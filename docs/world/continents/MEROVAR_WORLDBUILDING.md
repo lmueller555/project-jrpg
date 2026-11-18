@@ -115,6 +115,22 @@ allowed to warm up. A paid inn may offer a different agreement, and sanctuary
 hospitality frames help as service. These are alternatives, not grades of
 generosity; do not extend the Elden Vale covenant across Greyfold.
 
+## Greyfold Uplands: the verse you change
+
+In one [Greyfold](MEROVAR.md#greyfold-uplands) hall, a familiar
+unaccompanied song ends with a verse the singer makes up. Listeners try to
+catch three household details tucked into a journey: a lid that never
+fits, an uncle’s snoring, the cheese nobody admits finishing. Children
+count discoveries on their fingers. Whoever spots the last detail chooses
+the next singer, who is allowed to pass.
+
+Some older singers favour details everybody knows. Apprentices returning
+from river towns bring jokes their relatives don’t get. One sings about
+the battered pot in their rented room. Nobody laughs. Their grandmother
+asks what they cooked in it, and someone calls out a rhyme for the answer.
+The verse sticks because the room learns something new. Another hall
+might prefer to end the song without a game.
+
 ## Lower Leth: a fair weight after a flood
 
 At one weighing house, the keeper deducts the sack’s weight in front of
@@ -174,6 +190,23 @@ cleaning the cistern. A merchant objects to the keeper’s discretion, while a
 poor carrier knows the difference between an exception and losing a
 livelihood. Another town might handle the same emergency differently.
 “March” still does not establish a frontier or a shared water law.
+
+## Redstone March: the losing move
+
+At one shaded [Redstone](MEROVAR.md#redstone-march) market, both players
+in a board game are invited to name the other’s best move before the
+winner is called. Spectators argue over whether the praise is earned.
+A fruit seller sets aside the most bruised pear as a prize for a fine
+speech about a terrible game. One regular likes finding something kind
+to say; his sister thinks a loser should be able to leave without a
+public lesson. Travellers sometimes skip the speeches altogether.
+
+A young repairer beats the merchant whose recommendation she needs
+for her first job on her own. He praises a move she knows was a mistake.
+Rather than correcting him in front of the market, she sets the pieces
+back and asks him to show her what he saw. Now he can change his mind
+without having to apologize, and the market has something new to argue
+about before work resumes.
 
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
@@ -287,10 +320,10 @@ a particular species belongs in this game.
 
 ## Next development pass
 
-1. Give each region a second perspective beyond trade and shortages. Start
-   with a Greyfold hall performance and a Redstone market argument about
-   reputation. Develop each separately: who participates, who is left out,
-   and how someone bends the custom without simply rejecting it.
+1. Give each region a second perspective beyond trade and shortages. Build
+   on the Greyfold hall and Redstone market customs above; Marris or Rookfen
+   can next show whose humour travels and whose doesn’t. Develop each
+   separately: who participates, who is left out, and who bends the custom.
 2. Build on existing character ties. Ask what Lucan finds uncomfortable
    about his home region’s expectations, or what Edran learned from a
    colleague he still disagrees with. Do not assign new birthplaces or make
