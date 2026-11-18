@@ -1,0 +1,72 @@
+{
+  "anchor": [
+    12,
+    30
+  ],
+  "frame_size": [
+    48,
+    72
+  ],
+  "idles": {
+    "front": "assets/characters/named_hd/sanctuary_worker_b/idle_front.png",
+    "back": "assets/characters/named_hd/sanctuary_worker_b/idle_back.png",
+    "left": "assets/characters/named_hd/sanctuary_worker_b/idle_left.png",
+    "right": "assets/characters/named_hd/sanctuary_worker_b/idle_right.png"
+  },
+  "walks": {
+    "front": [
+      {
+        "file": "assets/characters/named_hd/sanctuary_worker_b/idle_front.png",
+        "duration_ms": 200
+      }
+    ],
+    "back": [
+      {
+        "file": "assets/characters/named_hd/sanctuary_worker_b/idle_back.png",
+        "duration_ms": 200
+      }
+    ],
+    "left": [
+      {
+        "file": "assets/characters/named_hd/sanctuary_worker_b/idle_left.png",
+        "duration_ms": 200
+      }
+    ],
+    "right": [
+      {
+        "file": "assets/characters/named_hd/sanctuary_worker_b/idle_right.png",
+        "duration_ms": 200
+      }
+    ]
+  },
+  "poses": {
+    "injured": {
+      "migration_status": "integrated",
+      "actor": "worker_b",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        32,
+        36
+      ],
+      "anchor": [
+        16,
+        30
+      ],
+      "loop": true,
+      "frames": [
+        {
+          "file": "assets/characters/named_hd/sanctuary_worker_b/injured.png",
+          "duration_ms": 1000
+        }
+      ]
+    }
+  },
+  "portrait": "arrival_worker_b",
+  "portrait_file": "assets/characters/named_hd/sanctuary_worker_b/portrait.png",
+  "stationary": true,
+  "travel_artwork_pixels_per_world_pixel": 2,
+  "migration_status": "integrated",
+  "activation_requires": [
+    "injured"
+  ]
+}
