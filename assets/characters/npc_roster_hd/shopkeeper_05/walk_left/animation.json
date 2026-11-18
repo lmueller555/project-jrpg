@@ -1,0 +1,674 @@
+{
+  "version": 1,
+  "character": "shopkeeper_05",
+  "animation": "walk.left",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/shopkeeper_05/walk_left/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/shopkeeper_05/walk_left/authored.png": "8af1d2e1330942b0f8e9c3fd26b0f4386a3f7162fbcac1d058ae0e536ace1e8c",
+    "assets/characters/npc_roster_hd/shopkeeper_05/idle_left.png": "ea0431d8146032b27a904529bc7dc11351d0da6414df518bce63d4f156b6ef07"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right contact",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 51,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            18,
+            69
+          ],
+          "toe": [
+            15,
+            69
+          ],
+          "heel": [
+            21,
+            67
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 67,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            29,
+            69
+          ],
+          "toe": [
+            26,
+            69
+          ],
+          "heel": [
+            33,
+            67
+          ]
+        }
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right down / left release",
+      "waist_registration": [
+        24,
+        31
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 72,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            21,
+            69
+          ],
+          "toe": [
+            18,
+            69
+          ],
+          "heel": [
+            25,
+            67
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 57,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            28,
+            67
+          ],
+          "toe": [
+            27,
+            65
+          ],
+          "heel": [
+            33,
+            64
+          ]
+        }
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left passing",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 34,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            23,
+            69
+          ],
+          "toe": [
+            20,
+            69
+          ],
+          "heel": [
+            27,
+            67
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 48,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            22,
+            64
+          ],
+          "toe": [
+            20,
+            64
+          ],
+          "heel": [
+            27,
+            61
+          ]
+        }
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left recovery / right toe-off",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 61,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            26,
+            69
+          ],
+          "toe": [
+            23,
+            69
+          ],
+          "heel": [
+            30,
+            67
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 62,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            18,
+            67
+          ],
+          "toe": [
+            15,
+            67
+          ],
+          "heel": [
+            23,
+            64
+          ]
+        }
+      },
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left contact",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 67,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            29,
+            69
+          ],
+          "toe": [
+            26,
+            69
+          ],
+          "heel": [
+            33,
+            67
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 51,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            18,
+            69
+          ],
+          "toe": [
+            15,
+            69
+          ],
+          "heel": [
+            21,
+            67
+          ]
+        }
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left down / right release",
+      "waist_registration": [
+        24,
+        31
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 57,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            28,
+            67
+          ],
+          "toe": [
+            27,
+            65
+          ],
+          "heel": [
+            33,
+            64
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 72,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            21,
+            69
+          ],
+          "toe": [
+            18,
+            69
+          ],
+          "heel": [
+            25,
+            67
+          ]
+        }
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right passing",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 18,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            21,
+            64
+          ],
+          "toe": [
+            20,
+            64
+          ],
+          "heel": [
+            27,
+            61
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 61,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            23,
+            69
+          ],
+          "toe": [
+            20,
+            69
+          ],
+          "heel": [
+            27,
+            67
+          ]
+        }
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right recovery / left toe-off",
+      "waist_registration": [
+        24,
+        30
+      ],
+      "belt_center": null,
+      "belt_visibility": "No exposed belt in approved long coat/waistcoat; waist registration is anatomical, not a visible belt pixel.",
+      "feet": {
+        "right": {
+          "visible_pixel_count": 62,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            18,
+            67
+          ],
+          "toe": [
+            15,
+            67
+          ],
+          "heel": [
+            23,
+            64
+          ]
+        },
+        "left": {
+          "visible_pixel_count": 61,
+          "knee": null,
+          "knee_visibility": "Hidden by long coat; no invented exposed knee landmark.",
+          "visible_sole": [
+            26,
+            69
+          ],
+          "toe": [
+            23,
+            69
+          ],
+          "heel": [
+            30,
+            67
+          ]
+        }
+      },
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
