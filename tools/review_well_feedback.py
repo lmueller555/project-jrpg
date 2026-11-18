@@ -197,7 +197,7 @@ class Recorder:
 def review(output=OUTPUT):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    source_paths = ['main.py', 'well_audio.py', 'well_audio_samples.py',
+    source_paths = ['main.py', 'npc_routines.py', 'well_audio.py', 'well_audio_samples.py',
                     'well_examination.py', 'regional_audio.py',
                     'gardener_well_runtime.py', 'well_routine.py',
                     'assets/story/well/inspection.json', 'tools/review_well_feedback.py']

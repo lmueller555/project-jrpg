@@ -90,11 +90,25 @@ retrieval; active-work scene-exit behavior is additionally covered by gameplay
 tests. The material montage is 5.870 seconds and includes all six original
 source sounds, separately from these accepted gameplay cues.
 
-Nine runtime/tool/text source hashes, three map/routine/collision hashes and
+Ten runtime/tool/text source hashes, three map/routine/collision hashes and
 four WAV/PNG artifact hashes match the final capture. Both native examination
 screenshots were inspected for readable text, current character identity and
 well/actor depth. The report retains all seven mechanism events, the actual
 per-frame source positions/gains and the two unchanged examination signatures.
+
+## Regression checks
+
+All **295 consolidated tests pass** (490.511 seconds), covering the new well
+audio/examination unit and actual-Game checks alongside regional sound, settings,
+the live well/gardener, source packs, saves, social behavior and roster bindings.
+The selected suites check the short cubic cutoff, once-only/expired cues,
+unavailable/reused channels, no deferred impacts, pause/focus/menu transitions,
+New Game/Continue cleanup, inspection reach/arbitration and unchanged ownership.
+The actual-Game review above remains separate evidence from those tests.
+
+After merging the latest town character work, another 21 feedback, Tomas and
+Serene compatibility cases pass. An independent 40-operation stress check
+produced 160 unique contact starts without replay, with history bounded at 128.
 
 Numerical/stream review and native screenshot inspection do not establish
 perceptual material identity on speakers. No hardware listening approval is

@@ -1,6 +1,6 @@
 {
   "method": "Review actual well feedback with disposable Game state and offline PCM.\n\nThe dummy SDL device cannot provide hardware loopback. Fake output-channel\nleases expose the production WellAudio accepted start/gain/stop stream; this\nhelper mixes that stream using the same original PCM provider and sample rate.\nIt adds no cues, soundtrack, normalization, compression or limiting. Player\nposition changes used for distance/scene fixtures are labelled in the report;\nthe gardener always follows actual Game.update navigation and mechanism gates.\n",
-  "revision": "1b5e9e9e446e0a92081dc7fb8b0282664c12ce87",
+  "revision": "eb0814f2e1f00e40eb11aeeb7760c71f91e24386",
   "runtime_activation": true,
   "simulation_fps": 30,
   "listener_fixtures": "Initial placement and diagnostic door transfers are explicit; outward/return falloff uses actual Game movement. The gardener is never teleported or advanced outside Game.update.",
@@ -11429,6 +11429,7 @@
   ],
   "source_sha256": {
     "main.py": "2b7b8036ce1950f0be4c2694fcf3befe33e511a26d5a43721d61ec0ca6ef2b0d",
+    "npc_routines.py": "99b8eff93800cee686b583e4e7272e39ce381b532e53f79d8243335caa1752be",
     "well_audio.py": "5374114444b50c0d2899d94429a1c4f726c38fc0d18a9380104554190a169746",
     "well_audio_samples.py": "97106add31048d0ee9b1e1f0254235864e13ad8a8a3761188a3137908b7a4daa",
     "well_examination.py": "b7b91c9d703c99cdbff4bb62936bb36b468c82f157f8239a7bc823457088f43c",
@@ -11436,7 +11437,7 @@
     "gardener_well_runtime.py": "496b129c0ea13364dde592debc5f5e8a1214a7e2ab83eb1e0657f4e5ef06e479",
     "well_routine.py": "c95d34a245f9944640333f76425c8eef81f2c11607ab08d3acd3a7c9e1192647",
     "assets/story/well/inspection.json": "4f83a63e5ad25e63f8cbba28568173abfdef591f5dd38879fe4b6375402795d4",
-    "tools/review_well_feedback.py": "3ca951b0838b7b2f3a2182789d58847ede6989190af00bdbb9295d43469d4448"
+    "tools/review_well_feedback.py": "823a3cb112a02cc9ba4019c5dd0ab24623d34487ef65c44fc15a7e7d99097ba5"
   },
   "preserved_sha256": {
     "assets/maps/eldenmere/playable/map.json": "525ca93dd7e333d1777e3cd1fc591c1ed633538d1e16fb9b718ef5fed234026b",
