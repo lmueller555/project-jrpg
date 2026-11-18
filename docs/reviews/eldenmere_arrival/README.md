@@ -11,7 +11,10 @@ businesses, signs, displays, trees, flowers and shrub retain their owners.
 | ![Original shop frontage](before_item_shop_frontage.png) | ![Small service-side margin and unchanged shop](item_shop_frontage.png) |
 
 The baseline is clean main
-`1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9`, after settlement PR 7.
+`52e2925f7f1e5d7165a4c53bc41711a498ed654b`, after settlement PR 7 and
+the independent interior-threshold revision. The final integrated capture uses
+`226161680bc0b1887f4327fa2eef48a3e575f4c8`; the later unwired NPC assets
+do not change active production files.
 [Revision metadata](before_revision.json), [original map](before_town.json),
 [original observations](before_observations.json) and exact
 [logical collision mask](before_collision.png) are retained for fresh-clone
@@ -82,16 +85,21 @@ The production checks passed:
   the existing **[384,312]** town entry.
 - Quest, party, inventory, flags and production inputs remain unchanged.
   All **159 PNG witnesses**, including the exact collision mask, have verified
-  recursive hashes in the capture record.
+  recursive hashes in the capture record. Every PNG is byte-identical to its
+  independently reviewed pre-integration counterpart; the refreshed revision
+  and fixture metadata identify the current baseline and run.
 
 The authored exit center is **[528,1620]**, but automatic departure occurs
 around **y=1603.2** when the player's real footprint first touches the exit
 rectangle. The capture exercises that actual behavior rather than forcing the
 player onto the exit center or calling a transition method.
 
-The **229 core/arrival checks** and **19 service checks** pass. Separate service
-tests cover functionality; this movement review does not claim purchases or
-rest-service use. [The baseline comparison](baseline_test_comparison.json)
+The **230 core/arrival checks** and **12 interior-threshold checks** pass;
+[core results](core_test_results.json) and
+[threshold results](threshold_test_results.json) retain test identifiers and
+outcomes. Separate service tests cover functionality; this movement review does
+not claim purchases or rest-service use.
+[The baseline comparison](baseline_test_comparison.json)
 records the broader regressions and any confirmed existing failures without
 changing their original assertions. This is a scoped rendering, movement,
 travel and save review, not a full quest playthrough.

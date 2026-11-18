@@ -1,9 +1,12 @@
 {
-  "purpose": "Record actual PR8 arrival regression runs and distinguish the three previously documented failures. Source snapshots explicitly describe the dirty precommit PR8 working tree; HEAD is its base, not a claim that changed source equals committed main.",
-  "current_base_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-  "working_tree_source_dirty": true,
-  "validation_state": "Built PR8 arrival implementation based on 1e39f7b2, before integration of newly announced upstream PR #262 at 52e2925f. These runs do not validate that later integration.",
-  "latest_observed_upstream_revision_not_tested_here": "52e2925f",
+  "purpose": "Record final actual PR8 regression runs after interior-threshold integration and restoration/rebuild of the frozen production sources. Keep original known failures separate and retain earlier pre-integration results by immutable Git reference.",
+  "current_base_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+  "actual_tested_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+  "active_source_reference_revision": "cc57ea9e68cdab4e31b4a3220034ebb1230b72a8",
+  "native_capture_baseline_revision": "52e2925f7f1e5d7165a4c53bc41711a498ed654b",
+  "latest_upstream_baseline_revision": "1c19aba183b720af4c740a85784f7e897ac8988a",
+  "working_tree_production_dirty": false,
+  "validation_state": "Fresh final 107+109+19 maintained-harness tests ran against clean production commit 22616168. Actual start/end snapshots for all38 recorded code/data inputs are identical and match cc57ea9e. The cc57-to-tested-HEAD difference contains only twelve added unwired NPC roster files; no existing active runtime/map/art file changes.",
   "environment": {
     "PYTHONPATH": "/tmp/project-jrpg-deps:tests:$PYTHONPATH",
     "SDL_VIDEODRIVER": "dummy",
@@ -97,9 +100,11 @@
   "runners": [
     {
       "group": "venn-story",
-      "execution_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "started_utc": "2026-11-17T23:56:02.282415+00:00",
-      "pid": 48581,
+      "execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+      "equivalent_active_source_reference": "cc57ea9e",
+      "active_source_equal_reference": true,
+      "started_utc": "2026-11-18T00:10:57.834291+00:00",
+      "pid": 51856,
       "command": [
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_eldenmere_hd.py",
@@ -111,7 +116,7 @@
         "test_lantern_village",
         "test_lantern_actor_handoffs",
         "--report",
-        "/tmp/pr8-venn-story-1e39-20261117T235602Z.json"
+        "/tmp/pr8-venn-story-22616168-20261118T001057Z.json"
       ],
       "modules": [
         "test_venn_visit",
@@ -122,10 +127,10 @@
         "test_lantern_village",
         "test_lantern_actor_handoffs"
       ],
-      "harness": "tools/check_eldenmere_hd.py; ReviewResult.stopTest calls gc.collect between cases",
-      "log_file": "/tmp/pr8-venn-story-1e39-20261117T235602Z.log",
-      "report_file": "/tmp/pr8-venn-story-1e39-20261117T235602Z.json",
-      "metadata_file": "/tmp/pr8-venn-story-1e39-20261117T235602Z-run.json",
+      "harness": "tools/check_eldenmere_hd.py with gc.collect between cases",
+      "log_file": "/tmp/pr8-venn-story-22616168-20261118T001057Z.log",
+      "report_file": "/tmp/pr8-venn-story-22616168-20261118T001057Z.json",
+      "metadata_file": "/tmp/pr8-venn-story-22616168-20261118T001057Z-run.json",
       "core_29_source_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -168,32 +173,6 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "execution_state": "Current built PR8 working tree based on 1e39f7b2; scoped composer/helper/data modifications are intentionally uncommitted.",
-      "completed_utc": "2026-11-17T23:59:57.806021+00:00",
-      "exit_code": 0,
-      "awaited_to_completion": true,
-      "head_at_completion": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "log_sha256": "ca640b7445018c8fbcab678e137383680bf4ca985ac79122df71cf7d3147990a",
-      "source_files_changed_during_run": [],
-      "source_snapshot_stable": true,
-      "report_sha256": "10b7a615f05ee24274f9553a6647dfb2f1e537fcddafcb4552bb51094b8a25df",
-      "summary": {
-        "tests": 107,
-        "passed": 107,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      },
-      "shell_session_id": 89810,
-      "working_tree_source_dirty_at_start": true,
-      "recorded_paths_differing_from_HEAD": [
-        "tools/build_eldenmere_hd.py",
-        "tools/eldenmere_settlement_dressing.py",
-        "tools/eldenmere_settlement.py",
-        "tools/eldenmere_settlement_streets.py",
-        "assets/source/maps/eldenmere/settlement/recipe.json",
-        "assets/maps/eldenmere/playable/map.json"
-      ],
       "actual_start_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -234,6 +213,12 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
+      "production_status_at_start": "",
+      "working_tree_production_clean_at_start": true,
+      "completed_utc": "2026-11-18T00:14:53.417208+00:00",
+      "exit_code": 0,
+      "awaited_to_completion": true,
+      "head_at_completion": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
       "actual_end_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -274,7 +259,20 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "end_snapshot_basis": "Runner calculated end hashes for every recorded file and reported no changed files; end hashes therefore equal recorded actual start hashes. Current file bytes were verified again before freezing this evidence.",
+      "source_files_changed_during_run": [],
+      "production_status_at_end": "",
+      "log_sha256": "9a044a2adbf31e7bb5ea111ab13e708d73c48769e7fdc26df9e3d29cb70ef4d6",
+      "source_snapshot_stable": true,
+      "report_sha256": "10b7a615f05ee24274f9553a6647dfb2f1e537fcddafcb4552bb51094b8a25df",
+      "summary": {
+        "tests": 107,
+        "passed": 107,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "shell_session_id": 39839,
+      "working_tree_production_dirty_at_start": false,
       "report": {
         "tests_run": 107,
         "passed": [
@@ -389,14 +387,15 @@
         "failures": [],
         "errors": [],
         "skipped": []
-      },
-      "log_output": "test_actual_door_and_parent_proximity_start_live_family_exchange (test_venn_visit.VennGameplayTests.test_actual_door_and_parent_proximity_start_live_family_exchange) ... ok\ntest_borrowed_lantern_stays_visible_until_set_down_before_other_hand_actions (test_venn_visit.VennGameplayTests.test_borrowed_lantern_stays_visible_until_set_down_before_other_hand_actions) ... ok\ntest_both_inspections_required_and_unread_inspection_does_not_count (test_venn_visit.VennGameplayTests.test_both_inspections_required_and_unread_inspection_does_not_count) ... ok\ntest_both_methods_animate_real_work_then_require_return_conversation (test_venn_visit.VennGameplayTests.test_both_methods_animate_real_work_then_require_return_conversation) ... ok\ntest_choice_and_repair_pause_safely_under_inventory (test_venn_visit.VennGameplayTests.test_choice_and_repair_pause_safely_under_inventory) ... ok\ntest_choice_requires_deliberate_click_and_walkaway_discards_callback (test_venn_visit.VennGameplayTests.test_choice_requires_deliberate_click_and_walkaway_discards_callback) ... ok\ntest_either_household_order_unlocks_report_without_automatic_turn_in (test_venn_visit.VennGameplayTests.test_either_household_order_unlocks_report_without_automatic_turn_in) ... ok\ntest_family_present_with_child_resting_and_three_distinct_portraits (test_venn_visit.VennGameplayTests.test_family_present_with_child_resting_and_three_distinct_portraits) ... ok\ntest_invalid_snapshots_and_cross_quest_progress_leave_save_untouched (test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched) ... ok\ntest_large_text_letterboxed_response_selects_exact_method (test_venn_visit.VennGameplayTests.test_large_text_letterboxed_response_selects_exact_method) ... ok\ntest_new_game_clears_repair_supplies_and_visual_pose (test_venn_visit.VennGameplayTests.test_new_game_clears_repair_supplies_and_visual_pose) ... ok\ntest_old_completed_saves_migrate_without_inventing_repair_method (test_venn_visit.VennGameplayTests.test_old_completed_saves_migrate_without_inventing_repair_method) ... ok\ntest_queued_visit_cannot_inspect_choose_repair_or_consume_supplies (test_venn_visit.VennGameplayTests.test_queued_visit_cannot_inspect_choose_repair_or_consume_supplies) ... ok\ntest_reload_inspections_interrupted_repair_and_repaired_boundary (test_venn_visit.VennGameplayTests.test_reload_inspections_interrupted_repair_and_repaired_boundary) ... ok\ntest_repair_preserves_cached_ground_collision_and_restores_downstream_flow (test_venn_visit.VennGameplayTests.test_repair_preserves_cached_ground_collision_and_restores_downstream_flow) ... ok\ntest_supplies_transfer_at_contact_once_without_finishing_gate (test_venn_visit.VennGameplayTests.test_supplies_transfer_at_contact_once_without_finishing_gate) ... ok\ntest_unread_arrival_never_hands_off_items (test_venn_visit.VennGameplayTests.test_unread_arrival_never_hands_off_items) ... ok\ntest_walkaway_resolution_keeps_repair_without_finishing_objective (test_venn_visit.VennGameplayTests.test_walkaway_resolution_keeps_repair_without_finishing_objective) ... ok\ntest_complete_hd_spell_bodies_have_fx_and_restore_idle (test_venn_magicks.VennMagickTests.test_complete_hd_spell_bodies_have_fx_and_restore_idle) ... ok\ntest_completed_legacy_magick_save_stays_repaired (test_venn_magicks.VennMagickTests.test_completed_legacy_magick_save_stays_repaired) ... ok\ntest_failed_cast_does_not_move_water_gate_or_debris_then_tools_repair (test_venn_magicks.VennMagickTests.test_failed_cast_does_not_move_water_gate_or_debris_then_tools_repair) ... ok\ntest_failure_checkpoint_survives_reload_and_resumes_only_tools (test_venn_magicks.VennMagickTests.test_failure_checkpoint_survives_reload_and_resumes_only_tools) ... ok\ntest_interrupted_attempt_reloads_safely_and_can_be_attempted (test_venn_magicks.VennMagickTests.test_interrupted_attempt_reloads_safely_and_can_be_attempted) ... ok\ntest_invalid_failure_snapshots_are_rejected (test_venn_magicks.VennMagickTests.test_invalid_failure_snapshots_are_rejected) ... ok\ntest_magic_is_a_small_blue_effect_that_disappears_before_idle (test_venn_magicks.VennMagickTests.test_magic_is_a_small_blue_effect_that_disappears_before_idle) ... ok\ntest_original_ground_collision_and_supplies_unchanged_by_spell (test_venn_magicks.VennMagickTests.test_original_ground_collision_and_supplies_unchanged_by_spell) ... ok\ntest_pause_and_inventory_freeze_cast_and_fizzle (test_venn_magicks.VennMagickTests.test_pause_and_inventory_freeze_cast_and_fizzle) ... ok\ntest_walking_away_from_failure_does_not_replay_spell_or_complete_quest (test_venn_magicks.VennMagickTests.test_walking_away_from_failure_does_not_replay_spell_or_complete_quest) ... ok\ntest_companion_traverses_real_workshop_door_without_cloning (test_mill_quest.MillQuestTests.test_companion_traverses_real_workshop_door_without_cloning) ... ok\ntest_diagnosis_needs_both_read_inspections_and_final_exchange (test_mill_quest.MillQuestTests.test_diagnosis_needs_both_read_inspections_and_final_exchange) ... ok\ntest_encouragement_only_references_seen_venn_failure (test_mill_quest.MillQuestTests.test_encouragement_only_references_seen_venn_failure) ... ok\ntest_final_verification_does_not_finish_unread_resolution (test_mill_quest.MillQuestTests.test_final_verification_does_not_finish_unread_resolution) ... ok\ntest_impossible_mill_progress_rejected_before_loading (test_mill_quest.MillQuestTests.test_impossible_mill_progress_rejected_before_loading) ... ok\ntest_interrupted_spell_restarts_from_safe_idle_on_load (test_mill_quest.MillQuestTests.test_interrupted_spell_restarts_from_safe_idle_on_load) ... ok\ntest_new_game_resets_companion_intake_and_mill (test_mill_quest.MillQuestTests.test_new_game_resets_companion_intake_and_mill) ... ok\ntest_old_available_handoff_without_mill_record_loads_normally (test_mill_quest.MillQuestTests.test_old_available_handoff_without_mill_record_loads_normally) ... ok\ntest_old_placeholder_ready_or_completed_migrates_to_unfinished_quest (test_mill_quest.MillQuestTests.test_old_placeholder_ready_or_completed_migrates_to_unfinished_quest) ... ok\ntest_pause_inventory_map_and_journal_freeze_spell (test_mill_quest.MillQuestTests.test_pause_inventory_map_and_journal_freeze_spell) ... ok\ntest_physical_repair_restarts_world_wheel_and_survives_reload (test_mill_quest.MillQuestTests.test_physical_repair_restarts_world_wheel_and_survives_reload) ... ok\ntest_preparation_is_a_timed_action_and_does_not_restore_mill (test_mill_quest.MillQuestTests.test_preparation_is_a_timed_action_and_does_not_restore_mill) ... ok\ntest_recruitment_uses_existing_actor_and_preserves_one_mira (test_mill_quest.MillQuestTests.test_recruitment_uses_existing_actor_and_preserves_one_mira) ... ok\ntest_small_spell_succeeds_before_encouragement_and_keeps_mill_stopped (test_mill_quest.MillQuestTests.test_small_spell_succeeds_before_encouragement_and_keeps_mill_stopped) ... ok\ntest_spell_preserves_body_and_visibly_clears_only_the_small_recess (test_mill_quest.MillQuestTests.test_spell_preserves_body_and_visibly_clears_only_the_small_recess) ... ok\ntest_tools_history_gets_encouragement_without_invented_failure (test_mill_quest.MillQuestTests.test_tools_history_gets_encouragement_without_invented_failure) ... ok\ntest_unread_reunion_does_not_accept_or_detach_mira (test_mill_quest.MillQuestTests.test_unread_reunion_does_not_accept_or_detach_mira) ... ok\ntest_upstream_checkpoint_is_valid_saved_location (test_mill_quest.MillQuestTests.test_upstream_checkpoint_is_valid_saved_location) ... ok\ntest_upstream_connection_is_reversible_with_one_companion (test_mill_quest.MillQuestTests.test_upstream_connection_is_reversible_with_one_companion) ... ok\ntest_walkaway_and_reload_preserve_success_but_not_unread_encouragement (test_mill_quest.MillQuestTests.test_walkaway_and_reload_preserve_success_but_not_unread_encouragement) ... ok\ntest_all_five_shots_gate_completion_on_animation_and_reading (test_mill_gift.MillGiftTests.test_all_five_shots_gate_completion_on_animation_and_reading) ... ok\ntest_authored_handoff_has_eight_distinct_registered_drawings (test_mill_gift.MillGiftTests.test_authored_handoff_has_eight_distinct_registered_drawings) ... ok\ntest_mechanical_click_obeys_volume_pause_and_ownership (test_mill_gift.MillGiftTests.test_mechanical_click_obeys_volume_pause_and_ownership) ... ok\ntest_muted_click_is_not_replayed_after_unmuting (test_mill_gift.MillGiftTests.test_muted_click_is_not_replayed_after_unmuting) ... ok\ntest_pause_focus_and_held_input_do_not_move_or_skip (test_mill_gift.MillGiftTests.test_pause_focus_and_held_input_do_not_move_or_skip) ... ok\ntest_shared_portraits_literal_emotes_and_large_text_fit (test_mill_gift.MillGiftTests.test_shared_portraits_literal_emotes_and_large_text_fit) ... ok\ntest_unread_dialogue_holds_and_reset_never_grants (test_mill_gift.MillGiftTests.test_unread_dialogue_holds_and_reset_never_grants) ... ok\ntest_active_quest_without_durable_record_is_rejected (test_lantern_quest.LanternQuestTests.test_active_quest_without_durable_record_is_rejected) ... ok\ntest_caelan_craft_complete_hd_bodies_preserve_owned_frame (test_lantern_quest.LanternQuestTests.test_caelan_craft_complete_hd_bodies_preserve_owned_frame) ... ok\ntest_caelan_walks_to_each_contact_before_using_his_work_pose (test_lantern_quest.LanternQuestTests.test_caelan_walks_to_each_contact_before_using_his_work_pose) ... ok\ntest_cancelled_classroom_scene_does_not_advance_or_authorize_outing (test_lantern_quest.LanternQuestTests.test_cancelled_classroom_scene_does_not_advance_or_authorize_outing) ... ok\ntest_classroom_checkpoint_reloads_without_replaying_the_invitation (test_lantern_quest.LanternQuestTests.test_classroom_checkpoint_reloads_without_replaying_the_invitation) ... ok\ntest_design_and_mother_permission_are_separate_committed_scenes (test_lantern_quest.LanternQuestTests.test_design_and_mother_permission_are_separate_committed_scenes) ... ok\ntest_frame_checkpoint_saves_without_completing_mq04_or_starting_festival (test_lantern_quest.LanternQuestTests.test_frame_checkpoint_saves_without_completing_mq04_or_starting_festival) ... ok\ntest_frame_credit_waits_for_lift_and_final_acknowledgment (test_lantern_quest.LanternQuestTests.test_frame_credit_waits_for_lift_and_final_acknowledgment) ... ok\ntest_full_objective_chain_is_registered_before_later_sections_ship (test_lantern_quest.LanternQuestTests.test_full_objective_chain_is_registered_before_later_sections_ship) ... ok\ntest_invitation_remains_with_tomas_and_serene_inside_the_sanctuary (test_lantern_quest.LanternQuestTests.test_invitation_remains_with_tomas_and_serene_inside_the_sanctuary) ... ok\ntest_leaving_before_permission_does_not_take_liam_out_of_school (test_lantern_quest.LanternQuestTests.test_leaving_before_permission_does_not_take_liam_out_of_school) ... ok\ntest_mira_is_the_same_actor_and_remains_available_for_crafting (test_lantern_quest.LanternQuestTests.test_mira_is_the_same_actor_and_remains_available_for_crafting) ... ok\ntest_new_game_keeps_the_quest_locked_before_regent_visit (test_lantern_quest.LanternQuestTests.test_new_game_keeps_the_quest_locked_before_regent_visit) ... ok\ntest_new_game_restores_school_children_to_their_households (test_lantern_quest.LanternQuestTests.test_new_game_restores_school_children_to_their_households) ... ok\ntest_old_completed_regent_save_gains_mq04_without_replaying_earlier_quests (test_lantern_quest.LanternQuestTests.test_old_completed_regent_save_gains_mq04_without_replaying_earlier_quests) ... ok\ntest_outing_uses_original_liam_teacher_children_and_tomas (test_lantern_quest.LanternQuestTests.test_outing_uses_original_liam_teacher_children_and_tomas) ... ok\ntest_overlay_panels_pause_construction_and_do_not_finish_the_frame (test_lantern_quest.LanternQuestTests.test_overlay_panels_pause_construction_and_do_not_finish_the_frame) ... ok\ntest_previous_world_repairs_remain_intact (test_lantern_quest.LanternQuestTests.test_previous_world_repairs_remain_intact) ... ok\ntest_regent_controller_does_not_pull_tomas_back_to_the_courtyard (test_lantern_quest.LanternQuestTests.test_regent_controller_does_not_pull_tomas_back_to_the_courtyard) ... ok\ntest_reload_during_assembly_replays_the_action_without_granting_credit (test_lantern_quest.LanternQuestTests.test_reload_during_assembly_replays_the_action_without_granting_credit) ... ok\ntest_repeat_interactions_cannot_duplicate_frame_credit (test_lantern_quest.LanternQuestTests.test_repeat_interactions_cannot_duplicate_frame_credit) ... ok\ntest_save_rejects_stage_objective_mismatches_and_unearned_future_progress (test_lantern_quest.LanternQuestTests.test_save_rejects_stage_objective_mismatches_and_unearned_future_progress) ... ok\ntest_unread_assembly_cannot_start_construction (test_lantern_quest.LanternQuestTests.test_unread_assembly_cannot_start_construction) ... ok\ntest_unread_invitation_cannot_accept_the_quest (test_lantern_quest.LanternQuestTests.test_unread_invitation_cannot_accept_the_quest) ... ok\ntest_cancelled_elira_conversations_preserve_each_committed_checkpoint (test_lantern_village.LanternVillageTests.test_cancelled_elira_conversations_preserve_each_committed_checkpoint) ... ok\ntest_complete_section_remains_active_without_festival_or_next_unimplemented_task (test_lantern_village.LanternVillageTests.test_complete_section_remains_active_without_festival_or_next_unimplemented_task) ... ok\ntest_departure_keeps_frame_and_drawing_at_miras_table (test_lantern_village.LanternVillageTests.test_departure_keeps_frame_and_drawing_at_miras_table) ... ok\ntest_elira_uses_the_same_already_retrieved_lantern (test_lantern_village.LanternVillageTests.test_elira_uses_the_same_already_retrieved_lantern) ... ok\ntest_existing_pr1_checkpoint_continues_without_replaying_construction (test_lantern_village.LanternVillageTests.test_existing_pr1_checkpoint_continues_without_replaying_construction) ... ok\ntest_final_credit_requires_leaving_eliras_home_and_reading_reflection (test_lantern_village.LanternVillageTests.test_final_credit_requires_leaving_eliras_home_and_reading_reflection) ... ok\ntest_invalid_stage_and_objective_combinations_are_rejected (test_lantern_village.LanternVillageTests.test_invalid_stage_and_objective_combinations_are_rejected) ... ok\ntest_mill_greeting_does_not_skip_the_flour_conversation (test_lantern_village.LanternVillageTests.test_mill_greeting_does_not_skip_the_flour_conversation) ... ok\ntest_mira_returns_to_her_original_bench_before_normal_work_resumes (test_lantern_village.LanternVillageTests.test_mira_returns_to_her_original_bench_before_normal_work_resumes) ... ok\ntest_neighbour_credit_requires_both_substantive_visits (test_lantern_village.LanternVillageTests.test_neighbour_credit_requires_both_substantive_visits) ... ok\ntest_new_game_releases_outing_and_restores_the_school_households (test_lantern_village.LanternVillageTests.test_new_game_releases_outing_and_restores_the_school_households) ... ok\ntest_original_villagers_and_companions_are_reused (test_lantern_village.LanternVillageTests.test_original_villagers_and_companions_are_reused) ... ok\ntest_out_of_order_household_visits_cannot_grant_future_scenes (test_lantern_village.LanternVillageTests.test_out_of_order_household_visits_cannot_grant_future_scenes) ... ok\ntest_reloading_each_visit_preserves_the_committed_story_not_the_page (test_lantern_village.LanternVillageTests.test_reloading_each_visit_preserves_the_committed_story_not_the_page) ... ok\ntest_repeated_optional_conversations_do_not_repeat_visit_credit (test_lantern_village.LanternVillageTests.test_repeated_optional_conversations_do_not_repeat_visit_credit) ... ok\ntest_unread_departure_cannot_release_the_outing (test_lantern_village.LanternVillageTests.test_unread_departure_cannot_release_the_outing) ... ok\ntest_venn_child_stays_resting_and_earlier_repairs_remain_true (test_lantern_village.LanternVillageTests.test_venn_child_stays_resting_and_earlier_repairs_remain_true) ... ok\ntest_accident_cleanup_returns_all_blocks_and_releases_daisy (test_lantern_actor_handoffs.LanternActorHandoffTests.test_accident_cleanup_returns_all_blocks_and_releases_daisy) ... ok\ntest_chase_returns_both_real_participants_through_door (test_lantern_actor_handoffs.LanternActorHandoffTests.test_chase_returns_both_real_participants_through_door) ... ok\ntest_claim_during_one_sided_exit_returns_liam_without_sending_daisy_out (test_lantern_actor_handoffs.LanternActorHandoffTests.test_claim_during_one_sided_exit_returns_liam_without_sending_daisy_out) ... ok\ntest_forgotten_block_waits_until_active_chase_has_returned (test_lantern_actor_handoffs.LanternActorHandoffTests.test_forgotten_block_waits_until_active_chase_has_returned) ... ok\ntest_held_block_finishes_contact_and_is_returned_before_claim (test_lantern_actor_handoffs.LanternActorHandoffTests.test_held_block_finishes_contact_and_is_returned_before_claim) ... ok\ntest_idle_claim_is_exclusive_and_releases_without_new_cycles (test_lantern_actor_handoffs.LanternActorHandoffTests.test_idle_claim_is_exclusive_and_releases_without_new_cycles) ... ok\ntest_independent_held_bone_survives_liam_claim_and_reset (test_lantern_actor_handoffs.LanternActorHandoffTests.test_independent_held_bone_survives_liam_claim_and_reset) ... ok\ntest_nap_wakes_promptly_instead_of_waiting_for_whole_rest (test_lantern_actor_handoffs.LanternActorHandoffTests.test_nap_wakes_promptly_instead_of_waiting_for_whole_rest) ... ok\ntest_request_during_cleanup_includes_the_already_forgotten_block (test_lantern_actor_handoffs.LanternActorHandoffTests.test_request_during_cleanup_includes_the_already_forgotten_block) ... ok\ntest_reset_cancels_a_pending_block_claim_and_restores_five_toys (test_lantern_actor_handoffs.LanternActorHandoffTests.test_reset_cancels_a_pending_block_claim_and_restores_five_toys) ... ok\ntest_resident_pose_moves_the_existing_teacher_blocker_and_restores_art (test_lantern_actor_handoffs.LanternActorHandoffTests.test_resident_pose_moves_the_existing_teacher_blocker_and_restores_art) ... ok\n\n----------------------------------------------------------------------\nRan 107 tests in 235.048s\n\nOK\n"
+      }
     },
     {
       "group": "civic-business-architecture",
-      "execution_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "started_utc": "2026-11-17T23:56:02.318051+00:00",
-      "pid": 48583,
+      "execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+      "equivalent_active_source_reference": "cc57ea9e",
+      "active_source_equal_reference": true,
+      "started_utc": "2026-11-18T00:10:57.800177+00:00",
+      "pid": 51855,
       "command": [
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_eldenmere_hd.py",
@@ -413,7 +412,7 @@
         "test_eldenmere_business_exteriors_hd",
         "test_eldenmere_architecture_art",
         "--report",
-        "/tmp/pr8-civic-business-architecture-1e39-20261117T235602Z.json"
+        "/tmp/pr8-civic-business-architecture-22616168-20261118T001057Z.json"
       ],
       "modules": [
         "test_well",
@@ -429,10 +428,10 @@
         "test_eldenmere_business_exteriors_hd",
         "test_eldenmere_architecture_art"
       ],
-      "harness": "tools/check_eldenmere_hd.py; ReviewResult.stopTest calls gc.collect between cases",
-      "log_file": "/tmp/pr8-civic-business-architecture-1e39-20261117T235602Z.log",
-      "report_file": "/tmp/pr8-civic-business-architecture-1e39-20261117T235602Z.json",
-      "metadata_file": "/tmp/pr8-civic-business-architecture-1e39-20261117T235602Z-run.json",
+      "harness": "tools/check_eldenmere_hd.py with gc.collect between cases",
+      "log_file": "/tmp/pr8-civic-business-architecture-22616168-20261118T001057Z.log",
+      "report_file": "/tmp/pr8-civic-business-architecture-22616168-20261118T001057Z.json",
+      "metadata_file": "/tmp/pr8-civic-business-architecture-22616168-20261118T001057Z-run.json",
       "core_29_source_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -475,32 +474,6 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "execution_state": "Current built PR8 working tree based on 1e39f7b2; scoped composer/helper/data modifications are intentionally uncommitted.",
-      "completed_utc": "2026-11-17T23:59:09.292015+00:00",
-      "exit_code": 1,
-      "awaited_to_completion": true,
-      "head_at_completion": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "log_sha256": "6e402ebb5057e32c8b7d680eb01720303b19b19c080c2dd5e05ac0a5a3fb3331",
-      "source_files_changed_during_run": [],
-      "source_snapshot_stable": true,
-      "report_sha256": "c88f61d886310048cb6ae567beb9439ddfdd626a6e8d83af41a354ec1c65d46f",
-      "summary": {
-        "tests": 109,
-        "passed": 106,
-        "failures": 3,
-        "errors": 0,
-        "skipped": 0
-      },
-      "shell_session_id": 79094,
-      "working_tree_source_dirty_at_start": true,
-      "recorded_paths_differing_from_HEAD": [
-        "tools/build_eldenmere_hd.py",
-        "tools/eldenmere_settlement_dressing.py",
-        "tools/eldenmere_settlement.py",
-        "tools/eldenmere_settlement_streets.py",
-        "assets/source/maps/eldenmere/settlement/recipe.json",
-        "assets/maps/eldenmere/playable/map.json"
-      ],
       "actual_start_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -541,6 +514,12 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
+      "production_status_at_start": "",
+      "working_tree_production_clean_at_start": true,
+      "completed_utc": "2026-11-18T00:14:08.496362+00:00",
+      "exit_code": 1,
+      "awaited_to_completion": true,
+      "head_at_completion": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
       "actual_end_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -581,7 +560,20 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "end_snapshot_basis": "Runner calculated end hashes for every recorded file and reported no changed files; end hashes therefore equal recorded actual start hashes. Current file bytes were verified again before freezing this evidence.",
+      "source_files_changed_during_run": [],
+      "production_status_at_end": "",
+      "log_sha256": "57b5dd56130b698025270249d9788ae845da32768c4d523121fe0e520155d100",
+      "source_snapshot_stable": true,
+      "report_sha256": "c88f61d886310048cb6ae567beb9439ddfdd626a6e8d83af41a354ec1c65d46f",
+      "summary": {
+        "tests": 109,
+        "passed": 106,
+        "failures": 3,
+        "errors": 0,
+        "skipped": 0
+      },
+      "shell_session_id": 7664,
+      "working_tree_production_dirty_at_start": false,
       "report": {
         "tests_run": 109,
         "passed": [
@@ -708,28 +700,29 @@
         ],
         "errors": [],
         "skipped": []
-      },
-      "log_output": "test_full_ring_and_south_connection_are_walkable (test_well.WellSquare.test_full_ring_and_south_connection_are_walkable) ... ok\ntest_roof_occludes_from_behind_and_player_draws_in_front (test_well.WellSquare.test_roof_occludes_from_behind_and_player_draws_in_front) ... FAIL\ntest_square_preserves_building_access_and_gathering_space (test_well.WellSquare.test_square_preserves_building_access_and_gathering_space) ... ok\ntest_water_moves_while_structure_rope_and_crank_stay_fixed (test_well.WellSquare.test_water_moves_while_structure_rope_and_crank_stay_fixed) ... FAIL\ntest_well_is_solid_without_tunnelling_from_any_side (test_well.WellSquare.test_well_is_solid_without_tunnelling_from_any_side) ... ok\ntest_actor_held_pail_is_behind_torso_and_articulated_arms (test_well_drawing.WellDrawing.test_actor_held_pail_is_behind_torso_and_articulated_arms) ... ok\ntest_blocked_loading_and_crank_positions_wait_then_resume (test_well_drawing.WellDrawing.test_blocked_loading_and_crank_positions_wait_then_resume) ... ok\ntest_crank_hand_alignment_and_loaded_reverse_rotation (test_well_drawing.WellDrawing.test_crank_hand_alignment_and_loaded_reverse_rotation) ... ok\ntest_handoffs_snap_between_concealed_hands_and_visible_top_winch (test_well_drawing.WellDrawing.test_handoffs_snap_between_concealed_hands_and_visible_top_winch) ... ok\ntest_idle_hook_is_retracted_beneath_windlass_with_no_long_rope (test_well_drawing.WellDrawing.test_idle_hook_is_retracted_beneath_windlass_with_no_long_rope) ... ok\ntest_near_side_poses_keep_normal_arm_lengths_and_fixed_body_proportions (test_well_drawing.WellDrawing.test_near_side_poses_keep_normal_arm_lengths_and_fixed_body_proportions) ... ok\ntest_one_pail_changes_owner_only_at_registered_matching_handoffs (test_well_drawing.WellDrawing.test_one_pail_changes_owner_only_at_registered_matching_handoffs) ... ok\ntest_parked_pail_is_fully_visible_then_rim_masks_its_descent (test_well_drawing.WellDrawing.test_parked_pail_is_fully_visible_then_rim_masks_its_descent) ... ok\ntest_rim_hides_shaft_pail_and_roof_never_changes (test_well_drawing.WellDrawing.test_rim_hides_shaft_pail_and_roof_never_changes) ... ok\ntest_rope_connector_exists_only_while_well_owns_attached_pail (test_well_drawing.WellDrawing.test_rope_connector_exists_only_while_well_owns_attached_pail) ... ok\ntest_scene_visit_preserves_active_draw_and_releases_reservation (test_well_drawing.WellDrawing.test_scene_visit_preserves_active_draw_and_releases_reservation) ... ok\ntest_suspended_pail_stays_centered_and_moves_only_vertically (test_well_drawing.WellDrawing.test_suspended_pail_stays_centered_and_moves_only_vertically) ... ok\ntest_top_pail_settles_one_pixel_then_rope_follows_its_descent_and_ascent (test_well_drawing.WellDrawing.test_top_pail_settles_one_pixel_then_rope_follows_its_descent_and_ascent) ... ok\ntest_brief_player_obstruction_pauses_movement_then_continues (test_gardener.SanctuaryGardener.test_brief_player_obstruction_pauses_movement_then_continues) ... ok\ntest_carrying_retains_approved_stride_and_bucket_levels_are_visible (test_gardener.SanctuaryGardener.test_carrying_retains_approved_stride_and_bucket_levels_are_visible) ... ok\ntest_complete_cycle_uses_dry_routes_stairs_and_all_six_targets (test_gardener.SanctuaryGardener.test_complete_cycle_uses_dry_routes_stairs_and_all_six_targets) ... ok\ntest_fixed_simulation_matches_different_frame_rates (test_gardener.SanctuaryGardener.test_fixed_simulation_matches_different_frame_rates) ... ok\ntest_one_pail_fills_in_shaft_and_pours_descend_to_roots (test_gardener.SanctuaryGardener.test_one_pail_fills_in_shaft_and_pours_descend_to_roots) ... ok\ntest_player_collision_and_own_probe_exclusion (test_gardener.SanctuaryGardener.test_player_collision_and_own_probe_exclusion) ... ok\ntest_random_rest_is_sampled_once_and_lasts_three_to_five_minutes (test_gardener.SanctuaryGardener.test_random_rest_is_sampled_once_and_lasts_three_to_five_minutes) ... ok\ntest_rest_countdown_survives_room_visits_and_rendering (test_gardener.SanctuaryGardener.test_rest_countdown_survives_room_visits_and_rendering) ... ok\ntest_room_visit_preserves_actor_bucket_and_progress (test_gardener.SanctuaryGardener.test_room_visit_preserves_actor_bucket_and_progress) ... ok\ntest_static_action_feet_and_player_depth_order (test_gardener.SanctuaryGardener.test_static_action_feet_and_player_depth_order) ... ok\ntest_sustained_obstruction_gets_a_safe_detour_on_the_open_lane (test_gardener.SanctuaryGardener.test_sustained_obstruction_gets_a_safe_detour_on_the_open_lane) ... ok\ntest_waits_when_collection_point_is_occupied_and_resumes (test_gardener.SanctuaryGardener.test_waits_when_collection_point_is_occupied_and_resumes) ... ok\ntest_exterior_animation_and_door_patches_match_at_native_scale (test_school.EldenmereSchoolTests.test_exterior_animation_and_door_patches_match_at_native_scale) ... ok\ntest_proximity_door_and_actual_round_trip_use_distinct_school_scene (test_school.EldenmereSchoolTests.test_proximity_door_and_actual_round_trip_use_distinct_school_scene) ... ok\ntest_room_has_six_seats_and_reachable_teacher_and_learning_areas (test_school.EldenmereSchoolTests.test_room_has_six_seats_and_reachable_teacher_and_learning_areas) ... ok\ntest_school_sits_on_lower_ground_without_moving_existing_landmarks (test_school.EldenmereSchoolTests.test_school_sits_on_lower_ground_without_moving_existing_landmarks) ... ok\ntest_teacher_role_is_registered_without_starting_unapproved_schedules (test_school.EldenmereSchoolTests.test_teacher_role_is_registered_without_starting_unapproved_schedules) ... ok\ntest_well_to_school_route_and_entrance_remain_walkable (test_school.EldenmereSchoolTests.test_well_to_school_route_and_entrance_remain_walkable) ... ok\ntest_actual_e_interaction_opens_original_art (test_school_world_map.SchoolWorldMapTests.test_actual_e_interaction_opens_original_art) ... ok\ntest_authored_approach_is_beside_map_and_reachable_from_door (test_school_world_map.SchoolWorldMapTests.test_authored_approach_is_beside_map_and_reachable_from_door) ... ok\ntest_close_consumes_remaining_event_batch_without_opening_other_menus (test_school_world_map.SchoolWorldMapTests.test_close_consumes_remaining_event_batch_without_opening_other_menus) ... ok\ntest_existing_dialogue_and_menus_take_precedence (test_school_world_map.SchoolWorldMapTests.test_existing_dialogue_and_menus_take_precedence) ... ok\ntest_map_is_unavailable_in_other_scenes_or_far_from_wall (test_school_world_map.SchoolWorldMapTests.test_map_is_unavailable_in_other_scenes_or_far_from_wall) ... ok\ntest_viewer_freezes_player_npcs_doors_and_quest_clocks (test_school_world_map.SchoolWorldMapTests.test_viewer_freezes_player_npcs_doors_and_quest_clocks) ... ok\ntest_blocked_arrival_waits_without_cloning_or_crossing_player (test_liam_daisy_play.LiamDaisyPlayTests.test_blocked_arrival_waits_without_cloning_or_crossing_player) ... ok\ntest_both_natural_random_endings_with_exact_three_laps_and_portals (test_liam_daisy_play.LiamDaisyPlayTests.test_both_natural_random_endings_with_exact_three_laps_and_portals) ... ok\ntest_four_pose_layers_protected_art_and_pillow_registration (test_liam_daisy_play.LiamDaisyPlayTests.test_four_pose_layers_protected_art_and_pillow_registration) ... ok\ntest_nap_holds_when_bedside_is_occupied_and_releases_normal_daisy_behavior (test_liam_daisy_play.LiamDaisyPlayTests.test_nap_holds_when_bedside_is_occupied_and_releases_normal_daisy_behavior) ... ok\ntest_obstructed_chase_detours_then_completes (test_liam_daisy_play.LiamDaisyPlayTests.test_obstructed_chase_detours_then_completes) ... ok\ntest_waits_for_existing_meal_and_empty_water_inspection (test_liam_daisy_play.LiamDaisyPlayTests.test_waits_for_existing_meal_and_empty_water_inspection) ... ok\ntest_daisy_lies_on_a_nonblocking_floor_rug_with_correct_depth (test_liam_household.LiamHouseholdTests.test_daisy_lies_on_a_nonblocking_floor_rug_with_correct_depth) ... ok\ntest_entry_exit_and_every_furniture_access_remain_reachable_with_residents (test_liam_household.LiamHouseholdTests.test_entry_exit_and_every_furniture_access_remain_reachable_with_residents) ... ok\ntest_exactly_four_residents_load_once_and_parents_remain_stationary (test_liam_household.LiamHouseholdTests.test_exactly_four_residents_load_once_and_parents_remain_stationary) ... ok\ntest_exit_and_reentry_reuse_the_same_stationary_household (test_liam_household.LiamHouseholdTests.test_exit_and_reentry_reuse_the_same_stationary_household) ... ok\ntest_new_pixel_assets_retain_palette_face_and_reconstruct_from_source_parts (test_liam_household.LiamHouseholdTests.test_new_pixel_assets_retain_palette_face_and_reconstruct_from_source_parts) ... ok\ntest_no_routines_dialogue_or_conversation_lock (test_liam_household.LiamHouseholdTests.test_no_routines_dialogue_or_conversation_lock) ... ok\ntest_residents_have_solid_footprints_and_player_cannot_walk_through (test_liam_household.LiamHouseholdTests.test_residents_have_solid_footprints_and_player_cannot_walk_through) ... ok\ntest_cached_rooms_reuse_same_people_and_have_no_dialogue (test_villager_households.VillagerHouseholdTests.test_cached_rooms_reuse_same_people_and_have_no_dialogue) ... ok\ntest_gardener_is_not_cloned_or_replaced (test_villager_households.VillagerHouseholdTests.test_gardener_is_not_cloned_or_replaced) ... ok\ntest_residents_leave_every_furnishing_and_exit_reachable (test_villager_households.VillagerHouseholdTests.test_residents_leave_every_furnishing_and_exit_reachable) ... ok\ntest_story_and_liam_homes_retain_assignments (test_villager_households.VillagerHouseholdTests.test_story_and_liam_homes_retain_assignments) ... ok\ntest_three_pairs_and_exactly_five_new_residents (test_villager_households.VillagerHouseholdTests.test_three_pairs_and_exactly_five_new_residents) ... ok\ntest_authored_four_frame_actions_and_sources_preserve_approved_art (test_daisy_routines.DaisyRoutineTests.test_authored_four_frame_actions_and_sources_preserve_approved_art) ... ok\ntest_contact_landmarks_meet_full_and_half_contents_and_front_rim_occludes (test_daisy_routines.DaisyRoutineTests.test_contact_landmarks_meet_full_and_half_contents_and_front_rim_occludes) ... ok\ntest_each_food_or_water_visit_consumes_exactly_one_level (test_daisy_routines.DaisyRoutineTests.test_each_food_or_water_visit_consumes_exactly_one_level) ... ok\ntest_empty_bowls_are_inspected_without_chewing_lapping_or_consumption (test_daisy_routines.DaisyRoutineTests.test_empty_bowls_are_inspected_without_chewing_lapping_or_consumption) ... ok\ntest_expired_cooldowns_automatically_select_a_bowl_after_rest (test_daisy_routines.DaisyRoutineTests.test_expired_cooldowns_automatically_select_a_bowl_after_rest) ... ok\ntest_initial_rest_and_production_timing_and_paths (test_daisy_routines.DaisyRoutineTests.test_initial_rest_and_production_timing_and_paths) ... ok\ntest_offscreen_update_and_exit_reentry_preserve_actor_and_bowl_state (test_daisy_routines.DaisyRoutineTests.test_offscreen_update_and_exit_reentry_preserve_actor_and_bowl_state) ... ok\ntest_player_blocking_station_causes_waiting_without_teleport_or_consumption (test_daisy_routines.DaisyRoutineTests.test_player_blocking_station_causes_waiting_without_teleport_or_consumption) ... ok\ntest_reservation_blocks_refill_until_daisy_steps_away (test_daisy_routines.DaisyRoutineTests.test_reservation_blocks_refill_until_daisy_steps_away) ... ok\ntest_time_chunking_keeps_movement_and_consumption_consistent (test_daisy_routines.DaisyRoutineTests.test_time_chunking_keeps_movement_and_consumption_consistent) ... ok\ntest_wander_stands_walks_pauses_and_settles_without_leaving_room (test_daisy_routines.DaisyRoutineTests.test_wander_stands_walks_pauses_and_settles_without_leaving_room) ... ok\ntest_carry_waiting_pose_retains_bundle_and_walk_timing (test_tomas_routines.TomasRoutines.test_carry_waiting_pose_retains_bundle_and_walk_timing) ... ok\ntest_conversation_waits_until_carried_bundle_is_released_then_resumes (test_tomas_routines.TomasRoutines.test_conversation_waits_until_carried_bundle_is_released_then_resumes) ... ok\ntest_full_schedule_completes_with_other_npcs_and_preserves_identity (test_tomas_routines.TomasRoutines.test_full_schedule_completes_with_other_npcs_and_preserves_identity) ... ok\ntest_loose_bundle_has_exactly_one_owner_for_every_frame_and_step (test_tomas_routines.TomasRoutines.test_loose_bundle_has_exactly_one_owner_for_every_frame_and_step) ... ok\ntest_npc_opens_door_and_waits_for_its_animation_before_transfer (test_tomas_routines.TomasRoutines.test_npc_opens_door_and_waits_for_its_animation_before_transfer) ... ok\ntest_player_blocking_delivery_can_talk_without_losing_bundle_or_getting_stuck (test_tomas_routines.TomasRoutines.test_player_blocking_delivery_can_talk_without_losing_bundle_or_getting_stuck) ... ok\ntest_random_break_is_sampled_once_and_stays_in_range (test_tomas_routines.TomasRoutines.test_random_break_is_sampled_once_and_stays_in_range) ... ok\ntest_room_and_actor_prop_handoffs_register_on_same_pixels (test_tomas_routines.TomasRoutines.test_room_and_actor_prop_handoffs_register_on_same_pixels) ... ok\ntest_route_stations_and_door_landings_are_reachable (test_tomas_routines.TomasRoutines.test_route_stations_and_door_landings_are_reachable) ... ok\ntest_work_assets_are_hard_pixels_and_crank_base_stays_fixed (test_tomas_routines.TomasRoutines.test_work_assets_are_hard_pixels_and_crank_base_stays_fixed) ... ok\ntest_ambient_layers_reconstruct_and_supports_stay_registered (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_ambient_layers_reconstruct_and_supports_stay_registered) ... ok\ntest_both_displays_have_four_potion_colors_and_weapon_armor_sections (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_both_displays_have_four_potion_colors_and_weapon_armor_sections) ... ok\ntest_candidate_plots_align_with_entries_and_retained_collision_snapshots (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_candidate_plots_align_with_entries_and_retained_collision_snapshots) ... ok\ntest_closed_and_open_reconstruct_from_fixed_structure_door_sign_and_display (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_closed_and_open_reconstruct_from_fixed_structure_door_sign_and_display) ... ok\ntest_doors_clear_shell_and_preserve_drawn_five_state_contract (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_doors_clear_shell_and_preserve_drawn_five_state_contract) ... ok\ntest_glass_stock_is_opaque_fixed_and_excluded_from_flicker (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_glass_stock_is_opaque_fixed_and_excluded_from_flicker) ... ok\ntest_hard_alpha_palette_and_native_detail (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_hard_alpha_palette_and_native_detail) ... FAIL\ntest_inventory_units_status_and_geometry_shared_by_variants (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_inventory_units_status_and_geometry_shared_by_variants) ... ok\ntest_native_street_scenes_reconstruct_at_character_scale (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_native_street_scenes_reconstruct_at_character_scale) ... ok\ntest_review_gif_timelines_match_native_frames_without_merchandise_flicker (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_review_gif_timelines_match_native_frames_without_merchandise_flicker) ... ok\ntest_service_spec_is_future_work_and_does_not_sell_unique_story_gear (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_service_spec_is_future_work_and_does_not_sell_unique_story_gear) ... ok\ntest_signs_sway_with_fixed_top_mount_and_other_props_are_static (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_signs_sway_with_fixed_top_mount_and_other_props_are_static) ... ok\ntest_sources_dependencies_and_scoped_reproducible_inventory (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_sources_dependencies_and_scoped_reproducible_inventory) ... ok\ntest_changed_registration_requires_explicit_review (test_eldenmere_architecture_art.ArchitectureArtTests.test_changed_registration_requires_explicit_review) ... ok\ntest_drop_in_adapter_uses_native_drawing_not_split_registration (test_eldenmere_architecture_art.ArchitectureArtTests.test_drop_in_adapter_uses_native_drawing_not_split_registration) ... ok\ntest_explicit_glass_panes_exclude_roof_stone_and_structural_timber (test_eldenmere_architecture_art.ArchitectureArtTests.test_explicit_glass_panes_exclude_roof_stone_and_structural_timber) ... ok\ntest_households_have_different_structural_bay_rhythms (test_eldenmere_architecture_art.ArchitectureArtTests.test_households_have_different_structural_bay_rhythms) ... ok\ntest_legacy_apparent_roof_rises_do_not_recreate_the_ground_depth_constraint (test_eldenmere_architecture_art.ArchitectureArtTests.test_legacy_apparent_roof_rises_do_not_recreate_the_ground_depth_constraint) ... ok\ntest_legacy_roof_language_has_tapered_ends_and_no_mid_plane_ridge (test_eldenmere_architecture_art.ArchitectureArtTests.test_legacy_roof_language_has_tapered_ends_and_no_mid_plane_ridge) ... ok\ntest_mill_left_foundation_and_school_feet_fit_occupied_ground (test_eldenmere_architecture_art.ArchitectureArtTests.test_mill_left_foundation_and_school_feet_fit_occupied_ground) ... ok\ntest_mill_processing_roof_has_two_sloped_wings_and_front_gable (test_eldenmere_architecture_art.ArchitectureArtTests.test_mill_processing_roof_has_two_sloped_wings_and_front_gable) ... ok\ntest_no_geometry_or_portal_migration (test_eldenmere_architecture_art.ArchitectureArtTests.test_no_geometry_or_portal_migration) ... ok\ntest_normal_and_reduced_differ_only_by_declared_effect_ownership (test_eldenmere_architecture_art.ArchitectureArtTests.test_normal_and_reduced_differ_only_by_declared_effect_ownership) ... ok\ntest_right_rear_hearth_flue_correspondence (test_eldenmere_architecture_art.ArchitectureArtTests.test_right_rear_hearth_flue_correspondence) ... ok\ntest_schedule_uses_reviewed_roof_planes_wall_contacts_and_cap_emitters (test_eldenmere_architecture_art.ArchitectureArtTests.test_schedule_uses_reviewed_roof_planes_wall_contacts_and_cap_emitters) ... ok\ntest_shop_merchandise_pixels_never_animate_or_receive_pane_light (test_eldenmere_architecture_art.ArchitectureArtTests.test_shop_merchandise_pixels_never_animate_or_receive_pane_light) ... ok\ntest_shortened_roof_attachments_are_supported_not_left_floating (test_eldenmere_architecture_art.ArchitectureArtTests.test_shortened_roof_attachments_are_supported_not_left_floating) ... ok\ntest_thirteen_live_consumers_and_independent_return_values (test_eldenmere_architecture_art.ArchitectureArtTests.test_thirteen_live_consumers_and_independent_return_values) ... ok\n\n======================================================================\nFAIL: test_roof_occludes_from_behind_and_player_draws_in_front (test_well.WellSquare.test_roof_occludes_from_behind_and_player_draws_in_front)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_well.py\", line 68, in test_roof_occludes_from_behind_and_player_draws_in_front\n    self.assertNotEqual(target.get_at((120,52))[:3],(255,0,255))\nAssertionError: (255, 0, 255) == (255, 0, 255)\n\n======================================================================\nFAIL: test_water_moves_while_structure_rope_and_crank_stay_fixed (test_well.WellSquare.test_water_moves_while_structure_rope_and_crank_stay_fixed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_well.py\", line 50, in test_water_moves_while_structure_rope_and_crank_stay_fixed\n    self.assertEqual(len(frames),6)\nAssertionError: 1 != 6\n\n======================================================================\nFAIL: test_hard_alpha_palette_and_native_detail (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_hard_alpha_palette_and_native_detail)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_eldenmere_business_exteriors_hd.py\", line 73, in test_hard_alpha_palette_and_native_detail\n    image=im(PACK/r['closed']);self.assertLessEqual(set(image.getchannel('A').tobytes()),{0,255});self.assertLessEqual(colors(image),allowed);fine=sum(len({image.getpixel((x+dx,y+dy)) for dx in (0,1) for dy in (0,1)})>1 for y in range(0,image.height,2) for x in range(0,image.width,2));self.assertGreater(fine,500)\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {(83, 92, 93, 255), (132, 90, 78, 255), (160, 129, 88, 255), (130, 125, 110, 255), (238, 231, 207, 255), (135, 148, 143, 255), (101, 78, 60, 255), (149, 104, 87, 255), (222, 215, 188, 255), (83, 105, 110, 255), (104, 139, 155, 255), (139, 95, 81, 255), (211, 198, 164, 255), (164, 170, 160, 255), (36, 107, 72, 255), (112, 78, 71, 255), (162, 170, 160, 255), (23, 30, 26, 255), (115, 126, 122, 255), (179, 133, 106, 255), (150, 146, 132, 255), (198, 161, 135, 255), (66, 151, 95, 255), (23, 63, 49, 255), (170, 157, 128, 255), (150, 133, 176, 255), (183, 154, 108, 255), (32, 91, 59, 255), (179, 125, 100, 255), (115, 110, 96, 255), (52, 70, 75, 255), (155, 109, 90, 255), (148, 101, 85, 255), (138, 179, 176, 255), (225, 214, 188, 255), (169, 123, 99, 255), (103, 185, 130, 255), (170, 164, 146, 255), (195, 188, 170, 255), (181, 174, 156, 255), (131, 99, 71, 255), (44, 124, 80, 255), (214, 181, 82, 255)} not less than or equal to {(108, 123, 88, 255), (83, 92, 93, 255), (198, 173, 213, 255), (164, 76, 75, 255), (160, 129, 88, 255), (130, 125, 110, 255), (238, 231, 207, 255), (135, 148, 143, 255), (101, 78, 60, 255), (153, 144, 159, 255), (212, 109, 99, 255), (83, 105, 110, 255), (67, 93, 107, 255), (222, 215, 188, 255), (104, 139, 155, 255), (59, 109, 152, 255), (121, 174, 99, 255), (101, 117, 121, 255), (164, 170, 160, 255), (211, 198, 164, 255), (228, 182, 107, 255), (36, 107, 72, 255), (220, 224, 210, 255), (23, 30, 26, 255), (189, 208, 142, 255), (161, 123, 184, 255), (115, 126, 122, 255), (162, 170, 160, 255), (150, 146, 132, 255), (66, 151, 95, 255), (179, 133, 106, 255), (198, 161, 135, 255), (23, 63, 49, 255), (78, 90, 70, 255), (170, 157, 128, 255), (72, 125, 83, 255), (112, 78, 71, 255), (173, 182, 147, 255), (150, 133, 176, 255), (183, 154, 108, 255), (32, 91, 59, 255), (78, 94, 100, 255), (197, 204, 193, 255), (170, 181, 172, 255), (245, 217, 154, 255), (179, 125, 100, 255), (115, 110, 96, 255), (212, 216, 206, 255), (52, 70, 75, 255), (120, 112, 131, 255), (240, 163, 144, 255), (183, 173, 185, 255), (148, 101, 85, 255), (92, 159, 196, 255), (138, 179, 176, 255), (114, 83, 142, 255), (143, 154, 117, 255), (225, 214, 188, 255), (103, 185, 130, 255), (87, 81, 95, 255), (189, 120, 152, 255), (170, 164, 146, 255), (195, 188, 170, 255), (181, 174, 156, 255), (131, 99, 71, 255), (44, 124, 80, 255), (129, 84, 72, 255), (142, 157, 155, 255), (214, 181, 82, 255), (161, 203, 217, 255)}\n\n----------------------------------------------------------------------\nRan 109 tests in 186.135s\n\nFAILED (failures=3)\n"
+      }
     },
     {
       "group": "town-services",
-      "execution_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "started_utc": "2026-11-17T23:56:02.323530+00:00",
-      "pid": 48585,
+      "execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+      "equivalent_active_source_reference": "cc57ea9e",
+      "active_source_equal_reference": true,
+      "started_utc": "2026-11-18T00:10:57.827794+00:00",
+      "pid": 51854,
       "command": [
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
         "tools/check_eldenmere_hd.py",
         "test_town_services",
         "--report",
-        "/tmp/pr8-town-services-1e39-20261117T235602Z.json"
+        "/tmp/pr8-town-services-22616168-20261118T001057Z.json"
       ],
       "modules": [
         "test_town_services"
       ],
-      "harness": "tools/check_eldenmere_hd.py; ReviewResult.stopTest calls gc.collect between cases",
-      "log_file": "/tmp/pr8-town-services-1e39-20261117T235602Z.log",
-      "report_file": "/tmp/pr8-town-services-1e39-20261117T235602Z.json",
-      "metadata_file": "/tmp/pr8-town-services-1e39-20261117T235602Z-run.json",
+      "harness": "tools/check_eldenmere_hd.py with gc.collect between cases",
+      "log_file": "/tmp/pr8-town-services-22616168-20261118T001057Z.log",
+      "report_file": "/tmp/pr8-town-services-22616168-20261118T001057Z.json",
+      "metadata_file": "/tmp/pr8-town-services-22616168-20261118T001057Z-run.json",
       "core_29_source_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -772,32 +765,6 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "execution_state": "Current built PR8 working tree based on 1e39f7b2; scoped composer/helper/data modifications are intentionally uncommitted.",
-      "completed_utc": "2026-11-17T23:56:19.476439+00:00",
-      "exit_code": 0,
-      "awaited_to_completion": true,
-      "head_at_completion": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
-      "log_sha256": "8c6ed31ec10fdf909914e71d7c97e859ab86218489144f5e034ba6ede11a5dfb",
-      "source_files_changed_during_run": [],
-      "source_snapshot_stable": true,
-      "report_sha256": "9a2c8cf01556dd4a20c063b4163a77ce3adc331844764b0b49d4610e5419132d",
-      "summary": {
-        "tests": 19,
-        "passed": 19,
-        "failures": 0,
-        "errors": 0,
-        "skipped": 0
-      },
-      "shell_session_id": 98296,
-      "working_tree_source_dirty_at_start": true,
-      "recorded_paths_differing_from_HEAD": [
-        "tools/build_eldenmere_hd.py",
-        "tools/eldenmere_settlement_dressing.py",
-        "tools/eldenmere_settlement.py",
-        "tools/eldenmere_settlement_streets.py",
-        "assets/source/maps/eldenmere/settlement/recipe.json",
-        "assets/maps/eldenmere/playable/map.json"
-      ],
       "actual_start_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -838,6 +805,12 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
+      "production_status_at_start": "",
+      "working_tree_production_clean_at_start": true,
+      "completed_utc": "2026-11-18T00:11:14.982725+00:00",
+      "exit_code": 0,
+      "awaited_to_completion": true,
+      "head_at_completion": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
       "actual_end_file_sha256": {
         "main.py": "2fc7c1ae639ff0f5797eeb87e61b89bfebb869882c108ce5044abbdb92161612",
         "npc_routines.py": "42ac4fca0c27b132541131fab954591132be0314a750e6542d6082b1da64705d",
@@ -878,7 +851,20 @@
         "assets/source/maps/eldenmere/settlement/recipe.json": "9bf2328f00977538701c3ca732622802f5852df40ca1cd8739fe66aae3e4fd23",
         "assets/maps/eldenmere/playable/map.json": "314421c6fd11e711c527e6e9fedc17aac9a668c4547a0170d75d1fa71071ddd1"
       },
-      "end_snapshot_basis": "Runner calculated end hashes for every recorded file and reported no changed files; end hashes therefore equal recorded actual start hashes. Current file bytes were verified again before freezing this evidence.",
+      "source_files_changed_during_run": [],
+      "production_status_at_end": "",
+      "log_sha256": "afd817b5ba6bd04b4b38ef9d0820d64e639d0f17ae1bf22aab53a489f185fb72",
+      "source_snapshot_stable": true,
+      "report_sha256": "9a2c8cf01556dd4a20c063b4163a77ce3adc331844764b0b49d4610e5419132d",
+      "summary": {
+        "tests": 19,
+        "passed": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "shell_session_id": 10538,
+      "working_tree_production_dirty_at_start": false,
       "report": {
         "tests_run": 19,
         "passed": [
@@ -905,18 +891,56 @@
         "failures": [],
         "errors": [],
         "skipped": []
-      },
-      "log_output": "test_autosave_load_restores_purchase_and_closes_service_ui (test_town_services.TownServicesGameplay.test_autosave_load_restores_purchase_and_closes_service_ui) ... ok\ntest_cancel_buy_and_leave_browsing_do_not_change_resources_or_request_saves (test_town_services.TownServicesGameplay.test_cancel_buy_and_leave_browsing_do_not_change_resources_or_request_saves) ... ok\ntest_every_service_is_free_and_gold_is_zero_without_a_grant (test_town_services.TownServicesGameplay.test_every_service_is_free_and_gold_is_zero_without_a_grant) ... ok\ntest_failed_full_stack_purchase_changes_nothing_and_requests_no_service_save (test_town_services.TownServicesGameplay.test_failed_full_stack_purchase_changes_nothing_and_requests_no_service_save) ... ok\ntest_gold_round_trip_legacy_default_and_bad_save_rejection (test_town_services.TownServicesGameplay.test_gold_round_trip_legacy_default_and_bad_save_rejection) ... ok\ntest_inn_decline_and_walk_away_do_not_heal_or_charge (test_town_services.TownServicesGameplay.test_inn_decline_and_walk_away_do_not_heal_or_charge) ... ok\ntest_innkeeper_and_guest_bed_share_confirmed_zero_cost_rest (test_town_services.TownServicesGameplay.test_innkeeper_and_guest_bed_share_confirmed_zero_cost_rest) ... ok\ntest_keeper_requires_front_counter_approach_and_available_exploration (test_town_services.TownServicesGameplay.test_keeper_requires_front_counter_approach_and_available_exploration) ... ok\ntest_menu_renders_at_all_text_sizes_including_long_owned_counts (test_town_services.TownServicesGameplay.test_menu_renders_at_all_text_sizes_including_long_owned_counts) ... ok\ntest_mouse_purchase_confirmation_and_cancel_use_actual_button_bounds (test_town_services.TownServicesGameplay.test_mouse_purchase_confirmation_and_cancel_use_actual_button_bounds) ... ok\ntest_multiple_purchases_refresh_owned_counts_and_publish_one_session (test_town_services.TownServicesGameplay.test_multiple_purchases_refresh_owned_counts_and_publish_one_session) ... ok\ntest_paid_inn_rejects_insufficient_gold_and_failed_save_rolls_back_charge_and_heal (test_town_services.TownServicesGameplay.test_paid_inn_rejects_insufficient_gold_and_failed_save_rolls_back_charge_and_heal) ... ok\ntest_real_keyboard_quantity_confirmation_and_session_autosave (test_town_services.TownServicesGameplay.test_real_keyboard_quantity_confirmation_and_session_autosave) ... ok\ntest_service_autosave_failure_retries_without_repeating_purchase (test_town_services.TownServicesGameplay.test_service_autosave_failure_retries_without_repeating_purchase) ... ok\ntest_shop_freezes_movement_and_conflicting_menus_and_focus_blocks_buy (test_town_services.TownServicesGameplay.test_shop_freezes_movement_and_conflicting_menus_and_focus_blocks_buy) ... ok\ntest_capacity_is_shared_with_every_inventory_grant (test_town_services.Transactions.test_capacity_is_shared_with_every_inventory_grant) ... ok\ntest_free_and_paid_purchases_update_both_resources (test_town_services.Transactions.test_free_and_paid_purchases_update_both_resources) ... ok\ntest_invalid_purchases_never_mutate_either_resource (test_town_services.Transactions.test_invalid_purchases_never_mutate_either_resource) ... ok\ntest_wallet_rejects_bad_balances_and_charges_atomically (test_town_services.Transactions.test_wallet_rejects_bad_balances_and_charges_atomically) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 16.763s\n\nOK\n"
+      }
     }
   ],
+  "initial_validation_reference": {
+    "execution_base_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9",
+    "working_tree_source_dirty": true,
+    "evidence_commit": "cc57ea9e68cdab4e31b4a3220034ebb1230b72a8",
+    "file": "docs/reviews/eldenmere_arrival/baseline_test_comparison.json",
+    "sha256": "dce14407e1ad87ae1d0a54a39d1cc386b89468a713473a2851fee193a37fd160",
+    "summary": {
+      "tests": 235,
+      "passed": 232,
+      "known_baseline_failures": 3,
+      "errors": 0,
+      "skipped": 0,
+      "new_failure_names": []
+    },
+    "raw_facts_preserved": "The original1e39 dirty-working-tree evidence remains byte-exact at this Git commit/path. It is historical initial evidence and is not relabeled as a final integrated run."
+  },
+  "integration_history": {
+    "clean_main_threshold_revision": "52e2925f7f1e5d7165a4c53bc41711a498ed654b",
+    "stable_active_source_reference": "cc57ea9e68cdab4e31b4a3220034ebb1230b72a8",
+    "tested_head": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+    "source_equivalent_latest_main": "1c19aba183b720af4c740a85784f7e897ac8988a",
+    "source_equivalent_added_files": [
+      "assets/characters/npc_roster_hd/innkeeper_03/design.json",
+      "assets/characters/npc_roster_hd/innkeeper_03/idle_back.png",
+      "assets/characters/npc_roster_hd/innkeeper_03/idle_front.png",
+      "assets/characters/npc_roster_hd/innkeeper_03/idle_left.png",
+      "assets/characters/npc_roster_hd/innkeeper_03/idle_right.png",
+      "assets/characters/npc_roster_hd/innkeeper_03/portrait.png",
+      "assets/characters/npc_roster_hd/shopkeeper_03/design.json",
+      "assets/characters/npc_roster_hd/shopkeeper_03/idle_back.png",
+      "assets/characters/npc_roster_hd/shopkeeper_03/idle_front.png",
+      "assets/characters/npc_roster_hd/shopkeeper_03/idle_left.png",
+      "assets/characters/npc_roster_hd/shopkeeper_03/idle_right.png",
+      "assets/characters/npc_roster_hd/shopkeeper_03/portrait.png"
+    ],
+    "intermediate_828_build": "Root revoked readiness before this agent launched any regression process. No828 test result is counted.",
+    "prelaunch_cc57_guard": "A stale expected-HEAD launch guard exited before Popen after the roster-only merge; no test process or validation report was created by those failed launch guards."
+  },
   "baseline_evidence": {
     "path": "docs/reviews/eldenmere_growing/baseline_test_comparison.json",
     "sha256": "bd1e2290cb63a2d8f8dcce90c158072433a36cd8177327aba2a6e0d20235b614",
     "tested_clean_failure_baseline_revision": "1b2362ebbe47cfd3542acb8ba3ccaf7608ffe85f",
-    "prior_integrated_regression_revision": "c7761b94c8cd9c3d019931803ecce5329aa8490b",
-    "tested_failure_baseline_is_ancestor_of_execution_base": true,
-    "new_clean_baseline_run": false,
-    "reuse_basis": "All eleven failure-related original tests/runtime/art files are byte-identical to the prior clean-main proof and to the 1e39f7b2 Git objects. Current failures have exactly the same three identities and assertions; original tests/art were not changed."
+    "latest_active_clean_capture_baseline_revision": "52e2925f7f1e5d7165a4c53bc41711a498ed654b",
+    "latest_roster_only_main_revision": "1c19aba183b720af4c740a85784f7e897ac8988a",
+    "baseline_is_ancestor_of_tested_head": true,
+    "new_clean_baseline_failure_run": false,
+    "reuse_basis": "All eleven failure-related original test/runtime/art files exactly match the earlier clean-main reproduction, clean52e threshold baseline, latest1c19 roster-only main and current files. The three final failing identities/assertions are unchanged. No original assertion, skip, expectedFailure or well/business art was altered."
   },
   "known_failures": [
     {
@@ -925,7 +949,7 @@
       "classification": "pre-existing well fixture/rendering expectation",
       "detail": "Original test expects legacy roof sample coverage or six visible idle-water frames; runtime, original test and native fixed/front-rim artwork are byte-identical to clean main.",
       "current_trace": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_well.py\", line 68, in test_roof_occludes_from_behind_and_player_draws_in_front\n    self.assertNotEqual(target.get_at((120,52))[:3],(255,0,255))\nAssertionError: (255, 0, 255) == (255, 0, 255)\n",
-      "current_execution_base_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9"
+      "current_execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8"
     },
     {
       "test": "test_water_moves_while_structure_rope_and_crank_stay_fixed (test_well.WellSquare.test_water_moves_while_structure_rope_and_crank_stay_fixed)",
@@ -933,7 +957,7 @@
       "classification": "pre-existing well fixture/rendering expectation",
       "detail": "Original test expects legacy roof sample coverage or six visible idle-water frames; runtime, original test and native fixed/front-rim artwork are byte-identical to clean main.",
       "current_trace": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_well.py\", line 50, in test_water_moves_while_structure_rope_and_crank_stay_fixed\n    self.assertEqual(len(frames),6)\nAssertionError: 1 != 6\n",
-      "current_execution_base_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9"
+      "current_execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8"
     },
     {
       "test": "test_hard_alpha_palette_and_native_detail (test_eldenmere_business_exteriors_hd.BusinessExteriorsHDTests.test_hard_alpha_palette_and_native_detail)",
@@ -941,79 +965,90 @@
       "classification": "pre-existing business roof-palette expectation",
       "detail": "Upstream native classic-roof authoring blends literal palette shades; legacy business test allows only the original literal ramp colors. All four closed business images and the palette test source are byte-identical to clean main.",
       "current_trace": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_eldenmere_business_exteriors_hd.py\", line 73, in test_hard_alpha_palette_and_native_detail\n    image=im(PACK/r['closed']);self.assertLessEqual(set(image.getchannel('A').tobytes()),{0,255});self.assertLessEqual(colors(image),allowed);fine=sum(len({image.getpixel((x+dx,y+dy)) for dx in (0,1) for dy in (0,1)})>1 for y in range(0,image.height,2) for x in range(0,image.width,2));self.assertGreater(fine,500)\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {(83, 92, 93, 255), (132, 90, 78, 255), (160, 129, 88, 255), (130, 125, 110, 255), (238, 231, 207, 255), (135, 148, 143, 255), (101, 78, 60, 255), (149, 104, 87, 255), (222, 215, 188, 255), (83, 105, 110, 255), (104, 139, 155, 255), (139, 95, 81, 255), (211, 198, 164, 255), (164, 170, 160, 255), (36, 107, 72, 255), (112, 78, 71, 255), (162, 170, 160, 255), (23, 30, 26, 255), (115, 126, 122, 255), (179, 133, 106, 255), (150, 146, 132, 255), (198, 161, 135, 255), (66, 151, 95, 255), (23, 63, 49, 255), (170, 157, 128, 255), (150, 133, 176, 255), (183, 154, 108, 255), (32, 91, 59, 255), (179, 125, 100, 255), (115, 110, 96, 255), (52, 70, 75, 255), (155, 109, 90, 255), (148, 101, 85, 255), (138, 179, 176, 255), (225, 214, 188, 255), (169, 123, 99, 255), (103, 185, 130, 255), (170, 164, 146, 255), (195, 188, 170, 255), (181, 174, 156, 255), (131, 99, 71, 255), (44, 124, 80, 255), (214, 181, 82, 255)} not less than or equal to {(108, 123, 88, 255), (83, 92, 93, 255), (198, 173, 213, 255), (164, 76, 75, 255), (160, 129, 88, 255), (130, 125, 110, 255), (238, 231, 207, 255), (135, 148, 143, 255), (101, 78, 60, 255), (153, 144, 159, 255), (212, 109, 99, 255), (83, 105, 110, 255), (67, 93, 107, 255), (222, 215, 188, 255), (104, 139, 155, 255), (59, 109, 152, 255), (121, 174, 99, 255), (101, 117, 121, 255), (164, 170, 160, 255), (211, 198, 164, 255), (228, 182, 107, 255), (36, 107, 72, 255), (220, 224, 210, 255), (23, 30, 26, 255), (189, 208, 142, 255), (161, 123, 184, 255), (115, 126, 122, 255), (162, 170, 160, 255), (150, 146, 132, 255), (66, 151, 95, 255), (179, 133, 106, 255), (198, 161, 135, 255), (23, 63, 49, 255), (78, 90, 70, 255), (170, 157, 128, 255), (72, 125, 83, 255), (112, 78, 71, 255), (173, 182, 147, 255), (150, 133, 176, 255), (183, 154, 108, 255), (32, 91, 59, 255), (78, 94, 100, 255), (197, 204, 193, 255), (170, 181, 172, 255), (245, 217, 154, 255), (179, 125, 100, 255), (115, 110, 96, 255), (212, 216, 206, 255), (52, 70, 75, 255), (120, 112, 131, 255), (240, 163, 144, 255), (183, 173, 185, 255), (148, 101, 85, 255), (92, 159, 196, 255), (138, 179, 176, 255), (114, 83, 142, 255), (143, 154, 117, 255), (225, 214, 188, 255), (103, 185, 130, 255), (87, 81, 95, 255), (189, 120, 152, 255), (170, 164, 146, 255), (195, 188, 170, 255), (181, 174, 156, 255), (131, 99, 71, 255), (44, 124, 80, 255), (129, 84, 72, 255), (142, 157, 155, 255), (214, 181, 82, 255), (161, 203, 217, 255)}\n",
-      "current_execution_base_revision": "1e39f7b2ac0f9a8c93bfa3fcb2b27d445cf5bed9"
+      "current_execution_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8"
     }
   ],
   "unchanged_baseline_sources_and_artwork": {
     "tests/test_well.py": {
       "previous_verified_sha256": "28b4221868425994139e01931da2d10867d5adf641f7b550d075c547b8e1fb66",
-      "clean_1e39_main_sha256": "28b4221868425994139e01931da2d10867d5adf641f7b550d075c547b8e1fb66",
+      "clean_52e_baseline_sha256": "28b4221868425994139e01931da2d10867d5adf641f7b550d075c547b8e1fb66",
+      "latest_1c19_main_sha256": "28b4221868425994139e01931da2d10867d5adf641f7b550d075c547b8e1fb66",
       "current_sha256": "28b4221868425994139e01931da2d10867d5adf641f7b550d075c547b8e1fb66",
       "identical": true
     },
     "well_routine.py": {
       "previous_verified_sha256": "e01f472bb380efe09c6543589cfd4918c317b5929917310e941cb383a9cb1e43",
-      "clean_1e39_main_sha256": "e01f472bb380efe09c6543589cfd4918c317b5929917310e941cb383a9cb1e43",
+      "clean_52e_baseline_sha256": "e01f472bb380efe09c6543589cfd4918c317b5929917310e941cb383a9cb1e43",
+      "latest_1c19_main_sha256": "e01f472bb380efe09c6543589cfd4918c317b5929917310e941cb383a9cb1e43",
       "current_sha256": "e01f472bb380efe09c6543589cfd4918c317b5929917310e941cb383a9cb1e43",
       "identical": true
     },
     "tests/test_eldenmere_business_exteriors_hd.py": {
       "previous_verified_sha256": "1a2e119727f06580cbc75b090bab026d099ebf85eb5f9bdb64d4946d052b44b0",
-      "clean_1e39_main_sha256": "1a2e119727f06580cbc75b090bab026d099ebf85eb5f9bdb64d4946d052b44b0",
+      "clean_52e_baseline_sha256": "1a2e119727f06580cbc75b090bab026d099ebf85eb5f9bdb64d4946d052b44b0",
+      "latest_1c19_main_sha256": "1a2e119727f06580cbc75b090bab026d099ebf85eb5f9bdb64d4946d052b44b0",
       "current_sha256": "1a2e119727f06580cbc75b090bab026d099ebf85eb5f9bdb64d4946d052b44b0",
       "identical": true
     },
     "tests/test_eldenmere_architecture_art.py": {
       "previous_verified_sha256": "6e2a791516778059f123345da6f573bbd2ce2c2c8c625c56d963c1df404ad212",
-      "clean_1e39_main_sha256": "6e2a791516778059f123345da6f573bbd2ce2c2c8c625c56d963c1df404ad212",
+      "clean_52e_baseline_sha256": "6e2a791516778059f123345da6f573bbd2ce2c2c8c625c56d963c1df404ad212",
+      "latest_1c19_main_sha256": "6e2a791516778059f123345da6f573bbd2ce2c2c8c625c56d963c1df404ad212",
       "current_sha256": "6e2a791516778059f123345da6f573bbd2ce2c2c8c625c56d963c1df404ad212",
       "identical": true
     },
     "tools/eldenmere_architecture_art.py": {
       "previous_verified_sha256": "84af3412fbbde81795cb0412238bde2c559cd0c7d3dc7316be15efa2275729c9",
-      "clean_1e39_main_sha256": "84af3412fbbde81795cb0412238bde2c559cd0c7d3dc7316be15efa2275729c9",
+      "clean_52e_baseline_sha256": "84af3412fbbde81795cb0412238bde2c559cd0c7d3dc7316be15efa2275729c9",
+      "latest_1c19_main_sha256": "84af3412fbbde81795cb0412238bde2c559cd0c7d3dc7316be15efa2275729c9",
       "current_sha256": "84af3412fbbde81795cb0412238bde2c559cd0c7d3dc7316be15efa2275729c9",
       "identical": true
     },
     "assets/maps/eldenmere/town_hd/well/fixed.png": {
       "previous_verified_sha256": "02723598acd65817366ac22268ab176ab18ad078bab7656347b244d20295af3f",
-      "clean_1e39_main_sha256": "02723598acd65817366ac22268ab176ab18ad078bab7656347b244d20295af3f",
+      "clean_52e_baseline_sha256": "02723598acd65817366ac22268ab176ab18ad078bab7656347b244d20295af3f",
+      "latest_1c19_main_sha256": "02723598acd65817366ac22268ab176ab18ad078bab7656347b244d20295af3f",
       "current_sha256": "02723598acd65817366ac22268ab176ab18ad078bab7656347b244d20295af3f",
       "identical": true
     },
     "assets/maps/eldenmere/town_hd/well/front_rim.png": {
       "previous_verified_sha256": "398d37c1e45a107421c57359b7ec00dafa649e5bdb5eb38fddd9642a28152a0e",
-      "clean_1e39_main_sha256": "398d37c1e45a107421c57359b7ec00dafa649e5bdb5eb38fddd9642a28152a0e",
+      "clean_52e_baseline_sha256": "398d37c1e45a107421c57359b7ec00dafa649e5bdb5eb38fddd9642a28152a0e",
+      "latest_1c19_main_sha256": "398d37c1e45a107421c57359b7ec00dafa649e5bdb5eb38fddd9642a28152a0e",
       "current_sha256": "398d37c1e45a107421c57359b7ec00dafa649e5bdb5eb38fddd9642a28152a0e",
       "identical": true
     },
     "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_maintained/closed.png": {
       "previous_verified_sha256": "d2964f92f650c6b56c38d9bd39eb5c8c9e9831375c2875df0dda58ef9677a6ef",
-      "clean_1e39_main_sha256": "d2964f92f650c6b56c38d9bd39eb5c8c9e9831375c2875df0dda58ef9677a6ef",
+      "clean_52e_baseline_sha256": "d2964f92f650c6b56c38d9bd39eb5c8c9e9831375c2875df0dda58ef9677a6ef",
+      "latest_1c19_main_sha256": "d2964f92f650c6b56c38d9bd39eb5c8c9e9831375c2875df0dda58ef9677a6ef",
       "current_sha256": "d2964f92f650c6b56c38d9bd39eb5c8c9e9831375c2875df0dda58ef9677a6ef",
       "identical": true
     },
     "assets/terrain/eldenmere/business_exteriors_hd/buildings/inn_weathered/closed.png": {
       "previous_verified_sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7",
-      "clean_1e39_main_sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7",
+      "clean_52e_baseline_sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7",
+      "latest_1c19_main_sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7",
       "current_sha256": "0b627c1e8b219b31f9305c194e634e1dc9a90e7db47117a768d37abafbdd1ea7",
       "identical": true
     },
     "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_maintained/closed.png": {
       "previous_verified_sha256": "bb173a0c262152eb0973d168d67882da266353b37b1dd9df7ffd0d0af5eeb952",
-      "clean_1e39_main_sha256": "bb173a0c262152eb0973d168d67882da266353b37b1dd9df7ffd0d0af5eeb952",
+      "clean_52e_baseline_sha256": "bb173a0c262152eb0973d168d67882da266353b37b1dd9df7ffd0d0af5eeb952",
+      "latest_1c19_main_sha256": "bb173a0c262152eb0973d168d67882da266353b37b1dd9df7ffd0d0af5eeb952",
       "current_sha256": "bb173a0c262152eb0973d168d67882da266353b37b1dd9df7ffd0d0af5eeb952",
       "identical": true
     },
     "assets/terrain/eldenmere/business_exteriors_hd/buildings/item_shop_weathered/closed.png": {
       "previous_verified_sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b",
-      "clean_1e39_main_sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b",
+      "clean_52e_baseline_sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b",
+      "latest_1c19_main_sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b",
       "current_sha256": "9616cda6cbdc3a3b6ad822c5c97d8c267df3b740324fbd6d672f32fbadef873b",
       "identical": true
     }
   },
   "independent_implementation_review": {
-    "result": "No unresolved blocker in the tested 1e39-based PR8 working tree.",
+    "result": "No unresolved implementation/native blocker. Final recorded active source snapshots equal clean cc57ea9e; final tested commit adds only the twelve unwired roster files listed below.",
     "physical_guard": "source_town_physics reproduces the complete maintained 1536x1632 source collision/navigation masks; the producer now validates the whole map rather than cropping to the former 1344-height base.",
     "collision_delta": 200,
     "collision_equals_baseline_plus_declared_supports": true,
@@ -1022,8 +1057,34 @@
     "five_prior_ledgers_identical": true,
     "placement_scope": "Ten native placements remain within four explicit disjoint pockets; all occupied artwork clears every source movement/sightline reservation. No ground or service/economy behavior changed.",
     "native_review": "Inn/shop signs, doors, merchandise and central road remain legible. Low flowers frame the exit without a gate or narrowed contact. Pot/crate scale and native actor depth are coherent.",
-    "capture_evidence": "docs/reviews/eldenmere_arrival/observations.json"
+    "capture_evidence": "docs/reviews/eldenmere_arrival/observations.json",
+    "native_capture_baseline_revision": "52e2925f7f1e5d7165a4c53bc41711a498ed654b"
   },
-  "scope_policy": "The original well coverage/frame-count expectations and business palette failure remain separate follow-ups. No expectedFailure, skip or assertion weakening was introduced. This evidence must be extended with fresh validation after any later code or interior-art integration.",
-  "evidence_frozen_utc": "2026-11-18T00:02:43.284979+00:00"
+  "scope_policy": "The two original well expectations and business palette failure remain separate follow-ups. Report235checks as232pass plus3known baseline failures. No result from the initial1e39 or revoked828 state is presented as final integration validation.",
+  "evidence_frozen_utc": "2026-11-18T00:16:31.452524+00:00",
+  "post_test_integration": {
+    "upstream_revision": "4653c5e1f47640c83bfb1f0e2ff6716fe9913af3",
+    "local_integration_revision": "2eb6dd2bfaa1c088b6bb7511713bf51797a344a1",
+    "reference_tested_revision": "226161680bc0b1887f4327fa2eef48a3e575f4c8",
+    "new_unwired_roster_files": 164,
+    "only_added_files_under": "assets/characters/npc_roster_hd/",
+    "existing_files_changed": 0,
+    "active_production_snapshot_matches_final_capture": true,
+    "runtime_builder_test_and_active_art_bytes_unchanged": true,
+    "policy": "These later staged asset additions preserve the actual tested production sources; no new test execution is claimed."
+  },
+  "core_and_threshold_results": {
+    "source_reference_revision": "cc57ea9e68cdab4e31b4a3220034ebb1230b72a8",
+    "core": {
+      "file": "core_test_results.json",
+      "tests": 230,
+      "passed": 230
+    },
+    "threshold": {
+      "file": "threshold_test_results.json",
+      "tests": 12,
+      "passed": 12
+    },
+    "source_equivalent_to_actual_tested_revision": true
+  }
 }
