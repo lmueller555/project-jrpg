@@ -1,0 +1,129 @@
+{
+  "status": "candidate",
+  "actions": {
+    "invite_left": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 2000,
+      "frames": [
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_left/frame_01.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_left/frame_02.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_left/frame_03.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_left/frame_04.png",
+          "duration_ms": 500
+        }
+      ],
+      "landmarks": {}
+    },
+    "invite_right": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 2000,
+      "frames": [
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_right/frame_01.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_right/frame_02.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_right/frame_03.png",
+          "duration_ms": 500
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/invite_right/frame_04.png",
+          "duration_ms": 500
+        }
+      ],
+      "landmarks": {}
+    },
+    "settle_bed": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 1200,
+      "frames": [
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/settle_bed/frame_01.png",
+          "duration_ms": 300
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/settle_bed/frame_02.png",
+          "duration_ms": 300
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/settle_bed/frame_03.png",
+          "duration_ms": 300
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/settle_bed/frame_04.png",
+          "duration_ms": 300
+        }
+      ],
+      "landmarks": {
+        "bed_position": [
+          36,
+          204
+        ],
+        "bedside": [
+          88,
+          246
+        ],
+        "head_on_pillow_world": [
+          60,
+          225
+        ]
+      }
+    },
+    "leave_bed": {
+      "frame_count": 4,
+      "draw_anchor": [
+        64,
+        66
+      ],
+      "duration_ms": 880,
+      "frames": [
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/leave_bed/frame_01.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/leave_bed/frame_02.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/leave_bed/frame_03.png",
+          "duration_ms": 220
+        },
+        {
+          "file": "assets/characters/liam/activity_hd/play_routine/leave_bed/frame_04.png",
+          "duration_ms": 220
+        }
+      ],
+      "landmarks": {}
+    }
+  },
+  "artwork_pixels_per_world_pixel": 2,
+  "source_drawings": "assets/source/characters/liam/activity_hd/drawings.json",
+  "body_only": true
+}

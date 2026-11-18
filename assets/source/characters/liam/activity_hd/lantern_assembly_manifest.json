@@ -1,0 +1,178 @@
+{
+  "canvas": [
+    40,
+    48
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "source_offset": [
+    8,
+    8
+  ],
+  "sheet": "assets/characters/liam/activity_hd/lantern_assembly/liam.png",
+  "actions": {
+    "work": [
+      {
+        "rect": [
+          0,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "hand": [
+          24,
+          32
+        ]
+      },
+      {
+        "rect": [
+          40,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "hand": [
+          25,
+          30
+        ]
+      },
+      {
+        "rect": [
+          80,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "hand": [
+          26,
+          27
+        ]
+      },
+      {
+        "rect": [
+          120,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "hand": [
+          26,
+          27
+        ]
+      },
+      {
+        "rect": [
+          160,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 160,
+        "hand": [
+          25,
+          30
+        ]
+      }
+    ],
+    "lift": [
+      {
+        "rect": [
+          0,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          28
+        ]
+      },
+      {
+        "rect": [
+          40,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          27
+        ]
+      },
+      {
+        "rect": [
+          80,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          26
+        ]
+      },
+      {
+        "rect": [
+          120,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          26
+        ]
+      },
+      {
+        "rect": [
+          160,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          27
+        ]
+      },
+      {
+        "rect": [
+          200,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "hand": [
+          25,
+          28
+        ]
+      }
+    ]
+  },
+  "head_pixels_preserved_above_y": 21,
+  "lower_body_preserved_from_y": 28,
+  "facing": "right",
+  "world_work_hand": [
+    652,
+    489
+  ],
+  "frame_handle": [
+    5,
+    1
+  ],
+  "lift_height_pixels": 2,
+  "artwork_pixels_per_world_pixel": 2,
+  "source_drawings": "assets/source/characters/liam/activity_hd/drawings.json"
+}

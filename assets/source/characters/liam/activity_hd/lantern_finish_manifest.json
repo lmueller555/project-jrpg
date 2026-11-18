@@ -1,0 +1,1362 @@
+{
+  "canvas": [
+    40,
+    48
+  ],
+  "draw_anchor": [
+    20,
+    38
+  ],
+  "native_offset": [
+    8,
+    8
+  ],
+  "sheet": "assets/characters/liam/activity_hd/lantern_finish/liam.png",
+  "carry": {
+    "front": {
+      "idle": {
+        "rect": [
+          0,
+          0,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          0,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            40,
+            0,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            80,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            80,
+            0,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            120,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            120,
+            0,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            160,
+            0,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            160,
+            0,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        }
+      ]
+    },
+    "left": {
+      "idle": {
+        "rect": [
+          0,
+          48,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          33
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          8,
+          18,
+          16,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          48,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            13,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            18,
+            16,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            40,
+            48,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            80,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            13,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            17,
+            16,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            80,
+            48,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            120,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            13,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            18,
+            16,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            120,
+            48,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            160,
+            48,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            13,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            8,
+            17,
+            16,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            160,
+            48,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        }
+      ]
+    },
+    "right": {
+      "idle": {
+        "rect": [
+          0,
+          96,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          96,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            40,
+            96,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            80,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            80,
+            96,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            120,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            120,
+            96,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            160,
+            96,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            160,
+            96,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        }
+      ]
+    },
+    "back": {
+      "idle": {
+        "rect": [
+          0,
+          144,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          33
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          25,
+          18,
+          33,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          144,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      "walk": [
+        {
+          "rect": [
+            40,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            40,
+            144,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            80,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            80,
+            144,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            120,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            33
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            18,
+            33,
+            35
+          ],
+          "ground_clearance_pixels": 8,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            120,
+            144,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        },
+        {
+          "rect": [
+            160,
+            144,
+            40,
+            48
+          ],
+          "duration_ms": 140,
+          "native_offset": [
+            8,
+            8
+          ],
+          "hand": [
+            26,
+            32
+          ],
+          "holds_frame": true,
+          "frame_bbox": [
+            25,
+            17,
+            33,
+            34
+          ],
+          "ground_clearance_pixels": 9,
+          "frame_angle": 0,
+          "source_rest_rect": [
+            160,
+            144,
+            40,
+            48
+          ],
+          "covering_attached": true,
+          "frame_is_lit": false
+        }
+      ]
+    }
+  },
+  "actions": {
+    "prepare": [
+      {
+        "rect": [
+          0,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          40,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          40,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          80,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          31
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          80,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          120,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          120,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          160,
+          192,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          160,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      }
+    ],
+    "cover": [
+      {
+        "rect": [
+          0,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          40,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          40,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          80,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          31
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          80,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          120,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          28,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          120,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          160,
+          240,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          26,
+          32
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          160,
+          288,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      }
+    ],
+    "pickup": [
+      {
+        "rect": [
+          0,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          35
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 90,
+        "source_rest_rect": [
+          160,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          40,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 67.5,
+        "source_rest_rect": [
+          120,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          80,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 45,
+        "source_rest_rect": [
+          80,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          120,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 22.5,
+        "source_rest_rect": [
+          40,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          160,
+          288,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          33
+        ],
+        "holds_frame": false,
+        "frame_bbox": null,
+        "ground_clearance_pixels": null,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": false,
+        "frame_is_lit": false
+      }
+    ],
+    "place": [
+      {
+        "rect": [
+          0,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          33
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          8,
+          18,
+          16,
+          35
+        ],
+        "ground_clearance_pixels": 8,
+        "frame_angle": 0,
+        "source_rest_rect": [
+          0,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          40,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          3,
+          20,
+          15,
+          37
+        ],
+        "ground_clearance_pixels": 6,
+        "frame_angle": 22.5,
+        "source_rest_rect": [
+          40,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          80,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          23,
+          16,
+          38
+        ],
+        "ground_clearance_pixels": 5,
+        "frame_angle": 45,
+        "source_rest_rect": [
+          80,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          120,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          34
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          28,
+          15,
+          39
+        ],
+        "ground_clearance_pixels": 4,
+        "frame_angle": 67.5,
+        "source_rest_rect": [
+          120,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      },
+      {
+        "rect": [
+          160,
+          336,
+          40,
+          48
+        ],
+        "duration_ms": 180,
+        "native_offset": [
+          8,
+          8
+        ],
+        "hand": [
+          13,
+          35
+        ],
+        "holds_frame": true,
+        "frame_bbox": [
+          0,
+          34,
+          15,
+          40
+        ],
+        "ground_clearance_pixels": 3,
+        "frame_angle": 90,
+        "source_rest_rect": [
+          160,
+          240,
+          40,
+          48
+        ],
+        "covering_attached": true,
+        "frame_is_lit": false
+      }
+    ]
+  },
+  "body_source": "assets/story/lantern/rest_poses/liam_body.png",
+  "body_source_sha256": "a20efaa934134389808ddd40d216a24aa74d50c9e22fc8f1719fa78f26d40522",
+  "source_rest_pose_metadata": "assets/story/lantern/rest_poses/liam.json",
+  "source_rest_pose_sha256": "54aa403aabf2b6cb7f798fda88271fa44cf9a159faf0ea61223f85b74255e380",
+  "bare_frame_source": "assets/story/lantern/props/frame.png",
+  "bare_frame_sha256": "6db88c32a71e1fde77dcfa297df3cc1e14bca8cd061d35b108e28426a5f2e190",
+  "covered_frame_source": "assets/story/lantern/finish_props/covered_frame.png",
+  "covering_attached": true,
+  "frame_is_lit": false,
+  "pickup_has_held_frame": false,
+  "place_has_held_frame": true,
+  "action_facing": {
+    "prepare": "right",
+    "cover": "right",
+    "pickup": "left",
+    "place": "left"
+  },
+  "world_contacts": {
+    "pickup": [
+      315,
+      231
+    ],
+    "place": [
+      315,
+      231
+    ],
+    "work": [
+      270,
+      228
+    ]
+  },
+  "carry_style": "Exact PR3 supporting body/gait, with only its separate frame covered in paper.",
+  "artwork_pixels_per_world_pixel": 2,
+  "source_drawings": "assets/source/characters/liam/activity_hd/drawings.json"
+}
