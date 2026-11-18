@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/child_boy_05/walk_right/authored.png",
+  "source_sha256": "8c1de2ee0ab2fcc19587319228573bb04b219ca79643ef949aa09e146cc85064",
+  "reference": "assets/characters/npc_roster_hd/child_boy_05/idle_right.png",
+  "reference_sha256": "b05726088d95e962c260441e0f4e4ff6ba9810c9209a8771c530f6e926121f8e",
+  "drawing": "Complete per-pose hand-plotted near/far silhouettes, outlines, folds, hands and soles. All limbs drawn anew in each source pose. Approved face/cap region retained at its authored bob above the redrawn neck.",
+  "export": "No transform. Cut 48\u00d772 RGBA rectangles from the native master verbatim. Frames compose exactly into the retained strip.",
+  "registration": "Body landmarks and fixed 24,60 draw / 24,69 ground refs; no fitting by height or lowest boot.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "contact",
+    "recoil",
+    "passing",
+    "recovery",
+    "contact",
+    "recoil",
+    "passing",
+    "recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "hard 0/255"
+}

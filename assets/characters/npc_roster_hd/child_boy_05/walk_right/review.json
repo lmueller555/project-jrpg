@@ -1,0 +1,200 @@
+{
+  "manifest_sha256": "69f6d3863a4fdaeffd9b99228b95c8dc5312bdc9fbbd41df46bab61087e0210a",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": [
+        23,
+        50
+      ],
+      "left_toe": [
+        16,
+        69
+      ],
+      "right_toe": [
+        36,
+        69
+      ]
+    },
+    {
+      "crown": [
+        24,
+        19
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": [
+        23,
+        51
+      ],
+      "left_toe": [
+        18,
+        66
+      ],
+      "right_toe": [
+        36,
+        69
+      ]
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": [
+        23,
+        50
+      ],
+      "left_toe": [
+        22,
+        63
+      ],
+      "right_toe": [
+        31,
+        69
+      ]
+    },
+    {
+      "crown": [
+        24,
+        17
+      ],
+      "neck": [
+        24,
+        34
+      ],
+      "belt": [
+        23,
+        49
+      ],
+      "left_toe": [
+        33,
+        65
+      ],
+      "right_toe": [
+        23,
+        69
+      ]
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": [
+        23,
+        50
+      ],
+      "left_toe": [
+        37,
+        69
+      ],
+      "right_toe": [
+        15,
+        69
+      ]
+    },
+    {
+      "crown": [
+        24,
+        19
+      ],
+      "neck": [
+        24,
+        36
+      ],
+      "belt": [
+        23,
+        51
+      ],
+      "left_toe": [
+        37,
+        69
+      ],
+      "right_toe": [
+        19,
+        66
+      ]
+    },
+    {
+      "crown": [
+        24,
+        18
+      ],
+      "neck": [
+        24,
+        35
+      ],
+      "belt": [
+        23,
+        50
+      ],
+      "left_toe": [
+        32,
+        69
+      ],
+      "right_toe": [
+        24,
+        63
+      ]
+    },
+    {
+      "crown": [
+        24,
+        17
+      ],
+      "neck": [
+        24,
+        34
+      ],
+      "belt": [
+        23,
+        49
+      ],
+      "left_toe": [
+        24,
+        69
+      ],
+      "right_toe": [
+        34,
+        67
+      ]
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
