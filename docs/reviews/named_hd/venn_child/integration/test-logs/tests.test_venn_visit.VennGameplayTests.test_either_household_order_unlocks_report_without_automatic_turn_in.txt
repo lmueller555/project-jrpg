@@ -1,0 +1,27 @@
+EE
+======================================================================
+ERROR: test_either_household_order_unlocks_report_without_automatic_turn_in (tests.test_venn_visit.VennGameplayTests.test_either_household_order_unlocks_report_without_automatic_turn_in) (elira_first=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/97954a4a5021/venn-qa/tests/test_venn_visit.py", line 288, in test_either_household_order_unlocks_report_without_automatic_turn_in
+    if elira_first:self.finish_elira()
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/97954a4a5021/venn-qa/tests/test_venn_visit.py", line 124, in finish_elira
+    from test_elira_visit import EliraGameplayTests
+ModuleNotFoundError: No module named 'test_elira_visit'
+
+======================================================================
+ERROR: test_either_household_order_unlocks_report_without_automatic_turn_in (tests.test_venn_visit.VennGameplayTests.test_either_household_order_unlocks_report_without_automatic_turn_in) (elira_first=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/97954a4a5021/venn-qa/tests/test_venn_visit.py", line 292, in test_either_household_order_unlocks_report_without_automatic_turn_in
+    if not elira_first:self.finish_elira()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/97954a4a5021/venn-qa/tests/test_venn_visit.py", line 124, in finish_elira
+    from test_elira_visit import EliraGameplayTests
+ModuleNotFoundError: No module named 'test_elira_visit'
+
+----------------------------------------------------------------------
+Ran 1 test in 3.348s
+
+FAILED (errors=2)

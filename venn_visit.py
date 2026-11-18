@@ -10,6 +10,7 @@ from quests import OPENING_QUEST, QuestLog
 from social import clear_sight, facing_toward
 from venn_magicks import VennMagicks
 from npc_roster_art import RosterArt
+from rendering import load_art
 
 ROOT = Path(__file__).resolve().parent
 ART = 'assets/story/venn/'
@@ -34,7 +35,14 @@ class VennResident:
         if self.named_art:self.draw_anchor = self.named_art.draw_anchor
         self.conversation_ready = False;self.conversation_facing = 'front';self.role = role
         if role == 'child':
-            self.heads = [world.image(ART+'child/rest_head.png'), world.image(ART+'child/rest_blink.png')]
+            rest_root = Path('assets/characters/named_hd/venn_child/bedrest')
+            rest_manifest = ROOT/rest_root/'animation.json'
+            if rest_manifest.is_file() and (ROOT/'assets/characters/named_hd/venn_child/design.json').is_file():
+                meta = json.loads(rest_manifest.read_text())
+                self.heads = [load_art(world, (rest_root/frame['file']).as_posix(), meta)
+                              for frame in meta['frames']]
+            else:
+                self.heads = [world.image(ART+'child/rest_head.png'), world.image(ART+'child/rest_blink.png')]
             self.story_position = (60, 112);self.story_draw_anchor = (12, 12);self.story_sort_y = 167
 
     @property

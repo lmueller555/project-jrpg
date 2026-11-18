@@ -1,0 +1,413 @@
+{
+  "legacy_cases": 74,
+  "legacy_passed": 74,
+  "modules": {
+    "test_venn_visit": 18,
+    "test_venn_magicks": 10,
+    "test_lantern_village": 17,
+    "test_lantern_quest": 24,
+    "test_villager_households": 5
+  },
+  "focused_runtime_cases": 9,
+  "focused_passed": 9,
+  "notes": [
+    "Combined process OS-killed; all legacy cases rerun individually as needed.",
+    "Temporary memory coordination import blocks not counted as tests passed.",
+    "Final retry PYTHONPATH includes repo and tests for legacy sibling helper imports.",
+    "No gardener-runtime files modified; overlay Python copied, unchanged asset trees symlinked read-only by convention."
+  ],
+  "final_legacy_results": [
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_actual_door_and_parent_proximity_start_live_family_exchange",
+      "exit_code": 0,
+      "seconds": 1.71
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_borrowed_lantern_stays_visible_until_set_down_before_other_hand_actions",
+      "exit_code": 0,
+      "seconds": 1.5
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_both_inspections_required_and_unread_inspection_does_not_count",
+      "exit_code": 0,
+      "seconds": 1.82
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_both_methods_animate_real_work_then_require_return_conversation",
+      "exit_code": 0,
+      "seconds": 5.29
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_choice_and_repair_pause_safely_under_inventory",
+      "exit_code": 0,
+      "seconds": 2.6
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_choice_requires_deliberate_click_and_walkaway_discards_callback",
+      "exit_code": 0,
+      "seconds": 1.73
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_either_household_order_unlocks_report_without_automatic_turn_in",
+      "exit_code": 0,
+      "seconds": 6.41
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_family_present_with_child_resting_and_three_distinct_portraits",
+      "exit_code": 0,
+      "seconds": 1.58
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched",
+      "exit_code": 0,
+      "seconds": 2.97
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_large_text_letterboxed_response_selects_exact_method",
+      "exit_code": 0,
+      "seconds": 1.9
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_new_game_clears_repair_supplies_and_visual_pose",
+      "exit_code": 0,
+      "seconds": 1.76
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_old_completed_saves_migrate_without_inventing_repair_method",
+      "exit_code": 0,
+      "seconds": 2.91
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_queued_visit_cannot_inspect_choose_repair_or_consume_supplies",
+      "exit_code": 0,
+      "seconds": 1.91
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_reload_inspections_interrupted_repair_and_repaired_boundary",
+      "exit_code": 0,
+      "seconds": 6.55
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_repair_preserves_cached_ground_collision_and_restores_downstream_flow",
+      "exit_code": 0,
+      "seconds": 2.84
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_supplies_transfer_at_contact_once_without_finishing_gate",
+      "exit_code": 0,
+      "seconds": 1.52
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_unread_arrival_never_hands_off_items",
+      "exit_code": 0,
+      "seconds": 2.14
+    },
+    {
+      "test": "tests.test_venn_visit.VennGameplayTests.test_walkaway_resolution_keeps_repair_without_finishing_objective",
+      "exit_code": 0,
+      "seconds": 3.13
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_complete_hd_spell_bodies_have_fx_and_restore_idle",
+      "exit_code": 0,
+      "seconds": 1.5
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_completed_legacy_magick_save_stays_repaired",
+      "exit_code": 0,
+      "seconds": 3.18
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_failed_cast_does_not_move_water_gate_or_debris_then_tools_repair",
+      "exit_code": 0,
+      "seconds": 1.98
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_failure_checkpoint_survives_reload_and_resumes_only_tools",
+      "exit_code": 0,
+      "seconds": 3.2
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_interrupted_attempt_reloads_safely_and_can_be_attempted",
+      "exit_code": 0,
+      "seconds": 3.0
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_invalid_failure_snapshots_are_rejected",
+      "exit_code": 0,
+      "seconds": 1.49
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_magic_is_a_small_blue_effect_that_disappears_before_idle",
+      "exit_code": 0,
+      "seconds": 1.74
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_original_ground_collision_and_supplies_unchanged_by_spell",
+      "exit_code": 0,
+      "seconds": 1.93
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_pause_and_inventory_freeze_cast_and_fizzle",
+      "exit_code": 0,
+      "seconds": 2.26
+    },
+    {
+      "test": "tests.test_venn_magicks.VennMagickTests.test_walking_away_from_failure_does_not_replay_spell_or_complete_quest",
+      "exit_code": 0,
+      "seconds": 2.11
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_cancelled_elira_conversations_preserve_each_committed_checkpoint",
+      "exit_code": 0,
+      "seconds": 6.42
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_complete_section_remains_active_without_festival_or_next_unimplemented_task",
+      "exit_code": 0,
+      "seconds": 7.64
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_departure_keeps_frame_and_drawing_at_miras_table",
+      "exit_code": 0,
+      "seconds": 1.99
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_elira_uses_the_same_already_retrieved_lantern",
+      "exit_code": 0,
+      "seconds": 6.22
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_existing_pr1_checkpoint_continues_without_replaying_construction",
+      "exit_code": 0,
+      "seconds": 3.59
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_final_credit_requires_leaving_eliras_home_and_reading_reflection",
+      "exit_code": 0,
+      "seconds": 6.09
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_invalid_stage_and_objective_combinations_are_rejected",
+      "exit_code": 0,
+      "seconds": 2.25
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_mill_greeting_does_not_skip_the_flour_conversation",
+      "exit_code": 0,
+      "seconds": 4.12
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_mira_returns_to_her_original_bench_before_normal_work_resumes",
+      "exit_code": 0,
+      "seconds": 1.72
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_neighbour_credit_requires_both_substantive_visits",
+      "exit_code": 0,
+      "seconds": 3.83
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_new_game_releases_outing_and_restores_the_school_households",
+      "exit_code": 0,
+      "seconds": 6.1
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_original_villagers_and_companions_are_reused",
+      "exit_code": 0,
+      "seconds": 6.07
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_out_of_order_household_visits_cannot_grant_future_scenes",
+      "exit_code": 0,
+      "seconds": 2.03
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_reloading_each_visit_preserves_the_committed_story_not_the_page",
+      "exit_code": 0,
+      "seconds": 20.18
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_repeated_optional_conversations_do_not_repeat_visit_credit",
+      "exit_code": 0,
+      "seconds": 6.29
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_unread_departure_cannot_release_the_outing",
+      "exit_code": 0,
+      "seconds": 3.46
+    },
+    {
+      "test": "tests.test_lantern_village.LanternVillageTests.test_venn_child_stays_resting_and_earlier_repairs_remain_true",
+      "exit_code": 0,
+      "seconds": 4.37
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_active_quest_without_durable_record_is_rejected",
+      "exit_code": 0,
+      "seconds": 3.44
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_caelan_craft_complete_hd_bodies_preserve_owned_frame",
+      "exit_code": 0,
+      "seconds": 1.64
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_caelan_walks_to_each_contact_before_using_his_work_pose",
+      "exit_code": 0,
+      "seconds": 3.77
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_cancelled_classroom_scene_does_not_advance_or_authorize_outing",
+      "exit_code": 0,
+      "seconds": 3.4
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_classroom_checkpoint_reloads_without_replaying_the_invitation",
+      "exit_code": 0,
+      "seconds": 4.4
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_design_and_mother_permission_are_separate_committed_scenes",
+      "exit_code": 0,
+      "seconds": 3.04
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_frame_checkpoint_saves_without_completing_mq04_or_starting_festival",
+      "exit_code": 0,
+      "seconds": 5.91
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_frame_credit_waits_for_lift_and_final_acknowledgment",
+      "exit_code": 0,
+      "seconds": 6.29
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_full_objective_chain_is_registered_before_later_sections_ship",
+      "exit_code": 0,
+      "seconds": 1.83
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_invitation_remains_with_tomas_and_serene_inside_the_sanctuary",
+      "exit_code": 0,
+      "seconds": 1.66
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_leaving_before_permission_does_not_take_liam_out_of_school",
+      "exit_code": 0,
+      "seconds": 3.2
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_mira_is_the_same_actor_and_remains_available_for_crafting",
+      "exit_code": 0,
+      "seconds": 3.71
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_new_game_keeps_the_quest_locked_before_regent_visit",
+      "exit_code": 0,
+      "seconds": 1.97
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_new_game_restores_school_children_to_their_households",
+      "exit_code": 0,
+      "seconds": 3.89
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_old_completed_regent_save_gains_mq04_without_replaying_earlier_quests",
+      "exit_code": 0,
+      "seconds": 2.86
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_outing_uses_original_liam_teacher_children_and_tomas",
+      "exit_code": 0,
+      "seconds": 3.26
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_overlay_panels_pause_construction_and_do_not_finish_the_frame",
+      "exit_code": 0,
+      "seconds": 3.43
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_previous_world_repairs_remain_intact",
+      "exit_code": 0,
+      "seconds": 3.73
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_regent_controller_does_not_pull_tomas_back_to_the_courtyard",
+      "exit_code": 0,
+      "seconds": 3.25
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_reload_during_assembly_replays_the_action_without_granting_credit",
+      "exit_code": 0,
+      "seconds": 5.84
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_repeat_interactions_cannot_duplicate_frame_credit",
+      "exit_code": 0,
+      "seconds": 4.25
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_save_rejects_stage_objective_mismatches_and_unearned_future_progress",
+      "exit_code": 0,
+      "seconds": 2.22
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_unread_assembly_cannot_start_construction",
+      "exit_code": 0,
+      "seconds": 4.64
+    },
+    {
+      "test": "tests.test_lantern_quest.LanternQuestTests.test_unread_invitation_cannot_accept_the_quest",
+      "exit_code": 0,
+      "seconds": 3.89
+    },
+    {
+      "test": "tests.test_villager_households.VillagerHouseholdTests.test_cached_rooms_reuse_same_people_and_have_no_dialogue",
+      "exit_code": 0,
+      "seconds": 1.38
+    },
+    {
+      "test": "tests.test_villager_households.VillagerHouseholdTests.test_gardener_is_not_cloned_or_replaced",
+      "exit_code": 0,
+      "seconds": 1.77
+    },
+    {
+      "test": "tests.test_villager_households.VillagerHouseholdTests.test_residents_leave_every_furnishing_and_exit_reachable",
+      "exit_code": 0,
+      "seconds": 1.81
+    },
+    {
+      "test": "tests.test_villager_households.VillagerHouseholdTests.test_story_and_liam_homes_retain_assignments",
+      "exit_code": 0,
+      "seconds": 1.55
+    },
+    {
+      "test": "tests.test_villager_households.VillagerHouseholdTests.test_three_pairs_and_exactly_five_new_residents",
+      "exit_code": 0,
+      "seconds": 1.35
+    }
+  ],
+  "focused_class_results": [
+    {
+      "test": "tests.test_venn_father_named_hd.VennFatherNative",
+      "exit_code": 0,
+      "seconds": 1.56
+    },
+    {
+      "test": "tests.test_venn_mother_named_hd.VennMotherNative",
+      "exit_code": 0,
+      "seconds": 1.57
+    },
+    {
+      "test": "tests.test_venn_child_named_hd.VennChildNative",
+      "exit_code": 0,
+      "seconds": 1.43
+    },
+    {
+      "test": "tests.test_venn_child_bedrest_native.VennChildBedrestNative",
+      "exit_code": 0,
+      "seconds": 0.08
+    }
+  ]
+}
