@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "actor_id": "grain_loader",
+  "runtime_activation": false,
+  "dependencies": [
+    {
+      "file": "assets/characters/grain_workers/loader/animation.json",
+      "sha256": "2939465cd212c27be84ea0e28650783c2b9962cb7f49ed56820d904cd9d2cf10"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/carry_sheet_generated.png",
+      "sha256": "eb868088b47f4a830ff5c3c70778c48b23515effa0c4ed7e0ace9ee67bb12f92"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/loaded_walk_generated.png",
+      "sha256": "c9c1a2e60c1b287b999182223c2b392350c9d4321880b1a6673a568bfc48cd4b"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/native_review.png",
+      "sha256": "b2d4e8719f41930aaea45ecdbee1cb015615094caf2a57392511c6164428e769"
+    },
+    {
+      "file": "assets/source/characters/grain_workers/loader/work_sheet_generated.png",
+      "sha256": "69ba841d1f341ea13cf276c419e9d4a669d512ed6e66de38b9e3dd3a4d9e5e80"
+    },
+    {
+      "file": "tools/build_grain_loader.py",
+      "sha256": "88f927033a1703b76c9b15cc545c45bfc18ca2c9dd521ee64365c8ff0f6ac3e6"
+    }
+  ],
+  "density": 2,
+  "method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "activation_gates": [
+    "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
+    "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
+    "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
+    "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ]
+}
