@@ -1,0 +1,722 @@
+{
+  "version": 1,
+  "character": "young_man_04",
+  "animation": "walk.right",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/young_man_04/walk_right/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/young_man_04/walk_right/authored.png": "c50aa4658b895e75da3be9109511f769f4a80b6833dbf680e960c97cd4f0ea3a",
+    "assets/characters/npc_roster_hd/young_man_04/idle_right.png": "59956ceca65951c04c569c27403010d518da4e9d948b987b44e0f4d4599a71a3"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left contact",
+      "support_foot": "left",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 1,
+      "crown": [
+        22,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        42,
+        29,
+        46
+      ],
+      "right_authored_toe": [
+        18,
+        67
+      ],
+      "right_measured_visible_toe": [
+        18,
+        67
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        11,
+        66
+      ],
+      "left_authored_toe": [
+        40,
+        69
+      ],
+      "left_measured_visible_toe": [
+        40,
+        69
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        28,
+        63
+      ],
+      "coat_visible_hem_y": 54,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left down",
+      "support_foot": "left",
+      "crown_y": 3,
+      "near_anatomical_side": "right",
+      "frame": 2,
+      "crown": [
+        22,
+        3
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        43,
+        29,
+        47
+      ],
+      "right_authored_toe": [
+        21,
+        65
+      ],
+      "right_measured_visible_toe": [
+        21,
+        65
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        13,
+        63
+      ],
+      "left_authored_toe": [
+        36,
+        69
+      ],
+      "left_measured_visible_toe": [
+        36,
+        69
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        25,
+        67
+      ],
+      "coat_visible_hem_y": 55,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right passing",
+      "support_foot": "left",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 3,
+      "crown": [
+        22,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        42,
+        29,
+        46
+      ],
+      "right_authored_toe": [
+        30,
+        65
+      ],
+      "right_measured_visible_toe": [
+        30,
+        65
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        19,
+        66
+      ],
+      "left_authored_toe": [
+        31,
+        67
+      ],
+      "left_measured_visible_toe": [
+        31,
+        67
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        19,
+        68
+      ],
+      "coat_visible_hem_y": 53,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right recovery",
+      "support_foot": "left",
+      "crown_y": 1,
+      "near_anatomical_side": "right",
+      "frame": 4,
+      "crown": [
+        22,
+        1
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        20,
+        41,
+        29,
+        45
+      ],
+      "right_authored_toe": [
+        35,
+        67
+      ],
+      "right_measured_visible_toe": [
+        35,
+        67
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        24,
+        63
+      ],
+      "left_authored_toe": [
+        25,
+        67
+      ],
+      "left_measured_visible_toe": [
+        25,
+        67
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        16,
+        67
+      ],
+      "coat_visible_hem_y": 52,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right contact",
+      "support_foot": "right",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 5,
+      "crown": [
+        22,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        42,
+        29,
+        46
+      ],
+      "right_authored_toe": [
+        40,
+        69
+      ],
+      "right_measured_visible_toe": [
+        40,
+        69
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        28,
+        63
+      ],
+      "left_authored_toe": [
+        19,
+        67
+      ],
+      "left_measured_visible_toe": [
+        19,
+        67
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        12,
+        66
+      ],
+      "coat_visible_hem_y": 54,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right down",
+      "support_foot": "right",
+      "crown_y": 3,
+      "near_anatomical_side": "right",
+      "frame": 6,
+      "crown": [
+        22,
+        3
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        20,
+        43,
+        29,
+        47
+      ],
+      "right_authored_toe": [
+        35,
+        69
+      ],
+      "right_measured_visible_toe": [
+        35,
+        69
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        24,
+        67
+      ],
+      "left_authored_toe": [
+        22,
+        65
+      ],
+      "left_measured_visible_toe": [
+        22,
+        65
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        14,
+        63
+      ],
+      "coat_visible_hem_y": 55,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left passing",
+      "support_foot": "right",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 7,
+      "crown": [
+        22,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        42,
+        29,
+        46
+      ],
+      "right_authored_toe": [
+        30,
+        67
+      ],
+      "right_measured_visible_toe": [
+        30,
+        67
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        18,
+        68
+      ],
+      "left_authored_toe": [
+        31,
+        65
+      ],
+      "left_measured_visible_toe": [
+        31,
+        65
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        26,
+        66
+      ],
+      "coat_visible_hem_y": 53,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left recovery",
+      "support_foot": "right",
+      "crown_y": 1,
+      "near_anatomical_side": "right",
+      "frame": 8,
+      "crown": [
+        22,
+        1
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "measured_belt_bbox": [
+        19,
+        41,
+        29,
+        45
+      ],
+      "right_authored_toe": [
+        24,
+        67
+      ],
+      "right_measured_visible_toe": [
+        24,
+        67
+      ],
+      "right_toe_visibility": "visible anterior contour",
+      "right_visible_heel": [
+        15,
+        67
+      ],
+      "left_authored_toe": [
+        35,
+        67
+      ],
+      "left_measured_visible_toe": [
+        35,
+        67
+      ],
+      "left_toe_visibility": "visible anterior contour",
+      "left_visible_heel": [
+        25,
+        63
+      ],
+      "coat_visible_hem_y": 52,
+      "hair_root": "exact own direction head plus original ponytail polygon pixels through tip including outline; no mirror",
+      "left_sole": null,
+      "right_sole": null,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          22,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
