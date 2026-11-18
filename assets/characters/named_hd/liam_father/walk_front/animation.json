@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "character": "liam_father",
+  "animation": "walk.front",
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "cycle_ms": 560,
+  "loop": true,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/named_hd/liam_father/walk_front_master.png",
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "support_leg": "right",
+      "bob_artwork_y": 0,
+      "sha256": "1467479b9f79614667b7ec86d82e34adc30c1f4988df8c91e1a9cb20670c4655"
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "support_leg": "right",
+      "bob_artwork_y": 1,
+      "sha256": "eaa7b927a73d3eeb825b3d043bf718fb2c6d7f15951278c6a0a8092edfa5977c"
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "support_leg": "right",
+      "bob_artwork_y": 0,
+      "sha256": "341eabee3975630d2d36278940dc3c42044376cbddcd79b165de241094b6b626"
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "support_leg": "right",
+      "bob_artwork_y": -1,
+      "sha256": "38f184138ac06bb59b5f386cdb02b65fb62f5ee93b077597a03831ac9ae419b3"
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "support_leg": "left",
+      "bob_artwork_y": 0,
+      "sha256": "db349cf9a25040da87a2a75f7e874666109dd55b16e28c14702ad9785c2752a6"
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "support_leg": "left",
+      "bob_artwork_y": 1,
+      "sha256": "de1fee1b0273c2020592388169806a3b8c2737959cecf0e531f67159df817170"
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "support_leg": "left",
+      "bob_artwork_y": 0,
+      "sha256": "38b9cdc63b4d46cd741d5d708bcb25580a980da8e5e2e28b4bfde7962c457c1f"
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "support_leg": "left",
+      "bob_artwork_y": -1,
+      "sha256": "d251f87a272ff63e729c51f6cdd96e7646edb987986596905b30b9b061fdbe83"
+    }
+  ]
+}
