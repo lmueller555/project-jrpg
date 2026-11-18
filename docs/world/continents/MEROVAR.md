@@ -7,6 +7,9 @@ institutions; exact internal borders and constitutional arrangements remain open
 
 **Parent:** [World atlas](../WORLD_ATLAS.md)
 
+**Development:** [Merovar worldbuilding proposals](MEROVAR_WORLDBUILDING.md)
+collects review-stage material separately from the approved facts below.
+
 Merovar occupies the northwestern part of the world map. Its inhabited
 middle latitudes include wooded valleys, mountain uplands, fertile river plains
 and a southern maritime coast. Farther north, forests give way to boreal country
