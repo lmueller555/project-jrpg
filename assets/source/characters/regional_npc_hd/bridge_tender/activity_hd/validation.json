@@ -1,0 +1,15 @@
+{
+  "actor": "bridge_tender",
+  "frame_count": 48,
+  "checks": [
+    "complete filename coverage",
+    "96x104 native",
+    "hard alpha",
+    "sha256 exact",
+    "directional opaque head byte-exact",
+    "all old hand-cue coordinates land on skin",
+    "no planted sole below native92"
+  ],
+  "legacy_sequence_and_prop_metadata": "retained mechanically by shared exporter; candidate changes only master pixels",
+  "game_qa": "not run in this source lane"
+}
