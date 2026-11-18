@@ -21,29 +21,49 @@ def bound_design(actor_id):
     return bindings().get(actor_id)
 
 
+NAMED_BANK = Path('assets/characters/named_hd')
+NAMED_HOUSEHOLD_ACTORS = frozenset(('tessa', 'finn', 'rowan', 'ada', 'pippa',
+                                    'liam_mother', 'liam_father'))
+
+
+def named_household_art(world, actor_id):
+    """Only explicitly supported household actors opt in once their bank lands."""
+    if actor_id in NAMED_HOUSEHOLD_ACTORS and (ROOT/NAMED_BANK/actor_id/'design.json').is_file():
+        return RosterArt(world, actor_id, named=True)
+    return None
+
+
 class RosterArt:
-    """Density-aware idles and manifest-timed walks; anchors exposed in world units."""
-    def __init__(self, world, design_id):
+    """Density-aware idles and manifest-timed gait; anchors exposed in world units."""
+    def __init__(self, world, design_id, *, named=False):
         self.design_id = design_id
-        folder = Path('assets/characters/npc_roster_hd')/design_id
+        folder = (NAMED_BANK if named else Path('assets/characters/npc_roster_hd'))/design_id
         self.design = json.loads((ROOT/folder/'design.json').read_text())
         self.draw_anchor = tuple(self.design['draw_anchor'])
         self.foot_anchor = tuple(self.design['foot_anchor'])
         self.portrait_path = (folder/self.design['portrait']).as_posix()
         self.idles = {d: load_art(world, (folder/self.design['frames'][d]).as_posix(),
                                   self.design) for d in DIRECTIONS}
-        self.walks = {}
-        for direction in DIRECTIONS:
-            walk_folder = folder/f'walk_{direction}'
-            meta = json.loads((ROOT/walk_folder/'animation.json').read_text())
+        self.walks = self._motion(world, folder, 'walk')
+        self.runs = self._motion(world, folder, 'run', optional=True) if named else {}
+
+    def _motion(self, world, folder, verb, *, optional=False):
+        paths = {d: folder/f'{verb}_{d}' for d in DIRECTIONS}
+        available = [(ROOT/path/'animation.json').is_file() for path in paths.values()]
+        if optional and not any(available):return {}
+        if not all(available):raise ValueError(f'Incomplete {verb} bank: {self.design_id}')
+        motions = {}
+        for direction, motion_folder in paths.items():
+            meta = json.loads((ROOT/motion_folder/'animation.json').read_text())
             density = meta['artwork_pixels_per_world_pixel']
             if tuple(v/density for v in meta['draw_anchor']) != self.draw_anchor:
-                raise ValueError(f'Walk registration differs from idle: {design_id}/{direction}')
-            self.walks[direction] = tuple(
-                (load_art(world, (walk_folder/f['file']).as_posix(), meta), f['duration_ms'])
+                raise ValueError(f'{verb} registration differs from idle: {self.design_id}/{direction}')
+            motions[direction] = tuple(
+                (load_art(world, (motion_folder/f['file']).as_posix(), meta), f['duration_ms'])
                 for f in meta['frames'])
-            if not self.walks[direction] or any(ms <= 0 for _, ms in self.walks[direction]):
-                raise ValueError('A walk needs positive frame durations')
+            if not motions[direction] or any(ms <= 0 for _, ms in motions[direction]):
+                raise ValueError(f'{verb} needs positive frame durations')
+        return motions
 
     def sprite(self, facing='front', moving=False, elapsed_ms=0):
         if not moving:

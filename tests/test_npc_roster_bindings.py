@@ -89,5 +89,5 @@ class RosterBindings(unittest.TestCase):
             self.assertTrue((ROOT/actor.roster_art.portrait_path).is_file())
         home=self.game._scene_by_id('home_a')
         tessa=next(a for a in home.npcs if a.data['id']=='tessa')
-        self.assertIsNone(tessa.roster_art)
+        self.assertNotIn('tessa',bindings())
         self.assertEqual(tessa.sprite(0).get_size(),pygame.image.load(str(ROOT/tessa.data['sprite'])).get_size())
