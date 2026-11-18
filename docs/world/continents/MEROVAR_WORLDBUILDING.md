@@ -123,6 +123,16 @@ unchanged. Check against the [atlas](MEROVAR.md) and
 [polar geography](../POLAR_REGIONS.md); a physical connection is not
 an interstate border or proof that anyone used it.
 
+## Who may decide what?
+
+These are three kinds of decision, not a hierarchy that applies everywhere.
+
+| Authority | Check the decision |
+| --- | --- |
+| [Northern Crown and regional regent](../../narrative/game_01/characters/ISELIN.md) | In author knowledge, the queen has given Iselin a specific charge. Proposed officers may prioritize a relief cart without that decision settling Iselin’s whole constitutional remit or the allegiance of every destination. |
+| [Elden Vale Sanctuary covenant](../SANCTUARY_COVENANT.md#uses-limits-and-permission) | Serene’s custodial role doesn’t let her surrender reserve protections on her own. A notice, request, or emergency response does not itself authorize excavation. |
+| Local arrangements | The Lower Leth speaking-turn proposal gives one displaced household a chance to be heard. It does not declare a right throughout Merovar, and the community’s higher allegiance remains open. |
+
 ## Elden Vale: mending before lighting
 
 Some households clean or mend an older festival lantern in company. The work
@@ -289,6 +299,13 @@ from a line naming Eldenmere. I favour *Tarrow* as a test and *the Yard*
 as a local nickname if the town’s market role is accepted. The
 [reviewed naming transcript](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=455s)
 informed testing how a name wears in use. Canon remains unnamed.
+
+**Speech check:** “Take it to Tarrow” would give a carrier a possible
+settlement name. “Meet at the Yard” would name its loading place in
+conversation with someone who knows it. The two need different referents;
+the second is not another official name for the town. Neither implies
+the settlement is inside the foothills, on the Leth, or at a junction.
+Any such placement would need its own evidence.
 
 ## Upper Leth: the stone-use bench
 
@@ -1061,12 +1078,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Clarify a few kinds of local authority without turning them into
-   one hierarchy. A northern office, a custodial covenant, and a
-   local arrangement do not confer the same powers.
-2. Pressure-test the southern town’s provisional names against the
-   approved road and the people who would use a town name or a yard
-   nickname. No final assignment follows from that check.
+1. Follow one ordinary exchange that doesn’t need a price, tax or
+   new route. Clarify what each household considers fair, without
+   making the practice a regional rule.
+2. Recheck one character proposal against the actual character sheet.
+   Keep what expresses a choice and remove any assumption that
+   home geography predicts personality.
 
 ## Map implications for a later review
 
