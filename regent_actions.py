@@ -4,6 +4,7 @@ The quest owns progress and movement. This view owns only temporary approved
 body drawings, attention and table props; reading is always player paced.
 """
 from caelan_scene_art import image as scene_image
+from serene_scene_art import image as serene_image
 from rendering import rotate as render_rotate
 from rendering import flip as render_flip
 from rendering import scale as render_scale
@@ -106,7 +107,7 @@ class RegentActions:
             actor = actors.get(identifier)
             if (actor is None or not self._owned_actor(actor)
                     or self.owner._world(actor) is not self.dining):continue
-            image = self._image(record['image'])
+            image = serene_image(self.dining, actor, record['image'], self._image)
             detail = ((self._image(record['detail_image']),tuple(record['detail_anchor']))
                       if 'detail_image' in record else None)
             if record.get('flip_x'):image = render_flip(image, True, False)
@@ -220,7 +221,8 @@ class RegentActions:
                 self._pose(actor,actor.idles[direction],actor.draw_anchor)
         elif self.active_cue == 'survivor_aid' and self._owned_actor(self.owner.serene):
             self._pose(self.owner.serene,
-                       self._image('assets/story/regent_emergency/poses/serene_aid_left.png'),
+                       serene_image(self.dining, self.owner.serene,
+                                    'assets/story/regent_emergency/poses/serene_aid_left.png', self._image),
                        (12,30))
 
     def _clear_beat(self):
