@@ -45,6 +45,18 @@ this PR's historical baseline; ordinary future previews allow intentional asset
 changes. Future action files use the same schema and local, correctly registered
 actor frames.
 
+Capture Iselin's live arrival-gate walking stop with
+`python tools/capture_iselin_walk_stop.py --check-mechanics --out /tmp/iselin-walk-stop`.
+After initial shot selection it uses ordinary production updates through the
+walk, deceleration, settle and greeting. It exports normal/quarter-speed crops,
+full-shot samples, a native frame board and a separately labeled fixed-world
+registration diagnostic. `--check-preservation` optionally checks the historical
+PNG baseline; `--repository /path/to/checkout` supports a labeled before capture.
+See the [walk-stop review](../docs/reviews/iselin_walk_stop/README.md) for source,
+timing, interruption checks and capture limits. Rebuild the complete new stop
+drawings with the existing `tools/build_regent_iselin.py`; the approved ordinary
+idles and walking banks remain unchanged.
+
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 
 Compile functional building doors and room transfers with `python tools/build_building_interiors.py`. It augments the playable town manifest with nine doors, five native poses per visible door, and eleven furnished scene manifests. Approved cottage door frames are reused exactly; other doors derive inward hinge poses from their existing panel pixels. Actor-free ground/light layers, furniture, fire/steam and floor-bounded collision come from approved room assets, with functional mill/workshop workrooms assembled from the same kit. Each house has a distinct scene/return link even when sharing a layout. `build_playable_eldenmere.py` invokes this compiler automatically. `tests/test_doors.py` covers proximity/hold/reversal/hysteresis, walk-in gating, all nine round trips, sanctuary room links, all scene exits/furnishing access, map behavior and small-room centering. Source art remains read only.

@@ -154,7 +154,8 @@ class RegentArrivalStagingTests(unittest.TestCase):
 
     def test_approach_greeting_and_admission_start_share_exact_party_feet(self):
         stations = []
-        for shot, seconds in (('gate_approach', 1.5), ('gate_greeting', 0), ('gate_admission', 0)):
+        approach = next(phase for phase in self.scene.data['phases'] if phase['id'] == 'gate_approach')
+        for shot, seconds in (('gate_approach', approach['min_seconds']), ('gate_greeting', 0), ('gate_admission', 0)):
             phase = self.frame(shot, seconds)
             stations.append({actor['id']: self.scene.actor_position(actor)
                              for actor in phase['actors'] if actor['id'] in ('iselin', 'clerk', 'caravan')})

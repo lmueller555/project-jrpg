@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 from tools.build_mira_combat import _main_component
 
 SOURCE = ROOT / 'assets/source/characters/iselin/native_scene_work'
+STOP_SOURCE = ROOT / 'assets/source/characters/iselin/native_stop_left'
 GROUND = ROOT / 'assets/story/regent_arrival/actors/iselin'
 AERIAL = ROOT / 'assets/story/regent_aerial/actors/iselin'
 NATIVE = ROOT / 'assets/characters/iselin'
@@ -122,6 +123,84 @@ def ground_presentation(image, label):
                         NATIVE_GROUND_ANCHOR, GROUND_ANCHOR, label)
 
 
+def stop_products():
+    """Register eight complete stopping drawings without changing the walk.
+
+    The source recipe owns the shared body grid and its approved head-region
+    preservation. Native/source foot bounds never determine sampling or scale.
+    """
+    recipe_path = STOP_SOURCE / 'recipe.json'
+    recipe = json.loads(recipe_path.read_text())
+    if recipe.get('version') != 1 or len(recipe.get('frames', [])) != 8:
+        raise ValueError('The left stop needs eight registered complete drawings')
+    with Image.open(STOP_SOURCE / recipe['source']) as source:
+        if source.size != tuple(recipe['source_canvas']):
+            raise ValueError('The complete stop source must retain its recorded canvas')
+    timing = recipe['timing']
+    if (set(timing) != {'handoff_ms', 'new_frame_ms', 'hold_ms', 'recovery_ms', 'total_ms'}
+            or any(type(value) is not int or value <= 0 for value in timing.values())
+            or timing['handoff_ms'] + 8 * timing['new_frame_ms'] + timing['hold_ms']
+               + timing['recovery_ms'] != timing['total_ms']):
+        raise ValueError('The left stop needs consistent positive frame timings')
+    approved = [NATIVE / 'native_walk_left/frame_16.png', NATIVE / 'native_idles/idle_left.png']
+    palette = set()
+    for path in approved:
+        pixels = Image.open(path).convert('RGBA').tobytes()
+        palette.update(tuple(pixels[index:index + 3]) for index in range(0, len(pixels), 4)
+                       if pixels[index + 3])
+    palette = sorted(palette)
+    mapped_colors = {}
+    outputs, records = {}, []
+    for index, record in enumerate(recipe['frames']):
+        name = f'frame_{index + 1:02}.png'
+        image, registration = native_drawing(record, 'stop_left/' + name)
+        if image.size != (24, 36):
+            raise ValueError('The native left stop must retain the 24x36 grid')
+        # A single palette mapping keeps the generated material ramps within
+        # the approved design. The protected head pixels remain exact; the
+        # complete moving body is recolored without reshaping any anatomy.
+        pixels = image.load()
+        for y in range(13, 36):
+            for x in range(24):
+                red, green, blue, alpha = pixels[x, y]
+                if not alpha:continue
+                color = (red, green, blue)
+                if color not in mapped_colors:
+                    mapped_colors[color] = min(palette, key=lambda target:
+                        sum((before - after) ** 2 for before, after in zip(color, target)))
+                pixels[x, y] = (*mapped_colors[color], alpha)
+        registration['native_rgba_sha256'] = sha256(image.tobytes()).hexdigest()
+        native_path = STOP_SOURCE / 'registered' / name
+        camera_path = GROUND / 'stop_left' / name
+        outputs[native_path] = _stable_png(native_path, image)
+        outputs[camera_path] = _stable_png(camera_path, ground_presentation(image, 'stop_left/' + name))
+        records.append({'frame': index + 1, 'phase': record['phase'], **registration})
+    action = {
+        'entry': [{'file': 'walk_left_15.png', 'duration_ms': timing['handoff_ms']}]
+                 + [{'file': f'stop_left/frame_{index + 1:02}.png', 'duration_ms': timing['new_frame_ms']}
+                    for index in range(8)],
+        'hold': {'file': 'stop_left/frame_08.png', 'duration_ms': timing['hold_ms']},
+        'recovery': [{'pose': 'stand_left', 'duration_ms': timing['recovery_ms']}],
+        'rest_pose': 'stand_left',
+    }
+    outputs[STOP_SOURCE / 'registration.json'] = json_bytes({
+        'generation_tool': 'image_gen.imagegen',
+        'construction': 'Eight complete authored stop/settle drawings; uniform native body registration and documented approved head preservation. No limb assembly or per-foot scaling.',
+        'recipe_sha256': sha256(recipe_path.read_bytes()).hexdigest(),
+        'native_canvas': [24, 36], 'native_ground_anchor': list(NATIVE_GROUND_ANCHOR),
+        'camera_canvas': list(GROUND_CANVAS), 'camera_anchor': list(GROUND_ANCHOR),
+        'camera_scale': GROUND_SCALE,
+        'palette': {'method': 'Nearest RGB in the combined approved handoff/idle palette; protected rows0..12 remain unchanged.',
+                    'color_count': len(palette)},
+        'approved_dependencies': {str(path.relative_to(ROOT)): sha256(path.read_bytes()).hexdigest()
+                                  for path in approved},
+        'records': records, 'action': action, 'duration_ms': timing['total_ms'],
+        'exports': {str(path.relative_to(ROOT)): sha256(data).hexdigest()
+                    for path, data in outputs.items()},
+    })
+    return outputs, action
+
+
 def products():
     specification_path = SOURCE / 'scene_art.json'
     specification = json.loads(specification_path.read_text())
@@ -170,13 +249,16 @@ def products():
     loops['walk_left_back'] = diagonal
     for name, image in poses.items():
         outputs[GROUND / (name + '.png')] = _stable_png(GROUND / (name + '.png'), image)
+    stop_outputs, stop_action = stop_products()
+    outputs.update(stop_outputs)
     outputs[GROUND / 'animation.json'] = json_bytes({
         'version': 1, 'canvas': list(GROUND_CANVAS), 'anchor': list(GROUND_ANCHOR),
         'poses': {name: name + '.png' for name in poses}, 'loops': loops,
+        'actions': {'stop_left': stop_action},
         'gaits': {'walk_left': {'stride_pixels': 32}},
         'native_canvas': [24, 36], 'native_ground_anchor': list(NATIVE_GROUND_ANCHOR),
         'camera_scale': GROUND_SCALE,
-        'source': 'Native complete Iselin scene drawings and approved16-frame native walks; uniform nearest-neighbor camera presentation.'})
+        'source': 'Native complete Iselin scene and stopping drawings with approved16-frame native walks; uniform nearest-neighbor camera presentation.'})
     seated = ROOT / 'assets/story/regent/poses/iselin_seated.png'
     outputs[seated] = _stable_png(seated, authored['seated_left'])
     for name in ('overhead', 'oblique'):
@@ -202,7 +284,7 @@ def products():
         'ground_camera_scale': GROUND_SCALE, 'aerial_camera_scale': AERIAL_SCALE,
         'aerial_crop': list(AERIAL_BOUNDS), 'records': records,
         'approved_asset_dependencies': dependencies,
-        'construction': 'Complete native poses/diagonal cycle; explicit body registration and uniform camera presentation. No predecessor art or limb assembly.',
+        'construction': 'Complete native poses, diagonal cycle and stop; explicit body registration and uniform camera presentation. No predecessor art or limb assembly.',
         'exports': {str(path.relative_to(ROOT)): sha256(data).hexdigest()
                     for path, data in outputs.items()}})
     return outputs

@@ -56,7 +56,9 @@ class CinematicActorActionTests(unittest.TestCase):
         return player
 
     def test_absent_actions_preserve_legacy_manifest_and_idle_player(self):
-        self.assertEqual(load_actions(self.record, self.poses, MANIFEST), {})
+        legacy = deepcopy(self.record)
+        legacy.pop('actions', None)
+        self.assertEqual(load_actions(legacy, self.poses, MANIFEST), {})
         player = ActionPlayer({})
         self.assertIsNone(player.frame)
         self.assertEqual(player.stage, 'idle')

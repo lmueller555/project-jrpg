@@ -459,5 +459,8 @@ scene-specific clip schemas in the relevant scene guide and tool catalogue.
 - [Native gameplay integration](reviews/iselin_native_integration/README.md):
   current actor, scene and lifecycle verification. Individual approval captures
   remain historical snapshots at their recorded commits.
+- [Cinematic walk stop](reviews/iselin_walk_stop/README.md): complete stopping
+  drawings, exact walk/idle handoffs, decelerating root travel, a stable settle
+  and continuous production-shot review.
 - [Asset tool catalogue](../tools/README.md): current reproduction commands and
   local implementation facts.
