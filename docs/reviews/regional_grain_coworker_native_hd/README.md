@@ -1,0 +1,13 @@
+# Gray-haired grain coworker: complete native replacement
+
+Only `grain_coworker` is enabled by this binding. It retains the approved `adult_man_03` gray head, slate shirt, brown trousers, slender adult stature and ground registration. The prerequisite dormant art refinement supplies17 complete96×104 poses across all five original clips. Existing filenames, timing, loops, hand and sack metadata remain unchanged. Root source history is retained. Shared runtime/controllers are not edited.
+
+The source bank's old chibi silhouette is replaced with naturally proportioned whole drawings, using exact canonical head pixels. Its48×52 logical canvas/anchor24,46 is art-only padding that aligns to unchanged40×44 travel registration. Actor ID, route, collision, save schema, story, contact cues, prop positions and ownership remain unchanged. No sibling actor is enabled implicitly; the previously validated loader is already native in these scene samples.
+
+## Actual Game validation
+
+Real production controllers drove125 native scene views through all four canonical unladen facings, ambient cart work, stretch, genuine optional exchange/approach/shared high assistance/lowering/recovery and empty-handed return. NPC feet, pose, clock, facing, state and transfer time were never forced. Fixtures seed predecessor quests, off-route player review positions, then the mill-restored fact after actual unrepaired cover/rest; real dialogue pages and physical beats run before their outcomes. Source hashes, camera/player/feet/clock, frames, exact prop records and durable physical states are recorded.
+
+Normal and reduced-motion runs have identical125-view full actor/prop/controller traces and final loaded2/exchange_readtrue/scene_donetrue. All sampled feet were safe. Existing22 grain/travel/roster Game checks and6 native units passed; the frozen source builder verified29 exports without writes. The art author independently inspected real cart reach, high/low assistance and recovery scenes: arm connected/proportionate, gray head/slate wardrobe/sole registration coherent, hands plausibly at the sack's near edge, recovery visibly empty-handed before return. No source correction was needed after live review.
+
+The full native960×640 scenes and labelled unscaled crops are selected evidence, not an uninterrupted real-time playthrough or proof of every individual frame solely by inspection. Controller chronology and ownership also rely on the unchanged lifecycle tests and recorded traces. Legacy sack/cart props remain coarser than the native body; fine contact behind opaque surfaces is not claimed. Normal median sampled draw10.36ms, max448.23ms was initial cache/material warm-up, not a frame guarantee. No hosted CI or user visual approval is claimed.
