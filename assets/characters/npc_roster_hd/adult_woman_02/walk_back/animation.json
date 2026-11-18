@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "character": "adult_woman_02",
+  "animation": "walk.back",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/adult_woman_02/walk_back/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/adult_woman_02/walk_back/authored.png": "520d2f090823a11f7af4b6e2f05e758d662240d59e27eae263c2ea359b81b1ce",
+    "assets/characters/npc_roster_hd/adult_woman_02/idle_back.png": "2244a3bb33f3d8b6116a1bf316bdc843f3708b86c130282a77279b59d29eefa9"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        18,
+        69
+      ],
+      "right_boot_bottom": [
+        28,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          18,
+          69
+        ],
+        "right_toe": [
+          28,
+          65
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        18,
+        67
+      ],
+      "right_boot_bottom": [
+        28,
+        66
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          18,
+          67
+        ],
+        "right_toe": [
+          28,
+          66
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        18,
+        65
+      ],
+      "right_boot_bottom": [
+        29,
+        67
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          18,
+          65
+        ],
+        "right_toe": [
+          29,
+          67
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        18,
+        66
+      ],
+      "right_boot_bottom": [
+        29,
+        68
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          18,
+          66
+        ],
+        "right_toe": [
+          29,
+          68
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        18,
+        65
+      ],
+      "right_boot_bottom": [
+        29,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          18,
+          65
+        ],
+        "right_toe": [
+          29,
+          69
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        18,
+        66
+      ],
+      "right_boot_bottom": [
+        29,
+        67
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          18,
+          66
+        ],
+        "right_toe": [
+          29,
+          67
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        19,
+        67
+      ],
+      "right_boot_bottom": [
+        28,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          19,
+          67
+        ],
+        "right_toe": [
+          28,
+          65
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        20,
+        68
+      ],
+      "right_boot_bottom": [
+        28,
+        66
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          20,
+          68
+        ],
+        "right_toe": [
+          28,
+          66
+        ],
+        "occlusion_note": "Knees and most ankles intentionally occluded by long dress throughout; independently drawn boots emerge consistently with support phase; forward hand partially behind bodice at contacts"
+      }
+    }
+  ]
+}
