@@ -455,6 +455,21 @@ wrapper into an official register, a new postal rule, or a list of
 households that owe anyone a service. This scene depends on the
 proposed shared-letter practice, not on approved history.
 
+## Rookfen: the pale patch
+
+In autumn, one patch of [Rookfen](MEROVAR.md#rookfen) reeds carries pale,
+dry seedheads above the green banks. A resident likes seeing them from
+her window: the channel looks familiar again. A neighbour keeps brushing
+stray fluff off the clothes hung outside. A visiting child asks whether
+the reeds have grown old. Their grandmother used to think that too; she
+points across the water to the patch she remembers beside her childhood
+home.
+
+The reeds don’t warn anyone, herald a ritual, or stand for one region’s
+view of nature. The [previously reviewed climate video](https://www.youtube.com/watch?v=5lCbxMZJ4zA)
+informs the broad climate-to-vegetation approach only. It is not
+evidence about any specific reed or its seasonal behaviour.
+
 ## Redstone March: the first drink
 
 One farming town offers a thirsty visitor a first drink without charge.
@@ -546,6 +561,22 @@ The shade has two handles because of what these two people do, not
 because it marks a Redstone household. The
 [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed making the difference visible through daily handling.
+
+## Redstone March: the plain family board
+
+A household takes its grandfather’s gameboard as proof that the
+family has always preferred plain, durable things. While refitting
+a loose hinge, his granddaughter finds bright painted flowers
+protected beneath its plate. The rest of the surface is worn smooth.
+Her father wants to cover the remaining paint before guests come to play.
+She wants to bring the flowers back.
+
+Nobody doubts whose board it was. They disagree about whether keeping
+his work means keeping the familiar appearance or admitting that he
+liked something different. The discovery is one family’s surprise,
+not a hidden regional tradition. The
+[reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8) informed
+putting the evidence on an object the family still uses.
 
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
@@ -821,12 +852,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Show one seasonal trace of a familiar plant or animal in Merovar
-   from two residents’ ordinary perspectives. Do not add a new species,
-   attach a magical cause, or define a gameplay rule.
-2. Give one material detail the power to complicate a family’s story
-   about its own tastes or work. Keep the distinction between evidence,
-   memory and what remains unknowable.
+1. Test what Caelan notices about one proposed regional practice,
+   separately from what Mira notices. Keep both grounded in approved
+   character material, and avoid a required new encounter.
+2. Compare two existing ways of remembering or giving care, without
+   assuming one doctrine. Check for overlap with the approved Vale
+   festival scenes before suggesting where any draft can be reused.
 
 ## Map implications for a later review
 
