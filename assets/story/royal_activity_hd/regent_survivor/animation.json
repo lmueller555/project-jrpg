@@ -1,0 +1,44 @@
+{
+  "id": "regent_survivor",
+  "canvas": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "poses": {
+    "alarm_front": {
+      "frames": [
+        {
+          "file": "alarm_front_00.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "front"
+    },
+    "rest_front": {
+      "frames": [
+        {
+          "file": "rest_front_00.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "front"
+    }
+  },
+  "status": "candidate_pending_independent_review",
+  "runtime_integration": false
+}
