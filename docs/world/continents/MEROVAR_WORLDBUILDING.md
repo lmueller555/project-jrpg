@@ -1,6 +1,6 @@
 # Merovar: worldbuilding proposals
 
-**Status:** First development pass for review. The [Merovar atlas entry](MEROVAR.md)
+**Status:** Development proposals for review. The [Merovar atlas entry](MEROVAR.md)
 and its linked canon remain authoritative. New customs, conflicts, naming
 rules and scene beats below are proposals, not facts already true in the
 game. No new destinations, playable layouts, quest obligations or map edits are
@@ -68,6 +68,32 @@ A voice test, not new script: “I kept counting the people waiting for the ston
 I should have counted the people I was asking to bear its cost.” Preserve the
 opening’s established limits on what the party knows about her.
 
+## Upper Leth: the stone-use bench
+
+One upper Leth market town brings a receiving mason, a carrier and a
+clerk together when there is a dispute over what a delivery can be used
+for. A block a mason refuses for a crossing might be useful as broken
+stone in a drain. The bench decides what can be salvaged without
+pretending the crossing has received what it needs. Its judgments are
+local to the work, not Merovar-wide grades.
+
+When the mason rejects a load, the carrier wants the cart empty in time
+for another paid run. A drain worker offers to take the fragments. A
+quarry worker objects to being billed for bad stone when it might have
+cracked on the road. The clerk keeps one marked fragment and records who
+refused it, for what use, and which claims are still disputed. That small
+piece lets a later visitor see why one repair went ahead while the other
+still waited.
+
+**Canon boundary:** [Elden Vale’s regional setting](../regions/ELDEN_VALE.md#authority-development-and-disagreement)
+establishes the road and quarry districts; the
+[covenant](../SANCTUARY_COVENANT.md) leaves distant stone available but costly.
+Reusing a disputed delivery neither replaces a quarry nor gives anyone
+permission to work protected ground. The bench is not part of MQ03.
+The [worldbuilding lecture](https://www.youtube.com/watch?v=V2KpWOLTXx8)
+noted under the northern kingdom informed the scene’s emphasis on what
+the institution can and cannot do for these particular workers.
+
 ## Greyfold Uplands: Rhea revises her own theory
 
 [Rhea’s established background](../../narrative/game_01/COMPANIONS.md)
@@ -98,6 +124,30 @@ needs grain sold today to buy food. The buyer wants to weigh it after drying
 rather than pay for water; the boat crew cannot wait another day without
 losing a run. Witnesses can settle what the scale read, not who can afford the
 delay. This is one town’s practice, not the river’s law.
+
+## Lower Leth: who speaks after the water
+
+The [Lower Leth atlas entry](MEROVAR.md#lower-leth) establishes flood risks,
+mixed landholding and market-day plays. In this proposed local history,
+residents opened an embankment during a flood to spare a market settlement.
+Several tenant households lost homes and orchards. At later flood-planning
+meetings, displaced households customarily spoke first, even if they no
+longer held land. This is a local practice, not a legal right elsewhere.
+
+One market family remembers a necessary breach and the proof that ordinary
+people could change public decisions. A displaced family remembers being
+pressed to agree and later thanked in public, with nowhere to return.
+Some descendants insist on their speaking turn. Others resent being asked
+to tell the same story every year. Both accounts can be true without anyone
+denying that the breach saved lives.
+
+A travelling teacher rehearses a play about the flood. A former pupil
+objects: the displaced family goes offstage smiling and never comes back.
+After his established introduction, [Edran](../../narrative/game_01/COMPANIONS.md#edran-hale)
+could hear the argument and ask whose account supplied the ending. The
+teacher decides what to change. The party need not travel to the Lower
+Leth, the incident does not explain any current anomaly, and neither the
+performance nor the meeting is a committed quest.
 
 ## Rookfen and Marris: where a cargo changes hands
 
@@ -237,16 +287,15 @@ a particular species belongs in this game.
 
 ## Next development pass
 
-1. Develop one Merovar institution and one historical turning point at a time.
-   Start with the upper Leth road-and-stone network and one documented or
-   plausible civic change that people remember differently. Identify the
-   character, household or occupation affected before proposing permanent
-   dates or borders.
-2. Give each major region a second perspective that complicates its first.
-   Use Lucan, Rhea and Edran’s existing home ties where useful, without
-   assigning them unnamed birthplaces or creating a required itinerary.
-   Add personal or place names only when the subjects being named are
-   concrete enough to test aloud.
+1. Give each region a second perspective beyond trade and shortages. Start
+   with a Greyfold hall performance and a Redstone market argument about
+   reputation. Develop each separately: who participates, who is left out,
+   and how someone bends the custom without simply rejecting it.
+2. Build on existing character ties. Ask what Lucan finds uncomfortable
+   about his home region’s expectations, or what Edran learned from a
+   colleague he still disagrees with. Do not assign new birthplaces or make
+   every region a required stop. Add names only once there is something
+   specific to name.
 
 ## Map implications for a later review
 
