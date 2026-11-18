@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/child_girl_01/walk_front/authored.png",
+  "source_sha256": "b81e98539d99429fa1ff23728cdba164323319de57a85d75dd03a5ab7e6dc2ce",
+  "reference": "assets/characters/npc_roster_hd/child_girl_01/idle_front.png",
+  "reference_sha256": "60d59cd3a30ee32b16dbc29dc7211f3597b4d7785eae8085718385e36ae29da1",
+  "drawing": "Complete per-pose hand-plotted near/far silhouettes, outlines, folds, hands and soles. All limbs drawn anew in each source pose. Approved head/face region retained at its authored bob above the redrawn neck.",
+  "export": "No transform. Cut 48\u00d772 RGBA rectangles from the native master verbatim. Frames compose exactly into the retained strip.",
+  "registration": "Body landmarks and fixed 24,60 draw / 24,69 ground refs; no fitting by height or lowest boot.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "contact",
+    "recoil",
+    "passing",
+    "recovery",
+    "contact",
+    "recoil",
+    "passing",
+    "recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "hard 0/255"
+}
