@@ -267,6 +267,21 @@ This belongs to one shore settlement on Merovar’s side of the
 [Rimeward Shores](../POLAR_REGIONS.md#rimeward-shores), not to a presumed
 relation with Iselin’s kingdom.
 
+## Merovar’s Rimeward Shores: the face that changes
+
+In one household on [Merovar’s Rimeward Shores](../POLAR_REGIONS.md#rimeward-shores),
+an older relative brings out a carved panel of the time the family’s
+supper tipped over. A child gives the cook a chalk smile. Now the cook
+is trying not to laugh instead of shouting. The relative tells the story
+again as they remember it; the child gets to leave the smile. The chalk
+will come off, and the carving will stay. Making a permanent cut in
+someone else’s work takes a conversation.
+
+A family with boatyard offcuts might keep several panels. Another
+family might use drawings because they dislike altering old work.
+The practice is a way for one household to make company on a visit,
+not a test of craftsmanship or a custom shared by every northern shore.
+
 ## Marris Coast: the apprentice explains the repair
 
 At one repair yard, an apprentice explains a first finished repair to the
@@ -310,6 +325,24 @@ Craft source for the thin northern institutional material: [Brandon Sanderson,
 reviewed). The useful technique is to tie one physical constraint to a
 specific cultural or institutional consequence a character can experience.
 It is not evidence for any northern relief institution.
+
+## Northern kingdom: who checks your cuffs?
+
+In one household in [Iselin’s northern kingdom](../../narrative/game_01/characters/ISELIN.md#northern-home-and-the-journey),
+mittens hang over a bench with the cuffs turned back. Before a child
+leaves, someone checks that the mittens cover the ends of the sleeves.
+A child insists on checking an older brother, who stoops solemnly despite
+being perfectly capable himself. Their grandmother stitched a crooked
+square inside one mitten so the child can tell their own pair from
+everybody else’s. Now the child wants the square on the outside where
+people can see it.
+
+Next door, everyone dresses themselves. Help is offered when requested,
+not assumed. The same cold gives both families a reason to check their
+clothes but doesn’t tell them how to show care. This is a domestic
+proposal for one inland community, not a custom of the whole kingdom
+or a claim about the Rimeward Shores. The [actual craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed the use of a concrete object to show the relationship.
 
 ## Elden Vale: naming places without inventing their history
 
@@ -381,15 +414,16 @@ a particular species belongs in this game.
 
 ## Next development pass
 
-1. Give the unnamed northern kingdom and Merovar’s Rimeward Shores one
-   everyday practice each beyond transport and weather warnings. Develop
-   the two separately, without deciding their political relationship
-   or naming a capital, dynasty, or new territory.
-2. Build the first small candidate toward a regional naming or history
-   decision: define what neighbouring Vale or Upper Leth settlements
-   need to distinguish before naming one, or separate a local event
-   from how later households remember it. Keep author truths, in-world
-   accounts and player disclosure separate.
+1. Develop the unnamed settlement south of Eldenmere in two steps.
+   First define its ordinary role and the feature locals need to
+   distinguish, using the established road and watershed constraints.
+   Then test a few name candidates against that identity and the Vale
+   naming guide. Keep the existing destination unnamed in canon and
+   do not alter the map.
+2. Give one pre-opening Merovar event a material trace and two different
+   accounts. Look beyond floods, ruptures and supply disputes: a school,
+   workshop, or shared gathering can change who belongs somewhere.
+   Keep author truth, in-world accounts and player disclosure separate.
 
 ## Map implications for a later review
 
