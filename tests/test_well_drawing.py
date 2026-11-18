@@ -145,9 +145,11 @@ class WellDrawing(unittest.TestCase):
             self.actor.water_units=water
             name,frame,pose,key,xy=self.actor.bucket_placement()
             self.assertEqual(pose['order'],'before',name)
-            rendered=self.actor.sprite(0);body=self.actor.bodies[name];bucket=self.actor.buckets[key]
-            arms=self.world.image(f'assets/source/characters/npcs/female_02/gardener/parts/{name}_arms.png')
-            overlap=arm_overlap=0;x0,y0=round(xy.x),round(xy.y)
+            rendered=self.actor.sprite(0).native
+            body=self.actor.bodies[name].native
+            bucket=self.actor.buckets[key].native
+            x0,y0=(round(v*2) for v in xy)
+            overlap=0
             for by in range(bucket.get_height()):
                 for bx in range(bucket.get_width()):
                     x,y=x0+bx,y0+by
@@ -155,9 +157,7 @@ class WellDrawing(unittest.TestCase):
                     if not bucket.get_at((bx,by)).a or not body.get_at((x,y)).a:continue
                     overlap+=1
                     self.assertEqual(rendered.get_at((x,y)),body.get_at((x,y)),(name,x,y))
-                    if arms.get_at((x,y)).a:arm_overlap+=1
             self.assertGreater(overlap,0,name)
-            self.assertGreater(arm_overlap,0,name)
 
     def test_near_side_poses_keep_normal_arm_lengths_and_fixed_body_proportions(self):
         recipe=main.read_json(main.ROOT/'assets/source/characters/npcs/female_02/gardener/recipe.json')

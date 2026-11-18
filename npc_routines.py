@@ -540,12 +540,25 @@ class RoutineNPC:
         return self.idles[self.facing]
 
 
+GARDENER_ROSTER = 'adult_woman_02'
+GARDENER_HD_ACTION = f'assets/characters/npc_roster_hd/{GARDENER_ROSTER}/gardener_hd/animations.json'
+
+
 class Gardener:
     """A persistent fill/carry/pour cycle, with collision-aware task progress."""
     def __init__(self,record,world,rng=None):
         self.data=record
         self.behavior=read_json(ROOT/record['behavior'])
-        self.animation=read_json(ROOT/record['animation'])
+        # Appearance follows the persistent actor ID, not a generated map's
+        # legacy asset path. Map regeneration cannot undo the art migration.
+        self.roster_art=None
+        self.animation_path=record['animation']
+        if record['id']=='sanctuary_gardener':
+            from npc_roster_art import RosterArt
+            self.roster_art=RosterArt(world,GARDENER_ROSTER)
+            self.portrait_path=self.roster_art.portrait_path
+            self.animation_path=GARDENER_HD_ACTION
+        self.animation=read_json(ROOT/self.animation_path)
         self.water_capacity=self.animation['water_capacity']
         self.well=world.well
         self._rng=rng if rng is not None else random.Random()
@@ -553,9 +566,16 @@ class Gardener:
         self.draw_anchor=self.animation['draw_anchor']
         self.position=pygame.Vector2(record['position'])
         self.probe_size=tuple(record['probe_size'])
-        folder=Path(record['animation']).parent
-        self.bodies={name:world.image((folder/pose['body']).as_posix()) for name,pose in self.animation['poses'].items()}
-        self.buckets={name:getattr(world,'room_art_image',world.image)((folder/pose['file']).as_posix()) for name,pose in self.animation['buckets'].items()}
+        folder=Path(self.animation_path).parent
+        bucket_folder=Path(self.animation.get('bucket_bank',Path(record['animation']).parent))
+        body_art={'artwork_pixels_per_world_pixel':self.animation.get('artwork_pixels_per_world_pixel',1),
+                  'logical_size':self.animation['action_canvas']}
+        self.bodies={name:load_art(world,(folder/pose['body']).as_posix(),body_art)
+                     for name,pose in self.animation['poses'].items()}
+        # Pails retain the original filenames, HD room replacements and grips.
+        # DrawingWell shares this exact bank; only the gardener's body changes.
+        self.buckets={name:getattr(world,'room_art_image',world.image)((bucket_folder/pose['file']).as_posix())
+                      for name,pose in self.animation['buckets'].items()}
         self.steps=self._steps()
         self.step_index=0;self.state_ms=0.0;self.walk_ms=0.0
         self.facing='right';self.moving=False;self.waiting=False
@@ -730,7 +750,16 @@ class Gardener:
 
     def sprite(self,elapsed_ms):
         name,frame,pose,key,xy=self.bucket_placement()
-        if frame.get('hidden_bucket') or (self.state.startswith('well_') and 'waypoints' in self.steps[self.step_index]):
+        unladen=('waypoints' in self.steps[self.step_index] and self.state.startswith('well_'))
+        if unladen and self.roster_art is not None:
+            body=self.roster_art.sprite(self.facing,self.moving,self.walk_ms)
+            cache_key=('unladen',body)
+            if cache_key not in self._sprite_cache:
+                canvas=render_layer(self.animation['action_canvas'],pygame.SRCALPHA)
+                canvas.blit(body,self.animation['body_offset'])
+                self._sprite_cache[cache_key]=canvas
+            return self._sprite_cache[cache_key]
+        if frame.get('hidden_bucket') or unladen:
             return self.bodies[name]
         submerged=frame.get('effect')=='ripple'
         cache_key=(name,key,submerged)

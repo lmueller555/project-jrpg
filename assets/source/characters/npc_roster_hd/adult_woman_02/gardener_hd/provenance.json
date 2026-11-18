@@ -1,0 +1,23 @@
+{
+  "source_identity": "adult_woman_02: exact same canonical directional head and sage dress/belt/boot palette",
+  "construction": "Complete literal pose contours on native96x96 action canvas. No flattened idle warp, detached bitmap limb rotation, body upscale or interpolated pose production. Compatible same-phase adult_woman_02 garment/boot contour guides retained for four-step carrying; action arm silhouettes are drawn separately as explicit polygons within each full drawing. Profile mirrored geometry valid for symmetric source costume, with own direction head.",
+  "reference_hashes": {
+    "assets/characters/npc_roster_hd/adult_woman_02/idle_front.png": "f9a9dac4478f078066b49fcc4dde918b5055c4661dc422043b82408b7a6841ad",
+    "assets/characters/npc_roster_hd/adult_woman_02/idle_back.png": "2244a3bb33f3d8b6116a1bf316bdc843f3708b86c130282a77279b59d29eefa9",
+    "assets/characters/npc_roster_hd/adult_woman_02/idle_left.png": "80b5b57e846e7304e2499b9ef3a5716488b3e02cb298ede8373486d3257bad27",
+    "assets/characters/npc_roster_hd/adult_woman_02/idle_right.png": "9a61db4a8c095deadb0045c7dec1aa8012a57ce8ac3d0ed5ac92fc26305217e4",
+    "assets/characters/npcs/female_02/gardener/animations.json": "0d3e97ed39da3440a6a0e9630d1ecfb22a4b2a8d7b1795f667fc80b0e363b883"
+  },
+  "checks": {
+    "poses": 98,
+    "legacy_sequences_exact": 18,
+    "cues_grips_order_and_capacity_unchanged": true,
+    "native_rgba_hard_alpha_unclipped": true
+  },
+  "notes": [
+    "Bucket art deliberately remains legacy; full new well pack is a separate asset task.",
+    "Source geometry is in native artwork pixels; animation grip/offset/anchor metadata remains logical world pixels.",
+    "Hidden rear hands remain naturally occluded by torso/head when reaching forward.",
+    "Preview proof is not scene integration acceptance; run actual live routine and blocked movement checks."
+  ]
+}
