@@ -1,0 +1,54 @@
+{
+  "canonical_id": "ada",
+  "identity": "Own approved legacy Ada and existing native dialogue portrait, not a roster substitute.",
+  "references": {
+    "idle_right.png": "86f640ef3d2627e26019f61a35a5d2e6e73dc7aab3bdf4d25b6890eb9d6126e1",
+    "character.json": "ab228458f431aecc4374278d3116e46a832bbcf7003acd4c9f9fd52b660c00b5",
+    "idle_left.png": "c37e1fd04c65411fe62183a5e9b6d084b13baa2e7408d82c4dd7be594b246d0c",
+    "idle_all.png": "92bfc4182ece0961a84c101b9d0fa08f130eed076d2dd73c0fc43f1228afa7dc",
+    "palette.json": "01916760b568b257e289039ca74646df1abb291c9e30a69901dd31006f61fe3d",
+    "idle_back.png": "61dc73f9991dd1edca136afda76ee678d112858ec3576a73eafe544c4c05ec63",
+    "portrait.png": "adf9bc72450de741f6499fa06bd398133ea57f8c9396ed16bba11f2f2761d1eb",
+    "idle_front.png": "c4a44ed89592fd80c3d099fd73c2e4e3753f4ea05fde01e85b6acf343a3d6808"
+  },
+  "legacy_height_logical": 24,
+  "new_height_art": 48,
+  "legacy_foot_anchor": [
+    12,
+    34
+  ],
+  "new_foot_anchor_art": [
+    24,
+    68
+  ],
+  "motion_guide": {
+    "commit": "7dfa732ea1abe9c62cd7860f453f9b923a20a4af",
+    "source_id": "child_girl_05",
+    "scope": "Compatible native child foot/leg contour coordinates retained as motion guide at native scale. No source pose pixels copied. Named heads, sleeves, hands, dress torso/hem and skin/shoe treatment are native target drawings, not roster substitution. Ada body shortened by independently drawn age7 torso, not rescaling.",
+    "directions": {
+      "front": {
+        "path": "assets/characters/npc_roster_hd/child_girl_05/walk_front/spritesheet.png",
+        "sha256": "83b531be84d642318562fe3f97788fd869502c9bfef6eb78b6ac7cd1d7a49755"
+      },
+      "right": {
+        "path": "assets/characters/npc_roster_hd/child_girl_05/walk_right/spritesheet.png",
+        "sha256": "74e941373671fda283cbe2398d44c052e5fc89fd4e2a2baec2907b54731505f3"
+      },
+      "back": {
+        "path": "assets/characters/npc_roster_hd/child_girl_05/walk_back/spritesheet.png",
+        "sha256": "53758036d475e5a8ec1455bdc09089b73f768f19a8f0a00a312bc04d91a5747f"
+      },
+      "left": {
+        "path": "assets/characters/npc_roster_hd/child_girl_05/walk_left/spritesheet.png",
+        "sha256": "4442357badf90b18fbafa00507d89ba0d2785bc316a50f72bc4f78010a790254"
+      }
+    }
+  },
+  "construction": "New native hand-plotted head/body/complete poses; no legacy sprite pixel enlargement. Compatible child gait foot/leg contour coordinates retained at native scale; no guide pixels copied. Target head, sleeves, hands, dress torso and hem independently plotted.",
+  "portrait": "Existing native72\u00d772 portrait retained byte-exact.",
+  "authored_inputs": [
+    "author_head.py",
+    "author_body.py",
+    "pose_drawings.json"
+  ]
+}
