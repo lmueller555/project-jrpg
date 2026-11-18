@@ -1,0 +1,631 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "appearance_reference": "assets/characters/iselin/native_idles/idle_front.png",
+  "construction": "Complete contact keys and four complete-drawing batches; no detached limbs, mirrored costume or anatomy generator.",
+  "export": "Hard alpha220, largest connected drawing, whole-pose nearest sampling; common crown/waist density per strip, no boot-bound normalization.",
+  "protected_region": {
+    "source": "assets/characters/iselin/native_idles/idle_front.png",
+    "source_sha256": "a0b58e06377223b03652e26d918ce849008c11ca6cab048e49ebea1339d0fa31",
+    "rect_xywh": [
+      0,
+      0,
+      24,
+      12
+    ],
+    "method": "Restore approved stationary head/face pixels after complete-drawing export; moving body below y12 remains authored.",
+    "reason": "Prevent inconsistent source-strip head width and hair silhouettes from creating a twitch at batch joins."
+  },
+  "target_crown_y": 1,
+  "target_waist_y": 18,
+  "source_sha256": {
+    "batch_1.png": "3d7de4d8be754e0df1adfb623fcb499c1096e964e8839c4ef661f7f0848b5f7b",
+    "batch_2.png": "b7468a6297b7aa7b47587428bb6be40159a2bda4d4263fa1c5caac8de23b73b3",
+    "batch_3.png": "bcd55ee22a826b67b94d900922729d566115f282d40bf7b6f16373407945df8e",
+    "batch_4.png": "e07293708a30187a1fc3217e99c85965d14df0bae793cd5fe6da7f6e22662829",
+    "keys.png": "c6711a8d0718c2a13c96d0512bcad5036ce20d752737aa34c7a35689026cdfcf",
+    "left_contact_reference.png": "170d06557a08a7c128548129cc05cacbfaf9f0d486876c6b87e01253c708913d",
+    "right_contact_reference.png": "fb5deb7701f3ed69bb0949102af6e85cfe16bd9184fc6a4417ac6fcde7fa0c05"
+  },
+  "records": [
+    {
+      "frame": 1,
+      "phase": "right_contact",
+      "source": "batch_1.png",
+      "column": 0,
+      "source_cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        142,
+        26,
+        410,
+        697
+      ],
+      "crown_row": 26,
+      "waist_row": 379,
+      "head_center_x": 273.5,
+      "uniform_scale": 0.04815864022662889,
+      "sample_size": [
+        26,
+        35
+      ],
+      "destination_origin": [
+        -1,
+        0
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 2,
+      "phase": "right_settle",
+      "source": "batch_1.png",
+      "column": 1,
+      "source_cell": [
+        543,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        135,
+        26,
+        410,
+        697
+      ],
+      "crown_row": 26,
+      "waist_row": 379,
+      "head_center_x": 273.5,
+      "uniform_scale": 0.04815864022662889,
+      "sample_size": [
+        26,
+        35
+      ],
+      "destination_origin": [
+        -1,
+        0
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 3,
+      "phase": "left_release",
+      "source": "batch_1.png",
+      "column": 2,
+      "source_cell": [
+        1086,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        137,
+        26,
+        410,
+        697
+      ],
+      "crown_row": 26,
+      "waist_row": 379,
+      "head_center_x": 273.5,
+      "uniform_scale": 0.04815864022662889,
+      "sample_size": [
+        26,
+        35
+      ],
+      "destination_origin": [
+        -1,
+        0
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 4,
+      "phase": "left_recovery",
+      "source": "batch_1.png",
+      "column": 3,
+      "source_cell": [
+        1629,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        139,
+        26,
+        410,
+        697
+      ],
+      "crown_row": 26,
+      "waist_row": 379,
+      "head_center_x": 273.5,
+      "uniform_scale": 0.04815864022662889,
+      "sample_size": [
+        26,
+        35
+      ],
+      "destination_origin": [
+        -1,
+        0
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        19,
+        34
+      ]
+    },
+    {
+      "frame": 5,
+      "phase": "left_passing",
+      "source": "batch_2.png",
+      "column": 0,
+      "source_cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        145,
+        34,
+        397,
+        681
+      ],
+      "crown_row": 34,
+      "waist_row": 378,
+      "head_center_x": 275.5,
+      "uniform_scale": 0.04941860465116279,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 6,
+      "phase": "left_advance",
+      "source": "batch_2.png",
+      "column": 1,
+      "source_cell": [
+        543,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        140,
+        34,
+        396,
+        685
+      ],
+      "crown_row": 34,
+      "waist_row": 378,
+      "head_center_x": 275.0,
+      "uniform_scale": 0.04941860465116279,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 7,
+      "phase": "left_reach",
+      "source": "batch_2.png",
+      "column": 2,
+      "source_cell": [
+        1086,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        139,
+        34,
+        394,
+        693
+      ],
+      "crown_row": 34,
+      "waist_row": 378,
+      "head_center_x": 275.0,
+      "uniform_scale": 0.04941860465116279,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 8,
+      "phase": "left_precontact",
+      "source": "batch_2.png",
+      "column": 3,
+      "source_cell": [
+        1629,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        144,
+        34,
+        394,
+        693
+      ],
+      "crown_row": 34,
+      "waist_row": 378,
+      "head_center_x": 275.0,
+      "uniform_scale": 0.04941860465116279,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 9,
+      "phase": "left_contact",
+      "source": "batch_3.png",
+      "column": 0,
+      "source_cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "opaque_bounds": [
+        144,
+        31,
+        425,
+        740
+      ],
+      "crown_row": 31,
+      "waist_row": 403,
+      "head_center_x": 288.0,
+      "uniform_scale": 0.0456989247311828,
+      "sample_size": [
+        23,
+        35
+      ],
+      "destination_origin": [
+        -1,
+        0
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        34
+      ]
+    },
+    {
+      "frame": 10,
+      "phase": "left_settle",
+      "source": "batch_3.png",
+      "column": 1,
+      "source_cell": [
+        512,
+        0,
+        512,
+        768
+      ],
+      "opaque_bounds": [
+        122,
+        31,
+        400,
+        740
+      ],
+      "crown_row": 31,
+      "waist_row": 403,
+      "head_center_x": 264.5,
+      "uniform_scale": 0.0456989247311828,
+      "sample_size": [
+        23,
+        35
+      ],
+      "destination_origin": [
+        0,
+        0
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        34
+      ]
+    },
+    {
+      "frame": 11,
+      "phase": "right_release",
+      "source": "batch_3.png",
+      "column": 2,
+      "source_cell": [
+        1024,
+        0,
+        512,
+        768
+      ],
+      "opaque_bounds": [
+        102,
+        31,
+        380,
+        740
+      ],
+      "crown_row": 31,
+      "waist_row": 403,
+      "head_center_x": 245.0,
+      "uniform_scale": 0.0456989247311828,
+      "sample_size": [
+        23,
+        35
+      ],
+      "destination_origin": [
+        1,
+        0
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        34
+      ]
+    },
+    {
+      "frame": 12,
+      "phase": "right_recovery",
+      "source": "batch_3.png",
+      "column": 3,
+      "source_cell": [
+        1536,
+        0,
+        512,
+        768
+      ],
+      "opaque_bounds": [
+        79,
+        31,
+        357,
+        732
+      ],
+      "crown_row": 31,
+      "waist_row": 403,
+      "head_center_x": 221.5,
+      "uniform_scale": 0.0456989247311828,
+      "sample_size": [
+        23,
+        35
+      ],
+      "destination_origin": [
+        2,
+        0
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        33
+      ]
+    },
+    {
+      "frame": 13,
+      "phase": "right_passing",
+      "source": "batch_4.png",
+      "column": 0,
+      "source_cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        142,
+        36,
+        400,
+        656
+      ],
+      "crown_row": 36,
+      "waist_row": 379,
+      "head_center_x": 277.0,
+      "uniform_scale": 0.04956268221574344,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        32
+      ]
+    },
+    {
+      "frame": 14,
+      "phase": "right_advance",
+      "source": "batch_4.png",
+      "column": 1,
+      "source_cell": [
+        543,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        148,
+        36,
+        405,
+        656
+      ],
+      "crown_row": 36,
+      "waist_row": 379,
+      "head_center_x": 277.5,
+      "uniform_scale": 0.04956268221574344,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        5,
+        1,
+        18,
+        32
+      ]
+    },
+    {
+      "frame": 15,
+      "phase": "right_reach",
+      "source": "batch_4.png",
+      "column": 2,
+      "source_cell": [
+        1086,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        151,
+        36,
+        406,
+        666
+      ],
+      "crown_row": 36,
+      "waist_row": 379,
+      "head_center_x": 277.0,
+      "uniform_scale": 0.04956268221574344,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        32
+      ]
+    },
+    {
+      "frame": 16,
+      "phase": "right_precontact",
+      "source": "batch_4.png",
+      "column": 3,
+      "source_cell": [
+        1629,
+        0,
+        543,
+        724
+      ],
+      "opaque_bounds": [
+        151,
+        36,
+        406,
+        679
+      ],
+      "crown_row": 36,
+      "waist_row": 379,
+      "head_center_x": 277.0,
+      "uniform_scale": 0.04956268221574344,
+      "sample_size": [
+        27,
+        36
+      ],
+      "destination_origin": [
+        -2,
+        -1
+      ],
+      "occupied_bounds": [
+        6,
+        1,
+        18,
+        33
+      ]
+    }
+  ],
+  "exports": {
+    "assets/characters/iselin/native_walk_front/frame_01.png": "8dbcf7d0bb4b13e8a88d082b7b6ea5e15aeec4abe6fd6c3e5f931f88ab456807",
+    "assets/characters/iselin/native_walk_front/frame_02.png": "64a5e0ce3cc2442bfe98896d7166f0aaa58a7b6f7bbee0ae1d339c453679efca",
+    "assets/characters/iselin/native_walk_front/frame_03.png": "54cfb600991a09e78064e641985fe8b2fa28cea886bcb3a5e5b2f47e3cf0fd95",
+    "assets/characters/iselin/native_walk_front/frame_04.png": "7b749f0e6bd8cc5dd92c1933408ad45798d053d099cebd25b72e29bd779dc293",
+    "assets/characters/iselin/native_walk_front/frame_05.png": "5a9178c9590992fb6b71bd6288d24073ec0f0856bc6b22a94701a55e67e5d9ad",
+    "assets/characters/iselin/native_walk_front/frame_06.png": "dc8304ff02bd534917c24f82ea92159ea0e6ee538c772c526a4d7396514a12cf",
+    "assets/characters/iselin/native_walk_front/frame_07.png": "6093b31ceef6ff64249b7bf6d20e4c93a879fdbb096c542db56a94828647301d",
+    "assets/characters/iselin/native_walk_front/frame_08.png": "c37b8fe7cfc6dee9bf1d9e302b1d1072fd1babb2f19342c57b4d4562b966643d",
+    "assets/characters/iselin/native_walk_front/frame_09.png": "f850469f1db746deed4f6859bf2910480c22020cd01cc53603d1f6925a360ba4",
+    "assets/characters/iselin/native_walk_front/frame_10.png": "47155e93a66fcea5488b8e5340cd7c54b918947afa9df5cbc2616b16a347f2a2",
+    "assets/characters/iselin/native_walk_front/frame_11.png": "6bb3a85741a87b627b36bb81acbab630148bd8e4a069353b95b4edeed23d9af4",
+    "assets/characters/iselin/native_walk_front/frame_12.png": "1d3ab69d666b833c3744d15ab3752358dd0055c906e240dd1bf6fa25f78b7d72",
+    "assets/characters/iselin/native_walk_front/frame_13.png": "38e2918bf99f1132c0f03a6dd83f608e64d5986660c9244405c9199df6ed06da",
+    "assets/characters/iselin/native_walk_front/frame_14.png": "9cbfeb6616e2ad1f9f1bd97d8d80f5db3da0c5e7c09b3d207e9145ac5436f0fd",
+    "assets/characters/iselin/native_walk_front/frame_15.png": "2acf0a4bf27575c774d0eef9bc9e42727087033d4c13acbf2c7bdd37f03c5b05",
+    "assets/characters/iselin/native_walk_front/frame_16.png": "76d8862e0fd9f67c9325eff7280ce319b24bcf6fac1ed7cc2c023a330b5709d4",
+    "assets/characters/iselin/native_walk_front/spritesheet.png": "7f94eda88d40e0e4e68e060e27d22285bfb30b9c998537a204a952b7616723f9",
+    "assets/characters/iselin/native_walk_front/review_spritesheet.png": "799dfbe3b1a9a22106bb8db40b3adfeff400e745d5a95b7c915d90526a43746f",
+    "assets/characters/iselin/native_walk_front/animation.json": "8655c6c3980e2662476e3985abc8521f47de279d7c3f12367c500c37cec1415a",
+    "assets/characters/iselin/native_walk_front/review_actor.json": "fef2eaefcdbb042f484f106dfc4bee1f053079f315f9bd12f1514d783fcbbd08",
+    "docs/reviews/iselin_native_front_walk/numbered_frames.png": "4763d96ebc715a712d50417b445e1a45c8c9a9a916c01a1903bccc936447692c"
+  },
+  "status": "awaiting user review"
+}
