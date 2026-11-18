@@ -1,0 +1,818 @@
+{
+  "version": 1,
+  "character": "shopkeeper_04",
+  "animation": "walk.right",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/shopkeeper_04/walk_right/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/shopkeeper_04/walk_right/authored.png": "03cd5dd55304642373a2b5ef1925822da989bbc7a7358fa70301b2a78751dcde",
+    "assets/characters/npc_roster_hd/shopkeeper_04/idle_right.png": "cd49daf4fe4a4e88a00a179b816ea2f3c5cf0df82e7c33acf2192cc955d0d083"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left contact",
+      "support_foot": "left",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 1,
+      "crown": [
+        18,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 18,
+      "waist_reference_y": 26,
+      "hip_y": 33,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        18,
+        67
+      ],
+      "right_visible_toe": [
+        18,
+        67
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        38,
+        69
+      ],
+      "left_visible_toe": [
+        38,
+        69
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        20,
+        25,
+        24,
+        29
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 34,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 26,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        38,
+        69
+      ],
+      "right_sole": [
+        18,
+        67
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          38,
+          69
+        ],
+        "right_toe": [
+          18,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left down",
+      "support_foot": "left",
+      "crown_y": 3,
+      "near_anatomical_side": "right",
+      "frame": 2,
+      "crown": [
+        18,
+        3
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 19,
+      "waist_reference_y": 27,
+      "hip_y": 34,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        21,
+        63
+      ],
+      "right_visible_toe": [
+        21,
+        63
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        34,
+        67
+      ],
+      "left_visible_toe": [
+        34,
+        67
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        20,
+        27,
+        22,
+        30
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 37,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 16,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        34,
+        67
+      ],
+      "right_sole": [
+        21,
+        63
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": [
+          34,
+          67
+        ],
+        "right_toe": [
+          21,
+          63
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right passing",
+      "support_foot": "left",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 3,
+      "crown": [
+        18,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 18,
+      "waist_reference_y": 26,
+      "hip_y": 33,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        29,
+        65
+      ],
+      "right_visible_toe": [
+        29,
+        65
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        29,
+        67
+      ],
+      "left_visible_toe": [
+        29,
+        67
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        20,
+        25,
+        29,
+        29
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 39,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 0,
+      "far_hand_occlusion": "naturally behind torso/near arm; opposite chain visible",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        29,
+        67
+      ],
+      "right_sole": [
+        29,
+        65
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          29,
+          67
+        ],
+        "right_toe": [
+          29,
+          65
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right recovery",
+      "support_foot": "left",
+      "crown_y": 1,
+      "near_anatomical_side": "right",
+      "frame": 4,
+      "crown": [
+        18,
+        1
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 17,
+      "waist_reference_y": 25,
+      "hip_y": 32,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        34,
+        67
+      ],
+      "right_visible_toe": [
+        34,
+        67
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        24,
+        67
+      ],
+      "left_visible_toe": [
+        24,
+        67
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        24,
+        24,
+        29,
+        28
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 35,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 21,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        24,
+        67
+      ],
+      "right_sole": [
+        34,
+        67
+      ],
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": [
+          24,
+          67
+        ],
+        "right_toe": [
+          34,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right contact",
+      "support_foot": "right",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 5,
+      "crown": [
+        18,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 18,
+      "waist_reference_y": 26,
+      "hip_y": 33,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        38,
+        69
+      ],
+      "right_visible_toe": [
+        38,
+        69
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        19,
+        67
+      ],
+      "left_visible_toe": [
+        19,
+        67
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        24,
+        25,
+        29,
+        29
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 42,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 35,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        19,
+        67
+      ],
+      "right_sole": [
+        38,
+        69
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          19,
+          67
+        ],
+        "right_toe": [
+          38,
+          69
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right down",
+      "support_foot": "right",
+      "crown_y": 3,
+      "near_anatomical_side": "right",
+      "frame": 6,
+      "crown": [
+        18,
+        3
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 19,
+      "waist_reference_y": 27,
+      "hip_y": 34,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        33,
+        67
+      ],
+      "right_visible_toe": [
+        33,
+        67
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        22,
+        63
+      ],
+      "left_visible_toe": [
+        22,
+        63
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        24,
+        26,
+        29,
+        30
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 35,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 15,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        22,
+        63
+      ],
+      "right_sole": [
+        33,
+        67
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": null,
+        "left_toe": [
+          22,
+          63
+        ],
+        "right_toe": [
+          33,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left passing",
+      "support_foot": "right",
+      "crown_y": 2,
+      "near_anatomical_side": "right",
+      "frame": 7,
+      "crown": [
+        18,
+        2
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 18,
+      "waist_reference_y": 26,
+      "hip_y": 33,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        27,
+        67
+      ],
+      "right_visible_toe": [
+        27,
+        67
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        30,
+        65
+      ],
+      "left_visible_toe": [
+        30,
+        65
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        27,
+        25,
+        29,
+        29
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 39,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 0,
+      "far_hand_occlusion": "naturally behind torso/near arm; opposite chain visible",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        30,
+        65
+      ],
+      "right_sole": [
+        27,
+        67
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": null,
+        "left_toe": [
+          30,
+          65
+        ],
+        "right_toe": [
+          27,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left recovery",
+      "support_foot": "right",
+      "crown_y": 1,
+      "near_anatomical_side": "right",
+      "frame": 8,
+      "crown": [
+        18,
+        1
+      ],
+      "ground_reference": [
+        24,
+        69
+      ],
+      "shoulder_y": 17,
+      "waist_reference_y": 25,
+      "hip_y": 32,
+      "waist_note": "Own outfit has no generic brown belt; narrow tape/button/blue vest waist panel is reference",
+      "right_authored_toe": [
+        22,
+        67
+      ],
+      "right_visible_toe": [
+        22,
+        67
+      ],
+      "right_toe_visibility": "visible exact anterior boot contour",
+      "left_authored_toe": [
+        35,
+        67
+      ],
+      "left_visible_toe": [
+        35,
+        67
+      ],
+      "left_toe_visibility": "visible exact anterior boot contour",
+      "measured_waist_panel_bbox": [
+        20,
+        25,
+        22,
+        28
+      ],
+      "waist_visibility": "visible vest waist material",
+      "near_visible_hand_pixels": 45,
+      "near_hand_occlusion": "visible empty hand/forearm",
+      "far_visible_hand_pixels": 28,
+      "far_hand_occlusion": "visible empty hand/forearm",
+      "hair_note": "Own directional original ponytail mask behind complete body/arm; no flipped finished hairstyle",
+      "left_sole": [
+        35,
+        67
+      ],
+      "right_sole": [
+        22,
+        67
+      ],
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          18,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": null,
+        "left_toe": [
+          35,
+          67
+        ],
+        "right_toe": [
+          22,
+          67
+        ],
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
