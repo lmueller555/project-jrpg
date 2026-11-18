@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/young_woman_03/walk_right/authored.png",
+  "source_sha256": "188e19d36dd9814abd1da4c6030923bdd38e774dac6795318c2faf7a2cb1d293",
+  "reference": "assets/characters/npc_roster_hd/young_woman_03/idle_right.png",
+  "reference_sha256": "003b08d965336fa8d5e7d02562a96945873efb178ae2d609b281c30c964b7bb0",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "left contact",
+    "left down",
+    "right passing",
+    "right recovery",
+    "right contact",
+    "right down",
+    "left passing",
+    "left recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
