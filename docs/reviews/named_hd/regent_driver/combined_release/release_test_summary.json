@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "4309466e552e52dcceabfbee26c1c25e5c979c2b",
+  "tomas_inputs_unchanged_after_validation": true,
+  "tomas_integration_tests": {
+    "passed": 6
+  },
+  "serene_royal_gate_regent_actions_tests": {
+    "passed": 22
+  },
+  "production_game_draw_views": 17,
+  "continue_after_report": true,
+  "continue_at_arrival": true,
+  "native_scene_walking_frames_each": 24,
+  "walking_frame_ms": 50,
+  "survivor_alarm_captured": true,
+  "sanctuary_page_read_attention_resume": true,
+  "page_pause_freeze": true,
+  "adapter_preservation": "Removing only added royal import and _image fallback reconstructs pkg-tomas/regent_actions.py byte-for-byte. npc_routines.py equals pkg-tomas exactly, preserving #523 and Serene.",
+  "gardener_runtime_modified": false,
+  "publication": "none"
+}
