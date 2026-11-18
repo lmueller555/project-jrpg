@@ -587,6 +587,20 @@ another room. At the coast the pause made room for another stitch;
 here it lets a parent hear that a child is still listening. The two
 uses can coexist without making the song an emblem of either region.
 
+## Marris Coast: finish it how you like
+
+At one [Marris](MEROVAR.md#marris-coast) market, sellers serve cooked
+fish with small dishes of salt and garden herbs on the counter. The
+buyer does the last bit of seasoning. Children watch how their
+household does it, then change it as soon as they get a plate of their own.
+
+A warehouse worker asks for an herb by the name she uses at home. The
+seller points to the wrong bowl. She takes a pinch, laughs, and says,
+“That’s my mother’s. Mine has more of this.” Her brother wants his
+plain. The custom works without requiring a shared name for every herb
+or agreement about what tastes right. It belongs to one market, not
+every Marris household.
+
 ## Marris Coast and Elden Vale: Mira asks where the hand goes
 
 In this voice test, a visiting apprentice describes a
@@ -639,6 +653,19 @@ clothes but doesn’t tell them how to show care. This is a domestic
 proposal for one inland community, not a custom of the whole kingdom
 or a claim about the Rimeward Shores. The [actual craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed the use of a concrete object to show the relationship.
+
+## Northern terms: which Crown?
+
+When both already-established meanings occur together, use **the
+queen’s Crown** for the authority of [Iselin’s unnamed northern kingdom](../../narrative/game_01/characters/ISELIN.md#northern-home-and-the-journey)
+and **the Nivren Crown** for the [circumpolar region](../POLAR_REGIONS.md).
+Shorten only when the referent stays clear.
+
+A clerk reads “a report from the Crown” and expects something from the
+queen’s officers. A colleague explains that it is a traveller’s account
+of northern sea ice. The clerk asks them to write “Nivren Crown” in
+full. This is an editorial and dialogue test, not an assumption about
+the traveller’s allegiance, a new jurisdiction, or a required encounter.
 
 ## Elden Vale: naming places without inventing their history
 
@@ -728,12 +755,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Explore one way a Marris household prepares or shares ordinary food
-   beyond the welcome-home meal. Let it show a destination’s daily life,
-   not the supposed character of everyone who lives there.
-2. Help writers keep the geographic Nivren Crown distinct from the
-   queen’s office. Use one plausible circumstance where a speaker
-   would clarify which they mean, without inventing an allegiance.
+1. Show how a young person builds an imperfect picture of another
+   Merovar region from a traveller or a familiar object. Distinguish
+   what they imagine from what the atlas establishes.
+2. Audit material culture for gaps beyond costumes, meals and trade.
+   Develop one useful object or making practice at a time rather
+   than assigning every settlement an emblem.
 
 ## Map implications for a later review
 
