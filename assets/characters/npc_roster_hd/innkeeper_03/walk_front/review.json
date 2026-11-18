@@ -1,0 +1,208 @@
+{
+  "manifest_sha256": "4b23349a51066e906529c8d5ed24de417266c77ad9ac662a694034f48a9df513",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        29,
+        66
+      ],
+      "right_toe": [
+        17,
+        69
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        29,
+        64
+      ],
+      "right_toe": [
+        18,
+        68
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        29,
+        64
+      ],
+      "right_toe": [
+        18,
+        66
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        38
+      ],
+      "left_toe": [
+        30,
+        67
+      ],
+      "right_toe": [
+        18,
+        65
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        29,
+        69
+      ],
+      "right_toe": [
+        19,
+        66
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        30,
+        68
+      ],
+      "right_toe": [
+        19,
+        64
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        30,
+        66
+      ],
+      "right_toe": [
+        19,
+        64
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        38
+      ],
+      "left_toe": [
+        30,
+        65
+      ],
+      "right_toe": [
+        19,
+        67
+      ],
+      "occlusion_note": "upper anatomical-left thigh behind apron/towel; lower ankles and toe landmarks visible"
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
