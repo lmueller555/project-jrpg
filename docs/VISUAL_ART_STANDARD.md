@@ -1204,6 +1204,16 @@ sections below describe original delivery inventories; the live integration
 registry owns current consumers. [Actual-game review evidence](reviews/eldenmere_town_hd/README.md)
 is separate from the older offline pack compositions.
 
+The replacement well/pail bank is separately staged under
+`assets/terrain/eldenmere/well_hd/`; its broad top opening, low masonry and rear
+canopy are new coherent drawings registered as a whole. It preserves the current
+physical support as a target while declaring its own draw, ground and mechanism
+anchors. The existing live rig remains active until the later mechanism, actor
+and integration deliveries. Static pack previews do not approve animation,
+hand contact or runtime layer ordering. The
+[staged well reference](TERRAIN_ART_STANDARD.md#staged-eldenmere-well-and-pail)
+owns its source/export commands and status.
+
 ### Integrated Sanctuary exterior
 
 The courtyard migration registers the Sanctuary facade at 216×216 logical units
