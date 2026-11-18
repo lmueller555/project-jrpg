@@ -1,0 +1,73 @@
+{
+  "id": "child_boy_01",
+  "display_name": "Round curls and short vest",
+  "age_group": "child",
+  "gender": "boy",
+  "role": "civilian",
+  "artwork_pixels_per_world_pixel": 2,
+  "logical_size": [
+    24,
+    36
+  ],
+  "foot_anchor": [
+    12,
+    34.5
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png",
+    "right": "idle_right.png"
+  },
+  "portrait": "portrait.png",
+  "design_notes": "Tobin: round curls and a short moss-grey vest over an ochre shirt. Native-authored 48x72 art, 52px occupied child height, crown y18 and soles y69; broad head, short neck and short child limbs. True rear and profile construction, consistent palette and hard alpha. Native 72x72 head-and-shoulders portrait on opaque dark green. New asset, not runtime integrated or user-reviewed.",
+  "version": 1,
+  "density": 2,
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "idles": {
+    "front": {
+      "file": "assets/characters/npc_roster_hd/child_boy_01/idle_front.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "left": {
+      "file": "assets/characters/npc_roster_hd/child_boy_01/idle_left.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "right": {
+      "file": "assets/characters/npc_roster_hd/child_boy_01/idle_right.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    },
+    "back": {
+      "file": "assets/characters/npc_roster_hd/child_boy_01/idle_back.png",
+      "artwork_pixels_per_world_pixel": 2,
+      "logical_size": [
+        24,
+        36
+      ]
+    }
+  },
+  "dialogue_portrait": {
+    "file": "assets/characters/npc_roster_hd/child_boy_01/portrait.png",
+    "logical_size": [
+      72,
+      72
+    ],
+    "expression": "neutral"
+  },
+  "status": "idle_bank"
+}
