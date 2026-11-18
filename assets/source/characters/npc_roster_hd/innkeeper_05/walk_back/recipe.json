@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/innkeeper_05/walk_back/authored.png",
+  "source_sha256": "1b9e3c011e565be616443dfc4d9e9cc7a5c0ca2244ff78e4d8cfdcc56187bd47",
+  "reference": "assets/characters/npc_roster_hd/innkeeper_05/idle_back.png",
+  "reference_sha256": "8395ee0c4807826dbc53a0bcbc0efe1dd5b866d9aa5166b92e1a831ab52f13e6",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "right_contact",
+    "right_down",
+    "left_passing",
+    "left_recovery",
+    "left_contact",
+    "left_down",
+    "right_passing",
+    "right_recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
