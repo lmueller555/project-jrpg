@@ -405,6 +405,38 @@ work. Native gameplay captures, route evidence and renderer timings are in
 `python tools/capture_eldenmere_hd.py docs/reviews/eldenmere_town_hd`; the tool
 uses temporary saves/settings only.
 
+### Staged Eldenmere well and pail
+
+The six-part well rebuild starts with the static bank at
+`assets/terrain/eldenmere/well_hd/manifest.json`, exported by
+`tools/build_eldenmere_well_pack.py` from retained new masters and authored
+geometry in `assets/source/terrain/eldenmere/well_hd/recipe.json`.
+It is **staged, not integrated, and awaiting user visual review**. The existing
+working well, gardener, source collision/navigation and town bindings remain
+unchanged. Merge status does not activate the bank or approve its appearance.
+
+The new 72×88 logical canvas contains native 144×176 artwork. Its canvas origin
+is distinct from its ground anchor; the source retains the existing 48×48 well
+support and declares loading/operator standing targets outside it. Explicit
+artwork-space polygons partition one uniformly registered structural master
+into masonry, visible water, timber supports, windlass and canopy. The contact
+shadow has a hard mask with declared whole-layer opacity. Shaped aperture,
+water and near-wall masks replace the former rectangular clipping assumption
+when the later mechanism is implemented.
+
+The separate 12×18 logical pail has seven neutral static fill levels. Fill changes
+stay inside the authored interior mask; wood, iron, handle and alpha remain
+fixed. Crank motion, rope/hook artwork, pail trajectories, gardener poses, sounds,
+player interactions and runtime activation belong to subsequent PRs. The rig
+targets require motion/pose review before integration.
+
+Run `python tools/build_eldenmere_well_pack.py` to export, and add `--check` to
+verify without writing. Focused contracts are in
+`tests/test_eldenmere_well_pack.py`.
+[The asset review](reviews/eldenmere_well_pack/README.md) compares the proposal
+with actual town scenery at native size; its substituted well is an explicitly
+labelled offline composite, not live gameplay or an occlusion/movement claim.
+
 ### Eldenmere settlement framework
 
 The settlement framework owns street, parcel and public-space composition contracts.

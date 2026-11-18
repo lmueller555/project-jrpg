@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "id": "eldenmere.well_hd",
+  "status": "staged",
+  "design_review_status": "pending_user_visual_review",
+  "runtime_integration_status": "not_integrated",
+  "delivery": "well_rework_pr1_asset_pack",
+  "activation": {
+    "enabled": false,
+    "live_town_binding": false,
+    "mechanism_animation": false,
+    "gardener_pose_replacement": false,
+    "player_interaction": false
+  },
+  "artwork_pixels_per_world_pixel": 2,
+  "coordinate_spaces": {
+    "logical": "All coordinates ending in _logical and mechanism anchors use logical world units. Local well coordinates are relative to world_position_logical. Standing stations may intentionally lie outside the artwork canvas.",
+    "artwork": "All authored mask vertices, crop boxes, normalization sizes and offsets use artwork pixels. Exported masks share their owning artwork canvas.",
+    "display": "Review scenes use the established 480x320 logical coverage at 960x640 native presentation."
+  },
+  "source_normalization": [
+    {
+      "id": "well",
+      "file": "well_master.png",
+      "sha256": "7e9050995eee41023588946957c19bba325057fc7887a50825c05a37e2633a0d",
+      "source_artwork_size": [
+        1199,
+        1312
+      ],
+      "crop_artwork": [
+        58,
+        96,
+        1138,
+        1209
+      ],
+      "resize_artwork": [
+        114,
+        117
+      ],
+      "offset_artwork": [
+        15,
+        55
+      ],
+      "canvas_artwork": [
+        144,
+        176
+      ],
+      "resampling": "nearest",
+      "normalization_policy": "One whole-master crop and uniform fit; no independent part stretching. Integer output dimensions retain nearest-pixel rounding."
+    },
+    {
+      "id": "pail",
+      "file": "pail_master.png",
+      "sha256": "6a003f4366ed69993f0629f65569991ca538c398fe6fb433809a9c36e41a8ebc",
+      "source_artwork_size": [
+        1261,
+        1247
+      ],
+      "crop_artwork": [
+        230,
+        111,
+        1031,
+        1168
+      ],
+      "resize_artwork": [
+        20,
+        26
+      ],
+      "offset_artwork": [
+        2,
+        4
+      ],
+      "canvas_artwork": [
+        24,
+        36
+      ],
+      "resampling": "nearest",
+      "normalization_policy": "One whole-master crop and uniform fit; no independent part stretching. Integer output dimensions retain nearest-pixel rounding."
+    }
+  ],
+  "alpha": {
+    "export_values": [
+      0,
+      255
+    ],
+    "threshold": 128,
+    "rgb_policy": "Preserve retained master RGB after nearest-neighbor normalization; alpha is hardened once."
+  },
+  "palette": {
+    "structure_policy": "Retain the new source master material colors; do not recolor or independently stretch structural layers.",
+    "water_source": "assets/terrain/eldenmere/cottage/palette.json",
+    "water_material": "materials.water",
+    "water_colors": {
+      "deep": "#4d7582",
+      "base": "#5c8b96",
+      "flow": "#6b9aa2",
+      "reflection": "#8ab3b0",
+      "glint": "#a1c5bc",
+      "shallow": "#719a91"
+    },
+    "contour_policy": "Retain thin dark source contours, hard transparency and unclipped silhouette bounds."
+  },
+  "well": {
+    "logical_size": [
+      72,
+      88
+    ],
+    "artwork_size": [
+      144,
+      176
+    ],
+    "world_position_logical": [
+      492,
+      800
+    ],
+    "draw_anchor_logical": [
+      0,
+      0
+    ],
+    "ground_anchor_logical": [
+      36,
+      64
+    ],
+    "ground_anchor_world_logical": [
+      528,
+      864
+    ],
+    "ground_rect_logical": [
+      12,
+      40,
+      48,
+      48
+    ],
+    "ground_rect_world_logical": [
+      504,
+      840,
+      48,
+      48
+    ],
+    "ground_source": {
+      "file": "assets/maps/eldenmere/well_square/layout.json",
+      "field": "well_ground_rect",
+      "retained_exactly": true
+    },
+    "projection": {
+      "kind": "orthogonal_top_down",
+      "reference": "docs/VISUAL_ART_STANDARD.md#orthogonal-exploration-architecture",
+      "ground_axes": "horizontal_and_vertical",
+      "camera_angle_degrees": null,
+      "policy": "Match actual town paving and adjacent roofs; no perspective convergence, frontal gable retrofit, or collision inferred from artwork alpha."
+    },
+    "masks": [
+      {
+        "id": "aperture",
+        "file": "masks/aperture.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            47,
+            119
+          ],
+          [
+            56,
+            115
+          ],
+          [
+            66,
+            113
+          ],
+          [
+            77,
+            113
+          ],
+          [
+            90,
+            116
+          ],
+          [
+            98,
+            121
+          ],
+          [
+            102,
+            128
+          ],
+          [
+            101,
+            137
+          ],
+          [
+            96,
+            143
+          ],
+          [
+            87,
+            148
+          ],
+          [
+            72,
+            151
+          ],
+          [
+            58,
+            148
+          ],
+          [
+            47,
+            142
+          ],
+          [
+            43,
+            134
+          ],
+          [
+            43,
+            127
+          ]
+        ]
+      },
+      {
+        "id": "water",
+        "file": "masks/water.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            48,
+            132
+          ],
+          [
+            53,
+            128
+          ],
+          [
+            62,
+            126
+          ],
+          [
+            69,
+            125
+          ],
+          [
+            78,
+            126
+          ],
+          [
+            86,
+            128
+          ],
+          [
+            94,
+            132
+          ],
+          [
+            95,
+            135
+          ],
+          [
+            93,
+            138
+          ],
+          [
+            91,
+            140
+          ],
+          [
+            90,
+            142
+          ],
+          [
+            87,
+            144
+          ],
+          [
+            84,
+            146
+          ],
+          [
+            80,
+            147
+          ],
+          [
+            75,
+            148
+          ],
+          [
+            68,
+            148
+          ],
+          [
+            63,
+            147
+          ],
+          [
+            56,
+            145
+          ],
+          [
+            50,
+            141
+          ],
+          [
+            47,
+            136
+          ]
+        ],
+        "intersection": [
+          "aperture"
+        ]
+      },
+      {
+        "id": "near_wall",
+        "file": "masks/near_wall.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            31,
+            135
+          ],
+          [
+            36,
+            141
+          ],
+          [
+            42,
+            145
+          ],
+          [
+            52,
+            149
+          ],
+          [
+            64,
+            151
+          ],
+          [
+            77,
+            152
+          ],
+          [
+            90,
+            149
+          ],
+          [
+            101,
+            144
+          ],
+          [
+            110,
+            136
+          ],
+          [
+            119,
+            136
+          ],
+          [
+            119,
+            174
+          ],
+          [
+            24,
+            174
+          ],
+          [
+            24,
+            135
+          ]
+        ]
+      },
+      {
+        "id": "canopy",
+        "file": "masks/canopy.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            14,
+            53
+          ],
+          [
+            130,
+            53
+          ],
+          [
+            130,
+            92
+          ],
+          [
+            117,
+            92
+          ],
+          [
+            117,
+            95
+          ],
+          [
+            104,
+            95
+          ],
+          [
+            104,
+            92
+          ],
+          [
+            42,
+            92
+          ],
+          [
+            42,
+            94
+          ],
+          [
+            27,
+            94
+          ],
+          [
+            25,
+            92
+          ],
+          [
+            14,
+            92
+          ]
+        ]
+      },
+      {
+        "id": "supports",
+        "file": "masks/supports.png",
+        "space": "artwork",
+        "shape": "multipolygon",
+        "polygons": [
+          [
+            [
+              28,
+              88
+            ],
+            [
+              41,
+              88
+            ],
+            [
+              41,
+              130
+            ],
+            [
+              28,
+              130
+            ]
+          ],
+          [
+            [
+              104,
+              88
+            ],
+            [
+              116,
+              88
+            ],
+            [
+              116,
+              131
+            ],
+            [
+              104,
+              131
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "windlass",
+        "file": "masks/windlass.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            39,
+            93
+          ],
+          [
+            124,
+            93
+          ],
+          [
+            124,
+            106
+          ],
+          [
+            39,
+            106
+          ]
+        ]
+      },
+      {
+        "id": "contact_shadow",
+        "file": "masks/contact_shadow.png",
+        "space": "artwork",
+        "shape": "ellipse",
+        "box": [
+          25,
+          152,
+          119,
+          174
+        ]
+      }
+    ],
+    "layer_partition": {
+      "source": "well",
+      "priority": [
+        "canopy",
+        "supports",
+        "windlass",
+        "water",
+        "stone_near",
+        "stone_far"
+      ],
+      "mask_by_layer": {
+        "canopy": "canopy",
+        "supports": "supports",
+        "windlass": "windlass",
+        "water": "water",
+        "stone_near": "near_wall",
+        "stone_far": "remaining_source_alpha"
+      },
+      "policy": "Partition normalized source pixels exclusively in this priority order; all structural pixels recombine exactly. The contact shadow is separate derived artwork."
+    },
+    "layers": [
+      {
+        "id": "contact_shadow",
+        "file": "layers/contact_shadow.png",
+        "role": "flat_ground_contact",
+        "depth_baseline_logical": 88,
+        "opacity": 0.22,
+        "color": "#172622"
+      },
+      {
+        "id": "stone_far",
+        "file": "layers/stone_far.png",
+        "role": "far_masonry_and_inner_shaft",
+        "depth_baseline_logical": 64,
+        "opacity": 1.0
+      },
+      {
+        "id": "water",
+        "file": "layers/water.png",
+        "role": "recessed_water_surface",
+        "depth_baseline_logical": 64,
+        "opacity": 1.0
+      },
+      {
+        "id": "supports",
+        "file": "layers/supports.png",
+        "role": "grounded_timber_supports",
+        "depth_baseline_logical": 66,
+        "opacity": 1.0
+      },
+      {
+        "id": "windlass",
+        "file": "layers/windlass.png",
+        "role": "static_spindle_and_crank_reference",
+        "depth_baseline_logical": 66,
+        "opacity": 1.0
+      },
+      {
+        "id": "stone_near",
+        "file": "layers/stone_near.png",
+        "role": "near_masonry_occluder",
+        "depth_baseline_logical": 88,
+        "opacity": 1.0
+      },
+      {
+        "id": "canopy",
+        "file": "layers/canopy.png",
+        "role": "supported_overhead_slate_canopy",
+        "depth_baseline_logical": 66,
+        "opacity": 1.0
+      }
+    ],
+    "anchors_logical": {
+      "shaft_center": [
+        36,
+        66
+      ],
+      "crank_pivot": [
+        61,
+        51
+      ],
+      "rope_exit": [
+        36,
+        53
+      ],
+      "water_contact": [
+        36,
+        69
+      ],
+      "loading_grip": [
+        36,
+        74
+      ],
+      "aperture_entry": [
+        36,
+        60
+      ]
+    },
+    "stations": [
+      {
+        "id": "loading",
+        "feet_world_logical": [
+          528,
+          900
+        ],
+        "feet_local_logical": [
+          36,
+          100
+        ],
+        "facing": "back",
+        "contact_anchor": "loading_grip",
+        "gardener_probe_logical": [
+          12,
+          8
+        ],
+        "player_probe_logical": [
+          24,
+          12
+        ]
+      },
+      {
+        "id": "operator",
+        "feet_world_logical": [
+          566,
+          874
+        ],
+        "feet_local_logical": [
+          74,
+          74
+        ],
+        "facing": "left",
+        "contact_anchor": "crank_pivot",
+        "gardener_probe_logical": [
+          12,
+          8
+        ],
+        "player_probe_logical": [
+          24,
+          12
+        ]
+      }
+    ],
+    "mechanism_reference": {
+      "status": "rig_targets_provisional_until_PR2_PR3_review",
+      "crank_orbit": {
+        "center_logical": [
+          61,
+          51
+        ],
+        "radii_logical": [
+          4,
+          3
+        ],
+        "future_phase_samples": 16,
+        "rendered_animation_frames": 0
+      },
+      "loading_policy": "Attach at the reachable foreground loading ledge. Future operation continuously lifts and guides the pail into the aperture before lowering; no high parking teleport.",
+      "maximum_preferred_handoff_snap_logical": 4,
+      "motion_durations_authored": false,
+      "limits": "Static art and anchor targets only. Pail trajectories, moving-part separation, per-frame limb contact, sound cues and operation timing require PR2/PR3 review."
+    }
+  },
+  "pail": {
+    "logical_size": [
+      12,
+      18
+    ],
+    "artwork_size": [
+      24,
+      36
+    ],
+    "grip_anchor_logical": [
+      6,
+      2.5
+    ],
+    "support_anchor_logical": [
+      6,
+      15
+    ],
+    "masks": [
+      {
+        "id": "mouth",
+        "file": "masks/mouth.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            8,
+            13
+          ],
+          [
+            16,
+            13
+          ],
+          [
+            18,
+            15
+          ],
+          [
+            18,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            6,
+            15
+          ]
+        ],
+        "clip_to_source_alpha": true
+      },
+      {
+        "id": "interior",
+        "file": "masks/interior.png",
+        "space": "artwork",
+        "shape": "polygon",
+        "points": [
+          [
+            8,
+            13
+          ],
+          [
+            16,
+            13
+          ],
+          [
+            18,
+            15
+          ],
+          [
+            18,
+            18
+          ],
+          [
+            15,
+            20
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            6,
+            18
+          ],
+          [
+            6,
+            15
+          ]
+        ],
+        "clip_to_source_alpha": true,
+        "intersection": [
+          "mouth"
+        ]
+      },
+      {
+        "id": "handle",
+        "file": "masks/handle.png",
+        "space": "artwork",
+        "shape": "rectangles",
+        "boxes": [
+          [
+            0,
+            0,
+            24,
+            11
+          ],
+          [
+            0,
+            0,
+            7,
+            19
+          ],
+          [
+            18,
+            0,
+            24,
+            19
+          ]
+        ],
+        "clip_to_source_alpha": true,
+        "subtract": [
+          "mouth"
+        ]
+      },
+      {
+        "id": "body",
+        "file": "masks/body.png",
+        "space": "artwork",
+        "shape": "source_alpha_remainder",
+        "subtract": [
+          "mouth",
+          "handle"
+        ]
+      }
+    ],
+    "capacity_units": 6,
+    "variants": [
+      {
+        "units": 0,
+        "file": "pail/fill_0.png"
+      },
+      {
+        "units": 1,
+        "file": "pail/fill_1.png"
+      },
+      {
+        "units": 2,
+        "file": "pail/fill_2.png"
+      },
+      {
+        "units": 3,
+        "file": "pail/fill_3.png"
+      },
+      {
+        "units": 4,
+        "file": "pail/fill_4.png"
+      },
+      {
+        "units": 5,
+        "file": "pail/fill_5.png"
+      },
+      {
+        "units": 6,
+        "file": "pail/fill_6.png"
+      }
+    ],
+    "fill_policy": {
+      "change_mask": "interior",
+      "preserve_exterior_pixels_exactly": true,
+      "water_material": "palette.water_colors",
+      "neutral_orientation_only": true
+    },
+    "future_consumers": [
+      "well_attachment",
+      "shaft_lowering_and_raising",
+      "gardener_carrying",
+      "gardener_pouring"
+    ],
+    "limits": "PR1 exports neutral static fill levels. No tilted carrying/pouring poses or live gardener bindings are introduced."
+  },
+  "review": {
+    "construction_reference_only": true,
+    "native_appearance_comparison_required": true,
+    "live_gameplay_integration_claimed": false,
+    "legacy_runtime_preservation_required": true,
+    "notes": "A merged staged asset pack does not grant visual approval or activate the new well. Interaction feet, limb reach and runtime depth must be validated when the replacement is integrated."
+  },
+  "authoring": {
+    "method": "New image_gen transparent masters, retained unchanged; deterministic whole-image native normalization and authored layer/mask extraction.",
+    "style_brief": "Orthogonal top-down village well with visible broad upper opening, low stone face, rear slate canopy, oak windlass supports, restrained moss and thin dark contours. Separate open oak/iron pail with an upright handle.",
+    "comparison_references": [
+      "docs/VISUAL_ART_STANDARD.md#orthogonal-exploration-architecture",
+      "docs/reviews/eldenmere_architecture_contracts/projection_reference.png",
+      "docs/reviews/eldenmere_commons/commons_well_closeup.png"
+    ],
+    "review_state": "Static pack delivered; user visual approval and runtime activation remain separate."
+  }
+}
