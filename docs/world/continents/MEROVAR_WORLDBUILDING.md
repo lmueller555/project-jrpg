@@ -402,6 +402,20 @@ wouldn’t volunteer to sing, but next time the pot comes up he laughs
 without checking who else did. This tests a changing social judgment,
 not Mira’s practical kind of curiosity, and requires no visit or scene.
 
+## Greyfold Uplands: the same peg, a different obligation
+
+In a proposed pair of neighbouring [Greyfold](MEROVAR.md#greyfold-uplands)
+settlements, people recognize the same forked peg used to dry wet
+clothes. Carriers have passed through both places for generations.
+Children can learn to carve the peg in either; nobody knows for sure
+where the shape started.
+
+At one shared shelter, a visitor replaces a broken peg before leaving.
+At a paid inn in the other settlement, the keeper looks after the rack
+as part of the overnight service. Travellers know the equipment and
+still ask what is expected of them. A useful design can spread without
+spreading the same obligation. Neither practice is Greyfold-wide.
+
 ## Lower Leth: a fair weight after a flood
 
 At one weighing house, the keeper deducts the sack’s weight in front of
@@ -501,6 +515,20 @@ have made similar choices on their own or learned from another
 workshop. No date, direction, traveller, journey, or migration is
 decided. The object is a way to ask about contact, not to label
 the people who used either rack.
+
+## Lower Leth: which buildings are older?
+
+**Proposed clue:** The early pages of one Lower Leth rent book list
+repeated repairs to high-ground homes. Leases beside a landing appear
+later. A tenant remembers the uphill roofs needing replacement before
+her family’s lower shop entered the accounts.
+
+That could be evidence of expansion from the residential cluster down
+toward the landing. It could also mean the landlord simply acquired
+older landing properties later. The book records one owner’s holdings.
+Neither its omissions nor its first entry date a settlement. This tests
+an explanation of the [existing terrain](MEROVAR.md#lower-leth), not a
+mapped ruin, a founder or a new canon chronology.
 
 ## Rookfen and Marris: where a cargo changes hands
 
@@ -1033,12 +1061,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Identify one thing that could distinguish an older settled
-   neighbourhood from a later extension. Keep the evidence and its
-   limitations visible without adding a mapped site.
-2. Look for a shared practice or object that means different things
-   in two communities over time. Show why repeated contact needn’t
-   make either place a copy of the other.
+1. Clarify a few kinds of local authority without turning them into
+   one hierarchy. A northern office, a custodial covenant, and a
+   local arrangement do not confer the same powers.
+2. Pressure-test the southern town’s provisional names against the
+   approved road and the people who would use a town name or a yard
+   nickname. No final assignment follows from that check.
 
 ## Map implications for a later review
 
