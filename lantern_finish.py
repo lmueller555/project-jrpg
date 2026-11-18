@@ -1,4 +1,5 @@
 """Finish, carry and safely put away Liam's first lantern in the same afternoon."""
+import liam_native_art
 import json
 from pathlib import Path
 
@@ -39,8 +40,7 @@ class LanternFinish:
         self.points = json.loads((ART/'finish_layout.json').read_text())
         self.lines = json.loads((ART/'finish_scene.json').read_text())
         self.art = json.loads((ART/'finish_art.json').read_text())
-        self.pose_meta = json.loads((ROOT/self.art['poses']['liam']).read_text())
-        sheet = self.town.image(self.pose_meta['sheet'])
+        self.pose_meta,sheet=liam_native_art.story_sheet(self.town,'finish',self.art['poses']['liam'])
         self.actions = {k: [(sheet.subsurface(f['rect']).copy(), f['duration_ms']) for f in frames]
                         for k, frames in self.pose_meta['actions'].items()}
         self.carry = {d: {'idle': sheet.subsurface(spec['idle']['rect']).copy(),

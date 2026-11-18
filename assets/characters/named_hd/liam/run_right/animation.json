@@ -1,0 +1,65 @@
+{
+  "character": "liam",
+  "animation": "run.right",
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "loop": true,
+  "cycle_ms": 400,
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "duration_ms": 100,
+      "bounds": [
+        11,
+        18,
+        39,
+        69
+      ]
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 100,
+      "bounds": [
+        11,
+        16,
+        38,
+        66
+      ]
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 100,
+      "bounds": [
+        11,
+        18,
+        39,
+        69
+      ]
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 100,
+      "bounds": [
+        11,
+        16,
+        35,
+        66
+      ]
+    }
+  ]
+}
