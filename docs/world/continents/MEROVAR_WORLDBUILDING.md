@@ -486,6 +486,23 @@ chair and asks how they would like to be introduced. The connection
 grows through invitations and time spent together, not shared descent
 or an obligation other households must follow.
 
+## Redstone March: two ways to keep someone’s place
+
+The [atlas](MEROVAR.md#redstone-march) leaves room for both prosperous
+farming valleys and exposed settlements serving caravans or nearby
+quarries. In one proposed valley settlement, neighbouring households
+keep having supper at the same table. Talk picks up where it left off
+a week earlier, or a year. A new neighbour may need a while before
+anyone thinks to save them a seat.
+
+In one more exposed settlement, a repair-yard household keeps a meal
+open to people still waiting for work or departure. A regular leaves
+a place for a carrier who may not arrive. A newcomer brings a dish
+before anyone knows their family. Both groups hold friendships over
+time; one can rely more on seeing the same people, the other makes
+room for long absences. These are examples, not named destinations
+or rules about who is welcoming.
+
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
 A watcher sees an unfamiliar vessel approaching yesterday’s landing channel.
@@ -569,6 +586,22 @@ laundry. They stretch the answering note until a child joins from
 another room. At the coast the pause made room for another stitch;
 here it lets a parent hear that a child is still listening. The two
 uses can coexist without making the song an emblem of either region.
+
+## Marris Coast and Elden Vale: Mira asks where the hand goes
+
+In this voice test, a visiting apprentice describes a
+[Marris](MEROVAR.md#marris-coast) yard where a first repair has to be
+explained to someone outside the trade. [Mira](../../narrative/game_01/characters/MIRA.md)
+stops turning a little wheel. “Even if your supervisor has checked it?”
+The apprentice explains that his sister asked where a customer would
+put their fingers. He moved the handle.
+
+“Good,” Mira says. “Though I’d hate explaining something to Caelan
+while he was trying to make it jam.” She shifts the wheel toward him.
+“Here. Tell me where you’d put your hand. Before I tell you.”
+Mira doesn’t adopt the whole custom or talk about it in the abstract;
+she tries the part that could teach her something. No visit, task,
+or change to her backstory is committed.
 
 ## Northern kingdom: who gets the next loaded cart?
 
@@ -695,12 +728,12 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Contrast two settlement patterns already plausible in Redstone.
-   Focus on what neighbours know about one another rather than
-   making the landscape determine people’s behaviour.
-2. Give Mira one encounter with a local practice she didn’t grow up
-   with. Keep her history and voice intact and don’t bind the party
-   to another destination.
+1. Explore one way a Marris household prepares or shares ordinary food
+   beyond the welcome-home meal. Let it show a destination’s daily life,
+   not the supposed character of everyone who lives there.
+2. Help writers keep the geographic Nivren Crown distinct from the
+   queen’s office. Use one plausible circumstance where a speaker
+   would clarify which they mean, without inventing an allegiance.
 
 ## Map implications for a later review
 
