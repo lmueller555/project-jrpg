@@ -157,7 +157,11 @@ def build():
         registration=(SOURCE/'registration.json').relative_to(ROOT).as_posix(),
         native_scale=scale, animations=animations)
     (OUTPUT/'animation.json').write_text(json.dumps(metadata, indent=2)+'\n')
-    return metadata
+    if __package__:
+        from .build_mira_bolt_firing import build as build_firing
+    else:
+        from build_mira_bolt_firing import build as build_firing
+    return build_firing(metadata)
 
 
 if __name__ == '__main__':

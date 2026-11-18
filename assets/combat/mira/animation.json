@@ -28,18 +28,26 @@
         8,
         5
       ]
+    },
+    {
+      "path": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+      "sha256": "6d11cfa4db544e007277ba2ca6f46f6d61a56e3878d84906daf2370e3bd419ce",
+      "grid": [
+        4,
+        2
+      ]
     }
   ],
   "sheet": "spritesheet.png",
   "sheet_grid": [
     8,
-    11
+    12
   ],
   "source_grid": [
     6,
     7
   ],
-  "authored_frames": 82,
+  "authored_frames": 90,
   "extraction": "largest connected authored alpha; binary alpha; fixed nearest-neighbor native scale; shared opaque-only 96-color palette; explicit anatomical floor",
   "registration": "assets/source/combat/mira_arm_rig/registration.json",
   "native_scale": 0.225,
@@ -400,69 +408,243 @@
             15
           ],
           "file": "attack_03.png",
-          "duration_ms": 100
-        },
-        {
-          "source_cell": 7,
-          "source_rect": [
-            194,
-            193,
-            193,
-            194
-          ],
-          "source_foot": [
-            111,
-            186
-          ],
-          "anchors": {
-            "floor": [
-              32,
-              54
-            ],
-            "muzzle": [
-              14,
-              27
-            ],
-            "controller": [
-              22,
-              27
-            ],
-            "projector": [
-              14,
-              27
-            ],
-            "tool": [
-              14,
-              27
-            ]
-          },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            220,
-            204,
-            372,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            13,
-            15
-          ],
-          "file": "attack_04.png",
           "duration_ms": 60
         },
         {
-          "source_cell": 8,
+          "file": "bolt_firing_01.png",
+          "duration_ms": 40,
+          "phase": "compression",
+          "source_cell": 82,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            387,
-            193,
-            193,
-            194
+            0,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            0,
+            0,
+            448,
+            448
           ],
           "source_foot": [
-            108,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              14,
+              28
+            ],
+            "controller": [
+              21,
+              28
+            ],
+            "projector": [
+              14,
+              28
+            ],
+            "tool": [
+              14,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_02.png",
+          "duration_ms": 40,
+          "phase": "snap",
+          "source_cell": 83,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            448,
+            0,
+            896,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              14,
+              28
+            ],
+            "controller": [
+              21,
+              28
+            ],
+            "projector": [
+              14,
+              28
+            ],
+            "tool": [
+              14,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_03.png",
+          "duration_ms": 50,
+          "phase": "recoil",
+          "source_cell": 84,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            896,
+            0,
+            1344,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              15,
+              28
+            ],
+            "controller": [
+              22,
+              28
+            ],
+            "projector": [
+              15,
+              28
+            ],
+            "tool": [
+              15,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_04.png",
+          "duration_ms": 60,
+          "phase": "recoil_peak",
+          "source_cell": 85,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            1344,
+            0,
+            1774,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              28
+            ],
+            "controller": [
+              24,
+              28
+            ],
+            "projector": [
+              17,
+              28
+            ],
+            "tool": [
+              17,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_05.png",
+          "duration_ms": 70,
+          "phase": "settle",
+          "source_cell": 86,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            0,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            0,
+            448,
+            448,
+            887
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -474,7 +656,7 @@
               27
             ],
             "controller": [
-              25,
+              24,
               27
             ],
             "projector": [
@@ -486,33 +668,35 @@
               27
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            421,
-            204,
-            563,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            15,
-            15
-          ],
-          "file": "attack_05.png",
-          "duration_ms": 80
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 9,
+          "file": "bolt_firing_06.png",
+          "duration_ms": 80,
+          "phase": "followthrough",
+          "source_cell": 87,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            580,
-            193,
-            194,
-            194
+            448,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            448,
+            448,
+            896,
+            887
           ],
           "source_foot": [
-            101,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -520,49 +704,51 @@
               54
             ],
             "muzzle": [
-              18,
-              33
+              15,
+              28
             ],
             "controller": [
-              25,
-              32
+              22,
+              28
             ],
             "projector": [
-              18,
-              33
+              15,
+              28
             ],
             "tool": [
-              18,
-              33
+              15,
+              28
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            612,
-            205,
-            743,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_06.png",
-          "duration_ms": 100
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 10,
+          "file": "bolt_firing_07.png",
+          "duration_ms": 100,
+          "phase": "lower",
+          "source_cell": 88,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            774,
-            193,
-            194,
-            194
+            896,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            896,
+            448,
+            1344,
+            887
           ],
           "source_foot": [
-            96,
-            187
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -570,49 +756,51 @@
               54
             ],
             "muzzle": [
-              18,
-              38
+              15,
+              30
             ],
             "controller": [
-              26,
-              38
+              22,
+              30
             ],
             "projector": [
-              18,
-              38
+              15,
+              30
             ],
             "tool": [
-              18,
-              38
+              15,
+              30
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            801,
-            206,
-            931,
-            381
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_07.png",
-          "duration_ms": 140
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 11,
+          "file": "bolt_firing_08.png",
+          "duration_ms": 120,
+          "phase": "rest",
+          "source_cell": 89,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            968,
-            193,
-            193,
-            194
+            1344,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            1344,
+            448,
+            1774,
+            887
           ],
           "source_foot": [
-            92,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -620,41 +808,29 @@
               54
             ],
             "muzzle": [
-              18,
-              39
+              14,
+              35
             ],
             "controller": [
-              25,
-              38
+              21,
+              35
             ],
             "projector": [
-              18,
-              39
+              14,
+              35
             ],
             "tool": [
-              18,
-              39
+              14,
+              35
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            989,
-            206,
-            1121,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_08.png",
-          "duration_ms": 140
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         }
       ],
+      "release_ms": 280,
       "contact_ms": 400,
-      "release_ms": 280
+      "flash_duration_ms": 40,
+      "duration_ms": 800
     },
     "guard_enter": {
       "loop": false,
@@ -4378,69 +4554,243 @@
             15
           ],
           "file": "attack_03.png",
-          "duration_ms": 100
-        },
-        {
-          "source_cell": 7,
-          "source_rect": [
-            194,
-            193,
-            193,
-            194
-          ],
-          "source_foot": [
-            111,
-            186
-          ],
-          "anchors": {
-            "floor": [
-              32,
-              54
-            ],
-            "muzzle": [
-              14,
-              27
-            ],
-            "controller": [
-              22,
-              27
-            ],
-            "projector": [
-              14,
-              27
-            ],
-            "tool": [
-              14,
-              27
-            ]
-          },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            220,
-            204,
-            372,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            13,
-            15
-          ],
-          "file": "attack_04.png",
           "duration_ms": 60
         },
         {
-          "source_cell": 8,
+          "file": "bolt_firing_01.png",
+          "duration_ms": 40,
+          "phase": "compression",
+          "source_cell": 82,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            387,
-            193,
-            193,
-            194
+            0,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            0,
+            0,
+            448,
+            448
           ],
           "source_foot": [
-            108,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              14,
+              28
+            ],
+            "controller": [
+              21,
+              28
+            ],
+            "projector": [
+              14,
+              28
+            ],
+            "tool": [
+              14,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_02.png",
+          "duration_ms": 40,
+          "phase": "snap",
+          "source_cell": 83,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            448,
+            0,
+            896,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              14,
+              28
+            ],
+            "controller": [
+              21,
+              28
+            ],
+            "projector": [
+              14,
+              28
+            ],
+            "tool": [
+              14,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_03.png",
+          "duration_ms": 50,
+          "phase": "recoil",
+          "source_cell": 84,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            896,
+            0,
+            1344,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              15,
+              28
+            ],
+            "controller": [
+              22,
+              28
+            ],
+            "projector": [
+              15,
+              28
+            ],
+            "tool": [
+              15,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_04.png",
+          "duration_ms": 60,
+          "phase": "recoil_peak",
+          "source_cell": 85,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "source_bounds": [
+            1344,
+            0,
+            1774,
+            448
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
+          ],
+          "anchors": {
+            "floor": [
+              32,
+              54
+            ],
+            "muzzle": [
+              17,
+              28
+            ],
+            "controller": [
+              24,
+              28
+            ],
+            "projector": [
+              17,
+              28
+            ],
+            "tool": [
+              17,
+              28
+            ]
+          },
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
+        },
+        {
+          "file": "bolt_firing_05.png",
+          "duration_ms": 70,
+          "phase": "settle",
+          "source_cell": 86,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
+          "source_rect": [
+            0,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            0,
+            448,
+            448,
+            887
+          ],
+          "source_foot": [
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -4452,7 +4802,7 @@
               27
             ],
             "controller": [
-              25,
+              24,
               27
             ],
             "projector": [
@@ -4464,33 +4814,35 @@
               27
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            421,
-            204,
-            563,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            15,
-            15
-          ],
-          "file": "attack_05.png",
-          "duration_ms": 80
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 9,
+          "file": "bolt_firing_06.png",
+          "duration_ms": 80,
+          "phase": "followthrough",
+          "source_cell": 87,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            580,
-            193,
-            194,
-            194
+            448,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            448,
+            448,
+            896,
+            887
           ],
           "source_foot": [
-            101,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -4498,49 +4850,51 @@
               54
             ],
             "muzzle": [
-              18,
-              33
+              15,
+              28
             ],
             "controller": [
-              25,
-              32
+              22,
+              28
             ],
             "projector": [
-              18,
-              33
+              15,
+              28
             ],
             "tool": [
-              18,
-              33
+              15,
+              28
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            612,
-            205,
-            743,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_06.png",
-          "duration_ms": 100
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 10,
+          "file": "bolt_firing_07.png",
+          "duration_ms": 100,
+          "phase": "lower",
+          "source_cell": 88,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            774,
-            193,
-            194,
-            194
+            896,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            896,
+            448,
+            1344,
+            887
           ],
           "source_foot": [
-            96,
-            187
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -4548,49 +4902,51 @@
               54
             ],
             "muzzle": [
-              18,
-              38
+              15,
+              30
             ],
             "controller": [
-              26,
-              38
+              22,
+              30
             ],
             "projector": [
-              18,
-              38
+              15,
+              30
             ],
             "tool": [
-              18,
-              38
+              15,
+              30
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            801,
-            206,
-            931,
-            381
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_07.png",
-          "duration_ms": 140
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         },
         {
-          "source_cell": 11,
+          "file": "bolt_firing_08.png",
+          "duration_ms": 120,
+          "phase": "rest",
+          "source_cell": 89,
+          "source": "firing_authored.png",
+          "source_sheet": "assets/source/combat/mira_bolt_firing/firing_authored.png",
           "source_rect": [
-            968,
-            193,
-            193,
-            194
+            1344,
+            448,
+            448,
+            448
+          ],
+          "source_bounds": [
+            1344,
+            448,
+            1774,
+            887
           ],
           "source_foot": [
-            92,
-            186
+            278.75555555555553,
+            438.0444444444444
+          ],
+          "native_scale": 0.10044642857142858,
+          "position": [
+            4,
+            10
           ],
           "anchors": {
             "floor": [
@@ -4598,41 +4954,29 @@
               54
             ],
             "muzzle": [
-              18,
-              39
+              14,
+              35
             ],
             "controller": [
-              25,
-              38
+              21,
+              35
             ],
             "projector": [
-              18,
-              39
+              14,
+              35
             ],
             "tool": [
-              18,
-              39
+              14,
+              35
             ]
           },
-          "source": "base_authored.png",
-          "native_scale": 0.225,
-          "source_bounds": [
-            989,
-            206,
-            1121,
-            380
-          ],
-          "source_sheet": "assets/source/combat/mira_arm_rig/base_authored.png",
-          "position": [
-            16,
-            15
-          ],
-          "file": "attack_08.png",
-          "duration_ms": 140
+          "regional_restore": "assets/source/combat/mira_bolt_firing/recipe.json"
         }
       ],
+      "release_ms": 280,
       "contact_ms": 400,
-      "release_ms": 280
+      "flash_duration_ms": 40,
+      "duration_ms": 800
     },
     "flee": {
       "loop": true,
