@@ -31,6 +31,7 @@ specified.
 
 [Established material](#where-to-look-for-established-material) ·
 [Historical layers](#historical-layers-what-can-be-placed-in-order) ·
+[Settlement history questions](#merovar-settlement-history-three-questions-to-resolve) ·
 [Canon review](#before-a-proposal-becomes-canon) ·
 [Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
 [Next development pass](#next-development-pass) ·
@@ -73,6 +74,40 @@ or the destinations in the game.
 | Successor communities and later specialization | Successor cultures are established; Merovar’s settlement sequence is not. The Vale and Greyfold wool history is a **proposal** for later specialization, not a dated era or a confirmed route. |
 | Local civic memories | **Established:** the Sanctuary passage injuries and closure predate the opening crisis. **Separate proposals:** Lower Leth’s flood breach and school admission change, and Rookfen’s shared letters. Their order relative to one another or to the wool trade remains open. Testimony can show a person’s experience without settling every fact. |
 | Game I opening | Road damage from the recent regional surges predates the opening encounters. Those surges are distinct from the old Sanctuary accident. Follow the [opening reference](../../narrative/game_01/REGIONAL_SURGES.md) and approved story before making any connection. |
+
+## Merovar settlement history: three questions to resolve
+
+The [foundational lore](../../FOUNDATIONAL_LORE.md) establishes
+independent successor cultures, not Merovar’s settlement sequence.
+These are questions to develop, not consecutive eras.
+
+| Question | Known anchor | Evidence the history would need |
+| --- | --- | --- |
+| **Where did communities endure?** | Elden Vale has headwater settlements; Lower Leth villages use higher ground above the floodplain. | Something that distinguishes long habitation from a later expansion. A good site alone cannot establish either. |
+| **What made connections dependable?** | Greyfold passes depend on weather and upkeep; Rookfen channels change. | A known practice or arrangement that made repeat journeys possible. No route is required from geography alone. |
+| **When did practices diverge?** | Wetter western Greyfold, dependably watered patches in Redstone, and Marris anchorages support different livelihoods. | A trace of people adapting at particular places, without making any way of life inevitable or continent-wide. |
+
+The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+helps keep each question tied to something characters can encounter.
+No dates, founders, migrations or borders have been established here.
+
+## What present-day Merovar can tell us about contact
+
+Look for what returns with people. The [Merovar atlas](MEROVAR.md)
+establishes Marris households with relatives overseas and several
+languages, and Greyfold apprentices coming back from river towns with
+unfamiliar fashions. [Rimeward households](../POLAR_REGIONS.md#rimeward-shores)
+keep relationships between seasonal herders and settled villages.
+Repeated visits can explain why a practice looks familiar away from
+home, without explaining who originally settled either place.
+
+Keep the inland kingdom distinct. [Iselin’s homeland](../../narrative/game_01/characters/ISELIN.md#northern-home-and-the-journey)
+is enclosed by mountains on three sides and approached from the south.
+The Rimeward examples describe coastal and seasonal relationships.
+Their proximity on an atlas doesn’t prove shared routes, government,
+or identity. To reconstruct a past connection, look for corroborated
+journeys, records that can be placed in sequence, or evidence of when
+a practice appeared. Differences in words or habits alone aren’t enough.
 
 ## Elden Vale: mending before lighting
 
@@ -969,12 +1004,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Audit the remaining big gaps in Merovar’s geography, history, and
-   peoples rather than assuming the number of examples means the
-   broad assignment is complete.
-2. Pick one uncovered question with real consequences for more than
-   one community. Break it into narrow, independent pieces and keep
-   exact borders, names, dates and routes open unless actually needed.
+1. Try one earlier connection between two communities with an object
+   whose origin is uncertain. Distinguish borrowing from separate
+   responses to a similar problem, and don’t assume migration.
+2. Cross-check Merovar’s regional relationships: what physical
+   connection is actually established, and what social or political
+   story would still have to be developed?
 
 ## Map implications for a later review
 
