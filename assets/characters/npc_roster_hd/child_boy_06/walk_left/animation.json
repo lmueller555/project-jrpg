@@ -1,0 +1,374 @@
+{
+  "version": 1,
+  "character": "child_boy_06",
+  "animation": "walk.left",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/child_boy_06/walk_left/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/child_boy_06/walk_left/authored.png": "ca2cfcc2a47163579e0319d6aa2faacb5f7fded8460aa70af33519d5900d0784",
+    "assets/characters/npc_roster_hd/child_boy_06/idle_left.png": "29d55f7b0d5c3f7a04337911c5772a451cb517fa5f33052532a8ed5836017c17"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 1,
+      "source_right_frame": 5,
+      "source_sha256": "4ededfc7e25f071274550d52079e282f536c6da2f8f2bc9d84d357b58284ddf9",
+      "left_frame_sha256": "851af8b00fb017fac8d747806674341468a2205696a52f0a6d0b48efc8e7cdbb",
+      "phase": "right_contact",
+      "support_detail": "right contact/left toe",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 2,
+      "source_right_frame": 6,
+      "source_sha256": "969036f45bc0d71b85f2629fb5ab847d3c88c2f38615e1481ddcb596ac1d6830",
+      "left_frame_sha256": "14805a48e90477b5c4fb0a7111836653a83ea6cbc3e167bfe1b6645863bd98c7",
+      "phase": "right_down",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 3,
+      "source_right_frame": 7,
+      "source_sha256": "1a2108c8a3e9b1cd6609e94bafdf2311605f7e284cefbe5feb4cc658703f40da",
+      "left_frame_sha256": "cdad804117e0677358a50bb17a329179af61df5fde84444bda71c5fe3cb76a82",
+      "phase": "left_passing",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 4,
+      "source_right_frame": 8,
+      "source_sha256": "416320ea9d636ab7b74f11a285f39648360030a19da8c8dac11132ea334f5779",
+      "left_frame_sha256": "77dc31a239ba5b617fdb875bb3c7990ec7d6b0767834941a53bc1f8a75ac0a55",
+      "phase": "left_recovery",
+      "support_detail": "right toe; left recovery",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 5,
+      "source_right_frame": 1,
+      "source_sha256": "aefe76810178ea6a93d20cf901faa4dd3ab6678e58f27e96e7886a724bee9b96",
+      "left_frame_sha256": "05b62e2ad5b4c16f5ab3b3bddb047af032bdf9956123de89793475ed11d4ce9b",
+      "phase": "left_contact",
+      "support_detail": "left contact/right toe",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 6,
+      "source_right_frame": 2,
+      "source_sha256": "968014bce937861ab6168da3cde1d81ba989a24d7c8d3c1d7d1e87e37abacece",
+      "left_frame_sha256": "8ad3a486d824cb7f5f6407f0ed45d48cf6ca98e4a1695f366728c29bad1f3a84",
+      "phase": "left_down",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 7,
+      "source_right_frame": 3,
+      "source_sha256": "d888ac67055eb29747280e4938bc07df855ccc3ff2dc72ee98607f9540d6a165",
+      "left_frame_sha256": "34225d6349842754b2f38ad5eabcda21ecea65ddc8a179931d068efc04eb89a1",
+      "phase": "right_passing",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 8,
+      "source_right_frame": 4,
+      "source_sha256": "470d58b6dce3b9d67c53f40ccc93e687a36c0e564776f89afde1090730b602c7",
+      "left_frame_sha256": "a3a37552ddb7acce773377a718a2b6e4cb720341cb20c8a13c8414403904fd84",
+      "phase": "right_recovery",
+      "support_detail": "left toe; right recovery",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": null,
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
