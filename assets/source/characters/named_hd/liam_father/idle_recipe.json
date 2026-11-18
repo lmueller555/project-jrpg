@@ -1,0 +1,870 @@
+{
+  "front": {
+    "source": "assets/source/characters/liam_family/front_idle_concepts.png",
+    "sha256": "ff2f40d761a0f8e5d11b594845bb3488603a163f24f5cc1a0dc212b982c32f9f",
+    "recipe": {
+      "source": "front_idle_concepts.png",
+      "alpha_threshold": 128,
+      "source_bounds": [
+        1016,
+        76,
+        1414,
+        958
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "occupied_rect": [
+        8,
+        2,
+        32,
+        68
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "bands": [
+        {
+          "source_y": [
+            76,
+            331
+          ],
+          "native_y": [
+            2,
+            28
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            331,
+            529
+          ],
+          "native_y": [
+            28,
+            44
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            529,
+            568
+          ],
+          "native_y": [
+            44,
+            46
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle"
+          ]
+        },
+        {
+          "source_y": [
+            568,
+            681
+          ],
+          "native_y": [
+            46,
+            52
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            681,
+            845
+          ],
+          "native_y": [
+            52,
+            62
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            845,
+            958
+          ],
+          "native_y": [
+            62,
+            70
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            1142,
+            182,
+            1290,
+            278
+          ],
+          "materials": [
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1152,
+            278,
+            1284,
+            330
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1139,
+            324,
+            1293,
+            424
+          ],
+          "materials": [
+            "outline",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1028,
+            483,
+            1107,
+            580
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1327,
+            483,
+            1408,
+            580
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            1024,
+            589,
+            1092,
+            681
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            1340,
+            589,
+            1411,
+            681
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ],
+      "eyes": {
+        "top_pixels": [],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers": {
+        "head": [
+          0,
+          14
+        ],
+        "upper_body": [
+          14,
+          23
+        ],
+        "tunic_and_hands": [
+          23,
+          26
+        ],
+        "legs_and_boots": [
+          26,
+          36
+        ]
+      }
+    },
+    "native_eye_points": {
+      "pupil": [
+        [
+          20,
+          18
+        ],
+        [
+          26,
+          18
+        ]
+      ],
+      "iris": [
+        [
+          20,
+          19
+        ],
+        [
+          26,
+          19
+        ]
+      ]
+    }
+  },
+  "left": {
+    "source": "assets/source/characters/liam_family/turnaround_concepts.png",
+    "sha256": "3b94aa159a65841b8ce84d503234b50d9aa15a8d62dea462d778a2d7141bb62f",
+    "recipe": {
+      "source_bounds": [
+        116,
+        965,
+        283,
+        1511
+      ],
+      "occupied_rect": [
+        10,
+        2,
+        28,
+        68
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "bands": [
+        {
+          "source_y": [
+            965,
+            1141
+          ],
+          "native_y": [
+            2,
+            28
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1141,
+            1237
+          ],
+          "native_y": [
+            28,
+            44
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1237,
+            1264
+          ],
+          "native_y": [
+            44,
+            46
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle"
+          ]
+        },
+        {
+          "source_y": [
+            1264,
+            1330
+          ],
+          "native_y": [
+            46,
+            52
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1330,
+            1429
+          ],
+          "native_y": [
+            52,
+            62
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            1429,
+            1511
+          ],
+          "native_y": [
+            62,
+            70
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            137,
+            1034,
+            210,
+            1091
+          ],
+          "materials": [
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            141,
+            1133,
+            199,
+            1174
+          ],
+          "materials": [
+            "outline",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            212,
+            1213,
+            277,
+            1284
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            227,
+            1284,
+            272,
+            1337
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ],
+      "eyes": {
+        "top_pixels": [],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers": {
+        "head": [
+          0,
+          14
+        ],
+        "upper_body": [
+          14,
+          23
+        ],
+        "tunic_and_hands": [
+          23,
+          26
+        ],
+        "legs_and_boots": [
+          26,
+          36
+        ]
+      }
+    },
+    "native_eye_points": {
+      "pupil": [
+        [
+          18,
+          16
+        ]
+      ],
+      "iris": [
+        [
+          18,
+          17
+        ]
+      ]
+    }
+  },
+  "right": {
+    "source": "assets/source/characters/liam_family/turnaround_concepts.png",
+    "sha256": "3b94aa159a65841b8ce84d503234b50d9aa15a8d62dea462d778a2d7141bb62f",
+    "recipe": {
+      "source_bounds": [
+        423,
+        966,
+        594,
+        1511
+      ],
+      "occupied_rect": [
+        10,
+        2,
+        28,
+        68
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "bands": [
+        {
+          "source_y": [
+            966,
+            1141
+          ],
+          "native_y": [
+            2,
+            28
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1141,
+            1237
+          ],
+          "native_y": [
+            28,
+            44
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1237,
+            1264
+          ],
+          "native_y": [
+            44,
+            46
+          ],
+          "materials": [
+            "outline",
+            "leather",
+            "buckle"
+          ]
+        },
+        {
+          "source_y": [
+            1264,
+            1330
+          ],
+          "native_y": [
+            46,
+            52
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1330,
+            1429
+          ],
+          "native_y": [
+            52,
+            62
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            1429,
+            1511
+          ],
+          "native_y": [
+            62,
+            70
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            490,
+            1034,
+            566,
+            1091
+          ],
+          "materials": [
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            505,
+            1133,
+            567,
+            1174
+          ],
+          "materials": [
+            "outline",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            426,
+            1213,
+            486,
+            1284
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            431,
+            1284,
+            481,
+            1337
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ],
+      "eyes": {
+        "top_pixels": [],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers": {
+        "head": [
+          0,
+          14
+        ],
+        "upper_body": [
+          14,
+          23
+        ],
+        "tunic_and_hands": [
+          23,
+          26
+        ],
+        "legs_and_boots": [
+          26,
+          36
+        ]
+      }
+    },
+    "native_eye_points": {
+      "pupil": [
+        [
+          28,
+          16
+        ]
+      ],
+      "iris": [
+        [
+          28,
+          17
+        ]
+      ]
+    }
+  },
+  "back": {
+    "source": "assets/source/characters/liam_family/turnaround_concepts.png",
+    "sha256": "3b94aa159a65841b8ce84d503234b50d9aa15a8d62dea462d778a2d7141bb62f",
+    "recipe": {
+      "source_bounds": [
+        717,
+        965,
+        948,
+        1507
+      ],
+      "occupied_rect": [
+        8,
+        2,
+        32,
+        68
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "foot_anchor": [
+        12,
+        34
+      ],
+      "alpha_threshold": 128,
+      "bands": [
+        {
+          "source_y": [
+            965,
+            1121
+          ],
+          "native_y": [
+            2,
+            28
+          ],
+          "materials": [
+            "outline",
+            "hair",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1121,
+            1237
+          ],
+          "native_y": [
+            28,
+            44
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1237,
+            1264
+          ],
+          "native_y": [
+            44,
+            46
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        },
+        {
+          "source_y": [
+            1264,
+            1330
+          ],
+          "native_y": [
+            46,
+            52
+          ],
+          "materials": [
+            "outline",
+            "tunic",
+            "skin"
+          ]
+        },
+        {
+          "source_y": [
+            1330,
+            1429
+          ],
+          "native_y": [
+            52,
+            62
+          ],
+          "materials": [
+            "outline",
+            "trousers"
+          ]
+        },
+        {
+          "source_y": [
+            1429,
+            1507
+          ],
+          "native_y": [
+            62,
+            70
+          ],
+          "materials": [
+            "outline",
+            "leather"
+          ]
+        }
+      ],
+      "material_windows": [
+        {
+          "rect": [
+            775,
+            1113,
+            892,
+            1138
+          ],
+          "materials": [
+            "outline",
+            "linen",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            719,
+            1207,
+            771,
+            1284
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            895,
+            1207,
+            946,
+            1284
+          ],
+          "materials": [
+            "outline",
+            "linen"
+          ]
+        },
+        {
+          "rect": [
+            727,
+            1284,
+            770,
+            1338
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        },
+        {
+          "rect": [
+            897,
+            1284,
+            941,
+            1338
+          ],
+          "materials": [
+            "outline",
+            "skin"
+          ]
+        }
+      ],
+      "eyes": {
+        "top_pixels": [],
+        "height": 2,
+        "iris_offset_y": 1
+      },
+      "layers": {
+        "head": [
+          0,
+          14
+        ],
+        "upper_body": [
+          14,
+          23
+        ],
+        "tunic_and_hands": [
+          23,
+          26
+        ],
+        "legs_and_boots": [
+          26,
+          36
+        ]
+      }
+    },
+    "native_eye_points": {
+      "pupil": [],
+      "iris": []
+    }
+  }
+}

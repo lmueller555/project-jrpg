@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "id": "liam_mother",
+  "display_name": "Liam's mother",
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    12,
+    30
+  ],
+  "foot_anchor": [
+    12,
+    34.5
+  ],
+  "frames": {
+    "front": "idle_front.png",
+    "back": "idle_back.png",
+    "left": "idle_left.png",
+    "right": "idle_right.png"
+  },
+  "portrait": "portrait.png",
+  "design_notes": "Liam’s mother and teacher: chestnut braid on her anatomical right, green eyes, blue-green dress, cream apron and brown boots.",
+  "source": "Retained approved family concept masters, sampled at new density rather than enlarging legacy sprites. Own named walk costume and head; phase references documented in source.",
+  "portrait_provenance": "assets/portraits/eldenmere/liam_mother_neutral.png",
+  "status": "integrated"
+}

@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "exporter": "tools/build_road_guards_hd.py",
+  "sources": {
+    "assets/source/characters/road_guards/directions_generated.png": "2582e8109a04374c484cbfd1afff8762d4353ad516829e915ff47b90c6fce7b6",
+    "assets/source/characters/road_guards/portrait_generated.png": "90b43ff94fe7b64d4d6724f64641696f9a1783fba535aaf0e04462e2320d1236"
+  },
+  "registrations": {
+    "idle_front_0": {
+      "source_cell": [
+        0,
+        0,
+        317,
+        310
+      ],
+      "alpha_bounds": [
+        102,
+        33,
+        259,
+        292
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        20,
+        6
+      ]
+    },
+    "idle_front_1": {
+      "source_cell": [
+        317,
+        0,
+        634,
+        310
+      ],
+      "alpha_bounds": [
+        85,
+        33,
+        242,
+        292
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        20,
+        6
+      ]
+    },
+    "gesture_front": {
+      "source_cell": [
+        634,
+        0,
+        951,
+        310
+      ],
+      "alpha_bounds": [
+        53,
+        33,
+        239,
+        292
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        12,
+        6
+      ]
+    },
+    "recover_front": {
+      "source_cell": [
+        951,
+        0,
+        1269,
+        310
+      ],
+      "alpha_bounds": [
+        64,
+        34,
+        221,
+        292
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        20,
+        6
+      ]
+    },
+    "idle_left_0": {
+      "source_cell": [
+        0,
+        310,
+        317,
+        610
+      ],
+      "alpha_bounds": [
+        123,
+        19,
+        239,
+        285
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        27,
+        4
+      ]
+    },
+    "idle_left_1": {
+      "source_cell": [
+        317,
+        310,
+        634,
+        610
+      ],
+      "alpha_bounds": [
+        103,
+        18,
+        221,
+        285
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        26,
+        4
+      ]
+    },
+    "gesture_left": {
+      "source_cell": [
+        634,
+        310,
+        951,
+        610
+      ],
+      "alpha_bounds": [
+        60,
+        20,
+        224,
+        285
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        15,
+        5
+      ]
+    },
+    "recover_left": {
+      "source_cell": [
+        951,
+        310,
+        1269,
+        610
+      ],
+      "alpha_bounds": [
+        86,
+        18,
+        205,
+        285
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        26,
+        4
+      ]
+    },
+    "idle_right_0": {
+      "source_cell": [
+        0,
+        610,
+        317,
+        910
+      ],
+      "alpha_bounds": [
+        119,
+        17,
+        233,
+        280
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        23,
+        5
+      ]
+    },
+    "idle_right_1": {
+      "source_cell": [
+        317,
+        610,
+        634,
+        910
+      ],
+      "alpha_bounds": [
+        102,
+        17,
+        214,
+        280
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        23,
+        5
+      ]
+    },
+    "gesture_right": {
+      "source_cell": [
+        634,
+        610,
+        951,
+        910
+      ],
+      "alpha_bounds": [
+        100,
+        17,
+        248,
+        280
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        24,
+        5
+      ]
+    },
+    "recover_right": {
+      "source_cell": [
+        951,
+        610,
+        1269,
+        910
+      ],
+      "alpha_bounds": [
+        83,
+        17,
+        193,
+        280
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        24,
+        5
+      ]
+    },
+    "idle_back_0": {
+      "source_cell": [
+        0,
+        910,
+        317,
+        1240
+      ],
+      "alpha_bounds": [
+        88,
+        12,
+        254,
+        279
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        17,
+        4
+      ]
+    },
+    "idle_back_1": {
+      "source_cell": [
+        317,
+        910,
+        634,
+        1240
+      ],
+      "alpha_bounds": [
+        76,
+        11,
+        241,
+        279
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        17,
+        4
+      ]
+    },
+    "gesture_back": {
+      "source_cell": [
+        317,
+        910,
+        634,
+        1240
+      ],
+      "alpha_bounds": [
+        76,
+        11,
+        241,
+        279
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        17,
+        4
+      ]
+    },
+    "recover_back": {
+      "source_cell": [
+        951,
+        910,
+        1269,
+        1240
+      ],
+      "alpha_bounds": [
+        59,
+        11,
+        223,
+        279
+      ],
+      "scale": 0.2696629213483146,
+      "registration": [
+        18,
+        4
+      ]
+    }
+  },
+  "exports": {
+    "assets/characters/road_guards_hd/idle_front_0.png": "6a93a256d6985efc87d5381acfcfa93f0d80b2c86d316d6179f9b009d4845ad1",
+    "assets/characters/road_guards_hd/idle_front_1.png": "337c72ffa8408f3abc0dc6e678f9dc585b8c72b8ccab3cc57955a80ce25fda57",
+    "assets/characters/road_guards_hd/gesture_front.png": "78b97391f2ebf01be0836fd71e41ca4f33b735530a63263d2747a2dce54a6b2d",
+    "assets/characters/road_guards_hd/recover_front.png": "fc77d4012a9d5f8ee2c46f31436a972f1fa8a82487b415d937627c3e27efe4c7",
+    "assets/characters/road_guards_hd/idle_left_0.png": "1a387dfe1a3e4e8cce5b92af2e5acbbfe9085bcb96d54b8e8499749b31110cda",
+    "assets/characters/road_guards_hd/idle_left_1.png": "1a5d4a06bbf3074d03abe9543951e077c2356024154d16267c3db571d8038f31",
+    "assets/characters/road_guards_hd/gesture_left.png": "753ce5087ce2da8af10ce5e3835a0bab2ef3e0094cb76241a972b64a520401f4",
+    "assets/characters/road_guards_hd/recover_left.png": "f6f07b207ee35c378252fc1b32c81e4fecb4001dd358b30d5f4591a873ca7c86",
+    "assets/characters/road_guards_hd/idle_right_0.png": "5790e8f0c7f02ccdc380ac94d19bb8f5dc15ce7befca18f27459d5e428c90640",
+    "assets/characters/road_guards_hd/idle_right_1.png": "f32699407979e61ccab0e35643e8d168048958497f32c3acb7ac6ac0279beec3",
+    "assets/characters/road_guards_hd/gesture_right.png": "9fbc525976f1c12f4f9fd5e05cbffe28173fec3e96a3e9fb91ce8baad4dd9e67",
+    "assets/characters/road_guards_hd/recover_right.png": "4152e789471d6fc68c0cef3dd12580aaccbd0a703b1b11c2eb6e1969132da452",
+    "assets/characters/road_guards_hd/idle_back_0.png": "e8b198cd35dac19560f24609a92dcf8fec12593d82891220042bb59a3e3e3375",
+    "assets/characters/road_guards_hd/idle_back_1.png": "38b2aec5db9653139be68767479b998c859e63926f747008ef00900e5667e837",
+    "assets/characters/road_guards_hd/gesture_back.png": "38b2aec5db9653139be68767479b998c859e63926f747008ef00900e5667e837",
+    "assets/characters/road_guards_hd/recover_back.png": "7104540e5f5681c5abe3c07cece559fa9fdcdd3db5ee7541b8f113c31130ff09",
+    "assets/characters/road_guards_hd/portrait.png": "46aebafe319397b82a1e9f61d0d918af5e3f90ce3bb7f00f102e173679fc76f6",
+    "assets/characters/road_guards_hd/animation.json": "ae54b1beb19393efed6e96cde937bd9c4ea443a5b0eb81661761b12981b3bf5c",
+    "assets/characters/road_guards_hd/review.png": "d7ee09df71c0e33313724d121098bddf7fe543ec0a5398f414607c778bcff987"
+  },
+  "notes": [
+    "Full authored body poses; no arm-strip rotation or drawn limbs.",
+    "Four separately authored directions preserve physical shield hand.",
+    "Rejected rear gesture cell is never used by the game.",
+    "Planted boots share a common foot anchor; collision footprints unchanged."
+  ]
+}
