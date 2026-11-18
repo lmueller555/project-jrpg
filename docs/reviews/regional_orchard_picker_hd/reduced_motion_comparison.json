@@ -1,0 +1,26 @@
+{
+  "native_views_each": 149,
+  "actor_trace_identical": true,
+  "compared_fields": [
+    "tick",
+    "feet",
+    "pose",
+    "facing",
+    "clock",
+    "moving",
+    "animation_key",
+    "native_anchor",
+    "controller_stage"
+  ],
+  "final_garden_identical": true,
+  "normal_draw_ms": {
+    "samples": 149,
+    "median": 9.95132900061435,
+    "max": 385.8272930010571
+  },
+  "reduced_draw_ms": {
+    "samples": 149,
+    "median": 9.827728998061502,
+    "max": 351.6231300018262
+  }
+}
