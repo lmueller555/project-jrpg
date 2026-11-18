@@ -38,6 +38,8 @@ from regent_arrival import RegentArrival
 from mill_gift import MillGift
 from opening_audio import MorningAudio
 from regional_audio import RegionalAudio
+from well_audio import WellAudio
+from well_examination import WellExamination
 from audio_settings import AudioSettings
 from game_music import GameMusic
 from pause_menu import PauseMenu
@@ -700,6 +702,9 @@ class Game:
         self.sanctuary_arrival=SanctuaryArrival(self)
         self.sanctuary_rescue=SanctuaryRescue(self)
         self.regional_audio=RegionalAudio(self)
+        self.well_audio=WellAudio(self)
+        self.well_audio.prepare()
+        self.well_examination=WellExamination(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
         self.game_over=False
@@ -1288,6 +1293,7 @@ class Game:
         self.saves.pending_services.clear()
         self.opening_audio.reset()
         self.regional_audio.reset()
+        self.well_audio.reset()
         self.elemental_bosses.stop_audio()
         self.player.moving=self.player.running=False
         self._mouse_held=False
@@ -1302,6 +1308,7 @@ class Game:
         for scene in self.scenes.values():
             for npc in scene.npcs:
                 if isinstance(npc,Gardener):npc.reset_cycle()
+        self.well_audio.reset()
 
     def return_to_title(self):
         self.save_menu.close()
@@ -1627,10 +1634,12 @@ class Game:
                 self.combat.stop_audio()
                 self.elemental_bosses.stop_audio()
                 self.cave_lesson.release_pose()
+                self.well_audio.stop()
                 self.music.stop()
                 return False
             if event.type==pygame.WINDOWFOCUSLOST:
                 self._music_focused=False
+                self.well_audio.stop()
             elif event.type==pygame.WINDOWFOCUSGAINED:
                 self._music_focused=True
             if event.type==pygame.KEYDOWN and event.key==pygame.K_F11:
@@ -1837,10 +1846,16 @@ class Game:
                         continue
                     if self.try_inspect_world_map() or self.bed_rest.interact():continue
                     if not any(visit.interact() for visit in self.household_visits):
-                        if not self.combat.interact() and not self.try_world_link():self.opening.inspect_nearby()
+                        if not self.combat.interact() and not self.try_world_link():
+                            if self.well_examination.interact():
+                                self.well_audio.stop()
+                                advanced=resumed=True
+                                continue
+                            self.opening.inspect_nearby()
         return True
 
     def update(self,seconds,direction=None,running=None):
+        self.well_audio.update(seconds)
         self._update_object_cues(0)
         self.elemental_bosses.sync_audio()
         if self.quest_playtest_session is not None:
@@ -1872,6 +1887,7 @@ class Game:
             self._update_world(seconds,direction,running)
         finally:
             self.regional_audio.update(0)
+            self.well_audio.update(0)
             self.saves.update(seconds)
 
     def _sync_world_music(self, *, restoring=False):
@@ -2073,7 +2089,8 @@ class Game:
                 for npc in scene.npcs:
                     if isinstance(npc,Gardener):
                         if (self._music_focused and not self.quest_ui.journal_open
-                                and not self.map_open):npc.update(seconds,scene,blocker)
+                                and not self.map_open and not (self.social.script_identifier or '').startswith('well_examine_')):
+                            npc.update(seconds,scene,blocker)
                     elif isinstance(npc,DaisyRoutine):npc.update(seconds,scene,blocker)
             for npc in self.persistent_npcs:
                 if getattr(npc,'story_paused',False) or getattr(npc,'party_travelling',False):continue
@@ -2164,6 +2181,7 @@ class Game:
         if self.social.locked:self.social.cancel()
         if self.world is self.town:self.exterior_position.update(door.data['anchor'])
         origin=self.world
+        self.well_audio.stop()
         self.world=destination
         self.player.position.update(spawn)
         self.sanctuary_relief.ensure_world()
@@ -2222,6 +2240,7 @@ class Game:
         if not destination.can_stand(spawn):return False
         origin=self.world
         if origin is self.town:self.exterior_position.update(self.player.position)
+        self.well_audio.stop()
         self.world=destination;self.player.position.update(spawn)
         self.player.facing=link.get('arrival_facing','front');self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.3
@@ -2288,6 +2307,7 @@ class Game:
         if not hint:
             link=self.nearby_world_link()
             if link is not None:hint='E: '+link.get('label','Follow the trail')
+        if not hint:hint=self.well_examination.interaction_hint()
         if hint:
             hint=hint.replace(': ',' — ',1)
             available=self.minimap.rect.left-24 if self.minimap.visible else VIEW_SIZE[0]-24
@@ -2460,6 +2480,7 @@ def main(argv=None):
     finally:
         game.save_progress()
         game.opening_audio.reset()
+        game.well_audio.reset()
         game.cave_lesson.release_pose()
         game.elemental_bosses.stop_audio()
         game.music.stop()

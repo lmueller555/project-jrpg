@@ -25,6 +25,7 @@ class QuestPlaytestSession:
         parent.music.stop()
         parent.opening_audio.reset()
         parent.regional_audio.reset()
+        if getattr(parent,'well_audio',None) is not None:parent.well_audio.reset()
         ready = False
         try:
             self.game = Game(fullscreen=parent.fullscreen, start_on_title=False,
@@ -176,6 +177,7 @@ class QuestPlaytestSession:
         if self.game is not None:
             game = self.game
             game.regional_audio.reset()
+            if getattr(game,'well_audio',None) is not None:game.well_audio.reset()
             game.opening_audio.reset()
             game.regent_arrival.reset()
             game.opening_cinematic.reset()
