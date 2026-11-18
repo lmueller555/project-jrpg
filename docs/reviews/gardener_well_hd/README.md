@@ -84,7 +84,13 @@ world origin `[492,800]`. PR1's historical coordinates were not rewritten.
   and [pickup/setdown](pickup_setdown.png) show complete body/pail bindings.
 - [Observations](observations.json) retain all 371 actual-model samples, events,
   source/contract hashes, 32 measured hand contacts, static-route probe proof
-  and artifact hashes. Normal operation reaches completion at 17.75 seconds;
+  and artifact hashes. Preservation compares the current checkout immediately
+  before and after capture: the complete active production snapshot and the
+  same protected runtime/source path set recorded by PR1. It retains baseline
+  revision, per-file hashes, counts and matching aggregate before/after hashes.
+  Differences from the historical PR1 baseline are informational, so unrelated
+  legitimate changes on main do not invalidate a read-only capture.
+  Normal operation reaches completion at 17.75 seconds;
   the stable completion arrangement remains briefly for review.
 
 The reviewed drawings retain the gardener's chestnut bob, sage clothing and

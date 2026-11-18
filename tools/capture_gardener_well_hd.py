@@ -46,12 +46,12 @@ def scene(renderer,state,selection,position,elapsed):
 def capture(folder=DEFAULT):
     folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
     old=json.loads((ROOT/'docs/reviews/eldenmere_well_pack/production_before.json').read_text())
-    # Preserve the same active source/legacy owners as the earlier asset pack.
+    # Rebase the read-only proof on this checkout, rather than freezing runtime
+    # bytes to PR1 forever. The historical pack supplies the protected path set.
     from tools.capture_eldenmere_settlement_framework import production_snapshot
-    assert production_snapshot()==old['production']
-    for path,value in old['protected_files'].items():
-        expected=value['sha256'] if isinstance(value,dict) else value
-        assert digest((ROOT/path).read_bytes())==expected,path
+    baseline_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    production_before=production_snapshot()
+    protected_before={path:digest((ROOT/path).read_bytes()) for path in sorted(old['protected_files'])}
     contract_path=ROOT/'assets/source/terrain/eldenmere/well_hd/mechanism/contract.json'
     reference=ROOT/'assets/source/characters/npcs/female_02/gardener_well_hd/mechanism_reference.json'
     assert reference.read_bytes()==contract_path.read_bytes()
@@ -152,11 +152,32 @@ def capture(folder=DEFAULT):
         ImageDraw.Draw(pickup).text((8,row*174+7),'setdown' if deposit else 'pickup',fill='white')
     pickup.save(folder/'pickup_setdown.png')
     manifest=ROOT/actor_art.MANIFEST
+    production_after=production_snapshot()
+    protected_after={path:digest((ROOT/path).read_bytes()) for path in protected_before}
+    assert production_after==production_before,'Capture changed active production files'
+    assert protected_after==protected_before,'Capture changed protected source/runtime files'
+    historical_changed=[path for path,value in old['protected_files'].items()
+                        if protected_before[path]!=(value['sha256'] if isinstance(value,dict) else value)]
     report={'scope':'Offline actual-model-driven native 2x character performance; not live Game selection/navigation or gameplay acceptance.',
-            'revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+            'revision':baseline_revision,
             'contract_sha256':digest(contract_path.read_bytes()),'manifest_sha256':digest(manifest.read_bytes()),
             'adapter_sha256':digest((ROOT/'gardener_well_presentation.py').read_bytes()),
-            'runtime_activation':False,'old_active_and_protected_files_unchanged':production_snapshot()==old['production'],
+            'runtime_activation':False,'capture_active_and_protected_files_unchanged':True,
+            'preservation':{
+                'baseline_revision':baseline_revision,
+                'active_file_count':production_before['active_file_count'],
+                'protected_file_count':len(protected_before),
+                'unique_file_count':len(set(production_before['active_files'])|set(protected_before)),
+                'production_before_sha256':digest(document(production_before)),
+                'production_after_sha256':digest(document(production_after)),
+                'protected_before_sha256':digest(document(protected_before)),
+                'protected_after_sha256':digest(document(protected_after)),
+                'baseline_production':production_before,'baseline_protected_files':protected_before,
+                'historical_reference':{
+                    'revision':old['revision'],
+                    'production_matches':production_before==old['production'],
+                    'protected_paths_changed_since_reference':sorted(historical_changed),
+                    'scope':'Historical comparison only; legitimate later main changes are not capture mutations.'}},
             'positions':{'loading':loading,'operator':operator},'step_ms':50,'operation_duration_ms':complete_at,
             'offline_route':{'waypoints_world':[loading,[564.,894.],operator],
                              'reverse_for_retrieval':True,'speed':60,
