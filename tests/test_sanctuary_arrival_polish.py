@@ -233,7 +233,12 @@ class SanctuaryArrivalPolishTests(unittest.TestCase):
             # The global standard permits a small deliberate contact gap.
             # Exact coincidence previously forced an oversized reaching arm.
             self.assertLessEqual(hand_world.distance_to(rope_world),4,elapsed)
-            hand = keeper.sprite(0).get_at(tuple(map(int, grip)))
+            # Grip landmarks are logical, including half-world coordinates.
+            # Inspect the authored native texel rather than its lossy 1x mirror.
+            sprite = keeper.sprite(0)
+            density = action.get('artwork_pixels_per_world_pixel', 1)
+            hand = getattr(sprite, 'native', sprite).get_at(
+                tuple(round(value*density) for value in grip))
             endpoint = game.world.image(rope_frame['file']).get_at(tuple(rope_frame['free_end']))
             self.assertEqual(hand.a, 255)
             self.assertEqual(endpoint.a, 255)

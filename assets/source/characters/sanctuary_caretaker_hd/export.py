@@ -23,5 +23,15 @@ def export():
  for i,p in enumerate(frames+[frames[-1]]*4):
   p=p.resize((round(p.width*factor),round(p.height*factor)),Image.Resampling.NEAREST)
   # Fixed back-of-body line; forward reach changes crop width, never body origin.
-  c=Image.new('RGBA',(80,96));c.alpha_composite(p,(50-p.width,88-p.height));c.save(OUT/'unhook'/f'frame_{i:02}.png')
+  c=Image.new('RGBA',(80,96));c.alpha_composite(p,(50-p.width,88-p.height))
+  if i in (3,6):
+   # Source-authored complete-pose correction. Preserve approved pixels outside
+   # the edited arm region; no limb transforms/interpolation or body movement.
+   master=read('reach_correction_master.png');col=i%4;row=i//4
+   fix=master.crop((col*master.width//4,row*master.height//3,(col+1)*master.width//4,(row+1)*master.height//3));fix=fix.crop(fix.getbbox())
+   fix=fix.resize((round(fix.width*factor),round(fix.height*factor)),Image.Resampling.NEAREST)
+   registered=Image.new('RGBA',(80,96));registered.alpha_composite(fix,(50-fix.width,88-fix.height))
+   box=(10,42,44,56) if i==3 else (16,49,44,61)
+   c.paste(registered.crop(box),box)
+  c.save(OUT/'unhook'/f'frame_{i:02}.png')
 if __name__=='__main__':export()
