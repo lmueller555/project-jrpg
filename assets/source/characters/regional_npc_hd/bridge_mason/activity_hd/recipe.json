@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "actor_id": "bridge_mason",
+  "runtime_activation": false,
+  "dependencies": [
+    {
+      "file": "assets/characters/bridge_workers/mason/animation.json",
+      "sha256": "738bd8eacf35b11543d9afdcf3c29f4178a23b754f5b4f7b2068c9950795427a"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/carry_generated.png",
+      "sha256": "21662e3d348eebd9664bea5539bbf25b522dae744167a332ac9af311b22c0d9c"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/native_review.png",
+      "sha256": "d2a551ae71d6467ac256e477905e279bfe134cf25afe74c2070e7e9815b72f15"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/seated_generated.png",
+      "sha256": "04d5da35d104c8cf782f904710d8cc6a06a74d0dd83901c2058804ef28491656"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/tea_generated.png",
+      "sha256": "78c4236ad5a133628c6e99ca50aab093c599bb13986ae5fad67e33c7d3fbe8c2"
+    },
+    {
+      "file": "assets/source/characters/bridge_workers/mason/work_generated.png",
+      "sha256": "8ff21d07606cf1303a82fef7fc4982871dc46677986079ba513f6a72026f89e9"
+    },
+    {
+      "file": "tools/build_bridge_mason.py",
+      "sha256": "28a48acf590ab61eb53c9926e425bb0aaa29111cec7cfd585147384517114b6d"
+    },
+    {
+      "file": "tools/build_grain_loader.py",
+      "sha256": "88f927033a1703b76c9b15cc545c45bfc18ca2c9dd521ee64365c8ff0f6ac3e6"
+    }
+  ],
+  "density": 2,
+  "method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "activation_gates": [
+    "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
+    "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
+    "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
+    "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ]
+}
