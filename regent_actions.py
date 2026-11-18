@@ -4,6 +4,7 @@ The quest owns progress and movement. This view owns only temporary approved
 body drawings, attention and table props; reading is always player paced.
 """
 from caelan_scene_art import image as scene_image
+from regent_native_activity import image as native_activity_image
 from serene_scene_art import image as serene_image
 from tomas_scene_art import image as tomas_image, replacement as tomas_replacement
 from rendering import rotate as render_rotate
@@ -35,7 +36,9 @@ class RegentActions:
         self.reset()
 
     def _image(self, path):
-        if path not in self._images:self._images[path] = scene_image(self.dining,path)
+        if path not in self._images:
+            native=native_activity_image(self.dining,path)
+            self._images[path]=native if native is not None else scene_image(self.dining,path)
         return self._images[path]
 
     def _hand_pose(self, direction):

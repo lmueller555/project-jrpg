@@ -1,0 +1,17 @@
+# Page native overworld base candidate
+
+Canonical ID `regent_clerk`; keep the displayed name Page and original scene ownership. Four native48×72 idles and four8×70ms walks retain original24×36 logical presentation, draw[12,30], foot[12,34], density2. Visible idle height70 artwork pixels matches the original35 logical pixels. Palette, brown curls, moss coat, ivory collar, brass trim/belt and brown leather boots reference the Page's actual existing bank, not an adult villager recolor. Original cinematic portrait copied byte-exact for provenance; no dialogue portrait registry change.
+
+Source: author_idle.py, author_walk.py and motion_contours.json under assets/source/characters/named_hd/regent_clerk. Complete native body/sleeve/hand/coat contours are newly plotted; only this target's newly drawn head is reused. Compatible approved shopkeeper_01 foot/leg contour coordinates are explicitly retained, hidden above this Page's coat hem; no source pose pixels copied. Guide hashes/paths and phase4 left motion correspondence recorded in guide_provenance.json. Left idle uses the symmetric costume structure with separately revised curl drawing; no asymmetric costume invented or reflected across sides.
+
+Each directional directory includes old/new idle +8poses, native/normal/slow loops, seam7–8–1–2 and landmarks. Belt coordinates may be concealed behind the profile near sleeve; no false visibility assertion. Coat conceals hip/knee roots. Static sheets inspected; final normal-speed live playback and independent reviewer approval remain pending. Crown starts at0 as original; walk bob stays0/+1 to avoid artificial clipping or enlarging canvas.
+
+Seven ID-local art tests pass: geometry/registration, idle height/alpha,8distinct complete frames+strip agreement, exact portrait, no invented run, preview duration and byte-reproducible rebuild. Build `python tools/build_named_regent_clerk_hd.py`; tests `python -m unittest discover -s tests -p test_named_regent_clerk_hd.py`.
+
+The sparse regent_actors.py override is based on merged0bd821b2. It opts in the three explicitly assigned regent_clerk/regent_driver/regent_survivor IDs only when each ID-specific bank exists, calls RosterArt(world,id,named=True), preserves positions/anchors/probes/clock and legacy named activity precedence. Missing bank preserves the legacy path. Root must merge and exercise against actual main. Actual production Game.draw and native dispatch/lifecycle evidence is now supplied under production/; the final current-main adapter composition remains the root integration gate.
+
+Separate activity work remains: actual read/read_lower/read_attention/read_resume metadata (only read identified as used), and clerk_seated dining pose. These are not disguised as locomotion. Legacy scenes remain in force until separate activity approval. Cinematic80×96 Page, Driver, ceremonial guard and local audit is in ../ audit package; these are distinct projections and are not replaced by this overworld bank. No Git operations/publication performed.
+
+## Completed production QA and activation packaging
+
+See production/README.md and actual Game.draw images/GIFs. The earlier sparse-only status above is superseded by this production QA. The replacement PR includes this ID’s explicit activation.json and requires BOTH its base and separately staged activity bank. Shared consumers are supplied only by Page replacement. Activity PRs remain distinct, dormant asset/source/test-only packages. Do not merge any package until the entire reviewed activation set is ready.
