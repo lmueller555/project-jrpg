@@ -37,11 +37,438 @@
     }
   ],
   "density": 2,
-  "method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "method": "Native complete drawings matching adult_man_01 canonical directional heads and stature. Original generated chibi provenance retained as history, superseded by refined_masters; no body raster warp/resizing. Explicit native whole-pose source atlas and plan retained.",
   "activation_gates": [
     "Visually review every frame, both-step loaded gait, turn/hold/action joins and first-last loop.",
     "Check native hands/grips against separately owned sack/cloth/stone/cup/tool objects in actual Game; no anatomy stretch.",
     "Verify rear/side prop occlusion and blocked holds, interruption/cancel, region streaming and Save/Continue.",
     "Keep old durable milestones and logical metadata unless a specific reviewed correction is needed."
+  ],
+  "refined_masters": {
+    "poses/carry_back_0.png": {
+      "file": "refined_masters/carry_back_0.png",
+      "sha256": "5435a4bc8519c060afcab0b3889698d1aa6023cbdeac17cf3054f43350649704"
+    },
+    "poses/carry_back_1.png": {
+      "file": "refined_masters/carry_back_1.png",
+      "sha256": "8b15a84b3a78f070222fc47a8fd6e22d1fd3de43addca64cde4b9383615c3f56"
+    },
+    "poses/carry_back_2.png": {
+      "file": "refined_masters/carry_back_2.png",
+      "sha256": "4eb43f8a93b34b5028c91ab6105a73bef8da4b5d75266e4dca76ccc4ae94071e"
+    },
+    "poses/carry_back_3.png": {
+      "file": "refined_masters/carry_back_3.png",
+      "sha256": "4bf8d8a89411c1f3525506aaf084eb6d7569d58caaba84907a381e42dc25714d"
+    },
+    "poses/carry_front_0.png": {
+      "file": "refined_masters/carry_front_0.png",
+      "sha256": "7c819e1b17d2ec1bb0966744ce890b9a053b783964f54039575f2d68ee09a9c6"
+    },
+    "poses/carry_front_1.png": {
+      "file": "refined_masters/carry_front_1.png",
+      "sha256": "3f178536371b15af7e24b9b6082fb3bee94d19ad3c1bbf44c1fa8c7d336fb5a6"
+    },
+    "poses/carry_front_2.png": {
+      "file": "refined_masters/carry_front_2.png",
+      "sha256": "6124e41d3f606fd8c659a454ee4b359514512af91f359a417b5189a4053e7fa2"
+    },
+    "poses/carry_front_3.png": {
+      "file": "refined_masters/carry_front_3.png",
+      "sha256": "e14097232a68de519801bfa790b054ee598caa3414a33d20ee74018137d01280"
+    },
+    "poses/carry_left_0.png": {
+      "file": "refined_masters/carry_left_0.png",
+      "sha256": "6bc0babb2833f7267b580f73cdc38e0248c698ed0f0ebe32da0b7296692b3924"
+    },
+    "poses/carry_left_1.png": {
+      "file": "refined_masters/carry_left_1.png",
+      "sha256": "a6b6641896e71ef373f92dafebcb6e2acf06c3a1af9586bacb8ec80516c6ce52"
+    },
+    "poses/carry_left_2.png": {
+      "file": "refined_masters/carry_left_2.png",
+      "sha256": "79ace6bfceed22b74aa550320e3e1aea9bea246607586d84120a72a70264390e"
+    },
+    "poses/carry_left_3.png": {
+      "file": "refined_masters/carry_left_3.png",
+      "sha256": "3243bff0239e1b0e4e90885cbb62aba7950db1f71f9e6aa7964884db2e0d4c42"
+    },
+    "poses/carry_right_0.png": {
+      "file": "refined_masters/carry_right_0.png",
+      "sha256": "2bcdf416979b166913f62c889ead404de9a50fa30dabf66b9a262204efa7dedc"
+    },
+    "poses/carry_right_1.png": {
+      "file": "refined_masters/carry_right_1.png",
+      "sha256": "f0adc0818f5acb81d40f0034021a568b56ea651256d37fad1e5dc04cdec402e1"
+    },
+    "poses/carry_right_2.png": {
+      "file": "refined_masters/carry_right_2.png",
+      "sha256": "63be946324c89064d6d0f8a755fe4560334d8b1e13df0368ada0af96ef71a10c"
+    },
+    "poses/carry_right_3.png": {
+      "file": "refined_masters/carry_right_3.png",
+      "sha256": "a8e5d89d6d55babe5f454e27e6a85dcb87fcc737dfadecf4bdcf5e5c1305ad83"
+    },
+    "poses/cup_back_0.png": {
+      "file": "refined_masters/cup_back_0.png",
+      "sha256": "5435a4bc8519c060afcab0b3889698d1aa6023cbdeac17cf3054f43350649704"
+    },
+    "poses/cup_back_1.png": {
+      "file": "refined_masters/cup_back_1.png",
+      "sha256": "8b15a84b3a78f070222fc47a8fd6e22d1fd3de43addca64cde4b9383615c3f56"
+    },
+    "poses/cup_back_2.png": {
+      "file": "refined_masters/cup_back_2.png",
+      "sha256": "4eb43f8a93b34b5028c91ab6105a73bef8da4b5d75266e4dca76ccc4ae94071e"
+    },
+    "poses/cup_back_3.png": {
+      "file": "refined_masters/cup_back_3.png",
+      "sha256": "4bf8d8a89411c1f3525506aaf084eb6d7569d58caaba84907a381e42dc25714d"
+    },
+    "poses/cup_front_0.png": {
+      "file": "refined_masters/cup_front_0.png",
+      "sha256": "25b183735ebbc25548b79d86e3a3650831b37089c9484186eadde541d2932c6f"
+    },
+    "poses/cup_front_1.png": {
+      "file": "refined_masters/cup_front_1.png",
+      "sha256": "694b1fdbb933b50c4f5f92b5da8bcde76d5a9532161fcb15d749cf3c57f337f9"
+    },
+    "poses/cup_front_2.png": {
+      "file": "refined_masters/cup_front_2.png",
+      "sha256": "be70fddf4fe3adc0160d03314b11982a31114ddf7c2efda87cf791eab6db40e3"
+    },
+    "poses/cup_front_3.png": {
+      "file": "refined_masters/cup_front_3.png",
+      "sha256": "ba99e86aa7594138f9c5f06cbcc4cb6ab745741d364ad23f3654826c91c6f5a3"
+    },
+    "poses/cup_hold_back_0.png": {
+      "file": "refined_masters/cup_hold_back_0.png",
+      "sha256": "f3392704e3bc351adedf865b4c89f1d0df793a08179c89927ea382bc6ac4e55f"
+    },
+    "poses/cup_hold_front_0.png": {
+      "file": "refined_masters/cup_hold_front_0.png",
+      "sha256": "e3068cedf1daf0cfe6baf4a2f0b21e0e779c6a584ec9aa6b4c0c77f0d5488a7c"
+    },
+    "poses/cup_hold_left_0.png": {
+      "file": "refined_masters/cup_hold_left_0.png",
+      "sha256": "e88a9977e0e69fcfe2aed22e7c46ecc4a3d469dfb14408e241c9b4cf5b190953"
+    },
+    "poses/cup_hold_right_0.png": {
+      "file": "refined_masters/cup_hold_right_0.png",
+      "sha256": "ab201d774c4dfb009f4533072806277a2b10ce445a33c01447a1c9370eb06b46"
+    },
+    "poses/cup_left_0.png": {
+      "file": "refined_masters/cup_left_0.png",
+      "sha256": "3d3b42bb4888e18adc54af277bc9781c8f86ad7fb1269822e76f97eddd107576"
+    },
+    "poses/cup_left_1.png": {
+      "file": "refined_masters/cup_left_1.png",
+      "sha256": "345a5995341fb5746f6bfad6fbd30dc8636888eb95dbc908284823ff8a8cebea"
+    },
+    "poses/cup_left_2.png": {
+      "file": "refined_masters/cup_left_2.png",
+      "sha256": "f1338cfc4cd8d44d508c5d4d2ad0fa8c58d3d056b45685b807393237ad6b3e18"
+    },
+    "poses/cup_left_3.png": {
+      "file": "refined_masters/cup_left_3.png",
+      "sha256": "f4f1c21e940118a4c128eecfd73871ef3374df1cce81667c5af11811892337ce"
+    },
+    "poses/cup_right_0.png": {
+      "file": "refined_masters/cup_right_0.png",
+      "sha256": "2bcdf416979b166913f62c889ead404de9a50fa30dabf66b9a262204efa7dedc"
+    },
+    "poses/cup_right_1.png": {
+      "file": "refined_masters/cup_right_1.png",
+      "sha256": "f0adc0818f5acb81d40f0034021a568b56ea651256d37fad1e5dc04cdec402e1"
+    },
+    "poses/cup_right_2.png": {
+      "file": "refined_masters/cup_right_2.png",
+      "sha256": "63be946324c89064d6d0f8a755fe4560334d8b1e13df0368ada0af96ef71a10c"
+    },
+    "poses/cup_right_3.png": {
+      "file": "refined_masters/cup_right_3.png",
+      "sha256": "a8e5d89d6d55babe5f454e27e6a85dcb87fcc737dfadecf4bdcf5e5c1305ad83"
+    },
+    "poses/drink_front_0.png": {
+      "file": "refined_masters/drink_front_0.png",
+      "sha256": "697ad5daf6b6a983b34627ee2aa0e428d4ecf39f23371622c11814306c9fb964"
+    },
+    "poses/drink_front_1.png": {
+      "file": "refined_masters/drink_front_1.png",
+      "sha256": "eda95c68624b5f4efb4db920c5a719106b3c6c0afa687f022ebaf49f2e0135c8"
+    },
+    "poses/drink_front_2.png": {
+      "file": "refined_masters/drink_front_2.png",
+      "sha256": "d636f739c9de920d1751ad57a81ea01d9407dc7be9243f30720a4324451301e8"
+    },
+    "poses/drink_front_3.png": {
+      "file": "refined_masters/drink_front_3.png",
+      "sha256": "697ad5daf6b6a983b34627ee2aa0e428d4ecf39f23371622c11814306c9fb964"
+    },
+    "poses/hold_back_0.png": {
+      "file": "refined_masters/hold_back_0.png",
+      "sha256": "f3392704e3bc351adedf865b4c89f1d0df793a08179c89927ea382bc6ac4e55f"
+    },
+    "poses/hold_front_0.png": {
+      "file": "refined_masters/hold_front_0.png",
+      "sha256": "57f87bd251e4049cb4c8881f7712a4c5988b71785b3a46718e7ec620422bb6dc"
+    },
+    "poses/hold_left_0.png": {
+      "file": "refined_masters/hold_left_0.png",
+      "sha256": "ab9046d4ed9a06711f1d940368e85d1cbdc8042e7cc7c8e94ec101903e94c66d"
+    },
+    "poses/hold_right_0.png": {
+      "file": "refined_masters/hold_right_0.png",
+      "sha256": "4009178c15d7dfe9c4b62424a185b7a60d92c9ad23f8acf90518ac394b6cfd4f"
+    },
+    "poses/inspect_front_0.png": {
+      "file": "refined_masters/inspect_front_0.png",
+      "sha256": "4906418cd0ea2f2b98ba45fce4588107d2ca9d28f1b41b494eed313ed4a93687"
+    },
+    "poses/inspect_front_1.png": {
+      "file": "refined_masters/inspect_front_1.png",
+      "sha256": "07ea2f7e6aef8ac8c863df3ec6493ede74239c1d398362ee8b7ea1760612da7b"
+    },
+    "poses/lift_front_0.png": {
+      "file": "refined_masters/lift_front_0.png",
+      "sha256": "e4fab4686f4d946812727a6a0a31967f09d634a60757fd6c8f7cfeaea13006b5"
+    },
+    "poses/lift_front_1.png": {
+      "file": "refined_masters/lift_front_1.png",
+      "sha256": "8d5f1b8f8a2d34659bbc87c666a551a1f6b65ab666937e2578658d1fdba861d2"
+    },
+    "poses/lift_front_2.png": {
+      "file": "refined_masters/lift_front_2.png",
+      "sha256": "f655bb5f36039954c0be01ec515d65eb984bc636337d8a1ce4bcc017cc514322"
+    },
+    "poses/lift_front_3.png": {
+      "file": "refined_masters/lift_front_3.png",
+      "sha256": "f7e99ef678a9e63a458e0a65bedc4be89af8062020375690c71158373612c1e5"
+    },
+    "poses/measure_left_0.png": {
+      "file": "refined_masters/measure_left_0.png",
+      "sha256": "f4f5bd45990fa10b98d07b80f3261d85cf39fd643a5aff1d8f3d0edbd141259d"
+    },
+    "poses/measure_left_1.png": {
+      "file": "refined_masters/measure_left_1.png",
+      "sha256": "179834d2d8d386fefbb5122aa7503d9186f579b18cb2477db30e5a1e3a0a8109"
+    },
+    "poses/measure_right_0.png": {
+      "file": "refined_masters/measure_right_0.png",
+      "sha256": "52f977f79b332284df5afb93ee2180bffc17b29c2ebba0dcd1f37088d9ee2b15"
+    },
+    "poses/measure_right_1.png": {
+      "file": "refined_masters/measure_right_1.png",
+      "sha256": "262bd90fac13b13304d02860739626383e0b873a8f053da7379fdb85407a1b35"
+    },
+    "poses/offer_right_0.png": {
+      "file": "refined_masters/offer_right_0.png",
+      "sha256": "37be226b91d7b04760b3dd3fc03efde05d497ca457761b5aa14a70a3f882243a"
+    },
+    "poses/offer_right_1.png": {
+      "file": "refined_masters/offer_right_1.png",
+      "sha256": "994e0a68855ed57dd3cafa9ef0ea39a2738f83d4b6b7c5d72a7b3af1f2360419"
+    },
+    "poses/offer_right_2.png": {
+      "file": "refined_masters/offer_right_2.png",
+      "sha256": "1eb838f6bd1c23ea30f9411ae3e1546cb470992bd0b187613530d814d3c52b53"
+    },
+    "poses/offer_right_3.png": {
+      "file": "refined_masters/offer_right_3.png",
+      "sha256": "a5893d6f6fd1d8991b84572c0552251a5ef581f24595e3c5b618df49efce8792"
+    },
+    "poses/place_front_0.png": {
+      "file": "refined_masters/place_front_0.png",
+      "sha256": "f7e99ef678a9e63a458e0a65bedc4be89af8062020375690c71158373612c1e5"
+    },
+    "poses/place_front_1.png": {
+      "file": "refined_masters/place_front_1.png",
+      "sha256": "f655bb5f36039954c0be01ec515d65eb984bc636337d8a1ce4bcc017cc514322"
+    },
+    "poses/place_front_2.png": {
+      "file": "refined_masters/place_front_2.png",
+      "sha256": "8d5f1b8f8a2d34659bbc87c666a551a1f6b65ab666937e2578658d1fdba861d2"
+    },
+    "poses/place_front_3.png": {
+      "file": "refined_masters/place_front_3.png",
+      "sha256": "e4fab4686f4d946812727a6a0a31967f09d634a60757fd6c8f7cfeaea13006b5"
+    },
+    "poses/receive_right_0.png": {
+      "file": "refined_masters/receive_right_0.png",
+      "sha256": "f060f5bab51d4f812fcdd4dc82bedcce0416b662f8e080e68dbe81a3a652b25b"
+    },
+    "poses/receive_right_1.png": {
+      "file": "refined_masters/receive_right_1.png",
+      "sha256": "a5893d6f6fd1d8991b84572c0552251a5ef581f24595e3c5b618df49efce8792"
+    },
+    "poses/receive_right_2.png": {
+      "file": "refined_masters/receive_right_2.png",
+      "sha256": "9a780364c7dc4a96fd68429c288d52d4962675ffdc81dd99d6784abf19b16160"
+    },
+    "poses/receive_right_3.png": {
+      "file": "refined_masters/receive_right_3.png",
+      "sha256": "9a780364c7dc4a96fd68429c288d52d4962675ffdc81dd99d6784abf19b16160"
+    },
+    "poses/recover_front_0.png": {
+      "file": "refined_masters/recover_front_0.png",
+      "sha256": "e4fab4686f4d946812727a6a0a31967f09d634a60757fd6c8f7cfeaea13006b5"
+    },
+    "poses/recover_front_1.png": {
+      "file": "refined_masters/recover_front_1.png",
+      "sha256": "5a46f81381b96735e367cae31400dfe4a1a5fdbcb5dc496436b4992be8987cd3"
+    },
+    "poses/recover_front_2.png": {
+      "file": "refined_masters/recover_front_2.png",
+      "sha256": "6153dd042b5bd570b541bdc27f6f51cd2e7ec5e5039b58d8fc903a42292afee0"
+    },
+    "poses/recover_front_3.png": {
+      "file": "refined_masters/recover_front_3.png",
+      "sha256": "8e72d8368baf20fb90973eb9ba04da8d16cec279fb49807e42f10c1ab95d8f27"
+    },
+    "poses/sit_down_front_0.png": {
+      "file": "refined_masters/sit_down_front_0.png",
+      "sha256": "b819b8ae46ea47c8d23d9e04acf4d37a8532643071b06f2348cbe26180483b06"
+    },
+    "poses/sit_down_front_1.png": {
+      "file": "refined_masters/sit_down_front_1.png",
+      "sha256": "46c203655e6f105cfe22be7ee80db041b7c6d882a710c3ce02aa260da1d2add9"
+    },
+    "poses/sit_down_front_2.png": {
+      "file": "refined_masters/sit_down_front_2.png",
+      "sha256": "5dcd3cbc44d1fbc923892f8c91c0dfe3605cae7e9fa5d1a2ac706be50ad96cc2"
+    },
+    "poses/sit_down_front_3.png": {
+      "file": "refined_masters/sit_down_front_3.png",
+      "sha256": "697ad5daf6b6a983b34627ee2aa0e428d4ecf39f23371622c11814306c9fb964"
+    },
+    "poses/sit_front_0.png": {
+      "file": "refined_masters/sit_front_0.png",
+      "sha256": "697ad5daf6b6a983b34627ee2aa0e428d4ecf39f23371622c11814306c9fb964"
+    },
+    "poses/stand_front_0.png": {
+      "file": "refined_masters/stand_front_0.png",
+      "sha256": "697ad5daf6b6a983b34627ee2aa0e428d4ecf39f23371622c11814306c9fb964"
+    },
+    "poses/stand_front_1.png": {
+      "file": "refined_masters/stand_front_1.png",
+      "sha256": "25fec3c421049322d9a8877ec6dc99a47de55f830d37cd689cfce8f902f86e38"
+    },
+    "poses/stand_front_2.png": {
+      "file": "refined_masters/stand_front_2.png",
+      "sha256": "53f5dd4f3a6cf795b4687296c8b634da4865841ad049ce1c44ee68ea4656f083"
+    },
+    "poses/stand_front_3.png": {
+      "file": "refined_masters/stand_front_3.png",
+      "sha256": "623f8e4daaa1abe5c926732b6b318fc456c24805a89847ad88e3d4347aa2aef7"
+    },
+    "poses/stretch_front_0.png": {
+      "file": "refined_masters/stretch_front_0.png",
+      "sha256": "d9784d13d553f573d287b7617f8953c2f4a0e8d1f0687953e00ebbf431d4828d"
+    },
+    "poses/stretch_front_1.png": {
+      "file": "refined_masters/stretch_front_1.png",
+      "sha256": "d4d2f3aef69910d89a406afdd4bad3846e56dfd84aef8386426c083db56ec257"
+    },
+    "poses/work_right_0.png": {
+      "file": "refined_masters/work_right_0.png",
+      "sha256": "84a600a55aaa05ea9a020b145acb5c749e76772266bc4426a80e58f6480650fa"
+    },
+    "poses/work_right_1.png": {
+      "file": "refined_masters/work_right_1.png",
+      "sha256": "049ddfca80636b4a172e6d63868d362b00390e21af8dd58a738ad0e818becc60"
+    },
+    "poses/work_right_2.png": {
+      "file": "refined_masters/work_right_2.png",
+      "sha256": "13357276979cbc1cfe98571a8362c721d368aaedddf3f13aaa126a5ff1fedbfe"
+    },
+    "poses/work_right_3.png": {
+      "file": "refined_masters/work_right_3.png",
+      "sha256": "84a600a55aaa05ea9a020b145acb5c749e76772266bc4426a80e58f6480650fa"
+    }
+  },
+  "revision": 2,
+  "refinement_method": "Native complete drawings matching adult_man_01 canonical directional heads and stature. Original generated chibi provenance retained as history, superseded by refined_masters; no body raster warp/resizing. Explicit native whole-pose source atlas and plan retained.",
+  "original_method": "Retained complete-figure master cells selected by original reproducible exporter; native sampling occurs before downsampling, not enlargement of its legacy output.",
+  "reference_dependencies": [
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/idle_front.png",
+      "sha256": "40b1721321da354a0760b81181009f176d676081c2044af1182d0e6b278ddafc"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_front/frame_01.png",
+      "sha256": "60e675f511910e4c92bef9410649077653ca2d4ac17d305323c5c967d096b921"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_front/frame_03.png",
+      "sha256": "6efecf63a4c17098d919f66cb57cc7b411ca640858f7d1fc0218d75784349ed6"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_front/frame_05.png",
+      "sha256": "ad6dc6766f54946f1cfc93f2d402bc38e41b89275b3e0b39f64f7b2872afafc7"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_front/frame_07.png",
+      "sha256": "0c0b33acbe814baeb635d8d9162d57f55f09cc029f79f1bc903736f00adbe21b"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/idle_back.png",
+      "sha256": "5b00c1601f094d5b073629db32940b74de56fff7159a4c2032fef54aa30330aa"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_back/frame_01.png",
+      "sha256": "23a573e196d0ebe758cbcd03931aaf78300576cebf3c5c7ea4be162275ade905"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_back/frame_03.png",
+      "sha256": "815d9919ff39d476437c7fca974d41b742c2e564ce23a48cb0ebdc08a830f49d"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_back/frame_05.png",
+      "sha256": "d1ab1ac0da8faa76b83399b1f8bd23b0e22e538b7aee8348a097513512fc7be5"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_back/frame_07.png",
+      "sha256": "305d3c50669808cff11a9dd3a7e210aba2f5269e78a4e11efb9e876f3b96b08f"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/idle_left.png",
+      "sha256": "a76db64a71d0ebbc21acdec3509f28aa6c90be9016cd9e85ae4773fd433ac882"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_left/frame_01.png",
+      "sha256": "02acf548c56e4a82bd0023760b7a16df72d04993685baff54d1c42ed29cac732"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_left/frame_03.png",
+      "sha256": "d0451e2244d7298ec09ba63c921e2cf7c3b998f2b5bd232b7aecd406d9f3c8a7"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_left/frame_05.png",
+      "sha256": "1677e51a7baa153f4b4f06911d0c834e9af8b3d2972379835b2553e6c44312a4"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_left/frame_07.png",
+      "sha256": "674f92f94ab848706d9614d678f44c738e9a76bd12f8eb954b590a94aa6f5cbe"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/idle_right.png",
+      "sha256": "d739f0f941746f2a610d4f4c7d5460ed30c0b86a278d2d4a947e8fab60a5102a"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_right/frame_01.png",
+      "sha256": "f0886a8df9ba038ad82721250af20762c9a8ef70321c04daa83cd6ef58b4abee"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_right/frame_03.png",
+      "sha256": "cf0abd72a4e90566cd3152f501d65cfefe47d622aabbae789dbe9f390aea3699"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_right/frame_05.png",
+      "sha256": "a239e7c96632d9cfeb8481850e18da71c040487d3f043095e87ee468bfa974db"
+    },
+    {
+      "file": "assets/characters/npc_roster_hd/adult_man_01/walk_right/frame_07.png",
+      "sha256": "d0cbddda59afcbab0e6a5d5b5ee24ccb4e81a46a270a06b00a14f9b6f6eae3bb"
+    }
   ]
 }
