@@ -128,8 +128,9 @@ livelihood. Another town might handle the same emergency differently.
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
 A watcher sees an unfamiliar vessel approaching yesterday’s landing channel.
-A boatbuilder intercepts it and shows the crew where the ice has moved on a
-board marked from that morning’s observations. A grain consignee objects to
+The boatbuilder, who usually sketches faces on scraps of plank while she
+waits for seams to dry, takes one out with a drawing of the morning’s ice
+instead. She shows the crew which landmarks they should no longer steer by. A grain consignee objects to
 another delay. A deckhand whose brother worked the last unpaid rescue refuses
 to lead the boat in before another approach is checked. The argument is over
 who bears the cost of caution, not whether the strangers deserve warning.
@@ -156,7 +157,8 @@ medicine. Record both the agreed priority and the requests it puts off;
 a visible promise can be challenged even when nobody can produce another
 cart. This is a candidate local practice, not a constitution, a kingdom-wide
 institution, or an excuse to bypass protected ground. It does not name the
-kingdom, capital, roads, or officeholders.
+kingdom, capital, roads, or officeholders. Do not use it to disclose the
+Crown’s covert investigation or Iselin’s later fate.
 
 Craft source for the thin northern institutional material: [Brandon Sanderson,
 *Worldbuilding Part Two*](https://www.youtube.com/watch?v=V2KpWOLTXx8)
