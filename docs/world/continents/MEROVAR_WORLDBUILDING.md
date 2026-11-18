@@ -109,6 +109,20 @@ or identity. To reconstruct a past connection, look for corroborated
 journeys, records that can be placed in sequence, or evidence of when
 a practice appeared. Differences in words or habits alone aren’t enough.
 
+## Three established relationships and what they don’t prove
+
+| Pair | What the geography establishes | What it leaves open |
+| --- | --- | --- |
+| Vale and Greyfold | Western foothills and drainage connect the uplands with greener country below. | Common culture, a political boundary, and the proposed history of wool commissions. |
+| Lower Leth and Rookfen | The Leth flows through the floodplains toward the marshes and delta. | A particular working arrangement, historical cooperation, or common government. |
+| Iselin’s homeland and the Rimeward Shores | The sources describe the mountain-enclosed kingdom and the far northern coast separately. | A direct route, shared identity, or shared sovereignty. |
+
+Before linking communities in a proposed history, say what the
+connection would carry, what would obstruct it, and what would remain
+unchanged. Check against the [atlas](MEROVAR.md) and
+[polar geography](../POLAR_REGIONS.md); a physical connection is not
+an interstate border or proof that anyone used it.
+
 ## Elden Vale: mending before lighting
 
 Some households clean or mend an older festival lantern in company. The work
@@ -472,6 +486,21 @@ A neighbouring stallholder hires only people he knows: a sound joint
 doesn’t tell him who will still be in town tomorrow. The stool opens one
 door without becoming a regional test, a licence to work, or proof that
 any stranger will get a job.
+
+## Lower Leth and Rookfen: the rack that comes apart
+
+**Proposed trace:** An old Lower Leth orchard drying rack has three
+unevenly spaced sockets for removable slats. A repaired household
+rack in [Rookfen](MEROVAR.md#rookfen) has the same spacing. The orchard
+family remembers someone bringing the idea home after seasonal work.
+The slats are useful in both places; they can be taken out to clean
+the rack or put it away.
+
+The match makes borrowing possible, not certain. The families might
+have made similar choices on their own or learned from another
+workshop. No date, direction, traveller, journey, or migration is
+decided. The object is a way to ask about contact, not to label
+the people who used either rack.
 
 ## Rookfen and Marris: where a cargo changes hands
 
@@ -1004,12 +1033,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Try one earlier connection between two communities with an object
-   whose origin is uncertain. Distinguish borrowing from separate
-   responses to a similar problem, and don’t assume migration.
-2. Cross-check Merovar’s regional relationships: what physical
-   connection is actually established, and what social or political
-   story would still have to be developed?
+1. Identify one thing that could distinguish an older settled
+   neighbourhood from a later extension. Keep the evidence and its
+   limitations visible without adding a mapped site.
+2. Look for a shared practice or object that means different things
+   in two communities over time. Show why repeated contact needn’t
+   make either place a copy of the other.
 
 ## Map implications for a later review
 
