@@ -1,0 +1,34 @@
+{
+  "id": "regent_driver",
+  "canvas": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "artwork_pixels_per_world_pixel": 2,
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    68
+  ],
+  "poses": {
+    "seated": {
+      "frames": [
+        {
+          "file": "seated_00.png",
+          "duration_ms": 100
+        }
+      ],
+      "loop": false,
+      "facing": "back"
+    }
+  },
+  "status": "candidate_pending_independent_review",
+  "runtime_integration": false
+}
