@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "character": "adult_man_04",
+  "animation": "walk.right",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/adult_man_04/walk_right/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/adult_man_04/walk_right/authored.png": "f3b76f3ac4817d671af4964ef98f0ac1b785a68c2d3948a0e6722cb7b2579917",
+    "assets/characters/npc_roster_hd/adult_man_04/idle_right.png": "b11edd6c8d28caab0d588c6b5ea2870cd1b60732e03ca178e79b76c6421b671d"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        17,
+        67
+      ],
+      "right_boot_bottom": [
+        32,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          17,
+          67
+        ],
+        "right_toe": [
+          32,
+          69
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        19,
+        64
+      ],
+      "right_boot_bottom": [
+        28,
+        69
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          19,
+          64
+        ],
+        "right_toe": [
+          28,
+          69
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        26,
+        65
+      ],
+      "right_boot_bottom": [
+        24,
+        69
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          26,
+          65
+        ],
+        "right_toe": [
+          24,
+          69
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        30,
+        67
+      ],
+      "right_boot_bottom": [
+        20,
+        69
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          30,
+          67
+        ],
+        "right_toe": [
+          20,
+          69
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_contact",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        31,
+        69
+      ],
+      "right_boot_bottom": [
+        18,
+        67
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          31,
+          69
+        ],
+        "right_toe": [
+          18,
+          67
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "left_down",
+      "body_bob_art_pixels": 1,
+      "left_boot_bottom": [
+        27,
+        69
+      ],
+      "right_boot_bottom": [
+        20,
+        64
+      ],
+      "crown_y": 3,
+      "belt_y": 41,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          3
+        ],
+        "neck": [
+          24,
+          26
+        ],
+        "belt": [
+          24,
+          41
+        ],
+        "left_toe": [
+          27,
+          69
+        ],
+        "right_toe": [
+          20,
+          64
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_passing",
+      "body_bob_art_pixels": 0,
+      "left_boot_bottom": [
+        23,
+        69
+      ],
+      "right_boot_bottom": [
+        27,
+        65
+      ],
+      "crown_y": 2,
+      "belt_y": 40,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          2
+        ],
+        "neck": [
+          24,
+          25
+        ],
+        "belt": [
+          24,
+          40
+        ],
+        "left_toe": [
+          23,
+          69
+        ],
+        "right_toe": [
+          27,
+          65
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "phase": "right_recovery",
+      "body_bob_art_pixels": -1,
+      "left_boot_bottom": [
+        19,
+        69
+      ],
+      "right_boot_bottom": [
+        31,
+        67
+      ],
+      "crown_y": 1,
+      "belt_y": 39,
+      "occlusion": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes.",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          1
+        ],
+        "neck": [
+          24,
+          24
+        ],
+        "belt": [
+          24,
+          39
+        ],
+        "left_toe": [
+          19,
+          69
+        ],
+        "right_toe": [
+          31,
+          67
+        ],
+        "occlusion_note": "Right arm/leg always near; left far arm partly occluded by torso and left swing leg partly occluded by right support at passing. No side identity changes."
+      }
+    }
+  ]
+}
