@@ -1,6 +1,6 @@
 # Native Iselin back-walk source
 
-Status: awaiting user review. This is the rear-direction asset milestone;
+Status: back walk approved by the user. This is the rear-direction asset milestone;
 existing approved native idles/front/left/right walks and live bindings remain
 unchanged.
 

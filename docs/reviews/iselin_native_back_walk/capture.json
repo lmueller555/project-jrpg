@@ -3,7 +3,7 @@
   "movement": "RegentQuest._move at74worldpx/s for upward travel; pinned in-place inspection separately.",
   "scope": "Review actor only; live Iselin art bindings/walks/quest state unchanged.",
   "persistence": "Disposable save/settings directory; no player saves published.",
-  "base_commit": "caa81e8b0597430e05350a33fc23e7823d7dbd7d",
+  "base_commit": "d6a2215c75be55c8f134a0d77a528107e03df6ca",
   "walking_speed_world_px_s": 74,
   "simulation_step_ms": 35,
   "fixed_camera": [
@@ -2524,8 +2524,8 @@
     }
   ],
   "source_sha256": {
-    "assets/characters/iselin/native_walk_back/animation.json": "80ffa53d9fe14afbb6f260e73e153a1c4d548d435bd79d6aa12aa3e31b08062d",
-    "assets/characters/iselin/native_walk_back/review_actor.json": "808585fdb18c30922037a357a4ffa4b3ef8d89fa9e1babde189b136ccd5b8d53",
+    "assets/characters/iselin/native_walk_back/animation.json": "987a084c764197df65315a6a11192d6ae7b507d9c3137d51dd694c13ab797216",
+    "assets/characters/iselin/native_walk_back/review_actor.json": "8bd28ba7ffcb78dc7b0ecfdaffcfa6709e6e1b867242060172440b3dfa72c708",
     "assets/characters/iselin/native_walk_back/frame_01.png": "40a919ac74ef4cf927bf343dce3c964f9ff8e1cd323cc71b6382a69da7081d4a",
     "assets/characters/iselin/native_walk_back/frame_02.png": "b1c9d9a5a365393e76f91748333959c7be368d7b3fb459b8fde6d7ee2f08f381",
     "assets/characters/iselin/native_walk_back/frame_03.png": "923d52424f3572a6d44cd094dc15dedf4e12b27d3c36083d939473e3c4791a06",

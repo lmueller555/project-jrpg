@@ -1,6 +1,6 @@
 # Iselin native back-walk review
 
-**Status: awaiting user review.** The native 24×36 back walk is staged beside
+**Status: back walk approved by the user.** The native 24×36 back walk is staged beside
 the approved native idles and front/left/right walks. It does not activate the
 new artwork in the campaign or convert seated and cinematic poses.
 
