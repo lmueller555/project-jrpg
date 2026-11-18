@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/adult_man_01/walk_right/authored.png",
+  "source_sha256": "7e968ca0c7d95a75e2e2038d37dd68af0f476d68a28990f82c5dc5bbd8489fcd",
+  "reference": "assets/characters/npc_roster_hd/adult_man_01/idle_right.png",
+  "reference_sha256": "d739f0f941746f2a610d4f4c7d5460ed30c0b86a278d2d4a947e8fab60a5102a",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "right_contact",
+    "right_down",
+    "left_passing",
+    "left_recovery",
+    "left_contact",
+    "left_down",
+    "right_passing",
+    "right_recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
