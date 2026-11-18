@@ -1,0 +1,35 @@
+{
+  "source_sha256": "3511f6f752444d1ecd77a0e302a5bd95fb70498b0e86734ee6c86303d873eea6",
+  "unchanged_frames": "0,1,2,4,5,7,8,9,10,11,12,13,14,15",
+  "corrected_frames": {
+    "3": {
+      "native_edited_region": [
+        10,
+        42,
+        44,
+        56
+      ],
+      "sha256": "14f09bcb068f8e389ebfadbc2b29c6defc1a802c0f74469802a0e7070050c152",
+      "outside_region_unchanged": true
+    },
+    "6": {
+      "native_edited_region": [
+        16,
+        49,
+        44,
+        61
+      ],
+      "sha256": "3823a56fdc8b4b7534402095d6f235c82dc8fa6750cf4c472bddca6d59f64baa",
+      "outside_region_unchanged": true
+    }
+  },
+  "logical_grip_gaps_by_frame": {
+    "3": 3.8078865529319543,
+    "4": 2.5,
+    "5": 3.3541019662496847,
+    "6": 2.692582403567252,
+    "7": 4.0
+  },
+  "coordinate_contract": "grip/shoulder/elbow logical; fractions map exactly to native texels at density2",
+  "gameplay": "no clocks, positions, collision, rope geometry, transfer rules or speed changed"
+}
