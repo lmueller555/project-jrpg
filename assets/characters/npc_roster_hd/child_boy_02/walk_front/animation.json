@@ -1,0 +1,518 @@
+{
+  "version": 1,
+  "character": "child_boy_02",
+  "animation": "walk.front",
+  "status": "reviewed_asset",
+  "runtime_integration": false,
+  "artwork_pixels_per_world_pixel": 2,
+  "frame_size": [
+    48,
+    72
+  ],
+  "logical_size": [
+    24,
+    36
+  ],
+  "draw_anchor": [
+    24,
+    60
+  ],
+  "foot_anchor": [
+    24,
+    69
+  ],
+  "loop": true,
+  "cycle_ms": 560,
+  "spritesheet": "spritesheet.png",
+  "source": "assets/source/characters/npc_roster_hd/child_boy_02/walk_front/authored.png",
+  "source_hashes": {
+    "assets/source/characters/npc_roster_hd/child_boy_02/walk_front/authored.png": "1f1a12151bfe2483645d893e3e55f9316ebabbe3d7ee776eee508e75bee4f5db",
+    "assets/characters/npc_roster_hd/child_boy_02/idle_front.png": "bf88b0c7c1f2d9e083118955a8d00e6045a4be6012b775473f573d7ed541a00e"
+  },
+  "frames": [
+    {
+      "file": "frame_01.png",
+      "rect": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 1,
+      "phase": "right_contact",
+      "crown_y_measured": 18,
+      "waist_hem_seam_y_measured": 51,
+      "waist_center_art": [
+        24,
+        50
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 69,
+        "anatomical_left": 69
+      },
+      "bounds": [
+        13,
+        18,
+        37,
+        70
+      ],
+      "sha256": "6a641831fe0c357867420c68b9d7cefd046ab03e2b0d723ae4dbe621d69637cc",
+      "belt_y": 50,
+      "support_detail": "right contact/left toe",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        0,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": [
+          24,
+          50
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_02.png",
+      "rect": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 2,
+      "phase": "right_down",
+      "crown_y_measured": 19,
+      "waist_hem_seam_y_measured": 52,
+      "waist_center_art": [
+        24,
+        51
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 68,
+        "anatomical_left": 65
+      },
+      "bounds": [
+        13,
+        19,
+        37,
+        69
+      ],
+      "sha256": "82dd617639680b5a670e4c10e9d51a194f681accc57e84608e8a3b71b918274e",
+      "belt_y": 51,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        48,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": [
+          24,
+          51
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_03.png",
+      "rect": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 3,
+      "phase": "left_passing",
+      "crown_y_measured": 18,
+      "waist_hem_seam_y_measured": 51,
+      "waist_center_art": [
+        24,
+        50
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 67,
+        "anatomical_left": 65
+      },
+      "bounds": [
+        13,
+        18,
+        37,
+        68
+      ],
+      "sha256": "713c82f126802139d001ed636eb11baf8fe17a9e77119a8a610eef828b778d3a",
+      "belt_y": 50,
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        96,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": [
+          24,
+          50
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_04.png",
+      "rect": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 4,
+      "phase": "left_recovery",
+      "crown_y_measured": 17,
+      "waist_hem_seam_y_measured": 50,
+      "waist_center_art": [
+        24,
+        49
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 66,
+        "anatomical_left": 68
+      },
+      "bounds": [
+        13,
+        17,
+        36,
+        69
+      ],
+      "sha256": "1fabed64d03e150ca064e5570989d929b299ddd910da637f0036a839a5cea672",
+      "belt_y": 49,
+      "support_detail": "right toe,left recovery",
+      "support_leg": "right",
+      "swing_leg": "left",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        144,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": [
+          24,
+          49
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_05.png",
+      "rect": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 5,
+      "phase": "left_contact",
+      "crown_y_measured": 18,
+      "waist_hem_seam_y_measured": 51,
+      "waist_center_art": [
+        24,
+        50
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 66,
+        "anatomical_left": 69
+      },
+      "bounds": [
+        13,
+        18,
+        36,
+        70
+      ],
+      "sha256": "1a97695a8a03c6eebe7f7243ccc05f80af16d2a7197693608ac3cf370ff7fe4e",
+      "belt_y": 50,
+      "support_detail": "left contact/right toe",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        192,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": [
+          24,
+          50
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_06.png",
+      "rect": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 6,
+      "phase": "left_down",
+      "crown_y_measured": 19,
+      "waist_hem_seam_y_measured": 52,
+      "waist_center_art": [
+        24,
+        51
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 65,
+        "anatomical_left": 68
+      },
+      "bounds": [
+        13,
+        19,
+        37,
+        69
+      ],
+      "sha256": "f35d83bca9ad67a592e03f521ad470fa32f0151b53b332a6423e575d80f90494",
+      "belt_y": 51,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        240,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          19
+        ],
+        "neck": [
+          24,
+          37
+        ],
+        "belt": [
+          24,
+          51
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_07.png",
+      "rect": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 7,
+      "phase": "right_passing",
+      "crown_y_measured": 18,
+      "waist_hem_seam_y_measured": 51,
+      "waist_center_art": [
+        24,
+        50
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 65,
+        "anatomical_left": 67
+      },
+      "bounds": [
+        13,
+        18,
+        37,
+        68
+      ],
+      "sha256": "296e3955232619336ceff07e0fad3047b26cf461852957cc7abab03da087e751",
+      "belt_y": 50,
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        288,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          18
+        ],
+        "neck": [
+          24,
+          36
+        ],
+        "belt": [
+          24,
+          50
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    },
+    {
+      "file": "frame_08.png",
+      "rect": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "duration_ms": 70,
+      "frame": 8,
+      "phase": "right_recovery",
+      "crown_y_measured": 17,
+      "waist_hem_seam_y_measured": 50,
+      "waist_center_art": [
+        24,
+        49
+      ],
+      "feet_sole_y_measured": {
+        "anatomical_right": 68,
+        "anatomical_left": 66
+      },
+      "bounds": [
+        13,
+        17,
+        37,
+        69
+      ],
+      "sha256": "5ca00df5b1d7621fa8622b45000797ea7e19937ef656bdbf98d1ccfe0524a61c",
+      "belt_y": 49,
+      "support_detail": "left toe,right recovery",
+      "support_leg": "left",
+      "swing_leg": "right",
+      "origin": [
+        0,
+        0
+      ],
+      "source_bounds": [
+        336,
+        0,
+        48,
+        72
+      ],
+      "uniform_scale": 1,
+      "landmarks": {
+        "crown": [
+          24,
+          17
+        ],
+        "neck": [
+          24,
+          35
+        ],
+        "belt": [
+          24,
+          49
+        ],
+        "left_toe": null,
+        "right_toe": null,
+        "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+      }
+    }
+  ]
+}
