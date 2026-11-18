@@ -440,6 +440,21 @@ without a personal favour, but a volunteer still has to be there to
 collect it. The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed letting one ordinary object show what changed.
 
+## Rookfen: the names that are not departures
+
+A visiting clerk in one [Rookfen](MEROVAR.md#rookfen) settlement looks
+at the crossed-out households on the letter wrapper and takes them for
+people who have moved away. She nearly leaves one older resident off
+an interview notice. The current host explains that the names are
+former caretakers of the bundle. The resident still lives nearby; her
+hands began to hurt, so she stopped collecting letters.
+
+The clerk takes the notice to her herself. The correction reaches one
+person who would otherwise have been missed. It doesn’t turn the
+wrapper into an official register, a new postal rule, or a list of
+households that owe anyone a service. This scene depends on the
+proposed shared-letter practice, not on approved history.
+
 ## Redstone March: the first drink
 
 One farming town offers a thirsty visitor a first drink without charge.
@@ -794,14 +809,24 @@ This applies the previously reviewed
 [transcript on fantasy peoples](https://www.youtube.com/watch?v=-aOa4O_M9ic&t=594s)
 to the narrower question of how familiarity is learned.
 
+## A short list for possible Game I use
+
+These are suggested priorities, not approved scenes or new destinations.
+
+| Proposal | Why use it | Before adopting |
+| --- | --- | --- |
+| [Mending before lighting](#elden-vale-mending-before-lighting) | A small action can show affection before the larger festival story without implying a magical rite. | Choose a relationship the game can follow, not a second version of Elira’s scene. |
+| [Who speaks after the water](#lower-leth-who-speaks-after-the-water) | A remembered rescue shows who can be heard and who still pays for a public decision without invoking a hidden cause. | Decide whose account might challenge the party’s sympathies and whether the ledger or performance is actually needed. |
+| [Mira asks where the hand goes](#marris-coast-and-elden-vale-mira-asks-where-the-hand-goes) | Mira learns something from a visitor by trying it; another region matters without another stop. | Decide whether to establish an early habit or show a later change. |
+
 ## Next development pass
 
-1. Select a few existing proposals that could serve Game I most directly.
-   Say why a scene or object earns its place and what must still be
-   decided before any proposal becomes canon.
-2. Test one ordinary case where a travelling official misunderstands
-   what a local object means. Let local knowledge correct the mistake
-   without assigning a new border, power or institution.
+1. Show one seasonal trace of a familiar plant or animal in Merovar
+   from two residents’ ordinary perspectives. Do not add a new species,
+   attach a magical cause, or define a gameplay rule.
+2. Give one material detail the power to complicate a family’s story
+   about its own tastes or work. Keep the distinction between evidence,
+   memory and what remains unknowable.
 
 ## Map implications for a later review
 
