@@ -1,0 +1,208 @@
+{
+  "manifest_sha256": "fb3e45ae8a626b2f8c5985be3e368e6d35117274657d8935f66b17638c62aaed",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        29,
+        67
+      ],
+      "right_toe": [
+        16,
+        69
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        41
+      ],
+      "left_toe": [
+        27,
+        64
+      ],
+      "right_toe": [
+        20,
+        69
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        20,
+        65
+      ],
+      "right_toe": [
+        24,
+        69
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        16,
+        67
+      ],
+      "right_toe": [
+        28,
+        69
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        15,
+        69
+      ],
+      "right_toe": [
+        30,
+        67
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": [
+        24,
+        41
+      ],
+      "left_toe": [
+        19,
+        69
+      ],
+      "right_toe": [
+        28,
+        64
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": [
+        24,
+        40
+      ],
+      "left_toe": [
+        23,
+        69
+      ],
+      "right_toe": [
+        21,
+        65
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    },
+    {
+      "crown": [
+        24,
+        1
+      ],
+      "neck": [
+        24,
+        24
+      ],
+      "belt": [
+        24,
+        39
+      ],
+      "left_toe": [
+        27,
+        69
+      ],
+      "right_toe": [
+        17,
+        67
+      ],
+      "occlusion_note": "Left arm/leg always near; right far arm partly occluded by torso and right swing leg partly occluded by left support at passing. No side identity changes."
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}

@@ -1,0 +1,20 @@
+{
+  "target": "adult_man_01 left",
+  "approved_motion_source": "adult_man_01 right native-v1",
+  "exact_canonical_reflection_equal": true,
+  "preservation": "reflected same-phase motion guide coordinates, phase order rotated4 to start anatomical-right contact; no finished sprite reflection",
+  "appearance": "actual left canonical head/neck; clothing shading redrawn from equivalent left material masks",
+  "canonical_left_sha256": "a76db64a71d0ebbc21acdec3509f28aa6c90be9016cd9e85ae4773fd433ac882",
+  "canonical_right_sha256": "d739f0f941746f2a610d4f4c7d5460ed30c0b86a278d2d4a947e8fab60a5102a",
+  "approved_source_sha256": "56d1dd6a57046bcf05e5c3e402c67d8c987a598fd42b10666ba7a92a0a5315d5",
+  "right_source_phase_order": [
+    5,
+    6,
+    7,
+    8,
+    1,
+    2,
+    3,
+    4
+  ]
+}
