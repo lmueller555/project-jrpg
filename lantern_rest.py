@@ -1,4 +1,5 @@
 """Liam's home break and sanctuary questions, inside the same lantern quest."""
+import liam_native_art
 import json
 from pathlib import Path
 
@@ -45,8 +46,7 @@ class LanternRest:
         self.serene = controller.serene
         self.father_pose = None;self.serene_owned = False
         self.zone = None;self.work_time = 0.;self.pose_owned = False
-        self.pose_meta = json.loads((ROOT/self.art['poses']['liam']).read_text())
-        self.sheet = self.town.image(self.pose_meta['sheet'])
+        self.pose_meta,self.sheet=liam_native_art.story_sheet(self.town,'rest',self.art['poses']['liam'])
         self.actions = {kind: [(self.sheet.subsurface(f['rect']).copy(), f['duration_ms']) for f in frames]
                         for kind, frames in self.pose_meta['actions'].items()}
         self.carry = {d: {'idle': self.sheet.subsurface(spec['idle']['rect']).copy(),

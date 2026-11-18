@@ -1,5 +1,7 @@
 """One coordinated, persistent household play routine; runtime needs only Pygame."""
 from rendering import layer as render_layer
+from npc_roster_art import RosterArt
+import liam_native_art
 from collections import deque
 import json
 import math
@@ -23,14 +25,22 @@ class PlayPose:
         self.size=(96,96) if character=='liam' else (64,48)
         self.offset=(52,36) if character=='liam' else (16,12)
         self.idles={};self.walks={};self.runs={};self.actions={}
-        for direction in ('front','left','right','back'):
-            self.idles[direction]=self.pad(world.image(f'assets/characters/{character}/idle_{direction}.png'))
-            for verb,dest in (('walk',self.walks),('run',self.runs)):
-                folder=f'assets/characters/{character}/{verb}_{direction}'
-                dest[direction]=[(self.pad(world.image(f'{folder}/{f["file"]}')),f['duration_ms']) for f in read(f'{folder}/animation.json')['frames']]
-        for key,spec in read(META)['actions'].items():
-            if (character=='daisy')==(key.startswith(('hop_','wag_'))):
-                self.actions[key]=[(world.image(f['file']),f['duration_ms']) for f in spec['frames']]
+        self.roster_art=RosterArt(world,'liam',named=True) if character=='liam' and liam_native_art.active() else None
+        if self.roster_art is None:
+            for direction in ('front','left','right','back'):
+                self.idles[direction]=self.pad(world.image(f'assets/characters/{character}/idle_{direction}.png'))
+                for verb,dest in (('walk',self.walks),('run',self.runs)):
+                    folder=f'assets/characters/{character}/{verb}_{direction}'
+                    dest[direction]=[(self.pad(world.image(f'{folder}/{f["file"]}')),f['duration_ms']) for f in read(f'{folder}/animation.json')['frames']]
+            for key,spec in read(META)['actions'].items():
+                if (character=='daisy')==(key.startswith(('hop_','wag_'))):
+                    self.actions[key]=[(world.image(f['file']),f['duration_ms']) for f in spec['frames']]
+        else:
+            self.idles={d:self.pad(image) for d,image in self.roster_art.idles.items()}
+            for source,dest in ((self.roster_art.walks,self.walks),(self.roster_art.runs,self.runs)):
+                for direction,frames in source.items():
+                    dest[direction]=[(self.pad(image),duration) for image,duration in frames]
+            self.actions.update(liam_native_art.home_actions(world,'play_routine'))
         if character=='daisy':
             for key in ('stand_up','settle_down'):
                 spec=read('assets/characters/daisy/house_routines/animations.json')['actions'][key]
@@ -60,6 +70,7 @@ class PlayActor(PlayPose):
         self.position=pygame.Vector2(record['position']);self.probe_size=tuple(record['probe_size'])
         self.sort_y=None
         self.work_renderer=None
+        self.world=world
 
     @property
     def blocker(self):return pygame.Rect(round(self.position.x)-self.probe_size[0]//2,round(self.position.y)-self.probe_size[1]//2,*self.probe_size)
@@ -69,6 +80,16 @@ class PlayActor(PlayPose):
 
     def draw_foreground(self,target,camera):
         if self.work_renderer is not None:self.work_renderer.draw_held(target,camera)
+        if self.roster_art is None or self.action not in ('settle_bed','leave_bed'):return
+        frames=self.actions[self.action]
+        if ((self.action=='settle_bed' and self.action_ms<frames[0][1]) or
+                (self.action=='leave_bed' and self.action_ms>=sum(d for _,d in frames[:-1]))):return
+        bed=next(e for e in self.world.entities if e['id']=='liam_bed')
+        # Reuse the room's HD quilt and near frame, not baked legacy furniture.
+        # Source crop starts below the pillow, which stays behind Liam's head.
+        quilt=pygame.Rect(8,29,32,37)
+        x,y=bed['position']
+        target.blit(bed['surfaces'][0],(x+quilt.x-camera[0],y+quilt.y-camera[1]),quilt)
 
 
 class LiamDaisyPlay:

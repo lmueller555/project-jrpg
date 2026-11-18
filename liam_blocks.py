@@ -3,6 +3,7 @@ from collections import deque
 import random
 import pygame
 from liam_daisy_play import read
+import liam_native_art
 from ui_style import draw_ambient_speech
 
 META='assets/characters/liam_family/block_play/animations.json'
@@ -19,8 +20,10 @@ class LiamBlocks:
             block={**spec,'state':'box','center':pygame.Vector2(center),'surface':surface,'anchor':anchor}
             prop={'id':spec['id'],'scene':home.data['id'],'surface':surface,'position':[0,0],'sort_y':209,'sort_priority':1}
             block['prop']=prop;self.blocks.append(block);self.surface_props.append(prop)
+        native=liam_native_art.home_actions(home,'block_play') if self.liam.roster_art is not None else {}
         for name,spec in self.meta['actions'].items():
-            frames=[(home.image(f['file']),f['duration_ms']) for f in spec['frames']]
+            frames=native.get(name)
+            if frames is None:frames=[(home.image(f['file']),f['duration_ms']) for f in spec['frames']]
             if name.startswith('curious_'):shared.dog_pose.actions[name]=frames
             else:self.liam.actions[name]=frames
         home.attach_routine_props(self)
