@@ -52,6 +52,18 @@ what a household believes and what Game I has actually shown. An
 unresolved subject is not permission to overwrite existing lore.
 
 
+## Game I exposure: visited, heard about, or writer-only
+
+| Exposure | Use |
+| --- | --- |
+| **Direct** | Eldenmere anchors direct experience. The [character foundations](../../narrative/game_01/characters/ISELIN.md) and [working act outline](../../narrative/game_01/ACT_OUTLINE.md) give the wider regional journey and unnamed northern capital an intended direction; distinguish that plan from implemented locations and do not infer stops. |
+| **Through people or objects** | Lower Leth, Rookfen, Marris and Redstone can be present through letters, teaching, goods or a traveller. Mira’s proposed conversation with a Marris apprentice does not require her to go to Marris. |
+| **Writer-only** | Keep uncertain overlays, outside routes and political assumptions available for review without presenting them on a player map or in dialogue. |
+
+Classify the proposed appearance, not the region forever. Nothing here
+changes the [approved story scope](MEROVAR.md#story-scope-and-continuity)
+or the destinations in the game.
+
 ## Historical layers: what can be placed in order
 
 | Layer | Established or proposed |
@@ -486,6 +498,22 @@ view of nature. The [previously reviewed climate video](https://www.youtube.com/
 informs the broad climate-to-vegetation approach only. It is not
 evidence about any specific reed or its seasonal behaviour.
 
+## Rookfen: where to put the visitor’s chair
+
+In a permanently settled household by one [Rookfen](MEROVAR.md#rookfen)
+freshwater channel, the chairs are already drawn up for supper. The
+host moves her workbasket. “You came to sit with us. Sit.”
+
+At a farm on nearby silt-rich ground, someone is shelling beans when
+the same visitor arrives. The farmer carries out a chair. “Company,
+not labour,” she says when the guest reaches for a pod. Her daughter
+brings a spare bowl anyway because she likes having something to do
+while listening. The guest takes a chair and leaves the bowl empty.
+
+Both households make room, one by putting its work aside and the
+other by leaving it nearby. Neither choice measures hospitality or
+defines all homes by channels or fields.
+
 ## Redstone March: the first drink
 
 One farming town offers a thirsty visitor a first drink without charge.
@@ -885,12 +913,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Describe the difference between a place Game I actually visits,
-   a place someone speaks about, and a place that only writers need.
-   Follow approved plans and do not turn a draft scene into an itinerary.
-2. Show two nearby Rookfen households receiving a visitor differently,
-   without turning practical or personal differences into one test
-   of belonging.
+1. Use one small existing connection between the Vale and Greyfold to
+   show how ordinary knowledge moves between neighbours. Do not add
+   a crossing, pass or road.
+2. Develop a small-scale form of address that signals a relationship in
+   one household or workplace. It should not imply a new language,
+   inherited title, surname or rule for everyone on Merovar.
 
 ## Map implications for a later review
 
