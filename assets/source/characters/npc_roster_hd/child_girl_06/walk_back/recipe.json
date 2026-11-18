@@ -1,0 +1,71 @@
+{
+  "source": "assets/source/characters/npc_roster_hd/child_girl_06/walk_back/authored.png",
+  "source_sha256": "f182aa94640a4b9bad65d22ae5eb536bf3c41b7a112c3b7d1bdca4ec8931b070",
+  "reference": "assets/characters/npc_roster_hd/child_girl_06/idle_back.png",
+  "reference_sha256": "a4dad71d4fcdca74df392b1f47e0ea152b919c49cbb904b1614d930d7da3bfe0",
+  "drawing": "Eight complete, independently plotted native pixel drawings; no isolated limb transforms. Approved head/appearance retained within authored bob.",
+  "export": "No rescale or normalization, crop retained source at recorded rectangles.",
+  "registration": "Common head/neck and torso registration, fixed 24,60 draw and 24,69 foot references.",
+  "frames": [
+    [
+      0,
+      0,
+      48,
+      72
+    ],
+    [
+      48,
+      0,
+      48,
+      72
+    ],
+    [
+      96,
+      0,
+      48,
+      72
+    ],
+    [
+      144,
+      0,
+      48,
+      72
+    ],
+    [
+      192,
+      0,
+      48,
+      72
+    ],
+    [
+      240,
+      0,
+      48,
+      72
+    ],
+    [
+      288,
+      0,
+      48,
+      72
+    ],
+    [
+      336,
+      0,
+      48,
+      72
+    ]
+  ],
+  "phase_order": [
+    "right_contact",
+    "right_down",
+    "left_passing",
+    "left_recovery",
+    "left_contact",
+    "left_down",
+    "right_passing",
+    "right_recovery"
+  ],
+  "duration_ms": 70,
+  "alpha": "0/255"
+}
