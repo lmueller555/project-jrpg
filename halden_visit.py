@@ -4,6 +4,7 @@ Persistent facts are separate from short gestures. An interrupted lift resumes
 at its safe source; stored sacks and the medicine receipt are never replayed.
 """
 from caelan_scene_art import image as scene_image
+from tomas_scene_art import image as tomas_image
 from npc_roster_art import RosterArt
 from collections import deque
 import heapq
@@ -106,7 +107,7 @@ class HaldenVisit:
         self.surface_props = []
         for i in range(3):
             self.surface_props.append({'id': f'sack_{i}', 'scene': 'halden',
-                'surface': self.home.room_art_image(ART+'sack.png'), 'position': [0, 0], 'sort_y': 0})
+                'surface': tomas_image(self.home,self.tomas,ART+'sack.png',self.home.room_art_image), 'position': [0, 0], 'sort_y': 0})
         self.surface_props.append({'id': 'grain_pallet', 'scene': 'halden',
             'surface': self.home.room_art_image(ART+'pallet.png'), 'position': [98, 94], 'sort_y': 96})
         self.surface_props.append({'id': 'halden_medicine', 'scene': 'halden',
@@ -318,7 +319,8 @@ class HaldenVisit:
 
     def _pose(self, actor, character, kind, direction, index=None):
         suffix = '' if index is None else '_'+str(index)
-        actor.story_sprite = scene_image(self.home,ART+f'{character}/{kind}_{direction}{suffix}.png')
+        actor.story_sprite = tomas_image(self.home,actor,ART+f'{character}/{kind}_{direction}{suffix}.png',
+                                        lambda path:scene_image(self.home,path))
         actor.story_draw_anchor = (16, 34)
         if actor is self.game.player:self._player_pose = True
         else:self._tomas_pose = True

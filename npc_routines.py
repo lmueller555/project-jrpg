@@ -78,7 +78,12 @@ class RoutineNPC:
         if record['id']=='mother_serene':
             self.animation_path='assets/characters/serene/activity_hd/routines/animations.json'
             self.sprite_root='assets/characters/named_hd/serene'
+        elif record['id']=='tomas':
+            self.animation_path='assets/characters/tomas/activity_hd/routines/animations.json'
+            self.sprite_root='assets/characters/named_hd/tomas'
         self.animation=read_json(ROOT/self.animation_path)
+        if record['id']=='tomas':
+            self.animation={**self.animation,'sprite_root':self.sprite_root,'action_canvas':[64,48]}
         self.steps=self.behavior['steps']
         if not self.steps:raise ValueError(f'Routine {record["id"]!r} has no steps')
         self.scene_id=scene_id or record.get('scene') or self.behavior['start_scene']
@@ -152,14 +157,15 @@ class RoutineNPC:
         sprite_root=Path(self.animation.get('sprite_root',self.sprite_root))
         if not sprite_root.is_absolute():sprite_root=ROOT/sprite_root
 
+        base_art=(read_json(sprite_root/'design.json') if self.data['id']=='tomas' else self.animation)
         for direction in self.DIRECTIONS:
-            idle=load_art(world,(sprite_root/f'idle_{direction}.png').relative_to(ROOT).as_posix(),self.animation)
+            idle=load_art(world,(sprite_root/f'idle_{direction}.png').relative_to(ROOT).as_posix(),base_art)
             self.idles[direction]=self._padded(idle)
             walk_folder=sprite_root/f'walk_{direction}'
             walk_data=read_json(walk_folder/'animation.json')
             frames=[]
             for frame in walk_data['frames']:
-                image=load_art(world,(walk_folder/frame['file']).relative_to(ROOT).as_posix(),{**self.animation,**walk_data,**frame})
+                image=load_art(world,(walk_folder/frame['file']).relative_to(ROOT).as_posix(),{**base_art,**walk_data,**frame})
                 frames.append((self._padded(image),int(frame['duration_ms'])))
             self.walks[direction]=frames
 
@@ -208,7 +214,9 @@ class RoutineNPC:
             if not image_path:
                 raise ValueError(f'Surface prop {record.get("id", "<unknown>")!r} needs a file')
             prop=dict(record)
-            prop['surface']=load_art(world,self._asset_path(image_path,behavior_folder),prop)
+            from tomas_scene_art import image as tomas_image
+            prop['surface']=tomas_image(world,self,self._asset_path(image_path,behavior_folder),
+                                        lambda path:load_art(world,path,prop))
             self.surface_props.append(prop)
 
     def _padded(self,image):
