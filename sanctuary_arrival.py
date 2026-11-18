@@ -235,8 +235,12 @@ class SanctuaryArrival(MillGift):
                 g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
         for role,name,portrait in (('worker_b','Injured worker','arrival_worker_b'),('runner','Sanctuary attendant','female_01'),('sentry','Sanctuary lookout','female_02')):
             key='arrival_'+role
+            actor_art=self.art['actors'].get(role,{})
+            portrait=actor_art.get('portrait',portrait)
             g.social.data['speakers'][key]={'name':name,'portrait':portrait}
-            if portrait not in g.social.portraits:g.social.portraits[portrait]=world.image('assets/portraits/eldenmere/'+portraits[portrait]['file'])
+            if portrait not in g.social.portraits:
+                path=actor_art.get('portrait_file') or 'assets/portraits/eldenmere/'+portraits[portrait]['file']
+                g.social.portraits[portrait]=world.image(path)
         for actor in c.sanctuary_escorts:c._hide(actor)
         starts=self.manifest['starts']
         first=self.manifest['beats'][0]['goals']

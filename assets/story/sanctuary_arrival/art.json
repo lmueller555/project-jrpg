@@ -481,6 +481,166 @@
       "portrait": "arrival_worker_b",
       "portrait_file": "assets/story/sanctuary_arrival/art/portraits/worker_b.png",
       "stationary": true
+    },
+    "sentry": {
+      "anchor": [
+        12,
+        30
+      ],
+      "frame_size": [
+        48,
+        72
+      ],
+      "travel_artwork_pixels_per_world_pixel": 2,
+      "idles": {
+        "front": "assets/characters/npc_roster_hd/adult_woman_02/idle_front.png",
+        "back": "assets/characters/npc_roster_hd/adult_woman_02/idle_back.png",
+        "left": "assets/characters/npc_roster_hd/adult_woman_02/idle_left.png",
+        "right": "assets/characters/npc_roster_hd/adult_woman_02/idle_right.png"
+      },
+      "walks": {
+        "front": [
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_02.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_07.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_front/frame_08.png",
+            "duration_ms": 70
+          }
+        ],
+        "back": [
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_02.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_07.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_back/frame_08.png",
+            "duration_ms": 70
+          }
+        ],
+        "left": [
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_02.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_07.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_left/frame_08.png",
+            "duration_ms": 70
+          }
+        ],
+        "right": [
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_01.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_02.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_03.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_04.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_05.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_06.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_07.png",
+            "duration_ms": 70
+          },
+          {
+            "file": "assets/characters/npc_roster_hd/adult_woman_02/walk_right/frame_08.png",
+            "duration_ms": 70
+          }
+        ]
+      },
+      "poses": {},
+      "portrait": "arrival_sentry_hd",
+      "portrait_file": "assets/characters/npc_roster_hd/adult_woman_02/portrait.png",
+      "identity": "Existing brown-haired green-dressed Sanctuary lookout, migrated to corresponding standard-roster design; no guard armor or new plot role.",
+      "stationary": false
     }
   },
   "rail": {
