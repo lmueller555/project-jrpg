@@ -66,6 +66,28 @@ class HomeAssetTests(unittest.TestCase):
             self.assertEqual(image.crop((0,0,48,6)).tobytes(),frames[0].crop((0,0,48,6)).tobytes())
 
 
+    def test_passage_and_sill_are_registered_and_builder_owned(self):
+        from tools.build_sanctuary_home_hd import door_poses
+        source=Image.open(SOURCE/'props_atlas.png').convert('RGBA')
+        frames=[Image.open(ROOT/p).convert('RGBA') for p in self.manifest['doors']]
+        for actual,expected in zip(frames,door_poses(source)):
+            self.assertEqual(actual.tobytes(),expected.tobytes())
+            self.assertEqual(actual.crop((4,68,44,72)).tobytes(),
+                             frames[0].crop((4,68,44,72)).tobytes())
+            self.assertEqual(actual.crop((44,0,48,72)).tobytes(),
+                             frames[0].crop((44,0,48,72)).tobytes())
+        opened=frames[-1]
+        self.assertNotEqual(opened.getpixel((25,30)),(36,48,45,255))
+        # Floor seams and the upper shaded room remain visible behind the leaf.
+        self.assertNotEqual(opened.getpixel((25,30)),opened.getpixel((25,56)))
+        self.assertNotEqual(opened.getpixel((25,56)),opened.getpixel((25,69)))
+        # Already-exposed background never shifts as the leaf narrows.
+        for index,(current,following) in enumerate(zip(frames,frames[1:])):
+            exposed=4+(40,32,23,12)[index]
+            self.assertEqual(current.crop((exposed,6,44,68)).tobytes(),
+                             following.crop((exposed,6,44,68)).tobytes())
+
+
 class HomeGameplayTests(unittest.TestCase):
     def setUp(self):
         from main import Game

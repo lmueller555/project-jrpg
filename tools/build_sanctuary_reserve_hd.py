@@ -12,6 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from tools.build_eldenmere_hd import Export,source_cell,fit,update_visual,pixels
 from tools.build_eldenmere_exteriors_hd import split_registration
+from tools.build_sanctuary_home_hd import SOURCE as HOME_ART_SOURCE, door_poses
 from tools.eldenmere_hd_materials import Materials,image,read
 SRC=ROOT/'assets/source/maps/sanctuary_reserve_hd'
 PACK='assets/maps/sanctuary_reserve_hd'
@@ -91,6 +92,75 @@ def antler_products(ex, reserve, spec):
         'source_manifest':spec['manifest']}}
     return [spec['manifest'],pack['assets']['antlers_complete']['image'],
             *[pack['assets'][r['asset']]['image'] for r in spec['dressing']]]
+
+
+def stone_threshold(shell, data, door, materials, courtyard):
+    """Camera-facing cutaway: structural ends sit outside the retained clear slot."""
+    _,y,clear_width,_=data['exit_clearance']
+    # The reserve's wide entrance and the narrower relief passage have
+    # different transfer widths. Include only the lip outside the sensor,
+    # not the whole probe-clear area as if it were all an entrance.
+    width=min(clear_width,2*(door['entry_half_width']+2))
+    x=round(door['anchor'][0])-width//2
+    # A quiet, broad ashlar sill makes the same passage recognizable from across
+    # the hall. Neither its painted landing nor jambs add occupied geometry.
+    left,right=x*2,(x+width)*2; top=y*2; bottom=(door['entry_y']+8)*2
+    d=ImageDraw.Draw(shell)
+    d.rectangle((left,top,right-1,bottom),fill='#666b65')
+    floor=materials.paving((width*2,bottom-top),(x,y))
+    shell.alpha_composite(floor,(left,top))
+    if courtyard:
+        # The reserve courtyard uses these same pale flags, in outdoor light.
+        landing=ImageEnhance.Brightness(materials.paving((width*2,12),(535,371))).enhance(1.12)
+    else:
+        # Returning to the hall exposes its actual stone-floor palette.
+        landing=materials.paving((width*2,12),(192,164))
+    shell.alpha_composite(landing,(left,bottom-11))
+    d=ImageDraw.Draw(shell)
+    sill=door['entry_y']*2-3
+    d.rectangle((left,sill,right-1,sill+5),fill='#555c58',outline='#303c38')
+    d.line((left+1,sill,right-2,sill),fill='#ded6b6',width=2)
+    d.line((left+2,sill+3,right-3,sill+3),fill='#a19f8c')
+    for xx in range(left+24,right-1,24):d.line((xx,sill+1,xx,sill+4),fill='#777c70')
+    # Short cut wall tops connect the jambs to the room boundary, rather than
+    # presenting two free-standing posts in the off-map void.
+    for a,b in ((left-38,left-15),(right+14,right+37)):
+        d.rectangle((a,top-3,b,top+6),fill='#59675a',outline='#303c38')
+        d.line((a+1,top-3,b-1,top-3),fill='#b8b99e',width=2)
+    # Two masonry wall returns terminate at the actual opening edges; no
+    # converging perspective and no lintel across the player-facing cutaway.
+    for a,b in ((left-15,left-1),(right,right+14)):
+        d.rectangle((a,top-14,b,bottom-4),fill='#303c38')
+        d.rectangle((a+1,top-13,b-1,bottom-6),fill='#72796b')
+        d.rectangle((a+1,top-13,b-1,top-6),fill='#c2bea5')
+        d.line((a+2,top-12,b-2,top-12),fill='#e2d9b9')
+        for yy in range(top-4,bottom-6,9):
+            d.line((a+1,yy,b-1,yy),fill='#444f48')
+            d.line((a+2,yy+1,b-2,yy+1),fill='#9a9f89')
+        d.line((a+2,top-4,a+2,bottom-7),fill='#9da18d')
+    return shell
+
+
+def relief_door_frames(size, materials):
+    """Share the hinged leaf master, never sample a finished timber passage."""
+    background=Image.new('RGBA',(48,72),'#24302d')
+    d=ImageDraw.Draw(background);w,h=background.size
+    d.rectangle((4,6,w-5,h-5),fill='#43514b')
+    d.rectangle((8,11,w-9,h-22),fill='#5b6458')
+    d.rectangle((10,13,w-11,h-24),fill='#747b69')
+    for yy in range(20,h-24,11):
+        d.line((11,yy,w-12,yy),fill='#626d60')
+        xx=17 if yy%2 else w-18
+        d.line((xx,yy-8,xx,yy),fill='#626d60')
+    paving=ImageEnhance.Brightness(materials.paving((w-16,22),(168,248))).enhance(.72)
+    background.alpha_composite(paving,(8,h-23))
+    d=ImageDraw.Draw(background)
+    d.line((8,h-24,w-9,h-24),fill='#39483f')
+    d.line((8,12,8,h-3),fill='#263a34',width=2)
+    atlas=image((HOME_ART_SOURCE/'props_atlas.png').relative_to(ROOT).as_posix())
+    colors=('#39483f','#c8c3a8','#a9ac98','#646f62')
+    return [fit(frame,size) for frame in door_poses(atlas,background,colors)]
+
 
 
 def products():
@@ -239,10 +309,11 @@ def products():
         for door in data['doors']:
             if door['frames']:
                 size=image(old[name]['doors'][data['doors'].index(door)]['frames'][0]).size
-                donor=read('assets/terrain/eldenmere/sanctuary_home_hd/manifest.json')['doors']
-                door['frames']=[native(f'doors/{i}',image(p),size) for i,p in enumerate(donor)];door.update(artwork_pixels_per_world_pixel=2,logical_size=list(size))
+                door['frames']=[ex.png(f'doors/{i}',frame) for i,frame in enumerate(relief_door_frames(size,materials))];door.update(artwork_pixels_per_world_pixel=2,logical_size=list(size))
             ax,ay=door['anchor'];opening=(int(ax-door['entry_half_width'])*2,min(int(ay)-8,fy+fh)*2,int(ax+door['entry_half_width'])*2,(int(ay)+8)*2)
             shell.paste(materials.paving((opening[2]-opening[0],opening[3]-opening[1]),(opening[0]//2,opening[1]//2)),opening[:2])
+            if door['entry_side']=='south':
+                shell=stone_threshold(shell,data,door,materials,name=='elden_vale_sanctuary_hall')
         data['ground_overlays']=ex.chunks(name,shell,[Image.new('RGBA',shell.size)]);data['ground_frames']=[ex.png('blank',Image.new('RGBA',(1,1)))];data['artwork_pixels_per_world_pixel']=1
     # Repeatable inspection cues advertise their actual authored floor approaches.
     cues={RESERVE:[('boundary','reserve_boundary_marker'),('survey','reserve_survey_board')], 'elden_vale_sanctuary_hall':[('records','ledger_table'),('remembrance','north_remembrance_table'),('cabinet','records_cabinet')]}
@@ -265,7 +336,9 @@ def products():
     for root in ('assets/terrain/eldenmere/grass_dirt_hd','assets/terrain/eldenmere/stone_paving_hd','assets/terrain/eldenmere/terraces_hd','assets/terrain/vegetation_hd','assets/terrain/eldenmere/sanctuary_home_hd','assets/terrain/eldenmere/sanctuary_dining_hd','assets/terrain/eldenmere/exteriors_hd','assets/maps/eldenmere/town_hd','assets/maps/eldenmere/courtyard_hd'):
         for p in sorted((ROOT/root).rglob('*')):
             if p.is_file() and p.suffix in ('.png','.json'):dependencies.append({'path':str(p.relative_to(ROOT)),'sha256':sha256(p.read_bytes()).hexdigest()})
-    for file in ('assets/source/maps/elden_vale_sanctuary/recipe.json','assets/story/sanctuary_reserve/layout.json','assets/maps/eldenmere/playable/map.json'):
+    for file in ('assets/source/maps/elden_vale_sanctuary/recipe.json','assets/story/sanctuary_reserve/layout.json',
+                 'assets/maps/eldenmere/playable/map.json','tools/build_sanctuary_home_hd.py',
+                 (HOME_ART_SOURCE/'props_atlas.png').relative_to(ROOT).as_posix()):
         dependencies.append({'path':file,'sha256':sha256((ROOT/file).read_bytes()).hexdigest()})
     for name,data in maps.items():
         data['source_recipe']=str((SRC/'recipe.json').relative_to(ROOT));data['source_recipe_sha256']=sha256((SRC/'recipe.json').read_bytes()).hexdigest()

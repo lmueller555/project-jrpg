@@ -238,32 +238,48 @@ def _bed_linen(im, color, variant=0):
 
 
 def _stair_art(palette, upstairs=False):
+    """An ascending flight or recessed descending well, never a route arrow.
+
+    Both sensors are approached northwards. Direction is communicated by built
+    form, not a chevron that can be mistaken for a destination-floor label.
+    Existing canvas, support rails, landing and trigger remain exact.
+    """
     d=Draft((60,84),palette)
-    d.rect((5,0,54,81),'oak_dark','contour')
-    # Axial treads expose horizontal walkable tops. No convergence or horizon.
-    for index,y in enumerate(range(3,78,8)):
-        depth=7
-        d.timber((6,y,53,y+depth),dark=upstairs and index<5)
-        d.line([(7,y+depth-1),(52,y+depth-1)],'contour')
-        d.line([(10,y+2),(22,y+2)],'oak_edge')
-        d.line([(31,y+4),(46,y+4)],'oak_shadow')
     if upstairs:
-        d.rect((6,0,53,3),'iron_shadow','contour')
+        # Open well cut into the upper floor: deep end shadow, visible inner
+        # return faces, and treads that lose light as they descend away.
+        d.rect((5,0,54,79),'#24221d','contour')
+        d.rect((6,2,10,78),'#514331')
+        d.rect((49,2,53,78),'#352e24')
+        d.line([(10,3),(10,77)],'#766046')
+        d.line([(48.5,3),(48.5,77)],'#171a17')
+        for index,y in enumerate(range(19,76,9)):
+            amount=index*7
+            d.rect((11,y,48,y+7),_shade('#4d402f',amount))
+            d.line([(11,y+6.5),(48,y+6.5)],_shade('#6e5940',amount))
+            d.line([(11,y+7),(48,y+7)],'#24221d')
+            d.line([(15,y+3),(28,y+3)],_shade('#574630',amount))
+        # Thick far rim establishes a hole instead of a free-standing ladder.
+        d.timber((5,0,54,5),dark=True)
     else:
-        d.timber((6,0,53,4),dark=True)
-    # Real stringers/rail posts with exactly named narrow collision footprints.
+        # Broad tread tops and narrow shadowed risers rise to a bright landing.
+        d.rect((5,0,54,81),'oak_dark','contour')
+        for index,y in enumerate(range(7,78,9)):
+            d.rect((6,y,53,y+5),'oak')
+            d.line([(7,y+.5),(52,y+.5)],'oak_light')
+            d.line([(10,y+2),(24,y+2)],'oak_shadow')
+            d.line([(34,y+3),(47,y+3)],'oak_shadow')
+            d.rect((6,y+5.5,53,y+8),'oak_dark')
+            d.line([(6,y+5.5),(53,y+5.5)],'oak_edge')
+            d.line([(6,y+8),(53,y+8)],'contour')
+        d.timber((5,0,54,6))
+    # Uprights share the existing exactly named narrow support footprints.
     for x in (0,55):
         d.timber((x+.5,0,x+4,79),dark=True,vertical=True)
         for y in (1,25,49,73):
-            d.timber((x, y, x+4.5,y+8),vertical=True)
+            d.timber((x,y,x+4.5,y+8),vertical=True)
             d.rect((x+1,y+1,x+3.5,y+2),'oak_edge','contour')
     d.timber((5,79,54,83))
-    # Both first-tread sensors are entered northward from the south landing.
-    # Route chevrons agree with that movement; far-step lighting distinguishes
-    # the upward flight from the descending well, not a contradictory arrow.
-    cy=70 if upstairs else 12
-    points=[(26,cy+3),(30,cy-3),(34,cy+3)]
-    d.line(points,'canvas_light',2)
     return d.image
 
 
@@ -376,28 +392,51 @@ def _shop_display(base, palette, armor=False):
     return d.image
 
 
-def _south_exit(shell, door, palette):
-    """Cut a real opening through the south base rail, not another floor mat."""
+def _south_exit(shell, door, palette, room_id):
+    """Draw a timber wall cutaway around the unchanged southward trigger."""
     out=shell.copy().convert('RGBA')
     x=round(door['anchor'][0]);y=round(door['entry_y'])
-    d=Draft((36,42),palette)
-    # The floor visibly continues through the southern wall cutaway. There is
-    # deliberately no header/leaf to suggest a shut door over an open sensor.
-    d.rect((5,0,30,41),'#24302d')
-    d.rect((6,0,29,35),'#806449')
-    for yy in range(2,36,5):
-        d.line([(6,yy),(29,yy)],'oak_shadow')
-        d.line([(8,yy+1),(25,yy+1)],'oak')
-    # Side returns join the existing base wall at entry_y+6 (usually y312).
-    d.timber((1,12,6,26),dark=True,vertical=True)
-    d.timber((29,12,34,26),dark=True,vertical=True)
-    d.rect((1,15,6,18),'oak_light','contour')
-    d.rect((29,15,34,18),'oak_light','contour')
-    d.rect((6,21,29,24),'stone','contour')
-    d.line([(7,21.5),(28,21.5)],'stone_light')
-    d.line([(7,24.5),(28,24.5)],'oak_dark')
-    d.rect((6,36,29,41),'#1e2b28')
-    out.alpha_composite(d.image,((x-18)*2,(y-15)*2))
+    d=Draft((44,42),palette)
+    # Remove the template's small legacy threshold/mat above the actual
+    # sensor. Lift that narrow strip from adjacent planks on the same rows
+    # so existing floor joints and lighting continue through the approach.
+    donor=((x-61)*2,(y-16)*2,(x-35)*2,y*2)
+    d.image.alpha_composite(out.crop(donor),(18,0))
+    # The sill's inner edge is right on the transfer line (local y=16).
+    # Match the 24-unit walkable cut through the wall. The material beyond it
+    # is a glimpse of the destination, not a floating plank or a new corridor.
+    d.rect((9,19,34.5,41.5),'#24302d')
+    if door['id']=='hall':
+        # A short view of the hall's transverse oak planks, distinct from
+        # the brighter exterior yard materials without rotating the floor.
+        d.rect((10,19,33.5,31.5),'#8c7257','contour')
+        for yy,xx in ((23,24),(28,17)):
+            d.line([(10,yy),(33.5,yy)],'oak_dark')
+            d.line([(11,yy+.5),(32,yy+.5)],'oak')
+            d.line([(xx,yy+.5),(xx,yy+4.5)],'oak_shadow')
+    else:
+        from tools.eldenmere_hd_materials import Materials
+        if room_id in {'school','inn','item_shop','sanctuary_hall'}:
+            landing=Materials().paving((48,25),tuple(map(round,door['spawn'])))
+        else:
+            # The local yard ribbon is a small section of the town dirt bank.
+            mat=Materials()
+            landing=mat.dirt[255].crop((0,11,48,36))
+        d.image.alpha_composite(landing,(20,39))
+        d.line([(10,31.5),(33.5,31.5)],'contour')
+    # Return faces attach into the rail at local y=22. Tall uprights or a
+    # header would obstruct the cutaway; broad end-grain caps signal the wall.
+    for left in (3,34):
+        d.timber((left,7,left+6.5,26),dark=True,vertical=True)
+        d.rect((left,7,left+6.5,11.5),'oak_light','contour')
+        d.line([(left+1,8),(left+5.5,8)],'oak_edge')
+        d.line([(left+1.5,9.5),(left+5,9.5)],'oak_shadow')
+    d.rect((9.5,16,34,20.5),'stone','contour')
+    d.line([(10,16.5),(33.5,16.5)],'stone_light')
+    d.line([(10,19.5),(33.5,19.5)],'stone_shadow')
+    d.line([(16,17),(16,19)],'stone_shadow')
+    d.line([(28,17),(28,19)],'stone_shadow')
+    out.alpha_composite(d.image,((x-22)*2,(y-16)*2))
     return out
 
 
@@ -434,7 +473,7 @@ def _room_architecture(shell, data, policy, palette):
     # remain their separately registered controller-driven leaves.
     for door in data['doors']:
         if door['entry_side']=='south' and not door['frames']:
-            out=_south_exit(out,door,palette)
+            out=_south_exit(out,door,palette,data['id'])
     return out
 
 
