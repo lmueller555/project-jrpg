@@ -1,0 +1,184 @@
+{
+  "manifest_sha256": "c3cad706a0aaa3dd1340cbe61936d8ac91b08ef78fa94f531463bb63baf4cd83",
+  "previews": {
+    "normal": "normal.gif",
+    "half_speed": "half_speed.gif"
+  },
+  "landmarks": [
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        66
+      ],
+      "right_toe": [
+        20,
+        69
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        64
+      ],
+      "right_toe": [
+        20,
+        68
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        64
+      ],
+      "right_toe": [
+        19,
+        67
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        67
+      ],
+      "right_toe": [
+        19,
+        66
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        69
+      ],
+      "right_toe": [
+        20,
+        66
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        3
+      ],
+      "neck": [
+        24,
+        26
+      ],
+      "belt": null,
+      "left_toe": [
+        28,
+        68
+      ],
+      "right_toe": [
+        20,
+        64
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        67
+      ],
+      "right_toe": [
+        21,
+        64
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    },
+    {
+      "crown": [
+        24,
+        2
+      ],
+      "neck": [
+        24,
+        25
+      ],
+      "belt": null,
+      "left_toe": [
+        27,
+        66
+      ],
+      "right_toe": [
+        21,
+        67
+      ],
+      "occlusion_note": "Overlapping limbs read from the retained source; unmeasured toes are omitted."
+    }
+  ],
+  "manual_review": {
+    "reviewer": "Review coordinator",
+    "approved": true,
+    "identity_palette_asymmetry": true,
+    "complete_drawings_four_limbs": true,
+    "contact_passing_weight_transfer": true,
+    "support_swing_continuity": true,
+    "stable_body_proportions": true,
+    "normal_native_and_half_speed": true,
+    "batch_joins_and_loop_seam": true,
+    "idle_cast_comparison": true,
+    "alpha_light_dark_edges": true,
+    "source_recipe_no_limb_rig": true
+  },
+  "runtime_integration": "deferred: standalone asset bank"
+}
