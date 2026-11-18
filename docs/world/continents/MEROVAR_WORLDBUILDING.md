@@ -145,6 +145,24 @@ keeper’s agreement. This is not an MQ03 beat, a new required visit,
 or a permanent veto. The [reviewed transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed showing politics through a problem the people must actually solve.
 
+## Elden Vale and Greyfold: when fleece became a repeat order
+
+**Proposed intermediate history:** Long after successor communities
+formed, some [Greyfold](MEROVAR.md#greyfold-uplands) shepherd households
+began commissioning finished cloth from [Vale](../regions/ELDEN_VALE.md)
+workshops instead of selling only fleece. Repeat orders supported more
+specialized work and made each household a little more dependent on
+someone else's ability to pay. This happened in some communities,
+not everywhere on the continent or in a newly named historical age.
+
+A stone fulling trough now serves as a workshop washbasin. Its owner
+wants to sell it and clear space. An upland customer says their family
+helped buy it when neither household could afford it alone. The trough
+preserves a connection, not proof of ownership. Neither account explains
+a modern anomaly or places the change in an exact year. The
+[reviewed transcript](https://pickscribe.com/v/V2KpWOLTXx8) supplied the
+craft technique of grounding a longer change in one object and one decision.
+
 ## Upper Leth approach: the unnamed town south of Eldenmere
 
 One proposed identity for the next town south is a market that suits
@@ -649,12 +667,13 @@ to the narrower question of how familiarity is learned.
 
 ## Next development pass
 
-1. Define one proposed historical phase between the ancient foundation
-   and the recent local stories. Give it a surviving material trace
-   rather than a new date, dynasty or hidden cause.
-2. Make the Rookfen–Marris overlay easier to assess without deciding a
-   route: distinguish what a landing, coastal leg and receiving port
-   need before any line goes on a map.
+1. Separate Merovar’s historical material by what can actually be
+   ordered. Mark ancient author knowledge, broad settlement, later
+   proposals and the known opening sequence without inventing exact
+   dates or ordering unrelated local events.
+2. Explore one way two unnamed local communities do something together
+   without assuming they share a Crown official, law or permanent border.
+   Keep the proposal about the relationship, not a new state.
 
 ## Map implications for a later review
 
@@ -670,10 +689,18 @@ to the narrower question of how familiarity is learned.
   the [reviewed map transcript](https://www.youtube.com/watch?v=pjLSv4WNUtY)
   to the [overworld](../../OVERWORLD.md) and the
   [covenant](../SANCTUARY_COVENANT.md), which remain authoritative.
-- A writer-only **Rookfen–Marris cargo overlay** could distinguish a delta
-  transfer, a coastal leg, and a receiving seaport. Keep its route provisional
-  until channel, tide and distance assumptions are checked. It does not move
-  a coast, redraw the classroom map, or require an overseas leg.
+- A writer-only **Rookfen–Marris cargo overlay** has three review gates,
+  distinct from the Upper Leth road proposal:
+  1. **Delta passage.** Check that a local transfer point has a usable
+     passage for the likely carrier under the intended conditions. A
+     marker by itself is not evidence that the channel is navigable.
+  2. **Coastal approach.** Check how the coastal leg would reach a
+     receiving Marris port, including tides and the rough scale of the
+     voyage. A delta landing and a seaport needn’t be adjacent; the port
+     is not assumed to sit at the Leth’s mouth.
+  3. **Working agreement.** Identify who might accept cargo, deal with
+     delays, and grant access at each end. A plausible route doesn’t
+     establish a service, a tariff, or a common government.
 
 These are questions for a later map decision, not instructions to alter the
 game’s map. Regions outside Merovar are unchanged.
