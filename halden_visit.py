@@ -4,6 +4,7 @@ Persistent facts are separate from short gestures. An interrupted lift resumes
 at its safe source; stored sacks and the medicine receipt are never replayed.
 """
 from caelan_scene_art import image as scene_image
+from npc_roster_art import RosterArt
 from collections import deque
 import heapq
 import itertools
@@ -69,7 +70,9 @@ class Halden:
         self.data = {'id': 'halden', 'name': 'Master Halden'}
         self.position = pygame.Vector2(192, 176)
         self.probe_size = (12, 8);self.draw_anchor = (12, 30)
-        self.idles = {d: world.image(ART+f'idle_{d}.png') for d in ('front', 'back', 'left', 'right')}
+        self.roster_art = RosterArt(world, 'halden', named=True)
+        self.idles = self.roster_art.idles
+        self.walks = self.roster_art.walks
         self.moving = False;self.walk_ms = 0.;self.opens_doors = True
         self.facing = 'front';self.conversation_ready = False
         self.conversation_facing = 'front'
@@ -78,9 +81,8 @@ class Halden:
     def blocker(self):return pygame.Rect(round(self.position.x)-6, round(self.position.y)-4, 12, 8)
 
     def sprite(self, elapsed_ms):
-        if self.moving and not self.conversation_ready and hasattr(self, 'walks'):
-            return self.walks[self.facing][int(self.walk_ms//140)%4]
-        return self.idles[self.conversation_facing if self.conversation_ready else self.facing]
+        facing = self.conversation_facing if self.conversation_ready else self.facing
+        return self.roster_art.sprite(facing, self.moving and not self.conversation_ready, self.walk_ms)
 
     def request_conversation(self, facing):
         self.conversation_ready = True;self.conversation_facing = facing
