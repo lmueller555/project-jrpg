@@ -1,0 +1,19 @@
+{
+  "canonical_id": "regent_driver",
+  "references": {
+    "idle_right.png": "6d09870c90316520b909624ec1366aa26e88087bbd513a581018b4c13b5cf14e",
+    "idle_left.png": "7c86a8a18e2ce620f611cf4e9defae6f690a7953201ccebad479d89a4197f07a",
+    "idle_back.png": "2bd828e975bc9d46ad2600032d3bfa9821ff058d6df948f1ab132f02593aed7c",
+    "portrait.png": "3f5402f4fe1d8343d96e1fa85f4a4680662d64085b84c5b7e7b37f42bd886ce1",
+    "idle_front.png": "413ddbfb260f02272c9bd6ad6062a006e500ab521bded7825e0452a0eac21661"
+  },
+  "motion_guide": "Approved shopkeeper_01 native leg/foot coordinates retained at native scale; own short shirt, trouser and hair. Arm contour studies reused explicitly from same-task Page, with bare forearm/short sleeve redrawing; survivor guarded left chain replaces, never overlays, the ordinary arm. No guide pixels copied.",
+  "construction": "Four native directional head drawings and target body/arm/leg contours. No old limb pixels or scaled legacy art.",
+  "authored_inputs": [
+    "author_head.py",
+    "author_body.py",
+    "motion_contours.json",
+    "arm_contours.json"
+  ],
+  "portrait": "Existing cinematic portrait retained byte-exact; original dialogue registry unchanged."
+}

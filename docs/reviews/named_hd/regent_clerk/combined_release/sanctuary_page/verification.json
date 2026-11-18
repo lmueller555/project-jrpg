@@ -1,0 +1,36 @@
+{
+  "source": "production Game.draw via actual Gallery scene/input",
+  "fixture": "isolated Gallery prerequisites; no user save",
+  "views": [
+    {
+      "file": "read.png",
+      "beat": 1,
+      "pose_ms": 50.0,
+      "position": [
+        820.0,
+        386.0
+      ]
+    },
+    {
+      "file": "read_attention.png",
+      "beat": 5,
+      "pose_ms": 200.0,
+      "position": [
+        820.0,
+        386.0
+      ]
+    },
+    {
+      "file": "read_resume.png",
+      "beat": 5,
+      "pose_ms": 200.0,
+      "position": [
+        820.0,
+        386.0
+      ]
+    }
+  ],
+  "pause_freezes_page_pose": true,
+  "read_handoff_observed": true,
+  "final_beat": 6
+}

@@ -1,0 +1,271 @@
+[
+  {
+    "test": "tests.test_sanctuary_arrival_gallery.SanctuaryArrivalGalleryTests.test_actual_scene_completes_and_preserves_saved_journey_parent_roster_and_settings",
+    "returncode": 0,
+    "seconds": 9.54
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_gallery.SanctuaryArrivalGalleryTests.test_pause_focus_restart_and_early_exit_remain_inside_disposable_runtime",
+    "returncode": 0,
+    "seconds": 4.73
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_gallery.SanctuaryArrivalGalleryTests.test_entry_is_the_live_arrival_with_local_thumbnail",
+    "returncode": 0,
+    "seconds": 0.22
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_completed_handoff_is_durable_and_never_completes_mq03_or_heals_members",
+    "returncode": 0,
+    "seconds": 5.01
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_older_standing_spot_covered_by_the_new_closed_rope_resumes_on_clear_apron",
+    "returncode": 0,
+    "seconds": 3.81
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_partial_dialogue_restarts_only_its_unacknowledged_beat_after_continue",
+    "returncode": 0,
+    "seconds": 3.74
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_continue_during_rope_operation_rebuilds_the_unacknowledged_final_beat",
+    "returncode": 0,
+    "seconds": 3.71
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_failed_final_checkpoint_rolls_back_recruitment_and_retries_without_replaying_scene",
+    "returncode": 0,
+    "seconds": 1.89
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_earlier_cave_visit_releases_music_without_skipping_the_later_arrival",
+    "returncode": 0,
+    "seconds": 1.78
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_state.SanctuaryArrivalStateTests.test_new_record_validation_rejects_impossible_or_malformed_beats",
+    "returncode": 0,
+    "seconds": 1.51
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_kit_and_cloth_transfer_once_after_the_authored_actions",
+    "returncode": 0,
+    "seconds": 2.07
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_runner_releases_one_fixed_bundle_and_does_not_restart",
+    "returncode": 0,
+    "seconds": 2.06
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_pause_and_focus_freeze_care_ownership_pose_and_transfer_clock",
+    "returncode": 0,
+    "seconds": 1.94
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_continue_during_retrieval_rebuilds_the_unacknowledged_care_beat",
+    "returncode": 0,
+    "seconds": 4.36
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_page_acknowledges_the_group_then_returns_to_his_ledger",
+    "returncode": 0,
+    "seconds": 2.0
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_objects.SanctuaryArrivalObjectTests.test_a_large_update_crosses_each_transfer_cue_only_once",
+    "returncode": 0,
+    "seconds": 1.82
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_speakers_and_native_art_keep_page_and_workers_distinct",
+    "returncode": 0,
+    "seconds": 3.93
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_live_gallery_movement_keeps_every_cast_members_feet_separate",
+    "returncode": 0,
+    "seconds": 3.56
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_leaving_a_dialogue_page_open_does_not_restart_the_supply_run",
+    "returncode": 0,
+    "seconds": 3.19
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_rope_frames_keep_all_post_pixels_at_the_same_world_position",
+    "returncode": 0,
+    "seconds": 3.49
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_pause_and_focus_freeze_the_caretaker_and_rope_during_release",
+    "returncode": 0,
+    "seconds": 3.19
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_rope_contact_stays_within_natural_reach_until_the_free_end_is_released",
+    "returncode": 0,
+    "seconds": 3.78
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_gallery_restart_during_release_restores_the_closed_barrier",
+    "returncode": 0,
+    "seconds": 6.17
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_polish.SanctuaryArrivalPolishTests.test_gallery_restart_during_kit_retrieval_discards_partial_prop_ownership",
+    "returncode": 0,
+    "seconds": 5.91
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_blocking.SanctuaryBlockingTests.test_all_beats_keep_clear_stations_and_paths_at_multiple_frame_rates",
+    "returncode": 0,
+    "seconds": 0.88
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_blocking.SanctuaryBlockingTests.test_resume_reconstructs_each_beat_without_reintroducing_crossings",
+    "returncode": 0,
+    "seconds": 0.52
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_blocking.SanctuaryBlockingTests.test_every_principal_station_is_visible_above_foreground_furniture",
+    "returncode": 0,
+    "seconds": 1.79
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_blocking.SanctuaryBlockingTests.test_runner_completes_one_delivery_and_long_dialogue_holds_still",
+    "returncode": 0,
+    "seconds": 0.65
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_prearrival_retains_the_existing_two_member_event_and_resources",
+    "returncode": 0,
+    "seconds": 0.19
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_completion_adds_temporary_lucan_and_preserves_every_character_object_and_resource",
+    "returncode": 0,
+    "seconds": 0.21
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_existing_permanent_lucan_is_not_recruited_again_or_downgraded",
+    "returncode": 0,
+    "seconds": 0.17
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_unrelated_event_is_not_replaced_and_failed_upgrade_is_atomic",
+    "returncode": 0,
+    "seconds": 0.18
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_player_formation_before_the_outing_and_later_order_are_preserved",
+    "returncode": 0,
+    "seconds": 0.17
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_completed_scene_requires_the_trio_in_active_modern_mq03_snapshots",
+    "returncode": 0,
+    "seconds": 0.18
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_party.SanctuaryArrivalPartyTests.test_ending_this_outing_releases_only_its_temporary_lucan",
+    "returncode": 0,
+    "seconds": 0.19
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_entry_offer_and_retreat_do_not_start_rescue_or_create_battle",
+    "returncode": 0,
+    "seconds": 3.39
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_confirmed_scene_finishes_before_ticket_and_preserves_resources",
+    "returncode": 0,
+    "seconds": 3.18
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_pause_and_focus_freeze_clock_and_staging",
+    "returncode": 0,
+    "seconds": 3.12
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_missing_legacy_record_infers_departed_worker_without_replaying",
+    "returncode": 0,
+    "seconds": 2.98
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_malformed_records_and_impossible_defeat_states_are_rejected",
+    "returncode": 0,
+    "seconds": 3.17
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_fast_input_cannot_free_or_treat_before_physical_cues",
+    "returncode": 0,
+    "seconds": 3.42
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_greenwell_prepare_keeps_worker_and_lucan_safe_without_rewards",
+    "returncode": 0,
+    "seconds": 3.65
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_handoff_completes_before_guest_departure_and_survives_continue",
+    "returncode": 0,
+    "seconds": 8.3
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_partial_physical_work_reloads_from_last_acknowledged_stage",
+    "returncode": 0,
+    "seconds": 6.98
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_failed_extraction_checkpoint_rolls_back_scene_and_guest",
+    "returncode": 0,
+    "seconds": 3.7
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_camera_holds_on_warning_and_reduced_motion_uses_stable_shots",
+    "returncode": 0,
+    "seconds": 3.31
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_failed_final_handoff_checkpoint_keeps_guest_until_retry",
+    "returncode": 0,
+    "seconds": 3.44
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_reset_removes_waiting_worker_and_temporary_world_props",
+    "returncode": 0,
+    "seconds": 3.33
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_missing_legacy_pending_record_resumes_committed_fight_without_reveal",
+    "returncode": 0,
+    "seconds": 2.65
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_failed_battle_start_retries_without_replaying_rescue",
+    "returncode": 0,
+    "seconds": 3.08
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_disabled_save_playtest_can_complete_the_caretaker_handoff",
+    "returncode": 0,
+    "seconds": 7.72
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_acknowledged_confrontation_can_leave_before_retry_without_corrupt_save",
+    "returncode": 0,
+    "seconds": 5.44
+  },
+  {
+    "test": "tests.test_sanctuary_rescue.SanctuaryRescueTests.test_reduced_motion_escort_holds_shots_and_preserves_supported_spacing",
+    "returncode": 0,
+    "seconds": 3.06
+  },
+  {
+    "test": "tests.test_sanctuary_arrival_gallery.SanctuaryArrivalGalleryTests.test_actual_scene_completes_and_preserves_saved_journey_parent_roster_and_settings [reduced_motion]",
+    "returncode": 0
+  }
+]
