@@ -165,6 +165,22 @@ teacher decides what to change. The party need not travel to the Lower
 Leth, the incident does not explain any current anomaly, and neither the
 performance nor the meeting is a committed quest.
 
+## Lower Leth: Edran’s borrowed lesson book
+
+A clinic colleague of [Edran](../../narrative/game_01/COMPANIONS.md#edran-hale)
+thinks an apprentice needs enough time with one teacher to be watched
+making the same mistake twice. Edran wants training to reach people who
+cannot leave their settlements. He trusts her judgment in part because
+former pupils come back to teach beside her.
+
+They pass a battered lesson book back and forth. She crosses out examples
+that assume a room or equipment a village might not have. He adds questions
+he hears in smaller settlements. Each keeps the other’s corrections,
+including the irritating ones. She makes room for visiting learners. When
+Edran is in town, he covers one of her teaching afternoons so she can leave
+early. The exchange is a proposed relationship, not a fixed scene or an
+earlier introduction, and neither person considers the argument settled.
+
 ## Rookfen and Marris: where a cargo changes hands
 
 At an unnamed Rookfen landing, grain coming down the Leth is checked for damp
@@ -179,6 +195,20 @@ storage, the boat crew loses earning time, and the port loses a cargo its
 workers expected. Replacing the marker restores passage, but does not decide
 who pays. The [World Atlas](../WORLD_ATLAS.md) is the source for commodities
 and geography; the transfer, voyage and dispute are proposals.
+
+## Rookfen: the bedtime screen
+
+In one [Rookfen](MEROVAR.md#rookfen) household, a child turns a patterned
+reed screen across the sleeping corner in the evening and hooks its
+cord loops over smooth pegs. The lowest loop is wrapped in soft cloth
+where small fingers pull. A hand’s-width gap means “stay and talk.”
+Closing it means “goodnight,” even when the adults stay awake nearby.
+The child can ask for privacy without having to send anyone away.
+
+Neighbours who only put up a screen when guests stay over would not
+read the gap the same way. A more crowded household might have no room
+to divide at all. The signal belongs to this family, not the pattern
+or the delta.
 
 ## Redstone March: the first drink
 
@@ -208,6 +238,22 @@ back and asks him to show her what he saw. Now he can change his mind
 without having to apologize, and the market has something new to argue
 about before work resumes.
 
+## Redstone March: Lucan gives the account before the title
+
+[Lucan](../../narrative/game_01/characters/LUCAN.md) takes pride in
+bringing people through safely. For a character test, have a returning
+escort in one [Redstone](MEROVAR.md#redstone-march) community describe the
+journey before anyone praises it. A carrier interrupts Lucan’s polished
+account to ask where the road narrowed. He hears doubt about his
+competence. She is taking a wider wagon tomorrow and needs to know
+whether she can use the same road.
+
+“I brought everyone through,” he says. “And tomorrow I take a wider
+wagon,” she answers. He marks the narrowest stretch from memory and
+asks the younger escort to check it. When corrected, he moves the mark
+without making a speech. He still straightens when the carrier thanks
+him. This is a voice test, not a fixed hometown custom or mission.
+
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
 A watcher sees an unfamiliar vessel approaching yesterday’s landing channel.
@@ -230,6 +276,21 @@ a customer would hesitate to ask, or spot something the supervisor missed.
 A sibling covering a market shift may resent being asked to come too. Some
 yards let a crewmate stand in; some use a paid trial instead. The custom does
 not imply equal access to an apprenticeship or one uniform port culture.
+
+## Marris Coast: the joke that comes home
+
+At one [Marris](MEROVAR.md#marris-coast) family’s welcome-home meal,
+relatives act out a favourite harbour comedy. A pompous lover rehearses
+a greeting without realizing he’s addressing a coat hung on the door.
+Returning travellers bring different endings. Nobody agrees which
+ending was there first.
+
+An aunt loves hearing lines she remembers from childhood. Her nephew,
+raised speaking another household language, enjoys the ridiculous bows
+but misses the wordplay. When she explains one joke too many, he says,
+“If you tell me when to laugh, I’ll charge admission.” She hands him
+the coat. He makes it turn down the lover. This family can carry a joke
+between languages without agreeing on which version counts as the original.
 
 ## Northern kingdom: who gets the next loaded cart?
 
@@ -320,15 +381,15 @@ a particular species belongs in this game.
 
 ## Next development pass
 
-1. Give each region a second perspective beyond trade and shortages. Build
-   on the Greyfold hall and Redstone market customs above; Marris or Rookfen
-   can next show whose humour travels and whose doesn’t. Develop each
-   separately: who participates, who is left out, and who bends the custom.
-2. Build on existing character ties. Ask what Lucan finds uncomfortable
-   about his home region’s expectations, or what Edran learned from a
-   colleague he still disagrees with. Do not assign new birthplaces or make
-   every region a required stop. Add names only once there is something
-   specific to name.
+1. Give the unnamed northern kingdom and Merovar’s Rimeward Shores one
+   everyday practice each beyond transport and weather warnings. Develop
+   the two separately, without deciding their political relationship
+   or naming a capital, dynasty, or new territory.
+2. Build the first small candidate toward a regional naming or history
+   decision: define what neighbouring Vale or Upper Leth settlements
+   need to distinguish before naming one, or separate a local event
+   from how later households remember it. Keep author truths, in-world
+   accounts and player disclosure separate.
 
 ## Map implications for a later review
 
