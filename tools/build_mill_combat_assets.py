@@ -10,8 +10,10 @@ from PIL import Image
 
 if __package__:
     from .build_mira_combat import build as build_mira
+    from .build_tusker_bolt_recoil import export as build_tusker_bolt_recoil
 else:
     from build_mira_combat import build as build_mira
+    from build_tusker_bolt_recoil import export as build_tusker_bolt_recoil
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -131,14 +133,14 @@ def build_actor(actor):
             'sheet': 'spritesheet.png', 'extraction': 'connected-alpha sprites; fixed native scale',
             'native_scale': settings['scale'], 'animations': animations}
     (directory/'animation.json').write_text(json.dumps(data, indent=2)+'\n')
-    return data
+    return build_tusker_bolt_recoil(directory=directory)
 
 
 def main():
     build_mira()
     for actor in ACTORS:build_actor(actor)
     print(json.dumps({'actors': ['mira', *ACTORS],
-                      'source_cells_per_actor': {'mira': 82, 'ridgeback_tusker': 16}}))
+                      'source_cells_per_actor': {'mira': 90, 'ridgeback_tusker': 22}}))
     return 0
 
 

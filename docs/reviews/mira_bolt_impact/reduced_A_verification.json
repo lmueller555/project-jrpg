@@ -1,0 +1,1088 @@
+{
+  "unseeded_new_game": true,
+  "production_mq02": true,
+  "normal_player_files_untouched": true,
+  "reduced_motion": true,
+  "baseline_scene_commit": "a997adbdfb9605c417012a3be35044dc29482e2d",
+  "git_commit": "19ed3f25fe06d1e09cf55ad55ec4d9ab59813bde",
+  "runtime_hashes": {
+    "battle_scene.py": "b11ac839886a4711fbc74718a54f6651caa431bdf59db2c928cad18fde1bba50",
+    "mira_combat_art.py": "f3aa5a61f6ce114ffcc593224fbe5747e83f5c710df9c61da12866a122507def",
+    "bolt_shot_fx.py": "5f50ba323fbe67061e1f7e9914911529c13e3d2401f155cb4431a2d24f2eaabb",
+    "assets/combat/mira/animation.json": "a85f024ec6f9293e01d447ce5e004d9add041c8c155a5857f44d0d3f58b084a0",
+    "assets/combat/ridgeback_tusker/animation.json": "33bc7c0b72ffc0062edc6fb3035ff0d1acefbb02bf112559a4f51955aef283e1",
+    "assets/combat/actions.json": "dc897f0609b604886cf1126678fa6153bb835a8753583728cee5ba98a05fca20",
+    "battle_model.py": "ea73c5fd353e2a625c775074434f02dedd1f5faf9dea79aeb6910aa5a9d03a68",
+    "battle_action_audio.py": "f6442f0c14f73a6396a11a2c64dde01ca3b920068a5eacfb4a9057093e601133",
+    "assets/audio/sfx/mira_bolt_shot/bolt_impact.wav": "7e24f7e9e034a47e98af8b233f29ab14b06d72b13d756fb11a9ff7fa622cf611",
+    "tools/capture_mira_bolt_impact.py": "6f08e3583c83c4f8aaf8cb68eacd103de8c3fb4d975800fe871fcdf48c3eab86"
+  },
+  "source_dialogue_pages": 264,
+  "lesson": {
+    "stage": "complete",
+    "aether_edge_discovered": true
+  },
+  "cues": [
+    {
+      "cue": "guard_hit",
+      "elapsed": 0.5000000000000009,
+      "action": "tusker_charge"
+    },
+    {
+      "cue": "focus",
+      "elapsed": 5.464378949326942e-16,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "step",
+      "elapsed": 0.4600000000000008,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "swing",
+      "elapsed": 0.8800000000000011,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "impact",
+      "elapsed": 1.000000000000001,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "step",
+      "elapsed": 1.3500000000000014,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "land",
+      "elapsed": 1.8000000000000018,
+      "action": "aether_edge"
+    },
+    {
+      "cue": "mira_clack",
+      "elapsed": 0.28,
+      "action": "bolt_shot"
+    },
+    {
+      "cue": "impact",
+      "elapsed": 0.4,
+      "action": "bolt_shot"
+    }
+  ],
+  "review_cues": [
+    {
+      "cue": "mira_clack",
+      "elapsed": 0.28,
+      "action": "bolt_shot"
+    },
+    {
+      "cue": "impact",
+      "elapsed": 0.4,
+      "action": "bolt_shot"
+    }
+  ],
+  "preview_audio": "Observed production SFX at unity effects volume; no music",
+  "samples": [
+    {
+      "elapsed": 0.0,
+      "actual_elapsed": 0.0,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18300.000000000062
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.1,
+      "actual_elapsed": 0.1,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18400.00000000007
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.2,
+      "actual_elapsed": 0.2,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18500.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.279,
+      "actual_elapsed": 0.279,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18579.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.28,
+      "actual_elapsed": 0.28,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        368.0,
+        99.0
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18580.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.295,
+      "actual_elapsed": 0.295,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        336.8750000000001,
+        105.12499999999999
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18595.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.31,
+      "actual_elapsed": 0.31,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        305.75000000000006,
+        111.24999999999999
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18610.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.325,
+      "actual_elapsed": 0.325,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        274.625,
+        117.375
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18625.000000000076
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.34,
+      "actual_elapsed": 0.34,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        243.5,
+        123.5
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18640.00000000008
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.355,
+      "actual_elapsed": 0.355,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        212.37500000000009,
+        129.62499999999997
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18655.00000000008
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.37,
+      "actual_elapsed": 0.37,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        181.25000000000006,
+        135.75
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18670.00000000008
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.385,
+      "actual_elapsed": 0.385,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        150.12500000000003,
+        141.875
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18685.00000000008
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.399,
+      "actual_elapsed": 0.399,
+      "resolved": false,
+      "enemy_hp": 245,
+      "projectile": [
+        121.07499999999999,
+        147.59166666666667
+      ],
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        18699.00000000008
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    },
+    {
+      "elapsed": 0.4,
+      "actual_elapsed": 0.4,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        0.0
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.0,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.416,
+      "actual_elapsed": 0.416,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        15.99999999999996
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.01599999999999996,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.44,
+      "actual_elapsed": 0.44,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        39.99999999999998
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.03999999999999998,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.456,
+      "actual_elapsed": 0.456,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        55.99999999999999
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.055999999999999994,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.49,
+      "actual_elapsed": 0.49,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        89.99999999999997
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.08999999999999997,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.55,
+      "actual_elapsed": 0.55,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        150.00000000000003
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.15000000000000002,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.6,
+      "actual_elapsed": 0.6,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        199.99999999999994
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.19999999999999996,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.65,
+      "actual_elapsed": 0.65,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        250.0
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.25,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.72,
+      "actual_elapsed": 0.72,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": [
+        368.0,
+        99.0
+      ],
+      "target": [
+        119.0,
+        148.0
+      ],
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        319.99999999999994
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.31999999999999995,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.8,
+      "actual_elapsed": 0.8,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": null,
+      "target": null,
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "hurt",
+        400.0
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.4,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.88,
+      "actual_elapsed": 0.8,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": null,
+      "target": null,
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        19180.000000000087
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.48,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 0.95,
+      "actual_elapsed": 0.8,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": null,
+      "target": null,
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "idle",
+        19250.000000000084
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": {
+        "age": 0.5499999999999999,
+        "guarded": false,
+        "lethal": false,
+        "action": "bolt_shot"
+      }
+    },
+    {
+      "elapsed": 1.05,
+      "actual_elapsed": 0.8,
+      "resolved": true,
+      "enemy_hp": 228,
+      "projectile": null,
+      "origin": null,
+      "target": null,
+      "enemy_floor": [
+        119.0,
+        196.0
+      ],
+      "mira_floor": [
+        404.0,
+        151.0
+      ],
+      "enemy_pose": [
+        "attack",
+        89.74358974353545
+      ],
+      "camera": [
+        1.0,
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "observed_reduced_motion": true,
+      "reaction": null
+    }
+  ],
+  "fps": 60,
+  "frames": 64
+}
