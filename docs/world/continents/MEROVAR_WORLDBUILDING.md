@@ -200,6 +200,20 @@ one visit, not a picture of the whole delta. The
 [classroom map](../../WORLD_MAP.md) and atlas remain the geographic
 references. No visit or new route is established.
 
+## Elden Vale and Greyfold: tell us before you clear it
+
+In this proposed neighbour story, one woodland household clears leaves
+from its drainage ditch before heavy rain. A Vale neighbour has washing
+soaking where the runoff arrives. Next time, the upland household sends
+word with someone already coming down. The washer delays soaking and
+asks whether they want a hand. Her brother points out that their own
+garden will still need work. They decide to help this time, not every time.
+
+The [atlas](MEROVAR.md#greyfold-uplands) establishes western-slope
+drainage into greener country below. The ditch, visit and households
+are one illustration of how that connection might matter. No channel
+name, new route, exact location, or permanent duty follows.
+
 ## Upper Leth approach: the unnamed town south of Eldenmere
 
 One proposed identity for the next town south is a market that suits
@@ -732,6 +746,19 @@ better there.”
 This is one furnishing in one proposed household. The repair records
 the owner’s preference, not a coastal style, new asset or room layout.
 
+## Marris Coast: who answers to First?
+
+In one proposed repair yard, workers call whoever has the final check
+that day “First.” The name gives an apprentice someone to ask before
+a repair leaves the yard. A visitor hears “First, check this hinge”
+and looks toward the supervisor. The youngest qualified person
+answers instead. Another yard might just use personal names.
+
+The form of address marks who has agreed to do a particular job, not
+ownership, family rank, or seniority. The
+[reviewed character-naming transcript](https://www.youtube.com/watch?v=ikdyuJVq_p8&t=900s)
+informed keeping the pattern in a small group and giving it a reason.
+
 ## Marris Coast and Elden Vale: Mira asks where the hand goes
 
 In this voice test, a visiting apprentice describes a
@@ -913,12 +940,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Use one small existing connection between the Vale and Greyfold to
-   show how ordinary knowledge moves between neighbours. Do not add
-   a crossing, pass or road.
-2. Develop a small-scale form of address that signals a relationship in
-   one household or workplace. It should not imply a new language,
-   inherited title, surname or rule for everyone on Merovar.
+1. Draw one optional nonhuman character design on paper only as a
+   writing description. Test whether it buys a useful interaction
+   instead of adding an ancestry label to existing people.
+2. Decide what makes a proposal ready for canon review. Record what
+   would have to move into an authoritative source and what should
+   stay open, without promoting anything by default.
 
 ## Map implications for a later review
 
