@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "source": "stop_source.png",
+  "source_canvas": [
+    1536,
+    1024
+  ],
+  "grid": [
+    4,
+    2
+  ],
+  "registration": "All complete384x512 drawings use nominal0.08 density,31x41 nearest sample and commonorigin[-4,-2]. This fixed source-body registration is separate from logical groundanchor[12,34]; no pose bounds or individual feet determine scale.",
+  "appearance": "Near anatomical left braid; far anatomical right mantle; approved native blue/silver coat and black exterior outline.",
+  "preservation": "Approved head/neck rows0..12 from walk16 forframes1..6, then idle forframes7..8 after complete-drawing registration. All moving anatomy below remains authored source.",
+  "palette": "One nearest-RGB mapping of body rows13..35 to approved walk16/idle colors; original source unchanged.",
+  "timing": {
+    "handoff_ms": 40,
+    "new_frame_ms": 60,
+    "hold_ms": 60,
+    "recovery_ms": 120,
+    "total_ms": 700
+  },
+  "frames": [
+    {
+      "phase": "last_contact",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "weight_accept",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "trailing_recovery",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "trailing_close",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "double_support",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "body_settle",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "cloth_followthrough",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "phase": "settled_cloth",
+      "source": "../native_stop_left/stop_source.png",
+      "rect": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "scale": 0.08,
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    }
+  ]
+}

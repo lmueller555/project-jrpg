@@ -72,11 +72,11 @@ Caelan restored the mill.
 The [sprite and animation standard](SPRITE_ANIMATION_STANDARD.md) owns Iselin's
 appearance, body registration and complete-frame construction. Her current
 arrival assets include static standing/listening/gesture/turn poses and the
-left, rear-three-quarter and rear walks. The acting foundation adds optional
-finite clips; the shipped arrival manifest keeps its existing poses and timing.
-New stopping, greeting, listening, speaking and turning performances are separate
-artwork changes. A reference board and isolated playback evidence are recorded
-in the [foundation review](reviews/iselin_cinematic_foundation/README.md).
+left, rear-three-quarter and rear walks. Optional finite clips support one-time
+performances. The first live clip is the gate stop and settle described below;
+greeting, listening, speaking and turning remain separate performance changes.
+The [foundation review](reviews/iselin_cinematic_foundation/README.md) records the
+original playback mechanics and reference board at that milestone.
 
 An arrival actor's `animation.json` can declare an `actions` object alongside
 its existing `poses` and `loops`. Each named action has this shape:
@@ -113,6 +113,55 @@ the temporary players and cue history. Existing static and walking selection
 continues when no action is active. The durable arrival receipt remains the
 same version-one `waiting`/`pending`/`seen` record; action frames and clocks are
 never serialized or used as quest completion signals.
+
+### Gate stop and standing settle
+
+Iselin approaches the gate at the existing 24 cinematic pixels per second.
+At 1.25 seconds she has traveled 30 pixels and reaches the sixteenth approved
+left-walk drawing. The `stop_left` clip begins on that exact image, decelerates
+with her final step, and settles into the exact approved `stand_left` pose.
+
+| Approach time | Movement and performance |
+| --- | --- |
+| 0–1.25 s | Original straight approach, root `[611,375]` to `[581,375]`, unchanged gait phase. |
+| 1.25–1.75 s | Linear reduction of speed from 24 to zero, covering the final six pixels to `[575,375]`. Leading boot remains supported as the trailing boot closes. |
+| 1.75–1.95 s | Root stays still; arms, coat and braid finish settling. |
+| Greeting | Temporary stop ownership clears; the ordinary approved standing pose remains. |
+
+The 700 ms clip uses the approved walk handoff for 40 ms, eight complete new
+drawings at 60 ms each, a 60 ms hold, and 120 ms recovery on the approved idle.
+All source poses share one native density and registration; neither the feet nor
+body bounds determine per-frame scale. Head/neck preservation and palette
+registration are documented alongside the complete generated source under
+`assets/source/characters/iselin/native_stop_left/`.
+
+The approach camera retains its original 1.5-second pan and then holds.
+Caravan, Lucan and page tracks still stop at 1.5 seconds; wagon/hoof audio follows
+the caravan. Endpoints, dialogue and the subsequent gate passage are retained.
+Only this left-facing gate stop is activated; other approaches keep their existing
+performances until their gait phases and staging are reviewed.
+
+A straight-moving actor can declare this bounded annotation:
+
+```json
+"stop": {
+  "start_seconds": 1.25,
+  "deceleration_seconds": 0.5,
+  "settle_seconds": 0.2,
+  "action": "stop_left"
+}
+```
+
+`move_seconds` includes deceleration and must end at `start_seconds` plus
+`deceleration_seconds`; the shot must leave room for the complete settle.
+The finite action duration must equal deceleration plus settle. Scene updates
+start the cue once and account for only the time since its boundary, including
+when a large update crosses it. Drawing and reading dialogue do not trigger the
+clip. Aerial ground-reference sampling retains the uninterrupted incoming walk.
+
+The [walk-stop review](reviews/iselin_walk_stop/README.md) records continuous
+production-shot captures, normal/slow playback, frame inspection and lifecycle
+validation. It distinguishes initial review stationing from played scene updates.
 
 ## Controls and presentation
 

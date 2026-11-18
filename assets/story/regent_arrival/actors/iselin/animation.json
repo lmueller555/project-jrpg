@@ -216,6 +216,59 @@
       }
     ]
   },
+  "actions": {
+    "stop_left": {
+      "entry": [
+        {
+          "file": "walk_left_15.png",
+          "duration_ms": 40
+        },
+        {
+          "file": "stop_left/frame_01.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_02.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_03.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_04.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_05.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_06.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_07.png",
+          "duration_ms": 60
+        },
+        {
+          "file": "stop_left/frame_08.png",
+          "duration_ms": 60
+        }
+      ],
+      "hold": {
+        "file": "stop_left/frame_08.png",
+        "duration_ms": 60
+      },
+      "recovery": [
+        {
+          "pose": "stand_left",
+          "duration_ms": 120
+        }
+      ],
+      "rest_pose": "stand_left"
+    }
+  },
   "gaits": {
     "walk_left": {
       "stride_pixels": 32
@@ -230,5 +283,5 @@
     34
   ],
   "camera_scale": 2.3529411764705883,
-  "source": "Native complete Iselin scene drawings and approved16-frame native walks; uniform nearest-neighbor camera presentation."
+  "source": "Native complete Iselin scene and stopping drawings with approved16-frame native walks; uniform nearest-neighbor camera presentation."
 }

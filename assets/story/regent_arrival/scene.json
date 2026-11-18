@@ -142,7 +142,7 @@
     {
       "id": "gate_approach",
       "scene": "gate",
-      "min_seconds": 1.5,
+      "min_seconds": 1.95,
       "camera": {
         "from": [
           400,
@@ -151,7 +151,8 @@
         "to": [
           380,
           140
-        ]
+        ],
+        "move_seconds": 1.5
       },
       "actors": [
         {
@@ -179,8 +180,14 @@
             575,
             375
           ],
-          "move_seconds": 1.5,
-          "animation_rate": 0.6
+          "move_seconds": 1.75,
+          "animation_rate": 0.6,
+          "stop": {
+            "start_seconds": 1.25,
+            "deceleration_seconds": 0.5,
+            "settle_seconds": 0.2,
+            "action": "stop_left"
+          }
         },
         {
           "id": "lucan",

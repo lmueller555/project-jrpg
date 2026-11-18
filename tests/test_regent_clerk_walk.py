@@ -429,9 +429,9 @@ class RegentClerkWalkTests(unittest.TestCase):
         expected.update((ROOT/'assets/source/cinematics/regent_arrival/actors/aldric_side_walk').rglob('*.png'))
         for directory in (GROUND, AERIAL):
             for path in directory.rglob('*.png'):
-                # Lucan joined the cinematic after this original-art snapshot.
-                # His own continuity suite validates the additive exports.
-                if path.parent.name in ('lucan','iselin'):continue
+                # Later actor suites protect Lucan/Iselin and their nested
+                # action exports independently of this original-art snapshot.
+                if path.relative_to(directory).parts[0] in ('lucan','iselin'):continue
                 if path.parent.name == 'clerk' and (directory == AERIAL or
                                                     path.name not in ('stand_left.png', 'read_left.png')):
                     continue

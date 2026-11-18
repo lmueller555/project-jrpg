@@ -222,11 +222,13 @@ class ActionPlayer:
             else:
                 duration = getattr(self._clip, self._stage)[self._index].duration_ms
             needed = duration - self._elapsed
-            # Subtracting adjacent scene timestamps can leave an exact nominal
-            # boundary a few floating-point steps short. Scale tolerance only
-            # to representation error, so genuinely early samples stay put.
+            # Timestamp and segment subtraction can accumulate more error than
+            # a frame duration's ulps. Supplement that allowance with a tiny
+            # absolute budget, capped at 1e-9ms and scaled down for tiny frames,
+            # so genuinely early samples stay put.
+            tolerance = max(8 * math.ulp(duration), min(1e-9, duration * 1e-9))
             at_boundary = math.isclose(remaining, needed, rel_tol=0.,
-                                       abs_tol=8 * math.ulp(duration))
+                                       abs_tol=tolerance)
             if remaining < needed and not at_boundary:
                 self._elapsed += remaining
                 return

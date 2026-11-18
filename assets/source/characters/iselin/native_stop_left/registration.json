@@ -1,0 +1,494 @@
+{
+  "generation_tool": "image_gen.imagegen",
+  "construction": "Eight complete authored stop/settle drawings; uniform native body registration and documented approved head preservation. No limb assembly or per-foot scaling.",
+  "recipe_sha256": "4bf7e6d14786903d78364adc24b4b60bb333dc84be866390f26a0a4885e68da5",
+  "native_canvas": [
+    24,
+    36
+  ],
+  "native_ground_anchor": [
+    12,
+    34
+  ],
+  "camera_canvas": [
+    80,
+    96
+  ],
+  "camera_anchor": [
+    40,
+    92
+  ],
+  "camera_scale": 2.3529411764705883,
+  "palette": {
+    "method": "Nearest RGB in the combined approved handoff/idle palette; protected rows0..12 remain unchanged.",
+    "color_count": 325
+  },
+  "approved_dependencies": {
+    "assets/characters/iselin/native_walk_left/frame_16.png": "5b23cbbfee9e24152259ea8ecb49e89105464df9505908adb3c8bf54c3702716",
+    "assets/characters/iselin/native_idles/idle_left.png": "384727a6790f31bf261d51356b75a9144c4070c5ce9b8cf211586295fee00589"
+  },
+  "records": [
+    {
+      "frame": 1,
+      "phase": "last_contact",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        4,
+        2,
+        21,
+        35
+      ],
+      "native_rgba_sha256": "b3f6d649a7241c4ae93ae0299795edad0210aac6685e82c1fdbeb5d8d49895cf",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 2,
+      "phase": "weight_accept",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        5,
+        2,
+        20,
+        35
+      ],
+      "native_rgba_sha256": "c9596fb9a690d4f2c97f6fa347caacf129467e14767ed86cb5a97abea6b0b87d",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 3,
+      "phase": "trailing_recovery",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        2,
+        19,
+        35
+      ],
+      "native_rgba_sha256": "39f9b37626fe4ffce36329f416fbcbbee9b632b5c10a7eac318279dffcf0d514",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 4,
+      "phase": "trailing_close",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        2,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "981147585a8f3f8299a58890c476c1e424419a009c2089d1d0849c9c16a35907",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 5,
+      "phase": "double_support",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        2,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "50ab4395ceed9ee007de013a1f976f2c13953a377f851717bcb68f3c97698466",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 6,
+      "phase": "body_settle",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        2,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "3643959b7c17ddf0be31ea17ad8280e9927b0f6af639ab5a5fcffb7b0a87c838",
+      "preserve": {
+        "image": "assets/characters/iselin/native_walk_left/frame_16.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 7,
+      "phase": "cloth_followthrough",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        1,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "81a444643936492a4f259b574681d9496cc3fe84889d46f2a301fe6397cec3af",
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    },
+    {
+      "frame": 8,
+      "phase": "settled_cloth",
+      "source": "../native_stop_left/stop_source.png",
+      "source_sha256": "62bd54087a380922e425c3f1c1b29594037f9acbeb1a2aa928c41740b1c1716f",
+      "source_rect_xywh": [
+        1152,
+        512,
+        384,
+        512
+      ],
+      "source_anchor": [
+        192,
+        462
+      ],
+      "destination_anchor": [
+        11,
+        35
+      ],
+      "uniform_scale": 0.08,
+      "sample_size": [
+        31,
+        41
+      ],
+      "origin": [
+        -4,
+        -2
+      ],
+      "canvas": [
+        24,
+        36
+      ],
+      "opaque_bounds": [
+        6,
+        1,
+        18,
+        35
+      ],
+      "native_rgba_sha256": "908e1d2ddceb889c06195cb2e4a0b10b275f0f84894d3cd9cde1b5850d321e84",
+      "preserve": {
+        "image": "assets/characters/iselin/native_idles/idle_left.png",
+        "rect": [
+          0,
+          0,
+          24,
+          13
+        ]
+      }
+    }
+  ],
+  "action": {
+    "entry": [
+      {
+        "file": "walk_left_15.png",
+        "duration_ms": 40
+      },
+      {
+        "file": "stop_left/frame_01.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_02.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_03.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_04.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_05.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_06.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_07.png",
+        "duration_ms": 60
+      },
+      {
+        "file": "stop_left/frame_08.png",
+        "duration_ms": 60
+      }
+    ],
+    "hold": {
+      "file": "stop_left/frame_08.png",
+      "duration_ms": 60
+    },
+    "recovery": [
+      {
+        "pose": "stand_left",
+        "duration_ms": 120
+      }
+    ],
+    "rest_pose": "stand_left"
+  },
+  "duration_ms": 700,
+  "exports": {
+    "assets/source/characters/iselin/native_stop_left/registered/frame_01.png": "29b3e2af70eb9ca0a09bf7473c4d0d51aa4ae321fa085a3986a0bc31b7837928",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_01.png": "60718150fc7699858030ad251c1a93c4c5490648e4cd643ab673c484b1afe1ce",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_02.png": "e23ebde6a4d08e5f265652efa37d9069442fa62ccde043d09237d80935a0d93b",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_02.png": "0a99338c1f713e2995836e214f6e76be457bb3da6a78e793904940ba2f87c726",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_03.png": "80603fca9bcec8fc08c674952b171f45b22744cb9070535ab2350c8021dfb808",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_03.png": "b579ee13a2b77ea0a24d63e484e6b5ff4e362e81957be449d8e80c25f9391b68",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_04.png": "edd46d96beee66fded3231514aa475d4a2937ebf737f8c633b1eec519b815317",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_04.png": "0756c82dab2482d2e2358ce1a15bb914ef21a14fcbb4fc98dd1c7a1d04fdfacc",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_05.png": "bccd26f349dbb71d398f0b3904d7bf1db8b4e6e1d476e61a87376f72ef5437d7",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_05.png": "528501d212364803c9a595a97ccca877568490f0fb96a2ea6bb0ccb93041cdc7",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_06.png": "6a82c16f8cc17398a436b6b3513c3cc29a3ab4cee53ffb15f01ab1bf193f04db",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_06.png": "6607ecbefc67f3307e120237de6a807ab90b6975bdf8f72c36aa1d967252302b",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_07.png": "f8a50588f2e6f9465e1222f60316b9edeaf680a4a65575182ff321c60d3b3a41",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_07.png": "57f7d0cfcffffcfcb8ac263124ad5db9d206920f4e95f6560104d35e83eace85",
+    "assets/source/characters/iselin/native_stop_left/registered/frame_08.png": "866f0dfea579b620c01ca69a5f1c839cc3eaf855d3f12209efcea00b6361c682",
+    "assets/story/regent_arrival/actors/iselin/stop_left/frame_08.png": "e86ddc26b2ea5accecc1e8e67f221d92da580ddd4e8d304e1b5f734857ce1592"
+  }
+}

@@ -133,6 +133,7 @@ class RegentArrival:
         self.scenery = None
         self.actor_art = {}
         self._actor_actions = {}
+        self._stop_cues = set()
         self.profiles = {}
         self.portraits = {}
         self.skip_rect = pygame.Rect(426, 292, 44, 20)
@@ -174,6 +175,36 @@ class RegentArrival:
             for actor in phase['actors']:
                 if actor['id'] not in self.data['actors']:
                     raise ValueError('Unknown arrival actor')
+                if 'stop' in actor:self._validate_stop(actor, phase)
+
+    @staticmethod
+    def _validate_stop(actor, phase):
+        """A bounded stop belongs to one straight approach and one finite clip."""
+        stop = actor['stop']
+        if (not isinstance(stop, dict)
+                or set(stop) != {'start_seconds', 'deceleration_seconds', 'settle_seconds', 'action'}
+                or phase['scene'] in ('aerial', 'world')
+                or 'to' not in actor or 'path' in actor or 'route' in actor
+                or sum(other['id'] == actor['id'] for other in phase['actors']) != 1
+                or not isinstance(stop.get('action'), str) or not stop['action'].strip()):
+            raise ValueError('Invalid arrival stop annotation')
+        numbers = (stop['start_seconds'], stop['deceleration_seconds'], stop['settle_seconds'],
+                   actor.get('move_start', 0.), actor.get('move_seconds'))
+        if any(type(value) not in (int, float) or not math.isfinite(value) for value in numbers):
+            raise ValueError('Arrival stop times must be finite numbers')
+        start, deceleration, settle, move_start, movement = numbers
+        if (start < move_start or move_start < 0 or deceleration <= 0 or settle < 0
+                or movement <= 0
+                or not math.isclose(start + deceleration, move_start + movement,
+                                    rel_tol=0., abs_tol=1e-9)
+                or start + deceleration + settle > phase['min_seconds'] + 1e-9):
+            raise ValueError('Arrival stop does not fit its approach and shot')
+        for point in (actor.get('position'), actor.get('to')):
+            if (not isinstance(point, list) or len(point) != 2
+                    or any(type(value) not in (int, float) or not math.isfinite(value) for value in point)):
+                raise ValueError('Arrival stop needs finite start and destination positions')
+        if actor['position'] == actor['to']:
+            raise ValueError('Arrival stop requires actual approach travel')
 
     def _path(self, filename):
         path = (self.scene_path.parent/filename).resolve()
@@ -332,7 +363,9 @@ class RegentArrival:
             return 'travel' if snapshot.get('party_visible') and snapshot.get('party_moving') else None
         if self.phase.get('sound') == 'travel':
             for actor in self.phase['actors']:
-                if actor['id'] not in ('iselin', 'caravan'):continue
+                # These sounds are wagon/hooves, owned by the caravan. Iselin's
+                # final human step can finish after the wagon has parked.
+                if actor['id'] != 'caravan':continue
                 start = actor.get('move_start', 0.)
                 duration = actor.get('move_seconds', self.phase['min_seconds'])
                 if (any(key in actor for key in ('to', 'path', 'route'))
@@ -363,8 +396,9 @@ class RegentArrival:
                           gain=self._audio_gain(snapshot), travel_rate=self._travel_rate(snapshot))
         self.bird_audio.update(0 if paused else seconds, snapshot, paused=paused)
         if paused:return
-        for player in self._actor_actions.values():player.update(max(0., seconds))
-        self.phase_time += max(0., seconds);self.elapsed += max(0., seconds)
+        delta = max(0., seconds)
+        self._advance_actor_actions(delta)
+        self.phase_time += delta;self.elapsed += delta
         if (self.shot == 'sanctuary_close' and self.fade_alpha
                 and not self._music_transition_started):
             self._music_transition_started = True
@@ -445,6 +479,18 @@ class RegentArrival:
                 loaded['actions'] = load_actions(record, frames, path,
                     lambda filename: pygame.image.load(str(filename)).convert_alpha())
             actors[identifier] = loaded
+        for phase in self.data['phases']:
+            for actor in phase['actors']:
+                if 'stop' not in actor:continue
+                stop = actor['stop']
+                clip = actors[actor['id']].get('actions', {}).get(stop['action'])
+                if clip is None or clip.hold_duration_ms is None:
+                    raise ValueError('Arrival stop requires a known finite action')
+                duration = (sum(frame.duration_ms for frame in (*clip.entry, *clip.recovery))
+                            + clip.hold_duration_ms)
+                if not math.isclose(duration, (stop['deceleration_seconds'] + stop['settle_seconds']) * 1000,
+                                    rel_tol=0., abs_tol=1e-7):
+                    raise ValueError('Arrival stop action does not match its movement and settling time')
         for key, record in self.data['speakers'].items():
             profile = dict(self.game.social.data['speakers'].get(record.get('profile'), record))
             if record.get('portrait_file'):
@@ -457,7 +503,16 @@ class RegentArrival:
     def _movement_fraction(self, actor):
         start = actor.get('move_start', 0.)
         duration = actor.get('move_seconds', self.phase['min_seconds'])
-        return max(0., min(1., (self.phase_time-start)/duration))
+        elapsed = max(0., min(duration, self.phase_time-start))
+        stop = actor.get('stop')
+        if stop is None:return elapsed/duration
+        deceleration = stop['deceleration_seconds']
+        braking_at = stop['start_seconds'] - start
+        # Integrate constant initial velocity then a linear velocity ramp to
+        # zero. This preserves the approach speed, endpoint and a smooth stop.
+        braking_time = max(0., elapsed - braking_at)
+        distance_time = min(elapsed, braking_at) + braking_time - braking_time**2/(2*deceleration)
+        return distance_time/(duration - deceleration/2)
 
     def actor_route_distance(self, actor):
         return actor['route_start']+(actor['route_end']-actor['route_start'])*self._movement_fraction(actor)
@@ -537,7 +592,9 @@ class RegentArrival:
                 else:
                     points = actor.get('path',[actor['position'],actor.get('to',actor['position'])])
                     distance = sum(pygame.Vector2(a).distance_to(b) for a,b in zip(points,points[1:]))
-                time = (clock*distance/duration/gait['stride_pixels']*total)%total
+                traveled = (distance*self._movement_fraction(actor) if actor.get('stop')
+                            else clock*distance/duration)
+                time = (traveled/gait['stride_pixels']*total)%total
             else:
                 time = (clock*actor.get('animation_rate',1.))%total
             time = (time+actor.get('gait_offset',0.)*total)%total
@@ -576,6 +633,43 @@ class RegentArrival:
     def clear_actor_actions(self):
         """Discard local presentation clocks, settled overrides and cue history."""
         self._actor_actions.clear()
+        self._stop_cues.clear()
+
+    @staticmethod
+    def _stop_is_due(start, seconds):
+        # Repeated scene deltas can land a nominal cue a few ulps short. Match
+        # only timestamp roundoff; a genuinely earlier sample still waits.
+        return seconds >= start or math.isclose(seconds, start, rel_tol=0., abs_tol=1e-12)
+
+    def _start_due_stops(self, phase_time):
+        """Fire approach cues from updates, carrying only time since the cue.
+
+        The phase-local ledger also makes a busy action reject a due stop once,
+        rather than turning it into a hidden queue or replay after settling.
+        """
+        for actor in self.phase['actors']:
+            stop = actor.get('stop')
+            if stop is None or not self._stop_is_due(stop['start_seconds'], phase_time):continue
+            cue = self.shot + ':' + actor['id'] + ':stop'
+            if cue in self._stop_cues:continue
+            self._stop_cues.add(cue)
+            if self.play_actor_action(actor['id'], stop['action'], cue):
+                self._actor_actions[actor['id']].update(max(0., phase_time - stop['start_seconds']))
+
+    def _advance_actor_actions(self, seconds):
+        """Evaluate action ownership at a crossed cue, not at the frame's end."""
+        cursor = self.phase_time
+        end = cursor + seconds
+        pending = sorted({actor['stop']['start_seconds'] for actor in self.phase['actors']
+                          if 'stop' in actor
+                          and self.shot + ':' + actor['id'] + ':stop' not in self._stop_cues
+                          and self._stop_is_due(actor['stop']['start_seconds'], end)})
+        for cue_time in pending:
+            boundary = min(end, max(cursor, cue_time))
+            for player in self._actor_actions.values():player.update(boundary - cursor)
+            self._start_due_stops(boundary)
+            cursor = boundary
+        for player in self._actor_actions.values():player.update(max(0., end - cursor))
 
     def _actor_scale(self, actor):
         scale = actor.get('scale', 1.)
@@ -714,6 +808,11 @@ class RegentArrival:
         reference['actors'] = [dict(actor) for actor in phase['actors']]
         for actor in reference['actors']:
             if actor['id'] in ('iselin','lucan','clerk','caravan'):
+                stop = actor.pop('stop', None)
+                if stop is not None:
+                    # Aerial samples show the uninterrupted incoming approach,
+                    # before the later gate stop; retain its 24px/s gait.
+                    actor['move_seconds'] -= stop['deceleration_seconds']/2
                 # Translate the whole path, not only its start. The reference
                 # root moves at24px/s; its gait must retain that same speed.
                 for key in ('position','to'):

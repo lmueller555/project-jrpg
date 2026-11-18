@@ -1,0 +1,2746 @@
+{
+  "classification": "Historical before comparison, captured with unchanged pre-stop main runtime; retains one normal-speed GIF only.",
+  "repository_commit": "e1a010069507b592020ee4addf93f0a5d545ed5e",
+  "fixture": "Initial gate_approach shot stationed at0; then continuous production Game.update and Game.draw through real Gallery. No pose/action/frame overrides.",
+  "dt": ".02s maximum, split at listed exact meaningful times",
+  "gif_crop_window_pixels": [
+    240,
+    170,
+    720,
+    590
+  ],
+  "gif_playback": {
+    "before.gif": {
+      "frames": 101,
+      "total_ms": 2020,
+      "exposure_ms": 20,
+      "disposal": 1,
+      "decoded_pixels_and_exposures_verified": true
+    }
+  },
+  "input_sha256": {
+    "regent_arrival.py": "788ab213ffb4f1642cbef8cdf5ed39a33311aeb9976bbec7898eb6e38db4b5a9",
+    "cinematic_actor_actions.py": "828af8838a1fe81961bc9de610696aa06657e5af464d5758c04e508e328035d7",
+    "assets/story/regent_arrival/scene.json": "bf0d3d1b5a25ef6b2593ff7ebcb8837f9d2a546fa79bf1fac752e981c3767318",
+    "assets/story/regent_arrival/actors/iselin/animation.json": "63f7eae0b0d77c88c9b5d9b7774df017ffcbddfee1e70674f48005a769223b67"
+  },
+  "timeline_samples": [
+    {
+      "elapsed": 0.8,
+      "shot": "gate_approach",
+      "shot_seconds": 0.8,
+      "root": [
+        591.8,
+        375.0
+      ],
+      "camera": [
+        389.0014814814815,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "180082a78c71abc33b7555725638d82d4fffd36d7d0f8eeb456f171604475afc",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.82,
+      "shot": "gate_approach",
+      "shot_seconds": 0.82,
+      "root": [
+        591.3199999999999,
+        375.0
+      ],
+      "camera": [
+        388.60406518518516,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "180082a78c71abc33b7555725638d82d4fffd36d7d0f8eeb456f171604475afc",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.84,
+      "shot": "gate_approach",
+      "shot_seconds": 0.84,
+      "root": [
+        590.8399999999999,
+        375.0
+      ],
+      "camera": [
+        388.20864,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "3413f32da51bdbdf12ad7bd97c83c3005ae0821b9bdff094309dde6b77d7afd8",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.86,
+      "shot": "gate_approach",
+      "shot_seconds": 0.86,
+      "root": [
+        590.36,
+        375.0
+      ],
+      "camera": [
+        387.81577481481486,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "3413f32da51bdbdf12ad7bd97c83c3005ae0821b9bdff094309dde6b77d7afd8",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.88,
+      "shot": "gate_approach",
+      "shot_seconds": 0.88,
+      "root": [
+        589.88,
+        375.0
+      ],
+      "camera": [
+        387.4260385185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "3413f32da51bdbdf12ad7bd97c83c3005ae0821b9bdff094309dde6b77d7afd8",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.9,
+      "shot": "gate_approach",
+      "shot_seconds": 0.9,
+      "root": [
+        589.4,
+        375.0
+      ],
+      "camera": [
+        387.03999999999996,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "3413f32da51bdbdf12ad7bd97c83c3005ae0821b9bdff094309dde6b77d7afd8",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.92,
+      "shot": "gate_approach",
+      "shot_seconds": 0.92,
+      "root": [
+        588.92,
+        375.0
+      ],
+      "camera": [
+        386.65822814814817,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "dd10d0753559a982fd77606f0af070af3d4a46f4fc44571ca5a56fa6d09c3207",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.94,
+      "shot": "gate_approach",
+      "shot_seconds": 0.94,
+      "root": [
+        588.44,
+        375.0
+      ],
+      "camera": [
+        386.28129185185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "dd10d0753559a982fd77606f0af070af3d4a46f4fc44571ca5a56fa6d09c3207",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.96,
+      "shot": "gate_approach",
+      "shot_seconds": 0.96,
+      "root": [
+        587.96,
+        375.0
+      ],
+      "camera": [
+        385.90976,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "dd10d0753559a982fd77606f0af070af3d4a46f4fc44571ca5a56fa6d09c3207",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 0.98,
+      "shot": "gate_approach",
+      "shot_seconds": 0.98,
+      "root": [
+        587.48,
+        375.0
+      ],
+      "camera": [
+        385.5442014814815,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "dd10d0753559a982fd77606f0af070af3d4a46f4fc44571ca5a56fa6d09c3207",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.0,
+      "shot": "gate_approach",
+      "shot_seconds": 1.0,
+      "root": [
+        587.0,
+        375.0
+      ],
+      "camera": [
+        385.1851851851852,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "dd10d0753559a982fd77606f0af070af3d4a46f4fc44571ca5a56fa6d09c3207",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.02,
+      "shot": "gate_approach",
+      "shot_seconds": 1.02,
+      "root": [
+        586.52,
+        375.0
+      ],
+      "camera": [
+        384.83327999999995,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ae559c9de928663cdd95d5d3730f375ffe4a0369b990a6a5771438e42dfdb982",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.04,
+      "shot": "gate_approach",
+      "shot_seconds": 1.04,
+      "root": [
+        586.04,
+        375.0
+      ],
+      "camera": [
+        384.48905481481484,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ae559c9de928663cdd95d5d3730f375ffe4a0369b990a6a5771438e42dfdb982",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.06,
+      "shot": "gate_approach",
+      "shot_seconds": 1.06,
+      "root": [
+        585.56,
+        375.0
+      ],
+      "camera": [
+        384.1530785185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ae559c9de928663cdd95d5d3730f375ffe4a0369b990a6a5771438e42dfdb982",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.08,
+      "shot": "gate_approach",
+      "shot_seconds": 1.08,
+      "root": [
+        585.08,
+        375.0
+      ],
+      "camera": [
+        383.82592,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ae559c9de928663cdd95d5d3730f375ffe4a0369b990a6a5771438e42dfdb982",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.1,
+      "shot": "gate_approach",
+      "shot_seconds": 1.1,
+      "root": [
+        584.6,
+        375.0
+      ],
+      "camera": [
+        383.50814814814817,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "39140078f189ccd2b05b52117c9e5156cdcb833e5daf58d67eca5179c8ba80f3",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.12,
+      "shot": "gate_approach",
+      "shot_seconds": 1.12,
+      "root": [
+        584.12,
+        375.0
+      ],
+      "camera": [
+        383.20033185185184,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "39140078f189ccd2b05b52117c9e5156cdcb833e5daf58d67eca5179c8ba80f3",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.14,
+      "shot": "gate_approach",
+      "shot_seconds": 1.14,
+      "root": [
+        583.64,
+        375.0
+      ],
+      "camera": [
+        382.90304000000003,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "39140078f189ccd2b05b52117c9e5156cdcb833e5daf58d67eca5179c8ba80f3",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.16,
+      "shot": "gate_approach",
+      "shot_seconds": 1.16,
+      "root": [
+        583.1600000000001,
+        375.0
+      ],
+      "camera": [
+        382.6168414814815,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "39140078f189ccd2b05b52117c9e5156cdcb833e5daf58d67eca5179c8ba80f3",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.18,
+      "shot": "gate_approach",
+      "shot_seconds": 1.18,
+      "root": [
+        582.6800000000001,
+        375.0
+      ],
+      "camera": [
+        382.3423051851852,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.2,
+      "shot": "gate_approach",
+      "shot_seconds": 1.2,
+      "root": [
+        582.2,
+        375.0
+      ],
+      "camera": [
+        382.08,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.22,
+      "shot": "gate_approach",
+      "shot_seconds": 1.22,
+      "root": [
+        581.72,
+        375.0
+      ],
+      "camera": [
+        381.8304948148148,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.24,
+      "shot": "gate_approach",
+      "shot_seconds": 1.24,
+      "root": [
+        581.24,
+        375.0
+      ],
+      "camera": [
+        381.5943585185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.26,
+      "shot": "gate_approach",
+      "shot_seconds": 1.26,
+      "root": [
+        580.76,
+        375.0
+      ],
+      "camera": [
+        381.37216,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "2accc96e07e0ea2dff44f6654e17f7c0b90f3570df0f7f3d38003b1f8a0c7288",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.28,
+      "shot": "gate_approach",
+      "shot_seconds": 1.28,
+      "root": [
+        580.28,
+        375.0
+      ],
+      "camera": [
+        381.16446814814816,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "2accc96e07e0ea2dff44f6654e17f7c0b90f3570df0f7f3d38003b1f8a0c7288",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.3,
+      "shot": "gate_approach",
+      "shot_seconds": 1.3,
+      "root": [
+        579.8000000000001,
+        375.0
+      ],
+      "camera": [
+        380.97185185185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "2accc96e07e0ea2dff44f6654e17f7c0b90f3570df0f7f3d38003b1f8a0c7288",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.32,
+      "shot": "gate_approach",
+      "shot_seconds": 1.32,
+      "root": [
+        579.3199999999999,
+        375.0
+      ],
+      "camera": [
+        380.79488000000003,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "2accc96e07e0ea2dff44f6654e17f7c0b90f3570df0f7f3d38003b1f8a0c7288",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.34,
+      "shot": "gate_approach",
+      "shot_seconds": 1.34,
+      "root": [
+        578.84,
+        375.0
+      ],
+      "camera": [
+        380.6341214814815,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "f611fc2756eb0d022eb9d327aa5de1aa01eeb2946a61f751abc6687dc0e1842f",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.36,
+      "shot": "gate_approach",
+      "shot_seconds": 1.36,
+      "root": [
+        578.36,
+        375.0
+      ],
+      "camera": [
+        380.49014518518516,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "f611fc2756eb0d022eb9d327aa5de1aa01eeb2946a61f751abc6687dc0e1842f",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.38,
+      "shot": "gate_approach",
+      "shot_seconds": 1.38,
+      "root": [
+        577.88,
+        375.0
+      ],
+      "camera": [
+        380.36352,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "f611fc2756eb0d022eb9d327aa5de1aa01eeb2946a61f751abc6687dc0e1842f",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.4,
+      "shot": "gate_approach",
+      "shot_seconds": 1.4,
+      "root": [
+        577.4,
+        375.0
+      ],
+      "camera": [
+        380.25481481481484,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "f611fc2756eb0d022eb9d327aa5de1aa01eeb2946a61f751abc6687dc0e1842f",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.42,
+      "shot": "gate_approach",
+      "shot_seconds": 1.42,
+      "root": [
+        576.9200000000001,
+        375.0
+      ],
+      "camera": [
+        380.1645985185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "864b7158eee778ba9e698a8f92c1c1a04e94742b97dd8a75ad6af01d0e0c024d",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.44,
+      "shot": "gate_approach",
+      "shot_seconds": 1.44,
+      "root": [
+        576.4399999999999,
+        375.0
+      ],
+      "camera": [
+        380.09344000000004,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "864b7158eee778ba9e698a8f92c1c1a04e94742b97dd8a75ad6af01d0e0c024d",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.46,
+      "shot": "gate_approach",
+      "shot_seconds": 1.46,
+      "root": [
+        575.96,
+        375.0
+      ],
+      "camera": [
+        380.0419081481482,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "864b7158eee778ba9e698a8f92c1c1a04e94742b97dd8a75ad6af01d0e0c024d",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.48,
+      "shot": "gate_approach",
+      "shot_seconds": 1.48,
+      "root": [
+        575.4799999999999,
+        375.0
+      ],
+      "camera": [
+        380.01057185185186,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "864b7158eee778ba9e698a8f92c1c1a04e94742b97dd8a75ad6af01d0e0c024d",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.5,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.0,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.52,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.02,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.00000000000006,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.54,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.04,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.56,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.06,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.00000000000003
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.58,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.08,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.6,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.1,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.00000000000003
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.62,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.12,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.00000000000006,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.64,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.14,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.66,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.16,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.00000000000006,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.68,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.18,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.7,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.2,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.72,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.22,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.74,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.24,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.76,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.26,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.78,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.28,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        379.99999999999994,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.8,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.3,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.82,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.32,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.84,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.34,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.86,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.36,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.88,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.38,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.9,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.4,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.92,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.42,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.94,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.44,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.96,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.46,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.98,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.48,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.0,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.5,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.02,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.52,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.04,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.54,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.06,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.56,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.08,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.58,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.1,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.6,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.12,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.62,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.14,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.64,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.16,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.66,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.18,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.68,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.2,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.7,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.22,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.72,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.24,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.74,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.26,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.76,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.28,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.78,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.3,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.8,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.32,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.82,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.34,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.84,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.36,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.86,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.38,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.88,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.4,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.9,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.42,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.92,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.44,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.94,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.46,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.96,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.48,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.98,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.5,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.0,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.52,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.02,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.54,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.04,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.56,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.06,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.58,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.08,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.6,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.1,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.62,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.12,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.64,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.14,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.66,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.16,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.68,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.18,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.7,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.2,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.72,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.22,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.74,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.24,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.76,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.26,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.78,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.28,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.8,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.3,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    }
+  ],
+  "key_states": [
+    {
+      "elapsed": 0.8,
+      "shot": "gate_approach",
+      "shot_seconds": 0.8,
+      "root": [
+        591.8,
+        375.0
+      ],
+      "camera": [
+        389.0014814814815,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "180082a78c71abc33b7555725638d82d4fffd36d7d0f8eeb456f171604475afc",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.24,
+      "shot": "gate_approach",
+      "shot_seconds": 1.24,
+      "root": [
+        581.24,
+        375.0
+      ],
+      "camera": [
+        381.5943585185185,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.25,
+      "shot": "gate_approach",
+      "shot_seconds": 1.25,
+      "root": [
+        581.0,
+        375.0
+      ],
+      "camera": [
+        381.48148148148147,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "df17785dcbca0170a865695ae99bd8244063be5f1305442d734c9d4d555d6501",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.29,
+      "shot": "gate_approach",
+      "shot_seconds": 1.29,
+      "root": [
+        580.04,
+        375.0
+      ],
+      "camera": [
+        381.06624,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "2accc96e07e0ea2dff44f6654e17f7c0b90f3570df0f7f3d38003b1f8a0c7288",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.41,
+      "shot": "gate_approach",
+      "shot_seconds": 1.41,
+      "root": [
+        577.1600000000001,
+        375.0
+      ],
+      "camera": [
+        380.20736000000005,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "f611fc2756eb0d022eb9d327aa5de1aa01eeb2946a61f751abc6687dc0e1842f",
+      "audio_mode": "travel"
+    },
+    {
+      "elapsed": 1.53,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.03,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.65,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.15,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.75,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.25,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.83,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.33,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 1.95,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.45,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.35,
+      "shot": "gate_greeting",
+      "shot_seconds": 0.85,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    },
+    {
+      "elapsed": 2.75,
+      "shot": "gate_greeting",
+      "shot_seconds": 1.25,
+      "root": [
+        575.0,
+        375.0
+      ],
+      "camera": [
+        380.0,
+        140.0
+      ],
+      "action": {
+        "stage": "idle",
+        "action": null,
+        "cue_id": null,
+        "frame_index": null,
+        "elapsed_ms": 0.0,
+        "release_requested": false,
+        "active": false
+      },
+      "rendered_frame_rgba_sha256": "ba4b5ea87a76c49d80d50d1f462ad4fe4ada8e105b69406ef476f95e83a4195c",
+      "audio_mode": null
+    }
+  ],
+  "output_sha256": {
+    "before.gif": "62ed4b8985aafe9ff5d2685b5a32ec13e3b404f75e4123bff2899f6c6541ca19"
+  }
+}
