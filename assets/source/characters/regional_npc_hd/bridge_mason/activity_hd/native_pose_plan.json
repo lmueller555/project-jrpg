@@ -1,0 +1,2034 @@
+{
+  "version": 2,
+  "actor_id": "bridge_mason",
+  "method": "Native complete pose drawings, canonical directional head pixels and approved phase-specific lower walk artwork retained at scale1. No old body resizing or raster warps. Frozen full pose atlas; exporter crops only.",
+  "reference": "assets/characters/npc_roster_hd/adult_man_01",
+  "native_canvas": [
+    96,
+    104
+  ],
+  "native_anchor": [
+    48,
+    92
+  ],
+  "frames": [
+    {
+      "clip": "inspect_front",
+      "index": 0,
+      "file": "poses/inspect_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          17,
+          45
+        ],
+        [
+          30,
+          44
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "inspect_front",
+      "index": 1,
+      "file": "poses/inspect_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          17,
+          46
+        ],
+        [
+          30,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "lift_front",
+      "index": 0,
+      "file": "poses/lift_front_0.png",
+      "direction": "front",
+      "bend_native": 12,
+      "hands_native_local": [
+        [
+          16,
+          59
+        ],
+        [
+          28,
+          59
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "lift_front",
+      "index": 1,
+      "file": "poses/lift_front_1.png",
+      "direction": "front",
+      "bend_native": 8,
+      "hands_native_local": [
+        [
+          16,
+          55
+        ],
+        [
+          30,
+          55
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "lift_front",
+      "index": 2,
+      "file": "poses/lift_front_2.png",
+      "direction": "front",
+      "bend_native": 3,
+      "hands_native_local": [
+        [
+          14,
+          47
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "lift_front",
+      "index": 3,
+      "file": "poses/lift_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          45
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "recover_front",
+      "index": 0,
+      "file": "poses/recover_front_0.png",
+      "direction": "front",
+      "bend_native": 12,
+      "hands_native_local": [
+        [
+          16,
+          59
+        ],
+        [
+          28,
+          59
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "recover_front",
+      "index": 1,
+      "file": "poses/recover_front_1.png",
+      "direction": "front",
+      "bend_native": 8,
+      "hands_native_local": [
+        [
+          16,
+          55
+        ],
+        [
+          28,
+          55
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        0,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "recover_front",
+      "index": 2,
+      "file": "poses/recover_front_2.png",
+      "direction": "front",
+      "bend_native": 3,
+      "hands_native_local": [
+        [
+          16,
+          51
+        ],
+        [
+          28,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "recover_front",
+      "index": 3,
+      "file": "poses/recover_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          16,
+          47
+        ],
+        [
+          28,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "place_front",
+      "index": 0,
+      "file": "poses/place_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          45
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "place_front",
+      "index": 1,
+      "file": "poses/place_front_1.png",
+      "direction": "front",
+      "bend_native": 3,
+      "hands_native_local": [
+        [
+          14,
+          47
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "place_front",
+      "index": 2,
+      "file": "poses/place_front_2.png",
+      "direction": "front",
+      "bend_native": 8,
+      "hands_native_local": [
+        [
+          16,
+          55
+        ],
+        [
+          30,
+          55
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "place_front",
+      "index": 3,
+      "file": "poses/place_front_3.png",
+      "direction": "front",
+      "bend_native": 12,
+      "hands_native_local": [
+        [
+          16,
+          59
+        ],
+        [
+          28,
+          59
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "work_right",
+      "index": 0,
+      "file": "poses/work_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          32,
+          46
+        ],
+        [
+          34,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "work_right",
+      "index": 1,
+      "file": "poses/work_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          36,
+          46
+        ],
+        [
+          38,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        104,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "work_right",
+      "index": 2,
+      "file": "poses/work_right_2.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          40,
+          48
+        ],
+        [
+          42,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "work_right",
+      "index": 3,
+      "file": "poses/work_right_3.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          32,
+          46
+        ],
+        [
+          34,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "measure_left",
+      "index": 0,
+      "file": "poses/measure_left_0.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          8,
+          44
+        ],
+        [
+          6,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "measure_left",
+      "index": 1,
+      "file": "poses/measure_left_1.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          44
+        ],
+        [
+          12,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "measure_right",
+      "index": 0,
+      "file": "poses/measure_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          38,
+          44
+        ],
+        [
+          40,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "measure_right",
+      "index": 1,
+      "file": "poses/measure_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          30,
+          46
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stretch_front",
+      "index": 0,
+      "file": "poses/stretch_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          11,
+          30
+        ],
+        [
+          36,
+          30
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stretch_front",
+      "index": 1,
+      "file": "poses/stretch_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          11,
+          24
+        ],
+        [
+          36,
+          24
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        208,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "hold_front",
+      "index": 0,
+      "file": "poses/hold_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          43
+        ],
+        [
+          32,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_front",
+      "index": 0,
+      "file": "poses/carry_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          47
+        ],
+        [
+          28,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        96,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_front",
+      "index": 1,
+      "file": "poses/carry_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          47
+        ],
+        [
+          28,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        192,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_front",
+      "index": 2,
+      "file": "poses/carry_front_2.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          18,
+          43
+        ],
+        [
+          34,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        288,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_front",
+      "index": 3,
+      "file": "poses/carry_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          30,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        384,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_hold_front",
+      "index": 0,
+      "file": "poses/cup_hold_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          43
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_front",
+      "index": 0,
+      "file": "poses/cup_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          43
+        ],
+        [
+          28,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        576,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_front",
+      "index": 1,
+      "file": "poses/cup_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          43
+        ],
+        [
+          30,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        672,
+        312,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_front",
+      "index": 2,
+      "file": "poses/cup_front_2.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          18,
+          43
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        0,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_front",
+      "index": 3,
+      "file": "poses/cup_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          43
+        ],
+        [
+          30,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        96,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "hold_back",
+      "index": 0,
+      "file": "poses/hold_back_0.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_back",
+      "index": 0,
+      "file": "poses/carry_back_0.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        288,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_back",
+      "index": 1,
+      "file": "poses/carry_back_1.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        384,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_back",
+      "index": 2,
+      "file": "poses/carry_back_2.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        480,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_back",
+      "index": 3,
+      "file": "poses/carry_back_3.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        576,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_hold_back",
+      "index": 0,
+      "file": "poses/cup_hold_back_0.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        416,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_back",
+      "index": 0,
+      "file": "poses/cup_back_0.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        0,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_back",
+      "index": 1,
+      "file": "poses/cup_back_1.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        96,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_back",
+      "index": 2,
+      "file": "poses/cup_back_2.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        192,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_back",
+      "index": 3,
+      "file": "poses/cup_back_3.png",
+      "direction": "back",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          35,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        288,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "hold_left",
+      "index": 0,
+      "file": "poses/hold_left_0.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          45
+        ],
+        [
+          14,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_left",
+      "index": 0,
+      "file": "poses/carry_left_0.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          10,
+          43
+        ],
+        [
+          14,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        480,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_left",
+      "index": 1,
+      "file": "poses/carry_left_1.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          43
+        ],
+        [
+          14,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        576,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_left",
+      "index": 2,
+      "file": "poses/carry_left_2.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          10,
+          43
+        ],
+        [
+          14,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        672,
+        520,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_left",
+      "index": 3,
+      "file": "poses/carry_left_3.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          10,
+          41
+        ],
+        [
+          14,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        0,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_hold_left",
+      "index": 0,
+      "file": "poses/cup_hold_left_0.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          12,
+          41
+        ],
+        [
+          14,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_left",
+      "index": 0,
+      "file": "poses/cup_left_0.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          41
+        ],
+        [
+          16,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        192,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_left",
+      "index": 1,
+      "file": "poses/cup_left_1.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          41
+        ],
+        [
+          16,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        288,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_left",
+      "index": 2,
+      "file": "poses/cup_left_2.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          41
+        ],
+        [
+          16,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        384,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_left",
+      "index": 3,
+      "file": "poses/cup_left_3.png",
+      "direction": "left",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          10,
+          39
+        ],
+        [
+          16,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        480,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "hold_right",
+      "index": 0,
+      "file": "poses/hold_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          32,
+          45
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_right",
+      "index": 0,
+      "file": "poses/carry_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          36,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        672,
+        624,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_right",
+      "index": 1,
+      "file": "poses/carry_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        0,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_right",
+      "index": 2,
+      "file": "poses/carry_right_2.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        96,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "carry_right",
+      "index": 3,
+      "file": "poses/carry_right_3.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        192,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_hold_right",
+      "index": 0,
+      "file": "poses/cup_hold_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_right",
+      "index": 0,
+      "file": "poses/cup_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          36,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 1,
+      "source_cell": [
+        384,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_right",
+      "index": 1,
+      "file": "poses/cup_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 3,
+      "source_cell": [
+        480,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_right",
+      "index": 2,
+      "file": "poses/cup_right_2.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 5,
+      "source_cell": [
+        576,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "cup_right",
+      "index": 3,
+      "file": "poses/cup_right_3.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          43
+        ],
+        [
+          38,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": 7,
+      "source_cell": [
+        672,
+        728,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "receive_right",
+      "index": 0,
+      "file": "poses/receive_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          40,
+          44
+        ],
+        [
+          42,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "receive_right",
+      "index": 1,
+      "file": "poses/receive_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          38,
+          42
+        ],
+        [
+          40,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "receive_right",
+      "index": 2,
+      "file": "poses/receive_right_2.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          44
+        ],
+        [
+          36,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "receive_right",
+      "index": 3,
+      "file": "poses/receive_right_3.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          34,
+          44
+        ],
+        [
+          36,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "offer_right",
+      "index": 0,
+      "file": "poses/offer_right_0.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          32,
+          44
+        ],
+        [
+          34,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "offer_right",
+      "index": 1,
+      "file": "poses/offer_right_1.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          38,
+          40
+        ],
+        [
+          40,
+          39
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "offer_right",
+      "index": 2,
+      "file": "poses/offer_right_2.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          38,
+          38
+        ],
+        [
+          40,
+          37
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "offer_right",
+      "index": 3,
+      "file": "poses/offer_right_3.png",
+      "direction": "right",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          38,
+          42
+        ],
+        [
+          40,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        832,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "sit_down_front",
+      "index": 0,
+      "file": "poses/sit_down_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "sit_down_front",
+      "index": 1,
+      "file": "poses/sit_down_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          18,
+          43
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "sit_down_front",
+      "index": 2,
+      "file": "poses/sit_down_front_2.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          24,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "sit_down_front",
+      "index": 3,
+      "file": "poses/sit_down_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          26,
+          51
+        ],
+        [
+          34,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "sit_front",
+      "index": 0,
+      "file": "poses/sit_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          26,
+          51
+        ],
+        [
+          34,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "drink_front",
+      "index": 0,
+      "file": "poses/drink_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          26,
+          51
+        ],
+        [
+          34,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        480,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "drink_front",
+      "index": 1,
+      "file": "poses/drink_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          24,
+          43
+        ],
+        [
+          26,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        576,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "drink_front",
+      "index": 2,
+      "file": "poses/drink_front_2.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          24,
+          43
+        ],
+        [
+          28,
+          47
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        672,
+        936,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "drink_front",
+      "index": 3,
+      "file": "poses/drink_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          26,
+          51
+        ],
+        [
+          34,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        0,
+        1040,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stand_front",
+      "index": 0,
+      "file": "poses/stand_front_0.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          26,
+          51
+        ],
+        [
+          34,
+          51
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        96,
+        1040,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stand_front",
+      "index": 1,
+      "file": "poses/stand_front_1.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          24,
+          45
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        192,
+        1040,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stand_front",
+      "index": 2,
+      "file": "poses/stand_front_2.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          20,
+          41
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        288,
+        1040,
+        96,
+        104
+      ]
+    },
+    {
+      "clip": "stand_front",
+      "index": 3,
+      "file": "poses/stand_front_3.png",
+      "direction": "front",
+      "bend_native": 0,
+      "hands_native_local": [
+        [
+          14,
+          39
+        ]
+      ],
+      "approved_lower_walk_frame": null,
+      "source_cell": [
+        384,
+        1040,
+        96,
+        104
+      ]
+    }
+  ],
+  "authored_sha256": "21bdf3c026f396fa25f0de946901c8c3ae6ff747dc002a0a17bc92e39b474310",
+  "runtime_activation": false
+}
