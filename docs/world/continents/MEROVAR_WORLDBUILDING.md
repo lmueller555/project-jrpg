@@ -347,6 +347,15 @@ to take power from a hall owner now depends on property and living
 wood of a different kind. No scheduled gathering, location, faction
 law or magicks mechanism is established.
 
+**What one old tool can establish:** A surviving crown-rack has
+hinged ribs to spread beneath night-softened branches and fold
+inward before the living roof stiffens. Its lower set of hauling
+grips was added later and has been worn smooth. Seasonal workers’
+descendants say their grandparents wanted to raise the roof
+themselves. Growers remember teaching new hands to help. The wear
+supports years of participation; it cannot tell anyone whether
+those hands also earned time to speak.
+
 **Speech test:** “Folding Orchards” is a descriptive working
 label that distinguishes the phenomenon from ordinary orchards.
 A worker might say “under the crowns” when telling someone where
@@ -411,6 +420,15 @@ earshot of one another was part of how those crews stayed safe in the
 first place. One living stand can’t both keep the harbour quiet and
 become the boats it services. This is a proposed local struggle,
 not a Marris-wide law, actual harbour, or playable facility.
+
+**What a distant listener imagines:** An orchard worker hears “the
+sea comes through the trees” and pictures salt water around the
+trunks. The Marris visitor says his boots were dry. The breakers
+were below the cliff; every crown above him sounded like a wave.
+“Down by the water I could hear my daughter whisper.” The account
+corrects the worker’s imagined flood without telling either of them
+why the forest roars. It is one proposed telling, not another
+mechanism or a new name.
 
 **Proposed ecological cost:** Some woodland keepers remember hearing
 more nesting birds among the connected trees. Quieter outer stands
@@ -1641,12 +1659,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test how a distant resident might imagine one wonder incorrectly.
-   Correct only what a trustworthy account or familiar object can
-   establish; the cause can stay strange.
-2. Give a past choice one physical trace that had to be made
-   differently because of the wonder. It should show part of the
-   story without settling who was right.
+1. Test a choice people could make to put some distance between
+   themselves and a wonder that shaped their lives. What would
+   they knowingly give up rather than accept the old conditions?
+2. Review one place where the draft jumps too fast from a magical
+   rule to a historical outcome. Give the intervening human choice
+   enough weight that the history isn’t inevitable.
 
 ## Map implications for a later review
 
