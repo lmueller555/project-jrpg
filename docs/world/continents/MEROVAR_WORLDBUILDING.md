@@ -210,10 +210,11 @@ next time.
 **Settlement test:** Without a Cliff Lake, this proposed quarry
 could have remained a seasonal camp supplied from one of the
 dependably watered valleys the [atlas](MEROVAR.md#redstone-march)
-already supports. With a finite supply at the cliff, households
-could stay beside the workings between seasons. The people tending
-the lake would have become responsible for whether settlement could
-continue, long before anyone asked them to release one. This is a
+already supports. A lake would let households try staying beside the workings, but
+storage alone does not make replenishment reliable. As they draw on
+the water, the shrinking sheet makes the cost of staying visible.
+Tenders would matter to whether people could remain long before
+anyone asked them to release a lake. This is a
 possible sequence, not a date, new site, or regional founding myth.
 
 **What the memorial can’t pass on:** A tending household offers
@@ -310,6 +311,16 @@ was the supposed villain, and nobody has asked what she did. Which
 performance counts as the town’s story helps decide who can claim
 to speak for the town now. Nothing here sets its actual name, location,
 a new water route, or a quest.
+
+**The price of a separate voice:** Some descendants want to leave
+the travelling balcony behind. They would move ashore during a
+pause and decline to answer the old stage, rather than let anyone
+use the duet as proof that both groups still speak for one town.
+They would give up homes, gardens and the rare ability to leave
+with their ground still beneath them. Others call that a second
+dispossession, this time asked of them by their own neighbours.
+An older player is willing to leave her balcony, but will not let
+her children speak of those who stay as if they had all consented.
 
 **Skill the landscape forces people to learn:** Boat-tenders teach
 apprentices to tell ground that has become shallow enough to stop
@@ -1659,12 +1670,13 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test a choice people could make to put some distance between
-   themselves and a wonder that shaped their lives. What would
-   they knowingly give up rather than accept the old conditions?
-2. Review one place where the draft jumps too fast from a magical
-   rule to a historical outcome. Give the intervening human choice
-   enough weight that the history isn’t inevitable.
+1. Keep the early Hollow Crest story about a living person’s right
+   to refuse the official wording. Check it against later Game I
+   material so the encounter does not repeat a more consequential
+   diversion or reveal how that larger story will work.
+2. Develop one thing inhabitants make or celebrate because a
+   wonder exists, apart from a dispute or response to disaster.
+   Keep the achievement tied to the specific landscape.
 
 ## Map implications for a later review
 
