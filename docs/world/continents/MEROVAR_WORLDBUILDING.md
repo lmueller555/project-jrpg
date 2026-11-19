@@ -82,6 +82,13 @@ make crossings and physical constraints consequential, make rules clear
 where they govern choices, and leave deeper causes open where mystery
 serves the place.
 
+**Footprint is not influence.** The Surfwood only changes surf noise
+where its living roots connect to one headland. Elsewhere on the coast,
+breakers still sound normally. A repair family farther away might hear
+why a port chose to preserve its woods or pay more for another source
+of timber. They don’t live under the same magick. Keep ordinary land,
+livelihoods and histories between the wonders.
+
 ### What each wonder tests
 
 Keep the central story choice different even when histories include
@@ -324,6 +331,21 @@ the duty. Another fears being held responsible for a gathering
 she no longer oversees. The small spell gives someone responsibility
 for a voice, not power over the orchard or an answer to the housing
 dispute. It is not an approved spell or a source explanation.
+
+**Rhea under the orchard:** In this voice test, the night-tender turns
+to answer someone and the silver dew chain falls. A seasonal worker
+has been yielding to people who promise to be brief. Rhea asks whether
+the chain can stay until everyone finishes. “The dew, yes. The night,
+no.” Light is whitening the branches. The grower is about to lift
+the crown before it stiffens.
+
+Rhea could leave now to watch the wood set from above. Instead she
+stands beside the worker. “She was next.” Someone says she’ll miss
+what she came to see. “Yes. Go on. We’re listening.” Rhea learns
+nothing new about how to bend wood; she accepts missing an observation
+so someone else can be heard. This is a possible character choice
+under an established proposal’s limits, not another approved spell,
+quest or reason to visit the orchard.
 
 ## Marris Coast: the Surfwood
 
@@ -1564,12 +1586,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Distinguish a wonder’s footprint from the reach of its effects.
-   Leave room for ordinary land and households that know about it
-   without living under its rule.
-2. Give an existing companion a reason to care about a limit
-   their own training can’t overcome. Do not add an approved spell
-   or let a small use of magicks erase the larger conflict.
+1. Compare which wonder belongs closest to Game I’s existing stakes
+   and which might work better at a distance. Rank them by what
+   they add to the story, not by how much new geography they require.
+2. Develop one Reedwake skill that matters because part of a town can
+   move. Let people use their knowledge instead of making the
+   moving land another disaster to survive.
 
 ## Map implications for a later review
 
