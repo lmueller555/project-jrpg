@@ -247,8 +247,10 @@ qualification for water-tending across Redstone.
 **Working name; not canon.** Through the season without sunrise,
 the intact wall of one [Rimeward fjord](../POLAR_REGIONS.md#rimeward-shores)
 turns clear enough to see mineral veins and the outlines of caverns
-sealed within it. A lamp can reveal a crack no one can reach. The
-stone is still cold, heavy and solid. A piece broken off turns
+sealed within it. A lamp catches a pale scratch on its weathered outer face while
+a mineral vein remains visible farther back. The view does not open
+the cavern to the air. The stone is still cold,
+heavy and solid. A piece broken off turns
 opaque; cutting it into windows will not let anyone take the wonder
 home. Daylight closes the view into the cliffs, not the caverns
 themselves. The coast and the inland kingdom remain separate; the
@@ -427,6 +429,17 @@ break continuity and each new group must earn recognition again.
 The same worn grips then record years of help without proving
 control or a permanent voice. This decision changes the present
 conflict; the tool alone does not settle it.
+
+**Choice to hold for review:** Should a person’s place in the
+gathering belong to the crown that shelters them, or follow them
+between orchards? Under the first answer, workers have to secure a
+replacement crown before they can keep being heard; growers remain
+indispensable hosts. Under the second, people trained to keep
+speaking order can carry some public standing even when a grower
+lifts the roof. My preference is to begin with shelter-based voice
+and make portability the live dispute. That gives the trees
+real authority without deciding the workers must always depend
+on them. It is a recommendation, not an adopted rule or scene.
 
 **Speech test:** “Folding Orchards” is a descriptive working
 label that distinguishes the phenomenon from ordinary orchards.
@@ -1788,12 +1801,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Identify one historical choice the draft is now developed enough
-   to put on a decision list. Show what each answer changes instead
-   of making another scene do that work.
-2. Give one fantasy image a clearer point of reference that helps
-   a reader picture the place. Don’t decide its exact scale or
-   place anything on a gameplay map.
+1. Test one consequence beyond a wonder’s physical footprint
+   at the level of a neighbouring community, not just a traveller.
+   Do not invent another wondrous site or move a boundary.
+2. Check one wonder against its approved region description.
+   It should make the terrain more distinctive, not quietly
+   replace the land that is there.
 
 ## Map implications for a later review
 
