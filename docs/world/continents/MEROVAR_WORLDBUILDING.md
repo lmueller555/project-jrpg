@@ -197,6 +197,15 @@ them, upright for those saved or turned down for those lost. A
 household can hang both. That memorial does not settle who decides
 next time.
 
+**Settlement test:** Without a Cliff Lake, this proposed quarry
+could have remained a seasonal camp supplied from one of the
+dependably watered valleys the [atlas](MEROVAR.md#redstone-march)
+already supports. With a finite supply at the cliff, households
+could stay beside the workings between seasons. The people tending
+the lake would have become responsible for whether settlement could
+continue, long before anyone asked them to release one. This is a
+possible sequence, not a date, new site, or regional founding myth.
+
 **What the memorial can’t pass on:** A tending household offers
 its granddaughter the apprenticeship once promised to her mother.
 Her mother’s quarry kin will support it only if she promises not to
@@ -327,6 +336,14 @@ lose the place from which they have been heard. A custom devised
 to take power from a hall owner now depends on property and living
 wood of a different kind. No scheduled gathering, location, faction
 law or magicks mechanism is established.
+
+**Speech test:** “Folding Orchards” is a descriptive working
+label that distinguishes the phenomenon from ordinary orchards.
+A worker might say “under the crowns” when telling someone where
+the gathering meets. The phrase names a use, not another place on
+the atlas. The [reviewed place-naming transcript](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=687s)
+informed the distinction between what a local needs to say and
+what a stranger needs explained. Neither form is being approved.
 
 **Proposed local magicks: the dew witness.** A night-tender uses
 available free-flowing aether to hold a little existing dew beneath
@@ -1605,12 +1622,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test a proposed settlement against the counterfactual: if its
-   wonder were absent, what would have developed elsewhere, under
-   whose control, or not at all?
-2. Check how one working wonder name changes in local use. A
-   practical name and a cartographer’s label needn’t solve the same
-   problem or become canonical together.
+1. Ask how one wonder could alter the lives of ordinary plants or
+   animals over time, then show one choice the change creates for
+   people. Do not infer a new species or new magicks.
+2. Follow one visitor’s interpretation of the Vale Sanctuary in
+   light of a different wonder they know. Show what the visitor
+   does, not why the Sanctuary actually works.
 
 ## Map implications for a later review
 
