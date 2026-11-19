@@ -359,6 +359,15 @@ to take power from a hall owner now depends on property and living
 wood of a different kind. No scheduled gathering, location, faction
 law or magicks mechanism is established.
 
+**Learning to keep the crown:** A child looks forward to helping
+lift the living roof before sunrise. From below, it looks like
+making morning happen. Training also means learning when to interrupt
+a gathering that has to finish, even while someone is finally being
+heard. Another child wants orchard work but turns down that duty.
+They would rather prune than decide whose unfinished words follow
+them outside. The working difference is local and learned, not a rite
+of adulthood or a personality of people born under the crowns.
+
 **What one old tool can establish:** A surviving crown-rack has
 hinged ribs to spread beneath night-softened branches and fold
 inward before the living roof stiffens. Its lower set of hauling
@@ -419,12 +428,12 @@ part. Remove a connected stand and more of the ordinary noise
 returns to the shore. Timber carried away has no such property.
 The phenomenon’s cause and exact range are open.
 
-**How it changed the harbour:** Repair crews could hear each
-other’s warnings above the breakers. When the port once considered
-taking the woodland for a larger timber trade, it chose the quiet
-instead. Woodland households agreed to keep their connected stands
-alive in exchange for a lasting say in whether any could be cut.
-Their claim comes from the bargain, not ownership of the shore.
+**How it changed the harbour:** Repair households argued for
+keeping the connected woods because being able to hear warnings kept
+crews safer. Woodland households accepted the continuing work in
+exchange for a lasting say over cutting, not ownership of the shore.
+Their descendants can honour the bargain and still disagree over
+whether the people who benefit from the quiet should do more of the work.
 
 Today a repair master wants some of the wood made available so small
 crews can afford sound boats. A woodland heir refuses: keeping
@@ -1681,12 +1690,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Follow a young person into a responsibility that could only
-   exist in one of these landscapes. What do they want to learn
-   or refuse, and how does that change who will keep the practice?
-2. Check that at least one region’s decision makers and burden
-   bearers are legible. Do not conflate a group’s practical expertise
-   with a legal right to decide for everyone affected.
+1. Test whether someone from outside a wonder’s home can learn
+   a local skill, and what that achievement does not entitle
+   them to decide.
+2. Compare two different kinds of power created by these places.
+   Where does the geography itself keep a powerful group from
+   settling a conflict entirely on its own terms?
 
 ## Map implications for a later review
 
