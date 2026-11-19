@@ -358,6 +358,21 @@ ask the tender, not just an apprentice, to do the rebuilding
 work with them. They still need the tender’s knowledge; they don’t
 take a confident forecast as permission to spend their labour.
 
+**What could outlast an expert:** Households on the moving islet
+and ashore could share a tender-house. It would teach apprentices to
+distinguish a pause from a stop and keep prior forecasts beside
+residents’ accounts of what a mistake cost. They inherit promises
+to do the rebuilding work as well as a set of observations. Neither
+bank’s version of the interrupted play becomes an official account
+just because it appears in the book.
+
+If pressure for new landings rises, supervised time is the first
+thing likely to go. Families want more tenders working independently
+before anyone has seen how a new apprentice answers for a mistake.
+Training can grant responsibility for a forecast without granting
+the right to speak for either half of the town. This is a proposed
+institution, not a new office or a reason to put a building on a map.
+
 ## Lower Leth: the Folding Orchards
 
 **Working name; not canon.** At dusk in one belt of
@@ -1773,12 +1788,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop one institution that has had to pass on both a skill
-   and an obligation because the landscape demands both. What
-   fails first if more people need what it provides?
-2. Check a consequential sentence for proposal-versus-canon
-   ambiguity. Fix the actual ambiguity rather than adding another
-   disclaimer to the whole document.
+1. Identify one historical choice the draft is now developed enough
+   to put on a decision list. Show what each answer changes instead
+   of making another scene do that work.
+2. Give one fantasy image a clearer point of reference that helps
+   a reader picture the place. Don’t decide its exact scale or
+   place anything on a gameplay map.
 
 ## Map implications for a later review
 
