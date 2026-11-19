@@ -82,6 +82,25 @@ make crossings and physical constraints consequential, make rules clear
 where they govern choices, and leave deeper causes open where mystery
 serves the place.
 
+## Elden Vale: what the confluence asks of the living
+
+Elden Vale already has its defining wonder. The
+[confluence and Sanctuary](../ELDEN_VALE_FAITH.md) are not a proposal
+for another magical landscape: the Sanctuary really serves the dead,
+and its [covenant](../SANCTUARY_COVENANT.md) keeps protected ground
+answerable to that responsibility. The exact workings and what
+persists of a person remain open.
+
+**Writer question:** Can people inherit responsibility for sacred ground
+without inheriting a say in its care? Some established households might
+argue that keeping this place takes obligations that survive any
+resident’s death or departure. Newer residents can agree to do the
+work and still object to being heard only as helpers under decisions
+other families inherit. Neither disputes the Sanctuary’s work or
+threatens to withhold it. Put the conflict in who counts as a keeper,
+not in a second quarry negotiation or a new doctrine. No authority,
+office, rite or scene is added by asking the question.
+
 ## Greyfold Uplands: the Hollow Crest
 
 **Working name; not canon.** Above one gorge on Greyfold’s wet western
@@ -283,6 +302,38 @@ earshot of one another was part of how those crews stayed safe in the
 first place. One living stand can’t both keep the harbour quiet and
 become the boats it services. This is a proposed local struggle,
 not a Marris-wide law, actual harbour, or playable facility.
+
+## Northern kingdom: the Emberways
+
+**Working name; not canon.** In one inland part of
+[Iselin’s homeland](../../narrative/game_01/characters/ISELIN.md#northern-home-and-the-journey),
+blue ice rises into branching vaults above gardens that stay green
+through deep winter. An amber edge appears on the ice as warmth travels
+from a distant hearth. The soil under the vault thaws; the ground
+beside the hearth can stay bitterly cold.
+
+The connected ice carries warmth that already exists. The source
+cools faster, a broken branch no longer carries warmth to its end,
+and a cut piece elsewhere is ordinary ice. No heat is created.
+The origin and exact location remain open. The effect does not create
+a northern approach or explain Iselin’s abilities or final arc.
+
+**How it changed households:** In one proposed older winter, a ridge
+collapse broke several branches. People moved their hearths to the
+remaining connected ice and chose to live under one garden vault
+instead of rebuilding separately. They dismantled their old houses
+for fuel. Widowed neighbours and unrelated children became permanent
+members of households that had once been separate.
+
+Children still learn which hearth reaches which beds by walking
+the branches with an elder. Joining a household can mean choosing
+which hearth to tend and whose warmth you are responsible for. Now
+a grower wants to reopen a dormant spur to her grandparents’ home so
+she can raise her children without relatives’ permission. Doing so
+would redirect part of the warmth that now reaches shared nursery
+beds. Her relatives see that not as a private move but as a decision
+about everyone’s winter. This is one proposed community, not a
+kingdom-wide family rule.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1420,12 +1471,13 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop one fantastic inland northern premise with a different
-   visual and historical consequence from the coast’s Nightglass.
-   Keep it separate from Iselin’s established arc.
-2. Test how the Vale’s existing confluence makes a distinctive
-   fantasy region without adding a competing wonder or explaining
-   how the Sanctuary’s service to the dead works.
+1. Develop one small act of deliberate magicks that works inside a
+   proposed landscape without letting anyone reproduce or control the
+   whole wonder. The spell should change someone’s responsibility,
+   not make the central dilemma go away.
+2. Put people shaped by two different landscapes in the same
+   disagreement. Show which lesson each takes from home, without
+   inventing a trade route, political alliance or compulsory visit.
 
 ## Map implications for a later review
 
