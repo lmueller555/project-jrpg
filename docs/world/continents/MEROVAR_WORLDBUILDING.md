@@ -8,6 +8,7 @@ specified.
 
 **Places, households, and local institutions**
 
+[Fantastic landscapes](#fantastic-landscapes-that-change-merovar) ·
 [Elden Vale](#elden-vale-mending-before-lighting) ·
 [Upper Leth approach](#upper-leth-approach-the-unnamed-town-south-of-eldenmere) ·
 [Greyfold](#greyfold-uplands-rhea-revises-her-own-theory) ·
@@ -53,6 +54,97 @@ owner rather than repeating the fact. Distinguish author knowledge from
 what a household believes and what Game I has actually shown. An
 unresolved subject is not permission to overwrite existing lore.
 
+
+## Fantastic landscapes that change Merovar
+
+These are regional proposals, not ordinary places with magick added
+afterward. For each one, ask four questions: **What can people count
+on seeing? Who can live or travel there because of it? What past
+choice left a trace? What incompatible choices remain now?** If the
+history and conflict would survive unchanged without the wonder, the
+geography isn’t doing enough.
+
+Separate the observable rule from the cause. [Foundational Lore](../../FOUNDATIONAL_LORE.md)
+distinguishes a natural phenomenon from deliberate magicks using
+available free-flowing aether. Aether is conserved and ordinary
+magicks do not tap the Aethersphere. These drafts use existing snow,
+water, or stone without deciding whether magicks can create matter.
+Nothing here explains the Ancients or the opening’s
+[recent surges](../../narrative/game_01/REGIONAL_SURGES.md). None specifies
+a map change, playable area or required journey.
+
+Craft carried forward from the actual
+[map-making transcript](https://www.youtube.com/watch?v=pjLSv4WNUtY)
+and Hello Future Me’s
+[hard](https://www.youtube.com/watch?v=iMJQb5bGu_g) and
+[soft worldbuilding](https://www.youtube.com/watch?v=ZVrnfniQiS8) transcripts:
+make crossings and physical constraints consequential, make rules clear
+where they govern choices, and leave deeper causes open where mystery
+serves the place.
+
+## Greyfold Uplands: the Hollow Crest
+
+**Working name; not canon.** Above one gorge on Greyfold’s wet western
+slopes, winter snow gathers into the shape of a ridge with no mountain
+under it. Cornices hang over open air. Through a blue tunnel in the
+snow, a traveller can see pine trees on the far side. Each spring the
+white ridge thins from one end. A curtain of meltwater advances across
+the gorge as the suspended snow lets go.
+
+Only existing snowfall collects. The crest has a finite capacity, and
+water that leaves it falls normally. Its form looks like a missing
+mountain, but that is not evidence one stood there. People can know
+the thaw’s usual order without knowing what holds the snow. This is
+a longstanding phenomenon proposed for one gorge, not an explanation
+of the recent surges.
+
+**How it changed Greyfold:** In one proposed older thaw, leaders
+tried to keep their only dependable crossing usable by turning part
+of the falling water away from it. They kept the crossing, but the
+water took away the ledge where several households lived. Those
+households survived and settled elsewhere. The crossing keepers
+remember the year the valley stayed connected. The displaced
+families’ descendants remember being made to pay for that connection.
+
+Descendants want the old diversion closed before it takes their
+remaining grazing ground. Households across the gorge want it kept
+open long enough for people to reach winter shelter and family.
+The conflict is not about finding more water or making it disappear.
+The places people can safely inhabit change with where their spring
+water goes. No one has established a spell that can hold up the
+whole crest or remove the need to choose.
+
+## Redstone March: the Cliff Lakes
+
+**Working name; not canon.** In one part of the Redstone rain shadow,
+sheets of water stand upright against native red cliffs. From a distance
+they look like narrow blue blades with bands of green at their feet.
+From below, a traveller can see a caravan reflected overhead against
+dry stone.
+
+A continuous band of rock holds existing water. Draw water out and
+the sheet visibly shrinks; it returns only if water flows in. Sever a
+loaded band and the water drops. A quarried block cannot do the same
+thing elsewhere. The rule would make some dependable water pockets
+visibly fantastic without ending the rain shadow or creating limitless
+water. The sustaining cause is open.
+
+**How it changed Redstone:** During a proposed older fire in the
+timber workshops of a quarry, lake-tenders deliberately released a
+Cliff Lake. The water stopped the fire reaching the dwellings above
+the workings, but drowned people sheltering below. Some relatives say
+rescuers heard answering blows. Tending families remember the fire
+already reaching the outer houses. The order saved people and killed
+people; whether there was time for another rescue remains disputed.
+
+Quarry households now want a representative to share authority over
+any deliberate release. Lake-tenders argue that waiting for two
+decisions could cost the people a release would protect. Several
+families belong to both groups. At the dry cliff, sockets from old
+draw ladders survive above the stone. People hang ordinary cups from
+them, upright for those saved or turned down for those lost. A
+household can hang both. That memorial does not settle who decides
+next time.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1190,12 +1282,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Check how the time or help a household can spare changes access
-   to an ordinary public pastime. Make the difference about a person’s
-   circumstances, not ancestry or a regional personality.
-2. Check that the writer-only overlays record the states already shown
-   in the opening, not suggested traversal changes or permission to
-   edit the classroom map.
+1. Develop one Rimeward phenomenon with a different physical premise.
+   Give it a distinct history and conflict, not another dispute over
+   diverting water or waiting for a passage.
+2. For the strongest developed wonder, test how its consequences
+   could reach Eldenmere through a person, custom or claim without
+   requiring a visit. Keep the opening surges and the hidden lore separate.
 
 ## Map implications for a later review
 
