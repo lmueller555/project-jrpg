@@ -195,6 +195,14 @@ thing elsewhere. The rule would make some dependable water pockets
 visibly fantastic without ending the rain shadow or creating limitless
 water. The sustaining cause is open.
 
+**Keep ordinary Redstone visible:** This exceptional pocket would
+sit in a region that still includes dry grassland, thorn scrub and
+prosperous valleys around dependable watercourses. “The March has
+water standing in its cliffs” would be an overstatement. A
+settlement beside flowing water and one trying to live from a
+shrinking sheet would make different decisions about whether to stay.
+Neither layout nor location is chosen.
+
 **Working-name alternatives:** Travellers might try **Bluewall**
 for the sight of upright blue water against red stone. Tenders
 might say **heldwater** to distinguish water still supported by
@@ -374,6 +382,20 @@ before anyone has seen how a new apprentice answers for a mistake.
 Training can grant responsibility for a forecast without granting
 the right to speak for either half of the town. This is a proposed
 institution, not a new office or a reason to put a building on a map.
+
+**A promise reaches ordinary ground:** A neighbouring fixed-bank
+community offers a vacant house to people who want to leave the
+travelling balcony. Its roof needs work. The proposed tender-house
+offers hands to repair it in return for shelter. Then a failed
+forecast leaves another landing to rebuild. The same workers have
+now been promised twice.
+
+Landing first leaves the departing families on the islet through
+another possible move. Roof first breaks the promise to people
+already hurt by the forecast. The fixed-bank residents have to
+decide whether they can offer a house before the work is done,
+not whether either half speaks for the town. No ground moves in
+their community; the obligations do.
 
 ## Lower Leth: the Folding Orchards
 
@@ -1801,12 +1823,11 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test one consequence beyond a wonder’s physical footprint
-   at the level of a neighbouring community, not just a traveller.
-   Do not invent another wondrous site or move a boundary.
-2. Check one wonder against its approved region description.
-   It should make the terrain more distinctive, not quietly
-   replace the land that is there.
+1. Propose one later atlas-scale change that would preserve a
+   wonder’s seasonal reach or its effect on routes. Leave the
+   approved map untouched.
+2. Separate one deliberately unanswered cause from a practical
+   detail that a writer must settle before using a wonder in a story.
 
 ## Map implications for a later review
 
