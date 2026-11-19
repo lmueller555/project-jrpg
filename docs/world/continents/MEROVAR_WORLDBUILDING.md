@@ -347,10 +347,12 @@ apprentices to tell ground that has become shallow enough to stop
 an islet from ground where the brackish ring has only broken for now.
 Both look still. An ordinary delta pilot asks where a boat can pass;
 a Reedwake tender also asks whether the place beside it might move
-on a later ebb. An apprentice fits new landing steps during a pause.
-The land moves again. Nobody is hurt, but a beautifully built stair
-now serves nobody. This is a proposed trade skill, not a fixed route
-or a way to control the islet.
+on a later ebb. A tender mistakes a pause for a permanent stop and
+persuades households to build landing steps. The islet moves again.
+Nobody is hurt, but a well-made stair serves nobody. The residents
+ask the tender, not just an apprentice, to do the rebuilding
+work with them. They still need the tender’s knowledge; they don’t
+take a confident forecast as permission to spend their labour.
 
 ## Lower Leth: the Folding Orchards
 
@@ -583,6 +585,18 @@ Folding Orchards put a different kind of power in the hands of
 people who keep roofs alive: time in which someone can be heard.
 Dawn limits them too. A skilled person can influence a decision
 without being able to make the clock stop or make the evidence final.
+
+**An expert may be right in the wrong place:** The Nightglass
+surveyors’ care about what a drawing can prove could earn their
+assessments respect elsewhere. A sunrise drawing of a living orchard
+roof can be entirely accurate and still mislead a patron whose money
+decides whether people may spend the night under it. The wood
+softens that evening. A grower who has to set it again may know
+more about the roof’s use than the person who drew it.
+
+The proposed tension is whose expertise counts once money travels
+farther than the landscape that made the expert. No actual contract,
+route, authority, or event is established.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1729,12 +1743,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Find a way to hold a knowledgeable practitioner answerable
-   for an ordinary decision. Let the fantastic constraint matter,
-   without making expertise a guarantee or a new legal office.
-2. Develop a substantial cross-regional consequence of two unlike
-   wonders. Show why something that works in one place may not
-   work in another, without needing a new road or political border.
+1. Revisit the optional peoples test within one of the fantastic
+   landscapes. Keep an all-human comparison so the design must
+   earn what it contributes.
+2. Stress-test one fantastic rule once more. Find a case where it
+   could solve too much or make an outcome inevitable, and spell
+   out the smallest needed limitation or open question.
 
 ## Map implications for a later review
 
