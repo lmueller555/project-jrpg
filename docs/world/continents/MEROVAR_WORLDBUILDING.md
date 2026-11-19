@@ -273,6 +273,16 @@ about whether they learned the mountain to protect it or to work
 it better. This proposed achievement is separate from the terrace
 dispossession, not another version of that dispute.
 
+**Learning without inheriting the answer:** A newcomer miner and
+an apprentice whose mother contributed to the drawings sketch the
+same vein from different positions. An experienced lamp-holder
+shows them how to leave a gap where two visible stretches cannot
+be joined with confidence. The newcomer’s mining experience helps
+her read what she can see. The apprentice corrects a line inherited
+from his mother. Their contributions can both be checked. Neither
+competence nor descent gives them the right to decide what becomes
+of the teaching face.
+
 **How a player could learn the limit without visiting:** A Rimeward
 traveller turns a dark chip toward a lamp. “It was clear until it
 broke free.” It stays opaque. The player has seen the chip and
@@ -544,6 +554,15 @@ unsigned. One pulls up a chair; the other leaves it empty.
 This tests what each person learned from a particular place, not
 what everyone from either region believes. It makes no shared legal
 rule, compulsory visit, new quest or travel connection.
+
+**Two different kinds of power:** Nightglass rewards people who
+can interpret what others cannot inspect year-round. Their record
+still needs checking each winter, detached samples can’t settle
+it, and seeing a hollow never proved a terrace unsafe. The
+Folding Orchards put a different kind of power in the hands of
+people who keep roofs alive: time in which someone can be heard.
+Dawn limits them too. A skilled person can influence a decision
+without being able to make the clock stop or make the evidence final.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1690,12 +1709,11 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test whether someone from outside a wonder’s home can learn
-   a local skill, and what that achievement does not entitle
-   them to decide.
-2. Compare two different kinds of power created by these places.
-   Where does the geography itself keep a powerful group from
-   settling a conflict entirely on its own terms?
+1. Identify one region-scale historical question that could have
+   gone two very different ways. Develop both directions briefly
+   before treating either as the history.
+2. Check one provisional wonder name for overfamiliar wording.
+   Test distinct uses without turning a drafting label into canon.
 
 ## Map implications for a later review
 
