@@ -328,6 +328,28 @@ first place. One living stand can’t both keep the harbour quiet and
 become the boats it services. This is a proposed local struggle,
 not a Marris-wide law, actual harbour, or playable facility.
 
+### Surfwood: listen from both sides
+
+**Two in-world explanations, neither established.** A woodland heir
+says the living trees learned to take the waves inland. She points
+to the silence of felled wood and doubts another tree could ever
+replace a connected old stand. A repair master says the common thing
+is the headland’s rock. Perhaps a different living stand could take its
+place. He accepts louder surf in the meantime; she won’t promise
+the quieter shore will return. Neither has proved that the trees or
+the rock are the cause. Their uncertainty is part of the decision
+about cutting, not a missing explanation the narrator must supply.
+
+When one household passes on a stand, its next keeper listens under
+the trees while a harbour household listens below the cliffs. They tell
+each other afterwards what they could hear. The proposed custom ends
+with a new promise to keep the trees. One daughter will care for them
+this year but will not promise the same labour on behalf of children
+she may have. She asks the harbour families to say what they will
+do now. A young boat owner offers paid help, knowing it will delay
+his own repairs. The quiet remains something both sides have to make
+possible, not a gift one family is born owing.
+
 ## Northern kingdom: the Emberways
 
 **Working name; not canon.** In one inland part of
@@ -1517,12 +1539,11 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. For one strong wonder, contrast two in-world stories about why it
-   behaves that way. Give each a different observation and a decision
-   it would change. Keep the actual cause open.
-2. Develop an observance that could not exist without its particular
-   fantastic landscape. Ask what it costs to refuse it now instead of
-   treating it as decoration or a shared religion.
+1. Develop a long-term achievement made possible by a wonder,
+   not another ruin or emergency. Give people a reason to be proud
+   of what they made together and a reason to argue over preserving it.
+2. Test how someone could understand one wonder’s rule without an
+   explanation delivered as exposition, a map pin, or mandatory travel.
 
 ## Map implications for a later review
 
