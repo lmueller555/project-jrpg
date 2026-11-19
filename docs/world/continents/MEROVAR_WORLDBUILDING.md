@@ -230,6 +230,60 @@ performance counts as the town’s story helps decide who can claim
 to speak for the town now. Nothing here sets its actual name, location,
 a new water route, or a quest.
 
+## Lower Leth: the Folding Orchards
+
+**Working name; not canon.** At dusk in one belt of
+[Lower Leth](MEROVAR.md#lower-leth) orchard country, rooted living wood
+bends like heavy cloth. From a hill, people watch whole crowns lower
+into green vaults above the meadows, fruit still hanging underneath.
+At sunrise the wood stiffens in whichever shape it has reached.
+A severed limb loses the effect. A mature shelter takes years to
+grow; nobody can buy it and carry it away.
+
+**How it changed public life:** Generations ago, several households
+left a patron’s lockable stone hall for gatherings under living
+roofs. They gained a meeting nobody had a door key for, but depended
+on growers keeping the oldest trees alive. Before dawn, they open
+the roof crown by crown. Someone who sleeps or works beneath each
+tree gets a chance to speak before its crown is lifted. If the
+gathering runs late, a grower risks leaving a fruiting tree in its
+gathering shape for the day.
+
+A grower wants to replace exhausted trees after sunrise. Seasonal
+workers want to train other trees into shelter first; otherwise they
+lose the place from which they have been heard. A custom devised
+to take power from a hall owner now depends on property and living
+wood of a different kind. No scheduled gathering, location, faction
+law or magicks mechanism is established.
+
+## Marris Coast: the Surfwood
+
+**Working name; not canon.** Beneath one wooded
+[Marris](MEROVAR.md#marris-coast) headland, breakers hit the cliffs
+without their crash. Walk inland and the treetops roar in the rhythm
+of the waves. Voices and wind still sound where they originate.
+The wood carries the surf’s sound; it does not make messages or
+make the waves louder.
+
+Only trees whose living roots reach the headland’s native rock take
+part. Remove a connected stand and more of the ordinary noise
+returns to the shore. Timber carried away has no such property.
+The phenomenon’s cause and exact range are open.
+
+**How it changed the harbour:** Repair crews could hear each
+other’s warnings above the breakers. When the port once considered
+taking the woodland for a larger timber trade, it chose the quiet
+instead. Woodland households agreed to keep their connected stands
+alive in exchange for a lasting say in whether any could be cut.
+Their claim comes from the bargain, not ownership of the shore.
+
+Today a repair master wants some of the wood made available so small
+crews can afford sound boats. A woodland heir refuses: keeping
+earshot of one another was part of how those crews stayed safe in the
+first place. One living stand can’t both keep the harbour quiet and
+become the boats it services. This is a proposed local struggle,
+not a Marris-wide law, actual harbour, or playable facility.
+
 ## Game I exposure: visited, heard about, or writer-only
 
 | Exposure | Use |
@@ -1366,11 +1420,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Try a coast and a floodplain whose wonders do not lift water,
-   expose hidden rock or move land. Give each a rule with a real limit.
-2. Give each strong candidate an older historical choice that helps
-   explain present power or conflict; then decide which ones deserve
-   more development rather than filling every region with an anomaly.
+1. Develop one fantastic inland northern premise with a different
+   visual and historical consequence from the coast’s Nightglass.
+   Keep it separate from Iselin’s established arc.
+2. Test how the Vale’s existing confluence makes a distinctive
+   fantasy region without adding a competing wonder or explaining
+   how the Sanctuary’s service to the dead works.
 
 ## Map implications for a later review
 
