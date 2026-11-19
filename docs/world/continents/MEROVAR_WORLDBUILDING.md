@@ -963,6 +963,21 @@ proposal for one inland community, not a custom of the whole kingdom
 or a claim about the Rimeward Shores. The [actual craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed the use of a concrete object to show the relationship.
 
+## Northern kingdom: the board that isn’t ready
+
+In one proposed inland workshop in [Iselin’s homeland](../../narrative/game_01/characters/ISELIN.md#northern-home-and-the-journey),
+joiners set an offcut beside each stack of drying boards. Before
+starting a door an apprentice splits the sample. The inside of the
+cheaper stack’s offcut still feels damp. The joiner shows the customer
+rather than making a promise about the whole stack. The apprentice
+keeps the sample to compare later.
+
+What matters here is a small difference in patience: to the customer
+the stack looks ready now, while the apprentice has decided what
+they want to check again. The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed the use of a concrete detail. This is neither a northern
+standard nor a new workshop placement.
+
 ## Remembering at a table and on a bank
 
 Some Vale households might repair a lantern together, as proposed
@@ -1016,6 +1031,14 @@ name describes, [7:35](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=455s)
 for change in use, and [11:27](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=687s)
 for local and outsider usage. Use these as naming tools, not as evidence
 for Merovar’s languages or for the video’s corrected historical example.
+
+**Name status check:** **Elden Vale** is an approved regional name,
+not an etymology or jurisdiction. **Upper Millrace** is an established
+descriptive name for a specific area, not a template for naming
+surrounding land. The **next town south of Eldenmere** exists in canon
+but remains unnamed. *Tarrow* is a test only. The two “Crown” uses
+above likewise refer to different things; the proposed clerk exchange
+does not make a new official title or dialogue line canon.
 
 ## Merovar: naming people for dialogue
 
@@ -1119,12 +1142,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Keep names sorted by what they name. Check one region name,
-   one descriptive label, and one canonically unnamed place so
-   a writing shortcut does not become a map or dialogue fact.
-2. Develop one inland northern practice beyond domestic clothing
-   and relief logistics, without implying a common practice on
-   the Rimeward Shores.
+1. Compare one inland Greyfold response to seasonal travel with
+   an independently grounded Redstone response. Do not infer a
+   common climate, road, or hierarchy.
+2. Tighten one continuity boundary or one overlap in the draft.
+   What a resident knows from local memory is not author knowledge
+   of the ancient event, and new prose should not repeat an approved scene.
 
 ## Map implications for a later review
 
