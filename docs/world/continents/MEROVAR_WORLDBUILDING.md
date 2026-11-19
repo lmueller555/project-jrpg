@@ -435,6 +435,21 @@ as part of the overnight service. Travellers know the equipment and
 still ask what is expected of them. A useful design can spread without
 spreading the same obligation. Neither practice is Greyfold-wide.
 
+## Greyfold Uplands and Elden Vale: what would Tomas add?
+
+In this voice test, a visitor describes the miniature house their
+Greyfold makers’ circle keeps adding to. [Tomas](../../narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md)
+asks how big it is now, then whether the group would keep something
+made by a person who only came once. The visitor tells him the old
+chair is still there.
+
+“I’d make a door that opens. Not the front one. A little one under the
+stairs.” Tomas starts explaining where it would go and then asks,
+“What did you make?” He imagines joining in before he gets curious
+about the person already there. This is a different response from
+Mira’s practical test or Caelan’s change of mind. It requires no visit
+to Greyfold and gives Tomas no unapproved history.
+
 ## Lower Leth: a fair weight after a flood
 
 At one weighing house, the keeper deducts the sack’s weight in front of
@@ -490,6 +505,16 @@ The [actual Sanderson transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed using a concrete object and individual viewpoints. It supplies
 no facts about the school. Keep testimony and established history
 separate under the [revelation plan](../../narrative/saga/REVELATION_PLAN.md).
+
+**Schooling in the Vale is separate.** The
+[Eldenmere classroom](../../../assets/maps/eldenmere/playable/README.md)
+seats six and is taught by Liam’s mother. The
+[Chapter 1 preparation session](../../narrative/game_01/CHAPTER_01.md)
+does not establish general admission ages, compulsory attendance,
+or a sponsorship rule. In the proposed Lower Leth account, a cousin
+can be admitted and still miss class for work. That distinction
+between access and attendance belongs to this proposal, not a policy
+to assign to both communities.
 
 ## Lower Leth: Edran’s borrowed lesson book
 
@@ -1094,12 +1119,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test what Tomas wants to know from someone outside the Vale.
-   Distinguish his interest from Caelan’s social judgment and
-   Mira’s curiosity about how things work.
-2. Compare what the approved Eldenmere classroom tells us with
-   what the proposed Lower Leth school history doesn’t. Do not
-   assume one town’s policy or attendance rule applies to the other.
+1. Keep names sorted by what they name. Check one region name,
+   one descriptive label, and one canonically unnamed place so
+   a writing shortcut does not become a map or dialogue fact.
+2. Develop one inland northern practice beyond domestic clothing
+   and relief logistics, without implying a common practice on
+   the Rimeward Shores.
 
 ## Map implications for a later review
 
