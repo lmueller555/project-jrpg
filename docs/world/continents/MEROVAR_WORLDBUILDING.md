@@ -82,6 +82,17 @@ make crossings and physical constraints consequential, make rules clear
 where they govern choices, and leave deeper causes open where mystery
 serves the place.
 
+### What each wonder tests
+
+Keep the central story choice different even when histories include
+loss or inheritance. Hollow Crest asks whether people can consent on
+behalf of those displaced; Cliff Lakes asks who can act in an emergency.
+Nightglass concerns restitution and what uncertain evidence can justify.
+Reedwake asks who can speak for a place that no longer occupies one
+location. The Folding Orchards turn participation into a race against dawn.
+Surfwood ties who can hear to who must care for the woods. The Emberways
+make a private choice to leave a household consequential for people who stay.
+
 ## Elden Vale: what the confluence asks of the living
 
 Elden Vale already has its defining wonder. The
@@ -1506,19 +1517,20 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Identify what a future writer’s overlay would need to show
-   about these wonders. Separate season, range and whether the
-   feature itself moves from decisions about placing them on maps.
-2. Check where the current candidates feel too similar. Keep a
-   strong distinct conflict in each, and prefer a few developments
-   the story can use over making every idea a required destination.
+1. For one strong wonder, contrast two in-world stories about why it
+   behaves that way. Give each a different observation and a decision
+   it would change. Keep the actual cause open.
+2. Develop an observance that could not exist without its particular
+   fantastic landscape. Ask what it costs to refuse it now instead of
+   treating it as decoration or a shared religion.
 
 ## Map implications for a later review
 
 - A writer-only **Upper Leth haulage overlay** could use two kinds of marks.
   **Passage-state marks** distinguish the ruined western bridge road inside
-  the walls from the southern land checkpoint that relief traffic uses.
-  Do not draw an eastern bridge. **Constraint notes** distinguish the brook,
+  the walls from the southern land checkpoint associated with relief traffic.
+  Both checkpoints remain closed during the opening quests; the writer’s
+  overlay cannot make them traversable. Do not draw an eastern bridge. **Constraint notes** distinguish the brook,
   controlled millrace, unnamed boundary rivers and unnamed downstream
   tributaries. The nearer seam is protected, not an authorized supply;
   farther stone remains available and takes longer to haul. Omit a mark
@@ -1539,6 +1551,20 @@ These are suggested priorities, not approved scenes or new destinations.
   3. **Working agreement.** Identify who might accept cargo, deal with
      delays, and grant access at each end. A plausible route doesn’t
      establish a service, a tariff, or a common government.
+
+### Constraints a later writer’s overlay must preserve
+
+- **Nightglass:** the view appears in the sunless season. Transparency
+  is neither an entrance nor evidence that a terrace will collapse.
+- **Reedwake:** only particular ground moves under the proposal’s
+  tidal conditions. A dock alone cannot label where its people now live.
+- **Emberways:** warmth follows a connected formation and cools the
+  source. A break or detached piece cannot feed the same beds.
+
+Keep season, reach and the observed rule attached to each proposal.
+None of these is a neighbouring mark, fixed route, player-map edit or
+reason the party has to visit. The [previously reviewed map transcript](https://www.youtube.com/watch?v=pjLSv4WNUtY)
+provides the craft test: show a feature’s consequences, not just its icon.
 
 These are questions for a later map decision, not instructions to alter the
 game’s map. Regions outside Merovar are unchanged.
