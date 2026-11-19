@@ -114,6 +114,20 @@ The places people can safely inhabit change with where their spring
 water goes. No one has established a spell that can hold up the
 whole crest or remove the need to choose.
 
+**How a claim could reach Eldenmere:** A seasonal orchard worker
+receives an offer for her family’s claim to the vanished ledge. The
+people still keeping the crossing want a clear claim to the surviving
+ground before their children build there. The money would let her
+rent a home and stop following harvest work. But the offer calls her
+grandmother’s departure voluntary, and the account she grew up with
+describes someone carried away while protesting.
+
+She asks Caelan to read the offer aloud twice, once without the
+payment. Refusing would preserve a claim, not bring back a house.
+Accepting could make another family safer under words she can’t
+accept. This is a proposed encounter about consent and inheritance,
+not a legal rule, new visit, quest or change to MQ03.
+
 ## Redstone March: the Cliff Lakes
 
 **Working name; not canon.** In one part of the Redstone rain shadow,
@@ -145,6 +159,33 @@ draw ladders survive above the stone. People hang ordinary cups from
 them, upright for those saved or turned down for those lost. A
 household can hang both. That memorial does not settle who decides
 next time.
+
+## Merovar’s Rimeward Shores: the Nightglass Escarpments
+
+**Working name; not canon.** Through the season without sunrise,
+the intact wall of one [Rimeward fjord](../POLAR_REGIONS.md#rimeward-shores)
+turns clear enough to see mineral veins and the outlines of caverns
+sealed within it. A lamp can reveal a crack no one can reach. The
+stone is still cold, heavy and solid. A piece broken off turns
+opaque; cutting it into windows will not let anyone take the wonder
+home. Daylight closes the view into the cliffs, not the caverns
+themselves. The coast and the inland kingdom remain separate; the
+effect’s cause and exact location are open.
+
+**How it changed the coast:** During one proposed older winter,
+surveyors saw an immense hollow under a terrace everyone had thought
+solid. Several families left to stay with relatives and handed over
+their keys so builders could inspect. By the time daylight returned,
+their hosts had called the homes abandoned and divided them up. No
+one ever established whether the hollow put the buildings in danger.
+
+Some descendants mark their own doors with a second keyhole cut into
+a piece of dark wood: a door they own beside a door they lost. Others
+think the custom accuses children of something their grandparents did.
+The displaced families now want recognition and the return of surviving
+homes. Current residents can accept an independent survey and still
+object to a remedy that would leave their children without homes.
+Seeing into a mountain never told anyone how to divide the land above it.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1282,12 +1323,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop one Rimeward phenomenon with a different physical premise.
-   Give it a distinct history and conflict, not another dispute over
-   diverting water or waiting for a passage.
-2. For the strongest developed wonder, test how its consequences
-   could reach Eldenmere through a person, custom or claim without
-   requiring a visit. Keep the opening surges and the hidden lore separate.
+1. Test a Rookfen phenomenon that does not use buoyancy, visibility
+   through stone, or another simple flood. Let its rule change
+   how people can settle or find one another over generations.
+2. See how the Cliff Lakes’ cup memorial affects who is trusted
+   with authority today. Prefer a consequential choice to another
+   description of the ceremony.
 
 ## Map implications for a later review
 
