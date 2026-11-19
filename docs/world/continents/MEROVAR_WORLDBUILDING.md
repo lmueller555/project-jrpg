@@ -119,6 +119,16 @@ threatens to withhold it. Put the conflict in who counts as a keeper,
 not in a second quarry negotiation or a new doctrine. No authority,
 office, rite or scene is added by asking the question.
 
+**A visitor could take a different lesson from it:** A visitor
+from the proposed Cliff Lakes hangs both cups at home, one for
+relatives saved in the release and one for those lost. She hears
+that Serene cared for the injured Crown survivor and understands
+it as helping someone without declaring their side right. When
+neighbours ask why she brings clean cloth, she says, “I’m helping
+him live. That isn’t permission to dig.” This is a possible
+response to established events, not a new quest objective,
+Sanctuary rite or claim about what happens to the dead.
+
 ## Greyfold Uplands: the Hollow Crest
 
 **Working name; not canon.** Above one gorge on Greyfold’s wet western
@@ -401,6 +411,15 @@ earshot of one another was part of how those crews stayed safe in the
 first place. One living stand can’t both keep the harbour quiet and
 become the boats it services. This is a proposed local struggle,
 not a Marris-wide law, actual harbour, or playable facility.
+
+**Proposed ecological cost:** Some woodland keepers remember hearing
+more nesting birds among the connected trees. Quieter outer stands
+might now offer better places to nest. A harbour family remembers
+the decision to keep the forest chiefly as the moment crews could
+hear warnings. A woodland heir asks what else moved inland when the
+shore grew quiet. Her memory is a reason to ask, not proof of why
+every bird left or a decision about cutting. No new species, measured
+change, or additional magicks are established.
 
 ### Surfwood: listen from both sides
 
@@ -1622,12 +1641,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Ask how one wonder could alter the lives of ordinary plants or
-   animals over time, then show one choice the change creates for
-   people. Do not infer a new species or new magicks.
-2. Follow one visitor’s interpretation of the Vale Sanctuary in
-   light of a different wonder they know. Show what the visitor
-   does, not why the Sanctuary actually works.
+1. Test how a distant resident might imagine one wonder incorrectly.
+   Correct only what a trustworthy account or familiar object can
+   establish; the cause can stay strange.
+2. Give a past choice one physical trace that had to be made
+   differently because of the wonder. It should show part of the
+   story without settling who was right.
 
 ## Map implications for a later review
 
