@@ -6,9 +6,13 @@ rules and scene beats below are proposals, not facts already true in the
 game. No new destinations, playable layouts, quest obligations or map edits are
 specified.
 
+**Start here:** [Explore Merovar’s wonders](#fantastic-landscapes-that-change-merovar)
+for the landscapes and rules, or
+[explore their story consequences](#when-two-wonders-teach-different-lessons)
+for a disagreement shaped by more than one region.
+
 **Places, households, and local institutions**
 
-[Fantastic landscapes](#fantastic-landscapes-that-change-merovar) ·
 [Elden Vale](#elden-vale-mending-before-lighting) ·
 [Upper Leth approach](#upper-leth-approach-the-unnamed-town-south-of-eldenmere) ·
 [Greyfold](#greyfold-uplands-rhea-revises-her-own-theory) ·
@@ -552,6 +556,18 @@ would redirect part of the warmth that now reaches shared nursery
 beds. Her relatives see that not as a private move but as a decision
 about everyone’s winter. This is one proposed community, not a
 kingdom-wide family rule.
+
+**A tool fixed to a relationship:** Growers under one vault put
+shallow clay troughs along the thawed strip. Water carried between
+branches kept freezing before it reached the seedlings. The sections
+fit this branch’s bends. Moving the clay elsewhere would leave
+nothing to keep the run warm.
+
+The grower who wants to leave asks for the sections her grandmother
+fired. Her cousin offers fresh clay instead. Taking those pieces
+would interrupt watering the common nursery. What one person thinks
+of as inherited work has become something several households need.
+The tool doesn’t resolve who must stay or carry the cost of leaving.
 
 **What people made that they didn’t need:** Households beneath one
 vault grow a flowering bed together. At first they want it to rival a
@@ -1757,11 +1773,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Find one adaptation people would have no reason to make if
-   a particular wonder did not exist. Make the adapted object
-   serve an existing social relationship rather than collect props.
-2. Improve the entry points for readers of the consolidated draft.
-   Keep existing lore, anchors and questions intact.
+1. Develop one institution that has had to pass on both a skill
+   and an obligation because the landscape demands both. What
+   fails first if more people need what it provides?
+2. Check a consequential sentence for proposal-versus-canon
+   ambiguity. Fix the actual ambiguity rather than adding another
+   disclaimer to the whole document.
 
 ## Map implications for a later review
 
