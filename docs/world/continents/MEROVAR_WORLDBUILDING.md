@@ -292,6 +292,16 @@ performance counts as the town’s story helps decide who can claim
 to speak for the town now. Nothing here sets its actual name, location,
 a new water route, or a quest.
 
+**Skill the landscape forces people to learn:** Boat-tenders teach
+apprentices to tell ground that has become shallow enough to stop
+an islet from ground where the brackish ring has only broken for now.
+Both look still. An ordinary delta pilot asks where a boat can pass;
+a Reedwake tender also asks whether the place beside it might move
+on a later ebb. An apprentice fits new landing steps during a pause.
+The land moves again. Nobody is hurt, but a beautifully built stair
+now serves nobody. This is a proposed trade skill, not a fixed route
+or a way to control the islet.
+
 ## Lower Leth: the Folding Orchards
 
 **Working name; not canon.** At dusk in one belt of
@@ -461,6 +471,15 @@ rule, compulsory visit, new quest or travel connection.
 Classify the proposed appearance, not the region forever. Nothing here
 changes the [approved story scope](MEROVAR.md#story-scope-and-continuity)
 or the destinations in the game.
+
+**Current story-fit recommendation, not an itinerary:** Hollow Crest
+could enter Game I through the orchard worker’s document in Eldenmere:
+consent, the costs of keeping a community safe, and whose account
+of loss gets written down already matter there. Nightglass is a strong
+candidate to keep distant. The clear cliff and irreplaceable teaching
+face give the coast an identity without adding an investigation stop.
+The player could learn one limit through testimony and an opaque chip,
+not reach the entire region. Both placements remain open.
 
 ## Historical layers: what can be placed in order
 
@@ -1586,12 +1605,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Compare which wonder belongs closest to Game I’s existing stakes
-   and which might work better at a distance. Rank them by what
-   they add to the story, not by how much new geography they require.
-2. Develop one Reedwake skill that matters because part of a town can
-   move. Let people use their knowledge instead of making the
-   moving land another disaster to survive.
+1. Test a proposed settlement against the counterfactual: if its
+   wonder were absent, what would have developed elsewhere, under
+   whose control, or not at all?
+2. Check how one working wonder name changes in local use. A
+   practical name and a cartographer’s label needn’t solve the same
+   problem or become canonical together.
 
 ## Map implications for a later review
 
