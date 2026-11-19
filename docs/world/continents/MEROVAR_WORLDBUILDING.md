@@ -75,6 +75,12 @@ or the destinations in the game.
 | Local civic memories | **Established:** the Sanctuary passage injuries and closure predate the opening crisis. **Separate proposals:** Lower Leth’s flood breach and school admission change, and Rookfen’s shared letters. Their order relative to one another or to the wool trade remains open. Testimony can show a person’s experience without settling every fact. |
 | Game I opening | Road damage from the recent regional surges predates the opening encounters. Those surges are distinct from the old Sanctuary accident. Follow the [opening reference](../../narrative/game_01/REGIONAL_SURGES.md) and approved story before making any connection. |
 
+In local speech, don’t use “Great Sacrifice” as an established public
+historical reference. A household can say who came back hurt or which
+road was damaged. Neither the passage accident nor a public remembrance
+practice stands in for the ancient event. Follow the revelation plan
+for what a character could actually know.
+
 ## Merovar settlement history: three questions to resolve
 
 The [foundational lore](../../FOUNDATIONAL_LORE.md) establishes
@@ -407,13 +413,11 @@ showing a political relationship through what people can actually do.
 
 ## Greyfold Uplands: what Caelan hears in the verse
 
-In this voice test within the existing hall-song proposal,
+In this voice test within [the hall-song proposal](#greyfold-uplands-the-verse-you-change),
 [Caelan](../../narrative/game_01/characters/CAELAN.md#everyday-individuality)
-initially dislikes the guessing verse. A stranger could listen all night
-and never know which uncle snores. When the returning apprentice sings
-about a cooking pot and nobody laughs, he thinks that proves his point.
-Then the grandmother asks what they cooked in it. Caelan listens
-instead of trying to make the silence less awkward.
+initially thinks the guessing verse leaves strangers out. The
+grandmother’s question about the apprentice’s pot makes him listen
+instead of trying to fill the silence.
 
 The apprentice describes their first spoiled supper away from home.
 Someone supplies a rhyme; the apprentice improves it. Caelan still
@@ -772,6 +776,21 @@ liked something different. The discovery is one family’s surprise,
 not a hidden regional tradition. The
 [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8) informed
 putting the evidence on an object the family still uses.
+
+## Inland lodging: staying through winter or between visits
+
+In one proposed [Greyfold](MEROVAR.md#greyfold-uplands) valley, a carrier
+rents sleeping space for the winter before the higher passes close.
+The household wants a reliable payment; a returning apprentice needs
+the same room. The shared roadside shelter does not settle a longer
+stay in someone’s home.
+
+In one [Redstone](MEROVAR.md#redstone-march) farming town served by
+caravans, a household instead lets a room between visits. A delayed
+departure overlaps the next booking. Both hosts have to decide who
+has a claim on a familiar room. The difference is the sort of time
+they plan for, not that one region is more generous, settled, or
+exposed to hardship. No building or travel schedule is canon here.
 
 ## Merovar’s Rimeward Shores: yesterday’s channel
 
@@ -1142,12 +1161,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Compare one inland Greyfold response to seasonal travel with
-   an independently grounded Redstone response. Do not infer a
-   common climate, road, or hierarchy.
-2. Tighten one continuity boundary or one overlap in the draft.
-   What a resident knows from local memory is not author knowledge
-   of the ancient event, and new prose should not repeat an approved scene.
+1. Develop one small practice for understanding someone else’s words
+   in a multilingual Marris setting. Keep it distinct from alternate
+   place names and don’t invent a language or migration.
+2. Identify what could count as evidence of contact between the inland
+   north and Rimeward, and why one example could still mislead. Leave
+   the relationship open.
 
 ## Map implications for a later review
 
