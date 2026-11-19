@@ -529,6 +529,13 @@ and a cut piece elsewhere is ordinary ice. No heat is created.
 The origin and exact location remain open. The effect does not create
 a northern approach or explain Iselin’s abilities or final arc.
 
+**Unresolved material limit:** Before adopting the feature, check
+whether one ordinary winter’s use would weaken the connected ice
+that carries the heat. The allowed rule does not guarantee ice that
+can never melt. If the structure has to be protected, that may limit
+who can draw warmth and when. Leave the capacity, mechanism, and
+answer open rather than assuming heatproof ice or an unlimited garden.
+
 **How it changed households:** In one proposed older winter, a ridge
 collapse broke several branches. People moved their hearths to the
 remaining connected ice and chose to live under one garden vault
@@ -1717,6 +1724,13 @@ with an all-human cast and keep this candidate only if the visible
 adaptation adds useful information about the two individuals.
 No species name, origin, powers, asset, or canon assignment follows.
 
+**Current comparison result:** Giving the screen visitor horns
+makes one turn behind the screen physically different. The mistaken
+goodnight and decision to stay and listen work as clearly with an
+all-human cast. Hold the design unless a later grounded story needs
+more than this difference in movement. No wonder requires, favours,
+or identifies a particular ancestry by default.
+
 ## A short list for possible Game I use
 
 These are suggested priorities, not approved scenes or new destinations.
@@ -1743,12 +1757,11 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Revisit the optional peoples test within one of the fantastic
-   landscapes. Keep an all-human comparison so the design must
-   earn what it contributes.
-2. Stress-test one fantastic rule once more. Find a case where it
-   could solve too much or make an outcome inevitable, and spell
-   out the smallest needed limitation or open question.
+1. Find one adaptation people would have no reason to make if
+   a particular wonder did not exist. Make the adapted object
+   serve an existing social relationship rather than collect props.
+2. Improve the entry points for readers of the consolidated draft.
+   Keep existing lore, anchors and questions intact.
 
 ## Map implications for a later review
 
