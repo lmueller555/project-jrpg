@@ -275,6 +275,20 @@ to take power from a hall owner now depends on property and living
 wood of a different kind. No scheduled gathering, location, faction
 law or magicks mechanism is established.
 
+**Proposed local magicks: the dew witness.** A night-tender uses
+available free-flowing aether to hold a little existing dew beneath
+a branch. A trembling silver chain catches lamplight over a person
+waiting to speak. It falls if the tender leaves or stops attending
+to it. It can’t bend the wood, prolong the night, or keep a tree alive.
+
+A seasonal worker asks to learn. If workers can keep their own
+speaking order in view, a grower no longer has to be present to
+acknowledge the next voice. One grower welcomes a chance to share
+the duty. Another fears being held responsible for a gathering
+she no longer oversees. The small spell gives someone responsibility
+for a voice, not power over the orchard or an answer to the housing
+dispute. It is not an approved spell or a source explanation.
+
 ## Marris Coast: the Surfwood
 
 **Working name; not canon.** Beneath one wooded
@@ -334,6 +348,27 @@ would redirect part of the warmth that now reaches shared nursery
 beds. Her relatives see that not as a private move but as a decision
 about everyone’s winter. This is one proposed community, not a
 kingdom-wide family rule.
+
+## When two wonders teach different lessons
+
+**Proposed encounter in Eldenmere, not an itinerary.** Two seasonal
+workers consider signing a letter supporting the return of a
+Nightglass house. One grew up at the Folding Orchards, where the
+person currently sheltering beneath a crown speaks before it is
+lifted. She wants the household living in the house now to answer
+first. They are the ones who will wake beneath its roof tomorrow.
+
+The other carries a dark wood mark with two keyholes. Her grandmother
+gave up a key the winter the cliff turned clear. Letting present
+occupants answer first, she says, makes it too easy to treat the
+first family’s account as an interruption. They agree that no child
+should be left homeless. They disagree about whether protecting
+today’s home would repeat the old wrong. The letter is still
+unsigned. One pulls up a chair; the other leaves it empty.
+
+This tests what each person learned from a particular place, not
+what everyone from either region believes. It makes no shared legal
+rule, compulsory visit, new quest or travel connection.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1471,13 +1506,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop one small act of deliberate magicks that works inside a
-   proposed landscape without letting anyone reproduce or control the
-   whole wonder. The spell should change someone’s responsibility,
-   not make the central dilemma go away.
-2. Put people shaped by two different landscapes in the same
-   disagreement. Show which lesson each takes from home, without
-   inventing a trade route, political alliance or compulsory visit.
+1. Identify what a future writer’s overlay would need to show
+   about these wonders. Separate season, range and whether the
+   feature itself moves from decisions about placing them on maps.
+2. Check where the current candidates feel too similar. Keep a
+   strong distinct conflict in each, and prefer a few developments
+   the story can use over making every idea a required destination.
 
 ## Map implications for a later review
 
