@@ -39,7 +39,7 @@ for a disagreement shaped by more than one region.
 [Settlement history questions](#merovar-settlement-history-three-questions-to-resolve) ·
 [Canon review](#before-a-proposal-becomes-canon) ·
 [Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
-[Open decisions](#open-decisions-for-a-later-review) ·
+[Open decisions](#next-development-pass) ·
 [Map implications](#map-implications-for-a-later-review)
 
 ## Where to look for established material
@@ -1857,7 +1857,9 @@ These are suggested priorities, not approved scenes or new destinations.
    in its existing authoritative home. Remove any duplicate here
    and link to the owner. Merging a proposal is not that approval.
 
-## Open decisions for a later review
+## Next development pass
+
+These are open decisions for a later review, not implementation instructions.
 
 1. Which fantastic landscapes deserve approval, and which
    should remain distant possibilities? Confirm names, limits,
