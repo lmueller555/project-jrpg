@@ -191,6 +191,15 @@ thing elsewhere. The rule would make some dependable water pockets
 visibly fantastic without ending the rain shadow or creating limitless
 water. The sustaining cause is open.
 
+**Working-name alternatives:** Travellers might try **Bluewall**
+for the sight of upright blue water against red stone. Tenders
+might say **heldwater** to distinguish water still supported by
+the seam from an ordinary store. The first names something a person
+can point out; the second tells them what sort of water they are
+dealing with. Neither replaces *Cliff Lakes*, establishes an etymology,
+or becomes approved by appearing here. This uses the
+[earlier place-naming research](https://www.youtube.com/watch?v=mcKMbVXpRRA&t=687s).
+
 **How it changed Redstone:** During a proposed older fire in the
 timber workshops of a quarry, lake-tenders deliberately released a
 Cliff Lake. The water stopped the fire reaching the dwellings above
@@ -386,6 +395,17 @@ descendants say their grandparents wanted to raise the roof
 themselves. Growers remember teaching new hands to help. The wear
 supports years of participation; it cannot tell anyone whether
 those hands also earned time to speak.
+
+**Open historical choice:** Did seasonal workers turn indispensable
+night-work into an independent voice, or did they remain helpers
+whose standing depended on growers? In one version, returning
+workers pass on both crown-tending and speaking order. The network
+outlasts individual departures; exhausted trees threaten an
+accumulated public role, not just shelter. In the other, departures
+break continuity and each new group must earn recognition again.
+The same worn grips then record years of help without proving
+control or a permanent voice. This decision changes the present
+conflict; the tool alone does not settle it.
 
 **Speech test:** “Folding Orchards” is a descriptive working
 label that distinguishes the phenomenon from ordinary orchards.
@@ -1709,11 +1729,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Identify one region-scale historical question that could have
-   gone two very different ways. Develop both directions briefly
-   before treating either as the history.
-2. Check one provisional wonder name for overfamiliar wording.
-   Test distinct uses without turning a drafting label into canon.
+1. Find a way to hold a knowledgeable practitioner answerable
+   for an ordinary decision. Let the fantastic constraint matter,
+   without making expertise a guarantee or a new legal office.
+2. Develop a substantial cross-regional consequence of two unlike
+   wonders. Show why something that works in one place may not
+   work in another, without needing a new road or political border.
 
 ## Map implications for a later review
 
