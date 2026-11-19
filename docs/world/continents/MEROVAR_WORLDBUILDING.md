@@ -160,6 +160,17 @@ them, upright for those saved or turned down for those lost. A
 household can hang both. That memorial does not settle who decides
 next time.
 
+**What the memorial can’t pass on:** A tending household offers
+its granddaughter the apprenticeship once promised to her mother.
+Her mother’s quarry kin will support it only if she promises not to
+authorize a release alone. Her grandfather says lives were saved
+because somebody acted before everyone agreed. The girl can hang
+both cups and still lose the trust of half her family, whichever
+condition she accepts. If she refuses the apprenticeship, a practical
+skill the community needs may stop passing between generations.
+This is a proposed consequence of one family’s history, not a general
+qualification for water-tending across Redstone.
+
 ## Merovar’s Rimeward Shores: the Nightglass Escarpments
 
 **Working name; not canon.** Through the season without sunrise,
@@ -186,6 +197,38 @@ The displaced families now want recognition and the return of surviving
 homes. Current residents can accept an independent survey and still
 object to a remedy that would leave their children without homes.
 Seeing into a mountain never told anyone how to divide the land above it.
+
+## Rookfen: the Reedwake
+
+**Working name; not canon.** An islet with reed beds, trees and
+occupied houses creeps upstream while barges pass it going downriver.
+Behind it, dark water opens where farmland stood. This is not a
+floating island: the roots and silt move along the submerged bed.
+
+In one proposed delta reach, on an ebb after the natural tidal salt
+front has completely encircled an intact islet, the islet moves
+toward freshwater. It stops where fresh water breaks the ring or
+its roots reach shallower ground. Freshwater-only ground does not
+move. Detached roots and poured salt do not reproduce the phenomenon.
+The rule makes one kind of access unreliable even when nothing floods:
+the landing can be safe and dry while the people it served have moved.
+
+**How it divided a town:** In one proposed summer, an inhabited
+islet began to move during a play performed across the channel.
+Some households went ashore before it pulled away. Others stayed
+deliberately, taking the players with them. They no longer wanted
+to stage victories for families who had prospered at their expense.
+Neither group accepted that the other had become a different town.
+The old stage still faces an empty channel. The balcony that used
+to answer it now stands upstream among living trees.
+
+The two groups want to finish the play. One wants the defeated to
+have speaking parts; the other demands the original ending first.
+An actor welcome on both banks refuses either version. Her grandmother
+was the supposed villain, and nobody has asked what she did. Which
+performance counts as the town’s story helps decide who can claim
+to speak for the town now. Nothing here sets its actual name, location,
+a new water route, or a quest.
 
 ## Game I exposure: visited, heard about, or writer-only
 
@@ -1323,12 +1366,11 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test a Rookfen phenomenon that does not use buoyancy, visibility
-   through stone, or another simple flood. Let its rule change
-   how people can settle or find one another over generations.
-2. See how the Cliff Lakes’ cup memorial affects who is trusted
-   with authority today. Prefer a consequential choice to another
-   description of the ceremony.
+1. Try a coast and a floodplain whose wonders do not lift water,
+   expose hidden rock or move land. Give each a rule with a real limit.
+2. Give each strong candidate an older historical choice that helps
+   explain present power or conflict; then decide which ones deserve
+   more development rather than filling every region with an anomaly.
 
 ## Map implications for a later review
 
