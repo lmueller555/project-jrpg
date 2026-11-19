@@ -93,6 +93,15 @@ why a port chose to preserve its woods or pay more for another source
 of timber. They don’t live under the same magick. Keep ordinary land,
 livelihoods and histories between the wonders.
 
+**What to leave open and what to prove useful:** The cause of
+Nightglass can remain unknown. Seeing solid rock become readable
+during polar darkness is enough for its story. The Cliff Lakes’
+finite supply is a decision rule, not that kind of mystery.
+Before adopting a settlement scene, write a period of withdrawals
+without replenishment. The sheet should visibly shrink and change
+someone’s plan. If nobody makes a different choice, the rule isn’t
+doing enough in that scene.
+
 ### What each wonder tests
 
 Keep the central story choice different even when histories include
@@ -1823,11 +1832,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Propose one later atlas-scale change that would preserve a
-   wonder’s seasonal reach or its effect on routes. Leave the
-   approved map untouched.
-2. Separate one deliberately unanswered cause from a practical
-   detail that a writer must settle before using a wonder in a story.
+1. Test one resolution to a longstanding wonder conflict that
+   cannot make everybody whole. Show what people choose to keep and
+   what the established limit means they actually lose.
+2. Identify one strong proposed wonder that belongs mainly in
+   background history. Leave it there for a story reason, not
+   because it would be hard to put on a map.
 
 ## Map implications for a later review
 
@@ -1867,6 +1877,12 @@ These are suggested priorities, not approved scenes or new destinations.
   source. A break or detached piece cannot feed the same beds.
 
 Keep season, reach and the observed rule attached to each proposal.
+For **Hollow Crest**, consider a season-dependent hazard note on a
+future atlas overlay rather than one permanent landmark symbol. First
+check where the thaw-front would affect a real approach and where the
+water would go. Until the season, drainage and who bears the effect
+are clear, a mark would imply more than the proposal knows.
+
 None of these is a neighbouring mark, fixed route, player-map edit or
 reason the party has to visit. The [previously reviewed map transcript](https://www.youtube.com/watch?v=pjLSv4WNUtY)
 provides the craft test: show a feature’s consequences, not just its icon.
