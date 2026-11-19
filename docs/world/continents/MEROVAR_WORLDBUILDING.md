@@ -929,6 +929,20 @@ could carry, not just time spent repairing it. Neither owes the
 other indefinite help. This is one exchange between neighbours,
 not a local rate or a rule binding their trades.
 
+## Marris Coast: say it back
+
+At one [Marris](MEROVAR.md#marris-coast) repair counter a customer
+describes a broken shutter in the words she uses at home. A bilingual
+neighbour helps. Before taking the job, the joiner asks which part must
+still open, then repeats the request through the neighbour. The customer
+corrects him: the lower panel must stay shut while the upper opens.
+She wants daylight without rain on the bedding.
+
+This is one shop’s habit of checking what someone means, not a wider
+language claim. No one has to use a particular language to get the
+repair. The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
+informed starting with what the customer actually needs.
+
 ## Marris Coast and Elden Vale: Mira asks where the hand goes
 
 In this voice test, a visiting apprentice describes a
@@ -996,6 +1010,21 @@ the stack looks ready now, while the apprentice has decided what
 they want to check again. The [reviewed craft transcript](https://pickscribe.com/v/V2KpWOLTXx8)
 informed the use of a concrete detail. This is neither a northern
 standard nor a new workshop placement.
+
+## Northern contact: what a supplier description could show
+
+One **writer-only** candidate is an inland account book kept by several
+people over time. It attributes purchases of preserved fish to a
+household on [Merovar’s Rimeward Shores](../POLAR_REGIONS.md#rimeward-shores).
+Different handwriting, dated receipts, or corrected entries could help
+distinguish repeated personal dealings from one old story.
+
+Even repeat entries aren’t enough on their own. Later keepers might
+copy an old supplier description while buying from an intermediary.
+The account would then exaggerate the continuity of direct contact.
+Neither the book nor the trading relationship exists in canon. It
+does not put a new road through Iselin’s mountains, give her kingdom
+a coastal approach, or settle anyone’s allegiance.
 
 ## Remembering at a table and on a bank
 
@@ -1161,12 +1190,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop one small practice for understanding someone else’s words
-   in a multilingual Marris setting. Keep it distinct from alternate
-   place names and don’t invent a language or migration.
-2. Identify what could count as evidence of contact between the inland
-   north and Rimeward, and why one example could still mislead. Leave
-   the relationship open.
+1. Check how the time or help a household can spare changes access
+   to an ordinary public pastime. Make the difference about a person’s
+   circumstances, not ancestry or a regional personality.
+2. Check that the writer-only overlays record the states already shown
+   in the opening, not suggested traversal changes or permission to
+   edit the classroom map.
 
 ## Map implications for a later review
 
