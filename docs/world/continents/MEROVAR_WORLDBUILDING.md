@@ -577,6 +577,16 @@ do now. A young boat owner offers paid help, knowing it will delay
 his own repairs. The quiet remains something both sides have to make
 possible, not a gift one family is born owing.
 
+**One possible ending, not everybody made whole:** A woodland
+heir agrees to lose one connected stand to repair the smallest
+crews’ boats. The repair master accepts that the remaining woods
+stay and brings harbour labour to their care. Ordinary breakers
+return below the lost trees. People can no longer hear one another
+where they once worked, and there is no promise that replacements
+will restore the quiet. The heir helps choose the timber; the
+master helps tend the rest. Neither calls the bargain fair.
+Both have to go on living beside what it cost.
+
 ## Northern kingdom: the Emberways
 
 **Working name; not canon.** In one inland part of
@@ -700,6 +710,14 @@ candidate to keep distant. The clear cliff and irreplaceable teaching
 face give the coast an identity without adding an investigation stop.
 The player could learn one limit through testimony and an opaque chip,
 not reach the entire region. Both placements remain open.
+
+**Another candidate to leave in the background:** The Cliff Lakes’
+older release could reach Game I through the cups or through people
+who remember what happened. Putting the full emergency decision
+onstage risks rehearsing Iselin’s existing conflict over who gets
+to decide for others in the name of protection. Keep the wonder
+and its history available without asking this game to dramatize
+every one of its consequences.
 
 ## Historical layers: what can be placed in order
 
@@ -1832,12 +1850,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Test one resolution to a longstanding wonder conflict that
-   cannot make everybody whole. Show what people choose to keep and
-   what the established limit means they actually lose.
-2. Identify one strong proposed wonder that belongs mainly in
-   background history. Leave it there for a story reason, not
-   because it would be hard to put on a map.
+1. Consider one political-geography relationship a later atlas
+   might annotate without drawing a border. Mark what people can
+   act on and what their power does not reach.
+2. Show how descendants might misremember a past decision about
+   one of these landscapes. Give them one physical detail that
+   makes the familiar version harder to hold without solving the past.
 
 ## Map implications for a later review
 
