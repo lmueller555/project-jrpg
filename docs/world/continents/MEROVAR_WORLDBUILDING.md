@@ -228,6 +228,31 @@ homes. Current residents can accept an independent survey and still
 object to a remedy that would leave their children without homes.
 Seeing into a mountain never told anyone how to divide the land above it.
 
+### Nightglass: the mountain people learned to read
+
+Surveyors, miners and lamp-holders spent generations drawing the
+clear cliff from different positions. Apprentices can now follow
+a vein through solid stone before entering a mine. The achievement
+is a shared record, not a perfect map. Each winter younger observers
+correct their predecessors’ drawings against the cliff itself.
+Detached samples are opaque. The place is still the teacher.
+
+A promising vein crosses the clearest face. Mining it could give
+experienced people work they could teach their children. Leaving it
+intact would preserve a way for those children to learn that they
+can’t take anywhere else. Even people who made the drawings disagree
+about whether they learned the mountain to protect it or to work
+it better. This proposed achievement is separate from the terrace
+dispossession, not another version of that dispute.
+
+**How a player could learn the limit without visiting:** A Rimeward
+traveller turns a dark chip toward a lamp. “It was clear until it
+broke free.” It stays opaque. The player has seen the chip and
+heard testimony, not witnessed the fjord turn clear, learned what
+causes it, or established whether anyone’s home is unsafe. This
+could happen in an encounter the story already needs; no new
+destination or tutorial follows.
+
 ## Rookfen: the Reedwake
 
 **Working name; not canon.** An islet with reed beds, trees and
@@ -1539,11 +1564,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Develop a long-term achievement made possible by a wonder,
-   not another ruin or emergency. Give people a reason to be proud
-   of what they made together and a reason to argue over preserving it.
-2. Test how someone could understand one wonder’s rule without an
-   explanation delivered as exposition, a map pin, or mandatory travel.
+1. Distinguish a wonder’s footprint from the reach of its effects.
+   Leave room for ordinary land and households that know about it
+   without living under its rule.
+2. Give an existing companion a reason to care about a limit
+   their own training can’t overcome. Do not add an approved spell
+   or let a small use of magicks erase the larger conflict.
 
 ## Map implications for a later review
 
