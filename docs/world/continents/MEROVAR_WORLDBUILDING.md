@@ -170,10 +170,11 @@ grandmother’s departure voluntary, and the account she grew up with
 describes someone carried away while protesting.
 
 She asks Caelan to read the offer aloud twice, once without the
-payment. Refusing would preserve a claim, not bring back a house.
-Accepting could make another family safer under words she can’t
-accept. This is a proposed encounter about consent and inheritance,
-not a legal rule, new visit, quest or change to MQ03.
+payment. Then she asks him to write down her objection to
+“voluntary.” Whether she accepts remains hers to decide. Keep the
+old diversion’s mechanics out of this possible exchange so it does
+not pre-tell the [working Act IV conflict](../../narrative/game_01/ACT_OUTLINE.md).
+No legal rule, new visit, quest or change to MQ03 follows.
 
 ## Redstone March: the Cliff Lakes
 
@@ -503,6 +504,16 @@ would redirect part of the warmth that now reaches shared nursery
 beds. Her relatives see that not as a private move but as a decision
 about everyone’s winter. This is one proposed community, not a
 kingdom-wide family rule.
+
+**What people made that they didn’t need:** Households beneath one
+vault grow a flowering bed together. At first they want it to rival a
+summer meadow. Then children lie beside it and see petals against the
+blue ice over their heads. The garden becomes something summer can’t
+offer. The households choose to reserve a little warmth for beauty,
+not just food, and mingle the colours instead of dividing the bed by
+hearth. The display belongs to the connected ice and the vault left
+behind when anyone carries away a piece; it is not portable garden
+magick or a kingdom-wide celebration.
 
 ## When two wonders teach different lessons
 
@@ -1670,13 +1681,12 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Keep the early Hollow Crest story about a living person’s right
-   to refuse the official wording. Check it against later Game I
-   material so the encounter does not repeat a more consequential
-   diversion or reveal how that larger story will work.
-2. Develop one thing inhabitants make or celebrate because a
-   wonder exists, apart from a dispute or response to disaster.
-   Keep the achievement tied to the specific landscape.
+1. Follow a young person into a responsibility that could only
+   exist in one of these landscapes. What do they want to learn
+   or refuse, and how does that change who will keep the practice?
+2. Check that at least one region’s decision makers and burden
+   bearers are legible. Do not conflate a group’s practical expertise
+   with a legal right to decide for everyone affected.
 
 ## Map implications for a later review
 
