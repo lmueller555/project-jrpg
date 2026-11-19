@@ -39,7 +39,7 @@ for a disagreement shaped by more than one region.
 [Settlement history questions](#merovar-settlement-history-three-questions-to-resolve) ·
 [Canon review](#before-a-proposal-becomes-canon) ·
 [Peoples and species](#peoples-are-not-species-and-regions-are-not-personalities) ·
-[Next development pass](#next-development-pass) ·
+[Open decisions](#next-development-pass) ·
 [Map implications](#map-implications-for-a-later-review)
 
 ## Where to look for established material
@@ -625,6 +625,15 @@ would redirect part of the warmth that now reaches shared nursery
 beds. Her relatives see that not as a private move but as a decision
 about everyone’s winter. This is one proposed community, not a
 kingdom-wide family rule.
+
+**How a shared home becomes a story:** Children play the old
+gathering as if it were a wedding: every household happily joined
+one family. On the branch walk, one child notices a buried
+threshold beyond the broken spur. It faces away from the vault,
+toward a hollow where another house once stood. She asks why the
+wedding needed so many doors. The threshold shows that people once
+lived separately, not that anyone joined willingly or unwillingly.
+No elder has to supply a definitive ending.
 
 **A tool fixed to a relationship:** Growers under one vault put
 shallow clay troughs along the thawed strip. Water carried between
@@ -1850,12 +1859,15 @@ These are suggested priorities, not approved scenes or new destinations.
 
 ## Next development pass
 
-1. Consider one political-geography relationship a later atlas
-   might annotate without drawing a border. Mark what people can
-   act on and what their power does not reach.
-2. Show how descendants might misremember a past decision about
-   one of these landscapes. Give them one physical detail that
-   makes the familiar version harder to hold without solving the past.
+These are open decisions for a later review, not implementation instructions.
+
+1. Which fantastic landscapes deserve approval, and which
+   should remain distant possibilities? Confirm names, limits,
+   origins to leave open, and audience exposure separately from
+   placement on a map.
+2. If one proposal is adopted, move the approved fact to its
+   authoritative home. Keep the working alternatives provisional
+   and preserve all existing story, route and layout boundaries.
 
 ## Map implications for a later review
 
@@ -1884,6 +1896,17 @@ These are suggested priorities, not approved scenes or new destinations.
   3. **Working agreement.** Identify who might accept cargo, deal with
      delays, and grant access at each end. A plausible route doesn’t
      establish a service, a tariff, or a common government.
+
+**Conditional relationship to annotate later:** If a proposed
+Rookfen–Marris cargo handoff is eventually placed in an affected
+Reedwake reach, distinguish the fixed landing from the inhabited
+ground that can move away from it. A tender-house could answer for
+a forecast or a rebuilding promise at the landing. Cargo handlers
+could accept a tally and agree on storage or delay costs with a
+receiving port. Neither could thereby speak for the moving
+households or govern the coast between them. A handoff can work
+for people who reject the person who signed its agreement as
+their spokesperson. No overlap or route is placed here.
 
 ### Constraints a later writer’s overlay must preserve
 
