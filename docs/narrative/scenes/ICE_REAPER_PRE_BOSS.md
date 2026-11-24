@@ -54,6 +54,11 @@ handoff; it is not another implemented Gallery scene or a final dialogue script.
 - The kingdom's dependence on the woman it unfairly exiled supplies the tragic
   reversal. Her injustice and her responsibility for killing the searchers and
   threatening the population remain distinct.
+- Ground that injustice in the
+  [royal authorization and betrayal](../game_01/STORY_BIBLE.md#royal-authorization-and-betrayal),
+  with [Iselin's personal response](../game_01/characters/ISELIN.md#her-sisters-promise-and-betrayal).
+  What Rhea already knows and what the conversation reveals remain subject to
+  the Revelation Plan; she does not automatically know the private royal scenes.
 - Author the exchange through specific earlier experiences and decisions once
   those scenes exist. No new shared incident, complete dialogue or successful
   persuasion is invented here. Rhea's attempt fails, and she is imprisoned.

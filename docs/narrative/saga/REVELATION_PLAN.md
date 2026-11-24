@@ -1,7 +1,7 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.5 (post-timeskip search, confrontation and knowledge boundaries).
+**Version:** 0.6 (royal authorization and public-accusation boundaries).
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), including broad saga
 planning, and the [narrative index](../README.md).
 
@@ -59,6 +59,26 @@ measure while below, what Rhea believes about its disappearance, and how the
 party learns Iselin's fate remain open. Chronology is owned by the
 [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology);
 physical premises by [Foundational Lore](FOUNDATIONAL_LORE.md#approved-game-i-interior-and-ice-stasis-phenomena).
+
+### Royal authorization and the public accusation
+
+**General direction approved, 2026-11-24; not implemented:** Follow the
+[Story Bible's betrayal sequence](../game_01/STORY_BIBLE.md#royal-authorization-and-betrayal)
+for author truth and its remaining illustrative details.
+
+| Account or viewpoint | Knowledge boundary |
+| --- | --- |
+| Private authorization | The queen authorizes protection and promises support. Who else hears, records or receives the order remains open. |
+| Public accusation | The account that Iselin defied Crown authorization is false. A report, proclamation or accuser repeating it is not an objective narrator confirming it. |
+| Real consequences | The dome saves people while causing losses outside. Those losses and legitimate demands for an explanation are not disproved by the queen's betrayal. |
+| The queen's choice | She permits the false account rather than acknowledge responsibility. Her belief that exile saves Iselin is her self-justification, not authorial absolution. |
+| Player and party | Later cutaways may show private decisions. The exact disclosure sequence is open; absent party members do not automatically know what the player witnesses. |
+| Rhea's appeal | Her eventual conversation can address a genuine injustice and oppose collective punishment. What she knows beforehand, what Iselin tells her and what evidence the main party obtains require authoring. |
+
+Do not invent an omniscient Crown, a universally corrupt military or a completed
+inquiry as shortcuts. Exact letters, witnesses, proofs, legal arrangements and
+any later public correction remain open. These later disclosures do not permit
+opening dialogue to reveal the covert mission or hidden cosmic history.
 
 ### Collapsing dome, expedition and Rhea's appeal
 

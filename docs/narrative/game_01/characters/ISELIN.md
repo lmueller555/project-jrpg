@@ -62,8 +62,35 @@ her before her fall. Her fear and protective intent lead to the kingdom-sized
 ice dome, accusation of treachery and exile. The shared sequence and surface
 interval are recorded in the [Game I chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology).
 Exile begins the final sequence; her transformation occurs afterward in the cave.
-Her exile is unfair, as established by the author on 2026-11-24; the precise
-political injustice and enforcement circumstances remain to be developed.
+Her exile is unfair. The author-approved general direction now establishes her
+sister's broken authorization and refusal of acknowledgment; the remaining
+political procedure and enforcement circumstances still need development.
+
+### Her sister's promise and betrayal
+
+**General direction approved, 2026-11-24; not implemented:** Her sister
+privately authorizes the protective intervention and promises to support her,
+then permits a false public account that Iselin acted against Crown orders.
+The [Story Bible](../STORY_BIBLE.md#royal-authorization-and-betrayal) owns the
+full decision sequence and the distinction between approved direction and
+illustrative military logistics.
+
+The relationship must include genuine affection, trust, disagreement and prior
+support, so the betrayal breaks an experienced bond. Earlier correspondence
+is one possible presentation, not an approved set of letters or invented
+childhood events. The Crown's covert assignment remains part of their history
+without making all of Iselin's relief work fraudulent.
+
+The queen regards commuting execution to exile as protecting her sister.
+Iselin seeks public acknowledgment of what she was entrusted to do, and her
+sister refuses. That refusal supplies a personal wound beyond loss of rank or
+public approval. Exact hearing scenes and dialogue remain unwritten.
+
+During confinement she can return to the promise, authorization, people saved,
+public accusation and refusal. Her resentment eventually extends from those
+responsible to the population collectively. The injustice is real; it does
+not make that expansion of blame or her later murders justified. Real losses
+caused by the dome also remain part of the history.
 
 ### Recurring stasis and dome symbolism
 
@@ -145,6 +172,10 @@ both real assistance and concealed decisions without resolving her entire moral
 character in the opening quest.
 
 ## Ruling-family development — proposals, not canon
+
+**Maren** is the current working-name proposal for Iselin's elder sister in the
+betrayal discussion. Approval of the general betrayal direction does not select
+the queen's personal name. Use her established title until a name is approved.
 
 The previously discussed House Maroven, Queen Isolde, Dowager Helena and Prince
 Oren remain unapproved proposals, now associated with Iselin rather than her
