@@ -8,7 +8,7 @@ Related references: [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01
 
 ## Setting
 
-A huge ice dome covers a ruined, frozen kingdom. Iselin created it in desperation to protect her people from the coming calamity. She is seen as a traitor and exiled; the mountain exile and subsequent conscious confinement lead to her Ice Reaper transformation. This approved motive supersedes the earlier hostile-army explanation. The exact sequence of the kingdom's destruction and the confrontation remains unwritten. The dome is a regional ice construction, not the Aethersphere.
+A huge ice dome covers a ruined, frozen kingdom. Iselin created it in desperation to protect her people from the coming calamity. She is seen as a traitor and unfairly exiled; the mountain exile and subsequent conscious confinement lead to her Ice Reaper transformation. This approved motive supersedes the earlier hostile-army explanation. After the timeskip, enormous falling chunks have already destroyed parts of the kingdom. The [Story Bible](../game_01/STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome) owns that ongoing failure and the threatened population; exact damage locations and the final outcome remain open. The dome is a regional ice construction, not the Aethersphere.
 
 The Ice Reaper is Regent Iselin, the reigning queen's younger sister. She already has exceptional ice-magick talent from her northern upbringing. Her late-game form has merged with a great amount of ice-aspected aether, with glassy blue wings, ice-covered parts of her body, and blue, white and silver accents. The author-established amplification occurs during her conscious self-stasis in an ice-aspected summit cave; see [her arc](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement). She does not first acquire ice magick here.
 
@@ -33,6 +33,55 @@ Iselin transforms during confinement and emerges intending to bury those she
 once swore to save. These are author-facing foundations, not newly implemented
 Gallery shots or a selected combat outcome. The antiwar storyline does not
 establish that war replaces the dome's previously approved calamity motive.
+
+## Planned confrontation and imprisonment
+
+**Author-established direction, 2026-11-24; not implemented:** Before this
+rescue-and-duel sequence, the main party searches for Rhea, learns she led the
+offscreen-dispatched expedition to find Iselin, and retraces its mountain route
+through a dungeon segment. The party encounters the dead expedition members.
+The [Story Bible](../game_01/STORY_BIBLE.md#mountain-search-for-rhea) owns that
+approach. This section owns the substantial preceding conversation and its
+handoff; it is not another implemented Gallery scene or a final dialogue script.
+
+### Conversation requirements
+
+- Rhea seeks help for the endangered population and attempts to reason with
+  Iselin. Her role follows her established leadership and relationships.
+- Their extended exchange reveals Iselin's intention to deliberately collapse
+  the dome onto the entire kingdom, and how bitterness, betrayal and revenge
+  have shaped her response to the appeal.
+- The kingdom's dependence on the woman it unfairly exiled supplies the tragic
+  reversal. Her injustice and her responsibility for killing the searchers and
+  threatening the population remain distinct.
+- Author the exchange through specific earlier experiences and decisions once
+  those scenes exist. No new shared incident, complete dialogue or successful
+  persuasion is invented here. Rhea's attempt fails, and she is imprisoned.
+- The other expedition members are killed; Rhea survives. Attack order,
+  separation, capture circumstances and why she survives remain open. The
+  recent searchers are not the hikers from the exile three years earlier.
+
+### Viewpoint and handoff
+
+**Proposed staging, not fixed cinematography:** Shift briefly to Rhea as the
+main party approaches: extended confrontation, then imprisonment, then return
+to the party finding her already encased. This allows her to speak before her
+final prison state without unexplained speech from complete encasement. If
+another viewpoint is chosen, establish chronology and access explicitly.
+Do not leave the main party watching passively through a long exchange it
+could interrupt. How much it hears remains an authored knowledge decision;
+follow the [Revelation Plan](../saga/REVELATION_PLAN.md#collapsing-dome-expedition-and-rheas-appeal).
+
+Rhea's imprisonment must lead into the retained eyes-closed, straining prison
+presentation and Caelan's alarm. Her experience and increased power remain
+valid; the capture and later breakout need consistent circumstances rather
+than unexplained changes to her abilities.
+
+The long conversation precedes the existing 32-second cinematic and has its
+own pacing. It is not added to that cue's clock. Preserve the authored rescue,
+four timed dialogue lines, music synchronization, wind/rune/fireball sequence
+and existing approval boundary below. Main-story implementation, the dialogue
+script, dungeon design and playable boss remain future work.
 
 ## Music and playback
 
@@ -122,4 +171,4 @@ Source drawings, prompts, extraction metadata and audio provenance remain beside
 
 ## Open story and gameplay decisions
 
-The kingdom's northern location and Iselin's identity and protective motive are established. Its name, the capital's name, exact main-story placement, remaining transformation mechanics, release trigger, boss attributes and abilities, encounter balance, outcome and post-fight dialogue remain unassigned. The final charge and fade establish the cinematic fight opening without silently implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions.
+The kingdom's northern location, Iselin's identity and protective motive, the failing dome, Rhea-led expedition and preceding failed appeal are established future direction. Relative placement is mountain search → extended confrontation → imprisonment → discovery/rescue and duel; exact quest, act and checkpoint IDs remain unassigned. The kingdom and capital names, damage layout, remaining transformation mechanics, release trigger, expedition roster and dispatch timing, attack/capture circumstances, exact dialogue and viewpoint, boss attributes and abilities, encounter balance, outcome and post-fight dialogue remain open. The final charge and fade establish the cinematic fight opening without silently implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions. Defeating Iselin does not by itself establish how the already-failing dome is made safe.
