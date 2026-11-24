@@ -2,7 +2,7 @@
 
 **Historical transcript:** Captured before the 2026-11-04 planetary-aether
 revision. Its doctrinal wording is superseded; the
-[current implementation script](../../narrative/game_01/CH01_MQ04_PR3.md)
+[current implementation script](../../narrative/game_01/CH01_MQ04.md#part-3)
 records the live dialogue. This transcript is retained as a capture record,
 not as present-day canon.
 

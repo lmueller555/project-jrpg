@@ -39,7 +39,7 @@ classroom, fitted viewer, and zoomed detail.
 
 **Status:** Approved regional lore. The [Elden Vale overworld](OVERWORLD.md)
 now implements the local landscape and ruined western crossing. The classroom
-map remains unchanged. Iselin's [arrival cinematic](REGENT_ARRIVAL.md) and MQ03
+map remains unchanged. Iselin's [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) and MQ03
 dialogue now present the revised relief-visit story in the game.
 
 Before Game I opens, an extraordinarily powerful lightning surge destroyed

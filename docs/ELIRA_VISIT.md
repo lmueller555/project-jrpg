@@ -1,5 +1,9 @@
 # Elira's memorial lantern
 
+**Narrative owner:** [MQ01 script](narrative/game_01/CH01_MQ01.md).
+This guide owns the visit's controls, action staging, object lifecycle, and save
+compatibility. Its walkthrough describes how to execute that authored sequence.
+
 Finish Halden's visit and Tomas's goodbye first. Elira's cottage is near the
 southern bridge; **M** opens the town map. Enter and approach Elira to start her
 approved exchange with Caelan. Click anywhere to advance. Finishing that exchange

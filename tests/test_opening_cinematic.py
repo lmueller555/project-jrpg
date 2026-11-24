@@ -277,7 +277,7 @@ class OpeningCinematicTests(unittest.TestCase):
                                          (size, scale, record['id'], rect))
 
     def test_expanded_exchange_matches_the_approved_speaker_transcript(self):
-        guide = (SCENE.parents[3]/'docs/OPENING_CINEMATIC.md').read_text(encoding='utf-8')
+        guide = (SCENE.parents[3]/'docs/narrative/scenes/OPENING_CINEMATIC.md').read_text(encoding='utf-8')
         documented = re.findall(r'^- \*\*(Mira|Caelan):\*\* “(.*)”$', guide, re.MULTILINE)
         dialogue = self.scene.data['dialogue']
         self.assertEqual(len(dialogue), 30)

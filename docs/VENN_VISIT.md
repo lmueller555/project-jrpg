@@ -1,5 +1,9 @@
 # Venn family: supplies and the irrigation gate
 
+**Narrative owner:** [MQ01 script](narrative/game_01/CH01_MQ01.md).
+This guide owns the visit's controls, action staging, object lifecycle, and save
+compatibility. Its walkthrough describes how to execute that authored sequence.
+
 Finish Halden's visit and Tomas's departure first. The Venn family occupies the
 wide eastern cottage, and their errand can be completed before or after Elira's.
 The parents use the display names Mrs. Venn and Mr. Venn; their child is identified

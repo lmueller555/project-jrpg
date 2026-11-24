@@ -7,7 +7,7 @@ establish exhaustion and familiarity before the scene returns to Caelan's
 ordinary sanctuary bedroom and Tomas's existing first line.
 
 The 252.57-second sequence begins with “Later in the journey…” to identify the
-flashforward explicitly. [Watch the captured opening](reviews/opening_cinematic/README.md).
+flashforward explicitly. [Watch the captured opening](../../reviews/opening_cinematic/README.md).
 
 ## Story contract
 

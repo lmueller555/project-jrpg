@@ -44,7 +44,7 @@ Space pauses, R restarts, S changes normal/quarter speed, the arrow keys step
 to `/tmp/iselin-cinematic-preview`. Headless captures include an existing
 artwork reference board and normal/slow playback. `--probe` uses existing stills
 to demonstrate entry/hold/recovery timing; it is not newly drawn motion. The
-[arrival guide](../docs/REGENT_ARRIVAL.md#native-acting-foundation) defines the
+[arrival guide](../docs/narrative/scenes/REGENT_ARRIVAL.md#native-acting-foundation) defines the
 optional actor action schema; the
 [foundation review](../docs/reviews/iselin_cinematic_foundation/README.md) records
 capture staging and preservation checks. `--check-preservation` explicitly checks

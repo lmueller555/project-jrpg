@@ -94,11 +94,11 @@ it freezes camera, actors, ambient movement, captions and the looping leitmotif.
 Focus loss also freezes the scene, without clearing a manual pause on return.
 Reduced Motion uses static shot changes. Finishing or skipping leads into the
 ordinary bedroom opening; Continue never inserts this flashforward into an
-existing journey. See [the cinematic guide](OPENING_CINEMATIC.md).
+existing journey. See [the cinematic guide](narrative/scenes/OPENING_CINEMATIC.md).
 
 ## Iselin's arrival
 
-The [post-mill arrival](REGENT_ARRIVAL.md) uses detailed cinematic scenery and
+The [post-mill arrival](narrative/scenes/REGENT_ARRIVAL.md) uses detailed cinematic scenery and
 separate animated actors, with the existing portrait dialogue frame and
 display-resolution text. Its dialogue advances at the player's pace. Escape
 pauses/resumes, focus loss suspends playback, and a small Skip control remains

@@ -66,7 +66,7 @@ compositions rather than reaction montages.
   accepts their practical contribution. He does not repeat his earlier surprise
   about the secret deployment as a new discovery.
 - **Iselin:** Owns the orders, admits the absence of agreement and stops the work.
-  His concern is sincere; the Sanctuary's dispute with him remains unresolved.
+  Her concern is sincere; the Sanctuary's dispute with her remains unresolved.
 - **Page:** Uses the crew list and helps account for survivors. The scene does
   not establish complicity in the secret deployment.
 - **Caretakers:** Continue caring for the wounded, provide firsthand information,

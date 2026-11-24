@@ -6,26 +6,12 @@
 
 ## Approved chapter structure
 
-Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Players spend time living in **Eldenmere**, building attachment to the community and Caelen's relationships before the inciting catastrophe. The excavation disaster occurs in **Act I, Chapter 3**, not in Chapter 1.
+Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Players spend time living in **Eldenmere**, building attachment to the community and Caelan's relationships before the inciting catastrophe. The excavation disaster occurs in **Act I, Chapter 3**, not in Chapter 1.
 
-New Game now begins with an approved, separate [cinematic flashforward](../../OPENING_CINEMATIC.md):
-an exhausted Caelan and Mira briefly rest in a damaged wayside sanctuary
-overlooking an inhabited valley. Their mill recollection frames the journey
-before the game returns to this chapter's ordinary morning.
-The expanded exchange establishes an entrance beyond a ridge, evacuation carts
-and a valley road threatened by another local surge. Its mill recollection
-connects Caelan's modest early success to their shared responsibility later.
-The working later-act outline places the eventual reprise near the Act IV/V
-boundary; its exact route,
-the crisis's mechanics and other characters' outcomes remain unapproved. The
-teaser does not move the excavation catastrophe into Chapter 1 or establish
-Tomas's fate, Eldenmere's condition or hidden cosmology.
-
-The author-expanded cinematic now includes Mira holding Caelan's hands,
-incremental lamp repair and his skyward blue signal for the caravan. Its closing
-shot follows their departure, then stays with an anonymous bloody helmet on a
-sword embedded in stone. This deliberately hints at an unidentified death later
-in the journey; it does not assign that loss to Tomas or any named character.
+The separate [opening flashforward](../scenes/OPENING_CINEMATIC.md) owns its
+approved dialogue, action order, visual promises, and limits. Its eventual
+reprise is currently intended near the Act IV/V boundary; that placement does
+not approve the older later-act proposal or settle the crisis's cause.
 
 - **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Iselin, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
 - **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
@@ -41,92 +27,43 @@ biography, line of dialogue, map, mechanic or detail of the coming disaster.
 Later explicit approvals are recorded in their linked guides. The approved
 [regional surges and relief visit](REGIONAL_SURGES.md) and
 [sanctuary covenant](../world/SANCTUARY_COVENANT.md) now govern the revised
-MQ02/MQ03 story. The [arrival cinematic](../../REGENT_ARRIVAL.md) and revised MQ03
+MQ02/MQ03 story. The [arrival cinematic](../scenes/REGENT_ARRIVAL.md) and revised MQ03
 dialogue now implement that approved opening context.
 
 ## Approved regional background
 
-Before the opening morning, an extraordinary lightning surge destroyed the
-road to the next town south of Eldenmere. Only a handful of comparable events
-have occurred elsewhere. Iselin has already helped a couple of those affected
-communities, and their combined repair needs are straining stone supplies.
-Her arranged visit brings that relief effort to Eldenmere and a request to
-discuss the protected ridge seam with Serene. The festival gives the visit a
-social setting; the repaired mill does not cause her journey.
-
-Elden Vale Sanctuary is the regional ridge site, separate from Serene's home
-in Eldenmere. It was deliberately built near a natural aether confluence to
-guide the region's dead back to the planet and remember them. Mining would
-disrupt the keepers' critical societal responsibility. Caretakers have heard
-growling inside the cave since the bridge incident.
-
-Iselin secretly sent a Crown crew to establish control and prepare mining
-before seeking Serene's agreement. A survivor interrupts the post-meal
-conversation after something from the cave attacks that crew, exposing
-Iselin's bad faith. Lucan did not know about the deployment and is taken aback.
-Caelan collects Mira and travels with her, Iselin, Lucan and the page to the
-Sanctuary. The implemented MQ03 route continues through the arrival cinematic,
-cave rescue, Vespermaw fight, healing-pool evacuation and acknowledged return
-resolution. These developments do not move the Chapter 3 excavation
-catastrophe into the opening chapter.
+The [regional surge history](REGIONAL_SURGES.md),
+[Sanctuary covenant](../world/SANCTUARY_COVENANT.md), and
+[local faith](../world/ELDEN_VALE_FAITH.md) own the relief context and
+Sanctuary responsibilities. MQ03 owns the disclosure and rescue sequence.
+These opening events do not move the excavation catastrophe into Chapter 1.
 
 ## Mandatory quests — approved sequence and functions
 
 ### MQ01 — A Day Like Any Other
 
-**Premise:** Caelen starts the morning at Serene’s home in Eldenmere. Serene asks him to deliver needed medicine or supplies to three households; Tomas accompanies him briefly.
+**Purpose:** Let the player control Caelan quickly; introduce ordinary worship, service, village geography, family dynamics, and the practical community service offered by Serene’s household.
 
-**Purpose:** Let the player control Caelen quickly; introduce ordinary worship, service, village geography, family dynamics, and the practical community service offered by Serene’s household.
-
-**Proposed staging:** Explore Caelen's room, the household library and courtyard; deliver supplies; hear both grateful and skeptical villagers. The number of households, exact tasks, and tutorial interactions are adjustable.
+**Narrative owner:** [MQ01 script](CH01_MQ01.md).
 
 **Emotional result:** Eldenmere is home rather than an exposition hub.
 
 ### MQ02 — A Little Trouble at the Mill
 
-**Premise:** Caelen reunites with his childhood friend Mira after the watermill fails; together they investigate an obstructed channel outside the village and restore its operation.
-
 **Purpose:** Provide a small, complete adventure through Mira's engineering knowledge and Caelan's practical help and limited learned magicks. After pressure is relieved mechanically, he successfully clears a small pocket of still water; this remains below the force required to push back the Venns' flowing channel. Mira encourages his pleasure in that modest success, with a conditional acknowledgment of the earlier failed attempt. Develop their affectionate, credible differences over technological progress and inherited restrictions through their work together. See the [implemented quest script](CH01_MQ02.md).
 
-**Current staging:** Mira checks her worn arm rig before the riverbank outing. The Ridgeback Tusker teaches Caelan Guard, failed Aqua Edge and Aether Edge; Mira then fights using her own power-gated techniques. Victory leads into the character exchange, bypass, small spell and cooperative repair. Older completed routes retain their quest progress.
+**Narrative owner:** [MQ02 script](CH01_MQ02.md).
 
-**Implemented handoff:** After MQ02's acknowledged homecoming and cup-setting,
-[Iselin's arrival](../../REGENT_ARRIVAL.md) shows her expected relief visit before
-Caelan meets the visitors in MQ03. The cinematic preserves the mill repair and
-rewards and does not itself accept MQ03.
-
-**Emotional result:** Mira and Caelen succeed through complementary strengths rather than one worldview defeating the other.
+**Emotional result:** Mira and Caelan succeed through complementary strengths rather than one worldview defeating the other.
 
 ### MQ03 — The Regent's Road
-
-**Premise:** Iselin reaches Eldenmere during a relief journey after unusual
-lightning has damaged several communities. Repair demand is real, but she has
-already secretly sent a Crown crew to establish authority over the Sanctuary
-and prepare mining. Caelan welcomes the visitors and accompanies them to a meal
-at Serene's home. The discussion of the Sanctuary's duty to guide the region's
-dead is interrupted by a survivor whose crew was attacked from the cave.
 
 **Purpose:** Build familiarity with Iselin and Lucan before revealing Iselin's
 breach of trust. Make Serene's protection of the Sanctuary an active societal
 responsibility. Give Caelan agency in the emergency and bring Mira into an
 outing that uses her existing engineering skills and equipment.
 
-**Implemented continuation:** The [revised MQ03 script](CH01_MQ03.md) preserves
-the greeting and meal, then introduces the growling report, survivor's entrance,
-exposure of the secret deployment, departure, Mira's rejoining and ordinary
-travel to the Sanctuary. Lucan is surprised by the secrecy and turns to the
-people still in danger. Serene remains to care for the survivor with Tomas and
-the driver helping. The five travelers are Iselin, Lucan, the page, Caelan and
-Mira. The page occupies the former clerk role; no prior complicity is assigned.
-
-The route continues through the Sanctuary arrival, cave rescue and Vespermaw
-fight. Lucan joins Caelan and Mira as a temporary cave guest. After evacuation
-to the healing pool, the party reports to Iselin and returns home for the
-reunion, accountability and relief arrangements. The acknowledged private
-family exchange completes MQ03 and unlocks MQ04. The earlier immediate
-private-aftermath completion is superseded for new journeys. Existing completed
-MQ03/MQ04 journeys retain their progress without inventing an attack report,
-new trip or party membership.
+**Narrative owner:** [MQ03 script](CH01_MQ03.md).
 
 **Emotional result:** Caelan has reason to value Iselin's achievements and to
 recognize her deception. Lucan's independent reaction begins separating his
@@ -135,24 +72,9 @@ the rescue; permanent recruitment remains future work.
 
 ### MQ04 — A Light of His Own
 
-**Premise:** On the day before the festival, Caelan and Tomas help eight-year-old Liam make his first lantern of his own. Liam has attended earlier festivals; this year he is learning their meaning consciously and taking responsibility for his own contribution. Caelan, 18, and Tomas, 14, already know the annual tradition.
-
 **Purpose:** Let the player learn through a child’s genuine curiosity, ordinary village preparations and substantial character scenes. Caelan’s involvement follows his household responsibilities, family relationships and an outing explicitly agreed with Liam’s mother, the village teacher.
 
-**Approved four-PR implementation sequence:**
-
-1. School preparation session, Liam’s ambitious tower drawing, agreed outing and Mira’s workshop. End with a finished unlit frame and MQ04 still active.
-2. A few substantial village preparation encounters and a remembrance scene with Elira, building on the lantern already retrieved in MQ01.
-3. A domestic break, craft frustration, quieter brother conversation and Liam’s questions about faith with Serene.
-4. Liam chooses his purpose, finishes the lantern and explains it to his mother. Complete MQ04 and prepare the festival handoff.
-
-**PR1 staging:** The same teacher and six children attend a special school preparation session; no general attendance schedule is established. Mira collaborates with Liam to preserve his tower design while solving practical balance, weight and ventilation problems. Tomas contributes ideas and Caelan learns to assist when asked. See the [PR1 implementation script](CH01_MQ04.md).
-
-**PR2 staging:** Liam’s frame and drawing stay with Mira while Caelan and Tomas accompany him along the village preparation route: Halden’s working mill, the Venn family’s cottage and Elira’s cottage. Shared food tables and homebound portions show ordinary cooperation. The recovering Venn child chooses decoration colors while a parent handles the ties; tomorrow’s attendance remains uncertain. Elira’s remembrance builds on the same lantern retrieved in MQ01 and a specific memory of her husband’s poor singing. The farewell and outside reflection leave MQ04 active with its first four objectives complete. See the [PR2 implementation script](CH01_MQ04_PR2.md).
-
-**PR3 staging:** Collect the frame and drawing explicitly from Mira, then return to Liam’s home for food, rest and a loose paper-panel trial. His father hosts while his mother remains at the school; the existing Daisy keeps her independent household behavior. A quiet brother exchange grows from Tomas’s offer to carry Elira’s lantern. Liam’s questions lead to Serene, who explains planetary aether return and remembrance without exposing hidden ancient history or settling consciousness. The frame and papers stay at home, unlit and unfinished. MQ04 remains active with its first six objectives complete. See the [PR3 implementation script](CH01_MQ04_PR3.md).
-
-**PR4 staging:** Return from Serene’s hall to Liam’s home, where his father has kept the materials safe. Liam chooses to carry his lantern for someone without anybody there to carry a light for them. Use his larger practice stairs and window to finish the same unlit tower, with adult help fastening the covering. After its careful lift and inspection, take only the lantern to his mother at the actual school. Liam explains the workmanship before his personal purpose. His mother remains to finish school work while the three return home and safely put the lantern away. The acknowledged farewell completes MQ04; Liam stays home, Tomas returns to preparations at Serene’s home and MQ05 does not begin automatically. See the [PR4 implementation script](CH01_MQ04_PR4.md).
+**Narrative owner:** [MQ04 script](CH01_MQ04.md). The single script contains all four preparation segments; its final farewell completes MQ04 on the preparation day.
 
 **Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. Carrying his lantern for someone without anybody there is his personal intention, not a newly established universal custom or religious rule. His finished lantern keeps the chosen tower shape and an imperfect step. All four preparation segments now conclude within MQ04; tomorrow’s festival remains separate.
 
@@ -182,41 +104,29 @@ These are **ideas**, not commitments to quest count, rewards, or plot canon. Opt
 
 ## Closing beat — the authorization letter
 
-After the festival, Caelen helps Serene finish the evening work at home. A messenger brings word that the government has **formally authorized excavation** at Elden Vale Sanctuary, escalating the dispute.
+After the festival, Caelan helps Serene finish the evening work at home. A messenger brings word that the government has **formally authorized excavation** at Elden Vale Sanctuary, escalating the dispute.
 
 Serene is shaken but shares only that the conflict with the regent is becoming more serious. Alone, she retrieves and examines an inherited warning about disturbances beneath the mountains. **The player does not read the full warning.** The chapter closes with uncertainty, not an immediate disaster.
 
 Her precise knowledge is limited: she does not know the cosmic catastrophe, the Great Sacrifice's full truth, or the identities of the four survivors.
 
-## Character introductions — approved facts and open biography
+## Character introductions
 
-- **Caelen (Caelan):** **18 years old** at the game opening; Tomas's older biological brother. Helps Serene with household and community service; acolyte/record keeper remains a working role. Service-oriented and trusting, but observant. Give him agency beyond carrying documents.
-- **Serene:** Loving guardian and community caretaker; sincere faith and a plausible reason for preserving limited warnings.
-- **Mira:** Childhood friend and mechanically curious engineer; believes responsible development can improve lives.
-- **Tomas:** **14 years old** at the game opening; Caelan's younger biological brother, restless and inventive; an autonomous person, not simply a future tragedy.
-- **Iselin:** Respected ruler who has tangibly helped the region; MQ03 exposes her deliberate secret deployment and deceptive negotiation. Her achievements do not erase that choice, and the choice does not make her earlier relief work fictitious.
-- **Lucan:** Iselin's personal guard, initially unaware of the advance crew. He is taken aback by the secrecy and joins the cave rescue as a temporary guest; permanent recruitment remains future work.
-
-Caelan's age of **18** and Tomas's age of **14** are approved canon; see
-[approved character facts](CHARACTERS.md). Other ages and biography details
-remain **working proposals pending character approval** unless separately approved.
-The 2026-11-04 family clarification establishes their shared parentage, lifelong
-home in Eldenmere and care by Serene because their parents are missing.
-[Caelan's sheet](characters/CAELAN.md) distinguishes the parents' actual survival
-from the brothers' likely belief that they are dead; the reveal is not staged here.
-The later [companion index and sheets](CHARACTERS.md#eventual-party-members) approve Lucan, Rhea and Edran
-and their introduction windows; their exact recruitment quests remain open.
+The [cast index](CHARACTERS.md) and individual character sheets own biographies,
+ages at opening, relationships, and knowledge boundaries. This chapter's quest
+scripts own their authored introductions. Companion introduction windows do not
+approve an entire later-act plot or exact recruitment quest.
 
 ## Chapter pacing and prerequisites
 
-- **Mandatory spine:** MQ01 → MQ02 → MQ03, including the Sanctuary emergency → MQ04 preparations → MQ05 festival → closing scene. The current new MQ03 implementation stops at Sanctuary arrival; its remaining scenes and eventual handoff must be finished before that route unlocks MQ04. Existing completed journeys preserve their later quest progress. MQ04 remains on the preparation day and MQ05 on the next day unless explicitly revised.
+- **Mandatory spine:** MQ01 → MQ02 → MQ03, including the Sanctuary emergency → MQ04 preparations → MQ05 festival → closing scene. The acknowledged post-rescue family exchange completes MQ03 and unlocks MQ04; arrival alone does not complete it. Existing completed journeys preserve their later quest progress. MQ04 remains on the preparation day and MQ05 on the next day unless explicitly revised.
 - **Optional activities:** Become available naturally as the village opens up; ideally remain available through the festival where continuity permits.
 - **Player agency:** Free exploration and low-pressure activities between main sequences; avoid long mandatory exposition.
 - **No catastrophe in Chapter 1:** First a meaningful ordinary life, then Chapter 2 warnings and exploration, then Chapter 3 disaster and departure.
 
 ## Exit conditions and continuity checks
 
-Players should understand why Caelen loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelen without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
+Players should understand why Caelan loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelan without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
 
 Mechanisms and magicks must obey conservation of aether. Planetary-return teaching does not reveal hidden ancient history or settle personal consciousness after death. The Aethersphere's protective purpose and ancient origin, and the four surviving Ancients, remain hidden. Preserve the separate regional ending promised by the saga documents.
 

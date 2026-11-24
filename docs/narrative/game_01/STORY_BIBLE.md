@@ -42,7 +42,7 @@ owns the applicable biography, characterization and open decisions.
 
 ## Approved opening frame and later reprise
 
-**Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
+**Approved opening frame:** New Game's [cinematic flashforward](../scenes/OPENING_CINEMATIC.md)
 shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
 then returns to the Eldenmere morning. The current intended location for the
 eventual reprise is the threshold between Acts IV and V. This approves the

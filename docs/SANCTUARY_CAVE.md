@@ -181,9 +181,9 @@ while KO Caelan defers only the post-Spoils installation dialogue. See the
 [elemental encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md).
 See the [live encounter review](reviews/mira_rig_continuity/README.md).
 
-The [arrival cutscene](SANCTUARY_ARRIVAL.md) is implemented. Further combat
-tuning, the missing worker's rescue payoff and post-boss resolution remain
-later work. The cave does not establish the
+The [MQ03 narrative owner](narrative/game_01/CH01_MQ03.md) records the implemented
+arrival, missing-worker rescue, healing-pool evacuation, and post-boss resolution.
+Future combat tuning does not leave those story scenes unfinished. The cave does not establish the
 confluence's detailed workings, identify the original sacrificial temple or
 merge this location with the historically sealed workers' passage.
 
