@@ -20,7 +20,8 @@ method, then follow the sources relevant to the assignment.
 | World geography and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
 | Protected-ground terms, public records, permitted use and joint authorization | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
-| Authored Ice Reaper scene study and its placement limits | [Ice Reaper pre-boss scene](scenes/ICE_REAPER_PRE_BOSS.md) |
+| Authored standalone cinematics, dialogue, choreography and placement limits | [Opening flashforward](scenes/OPENING_CINEMATIC.md), [Iselin's arrival](scenes/REGENT_ARRIVAL.md), and [Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
+| Detailed opening quest scripts | [MQ01](game_01/CH01_MQ01.md), [MQ02](game_01/CH01_MQ02.md), [MQ03](game_01/CH01_MQ03.md), and [complete MQ04](game_01/CH01_MQ04.md) |
 
 Use the owner for a fact rather than maintaining another full copy in a related
 guide. Brief context and a source link are appropriate. A regional guide can
@@ -59,6 +60,15 @@ historical validation. They are evidence, not competing present-day canon.
 Preserve their recorded content and status; update navigation links when a
 source moves rather than rewriting a historical transcript to match new lore.
 
+## Later story approvals
+
+The 2026-11-24 author-approved parallel journey, playable exile, conscious
+ice-stasis transformation, planetary-core interval and Rhea's absence are
+recorded in the [shared chronology](game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+and its linked character, lore and revelation owners. These are future story
+direction, not implemented scenes. Unchosen causes, names and outcomes remain
+open; suggestions made during discussion are not automatically canon.
+
 ## Consolidation record
 
 The 2026-11-24 organization combines the former top-level foundational lore and
@@ -74,3 +84,9 @@ voice examples, art references and supporting household facts remain in the cast
 index. The workshop-bot intention belongs to Mira's departure section, and the
 Ice Reaper study belongs to its scene owner. These moves preserve approval and
 knowledge boundaries and introduce no new story facts.
+
+The four MQ04 script installments now form one document with part anchors and
+their original local scene numbers. Dedicated opening and arrival specifications
+live in `scenes/`. Runtime guides retain technical ownership/save/presentation
+contracts and refer to quest scripts for narrative. The separately recorded
+later-story approvals above are additions after the structural migration.

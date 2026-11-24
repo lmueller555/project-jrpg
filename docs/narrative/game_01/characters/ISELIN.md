@@ -25,6 +25,13 @@ The first half to roughly two-thirds of the intended adventure accompanies
 Iselin northward through several affected regions. Landscapes, settlements,
 intermediate incidents and the precise itinerary still need development.
 
+### Return and parallel antiwar story
+
+She eventually leaves the company's journey and returns to her kingdom to try
+to prevent war with an enemy nation. Main-party travel continues with occasional
+Iselin cutaways. The departure's timing, immediate trigger and diplomatic scenes
+remain open; follow the shared chronology rather than inventing a second order.
+
 ## Existing ice magick
 
 Growing up in the cold north, Iselin developed proficiency with ice magick and
@@ -51,15 +58,54 @@ quest trackers, Gallery labels or casual NPC exposition.
 ## Eventual Ice Reaper arc — author knowledge
 
 The long shared journey must give the party and player reasons to care about
-her before her fall. Fear and desperation to save her people eventually drive
-her to enclose her kingdom in a vast dome of ice, believing she is protecting
-it from the coming calamity. She is seen as a traitor and exiled. That rejection
-is the final breaking point in her descent into the Ice Reaper, an established
-late-game boss identity.
+her before her fall. Her fear and protective intent lead to the kingdom-sized
+ice dome, accusation of treachery and exile. The shared sequence and surface
+interval are recorded in the [Game I chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology).
+Exile begins the final sequence; her transformation occurs afterward in the cave.
 
-The route, escalating choices, source of any later amplification, catastrophe
-mechanism and exact scenes remain unwritten. No new pact, relic, ancient entity,
-capital name or irreversible moral explanation is chosen by this replacement.
+### Recurring stasis and dome symbolism
+
+**Established direction, 2026-11-24:** Iselin repeatedly uses ice magick to trap
+dangerous enemies in stasis during the story. This recurring action prepares
+the symbolism of the enclosing dome and her eventual self-imprisonment. Her
+attempts to hold threats and loss at bay culminate in preserving her own body
+and restricting her ability to harm the kingdom. Specific earlier encounters,
+release rules, and whether all other stasis subjects remain conscious are open.
+
+### Playable exile and conscious confinement
+
+**Established direction, 2026-11-24; not implemented:** After her exile, control
+passes to Iselin for a substantial emotional roleplaying sequence.
+
+1. Royal troops pursue her out of the kingdom. Across successive battle
+   backgrounds, the kingdom recedes into the distance, making her separation
+   visible. The troops' orders and precise route remain to be written.
+2. In the mountain foothills she encounters local wildlife and kills animals
+   to survive as her desperation increases.
+3. During the ascent she encounters hikers who ridicule her as a branded
+   traitor. The player can attempt lethal actions, but Iselin initially refuses.
+   Several encounters develop this boundary until she loses her resolve and
+   no longer refuses to kill them. Exact commands, nonlethal progress,
+   encounter scripts, and handling players who never attempt killing remain
+   design work; no additional moral branch is promised by this outline.
+4. Near the summit she finds an ice-aspected cave and defeats its resident
+   yeti, exhausting her strength. Desperate and starving, she encases herself
+   in ice to preserve her life and keep the kingdom safe from her wrath.
+
+Her body is preserved, but she remains conscious throughout the approximate
+three-year confinement fixed by the shared chronology. She broods over the
+exile and develops resentment and hatred. Absorbing the cave's ice-aspected
+aether transforms her into the Ice Reaper while she is encased. Upon emerging,
+she is resolved to bury those she once swore to save, the intention reflected
+in her battle theme. The cave supplies the amplification; no new pact, relic or
+ancient patron is established. Physical transformation and her developing
+intentions remain distinct parts of the arc.
+
+The precise presentation, duration as she perceives it, physiological rules,
+spell costs, quantities of absorbed aether, cause of release and events after
+emergence remain open. The approved intent does not settle the boss outcome or
+implement these sequences. Her initial decision to restrain herself remains
+part of her history after transformation.
 
 ## Relationships and continuation
 
