@@ -1,9 +1,27 @@
-# Game I — approved character facts
+# Game I — cast index and supporting households
 
-**Status:** CANON for the facts listed below. Ages are measured at the beginning
-of Game I. The opening household ages were approved on 2026-10-25; the companion
-foundations below were approved on 2026-10-30.
-Mira's age, upbringing with Halden and workshop timeline were approved on 2026-11-03.
+**Status:** Approved facts retain their original approval scope. Opening
+household ages were approved on 2026-10-25; companion foundations on
+2026-10-30; Mira's age and timeline on 2026-11-03; the brothers' family
+clarification on 2026-11-04. Hypothetical references and open decisions retain
+the statuses in their owners.
+
+Detailed biographies, growth and individual voice guidance live in character
+sheets. This index owns supporting households, shared party guidance and the
+common approved-art references. Ages are measured at the opening of Game I.
+
+## Cast and profile owners
+
+| Character | Profile owner |
+| --- | --- |
+| Caelan | [Protagonist sheet](characters/CAELAN.md) |
+| Mira | [Engineer sheet](characters/MIRA.md) |
+| Regent Iselin | [Royal background, mission and future arc](characters/ISELIN.md) |
+| Lucan Rooke | [Armsmaster sheet](characters/LUCAN.md) |
+| Rhea Sorel | [Aethermage and naturalist foundation](characters/RHEA.md) |
+| Edran Hale | [Sage and healer foundation](characters/EDRAN.md) |
+
+## Opening household ages and everyday life
 
 | Character | Age at game opening | Relationship |
 | --- | --- | --- |
@@ -15,8 +33,8 @@ Mira's age, upbringing with Halden and workshop timeline were approved on 2026-1
 | Liam's father | Mid-30s | Liam's father; name unassigned |
 
 Caelan and Tomas are four years apart. These ages guide future dialogue,
-characterization and character design. Liam and his parents are a newly
-requested NPC family; their surname and quest association are unassigned.
+characterization and character design. Liam and his parents are an approved NPC family; their surname remains
+unassigned. MQ04 uses this existing family.
 Their home is the new wide cottage in western Eldenmere, directly south of
 Serene’s home. His parents remain stationary home residents during ordinary life. MQ04
 borrows his mother for the school preparation session and its dialogue. Liam and Daisy share an ambient invitation, chase and nap
@@ -39,200 +57,102 @@ relationships and scene context.
 
 ## Caelan - protagonist foundation
 
-**Confirmed, 2026-11-04:** Caelan is reserved, thoughtful and self-doubting.
-Before the crisis, he wants to develop his magicks and find a vocation of his own.
-
-**Profile notes approved, 2026-11-04:** His
-[character sheet](characters/CAELAN.md) gathers the established opening facts,
-approved characterization and growth direction, ten dialogue references and
-five nonverbal portrayal references. Their hypothetical scene events,
-unassigned biography details and exact later outcomes remain open.
-
-His [combat progression concept](characters/CAELAN.md#combat-progression-concept),
-recorded on 2026-11-07, centers on more elemental gems and blade gears, elemental
-combinations, and a five-Caelan-turn ultimate with independently charging swords.
-Unlock methods and each sword's behavior remain open.
+[Caelan's sheet](characters/CAELAN.md) owns his approved personality, magical
+ambition, vocation, portrayal and voice references, progression concept, and
+[starting gameplay attributes](characters/CAELAN.md#caelans-starting-gameplay-attributes).
+Hypothetical portrayal scenes do not become game events through profile approval.
 
 ### Caelan and Tomas - shared family background
 
-**Confirmed, 2026-11-04:** The brothers share the same parents. Both were born
-in Eldenmere and have lived there their whole lives. Their parents have been
-missing for years, and Serene cares for them because of that absence.
-
-**Author-only truth:** Their parents are alive at the game opening. The
-brothers do not know this; although they do not talk about it, they probably
-think their parents are dead by now.
-
-**Early responsibility, confirmed 2026-11-04:** Caelan had to quickly learn
-how to care for Tomas while still young and immature himself. Part of his
-self-doubt comes from feeling he must act composed and have the answers for
-his brother even when he does not know what the right answers are. Serene
-remains their caregiver; this does not make Caelan Tomas's sole parent.
-
-The disappearance's cause, exact timeline and circumstances, the parents'
-whereabouts, what Serene knows, and the survival reveal remain open.
-[Caelan's sheet](characters/CAELAN.md) keeps author knowledge separate from
-character belief; no new dialogue reveals this information in the current game.
+The [family foundation](characters/CAELAN.md#family-background-and-missing-parents)
+owns their shared parentage, lifelong home, missing parents, author-only
+survival truth, likely private beliefs and premature responsibility. Exact
+circumstances and reveal remain open. Serene remains their caregiver.
 
 ### Caelan and Mira - shared childhood bond
 
-**Confirmed, 2026-11-04:** Both grew up without their parents, and this shared
-sense of loss is a mostly unspoken part of their existing bond at the opening.
-Mira's parents died when she was 12; Caelan's are missing and he probably
-thinks them dead. Their connection does not establish that Mira knows the
-author-only truth that his parents are alive.
-
-They already share several childhood memories by the start of the game.
-The player will learn about these later, as their shared past is explored
-throughout the game. Specific memories, their chronology and their reveal
-format and timing remain open. No particular childhood event, simultaneous
-loss, shared household, romance or implemented flashback is established here.
-Both [Caelan's sheet](characters/CAELAN.md) and
-[Mira's sheet](characters/MIRA.md) record this shared foundation.
+The [shared bond](characters/CAELAN.md#shared-childhood-bond-with-mira) and
+[Mira's perspective](characters/MIRA.md#shared-childhood-bond-with-caelan)
+record the approved loss-shaped friendship and existing childhood memories.
+Specific memories and their presentation remain open; no romance, shared
+household or particular childhood event is established by this index.
 
 ## Eventual party members
 
-The approved [companion guide](COMPANIONS.md) links detailed character profiles
-and records the shared companion foundations and intended combat roles.
-[Lucan's character sheet](characters/LUCAN.md) is the first dictionary-style
-profile, with ten dialogue/expression references and explicit established,
-proposed and open entries. [Mira's sheet](characters/MIRA.md) applies the same
-design to her early parental loss, repair work and personal development.
-Both sheets also contain five hypothetical Show, Don't Tell scenarios for
-review. These nonverbal portrayal proposals do not establish new game events.
-The [sheet template](characters/TEMPLATE.md)
-provides the structure for subsequent characters. Rhea and Edran's full
-foundations remain in the companion guide.
+**Approved:** 2026-10-30. Lucan's personal-guard/recruitment premise was revised
+on 2026-11-03 and his Armsmaster combat role on 2026-11-07. Detailed foundations
+live in the linked sheets; [Game I structure](STORY_BIBLE.md) owns the approved
+introduction windows. All three come from Merovar, preserving the game's
+regional scope; their home regions do not require visits.
 
 | Character | Age at opening | Home region | Role and introduction |
 | --- | --- | --- | --- |
-| Lucan Rooke | 24 | Redstone March | Confident, arrogant Armsmaster and Iselin's personal guard; growing arsenal of weapons and shields; Act I |
-| Rhea Sorel | 22 | Wooded western Greyfold slopes | Upbeat, carefree Aethermage and field naturalist; sometimes chaotic offensive magicks; early Act II |
-| Edran Hale | 46 | Lower Leth | Reserved, wise Sage; healing, defense, support and enemy debuffs; end of Act II |
+| [Lucan Rooke](characters/LUCAN.md) | 24 | Redstone March | Armsmaster; Iselin's personal guard; Act I |
+| [Rhea Sorel](characters/RHEA.md) | 22 | Wooded western Greyfold slopes | Aethermage; field naturalist; early Act II |
+| [Edran Hale](characters/EDRAN.md) | 46 | Lower Leth | Sage; healer and support caster; end of Act II |
 
-Rhea's approved background is the study of aether in nature, following basic
-local instruction. She and Edran are major sources of lore during travel:
-her environmental observations complement his experience with healing,
-injuries and protective workings. Both learn from evidence and can be wrong.
+The [template](characters/TEMPLATE.md) defines status-aware profile structure.
+Lucan's new voice/nonverbal interpretations remain proposed; Mira's approved
+characterization and dialogue references are distinct from her five proposed
+nonverbal scenes. Caelan's hypothetical voice and portrayal references retain
+their approval boundaries in his sheet.
 
-Their approved front idle, combat-ready and cinematic standing sprites are
-linked in the [companion guide](COMPANIONS.md#approved-base-sprite-designs).
-Their [four-frame front walks](../../reviews/companion_front_walks/README.md)
-are also approved.
-All [four directional idle views](../../reviews/companion_directional_idles/README.md)
-are approved for each companion.
-Their [four-direction walking sets](../../reviews/companion_directional_walks/README.md)
-are also approved.
-Recruitment quests, action animations, battle abilities, numeric builds and
-progression unlocks require later implementation.
+## Approved base sprite designs
+
+All three characters have approved front overworld idles, left-facing combat
+stances and larger cinematic standing poses. Their native canvases are 24×36,
+64×64 and 96×112 pixels respectively. See the
+[sprite comparison and scene-scale boards](../../reviews/companion_sprites/README.md).
+
+| Character | Approved appearance | Asset guide |
+| --- | --- | --- |
+| Lucan | Dark swept hair, polished steel armor, oxblood cloth and gold trim; sword and shield | [Lucan sprites](../../../assets/characters/lucan/README.md) |
+| Rhea | Blonde hair, blue eyes, fitted green dress with a thigh slit, brown boots and a notebook pouch; purple tanglewood staff topped with a glowing green orb | [Rhea sprites](../../../assets/characters/rhea/README.md) |
+| Edran | Salt-and-pepper hair and short beard, long sky-blue robe with a high collar and capelet, silver trim and sash, gray boots and healer pouch; ashwood crook with silver fittings | [Edran sprites](../../../assets/characters/edran/README.md) |
+
+The approved Edran design uses the sky-blue and silver revision. These are
+static base poses for future animations and scenes.
+
+All three [front-walk cycles](../../reviews/companion_front_walks/README.md)
+are also approved. Each has four 24×36 frames at 140 ms per frame, matching
+Caelan's walking cadence. The retained sources, shared palettes and fixed
+registration are reproducible through the companion front-walk exporter.
+Their [left, right and rear idles](../../reviews/companion_directional_idles/README.md)
+are approved as well, completing the four-direction standing references.
+All [four walking directions](../../reviews/companion_directional_walks/README.md)
+are approved for each character, with four-frame cycles at the same cadence.
+Running and action animations remain future work.
 
 ## Iselin — approved royal background
 
-Iselin replaces the former regent character throughout current canon. She holds
-that same title and established role: a royal regional regent, the younger sister
-of the reigning queen, and Lucan Rooke's employer. Royal birth does not make her
-the reigning monarch. Her immediate relief responsibilities still include Elden
-Vale and nearby upper-Leth road and quarry districts.
-
-Her kingdom lies in northern Merovar, in a very cold climate, enclosed by
-mountains to the east, west and north, with its only approach from the south.
-The capital is the party's intended long-term northern destination. The kingdom,
-capital, dynasty, queen's name, exact age and succession details remain unnamed
-or unresolved. The earlier assumption that a single Crown rules all Merovar is
-superseded; Merovar is the wider continent containing her northern kingdom.
-
-Growing up in that climate, she already became proficient with ice magick and
-is a prodigy. Recent royal duties have given her little occasion to exercise
-that talent. Her later story concerns the growth and misuse of an existing
-ability, not first acquiring ice magick from nothing.
-
-Lucan is her personal guard. MQ03 establishes his professional loyalty, practical
-advice and surprise at the concealed advance crew. He accompanies the cave
-mission as a temporary combat guest; later permanent recruitment remains a
-separate story decision. The page retains the established clerk role and has
-no newly assigned biography or prior knowledge of the operation.
-
-The [Iselin character guide](characters/ISELIN.md) records the approved covert
-mission, northward journey and eventual Ice Reaper arc. Those author-facing
-facts are not automatically information available to opening-scene characters.
-
-### Ruling-family development — proposals, not canon
-
-The previously discussed House Maroven, Queen Isolde, Dowager Helena and Prince
-Oren remain unapproved proposals, now associated with Iselin rather than her
-predecessor. If developed, her relationship to the prince would be aunt rather
-than uncle. No dynasty name, queen's personal name, heir or inheritance rule is
-established by this migration. Proposed themes of service, responsibility and
-wanting achievement to justify royal standing remain usable development notes.
-Her covert Crown investigation, however, is approved separately and must not be
-excluded by the older "no hidden cosmic motive" proposal boundary.
+[Iselin's sheet](characters/ISELIN.md) owns her title, family relationship,
+northern kingdom, existing ice proficiency, covert investigation, northward
+journey, future Ice Reaper identity and unapproved ruling-family proposals.
+Opening characters do not automatically know these author-facing facts.
 
 ## Iselin and Serene — relief needs and the Sanctuary breach of trust
 
-The [regional surge context](REGIONAL_SURGES.md) and
-[covenant guide](../world/SANCTUARY_COVENANT.md) govern the revised MQ03
-conflict. The guidance-of-the-dead role and concealed deployment supersede
-the older mutually sincere negotiation and limited-inspection compromise.
+The [regional surge context](REGIONAL_SURGES.md),
+[covenant](../world/SANCTUARY_COVENANT.md), and [MQ03](CH01_MQ03.md)
+own this sequence and its knowledge boundaries. Their approved concealed-crew
+conflict supersedes the old mutually sincere negotiation/limited-inspection
+compromise. Sincere aid does not resolve Iselin's breach of trust.
 
-Iselin's relief work and the shortages are real. Before speaking with Serene,
-she has nevertheless sent a Crown crew to establish control of the protected
-area and prepare mining. The panicked survivor's report of the cave attack
-reveals that action. Iselin sought her agreement while concealing an operation
-already set in motion; urgency does not erase the deception.
-
-Serene holds the ground in keeping for the region. The Sanctuary was built
-near the natural confluence to guide the region's dead back to the planet and
-remember them. Mining would disrupt that critical service. Caretakers have
-heard growling from the cave since the bridge incident. Its cause, the
-creature's identity and any connection to mining remain unknown.
-
-Serene recognizes Iselin's bad faith and then tends the injured survivor,
-with Tomas and the driver helping. Caelan volunteers and collects Mira from
-her workshop. Mira joins with her worn engineering arm rig.
-Iselin, Lucan, the page, Caelan and Mira make the emergency journey. The page's
-prior knowledge of the operation remains unspecified. Lucan was unaware and
-is taken aback before turning to the people left in danger.
-
-Serene's [planetary tradition](../world/ELDEN_VALE_FAITH.md) does not center
-gods. The confluence belongs to the planetary cycle, separate from the
-Aethersphere; the guidance mechanism and buried works' purpose remain open.
-The grove does not assign individual souls to trees. The public foundation
-plan and historical passage-injury account remain background evidence; her
-inherited private warning keeps its later disclosure limits.
-
-Caelan begins as a guide and host, then chooses to help the endangered crew.
-He gains no authority to grant a quarry, settle the covenant or command Crown
-policy. The implemented Sanctuary arrival, cave rescue, Vespermaw fight and
-healing-pool evacuation lead into the return resolution at home. The final
-acknowledged family exchange completes MQ03 and unlocks MQ04; the old immediate
-lantern handoff does not finish new journeys.
+Serene's [planetary tradition](../world/ELDEN_VALE_FAITH.md) owns the local
+beliefs and public foundation/historical passage evidence, while the
+[Revelation Plan](../saga/REVELATION_PLAN.md) limits her private warning and
+other disclosures. The implemented arrival, cave rescue and return resolution
+are part of MQ03; the final acknowledged family exchange unlocks MQ04.
 
 ## Mira's millrace outing
 
-Mira is Caelan's childhood friend and a capable **Engineer**.
+[Mira's sheet](characters/MIRA.md) owns her approved age, parental loss,
+upbringing with Halden, workshop, characterization and Engineer progression.
+Engineer supersedes Machinist. Her [rig guide](../../MIRA_RIG_COMBAT.md)
+owns combat rules; [MQ02](CH01_MQ02.md) owns the outing. Hypothetical scene
+approvals do not add gameplay, dialogue or artwork.
 
-**Combat direction, 2026-11-07:** Engineer supersedes her earlier Machinist
-designation. Her [future progression notes](characters/MIRA.md#combat-progression-concept)
-cover additional bots, configurable engineered self-augments and a five-turn
-piloted-mech ultimate concept. Detailed mechanics and unlocks remain open.
-
-**Approved background revision, 2026-11-03:** Mira is 18 at the opening. She lost
-both parents at 12, and Halden took her in. Working with him on the mill gave
-her proficiency as a mechanic; she immersed herself in it to bury the loss.
-Recognizing her unresolved grief, Halden encouraged her to open her workshop at
-17. She now finds purpose in maintaining Eldenmere's infrastructure but still
-does not know how to mend the brokenness she feels in her heart.
-
-This describes her relationship to grief, not a declaration that she is
-defective. Her parents' identities and death circumstances, formal caregiving
-arrangements, and workshop property and funding details remain open.
-
-**Profile approval, 2026-11-03:** Her detailed characterization, emotional
-interpretations, writing guidance and ten dialogue references are approved.
-Hypothetical scene events, disclosure timing and her exact ending remain open.
-
-The [bot guide](../../MIRA_RIG_COMBAT.md) remains authoritative for combat rules.
-No game dialogue, mechanics or artwork changes accompany this biography revision.
+## Village adults and school
 
 Liam's mother is Eldenmere's schoolteacher, as established by the author on
 2026-10-25. The school is a separate public building northeast of the well square,
@@ -262,36 +182,59 @@ preparation session provides quest-scoped attendance.
 
 ## Festival preparation session
 
-In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning remains open until later quest segments.
+In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning is not chosen in that opening segment; the
+[conclusion](CH01_MQ04_PR4.md) records his later personal intention.
 
-## Caelan's starting gameplay attributes
+## Rhea and Edran as sources of lore
 
-The approved attribute set is **HP, MP, Str, Mag, Spr, Def, M. Def, Speed, Acc,
-Eva and Lck**. Mag increases damaging-spell power; Spr increases healing-spell
-power. Caelan's approved job identity is **Spellblade**, beginning as a balanced all-rounder:
+Rhea and Edran are major ongoing sources of lore during the group's travels.
+Their expertise gives them different ways to interpret the same place.
 
-| HP | MP | Str | Mag | Spr | Def | M. Def | Speed | Acc | Eva | Lck |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 140 | 30 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |
+| Rhea's observations | Edran's observations |
+| --- | --- |
+| Aether patterns across landscapes, habitats and local casting conditions | Exhaustion, injuries, disrupted healing and changes in familiar protective workings |
+| Differences between sites and exciting new explanations | Patterns across cases and the limits of a diagnosis |
 
-HP and MP are maximum values; current resources start full. The remaining
-numbers are ratings, including Acc, Eva and Lck, rather than percentages.
-Starting numbers are a tunable gameplay baseline. His Spellblade identity
-develops through learned weapon techniques and magicks; these numbers do not
-change his established magical limitations. Aether Edge is his only learned
-first-weapon starter skill, without permanent elemental coverage. He begins
-unarmed. Mira presents his first gear-and-gem blade at the start of MQ02, before
-the outing. The gift contains only the Blue Water gem. His first Aqua Edge
-attempt fails, but inadvertently releases and teaches Aether Edge in the same
-attempt. The first Sanctuary cave encounter later teaches Aqua Edge. It costs
-0 MP throughout that introductory battle and normally 4 MP after it clears.
-Optional level-four Embravyr and Nivareth crystallize the Red/Fire and White/Ice
-focuses and teach Flame Edge and Ice Edge in either order. Learned elemental
-Edges cost 0 MP throughout those two teaching fights, then return to 4 MP in
-normal encounters. These unlocks retain one gear and one selected focus. The
-[character ability dictionaries](../../CHARACTER_ABILITIES.md) record his
-unlock rules and the other party members' profiles.
-The values are visible through **Pause → Characters**, with attribute icons and
-hover explanations. Weapon discovery retains its authored story rules. See
-[character attributes](../../CHARACTER_ATTRIBUTES.md) for the definitions,
-runtime integration and save compatibility.
+Begin these exchanges with something the group can see, touch or experience.
+Let Caelan and the others ask reasonable questions, contribute observations
+and act on what they learn. Rhea and Edran compare evidence, disagree and revise
+their explanations together. Each should sometimes recognize something the
+other overlooked.
+
+This exchange is a voice reference, not a committed quest script:
+
+> **Rhea:** “Feel this stone. Warm underneath, cold on top.”
+>
+> **Caelan:** “Sun hasn't reached it?”
+>
+> **Rhea:** “That was my first thought. Then I turned it over.”
+>
+> **Edran:** “And checked another?”
+>
+> **Rhea:** “*grins* Three. I knew you'd ask.”
+
+Both begin as modern specialists whose knowledge develops through observation.
+Their interpretations remain fallible. Game I's disclosures must follow the
+[Revelation Plan](../saga/REVELATION_PLAN.md); their expertise does not grant
+them knowledge of the hidden cosmic history or resolve its unanswered questions.
+
+## Party relationships and future work
+
+Lucan wants decisions and an orderly plan. Rhea wants room to observe and
+improvise. Edran wants enough information to judge consequences. Their
+disagreements should develop from these priorities and allow each to contribute.
+Rhea enjoys puncturing Lucan's self-importance; Edran can catch the point where
+her excitement is overtaking her judgment. Caelan gradually learns when to
+listen and when to choose for himself.
+
+These foundations establish three intended combat roles, not a new mandatory
+job system. Caelan retains his approved all-rounder baseline and earned
+magical progression. Mira retains her established skills and relationship
+with him.
+
+Specific settlements, family identities, remaining poses and animations,
+recruitment quest scripts, exact abilities, numeric attributes and progression
+unlocks remain open.
+Later character outcomes and the identity associated with the cinematic's
+bloody helmet remain undecided. Future scenes should preserve the
+[opening cinematic's established limits](../../OPENING_CINEMATIC.md).

@@ -17,7 +17,7 @@ from this earlier profile approval.
 Unless a later scene is identified, this describes her opening characterization.
 
 **Related guides:** [Character index](../CHARACTERS.md),
-[companion guide](../COMPANIONS.md), [millrace script](../CH01_MQ02.md),
+[shared party guidance](../CHARACTERS.md#party-relationships-and-future-work), [millrace script](../CH01_MQ02.md),
 [lantern script](../CH01_MQ04.md), [Mira's art](../../../../assets/characters/mira/README.md).
 
 ## Identity
@@ -149,11 +149,43 @@ and [lantern script](../CH01_MQ04.md).
 
 ### Planned departure beat
 
-The [scenario notes](../SCENARIOS.md) record the established intent for Mira
-to create a workshop-management bot before leaving Eldenmere near or after
-the end of Act I. Sprite work and a series of bot routines belong to future
-development. The format and exact timing remain open; this is not an
-accomplishment already completed at the opening or an implemented game scene.
+**Status:** Established story-beat intent, 2026-11-03; not implemented.
+
+**Placement:** Near or after the end of Act I, when the party is preparing to
+leave Eldenmere. The exact story checkpoint remains open.
+
+**Format:** A cutscene, dialogue sequence or short quest; not yet chosen.
+
+#### Core beat
+
+Before leaving, Mira creates a bot to run her workshop while she is gone.
+The bot carries out a series of workshop-management routines during her
+absence, allowing the workshop to continue operating without her being there.
+
+#### Future development
+
+- Create sprite work for the workshop-management bot and the actions needed
+  by its routines.
+- Design and implement the series of workshop-management routines it executes.
+  The specific tasks and their scope remain open.
+- Develop the construction and handover beat in the chosen scene or quest
+  format. No final dialogue, objectives or choreography have been assigned.
+
+#### Continuity and open decisions
+
+- The bot's name, appearance, capabilities and exact management duties are
+  unassigned.
+- This is an independent workshop helper concept; its identity and duties remain open.
+- The exact departure timing, workshop condition and local needs must be
+  reconciled with the eventual Act I catastrophe and its consequences. These
+  notes do not settle Eldenmere's ultimate condition.
+- Saved progress, behavior when the workshop is off-screen, later visits and
+  what happens when Mira returns remain to be designed.
+
+**Possible character opportunity - proposed:** Delegating the workshop can
+make Mira's attachment to useful work, responsibility toward Eldenmere and
+difficulty leaving visible. It need not imply that she has resolved her grief
+or completed her broader growth before departure.
 
 ## Everyday individuality
 

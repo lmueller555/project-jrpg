@@ -2,7 +2,7 @@
 
 **Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.\
 **Version:** 1.3 (Sanctuary responsibility and MQ03 emergency revision)\
-**Parent:** [Act Outline](ACT_OUTLINE.md) · [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
+**Parent:** [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
 
 ## Approved chapter structure
 
@@ -204,7 +204,7 @@ The 2026-11-04 family clarification establishes their shared parentage, lifelong
 home in Eldenmere and care by Serene because their parents are missing.
 [Caelan's sheet](characters/CAELAN.md) distinguishes the parents' actual survival
 from the brothers' likely belief that they are dead; the reveal is not staged here.
-The later [companion foundations](COMPANIONS.md) approve Lucan, Rhea and Edran
+The later [companion index and sheets](CHARACTERS.md#eventual-party-members) approve Lucan, Rhea and Edran
 and their introduction windows; their exact recruitment quests remain open.
 
 ## Chapter pacing and prerequisites

@@ -368,7 +368,7 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 | Later | Matter creation versus manipulation by magicks | **Explicitly postponed by design** |
 | Later | Persistence of identity/consciousness after death | **Unresolved**, central to soul and resurrection lore |
 | Later | Geography, polities, cities, languages, calendar, religion names | Must follow story needs, not precede them |
-| Later | Additional character biographies and detailed combat builds | Develop from the narrative arc and preserve the [approved companion foundations](../game_01/COMPANIONS.md) |
+| Later | Additional character biographies and detailed combat builds | Develop from the narrative arc and preserve the [approved companion foundations](../game_01/CHARACTERS.md) |
 | Later | Detailed scene-by-scene narrative, ending, gameplay systems | Require subsequent story design |
 | Later | Which secrets each future installment reveals and what earns each reveal | Develop in the [Revelation Plan](REVELATION_PLAN.md) without fixing a saga ending |
 | Later | How deeply faith, industrialization and the politics of modern societies intertwine | Retains an open saga-planning decision |

@@ -260,7 +260,7 @@ same embankment while both care about their home. Let a traveller's mistaken
 expectation meet a specific person rather than a whole population confirming
 the stereotype.
 
-The approved [companion foundations](../game_01/COMPANIONS.md) place
+The approved [companion foundations](../game_01/CHARACTERS.md) place
 Lucan Rooke in the Redstone March, Rhea Sorel on the wooded western Greyfold
 slopes and Edran Hale in the Lower Leth. Specific home settlements remain open.
 Use the atlas to develop future backgrounds as the characters' needs become

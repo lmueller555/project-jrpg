@@ -7,7 +7,7 @@ general instructions.
 
 **Status:** All nine base sprite designs are approved, including Edran’s
 sky-blue and silver revision. Character biographies are approved
-in the [companion guide](../../narrative/game_01/COMPANIONS.md).
+in the [cast index and linked character sheets](../../narrative/game_01/CHARACTERS.md).
 
 [Review Edran’s updated design](edran_sky_blue_review.png).
 [Open the nine-pose comparison](sprite_comparison.png).
