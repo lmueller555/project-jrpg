@@ -9,7 +9,7 @@ the lightning-destroyed western bridge and road damage on both banks. The
 arrival cutscene presents the relief visit. Revised MQ03 continues the
 protected-ground disagreement into the exposure of Iselin's secret advance
 crew and an emergency journey to the Sanctuary. See
-[the arrival guide](../../REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
+[the arrival guide](../scenes/REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
 
 References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
 [MQ03](CH01_MQ03.md), [Elden Vale](../world/regions/ELDEN_VALE.md),
@@ -122,7 +122,7 @@ ridge discussion interrupted by the attack report. The former cart dispute is
 removed. Caelan volunteers to help the people at risk; he gains no legal or
 survey authority from the relief context.
 
-The [arrival guide](../../REGENT_ARRIVAL.md) documents the cinematic's dialogue,
+The [arrival guide](../scenes/REGENT_ARRIVAL.md) documents the cinematic's dialogue,
 shots, input ownership and saved handoff. The scene grants no new repair,
 checkpoint-release or excavation facts.
 

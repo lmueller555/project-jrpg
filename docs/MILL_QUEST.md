@@ -7,20 +7,11 @@ contact timings, and captures below describe the current implementation.
 Natural proportions and readable intent take priority over exact hand contact;
 a small, deliberate transfer snap is acceptable.
 
-MQ02 now ends with Caelan returning to help Serene and Tomas inside the
-sanctuary dining room. Halden's acknowledged mill report records the repair
-and releases Mira to her workshop, while the quest remains active. After the
-homecoming conversation and actual cup-setting action finish, the existing
-quest rewards settle once and [Iselin's arrival cinematic](REGENT_ARRIVAL.md)
-plays. It introduces the relief caravan before the party appears at the lower
-brook bridge in town, then returns control to Caelan in the same dining room.
-The [regional story handoff](narrative/game_01/REGIONAL_SURGES.md) continues into
-MQ03's relief, quarry and [covenant](narrative/world/SANCTUARY_COVENANT.md) discussion.
-Serene's separate request to meet the visitors accepts MQ03.
-
-`CH01_MQ02` begins after MQ01’s stopped-wheel exchange. Its available marker points to Mira at the existing outdoor workbench before the upper bridge. The revised request leads into her early birthday present for Caelan. Completing the presentation owns/equips the sword once, accepts the quest and records the meeting before the same Mira accompanies him.
-
-The main route is now workshop request and gift, mill diagnosis, armed departure, the riverbank tutorial, linear aftermath, intake inspection, pressure relief, sword-focused water spell, encouragement, cooperative repair and gift thanks, working wheel, Halden’s resolution and the sanctuary homecoming. Dialogue supplies household/work context and the actual north-road directions; selective emotive cues use literal asterisks.
+This is the MQ02 runtime/presentation guide. The
+[MQ02 script](narrative/game_01/CH01_MQ02.md) owns the authored route, dialogue,
+gift premise, magick discoveries, and homecoming. This guide owns interaction,
+action, controller, and save contracts. The separate
+[arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) owns its shots and performances.
 
 ## The birthday presentation
 
@@ -30,7 +21,7 @@ Mira prepared the gift before the outing. A detailed workshop insert shows her p
 
 The real item is `caelan_gearblade`, **Mira’s Blade**. Its inventory/first-weapon receipt is separate from learning Aether Edge: the gift leaves starter training pending. Reequipping cannot bypass that state. An interrupted unfinished scene can restart safely, while an owned gift is never granted twice. New Game clears ownership/training normally. The gift owns Blue only, independently of the currently selected focus or later material drops. Older already-active/completed journeys keep their route without a forced retroactive presentation.
 
-## Playing through
+## Battle and action contracts
 
 Inspect the wheel and its channel with Mira nearby, then acknowledge the diagnosis and departure warning. Caelan now brings the sheathed gearblade. Take the actual north road past the sanctuary steps and use the boundary prompt to enter the upper millrace.
 
@@ -61,11 +52,9 @@ room before arrival, without exposing Iselin's party or enabling MQ03 early.
 Caelan's earlier morning offer to help is remembered without suggesting he
 forgot the tables: Tomas and Serene already took over that work.
 
-`sanctuary_return` closes the mill outing and ends with the exact exchange:
-
-- Tomas: “The tables are finished, we're just setting them if you can grab the cups.”
-- Serene: “You could bring those clean ones over, if you have a moment.”
-- Caelan: “Yep, on it.”
+The `sanctuary_return` dialogue is recorded once in the
+[MQ02 homecoming script](narrative/game_01/CH01_MQ02.md); its final request
+hands off to the cup-placement action below.
 
 Caelan visibly collects, carries and places the clean cups in a short staged
 action, using the existing character and prop art. `sanctuary_setting` introduces

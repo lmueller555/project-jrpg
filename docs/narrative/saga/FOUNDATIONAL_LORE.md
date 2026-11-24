@@ -2,9 +2,9 @@
 
 **Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals
 
-**Version:** 0.6
+**Version:** 0.7
 
-**Last revised:** 2026-11-24 (documentation consolidation).
+**Last revised:** 2026-11-24 (consolidation followed by approved interior/stasis premises).
 
 **Provenance:** Retains the foundational decisions recorded in version 0.5,
 including the 2026-11-04 planetary-cycle revision, and the unique saga-planning
@@ -93,6 +93,29 @@ a sentient planet or the persistence of personal memories. Do not quietly
 assert answers in future documents.
 
 ---
+
+### Approved Game I interior and ice-stasis phenomena
+
+**Author-established, 2026-11-24:** The later Game I party enters the planet's
+core lifeforce through a deep chasm. Time flows differently within the planet:
+the party returns after about three surface years, with the subjective
+duration of its experience still undecided. This is a scoped story premise; it does
+not define a universal rate for every depth or grant unrestricted time travel.
+The [Game I chronology](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+owns the ordering and roster constraints.
+
+Iselin's refuge near the mountain summit is an ice-aspected cave. Her
+self-encasement preserves her living body against starvation while leaving her
+conscious. She absorbs ice-aspected aether from this environment and transforms
+during confinement. The [Iselin sheet](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement)
+owns her choices and progression. Rates, capacities, consciousness in other
+forms of stasis, release and maintenance rules remain open. The conservation
+principle still applies; no unlimited aether source is established.
+
+These approvals do not settle awareness during the Ancient sacrifice,
+consciousness after death, reincarnation, resurrection, planetary sentience,
+or the relationship between the planetary cycle and the Aethersphere. The
+regional ice dome remains distinct from the planetary atmosphere.
 
 ## 2. The ancient civilization
 

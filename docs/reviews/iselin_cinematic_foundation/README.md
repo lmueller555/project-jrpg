@@ -2,7 +2,7 @@
 
 This review adds playback mechanics and a reusable preview tool. It adds no new
 performance drawings and installs no actions in production manifests. The
-[Regent arrival guide](../../REGENT_ARRIVAL.md) and
+[Regent arrival guide](../../narrative/scenes/REGENT_ARRIVAL.md) and
 [sprite animation standard](../../SPRITE_ANIMATION_STANDARD.md) remain the
 authoring guidance.
 

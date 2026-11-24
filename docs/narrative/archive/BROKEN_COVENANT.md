@@ -57,7 +57,7 @@ foundations have separate approvals. The specific
 are now approved; this does not approve the whole outline. **Hollow Harvest**
 remains an older alternative, not canon.
 
-**Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
+**Approved opening frame:** New Game's [cinematic flashforward](../scenes/OPENING_CINEMATIC.md)
 shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
 then returns to the Eldenmere morning. The current intended location for the
 eventual reprise is the threshold between Acts IV and V. This approves the

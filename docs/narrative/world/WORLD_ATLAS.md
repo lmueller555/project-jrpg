@@ -144,13 +144,23 @@ plain and delta have different livelihoods and concerns from the uplands.
 | **Marris Coast** | Southern cliffs, estuaries and sheltered Amber Sea harbours | Ship repair, salt production, migrant neighbourhoods and merchant institutions | Transit fees, access to waterfront work and the price of imported necessities |
 | **Redstone March** | Drier grassland and scrub east of the Greyfold range | Pastoral routes, quarry settlements, market centres and well maintenance | Town boundaries and private holdings can interrupt shared access to water |
 
-Game I's core remains Elden Vale and its nearby upland and upper-river
-connections. These regions offer choices for later story planning; they do
-not require the first game to visit every biome or reach the coast. The
-southern delta, farther east and the rest of Merovar can remain outside its
-playable route.
+Game I opens in Elden Vale and its nearby upland and upper-river connections,
+then develops the approved northward journey described below. The regions in
+this table offer choices for planning that route; they do not require visits
+to every biome, the coast or the southern delta. Intermediate destinations
+remain open.
 
 Read the continental detail in [Merovar](continents/MEROVAR.md).
+
+### Later Game I journey — approved direction
+
+The opening's Elden Vale focus expands into a northward journey toward Iselin's
+kingdom. The [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+owns the later separation, antiwar threads, descent and surface interval.
+Her exile route reaches an ice-aspected cave near a mountain summit. Its name,
+precise mountain, route and distances remain open. The chasm leading into the
+planetary lifeforce has no assigned location; the existing Sanctuary rupture
+is not identified as that descent by this approval.
 
 ## Other continents, the island chain and the poles
 

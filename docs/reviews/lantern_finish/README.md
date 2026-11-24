@@ -13,5 +13,5 @@ The uninterrupted four-part verification starts from MQ04 available, never seeds
 **Historical verification:** That four-part record predates the 2026-11-04
 planetary-aether revision and includes earlier rest/sanctuary wording. It is
 historical progression evidence, not the current doctrine or a new test result.
-See the [current rest/sanctuary script](../../narrative/game_01/CH01_MQ04_PR3.md)
+See the [current rest/sanctuary script](../../narrative/game_01/CH01_MQ04.md#part-3)
 and [Foundational Lore](../../narrative/saga/FOUNDATIONAL_LORE.md) for the revised teaching.

@@ -1,7 +1,7 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.3 (reference consolidation; disclosure statuses unchanged).
+**Version:** 0.4 (consolidated references and approved parallel-story knowledge boundaries).
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), including broad saga
 planning, and the [narrative index](../README.md).
 
@@ -37,6 +37,29 @@ faith.
 | New life | [Modern inhabitants](FOUNDATIONAL_LORE.md#6-ten-millennia-of-new-life) | Modern people have independent cultures | Historical origins may be disclosed later |
 | Dying worlds | [Ancient observations](FOUNDATIONAL_LORE.md#3-the-cosmic-catastrophe) | Cosmic scope and cause concealed | Mystery can unfold in later games |
 | Ultimate cause / final answer | [Open cosmic mystery](FOUNDATIONAL_LORE.md#open-mystery) | Cannot accidentally imply a fixed answer | Deliberately open until decided |
+
+## Parallel story and timeskip knowledge
+
+**Author-established direction, 2026-11-24:** Later play follows the main party
+after Iselin returns home, with occasional Iselin cutaways and a substantial
+playable exile. What the player witnesses in those sequences is not automatically
+known by the separated main party. Do not keep her identity secret from players
+after showing it, or give characters knowledge of unwitnessed scenes.
+
+| Stage | Knowledge boundary |
+| --- | --- |
+| Opening and shared journey | Existing limits on the Crown's investigation, Ice Reaper identity, and hidden cosmology remain in force. |
+| Parallel antiwar story | Player knowledge follows the actual scenes shown; communications between groups must be authored rather than assumed. |
+| Playable exile and confinement | The player can witness Iselin's actions and later transformation. The core party has not thereby witnessed them. |
+| Planetary interior | The party experiences the core lifeforce and different time flow. That does not supply the hidden Ancient/cosmic explanation or proof of planetary consciousness. |
+| Return after the surface interval | The elapsed years and surface events require evidence or testimony. Rhea's experiences are not automatically shared memories. |
+
+The exact moment players learn the elapsed duration, what the core party can
+measure while below, what Rhea believes about its disappearance, and how the
+party learns Iselin's fate remain open. Chronology is owned by the
+[Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology);
+physical premises by [Foundational Lore](FOUNDATIONAL_LORE.md#approved-game-i-interior-and-ice-stasis-phenomena).
+
 
 ## Reveal design rules
 

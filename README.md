@@ -59,7 +59,7 @@ glimpse of Caelan and Mira later in their journey. Layered sanctuary and valley
 art, quiet character animation and camera shots lead into Caelan's opening
 morning. **Esc** pauses/resumes the cinematic and its music; a small **Skip**
 button remains available in the bottom-right corner. Continue resumes the saved
-journey directly. See the [opening cinematic guide](docs/OPENING_CINEMATIC.md).
+journey directly. See the [opening cinematic guide](docs/narrative/scenes/OPENING_CINEMATIC.md).
 Settings changes fullscreen/windowed mode, independent music/effects levels,
 text size, reduced interface motion and objective visibility. Continue resumes
 a saved journey when one exists. The logo uses **The Broken Covenant** as a working title.
@@ -214,7 +214,7 @@ leaving and reloading. See the [quest guide](docs/MILL_QUEST.md) and
 [in-game previews](docs/reviews/mill_quest/README.md).
 
 **Iselin arrives after the mill quest.** A detailed, player-advanced
-[cinematic](docs/REGENT_ARRIVAL.md) opens with a bird-led aerial view of the
+[cinematic](docs/narrative/scenes/REGENT_ARRIVAL.md) opens with a bird-led aerial view of the
 actual Elden Vale landscape, then descends to his caravan at the southern
 land gate. It follows his admission, his conversation with locals about the
 ruined crossing, and Serene's private reaction from inside the sanctuary.
@@ -521,6 +521,6 @@ The [watermill](assets/terrain/eldenmere/watermill/README.md) is approved follow
 
 ### Liam’s first lantern — MQ04 opening
 
-After Iselin’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. After Elira, collect the materials from Mira, take a break at Liam’s home, and bring his questions to Serene in the sanctuary hall. Return home to finish Liam’s personal lantern, carry it to his mother at school, then put it away safely. MQ04 completes after the final farewell; the finished lantern stays unlit at home for tomorrow’s festival. Existing PR3 saves continue directly from Serene without replaying earlier scenes. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [opening dialogue](docs/narrative/game_01/CH01_MQ04.md), [final section](docs/narrative/game_01/CH01_MQ04_PR4.md), and [actual-game finale preview](docs/reviews/lantern_finish/README.md).
+After Iselin’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. After Elira, collect the materials from Mira, take a break at Liam’s home, and bring his questions to Serene in the sanctuary hall. Return home to finish Liam’s personal lantern, carry it to his mother at school, then put it away safely. MQ04 completes after the final farewell; the finished lantern stays unlit at home for tomorrow’s festival. Existing PR3 saves continue directly from Serene without replaying earlier scenes. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [opening dialogue](docs/narrative/game_01/CH01_MQ04.md), [final section](docs/narrative/game_01/CH01_MQ04.md#part-4), and [actual-game finale preview](docs/reviews/lantern_finish/README.md).
 
 Personal weapon and tool visibility follows the [personal-prop presentation rule](docs/PERSONAL_PROPS.md).

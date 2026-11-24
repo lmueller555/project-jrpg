@@ -69,13 +69,13 @@ Caelan restored the mill.
 
 ## Native acting foundation
 
-The [sprite and animation standard](SPRITE_ANIMATION_STANDARD.md) owns Iselin's
+The [sprite and animation standard](../../SPRITE_ANIMATION_STANDARD.md) owns Iselin's
 appearance, body registration and complete-frame construction. Her current
 arrival assets include static standing/listening/gesture/turn poses and the
 left, rear-three-quarter and rear walks. Optional finite clips support one-time
 performances. The first live clip is the gate stop and settle described below;
 greeting, listening, speaking and turning remain separate performance changes.
-The [foundation review](reviews/iselin_cinematic_foundation/README.md) records the
+The [foundation review](../../reviews/iselin_cinematic_foundation/README.md) records the
 original playback mechanics and reference board at that milestone.
 
 An arrival actor's `animation.json` can declare an `actions` object alongside
@@ -167,11 +167,11 @@ when a large update crosses it. Drawing and reading dialogue do not trigger the
 clip. Aerial ground-reference sampling uses the separate uninterrupted incoming
 cycle and never borrows the live stopping action.
 
-The [live detailed gate review](reviews/iselin_detailed_gate_live/README.md)
+The [live detailed gate review](../../reviews/iselin_detailed_gate_live/README.md)
 records production-loaded normal/slow captures, approved-pixel checks and
 lifecycle validation. Initial review stationing selects the shot; production
 updates then own all movement, action and camera selection. The earlier
-[native stop review](reviews/iselin_walk_stop/README.md) remains historical.
+[native stop review](../../reviews/iselin_walk_stop/README.md) remains historical.
 
 ## Controls and presentation
 
@@ -200,7 +200,7 @@ Recorded hawk calls and quieter, animation-timed wingbeats accompany the visible
 bird. Hoofbeats and wagon sounds follow the party's movement and gait rate;
 they stop when the party stops. Pause, focus loss, Skip and leaving the Gallery
 also pause or release the appropriate voices. The recordings and source licenses
-are documented in [the aerial sound assets](../assets/audio/sfx/regent_aerial/README.md).
+are documented in [the aerial sound assets](../../../assets/audio/sfx/regent_aerial/README.md).
 
 ## Durable handoff
 
@@ -226,7 +226,7 @@ accepting the visit does not create a second Iselin or wagon.
 The arrival capture verifies MQ03's introductory request, greeting and welcome
 meal, stopping at `hosted` with MQ03 active and MQ04 locked. The later survivor
 report, secret deployment, Mira rejoin and Sanctuary journey are covered by the
-[current emergency review](reviews/mq03_emergency/README.md). The earlier
+[current emergency review](../../reviews/mq03_emergency/README.md). The earlier
 revised-visit review remains historical; its old CLI entry now delegates to the
 current emergency driver without overwriting that archive.
 
@@ -265,13 +265,13 @@ python tools/capture_regent_crossroads.py
 python tools/capture_regent_crossroads.py --check
 ```
 
-The current [clerk and crossroads review](reviews/regent_crossroads/README.md)
+The current [clerk and crossroads review](../../reviews/regent_crossroads/README.md)
 contains the uninterrupted arrival, a focused crossroads/bridge clip, native
 pose/contact sheets, geographic overlays and reproducible validation receipts.
 
-The [gate and transition review](reviews/regent_arrival_polish/README.md)
+The [gate and transition review](../../reviews/regent_arrival_polish/README.md)
 records earlier staging. The predecessor's
-[historical side-walk review](reviews/aldric_side_walk/README.md) is archived
+[historical side-walk review](../../reviews/aldric_side_walk/README.md) is archived
 implementation evidence. Current Iselin scenes use complete authored poses,
 her approved 16-frame walks, and a new rear-three-quarter cycle, exported by
 `tools/build_regent_iselin.py`. The current native integration review records the
@@ -279,16 +279,16 @@ cinematic, meal, Sanctuary and save-checkpoint checks.
 The full arrival can also be replayed from the title screen's **Gallery** as
 **Iselin's Relief Caravan**, without loading or changing a journey.
 
-The [aerial-opening review](reviews/regent_aerial/README.md) records the
+The [aerial-opening review](../../reviews/regent_aerial/README.md) records the
 bird-led introduction and its continuous handoff to the gate. Its geographic
 reference comes from `assets/maps/overworld/elden_vale/region.json`; cinematic
 art and animation sources are retained under
 `assets/source/cinematics/regent_aerial/`.
 
-The [road approach and audio review](reviews/regent_caravan_revision/README.md)
+The [road approach and audio review](../../reviews/regent_caravan_revision/README.md)
 includes an uninterrupted preview with the actual runtime sound mix, road-contact
 measurements, walking and guard-clearance evidence, and a bird-sound audition.
 
-See the [production-game review](reviews/regent_arrival/README.md),
-[MQ03 guide](REGENT_QUEST.md), [regional surge context](narrative/game_01/REGIONAL_SURGES.md)
-and [covenant](narrative/world/SANCTUARY_COVENANT.md).
+See the [production-game review](../../reviews/regent_arrival/README.md),
+[MQ03 guide](../../REGENT_QUEST.md), [regional surge context](../game_01/REGIONAL_SURGES.md)
+and [covenant](../world/SANCTUARY_COVENANT.md).

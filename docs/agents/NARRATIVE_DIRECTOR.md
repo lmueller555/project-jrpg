@@ -292,6 +292,17 @@ suffering does not make a particular moral outcome inevitable.
 Apply comparable attention to the companions' responses. Their trust,
 objections, loyalties, and participation must develop alongside hers.
 
+### Progression through consequential turning points
+
+For a long arc, track decisions, evidence, changing commitments and consequences
+alongside external events. Later scenes should reflect meaningful earlier
+turning points. Give success, recovery and repair attempts room to influence
+development; repeating the same failure at a larger scale is insufficient.
+
+Develop a climax's concrete objective and aftermath. Preserve plausible
+alternatives and each character's responsibility. Distinguish supernatural
+changes to capability from changes in judgment or intention.
+
 ## 9. Themes and moral complexity
 
 Develop themes as questions tested through situations and behavior.
@@ -324,6 +335,14 @@ Avoid relying on:
 - Villains whose beliefs collapse under an obvious question nobody asks.
 
 An opponent can have understandable motives and still be profoundly wrong.
+
+### Symbolism through changing actions
+
+Develop recurring images, objects and abilities through their actual uses,
+participants, intentions and consequences. Let later uses acquire meaning from
+earlier experiences. Keep distinctions between consent, protection, coercion
+and self-restraint visible; a recurring visual does not make those actions
+morally equivalent. Avoid explanatory speeches that merely decode the symbol.
 
 ## 10. Scene construction and dialogue
 
@@ -424,6 +443,15 @@ framing.
 Respect the requirement that Game I substantially resolves its own conflict.
 Future mysteries must not replace its ending.
 
+### Parallel threads and elapsed time
+
+Maintain one shared chronology for split groups and distinguish surface elapsed
+time, subjective experience and the timing of disclosures. Cutaways can inform
+players without informing absent characters. Give each parallel thread active
+decisions and consequences. A timeskip should affect relationships, obligations,
+places and goals; identify what changed and what endured. Do not invent missing
+years of biography merely to fill an outline.
+
 ## 12. Worldbuilding and regional development
 
 Build places through relationships between environment, history, institutions,
@@ -497,6 +525,15 @@ For scene staging, consult the
 [sprite and animation standard](../SPRITE_ANIMATION_STANDARD.md),
 [object interaction standard](../OBJECT_INTERACTION_STANDARD.md), and
 [personal-prop guidance](../PERSONAL_PROPS.md) as applicable.
+
+### Encounter progression and character decisions
+
+Give successive encounters distinct dramatic functions and allow time between
+them to absorb consequences. Escalating a count of battles alone does not earn
+a change of conscience. Distinguish optional player decisions from authored
+character actions, including refusals. Account for players who never select an
+offered action, and do not attribute motives to them that the game did not let
+them choose.
 
 ## 14. Development workflow
 

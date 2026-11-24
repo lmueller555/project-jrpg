@@ -355,7 +355,7 @@ They do not require new dialogue-choice mechanics or routine animations.
 | Tests and setbacks | Specific commitments, failures and turning points remain unchosen | Open |
 | Later outcomes | Exact later personal losses, the parents' later fates or reunion, Tomas's fate, Eldenmere's ultimate condition and final vocation remain undecided | Open |
 
-The [opening cinematic](../../../OPENING_CINEMATIC.md) establishes only its
+The [opening cinematic](../../scenes/OPENING_CINEMATIC.md) establishes only its
 limited late-journey frame with Mira. Its anonymous helmet does not identify a
 particular person's death or resolve these open outcomes. Follow the [revelation plan](../../saga/REVELATION_PLAN.md);
 the broader proposed act outline is not blanket approval of later events.

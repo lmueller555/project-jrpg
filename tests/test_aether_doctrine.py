@@ -32,7 +32,7 @@ class AetherDoctrineTests(unittest.TestCase):
     def test_current_implementation_scripts_match_the_doctrine_exchanges(self):
         punctuation = str.maketrans({'\u201c': '"', '\u201d': '"', '\u2019': "'"})
         cases = (
-            ('docs/narrative/game_01/CH01_MQ04_PR3.md',
+            ('docs/narrative/game_01/CH01_MQ04.md',
              [line for name in ('liam_questions', 'sanctuary_welcome', 'returning_life')
               for line in self.lantern[name]]),
             ('docs/narrative/game_01/CH01_MQ03.md',

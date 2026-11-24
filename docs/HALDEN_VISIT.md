@@ -1,5 +1,9 @@
 # First household and temporary escort
 
+**Narrative owner:** [MQ01 script](narrative/game_01/CH01_MQ01.md).
+This guide owns the visit's controls, action staging, object lifecycle, and save
+compatibility. Its walkthrough describes how to execute that authored sequence.
+
 Accept Serene's request after breakfast. Tomas joins Caelan after the follow-up
 conversation and follows through the existing doors. Use **M** to locate Halden's
 cottage on the eastern mill terrace. Approach Halden inside to start the approved

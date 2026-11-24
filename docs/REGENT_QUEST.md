@@ -1,45 +1,23 @@
 # Iselin's visit and the Sanctuary emergency
 
-MQ03, **The Regent's Road**, begins with Iselin's welcome and meal at Serene's
-home. Its revised post-meal sequence exposes her secret deployment at Elden
-Vale Sanctuary, brings Mira back into the party and takes the cast to the
-regional reserve. The [canonical script](narrative/game_01/CH01_MQ03.md) mirrors
-the playable dialogue in `assets/story/regent/scene.json`.
+This guide owns MQ03's runtime checkpoints, presentation, actor ownership,
+and save compatibility. The [MQ03 narrative/script](narrative/game_01/CH01_MQ03.md)
+owns its visit, emergency, rescue, and return-home sequence. The runtime source
+is `assets/story/regent/scene.json`.
 
 ## Boundary after MQ02
 
 MQ02 completes after Caelan's homecoming and clean-cup placement. Iselin's
-separate [arrival cinematic](REGENT_ARRIVAL.md) returns control to the same
+separate [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) returns control to the same
 home dining room. Serene's short request separately accepts MQ03. The gift,
 homecoming and table-setting conversation are not repeated.
 
-## Playing through
+## Objective boundary
 
-1. Speak with Serene in the dining room, then meet Iselin by the lower bridge.
-2. Greet Iselin, Lucan, the page and driver. Lucan is Iselin's personal guard;
-   his observation about Mira's sword establishes his practical attention.
-3. Guide the visitors directly through the courtyard and hall into the dining
-   room. The relief wagon remains at the village approach.
-4. Share the meal once everyone is gathered. The family and visitors retain
-   their existing conversation, eating and guard-attention beats.
-5. Hear the mining proposal. Serene explains the Sanctuary's duty to guide the
-   region's dead back to the planet and remember them, and the disruption
-   mining would cause. She reports growling from the cave since the bridge
-   incident. No agreement is reached.
-6. A wounded survivor runs through the hall and enters the dining room. His
-   report of an attack reveals the advance party. Iselin confirms she dispatched
-   it before coming to Eldenmere, to establish Crown control and prepare the
-   mining work. Lucan was not informed and is visibly taken aback.
-7. Serene treats the survivor, helped by Tomas and the driver. Caelan volunteers
-   to help the people still at the reserve and proposes bringing Mira. Iselin,
-   Lucan and the page accompany him to her workshop.
-8. Speak with Mira. She chooses to bring her existing kit and arm rig, rejoins
-   for the outing, and travels with the group through the existing town exit
-   and overworld route.
-9. Reach the real Sanctuary reserve. The cast gathers at safe arrival positions
-   and MQ03 remains active at `sanctuary_arrival_pending`. The eight-beat arrival scene plays in the live reserve. Its acknowledged
-   handoff returns control at the cave apron with Lucan temporarily joining
-   Caelan and Mira. The later rescue payoff and quest resolution remain future work.
+Follow the [MQ03 critical path and script](narrative/game_01/CH01_MQ03.md#critical-path-and-player-responsibility).
+`sanctuary_arrival_pending` is an intermediate arrival checkpoint. The arrival
+handoff gives the cave party control without completing the quest; the later
+rescue and acknowledged return-home resolution complete MQ03 and unlock MQ04.
 
 The four ordered objective IDs remain `meet_visitors`, `accompany_visit`,
 `welcome_party` and `speak_serene` for compatibility. The final objective now
@@ -119,21 +97,11 @@ entrance. Saved phases and the party event restore that ownership after load;
 New Game releases it. The [arrival scene](SANCTUARY_ARRIVAL.md) owns its durable beat checkpoints
 and the three-member rescue handoff.
 
-## Story boundaries
+## Narrative authority
 
-The user-approved Sanctuary guidance role and Iselin's deliberate concealment
-supersede the older good-faith inspection compromise. Her relief needs remain
-real, and her secret assertion of Crown control is still a breach of trust.
-Serene's treatment of the survivor gives aid without settling that conflict.
-
-The growling began after the bridge incident, the crew entered the reserve and
-something from the cave attacked them. This sequence does not identify the
-creature or prove that mining caused the attack. The arrival confirms injured crew, suspends the work and establishes a
-missing worker believed alive inside.
-The playable cave and miniboss remain live; rescuing the worker and resolving
-MQ03 require the later story continuation. Tomas's lantern invitation must be positioned after that later
-sequence rather than firing from the removed ending.
-
-See the [faith guide](narrative/world/ELDEN_VALE_FAITH.md),
-[covenant](narrative/world/SANCTUARY_COVENANT.md) and
-[regional setting](narrative/world/regions/ELDEN_VALE.md) for the revised societal role.
+See [MQ03's narrative contract and knowledge boundaries](narrative/game_01/CH01_MQ03.md)
+for the secret deployment, witnesses, reveal limits, rescue, and resolution.
+The local [faith](narrative/world/ELDEN_VALE_FAITH.md),
+[covenant](narrative/world/SANCTUARY_COVENANT.md), and
+[regional setting](narrative/world/regions/ELDEN_VALE.md) own their distinct worldbuilding.
+This runtime guide does not establish a competing account of those events.

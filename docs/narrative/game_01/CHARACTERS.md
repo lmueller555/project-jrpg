@@ -183,7 +183,7 @@ preparation session provides quest-scoped attendance.
 ## Festival preparation session
 
 In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning is not chosen in that opening segment; the
-[conclusion](CH01_MQ04_PR4.md) records his later personal intention.
+[conclusion](CH01_MQ04.md#part-4) records his later personal intention.
 
 ## Rhea and Edran as sources of lore
 
@@ -237,4 +237,4 @@ recruitment quest scripts, exact abilities, numeric attributes and progression
 unlocks remain open.
 Later character outcomes and the identity associated with the cinematic's
 bloody helmet remain undecided. Future scenes should preserve the
-[opening cinematic's established limits](../../OPENING_CINEMATIC.md).
+[opening cinematic's established limits](../scenes/OPENING_CINEMATIC.md).

@@ -2,7 +2,8 @@
 
 **Status:** Established foundations approved on 2026-10-30, migrated from the
 former companion guide. Ages are measured at the beginning of Game I. This
-migration adds no biography or implemented recruitment quest.
+migration preserved the existing biography. The separately dated later-story
+direction below establishes future availability without implementing recruitment.
 
 **Scope:** Existing background, motivation, personality, growth, combat role,
 introduction window and voice reference. Illustrative casting and dialogue
@@ -99,6 +100,22 @@ question.
 
 > “I was wrong about the cause. The observation was good, though. Come and
 > look—we've missed something.”
+
+## Departure and the surface interval
+
+**Author-established direction, 2026-11-24; not implemented:** Rhea leaves the
+party before its descent into the planetary core and is not present for that
+sequence. She remains on the surface and lives through the approximately three
+years that pass during the party's absence. Her continued
+experience and power development partly explain her strength during the later
+Ice Reaper confrontation. The [shared chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+owns the ordering and elapsed surface time.
+
+Her departure's reason, exact point, commitments, activities, sources of growth,
+knowledge of the party's disappearance, search efforts, reunion and specific
+new abilities remain open. A proposed research assignment or training method
+has not been selected. This direction grants no current gameplay skills and
+does not change her age at the opening.
 
 ## Shared knowledge and production boundaries
 

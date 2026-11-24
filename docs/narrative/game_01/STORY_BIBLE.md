@@ -11,7 +11,7 @@ author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.3
+**Version:** 0.4 (consolidated structure and 2026-11-24 later-story direction)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
@@ -42,7 +42,7 @@ owns the applicable biography, characterization and open decisions.
 
 ## Approved opening frame and later reprise
 
-**Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
+**Approved opening frame:** New Game's [cinematic flashforward](../scenes/OPENING_CINEMATIC.md)
 shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
 then returns to the Eldenmere morning. The current intended location for the
 eventual reprise is the threshold between Acts IV and V. This approves the
@@ -90,6 +90,59 @@ five-act outline. The current companion sheets own detailed foundations:
 visit each one. Detailed Chapter 2/3 sequencing, recruitment quests, remaining
 acts and outcomes are not settled by this consolidation.
 
+## Approved later progression and parallel chronology
+
+**Source / status:** Author-established direction, 2026-11-24. These are future
+story requirements, not implemented quests, a complete act outline, or approval
+of earlier alternative plots. This section owns the shared ordering and timing.
+
+After a substantial shared northward journey, Iselin leaves the party and returns
+to her kingdom. The party continues without her. Both pursue efforts to avert
+war with an enemy nation; occasional cutaways follow Iselin's attempts within
+her kingdom. The enemy nation's name, objectives, and the war's relationship to
+the previously established calamity and regional phenomena remain open. The
+antiwar thread does not silently replace the dome's existing protective motive.
+
+| Phase | Main party | Iselin | Rhea |
+| --- | --- | --- | --- |
+| Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to her northern kingdom. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
+| Parallel crisis | Attempts to avert war, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
+| Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
+| Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in confinement for about three surface years. | Lives through those years, gaining power and experience. |
+| Surface return | Escapes after about three years have passed on the surface. | Has transformed during confinement; the trigger and exact timing of her emergence remain open. | Her additional surface experience partly explains her power at the Ice Reaper confrontation. |
+
+The approximate alignment does not establish a magical connection between the
+fall and self-encasement. Only Rhea's exclusion from the core party is fixed;
+the complete roster, precise departure scenes and subjective core duration are
+not chosen. Opening ages remain ages at opening; post-skip ages require the
+pre-descent journey's elapsed time as well.
+
+### Linked character and scene owners
+
+- [Iselin's arc](characters/ISELIN.md#playable-exile-and-conscious-confinement)
+  owns the playable mountain exile, recurring stasis imagery, conscious
+  confinement, transformation and eventual intention.
+- [Rhea's surface interval](characters/RHEA.md#departure-and-the-surface-interval)
+  owns her availability requirement and later development. Her reason for
+  leaving and what she specifically does during the interval remain unwritten.
+- [Planetary and stasis premises](../saga/FOUNDATIONAL_LORE.md#approved-game-i-interior-and-ice-stasis-phenomena)
+  own the narrowly approved supernatural conditions.
+- [Revelation planning](../saga/REVELATION_PLAN.md#parallel-story-and-timeskip-knowledge)
+  separates what the player witnesses from what the returning party knows.
+- [Ice Reaper scene study](../scenes/ICE_REAPER_PRE_BOSS.md) retains its existing
+  Gallery presentation; this outline does not implement or relocate that fight.
+
+### Decisions still open
+
+The war's causes, factions and outcome; Iselin's departure trigger; diplomatic
+events; the dome's practical effects; the authority and orders behind exile;
+Rhea's departure reason, training and surface activities; the fall's cause and
+location; the core's route and subjective duration; changes on the surface;
+Iselin's release; the confrontation's exact placement, mechanics and outcome
+remain to be designed. Assistant suggestions are not adopted merely because
+they were discussed. The existing cave rupture is not assigned as the descent
+site by this approval.
+
 ## Ending requirements (CANON boundaries, not a chosen ending)
 
 - Resolve the game's main regional conflict; players should feel their actions mattered.
@@ -105,8 +158,8 @@ Players may experience conventional magicks, religious worship, regional unrest,
 
 Continue the approved opening while developing the remaining character arcs,
 the journey with Iselin, regional conflict and a complete local ending. Exact
-intermediate regions, later act structure, sources of amplification, final
-encounters, character outcomes and saga clues remain open unless an active
+intermediate regions, later act structure, remaining amplification mechanics, final
+encounter outcomes, character outcomes and saga clues remain open unless an active
 owner explicitly records an approval.
 
 Two older proposals are retained as historical material:
