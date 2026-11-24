@@ -440,9 +440,9 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Auratia world atlas](docs/narrative/world/WORLD_ATLAS.md): approved continental geography, regional cultures, and Eldenmere's wider setting.
 - [Classroom world map](docs/WORLD_MAP.md): inspect Auratia’s map at the village school, including its northern and southern polar regions.
 - [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.
-- [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements and an earlier alternative premise.
-- [Game I act outline](docs/narrative/game_01/ACT_OUTLINE.md): the proposed direction, *The Broken Covenant*.
-- [Approved companion foundations](docs/narrative/game_01/COMPANIONS.md): Lucan, Rhea and Edran’s backgrounds, personalities, combat roles and introduction windows.
+- [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements, approved structure, opening frame and character introduction windows.
+- [Historical Game I alternatives](docs/narrative/archive/README.md): unapproved older premises and outlines, preserved outside active canon.
+- [Cast and companion index](docs/narrative/game_01/CHARACTERS.md): supporting households, shared party guidance, approved art and links to individual character sheets.
 - [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
 - [Regional surges and Iselin's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): southern-road damage, repair pressures and the end-MQ02 caravan arrival.
 - [Sanctuary covenant](docs/narrative/world/SANCTUARY_COVENANT.md): approved protected-ground boundaries, custodial duties, public evidence and restricted excavation.

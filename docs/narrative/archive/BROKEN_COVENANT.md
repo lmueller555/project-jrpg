@@ -1,8 +1,26 @@
+# Historical Game I alternative — The Broken Covenant
+
+**Archive status:** Historical working outline, not current canon or an active
+plan. Its proposed logline, themes, five-act events, mechanisms, risks and open
+questions are retained below without promoting them to approved story.
+
+**Source:** The former `game_01/ACT_OUTLINE.md`, version 0.3. Independently
+approved material quoted in this source has been transferred to the active
+[Game I Story Bible](../game_01/STORY_BIBLE.md) and character/scene owners. Those
+owners govern current work. “Preferred current direction” and “next milestone”
+in the retained text describe that older draft's context.
+
+The old shallow-trial-cut/limited-inspection negotiation is superseded by MQ03's
+approved concealed Crown deployment. Any other conflict with active canon must
+be treated as historical proposal wording, not reconciled by inventing events.
+
+---
+
 # Game I — Act Outline: The Broken Covenant
 
 ## Current regent direction
 
-[Regent Iselin](characters/ISELIN.md) replaces the former regent in current
+[Regent Iselin](../game_01/characters/ISELIN.md) replaces the former regent in current
 canon. Her homeland is a cold northern kingdom within Merovar, surrounded by
 mountains except for its southern approach. The capital is the party's eventual
 northward destination and remains unnamed. She already has exceptional ice
@@ -23,7 +41,7 @@ origin or disclose the catastrophe to the player.
 
 ## Authority and boundaries
 
-This outline explores **The Broken Covenant** as the preferred current direction for Game I. It does **not** supersede the [Game I Story Bible](STORY_BIBLE.md), [Foundational Lore](../saga/FOUNDATIONAL_LORE.md), or [Revelation Plan](../saga/REVELATION_PLAN.md). Those documents' confirmed constraints remain binding:
+This outline explores **The Broken Covenant** as the preferred current direction for Game I. It does **not** supersede the [Game I Story Bible](../game_01/STORY_BIBLE.md), [Foundational Lore](../saga/FOUNDATIONAL_LORE.md), or [Revelation Plan](../saga/REVELATION_PLAN.md). Those documents' confirmed constraints remain binding:
 
 - Game I is a **largely regional**, emotionally grounded, **self-contained** first installment of a multi-game saga.
 - Its primary antagonist is a present-day person with agency and comprehensible motivations; modern societies' problems cannot all be attributed to ancient manipulation.
@@ -34,7 +52,7 @@ This outline explores **The Broken Covenant** as the preferred current direction
 **Proposal status:** The broad five-act sequence, sanctuary mechanisms,
 unapproved later events and outcomes remain provisional. Geography and cast
 foundations have separate approvals. The specific
-[regional surges and relief visit](REGIONAL_SURGES.md),
+[regional surges and relief visit](../game_01/REGIONAL_SURGES.md),
 [covenant terms](../world/SANCTUARY_COVENANT.md) and revised MQ03 motives
 are now approved; this does not approve the whole outline. **Hollow Harvest**
 remains an older alternative, not canon.
@@ -66,7 +84,7 @@ When a regional ruler breaks an age-old religious prohibition to excavate beneat
 
 ## Act I — The Shattered Oath
 
-**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
+**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](../game_01/CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
 
 **Approved opening pressure:** Before the opening morning, a lightning surge
 destroys Eldenmere's southern connection. Iselin arrives after aiding a couple
@@ -93,12 +111,12 @@ move the major catastrophe into Chapter 1 or make every anomaly Iselin's doing.
 **Approved companion introduction:** Lucan Rooke, the Armsmaster, enters during
 Act I as Iselin's personal guard. Iselin later entrusts him to Caelan's party,
 providing the approved basis for recruitment rather than a generic road escort.
-His character foundation is recorded in the [companion guide](COMPANIONS.md);
+His character foundation is recorded in the [companion guide](../game_01/CHARACTERS.md);
 the exact recruitment quest remains open.
 
 **Established departure story beat:** Near or after the end of Act I, as the
 party prepares to leave Eldenmere, Mira creates a bot to run her workshop
-while she is gone. The [scenario notes](SCENARIOS.md) record the planned sprite
+while she is gone. The [scenario notes](../game_01/characters/MIRA.md#planned-departure-beat) record the planned sprite
 work and workshop-management routines. Exact placement and whether this is a
 cutscene, dialogue sequence or short quest remain open; no implementation is
 implied by this entry.
@@ -125,7 +143,7 @@ enters early in Act II while investigating unusual aether behavior. Edran Hale,
 the Sage, enters at the end of Act II when the party's account connects
 injuries and failed protective workings he has encountered. They become major
 sources of lore through their complementary observations during travel.
-See the [companion guide](COMPANIONS.md).
+See the [companion guide](../game_01/CHARACTERS.md).
 
 **Not yet chosen:** Specific towns, factions, exact recruitment quests and
 scenes, research records, order of revelations and the ruler's prior

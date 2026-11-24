@@ -23,4 +23,4 @@ The [review boards](../../../docs/reviews/companion_sprites/README.md) show all
 native outputs and a comparison with Caelan. All three characters’ base sprite
 designs are approved, including Edran’s sky-blue and silver revision. Source
 recipes record the individual approvals. Approved biography facts live in the
-[companion guide](../../../docs/narrative/game_01/COMPANIONS.md).
+[cast index and linked character sheets](../../../docs/narrative/game_01/CHARACTERS.md).

@@ -1,7 +1,7 @@
 # Rhea Sorel — first sprite studies
 
 **Status:** All three sprite designs approved by the user. The approved character foundations are in the
-[companion guide](../../../docs/narrative/game_01/COMPANIONS.md).
+[character sheet](../../../docs/narrative/game_01/characters/RHEA.md).
 
 Blonde hair, blue eyes, fitted emerald green dress with a thigh slit, brown boots and a field-notebook pouch. Her purple tanglewood staff cradles a glowing green orb. The same appearance is retained across all three poses.
 

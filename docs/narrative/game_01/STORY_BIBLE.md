@@ -2,24 +2,17 @@
 
 ## Current regent direction
 
-[Regent Iselin](characters/ISELIN.md) replaces the former regent in current
-canon. Her homeland is a cold northern kingdom within Merovar, surrounded by
-mountains except for its southern approach. The capital is the party's eventual
-northward destination and remains unnamed. She already has exceptional ice
-magick proficiency. The Crown's pre-game partial knowledge and her covert
-investigation are author-facing facts; her sincere relief work and existing
-Sanctuary breach of trust remain part of the opening.
+[Regent Iselin](characters/ISELIN.md) is the current royal character. Her
+northern capital is the party's eventual destination. The intended first half
+to roughly two-thirds of the adventure accompanies her through affected regions
+before her late-story Ice Reaper descent. Her sheet owns her background,
+existing ice proficiency, concealed mission, motive and future identity; these
+author-facing facts are not opening exposition or implemented later quests.
+Historical act sketches do not override that approved direction.
 
-The intended first half to roughly two-thirds of the adventure accompanies her
-through affected regions before her eventual Ice Reaper descent. The protective
-ice dome, traitor accusation and exile are late-story direction, not opening
-exposition or a newly implemented quest. Existing act sketches remain working
-material subject to that approved direction; they do not establish a competing
-origin or disclose the catastrophe to the player.
-
-**Status:** Game-level requirements and linked approved opening foundations are CANON; the older illustrative premise remains PROPOSED.
-**Version:** 0.2
-**Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md), including broad saga planning, and [Revelation Plan](../saga/REVELATION_PLAN.md).
+**Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
+**Version:** 0.3
+**Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
 
@@ -33,73 +26,69 @@ the wider period of industrialization and unapproved religious details remain op
 
 ## Approved regional story foundations (CANON)
 
-The [early regional surges](REGIONAL_SURGES.md) establish a handful of unusual
-lightning incidents. One destroyed the road to the next town south of Eldenmere
-before the opening. Iselin has already aided a couple of other communities;
-their combined repair demands strain the supply of stone and motivate her
-request to examine a seam within Elden Vale Sanctuary’s protected ground.
+The opening combines regional relief needs with a Sanctuary breach of trust.
+[Regional surges](REGIONAL_SURGES.md) owns the early incidents and repair
+pressures; the [covenant](../world/SANCTUARY_COVENANT.md) owns reserve custody
+and duties; [MQ03](CH01_MQ03.md) owns the concealed deployment, emergency,
+rescue and acknowledged return resolution. These opening events preserve the
+separate later authorization, private warning and Chapter 3 catastrophe.
 
-The [covenant](../world/SANCTUARY_COVENANT.md) defines shared custody and
-protection of the reserve. The Sanctuary was deliberately built near the
-natural confluence to guide the region's dead back to the planet and remember
-them. Mining would disrupt this critical responsibility. Caretakers have heard
-growling from the cave since the bridge incident; its cause remains unknown.
+## Approved character foundations (CANON)
 
-Iselin secretly dispatched a Crown crew to establish control and prepare the
-mining operation before seeking Serene's agreement. An injured survivor's report
-exposes her deception during MQ03. Lucan did not know about the deployment and
-is taken aback. Iselin, Lucan, her page, Caelan and Mira travel to the Sanctuary
-while Serene, Tomas and the driver care for the survivor. The implemented route continues
-through the Sanctuary arrival, cave rescue, Vespermaw fight and healing-pool
-evacuation, then returns home for accountability and relief arrangements.
-The final acknowledged family exchange completes MQ03 and unlocks MQ04. Older completed
-journeys retain their progress. The later formal authorization, private warning,
-Chapter 3 catastrophe placement and broader revelation boundaries remain
-separate story work.
+The [cast index](CHARACTERS.md) routes supporting households and individual
+profiles. [Caelan's sheet](characters/CAELAN.md) owns the brothers' family
+background and its author/character knowledge boundary; each character sheet
+owns the applicable biography, characterization and open decisions.
 
-## Approved character facts (CANON)
+## Approved opening frame and later reprise
 
-At the beginning of Game I, **Caelan is 18 years old** and **Tomas is 14 years
-old**. They are biological brothers, with Caelan the older brother. These ages were
-approved by the author on 2026-10-25. See [approved character facts](CHARACTERS.md)
-for the shared reference and the earlier Caelen spelling used in scene drafts.
+**Approved opening frame:** New Game's [cinematic flashforward](../../OPENING_CINEMATIC.md)
+shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
+then returns to the Eldenmere morning. The current intended location for the
+eventual reprise is the threshold between Acts IV and V. This approves the
+opening scene, not the full five-act plot, the final mechanism or anyone else's
+fate. Later writing must earn and continue this moment; the late-game reprise
+itself is not implemented yet. The expanded opening establishes evacuation
+carts, a threatened valley road and an entrance beyond a ridge as facts of
+this frame. It leaves the crisis's cause and the final plan concealed.
 
-Their shared parentage and lifelong home in Eldenmere were clarified on
-2026-11-04. Serene cares for them because their parents have been missing for
-years. **Author-only:** The parents are alive at the opening, but the brothers
-do not know this and probably think them dead without discussing it. The cause
-and reveal remain open; see [Caelan's sheet](characters/CAELAN.md) for the
-knowledge boundary.
+The later author revision adds hand-holding, mechanical lamp restoration,
+Caelan's evacuation flare and a closing focus on an anonymous bloody helmet
+resting on a sword in stone. This approves a deliberate hint of an unidentified
+death by that point in the journey, without assigning the loss to Tomas or
+another character. It does not expose the saga-level history or finalize the
+unimplemented later-act events.
 
-## Working premise — THE HOLLOW HARVEST (PROPOSED ONLY)
+## Approved act and companion structure
 
-A fertile valley once faced famine. A celebrated ruler saved it by activating an ancient aetheric mechanism that dramatically improved agriculture. Years later, parts of the valley begin to fail. A provincial surveyor whose community suffers from the damage discovers that the machine has been redirecting aether from the local ecology. The ruler, terrified that shutting it down will cause renewed starvation, suppresses evidence and sacrifices outlying communities to preserve the center. The protagonist must expose the cost of prosperity and avert further collapse. The mechanism is disabled, but the valley faces a difficult recovery rather than an instant cure.
+**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
 
-**This entire Hollow Harvest premise—including famine, machine, surveyor,
-ruler and outcome—is an older alternative, not canon.** Its candidate cast,
-themes and five-act sequence below do not replace the independently approved
-characters, geography, opening quests or covenant revision linked above.
+**Approved companion introduction:** Lucan Rooke, the Armsmaster, enters during
+Act I as Iselin's personal guard. Iselin later entrusts him to Caelan's party,
+providing the approved basis for recruitment rather than a generic road escort.
+His character foundation is recorded in the [Lucan sheet](characters/LUCAN.md);
+the exact recruitment quest remains open.
 
-## Candidate central dramatic question (PROPOSED)
+**Established departure story beat:** Near or after the end of Act I, as the
+party prepares to leave Eldenmere, Mira creates a bot to run her workshop
+while she is gone. The [Mira departure beat](characters/MIRA.md#planned-departure-beat) records
+the planned sprite work and workshop-management routines. Exact placement and whether this is a
+cutscene, dialogue sequence or short quest remain open; no implementation is
+implied by this entry.
 
-When prosperity depends on transferring irreversible costs to people who did not consent, what does a responsible leader owe those people—and what sacrifices can a community reasonably accept to survive?
+**Approved companion introductions:** Rhea Sorel, the naturalist Aethermage,
+enters early in Act II while investigating unusual aether behavior. Edran Hale,
+the Sage, enters at the end of Act II when the party's account connects
+injuries and failed protective workings he has encountered. They become major
+sources of lore through their complementary observations during travel.
+See [Rhea](characters/RHEA.md) and [Edran](characters/EDRAN.md).
 
-## Candidate principal cast (PROPOSED)
-
-- **Protagonist:** Provincial surveyor tied personally to a village and its failures. Their strengths are observation and persistence, not predestined power. Personal loss and core flaw undetermined.
-- **Primary antagonist:** Once-revered regional leader who genuinely saved lives but increasingly suppresses evidence and chooses who bears the consequences.
-- **Party:** Not yet selected. Members should each have independent commitments and meaningful disagreements, not exist only to affirm the protagonist.
-- **Ancient presence:** One of four may indirectly facilitate or observe an extraction experiment; whether this occurs is unapproved. Never let that erase the ruler's agency.
-
-## Candidate five-act arc (PROPOSED)
-
-1. **The Withering:** A home-community disaster provokes an investigation.
-2. **The Valley of Plenty:** The party sees an unequal landscape of prosperity and neglect.
-3. **The Cost of Salvation:** The machinery's energy diversion and political suppression emerge.
-4. **The Breaking Point:** An attempt to extend the system triggers a larger regional crisis.
-5. **What We Choose to Save:** The ruler is confronted; the harmful system is stopped at genuine material cost, while communities begin reconstruction.
-
-The arc must be revised or discarded if another premise is approved.
+The introduction windows above do not approve the surrounding historical
+five-act outline. The current companion sheets own detailed foundations:
+[Lucan](characters/LUCAN.md), [Rhea](characters/RHEA.md), and
+[Edran](characters/EDRAN.md). Their home regions do not require the party to
+visit each one. Detailed Chapter 2/3 sequencing, recruitment quests, remaining
+acts and outcomes are not settled by this consolidation.
 
 ## Ending requirements (CANON boundaries, not a chosen ending)
 
@@ -108,31 +97,25 @@ The arc must be revised or discarded if another premise is approved.
 - Do not end by fully unveiling, defeating, or explaining all four ancients or solving the cosmic catastrophe.
 - An optional saga hook may appear only after the local dramatic promise has been fulfilled.
 
-## Setting requirements (OPEN)
-
-Design locations from approved narrative needs. The Hollow Harvest's proposed
-location needs include agricultural villages, a regional seat of power,
-abandoned settlements, holy spaces and an energy mechanism; that alternative
-does not itself authorize assets or maps. Independently approved Eldenmere,
-world geography and the Elden Vale Sanctuary story retain their own authority.
-
 ## Game I player knowledge (CANON boundary)
 
 Players may experience conventional magicks, religious worship, regional unrest, and ancient ruins, but do not receive the full truth of the four active ancients, Great Sacrifice, the atmosphere's origin, or dying worlds. Refer to REVELATION_PLAN.md for the authoritative knowledge boundary.
 
-## Approval checklist and next questions
+## Open development and historical alternatives
 
-- [ ] Choose, revise, or reject The Hollow Harvest against other Game I premises.
-- [ ] Define the protagonist's defining relationship, external goal, inner need, flaw, and personal stakes.
-- [ ] Define the primary antagonist's legitimate objective, wrongdoing, history with the protagonist, and irreversible choice.
-- [ ] Select the core local conflict and its credible human-scale consequences.
-- [ ] Define a complete ending and concrete price of victory before detailed act writing.
-- [ ] Determine the party's independent perspectives and character arcs.
-- [ ] Decide exactly which, if any, saga clues appear and who notices them.
-- [ ] Derive world requirements and settlements from the chosen plot.
-- [ ] Promote approved decisions to CANON with focused PRs before drafting individual scenes or implementation.
+Continue the approved opening while developing the remaining character arcs,
+the journey with Iselin, regional conflict and a complete local ending. Exact
+intermediate regions, later act structure, sources of amplification, final
+encounters, character outcomes and saga clues remain open unless an active
+owner explicitly records an approval.
 
-**Next narrative milestone:** Continue the approved opening revisions while
-developing the remaining protagonist-antagonist arc and a complete local ending.
-This approval does not promote an older alternative or the whole working act
-outline to canon.
+Two older proposals are retained as historical material:
+
+- [The Hollow Harvest](../archive/HOLLOW_HARVEST.md): famine, a surveyor,
+  ecological extraction and their candidate cast, themes and ending.
+- [The Broken Covenant](../archive/BROKEN_COVENANT.md): the former broad five-act
+  outline, proposed institutional conflict, mechanisms and outcomes.
+
+Neither alternative is current canon. The independently approved opening frame,
+Act I chapter structure, character introductions and departure beat are kept
+above and in their owners; archiving the alternatives does not revoke them.

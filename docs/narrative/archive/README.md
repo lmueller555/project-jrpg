@@ -1,0 +1,17 @@
+# Historical narrative alternatives
+
+These documents retain older unapproved story proposals. They are historical
+reference material, not active canon or assignments. Their original status
+labels, candidate dialogue, unresolved questions and development risks do not
+constitute new approvals.
+
+- [The Hollow Harvest](HOLLOW_HARVEST.md): the former Story Bible's alternative
+  premise, candidate cast, five-act sequence and open development questions.
+- [The Broken Covenant](BROKEN_COVENANT.md): the former broad working act
+  outline, including its proposed institutions, mechanisms and outcomes.
+
+The [active Game I Story Bible](../game_01/STORY_BIBLE.md) preserves independently
+approved structural facts, opening-frame limits and introduction windows. The
+[cast index](../game_01/CHARACTERS.md) points to current character owners. If a
+historical proposal conflicts with those sources, preserve its status rather
+than using it to fill a gap in current canon.

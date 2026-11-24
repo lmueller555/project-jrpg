@@ -1,7 +1,7 @@
 # Edran Hale — first sprite studies
 
 **Status:** All three sprite designs approved by the user. The approved character foundations are in the
-[companion guide](../../../docs/narrative/game_01/COMPANIONS.md).
+[character sheet](../../../docs/narrative/game_01/characters/EDRAN.md).
 
 Salt-and-pepper hair and a short beard, a sky-blue long robe with a high collar and capelet, silver trim and sash, slate-gray boots and healer pouch, and an ashwood crook with silver fittings.
 

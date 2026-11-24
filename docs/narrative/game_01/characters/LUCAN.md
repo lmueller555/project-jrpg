@@ -7,8 +7,8 @@ explicitly proposed.
 Unless noted otherwise, this describes his opening characterization.
 
 **Related guides:** [Character index](../CHARACTERS.md),
-[companions and approved artwork](../COMPANIONS.md),
-[Act I outline](../ACT_OUTLINE.md), [sheet template](TEMPLATE.md).
+[approved artwork](../CHARACTERS.md#approved-base-sprite-designs),
+[Game I structure](../STORY_BIBLE.md), [sheet template](TEMPLATE.md).
 
 ## Identity
 
@@ -26,7 +26,7 @@ Unless noted otherwise, this describes his opening characterization.
 | Recruitment | Iselin later entrusts him to Caelan's party. Exact occasion, reason and scene remain undecided. | Established / Open |
 
 Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
-[Iselin's royal background](../CHARACTERS.md#iselin--approved-royal-background),
+[Iselin's royal background](ISELIN.md),
 [Redstone March](../../world/continents/MEROVAR.md#redstone-march) and
 [Lucan's asset guide](../../../../assets/characters/lucan/README.md).
 
@@ -163,7 +163,7 @@ requirements and name remain undecided.
 | Edran | Lucan wants a decision and orderly plan; Edran wants enough information to judge consequences. Particular bonds and conflicts remain open. | Established / Open |
 | Family | Wants lasting security for them; individual relationships remain undefined | Established / Open |
 
-Shared party dynamics remain in the [companion guide](../COMPANIONS.md#party-relationships-and-future-work).
+Shared party dynamics remain in the [shared party guidance](../CHARACTERS.md#party-relationships-and-future-work).
 
 ## Voice and behavior
 

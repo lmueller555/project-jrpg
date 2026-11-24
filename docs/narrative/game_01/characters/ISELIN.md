@@ -69,3 +69,24 @@ party recruitment retains its existing future scope. Serene recognizes Iselin's
 breach of trust while prioritizing the injured. Caelan and Mira can acknowledge
 both real assistance and concealed decisions without resolving her entire moral
 character in the opening quest.
+
+## Ruling-family development — proposals, not canon
+
+The previously discussed House Maroven, Queen Isolde, Dowager Helena and Prince
+Oren remain unapproved proposals, now associated with Iselin rather than her
+predecessor. If developed, her relationship to the prince would be aunt rather
+than uncle. No dynasty name, queen's personal name, heir or inheritance rule is
+established by this migration. Proposed themes of service, responsibility and
+wanting achievement to justify royal standing remain usable development notes.
+Her covert Crown investigation, however, is approved separately and must not be
+excluded by the older "no hidden cosmic motive" proposal boundary.
+
+## Opening relief responsibilities
+
+Her immediate relief responsibilities include Elden Vale and nearby upper-Leth
+road and quarry districts. The [regional context](../REGIONAL_SURGES.md),
+[MQ03 script](../CH01_MQ03.md), and
+[covenant](../../world/SANCTUARY_COVENANT.md) own the detailed public needs,
+concealed deployment, Sanctuary emergency and acknowledged resolution. Caelan
+begins as host and guide, then volunteers to help; he gains no quarry or Crown
+policy authority.

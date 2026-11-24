@@ -1,7 +1,7 @@
 # Lucan Rooke — first sprite studies
 
 **Status:** All three sprite designs approved by the user. The approved character foundations are in the
-[companion guide](../../../docs/narrative/game_01/COMPANIONS.md).
+[character sheet](../../../docs/narrative/game_01/characters/LUCAN.md).
 
 Dark swept hair, polished steel armor, oxblood cloth and gold trim. Sword and shield remain visible in all three poses.
 

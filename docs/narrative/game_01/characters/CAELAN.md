@@ -200,6 +200,38 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
 | Future development | Gear-based combat progression is the current direction below; exact vocation, teachers, unlock methods and detailed later mechanics remain undecided | Direction recorded, 2026-11-07 / Open details |
 
+## Caelan's starting gameplay attributes
+
+The approved attribute set is **HP, MP, Str, Mag, Spr, Def, M. Def, Speed, Acc,
+Eva and Lck**. Mag increases damaging-spell power; Spr increases healing-spell
+power. Caelan's approved job identity is **Spellblade**, beginning as a balanced all-rounder:
+
+| HP | MP | Str | Mag | Spr | Def | M. Def | Speed | Acc | Eva | Lck |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 140 | 30 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 | 10 |
+
+HP and MP are maximum values; current resources start full. The remaining
+numbers are ratings, including Acc, Eva and Lck, rather than percentages.
+Starting numbers are a tunable gameplay baseline. His Spellblade identity
+develops through learned weapon techniques and magicks; these numbers do not
+change his established magical limitations. Aether Edge is his only learned
+first-weapon starter skill, without permanent elemental coverage. He begins
+unarmed. Mira presents his first gear-and-gem blade at the start of MQ02, before
+the outing. The gift contains only the Blue Water gem. His first Aqua Edge
+attempt fails, but inadvertently releases and teaches Aether Edge in the same
+attempt. The first Sanctuary cave encounter later teaches Aqua Edge. It costs
+0 MP throughout that introductory battle and normally 4 MP after it clears.
+Optional level-four Embravyr and Nivareth crystallize the Red/Fire and White/Ice
+focuses and teach Flame Edge and Ice Edge in either order. Learned elemental
+Edges cost 0 MP throughout those two teaching fights, then return to 4 MP in
+normal encounters. These unlocks retain one gear and one selected focus. The
+[character ability dictionaries](../../../CHARACTER_ABILITIES.md) record his
+unlock rules and the other party members' profiles.
+The values are visible through **Pause → Characters**, with attribute icons and
+hover explanations. Weapon discovery retains its authored story rules. See
+[character attributes](../../../CHARACTER_ATTRIBUTES.md) for the definitions,
+runtime integration and save compatibility.
+
 ## Combat progression concept
 
 **Current author direction, 2026-11-07:** Preserve these broad strokes for later

@@ -4,7 +4,7 @@
 
 **Placement:** This remains an isolated Gallery scene study for Iselin's eventual late-game Ice Reaper confrontation. Her kingdom lies in northern Merovar; its name and capital remain undecided. The exact quest, act and main-story checkpoint have not been assigned. Follow [Iselin's approved character canon](../game_01/characters/ISELIN.md) when placing it in the main story.
 
-Related references: [scenario index](../game_01/SCENARIOS.md), [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01/characters/MIRA.md), [companion foundations](../game_01/COMPANIONS.md), and [aether foundations](../saga/FOUNDATIONAL_LORE.md).
+Related references: [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01/characters/MIRA.md), [Rhea](../game_01/characters/RHEA.md), [shared party foundations](../game_01/CHARACTERS.md), and [aether foundations](../saga/FOUNDATIONAL_LORE.md).
 
 ## Setting
 
@@ -15,6 +15,14 @@ The Ice Reaper is Regent Iselin, the reigning queen's younger sister. She alread
 These identity and motive notes are author knowledge. Opening dialogue, quest trackers, Gallery labels and casual NPC exposition must not reveal her covert Crown investigation or future Ice Reaper identity. The existing scene artwork and action study do not by themselves establish the missing transformation scenes or final encounter placement.
 
 Caelan, Lucan and Mira rescue Rhea from an ice prison. Rhea then takes control of the confrontation while moving her companions out of its path. Her wind blast and fireballs express her limit-breaking magic without establishing a named player ability or a combat damage formula.
+
+## Superseded study reference
+
+The earlier 45-second **Wintermute2** and meteor/vine proposal is superseded by
+the current 32-second **Those I Swore to Save** study. The Gallery action study
+does not implement Iselin's intervening journey or transformation. The current
+approval boundary remains the first 21 seconds; the continuation is implemented
+for whole-scene review. Main-story placement and a playable boss remain open.
 
 ## Music and playback
 
