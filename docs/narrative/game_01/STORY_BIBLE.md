@@ -11,7 +11,7 @@ author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.5 (post-timeskip dome collapse and Rhea-led expedition)
+**Version:** 0.6 (royal authorization, betrayal and unfair exile)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
@@ -107,6 +107,7 @@ antiwar thread does not silently replace the dome's existing protective motive.
 | --- | --- | --- | --- |
 | Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to her northern kingdom. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
 | Parallel crisis | Attempts to avert war, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
+| Royal betrayal | The party's precise location and knowledge during the royal decisions remain open. | Her sister privately authorizes protection, then permits a false account of disobedience and refuses to acknowledge that authorization. Exile follows. | What she witnesses or learns about these decisions remains open. |
 | Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
 | Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in confinement for about three surface years. | Lives through those years, gaining power and experience. |
 | Surface return | Escapes after about three years have passed on the surface. | Has transformed during confinement; the trigger and exact timing of her emergence remain open. | Her additional surface experience partly explains her power at the Ice Reaper confrontation. |
@@ -118,6 +119,61 @@ fall and self-encasement. Only Rhea's exclusion from the core party is fixed;
 the complete roster, precise departure scenes and subjective core duration are
 not chosen. Opening ages remain ages at opening; post-skip ages require the
 pre-descent journey's elapsed time as well.
+
+### Royal authorization and betrayal
+
+**Source / status:** General story direction approved by the author on
+2026-11-24; future material, not implemented scenes. This section owns the
+causal sequence. Detailed dialogue, political procedure and battlefield
+logistics remain open.
+
+1. Iselin returns with evidence gathered during the journey and warns her
+   sister, the reigning queen, of a major approaching aether disturbance.
+   Her assessment contains uncertainty; neither sister possesses the hidden
+   cosmic explanation or a complete prediction.
+2. The queen privately authorizes the protective intervention and promises
+   to support Iselin. Their prior trust and genuine affection must be developed
+   before this promise is broken.
+3. Iselin creates the dome. It protects substantial numbers of people, but
+   closing the southern approach also strands people outside and causes real
+   losses, including deaths. These consequences remain meaningful even when
+   the later accusation is exposed as unfair.
+4. The public accusation claims she defied the queen's orders, deliberately
+   abandoned the army and acted against the kingdom. The claim of acting
+   against royal authorization is false. Protective intent does not prove
+   every judgment was sound, but the account of unauthorized treachery is not
+   objective author truth.
+5. Military leaders and bereaved families have legitimate reasons to demand
+   answers. A truthful inquiry would examine the queen's authorization and
+   royal decisions concerning protection, evacuation and withdrawal. Not all
+   accusers are knowingly dishonest or secretly conspiring.
+6. The queen could acknowledge her responsibility and defend Iselin, at the
+   risk of losing military support and exposing government failures during a
+   political and military crisis. She instead allows the false account to
+   stand. This is her consequential choice, not an unavoidable procedure or
+   proof that every alternative was impossible.
+7. The queen secures exile instead of execution and privately regards this as
+   saving her sister's life. Iselin asks her to publicly acknowledge the
+   authorization; the queen refuses. Her claim of mercy does not erase her
+   responsibility for permitting the injustice.
+8. The broken promise, public condemnation and refusal of acknowledgment
+   provide specific experiences for Iselin's later conscious brooding. Her
+   eventual extension of blame to the whole population remains her own moral
+   development, not a justified consequence of the betrayal.
+
+**Illustrative logistics, still proposed:** A royal rear guard holds the
+southern road during civilian evacuation; the queen approves sealing before
+everyone returns. The unit, exact orders, who knows them, victims, timing and
+alternatives are not selected. No named character's death is established.
+The precise military leverage and any negotiation or armistice terms also
+remain to be authored; this approval does not settle whether war is prevented
+or how it ends.
+
+The [Iselin sheet](characters/ISELIN.md#her-sisters-promise-and-betrayal) owns
+her relationship and response. The
+[Revelation Plan](../saga/REVELATION_PLAN.md#royal-authorization-and-the-public-accusation)
+separates private truth, the public account and each participant's knowledge.
+The queen's personal name remains open; **Maren** is a working proposal only.
 
 ### Post-timeskip aftermath and the collapsing dome
 
@@ -184,8 +240,9 @@ script or new runtime quest identifier is selected here.
 ### Decisions still open
 
 The war's causes, factions and outcome; Iselin's departure trigger; diplomatic
-events; the dome's remaining practical effects and deterioration mechanism;
-the political circumstances making exile unfair and the orders enforcing it;
+events; the approaching calamity's nature and protective mechanics; the dome's
+remaining practical effects and deterioration mechanism; the detailed inquiry,
+military leverage, sentencing procedure and orders enforcing the unfair exile;
 Rhea's pre-core departure reason, training and remaining surface activities;
 the fall's cause and location; the core's route and subjective duration;
 remaining surface changes; Iselin's release; the expedition's commissioner,
