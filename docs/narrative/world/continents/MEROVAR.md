@@ -174,12 +174,12 @@ later stories.
 These regions do not determine a person's ancestry, personality, moral position
 or magical potential. Borders and institutions will overlap the landscape.
 The original sacrificial temple's location remains unassigned. The approved
-[companion foundations](../../narrative/game_01/COMPANIONS.md) give Lucan the
+[companion foundations](../../game_01/COMPANIONS.md) give Lucan the
 Redstone March, Rhea the wooded western Greyfold slopes and Edran the Lower
 Leth as home regions; specific settlements remain open.
 Regional customs cannot reveal the hidden ancient history or settle
 the unresolved mechanics of souls and resurrection.
 
-References: [foundational lore](../../FOUNDATIONAL_LORE.md),
-[approved Eldenmere geography](../eldenmere/blockout/README.md),
-and [Game I's working act outline](../../narrative/game_01/ACT_OUTLINE.md).
+References: [foundational lore](../../saga/FOUNDATIONAL_LORE.md),
+[approved Eldenmere geography](../../../world/eldenmere/blockout/README.md),
+and [Game I's working act outline](../../game_01/ACT_OUTLINE.md).

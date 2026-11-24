@@ -6,7 +6,7 @@ encounters remain story seeds; exact political borders and institutions remain o
 Othara is the continent south of Auratia's Amber Sea. Its regional names describe
 geographic areas containing different communities and jurisdictions. This document follows the
 [world atlas](../WORLD_ATLAS.md) and preserves the established limits in
-[Foundational Lore](../../FOUNDATIONAL_LORE.md).
+[Foundational Lore](../../saga/FOUNDATIONAL_LORE.md).
 
 ## Position and climate
 

@@ -68,6 +68,6 @@ sheet is a diagram; the gameplay screenshots and video use the production
 renderer and ordinary movement.
 
 See the [reserve guide](SANCTUARY_RESERVE.md) for exploration and scene build
-commands, the [faith guide](world/ELDEN_VALE_FAITH.md) for the established
-spiritual foundations, and the [covenant](world/SANCTUARY_COVENANT.md) for the
+commands, the [faith guide](narrative/world/ELDEN_VALE_FAITH.md) for the established
+spiritual foundations, and the [covenant](narrative/world/SANCTUARY_COVENANT.md) for the
 reserve's public responsibilities and unresolved history.

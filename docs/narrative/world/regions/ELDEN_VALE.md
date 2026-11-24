@@ -3,13 +3,10 @@
 **Status: Approved regional geography, cultural foundations and opening
 regional context around Eldenmere. Illustrative encounters remain story seeds.**
 
-**Implementation:** The [first regional overworld](../../OVERWORLD.md) now
-represents the boundary rivers, woodland, foothills, fields, guarded walls and
-lightning-destroyed western road bridge. Iselin's [arrival cinematic](../../REGENT_ARRIVAL.md)
-and MQ03 dialogue present the relief visit and covenant disagreement. Elden Vale
-Sanctuary has an overworld miniature and approach in the northeastern foothills.
-Its [detailed reserve and hall](../../SANCTUARY_RESERVE.md) are now accessible
-from the miniature; the cave dungeon and its quest remain future work.
+**Implementation references:** The [regional overworld](../../../OVERWORLD.md)
+implements the valley landscape; [MQ03](../../game_01/CH01_MQ03.md) owns the
+Sanctuary journey, cave emergency and return progression. The
+[detailed reserve](../../../SANCTUARY_RESERVE.md) owns scene layout and access.
 
 Elden Vale is Eldenmere's home region: a wooded inland valley on
 the western foothills of Merovar's Greyfold Mountains. The valley gives Game I
@@ -18,8 +15,8 @@ connections to neighbouring communities. It also gives the covenant dispute
 specific land, livelihoods and relationships at stake.
 
 Existing village facts are drawn from
-[Chapter 1](../../narrative/game_01/CHAPTER_01.md) and the
-[local map contract](../eldenmere/blockout/README.md). The continental context
+[Chapter 1](../../game_01/CHAPTER_01.md) and the
+[local map contract](../../../world/eldenmere/blockout/README.md). The continental context
 is established in the [World Atlas](../WORLD_ATLAS.md) and
 [Merovar](../continents/MEROVAR.md).
 
@@ -104,25 +101,12 @@ A maintained spur from the eastern footpath reaches its regional miniature.
 Its full buried layout remains open; it is not established as the original
 sacrificial temple.
 
-The ridge sanctuary was deliberately built near a real natural aether
-confluence to guide the region's dead back to the planet and remember them.
-Its caretakers perform a critical societal responsibility that mining would
-disrupt. A living memorial grove forms part of the community's continuing care.
-Serene and the keepers understand this function. The confluence belongs to the
-ordinary planetary cycle, separate from the Aethersphere; its exact workings,
-the buried structures' purpose and their relationship remain unresolved.
-
-Greater regions elsewhere in Auratia also have their own sanctuaries at natural
-aetherial confluences. Elden Vale Sanctuary provides the local introduction to
-that wider pattern. Exploring other sanctuaries may become a recurring main-story
-thread; their individual histories, routes and discoveries remain to be designed.
-
-Civil authorities, sanctuary keepers and the community share a custodial
-trust in the reserve. Protection sits alongside duties of care and practical
-service; it does not make the ground the order's unrestricted property or
-prevent ordinary passage and maintenance within established limits. New
-quarrying and disturbance of buried works require joint review and exceptional
-authorization. See the [Sanctuary Covenant](../SANCTUARY_COVENANT.md).
+The [faith guide](../ELDEN_VALE_FAITH.md) owns the Sanctuary's natural
+confluence, guidance of the dead and living memorial care, including what is
+known and unresolved. The [covenant](../SANCTUARY_COVENANT.md) owns the reserve's
+shared custodial responsibilities, permitted use and restricted excavation.
+These obligations matter to the region's daily life without making the ground
+unrestricted property of the order.
 
 The wider valley could support small care households, travelling
 caretakers and lay volunteers with varying resources. A remote household may
@@ -146,47 +130,21 @@ and constitutional powers remain open. Elden Vale and nearby
 upper Leth road and quarry districts form the immediate setting of her
 administration's concerns.
 
-Before Game I opens, an extraordinarily powerful lightning surge destroyed
-Eldenmere's road south to the next town. The southern connection is part of
-the [classroom world map's route context](../../WORLD_MAP.md); the town has no
-approved name. A handful of similar incidents have affected other parts of
-the region, and Iselin has already visited a couple of communities to provide
-relief. These are serious local emergencies, not a widespread cataclysm.
-Their deeper mechanism is unknown to the people involved. The
-[Regional Surges guide](../../narrative/game_01/REGIONAL_SURGES.md) governs
-these incidents and the opening arrival context.
-
-Repairs across the affected communities strain stone supplies, hauling and
-other repair resources. Iselin seeks a nearer stone seam within the ridge
-sanctuary's protected boundary to supply several towns. More distant stone
-remains an alternative, with a longer haul competing for carts, money and
-time needed by other repairs.
+The [regional surges guide](../../game_01/REGIONAL_SURGES.md) owns the recent
+road damage, relief visit and material pressures behind Iselin's request. The
+southern connection continues toward the Leth settlements; the neighbouring
+town remains unnamed. The [covenant](../SANCTUARY_COVENANT.md) owns the protected
+seam and alternative-stone considerations.
 
 Road access, affordable building material, reliable mills and safe movement
 between settlements can improve people's lives. The covenant also protects
 sanctuary ground, including what lies beneath it. Serene's concern has a
 legitimate basis even where she cannot explain every inherited boundary.
 
-The old foundation plan and historical passage-injury account remain public
-background evidence, separate from the recent bridge incident. Caretakers
-have heard growling inside the cave since that incident and have kept the
-entrance closed. Neither report establishes the creature's identity or a
-common cause for these events.
-
-Before her discussion with Serene, Iselin secretly sent a Crown crew to secure
-the working area and prepare the mining operation. A panicked survivor's
-report of a cave attack exposes that deployment during
-[MQ03](../../narrative/game_01/CH01_MQ03.md). Serene recognizes her bad faith;
-Lucan, who was not told about the crew, is taken aback. Iselin's genuine relief
-work does not erase her concealed attempt to impose control over the site.
-
-Serene stays to care for the survivor with Tomas and the driver helping.
-Caelan collects Mira and travels to the reserve with her, Iselin, Lucan and
-the page. The implemented route includes the Sanctuary arrival, cave rescue,
-Vespermaw fight, healing-pool evacuation and return resolution. Iselin must
-account for her concealed deployment, and relief arrangements address the
-immediate recovery needs. No agreement to excavate is granted by this emergency
-response or by completing MQ03.
+The [covenant's public evidence](../SANCTUARY_COVENANT.md#the-public-evidence-behind-serenes-caution)
+is distinct from the recent incidents and from Serene's inherited private
+warning. [MQ03](../../game_01/CH01_MQ03.md) owns the concealed deployment,
+emergency and return; completing that rescue grants no excavation agreement.
 
 Valley residents should have varied positions. A quarry worker may want steady
 work and stronger safety oversight. A farmer may welcome a road while

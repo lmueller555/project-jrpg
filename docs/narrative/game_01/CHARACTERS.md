@@ -170,7 +170,7 @@ excluded by the older "no hidden cosmic motive" proposal boundary.
 ## Iselin and Serene — relief needs and the Sanctuary breach of trust
 
 The [regional surge context](REGIONAL_SURGES.md) and
-[covenant guide](../../world/SANCTUARY_COVENANT.md) govern the revised MQ03
+[covenant guide](../world/SANCTUARY_COVENANT.md) govern the revised MQ03
 conflict. The guidance-of-the-dead role and concealed deployment supersede
 the older mutually sincere negotiation and limited-inspection compromise.
 
@@ -193,7 +193,7 @@ Iselin, Lucan, the page, Caelan and Mira make the emergency journey. The page's
 prior knowledge of the operation remains unspecified. Lucan was unaware and
 is taken aback before turning to the people left in danger.
 
-Serene's [planetary tradition](../../world/ELDEN_VALE_FAITH.md) does not center
+Serene's [planetary tradition](../world/ELDEN_VALE_FAITH.md) does not center
 gods. The confluence belongs to the planetary cycle, separate from the
 Aethersphere; the guidance mechanism and buried works' purpose remain open.
 The grove does not assign individual souls to trees. The public foundation

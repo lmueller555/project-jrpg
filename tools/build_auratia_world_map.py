@@ -55,8 +55,8 @@ def build():
         'wall_sprite_source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         'export': 'crop opaque bounds; nearest-neighbor fit within 40x36; 64-color palette; centered in 42x40; binary alpha',
         'build_tool': 'tools/build_auratia_world_map.py',
-        'geography': 'docs/world/WORLD_ATLAS.md',
-        'polar_regions': 'docs/world/POLAR_REGIONS.md',
+        'geography': 'docs/narrative/world/WORLD_ATLAS.md',
+        'polar_regions': 'docs/narrative/world/POLAR_REGIONS.md',
     }
     (OUTPUT/'map.json').write_text(json.dumps(manifest, indent=2)+'\n', encoding='utf-8')
     print('Exported Auratia classroom wall map at 42x40; approved full-size PNG preserved.')

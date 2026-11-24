@@ -27,7 +27,7 @@ Unless noted otherwise, this describes his opening characterization.
 
 Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 [Iselin's royal background](../CHARACTERS.md#iselin--approved-royal-background),
-[Redstone March](../../../world/continents/MEROVAR.md#redstone-march) and
+[Redstone March](../../world/continents/MEROVAR.md#redstone-march) and
 [Lucan's asset guide](../../../../assets/characters/lucan/README.md).
 
 ## Personality

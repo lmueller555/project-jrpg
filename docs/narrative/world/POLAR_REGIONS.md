@@ -210,5 +210,5 @@ No Ancient homeland, original sacrificial temple, survivor identity or
 companion birthplace is assigned to either pole. Local religious beliefs
 remain beliefs and do not settle the world's hidden cosmology. Game I's
 regional story does not require a polar expedition. See
-[Foundational Lore](../FOUNDATIONAL_LORE.md) and the
-[Revelation Plan](../narrative/saga/REVELATION_PLAN.md).
+[Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and the
+[Revelation Plan](../saga/REVELATION_PLAN.md).

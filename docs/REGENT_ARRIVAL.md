@@ -291,4 +291,4 @@ measurements, walking and guard-clearance evidence, and a bird-sound audition.
 
 See the [production-game review](reviews/regent_arrival/README.md),
 [MQ03 guide](REGENT_QUEST.md), [regional surge context](narrative/game_01/REGIONAL_SURGES.md)
-and [covenant](world/SANCTUARY_COVENANT.md).
+and [covenant](narrative/world/SANCTUARY_COVENANT.md).

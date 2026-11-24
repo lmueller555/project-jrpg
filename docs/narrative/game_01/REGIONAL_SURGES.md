@@ -12,8 +12,8 @@ crew and an emergency journey to the Sanctuary. See
 [the arrival guide](../../REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
 
 References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
-[MQ03](CH01_MQ03.md), [Elden Vale](../../world/regions/ELDEN_VALE.md),
-[the covenant](../../world/SANCTUARY_COVENANT.md), and the
+[MQ03](CH01_MQ03.md), [Elden Vale](../world/regions/ELDEN_VALE.md),
+[the covenant](../world/SANCTUARY_COVENANT.md), and the
 [revelation plan](../saga/REVELATION_PLAN.md).
 
 ## The southern road
@@ -81,7 +81,7 @@ relief effort and a discussion with Serene about the protected ridge site.
 
 The seam lies inside the marked reserve around Elden Vale Sanctuary on the ridge near
 Eldenmere, separate from Serene’s home where Caelan lives. The
-[covenant guide](../../world/SANCTUARY_COVENANT.md) defines the protected land,
+[covenant guide](../world/SANCTUARY_COVENANT.md) defines the protected land,
 ordinary permitted use, restricted excavation and shared custodial duties.
 
 The Sanctuary was deliberately sited near a natural aether confluence to

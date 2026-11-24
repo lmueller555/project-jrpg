@@ -1,11 +1,21 @@
 # Project JRPG — Foundational Lore
 
-**Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals  
-**Version:** 0.5
+**Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals
 
-**Last revised:** 2026-11-04
+**Version:** 0.6
 
-**Scope:** Core cosmology, history before the game's opening, ancient sacrifice, successor life, religion, and the original source of the present crisis.
+**Last revised:** 2026-11-24 (documentation consolidation).
+
+**Provenance:** Retains the foundational decisions recorded in version 0.5,
+including the 2026-11-04 planetary-cycle revision, and the unique saga-planning
+material from the former Saga Bible version 0.2. Established, proposed, working
+interpretation and open statuses are preserved; consolidation approves no new
+story facts.
+
+**Scope:** Core cosmology, history before the game's opening, ancient sacrifice,
+successor life, the original source of the present crisis, and broad multi-game
+planning. See the [narrative index](../README.md) for the owners of local faith,
+setting, character, quest and disclosure details.
 
 ## 0. How to read this document
 
@@ -27,10 +37,10 @@ purpose or ancient origin. The planetary-cycle revision below is established
 canon as of 2026-11-04.
 
 **World and geography:** The world is named **Auratia**. The
-[World Atlas](world/WORLD_ATLAS.md) establishes its continents, regional
+[World Atlas](../world/WORLD_ATLAS.md) establishes its continents, regional
 geography and cultural foundations, including Eldenmere's place in Elden Vale
 on Merovar. The four major continents are Merovar, Serevin, Othara and Istrava.
-The [Polar Regions](world/POLAR_REGIONS.md) distinguish the Nivren Crown's
+The [Polar Regions](../world/POLAR_REGIONS.md) distinguish the Nivren Crown's
 northern polar ocean from Istrava's southern polar landmass. Exact borders,
 distances and illustrative future encounters remain open; established
 cosmology and Eldenmere's local map retain their authority.
@@ -195,30 +205,12 @@ Traditions that revere these beings have a real historical basis: ancient
 beings did sacrifice their own active existence to preserve the world. This
 does not require every modern spiritual tradition to center divine worship.
 
-**Serene's local faith, confirmed 2026-11-04:** She practices a
-[planetary spiritual tradition](world/ELDEN_VALE_FAITH.md) that does not center
-gods. Its responsibilities of care, remembrance and keeping shared places
-are grounded in belonging to the planetary aether cycle.
-
-Elden Vale Sanctuary was deliberately constructed near a **real natural
-aether confluence** to **guide the region's dead back to the planet and
-remember them**. This is an actual societal responsibility understood by
-Serene and the keepers; mining the protected ground would disrupt it. Its
-living memorial grove forms part of that care. The confluence belongs to the
-ordinary planetary cycle, separate from the Aethersphere. The exact means of
-guidance, experience of the dead and relationship to the buried structures
-remain unresolved.
-
-Selected local practices also include Eldenmere's Festival of Light,
-planetary-return teaching, sanctuary community service and the
-[sanctuary covenant](world/SANCTUARY_COVENANT.md). These establish sincere
-spiritual practice and custodial responsibilities without defining consciousness
-after return to the planet or explaining the hidden ancient history. Faith
-names, wider institutions, doctrines and detailed rites remain open.
-
-Elden Vale Sanctuary is separate from Serene's home in the village. Neither
-has been identified as the original sacrificial temple;
-that temple's location remains unassigned.
+Local spiritual traditions and the known service of Elden Vale Sanctuary are
+recorded in [Serene's planetary faith](../world/ELDEN_VALE_FAITH.md); its public
+custodial obligations belong to the [Sanctuary Covenant](../world/SANCTUARY_COVENANT.md).
+Those local practices do not reveal the hidden ancient history. Neither Elden
+Vale Sanctuary nor Serene's home has been identified as the original sacrificial
+temple; that temple's location remains unassigned.
 
 ### Working interpretation
 
@@ -253,6 +245,16 @@ The survivors may have diverged philosophically over 10,000 years rather than ac
 
 Their accumulation might give them overwhelming power relative to modern people, but the limits, risks, mechanics, and practical feasibility of their plan need to be designed.
 
+### Character development requirements — details open
+
+The four survivors' names, identities, relationships, personalities, disguises,
+degree of coordination, specific methods and individual arcs remain undetermined.
+Their shared objective does not mean they share every belief or cause every
+wrong in modern history. Before finalizing one, record their motivations,
+distinct viewpoint, participation in the original disagreement, ongoing
+extraction method and eventual arc. This retains the former Saga Bible's design
+requirements without choosing those details.
+
 ---
 
 ## 9. The present-day situation and dramatic premise
@@ -279,33 +281,21 @@ The overarching ancient and cosmic conflict unfolds across **multiple games**. *
 
 ### Disclosure boundaries for Game I
 
-- **Visible or potentially visible:** Everyday magicks, the planetary aether
-  cycle, scholarly recognition of the Aethersphere as a distinct atmospheric
-  form, modern faith and worship at the ancient temple, regional unrest or
-  instability, and local people's choices and consequences.
-- **Largely concealed:** The temple's sacrificial origin, the Aethersphere's
-  protective purpose and ancient origin, the Great Sacrifice, exactly four
-  active survivors and their identity, the distant dying worlds, and the
-  larger cosmic plan.
-- **Narrative rule:** The player must not need sequel knowledge to understand Game I's main conflict and ending. The four survivors may influence events but modern people retain independent motives and responsibility.
-- **Approved regional foundations:** Caelan's opening community and relationships,
-  the limited [early lightning incidents and Iselin's relief visit](narrative/game_01/REGIONAL_SURGES.md),
-  and the [covenant disagreement](world/SANCTUARY_COVENANT.md). These do not
-  establish a complete five-act plot or the final mechanism of the catastrophe.
-- **Still to design:** Remaining game-wide motives, stakes and local resolution,
-  the precise later crisis and degree of further foreshadowing; individual
-  identities and relationships of the four.
+The [Revelation Plan](REVELATION_PLAN.md) owns Game I's permitted disclosures,
+character/player knowledge distinctions, approved clues and reveal design rules.
+Its boundaries preserve a self-contained regional conflict while withholding
+the wider ancient and cosmic explanation. Author knowledge is not automatically
+player knowledge.
 
 ### Working story direction — not locked plot
 
-The approved opening background now includes a handful of extraordinary
-lightning incidents, including destruction of Eldenmere's southern road before
-the opening morning. Iselin has aided other affected communities, and their
-combined repair needs motivate his quarry request. These incidents foreshadow
-a problem with aether's flow without establishing a complete mechanism or
-making the early region cataclysmic. They precede the proposed excavation.
-Gradual later revelations may reframe the temple, the gods, the planetary
-atmosphere's true purpose and origin, the hidden survivors and the distant cosmic threat.
+The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the approved
+opening incidents and relief context. The [Sanctuary Covenant](../world/SANCTUARY_COVENANT.md)
+owns the local protected-ground terms; [Chapter 1](../game_01/CHAPTER_01.md)
+and its quest guides own the opening progression. Those foundations do not
+establish a complete five-act plot or the final catastrophe mechanism. Remaining
+game-wide motives, stakes, local resolution and later crisis details need story
+development.
 
 The story's intended **tone is mature and morally complex**. Its broad creative
 direction combines high fantasy, technological or industrial transformation,
@@ -317,6 +307,23 @@ later-act outcomes remain open.
 **Potential central dramatic question:** What sacrifices can living civilizations justifiably demand of one another in order to face a threat to existence, especially when neither side knows whether its solution will work?
 
 This is a candidate framing, not a fixed ending or final thematic statement.
+
+### Saga horizons — proposed, not fixed
+
+The following progression is retained from the former Saga Bible as proposed
+planning, not a committed trilogy or an approved ending. The number and titles
+of installments remain undetermined:
+
+1. **Game I — regional story.** Human decisions and regional consequences form
+   the heart of a self-contained narrative. Subtle anomalies or agents hint at
+   something older, without revealing the four or the cosmic truth.
+2. **Later installment(s) — historical recontextualization.** The sacred site,
+   ancient civilization, atmospheric nature and hidden actors can gradually
+   become subjects of investigation. Their order and scale remain undecided.
+3. **Eventual saga reckoning.** The methods and assumptions of the four survivors
+   are challenged, and the origins and possible resolution of the cosmic
+   imbalance become central. An ending, successful solution, sacrifice and exact
+   installment count are **not yet chosen**.
 
 ---
 
@@ -361,8 +368,10 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 | Later | Matter creation versus manipulation by magicks | **Explicitly postponed by design** |
 | Later | Persistence of identity/consciousness after death | **Unresolved**, central to soul and resurrection lore |
 | Later | Geography, polities, cities, languages, calendar, religion names | Must follow story needs, not precede them |
-| Later | Additional character biographies and detailed combat builds | Develop from the narrative arc and preserve the [approved companion foundations](narrative/game_01/COMPANIONS.md) |
+| Later | Additional character biographies and detailed combat builds | Develop from the narrative arc and preserve the [approved companion foundations](../game_01/COMPANIONS.md) |
 | Later | Detailed scene-by-scene narrative, ending, gameplay systems | Require subsequent story design |
+| Later | Which secrets each future installment reveals and what earns each reveal | Develop in the [Revelation Plan](REVELATION_PLAN.md) without fixing a saga ending |
+| Later | How deeply faith, industrialization and the politics of modern societies intertwine | Retains an open saga-planning decision |
 
 ### Key continuity and logic checks
 
@@ -393,6 +402,21 @@ These are **deliberate next design tasks**, not errors to fill with unsupported 
 ### Guardrails
 
 Do not build a generic story in which the solution is merely killing a god. Do not duplicate FFXIV's specific metaphysical devices. Do not lock in a single culture, world map, protagonist, pantheon, or antagonist roster before the story gives a reason for their existence. Do not introduce a miraculous new energy source that invalidates conservation or dissolves the central conflict without earned consequences.
+
+### Cross-game continuity
+
+- Local characters, politics and suffering retain independent causal weight;
+  the four survivors are not secretly responsible for everything.
+- Earlier clues should support later reinterpretation without contradicting
+  previously presented facts.
+- Each installment delivers on its own central dramatic promise and resolution,
+  even when broader questions remain.
+- Storyteller knowledge differs from player knowledge; the
+  [Revelation Plan](REVELATION_PLAN.md) governs disclosure.
+- Preserve open questions without silently treating a compelling proposal as
+  canon.
+- Historical or metaphysical changes update this foundational authority first
+  or in the same reviewed change.
 
 ## 13. Change process
 

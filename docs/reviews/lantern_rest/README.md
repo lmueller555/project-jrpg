@@ -3,7 +3,7 @@
 **Historical capture:** This media and transcript predate the 2026-11-04
 planetary-aether revision. They remain staging evidence, not current doctrine.
 Use the [current implementation script](../../narrative/game_01/CH01_MQ04_PR3.md)
-and [Foundational Lore](../../FOUNDATIONAL_LORE.md) for the revised teaching.
+and [Foundational Lore](../../narrative/saga/FOUNDATIONAL_LORE.md) for the revised teaching.
 
 The capture uses the production Game, normal walking, real home and sanctuary doors, material handoffs and all eleven new dialogue callbacks. Only the shipped PR2 endpoint and earlier quests are seeded.
 

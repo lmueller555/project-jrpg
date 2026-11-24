@@ -15,9 +15,9 @@ borders and distances remain open; illustrative encounters are story seeds,
 not committed quests.
 
 The existing village, characters, quests and local geography retain their
-approved facts. [Foundational Lore](../FOUNDATIONAL_LORE.md) governs the
+approved facts. [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) governs the
 world's aether, ancient history and hidden cosmology. The
-[Revelation Plan](../narrative/saga/REVELATION_PLAN.md) governs what characters
+[Revelation Plan](../saga/REVELATION_PLAN.md) governs what characters
 and players may learn. The atlas is a writer's reference; a character's own
 map or understanding can be narrower.
 
@@ -104,36 +104,26 @@ The village's controlled millrace and irrigation supplies remain distinct
 from the main brook. The short wheel-feeding branch runs east–west locally.
 The blockage in MQ02 obstructs the mill supply; it does not stop the whole
 river or watershed. See the approved
-[Eldenmere elevation and water contract](eldenmere/blockout/README.md).
+[Eldenmere elevation and water contract](../../world/eldenmere/blockout/README.md).
 
 Regent Iselin's established authority is regional. Her
 administration's immediate concerns lie in Elden Vale and neighbouring upper
 Leth road and quarry districts. Iselin's Crown rules a northern kingdom within Merovar, and she is the
 reigning queen's younger sister. This does not establish one Crown ruling the
 entire continent. Her precise constitutional powers and exact political boundaries
-remain open. The [royal character foundations](../narrative/game_01/CHARACTERS.md#iselin--approved-royal-background)
+remain open. The [royal character foundations](../game_01/CHARACTERS.md#iselin--approved-royal-background)
 record this approved relationship separately from proposed family details.
 A geographic region in the atlas is not automatically an administrative province.
 
 ### The region at the opening of Game I
 
-Before the opening, an extraordinarily powerful lightning surge destroyed
-the road from Eldenmere to the next town south. That town has no approved
-name. A handful of similar events elsewhere in the region have led Iselin to
-visit a couple of affected communities and provide relief. Repairs strain
-available stone, transport and labour across those communities; this is not a
-widespread cataclysm. See [Regional Surges](../narrative/game_01/REGIONAL_SURGES.md)
-for the recent incidents and arrival context.
-
-The resulting material need drives Iselin's request to quarry a nearer seam
-inside the protected reserve of **Elden Vale Sanctuary**, northeast of Eldenmere.
-This is a separate site from **Serene's home**, the village household where
-Serene, Caelan and Tomas live and provide community care. The sanctuary's marked reserve
-covers a wooded hill and buried foundations as well as sanctuary buildings.
-The [Sanctuary Covenant](SANCTUARY_COVENANT.md) records the shared custodial
-trust, public evidence and relief obligations behind the disagreement;
-neither the site's complete history nor the surges' deeper cause is public
-knowledge.
+The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the recent
+southern-road damage and relief context. The protected seam lies within
+**Elden Vale Sanctuary**, northeast of Eldenmere, a separate regional site from
+**Serene's home** in the village. See the
+[Sanctuary Covenant](SANCTUARY_COVENANT.md) for the reserve boundaries,
+protected uses and public evidence; [MQ03](../game_01/CH01_MQ03.md) owns the
+emergency and return progression.
 
 The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
 
@@ -222,19 +212,12 @@ pressures rather than universally identical laws.
 
 ## Faith, magicks and cultural variation
 
-The current foundation describes life and nature as a planetary aether cycle:
-when living beings die, their aether returns to the planet. Scholars distinguish
-the Aethersphere as a poorly understood atmospheric form outside that cycle;
-its protective purpose and ancient origin are not known to them. See the
-[Foundational Lore](../FOUNDATIONAL_LORE.md) for the author-level truth and
-remaining metaphysical questions.
-
-Serene's [local planetary tradition](ELDEN_VALE_FAITH.md) does not center
-gods. Elden Vale Sanctuary was deliberately constructed near a real natural
-aether confluence to guide the region's dead back to the planet and remember
-them. Its caretakers carry a critical societal responsibility that mining
-would disrupt. This does not define a universal faith, the exact guidance
-practices or the purpose of the site's buried works.
+[Foundational Lore](../saga/FOUNDATIONAL_LORE.md) owns the planetary cycle,
+magick constraints and hidden cosmology. The
+[Revelation Plan](../saga/REVELATION_PLAN.md) distinguishes public understanding
+from author truth. [Serene's local faith](ELDEN_VALE_FAITH.md) owns Elden Vale's
+spiritual practices and the Sanctuary's service to the dead; the
+[covenant](SANCTUARY_COVENANT.md) owns its public custodial terms.
 
 Greater regions across Auratia have their own sanctuaries at natural aetherial
 confluences. Their surroundings, architecture, customs and custodial arrangements
@@ -277,7 +260,7 @@ same embankment while both care about their home. Let a traveller's mistaken
 expectation meet a specific person rather than a whole population confirming
 the stereotype.
 
-The approved [companion foundations](../narrative/game_01/COMPANIONS.md) place
+The approved [companion foundations](../game_01/COMPANIONS.md) place
 Lucan Rooke in the Redstone March, Rhea Sorel on the wooded western Greyfold
 slopes and Edran Hale in the Lower Leth. Specific home settlements remain open.
 Use the atlas to develop future backgrounds as the characters' needs become

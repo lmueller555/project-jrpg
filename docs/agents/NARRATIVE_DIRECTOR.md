@@ -62,6 +62,10 @@ because it was suggested.
 Use existing authoritative documents rather than creating a competing narrative
 bible.
 
+Start with the [narrative index](../narrative/README.md), which identifies the
+owner of each kind of fact and separates narrative authorities from runtime
+guides and historical review evidence.
+
 Relevant sources include:
 
 - [Game I Story Bible](../narrative/game_01/STORY_BIBLE.md),
@@ -69,10 +73,10 @@ Relevant sources include:
   documents.
 - [Character template](../narrative/game_01/characters/TEMPLATE.md) and individual
   character sheets.
-- [Foundational Lore](../FOUNDATIONAL_LORE.md),
-  [Saga Bible](../narrative/saga/SAGA_BIBLE.md), and
+- [Foundational Lore](../narrative/saga/FOUNDATIONAL_LORE.md),
+  including broad saga planning, and
   [Revelation Plan](../narrative/saga/REVELATION_PLAN.md).
-- [World Atlas](../world/WORLD_ATLAS.md) and relevant regional documents.
+- [World Atlas](../narrative/world/WORLD_ATLAS.md) and relevant regional documents.
 - Applicable gameplay and presentation standards when preparing implementation
   work.
 

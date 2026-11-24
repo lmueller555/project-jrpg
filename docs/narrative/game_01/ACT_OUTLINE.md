@@ -23,7 +23,7 @@ origin or disclose the catastrophe to the player.
 
 ## Authority and boundaries
 
-This outline explores **The Broken Covenant** as the preferred current direction for Game I. It does **not** supersede the [Game I Story Bible](STORY_BIBLE.md), [Foundational Lore](../../FOUNDATIONAL_LORE.md), [Saga Bible](../saga/SAGA_BIBLE.md), or [Revelation Plan](../saga/REVELATION_PLAN.md). Those documents' confirmed constraints remain binding:
+This outline explores **The Broken Covenant** as the preferred current direction for Game I. It does **not** supersede the [Game I Story Bible](STORY_BIBLE.md), [Foundational Lore](../saga/FOUNDATIONAL_LORE.md), or [Revelation Plan](../saga/REVELATION_PLAN.md). Those documents' confirmed constraints remain binding:
 
 - Game I is a **largely regional**, emotionally grounded, **self-contained** first installment of a multi-game saga.
 - Its primary antagonist is a present-day person with agency and comprehensible motivations; modern societies' problems cannot all be attributed to ancient manipulation.
@@ -35,7 +35,7 @@ This outline explores **The Broken Covenant** as the preferred current direction
 unapproved later events and outcomes remain provisional. Geography and cast
 foundations have separate approvals. The specific
 [regional surges and relief visit](REGIONAL_SURGES.md),
-[covenant terms](../../world/SANCTUARY_COVENANT.md) and revised MQ03 motives
+[covenant terms](../world/SANCTUARY_COVENANT.md) and revised MQ03 motives
 are now approved; this does not approve the whole outline. **Hollow Harvest**
 remains an older alternative, not canon.
 
@@ -106,7 +106,7 @@ implied by this entry.
 **Not yet chosen:** Precise personal loss, remaining character biographies,
 recruitment scene details, gameplay details, evidence and the emotional stakes
 of leaving. Eldenmere's approved local setting and wider geography are recorded
-in the [World Atlas](../../world/WORLD_ATLAS.md).
+in the [World Atlas](../world/WORLD_ATLAS.md).
 
 ## Act II — The Divided Land
 

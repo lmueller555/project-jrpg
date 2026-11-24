@@ -5,26 +5,19 @@ and MQ03 emergency revision supersedes the earlier account of a mutually
 honest negotiation ending in limited inspection agreements. The custodial
 terms remain in place.
 
-**Implementation:** The Sanctuary was deliberately built near a natural aether
-confluence to guide the region's dead back to the planet and remember them.
-Mining would disrupt this critical societal responsibility. During MQ03, a
-survivor's report of a cave attack exposes the Crown crew Iselin secretly
-sent ahead to establish authority and begin the mining operation. Lucan was
-unaware of the deployment. The new route reaches the
-[detailed reserve](../SANCTUARY_RESERVE.md) with Iselin, Lucan, the page, Caelan
-and Mira. The [arrival scene](../SANCTUARY_ARRIVAL.md) and cave miniboss are
-implemented; the missing worker's rescue payoff and final MQ03 resolution
-remain later story work.
+**Quest continuity:** [MQ03](../game_01/CH01_MQ03.md) owns the implemented
+emergency, rescue and return progression. This guide owns the custodial terms
+and public evidence used by that story.
 
 **Scope:** Elden Vale Sanctuary near Eldenmere, its public covenant, its
 service to the dead and the breach of trust exposed in Chapter 1.
 
 This guide records the approved local facts for reuse in later scenes. It
 expands the [Elden Vale regional setting](regions/ELDEN_VALE.md) and informs
-[MQ03 — The Regent's Road](../narrative/game_01/CH01_MQ03.md) and the
-[Chapter 1 closing authorization](../narrative/game_01/CHAPTER_01.md).
-The [Foundational Lore](../FOUNDATIONAL_LORE.md) and
-[Revelation Plan](../narrative/saga/REVELATION_PLAN.md) retain authority over
+[MQ03 — The Regent's Road](../game_01/CH01_MQ03.md) and the
+[Chapter 1 closing authorization](../game_01/CHAPTER_01.md).
+The [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and
+[Revelation Plan](../saga/REVELATION_PLAN.md) retain authority over
 hidden history, cosmology and Game I's disclosure limits.
 
 ## The land under protection
@@ -127,8 +120,8 @@ without being allowed to investigate it.
 The chapter-ending formal authorization remains a later escalation. This
 guide does not invent an emergency override clause, establish the full permit
 procedure or settle every legal question about that authorization. Iselin's
-secret advance deployment is not a new permission granted by Serene. The new
-MQ03 route remains active at Sanctuary arrival, before its later resolution.
+secret advance deployment is not a new permission granted by Serene. Current
+quest progress and completion are recorded in MQ03 rather than this covenant.
 
 ## The public evidence behind Serene's caution
 
@@ -159,68 +152,28 @@ every shallow cut is dangerous, explain the discharge's mechanism or prove
 that a new quarry would cause a catastrophe. No curse or divine punishment is
 confirmed. The exact extent of the buried works remains uncertain.
 
-## The recent road damage and Iselin's request
+## Application in MQ03
 
-Before the game's opening, an extraordinarily powerful lightning surge
-destroyed **Eldenmere's road south to the next town**. A handful of similar
-events have occurred elsewhere in the region. Iselin has already visited a
-couple of affected communities and helped with relief.
-
-This is early foreshadowing of disturbed aether flow. It is not an established
-widespread cataclysm, and the people in Chapter 1 do not know its deeper
-mechanism. The old passage injury is not another newly occurring road strike.
-
-Repair work across the affected communities has strained available stone,
-transport and repair resources. Iselin seeks the nearer seam because its
-material could serve several towns. Her request is a response to existing
-damage and relief needs, rather than expansion pursued solely for prestige.
-
-More distant stone remains a real alternative. Its longer haul uses carts,
-money and time that other repairs also need. The conflict does not require
+The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the damaged
+southern road, limited recent lightning incidents and regional relief pressure.
+More distant stone remains a real alternative: its longer haul competes for
+carts, money and time needed by other repairs. The conflict does not require
 every other quarry or route to be unusable.
 
-## The secret deployment and emergency
+[MQ03](../game_01/CH01_MQ03.md) owns Iselin's concealed advance deployment,
+the survivor's report, Lucan's surprise and the rescue/return sequence. These
+are not the supervised joint inspection of the superseded negotiation. The
+page's prior knowledge remains unassigned. The extent of work before the attack
+is not established by this covenant.
 
-Before the meal's negotiation, Iselin sent a crew into the reserve behind
-Serene's back to establish Crown authority and begin preparing the mining
-operation. This is an organized advance deployment, not the joint inspection
-proposed in the superseded MQ03 ending. The exact extent of work completed
-before the attack remains for the arrival scene.
-
-A survivor reaches Serene's home in panic after something from within the
-cave attacks the crew. His report reveals whose men were sent and when.
-Serene recognizes that Iselin has already acted while presenting herself as
-seeking Serene’s agreement. Lucan was unaware of the secrecy and is taken aback;
-his immediate response turns to the people still at risk. The page's prior
-knowledge has not been assigned.
-
-Iselin's relief work and material shortages remain real. They do not excuse
-her concealment or make Serene's role merely a ceremonial obstacle. Her
-assertion of Crown authority does not settle the covenant's legal questions
-or create a permission Serene has granted.
-
-Serene cares for the injured survivor while Tomas and the driver help.
-Caelan volunteers, collects Mira at her workshop and travels to the Sanctuary
-with Mira, Iselin, Lucan and the page. The implemented Sanctuary arrival leads
-into the cave rescue, Vespermaw fight and healing-pool evacuation. The return
-resolution acknowledges Iselin's breach of trust and arranges relief without
-granting excavation permission. The final acknowledged family exchange
-completes MQ03 and unlocks MQ04; the former immediate private-aftermath
-completion no longer finishes new journeys.
-
-## Responsibility and unresolved causes
-
-The Sanctuary's role in guiding the dead is established. The workings of the
-confluence, the full buried layout and the cause of the cave attack are not.
-Growling began after the bridge incident; Iselin's crew later entered the
-reserve and was attacked. This chronology does not establish that mining
-provoked the creature or that the bridge incident created it.
-
-Serene's care for the survivor is emergency aid, not acceptance of Iselin's
-operation. Her duties toward the dead and the living both remain active.
-Earlier proposals to contribute courtyard stone, crew meals and a joint
-inspection are superseded as MQ03's negotiated outcome; they must not be
-reported as agreements reached before the interruption.
+Neither the deployment nor Serene's emergency care grants mining permission or
+settles the covenant's legal questions. Rescue addresses the immediate danger;
+the Sanctuary's duties to the living and the dead continue. Earlier proposals
+for courtyard stone, crew meals and joint inspection are superseded as MQ03's
+negotiated outcome, and must not be reported as agreements reached before the
+interruption. The observed chronology does not prove that mining caused the
+growling or that the bridge incident created the creature; deeper causes remain
+open.
 
 ## Knowledge and disclosure boundaries
 
