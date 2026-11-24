@@ -17,8 +17,8 @@ The site remains separate from Serene's home in Eldenmere. It was deliberately
 constructed near the natural aether confluence to guide the region's dead back
 to the planet and remember them. Its living grove and shared keeping serve
 that responsibility, as established in
-[the faith guide](world/ELDEN_VALE_FAITH.md) and
-[the covenant](world/SANCTUARY_COVENANT.md).
+[the faith guide](narrative/world/ELDEN_VALE_FAITH.md) and
+[the covenant](narrative/world/SANCTUARY_COVENANT.md).
 
 ## Exploration
 

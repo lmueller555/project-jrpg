@@ -4,7 +4,7 @@
 
 **Placement:** This remains an isolated Gallery scene study for Iselin's eventual late-game Ice Reaper confrontation. Her kingdom lies in northern Merovar; its name and capital remain undecided. The exact quest, act and main-story checkpoint have not been assigned. Follow [Iselin's approved character canon](../game_01/characters/ISELIN.md) when placing it in the main story.
 
-Related references: [scenario index](../game_01/SCENARIOS.md), [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01/characters/MIRA.md), [companion foundations](../game_01/COMPANIONS.md), and [aether foundations](../../FOUNDATIONAL_LORE.md).
+Related references: [scenario index](../game_01/SCENARIOS.md), [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01/characters/MIRA.md), [companion foundations](../game_01/COMPANIONS.md), and [aether foundations](../saga/FOUNDATIONAL_LORE.md).
 
 ## Setting
 

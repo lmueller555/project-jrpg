@@ -107,6 +107,6 @@ Seasonal contracts, marriages, study and displaced households carry customs
 along these routes. Imported cloth, visiting healers and sailors' accounts can
 make Serevin present in Game I while its principal story remains regional.
 
-Modern practices here remain subject to the [Foundational Lore](../../FOUNDATIONAL_LORE.md).
+Modern practices here remain subject to the [Foundational Lore](../../saga/FOUNDATIONAL_LORE.md).
 This atlas places no original sacrificial temple or Ancient homeland. See the
 [World Atlas](../WORLD_ATLAS.md) for the global framework.

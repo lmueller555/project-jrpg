@@ -220,7 +220,7 @@ See the [runtime capture and testing notes](reviews/opening_conclusion/README.md
 
 `regent_quest.py` and `assets/story/regent/scene.json` implement the
 [approved regional story](narrative/game_01/REGIONAL_SURGES.md),
-[covenant guide](world/SANCTUARY_COVENANT.md) and
+[covenant guide](narrative/world/SANCTUARY_COVENANT.md) and
 [revised MQ03 script](narrative/game_01/CH01_MQ03.md). After MQ02's acknowledged
 report and rewards, the [arrival cinematic](REGENT_ARRIVAL.md) introduces Iselin
 at the southern land gate, shows him hearing local accounts of the destroyed

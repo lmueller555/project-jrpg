@@ -9,19 +9,14 @@ institutional history remain open.
 This descriptive title is not a chosen religion name or a declaration that
 every person in Elden Vale follows the same tradition.
 
-**Implementation:** MQ03 explains the Sanctuary's responsibility for the
-region's dead and the mining operation's disruption of that work. Reports of
-cave growling precede a survivor's account of an attack on Iselin's secret
-advance crew. The emergency takes Caelan, Mira, Iselin, Lucan and the page to
-the [detailed reserve](../SANCTUARY_RESERVE.md). The implemented arrival, cave
-rescue, Vespermaw fight and healing-pool evacuation lead into the return
-resolution. MQ03 completes and unlocks the lantern quest only after the final
-acknowledged family exchange at home.
+**Quest continuity:** [MQ03](../game_01/CH01_MQ03.md) owns the concealed
+Crown deployment, rescue and acknowledged return sequence. This guide owns the
+faith and Sanctuary responsibilities that the quest draws on.
 
-Related guides: [Foundational Lore](../FOUNDATIONAL_LORE.md),
+Related guides: [Foundational Lore](../saga/FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),
 [Sanctuary Covenant](SANCTUARY_COVENANT.md) and
-[Revelation Plan](../narrative/saga/REVELATION_PLAN.md).
+[Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## What makes this a faith
 
@@ -92,29 +87,13 @@ Serene, Caelan and Tomas live. The household offers meals, care, supplies and
 guidance to neighbours. Neither place has been identified as the original
 sacrificial temple.
 
-## The current danger and breach of trust
+## Application in the story
 
-Caretakers have heard growling from the cave since the bridge incident and
-have kept its entrance closed. The chronology is known; the creature's
-identity and the cause of the change are not.
-
-Before speaking with Serene, Iselin secretly sent a Crown crew to establish
-control of the site and prepare the mining operation. A panicked survivor
-interrupts the meal's aftermath with news that something from the cave
-attacked the crew. His report exposes Iselin's deployment and makes Serene
-recognize that Iselin was seeking her agreement after already acting.
-Lucan was not told about the deployment and is taken aback.
-
-Iselin's relief needs remain real, but they do not make this negotiation
-honest or erase the disruption of the caretakers' responsibility. Serene
-stays to treat the survivor, with Tomas and the driver helping. Caelan brings
-Mira into the rescue outing and travels with her, Iselin, Lucan and the page.
-The page's prior knowledge of the operation is not established.
-
-The implemented MQ03 rescue resolves the immediate missing-worker emergency
-and acknowledges Iselin's breach of trust. It does not establish that mining
-caused the growling or grant permission to excavate. The return resolution
-preserves the Sanctuary's responsibilities and the unresolved wider conflict.
+The [Sanctuary Covenant](SANCTUARY_COVENANT.md) records the protected-ground
+terms and public evidence behind the dispute. [MQ03](../game_01/CH01_MQ03.md)
+owns the recent cave emergency and its resolution. Emergency aid does not
+surrender the Sanctuary's continuing responsibility to the dead or authorize
+excavation; its relationship to the living community remains part of this faith.
 
 ## Knowledge and decisions still open
 
@@ -123,10 +102,8 @@ preserves the Sanctuary's responsibilities and the unresolved wider conflict.
 - The physical behavior of confluences and the precise effects of excavation.
 - The experience of the dead and consciousness after return to the planet.
 - The buried works' origin, purpose and relationship to the natural confluence.
-- The creature's identity and the relation, if any, between the bridge incident,
-  growling, advance crew's activity and attack.
-- The missing worker's rescue payoff and final MQ03 resolution. The Sanctuary
-  arrival scene and cave miniboss encounter are implemented.
+- The deeper relation, if any, between the bridge incident, growling, advance
+  crew's activity and attack; quest observations belong to MQ03.
 
 The old foundation plan and historical passage-injury account remain public
 background evidence, separate from the recent attack. Serene's inherited

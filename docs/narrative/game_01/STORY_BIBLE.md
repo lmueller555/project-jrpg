@@ -19,14 +19,14 @@ origin or disclose the catastrophe to the player.
 
 **Status:** Game-level requirements and linked approved opening foundations are CANON; the older illustrative premise remains PROPOSED.
 **Version:** 0.2
-**Parent documents:** [Foundational Lore](../../FOUNDATIONAL_LORE.md), [Saga Bible](../saga/SAGA_BIBLE.md), and [Revelation Plan](../saga/REVELATION_PLAN.md).
+**Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md), including broad saga planning, and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
 
 Game I is the **first self-contained installment** in a multi-game saga. It tells a largely **regional**, personal story with mature and morally complex themes, a protagonist with meaningful motivation, a primary local antagonist, and an ending that substantially resolves its own conflict. Exactly four surviving ancients operate as hidden forces in the background; neither their existence as a group nor the full ancient/cosmic history is disclosed. The game's own human conflicts must matter on their own terms.
 
 Its fantasy setting incorporates developing technology and an ancient-cataclysm
-legacy. Approved geography is recorded in the [World Atlas](../../world/WORLD_ATLAS.md);
+legacy. Approved geography is recorded in the [World Atlas](../world/WORLD_ATLAS.md);
 opening characters, quests and selected religious practices are recorded in
 [Chapter 1](CHAPTER_01.md) and its linked guides. Nation-level constitutions,
 the wider period of industrialization and unapproved religious details remain open.
@@ -39,7 +39,7 @@ before the opening. Iselin has already aided a couple of other communities;
 their combined repair demands strain the supply of stone and motivate her
 request to examine a seam within Elden Vale Sanctuary’s protected ground.
 
-The [covenant](../../world/SANCTUARY_COVENANT.md) defines shared custody and
+The [covenant](../world/SANCTUARY_COVENANT.md) defines shared custody and
 protection of the reserve. The Sanctuary was deliberately built near the
 natural confluence to guide the region's dead back to the planet and remember
 them. Mining would disrupt this critical responsibility. Caretakers have heard

@@ -1,8 +1,9 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.2
-**References:** [Foundational Lore](../../FOUNDATIONAL_LORE.md) and [Saga Bible](SAGA_BIBLE.md).
+**Version:** 0.3 (reference consolidation; disclosure statuses unchanged).
+**References:** [Foundational Lore](FOUNDATIONAL_LORE.md), including broad saga
+planning, and the [narrative index](../README.md).
 
 ## Purpose
 
@@ -19,19 +20,23 @@ classification is permitted without revealing the barrier or the sacrifice.
 
 ## Revelation matrix
 
-| Topic | Writer's established truth | Game I permitted treatment | Beyond Game I |
+The truth column points to its owning source. This plan owns disclosure timing
+and knowledge boundaries, rather than a second account of cosmology or local
+faith.
+
+| Topic | Truth source | Game I permitted treatment | Beyond Game I |
 | --- | --- | --- | --- |
-| Aether / magicks | Conserved energy manipulated as magicks | Everyday system; some limits and anomalies observable | Full metaphysics only when story requires |
-| Planetary life cycle | Life and nature consist of aether; death returns it to the planet, separately from the Aethersphere | Common understanding may be explained; no proof of personal consciousness after death | Detailed circulation and identity questions remain open |
-| Ridge sanctuary confluence | A real natural feature within the planetary cycle, at a remembrance-and-renewal sanctuary | Local natural and spiritual significance may be shown without explaining its full workings or the buried structures | Exact mechanics and historical connections remain open |
-| Gods | Ancients revered as gods | Worship and cultural interpretations visible | Mortal origins can eventually be revealed |
-| Holy temple | Original sacrificial site | Sacred place may be depicted without its historical truth | Sacrifice site significance revealed later |
-| Aethersphere / atmosphere | Protective barrier formed ~10,000 years ago; a distinct aetheric form outside the ordinary life cycle | Scholarly recognition of its atmospheric form is allowed; its protective purpose and ancient origin remain hidden | Reveal true purpose and origin when narratively earned |
-| Four dissenters | Exactly four active ancients | Unidentified influence, if any; do not reveal count or full nature | Reveal individuals and objective across later games |
-| Current instability | Long-term aether sequestration by dissenters | Regional consequences and immediate human agency | Broader energy mechanism emerges later |
-| New life | Emerged under barrier with less freely available aether | Modern people have independent cultures | Historical origins may be disclosed later |
-| Dying worlds | Ancients observed cosmic phenomenon for millennia | Cosmic scope and cause concealed | Mystery can unfold in later games |
-| Ultimate cause / final answer | Not yet defined by authors | Cannot accidentally imply a fixed answer | Deliberately open until decided |
+| Aether / magicks | [Conservation and magicks](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Everyday system; some limits and anomalies observable | Full metaphysics only when story requires |
+| Planetary life cycle | [Life, death and the separate Aethersphere](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Common understanding may be explained; no proof of personal consciousness after death | Detailed circulation and identity questions remain open |
+| Ridge sanctuary confluence | [Natural feature and local responsibilities](../world/ELDEN_VALE_FAITH.md#why-elden-vale-sanctuary-matters) | Local natural and spiritual significance may be shown without explaining its full workings or the buried structures | Exact mechanics and historical connections remain open |
+| Gods | [Deification](FOUNDATIONAL_LORE.md#7-the-gods-and-the-sacred-temple) | Worship and cultural interpretations visible | Mortal origins can eventually be revealed |
+| Holy temple | [Sacrificial site](FOUNDATIONAL_LORE.md#7-the-gods-and-the-sacred-temple) | Sacred place may be depicted without its historical truth | Sacrifice site significance revealed later |
+| Aethersphere / atmosphere | [The Great Sacrifice](FOUNDATIONAL_LORE.md#5-the-great-sacrifice--approximately-10000-years-ago) | Scholarly recognition of its atmospheric form is allowed; its protective purpose and ancient origin remain hidden | Reveal true purpose and origin when narratively earned |
+| Four dissenters | [Survivors outside stasis](FOUNDATIONAL_LORE.md#8-the-ancients-who-refused-the-sacrifice) | Unidentified influence, if any; do not reveal count or full nature | Reveal individuals and objective across later games |
+| Current instability | [Accumulation and destabilization](FOUNDATIONAL_LORE.md#8-the-ancients-who-refused-the-sacrifice) | Regional consequences and immediate human agency | Broader energy mechanism emerges later |
+| New life | [Modern inhabitants](FOUNDATIONAL_LORE.md#6-ten-millennia-of-new-life) | Modern people have independent cultures | Historical origins may be disclosed later |
+| Dying worlds | [Ancient observations](FOUNDATIONAL_LORE.md#3-the-cosmic-catastrophe) | Cosmic scope and cause concealed | Mystery can unfold in later games |
+| Ultimate cause / final answer | [Open cosmic mystery](FOUNDATIONAL_LORE.md#open-mystery) | Cannot accidentally imply a fixed answer | Deliberately open until decided |
 
 ## Reveal design rules
 
@@ -53,12 +58,12 @@ foreshadow a problem with aether flow and echo the opening cinematic's much
 larger threatened surge. They do not establish the exact cause of that future
 scene or reveal the ancient/cosmic explanation.
 
-The [covenant](../../world/SANCTUARY_COVENANT.md) gives Serene public,
+The [covenant](../world/SANCTUARY_COVENANT.md) gives Serene public,
 incomplete evidence: an old plan and a historic maintenance account of a small
 discharge injuring workers. She shares these openly. That older incident is
 distinct from the recent lightning events and from the inherited warning she
 privately examines after the festival. The reserve's
-[natural confluence and communal significance](../../world/ELDEN_VALE_FAITH.md)
+[natural confluence and communal significance](../world/ELDEN_VALE_FAITH.md)
 are established, but do not identify the buried works' purpose. Neither
 sanctuary is identified as the original sacrificial temple or a component
 of the Aethersphere.

@@ -134,6 +134,6 @@ The playable cave and miniboss remain live; rescuing the worker and resolving
 MQ03 require the later story continuation. Tomas's lantern invitation must be positioned after that later
 sequence rather than firing from the removed ending.
 
-See the [faith guide](world/ELDEN_VALE_FAITH.md),
-[covenant](world/SANCTUARY_COVENANT.md) and
-[regional setting](world/regions/ELDEN_VALE.md) for the revised societal role.
+See the [faith guide](narrative/world/ELDEN_VALE_FAITH.md),
+[covenant](narrative/world/SANCTUARY_COVENANT.md) and
+[regional setting](narrative/world/regions/ELDEN_VALE.md) for the revised societal role.

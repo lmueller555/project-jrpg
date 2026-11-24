@@ -1,8 +1,8 @@
 # Auratia classroom world map
 
 The school displays the approved map of Auratia, including the Nivren Crown
-and Istrava. Its geographic reference is the [World Atlas](world/WORLD_ATLAS.md)
-and the [polar regions guide](world/POLAR_REGIONS.md).
+and Istrava. Its geographic reference is the [World Atlas](narrative/world/WORLD_ATLAS.md)
+and the [polar regions guide](narrative/world/POLAR_REGIONS.md).
 
 Enter the village school and approach the small framed map on the north wall,
 left of the writing board. The prompt **E — Examine Auratia’s world map** appears
@@ -48,7 +48,7 @@ southward connection. That town has no approved name: **River Leth** and
 **Lower Leth** are geographic labels, not its name. The
 [Regional Surges guide](narrative/game_01/REGIONAL_SURGES.md) records the
 handful of other recent incidents, Iselin's relief visits and the resulting
-repair shortages. The [Sanctuary Covenant](world/SANCTUARY_COVENANT.md)
+repair shortages. The [Sanctuary Covenant](narrative/world/SANCTUARY_COVENANT.md)
 explains how those needs bear on the proposed quarry near the old ridge
 sanctuary.
 

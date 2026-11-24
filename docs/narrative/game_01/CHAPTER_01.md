@@ -40,7 +40,7 @@ The earlier 60–90-minute main-narrative estimate predates the approved longer 
 biography, line of dialogue, map, mechanic or detail of the coming disaster.
 Later explicit approvals are recorded in their linked guides. The approved
 [regional surges and relief visit](REGIONAL_SURGES.md) and
-[sanctuary covenant](../../world/SANCTUARY_COVENANT.md) now govern the revised
+[sanctuary covenant](../world/SANCTUARY_COVENANT.md) now govern the revised
 MQ02/MQ03 story. The [arrival cinematic](../../REGENT_ARRIVAL.md) and revised MQ03
 dialogue now implement that approved opening context.
 

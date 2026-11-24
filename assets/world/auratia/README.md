@@ -19,5 +19,5 @@ python tools/build_auratia_world_map.py
 The exporter uses nearest-neighbor sampling, a modest palette and binary alpha.
 It does not rewrite the approved full-size map. `map.json` records sizes,
 source paths and SHA-256 values. Geographic authority remains the
-[world atlas](../../../docs/world/WORLD_ATLAS.md) and
-[polar-region guide](../../../docs/world/POLAR_REGIONS.md).
+[world atlas](../../../docs/narrative/world/WORLD_ATLAS.md) and
+[polar-region guide](../../../docs/narrative/world/POLAR_REGIONS.md).

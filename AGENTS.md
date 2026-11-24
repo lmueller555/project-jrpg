@@ -3,7 +3,8 @@
 Before developing, reviewing or implementing narrative, character arcs, quest
 stories, dialogue or worldbuilding, read the
 [Narrative Director guidance](docs/agents/NARRATIVE_DIRECTOR.md) and the relevant
-authoritative sources it references. Apply it to the assignment in scope;
+authoritative sources in the [narrative index](docs/narrative/README.md).
+Apply them to the assignment in scope;
 existing story documents and character sheets retain ownership of canon.
 
 Before creating or changing character/NPC sprites, animation, or corresponding

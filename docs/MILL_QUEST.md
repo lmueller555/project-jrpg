@@ -15,7 +15,7 @@ quest rewards settle once and [Iselin's arrival cinematic](REGENT_ARRIVAL.md)
 plays. It introduces the relief caravan before the party appears at the lower
 brook bridge in town, then returns control to Caelan in the same dining room.
 The [regional story handoff](narrative/game_01/REGIONAL_SURGES.md) continues into
-MQ03's relief, quarry and [covenant](world/SANCTUARY_COVENANT.md) discussion.
+MQ03's relief, quarry and [covenant](narrative/world/SANCTUARY_COVENANT.md) discussion.
 Serene's separate request to meet the visitors accepts MQ03.
 
 `CH01_MQ02` begins after MQ01’s stopped-wheel exchange. Its available marker points to Mira at the existing outdoor workbench before the upper bridge. The revised request leads into her early birthday present for Caelan. Completing the presentation owns/equips the sword once, accepts the quest and records the meeting before the same Mira accompanies him.

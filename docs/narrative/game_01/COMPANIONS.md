@@ -14,7 +14,7 @@ Lucan Rooke, Rhea Sorel and Edran Hale are eventual party members. Their
 backgrounds sit within Merovar, preserving Game I's regional scope. Their home
 regions do not require the party to visit each place. This guide belongs
 alongside the [character facts](CHARACTERS.md),
-[act outline](ACT_OUTLINE.md) and [World Atlas](../../world/WORLD_ATLAS.md).
+[act outline](ACT_OUTLINE.md) and [World Atlas](../world/WORLD_ATLAS.md).
 
 Mira's opening-story foundations, age-based timeline, upbringing and mill
 training with Halden, and approved characterization and voice references are
@@ -79,7 +79,7 @@ below until their sheets are developed.
 ### Background and motivation
 
 Rhea grew up in a small settlement on the wooded western slopes of the
-[Greyfold Mountains](../../world/continents/MEROVAR.md#greyfold-uplands).
+[Greyfold Mountains](../world/continents/MEROVAR.md#greyfold-uplands).
 She received basic magical instruction locally and developed her abilities
 through years spent studying streams, storms, forests and aether in those
 environments. She reads other naturalists' accounts eagerly, then goes outside
@@ -135,7 +135,7 @@ and visual direction; they do not prescribe random spell results, friendly
 fire, damage values or other combat rules.
 
 Her casting remains subject to
-[aether conservation and the limits of magicks](../../FOUNDATIONAL_LORE.md#1-foundations-of-existence).
+[aether conservation and the limits of magicks](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence).
 Studying living environments does not establish a new source of unlimited
 energy or a mechanism for consuming their life force.
 
@@ -158,7 +158,7 @@ question.
 ### Background and motivation
 
 Edran is a practicing healer and teacher from the
-[Lower Leth](../../world/continents/MEROVAR.md#lower-leth). He has spent years
+[Lower Leth](../world/continents/MEROVAR.md#lower-leth). He has spent years
 moving between market-town clinics and smaller river settlements. His family
 is alive, his colleagues expect him back and unfinished obligations accompany
 every journey.
