@@ -1,5 +1,11 @@
 # Repository instructions
 
+Before developing, reviewing or implementing narrative, character arcs, quest
+stories, dialogue or worldbuilding, read the
+[Narrative Director guidance](docs/agents/NARRATIVE_DIRECTOR.md) and the relevant
+authoritative sources it references. Apply it to the assignment in scope;
+existing story documents and character sheets retain ownership of canon.
+
 Before creating or changing character/NPC sprites, animation, or corresponding
 asset builders and tests, read the
 [global sprite and animation standard](docs/SPRITE_ANIMATION_STANDARD.md).
