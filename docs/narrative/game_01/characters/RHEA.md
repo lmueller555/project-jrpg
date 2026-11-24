@@ -111,11 +111,35 @@ experience and power development partly explain her strength during the later
 Ice Reaper confrontation. The [shared chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
 owns the ordering and elapsed surface time.
 
-Her departure's reason, exact point, commitments, activities, sources of growth,
-knowledge of the party's disappearance, search efforts, reunion and specific
-new abilities remain open. A proposed research assignment or training method
-has not been selected. This direction grants no current gameplay skills and
-does not change her age at the opening.
+Her pre-core departure's reason and exact point, remaining commitments and
+activities, sources of growth, knowledge of the party's disappearance, any
+search for that missing party, reunion and specific new abilities remain open.
+A proposed research assignment or training method has not been selected. This
+direction grants no current gameplay skills and does not change her age at the
+opening.
+
+## Expedition leadership and captivity
+
+**Author-established direction, 2026-11-24; not implemented:** Rhea leads the
+expedition sent to find Iselin as the kingdom seeks relief from the collapsing
+dome. Its dispatch occurs offscreen. She seeks Iselin's help and later confronts
+her, attempting to reason with her during an extended dialogue scene. Iselin
+kills the other expedition members; Rhea survives but is imprisoned in ice
+before the main party finds her.
+
+Her leadership and attempted negotiation are active parts of this sequence.
+Her capture does not revoke her established experience or grant new abilities.
+The circumstances permitting it, why she survives, her actions during the
+attack, and the exact dialogue still need authoring. The commissioner, roster,
+departure date and timing relative to the main party's return remain open;
+this mission does not settle her earlier reason for leaving before the core.
+
+The [Story Bible](../STORY_BIBLE.md#mountain-search-for-rhea) owns the main
+party's investigation and mountain route. The
+[scene owner](../../scenes/ICE_REAPER_PRE_BOSS.md#planned-confrontation-and-imprisonment)
+owns the appeal, imprisonment and transition into the existing rescue-and-duel
+study. The scene's viewpoint does not automatically give the approaching party
+knowledge of everything she hears.
 
 ## Shared knowledge and production boundaries
 

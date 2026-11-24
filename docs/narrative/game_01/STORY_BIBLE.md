@@ -11,7 +11,7 @@ author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.4 (consolidated structure and 2026-11-24 later-story direction)
+**Version:** 0.5 (post-timeskip dome collapse and Rhea-led expedition)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
@@ -110,12 +110,61 @@ antiwar thread does not silently replace the dome's existing protective motive.
 | Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
 | Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in confinement for about three surface years. | Lives through those years, gaining power and experience. |
 | Surface return | Escapes after about three years have passed on the surface. | Has transformed during confinement; the trigger and exact timing of her emergence remain open. | Her additional surface experience partly explains her power at the Ice Reaper confrontation. |
+| Post-timeskip aftermath | Spends time experiencing the changed world and damage from the failing dome before the final confrontation. | Her unfair exile is followed by a fatal rejection of the kingdom's appeal for help. | Leads the expedition seeking Iselin; dispatch occurs offscreen. Its timing relative to the party's return remains open. |
+| Mountain search and approach | Searches for Rhea, learns she led the expedition, retraces its mountain route and encounters its dead members. | Intends to deliberately collapse the dome onto the entire kingdom. | Confronts Iselin and attempts to reason with her before being imprisoned in ice. |
 
 The approximate alignment does not establish a magical connection between the
 fall and self-encasement. Only Rhea's exclusion from the core party is fixed;
 the complete roster, precise departure scenes and subjective core duration are
 not chosen. Opening ages remain ages at opening; post-skip ages require the
 pre-descent journey's elapsed time as well.
+
+### Post-timeskip aftermath and the collapsing dome
+
+**Author-established direction, 2026-11-24; not implemented:** The party spends
+time in the post-timeskip world and deals with the consequences of its absence
+before the final confrontation. The ice dome still covers the kingdom, but
+sections are collapsing. Huge falling chunks have already destroyed parts of
+the kingdom, and its remaining population faces further devastation.
+
+A search party is dispatched offscreen to locate Iselin, believed to be the
+only person capable of saving the kingdom from the collapsing dome. Rhea leads
+this expedition. The appeal creates a tragic reversal: the woman unfairly
+exiled is now the person the kingdom needs. Iselin kills the other expedition
+members; Rhea survives as her ice-bound prisoner. Her personal response belongs
+to the [Iselin sheet](characters/ISELIN.md#the-kingdoms-appeal-and-deliberate-collapse),
+and Rhea's purpose and captivity to
+[Rhea's sheet](characters/RHEA.md#expedition-leadership-and-captivity).
+
+The dome's existing failure and Iselin's subsequent intention to deliberately
+collapse it onto the entire kingdom are distinct developments. The cause and
+onset of deterioration remain open; earlier falling chunks are not
+automatically established as deliberate attacks. This approval does not adopt
+the earlier proposed reopening/dismantling version of the post-exile history.
+
+### Mountain search for Rhea
+
+The player-facing sequence is:
+
+1. Search for Rhea in the post-timeskip world and learn that she led the
+   expedition sent to find Iselin.
+2. Retrace its steps up the mountain through a dungeon segment.
+3. Encounter the dead expedition members along the route and learn its fate.
+   These are recent searchers, distinct from the hikers killed during Iselin's
+   exile approximately three years earlier.
+4. Reach a substantial Rhea–Iselin confrontation scene in which Rhea attempts
+   to reason with her. Their extended exchange reveals to the player Iselin's
+   intention to collapse the dome and her bitterness, betrayal and revenge.
+5. Rhea is imprisoned before the main party finds her. The approach leads
+   into the existing pre-boss rescue-and-duel sequence.
+
+The [scene owner](../scenes/ICE_REAPER_PRE_BOSS.md#planned-confrontation-and-imprisonment)
+records the conversation's dramatic requirements, staging proposal and handoff.
+The expedition's dispatch remains offscreen. Viewpoint, chronology within the
+confrontation, and how much the approaching party hears require authored
+staging; a player-facing cutaway does not automatically inform the protagonists.
+No expedition roster, named deaths, dungeon map, encounter count, dialogue
+script or new runtime quest identifier is selected here.
 
 ### Linked character and scene owners
 
@@ -135,11 +184,16 @@ pre-descent journey's elapsed time as well.
 ### Decisions still open
 
 The war's causes, factions and outcome; Iselin's departure trigger; diplomatic
-events; the dome's practical effects; the authority and orders behind exile;
-Rhea's departure reason, training and surface activities; the fall's cause and
-location; the core's route and subjective duration; changes on the surface;
-Iselin's release; the confrontation's exact placement, mechanics and outcome
-remain to be designed. Assistant suggestions are not adopted merely because
+events; the dome's remaining practical effects and deterioration mechanism;
+the political circumstances making exile unfair and the orders enforcing it;
+Rhea's pre-core departure reason, training and remaining surface activities;
+the fall's cause and location; the core's route and subjective duration;
+remaining surface changes; Iselin's release; the expedition's commissioner,
+roster, dispatch timing and means of locating her; its attack sequence; Rhea's
+survival and capture circumstances; exact dialogue and viewpoints; and the
+confrontation's exact quest/act placement, mechanics and outcome remain open.
+How the ending addresses the already-failing dome as well as Iselin's intended
+attack is also unresolved. Assistant suggestions are not adopted merely because
 they were discussed. The existing cave rupture is not assigned as the descent
 site by this approval.
 

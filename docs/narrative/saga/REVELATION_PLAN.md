@@ -1,7 +1,7 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.4 (consolidated references and approved parallel-story knowledge boundaries).
+**Version:** 0.5 (post-timeskip search, confrontation and knowledge boundaries).
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), including broad saga
 planning, and the [narrative index](../README.md).
 
@@ -59,6 +59,30 @@ measure while below, what Rhea believes about its disappearance, and how the
 party learns Iselin's fate remain open. Chronology is owned by the
 [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology);
 physical premises by [Foundational Lore](FOUNDATIONAL_LORE.md#approved-game-i-interior-and-ice-stasis-phenomena).
+
+### Collapsing dome, expedition and Rhea's appeal
+
+**Author-established direction, 2026-11-24; not implemented:** The
+[Story Bible](../game_01/STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome)
+owns the failing dome and mountain search; the
+[scene owner](../scenes/ICE_REAPER_PRE_BOSS.md#planned-confrontation-and-imprisonment)
+owns the long Rhea–Iselin exchange and imprisonment handoff.
+
+| Presentation stage | Knowledge requirement |
+| --- | --- |
+| Post-timeskip aftermath | The party encounters destruction from fallen dome fragments. The cause of its existing failure is not automatically a deliberate act by Iselin. |
+| Search for Rhea | The party learns that Rhea led the expedition seeking Iselin's help. Its dispatch stays offscreen; do not add an earlier dispatch scene that preempts this discovery. |
+| Mountain route | The party encounters the other searchers dead. Identify these as the recent expedition rather than the hikers killed during the exile. Evidence, names and exact attack reconstruction remain to be authored. |
+| Rhea–Iselin confrontation | Rhea attempts to reason with her; the extended exchange reveals Iselin's deliberate-collapse intention and resentment to the player. How much the main party hears is not yet fixed. |
+| Prison and rescue | Rhea survives while the other members are killed. The main party finds her already encased. A player-facing cutaway does not give absent characters knowledge of the conversation. |
+
+Do not falsely confirm Rhea's death or present the expedition's dispatch as
+something the main party witnessed. Iselin's unfair exile, her subsequent
+violence and the kingdom's dependence on her can all be true. Whether the
+expedition encounters her before or after release from stasis, how its members
+are attacked, and how the main party learns the complete sequence remain open.
+The final confrontation's kingdom-saving outcome is not established by these
+revelations.
 
 
 ## Reveal design rules

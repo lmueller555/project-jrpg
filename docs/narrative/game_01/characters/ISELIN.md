@@ -62,6 +62,8 @@ her before her fall. Her fear and protective intent lead to the kingdom-sized
 ice dome, accusation of treachery and exile. The shared sequence and surface
 interval are recorded in the [Game I chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology).
 Exile begins the final sequence; her transformation occurs afterward in the cave.
+Her exile is unfair, as established by the author on 2026-11-24; the precise
+political injustice and enforcement circumstances remain to be developed.
 
 ### Recurring stasis and dome symbolism
 
@@ -102,10 +104,36 @@ ancient patron is established. Physical transformation and her developing
 intentions remain distinct parts of the arc.
 
 The precise presentation, duration as she perceives it, physiological rules,
-spell costs, quantities of absorbed aether, cause of release and events after
-emergence remain open. The approved intent does not settle the boss outcome or
-implement these sequences. Her initial decision to restrain herself remains
-part of her history after transformation.
+spell costs, quantities of absorbed aether, cause of release and remaining
+events after emergence remain open. The approved intent does not settle the
+boss outcome or implement these sequences. Her initial decision to restrain
+herself remains part of her history after transformation.
+
+### The kingdom's appeal and deliberate collapse
+
+**Author-established direction, 2026-11-24; not implemented:** As the dome fails,
+the kingdom turns to the woman it unfairly exiled as its only hope of rescue.
+[Rhea leads the expedition](RHEA.md#expedition-leadership-and-captivity) sent to
+find her. Iselin kills its other members and imprisons Rhea in ice. The
+[Story Bible](../STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome)
+owns the surrounding collapse, search and approach chronology.
+
+Her resolve to bury those she once swore to save now has a concrete method:
+deliberately collapse the dome onto the entire kingdom. She rejects Rhea's
+attempt to reason with her. Their substantial
+[confrontation](../../scenes/ICE_REAPER_PRE_BOSS.md#planned-confrontation-and-imprisonment)
+reveals to the player how conscious confinement and brooding have developed
+into bitterness, betrayal and revenge. The injustice of exile and her
+responsibility for subsequent killings and collective punishment remain
+separate facts; neither erases the other.
+
+The ice imagery consequently develops from restraining dangerous enemies to
+enclosing a population for protection, confining herself, and finally turning
+that protection into the means of burial. Existing structural failure is not
+automatically the result of a deliberate attack by her. Why Rhea survives,
+how she is captured, the exact exchange, and the outcome remain open. No new
+possession, magical command to hate, or literal internal disease is established
+by this account of her emotional deterioration.
 
 ## Relationships and continuation
 
