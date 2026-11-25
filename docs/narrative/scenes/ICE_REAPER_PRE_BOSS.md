@@ -8,9 +8,9 @@ Related references: [Caelan](../game_01/characters/CAELAN.md), [Mira](../game_01
 
 ## Setting
 
-A huge ice dome covers a ruined, frozen kingdom. Iselin created it in desperation to protect her people from the coming calamity. She is seen as a traitor and unfairly exiled; the mountain exile and subsequent conscious confinement lead to her Ice Reaper transformation. This approved motive supersedes the earlier hostile-army explanation. After the timeskip, enormous falling chunks have already destroyed parts of the kingdom. The [Story Bible](../game_01/STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome) owns that ongoing failure and the threatened population; exact damage locations and the final outcome remain open. The dome is a regional ice construction, not the Aethersphere.
+A huge ice dome covers a ruined, frozen kingdom. Iselin created it to protect her people when the enemy kingdom's aether cannon forced a war ultimatum. This revised trigger replaces the earlier unspecified coming-calamity explanation. The dome itself disrupts the Ice Worldvein. Iselin is seen as a traitor and unfairly exiled; the mountain exile and subsequent conscious confinement lead to her Ice Reaper transformation. After the timeskip, enormous falling chunks have already destroyed parts of the kingdom. The [Story Bible](../game_01/STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome) owns that ongoing failure and the threatened population; exact damage locations remain open.
 
-The Ice Reaper is Regent Iselin, the reigning queen's younger sister. She already has exceptional ice-magick talent from her northern upbringing. Her late-game form has merged with a great amount of ice-aspected aether, with glassy blue wings, ice-covered parts of her body, and blue, white and silver accents. The author-established amplification occurs during her conscious self-stasis in an ice-aspected summit cave; see [her arc](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement). She does not first acquire ice magick here.
+The Ice Reaper is Regent Iselin, the reigning queen's younger sister. She already has exceptional ice-magick talent from her northern upbringing. Her late-game form has merged with a great amount of ice-aspected aether, with glassy blue wings, ice-covered parts of her body, and blue, white and silver accents. During conscious self-stasis in a naturally ice-aspected summit cave she absorbs accumulating aether from the barrier, transforming her and weakening the dome; see [her arc](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement). She does not first acquire ice magick here.
 
 These identity and motive notes are author knowledge. Opening dialogue, quest trackers, Gallery labels and casual NPC exposition must not reveal her covert Crown investigation or future Ice Reaper identity. The existing scene artwork and action study do not by themselves establish the missing transformation scenes or final encounter placement.
 
@@ -31,8 +31,12 @@ establishes the party's core absence and the surface interval. Rhea remains
 above and gains experience over those years, partly explaining her power here.
 Iselin transforms during confinement and emerges intending to bury those she
 once swore to save. These are author-facing foundations, not newly implemented
-Gallery shots or a selected combat outcome. The antiwar storyline does not
-establish that war replaces the dome's previously approved calamity motive.
+Gallery shots or a fully designed combat outcome. The cannon ultimatum now
+supplies the defense's immediate trigger; wider Worldvein disruption supplies
+the environmental crisis. Defeating Iselin releases the excess ice aether and
+restores the Ice Worldvein, as owned by the
+[aether foundation](../saga/FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration).
+Her final fate and safe handling of the remaining dome are still open.
 
 ## Planned confrontation and imprisonment
 
@@ -176,4 +180,4 @@ Source drawings, prompts, extraction metadata and audio provenance remain beside
 
 ## Open story and gameplay decisions
 
-The kingdom's northern location, Iselin's identity and protective motive, the failing dome, Rhea-led expedition and preceding failed appeal are established future direction. Relative placement is mountain search → extended confrontation → imprisonment → discovery/rescue and duel; exact quest, act and checkpoint IDs remain unassigned. The kingdom and capital names, damage layout, remaining transformation mechanics, release trigger, expedition roster and dispatch timing, attack/capture circumstances, exact dialogue and viewpoint, boss attributes and abilities, encounter balance, outcome and post-fight dialogue remain open. The final charge and fade establish the cinematic fight opening without silently implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions. Defeating Iselin does not by itself establish how the already-failing dome is made safe.
+The kingdom's northern location, Iselin's identity and protective motive, cannon ultimatum, absorption-driven dome failure, Rhea-led expedition and preceding failed appeal are established future direction. Relative presentation remains mountain search → extended confrontation → imprisonment → discovery/rescue and duel; the expedition's encounter happens before the party finds Rhea, and a cutaway remains proposed staging. Exact quest, act and checkpoint IDs remain unassigned. Defeating Iselin must release the excess aether and restore the Ice Worldvein. That approved result does not decide her death, repair other Worldveins or safely dispose of physical ice by itself. The kingdom and capital names, damage layout, precise absorption and release mechanics, trigger for leaving self-stasis, expedition roster and dispatch timing, attack/capture circumstances, exact dialogue and viewpoint, boss attributes and abilities, encounter balance, final fate and post-fight dialogue remain open. The final charge and fade establish the cinematic fight opening without implementing those decisions. Any later combat integration must preserve the continuous music handoff and the surviving party's positions.

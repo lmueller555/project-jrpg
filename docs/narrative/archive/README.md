@@ -5,6 +5,11 @@ reference material, not active canon or assignments. Their original status
 labels, candidate dialogue, unresolved questions and development risks do not
 constitute new approvals.
 
+The 2026-11-24 Worldvein revision also retires their cosmic catastrophe,
+Ancients, Great Sacrifice, four-survivor and artificial-atmosphere assumptions.
+References to those premises below are historical, not hidden future canon.
+Use [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) for the replacement.
+
 - [The Hollow Harvest](HOLLOW_HARVEST.md): the former Story Bible's alternative
   premise, candidate cast, five-act sequence and open development questions.
 - [The Broken Covenant](BROKEN_COVENANT.md): the former broad working act

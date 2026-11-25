@@ -71,4 +71,4 @@ For PR4, additionally verify continuation from `serene_heard`; all four finish a
 
 ## Chapter continuity
 
-MQ04 happens on the preparation day and MQ05 on the next day. The broader [chapter structure](narrative/game_01/CHAPTER_01.md) now contains five main quests. The festival’s detailed activities and inciting event remain later work. The authorization letter remains the planned post-festival escalation, while the excavation catastrophe belongs to Chapter 3. In-world religious belief must remain distinct from concealed cosmic history.
+MQ04 happens on the preparation day and MQ05 on the next day. The broader [chapter structure](narrative/game_01/CHAPTER_01.md) now contains five main quests. The festival’s detailed activities and inciting event remain later work. The authorization letter remains the planned post-festival escalation, while the excavation catastrophe belongs to Chapter 3. In-world religious belief remains distinct from established physical rules and from the Crown's undisclosed investigation; this quest does not reveal the harvesting network or its military purpose.

@@ -11,18 +11,62 @@ author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.6 (royal authorization, betrayal and unfair exile)
+**Version:** 0.7 (Worldvein imbalance, Veinholds and the cannon ultimatum)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
 
-Game I is the **first self-contained installment** in a multi-game saga. It tells a largely **regional**, personal story with mature and morally complex themes, a protagonist with meaningful motivation, a primary local antagonist, and an ending that substantially resolves its own conflict. Exactly four surviving ancients operate as hidden forces in the background; neither their existence as a group nor the full ancient/cosmic history is disclosed. The game's own human conflicts must matter on their own terms.
+Game I is the **first self-contained installment** in a multi-game saga. It
+tells a largely **regional**, personal story with mature and morally complex
+themes, a protagonist with meaningful motivation, and human decisions with
+lasting consequences. Its developing conflict concerns elemental
+Worldveins, the enemy kingdom's artificial harvesting, the cannon that harvesting
+feeds, and Iselin's transformation into the Ice Reaper. The required final
+resolution is specified below; broader political outcomes and other Worldveins
+remain open.
 
-Its fantasy setting incorporates developing technology and an ancient-cataclysm
-legacy. Approved geography is recorded in the [World Atlas](../world/WORLD_ATLAS.md);
+Its fantasy setting incorporates developing technology and the interdependent
+elemental Worldveins. Approved geography is recorded in the [World Atlas](../world/WORLD_ATLAS.md);
 opening characters, quests and selected religious practices are recorded in
 [Chapter 1](CHAPTER_01.md) and its linked guides. Nation-level constitutions,
 the wider period of industrialization and unapproved religious details remain open.
+
+## Worldveins, Veinholds and the cannon
+
+**Author-established direction, 2026-11-24; not implemented:** Elemental
+Worldveins can occasionally experience brief natural imbalances. These can
+produce natural disasters whose damage persists after the imbalance itself
+passes. A brief imbalance does not imply brief or harmless consequences.
+
+The enemy kingdom artificially harvests elemental aether at installations
+called **Veinholds**. Some opponents disdainfully call them **"clots"**. This harvesting
+causes greater, sustained disruption across interdependent Worldveins: effects
+cannot be understood solely by examining one element in isolation. The physical
+premises belong to [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence).
+
+The harvested elemental aether is combined to feed a huge cannon. The enemy
+kingdom's war ultimatum, backed by this weapon, forces the protective decision
+that leads Iselin to create the Ice Dome. The artificial imbalance and the
+weapon have a shared cause in harvesting; natural Worldvein variation remains
+a distinct phenomenon. The barrier responds to this weapon-backed ultimatum.
+
+### Middle-game direction
+
+The northward journey develops the difference between temporary natural
+variation and the greater sustained imbalance associated with Veinholds.
+The party's observations, affected communities and Iselin's covert Crown
+investigation lead into the harvesting conflict, the cannon threat and efforts
+to prevent war. The precise discoveries, evidence, participants and order of
+disclosure remain to be written. This direction creates no new quest IDs,
+recruitment scenes or fixed act assignments.
+
+The enemy kingdom's name and wider political aims remain open. The first
+firing, any demonstration, exact ultimatum terms, harvesting-to-weapon
+logistics, and the cannon's condition during the three surface years are not
+selected. Reservoir shipping, an enemy goal of targeting the Ice Worldvein,
+party sabotage of the cannon, and an upstream Worldvein route to the summit
+cave remain unapproved
+suggestions rather than reasons to fill gaps in the chronology.
 
 ## Approved regional story foundations (CANON)
 
@@ -56,7 +100,7 @@ The later author revision adds hand-holding, mechanical lamp restoration,
 Caelan's evacuation flare and a closing focus on an anonymous bloody helmet
 resting on a sword in stone. This approves a deliberate hint of an unidentified
 death by that point in the journey, without assigning the loss to Tomas or
-another character. It does not expose the saga-level history or finalize the
+another character. It does not finalize the cause of that scene's threat or the
 unimplemented later-act events.
 
 ## Approved act and companion structure
@@ -98,21 +142,23 @@ of earlier alternative plots. This section owns the shared ordering and timing.
 
 After a substantial shared northward journey, Iselin leaves the party and returns
 to her kingdom. The party continues without her. Both pursue efforts to avert
-war with an enemy nation; occasional cutaways follow Iselin's attempts within
-her kingdom. The enemy nation's name, objectives, and the war's relationship to
-the previously established calamity and regional phenomena remain open. The
-antiwar thread does not silently replace the dome's existing protective motive.
+war with the enemy kingdom; occasional cutaways follow Iselin's attempts within
+her kingdom. The cannon ultimatum supplies the urgent threat behind the dome's
+protective purpose. The exact ultimatum, military sequence and wider political
+objectives remain open; observations of earlier disasters do not automatically
+prove which individual incidents resulted from harvesting.
 
 | Phase | Main party | Iselin | Rhea |
 | --- | --- | --- | --- |
 | Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to her northern kingdom. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
-| Parallel crisis | Attempts to avert war, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
+| Parallel crisis | Attempts to avert war amid the harvesting and cannon conflict, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the cannon ultimatum, authorized dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
 | Royal betrayal | The party's precise location and knowledge during the royal decisions remain open. | Her sister privately authorizes protection, then permits a false account of disobedience and refuses to acknowledge that authorization. Exile follows. | What she witnesses or learns about these decisions remains open. |
 | Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
-| Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in confinement for about three surface years. | Lives through those years, gaining power and experience. |
+| Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in the naturally Ice-aspected cave for about three surface years, absorbing accumulating Ice aether from the barrier and draining it. | Lives through those years, gaining power and experience. |
 | Surface return | Escapes after about three years have passed on the surface. | Has transformed during confinement; the trigger and exact timing of her emergence remain open. | Her additional surface experience partly explains her power at the Ice Reaper confrontation. |
 | Post-timeskip aftermath | Spends time experiencing the changed world and damage from the failing dome before the final confrontation. | Her unfair exile is followed by a fatal rejection of the kingdom's appeal for help. | Leads the expedition seeking Iselin; dispatch occurs offscreen. Its timing relative to the party's return remains open. |
 | Mountain search and approach | Searches for Rhea, learns she led the expedition, retraces its mountain route and encounters its dead members. | Intends to deliberately collapse the dome onto the entire kingdom. | Confronts Iselin and attempts to reason with her before being imprisoned in ice. |
+| Ice Reaper resolution | Defeats Iselin; the release of her accumulated excess Ice aether restores the Ice Worldvein. | Defeat does not establish her death or final fate. | Her later role and outcome beyond the established confrontation remain open. |
 
 The approximate alignment does not establish a magical connection between the
 fall and self-encasement. Only Rhea's exclusion from the core party is fixed;
@@ -128,9 +174,10 @@ causal sequence. Detailed dialogue, political procedure and battlefield
 logistics remain open.
 
 1. Iselin returns with evidence gathered during the journey and warns her
-   sister, the reigning queen, of a major approaching aether disturbance.
-   Her assessment contains uncertainty; neither sister possesses the hidden
-   cosmic explanation or a complete prediction.
+   sister, the reigning queen, of the threat behind the enemy kingdom's cannon
+   ultimatum. What the Crown already knows, the evidence she brings and the
+   detailed threat assessment remain to be authored; neither sister is
+   omniscient about Worldvein behavior or enemy decisions.
 2. The queen privately authorizes the protective intervention and promises
    to support Iselin. Their prior trust and genuine affection must be developed
    before this promise is broken.
@@ -165,8 +212,9 @@ logistics remain open.
 southern road during civilian evacuation; the queen approves sealing before
 everyone returns. The unit, exact orders, who knows them, victims, timing and
 alternatives are not selected. No named character's death is established.
-The precise military leverage and any negotiation or armistice terms also
-remain to be authored; this approval does not settle whether war is prevented
+The precise military leverage, first-shot circumstances and any negotiation or
+armistice terms also remain to be authored; the illustrative withdrawal does
+not establish when or how often the cannon fires, whether war is prevented,
 or how it ends.
 
 The [Iselin sheet](characters/ISELIN.md#her-sisters-promise-and-betrayal) owns
@@ -192,11 +240,29 @@ to the [Iselin sheet](characters/ISELIN.md#the-kingdoms-appeal-and-deliberate-co
 and Rhea's purpose and captivity to
 [Rhea's sheet](characters/RHEA.md#expedition-leadership-and-captivity).
 
-The dome's existing failure and Iselin's subsequent intention to deliberately
-collapse it onto the entire kingdom are distinct developments. The cause and
-onset of deterioration remain open; earlier falling chunks are not
-automatically established as deliberate attacks. This approval does not adopt
-the earlier proposed reopening/dismantling version of the post-exile history.
+### Barrier drain and Ice Worldvein resolution
+
+**Author-established direction, 2026-11-24:** During her approximately three
+conscious years encased in the naturally Ice-aspected summit cave, Iselin
+absorbs the accumulating Ice aether **from the barrier**. That accumulation
+transforms her and drains the barrier, causing its existing failure. The cave
+is naturally Ice-aspected, but its ambient aether is not substituted for the
+barrier as the established source of this accumulation.
+
+This draining and her later intention to deliberately collapse the dome onto
+the entire kingdom are distinct developments. The accumulating drain does not
+automatically establish that every earlier falling chunk was a consciously
+directed attack. The exact onset, rates and physical failure sequence remain
+open. The earlier proposed reopening/dismantling version of the post-exile
+history is not adopted.
+
+Defeating Iselin is necessary to release her accumulated excess Ice aether and
+restore the Ice Worldvein's normal flow. This is an approved requirement of
+the final confrontation. It does not determine whether she dies, repair all
+other Worldveins, make the physical dome safe, or select anyone's final fate.
+The [Iselin sheet](characters/ISELIN.md) owns her personal transformation and
+choices; [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence)
+owns the elemental premises.
 
 ### Mountain search for Rhea
 
@@ -239,39 +305,53 @@ script or new runtime quest identifier is selected here.
 
 ### Decisions still open
 
-The war's causes, factions and outcome; Iselin's departure trigger; diplomatic
-events; the approaching calamity's nature and protective mechanics; the dome's
-remaining practical effects and deterioration mechanism; the detailed inquiry,
-military leverage, sentencing procedure and orders enforcing the unfair exile;
+The enemy kingdom's identity and wider aims; exact Veinhold discoveries and
+harvesting-to-cannon logistics; ultimatum terms, firings and war outcome;
+whether and why firing ceases during the three-year interval; Iselin's
+departure trigger; diplomatic events; the dome's protective mechanics,
+construction and remaining practical effects; the detailed physical failure
+sequence despite its established draining cause; the inquiry, military leverage,
+sentencing procedure and orders enforcing the unfair exile;
 Rhea's pre-core departure reason, training and remaining surface activities;
 the fall's cause and location; the core's route and subjective duration;
-remaining surface changes; Iselin's release; the expedition's commissioner,
+remaining surface changes; Iselin's trigger for leaving self-stasis; the expedition's commissioner,
 roster, dispatch timing and means of locating her; its attack sequence; Rhea's
 survival and capture circumstances; exact dialogue and viewpoints; and the
-confrontation's exact quest/act placement, mechanics and outcome remain open.
-How the ending addresses the already-failing dome as well as Iselin's intended
-attack is also unresolved. Assistant suggestions are not adopted merely because
-they were discussed. The existing cave rupture is not assigned as the descent
-site by this approval.
+confrontation's exact quest/act placement, mechanics and final character outcomes remain open.
+The Ice Worldvein restoration is fixed, but how the ending addresses the
+already-failing physical dome, other Worldveins and each character's final fate
+remains open. Defeat does not mean death. Assistant suggestions are not adopted
+merely because they were discussed. The existing cave rupture is not assigned
+as the descent site by this approval.
 
 ## Ending requirements (CANON boundaries, not a chosen ending)
 
-- Resolve the game's main regional conflict; players should feel their actions mattered.
-- Preserve meaningful consequences and avoid an effortless solution that negates the antagonist's dilemma.
-- Do not end by fully unveiling, defeating, or explaining all four ancients or solving the cosmic catastrophe.
-- An optional saga hook may appear only after the local dramatic promise has been fulfilled.
+- Defeating Iselin is the only way to release her accumulated excess Ice aether
+  and restore the Ice Worldvein's normal flow. The final confrontation must
+  deliver this result; its precise mechanism remains open.
+- Do not infer Iselin's death, a safe or repaired physical dome, restored balance
+  in every other Worldvein, or a chosen final fate from that result.
+- Preserve meaningful consequences. The broader war, political settlement,
+  physical safety work and other character outcomes remain to be written.
 
 ## Game I player knowledge (CANON boundary)
 
-Players may experience conventional magicks, religious worship, regional unrest, and ancient ruins, but do not receive the full truth of the four active ancients, Great Sacrifice, the atmosphere's origin, or dying worlds. Refer to REVELATION_PLAN.md for the authoritative knowledge boundary.
+Players encounter ordinary magicks and local belief before learning how the
+Worldvein disturbances, artificial harvesting and cannon conflict connect.
+Public reports, private Crown knowledge, Iselin's decisions, player-facing
+cutaways and what absent party members know must remain distinct. The
+[Revelation Plan](../saga/REVELATION_PLAN.md) owns those disclosure decisions.
+An observation of elemental disaster is not proof of a Veinhold, and discovering
+harvesting does not establish the cause of every earlier incident.
 
 ## Open development and historical alternatives
 
 Continue the approved opening while developing the remaining character arcs,
-the journey with Iselin, regional conflict and a complete local ending. Exact
-intermediate regions, later act structure, remaining amplification mechanics, final
-encounter outcomes, character outcomes and saga clues remain open unless an active
-owner explicitly records an approval.
+the journey with Iselin, Worldvein and harvesting conflict, and the consequences
+of the required Ice Worldvein restoration. Exact intermediate regions, later
+act structure, remaining amplification mechanics, encounter presentation,
+political outcomes and character fates remain open unless an active owner
+explicitly records an approval.
 
 Two older proposals are retained as historical material:
 

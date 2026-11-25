@@ -33,9 +33,10 @@ unchanged. All 96 interactive grass placements are retained.
 The Sanctuary was deliberately built near this natural confluence to guide
 the region's dead back to the planet and remember them. Mining would disrupt
 that duty. The visual effects do not define the guidance mechanism, establish
-an Aethersphere link, identify the original sacrificial temple or assign souls
-to memorial trees. Crystal colors do not establish elemental affinities or
-mining rewards.
+a buried planetary control machine or assign souls to memorial trees. The
+[Worldvein foundations](narrative/saga/FOUNDATIONAL_LORE.md) govern natural
+circulation; crystal colors do not establish elemental affinities, a particular
+Worldvein route or mining rewards.
 
 The new MQ03 emergency journey reaches an arrival checkpoint after exposing
 Iselin's secret crew and its attack. The existing survey art does not stage

@@ -146,5 +146,6 @@ knowledge of everything she hears.
 The [shared lore and voice reference](../CHARACTERS.md#rhea-and-edran-as-sources-of-lore)
 records the complementary expertise and fallible knowledge of Rhea and Edran.
 Follow the [Revelation Plan](../../saga/REVELATION_PLAN.md); expertise does not
-grant hidden cosmic knowledge. See the cast index for approved art and the
+grant complete knowledge of Worldvein disturbances or the enemy harvesting
+network. See the cast index for approved art and the
 open recruitment, action-animation, ability and progression work.

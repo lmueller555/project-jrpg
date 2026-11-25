@@ -30,9 +30,9 @@ Its practice centers these relationships rather than worship of gods.
 Sanctuary service is an expression of the tradition.
 
 This does not declare gods nonexistent or make the planet a confirmed
-conscious being. Other traditions may revere gods; the existing history of
-the Ancients' deification remains separate author-level canon. Serene does
-not thereby know that history.
+conscious being. Other traditions may revere gods; their beliefs do not
+establish a particular divine origin or history. Serene's knowledge comes
+from her training, responsibilities and experience.
 
 ## Why Elden Vale Sanctuary matters
 
@@ -57,10 +57,11 @@ cycle. The buildings were sited to serve that natural feature; they did not
 create it. It is not an unlimited energy source or an established artificial
 machine.
 
-The confluence is separate from the **Aethersphere**. Its exact flows, the
-means by which caretakers guide the dead and its relationship to the buried
-foundations remain open. Its approved societal purpose does not reveal the
-atmosphere's protective function or hidden ancient history.
+The [Worldvein foundations](../saga/FOUNDATIONAL_LORE.md) govern this natural
+circulation. The confluence's exact flows, the means by which caretakers guide
+the dead and its relationship to the buried foundations remain open. No
+particular elemental Worldvein route or buried control mechanism is assigned
+here.
 
 ### Guidance and remembrance
 
@@ -84,8 +85,7 @@ authority to surrender it alone.
 
 The regional site remains separate from **Serene's home** in Eldenmere, where
 Serene, Caelan and Tomas live. The household offers meals, care, supplies and
-guidance to neighbours. Neither place has been identified as the original
-sacrificial temple.
+guidance to neighbours. The Sanctuary's full construction history remains open.
 
 ## Application in the story
 
@@ -107,6 +107,6 @@ excavation; its relationship to the living community remains part of this faith.
 
 The old foundation plan and historical passage-injury account remain public
 background evidence, separate from the recent attack. Serene's inherited
-private warning and the hidden history retain their later disclosure limits.
-No artificial planetary mechanism, Aethersphere connection, temple identity,
-resurrection system or planetary sentience is established by this revision.
+private warning retains its later disclosure limits; its content must be
+developed within the revised Worldvein foundations. No artificial planetary
+mechanism, resurrection system or planetary sentience is established here.

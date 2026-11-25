@@ -304,7 +304,7 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Disclosure | Halden knows about the loss and recognizes her continuing grief. At the MQ03 cave entrance, Mira admits that she too has wondered whether her parents could be in the confluence, answering Caelan's private question about his own. Detailed personal history and further disclosures remain undecided. | Established / Open |
 | Shared past with Caelan | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
 | Caelan's parents | The shared connection does not establish that she knows they are alive; her knowledge of their survival or whereabouts remains unassigned | Open |
-| Knowledge limits | Bereavement does not give her answers about souls, resurrection or hidden cosmic history | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
+| Knowledge limits | Bereavement does not give her answers about souls or resurrection; engineering does not grant complete knowledge of the enemy harvesting network | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
 | Starting condition | At 18, finds purpose maintaining Eldenmere's infrastructure through the workshop she opened at 17, while still carrying grief from her parents' loss at 12 | Established |
 | Mistaken belief | If she can keep making things better outside herself, she should eventually be able to stop hurting inside | Established |
 | Central tension | Repair can be meaningful joy and a refuge from a loss that cannot simply be reversed | Established interpretation |

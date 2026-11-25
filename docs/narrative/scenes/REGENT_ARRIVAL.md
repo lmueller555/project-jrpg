@@ -61,8 +61,8 @@ caravan never crosses the ruined bridge. Neither its admission nor MQ02's mill
 repair opens the player's regional checkpoints or repairs the crossing.
 
 The lightning has an unknown cause. Only a handful of incidents have occurred.
-This scene does not link the tusker's fallen tree to the strike, reveal an
-ancient mechanism, disclose Serene's inherited warning, or authorize excavation.
+This scene does not link the tusker's fallen tree to the strike, establish
+Veinhold interference, disclose Serene's inherited warning, or authorize excavation.
 The full covenant disagreement belongs to MQ03's later meal and discussion.
 Iselin's expected visit was arranged beforehand; she did not set out because
 Caelan restored the mill.

@@ -108,7 +108,10 @@ After the festival, Caelan helps Serene finish the evening work at home. A messe
 
 Serene is shaken but shares only that the conflict with the regent is becoming more serious. Alone, she retrieves and examines an inherited warning about disturbances beneath the mountains. **The player does not read the full warning.** The chapter closes with uncertainty, not an immediate disaster.
 
-Her precise knowledge is limited: she does not know the cosmic catastrophe, the Great Sacrifice's full truth, or the identities of the four survivors.
+Her precise knowledge is limited: the warning and public maintenance records
+do not establish the cause of the recent lightning, the enemy's harvesting
+network, the cannon plan or Iselin's covert mission. The contents and age of
+the inherited warning remain subject to their existing disclosure limits.
 
 ## Character introductions
 
@@ -126,14 +129,20 @@ approve an entire later-act plot or exact recruitment quest.
 
 ## Exit conditions and continuity checks
 
-Players should understand why Caelan loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelan without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, but its true dangers and ancient origins remain concealed.
+Players should understand why Caelan loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelan without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, while its precise hazards and the buried works' construction history remain unresolved.
 
-Mechanisms and magicks must obey conservation of aether. Planetary-return teaching does not reveal hidden ancient history or settle personal consciousness after death. The Aethersphere's protective purpose and ancient origin, and the four surviving Ancients, remain hidden. Preserve the separate regional ending promised by the saga documents.
+Mechanisms and magicks must obey conservation of aether. Planetary-return
+teaching does not settle personal consciousness after death or disclose the
+enemy harvesting network, cannon or Iselin's future. The
+[aether foundation](../saga/FOUNDATIONAL_LORE.md) now explains elemental
+Worldveins and distinguishes brief natural imbalances from sustained artificial
+disruption. The exact cause of the opening incidents remains open. Preserve
+the regional ending and its Ice Worldvein restoration requirement.
 
 ## Still to determine
 
 1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
 2. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
-3. Develop the later site investigation and formal-authorization escalation without giving Serene forbidden saga knowledge or erasing MQ03's secret deployment.
+3. Develop the later site investigation and formal-authorization escalation without giving Serene unearned knowledge of the harvesting network or erasing MQ03's secret deployment.
 4. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
 5. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.

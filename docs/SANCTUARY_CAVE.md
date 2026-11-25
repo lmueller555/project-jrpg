@@ -184,7 +184,7 @@ See the [live encounter review](reviews/mira_rig_continuity/README.md).
 The [MQ03 narrative owner](narrative/game_01/CH01_MQ03.md) records the implemented
 arrival, missing-worker rescue, healing-pool evacuation, and post-boss resolution.
 Future combat tuning does not leave those story scenes unfinished. The cave does not establish the
-confluence's detailed workings, identify the original sacrificial temple or
+confluence's detailed workings, identify a Veinhold or cannon connection, or
 merge this location with the historically sealed workers' passage.
 
 ## Reproduction and retained reviews

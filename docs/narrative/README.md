@@ -8,7 +8,7 @@ method, then follow the sources relevant to the assignment.
 
 | Subject | Owning source |
 | --- | --- |
-| Cosmology, ancient history, magick foundations, broad saga planning and its open decisions | [Foundational Lore](saga/FOUNDATIONAL_LORE.md) |
+| Aether conservation, Worldveins, natural and artificial imbalance, Veinholds, cannon and Ice Dome physics, and open foundational decisions | [Foundational Lore](saga/FOUNDATIONAL_LORE.md) |
 | What characters and players may learn, reveal design and disclosure boundaries | [Revelation Plan](saga/REVELATION_PLAN.md) |
 | Game I requirements, approved act/chapter structure, opening frame and introduction windows | [Game I Story Bible](game_01/STORY_BIBLE.md) |
 | Historical unapproved premises and act outlines | [Historical alternatives](archive/README.md); these do not override active canon |
@@ -61,6 +61,17 @@ Preserve their recorded content and status; update navigation links when a
 source moves rather than rewriting a historical transcript to match new lore.
 
 ## Later story approvals
+
+The 2026-11-24 Worldvein revision replaces the earlier cosmic catastrophe,
+Ancients, Great Sacrifice, four-survivor plot and artificial atmospheric origin.
+They are retired premises, not secrets awaiting revelation. The existing lore
+owner now records elemental circulation, natural disasters, Veinholds (called
+"clots" by some opponents), the enemy cannon ultimatum, and the dome's costs.
+Iselin absorbs accumulating barrier aether during confinement, weakening the
+dome; defeating her releases the excess and restores the Ice Worldvein.
+These are approved future-story facts, not new runtime systems. Weapon supply,
+the three-year military situation, exact absorption/release mechanics, Iselin's
+fate and safe handling of the physical dome remain open in their owners.
 
 The 2026-11-24 author-approved parallel journey, playable exile, conscious
 ice-stasis transformation, planetary-core interval and Rhea's absence are

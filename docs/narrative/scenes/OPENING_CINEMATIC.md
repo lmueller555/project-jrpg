@@ -25,9 +25,10 @@ helmet's owner nor whose death it suggests, and it does not settle Tomas's fate
 or Eldenmere's ultimate condition. The reference to “he” in Mira's encouragement
 remains the author's exact wording and leaves its context unresolved for the
 player. The lantern is ordinary traveling equipment, not Liam's tower lantern
-or an identified memorial keepsake. The wayside sanctuary does not reveal the
-ancient sacrificial temple. Iselin's responsibility, the regional mechanism and
-all saga-level mysteries remain concealed.
+or an identified memorial keepsake. The wayside sanctuary establishes no
+connection to a Veinhold or the cannon. Iselin's responsibility and the regional
+mechanism remain concealed; the revised aether foundation does not assign this
+flashforward's threatened surge a cause or identify its unnamed loss.
 
 The author's exchange establishes an entrance beyond the ridge, a threatened
 valley and a caravan returning for another group. Their reassurance, the lamp

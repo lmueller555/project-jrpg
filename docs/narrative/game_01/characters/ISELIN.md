@@ -52,6 +52,10 @@ The Elden Vale Sanctuary incident gives players their first inkling of concealed
 motives. It does not disclose the catastrophe's full nature, prove the cause of
 the cave creature, or absolve her deception toward Serene. Existing MQ03 relief,
 unauthorized mining preparations, rescue and accountability remain in place.
+The revised investigation belongs to the Worldvein and Veinhold story. Exactly
+what the Crown already knows about the enemy's harvesting network and cannon,
+and how its concealed excavation relates to that knowledge, remain open. Its
+partial knowledge does not establish that it predicted the whole sequence.
 Do not reveal the covert mission or future identity through opening dialogue,
 quest trackers, Gallery labels or casual NPC exposition.
 
@@ -59,7 +63,10 @@ quest trackers, Gallery labels or casual NPC exposition.
 
 The long shared journey must give the party and player reasons to care about
 her before her fall. Her fear and protective intent lead to the kingdom-sized
-ice dome, accusation of treachery and exile. The shared sequence and surface
+ice dome in response to the enemy cannon's war ultimatum, followed by accusation
+of treachery and exile. The dome also disrupts the Ice Worldvein; her protective
+purpose does not exempt such an enormous working from its environmental cost.
+The shared sequence and surface
 interval are recorded in the [Game I chronology](../STORY_BIBLE.md#approved-later-progression-and-parallel-chronology).
 Exile begins the final sequence; her transformation occurs afterward in the cave.
 Her exile is unfair. The author-approved general direction now establishes her
@@ -123,17 +130,25 @@ passes to Iselin for a substantial emotional roleplaying sequence.
 
 Her body is preserved, but she remains conscious throughout the approximate
 three-year confinement fixed by the shared chronology. She broods over the
-exile and develops resentment and hatred. Absorbing the cave's ice-aspected
-aether transforms her into the Ice Reaper while she is encased. Upon emerging,
+exile and develops resentment and hatred. During confinement she absorbs
+accumulating ice-aspected aether from the barrier, transforming into the Ice
+Reaper while she is encased. Her absorption also
+weakens the barrier and causes its existing failure. The cave remains naturally
+ice-aspected; the exact Worldvein route connecting it to the barrier is open.
+Upon emerging,
 she is resolved to bury those she once swore to save, the intention reflected
-in her battle theme. The cave supplies the amplification; no new pact, relic or
-ancient patron is established. Physical transformation and her developing
+in her battle theme. The barrier supplies the accumulating excess; no new pact
+or relic is established. Physical transformation and her developing
 intentions remain distinct parts of the arc.
 
 The precise presentation, duration as she perceives it, physiological rules,
-spell costs, quantities of absorbed aether, cause of release and remaining
-events after emergence remain open. The approved intent does not settle the
-boss outcome or implement these sequences. Her initial decision to restrain
+spell costs, quantities of absorbed aether, trigger for leaving self-stasis and remaining
+events after emergence remain open. The
+[aether foundation](../../saga/FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration)
+establishes that defeating her is necessary to release the excess aether and
+restore the Ice Worldvein. Her death is not established by that requirement.
+These approvals do not implement the boss or settle her final fate and the
+safe handling of the remaining physical dome. Her initial decision to restrain
 herself remains part of her history after transformation.
 
 ### The kingdom's appeal and deliberate collapse
@@ -157,8 +172,10 @@ separate facts; neither erases the other.
 The ice imagery consequently develops from restraining dangerous enemies to
 enclosing a population for protection, confining herself, and finally turning
 that protection into the means of burial. Existing structural failure is not
-automatically the result of a deliberate attack by her. Why Rhea survives,
-how she is captured, the exact exchange, and the outcome remain open. No new
+automatically a deliberate attack by her: absorption weakens the barrier during
+confinement, while her later intention to collapse it is conscious revenge.
+Why Rhea survives,
+how she is captured, the exact exchange, and her final fate and aftermath remain open. No new
 possession, magical command to hate, or literal internal disease is established
 by this account of her emotional deterioration.
 
@@ -183,8 +200,8 @@ predecessor. If developed, her relationship to the prince would be aunt rather
 than uncle. No dynasty name, queen's personal name, heir or inheritance rule is
 established by this migration. Proposed themes of service, responsibility and
 wanting achievement to justify royal standing remain usable development notes.
-Her covert Crown investigation, however, is approved separately and must not be
-excluded by the older "no hidden cosmic motive" proposal boundary.
+Her covert Crown investigation is approved separately; these older family
+proposals do not limit that mission or revive retired explanations of the crisis.
 
 ## Opening relief responsibilities
 

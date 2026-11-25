@@ -165,20 +165,23 @@ individuals within the same broad landscape.
 
 ## Story scope and continuity
 
-Elden Vale, nearby Greyfold routes and the upper Leth corridor provide enough
-geographic variety for Game I's regional story. Lower Leth, Rookfen, Marris and
+Elden Vale, nearby Greyfold routes and the upper Leth corridor anchor the
+opening. The approved longer journey heads north through affected regions
+toward Iselin's capital. Its exact itinerary and the locations of the opposing
+kingdom's Veinholds and cannon remain open. Lower Leth, Rookfen, Marris and
 Redstone can appear through travellers, goods, letters and personal connections;
 visiting every region is not required. Overseas travel remains available to
 later stories.
 
 These regions do not determine a person's ancestry, personality, moral position
 or magical potential. Borders and institutions will overlap the landscape.
-The original sacrificial temple's location remains unassigned. The approved
+The approved
 [companion foundations](../../game_01/CHARACTERS.md) give Lucan the
 Redstone March, Rhea the wooded western Greyfold slopes and Edran the Lower
 Leth as home regions; specific settlements remain open.
-Regional customs cannot reveal the hidden ancient history or settle
-the unresolved mechanics of souls and resurrection.
+Regional customs do not settle the unresolved mechanics of souls and
+resurrection or give their practitioners automatic knowledge of the harvesting
+network and its military purpose.
 
 References: [foundational lore](../../saga/FOUNDATIONAL_LORE.md),
 [approved Eldenmere geography](../../../world/eldenmere/blockout/README.md),
