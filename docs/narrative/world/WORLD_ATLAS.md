@@ -16,16 +16,16 @@ not committed quests.
 
 The existing village, characters, quests and local geography retain their
 approved facts. [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) governs the
-world's aether, ancient history and hidden cosmology. The
+world's aether, Worldveins and the effects of interrupted circulation. The
 [Revelation Plan](../saga/REVELATION_PLAN.md) governs what characters
 and players may learn. The atlas is a writer's reference; a character's own
 map or understanding can be narrower.
 
 ## The world's name
 
-**Auratia** is the world's name. Its language of origin, ancient etymology,
+**Auratia** is the world's name. Its language of origin, etymology,
 historical forms and regional pronunciations remain to be developed. The name
-does not by itself reveal the world's hidden history.
+does not by itself establish a particular historical origin.
 
 ## The broad arrangement
 
@@ -80,8 +80,8 @@ This is a schematic of relative positions, not a coastline or distance map:
 The atlas does not settle the planet's total land area, exact distances,
 coastline shapes or the existence of additional landmasses beyond those named
 here. Large interiors, remote coasts and the detailed extent of polar surveys
-remain available for later development. The original sacrificial temple has
-no assigned location here.
+remain available for later development. Specific Worldvein routes, Veinhold
+sites and the cannon's location have not been assigned on this map.
 
 ## Where Eldenmere belongs
 
@@ -223,7 +223,7 @@ pressures rather than universally identical laws.
 ## Faith, magicks and cultural variation
 
 [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) owns the planetary cycle,
-magick constraints and hidden cosmology. The
+elemental Worldveins, natural and artificial imbalance, and magick constraints. The
 [Revelation Plan](../saga/REVELATION_PLAN.md) distinguishes public understanding
 from author truth. [Serene's local faith](ELDEN_VALE_FAITH.md) owns Elden Vale's
 spiritual practices and the Sanctuary's service to the dead; the
@@ -238,8 +238,9 @@ named atlas region or settle how all confluences behave.
 
 Exploring these sanctuaries and studying their confluences may become a recurring
 thread of the main plot. This is a narrative direction for future development,
-not a completed itinerary, a reveal about ancient mechanisms or an explanation
-of the recent surges.
+not a completed itinerary or an explanation of the recent surges. A sanctuary's
+natural confluence does not establish that it contains a machine controlling
+the Worldveins.
 
 Eldenmere's established Festival of Light combines remembrance with living
 community. Other places may express related beliefs through different
@@ -250,8 +251,8 @@ remain to be chosen.
 
 The continental documents describe such practices as communal meals, repaired
 lamps, remembrance records or household acknowledgements. Their theological
-claims remain beliefs. They do not settle souls, reincarnation or the
-consciousness of the dormant Ancients. The Festival of Light's season and the
+claims remain beliefs. They do not settle souls, reincarnation or personal
+consciousness after death. The Festival of Light's season and the
 world's calendar also remain open.
 
 Magicks obey the same established conservation limits everywhere. Regional
@@ -260,6 +261,14 @@ and institutions. Geography and ancestry do not automatically determine a
 person's magical strength. Each region can contain healers, offensive casters,
 craft workers, people with modest abilities and people whose work uses little
 magicks.
+
+Occasional brief natural imbalances in the Worldveins cause natural disasters;
+their damage can outlast the disturbance. The opposing kingdom's **Veinholds**
+artificially disrupt that circulation while harvesting aether. Some opponents
+call them **"clots"** with disdain. The foundational owner records their
+connection to the cannon and Ice Dome; this atlas does not assign them to
+particular settlements or make every unusual weather event evidence of a
+Veinhold. The opening lightning's natural or artificial cause remains open.
 
 ## Turning the atlas into scenes
 

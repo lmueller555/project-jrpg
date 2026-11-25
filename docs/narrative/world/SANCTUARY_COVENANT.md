@@ -18,7 +18,7 @@ expands the [Elden Vale regional setting](regions/ELDEN_VALE.md) and informs
 [Chapter 1 closing authorization](../game_01/CHAPTER_01.md).
 The [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and
 [Revelation Plan](../saga/REVELATION_PLAN.md) retain authority over
-hidden history, cosmology and Game I's disclosure limits.
+the natural aether system and Game I's disclosure limits.
 
 ## The land under protection
 
@@ -39,10 +39,9 @@ Iselin has secretly deployed men to establish Crown control and prepare mining
 before securing her agreement. The exposed deployment makes the conflict a
 breach of trust as well as a dispute over the use of protected land.
 
-Elden Vale Sanctuary is **not established as the original temple of the Great
-Sacrifice**. Do not identify the two sites or invent a confirmed connection
-between them. The old sanctuary's complete history and buried layout remain
-unknown to the people involved.
+The old sanctuary's complete construction history and buried layout remain
+unknown to the people involved. Its natural confluence does not establish that
+the buried works control planetary circulation.
 
 ## Why this reserve is sacred
 
@@ -52,7 +51,8 @@ a **real natural aether confluence** to guide the region's dead back to the
 planet and remember them. Its living memorial grove forms part of that
 continuing care. Mining would disrupt the Sanctuary's central service.
 
-The confluence belongs to the ordinary planetary cycle, not the Aethersphere.
+The confluence belongs to the natural planetary circulation described by the
+[Worldvein foundations](../saga/FOUNDATIONAL_LORE.md).
 Its detailed workings and its relationship to the buried foundations remain
 imperfectly understood. It is not an unlimited aether source or an established
 artificial planetary mechanism.
@@ -72,8 +72,8 @@ remain open.
 
 The sanctuary ground is held in keeping across generations, rather than
 treated as a resource belonging solely to its present custodian. This
-custodial duty is held sincerely by the community without disclosing the
-hidden ancient history.
+custodial duty is held sincerely by the community; it does not depend on
+knowing every detail of the site's construction or physical workings.
 
 The covenant gives that keeping a recognized public form. Civil authorities
 recognize the reserve and the custodians' duties toward it. Its protection is
@@ -182,12 +182,13 @@ warning**, which she privately consults after the chapter-ending authorization.
 The player does not read that warning in full. It must not become a complete
 answer that Serene could have disclosed to settle the MQ03 disagreement.
 
-Serene does not know the cosmic catastrophe, the full truth of the Great
-Sacrifice or the identities of the four surviving Ancients. Neither her faith
-nor the public records establish the buried works' full mechanism. Do not
-reveal a buried machine or a hidden causal explanation during MQ03.
+Serene's faith and the public records do not establish the buried works' full
+mechanism, the Crown's covert mission or the source of the recent lightning.
+Do not reveal a buried machine or a complete causal explanation during MQ03.
+The warning's unwritten content is not permission to restore the retired
+cosmic or Ancient-race explanation.
 
 The broader mechanism, the old site's full history, precise civil procedures,
-and later discoveries remain open or concealed under the existing narrative
-guides. This approval establishes the local covenant and conflict; it does
-not turn those unanswered saga questions into public knowledge.
+and later discoveries remain open or subject to the existing disclosure
+boundaries. This approval establishes the local covenant and conflict; it does
+not turn unwritten details into public knowledge or an established secret.

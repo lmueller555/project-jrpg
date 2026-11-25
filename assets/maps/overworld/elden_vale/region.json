@@ -7560,7 +7560,7 @@
       "The runtime corridor widens and bends the atlas topology for 24px miniature-scale travel; no literal PNG scaling or uniform map-to-kilometre conversion is used.",
       "The village brook and controlled millrace remain distinct local water features in detailed Eldenmere; they are not additional bounding rivers.",
       "Neither boundary watercourse is assigned a new proper name or automatically identified as the River Leth. Repeated labels do not create duplicate rivers.",
-      "Elden Vale Sanctuary occupies the northeastern wooded foothills in the runtime region; the original sacrificial temple remains unlocated. Confluence workings, political borders, physical distances and unnamed settlements remain open.",
+      "Elden Vale Sanctuary occupies the northeastern wooded foothills in the runtime region. Its construction history, confluence workings, political borders, physical distances and unnamed settlements remain open; no Veinhold or cannon site is assigned here.",
       "North and south walls, checkpoints, walking loops, overlooks and bridge damage are authored runtime interpretation, not features redrawn onto the approved classroom map."
     ],
     "references": [
@@ -12306,7 +12306,7 @@
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "4802e92a6aee6ebf783e6a2524e2218b45323d94926798a61ca188b6d15418bb",
+    "source_recipe_sha256": "0081ae4f0243ce828bdd3a793e9b841137e508df67cb3964556732439a729e2d",
     "atlas_reference": "docs/reviews/elden_vale_composition/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",

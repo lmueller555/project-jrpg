@@ -1,58 +1,73 @@
 # Project JRPG — Revelation Plan
 
-**Status:** Game I disclosure constraints are CANON; future reveals are PROPOSED or OPEN.
-**Version:** 0.6 (royal authorization and public-accusation boundaries).
-**References:** [Foundational Lore](FOUNDATIONAL_LORE.md), including broad saga
-planning, and the [narrative index](../README.md).
+**Status:** Approved disclosure constraints; unwritten reveal scenes remain OPEN.
+**Version:** 0.7 (Worldveins, Veinholds, the cannon and Ice Reaper restoration).
+**Revision:** 2026-11-24.
+**References:** [Foundational Lore](FOUNDATIONAL_LORE.md), the
+[Story Bible](../game_01/STORY_BIBLE.md), and the [narrative index](../README.md).
 
 ## Purpose
 
-Track three distinct things: (1) objective storyteller truth, (2) prevailing in-world interpretations, and (3) what players have actually learned. No apparent legend or NPC claim automatically becomes objective truth. Do not expose secrets merely because another document contains them.
+Keep objective author truth, in-world accounts, individual character knowledge
+and player knowledge distinct. This document owns disclosure boundaries and
+reveal design. Physical rules belong to Foundational Lore, chronology to the
+Story Bible, characterization to character sheets, and local faith to its
+world guide.
+
+Approved future direction is not implemented content. An author-facing fact
+cannot enter opening dialogue, quest objectives, item descriptions or optional
+conversations merely because it appears here. An unwritten mechanism is an open
+authoring decision, not automatically a secret somebody in the world knows.
 
 ## Game I narrative boundary (CANON)
 
-Game I is principally regional in scope, with a complete local conflict and resolution. Exactly four surviving ancients operate behind the scenes, but their number, identities, historical origin, accumulated aether, mission, and connection to the atmosphere are not fully disclosed. The cosmic catastrophe and Great Sacrifice are not explained in full. Religious belief, an ancient holy temple, magicks, and local consequences of instability may appear.
+The connected conflict concerns elemental circulation, contemporary kingdoms'
+harvesting, the cannon ultimatum, Iselin's defense and betrayal, and the
+consequences encountered after the surface interval. Game I must substantially
+resolve its own conflict. Its opening local problems and the companions' choices
+retain independent importance as the journey expands.
 
-**Aethersphere boundary, confirmed 2026-11-04:** Modern scholars recognize an
-unusual atmospheric form of aether outside the planetary life cycle. They do
-not know its protective purpose or ancient origin. Naming or discussing this
-classification is permitted without revealing the barrier or the sacrifice.
+The former cosmic catastrophe, ancient race, Great Sacrifice, four surviving
+Ancients and sacrifice-made Aethersphere explanation are **retired**, rather
+than truths reserved for a later reveal. Do not plant clues that promise their
+return or retain them as the secret cause of the new conflict. Local faith,
+old human ruins and natural magical phenomena may remain without establishing
+those former explanations.
 
 ## Revelation matrix
 
-The truth column points to its owning source. This plan owns disclosure timing
-and knowledge boundaries, rather than a second account of cosmology or local
-faith.
+The truth column identifies the owning source. The permitted treatment column
+sets boundaries rather than prescribing an unwritten scene or exact quest ID.
 
-| Topic | Truth source | Game I permitted treatment | Beyond Game I |
-| --- | --- | --- | --- |
-| Aether / magicks | [Conservation and magicks](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Everyday system; some limits and anomalies observable | Full metaphysics only when story requires |
-| Planetary life cycle | [Life, death and the separate Aethersphere](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Common understanding may be explained; no proof of personal consciousness after death | Detailed circulation and identity questions remain open |
-| Ridge sanctuary confluence | [Natural feature and local responsibilities](../world/ELDEN_VALE_FAITH.md#why-elden-vale-sanctuary-matters) | Local natural and spiritual significance may be shown without explaining its full workings or the buried structures | Exact mechanics and historical connections remain open |
-| Gods | [Deification](FOUNDATIONAL_LORE.md#7-the-gods-and-the-sacred-temple) | Worship and cultural interpretations visible | Mortal origins can eventually be revealed |
-| Holy temple | [Sacrificial site](FOUNDATIONAL_LORE.md#7-the-gods-and-the-sacred-temple) | Sacred place may be depicted without its historical truth | Sacrifice site significance revealed later |
-| Aethersphere / atmosphere | [The Great Sacrifice](FOUNDATIONAL_LORE.md#5-the-great-sacrifice--approximately-10000-years-ago) | Scholarly recognition of its atmospheric form is allowed; its protective purpose and ancient origin remain hidden | Reveal true purpose and origin when narratively earned |
-| Four dissenters | [Survivors outside stasis](FOUNDATIONAL_LORE.md#8-the-ancients-who-refused-the-sacrifice) | Unidentified influence, if any; do not reveal count or full nature | Reveal individuals and objective across later games |
-| Current instability | [Accumulation and destabilization](FOUNDATIONAL_LORE.md#8-the-ancients-who-refused-the-sacrifice) | Regional consequences and immediate human agency | Broader energy mechanism emerges later |
-| New life | [Modern inhabitants](FOUNDATIONAL_LORE.md#6-ten-millennia-of-new-life) | Modern people have independent cultures | Historical origins may be disclosed later |
-| Dying worlds | [Ancient observations](FOUNDATIONAL_LORE.md#3-the-cosmic-catastrophe) | Cosmic scope and cause concealed | Mystery can unfold in later games |
-| Ultimate cause / final answer | [Open cosmic mystery](FOUNDATIONAL_LORE.md#open-mystery) | Cannot accidentally imply a fixed answer | Deliberately open until decided |
+| Topic | Truth source | Permitted treatment and disclosure boundary |
+| --- | --- | --- |
+| Aether and magicks | [Foundations](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Everyday use and teaching may explain established rules. Do not imply limitless energy or invent an exception to conservation for a dramatic scene. |
+| Elemental Worldveins | [Natural circulation](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Explain circulation through observable regional conditions and credible knowledge. Familiarity with magic does not grant a complete map or understanding of every flow. |
+| Natural disasters | [Natural imbalance](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Occasional brief natural imbalances can cause disasters with lasting damage. This foundation lets players consider the danger of greater artificial disruption; it does not prove the cause of any particular opening lightning incident. |
+| Veinholds and artificial disruption | [Harvesting](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Their actual effects and the opposing kingdom's responsibility require evidence as the investigation develops. Do not assume every resident, worker or soldier understands the whole network. |
+| “Clots” | [Facility terminology](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | A contemptuous name used by some opponents. Its use expresses a speaker's experience or allegiance; it is not universal vocabulary or an omniscient explanation. |
+| Combined supply and cannon | [Weapon and defense](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Discovery connects regional harvesting to the military threat. The ultimatum forces the dome decision. Exact discovery scenes, demands, supply method, firing rules and weapon outcome remain open. |
+| Crown investigation | [Iselin's covert mission](../game_01/characters/ISELIN.md#covert-investigation--author-knowledge) | The opening preserves her concealed mission alongside genuine aid. The Crown has partial knowledge; its precise evidence and suspicions require authoring. Do not make it omniscient or disclose the mission through casual opening exposition. |
+| Ice Dome and absorption | [Physical premises](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | The dome affects the Ice Worldvein. Iselin absorbs the barrier's accumulating ice-aspected aether during confinement, transforming and weakening it. Establish how characters learn this connection; do not substitute an unapproved upstream route or conscious sabotage throughout confinement. |
+| Defeat and restoration | [Restoration requirement](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | Defeating Iselin releases the excess aether and is necessary to restore the Ice Worldvein. How the party learns this, the release mechanism, her final fate and safe handling of the physical dome remain open. Do not announce that she must die or that every other damaged flow is thereby restored. |
+| Planetary life cycle and remembrance | [Life and death](FOUNDATIONAL_LORE.md#life-death-and-local-faith), [local faith](../world/ELDEN_VALE_FAITH.md) | Planetary-return teaching and remembrance may be explained. They do not prove personal consciousness after death, resurrection, or planetary sentience. |
+| Sanctuary confluence and buried works | [Local significance](../world/ELDEN_VALE_FAITH.md#why-elden-vale-sanctuary-matters), [covenant](../world/SANCTUARY_COVENANT.md) | Show natural and communal significance, records and observable hazards. The buried works' purpose is not established by their age or proximity to the confluence. |
 
 ## Parallel story and timeskip knowledge
 
-**Author-established direction, 2026-11-24:** Later play follows the main party
-after Iselin returns home, with occasional Iselin cutaways and a substantial
-playable exile. What the player witnesses in those sequences is not automatically
+**Author-established direction, revised 2026-11-24:** Later play follows the
+main party after Iselin returns home, with occasional Iselin cutaways and a
+substantial playable exile. What the player witnesses is not automatically
 known by the separated main party. Do not keep her identity secret from players
 after showing it, or give characters knowledge of unwitnessed scenes.
 
 | Stage | Knowledge boundary |
 | --- | --- |
-| Opening and shared journey | Existing limits on the Crown's investigation, Ice Reaper identity, and hidden cosmology remain in force. |
-| Parallel antiwar story | Player knowledge follows the actual scenes shown; communications between groups must be authored rather than assumed. |
-| Playable exile and confinement | The player can witness Iselin's actions and later transformation. The core party has not thereby witnessed them. |
-| Planetary interior | The party experiences the core lifeforce and different time flow. That does not supply the hidden Ancient/cosmic explanation or proof of planetary consciousness. |
-| Return after the surface interval | The elapsed years and surface events require evidence or testimony. Rhea's experiences are not automatically shared memories. |
+| Opening and shared journey | Preserve the covert-investigation boundary. The order of discoveries about Veinholds and the cannon still requires scenes and evidence. |
+| Parallel antiwar story | Player knowledge follows the actual scenes shown. Communications between groups must be authored rather than assumed. The cannon threat must not retroactively give every earlier character full knowledge. |
+| Playable exile and confinement | The player witnesses Iselin's choices and can later witness her transformation. Her conscious resentment and the aether changing her capabilities are distinct processes. The core party has not thereby witnessed either. |
+| Planetary interior | The party experiences the core lifeforce and different time flow. This does not establish a conscious planet, an artificial origin for the core, or complete understanding of the Worldveins. |
+| Return after about three surface years | Elapsed time and surface events require evidence or testimony. Rhea remained on the surface, but her experiences are not automatically shared memories. |
 
 The exact moment players learn the elapsed duration, what the core party can
 measure while below, what Rhea believes about its disappearance, and how the
@@ -62,68 +77,77 @@ physical premises by [Foundational Lore](FOUNDATIONAL_LORE.md#approved-game-i-in
 
 ### Royal authorization and the public accusation
 
-**General direction approved, 2026-11-24; not implemented:** Follow the
+**Approved direction, revised 2026-11-24; not implemented:** Follow the
 [Story Bible's betrayal sequence](../game_01/STORY_BIBLE.md#royal-authorization-and-betrayal)
 for author truth and its remaining illustrative details.
 
 | Account or viewpoint | Knowledge boundary |
 | --- | --- |
 | Private authorization | The queen authorizes protection and promises support. Who else hears, records or receives the order remains open. |
-| Public accusation | The account that Iselin defied Crown authorization is false. A report, proclamation or accuser repeating it is not an objective narrator confirming it. |
-| Real consequences | The dome saves people while causing losses outside. Those losses and legitimate demands for an explanation are not disproved by the queen's betrayal. |
+| Public accusation | The account that Iselin defied Crown authorization is false. A proclamation or accuser repeating it is not an objective narrator confirming it. |
+| Real consequences | The dome saves people while causing losses outside. Those losses and legitimate demands for an explanation remain real. |
 | The queen's choice | She permits the false account rather than acknowledge responsibility. Her belief that exile saves Iselin is her self-justification, not authorial absolution. |
-| Player and party | Later cutaways may show private decisions. The exact disclosure sequence is open; absent party members do not automatically know what the player witnesses. |
-| Rhea's appeal | Her eventual conversation can address a genuine injustice and oppose collective punishment. What she knows beforehand, what Iselin tells her and what evidence the main party obtains require authoring. |
+| Player and party | Cutaways may show private decisions. Exact disclosure timing is open; absent party members do not automatically know what the player witnesses. |
+| Rhea's appeal | She can address a genuine injustice and oppose collective punishment. What she knows beforehand, what Iselin tells her and what evidence the main party obtains require authoring. |
 
 Do not invent an omniscient Crown, a universally corrupt military or a completed
 inquiry as shortcuts. Exact letters, witnesses, proofs, legal arrangements and
 any later public correction remain open. These later disclosures do not permit
-opening dialogue to reveal the covert mission or hidden cosmic history.
+opening dialogue to reveal the covert mission or the later betrayal.
 
 ### Collapsing dome, expedition and Rhea's appeal
 
-**Author-established direction, 2026-11-24; not implemented:** The
+**Approved direction, revised 2026-11-24; not implemented:** The
 [Story Bible](../game_01/STORY_BIBLE.md#post-timeskip-aftermath-and-the-collapsing-dome)
 owns the failing dome and mountain search; the
 [scene owner](../scenes/ICE_REAPER_PRE_BOSS.md#planned-confrontation-and-imprisonment)
-owns the long Rhea–Iselin exchange and imprisonment handoff.
+owns the extended Rhea–Iselin exchange and imprisonment handoff.
 
 | Presentation stage | Knowledge requirement |
 | --- | --- |
-| Post-timeskip aftermath | The party encounters destruction from fallen dome fragments. The cause of its existing failure is not automatically a deliberate act by Iselin. |
-| Search for Rhea | The party learns that Rhea led the expedition seeking Iselin's help. Its dispatch stays offscreen; do not add an earlier dispatch scene that preempts this discovery. |
-| Mountain route | The party encounters the other searchers dead. Identify these as the recent expedition rather than the hikers killed during the exile. Evidence, names and exact attack reconstruction remain to be authored. |
-| Rhea–Iselin confrontation | Rhea attempts to reason with her; the extended exchange reveals Iselin's deliberate-collapse intention and resentment to the player. How much the main party hears is not yet fixed. |
-| Prison and rescue | Rhea survives while the other members are killed. The main party finds her already encased. A player-facing cutaway does not give absent characters knowledge of the conversation. |
+| Post-timeskip aftermath | The party encounters destruction from fallen dome fragments. Author truth attributes the weakening to Iselin's absorption of accumulating barrier aether. Characters need evidence to identify that cause. |
+| Absorption and intention | Do not portray every existing fracture as proof that she deliberately damaged the dome throughout confinement. Her later plan to collapse it on the kingdom is an intentional act of revenge. |
+| Search for Rhea | The party learns that Rhea led the expedition seeking Iselin's help. Dispatch remains offscreen; do not add an earlier dispatch scene that preempts this discovery. |
+| Mountain route | The party encounters the other searchers dead. Identify them as the recent expedition rather than the hikers killed during the exile. Names, evidence and exact attack reconstruction remain to be authored. |
+| Rhea–Iselin confrontation | Rhea attempts to reason with her. The extended exchange reveals Iselin's deliberate-collapse intention and resentment to the player. How much the main party hears is not fixed. |
+| Prison and rescue | Rhea survives while the other members are killed. The main party finds her already encased. A player-facing cutaway does not give absent characters knowledge of their conversation. |
+| Necessary confrontation | The party must defeat Iselin to release the excess aether and restore the Ice Worldvein. Plan evidence for that objective without inventing a compulsory death, automatic repair of all other flows, or an already-authored ending. |
 
-Do not falsely confirm Rhea's death or present the expedition's dispatch as
-something the main party witnessed. Iselin's unfair exile, her subsequent
-violence and the kingdom's dependence on her can all be true. Whether the
-expedition encounters her before or after release from stasis, how its members
-are attacked, and how the main party learns the complete sequence remain open.
-The final confrontation's kingdom-saving outcome is not established by these
-revelations.
-
+Do not falsely confirm Rhea's death or present dispatch as something the main
+party witnessed. Iselin's unfair exile, her subsequent violence and the
+kingdom's dependence on her can all be true. Whether the expedition encounters
+her before or after release from self-stasis, how its members are attacked, and
+how the main party learns the complete sequence remain open. The established
+Ice Worldvein restoration does not settle the remaining dome's physical safety,
+Iselin's ultimate fate or the kingdom's political recovery.
 
 ## Reveal design rules
 
-1. For every major reveal, identify what the player currently believes, what evidence they can inspect, the new truth, and how it changes an emotional or moral decision.
-2. A lie by a character is not a false assertion by the narrator; distinguish unreliable testimony from factual flashbacks.
-3. Foreshadowing should be retrospectively fair without announcing the answer early.
-4. Player discoveries and playable character knowledge may differ. Record the distinction when using cutaways.
-5. Preserve a sense of completion at the end of Game I; a closing hint must not replace the resolution.
-6. Do not imply that modern inhabitants are fragments of ancient souls or that the four automatically know how to stop the catastrophe.
-7. Do not use ordinary death-return to fuel the Aethersphere or treat the
-   planetary cycle as proof of reincarnation, resurrection or a sentient planet.
+1. For every major reveal, identify what the player currently believes, the
+   evidence available, the new truth, and how it changes a decision or relationship.
+2. A lie by a character is not a false assertion by the narrator. Distinguish
+   unreliable testimony from factual flashbacks.
+3. Foreshadowing should be retrospectively fair without announcing every answer
+   early. Give discoveries intermediate practical value.
+4. Player discoveries and playable character knowledge may differ. Record that
+   distinction when using cutaways, the exile and the core interval.
+5. Preserve Game I's own resolution. A closing hint must not replace it or
+   resurrect the retired cosmology.
+6. Natural disaster does not prove deliberate interference; an opponent's use
+   of “clot” does not by itself prove a particular installation's effects.
+7. The planetary cycle does not establish reincarnation, resurrection or a
+   sentient planet. Increased ice power does not compel Iselin's moral choices.
+8. The necessary release of excess aether is established. Its mechanism and
+   consequences must be authored before dialogue claims to explain them.
 
 ## Approved early regional clues
 
 The [regional surge revision](../game_01/REGIONAL_SURGES.md) establishes a
 handful of extraordinary lightning incidents before and around the opening,
-including pre-opening destruction of Eldenmere's southern road. They subtly
-foreshadow a problem with aether flow and echo the opening cinematic's much
-larger threatened surge. They do not establish the exact cause of that future
-scene or reveal the ancient/cosmic explanation.
+including pre-opening destruction of Eldenmere's southern road. They precede
+Iselin's local mining initiative. They foreshadow the importance of aether flow
+and echo the opening cinematic's larger threatened surge; their natural or
+artificial cause, and the future scene's precise mechanism, remain open.
 
 The [covenant](../world/SANCTUARY_COVENANT.md) gives Serene public,
 incomplete evidence: an old plan and a historic maintenance account of a small
@@ -131,31 +155,50 @@ discharge injuring workers. She shares these openly. That older incident is
 distinct from the recent lightning events and from the inherited warning she
 privately examines after the festival. The reserve's
 [natural confluence and communal significance](../world/ELDEN_VALE_FAITH.md)
-are established, but do not identify the buried works' purpose. Neither
-sanctuary is identified as the original sacrificial temple or a component
-of the Aethersphere.
+do not establish the buried works' purpose, a Veinhold, or a direct connection
+to the cannon.
 
 ## Game I possible clue categories (PROPOSED; not required)
 
-- A religious phrase containing an oddly precise historical or atmospheric reference.
-- A relic bearing a motif reused by an unidentified observer.
-- An aether imbalance that cannot be fully accounted for by a local authority's actions.
-- An unexplained benefactor or scholarly contact whose influence becomes meaningful only later.
+- Observations that distinguish a brief natural disturbance from repeated or
+  sustained interference with a particular flow.
+- Records or testimony connecting a facility's expansion to conditions nearby.
+- Shipping, engineering or military evidence linking harvesting to the weapon,
+  once its supply method has been chosen.
+- Evidence connecting the barrier's weakening to Iselin's accumulation, once
+  that physical route has been authored.
 
-No item here is approved as an actual scene or guaranteed revelation.
+These are investigation approaches, not approved scenes, proof objects or a
+fixed order of revelations.
 
 ## Reveal planning template for future use
 
 - **Reveal ID and installment:**
-- **Objective truth:**
+- **Objective truth and owning source:**
 - **Earlier player belief and supporting evidence:**
-- **Character belief (if different):**
+- **Character belief and evidence, if different:**
 - **Foreshadowing and constraints:**
 - **Revelation scene / discovery mechanism:**
 - **Changed character decision or emotional consequence:**
 - **Potential contradiction with established canon:**
-- **Status:** Proposed / Canon / Undetermined / Retired
+- **Status:** Proposed / Canon / Open / Retired
 
 ## Outstanding questions
 
-Which historical truth is revealed first? Do players ever see an Ancient without recognizing them in Game I? What is the first undeniable clue of a larger mystery? How many games elapse before the four are named? What should remain unanswered until the saga conclusion? These are not yet decided.
+- What evidence does the Crown possess before the opening, and what does Iselin
+  learn during the shared journey?
+- Which events distinguish natural disasters from artificial disruption for the
+  party, and when is responsibility proved?
+- When and how do the party discover the combined supply, the cannon and its
+  limitations? What accounts for the weapon's status during the three years?
+- What evidence connects the dome, the cave and Iselin's absorption? When does
+  the party learn that defeating her is necessary for Ice Worldvein restoration?
+- How are Rhea's earlier encounter and the queen's private authorization shown
+  without transferring player-only knowledge to absent characters?
+- How are the release of aether, remaining physical ice, other disrupted flows
+  and the human aftermath presented? These require outcomes beyond the fact of
+  defeating Iselin.
+
+Do not settle these questions through incidental exposition. Develop their
+answers in the relevant owners, then update this disclosure plan in the same
+reviewed change.

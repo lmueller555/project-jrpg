@@ -118,5 +118,5 @@ religious interpretations in several directions.
 
 Game I could encounter Othara through a visiting healer, traded medicine,
 imported cloth or a traveller's account. Visiting the continent belongs to later
-story decisions. This atlas assigns no companion birthplace, sacrificial temple
-location or Ancient identity, and requires no mandatory world tour.
+story decisions. This atlas assigns no companion birthplace, Veinhold site or
+specific Worldvein route, and requires no mandatory world tour.

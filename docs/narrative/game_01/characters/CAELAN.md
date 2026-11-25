@@ -347,7 +347,7 @@ They do not require new dialogue-choice mechanics or routine animations.
 | Parents - other people's knowledge | What Serene, Mira or others know about the parents' survival or whereabouts remains unassigned; familiarity with the brothers' parental absence does not grant knowledge of this secret | Open |
 | Disappearance and reveal | Cause, whereabouts, exact timeline, and how and when survival is revealed to the brothers or player remain undecided | Open |
 | Hidden lineage and prophecy | Neither has been established by the missing-parents background | Open |
-| Knowledge | Knows his community and its customs; does not know the hidden cosmic history merely because he is the protagonist | Established familiarity / Disclosure constraint |
+| Knowledge | Knows his community and its customs; does not know the enemy harvesting network or Iselin's covert mission merely because he is the protagonist | Established familiarity / Disclosure constraint |
 | Shared past with Mira | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
 | Starting outlook | Reserved, thoughtful, self-doubting; wants to develop magicks and find a vocation | Established, 2026-11-04 |
 | Mistaken belief | Must know he is capable of a path before allowing himself to choose it | Established |

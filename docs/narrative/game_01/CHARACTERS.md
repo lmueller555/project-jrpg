@@ -216,7 +216,8 @@ This exchange is a voice reference, not a committed quest script:
 Both begin as modern specialists whose knowledge develops through observation.
 Their interpretations remain fallible. Game I's disclosures must follow the
 [Revelation Plan](../saga/REVELATION_PLAN.md); their expertise does not grant
-them knowledge of the hidden cosmic history or resolve its unanswered questions.
+them complete knowledge of Worldvein disturbances, Veinholds or the cannon.
+They must distinguish observed evidence from explanations still being tested.
 
 ## Party relationships and future work
 

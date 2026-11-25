@@ -436,7 +436,7 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 ## Story documents
 
 - [Narrative index](docs/narrative/README.md): start here for authoritative story, world, character and revelation sources.
-- [Foundational lore](docs/narrative/saga/FOUNDATIONAL_LORE.md): cosmology, ancient history, established worldbuilding and broad saga planning.
+- [Foundational lore](docs/narrative/saga/FOUNDATIONAL_LORE.md): aether, Worldveins, Veinholds, natural and artificial imbalance, and the Ice Dome's consequences.
 - [Auratia world atlas](docs/narrative/world/WORLD_ATLAS.md): approved continental geography, regional cultures, and Eldenmere's wider setting.
 - [Classroom world map](docs/WORLD_MAP.md): inspect Auratia’s map at the village school, including its northern and southern polar regions.
 - [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.

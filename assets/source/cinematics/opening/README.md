@@ -3,7 +3,7 @@
 These unchanged imagegen PNG masters supply the detailed battle-style art for
 the late-journey opening frame. The location is a damaged ordinary wayside
 sanctuary overlooking inhabited mountain settlements. Its architecture and
-landscape do not reveal the ancient or cosmic history.
+landscape do not identify a Veinhold, the cannon or the crisis's precise cause.
 
 - `valley_generated.png`: opaque twilight sky and distant valley panorama.
 - `valley_alpha_generated.png`: the authored valley and mountains with the sky

@@ -1,454 +1,272 @@
 # Project JRPG — Foundational Lore
 
-**Status:** Authoritative for explicitly confirmed premises; working draft for interpretations and proposals
+**Status:** Authoritative for explicitly confirmed premises; open decisions are
+identified separately. Approved future direction is not a claim of runtime
+implementation.
 
-**Version:** 0.7
+**Version:** 0.8
 
-**Last revised:** 2026-11-24 (consolidation followed by approved interior/stasis premises).
+**Last revised:** 2026-11-24 (approved Worldveins, Veinholds, weapon and Ice
+Worldvein revision).
 
-**Provenance:** Retains the foundational decisions recorded in version 0.5,
-including the 2026-11-04 planetary-cycle revision, and the unique saga-planning
-material from the former Saga Bible version 0.2. Established, proposed, working
-interpretation and open statuses are preserved; consolidation approves no new
-story facts.
+**Scope:** Aether, planetary circulation, magicks, life and death, the origins
+of the current environmental crisis, and the physical foundations of the later
+Game I conflict. The [narrative index](../README.md) identifies the owners of
+geography, individual characters, chronology, quests and disclosure.
 
-**Scope:** Core cosmology, history before the game's opening, ancient sacrifice,
-successor life, the original source of the present crisis, and broad multi-game
-planning. See the [narrative index](../README.md) for the owners of local faith,
-setting, character, quest and disclosure details.
+## Authority and retired premises
 
-## 0. How to read this document
+**Established** means author-approved. **Proposed** identifies an unapproved
+suggestion. **Open** means an author decision has not been made; it is not an
+in-world secret with an answer waiting to be revealed. Character belief and
+player knowledge remain separate from author truth.
 
-This document preserves the decisions reached so far without pretending that every detail has been resolved. The labels are meaningful:
+This revision replaces the former cosmic-catastrophe and Ancient-civilization
+foundation. The Ancients, Great Sacrifice, four surviving dissenters, their
+10,000-year extraction campaign, ancient deification, and the Aethersphere as
+an artificial sacrificial atmosphere are **retired premises**, not concealed
+truths or future reveals. They must not return as the hidden cause of the
+Veinholds, the weapon, the planetary interior or Iselin's transformation.
+No replacement atmospheric origin or ancient race is established here.
 
-- **Established canon:** An explicitly agreed premise that later story work must respect unless this guide is deliberately revised.
-- **Working interpretation:** A plausible explanation or narrative framing offered during planning, but not yet committed as an immutable fact.
-- **Open question:** Intentionally undecided, including mysteries whose answers may become major plot revelations.
-
-**Story-first authority:** Develop characters, geography, religion, politics, and game mechanics from the narrative, not vice versa. This guide describes the foundation, not the complete plot or world encyclopedia. Any subsequent Story Bible must preserve established lore or explicitly record a change.
-
-**Originality:** Inspiration includes the emotional archetype of morally competing civilizations from classic JRPGs and FFXIV, but the game must create its own terminology, mythology, events, characters, locations, and imagery. No copied characters, Sundering, Rejoinings, or other proprietary narrative mechanisms.
-
-**Terminology:** “Aether,” “Ancients,” “Great Sacrifice,” and related descriptive names are **placeholders** until we choose original in-world terminology. “Magicks” is currently the selected descriptive spelling, not necessarily a final in-world term.
-
-**Aethersphere:** The selected name for the atmosphere's distinct aetheric
-form. Modern scholars recognize this form without knowing its protective
-purpose or ancient origin. The planetary-cycle revision below is established
-canon as of 2026-11-04.
-
-**World and geography:** The world is named **Auratia**. The
-[World Atlas](../world/WORLD_ATLAS.md) establishes its continents, regional
-geography and cultural foundations, including Eldenmere's place in Elden Vale
-on Merovar. The four major continents are Merovar, Serevin, Othara and Istrava.
-The [Polar Regions](../world/POLAR_REGIONS.md) distinguish the Nivren Crown's
-northern polar ocean from Istrava's southern polar landmass. Exact borders,
-distances and illustrative future encounters remain open; established
-cosmology and Eldenmere's local map retain their authority.
-
----
+Compatible foundations remain: conservation of aether, magicks as manipulation,
+planetary life and death, and the open status of matter creation and personal
+consciousness after death. The world remains **Auratia**; the
+[World Atlas](../world/WORLD_ATLAS.md) owns its geography and cultural settings.
+Historical cultures, ruins and local spiritual practices can have independent
+histories without inheriting the retired explanation.
 
 ## 1. Foundations of existence
 
 ### Established canon
 
-Aether is a fundamental energy permeating the world and the wider universe. Aether **cannot be created or destroyed**. It can be moved, concentrated, dispersed, manipulated, or bound, but the total amount is conserved.
+Aether is fundamental energy permeating the world. It **cannot be created or
+destroyed**. It can move, concentrate, disperse, change form or become bound;
+those processes preserve the total amount.
 
-Life and all of nature consist of aether. Plants, animals and modern
-inhabitants participate in the planet's aether cycle. When a living being
-dies, its aether returns to the **planet**, rejoining that cycle.
+Life and nature consist of aether. Living beings possess life-force aether and
+participate in the planetary cycle. When a plant, animal or inhabitant dies,
+its aether returns to the **planet**. No dormant civilization or artificial
+atmospheric shield receives that return.
 
-The **Aethersphere** contains a huge amount of aether in a different form,
-separate from the ordinary planetary life cycle. It is the protective barrier
-that forms the world's atmosphere; its energy does not circulate through
-ordinary life and death.
+**Magicks** are the deliberate manipulation of free-flowing aether. A wielder
+does not summon new energy into existence. Available quantity, accessibility
+and the wielder's capabilities constrain an effect. Possessing or accessing
+more aether does not confer greater moral worth.
 
-**Magicks** are the deliberate manipulation of **free-flowing aether**. Wielders do not summon new energy into existence. The amount, disposition, and accessibility of aether place real constraints on what any wielder can accomplish.
+### Explicitly open
 
-Living beings possess life-force aether. The strength and scale of individual magical capacity differ between inhabitants and ages. An important distinction is between the **amount of aether a being possesses or can access** and its moral worth: possessing more power does not confer a greater right to exist.
+Nature consisting of aether does not decide whether magicks create matter or
+only manipulate existing matter. The exact mechanisms of material forms,
+conversion, affinity, individual reserves and spell efficiency remain open.
+Neither planetary circulation nor death-return proves that the planet is
+conscious, that memories persist after death, or that resurrection and
+reincarnation occur. Those questions require their own decisions.
 
-### Modern scholarly understanding
-
-The world's scholars recognize the Aethersphere as an unusual atmospheric
-form of aether that does not participate in the planet's ordinary life cycle.
-Its nature and properties are poorly understood. They do **not** know that
-it is a protective barrier or that it was formed by an ancient sacrifice.
-Recognizing or naming the Aethersphere is not a discovery of that hidden history.
-
-### Accounting limits
-
-Planetary-cycle aether and aetherspheric aether are different forms within
-the same conservation constraint, not unrelated energy sources. Their amounts,
-the accounting of ancient committed or sequestered energy, and any possible
-conversion between forms remain to be designed without double-counting.
-Ordinary magicks do not gain access to the Aethersphere merely because it
-consists of aether.
-
-### Explicitly unresolved
-
-Nature consisting of aether does **not** settle whether magicks can create
-matter or only manipulate existing matter. The mechanisms of material forms,
-conversion, consciousness, souls, resurrection, reincarnation, magical affinity
-and spell efficiency remain undecided. The planetary cycle does not establish
-a sentient planet or the persistence of personal memories. Do not quietly
-assert answers in future documents.
-
----
-
-### Approved Game I interior and ice-stasis phenomena
-
-**Author-established, 2026-11-24:** The later Game I party enters the planet's
-core lifeforce through a deep chasm. Time flows differently within the planet:
-the party returns after about three surface years, with the subjective
-duration of its experience still undecided. This is a scoped story premise; it does
-not define a universal rate for every depth or grant unrestricted time travel.
-The [Game I chronology](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
-owns the ordering and roster constraints.
-
-Iselin's refuge near the mountain summit is an ice-aspected cave. Her
-self-encasement preserves her living body against starvation while leaving her
-conscious. She absorbs ice-aspected aether from this environment and transforms
-during confinement. The [Iselin sheet](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement)
-owns her choices and progression. Rates, capacities, consciousness in other
-forms of stasis, release and maintenance rules remain open. The conservation
-principle still applies; no unlimited aether source is established.
-
-These approvals do not settle awareness during the Ancient sacrifice,
-consciousness after death, reincarnation, resurrection, planetary sentience,
-or the relationship between the planetary cycle and the Aethersphere. The
-regional ice dome remains distinct from the planetary atmosphere.
-
-## 2. The ancient civilization
+## Worldveins and natural imbalance
 
 ### Established canon
 
-Far before the game's beginning, the planet was inhabited by an exceptionally powerful civilization, provisionally called the **Ancients**.
+Each element has its own flow through the planet: a **Worldvein**. The world's
+natural balance depends on those elemental flows circulating freely. The
+Worldveins are interdependent; obstructing one or more throws other elements
+out of balance and produces elemental natural disasters.
 
-In their era, far more of the planet's life-force aether was available outside a planetary barrier. Individually, ancients possessed tremendously greater aetheric reserves and power than modern inhabitants. They understood magicks and the cosmos at a level beyond modern civilizations, including the capacity to study distant worlds.
+Natural disasters also occur without human interference. They arise from
+**natural, occasional and brief imbalances** as aether flows through the world.
+The imbalance can be brief while the damage and recovery last much longer.
+Natural circulation therefore includes variation rather than a permanently
+motionless equilibrium.
 
-Yet they were not literal omnipotent gods. They could disagree, fear extinction, miscalculate, and face mysteries they were unable to solve.
+The narrative poses a concrete question through these familiar dangers: what
+happens when artificial intervention produces a much greater or sustained
+imbalance? The answer develops through the Veinholds and their consequences.
+An elemental disaster alone does not prove that a nearby facility caused it.
 
-### Working interpretation
+### Design limits and open mechanics
 
-Their individual magicks may have looked divine to later observers. Their great works, culture, and institutions remain to be invented from the needs of the eventual story; we have **not** settled whether they could create matter or life from nothing.
+The elemental roster, detailed routes, junctions, rates and interactions are
+not yet mapped. The term Worldvein does not establish literal blood vessels,
+a conscious planetary organism or an unlimited supply at every location.
 
----
+Ordinary magicks remain usable. No numerical threshold distinguishes a local,
+brief spell from an intervention that significantly disrupts circulation yet.
+Scale, duration, concentration and method need rules before a particular spell
+or technology is assigned a precise ecological cost.
 
-## 3. The cosmic catastrophe
+Upstream accumulation, downstream deprivation and particular weather patterns
+have been discussed as possible ways to model disruption. Exact geography and
+consequences are still **open**, not universal rules already approved for every
+Worldvein. Later regional stories must establish specific causes and effects.
 
-### Established canon
-
-Across **millennia of observation**, ancient scholars detected a troubling shift in the **balance and availability of aether** on distant worlds. Increasing numbers of worlds across the cosmos became dead or dying.
-
-The phenomenon spread through the universe. No one knew what caused it, and the ancients' knowledge did not allow them to stop it. Eventually they realized their own planet was threatened with apocalypse.
-
-The underlying catastrophe is **not** the destruction of aether: such destruction would violate conservation. The observed decline must be compatible with aether changing distribution, accessibility, or state, though precisely how remains a mystery.
-
-### Open mystery
-
-We have not established the ultimate source, intention (if any), physical mechanism, destination of displaced energy, or whether the cosmic phenomenon can actually be defeated. We also have not determined whether it still advances at the game's present date; the surviving ancients believe the threat is worth confronting, but their belief is not proof.
-
----
-
-## 4. The Great Disagreement
-
-### Established canon
-
-The ancients did **not** unanimously agree on how to respond.
-
-The majority favored sacrificing their active existence to shield their world from the approaching catastrophe. They chose to contribute their own life-force aether and enter stasis, creating and sustaining a protective barrier around the planet.
-
-Exactly four ancients refused to participate. They believed that hiding behind a barrier merely delayed the danger and that the true answer was to defeat whatever caused the cosmic catastrophe. They intended to gather sufficient aetheric power to attempt that confrontation.
-
-These conflicting strategies—**preservation through sacrifice** versus **resistance through accumulated power**—lie at the heart of the story.
-
-### Open questions
-
-How the decision was organized, whether each participant's choice was informed and voluntary, whether opposition involved violence, and what exactly each faction predicted remain undetermined. Avoid treating either side's historical arguments as proven correct.
-
----
-
-## 5. The Great Sacrifice — approximately 10,000 years ago
+## Veinholds and the cannon
 
 ### Established canon
 
-Approximately **10,000 years before the game's opening**, the sacrificing ancients gathered at a **temple** and surrendered their active lives into **stasis**. Their life force was committed to an immense shield around the planet.
+An opposing kingdom harnesses the planet's elemental flows for power. Its
+fortified harvesting installations are called **Veinholds**. They occupy sites
+where an elemental flow can be accessed; a volcanic location for fire-aspected
+aether is an established example of the intended environmental fit, not an
+assigned dungeon or named fortress.
 
-This shield successfully prevented the immediate apocalypse. **It became the
-Aethersphere, what later inhabitants understand as the planet's atmosphere.**
-This is a supernatural worldbuilding premise and should not be silently
-replaced with an ordinary atmosphere plus a separate, unrelated force field.
+Their interference with circulation drives the artificial aether imbalance
+and growing threat of calamity. Some people contemptuously call Veinholds
+**"clots"**, accusing them of obstructing the world's natural flow. This is
+in-world language used with disdain, not a requirement that every community
+or speaker shares the same terminology or judgment.
 
-A significant proportion of the planet's total available life-force aether
-became committed to this separate form. This left only a fraction of the
-former free energy accessible to the living beings of subsequent ages.
+The kingdom is building a huge cannon that harnesses the combined power of the
+Veinholds. The weapon supplies the military ultimatum that forces the decision
+to erect the Ice Dome. The immediate threat of a cannon attack and the broader
+environmental consequences of harvesting are connected, but they are not the
+same event.
 
-The dissenting ancients did **not** take part in this sacrifice and remained active.
+### Open decisions
 
-### Open questions
+The opposing kingdom's name, political structure and motives; facility names,
+locations and populations; and the cannon's name, location, firing rules,
+capacity and supply method remain unwritten. The ultimatum's precise demands
+and terms also remain open.
 
-The exact relation between atmospheric gases, weather, and the metaphysical shield; whether the dormant ancients are aware or can awaken; the costs of awakening; the temple's original physical layout; and whether the sacrifice was designed to be temporary or permanent are all undecided.
+Transportable reservoirs, physical conduits, a particular charging limit,
+party sabotage and destruction of the recharge network were suggestions, not
+established events. Before authoring the middle game, define what intervention
+at a Veinhold changes and why the weapon cannot simply continue firing without
+consequence throughout the three surface years. No resolution of that threat
+or outcome of the war is selected here.
 
----
-
-## 6. Ten millennia of new life
-
-### Established canon
-
-The life force of the dormant ancients helped **guide and nurture the growth of new life for millennia**.
-
-Modern inhabitants are **new living beings**, not automatically fragmented,
-diminished souls or reincarnations of particular ancients. Their individual
-aetheric reserves and magical power are a **fraction** of those possessed by
-the ancient civilization because so much energy remains in the separate Aethersphere.
-
-Life and nature participate in the planetary aether cycle. When a plant,
-animal or inhabitant dies, its aether returns to the planet. That cycle is
-separate from the Aethersphere; ordinary deaths do not fuel or replenish it.
-The dormant Ancients are not recipients of the planet's ordinary death-return flow.
-
-The society beneath the atmosphere developed its own independent history, cultures, beliefs, and values. Its inhabitants' relative lack of power says nothing about whether their lives are worthy of preservation.
-
-### Open questions
-
-The detailed routes, rates and mechanisms of planetary circulation remain
-unassigned. An individual's identity or consciousness returning with their
-aether upon death **has not been determined**.
-
----
-
-## 7. The gods and the sacred temple
+## Ice Dome absorption and restoration
 
 ### Established canon
 
-Over time, memories of the ancient civilization became religious tradition. The ancients were **eventually regarded as gods** by modern inhabitants.
+Iselin creates the **Ice Dome** as a defense against the weapon. Manipulating
+ice-aspected aether on this enormous scale affects the **Ice Worldvein**;
+protective intent does not exempt the intervention from the world's rules.
+The [Game I Story Bible](../game_01/STORY_BIBLE.md#royal-authorization-and-betrayal)
+owns the queen's private authorization, protective success, outside losses,
+public accusation and unfair exile.
 
-The very **temple where the ancients performed their sacrifice** survives into the current age as a **holy place of worship**.
+At the end of her mountain flight, Iselin encases herself in a naturally
+ice-aspected cave near the summit. During her approximately three-year
+conscious confinement, she absorbs the accumulating ice-aspected aether from
+the barrier. That absorption empowers and transforms her into the Ice Reaper
+while weakening the barrier. The dome's decline has this established cause;
+it is no longer an entirely unassigned deterioration mechanism.
 
-Traditions that revere these beings have a real historical basis: ancient
-beings did sacrifice their own active existence to preserve the world. This
-does not require every modern spiritual tradition to center divine worship.
+Her absorption during confinement and her later intention to deliberately
+collapse the dome onto the kingdom are distinct. Earlier falling chunks are
+not automatically established as conscious attacks. Her bitterness and
+collective revenge develop through her own response to betrayal and isolation;
+aether does not implant those intentions or remove her agency. The
+[Iselin sheet](../game_01/characters/ISELIN.md#playable-exile-and-conscious-confinement)
+owns that personal progression.
 
-Local spiritual traditions and the known service of Elden Vale Sanctuary are
-recorded in [Serene's planetary faith](../world/ELDEN_VALE_FAITH.md); its public
-custodial obligations belong to the [Sanctuary Covenant](../world/SANCTUARY_COVENANT.md).
-Those local practices do not reveal the hidden ancient history. Neither Elden
-Vale Sanctuary nor Serene's home has been identified as the original sacrificial
-temple; that temple's location remains unassigned.
+**Defeating Iselin is the only way to release the excess aether she has
+accumulated, return it to the planet and restore the Ice Worldvein's normal
+flow.** This is an approved
+requirement of the final confrontation, not one interchangeable solution among
+several. The precise release mechanism remains to be written. Defeat has not
+been defined as necessarily killing her, and her ultimate fate is not decided.
 
-### Working interpretation
+Restoring the Ice Worldvein does not itself settle the damage to other flows
+or the fate of other Veinholds. The remaining physical ice and the safety of
+people beneath it also require an authored outcome; conservation alone does
+not establish that falling debris vanishes harmlessly.
 
-The temple may become a powerful narrative site because it can first appear as a place of divine worship and later be understood as the site of a historical sacrifice. Some teachings may contain surprisingly accurate fragments of history; others may be mistaken.
+### Open mechanics
 
-### Open questions
+How the barrier's accumulating aether reaches the cave; why Iselin can absorb
+and retain it; rates, limits and the onset of visible failure; the dome's
+construction, continued operation and resistance to the cannon; and the exact
+battle-to-release transition remain open. A proposed upstream mountain route
+has not become approved geography. These gaps must not be filled by an Ancient
+machine, cosmic source or unbounded energy reservoir.
 
-Whether a single major religion or many traditions arise; which peoples use the temple; its guardians, architecture, and political role; whether surviving ancients have shaped the faith; and when knowledge of the original truth was lost all remain open.
+## Approved Game I interior and ice-stasis phenomena
 
----
+**Author-established:** The later Game I party enters the planet's core
+lifeforce through a deep chasm. Time flows differently within the planet. The
+party returns after about **three surface years**; its subjective experience
+is still undecided. This is a natural planetary story premise, not an ancient
+facility or a general license for time travel. No universal time ratio at
+every depth is established.
 
-## 8. The ancients who refused the sacrifice
+Iselin's self-encasement preserves her living body against starvation while
+leaving her conscious. Her ice-aspected refuge and barrier-linked absorption
+obey the conservation rule above. These facts do not settle the consciousness
+of other stasis subjects, a general maintenance rule for all ice prisons,
+planetary sentience or personal survival after death.
 
-### Established canon
+The [shared chronology](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+owns the relationship between the party's fall, Iselin's exile and confinement,
+and Rhea's absence from the core party. The fall's cause and location, interior
+route, reason for different time flow and the party's escape remain open.
 
-Exactly four ancients remained active after the Great Sacrifice.
+## Life, death and local faith
 
-For thousands of years they sought the power to challenge the unknown cosmic threat. They pursued this by **absorbing and accumulating aether from the life force committed by their sleeping brethren**.
+The planetary return of aether remains compatible with Serene's practical
+spiritual tradition. [Elden Vale Faith](../world/ELDEN_VALE_FAITH.md) owns that
+tradition's beliefs, remembrance and care for the dying. The
+[Sanctuary Covenant](../world/SANCTUARY_COVENANT.md) owns protected-ground duties,
+public records and authorization. Neither source needs a hidden sacrificial
+origin to justify its community's obligations.
 
-Their accumulation sequesters energy associated with the ancient sacrifice,
-destabilizing the Aethersphere and threatening the planet beneath it. The
-separate planetary life cycle does not replenish these losses. The precise
-extraction mechanism and how aetherspheric destabilization affects planetary
-life remain open; do not restore an automatic link between ordinary deaths
-and barrier maintenance.
+Belief, observed circulation and proof of an afterlife are separate. Do not
+replace the retired ancient-deification history with an invented universal
+religion, pantheon or explanation of the soul.
 
-The survivors' purpose is not established as simple greed or vengeance: their professed motivation is to defeat the cosmic danger rather than indefinitely shelter from it. Their methods nevertheless endanger the people living beneath the barrier.
+## Story and disclosure ownership
 
-### Working interpretation
+This foundation establishes a planetary environmental conflict driven by
+present-day intervention, military coercion and consequential character
+choices. It does not assign every accident or regional problem to one enemy.
+The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the early lightning
+incidents and damage. Their particular cause remains unassigned; the lightning
+predates Iselin's mining initiative.
 
-The survivors may have diverged philosophically over 10,000 years rather than acting as a perfectly unified faction. Different degrees of guilt, resolve, compassion, obsession, and doubt could underpin distinctive antagonists. This remains a suggested opportunity, **not confirmed canon**.
+The [Story Bible](../game_01/STORY_BIBLE.md) owns shared chronology and Game I
+requirements; character sheets own individual development. Game I must resolve
+its central dramatic conflict and acknowledge consequences. Later installments,
+if developed, do not inherit a hidden four-Ancient or cosmic-catastrophe plot.
+Their subjects and the eventual number of games remain open.
 
-Their accumulation might give them overwhelming power relative to modern people, but the limits, risks, mechanics, and practical feasibility of their plan need to be designed.
+The [Revelation Plan](REVELATION_PLAN.md) owns when characters and players learn
+about harvesting, the cannon, royal responsibility, the time interval and the
+Ice Reaper's relationship to the barrier. Author knowledge does not authorize
+opening quest dialogue, trackers or Gallery labels to reveal future events.
+Retired lore is not material to withhold for a later twist.
 
-### Character development requirements — details open
+## Outstanding decisions
 
-The four survivors' names, identities, relationships, personalities, disguises,
-degree of coordination, specific methods and individual arcs remain undetermined.
-Their shared objective does not mean they share every belief or cause every
-wrong in modern history. Before finalizing one, record their motivations,
-distinct viewpoint, participation in the original disagreement, ongoing
-extraction method and eventual arc. This retains the former Saga Bible's design
-requirements without choosing those details.
-
----
-
-## 9. The present-day situation and dramatic premise
-
-### Established canon
-
-At the game's opening, approximately ten millennia after the sacrifice,
-modern civilizations live beneath the atmosphere. Traditions that worship
-remembered ancients as gods do not broadly understand their mortal origins
-or the original cosmic catastrophe. This does not make divine worship the
-center of every modern spiritual tradition.
-
-Modern scholars distinguish the Aethersphere's unusual atmospheric aether
-from the planetary cycle. Its protective purpose and ancient origin remain
-hidden, even where the term or scholarly classification is known.
-
-The surviving ancients' long campaign of absorbing energy is destabilizing the planet. This destabilization **leads to the events of the game**.
-
-The opposing claims are morally serious. Modern inhabitants have independent lives and a right to defend their existence. The dissidents believe they must do more than maintain a sanctuary while the deeper cosmic problem remains unresolved. There is no established proof that their plan can work.
-
-### Multi-game structure — established canon
-
-The overarching ancient and cosmic conflict unfolds across **multiple games**. **Exactly four surviving ancients** are behind-the-scenes antagonistic forces during Game I. Game I must feature a comparatively **limited, primarily regional conflict**, and its immediate narrative must reach a satisfying resolution without explaining or resolving the cosmic catastrophe. The full identities, count, ancient origins and ultimate mission of the four remain concealed from Game I's protagonists and players; subtle clues may be planted for later reinterpretation. The total number of installments and ultimate saga ending remain undecided.
-
-### Disclosure boundaries for Game I
-
-The [Revelation Plan](REVELATION_PLAN.md) owns Game I's permitted disclosures,
-character/player knowledge distinctions, approved clues and reveal design rules.
-Its boundaries preserve a self-contained regional conflict while withholding
-the wider ancient and cosmic explanation. Author knowledge is not automatically
-player knowledge.
-
-### Working story direction — not locked plot
-
-The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the approved
-opening incidents and relief context. The [Sanctuary Covenant](../world/SANCTUARY_COVENANT.md)
-owns the local protected-ground terms; [Chapter 1](../game_01/CHAPTER_01.md)
-and its quest guides own the opening progression. Those foundations do not
-establish a complete five-act plot or the final catastrophe mechanism. Remaining
-game-wide motives, stakes, local resolution and later crisis details need story
-development.
-
-The story's intended **tone is mature and morally complex**. Its broad creative
-direction combines high fantasy, technological or industrial transformation,
-and the legacy of an ancient catastrophe. Approved geography, characters and
-opening events are recorded in the World Atlas and linked Game I guides.
-Exact national constitutions, the wider industrial system and unresolved
-later-act outcomes remain open.
-
-**Potential central dramatic question:** What sacrifices can living civilizations justifiably demand of one another in order to face a threat to existence, especially when neither side knows whether its solution will work?
-
-This is a candidate framing, not a fixed ending or final thematic statement.
-
-### Saga horizons — proposed, not fixed
-
-The following progression is retained from the former Saga Bible as proposed
-planning, not a committed trilogy or an approved ending. The number and titles
-of installments remain undetermined:
-
-1. **Game I — regional story.** Human decisions and regional consequences form
-   the heart of a self-contained narrative. Subtle anomalies or agents hint at
-   something older, without revealing the four or the cosmic truth.
-2. **Later installment(s) — historical recontextualization.** The sacred site,
-   ancient civilization, atmospheric nature and hidden actors can gradually
-   become subjects of investigation. Their order and scale remain undecided.
-3. **Eventual saga reckoning.** The methods and assumptions of the four survivors
-   are challenged, and the origins and possible resolution of the cosmic
-   imbalance become central. An ending, successful solution, sacrifice and exact
-   installment count are **not yet chosen**.
-
----
-
-## 10. Broad chronology
-
-Dates other than the roughly 10,000-year interval are deliberately approximate.
-
-| Era | Established event |
-| --- | --- |
-| Deep antiquity | Ancients prosper in a world with far greater freely accessible aether |
-| Over many millennia | They observe a spreading imbalance and the death of distant worlds |
-| Approaching ~10,000 years ago | The planet becomes threatened; ancients disagree over survival strategy |
-| ~10,000 years before play | Majority enters stasis at the temple and forms the Aethersphere; dissenters remain outside |
-| Following millennia | Ancient life force nurtures new life; planetary aether circulates through life and nature separately from the Aethersphere |
-| Over generations | Ancients become revered as gods; their sacrificial temple becomes a holy site |
-| Over thousands of years | Surviving ancients accumulate dormant life force, progressively upsetting equilibrium |
-| Game's opening | Planetary instability precipitates the story |
-
----
-
-## 11. Outstanding decisions and mysteries
-
-These are **deliberate next design tasks**, not errors to fill with unsupported lore. Priority refers to the order in which decisions would most help develop the story.
-
-| Priority | Decision or mystery | Why it matters |
+| Priority | Open decision | Why it matters |
 | --- | --- | --- |
-| High | Remaining original names for “aether” and the key ancient events; Aethersphere is now the selected atmospheric term | Establish original voice and consistency |
-| High | What precisely causes the cosmic aether imbalance? | Ultimate mystery; may remain hidden until late narrative |
-| High | What is the dissenters' actual plan, and what evidence makes it plausible? | Grounds antagonist motivation without guaranteeing success |
-| High | How is ancient committed aether extracted, and how does that destabilize the separate Aethersphere? | Central causal mechanism without using ordinary death-return as a supply route |
-| High | What further forms does destabilization take beyond the approved early lightning incidents, and how does the later inciting crisis unfold? | Connects regional consequences to the protagonist without prematurely fixing hidden mechanisms |
-| High | Who is the protagonist, what do they lose or want, and why do they act? | Creates an emotional narrative rather than just lore |
-| High | What could end the conflict and what unavoidable cost remains? | Prevents an effortless last-minute solution |
-| Medium | How are the four survivors related, and are they aligned or divided? | Enables individual motives, arcs, and conflict |
-| Medium | Were sacrifices voluntary and informed, and what was stasis meant to achieve? | Defines the moral weight of the original decision |
-| Medium | Are dormant ancients aware, able to speak, or able to awaken? | Shapes the ethics of the survivors' mission |
-| Medium | What are the Aethersphere's detailed properties and maintenance mechanisms, and how do its disturbances affect planetary life? | Preserve the separation from the ordinary planetary cycle |
-| Medium | How are energy capacity, manipulation skill, and magical effects limited? | Defines the boundaries of magicks |
-| Medium | How do religions interpret the gods, temple, afterlife and planetary return? | Shapes faith without settling consciousness or reviving the retired doctrine |
-| Medium | What technological level has modern civilization attained, and why? | Supports fantasy/industrial themes |
-| Medium | How does the modern population differ socially and culturally from ancients? | Keeps successor civilization independent and credible |
-| Later | Matter creation versus manipulation by magicks | **Explicitly postponed by design** |
-| Later | Persistence of identity/consciousness after death | **Unresolved**, central to soul and resurrection lore |
-| Later | Geography, polities, cities, languages, calendar, religion names | Must follow story needs, not precede them |
-| Later | Additional character biographies and detailed combat builds | Develop from the narrative arc and preserve the [approved companion foundations](../game_01/CHARACTERS.md) |
-| Later | Detailed scene-by-scene narrative, ending, gameplay systems | Require subsequent story design |
-| Later | Which secrets each future installment reveals and what earns each reveal | Develop in the [Revelation Plan](REVELATION_PLAN.md) without fixing a saga ending |
-| Later | How deeply faith, industrialization and the politics of modern societies intertwine | Retains an open saga-planning decision |
+| High | Elemental routes and particular disruption mechanisms | Makes each environmental consequence traceable rather than arbitrary |
+| High | Enemy kingdom, Veinhold operations and beneficiaries | Grounds the conflict in people, motives and institutions |
+| High | Cannon supply, firing limits and ultimatum terms | Defines the military threat and what intervention can accomplish |
+| High | Why further bombardment does not negate the three-year interval | Keeps the weapon and timeskip coherent without inventing a resolved war |
+| High | Dome operation, cave connection and absorption limits | Connects protection, transformation and deterioration consistently |
+| High | Defeat, excess-aether release and physical dome safety | Delivers the required restoration without silently deciding Iselin's fate |
+| High | Other disrupted Worldveins and remaining Veinholds | Prevents the Ice resolution from automatically fixing the whole planet |
+| Medium | Kingdom and capital names, detailed routes and diplomacy | Supports specific travel and political scenes; the World Atlas owns geography |
+| Medium | Ordinary casting limits and technological uses of aether | Distinguishes everyday activity from large disruptive interventions |
+| Medium | Core route, subjective duration and escape | Makes the natural time difference playable without unrestricted time travel |
+| Later | Matter creation and personal consciousness after death | Remain explicitly undecided; no incidental scene may settle them |
+| Later | Further-game subjects and disclosure sequence | Must follow a satisfying Game I resolution |
 
-### Key continuity and logic checks
+## Continuity and change rules
 
-1. **Conservation:** The cosmic phenomenon and the survivors' extraction must move, bind, or sequester aether—not annihilate it.
-2. **No double counting:** Aetherspheric, ancient committed and planetary-cycle
-   energy must have a consistent accounting model when quantified. Do not
-   treat ordinary life and death as a supply route into the Aethersphere.
-3. **No assumed villains:** Historical disagreement does not make every dissenter malicious or every sacrificing ancient morally flawless.
-4. **Distinct successors:** Lower aetheric power does not imply the modern inhabitants are lesser persons or reincarnated fragments.
-5. **Unknown truth:** Survivor confidence about defeating the catastrophe is not evidence of their correctness.
-6. **Atmospheric consistency:** The sacrifice-made Aethersphere is the
-   atmosphere, in a distinct form separate from the planetary cycle. Scholars
-   recognize its atmospheric form, not its protective purpose or ancient origin.
-7. **Unanswered on purpose:** Do not settle matter creation or persistence of consciousness by implication or convenient dialogue.
-
----
-
-## 12. Themes and narrative guardrails
-
-### Established creative aims
-
-- **Sacrifice and inheritance:** A civilization relinquished its present so that life could continue; its successors owe it remembrance, but the limits of obligation are contested.
-- **Preservation versus defiance:** Is protection enough, or must the original danger be confronted?
-- **Power versus moral worth:** A being's aetheric capacity does not determine whether it deserves to live.
-- **Faith, memory, and truth:** Worship can preserve authentic historical events while obscuring their human origins.
-- **Morally difficult choices:** Genuine costs, competing duties, and understandable motivations matter more than a simple “good civilization versus evil civilization” premise.
-
-### Guardrails
-
-Do not build a generic story in which the solution is merely killing a god. Do not duplicate FFXIV's specific metaphysical devices. Do not lock in a single culture, world map, protagonist, pantheon, or antagonist roster before the story gives a reason for their existence. Do not introduce a miraculous new energy source that invalidates conservation or dissolves the central conflict without earned consequences.
-
-### Cross-game continuity
-
-- Local characters, politics and suffering retain independent causal weight;
-  the four survivors are not secretly responsible for everything.
-- Earlier clues should support later reinterpretation without contradicting
-  previously presented facts.
-- Each installment delivers on its own central dramatic promise and resolution,
-  even when broader questions remain.
-- Storyteller knowledge differs from player knowledge; the
-  [Revelation Plan](REVELATION_PLAN.md) governs disclosure.
-- Preserve open questions without silently treating a compelling proposal as
-  canon.
-- Historical or metaphysical changes update this foundational authority first
-  or in the same reviewed change.
-
-## 13. Change process
-
-This document is the authoritative record of **confirmed foundation** and the explicit register of **unanswered questions**. When making a decision:
-
-1. Identify whether it confirms, expands, or changes existing canon.
-2. Update the relevant section and the open-decision register.
-3. Make clear whether new details are established, provisional, or intentionally unknown.
-4. Check the conservation law, Great Sacrifice, life/death cycle, barrier, and 10,000-year history for contradictions.
-5. Record substantial changes through a focused reviewed PR before relying on them in game content.
-
-**Next narrative milestone:** Develop the story's inciting incident and the surviving ancients' concrete plan; then draft the first narrative arc without prematurely filling in the whole world.
+- Track where aether moves, accumulates and returns. Neither the cannon, dome,
+  transformation nor final release creates or destroys energy.
+- Keep natural brief imbalances, sustained artificial disruption, a military
+  attack and its lasting consequences distinct in cause and timing.
+- Do not make all magicks equally disruptive or use sympathetic motives as an
+  exemption from physical rules. Do not assume equal moral responsibility from
+  the fact that different interventions affect the same system.
+- The three-year surface interval and Iselin's conscious absorption are approved;
+  the details of weapon supply, cave routing and final release are open.
+- No cosmic force, Ancient antagonist or sacrificial atmosphere secretly causes
+  the revised conflict. Do not convert retired premises into future mysteries.
+- Revise this authority when changing foundational facts, update linked owners
+  and knowledge boundaries in the same reviewed change, and mark proposals
+  before using them as facts. Historical review evidence retains its original
+  status and is not a competing source of current canon.

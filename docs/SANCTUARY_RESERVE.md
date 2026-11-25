@@ -78,7 +78,7 @@ Caretakers and visitors are live sprites rather than people painted into the
 scenery. Optional conversations and inspections introduce local care,
 remembrance, the natural aether currents and the proposed stone survey. They
 grant no items, attributes or quest completion. Subtle moving motes communicate
-the confluence without revealing an ancient mechanism.
+the natural confluence without establishing a buried control mechanism.
 
 ## Story boundaries
 

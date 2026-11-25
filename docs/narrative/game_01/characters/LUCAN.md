@@ -191,7 +191,7 @@ Detailed mannerisms and behavior when safe remain proposals, not approved animat
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Secrets | No personal secret is established | Open |
-| Knowledge and disclosure | Guard service does not grant knowledge of hidden cosmic history or certainty about the sanctuary | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
+| Knowledge and disclosure | Guard service does not grant knowledge of Iselin's covert mission, the full enemy harvesting network or certainty about the Sanctuary | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
 | Starting outlook | Real competence, pride and sincere protection coexist with an assumption of authority | Established |
 | Mistaken belief | Being responsible for someone's safety entitles him to decide for them | Established flaw |
 | Intended growth | Protect others while respecting their judgment and agency | Established |

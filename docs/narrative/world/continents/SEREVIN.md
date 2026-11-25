@@ -108,5 +108,5 @@ along these routes. Imported cloth, visiting healers and sailors' accounts can
 make Serevin present in Game I while its principal story remains regional.
 
 Modern practices here remain subject to the [Foundational Lore](../../saga/FOUNDATIONAL_LORE.md).
-This atlas places no original sacrificial temple or Ancient homeland. See the
+This atlas assigns no Veinhold site or specific Worldvein route. See the
 [World Atlas](../WORLD_ATLAS.md) for the global framework.

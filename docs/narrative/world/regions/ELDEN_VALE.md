@@ -98,8 +98,8 @@ protects the ground beneath the reserve as well as its surface. The ridge
 site now lies northeast of the village on a wooded shoulder of the eastern
 Greyfold foothills, south of the northern wall and west of the eastern river.
 A maintained spur from the eastern footpath reaches its regional miniature.
-Its full buried layout remains open; it is not established as the original
-sacrificial temple.
+Its full buried layout and construction history remain open; the natural
+confluence does not identify a buried planetary control mechanism.
 
 The [faith guide](../ELDEN_VALE_FAITH.md) owns the Sanctuary's natural
 confluence, guidance of the dead and living memorial care, including what is
@@ -152,9 +152,10 @@ objecting to the land it crosses. A sanctuary volunteer may favour new tools
 while wanting an excavation reviewed. None of these positions is a whole
 culture's permanent attitude.
 
-The future conflict can draw its stakes from these relationships. The modern
-people involved retain agency; an ancient influence does not explain every
-decision they make.
+The future conflict can draw its stakes from these relationships. The people
+and institutions involved remain responsible for their decisions; their
+different interests should shape the consequences of interference with natural
+aether circulation.
 
 ## Neighbours and travel
 

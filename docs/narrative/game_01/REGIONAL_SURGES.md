@@ -1,6 +1,7 @@
 # Game I — Early regional surges and Iselin's relief visit
 
-**Status:** APPROVED STORY CANON, 2026-10-31.\
+**Status:** APPROVED OPENING STORY CANON, 2026-10-31; Worldvein context revised
+2026-11-24.\
 **Scope:** The damaged southern road, the small number of recent lightning
 incidents, Iselin's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
@@ -42,9 +43,23 @@ not repair the southern road or explain the lightning.
 ## Scale and chronology of the incidents
 
 Only a handful of similar events have occurred in different places by this
-point in the story. Each can cause serious local damage, but their frequency
-and extent have not become a widespread cataclysm. Eldenmere's ordinary work,
-relationships and Festival of Light preparations continue alongside recovery.
+point in the story. Each can cause serious local damage. Eldenmere's ordinary
+work, relationships and Festival of Light preparations continue alongside
+recovery; this is not an opening filled with continuous catastrophe.
+
+Elemental Worldveins occasionally undergo brief natural imbalances that can
+produce natural disasters. The imbalance may pass while destroyed roads,
+injuries and other consequences remain. The enemy kingdom's artificial
+harvesting through **Veinholds**, disdainfully called **clots**, creates a
+greater, sustained imbalance across the interdependent Worldveins. These are
+different causes with potentially overlapping observable effects.
+
+Whether the particular opening lightning incidents arose naturally, through
+artificial harvesting, or through a combination remains unassigned. The later
+harvesting revelation must not silently turn every early disaster into a
+confirmed Veinhold effect. The [Story Bible](STORY_BIBLE.md#worldveins-veinholds-and-the-cannon)
+owns the later conflict; [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence)
+owns the elemental premises.
 
 The other incidents and their exact locations, dates and individual damage
 remain unspecified. Do not invent an exact regional count or portray every
@@ -128,10 +143,11 @@ checkpoint-release or excavation facts.
 
 ## Knowledge and longer-term continuity
 
-The lightning incidents subtly foreshadow a problem with the flow of aether.
-They give the opening cinematic's reference to a potentially valley-destroying
-surge a smaller early counterpart. This connection does not establish the
-future scene's exact cause or explain the physical mechanism of the strikes.
+The lightning incidents introduce how disruptions in elemental flow can have
+concrete local consequences. They give the opening cinematic's reference to a
+potentially valley-destroying surge a smaller early counterpart. That comparison
+does not assign the natural or artificial cause of either event, establish a
+Veinhold at the Sanctuary, or settle the future scene's exact mechanism.
 
 Villagers and Serene can know the damage and reports from other places
 without knowing why the incidents occur. Iselin privately carries the Crown’s
@@ -142,7 +158,15 @@ and author knowledge remain distinct. Serene's public maintenance evidence is
 separate from the inherited warning she privately examines after the festival.
 
 The later Chapter 1 authorization and private-warning beat remain in place;
-the excavation catastrophe belongs to Act I, Chapter 3. The hidden ancient
-history, the atmosphere's nature and the larger cosmic cause remain subject
-to the established disclosure limits. These revisions approve no new ancient
-mechanism, divine punishment or identification of the original sacred temple.
+the excavation catastrophe belongs to Act I, Chapter 3. Later development
+connects sustained artificial harvesting to the enemy kingdom's huge cannon
+and its war ultimatum. Those facts do not make early villagers informed about
+the weapon or Iselin's covert investigation. Refer to the Revelation Plan for
+when evidence establishes those connections.
+
+No exact firing, first-shot sequence, transport arrangement, enemy Ice Worldvein
+target, party sabotage plan or future route is established by these opening
+incidents. The early strikes still precede Iselin's mining preparations; her
+operation is not their original cause, and their appearance is not divine
+punishment for her later choices. Do not portray every weather event, creature
+or mechanical failure as a Worldvein disaster.

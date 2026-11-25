@@ -42,4 +42,4 @@ Watch gatherings bring together detailed practical recollections and deliberatel
 
 Rillan crews carry Merovar's grain, timber and ironware between Serevin and Othara, bringing home cloth, oils, medicines and other regional goods. The islands export preserved fish, fruit and skilled ropework alongside navigation and ship repair. These exchanges create migrant households, shared vocabulary and institutions with interests extending beyond their home ports.
 
-Game I can encounter island people through travellers, imported goods and a visiting crew. Later journeys may explore particular islands and their relationships. No island is assigned as a companion's birthplace, an Ancient's homeland or the location of the original sacrificial temple.
+Game I can encounter island people through travellers, imported goods and a visiting crew. Later journeys may explore particular islands and their relationships. No island is assigned as a companion's birthplace, a Veinhold site or the cannon's location.
