@@ -5,7 +5,8 @@ cultural foundations and opening regional context.**
 
 **Implementation:** The Elden Vale overworld shows the ruined western crossing
 and road damage. Iselin's arrival and MQ03 dialogue present the relief and
-covenant context below. The classroom world-map artwork is unchanged.
+covenant context below. The canonical world-map artwork is linked below; its
+continental scale does not replace the local playable map.
 
 **Auratia** contains four major continents, a significant central island chain
 and a northern circumpolar ocean region.
@@ -51,6 +52,39 @@ cancer. These are creative associations, not established in-world etymologies,
 magical geology, actual disease or aether pathology. They do not define every
 inhabitant's character or require residents to recognize the associations.
 
+## Approved world map
+
+**Approved geography revision, 2026-11-25:** The
+[canonical Auratia map](../../../assets/world/auratia/world_map.png) establishes
+Merovar as a continuous western continent extending from the far north to the
+far south of the depicted world. An **unnamed east–west river** crosses its
+middle and divides its northern and southern halves geographically; it is a
+river within one continent, not an ocean strait. This geographical division
+does not assign a political border.
+
+**Elden Vale and Eldenmere lie in far-southern Merovar**, between two unnamed
+north–south rivers. They remain temperate and inland. **Adamanthra lies in the
+far north**, enclosed by mountains on the west, north and east, with a land
+approach from the south. No water channel separates that northern land from
+the rest of Merovar. The Rimeward coast lies beyond the northern mountain
+enclosure; depicting that coast does not create another entrance into the
+kingdom.
+
+The image and this atlas now supersede the earlier continental outline and
+Elden Vale's former placement in the upper Leth watershed. The Vale belongs
+to a separate southern watershed. Local village orientation, mill operation,
+the ruined western crossing and the Sanctuary's northeast location remain
+unchanged. [Merovar](continents/MEROVAR.md) and
+[Elden Vale](regions/ELDEN_VALE.md) own the detailed relationships.
+
+Castle motifs do not assign a capital name or exact coordinates. The capital
+of Adamanthra remains unnamed. Distances, travel times, exact latitudes,
+political boundaries, the central river's name and detailed tributary junctions
+remain open. The picture is not a latitude grid: far-southern Elden Vale does
+not acquire a polar climate from its proximity to the frame or Istrava's art.
+See the [migration review](../../reviews/merovar_world_map/README.md) for the
+approved asset and integration scope; historical captures retain their status.
+
 ## The broad arrangement
 
 Merovar, Serevin and Othara surround the **Amber Sea**, a warm central sea with
@@ -63,42 +97,36 @@ while leaving voyages expensive, seasonal and consequential.
 
 | Land | Relative position | Geographic range | Initial story use |
 | --- | --- | --- | --- |
-| **Merovar** | Northwest of the Amber Sea | Temperate valleys, wooded uplands, alpine country, river plains, marshes, southern coasts and a drier eastern interior; colder forests and tundra farther north | Eldenmere and the first game's regional setting |
+| **Merovar** | Continuous western continent, west of the Amber Sea and extending far south | Temperate valleys, wooded uplands, alpine country, river plains, marshes, southern coasts and a drier eastern interior; colder forests and tundra farther north | Eldenmere and the first game's regional setting |
 | **Serevin** | East and northeast of the Amber Sea | Northern continental steppe, large river basins, seasonal monsoon country, forested uplands and maritime lowlands | Carcovia's continental setting; trading connections, visitors and possible later journeys |
 | **Othara** | South of the Amber Sea | A wet eastern coast, cool elevated plateaus, savanna transitions and an arid leeward interior | Trading relationships and substantial space for future games |
 | **Rillan Isles** | Island chain within the central sea routes | Sheltered harbours, wet volcanic highlands, cultivated slopes, reefs and exposed outer islands | Maritime communities with connections to the three surrounding continents |
 | **Nivren Crown** | Northern polar ocean and the far northern margins of Merovar and Serevin | Central pack ice, fjords, tundra, coastal islands and rocky offshore skerries | Coastal households, seasonal herding, cold-water trade and rescue obligations |
 | **Istrava** | Southern polar continent across the Southern Ocean from Othara | Interior ice plateau, glacier coasts and a subpolar volcanic island fringe | Small island communities and rotating shore stations; substantial room for later stories |
 
-This is a schematic of relative positions, not a coastline or distance map:
+This is a schematic of relative positions, not a coastline, route or distance map:
 
 ```text
-                              NORTH
+                                  NORTH
 
-                         NIVREN CROWN
-                    Pale Sea / NORTH POLE
-             Rimeward Shores / offshore Skeld Isles
+                       NIVREN CROWN / PALE SEA
+                Rimeward Shores                 Skeld Isles
 
-          MEROVAR                              SEREVIN
-    colder northern country             northern steppe and uplands
-    Elden Vale / Greyfold               river basins / eastern rains
-       Lower Leth / coast                Namar trading coast
-                  \                         /
-                   \      AMBER SEA       /
-                       RILLAN ISLES
-                   /                     \
-                  /         OTHARA        \
-                   drylands / high plateau
-                         wet eastern coast
+       WESTERN MEROVAR                         SEREVIN
+       Adamanthra                              Talven Steppe
+       mountains W / N / E; open S              Vashen Basin
+       Greyfold / Redstone                      Namar Coast
+       Leth / Lower Leth / Rookfen
+       --- unnamed central river ---    AMBER SEA / RILLAN ISLES
+       Southern Merovar
+       Elden Vale / Eldenmere                   OTHARA
+       between two N-S rivers                   (separate continent)
+       Southern tip                     SOUTHERN OCEAN
 
-                        SOUTHERN OCEAN
+                                  ISTRAVA
+                         White Expanse / SOUTH POLE
 
-                            ISTRAVA
-                         Cinder Isles
-                         Bluewall Coast
-                    White Expanse / SOUTH POLE
-
-                              SOUTH
+                                  SOUTH
 ```
 
 The atlas does not settle the planet's total land area, exact distances,
@@ -111,18 +139,21 @@ sites and the cannon's location have not been assigned on this map.
 
 Eldenmere's geographic hierarchy is:
 
-**Auratia → Merovar → upper River Leth watershed → Elden Vale → Eldenmere.**
+**Auratia → southern Merovar → Elden Vale → Eldenmere.**
 
-Elden Vale occupies wooded foothills on the wetter western side of the
-**Greyfold Mountains**. Eldenmere is an inland village within it. The existing
-local map has northern headwater woodland, terraced ground, a descending
+Elden Vale occupies a temperate inland valley among the southern outliers of
+the **Greyfold Mountains**, between its two bounding rivers. Eldenmere is a
+village within it. The existing local map has northern headwater woodland,
+terraced ground, a descending
 north–south brook, Serene's home on a raised terrace and a working mill. It
 remains a brook-side settlement; the name does not establish a lake or coastal location.
 
-At the larger scale, the village brook joins other tributaries that
-eventually feed the **River Leth**. The Leth runs south through fertile
-riverlands and reaches the Amber Sea through the **Rookfen** delta. Exact
-tributary junctions are left for a regional map.
+At the larger scale, the village brook belongs to the Vale's separate southern
+watershed; its junction with the bounding rivers remains unassigned. The
+**River Leth**, **Lower Leth** and **Rookfen** lie in central Merovar, north of
+the Vale. The Leth joins the unnamed central river. Rookfen comprises wetlands
+near that confluence; its exact estuarine extent is open. The old account of
+Eldenmere as an upper-Leth settlement with the delta farther south is replaced.
 
 The village's controlled millrace and irrigation supplies remain distinct
 from the main brook. The short wheel-feeding branch runs east–west locally.
@@ -131,8 +162,8 @@ river or watershed. See the approved
 [Eldenmere elevation and water contract](../../world/eldenmere/blockout/README.md).
 
 Regent Iselin's established authority is regional. Her
-administration's immediate concerns lie in Elden Vale and neighbouring upper
-Leth road and quarry districts. She is the younger sister of Queen Althea of
+administration's immediate concerns lie in Elden Vale and neighbouring southern
+road and quarry districts. She is the younger sister of Queen Althea of
 Adamanthra. This does not establish Adamanthran sovereignty over the entire
 continent. Her precise constitutional powers and exact political boundaries
 remain open. The [royal character foundations](../game_01/CHARACTERS.md#iselin--approved-royal-background)
@@ -154,32 +185,34 @@ The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
 ## Merovar and the first game's neighbourhood
 
 The Greyfold range creates a useful geographic contrast: moist western
-weather supports Elden Vale's woodland and pasture, while the eastern
-rain-shadow country becomes drier. Elevation provides conifer slopes,
-moorland and alpine meadows within a regional journey. The southern river
-plain and delta have different livelihoods and concerns from the uplands.
+slopes support woodland and pasture, while the eastern Redstone rain-shadow
+country becomes drier. Elden Vale occupies sheltered southern outliers rather
+than the former upper-Leth position. Elevation provides conifer slopes,
+moorland and alpine meadows within a regional journey. The central Leth
+riverlands and Rookfen wetlands have different livelihoods from the uplands.
 
 | Region | Landscape | Everyday cultural foundations | A material source of tension |
 | --- | --- | --- | --- |
 | **Elden Vale** | Temperate woods, streams, terraces and pasture | Sanctuary care, household crafts, milling and shared maintenance work | Useful improvements can conflict with protected ground and local obligations |
 | **Greyfold Uplands** | Conifer slopes, moorland, alpine meadows and mountain passes | Herding, quarrying, pass maintenance and hospitality along difficult routes | Quarry access, grazing rights and maintaining safe passes |
 | **Lower Leth** | Fertile river plains and seasonal floodlands | Grain markets, water-sharing agreements, tenant farms and market towns | Upstream and downstream interests diverge over water and flood protection |
-| **Rookfen** | Freshwater marshes becoming a brackish delta | Reed work, fishing, ferry services and homes adapted to wet ground | Draining land creates farms while threatening existing livelihoods |
-| **Marris Coast** | Southern cliffs, estuaries and sheltered Amber Sea harbours | Ship repair, salt production, migrant neighbourhoods and merchant institutions | Transit fees, access to waterfront work and the price of imported necessities |
+| **Rookfen** | Central confluence wetlands and branching channels; exact estuarine extent open | Reed work, fishing, ferry services and homes adapted to wet ground | Draining land creates farms while threatening existing livelihoods |
+| **Marris Coast** | Central-eastern cliffs, estuaries and sheltered Amber Sea harbours | Ship repair, salt production, migrant neighbourhoods and merchant institutions | Transit fees, access to waterfront work and the price of imported necessities |
 | **Redstone March** | Drier grassland and scrub east of the Greyfold range | Pastoral routes, quarry settlements, market centres and well maintenance | Town boundaries and private holdings can interrupt shared access to water |
 
-Game I opens in Elden Vale and its nearby upland and upper-river connections,
+Game I opens in far-southern Elden Vale and its nearby upland connections,
 then develops the approved northward journey described below. The regions in
 this table offer choices for planning that route; they do not require visits
-to every biome, the coast or the southern delta. Intermediate destinations
-remain open.
+to every biome, the coast or every central river district. Intermediate
+destinations remain open.
 
 Read the continental detail in [Merovar](continents/MEROVAR.md).
 
 ### Later Game I journey — approved direction
 
-The opening's Elden Vale focus expands into a northward journey toward
-Adamanthra's capital. The [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+The opening's far-southern Elden Vale focus expands into a long northward
+journey toward Adamanthra's capital in far-northern Merovar. The
+[Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
 owns the later separation, antiwar threads, descent and surface interval.
 Her exile route reaches an ice-aspected cave near a mountain summit. Its name,
 precise mountain, route and distances remain open. The chasm leading into the
@@ -229,7 +262,7 @@ encounter need not promise a later visit.
 
 | Connection | Goods and work | People and ideas travelling with them |
 | --- | --- | --- |
-| Elden Vale and the upper Leth | Timber, wool, milled flour, stone, tools and repair work | Sanctuary workers, herders, seasonal labourers and road crews |
+| Elden Vale and neighbouring southern valleys | Timber, wool, milled flour, stone, tools and repair work | Sanctuary workers, herders, seasonal labourers and road crews |
 | Lower Leth, Rookfen and Marris | Grain, river transport, reeds, fish, salt and coastal shipping | Bargemen, tenant families, apprentices and merchants |
 | Merovar and Rillan | Merovar timber, wool and grain; island produce, navigation and ship services | Migrant households, crews, travelling teachers and performers |
 | Serevin and the Amber Sea ports | Basin cloth, paper and preserved produce; steppe wool and livestock; imported metals, salt and timber | Clerks, scholars, transport workers, traders and mixed-language families |

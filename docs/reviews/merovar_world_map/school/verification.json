@@ -1,0 +1,26 @@
+{
+  "actual_renderer": true,
+  "scene": "school",
+  "approach": [
+    108,
+    94
+  ],
+  "reachable_from_door": true,
+  "opened_with_e": true,
+  "closed_with_escape": true,
+  "image_size": [
+    1448,
+    1086
+  ],
+  "world_map_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
+  "detail_settlement": "eldenmere",
+  "detail_atlas_pixel": [
+    263,
+    821
+  ],
+  "captures": [
+    "classroom.png",
+    "world_map_fit.png",
+    "world_map_detail.png"
+  ]
+}

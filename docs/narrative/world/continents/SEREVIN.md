@@ -8,7 +8,10 @@ jurisdictions. The extent of Carcovian rule and its relationship to those
 jurisdictions remain open. The continent's name does not establish one state,
 language or way of life, and the older regional cultures below remain intact.
 
-Serevin lies east of Merovar across the Amber Sea in Auratia.
+Serevin lies east of Merovar across the Amber Sea in Auratia. The
+[approved world map](../WORLD_ATLAS.md#approved-world-map) preserves that
+separation while extending western Merovar much farther south; Serevin's
+regional foundations below remain unchanged.
 Its northern interior has severe continental winters. Central uplands
 limit the rain reaching that interior, while moisture-bearing summer winds
 feed the warmer southeastern rivers. The southwestern Namar Coast faces the

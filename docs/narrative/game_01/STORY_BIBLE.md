@@ -12,8 +12,16 @@ existing ice proficiency, concealed mission, motive and future identity; these
 author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
+**Geography revised, 2026-11-25:** The
+[canonical world map](../world/WORLD_ATLAS.md#approved-world-map) places
+Elden Vale and Eldenmere in far-southern Merovar, between two north–south
+rivers in a separate watershed from the central Leth. The shared journey
+therefore crosses a long western continent toward far-northern Adamanthra.
+Exact routes, crossings and elapsed travel time remain open; this approval
+does not adopt proposed destinations, regional bosses or side adventures.
+
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.8 (Adamanthra, Queen Althea and Carcovia; names approved 2026-11-24)
+**Version:** 0.9 (southern Merovar map and journey geography, 2026-11-25)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)

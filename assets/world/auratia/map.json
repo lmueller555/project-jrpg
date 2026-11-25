@@ -1,13 +1,16 @@
 {
   "id": "auratia.world_map",
-  "status": "approved world map and classroom sprite adaptation",
+  "status": "approved world map and derived classroom sprite adaptation",
+  "revision": "southern_merovar_2026_11_25",
+  "approval": "assets/source/world/auratia/approval.json",
+  "approval_sha256": "92e9713674418732d035d4484dce3587a4ff05af18be808327895bb083475bc6",
   "world_map": "assets/world/auratia/world_map.png",
   "world_map_size": [
     1448,
     1086
   ],
-  "approved_original_filename": "exec-84160ef4-23a8-49eb-9aba-f8626924f576.png",
-  "world_map_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0",
+  "approved_original_filename": "exec-5c97cbf9-8cbd-4ef8-b55b-2740b6581125.png",
+  "world_map_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
   "wall_sprite": "assets/world/auratia/wall_map.png",
   "wall_sprite_size": [
     42,
@@ -20,11 +23,13 @@
   ],
   "wall_sprite_source_crop": [
     58,
-    123,
+    124,
     1228,
-    1113
+    1114
   ],
-  "wall_sprite_source_sha256": "2c897ea1db4ee412ac99ba76fb05fdf33d7e237196785f073d6cec3a4ee1fa5b",
+  "wall_sprite_source_sha256": "5d15424455cc0aa779f46ce76e1b46ef95b3190805c78a9b2ea3c0de48f455e2",
+  "wall_sprite_original_filename": "exec-40ea2af5-0c36-4d94-8cb7-d05989c9661a.png",
+  "wall_sprite_geography_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
   "export": "crop opaque bounds; nearest-neighbor fit within 40x36; 64-color palette; centered in 42x40; binary alpha",
   "build_tool": "tools/build_auratia_world_map.py",
   "geography": "docs/narrative/world/WORLD_ATLAS.md",

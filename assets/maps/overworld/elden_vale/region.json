@@ -6996,250 +6996,234 @@
   },
   "geography": {
     "atlas_source": "assets/world/auratia/world_map.png",
-    "atlas_sha256": "5ae7f81d71e8e2895c00654760ca661dc1cb9a326d3c9236c7f41607e76193e0",
+    "atlas_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
     "atlas_source_size": [
       1448,
       1086
     ],
     "coordinate_system": "Source image continuous pixel coordinates, origin upper left; normalized u=x/1448, v=y/1086. Runtime tile coordinates are separately authored, y increases south.",
-    "survey_method": "Manual tracing of visible blue watercourses and settlement illustrations in the approved PNG; approximate orientation anchors, not surveyed distances or geographic border claims.",
+    "survey_method": "Manual tracing of visible southern Merovar watercourses and Eldenmere illustration in the approved PNG; approximate orientation anchors, not surveyed distances or geographic border claims.",
     "atlas_traces": [
       {
         "id": "western_watercourse_reference",
         "atlas_points": [
           [
-            194,
-            310
-          ],
-          [
-            201,
-            321
-          ],
-          [
-            192,
-            328
-          ],
-          [
-            178,
-            334
-          ],
-          [
-            163,
-            343
-          ],
-          [
-            158,
-            349
-          ],
-          [
-            164,
-            358
-          ],
-          [
-            178,
-            361
-          ],
-          [
-            179,
-            368
-          ],
-          [
-            171,
-            373
-          ],
-          [
-            178,
-            382
-          ],
-          [
-            184,
-            392
-          ],
-          [
-            196,
-            396
-          ],
-          [
-            205,
-            402
-          ],
-          [
-            207,
-            407
-          ],
-          [
-            214,
-            415
-          ],
-          [
-            224,
-            421
-          ],
-          [
-            227,
-            428
+            242,
+            698
           ],
           [
             237,
-            433
+            706
           ],
           [
-            244,
-            439
+            228,
+            717
           ],
           [
-            255,
-            446
+            215,
+            726
           ],
           [
-            248,
-            451
+            203,
+            736
           ],
           [
-            240,
-            455
+            194,
+            746
           ],
           [
-            236,
-            463
+            189,
+            754
           ],
           [
-            234,
-            472
+            190,
+            763
           ],
           [
-            248,
-            483
+            198,
+            776
           ],
           [
-            255,
-            489
+            207,
+            787
           ],
           [
-            246,
-            496
+            212,
+            798
           ],
           [
-            235,
-            513
+            208,
+            807
+          ],
+          [
+            199,
+            817
+          ],
+          [
+            191,
+            828
+          ],
+          [
+            189,
+            838
+          ],
+          [
+            193,
+            848
+          ],
+          [
+            202,
+            860
+          ],
+          [
+            214,
+            873
+          ],
+          [
+            219,
+            884
+          ],
+          [
+            218,
+            893
+          ],
+          [
+            211,
+            903
+          ],
+          [
+            201,
+            913
+          ],
+          [
+            194,
+            923
+          ],
+          [
+            194,
+            934
+          ],
+          [
+            199,
+            944
+          ],
+          [
+            209,
+            953
+          ],
+          [
+            215,
+            961
           ]
         ],
         "atlas_normalized_points": [
           [
-            0.1339779,
-            0.2854512
-          ],
-          [
-            0.13881215,
-            0.29558011
-          ],
-          [
-            0.13259669,
-            0.30202578
-          ],
-          [
-            0.12292818,
-            0.30755064
-          ],
-          [
-            0.11256906,
-            0.31583794
-          ],
-          [
-            0.10911602,
-            0.3213628
-          ],
-          [
-            0.11325967,
-            0.32965009
-          ],
-          [
-            0.12292818,
-            0.33241252
-          ],
-          [
-            0.12361878,
-            0.3388582
-          ],
-          [
-            0.11809392,
-            0.34346225
-          ],
-          [
-            0.12292818,
-            0.35174954
-          ],
-          [
-            0.12707182,
-            0.36095764
-          ],
-          [
-            0.13535912,
-            0.36464088
-          ],
-          [
-            0.14157459,
-            0.37016575
-          ],
-          [
-            0.1429558,
-            0.3747698
-          ],
-          [
-            0.14779006,
-            0.38213628
-          ],
-          [
-            0.15469613,
-            0.38766114
-          ],
-          [
-            0.15676796,
-            0.39410681
+            0.16712707,
+            0.6427256
           ],
           [
             0.16367403,
-            0.39871087
+            0.65009208
           ],
           [
-            0.16850829,
-            0.40423573
+            0.15745856,
+            0.66022099
           ],
           [
-            0.17610497,
-            0.4106814
+            0.14848066,
+            0.66850829
           ],
           [
-            0.17127072,
-            0.41528545
+            0.14019337,
+            0.67771639
           ],
           [
-            0.16574586,
-            0.41896869
+            0.1339779,
+            0.68692449
           ],
           [
-            0.16298343,
-            0.42633517
+            0.13052486,
+            0.69429098
           ],
           [
-            0.16160221,
-            0.43462247
+            0.13121547,
+            0.70257827
           ],
           [
-            0.17127072,
-            0.44475138
+            0.13674033,
+            0.7145488
           ],
           [
-            0.17610497,
-            0.45027624
+            0.1429558,
+            0.72467772
           ],
           [
-            0.1698895,
-            0.45672192
+            0.14640884,
+            0.73480663
           ],
           [
-            0.16229282,
-            0.47237569
+            0.14364641,
+            0.74309392
+          ],
+          [
+            0.13743094,
+            0.75230203
+          ],
+          [
+            0.13190608,
+            0.76243094
+          ],
+          [
+            0.13052486,
+            0.77163904
+          ],
+          [
+            0.13328729,
+            0.78084715
+          ],
+          [
+            0.13950276,
+            0.79189687
+          ],
+          [
+            0.14779006,
+            0.8038674
+          ],
+          [
+            0.15124309,
+            0.81399632
+          ],
+          [
+            0.15055249,
+            0.82228361
+          ],
+          [
+            0.14571823,
+            0.83149171
+          ],
+          [
+            0.13881215,
+            0.84069982
+          ],
+          [
+            0.1339779,
+            0.84990792
+          ],
+          [
+            0.1339779,
+            0.86003683
+          ],
+          [
+            0.13743094,
+            0.86924494
+          ],
+          [
+            0.14433702,
+            0.87753223
+          ],
+          [
+            0.14848066,
+            0.88489871
           ]
         ]
       },
@@ -7247,198 +7231,230 @@
         "id": "eastern_watercourse_reference",
         "atlas_points": [
           [
-            243,
-            319
+            328,
+            696
           ],
           [
-            266,
-            322
+            335,
+            706
           ],
           [
-            281,
-            332
+            335,
+            715
           ],
           [
-            298,
-            339
+            329,
+            726
           ],
           [
-            307,
-            344
-          ],
-          [
-            304,
-            352
-          ],
-          [
-            311,
-            358
-          ],
-          [
-            321,
-            366
-          ],
-          [
-            327,
-            372
-          ],
-          [
-            332,
-            376
-          ],
-          [
-            332,
-            384
-          ],
-          [
-            327,
-            391
-          ],
-          [
-            317,
-            396
+            320,
+            738
           ],
           [
             316,
-            403
+            748
           ],
           [
-            315,
-            409
+            319,
+            760
           ],
           [
-            305,
-            417
+            328,
+            773
           ],
           [
-            301,
-            421
+            338,
+            784
           ],
           [
-            302,
-            426
+            339,
+            794
           ],
           [
-            294,
-            432
+            335,
+            804
           ],
           [
-            290,
-            436
+            326,
+            816
           ],
           [
-            290,
-            442
+            322,
+            824
           ],
           [
-            295,
-            446
+            325,
+            834
           ],
           [
-            299,
-            452
+            332,
+            844
           ],
           [
-            292,
-            458
+            336,
+            854
+          ],
+          [
+            334,
+            862
+          ],
+          [
+            325,
+            872
+          ],
+          [
+            318,
+            882
+          ],
+          [
+            316,
+            891
+          ],
+          [
+            320,
+            901
+          ],
+          [
+            327,
+            913
+          ],
+          [
+            334,
+            924
+          ],
+          [
+            336,
+            935
+          ],
+          [
+            331,
+            947
+          ],
+          [
+            324,
+            958
+          ],
+          [
+            321,
+            967
+          ],
+          [
+            323,
+            976
           ]
         ],
         "atlas_normalized_points": [
           [
-            0.16781768,
-            0.29373849
+            0.22651934,
+            0.64088398
           ],
           [
-            0.18370166,
-            0.29650092
+            0.23135359,
+            0.65009208
           ],
           [
-            0.19406077,
-            0.30570902
+            0.23135359,
+            0.65837937
           ],
           [
-            0.2058011,
-            0.3121547
+            0.22720994,
+            0.66850829
           ],
           [
-            0.21201657,
-            0.31675875
-          ],
-          [
-            0.20994475,
-            0.32412523
-          ],
-          [
-            0.21477901,
-            0.32965009
-          ],
-          [
-            0.22168508,
-            0.33701657
-          ],
-          [
-            0.22582873,
-            0.34254144
-          ],
-          [
-            0.22928177,
-            0.34622468
-          ],
-          [
-            0.22928177,
-            0.35359116
-          ],
-          [
-            0.22582873,
-            0.36003683
-          ],
-          [
-            0.21892265,
-            0.36464088
+            0.22099448,
+            0.67955801
           ],
           [
             0.21823204,
-            0.37108656
+            0.68876611
           ],
           [
-            0.21754144,
-            0.37661142
+            0.22030387,
+            0.69981584
           ],
           [
-            0.21063536,
-            0.3839779
+            0.22651934,
+            0.71178637
           ],
           [
-            0.20787293,
-            0.38766114
+            0.23342541,
+            0.72191529
           ],
           [
-            0.20856354,
-            0.39226519
+            0.23411602,
+            0.73112339
           ],
           [
-            0.20303867,
-            0.39779006
+            0.23135359,
+            0.74033149
           ],
           [
-            0.20027624,
-            0.4014733
+            0.22513812,
+            0.75138122
           ],
           [
-            0.20027624,
-            0.40699816
+            0.22237569,
+            0.7587477
           ],
           [
-            0.20372928,
-            0.4106814
+            0.22444751,
+            0.7679558
           ],
           [
-            0.20649171,
-            0.41620626
+            0.22928177,
+            0.7771639
           ],
           [
-            0.20165746,
-            0.42173112
+            0.2320442,
+            0.78637201
+          ],
+          [
+            0.23066298,
+            0.79373849
+          ],
+          [
+            0.22444751,
+            0.80294659
+          ],
+          [
+            0.21961326,
+            0.8121547
+          ],
+          [
+            0.21823204,
+            0.82044199
+          ],
+          [
+            0.22099448,
+            0.82965009
+          ],
+          [
+            0.22582873,
+            0.84069982
+          ],
+          [
+            0.23066298,
+            0.85082873
+          ],
+          [
+            0.2320442,
+            0.86095764
+          ],
+          [
+            0.22859116,
+            0.87200737
+          ],
+          [
+            0.22375691,
+            0.88213628
+          ],
+          [
+            0.22168508,
+            0.89042357
+          ],
+          [
+            0.2230663,
+            0.89871087
           ]
         ]
       }
@@ -7447,119 +7463,225 @@
       {
         "id": "eldenmere",
         "atlas_pixel": [
-          236,
-          403
+          263,
+          821
         ],
         "tile_position": [
           12,
           -28
         ],
-        "confidence": "named settlement icon",
+        "confidence": "approximate center of the named Eldenmere settlement illustration in southern Merovar",
         "atlas_normalized": [
-          0.16298343,
-          0.37108656
+          0.18162983,
+          0.75598527
         ]
       },
       {
         "id": "northern_woodland_context",
         "atlas_pixel": [
-          236,
-          383
+          269,
+          734
         ],
         "tile_position": [
           8,
           -64
         ],
-        "confidence": "illustrative woodland; runtime millrace position is a local adaptation",
+        "confidence": "illustrative woodland north of Eldenmere; runtime millrace position is a local adaptation",
         "atlas_normalized": [
-          0.16298343,
-          0.35267035
+          0.18577348,
+          0.67587477
         ]
       },
       {
         "id": "western_crossing_context",
         "atlas_pixel": [
-          225,
-          425
+          193,
+          848
         ],
         "tile_position": [
           -111,
           30
         ],
-        "confidence": "approximate west-watercourse crossing context; destroyed bridge is approved runtime layout, not existing damage artwork",
+        "confidence": "approximate western-watercourse context south of Eldenmere; no bridge is depicted here, and the destroyed bridge remains an authored runtime layout",
         "atlas_normalized": [
-          0.15538674,
-          0.39134438
+          0.13328729,
+          0.78084715
         ]
       },
       {
         "id": "greyfold_foothills_context",
         "atlas_pixel": [
-          329,
-          405
+          373,
+          817
         ],
         "tile_position": [
           92,
           -20
         ],
-        "confidence": "visible western mountain front",
+        "confidence": "nearby eastern foothill illustration in southern Merovar; retained anchor ID does not survey or extend the named Greyfold Uplands",
         "atlas_normalized": [
-          0.22720994,
-          0.37292818
+          0.25759669,
+          0.75230203
         ]
       },
       {
         "id": "southwestern_settlement_illustration",
         "atlas_pixel": [
-          182,
-          492
+          170,
+          939
         ],
-        "confidence": "unnamed illustration; not a new playable town or approved settlement identity",
+        "confidence": "unnamed southwestern ridge illustration; retained historical ID does not identify a settlement, destination or southern road endpoint",
         "atlas_normalized": [
-          0.12569061,
-          0.45303867
+          0.11740331,
+          0.86464088
         ]
       }
     ],
     "opening_corridor_reference_polygon": [
       [
-        171,
-        373
+        203,
+        736
       ],
       [
-        327,
-        372
+        320,
+        738
       ],
       [
-        315,
-        409
+        316,
+        748
       ],
       [
-        290,
-        442
+        319,
+        760
       ],
       [
-        244,
-        439
+        328,
+        773
       ],
       [
-        224,
-        421
+        338,
+        784
+      ],
+      [
+        339,
+        794
+      ],
+      [
+        335,
+        804
+      ],
+      [
+        326,
+        816
+      ],
+      [
+        322,
+        824
+      ],
+      [
+        325,
+        834
+      ],
+      [
+        332,
+        844
+      ],
+      [
+        336,
+        854
+      ],
+      [
+        334,
+        862
+      ],
+      [
+        325,
+        872
+      ],
+      [
+        318,
+        882
+      ],
+      [
+        316,
+        891
+      ],
+      [
+        320,
+        901
+      ],
+      [
+        211,
+        903
+      ],
+      [
+        218,
+        893
+      ],
+      [
+        219,
+        884
+      ],
+      [
+        214,
+        873
+      ],
+      [
+        202,
+        860
+      ],
+      [
+        193,
+        848
+      ],
+      [
+        189,
+        838
+      ],
+      [
+        191,
+        828
+      ],
+      [
+        199,
+        817
+      ],
+      [
+        208,
+        807
+      ],
+      [
+        212,
+        798
       ],
       [
         207,
-        407
+        787
       ],
       [
-        184,
-        392
+        198,
+        776
+      ],
+      [
+        190,
+        763
+      ],
+      [
+        189,
+        754
+      ],
+      [
+        194,
+        746
       ]
     ],
     "adaptation": [
-      "Preserve the inhabited corridor between western and eastern north-south waterways, woodland north, Greyfold foothills east, and cultivated riverlands south.",
+      "Preserve the inhabited southern Elden Vale corridor between western and eastern north-south waterways, woodland north, nearby foothills east and southwest, and cultivated valley ground south.",
+      "The large east-west river farther north in central Merovar is separate from the two local Elden Vale boundary watercourses; no central river is transplanted into the playable opening region.",
       "The runtime corridor widens and bends the atlas topology for 24px miniature-scale travel; no literal PNG scaling or uniform map-to-kilometre conversion is used.",
       "The village brook and controlled millrace remain distinct local water features in detailed Eldenmere; they are not additional bounding rivers.",
       "Neither boundary watercourse is assigned a new proper name or automatically identified as the River Leth. Repeated labels do not create duplicate rivers.",
+      "The retained foothill and southwestern illustration anchor IDs provide context only: they establish neither the full physical extent of Greyfold Uplands nor an unnamed new town.",
       "Elden Vale Sanctuary occupies the northeastern wooded foothills in the runtime region. Its construction history, confluence workings, political borders, physical distances and unnamed settlements remain open; no Veinhold or cannon site is assigned here.",
       "North and south walls, checkpoints, walking loops, overlooks and bridge damage are authored runtime interpretation, not features redrawn onto the approved classroom map."
     ],
@@ -7569,38 +7691,148 @@
       "docs/WORLD_MAP.md",
       "docs/world/eldenmere/blockout/README.md"
     ],
+    "reference_crop_atlas_pixels": [
+      150,
+      700,
+      400,
+      960
+    ],
     "opening_corridor_normalized_polygon": [
       [
-        0.11809392,
-        0.34346225
+        0.14019337,
+        0.67771639
       ],
       [
-        0.22582873,
-        0.34254144
+        0.22099448,
+        0.67955801
       ],
       [
-        0.21754144,
-        0.37661142
+        0.21823204,
+        0.68876611
       ],
       [
-        0.20027624,
-        0.40699816
+        0.22030387,
+        0.69981584
       ],
       [
-        0.16850829,
-        0.40423573
+        0.22651934,
+        0.71178637
       ],
       [
-        0.15469613,
-        0.38766114
+        0.23342541,
+        0.72191529
+      ],
+      [
+        0.23411602,
+        0.73112339
+      ],
+      [
+        0.23135359,
+        0.74033149
+      ],
+      [
+        0.22513812,
+        0.75138122
+      ],
+      [
+        0.22237569,
+        0.7587477
+      ],
+      [
+        0.22444751,
+        0.7679558
+      ],
+      [
+        0.22928177,
+        0.7771639
+      ],
+      [
+        0.2320442,
+        0.78637201
+      ],
+      [
+        0.23066298,
+        0.79373849
+      ],
+      [
+        0.22444751,
+        0.80294659
+      ],
+      [
+        0.21961326,
+        0.8121547
+      ],
+      [
+        0.21823204,
+        0.82044199
+      ],
+      [
+        0.22099448,
+        0.82965009
+      ],
+      [
+        0.14571823,
+        0.83149171
+      ],
+      [
+        0.15055249,
+        0.82228361
+      ],
+      [
+        0.15124309,
+        0.81399632
+      ],
+      [
+        0.14779006,
+        0.8038674
+      ],
+      [
+        0.13950276,
+        0.79189687
+      ],
+      [
+        0.13328729,
+        0.78084715
+      ],
+      [
+        0.13052486,
+        0.77163904
+      ],
+      [
+        0.13190608,
+        0.76243094
+      ],
+      [
+        0.13743094,
+        0.75230203
+      ],
+      [
+        0.14364641,
+        0.74309392
+      ],
+      [
+        0.14640884,
+        0.73480663
       ],
       [
         0.1429558,
-        0.3747698
+        0.72467772
       ],
       [
-        0.12707182,
-        0.36095764
+        0.13674033,
+        0.7145488
+      ],
+      [
+        0.13121547,
+        0.70257827
+      ],
+      [
+        0.13052486,
+        0.69429098
+      ],
+      [
+        0.1339779,
+        0.68692449
       ]
     ]
   },
@@ -12306,11 +12538,11 @@
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "0081ae4f0243ce828bdd3a793e9b841137e508df67cb3964556732439a729e2d",
-    "atlas_reference": "docs/reviews/elden_vale_composition/atlas_reference.png",
+    "source_recipe_sha256": "e6588dba9278aaf00816b37d6f74f16c83a00e03eb7e8fdefe5d1cb22885567c",
+    "atlas_reference": "docs/reviews/merovar_world_map/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",
-      "docs/reviews/elden_vale_composition/atlas_reference.png"
+      "docs/reviews/merovar_world_map/atlas_reference.png"
     ]
   }
 }

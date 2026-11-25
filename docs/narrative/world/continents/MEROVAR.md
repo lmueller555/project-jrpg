@@ -5,28 +5,44 @@ Existing Eldenmere geography remains the local anchor. Illustrative encounters
 remain story seeds. The Adamanthran Crown governs through regional and local
 institutions; exact internal borders and constitutional arrangements remain open.
 
-**Parent:** [World atlas](../WORLD_ATLAS.md)
+**Parent:** [World atlas](../WORLD_ATLAS.md#approved-world-map)
 
-Merovar occupies the northwestern part of the world map. Its inhabited
-middle latitudes include wooded valleys, mountain uplands, fertile river plains
-and a southern maritime coast. Farther north, forests give way to boreal country
+**Geography revision:** 2026-11-25, following the approved canonical map.
+
+Merovar is the continuous western continent, extending from the far north to
+the far south of the depicted world. An unnamed east–west river crosses its
+middle, geographically dividing its northern and southern halves without
+separating them into continents. Its varied country includes wooded valleys,
+mountain uplands, fertile river plains and maritime coasts. Farther north,
+forests give way to boreal country
 and tundra; the far northern coasts form part of the Nivren Crown's
 [Rimeward Shores](../POLAR_REGIONS.md), while more detailed inland districts
 remain unnamed. Moist westerly winds reach the
 Greyfold range from the west, supporting wet slopes and headwater forests. Its
 eastern rain shadow supports the drier Redstone March.
 
-The southern shore faces the Amber Sea. The River Leth flows generally south
-through the interior into Rookfen and the sea. Eldenmere's brook joins this system
-through unnamed tributaries. Its short millrace remains a separate controlled
-branch, including the established east-to-west flow beneath the mill wheel.
+The central-eastern shores face the Amber Sea; Merovar's southern extension
+continues beside Othara toward the Southern Ocean. The River Leth flows through
+central Merovar and joins the unnamed central river near the Rookfen wetlands.
+Lower Leth and Rookfen lie north of Elden Vale, not south of it. Detailed
+junctions, the central river's name and Rookfen's estuarine extent remain open.
+
+Far-southern Elden Vale has a separate watershed between two unnamed
+north–south rivers. Its village brook and short controlled millrace retain
+their local orientation, including the established east-to-west flow beneath
+the mill wheel. The brook is no longer assigned to the Leth system.
 
 **Adamanthra** is Iselin's kingdom in northern Merovar, ruled by her elder
 sister, **Queen Althea**. Iselin serves as regional regent and travels south
 on relief and a covert Crown investigation. Her cold homeland is enclosed by
-mountains to the east, west and north, with access only from the south.
-The party's longer journey heads north toward Adamanthra's capital, whose
-name remains open. Adamanthran sovereignty over all Merovar is not implied;
+mountains to the east, west and north, with its land approach open only from
+the south. No river or ocean channel cuts this northern country off from the
+rest of Merovar. The northern Rimeward coast lies beyond the enclosing
+mountains rather than providing an additional approach into Adamanthra.
+The party's longer journey crosses Merovar northward from far-southern Elden
+Vale toward Adamanthra's capital, whose name remains open. Map castles are
+illustrative settlement motifs, not proof of a named or precisely placed
+capital. Adamanthran sovereignty over all Merovar is not implied;
 the [World Atlas](../WORLD_ATLAS.md#named-kingdoms) records the approved
 political names and their authorial associations.
 
@@ -37,9 +53,11 @@ Merovaran footholds, borders and routes remain open; the
 
 ## Elden Vale
 
-[Elden Vale](../regions/ELDEN_VALE.md) is an inland district on the moist western
-and southwestern approaches to Greyfold. Mixed woodland, small pastures, gardens
-and cultivated terraces surround settlements along its headwaters. Eldenmere's
+[Elden Vale](../regions/ELDEN_VALE.md) is a temperate inland district in
+far-southern Merovar, between two north–south rivers. Its enclosing ridges are
+southern Greyfold outliers, connecting the local setting to the existing range
+without introducing a new named mountain system. Mixed woodland, small
+pastures, gardens and cultivated terraces surround its settlements. Eldenmere's
 approved brook descends from northern uplands toward the south; its northern
 woodland and Upper Millrace remain immediately local places.
 
@@ -54,7 +72,8 @@ practical reason to meet those differences through people who need help.
 
 ## Greyfold Uplands
 
-Greyfold rises through conifer forest and open moor to alpine meadows and
+Greyfold extends south into the outlying ridges around Elden Vale. Its higher
+country rises through conifer forest and open moor to alpine meadows and
 seasonally snowbound passes. Sheltered valleys support barley plots, livestock
 and small settlements; higher routes depend on weather, maintained crossings
 and guides. Streams draining its western slopes feed the greener
@@ -78,8 +97,10 @@ return with fashions their relatives find impressive, irritating or both.
 
 ## Lower Leth
 
-Downstream, the Leth spreads through fertile floodplains, wet meadows and orchard
-country. Villages sit on higher ground above fields, while larger market towns
+In central Merovar, north of Elden Vale, the lower Leth spreads through fertile
+floodplains, wet meadows and orchard country before joining the central river.
+“Lower” describes its downstream reaches, not a position south of the Vale.
+Villages sit on higher ground above fields, while larger market towns
 grow around ferries, bridges and barge landings. Seasonal flooding replenishes
 soil and can also threaten homes and stores.
 
@@ -101,15 +122,18 @@ advice vary between town households, estate tenants and people moving for work.
 
 ## Rookfen
 
-Rookfen follows the lower river through freshwater marshes and branching channels
-into a brackish delta. Reed beds, wet woodland, raised islands and silt-rich
-farmland form a changing landscape. Seasonal channels can connect communities
+Rookfen comprises wetlands near the Leth's confluence with the unnamed central
+river, north of Elden Vale. Freshwater marshes, branching channels, reed beds,
+wet woodland, raised islands and silt-rich farmland form a changing landscape.
+Its precise estuarine reach and any brackish delta extent remain open; the old
+placement of a terminal delta south of Elden Vale is superseded. Seasonal
+channels can connect communities
 that appear separated on a dry-season map.
 
 Fishing households, reed workers, clay gatherers, farmers and trading landings
 support several overlapping ways of life. Some settlements maintain raised
 walkways; others organise daily travel around boats. Channel markers and shared
-landing repairs are matters of ordinary public safety. Coastal families may
+landing repairs are matters of ordinary public safety. Local families may
 mark a remembrance gathering with lamps carried along a safe raised bank,
 while inland neighbours favour household visits. Such practices express belief
 and memory.
@@ -125,7 +149,8 @@ may share these customs while having very different means to host a gathering.
 
 ## Marris Coast
 
-The Marris Coast faces the Amber Sea along Merovar's southern shore. Cliffs,
+The Marris Coast faces the Amber Sea along Merovar's central-eastern shore.
+It is not the coastline of the newly established far-southern tip. Cliffs,
 estuaries, exposed grassland, maritime woodland and sheltered gardens break up
 the coastline. Fishing villages and working anchorages sit between larger
 ports.
@@ -172,9 +197,9 @@ individuals within the same broad landscape.
 
 ## Story scope and continuity
 
-Elden Vale, nearby Greyfold routes and the upper Leth corridor anchor the
-opening. The approved longer journey heads north through affected regions
-toward Adamanthra's capital. Its exact itinerary and the locations of
+Far-southern Elden Vale and its nearby Greyfold outliers anchor the opening. The approved longer journey heads north through affected regions
+toward Adamanthra's far-northern capital. Its exact itinerary, crossing of the
+central river and the locations of
 Carcovia's Veinholds and cannon remain open. Lower Leth, Rookfen, Marris and
 Redstone can appear through travellers, goods, letters and personal connections;
 visiting every region is not required. Overseas travel remains available to
@@ -186,6 +211,11 @@ The approved
 [companion foundations](../../game_01/CHARACTERS.md) give Lucan the
 Redstone March, Rhea the wooded western Greyfold slopes and Edran the Lower
 Leth as home regions; specific settlements remain open.
+The map revision does not change those companion home regions or establish
+new recruitment routes. Elden Vale remains temperate; the illustrative map
+does not set precise latitudes, climate boundaries, distances, travel times
+or political borders.
+
 Regional customs do not settle the unresolved mechanics of souls and
 resurrection or give their practitioners automatic knowledge of the harvesting
 network and its military purpose.
