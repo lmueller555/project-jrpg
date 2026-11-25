@@ -3,7 +3,9 @@
 ## Current regent direction
 
 [Regent Iselin](characters/ISELIN.md) is the current royal character. Her
-northern capital is the party's eventual destination. The intended first half
+kingdom is **Adamanthra** in northern Merovar, ruled by her elder sister,
+[Queen Althea](CHARACTERS.md#queen-althea). Its capital is the party's eventual
+destination; the capital's name remains open. The intended first half
 to roughly two-thirds of the adventure accompanies her through affected regions
 before her late-story Ice Reaper descent. Her sheet owns her background,
 existing ice proficiency, concealed mission, motive and future identity; these
@@ -11,7 +13,7 @@ author-facing facts are not opening exposition or implemented later quests.
 Historical act sketches do not override that approved direction.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.7 (Worldvein imbalance, Veinholds and the cannon ultimatum)
+**Version:** 0.8 (Adamanthra, Queen Althea and Carcovia; names approved 2026-11-24)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
@@ -20,7 +22,7 @@ Game I is the **first self-contained installment** in a multi-game saga. It
 tells a largely **regional**, personal story with mature and morally complex
 themes, a protagonist with meaningful motivation, and human decisions with
 lasting consequences. Its developing conflict concerns elemental
-Worldveins, the enemy kingdom's artificial harvesting, the cannon that harvesting
+Worldveins, Carcovia's artificial harvesting, the cannon that harvesting
 feeds, and Iselin's transformation into the Ice Reaper. The required final
 resolution is specified below; broader political outcomes and other Worldveins
 remain open.
@@ -38,14 +40,16 @@ Worldveins can occasionally experience brief natural imbalances. These can
 produce natural disasters whose damage persists after the imbalance itself
 passes. A brief imbalance does not imply brief or harmless consequences.
 
-The enemy kingdom artificially harvests elemental aether at installations
-called **Veinholds**. Some opponents disdainfully call them **"clots"**. This harvesting
-causes greater, sustained disruption across interdependent Worldveins: effects
+**Carcovia**, an industrious, shrewd kingdom on Serevin seeking expansion into
+Merovar through aether-powered military weapons, artificially harvests
+elemental aether at installations called **Veinholds**. Some opponents
+disdainfully call them **"clots"**. This harvesting causes greater, sustained
+disruption across interdependent Worldveins: effects
 cannot be understood solely by examining one element in isolation. The physical
 premises belong to [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence).
 
-The harvested elemental aether is combined to feed a huge cannon. The enemy
-kingdom's war ultimatum, backed by this weapon, forces the protective decision
+The harvested elemental aether is combined to feed a huge cannon. Carcovia's
+war ultimatum, backed by this weapon, forces the protective decision
 that leads Iselin to create the Ice Dome. The artificial imbalance and the
 weapon have a shared cause in harvesting; natural Worldvein variation remains
 a distinct phenomenon. The barrier responds to this weapon-backed ultimatum.
@@ -60,8 +64,11 @@ to prevent war. The precise discoveries, evidence, participants and order of
 disclosure remain to be written. This direction creates no new quest IDs,
 recruitment scenes or fixed act assignments.
 
-The enemy kingdom's name and wider political aims remain open. The first
-firing, any demonstration, exact ultimatum terms, harvesting-to-weapon
+Carcovia's identity and its goal of expansion into Merovar are established.
+The [World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns the kingdoms'
+geography, adjective forms and naming intentions. Carcovia's ruler, capital,
+dynasty, exact borders, detailed campaign aims and further motives remain open.
+The first firing, any demonstration, exact ultimatum terms, harvesting-to-weapon
 logistics, and the cannon's condition during the three surface years are not
 selected. Reservoir shipping, an enemy goal of targeting the Ice Worldvein,
 party sabotage of the cannon, and an upstream Worldvein route to the summit
@@ -141,18 +148,18 @@ story requirements, not implemented quests, a complete act outline, or approval
 of earlier alternative plots. This section owns the shared ordering and timing.
 
 After a substantial shared northward journey, Iselin leaves the party and returns
-to her kingdom. The party continues without her. Both pursue efforts to avert
-war with the enemy kingdom; occasional cutaways follow Iselin's attempts within
-her kingdom. The cannon ultimatum supplies the urgent threat behind the dome's
-protective purpose. The exact ultimatum, military sequence and wider political
+to Adamanthra. The party continues without her. Both pursue efforts to avert
+war with Carcovia; occasional cutaways follow Iselin's attempts within
+Adamanthra. The cannon ultimatum supplies the urgent threat behind the dome's
+protective purpose. The exact ultimatum, military sequence and detailed political
 objectives remain open; observations of earlier disasters do not automatically
 prove which individual incidents resulted from harvesting.
 
 | Phase | Main party | Iselin | Rhea |
 | --- | --- | --- | --- |
-| Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to her northern kingdom. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
+| Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to Adamanthra. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
 | Parallel crisis | Attempts to avert war amid the harvesting and cannon conflict, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the cannon ultimatum, authorized dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
-| Royal betrayal | The party's precise location and knowledge during the royal decisions remain open. | Her sister privately authorizes protection, then permits a false account of disobedience and refuses to acknowledge that authorization. Exile follows. | What she witnesses or learns about these decisions remains open. |
+| Royal betrayal | The party's precise location and knowledge during the royal decisions remain open. | Her elder sister, Queen Althea, privately authorizes protection, then permits a false account of disobedience and refuses to acknowledge that authorization. Exile follows. | What she witnesses or learns about these decisions remains open. |
 | Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
 | Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in the naturally Ice-aspected cave for about three surface years, absorbing accumulating Ice aether from the barrier and draining it. | Lives through those years, gaining power and experience. |
 | Surface return | Escapes after about three years have passed on the surface. | Has transformed during confinement; the trigger and exact timing of her emergence remain open. | Her additional surface experience partly explains her power at the Ice Reaper confrontation. |
@@ -174,32 +181,32 @@ causal sequence. Detailed dialogue, political procedure and battlefield
 logistics remain open.
 
 1. Iselin returns with evidence gathered during the journey and warns her
-   sister, the reigning queen, of the threat behind the enemy kingdom's cannon
+   elder sister, Queen Althea of Adamanthra, of the threat behind Carcovia's cannon
    ultimatum. What the Crown already knows, the evidence she brings and the
    detailed threat assessment remain to be authored; neither sister is
    omniscient about Worldvein behavior or enemy decisions.
-2. The queen privately authorizes the protective intervention and promises
+2. Althea privately authorizes the protective intervention and promises
    to support Iselin. Their prior trust and genuine affection must be developed
    before this promise is broken.
 3. Iselin creates the dome. It protects substantial numbers of people, but
    closing the southern approach also strands people outside and causes real
    losses, including deaths. These consequences remain meaningful even when
    the later accusation is exposed as unfair.
-4. The public accusation claims she defied the queen's orders, deliberately
-   abandoned the army and acted against the kingdom. The claim of acting
-   against royal authorization is false. Protective intent does not prove
+4. The public accusation claims she defied Althea's orders, deliberately
+   abandoned the Adamanthran army and acted against the kingdom. The claim of
+   acting against royal authorization is false. Protective intent does not prove
    every judgment was sound, but the account of unauthorized treachery is not
    objective author truth.
 5. Military leaders and bereaved families have legitimate reasons to demand
    answers. A truthful inquiry would examine the queen's authorization and
    royal decisions concerning protection, evacuation and withdrawal. Not all
    accusers are knowingly dishonest or secretly conspiring.
-6. The queen could acknowledge her responsibility and defend Iselin, at the
+6. Althea could acknowledge her responsibility and defend Iselin, at the
    risk of losing military support and exposing government failures during a
    political and military crisis. She instead allows the false account to
    stand. This is her consequential choice, not an unavoidable procedure or
    proof that every alternative was impossible.
-7. The queen secures exile instead of execution and privately regards this as
+7. Althea secures exile instead of execution and privately regards this as
    saving her sister's life. Iselin asks her to publicly acknowledge the
    authorization; the queen refuses. Her claim of mercy does not erase her
    responsibility for permitting the injustice.
@@ -221,7 +228,10 @@ The [Iselin sheet](characters/ISELIN.md#her-sisters-promise-and-betrayal) owns
 her relationship and response. The
 [Revelation Plan](../saga/REVELATION_PLAN.md#royal-authorization-and-the-public-accusation)
 separates private truth, the public account and each participant's knowledge.
-The queen's personal name remains open; **Maren** is a working proposal only.
+The [cast index](CHARACTERS.md#queen-althea) owns Althea's supporting entry;
+the [World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns Adamanthra's
+geographical context. These approved names do not settle further royal-family
+proposals or political institutions.
 
 ### Post-timeskip aftermath and the collapsing dome
 
@@ -305,7 +315,8 @@ script or new runtime quest identifier is selected here.
 
 ### Decisions still open
 
-The enemy kingdom's identity and wider aims; exact Veinhold discoveries and
+Carcovia's detailed campaign aims, further motives, ruler, capital and dynasty;
+the kingdoms' exact borders; exact Veinhold discoveries and
 harvesting-to-cannon logistics; ultimatum terms, firings and war outcome;
 whether and why firing ceases during the three-year interval; Iselin's
 departure trigger; diplomatic events; the dome's protective mechanics,

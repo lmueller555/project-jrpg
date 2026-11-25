@@ -4,9 +4,9 @@
 identified separately. Approved future direction is not a claim of runtime
 implementation.
 
-**Version:** 0.8
+**Version:** 0.9
 
-**Last revised:** 2026-11-24 (approved Worldveins, Veinholds, weapon and Ice
+**Last revised:** 2026-11-24 (approved kingdom and queen names following the
 Worldvein revision).
 
 **Scope:** Aether, planetary circulation, magicks, life and death, the origins
@@ -103,7 +103,7 @@ Worldvein. Later regional stories must establish specific causes and effects.
 
 ### Established canon
 
-An opposing kingdom harnesses the planet's elemental flows for power. Its
+**Carcovia** harnesses the planet's elemental flows for power. Its
 fortified harvesting installations are called **Veinholds**. They occupy sites
 where an elemental flow can be accessed; a volcanic location for fire-aspected
 aether is an established example of the intended environmental fit, not an
@@ -115,7 +115,12 @@ and growing threat of calamity. Some people contemptuously call Veinholds
 in-world language used with disdain, not a requirement that every community
 or speaker shares the same terminology or judgment.
 
-The kingdom is building a huge cannon that harnesses the combined power of the
+Carcovia is an industrious, shrewd kingdom seeking expansion into Merovar through
+aether-powered military weapons. The
+[World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns its location on Serevin,
+east of Merovar, and the kingdoms' geographical context.
+
+Carcovia is building a huge cannon that harnesses the combined power of the
 Veinholds. The weapon supplies the military ultimatum that forces the decision
 to erect the Ice Dome. The immediate threat of a cannon attack and the broader
 environmental consequences of harvesting are connected, but they are not the
@@ -123,8 +128,9 @@ same event.
 
 ### Open decisions
 
-The opposing kingdom's name, political structure and motives; facility names,
-locations and populations; and the cannon's name, location, firing rules,
+Carcovia's ruler, capital, dynasty, detailed political structure, exact borders,
+campaign aims beyond expansion into Merovar and further motives; facility
+names, locations and populations; and the cannon's name, location, firing rules,
 capacity and supply method remain unwritten. The ultimatum's precise demands
 and terms also remain open.
 
@@ -143,8 +149,10 @@ Iselin creates the **Ice Dome** as a defense against the weapon. Manipulating
 ice-aspected aether on this enormous scale affects the **Ice Worldvein**;
 protective intent does not exempt the intervention from the world's rules.
 The [Game I Story Bible](../game_01/STORY_BIBLE.md#royal-authorization-and-betrayal)
-owns the queen's private authorization, protective success, outside losses,
-public accusation and unfair exile.
+owns Queen Althea's private authorization, protective success, outside losses,
+public accusation and unfair exile in Adamanthra. Althea is its reigning queen
+and Iselin's elder sister; the
+[cast index](../game_01/CHARACTERS.md#queen-althea) owns her supporting entry.
 
 At the end of her mountain flight, Iselin encases herself in a naturally
 ice-aspected cave near the summit. During her approximately three-year
@@ -241,13 +249,13 @@ Retired lore is not material to withhold for a later twist.
 | Priority | Open decision | Why it matters |
 | --- | --- | --- |
 | High | Elemental routes and particular disruption mechanisms | Makes each environmental consequence traceable rather than arbitrary |
-| High | Enemy kingdom, Veinhold operations and beneficiaries | Grounds the conflict in people, motives and institutions |
+| High | Carcovian campaign details, Veinhold operations and beneficiaries | Grounds the approved expansion goal in people, motives and institutions |
 | High | Cannon supply, firing limits and ultimatum terms | Defines the military threat and what intervention can accomplish |
 | High | Why further bombardment does not negate the three-year interval | Keeps the weapon and timeskip coherent without inventing a resolved war |
 | High | Dome operation, cave connection and absorption limits | Connects protection, transformation and deterioration consistently |
 | High | Defeat, excess-aether release and physical dome safety | Delivers the required restoration without silently deciding Iselin's fate |
 | High | Other disrupted Worldveins and remaining Veinholds | Prevents the Ice resolution from automatically fixing the whole planet |
-| Medium | Kingdom and capital names, detailed routes and diplomacy | Supports specific travel and political scenes; the World Atlas owns geography |
+| Medium | Capital and dynasty names, Carcovia's ruler, exact borders, detailed routes and diplomacy | Adamanthra, Carcovia and Queen Althea are established; the World Atlas owns geography |
 | Medium | Ordinary casting limits and technological uses of aether | Distinguishes everyday activity from large disruptive interventions |
 | Medium | Core route, subjective duration and escape | Makes the natural time difference playable without unrestricted time travel |
 | Later | Matter creation and personal consciousness after death | Remain explicitly undecided; no incidental scene may settle them |

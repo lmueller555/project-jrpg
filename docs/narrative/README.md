@@ -15,9 +15,9 @@ method, then follow the sources relevant to the assignment.
 | Opening chronology and chapter progression | [Chapter 1](game_01/CHAPTER_01.md) and its linked quest scripts |
 | Early regional lightning incidents, road damage and relief context | [Regional Surges](game_01/REGIONAL_SURGES.md) |
 | Individual characterization and voice | [Cast index](game_01/CHARACTERS.md) routes to [Caelan](game_01/characters/CAELAN.md), [Mira](game_01/characters/MIRA.md), [Iselin](game_01/characters/ISELIN.md), [Lucan](game_01/characters/LUCAN.md), [Rhea](game_01/characters/RHEA.md) and [Edran](game_01/characters/EDRAN.md); [template](game_01/characters/TEMPLATE.md) defines profile status |
-| Supporting households, shared party relationships, lore exchanges and approved companion-art references | [Cast and supporting-household index](game_01/CHARACTERS.md) |
+| Supporting households and characters including Queen Althea, shared party relationships, lore exchanges and approved companion-art references | [Cast and supporting-household index](game_01/CHARACTERS.md) |
 | Mira's established workshop-bot departure beat and open implementation | [Mira's departure section](game_01/characters/MIRA.md#planned-departure-beat) |
-| World geography and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
+| World geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
 | Protected-ground terms, public records, permitted use and joint authorization | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
 | Authored standalone cinematics, dialogue, choreography and placement limits | [Opening flashforward](scenes/OPENING_CINEMATIC.md), [Iselin's arrival](scenes/REGENT_ARRIVAL.md), and [Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
@@ -61,6 +61,16 @@ Preserve their recorded content and status; update navigation links when a
 source moves rather than rewriting a historical transcript to match new lore.
 
 ## Later story approvals
+
+The approved names are **Adamanthra**, Iselin's northern Merovaran kingdom;
+**Queen Althea**, its ruler and Iselin's elder sister; and **Carcovia**, the
+industrious, shrewd kingdom on Serevin seeking expansion into Merovar through
+aether-powered military force. The [atlas](world/WORLD_ATLAS.md#named-kingdoms)
+owns geography, adjective forms and naming intentions; the
+[cast index](game_01/CHARACTERS.md#queen-althea) owns Althea's brief entry.
+Capital and dynasty names, Carcovia's ruler and exact political borders remain
+open. Authorial naming associations do not establish literal disease or
+in-world etymologies.
 
 The 2026-11-24 Worldvein revision replaces the earlier cosmic catastrophe,
 Ancients, Great Sacrifice, four-survivor plot and artificial atmospheric origin.

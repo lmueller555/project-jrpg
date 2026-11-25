@@ -2,7 +2,7 @@
 
 **Status:** Approved continental geography and cultural foundations for Auratia.
 Existing Eldenmere geography remains the local anchor. Illustrative encounters
-remain story seeds. The northern Crown governs Iselin’s kingdom through regional and local
+remain story seeds. The Adamanthran Crown governs through regional and local
 institutions; exact internal borders and constitutional arrangements remain open.
 
 **Parent:** [World atlas](../WORLD_ATLAS.md)
@@ -21,12 +21,19 @@ through the interior into Rookfen and the sea. Eldenmere's brook joins this syst
 through unnamed tributaries. Its short millrace remains a separate controlled
 branch, including the established east-to-west flow beneath the mill wheel.
 
-Iselin belongs to the ruling family of a kingdom in northern Merovar and is
-the reigning queen's younger sister. She serves as regional regent and travels
-south on relief and a covert Crown investigation. Her cold homeland is enclosed
-by mountains to the east, west and north, with access only from the south.
-The party's longer journey heads north toward its capital. The kingdom and
-capital remain unnamed; no Crown-wide sovereignty over all Merovar is implied.
+**Adamanthra** is Iselin's kingdom in northern Merovar, ruled by her elder
+sister, **Queen Althea**. Iselin serves as regional regent and travels south
+on relief and a covert Crown investigation. Her cold homeland is enclosed by
+mountains to the east, west and north, with access only from the south.
+The party's longer journey heads north toward Adamanthra's capital, whose
+name remains open. Adamanthran sovereignty over all Merovar is not implied;
+the [World Atlas](../WORLD_ATLAS.md#named-kingdoms) records the approved
+political names and their authorial associations.
+
+**Carcovia**, the opposing kingdom on [Serevin](SEREVIN.md) east of Merovar,
+seeks to expand into Merovar through aether-powered military weapons. Exact
+Merovaran footholds, borders and routes remain open; the
+[Story Bible](../../game_01/STORY_BIBLE.md) owns that conflict's progression.
 
 ## Elden Vale
 
@@ -167,8 +174,8 @@ individuals within the same broad landscape.
 
 Elden Vale, nearby Greyfold routes and the upper Leth corridor anchor the
 opening. The approved longer journey heads north through affected regions
-toward Iselin's capital. Its exact itinerary and the locations of the opposing
-kingdom's Veinholds and cannon remain open. Lower Leth, Rookfen, Marris and
+toward Adamanthra's capital. Its exact itinerary and the locations of
+Carcovia's Veinholds and cannon remain open. Lower Leth, Rookfen, Marris and
 Redstone can appear through travellers, goods, letters and personal connections;
 visiting every region is not required. Overseas travel remains available to
 later stories.

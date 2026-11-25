@@ -1,7 +1,7 @@
 # Game I — Early regional surges and Iselin's relief visit
 
-**Status:** APPROVED OPENING STORY CANON, 2026-10-31; Worldvein context revised
-2026-11-24.\
+**Status:** APPROVED OPENING STORY CANON, 2026-10-31; Worldvein and kingdom-name
+context revised 2026-11-24.\
 **Scope:** The damaged southern road, the small number of recent lightning
 incidents, Iselin's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
@@ -49,7 +49,7 @@ recovery; this is not an opening filled with continuous catastrophe.
 
 Elemental Worldveins occasionally undergo brief natural imbalances that can
 produce natural disasters. The imbalance may pass while destroyed roads,
-injuries and other consequences remain. The enemy kingdom's artificial
+injuries and other consequences remain. Carcovia's artificial
 harvesting through **Veinholds**, disdainfully called **clots**, creates a
 greater, sustained imbalance across the interdependent Worldveins. These are
 different causes with potentially overlapping observable effects.
@@ -77,6 +77,11 @@ organize aid and repairs. She reaches Eldenmere with firsthand knowledge of
 their damage and outstanding needs. Her relief work and the material shortages are real. Her later negotiation
 with Serene is deceptive: she has already sent a crew to establish Crown
 control of the Sanctuary's working area and prepare mining.
+
+She serves **Adamanthra**, her northern Merovaran kingdom, ruled by her elder
+sister, [Queen Althea](CHARACTERS.md#queen-althea). The
+[World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns the kingdom's geography.
+This author context does not add new dialogue to the implemented relief visit.
 
 Repairing several damaged places is straining the available materials. A
 nearer stone seam offers a possible additional supply for regional recovery.
@@ -159,10 +164,16 @@ separate from the inherited warning she privately examines after the festival.
 
 The later Chapter 1 authorization and private-warning beat remain in place;
 the excavation catastrophe belongs to Act I, Chapter 3. Later development
-connects sustained artificial harvesting to the enemy kingdom's huge cannon
+connects sustained artificial harvesting to Carcovia's huge cannon
 and its war ultimatum. Those facts do not make early villagers informed about
 the weapon or Iselin's covert investigation. Refer to the Revelation Plan for
 when evidence establishes those connections.
+
+Carcovia's name and identity as a kingdom on Serevin, east of Merovar, are
+established geography; its expansion into Merovar through aether-powered
+military weapons is approved direction. Naming it does not itself reveal the
+cause of the lightning, the harvesting network or the Crown's investigation.
+Those connections still require evidence and authored disclosure.
 
 No exact firing, first-shot sequence, transport arrangement, enemy Ice Worldvein
 target, party sabotage plan or future route is established by these opening

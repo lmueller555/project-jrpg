@@ -208,7 +208,7 @@ exceptional magical power.
 
 No companion birthplace, Veinhold site or specific Worldvein route is assigned
 to either pole. Local religious beliefs remain beliefs and do not settle
-unwritten physical mechanisms. Iselin's northern Merovaran kingdom is not
-thereby placed at the pole, and Game I does not require a polar expedition. See
+unwritten physical mechanisms. Adamanthra, Iselin's northern Merovaran kingdom,
+is not thereby placed at the pole, and Game I does not require a polar expedition. See
 [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and the
 [Revelation Plan](../saga/REVELATION_PLAN.md).

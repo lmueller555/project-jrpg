@@ -1,7 +1,7 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Approved disclosure constraints; unwritten reveal scenes remain OPEN.
-**Version:** 0.7 (Worldveins, Veinholds, the cannon and Ice Reaper restoration).
+**Version:** 0.8 (Adamanthra, Queen Althea and Carcovia disclosure boundaries).
 **Revision:** 2026-11-24.
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), the
 [Story Bible](../game_01/STORY_BIBLE.md), and the [narrative index](../README.md).
@@ -21,11 +21,22 @@ authoring decision, not automatically a secret somebody in the world knows.
 
 ## Game I narrative boundary (CANON)
 
-The connected conflict concerns elemental circulation, contemporary kingdoms'
-harvesting, the cannon ultimatum, Iselin's defense and betrayal, and the
-consequences encountered after the surface interval. Game I must substantially
+The connected conflict concerns elemental circulation, Carcovian harvesting
+and expansion into Merovar, the cannon ultimatum, Iselin's defense of Adamanthra,
+her betrayal by Queen Althea, and the consequences encountered after the surface
+interval. Game I must substantially
 resolve its own conflict. Its opening local problems and the companions' choices
 retain independent importance as the journey expands.
+
+The [World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns the approved
+kingdom names and geography: Adamanthra in northern Merovar and Carcovia on
+Serevin, east of Merovar. The
+[cast index](../game_01/CHARACTERS.md#queen-althea) owns Queen Althea's supporting
+entry as Adamanthra's reigning queen and Iselin's elder sister. These identities
+are established, not unnamed mysteries awaiting a reveal. Use them where a
+character's knowledge makes them appropriate; naming them does not disclose
+the covert investigation, prove the cause of a disaster or reveal future
+betrayal. This documentation revision does not rewrite opening runtime dialogue.
 
 The former cosmic catastrophe, ancient race, Great Sacrifice, four surviving
 Ancients and sacrifice-made Aethersphere explanation are **retired**, rather
@@ -44,10 +55,10 @@ sets boundaries rather than prescribing an unwritten scene or exact quest ID.
 | Aether and magicks | [Foundations](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Everyday use and teaching may explain established rules. Do not imply limitless energy or invent an exception to conservation for a dramatic scene. |
 | Elemental Worldveins | [Natural circulation](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Explain circulation through observable regional conditions and credible knowledge. Familiarity with magic does not grant a complete map or understanding of every flow. |
 | Natural disasters | [Natural imbalance](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Occasional brief natural imbalances can cause disasters with lasting damage. This foundation lets players consider the danger of greater artificial disruption; it does not prove the cause of any particular opening lightning incident. |
-| Veinholds and artificial disruption | [Harvesting](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Their actual effects and the opposing kingdom's responsibility require evidence as the investigation develops. Do not assume every resident, worker or soldier understands the whole network. |
+| Veinholds and artificial disruption | [Harvesting](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Their actual effects and Carcovia's responsibility require evidence as the investigation develops. Knowing the country's name does not establish those connections. Do not assume every resident, worker or soldier understands the whole network. |
 | “Clots” | [Facility terminology](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | A contemptuous name used by some opponents. Its use expresses a speaker's experience or allegiance; it is not universal vocabulary or an omniscient explanation. |
-| Combined supply and cannon | [Weapon and defense](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Discovery connects regional harvesting to the military threat. The ultimatum forces the dome decision. Exact discovery scenes, demands, supply method, firing rules and weapon outcome remain open. |
-| Crown investigation | [Iselin's covert mission](../game_01/characters/ISELIN.md#covert-investigation--author-knowledge) | The opening preserves her concealed mission alongside genuine aid. The Crown has partial knowledge; its precise evidence and suspicions require authoring. Do not make it omniscient or disclose the mission through casual opening exposition. |
+| Combined supply and cannon | [Weapon and defense](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Discovery connects regional harvesting to Carcovia's military threat. Its broad expansion goal is approved; exact discovery scenes, detailed campaign aims, demands, supply method, firing rules and weapon outcome remain open. The ultimatum forces the dome decision. |
+| Crown investigation | [Iselin's covert mission](../game_01/characters/ISELIN.md#covert-investigation--author-knowledge) | The opening preserves her concealed mission alongside genuine aid. The Adamanthran Crown has partial knowledge; its precise evidence and suspicions require authoring. Do not make it omniscient or disclose the mission through casual opening exposition. |
 | Ice Dome and absorption | [Physical premises](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | The dome affects the Ice Worldvein. Iselin absorbs the barrier's accumulating ice-aspected aether during confinement, transforming and weakening it. Establish how characters learn this connection; do not substitute an unapproved upstream route or conscious sabotage throughout confinement. |
 | Defeat and restoration | [Restoration requirement](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | Defeating Iselin releases the excess aether and is necessary to restore the Ice Worldvein. How the party learns this, the release mechanism, her final fate and safe handling of the physical dome remain open. Do not announce that she must die or that every other damaged flow is thereby restored. |
 | Planetary life cycle and remembrance | [Life and death](FOUNDATIONAL_LORE.md#life-death-and-local-faith), [local faith](../world/ELDEN_VALE_FAITH.md) | Planetary-return teaching and remembrance may be explained. They do not prove personal consciousness after death, resurrection, or planetary sentience. |
@@ -56,8 +67,8 @@ sets boundaries rather than prescribing an unwritten scene or exact quest ID.
 ## Parallel story and timeskip knowledge
 
 **Author-established direction, revised 2026-11-24:** Later play follows the
-main party after Iselin returns home, with occasional Iselin cutaways and a
-substantial playable exile. What the player witnesses is not automatically
+main party after Iselin returns to Adamanthra, with occasional Iselin cutaways
+and a substantial playable exile. What the player witnesses is not automatically
 known by the separated main party. Do not keep her identity secret from players
 after showing it, or give characters knowledge of unwitnessed scenes.
 
@@ -83,10 +94,10 @@ for author truth and its remaining illustrative details.
 
 | Account or viewpoint | Knowledge boundary |
 | --- | --- |
-| Private authorization | The queen authorizes protection and promises support. Who else hears, records or receives the order remains open. |
+| Private authorization | Queen Althea privately authorizes protection and promises support to Iselin, her younger sister. Who else hears, records or receives the order remains open. |
 | Public accusation | The account that Iselin defied Crown authorization is false. A proclamation or accuser repeating it is not an objective narrator confirming it. |
 | Real consequences | The dome saves people while causing losses outside. Those losses and legitimate demands for an explanation remain real. |
-| The queen's choice | She permits the false account rather than acknowledge responsibility. Her belief that exile saves Iselin is her self-justification, not authorial absolution. |
+| Althea's choice | She permits the false account rather than acknowledge responsibility. Her belief that exile saves Iselin is her self-justification, not authorial absolution. |
 | Player and party | Cutaways may show private decisions. Exact disclosure timing is open; absent party members do not automatically know what the player witnesses. |
 | Rhea's appeal | She can address a genuine injustice and oppose collective punishment. What she knows beforehand, what Iselin tells her and what evidence the main party obtains require authoring. |
 
@@ -193,7 +204,7 @@ fixed order of revelations.
   limitations? What accounts for the weapon's status during the three years?
 - What evidence connects the dome, the cave and Iselin's absorption? When does
   the party learn that defeating her is necessary for Ice Worldvein restoration?
-- How are Rhea's earlier encounter and the queen's private authorization shown
+- How are Rhea's earlier encounter and Althea's private authorization shown
   without transferring player-only knowledge to absent characters?
 - How are the release of aether, remaining physical ice, other disrupted flows
   and the human aftermath presented? These require outcomes beyond the fact of
