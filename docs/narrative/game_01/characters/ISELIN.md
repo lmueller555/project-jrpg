@@ -3,10 +3,11 @@
 ## Approved identity and opening role
 
 Iselin replaces Aldric in current game canon, retaining the regional regent title,
-royal role, relief work and Sanctuary breach of trust. She is the reigning queen's
-younger sister and Lucan Rooke's employer. The queen, dynasty and kingdom names,
-Iselin's age and detailed succession rules remain unresolved; older proposed
-family names are not promoted to canon.
+royal role, relief work and Sanctuary breach of trust. She is
+[Queen Althea's](../CHARACTERS.md#queen-althea) younger sister and Lucan Rooke's
+employer. Althea reigns over **Adamanthra**. The dynasty's name, Iselin's age
+and detailed succession rules remain unresolved; older proposed family names
+are not promoted to canon.
 
 Her appearance is approved Design A: white hair, blue eyes, royal-blue and silver
 travelling clothes, navy mantle on anatomical right and braid forward over
@@ -15,11 +16,12 @@ Scene-specific full-body drawings follow the global sprite standard.
 
 ## Northern home and the journey
 
-Her kingdom lies in northern Merovar in a very cold climate. Mountains enclose
+Adamanthra lies in northern Merovar in a very cold climate. Mountains enclose
 it on the east, west and north; the only approach is from the south. The capital
 is the party's eventual destination, but remains unnamed. Merovar is the larger
 continent, not a synonym for her kingdom, and the Crown is not established as
-ruling all of it.
+ruling all of it. The [world atlas](../../world/WORLD_ATLAS.md#named-kingdoms)
+owns the kingdom names, standard adjective forms and naming intentions.
 
 The first half to roughly two-thirds of the intended adventure accompanies
 Iselin northward through several affected regions. Landscapes, settlements,
@@ -27,8 +29,8 @@ intermediate incidents and the precise itinerary still need development.
 
 ### Return and parallel antiwar story
 
-She eventually leaves the company's journey and returns to her kingdom to try
-to prevent war with an enemy nation. Main-party travel continues with occasional
+She eventually leaves the company's journey and returns to Adamanthra to try
+to prevent war with Carcovia. Main-party travel continues with occasional
 Iselin cutaways. The departure's timing, immediate trigger and diplomatic scenes
 remain open; follow the shared chronology rather than inventing a second order.
 
@@ -53,7 +55,7 @@ motives. It does not disclose the catastrophe's full nature, prove the cause of
 the cave creature, or absolve her deception toward Serene. Existing MQ03 relief,
 unauthorized mining preparations, rescue and accountability remain in place.
 The revised investigation belongs to the Worldvein and Veinhold story. Exactly
-what the Crown already knows about the enemy's harvesting network and cannon,
+what the Crown already knows about Carcovia's harvesting network and cannon,
 and how its concealed excavation relates to that knowledge, remain open. Its
 partial knowledge does not establish that it predicted the whole sequence.
 Do not reveal the covert mission or future identity through opening dialogue,
@@ -63,7 +65,7 @@ quest trackers, Gallery labels or casual NPC exposition.
 
 The long shared journey must give the party and player reasons to care about
 her before her fall. Her fear and protective intent lead to the kingdom-sized
-ice dome in response to the enemy cannon's war ultimatum, followed by accusation
+ice dome in response to Carcovia's cannon-backed ultimatum, followed by accusation
 of treachery and exile. The dome also disrupts the Ice Worldvein; her protective
 purpose does not exempt such an enormous working from its environmental cost.
 The shared sequence and surface
@@ -75,7 +77,7 @@ political procedure and enforcement circumstances still need development.
 
 ### Her sister's promise and betrayal
 
-**General direction approved, 2026-11-24; not implemented:** Her sister
+**General direction approved, 2026-11-24; not implemented:** Her sister Althea
 privately authorizes the protective intervention and promises to support her,
 then permits a false public account that Iselin acted against Crown orders.
 The [Story Bible](../STORY_BIBLE.md#royal-authorization-and-betrayal) owns the
@@ -88,7 +90,7 @@ is one possible presentation, not an approved set of letters or invented
 childhood events. The Crown's covert assignment remains part of their history
 without making all of Iselin's relief work fraudulent.
 
-The queen regards commuting execution to exile as protecting her sister.
+Althea regards commuting execution to exile as protecting her sister.
 Iselin seeks public acknowledgment of what she was entrusted to do, and her
 sister refuses. That refusal supplies a personal wound beyond loss of rank or
 public approval. Exact hearing scenes and dialogue remain unwritten.
@@ -190,15 +192,15 @@ character in the opening quest.
 
 ## Ruling-family development — proposals, not canon
 
-**Maren** is the current working-name proposal for Iselin's elder sister in the
-betrayal discussion. Approval of the general betrayal direction does not select
-the queen's personal name. Use her established title until a name is approved.
+Queen Althea and Adamanthra are approved names; earlier queen-name candidates
+are superseded. Althea's brief supporting-character entry belongs to the
+[cast index](../CHARACTERS.md#queen-althea).
 
-The previously discussed House Maroven, Queen Isolde, Dowager Helena and Prince
+The previously discussed House Maroven, Dowager Helena and Prince
 Oren remain unapproved proposals, now associated with Iselin rather than her
 predecessor. If developed, her relationship to the prince would be aunt rather
-than uncle. No dynasty name, queen's personal name, heir or inheritance rule is
-established by this migration. Proposed themes of service, responsibility and
+than uncle. No dynasty name, heir or inheritance rule is established by the
+approved names. Proposed themes of service, responsibility and
 wanting achievement to justify royal standing remain usable development notes.
 Her covert Crown investigation is approved separately; these older family
 proposals do not limit that mission or revive retired explanations of the crisis.

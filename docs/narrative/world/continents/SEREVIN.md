@@ -3,8 +3,10 @@
 **Status: Approved continental geography and cultural foundations. Illustrative
 encounters remain story seeds; exact political borders and institutions remain open.**
 
-Serevin is a geographic label covering many communities and jurisdictions. Its
-inhabitants do not share a single government, language or way of life.
+Serevin is a continent containing **Carcovia** and many communities and local
+jurisdictions. The extent of Carcovian rule and its relationship to those
+jurisdictions remain open. The continent's name does not establish one state,
+language or way of life, and the older regional cultures below remain intact.
 
 Serevin lies east of Merovar across the Amber Sea in Auratia.
 Its northern interior has severe continental winters. Central uplands
@@ -16,6 +18,21 @@ establish travel and climate patterns; exact borders and distances remain open.
 The far northern coasts and offshore islands join the Nivren Crown's
 [Rimeward Shores](../POLAR_REGIONS.md). This circumpolar coastal geography
 does not replace Talven's inland steppe or Vashen's warmer southeastern basin.
+
+## Carcovia
+
+**Approved, 2026-11-24:** Carcovia is an industrious, shrewd kingdom on Serevin,
+seeking expansion into Merovar through aether-powered military weapons. Its Veinholds
+and cannon belong to the [aether foundations](../../saga/FOUNDATIONAL_LORE.md);
+the [Story Bible](../../game_01/STORY_BIBLE.md) owns their role in the war
+ultimatum and Adamanthra's defense. **Carcovian** is the standard adjective.
+
+These are traits of the kingdom's development and strategy, not a single
+personality assigned to every citizen or Serevin community. The capital,
+ruler, dynasty, borders, local governance and political unification history
+remain undecided. No existing atlas region is assigned wholly inside or
+outside Carcovia by this approval. The
+[World Atlas](../WORLD_ATLAS.md#named-kingdoms) owns the names' authorial intent.
 
 ## Talven Steppe
 
@@ -105,7 +122,9 @@ Serevin exchanges wool, cloth, paper, ceramics, dyes and preserved produce for M
 metalwork and tools, Otharan fibres and resins, and Rillan transport services.
 Seasonal contracts, marriages, study and displaced households carry customs
 along these routes. Imported cloth, visiting healers and sailors' accounts can
-make Serevin present in Game I while its principal story remains regional.
+make Serevin's people present in Game I alongside the conflict with Carcovia.
+The approved Carcovian expansion does not require a visit to every Serevin
+region or turn every trading relationship into support for its military policy.
 
 Modern practices here remain subject to the [Foundational Lore](../../saga/FOUNDATIONAL_LORE.md).
 This atlas assigns no Veinhold site or specific Worldvein route. See the

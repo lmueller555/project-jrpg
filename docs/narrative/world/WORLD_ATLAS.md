@@ -1,7 +1,7 @@
 # Auratia World Atlas
 
-**Status: Approved world name, broad geography, regional cultural foundations
-and opening regional context.**
+**Status: Approved world name, broad geography, named kingdoms, regional
+cultural foundations and opening regional context.**
 
 **Implementation:** The Elden Vale overworld shows the ruined western crossing
 and road damage. Iselin's arrival and MQ03 dialogue present the relief and
@@ -27,6 +27,30 @@ map or understanding can be narrower.
 historical forms and regional pronunciations remain to be developed. The name
 does not by itself establish a particular historical origin.
 
+## Named kingdoms
+
+**Approved, 2026-11-24:** These political names describe kingdoms within the
+existing continental geography; they do not replace continent names.
+
+| Kingdom | Continental location and approved identity | Adjective |
+| --- | --- | --- |
+| **Adamanthra** | Iselin's cold northern Merovaran homeland, ruled by **Queen Althea**, her elder sister; see [Merovar](continents/MEROVAR.md) for its mountain enclosure and southern approach | **Adamanthran** |
+| **Carcovia** | An industrious, shrewd kingdom on **Serevin**, east of Merovar across the Amber Sea; it seeks to expand into Merovar through aether-powered military weapons; see [Serevin](continents/SEREVIN.md) | **Carcovian** |
+
+The [Queen Althea entry](../game_01/CHARACTERS.md#queen-althea) and
+[royal character foundations](../game_01/CHARACTERS.md#iselin--approved-royal-background)
+own their identities and family relationship. The
+[Story Bible](../game_01/STORY_BIBLE.md) owns the conflict and its progression.
+The capital cities, dynasties, Carcovia's ruler, exact borders, constitutional
+arrangements and terms of the cannon ultimatum remain open. Carcovia's
+placement does not establish a single government over every Serevin region.
+
+**Authorial naming intent:** Adamanthra evokes adamant endurance, mountain
+strength and jewel-like beauty. Carcovia evokes the invasive expansion of
+cancer. These are creative associations, not established in-world etymologies,
+magical geology, actual disease or aether pathology. They do not define every
+inhabitant's character or require residents to recognize the associations.
+
 ## The broad arrangement
 
 Merovar, Serevin and Othara surround the **Amber Sea**, a warm central sea with
@@ -40,7 +64,7 @@ while leaving voyages expensive, seasonal and consequential.
 | Land | Relative position | Geographic range | Initial story use |
 | --- | --- | --- | --- |
 | **Merovar** | Northwest of the Amber Sea | Temperate valleys, wooded uplands, alpine country, river plains, marshes, southern coasts and a drier eastern interior; colder forests and tundra farther north | Eldenmere and the first game's regional setting |
-| **Serevin** | East and northeast of the Amber Sea | Northern continental steppe, large river basins, seasonal monsoon country, forested uplands and maritime lowlands | Distant connections, visitors and possible later journeys |
+| **Serevin** | East and northeast of the Amber Sea | Northern continental steppe, large river basins, seasonal monsoon country, forested uplands and maritime lowlands | Carcovia's continental setting; trading connections, visitors and possible later journeys |
 | **Othara** | South of the Amber Sea | A wet eastern coast, cool elevated plateaus, savanna transitions and an arid leeward interior | Trading relationships and substantial space for future games |
 | **Rillan Isles** | Island chain within the central sea routes | Sheltered harbours, wet volcanic highlands, cultivated slopes, reefs and exposed outer islands | Maritime communities with connections to the three surrounding continents |
 | **Nivren Crown** | Northern polar ocean and the far northern margins of Merovar and Serevin | Central pack ice, fjords, tundra, coastal islands and rocky offshore skerries | Coastal households, seasonal herding, cold-water trade and rescue obligations |
@@ -108,9 +132,9 @@ river or watershed. See the approved
 
 Regent Iselin's established authority is regional. Her
 administration's immediate concerns lie in Elden Vale and neighbouring upper
-Leth road and quarry districts. Iselin's Crown rules a northern kingdom within Merovar, and she is the
-reigning queen's younger sister. This does not establish one Crown ruling the
-entire continent. Her precise constitutional powers and exact political boundaries
+Leth road and quarry districts. She is the younger sister of Queen Althea of
+Adamanthra. This does not establish Adamanthran sovereignty over the entire
+continent. Her precise constitutional powers and exact political boundaries
 remain open. The [royal character foundations](../game_01/CHARACTERS.md#iselin--approved-royal-background)
 record this approved relationship separately from proposed family details.
 A geographic region in the atlas is not automatically an administrative province.
@@ -154,8 +178,8 @@ Read the continental detail in [Merovar](continents/MEROVAR.md).
 
 ### Later Game I journey — approved direction
 
-The opening's Elden Vale focus expands into a northward journey toward Iselin's
-kingdom. The [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+The opening's Elden Vale focus expands into a northward journey toward
+Adamanthra's capital. The [Story Bible](../game_01/STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
 owns the later separation, antiwar threads, descent and surface interval.
 Her exile route reaches an ice-aspected cave near a mountain summit. Its name,
 precise mountain, route and distances remain open. The chasm leading into the
@@ -164,7 +188,7 @@ is not identified as that descent by this approval.
 
 ## Other continents, the island chain and the poles
 
-**Serevin** gives us permanent river cities, mobile and settled communities
+**Serevin**, the continent containing Carcovia, gives us permanent river cities, mobile and settled communities
 in the northern steppe, upland settlements and busy coastal ports. Its
 regions are **Talven Steppe**, **Vashen Basin** and **Namar Coast**.
 Seasonal water and long travel routes matter in different ways to farmers,
@@ -263,7 +287,7 @@ craft workers, people with modest abilities and people whose work uses little
 magicks.
 
 Occasional brief natural imbalances in the Worldveins cause natural disasters;
-their damage can outlast the disturbance. The opposing kingdom's **Veinholds**
+their damage can outlast the disturbance. Carcovia's **Veinholds**
 artificially disrupt that circulation while harvesting aether. Some opponents
 call them **"clots"** with disdain. The foundational owner records their
 connection to the cannon and Ice Dome; this atlas does not assign them to

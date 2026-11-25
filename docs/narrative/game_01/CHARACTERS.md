@@ -8,7 +8,8 @@ the statuses in their owners.
 
 Detailed biographies, growth and individual voice guidance live in character
 sheets. This index owns supporting households, shared party guidance and the
-common approved-art references. Ages are measured at the opening of Game I.
+common approved-art references. It also owns brief supporting-character entries.
+Ages are measured at the opening of Game I.
 
 ## Cast and profile owners
 
@@ -17,6 +18,7 @@ common approved-art references. Ages are measured at the opening of Game I.
 | Caelan | [Protagonist sheet](characters/CAELAN.md) |
 | Mira | [Engineer sheet](characters/MIRA.md) |
 | Regent Iselin | [Royal background, mission and future arc](characters/ISELIN.md) |
+| Queen Althea | [Supporting-character foundation](#queen-althea) |
 | Lucan Rooke | [Armsmaster sheet](characters/LUCAN.md) |
 | Rhea Sorel | [Aethermage and naturalist foundation](characters/RHEA.md) |
 | Edran Hale | [Sage and healer foundation](characters/EDRAN.md) |
@@ -125,10 +127,29 @@ Running and action animations remain future work.
 
 ## Iselin — approved royal background
 
-[Iselin's sheet](characters/ISELIN.md) owns her title, family relationship,
-northern kingdom, existing ice proficiency, covert investigation, northward
-journey, future Ice Reaper identity and unapproved ruling-family proposals.
-Opening characters do not automatically know these author-facing facts.
+[Iselin's sheet](characters/ISELIN.md) owns her title, relationship to her elder
+sister Althea, Adamanthran background, existing ice proficiency, covert
+investigation, northward journey, future Ice Reaper identity and unapproved
+ruling-family proposals.
+Her covert mission and future identity retain their disclosure limits; the
+approved public names do not themselves constitute secrets.
+
+## Queen Althea
+
+**Established, 2026-11-24:** Althea is the reigning queen of **Adamanthra** and
+Iselin's elder sister. Her kingdom's geography and naming conventions belong
+to the [world atlas](../world/WORLD_ATLAS.md#named-kingdoms) and
+[Merovar guide](../world/continents/MEROVAR.md).
+
+The [Story Bible](STORY_BIBLE.md#royal-authorization-and-betrayal) owns her
+private authorization of Iselin's defense, subsequent betrayal and refusal to
+acknowledge that authorization. [Iselin's sheet](characters/ISELIN.md#her-sisters-promise-and-betrayal)
+owns their relationship's effect on Iselin. These later events remain approved
+future direction, not implemented scenes or public opening knowledge.
+
+Althea's age, appearance, detailed voice and history remain open. Her approved
+name does not establish a dynasty, succession arrangement or additional family
+members, and no separate character sheet or new artwork is created here.
 
 ## Iselin and Serene — relief needs and the Sanctuary breach of trust
 
