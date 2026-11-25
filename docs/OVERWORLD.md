@@ -4,8 +4,10 @@ Eldenmere's southern road now opens into the first playable region of Auratia.
 This is a separate regional scale: the detailed village retains its existing
 layout, while the overworld represents it with a small, recognizable town.
 The [review captures](reviews/elden_vale_overworld/README.md) show the actual
-renderer and the [atlas survey](reviews/elden_vale_overworld/atlas_reference.png)
-shows how the region follows the approved world map.
+renderer. The [current atlas survey](reviews/merovar_world_map/atlas_reference.png)
+places the region on the approved southern-Merovar world map; the
+[migration review](reviews/merovar_world_map/README.md) records the current
+school and regional-map presentation. Earlier surveys remain historical evidence.
 
 The [environment quality pass](reviews/elden_vale_polish/README.md) adds three
 composed farmsteads, smaller crop parcels, village orchards, clustered woodland,
@@ -23,11 +25,20 @@ give woodland, foothills and riverbanks more coherent local forms.
 
 ## Geography and travel
 
-Elden Vale is an inland, temperate corridor on the western side of Merovar's
-Greyfold foothills. Woodland occupies the north, cultivated ground opens south,
+Elden Vale is an inland, temperate corridor in far-southern Merovar, among
+southern Greyfold outliers. Woodland occupies the north, cultivated ground opens south,
 and rocky, wooded hills rise east. Two winding, unnamed rivers form the western
 and eastern boundaries. They remain distinct from the village brook and the
 controlled millrace. No sea, desert or new river name is introduced.
+
+The Vale has a separate southern watershed. The Leth districts lie north in
+central Merovar, beyond the unnamed east–west river that divides the extended
+continent. The [world atlas](narrative/world/WORLD_ATLAS.md#approved-world-map)
+owns these relationships. The full-size map's pixel coordinates, river traces
+and indicative survey crop are source references; local signed tile coordinates,
+collision, travel timing and saved locations remain separately authored.
+The revised survey rebuilds the regional manifest and refreshes cartography
+provenance while preserving its physical geometry and existing painted tiles.
 
 Stone walls join the riverbanks to the north and south. Each wall has a guarded
 opening. Both checkpoints are closed during the opening quests. The western

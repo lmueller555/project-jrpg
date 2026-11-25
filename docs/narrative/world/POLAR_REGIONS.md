@@ -8,10 +8,12 @@ circumpolar region centred on an ice-covered ocean, including the far northern
 shores of Merovar and Serevin. **Istrava** is a separate southern continent,
 with land beneath its ice, beyond Othara across the **Southern Ocean**.
 
-These additions preserve the existing placement and climates of Merovar,
-Serevin, Othara and the Rillan Isles. Othara remains south of the Amber Sea,
-with its dry northwest, elevated Ossan Plateau and wet eastern Velin Raincoast.
-Open ocean separates it from Istrava. See the [World Atlas](WORLD_ATLAS.md)
+The [2026-11-25 map revision](WORLD_ATLAS.md#approved-world-map) extends western
+Merovar far south and places Elden Vale in its separate southern watershed.
+Othara remains a distinct continent east of southern Merovar and south of the
+Amber Sea, with its dry northwest, elevated Ossan Plateau and wet eastern
+Velin Raincoast. Open ocean separates it from Istrava. See the
+[World Atlas](WORLD_ATLAS.md)
 for the whole-world arrangement.
 
 | Polar region | Geographic character | Broad settlement pattern |
@@ -191,10 +193,12 @@ precedes any wider disagreement over prices or responsibility.
 
 The world map should show northern pack ice over water and Istrava's southern
 ice over a distinct landmass, with open ocean between Istrava and Othara.
-Eldenmere, the Greyfold rain shadow, the Leth watershed, the warm central sea
-and all fifteen previously established regional foundations retain their
-approved relationships. The six polar subregions extend that regional
-framework; they do not replace it.
+The revised map places temperate Elden Vale in far-southern Merovar, north of
+the southern tip, while Leth and Rookfen remain farther north in central
+Merovar. The Vale has its own watershed; the former upper-Leth relationship is
+retired. Greyfold's rain shadow, the warm central sea and the six polar
+subregions retain their compatible foundations. The map is schematic rather
+than a latitude grid; the Vale's placement does not establish a polar climate.
 
 Coastlines, seasonal ice limits and station coverage are broad depictions.
 Political borders, precise distances, named shipping companies, settlement
@@ -209,6 +213,9 @@ exceptional magical power.
 No companion birthplace, Veinhold site or specific Worldvein route is assigned
 to either pole. Local religious beliefs remain beliefs and do not settle
 unwritten physical mechanisms. Adamanthra, Iselin's northern Merovaran kingdom,
-is not thereby placed at the pole, and Game I does not require a polar expedition. See
+is not thereby placed at the pole. Its northern enclosing mountains separate
+it from the Rimeward shore; depicting the coast beyond them does not change
+the kingdom's open southern land approach. Game I does not require a polar
+expedition. See
 [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and the
 [Revelation Plan](../saga/REVELATION_PLAN.md).

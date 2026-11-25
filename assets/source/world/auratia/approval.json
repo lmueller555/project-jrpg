@@ -1,0 +1,20 @@
+{
+  "id": "auratia.world_map.approval",
+  "revision": "southern_merovar_2026_11_25",
+  "approval_date": "2026-11-25",
+  "status": "Approved world-map design; classroom prop is a derived adaptation.",
+  "world_map": "assets/world/auratia/world_map.png",
+  "approved_original_filename": "exec-5c97cbf9-8cbd-4ef8-b55b-2740b6581125.png",
+  "world_map_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
+  "world_map_size": [
+    1448,
+    1086
+  ],
+  "wall_sprite_source": "assets/source/world/auratia/wall_map_generated.png",
+  "wall_sprite_original_filename": "exec-40ea2af5-0c36-4d94-8cb7-d05989c9661a.png",
+  "wall_sprite_source_sha256": "5d15424455cc0aa779f46ce76e1b46ef95b3190805c78a9b2ea3c0de48f455e2",
+  "wall_sprite_geography_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
+  "wall_sprite_generation": "Imagegen edit of the previous front-facing framed source, using the approved southern-Merovar world map as geography reference. No labels; simplified four-continent silhouettes, long western Merovar, central river and paired southern rivers.",
+  "geography": "docs/narrative/world/WORLD_ATLAS.md",
+  "review": "docs/reviews/merovar_world_map/README.md"
+}

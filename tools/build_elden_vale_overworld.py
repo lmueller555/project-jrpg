@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "assets/source/maps/overworld/elden_vale/recipe.json"
 OUTPUT = ROOT / "assets/maps/overworld/elden_vale/region.json"
-REFERENCE = ROOT / "docs/reviews/elden_vale_composition/atlas_reference.png"
+REFERENCE = ROOT / "docs/reviews/merovar_world_map/atlas_reference.png"
 
 
 def smooth_road(points, steps=6):
@@ -215,6 +215,32 @@ def validate(data):
     }
 
 
+def validate_atlas_survey(geography):
+    """Reject off-image survey points before normalizing or drawing a crop."""
+    width, height = geography["atlas_source_size"]
+
+    def point_inside(point):
+        return (len(point) == 2 and
+                all(isinstance(value, (int, float)) and math.isfinite(value)
+                    for value in point) and
+                0 <= point[0] < width and 0 <= point[1] < height)
+
+    for anchor in geography["anchors"]:
+        if not point_inside(anchor["atlas_pixel"]):
+            raise ValueError(f"Atlas anchor is outside the approved image: {anchor['id']}")
+    for trace in geography["atlas_traces"]:
+        if len(trace["atlas_points"]) < 2 or not all(map(point_inside, trace["atlas_points"])):
+            raise ValueError(f"Atlas watercourse trace is invalid: {trace['id']}")
+    polygon = geography["opening_corridor_reference_polygon"]
+    if len(polygon) < 3 or not all(map(point_inside, polygon)):
+        raise ValueError("Atlas corridor polygon is invalid")
+    crop = geography["reference_crop_atlas_pixels"]
+    if (len(crop) != 4 or not all(isinstance(value, int) for value in crop) or
+            not 0 <= crop[0] < crop[2] <= width or
+            not 0 <= crop[1] < crop[3] <= height):
+        raise ValueError("Atlas reference crop is outside the approved image")
+
+
 def prepare():
     data = deepcopy(json.loads(SOURCE.read_text(encoding="utf-8")))
     for road in data.get("roads", []):
@@ -228,6 +254,7 @@ def prepare():
     with Image.open(atlas) as image:
         if list(image.size) != geography["atlas_source_size"]:
             raise ValueError("Approved atlas dimensions differ from the survey")
+    validate_atlas_survey(geography)
     width, height = geography["atlas_source_size"]
     normalize = lambda point: [round(point[0] / width, 8), round(point[1] / height, 8)]
     for anchor in geography["anchors"]:
@@ -271,29 +298,33 @@ def reference_png(data):
         draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=(255, 255, 255, 255), outline=(0, 0, 0, 255))
         draw.text((x + 5, y - 9), str(number), fill=(255, 255, 255, 255), stroke_width=1, stroke_fill=(0, 0, 0, 255))
     annotated.alpha_composite(overlay)
-    canvas = Image.new("RGBA", (1448, 1556), (242, 237, 218, 255))
+    width, height = annotated.size
+    canvas = Image.new("RGBA", (width, height + 470), (242, 237, 218, 255))
     canvas.alpha_composite(annotated)
     # An enlarged reference crop improves inspection; it is not runtime art.
-    inset = annotated.crop((130, 310, 360, 530)).resize((460, 440), Image.Resampling.NEAREST)
-    canvas.alpha_composite(inset, (16, 1100))
+    inset = annotated.crop(tuple(geography["reference_crop_atlas_pixels"]))
+    inset_scale = min(460/inset.width, 440/inset.height)
+    inset = inset.resize((round(inset.width*inset_scale), round(inset.height*inset_scale)),
+                         Image.Resampling.NEAREST)
+    canvas.alpha_composite(inset, (16, height + 14))
     lines = [
         "ELDEN VALE - ATLAS SURVEY REFERENCE",
-        "Approved source PNG is unchanged (1448 x 1086).",
+        f"Approved southern Merovar PNG is unchanged ({width} x {height}).",
         "Left: enlarged reference crop; top: complete source.",
         "Cyan: western watercourse. Violet: eastern watercourse.",
         "Gold: indicative starting corridor, not existing walls.",
         "1 Eldenmere     2 Northern woodland context",
-        "3 Western crossing context     4 Greyfold foothills",
-        "5 Unnamed settlement illustration (no new town identity)",
+        "3 Western crossing context     4 Nearby southern foothills",
+        "5 Unnamed southwestern ridge (no new town identity)",
         "Anchors follow the map; gameplay space is authored separately.",
-        "No physical scale, exact confluences or temple site assigned.",
+        "Central east-west river is not a local Vale boundary river.",
         "Walls, gates and bridge damage are runtime interpretation.",
         "Builder: tools/build_elden_vale_overworld.py",
         "Source SHA-256: " + geography["atlas_sha256"][:32],
         "                " + geography["atlas_sha256"][32:],
     ]
     for index, line in enumerate(lines):
-        _label(canvas, (496, 1102 + index * 29), line)
+        _label(canvas, (496, height + 16 + index * 29), line)
     result = BytesIO()
     canvas.convert("RGB").save(result, format="PNG", optimize=False)
     return result.getvalue()

@@ -24,7 +24,8 @@ ruling all of it. The [world atlas](../../world/WORLD_ATLAS.md#named-kingdoms)
 owns the kingdom names, standard adjective forms and naming intentions.
 
 The first half to roughly two-thirds of the intended adventure accompanies
-Iselin northward through several affected regions. Landscapes, settlements,
+Iselin on a long northward journey from far-southern Elden Vale through
+several affected regions. Landscapes, settlements,
 intermediate incidents and the precise itinerary still need development.
 
 ### Return and parallel antiwar story
@@ -207,8 +208,10 @@ proposals do not limit that mission or revive retired explanations of the crisis
 
 ## Opening relief responsibilities
 
-Her immediate relief responsibilities include Elden Vale and nearby upper-Leth
-road and quarry districts. The [regional context](../REGIONAL_SURGES.md),
+Her immediate relief responsibilities include Elden Vale and nearby southern
+road and quarry districts. The Leth districts lie farther north in central
+Merovar; the revised map does not establish new jurisdictional borders. The
+[regional context](../REGIONAL_SURGES.md),
 [MQ03 script](../CH01_MQ03.md), and
 [covenant](../../world/SANCTUARY_COVENANT.md) own the detailed public needs,
 concealed deployment, Sanctuary emergency and acknowledged resolution. Caelan

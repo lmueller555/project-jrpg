@@ -389,7 +389,9 @@ def inputs():
             for path in paths if path.is_file()}
 
 
-def capture(early=False, stills_only=False):
+def capture(early=False, stills_only=False, output_dir=None):
+    global OUT
+    OUT = Path(output_dir).resolve() if output_dir is not None else ROOT/'docs/reviews/elden_vale_atlas'
     OUT.mkdir(parents=True, exist_ok=True)
     source_hashes = inputs()
     with tempfile.TemporaryDirectory(prefix='elden-vale-atlas-') as temporary:
@@ -443,5 +445,7 @@ if __name__ == '__main__':
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--early', action='store_true', help='Capture diagnostic Fit/zoom/minimap/text views only')
     group.add_argument('--stills-only', action='store_true', help='Capture all diagnostic still views without clips')
+    parser.add_argument('--output-dir', type=Path,
+                        help='Write a new review without replacing historical captures')
     args = parser.parse_args()
-    capture(args.early, args.stills_only)
+    capture(args.early, args.stills_only, args.output_dir)

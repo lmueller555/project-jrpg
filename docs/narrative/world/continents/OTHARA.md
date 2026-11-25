@@ -10,7 +10,10 @@ geographic areas containing different communities and jurisdictions. This docume
 
 ## Position and climate
 
-Othara lies south of the Amber Sea, across trading routes connecting Merovar,
+Othara lies south of the Amber Sea and east of the elongated southern Merovar,
+remaining a separate continent on the
+[approved world map](../WORLD_ATLAS.md#approved-world-map). It lies across
+trading routes connecting Merovar,
 Serevin and the Rillan Isles. Moist winds arriving from the eastern and
 southeastern ocean rise against the Ossan highlands. The eastern coast and
 windward valleys receive heavy rain; elevation makes the plateau cooler, while

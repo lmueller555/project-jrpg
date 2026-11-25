@@ -1,7 +1,7 @@
 # Game I — Early regional surges and Iselin's relief visit
 
 **Status:** APPROVED OPENING STORY CANON, 2026-10-31; Worldvein and kingdom-name
-context revised 2026-11-24.\
+context revised 2026-11-24; southern Merovar geography revised 2026-11-25.\
 **Scope:** The damaged southern road, the small number of recent lightning
 incidents, Iselin's reason for visiting Eldenmere, and the narrative handoff
 from MQ02 to MQ03.\
@@ -21,10 +21,12 @@ References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
 
 Before the opening morning, a sudden, extraordinarily powerful surge of
 lightning destroyed the road connecting Eldenmere with the next town to its
-south. This is the southward connection in the world-map geography, continuing
-toward the Leth settlements. The neighbouring town's name, exact distance and
-playable layout remain open. River Leth and Lower Leth are geographic names,
-not a new name for that town.
+south, within the separate southern Merovaran setting established by the
+[approved map](../world/WORLD_ATLAS.md#approved-world-map). This remains a
+southward local connection; the Leth districts now lie north in central
+Merovar and are not its assumed destination. The neighbouring town's name,
+exact distance and playable layout remain open. River Leth and Lower Leth are
+geographic names, not a new name for that town.
 
 The damage gives the road project a specific purpose: restore the connection
 used by people and deliveries between these communities. Its destruction is
@@ -33,8 +35,8 @@ overworld now establishes a destroyed stone bridge across the western boundary
 river, with road damage on both banks. Eldenmere's southern road bends west to
 this crossing; the far-bank route continues toward the unnamed town south.
 Guarded land gates are separate from the ruined crossing. Detours, repair
-quantities and eventual restoration still need later quest design. The
-classroom world-map artwork remains unchanged.
+quantities and eventual restoration still need later quest design. The canonical atlas updates the wider geography without moving this local
+crossing.
 
 MQ02's stopped mill remains a separate local problem. The ridgeback tusker
 felled the tree whose broken limb obstructs the intake. Fixing the mill does

@@ -4,7 +4,13 @@
 
 **Scope:** Auratia's central Amber Sea archipelago, with three regions and several independent polities.
 
-The islands lie along sea routes between Merovar, Serevin's Namar Coast and northern Othara. Sheltered channels, taller rain-catching islands and exposed reef settlements support different ways of living. Warm low coasts and cooler upland slopes allow mangroves, orchards, broadleaf woodland and scrub within the same island group.
+The islands lie along sea routes between Merovar's Amber Sea-facing coast,
+Serevin's Namar Coast and northern Othara. The
+[approved map](../WORLD_ATLAS.md#approved-world-map) preserves this central
+archipelago while Merovar extends south to its west. Sheltered channels, taller
+rain-catching islands and exposed reef settlements support different ways of
+living. Warm low coasts and cooler upland slopes allow mangroves, orchards,
+broadleaf woodland and scrub within the same island group.
 
 Seasonal winds, freshwater stores and navigable channels shape journeys between communities. The three regions below describe geography and connections, leaving political borders and precise passage times open. They follow the placement in the [world atlas](../WORLD_ATLAS.md) and the limits of the [foundational lore](../../saga/FOUNDATIONAL_LORE.md).
 

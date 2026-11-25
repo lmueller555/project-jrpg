@@ -1,8 +1,11 @@
 """Capture the real classroom map interaction and display-resolution viewer."""
+import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
 import sys
+import tempfile
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -16,10 +19,13 @@ from main import Game
 from npc_routines import find_path
 
 
-def capture():
-    out = ROOT/'docs/reviews/school_world_map'
+def capture(output_dir=None):
+    out = Path(output_dir).resolve() if output_dir is not None else ROOT/'docs/reviews/school_world_map'
     out.mkdir(parents=True, exist_ok=True)
-    game = Game(window_size=(1440, 960), fullscreen=False, start_on_title=False)
+    temporary = tempfile.TemporaryDirectory(prefix='school-world-map-')
+    game = Game(window_size=(1440, 960), fullscreen=False, start_on_title=False,
+                save_path=Path(temporary.name)/'journey.json',
+                settings_path=Path(temporary.name)/'settings.json')
     try:
         game.audio.effects_volume = 0
         game.world = game._scene_by_id('school')
@@ -39,6 +45,11 @@ def capture():
         game.draw()
         pygame.image.save(game.window, out/'world_map_fit.png')
         game.world_map_viewer.zoom_at(game.world_map_viewer.viewport.center, 5)
+        region = json.loads((ROOT/'assets/maps/overworld/elden_vale/region.json').read_text())
+        settlement = next(anchor for anchor in region['geography']['anchors']
+                          if anchor['id'] == 'eldenmere')
+        game.world_map_viewer.center.update(settlement['atlas_pixel'])
+        game.world_map_viewer._clamp()
         game.draw()
         pygame.image.save(game.window, out/'world_map_detail.png')
         pygame.event.post(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False))
@@ -48,12 +59,20 @@ def capture():
                   'approach': display['position'], 'reachable_from_door': True,
                   'opened_with_e': True, 'closed_with_escape': True,
                   'image_size': list(game.world_map_viewer.image.get_size()),
+                  'world_map_sha256': hashlib.sha256(game.world_map_viewer.image_path.read_bytes()).hexdigest(),
+                  'detail_settlement': settlement['id'],
+                  'detail_atlas_pixel': settlement['atlas_pixel'],
                   'captures': ['classroom.png', 'world_map_fit.png', 'world_map_detail.png']}
         (out/'verification.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2))
     finally:
         pygame.quit()
+        temporary.cleanup()
 
 
 if __name__ == '__main__':
-    capture()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir', type=Path,
+                        help='Write a new review without replacing historical captures')
+    args = parser.parse_args()
+    capture(args.output_dir)

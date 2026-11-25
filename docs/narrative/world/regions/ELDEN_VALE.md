@@ -3,13 +3,17 @@
 **Status: Approved regional geography, cultural foundations and opening
 regional context around Eldenmere. Illustrative encounters remain story seeds.**
 
+**Geography revised:** 2026-11-25, following the
+[canonical world-map approval](../WORLD_ATLAS.md#approved-world-map).
+
 **Implementation references:** The [regional overworld](../../../OVERWORLD.md)
 implements the valley landscape; [MQ03](../../game_01/CH01_MQ03.md) owns the
 Sanctuary journey, cave emergency and return progression. The
 [detailed reserve](../../../SANCTUARY_RESERVE.md) owns scene layout and access.
 
-Elden Vale is Eldenmere's home region: a wooded inland valley on
-the western foothills of Merovar's Greyfold Mountains. The valley gives Game I
+Elden Vale is Eldenmere's home region: a temperate wooded inland valley in
+far-southern Merovar, between two unnamed north–south rivers. The ridges around
+it are southern outliers of the Greyfold Mountains. The valley gives Game I
 a home with agricultural work, practical engineering, religious service and
 connections to neighbouring communities. It also gives the covenant dispute
 specific land, livelihoods and relationships at stake.
@@ -31,8 +35,10 @@ stands in the eastern part of the village.
 At the wider scale, short wooded side valleys open into pasture,
 mixed farms and a few small road settlements. Higher ground becomes conifer
 woodland and open upland before the main mountain passes. The main lowland
-route continues south toward the upper Leth market towns; local roads also
-serve outlying farms, quarry approaches and sanctuary properties.
+route continues toward an unnamed neighbouring town south of Eldenmere; local
+roads also serve outlying farms, quarry approaches and sanctuary properties.
+The Leth districts now lie north in central Merovar, beyond the Vale's own
+watershed, rather than along this immediate southern connection.
 
 No lake, seacoast, desert or tropical forest is added to Eldenmere's immediate
 surroundings. Rainfall, elevation and sheltered slopes provide the first
@@ -41,8 +47,10 @@ the festival's date or a world calendar.
 
 ## Water and the work it supports
 
-The larger watershed connects the village brook through downstream
-tributaries to the River Leth. The village's separate controlled millrace and
+The two bounding rivers and village brook belong to a separate southern
+watershed. They are not assigned to the central River Leth system. The exact
+junction between the brook and the two bounding rivers remains open; no new
+river names or extra local watercourses are introduced by this revision. The village's separate controlled millrace and
 irrigation supplies retain their existing operation. Locally, the wheel's
 feeding branch runs east–west; the brook follows its own north–south course.
 MQ02's obstruction interrupts mill operation rather than halting the region's
@@ -64,8 +72,8 @@ Their stories can begin with concrete work and competing needs.
 The existing village already supports flour milling, household gardens,
 medicine deliveries, mechanical repair and a school. The surrounding
 valley adds mixed farming, pasture, wool work, managed woodland and seasonal
-labour. Tools, salt, some metalwork and other goods arrive through the upper
-Leth routes. Households differ in what they grow, buy, make or exchange.
+labour. Tools, salt, some metalwork and other goods arrive along regional
+trade routes. Households differ in what they grow, buy, make or exchange.
 
 A possible local building tradition uses stone for foundations, steps and
 retaining walls, with timber where it is practical. Raised storage and covered
@@ -96,7 +104,7 @@ Its marked reserve includes sanctuary buildings,
 a wooded hill and buried foundations beyond the visible walls. The covenant
 protects the ground beneath the reserve as well as its surface. The ridge
 site now lies northeast of the village on a wooded shoulder of the eastern
-Greyfold foothills, south of the northern wall and west of the eastern river.
+Greyfold outliers, south of the northern wall and west of the eastern river.
 A maintained spur from the eastern footpath reaches its regional miniature.
 Its full buried layout and construction history remain open; the natural
 confluence does not identify a buried planetary control mechanism.
@@ -126,14 +134,14 @@ to carry a stranger's lantern is created.
 Regent Iselin is an established regional authority and the younger sister of
 **Queen Althea of Adamanthra**. The Adamanthran Crown governs through regional
 governors and local institutions. Her exact jurisdictional borders, appointment history
-and constitutional powers remain open. Elden Vale and nearby
-upper Leth road and quarry districts form the immediate setting of her
-administration's concerns.
+and constitutional powers remain open. Elden Vale and nearby southern
+road and quarry districts form the immediate setting of her administration's
+concerns; the map change does not assign her a new political jurisdiction.
 
 The [regional surges guide](../../game_01/REGIONAL_SURGES.md) owns the recent
 road damage, relief visit and material pressures behind Iselin's request. The
-southern connection continues toward the Leth settlements; the neighbouring
-town remains unnamed. The [covenant](../SANCTUARY_COVENANT.md) owns the protected
+southern connection continues toward an unnamed neighbouring town in southern
+Merovar; it is not automatically a route into the Leth districts. The [covenant](../SANCTUARY_COVENANT.md) owns the protected
 seam and alternative-stone considerations.
 
 Road access, affordable building material, reliable mills and safe movement
@@ -159,16 +167,20 @@ aether circulation.
 
 ## Neighbours and travel
 
-The valley connects north and east to Greyfold upland routes, south
-to the upper and Lower Leth riverlands, and through a more demanding mountain
-crossing to the Redstone rain-shadow country. The coast and delta lie farther
-downstream. They can be known through goods and travellers before any visit.
+Local routes connect the valley to its Greyfold outliers and nearby southern
+communities. The longer northward journey leads toward the central river,
+Leth districts and, eventually, far-northern Adamanthra. Exact roads, passes
+and the central crossing remain to be authored; the map does not require
+visiting every named region. Redstone, Marris and Rookfen can be known through
+goods and travellers before any visit. The old southward progression from
+Elden Vale through Lower Leth to a delta is replaced.
 
 For early story planning, use relative journeys: a local errand, a substantial
 day outing, a trip requiring an overnight stop, or a longer regional route.
 Exact distances and durations remain open until the playable road network and
 story sequence are designed. A world atlas is not a scale conversion of the
-current 480-pixel game view.
+current 480-pixel game view. Far-southern placement does not make the temperate
+Vale polar or move the Sanctuary, mill or ruined crossing within local play.
 
 ## Scene foundations for future development
 

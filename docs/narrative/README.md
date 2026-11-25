@@ -17,7 +17,7 @@ method, then follow the sources relevant to the assignment.
 | Individual characterization and voice | [Cast index](game_01/CHARACTERS.md) routes to [Caelan](game_01/characters/CAELAN.md), [Mira](game_01/characters/MIRA.md), [Iselin](game_01/characters/ISELIN.md), [Lucan](game_01/characters/LUCAN.md), [Rhea](game_01/characters/RHEA.md) and [Edran](game_01/characters/EDRAN.md); [template](game_01/characters/TEMPLATE.md) defines profile status |
 | Supporting households and characters including Queen Althea, shared party relationships, lore exchanges and approved companion-art references | [Cast and supporting-household index](game_01/CHARACTERS.md) |
 | Mira's established workshop-bot departure beat and open implementation | [Mira's departure section](game_01/characters/MIRA.md#planned-departure-beat) |
-| World geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
+| Canonical world map, world geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
 | Protected-ground terms, public records, permitted use and joint authorization | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
 | Authored standalone cinematics, dialogue, choreography and placement limits | [Opening flashforward](scenes/OPENING_CINEMATIC.md), [Iselin's arrival](scenes/REGENT_ARRIVAL.md), and [Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
@@ -27,6 +27,17 @@ Use the owner for a fact rather than maintaining another full copy in a related
 guide. Brief context and a source link are appropriate. A regional guide can
 explain why protected ground matters to its residents without reproducing the
 quest's dialogue and saved completion sequence.
+
+## Current map authority
+
+The [World Atlas's approved-map section](world/WORLD_ATLAS.md#approved-world-map)
+owns the 2026-11-25 geography migration and links the canonical asset. Western
+Merovar now extends far south; Elden Vale occupies its separate southern
+watershed, while Adamanthra remains in the far north. Detailed geography stays
+in the existing atlas, continent and regional owners rather than a second map
+or country bible. Local playable orientation and approved companion home
+regions retain their authority. Historical map captures are evidence of their
+own versions, not competing current geography.
 
 ## Status and knowledge
 

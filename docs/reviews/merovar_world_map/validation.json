@@ -1,0 +1,39 @@
+{
+  "approved_map_bytes_exact": true,
+  "historical_review_files_unchanged": 2385,
+  "cartography_tiles_unchanged": 43,
+  "all_nonprovenance_regional_data_unchanged": true,
+  "school_room_metadata_unchanged": true,
+  "targeted_tests": 61,
+  "passed": 60,
+  "preexisting_fixture_errors": 1,
+  "base_commit": "8ba18755ae62f16d27c285575bdd3ecd00558545",
+  "approved_world_map_sha256": "7337ed35770d9b19489ad4fa9b8330e529c744ebb6b89f1f471cb0a22f509cd4",
+  "approved_world_map_dimensions": [
+    1448,
+    1086
+  ],
+  "baseline_targeted_tests": 53,
+  "baseline_passed": 52,
+  "baseline_fixture_errors": 1,
+  "preexisting_fixture_error": "tests.test_overworld_map.RegionalMapTests.test_real_game_update_freezes_regional_world_until_map_closes: synthetic Game lacks elemental_bosses",
+  "export_checks": [
+    "tools/build_auratia_world_map.py --check",
+    "tools/build_elden_vale_overworld.py --check",
+    "tools/build_elden_vale_cartography.py --check"
+  ],
+  "new_test_modules": [
+    "tests/test_world_map_assets.py",
+    "tests/test_overworld_atlas_survey.py"
+  ],
+  "scope": "Existing local gameplay geometry, progression, room placements and historical evidence preserved; continental artwork and survey references revised.",
+  "town_map_and_playable_pngs_unchanged": true,
+  "map_only_school_rebuild_verified": true,
+  "documentation_links": {
+    "documents": 548,
+    "links_checked": 2283,
+    "baseline_broken": 9,
+    "current_broken": 9,
+    "new_broken": []
+  }
+}

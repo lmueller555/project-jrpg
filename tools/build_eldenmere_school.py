@@ -1,4 +1,5 @@
 """Add the public school locally; preserve existing rooms, NPCs and water routes."""
+import argparse
 from pathlib import Path
 from PIL import Image
 from build_eldenmere_stream import read_json,write_json
@@ -81,6 +82,24 @@ def yard(data):
     return result,solid
 
 
+def rebuild_map():
+    """Refresh classroom art without rerunning town paths, yard or exterior art."""
+    existing=read_json(ROOM)
+    from build_eldenmere_school_interior import build as build_interior
+    build_interior()
+    meta,compiled,_=compile_room(TERRAIN/'school/interior','school')
+    # Runtime doors, residents and quest data have their own owners. The map
+    # replacement uses the same room/prop paths and must not move the room.
+    runtime_fields={'doors','npcs','quests','landmarks'}
+    changed=[key for key,value in compiled.items()
+             if key not in runtime_fields and existing.get(key)!=value]
+    if meta['world_map_display']!=existing['world_map_display']:
+        changed.append('world_map_display')
+    if changed:
+        raise ValueError(f'Map-only rebuild would change classroom layout: {changed}')
+    print('Refreshed classroom map and compiled layers; town and live room metadata preserved.')
+
+
 def build():
     layout=read_json(AREA/'layout.json');data=read_json(TOWN)
     from build_eldenmere_school_exterior import build as build_exterior
@@ -121,4 +140,9 @@ def build():
     print('Added school, shaded yard, well-square path and enterable 16x12 classroom.')
 
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--map-only',action='store_true',
+                        help='Refresh classroom map art without rebuilding the town or yard.')
+    args=parser.parse_args()
+    rebuild_map() if args.map_only else build()
