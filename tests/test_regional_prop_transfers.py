@@ -16,7 +16,7 @@ from garden_orchard import GARDEN_SCENE, HAND, PROGRAMS, STARTS
 from grain_farm import DIRECTIONS, PICKUP_SECONDS, SOURCE
 from bridge_crew import CUP_ACTION_SECONDS, HELP, KETTLE, REACH, SAFE, WORK_STONE
 from purposeful_wildlife import BASKET_HOME, BASKET_PEN, VISIT, valid_state
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class RegionalPropTransfers(unittest.TestCase):
@@ -188,7 +188,7 @@ class RegionalPropTransfers(unittest.TestCase):
                 else:self.assertIsNotNone(bridge.cup_owner)
 
     def test_continue_preserves_every_committed_cup_owner(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         for beat,phase in [(1,'kettle'),(1,'tender'),(1,'stone'),(1,'tender_from_stone'),
                            (2,'tray'),(3,'mason'),(4,'tender_return'),(5,'kettle')]:
             with self.subTest(beat=beat,phase=phase):

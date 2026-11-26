@@ -7,9 +7,9 @@ receive chapter-ending excavation authorization. The Sanctuary's new story
 role and the cave's purpose remain **OPEN**.
 
 **Story continuity:** [Chapter 1](../game_01/CHAPTER_01.md) owns the approved
-Fire Veinhold opening. Existing MQ03 gameplay, dialogue and review captures
+Fire Veinhold opening. Removed MQ03 gameplay/dialogue and historical review captures
 record the previous implementation; they do not establish the revised
-opening's events. This is documentation alignment, with no runtime changes.
+opening's events. The old quest runtime is removed; the revised Fire opening remains future work.
 
 **Scope:** Elden Vale Sanctuary near Eldenmere, its recognized reserve,
 custodial responsibilities and older public records. The

@@ -18,7 +18,7 @@ from main import Game
 from overworld_travel import OverworldTravel
 from checkpoint_charm import (ACTIONS, ART, BENCH, HOMES, ROUTES, SUPPLIES,
     WITNESS, CheckpointCharm, empty_state, progress_state, valid_state)
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class CheckpointCharmTests(unittest.TestCase):
@@ -61,7 +61,7 @@ class CheckpointCharmTests(unittest.TestCase):
         return pygame.image.tobytes(actor.story_sprite or actor.sprite(self.g.elapsed_ms), 'RGBA')
 
     def seed_save(self):
-        seed_previous_quests(self.g)
+        seed_mill_completed(self.g)
         self.g.world = self.g.overworld_world;self.g.player.position.update(WITNESS)
         self.assertTrue(self.g.save_progress())
 

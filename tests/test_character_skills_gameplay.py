@@ -206,7 +206,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertTrue(resumed.has_saved_journey, resumed.save_error)
         self.assertTrue(resumed.begin_journey(True))
         self.assertEqual(self.snapshot(resumed), before)
-        self.assertTrue(resumed.begin_journey(False, show_cinematic=False))
+        self.assertTrue(resumed.begin_journey(False))
         self.assertEqual(resumed.inventory.quantity(TEST_SWORD), 0)
         self.assertFalse(resumed.character_abilities.has_weapon())
         self.assertEqual(resumed.character_abilities.skill_ids(), ())
@@ -346,7 +346,7 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual((scene.model.player.mp, scene.model.player.atb, scene.model.enemy.atb), gauges)
         self.assertEqual(scene.model.action_reason('aether_edge'), '')
 
-    def test_title_and_opening_cinematic_refuse_loadout_changes(self):
+    def test_title_and_optional_cinematic_refuse_loadout_changes(self):
         game = self.game(title=True)
         before = self.snapshot(game)
         self.assertFalse(game.acquire_weapon('caelan', TEST_SWORD))
@@ -355,7 +355,10 @@ class CharacterSkillsGameplayTests(unittest.TestCase):
         self.assertEqual(self.snapshot(game), before)
         self.assertFalse(self.path.exists())
         self.assertTrue(game.begin_journey(False))
-        self.assertTrue(game.opening_cinematic.active)
+        from ice_reaper_opening import IceReaperOpening
+        game.cinematic = IceReaperOpening(game)
+        game.cinematic.start()
+        self.assertTrue(game.cinematic_active)
         before = self.snapshot(game)
         self.assertFalse(game.acquire_weapon('caelan', TEST_SWORD))
         self.assertFalse(game.equip_weapon('caelan', None))

@@ -19,9 +19,9 @@ the approved dialogue portrait independent from character sprites.
 The old detailed overworld banks, prototype studies and dedicated HD exporters
 were removed. The [native integration review](../docs/reviews/iselin_native_integration/README.md)
 records ordinary actor verification. The separately approved cinematic gate
-performance uses true 80×96 detail matching the page and Lucan. Reproduce its
+performance uses true 80×96 detail matching the retained cinematic cast. Reproduce its
 selected drawings with `python tools/export_iselin_gate_detail.py --check`;
-`tools/build_regent_iselin.py` includes that pack in the live actor manifest.
+`tools/build_regent_iselin.py` includes that pack in the retained character manifest.
 `gate_walk_left` anticipates a single gate stop; generic `walk_left` remains the
 looping travel bank. The aerial lead-in uses `gate_incoming_left`, the first
 eight approved drawings at a 16-pixel stride, to preserve detail through the
@@ -29,40 +29,18 @@ ground handoff while excluding the stop-specific tail. Directional native review
 available with temporary saves; pass `--out /tmp/iselin-review` when reproducing
 them so the original approval snapshots stay intact.
 
-Preview individual Iselin arrival poses, walking loops and optional finite
-actions with `python tools/preview_iselin_cinematics.py --list`. The tool uses
-the real arrival Gallery renderer with temporary saves/settings. For example:
+Preview the retained Iselin character library with
+`python tools/preview_iselin_cinematics.py --list`. This is an isolated actor
+study rather than the removed arrival scene. Select `--pose`, `--loop` or
+`--action`; `--headless --out /tmp/iselin-review` keeps captures outside original
+approval folders. The reusable ground/aerial/seated banks live under
+`assets/characters/iselin/cinematic/` and `assets/characters/lucan/cinematic/`.
+The exporters preserve those drawings without rebuilding an old quest.
 
-```sh
-python tools/preview_iselin_cinematics.py --shot relief --pose gesture_left
-python tools/preview_iselin_cinematics.py --headless --shot gate_greeting --shot-time .4 --probe --release-at .3 --seconds 1 --out /tmp/iselin-probe
-python tools/preview_iselin_cinematics.py --shot gate_greeting --action-file /path/clips.json --action greeting
-```
-
-Space pauses, R restarts, S changes normal/quarter speed, the arrow keys step
-20 ms, E releases an action, F captures a frame and Escape exits. Output defaults
-to `/tmp/iselin-cinematic-preview`. Headless captures include an existing
-artwork reference board and normal/slow playback. `--probe` uses existing stills
-to demonstrate entry/hold/recovery timing; it is not newly drawn motion. The
-[arrival guide](../docs/narrative/scenes/REGENT_ARRIVAL.md#native-acting-foundation) defines the
-optional actor action schema; the
-[foundation review](../docs/reviews/iselin_cinematic_foundation/README.md) records
-capture staging and preservation checks. `--check-preservation` explicitly checks
-this PR's historical baseline; ordinary future previews allow intentional asset
-changes. Future action files use the same schema and local, correctly registered
-actor frames.
-
-Capture Iselin's live arrival-gate walking stop with
-`python tools/capture_iselin_walk_stop.py --check-mechanics --out /tmp/iselin-walk-stop`.
-After initial shot selection it uses ordinary production updates through the
-walk, deceleration, settle and greeting. It exports normal/quarter-speed crops,
-full-shot samples, the live cinematic frame board and a separately labeled fixed-world
-registration diagnostic. `--check-preservation` optionally checks the historical
-PNG baseline; `--repository /path/to/checkout` supports a labeled before capture.
-See the [live detailed gate review](../docs/reviews/iselin_detailed_gate_live/README.md)
-for approval, timing, interruption checks and capture limits. Rebuild the gate
-drawings with `tools/build_regent_iselin.py`; the approved ordinary
-idles and walking banks remain unchanged.
+The old flashforward, regent scenes and MQ04 builders/captures have been removed.
+Historical commands in `docs/reviews/` describe their recorded versions and are
+not current reproduction instructions. Current gameplay retains only MQ01/MQ02;
+new Fire Veinhold scenes remain future work.
 
 Build the detailed Elden Vale Sanctuary reserve with `python tools/build_elden_vale_sanctuary.py` and its hall with `python tools/build_sanctuary_reserve_hall.py`. Both support `--check`. The exterior command compiles native pixel terrain, source-derived stone modules, independent depth objects and full-foot collision from the authored reserve placements. The hall uses the existing room and furniture packs. Source references and hashes accompany the exports; the original Eldenmere packs stay unchanged. The retired background-painting/cutout pipeline and its cloister/cave repair patches have been removed. See [the reserve guide](../docs/SANCTUARY_RESERVE.md) and [in-game review](../docs/reviews/sanctuary_pixel_assets/README.md).
 

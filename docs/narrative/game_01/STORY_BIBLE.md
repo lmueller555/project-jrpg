@@ -11,7 +11,7 @@ before her late-story Ice Reaper descent. Her sheet owns her background,
 existing ice proficiency, motive and future identity. The new prologue shows
 her infiltration to the player; it does not give Caelan that knowledge
 or reveal her future identity. Approved future direction is distinct from the
-currently implemented opening.
+retained MQ01/MQ02 opening.
 Historical act sketches do not override that approved direction.
 
 **Geography revised, 2026-11-25:** The
@@ -104,7 +104,9 @@ This is an approved narrative replacement, **not implemented gameplay**. The
 old lightning-damaged opening, relief/quarry dispute, secret Sanctuary crew,
 mandatory cave rescue/accountability chain, excavation authorization and
 Chapter 3 excavation catastrophe no longer form the required opening spine.
-Their existing scripts and runtime content remain pending separate revision.
+Their runtime controllers, quest content and replays have now been removed;
+the remaining MQ01/MQ02 scripts use ordinary framing. The new Fire sequence
+itself remains unimplemented.
 The Sanctuary remains a natural confluence with communal significance; its
 revised cave purpose and any reused encounters remain open.
 
@@ -136,8 +138,8 @@ unchanged prerequisites.
 **Revised opening scope:** The former three-chapter festival → excavation
 warning → quarry catastrophe progression is retired. Replacement act/chapter
 counts, quest IDs and exact checkpoints remain open beyond the approved
-sequence in [Chapter 1](CHAPTER_01.md). This documentation change does not
-resequence existing quests or create the new prologue in the game.
+sequence in [Chapter 1](CHAPTER_01.md). Runtime retirement leaves only MQ01/MQ02 in the quest list. It does not create
+the new prologue or invasion in the game.
 
 **Approved companion introduction:** Lucan Rooke, the Armsmaster and Iselin's
 personal guard, is playable alongside her and an ordinary Crown soldier in the

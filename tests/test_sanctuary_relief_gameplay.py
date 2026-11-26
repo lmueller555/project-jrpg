@@ -1,4 +1,4 @@
-"""Real Sanctuary doors, local recovery and Continue during the MQ03 outing."""
+"""Real Sanctuary doors, local recovery and Continue with an explicit cave party."""
 from copy import deepcopy
 import json
 import os
@@ -13,25 +13,19 @@ import pygame
 
 from main import Game
 from overworld_travel import HALL_ID, RELIEF_ID, RESERVE_ID, OverworldTravel
-from quests import LANTERN_QUEST, REGENT_QUEST
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 from tools.capture_sanctuary_reserve import path as clear_path, walk
 
 
 class SanctuaryReliefGameplayTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Earlier quests are a labelled fixture; MQ03, its emergency departure,
-        # Mira's return and the Sanctuary journey use actual story input.
-        with tempfile.TemporaryDirectory(prefix='relief-story-') as directory:
+        # Explicit world/combat fixture, independent of retired opening quests.
+        with tempfile.TemporaryDirectory(prefix='cave-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal()
-            driver.attack_report()
-            driver.departure()
-            driver.rejoin_mira()
-            driver.arrive()
-            assert driver.game.save_progress()
+            game = driver.prepare_cave(lesson_complete=True)
+            assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
 
@@ -108,12 +102,9 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
 
     def story(self):
         game = self.game
-        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
-        self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
-        self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
-        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
+        self.assertIsNone(game.party.current_event_id)
         self.assertIn('mira', game.party.active_ids)
-        self.assertEqual(game.music.desired_track, 'battle')
+        self.assertEqual(game.music.desired_track, 'eldenmere')
 
     def durable_facts(self):
         game = self.game
@@ -124,8 +115,6 @@ class SanctuaryReliefGameplayTests(unittest.TestCase):
             'flags': sorted(game.social.flags),
             'opening': game.opening.to_dict(),
             'mill': game.mill_quest.to_dict(),
-            'regent': game.regent_quest.to_dict(),
-            'lantern': game.lantern_quest.to_dict(),
             'members': game.party.members,
             'active': game.party.active_ids,
             'event': game.party.event_id,

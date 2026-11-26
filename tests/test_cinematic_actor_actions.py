@@ -17,7 +17,7 @@ import pygame
 from cinematic_actor_actions import ActionPlayer, load_actions
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT/'assets/story/regent_arrival/actors/iselin/animation.json'
+MANIFEST = ROOT/'assets/characters/iselin/cinematic/ground/animation.json'
 
 
 def probe_action(hold_ms=None):

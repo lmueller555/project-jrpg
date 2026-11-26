@@ -233,7 +233,7 @@ def scale_board(frames, actors, records):
     references = {
         'overworld': (ROOT/'assets/characters/caelan/idle_front.png', (12, 34), 6),
         'combat': (ROOT/'assets/combat/caelan/idle_01.png', (24, 42), 4),
-        'cinematic': (ROOT/'assets/story/opening_cinematic/actors/caelan/stand_empty.png', (48, 104), 2),
+        'cinematic': (ROOT/'assets/source/cinematics/shared_references/caelan_standing.png', (48, 104), 2),
     }
     board = Image.new('RGB', (1600, 1030), BACKGROUND);draw = ImageDraw.Draw(board)
     draw.text((24, 14), 'Shared scene scale — Caelan and companion studies', font=font(27), fill=INK)

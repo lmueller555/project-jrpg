@@ -23,14 +23,12 @@ from well_routine import DrawingWell
 from dense_art import WorldCanvas, draw_actor
 from social import SocialSystem
 from title_screen import TitleScreen
-from quests import QuestLog, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
+from quests import QuestLog, MILL_QUEST
 from quest_ui import QuestUI
 from save_game import SaveStore
 from game_saves import GameSaves
 from save_menu import SaveMenu
 from opening import OpeningSequence
-from opening_cinematic import OpeningCinematic
-from regent_arrival import RegentArrival
 from mill_gift import MillGift
 from opening_audio import MorningAudio
 from regional_audio import RegionalAudio
@@ -53,25 +51,21 @@ from mira_rig_state import MiraRigState, migrate_mira_rig
 from status_ui import StatusUI
 from battle_rewards import BattleRewards
 from legacy_save import migrate_retired_progression
+from opening_retirement import STORY_REVISION, OpeningCompatibilityError, migrate_retired_opening
 from halden_visit import HaldenVisit
 from elira_visit import EliraVisit
 from venn_visit import VennVisit
 from opening_conclusion import OpeningConclusion
 from mill_quest import MillQuest
-from regent_quest import RegentQuest
-from lantern_quest import LanternQuest
 from world_encounters import CombatEncounters
 from bed_rest import BedRest
 from overworld_travel import OverworldTravel, REGION_FILE, WORLD_ID, RESERVE_FILE
 from overworld_minimap import OverworldMinimap
 from interactive_grass import InteractiveGrass
-from sanctuary_arrival import SanctuaryArrival
-from sanctuary_arrival_party import sync_arrival_party, valid_arrival_party
 from sanctuary_cave import SanctuaryCave, SCENE_FILES as CAVE_SCENE_FILES, migrate_legacy_cave, migrate_chasm_checkpoint
 from cave_random_encounters import CaveRandomEncounters
 from cave_lesson import CaveLesson
 from sanctuary_boss import SanctuaryBoss
-from sanctuary_rescue import SanctuaryRescue
 from elemental_bosses import ElementalBosses
 
 ROOT=Path(__file__).resolve().parent
@@ -533,17 +527,14 @@ class Game:
         self.party_ui=PartyUI(self)
         self.party_travel=PartyTravel(self)
         self.opening=OpeningSequence(self)
-        self.opening_cinematic=OpeningCinematic(self)
+        self.cinematic=None
         self.halden_visit=HaldenVisit(self)
         self.elira_visit=EliraVisit(self)
         self.venn_visit=VennVisit(self)
         self.opening_conclusion=OpeningConclusion(self)
         self.mill_quest=MillQuest(self)
         self.mill_gift=MillGift(self)
-        self.regent_arrival=RegentArrival(self)
-        self.regent_quest=RegentQuest(self)
-        self.lantern_quest=LanternQuest(self)
-        self.household_visits=(self.lantern_quest,self.regent_quest,self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
+        self.household_visits=(self.mill_quest,self.halden_visit,self.elira_visit,self.venn_visit,self.opening_conclusion)
         self.opening_audio=MorningAudio(self)
         self.camera=CameraDirector(self)
         self.pause=PauseMenu(self)
@@ -559,8 +550,6 @@ class Game:
         self.cave_lesson=CaveLesson(self)
         self.sanctuary_boss=SanctuaryBoss(self)
         self.elemental_bosses=ElementalBosses(self)
-        self.sanctuary_arrival=SanctuaryArrival(self)
-        self.sanctuary_rescue=SanctuaryRescue(self)
         self.regional_audio=RegionalAudio(self)
         self.minimap=OverworldMinimap(self)
         self.save_store=SaveStore(None if self._is_embedded else save_path)
@@ -663,9 +652,7 @@ class Game:
                            'cave_encounter_pending':self.cave_random_encounters.pending,
                            'cave_lesson':self.cave_lesson.to_dict(),
                            'sanctuary_boss':self.sanctuary_boss.to_dict(),
-              'sanctuary_rescue':self.sanctuary_rescue.to_dict(),
                            'elemental_bosses':self.elemental_bosses.to_dict(),
-                           'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
                            'character_attributes':self.attributes.to_dict(),
                            'character_levels':self.character_progression.to_dict(),
                            'party':self.party.to_dict(),
@@ -677,17 +664,18 @@ class Game:
                            'venn_visit':self.venn_visit.to_dict(),
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
-                           'regent_quest':self.regent_quest.to_dict(),
-                           'regent_arrival':self.regent_arrival.to_dict(),
-                           'lantern_quest':self.lantern_quest.to_dict(),
                            'overworld':self.overworld_travel.progress_dict(),
                            'post_battle':self.combat.snapshot(),
                            'opening':self.opening.to_dict()},sort_keys=True)
 
     @property
     def household_action(self):
-        return (getattr(getattr(self,'sanctuary_rescue',None),'active',False) or self.sanctuary_arrival.active or self.mill_gift.active or self.regent_arrival.active or self.regent_arrival.state=='pending' or
-                any(visit.locks_player for visit in self.household_visits))
+        return self.mill_gift.active or any(visit.locks_player for visit in self.household_visits)
+
+    @property
+    def cinematic_active(self):
+        """Only an explicitly installed scene owns the cinematic clock."""
+        return bool(getattr(getattr(self, 'cinematic', None), 'active', False))
 
     def _sync_inventory(self):
         """Grant entrusted supplies once; reconcile older quest-only journeys."""
@@ -749,8 +737,12 @@ class Game:
 
     def _validate_journey_unchecked(self,data):
         try:
+            data=migrate_retired_opening(data)
             data=migrate_legacy_cave(migrate_retired_progression(data))
             data=migrate_mira_rig(migrate_chasm_checkpoint(data))
+        except OpeningCompatibilityError as error:
+            self.save_error=str(error)
+            return None
         except (TypeError, ValueError, OSError, KeyError):
             self.save_error='The saved journey could not be read.'
             return None
@@ -773,7 +765,6 @@ class Game:
                ('inventory' not in data or self._valid_inventory_snapshot(data)) and
                SanctuaryCave.valid_journey(data) and
                SanctuaryBoss.valid_journey(data) and
-               SanctuaryRescue.valid_journey(data) and
                ElementalBosses.valid_journey(data) and
                CaveRandomEncounters.valid_journey(data) and
                CaveLesson.valid_journey(data) and
@@ -782,8 +773,6 @@ class Game:
                BattleRewards.valid_journey(data) and
                CharacterAbilities.valid_journey(data) and
                MiraRigState.valid_journey(data) and
-               SanctuaryArrival.valid_journey(data) and
-               (not RegentQuest.sanctuary_party_snapshot(data.get('regent_quest')) or 'party' in data) and
                ('party' not in data or self._valid_party_snapshot(data)) and
                ('post_battle' not in data or CombatEncounters.valid_pending_snapshot(data['post_battle'],data)) and
                ('opening' not in data or self.opening.valid_snapshot(data['opening'])) and
@@ -793,12 +782,7 @@ class Game:
                ('opening_conclusion' not in data or OpeningConclusion.valid_journey(data)) and
                (MillQuest.valid_journey(data) if 'mill_quest' in data else
                 set(data['quests']['quests'].get('CH01_MQ02',{}).get('completed_objectives',[])) <= {'meet_mira'}) and
-               ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked') and
-               ('regent_arrival' not in data or RegentArrival.valid_journey(data)) and
-               (RegentQuest.valid_journey(data) if 'regent_quest' in data else
-                data['quests']['quests'].get(REGENT_QUEST,{}).get('status','locked') in ('locked','available')) and
-               (LanternQuest.valid_journey(data) if 'lantern_quest' in data else
-                data['quests']['quests'].get(LANTERN_QUEST,{}).get('status','locked') in ('locked','available')))
+               ('opening_conclusion' in data or data['quests']['quests'].get('CH01_MQ02',{}).get('status','locked')=='locked'))
         if not valid:
             self.save_error='The saved journey could not be read.'
             return None
@@ -808,11 +792,11 @@ class Game:
     def _valid_party_snapshot(data):
         """Reject the complete journey before touching live roster or resources."""
         attributes=CharacterAttributes('caelan')
-        if 'character_attributes' in data and not attributes.restore(
-                data['character_attributes']):return False
+        if 'character_attributes' in data and not attributes.restore(data['character_attributes']):return False
         expected_attributes=attributes.to_dict()
         party=PartyState(attributes)
         if not party.restore(data['party']):return False
+        if party.current_event_id=='mq03_sanctuary':return False
         if data.get('quests',{}).get('quests',{}).get(MILL_QUEST,{}).get('status') in ('active','ready','completed'):
             mira=party.members.get('mira')
             if mira is None:return False
@@ -820,14 +804,7 @@ class Game:
                 accompanying=(data['quests']['quests'][MILL_QUEST]['status'] in ('active','ready')
                               and not data.get('mill_quest',{}).get('resolved',False))
                 if accompanying and (not mira['available'] or 'mira' not in party.active_ids):return False
-        sanctuary_trip=RegentQuest.sanctuary_party_snapshot(data.get('regent_quest'))
-        if sanctuary_trip:
-            mira=party.members.get('mira')
-            if (mira is None or not mira['available'] or 'mira' not in party.active_ids
-                    or party.current_event_id!='mq03_sanctuary'
-                    or 'mira' not in party.required_ids):return False
-        elif party.current_event_id=='mq03_sanctuary':return False
-        return attributes.to_dict()==expected_attributes and valid_arrival_party(data,party)
+        return attributes.to_dict()==expected_attributes
 
     @staticmethod
     def _valid_inventory_snapshot(data):
@@ -868,26 +845,8 @@ class Game:
             return record['stored_sacks']==[0,1,2] and record['departed']
         return True
 
-    def begin_journey(self,continue_saved=False,*,show_cinematic=True):
-        """Start the framing scene, or continue durable present-day quest facts.
-
-        The cinematic precedes New Game's first checkpoint. Keep an existing
-        journey untouched until the scene finishes or is skipped. Tools which
-        exercise a later quest can explicitly request the ordinary opening.
-        """
-        if not continue_saved and show_cinematic:
-            self.mill_gift.reset()
-            self.sanctuary_rescue.reset()
-            self.on_title=False
-            self._mouse_held=False
-            self.social.clear_pointer()
-            self.opening_audio.set_paused(True)
-            self.opening_cinematic.start(
-                lambda:self.begin_journey(False,show_cinematic=False))
-            self.music.set_paused(not self._music_focused)
-            self.music.set_ducked(False)
-            self.music.play('opening_leitmotif',fade_ms=0)
-            return True
+    def begin_journey(self,continue_saved=False):
+        """Begin the retained morning or restore a validated durable journey."""
         data=self.saved_journey if continue_saved else None
         self.game_over=False
         self.save_menu.close()
@@ -899,16 +858,10 @@ class Game:
             self.on_title=True
             self.title.fade=0.
             return False
-        # Existing battle receipts must restore against their original stat
-        # before-state. Guest-profile migration waits until that battle ends.
-        self._lucan_guest_defer_profile=bool(data and (data.get('post_battle')
-            or (data.get('sanctuary_boss') or {}).get('pending')
-            or (data.get('elemental_bosses') or {}).get('pending')
-            or (data.get('cave_random_encounters') or {}).get('pending')))
-        self.opening_cinematic.reset()
+        # Restore pending battle receipts against their original before-state.
+        if self.cinematic is not None:self.cinematic.reset()
+        self.cinematic=None
         self.mill_gift.reset()
-        self.sanctuary_rescue.reset()
-        self.regent_arrival.reset()
         self.combat.reset()
         self.attributes.reset()
         if data is not None and 'character_attributes' in data:
@@ -935,8 +888,6 @@ class Game:
         self.venn_visit.release_pose()
         self.mill_quest.release_pose()
         self.mill_quest.sanctuary_return.reset()
-        self.regent_quest.release_pose()
-        self.lantern_quest.release_pose()
         if self._overworld_world is not None:self._overworld_world.participation.release_pose(self)
         if data is None:
             self.quests.restore(QuestLog().to_dict())
@@ -1009,18 +960,7 @@ class Game:
         self.venn_visit.restore(data.get('venn_visit') if data else None)
         self.opening_conclusion.restore(data.get('opening_conclusion') if data else {'version':1,'stage':'idle'})
         self.mill_quest.restore(data.get('mill_quest') if data else None)
-        # Older completed mill journeys gain the new visit without replaying MQ02.
-        if self.quests.status(MILL_QUEST)=='completed' and self.quests.status(REGENT_QUEST)=='locked':
-            self.quests.unlock(REGENT_QUEST);self.quests.drain_events()
-        self.regent_arrival.restore(data.get('regent_arrival') if data else None)
-        if self.regent_arrival.arrival_complete:self.mill_quest.sanctuary_return.release()
-        self.sanctuary_arrival.restore(data.get('sanctuary_arrival') if data else None,journey=data)
-        self.regent_quest.restore(data.get('regent_quest') if data else None)
-        if self.quests.status(REGENT_QUEST)=='completed' and self.quests.status(LANTERN_QUEST)=='locked':
-            self.quests.unlock(LANTERN_QUEST);self.quests.drain_events()
-        self.lantern_quest.restore(data.get('lantern_quest') if data else None)
         self._sync_story_party()
-        self.sanctuary_arrival.sync_residents()
         # Story staging can reserve a different NPC station than an older
         # checkpoint used. Recheck after those actors have been positioned.
         if not self.world.can_stand(self.player.position):
@@ -1035,9 +975,6 @@ class Game:
                 landing=self.town.data['spawn']
             self.player.position.update(landing)
         self.overworld_travel.finish_story_restore(regional_checkpoint)
-        if self.sanctuary_cave.active:self.sanctuary_arrival.note_cave_entry()
-        self.sanctuary_arrival.stage_party()
-        if not self.sanctuary_rescue.restore(data.get('sanctuary_rescue') if data else None,journey=data):return False
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
         self.opening_audio.reset()
@@ -1072,16 +1009,14 @@ class Game:
                 self.save_error='The saved cave encounter could not be restored.'
                 self.on_title=True
                 return False
-        self._lucan_guest_defer_profile=False
         self.saves.begin(data)
         self.save_progress()
-        self.regent_arrival.maybe_start()
         if self.party.pending_selection is not None:self._resume_party_selection()
         return True
 
     def save_progress(self):
         """Checkpoint on story changes, conversations, door transfers and quit."""
-        if (self._is_gallery_preview or self.on_title or self.opening_cinematic.active
+        if (self._is_gallery_preview or self.on_title or self.cinematic_active
                 or self.game_over or (self.combat.model is not None and self.combat.model.phase=='defeat')
                 or not self.save_store.enabled):return False
         data=self.journey_snapshot()
@@ -1103,15 +1038,13 @@ class Game:
         checkpoint=self.combat.checkpoint_position
         if checkpoint is not None:saved_position=checkpoint
         post_battle=self.combat.snapshot()
-        data={'version':1,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
+        data={'version':1,'story_revision':STORY_REVISION,'quests':self.quests.to_dict(),'opening':self.opening.to_dict(),
               'inventory':self.inventory.to_dict(),
               'sanctuary_cave':self.sanctuary_cave.to_dict(),
               'cave_random_encounters':self.cave_random_encounters.to_dict(),
               'cave_lesson':self.cave_lesson.to_dict(),
               'sanctuary_boss':self.sanctuary_boss.to_dict(),
-              'sanctuary_rescue':self.sanctuary_rescue.to_dict(),
               'elemental_bosses':self.elemental_bosses.to_dict(),
-              'sanctuary_arrival':self.sanctuary_arrival.to_dict(),
               'character_attributes':self.attributes.to_dict(),
               'character_levels':self.character_progression.to_dict(),
               'party':self.party.to_dict(),
@@ -1123,9 +1056,6 @@ class Game:
               'venn_visit':self.venn_visit.to_dict(),
               'opening_conclusion':self.opening_conclusion.to_dict(),
                            'mill_quest':self.mill_quest.to_dict(),
-                           'regent_quest':self.regent_quest.to_dict(),
-                           'regent_arrival':self.regent_arrival.to_dict(),
-                           'lantern_quest':self.lantern_quest.to_dict(),
               'dialogue_flags':sorted(self.social.flags),
               'player':{'scene':self.world.data['id'],
                         'position':list(saved_position),'facing':self.player.facing},
@@ -1157,11 +1087,9 @@ class Game:
         self.combat.reset()
         self.social.cancel()
         self.pause.close()
-        self.opening_cinematic.reset()
-        self.regent_arrival.reset()
+        if self.cinematic is not None:self.cinematic.reset()
+        self.cinematic=None
         self.mill_gift.reset()
-        self.sanctuary_rescue.reset()
-        self.sanctuary_arrival.reset()
         self.on_title=True
         self.title.fade=0.
         self.title.selected=0
@@ -1169,59 +1097,22 @@ class Game:
         self.music.set_ducked(False)
         self.music.play('title',fade_ms=250)
 
-    def complete_cave_rescue_departure(self):
-        """Publish caretaker handoff and Lucan's guest departure in one checkpoint."""
-        rescue = self.sanctuary_rescue
-        if (rescue.stage != 'handoff' or self.world.data['id'] != 'elden_vale_sanctuary'
-                or not self.sanctuary_boss.defeated or self.sanctuary_boss.pending is not None
-                or self.combat.active):
-            return False
-        party_before = self.party.to_dict()
-        cave_before = self.sanctuary_cave.to_dict()
-        levels_before = self.character_progression.to_dict()
-        rescue.stage = 'evacuated'
-        self.sanctuary_cave.lucan_departed = True
-        if sync_arrival_party(self) is not False and (not self.save_store.enabled or self.save_progress()):
-            self.sanctuary_arrival.sync_residents()
-            self.party_travel.reset()
-            return True
-        rescue.stage = 'handoff'
-        self.party.restore(party_before)
-        self.character_progression.restore(levels_before)
-        self.sanctuary_cave.restore(cave_before)
-        self.sanctuary_arrival.sync_residents()
-        self.party_travel.reset()
-        return False
+
 
     def _sync_story_party(self):
-        """Reconcile authored recruitment without granting future companions."""
-        met=self.quests.objective_status(MILL_QUEST,'meet_mira')=='completed'
-        sanctuary_trip=bool(getattr(self.regent_quest,'sanctuary_party_active',False))
-        if not met:return not sanctuary_trip
-        handled=sync_arrival_party(self)
-        if handled is not None:return handled
+        """Reconcile the retained mill outing without recruiting future guests."""
+        if self.quests.objective_status(MILL_QUEST,'meet_mira')!='completed':return True
         migrated='mira' not in self.party.members
         if migrated:self.party.recruit('mira',temporary=True)
-        # Acknowledged MQ03 recruitment owns this outing after the completed
-        # mill quest. Reconciliation never resets her persistent resources.
-        if sanctuary_trip:
-            if self.party.current_event_id not in (None,'mq02','mq03_sanctuary'):return False
-            if self.party.current_event_id=='mq02':self.party.end_event('mq02')
-            self.party.set_available('mira',True)
-            return self.party.begin_event('mq03_sanctuary',required=('caelan','mira'),
-                                          reason='Caelan and Mira are needed at the Sanctuary.')
-        if self.party.current_event_id=='mq03_sanctuary':
-            self.party.end_event('mq03_sanctuary')
         accompanying=self.mill_quest.active and not self.mill_quest.resolved
         if accompanying:
             self.party.set_available('mira',True)
-            self.party.begin_event('mq02',required=('caelan','mira'),
-                                  reason='Mira is required for the mill outing.')
-        else:
-            leaving=self.party.current_event_id=='mq02'
-            if leaving:self.party.end_event('mq02')
-            if (migrated or leaving) and self.party.members['mira']['temporary']:
-                self.party.set_available('mira',False,'Working in Eldenmere.')
+            return self.party.begin_event('mq02',required=('caelan','mira'),
+                                         reason='Mira is required for the mill outing.')
+        leaving=self.party.current_event_id=='mq02'
+        if leaving:self.party.end_event('mq02')
+        if (migrated or leaving) and self.party.members['mira']['temporary']:
+            self.party.set_available('mira',False,'Working in Eldenmere.')
         return True
 
     def _party_checkpoint(self):
@@ -1229,9 +1120,9 @@ class Game:
 
     def party_change_reason(self):
         if self.combat.active:return 'Party changes are unavailable during combat.'
-        if self.on_title or self.opening_cinematic.active:return 'Begin the journey before changing the party.'
+        if self.on_title or self.cinematic_active:return 'Begin the journey before changing the party.'
         if (self.social.active or self.social.locked or self.household_action
-                or self.opening.locks_player or self.regent_arrival.state=='pending'):
+                or self.opening.locks_player):
             return 'Finish the current conversation or scene first.'
         return self.party.selection_change_reason()
 
@@ -1329,14 +1220,14 @@ class Game:
 
     def acquire_weapon(self,character_id,item_id,*,learn_starter=True):
         """Grant/equip a weapon; authored training may defer its starter skill."""
-        if self.on_title or self.combat.active or self.opening_cinematic.active:return False
+        if self.on_title or self.combat.active or self.cinematic_active:return False
         if not self.character_abilities.acquire_weapon(character_id,item_id,learn_starter=learn_starter):return False
         self.save_progress()
         return True
 
     def equip_weapon(self,character_id,item_id):
         """Equip an owned weapon, or None; a live encounter keeps its loadout."""
-        if self.on_title or self.combat.active or self.opening_cinematic.active:return False
+        if self.on_title or self.combat.active or self.cinematic_active:return False
         if not self.character_abilities.equip_weapon(character_id,item_id):return False
         self.save_progress()
         return True
@@ -1452,10 +1343,7 @@ class Game:
             except (OSError,ValueError,pygame.error) as error:
                 session.fail(error)
                 return True
-        self.regent_arrival.begin_input_batch()
         self.mill_gift.begin_event_batch()
-        self.sanctuary_arrival.begin_event_batch()
-        self.sanctuary_rescue.begin_event_batch()
         advanced=False
         resumed=False
         for event in events:
@@ -1495,32 +1383,16 @@ class Game:
                 resumed=self.on_gallery or self.on_quest_playtest
                 continue
             if resumed:continue
-            if self.opening_cinematic.active:
-                self.opening_cinematic.handle_event(event)
+            if self.cinematic_active:
+                self.cinematic.handle_event(event)
                 self.music.set_paused(not self._music_focused or
-                                      self.opening_cinematic.paused)
-                resumed=not self.opening_cinematic.active
-                continue
-            if self.sanctuary_rescue.active:
-                self.sanctuary_rescue.handle_event(event)
-                self.music.set_paused(not self._music_focused or self.sanctuary_rescue.paused)
-                resumed=not self.sanctuary_rescue.active
-                continue
-            if self.sanctuary_arrival.active:
-                self.sanctuary_arrival.handle_event(event)
-                self.music.set_paused(not self._music_focused or self.sanctuary_arrival.paused)
-                resumed=not self.sanctuary_arrival.active
+                                      self.cinematic.paused)
+                resumed=not self.cinematic_active
                 continue
             if self.mill_gift.active:
                 self.mill_gift.handle_event(event)
                 self.music.set_paused(not self._music_focused or self.mill_gift.paused)
                 resumed=not self.mill_gift.active
-                continue
-            if self.regent_arrival.active or self.regent_arrival.state=='pending':
-                if self.regent_arrival.active:self.regent_arrival.handle_event(event)
-                self.music.set_paused(not self._music_focused or
-                                      self.regent_arrival.paused)
-                resumed=not self.regent_arrival.active
                 continue
             if self.combat.active:
                 self.combat.handle_event(event)
@@ -1635,10 +1507,6 @@ class Game:
                         advanced=True
                         resumed=True
                         continue
-                    if self.sanctuary_rescue.interact():
-                        advanced=True
-                        resumed=True
-                        continue
                     if self.cave_lesson.interact():
                         advanced=True
                         resumed=True
@@ -1703,21 +1571,19 @@ class Game:
             self.saves.update(seconds)
 
     def _sync_world_music(self, *, restoring=False):
-        """Cave exploration supersedes the MQ03 travel score, never combat."""
-        if (self.on_title or self.combat.active or self.opening_cinematic.active
-                or self.mill_gift.active or self.regent_arrival.active):
+        """Exploration music follows the world without taking combat ownership."""
+        if (self.on_title or self.combat.active or self.cinematic_active
+                or self.mill_gift.active):
             return
         if self.sanctuary_cave.active:
             self.music.play('sanctuary_cave', fade_ms=0 if restoring else 450)
             return
         if restoring or self.music.desired_track == 'sanctuary_cave':
             self.music.play('eldenmere')
-        self.regent_quest.emergency.sync_music(restoring=restoring)
 
     def _cave_encounters_available(self):
         """Only free, focused exploration can spend the cave's travel budget."""
         return (self.sanctuary_cave.active and not self._is_gallery_preview
-                and not self.sanctuary_rescue.waiting
                 and not self.on_title and self._music_focused
                 and not self.combat.active and not self.social.locked
                 and self.sanctuary_boss.pending is None
@@ -1730,7 +1596,7 @@ class Game:
                 and not self.quest_ui.journal_open and not self.household_action
                 and not self.transfer_cooldown and not self.opening_fade
                 and not self.opening.locks_player and not self.opening.controls_player
-                and not self.opening_cinematic.active
+                and not self.cinematic_active
                 and not any(getattr(getattr(self,name,None),'is_open',False)
                             for name in ('pause','inventory_ui','world_map_viewer',
                                          'party_ui','status_ui'))
@@ -1759,22 +1625,6 @@ class Game:
         return self.combat.start_cave(ticket)
 
     def _update_world(self,seconds,direction=None,running=None):
-        if not self.on_title:self.sanctuary_rescue.maybe_start()
-        if self.sanctuary_rescue.active:
-            self.opening_audio.set_paused(True)
-            self.music.set_paused(not self._music_focused or self.sanctuary_rescue.paused)
-            self.music.set_ducked(self.sanctuary_rescue.dialogue is not None)
-            self.music.update(seconds)
-            self.sanctuary_rescue.update(seconds)
-            return
-        if not self.on_title:self.sanctuary_arrival.maybe_start()
-        if self.sanctuary_arrival.active:
-            self.opening_audio.set_paused(True)
-            self.music.set_paused(not self._music_focused or self.sanctuary_arrival.paused)
-            self.music.set_ducked(self.sanctuary_arrival.dialogue is not None)
-            self.music.update(seconds)
-            self.sanctuary_arrival.update(seconds)
-            return
         if self.mill_gift.active:
             self.opening_audio.set_paused(True)
             self.music.set_paused(not self._music_focused or self.mill_gift.paused)
@@ -1782,23 +1632,14 @@ class Game:
             self.music.update(seconds)
             self.mill_gift.update(seconds)
             return
-        if self.opening_cinematic.active:
-            # The flashforward has its own scene clock and never advances the
-            # present-day world, dialogue, quest actors or checkpoint clock.
+        if self.cinematic_active:
+            # Explicit scene studies own their clock while the world is paused.
             self.opening_audio.set_paused(True)
             self.music.set_paused(not self._music_focused or
-                                  self.opening_cinematic.paused)
+                                  self.cinematic.paused)
             self.music.set_ducked(False)
             self.music.update(seconds)
-            self.opening_cinematic.update(seconds)
-            return
-        if not self.on_title:self.regent_arrival.maybe_start()
-        if self.regent_arrival.active:
-            self.opening_audio.set_paused(True)
-            self.music.set_paused(not self._music_focused or self.regent_arrival.paused)
-            self.music.set_ducked(self.regent_arrival.dialogue is not None)
-            self.music.update(seconds)
-            self.regent_arrival.update(seconds)
+            self.cinematic.update(seconds)
             return
         # Music owns a separate clock: ATB decisions and world menus must not
         # freeze the score, while explicit battle/focus pauses retain position.
@@ -1818,11 +1659,6 @@ class Game:
             return
         if (not self._music_focused and self.world is self.mill_quest.upstream and
                 (self.mill_quest.encounter_cutscene_active or self.mill_quest.encounter_pending)):
-            self.opening_audio.set_paused(True)
-            return
-        if not self._music_focused and self.regent_quest.locks_player:
-            # The survivor's physical entrance shares the exploration clock;
-            # focus loss must not finish that scene while its window is away.
             self.opening_audio.set_paused(True)
             return
         self.opening_audio.set_paused(self.pause.is_open or self.inventory_ui.is_open or
@@ -1905,10 +1741,6 @@ class Game:
             for routine in self.play_routines:routine.update(seconds)
             for routine in self.block_routines:routine.update(seconds)
             for routine in self.bone_routines:routine.update(seconds)
-        elif getattr(self.regent_quest,'sanctuary_escort_active',False):
-            # The same owner stages its visitors in the detailed reserve. The
-            # overworld keeps its existing leader-only scale presentation.
-            self.regent_quest.update(seconds)
         self.social.update((0,0))
         self.transfer_cooldown=max(0,self.transfer_cooldown-seconds)
         self.overworld_travel.update(seconds)
@@ -1968,7 +1800,7 @@ class Game:
         arrival=next((d for d in destination.doors if d.data['id']==door.data['arrival_door']),None)
         if arrival:arrival.force_open()
         self.opening.on_enter_scene()
-        for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
+        for owner in (self.mill_quest,):
             hook=getattr(owner,'on_enter_scene',None)
             if hook is not None:hook(origin,door.data)
         self.save_progress()
@@ -1976,7 +1808,7 @@ class Game:
 
     def nearby_world_map(self):
         """Use the reachable floor approach authored beside the classroom map."""
-        if (self.on_title or self.opening_cinematic.active or self.combat.active or
+        if (self.on_title or self.cinematic_active or self.combat.active or
                 self.party_ui.is_open or self.world_map_viewer.is_open or self.pause.is_open or self.inventory_ui.is_open or
                 self.map_open or self.quest_ui.journal_open or self.social.locked or
                 self.household_action or self.opening.locks_player or self.transfer_cooldown):return None
@@ -2018,7 +1850,7 @@ class Game:
         self.world=destination;self.player.position.update(spawn)
         self.player.facing=link.get('arrival_facing','front');self.player.moving=False;self.player.walk_ms=0
         self.transfer_cooldown=.3
-        for owner in (self.mill_quest,self.regent_quest,self.lantern_quest):
+        for owner in (self.mill_quest,):
             hook=getattr(owner,'on_enter_scene',None)
             if hook is not None:hook(origin,link)
         self.camera.reset();self.save_progress();return True
@@ -2069,7 +1901,7 @@ class Game:
         hint=('E: '+display['label']) if display is not None else ''
         reserve=getattr(self,'sanctuary_reserve',None)
         hint=(hint or self.overworld_travel.interaction_hint() or self.cave_lesson.interaction_hint() or
-              self.elemental_bosses.interaction_hint() or self.sanctuary_rescue.interaction_hint() or
+              self.elemental_bosses.interaction_hint() or
               (self.sanctuary_boss.interaction_hint() if not self.cave_lesson.needs_intro else '') or
               self.sanctuary_cave.interaction_hint() or
               (reserve.interaction_hint() if reserve is not None else '') or
@@ -2121,35 +1953,16 @@ class Game:
         if self.on_title:
             self.title.draw()
             return
-        if self.opening_cinematic.active:
+        if self.cinematic_active:
             _,size,origin=self._ensure_ui_surface()
-            self.opening_cinematic.draw(self.canvas,self.ui_surface)
+            self.cinematic.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
-            if not self._is_embedded:pygame.display.flip()
-            return
-        if self.sanctuary_rescue.active:
-            _,size,origin=self._ensure_ui_surface()
-            self.sanctuary_rescue.draw(self.canvas,self.ui_surface)
-            self.window.fill('#101b19');self.window.blit(self.ui_surface,origin)
-            if not self._is_embedded:pygame.display.flip()
-            return
-        if self.sanctuary_arrival.active:
-            _,size,origin=self._ensure_ui_surface()
-            self.sanctuary_arrival.draw(self.canvas,self.ui_surface)
-            self.window.fill('#101b19');self.window.blit(self.ui_surface,origin)
             if not self._is_embedded:pygame.display.flip()
             return
         if self.mill_gift.active:
             _,size,origin=self._ensure_ui_surface()
             self.mill_gift.draw(self.canvas,self.ui_surface)
-            self.window.fill('#101b19')
-            self.window.blit(self.ui_surface,origin)
-            if not self._is_embedded:pygame.display.flip()
-            return
-        if self.regent_arrival.active:
-            _,size,origin=self._ensure_ui_surface()
-            self.regent_arrival.draw(self.canvas,self.ui_surface)
             self.window.fill('#101b19')
             self.window.blit(self.ui_surface,origin)
             if not self._is_embedded:pygame.display.flip()
@@ -2162,12 +1975,6 @@ class Game:
             if not self._is_embedded:pygame.display.flip()
             return
         camera=self.camera.position()
-        resolution=self.regent_quest
-        if resolution.stage.startswith('resolution_') and resolution.dialogue:
-            target=resolution.resolution.target()
-            if target is not None:
-                center=(self.player.position+target.position)/2
-                camera=camera_for(center,self.world.size)
         if isinstance(self.world,World):
             self.world.draw(self.canvas,camera,self.player,self.elapsed_ms,include_ui=False,
                             party_actors=self.party_travel.actors())

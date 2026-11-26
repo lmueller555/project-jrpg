@@ -13,7 +13,7 @@ import pygame
 from PIL import Image
 from main import Game
 from grain_farm import MILL_FLAG, SCENE_ID
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 OUT=ROOT/'docs/reviews/grain_farm'
 
@@ -52,7 +52,7 @@ def game_at_farm(root, repaired=False):
         save_path=root/'journey.json',settings_path=root/'settings.json')
     game.audio.set_music(0);game.audio.set_effects(0)
     if repaired:
-        seed_previous_quests(game)
+        seed_mill_completed(game)
         # Fixture includes the physical intake-repair fact emitted by gameplay.
         game.social.flags.add(MILL_FLAG)
     game.world=game.overworld_world

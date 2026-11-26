@@ -11,8 +11,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 OPENING_QUEST = 'CH01_MQ01'
 MILL_QUEST = 'CH01_MQ02'
-REGENT_QUEST = 'CH01_MQ03'
-LANTERN_QUEST = 'CH01_MQ04'
 SAVE_VERSION = 1
 STATUSES = frozenset(('locked', 'available', 'active', 'ready', 'completed'))
 

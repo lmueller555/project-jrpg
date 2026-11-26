@@ -10,7 +10,7 @@ from typing import Callable
 
 import pygame
 
-from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
+from quests import OPENING_QUEST, MILL_QUEST
 
 
 DIALOGUE_CONTROLS = 'Space / E / click: dialogue · Esc: Gallery'
@@ -130,45 +130,21 @@ def _mill_checkpoint(game, stage):
     _complete_objectives(game, MILL_QUEST, objectives)
     if stage == 'completed':
         if not game.quests.turn_in(MILL_QUEST, 'mira_worker'):raise ValueError('Cannot finish mill quest')
-        game.quests.unlock(REGENT_QUEST)
     if not game.mill_quest.restore(facts):raise ValueError('Invalid mill preview checkpoint')
 
 
-def _regent_checkpoint(game, stage):
-    from regent_quest import OBJECTIVES, PREFIX
-    _mill_checkpoint(game, 'completed')
-    # Subsequent present-day scenes take place after the standalone arrival.
-    game.regent_arrival.restore({'version': 1, 'state': 'seen'})
-    game.accept_quest(REGENT_QUEST)
-    _complete_objectives(game, REGENT_QUEST, OBJECTIVES[:PREFIX[stage]])
-    if stage == 'done':
-        if not game.quests.turn_in(REGENT_QUEST, 'mother_serene'):raise ValueError('Cannot finish regent quest')
-        game.quests.unlock(LANTERN_QUEST)
-    if not game.regent_quest.restore({'version': 3, 'stage': stage}):raise ValueError('Invalid regent checkpoint')
 
 
-def _lantern_checkpoint(game, stage, world, position):
-    from lantern_quest import OBJECTIVES, PREFIX
-    _regent_checkpoint(game, 'done')
-    game.accept_quest(LANTERN_QUEST)
-    _complete_objectives(game, LANTERN_QUEST, OBJECTIVES[:PREFIX[stage]])
-    _station(game, world, position)
-    if not game.lantern_quest.restore({'version': 1, 'stage': stage}):raise ValueError('Invalid lantern checkpoint')
 
 
-def _opening_film(game, playback):
-    playback.hold_seconds = 0.
-    game.opening_audio.set_paused(True)
-    game.opening_cinematic.start(playback.done)
-    game.music.play('opening_leitmotif', fade_ms=0)
 
 
 def _ice_reaper_film(game, playback):
     from ice_reaper_opening import IceReaperOpening
     playback.hold_seconds = 0.
     game.opening_audio.set_paused(True)
-    game.opening_cinematic = IceReaperOpening(game)
-    game.opening_cinematic.start(playback.done)
+    game.cinematic = IceReaperOpening(game)
+    game.cinematic.start(playback.done)
     game.music.play('those_i_swore_to_save', fade_ms=0)
 
 
@@ -253,41 +229,8 @@ def _mill_encounter(game, playback):
     if not controller.begin_encounter(playback.done):raise ValueError('Cannot start millrace encounter')
 
 
-def _arrival(game, playback):
-    from sanctuary_return import TABLE
-    playback.hold_seconds = 0.
-    _mill_checkpoint(game, 'completed')
-    homecoming = game.mill_quest.sanctuary_return
-    homecoming.restore(reported=True, placed=True, complete=True)
-    preferred = TABLE
-    clear = next((pygame.Vector2(preferred)+offset
-                  for offset in ((0, 0), (0, 12), (12, 0), (-12, 0), (0, -12), (24, 0))
-                  if homecoming.dining.can_stand(pygame.Vector2(preferred)+offset)), None)
-    if clear is None:raise ValueError('No clear arrival witness station')
-    _station(game, homecoming.dining, clear, 'right')
-    # Request exactly the production pending->active arrival boundary.
-    if not game.regent_arrival.request() or not game.regent_arrival.maybe_start():
-        raise ValueError('Cannot start Iselin arrival')
-    playback.watch(lambda: game.regent_arrival.arrival_complete and not game.regent_arrival.active)
 
 
-def _lantern(game, playback, segment):
-    controller = game.lantern_quest
-    configs = {
-        'frame': ('workshop', 'frame_ready', game.town, controller.points['workshop']),
-        'collect': ('collecting_route', 'materials_collected', game.town, controller.rest_points['collection']),
-        'homecoming': ('materials_collected', 'materials_home', controller.liam_home, controller.rest_points['home']),
-        'paper': ('rested', 'paper_tried', controller.liam_home, controller.rest_points['home']),
-        'finish': ('home_rejoined', 'lantern_finished', controller.liam_home, controller.finish_points['home']),
-        'putaway': ('homeward', 'done', controller.liam_home, controller.finish_points['home']),
-    }
-    start, end, world, point = configs[segment]
-    _lantern_checkpoint(game, start, world, point)
-    def drive():
-        if controller.stage != end and not game.social.active and controller.action is None:
-            controller.interact()
-    playback.watch(lambda: controller.stage == end and controller.action is None and not game.social.active, drive)
-    drive()
 
 
 def _bridge_tea(game, playback):
@@ -379,13 +322,6 @@ def _entry(identifier, name, chapter, description, fixture, automatic=False):
                         AUTOMATIC_CONTROLS if automatic else DIALOGUE_CONTROLS, fixture)
 
 
-def _sanctuary_arrival(game, playback):
-    """Replay the actual rescue arrival in a disposable reserve fixture."""
-    controller = game.sanctuary_arrival
-    controller.prepare_preview()
-    if not controller.start(force=True):
-        raise ValueError('Cannot start the Sanctuary emergency arrival')
-    playback.watch(lambda: controller.completed and not controller.active)
 
 
 def _mira_arm_rig(game, playback):
@@ -396,8 +332,6 @@ def _mira_arm_rig(game, playback):
 
 
 GALLERY_ENTRIES = (
-    _entry('later_journey', 'A Light in the Distance', 'Prologue',
-           'Caelan and Mira share a quiet moment later in their journey.', _opening_film, True),
     _entry('morning_wake', 'Morning Bells', 'A Day Like Any Other',
            'A knock at his bedroom door wakes Caelan.', partial(_morning, breakfast=False)),
     _entry('morning_breakfast', 'Breakfast at Home', 'A Day Like Any Other',
@@ -424,24 +358,6 @@ GALLERY_ENTRIES = (
            'Move a little still water and hear Mira’s encouragement.', partial(_mill_action, action='spell')),
     _entry('mill_repair', 'Freeing the Intake', 'Mira’s Mill Quest',
            'A lever, a haul rope and two pairs of hands restore the mill.', partial(_mill_action, action='repair')),
-    _entry('regent_arrival', 'Iselin’s Relief Caravan', 'The Regent’s Road',
-           'The present-day caravan reaches Eldenmere after the mill is restored.', _arrival),
-    GalleryEntry('sanctuary_arrival', 'Sanctuary — Emergency Arrival', 'The Regent’s Road',
-           'Find the wounded, account for the missing worker and prepare the Sanctuary cave rescue.',
-           'assets/ui/gallery/sanctuary_arrival.png',
-           'Space / E / click: dialogue · P: pause · R: restart · Esc: Gallery', _sanctuary_arrival),
-    _entry('lantern_frame', 'A Frame of His Own', 'Liam’s First Lantern',
-           'Try the design, assemble the tower frame and help Liam lift it.', partial(_lantern, segment='frame')),
-    _entry('lantern_collect', 'Gathering the Materials', 'Liam’s First Lantern',
-           'Liam collects the frame and paper from Mira’s workbench.', partial(_lantern, segment='collect')),
-    _entry('lantern_homecoming', 'A Place at the Table', 'Liam’s First Lantern',
-           'Bring the lantern materials home and set them down safely.', partial(_lantern, segment='homecoming')),
-    _entry('lantern_paper_practice', 'The First Paper Window', 'Liam’s First Lantern',
-           'Liam tries his first paper design at the family table.', partial(_lantern, segment='paper')),
-    _entry('lantern_finishing', 'Finishing Liam’s Lantern', 'Liam’s First Lantern',
-           'Choose the design, fit and fasten the covering, then lift the finished lantern.', partial(_lantern, segment='finish')),
-    _entry('lantern_putaway', 'Safe Until Tomorrow', 'Liam’s First Lantern',
-           'Put the finished lantern away and say goodbye for the afternoon.', partial(_lantern, segment='putaway')),
     _entry('grain_extra_sack', 'One Sack Too Many', 'Elden Vale',
            'A quiet disagreement by the grain cart ends with a shared lift.', _grain_extra),
     _entry('bridge_tea', 'Tea by the Broken Bridge', 'Elden Vale',

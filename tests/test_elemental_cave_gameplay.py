@@ -22,42 +22,23 @@ from leveling import total_xp_for_level
 from main import Game
 from post_battle import battle_reward_definition, valid_pending_snapshot
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 from test_mill_battle_gameplay import click, finish_spoils_presentation, key, wait_for_spoils
 
 
 class ElementalCaveGameplayTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with tempfile.TemporaryDirectory(prefix='elemental-story-') as directory:
+        with tempfile.TemporaryDirectory(prefix='elemental-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal();driver.attack_report();driver.departure()
-            driver.rejoin_mira();driver.arrive()
-            game = driver.game
-            # Arrival now owns the rescue choreography and Lucan's recruitment.
-            for _ in range(2400):
-                if game.sanctuary_arrival.completed:break
-                driver.tick(.2)
-                if game.sanctuary_arrival.dialogue:key(game, pygame.K_SPACE)
-            assert game.sanctuary_arrival.completed
-            if not game.character_abilities.has_weapon():
-                assert game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
-            game.character_abilities.learn_ability('caelan', 'aqua_edge')
-            assert game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
-                                              'battle_cleared': True, 'deferred': False})
-            # Public EXP and recovery APIs establish a labelled rested level-four
-            # permanent pair. The recruited level-five guest retains his level.
-            active = tuple(key for key in game.party.active_ids if key != 'lucan')
+            game = driver.prepare_cave(lesson_complete=True, enter=True)
+            active = game.party.active_ids
             end_hp = {identifier: game.party.characters[identifier].current_hp for identifier in active}
             assert game.character_progression.apply(game.character_progression.preview(
                 total_xp_for_level(4), active, end_hp))
             for identifier in active:
                 assert game.character_progression[identifier].level == 4
                 game.party.characters[identifier].recover()
-            game.player.position.update(RESERVE_ENTRY_APPROACH)
-            game.opening_fade = game.transfer_cooldown = 0
-            assert game.sanctuary_cave.interact()
-            game.opening_fade = game.transfer_cooldown = 0
             assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
@@ -95,7 +76,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
 
     def story(self):
         game = self.game
-        return deepcopy({'quests': game.quests.to_dict(), 'regent': game.regent_quest.to_dict(),
+        return deepcopy({'quests': game.quests.to_dict(),
             'active': list(game.party.active_ids), 'members': game.party.members,
             'event': game.party.current_event_id, 'treasures': game.sanctuary_cave.to_dict(),
             'random': game.cave_random_encounters.to_dict(), 'vespermaw': game.sanctuary_boss.to_dict()})
@@ -171,7 +152,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         self.game = self.load();self.award()
         for key, total in before.items():
             self.assertEqual(self.game.character_progression[key].total_xp,
-                             total+(0 if key == 'lucan' else 940))
+                             total+940)
 
     def victory(self, *, caelan_ko=False):
         owner = self.game.combat
@@ -268,7 +249,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                 for enemy_id in order:
                     self.start(enemy_id, seed=0);self.enter_battle()
                     self.assertEqual(self.game.combat.model.player.mp, 0)
-                    self.assertEqual([member.identifier for member in self.game.combat.model.party], ['player', 'mira', 'lucan'])
+                    self.assertEqual([member.identifier for member in self.game.combat.model.party], ['player', 'mira'])
                     trace = self.play_actual_battle(enemy_id)
                     self.assertTrue(any(event['type'] == 'impact' and event.get('actor') == 'player' for event in trace))
                     self.finish_spoils();self.read_acquisition(expected=enemy_id)
@@ -299,7 +280,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
                     self.assertTrue(any('focus is part of the blade now.' in page for page in pages))
                     for identifier, old in xp.items():
                         self.assertEqual(self.game.character_progression[identifier].total_xp,
-                                         old+(0 if identifier == 'lucan' else 460))
+                                         old+460)
                     self.assertEqual(self.story(), story)
                     self.assertTrue(self.game.save_progress())
                     self.game = self.load()
@@ -505,7 +486,7 @@ class ElementalCaveGameplayTests(unittest.TestCase):
         saved = self.path.read_bytes()
         for member in self.game.combat.model.party:member.hp = member.mp = 0
         self.game.combat.model._result('defeat');self.game.combat.scene.dismissed = True
-        self.assertTrue(self.game.combat._settle())
+        self.game.update(.05, (0, 0), False)
         self.assertTrue(self.game.game_over)
         self.assertFalse(self.game.combat.active)
         self.assertEqual(self.path.read_bytes(), saved)

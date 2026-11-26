@@ -138,7 +138,7 @@ class MiraRigJourneyTests(unittest.TestCase):
         self.assertTrue(restored.begin_journey(True))
         self.assertEqual(restored.mira_rig.allocation, OFFENSIVE)
         self.assertEqual(restored.party.to_dict(), party_before)
-        self.assertTrue(restored.begin_journey(False, show_cinematic=False))
+        self.assertTrue(restored.begin_journey(False))
         self.assertEqual(restored.mira_rig.allocation, DEFAULT)
 
     def test_continue_migrates_old_loadout_once_and_preserves_resources_and_supplies(self):

@@ -1,17 +1,11 @@
 # Sanctuary crystal cave
 
-**Migration status — 2026-11-26:** Current-runtime reference. The approved
-[Chapter 1 opening](narrative/game_01/CHAPTER_01.md) retires MQ03's quarry/secret-crew
-spine and its lightning explanation for the bridge. The bridge begins intact;
-the failed Fire strike destroys it after Iselin's arrival. The Sanctuary cave
-and natural confluence remain, with their revised quest purpose and the
-rupture's cause OPEN. Neither lightning nor a new Fire connection to the cave
-is established by this migration.
-
-The dungeon, Echo Chamber rupture, encounters, rescue, dialogue and save
-contracts below remain implemented and unchanged. Story explanations from the
-superseded route are retained as labeled reference; gameplay and dialogue
-changes belong to the later opening rewrite.
+**Current runtime:** Free exploration retains the cave, treasure, encounters,
+Vespermaw, healing pool and Aqua lesson. Old MQ03 rescue/cinematic dialogue,
+mission markers and automatic Mira/Lucan recruitment are removed. The natural
+confluence remains; its role in the future Fire Veinhold opening is open.
+The bridge is physically ruined until a separate phase implements the new
+intact-then-attacked chronology.
 
 For nearby recovery, return to the Sanctuary hall and take the bed-marked
 north-wing door to the visitor relief room. Attendant Nessa and the bed both
@@ -112,24 +106,10 @@ release the ambience audio without changing story music ownership.
 
 ## Story and encounters
 
-The [MQ03 arrival scene](SANCTUARY_ARRIVAL.md) returns control at the cave
-apron with Caelan, Mira and temporary companion Lucan ready for the rescue.
-Lucan joins as a level-five guest, receives no combat EXP, and has Inspire,
-Bolster and Provoke alongside the ordinary Attack, Items, Guard and permitted
-Flee commands. He has no interactable minigame in this appearance; see
-[guest combat rules](COMBAT.md#lucans-cave-guest-combat). He remains for early
-rest trips, and leaves only after Vespermaw's defeat and the subsequent actual
-cave exit. Save/Continue and later cave re-entry retain that departure.
-MQ03 remains active; cave exploration does not complete its remaining story. **Elden Vale
-Sanctuary Cave** replaces the emergency score during non-battle cave exploration,
-including the optional elemental chambers, dialogue and menus. The cue repeats
-without restarting as the player walks between rooms. Battles retain
-**Kindled Courage**, then resume the cave track at its interrupted position
-through results and rewards. Continue selects the cave cue even when restoring
-pending rewards. First entry permanently releases MQ03's emergency override;
-exiting returns to normal area music, including after Continue and later visits.
-Cave entry, treasure and the Echo Chamber inspection preserve the pending story
-state. See [music exports and playback](../assets/music/README.md).
+Entry from the reserve is ordinary exploration, without a rescue quest or
+companion recruitment. Cave music loops during exploration and resumes after
+battles through the normal audio owner; there is no MQ03 emergency override.
+Current party membership and resources are preserved on entry and exit.
 
 The first entrance with Mira’s Blade presents a short Blue-gem resonance
 scene. Caelan notices concentrated ambient aether and wonders whether he can
@@ -159,7 +139,7 @@ order works; neither is required for Vespermaw. Elemental Edges cost 0 MP
 throughout these two teaching encounters, then 4 MP in normal combat.
 
 The Echo Chamber contains the level-seven miniboss,
-[Vespermaw](BESTIARY.md#vespermaw), as a one-time solo story encounter. The
+[Vespermaw](BESTIARY.md#vespermaw), as a one-time boss encounter. The
 approach offers **Enter / Party / Step back**, with a short crystal-and-growl
 introduction before the dedicated animated Echo Chamber battlefield. Its
 [combat art](VESPERMAW_COMBAT_ART.md), party-wide Roar, marked Pounce response
@@ -179,8 +159,8 @@ Return to the Quiet Shelf** with pre-fight HP/MP restored and no rewards.
 Victory awards 520 EXP to each living active member plus one Aether Amethyst
 and one Aether Sapphire through the standard spoils transaction. The saved
 defeated flag prevents the encounter and rewards from repeating after Continue
-or revisiting. Boss completion leaves MQ03's remaining rescue and resolution open;
-the previous music resumes through the existing battle music owner.
+or revisiting. It grants no retired quest completion; the previous music
+resumes through the existing battle music owner.
 
 Random battle entry focuses the party, presents a loading screen and reveals
 one of four regional animated cave battlefields. Victory/flee return to the
@@ -194,11 +174,11 @@ while KO Caelan defers only the post-Spoils installation dialogue. See the
 [elemental encounter guide](ELEMENTAL_CAVE_ENCOUNTERS.md).
 See the [live encounter review](reviews/mira_rig_continuity/README.md).
 
-The [MQ03 narrative owner](narrative/game_01/CH01_MQ03.md) records the implemented
-arrival, missing-worker rescue, healing-pool evacuation, and post-boss resolution.
-Future combat tuning does not leave those story scenes unfinished. The cave does not establish the
-confluence's detailed workings, identify a Veinhold or cannon connection, or
-merge this location with the historically sealed workers' passage.
+The former worker rescue, healing-pool evacuation and return-home resolution
+are removed. The pool itself remains an exploration interaction. This location
+does not establish the confluence's detailed workings, a Veinhold connection
+or the cause of the Echo Chamber rupture. New cave story use requires separate
+authoring.
 
 ## Reproduction and retained reviews
 
@@ -226,23 +206,7 @@ When Mira is travelling with the party, a safe inspection has her recognize
 climbing marks and the equipment needed for descent; Caelan feels rising aether
 without claiming the full explanation. Otherwise Caelan inspects it alone.
 
-**Superseded story premise (not current author truth):** the aether surge that caused the lightning storm and
-bridge destruction also disturbed this natural confluence. The floor ruptured,
-opening onto the deeper subterranean region before the Crown crew was attacked.
-That region is later-game content. This does not add a new explanation for the
-planet's aether cycle or resolve the Sanctuary's other story scenes.
-
-Eleven restrained aether threads rise, bend outward and dissolve over a
-12-second cycle, with blue-white dominant and faint other mineral colors.
-A soft below-rim glow preserves a dark centre. The ordinary crystal cycle
-remains six seconds. The Effects-volume regional audio owner adds quiet air
-and low resonance near the opening; it releases the bed for menus, dialogue,
-focus loss, combat and leaving the cave. Cave music remains unchanged.
-World VFX freeze with pause/focus conditions; Reduced Motion holds them steady.
-The boss introduction pans to the rupture and the dedicated Echo battlefield
-shows matching scenery and a cached 48-frame cycle behind its clear actor stage.
-
-Old cave saves covered by the new collision relocate to an intact foreground
-landing. Matching pending boss and spoils coordinates move together before
-normal save validation. Seeds, receipts, resources, rewards and story flags
-are preserved; loading alone does not write the migration to disk.
+The former lightning-storm/secret-crew explanation is retired. The visible
+rupture is retained geography with no selected replacement story cause. Its
+inspection does not open a deeper route, assign a new quest or establish a
+connection to the future Fire weapon.

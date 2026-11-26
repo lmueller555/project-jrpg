@@ -41,10 +41,6 @@ SOURCES = (
          git_sha='ab0adebed97a04f13d9a1c5604d76a287bb63ab9',
          target='triumphal_fanfare.ogg', title='Triumphal Fanfare', trim_tail=False,
          loop=False),
-    dict(identifier='opening_leitmotif', source='Dare to Dream Leitmotif.m4a',
-         git_sha='c057902f21e2d84ac786f5f4ee37ac98f3c073e2',
-         target='dare_to_dream_leitmotif.ogg', title='Dare to Dream Leitmotif',
-         trim_tail=False, boundary_declick_ms=5),
     # Homebrew's native experimental Vorbis encoder prepends 56 decoded frames.
     dict(identifier='royalty', source='Royalty of the Realm.m4a',
          git_sha='1ead236be4b4a5e5a8a1ec2d83af3e4be1eaf1ac',
@@ -197,15 +193,6 @@ def build(identifiers=None):
                           boundary_declick_ms=0)
         if source['trim_tail']:
             export, boundaries = trimmed_battle(audio)
-        elif source.get('boundary_declick_ms'):
-            # The leitmotif's first sample is audible while its tail is quiet.
-            # Taper only five milliseconds at both ends; preserve every frame,
-            # the complete musical phrase and its natural reverb/ending.
-            amount = round(source['boundary_declick_ms'] * RATE / 1000)
-            export = audio.copy()
-            export[:amount] *= np.linspace(0, 1, amount)[:, None]
-            export[-amount:] *= np.linspace(1, 0, amount)[:, None]
-            boundaries['boundary_declick_ms'] = source['boundary_declick_ms']
         target = MUSIC / 'runtime' / source['target']
         encode(export, target, source['title'], encoder=source.get('encoder', 'libvorbis'))
         loop = source.get('loop', True)
@@ -213,8 +200,6 @@ def build(identifiers=None):
         if path.read_bytes() != original:
             raise AssertionError('An original upload changed during export')
         tracks[source['identifier']] = dict(file='runtime/' + source['target'], gain=.45)
-        if source['identifier'] == 'opening_leitmotif':
-            tracks[source['identifier']]['loop'] = True
         if not loop:
             tracks[source['identifier']]['loop'] = False
         record = dict(identifier=source['identifier'], source=source['source'],

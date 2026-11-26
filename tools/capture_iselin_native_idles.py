@@ -25,8 +25,8 @@ if str(ROOT) not in sys.path:
 import pygame
 from PIL import Image, ImageDraw, ImageFont
 
-from regent_actors import StoryActor
-from tools.capture_sanctuary_rescue import make_game
+from story_actor import StoryActor
+from tools.scenario_fixtures import make_game
 
 
 DIRECTIONS = ('front', 'left', 'right', 'back')
@@ -69,8 +69,6 @@ def capture(output=DEFAULT_OUT):
                 if hasattr(game.player, attribute):
                     delattr(game.player, attribute)
             # This is an isolated placement fixture, not a quest-state edit.
-            for actor in game.regent_quest.actors.values():
-                actor.story_visible = False
             game.player.position.update(POSITIONS['caelan'])
             game.player.moving = game.player.running = False
             mira = game.mill_quest.mira

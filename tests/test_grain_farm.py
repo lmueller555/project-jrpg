@@ -9,7 +9,7 @@ os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 import pygame
 from main import Game
 from grain_farm import MILL_FLAG, SOURCE, SCENE_ID, valid_state
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class GrainFarmTests(unittest.TestCase):
@@ -99,7 +99,7 @@ class GrainFarmTests(unittest.TestCase):
             self.assertEqual(before,(self.f.timer,[a.clock for a in self.f.actors],[tuple(a.position) for a in self.f.actors]))
 
     def test_continue_rolls_back_unplaced_sack_and_keeps_committed_work(self):
-        seed_previous_quests(self.g);self.g.social.flags.add(MILL_FLAG);self.g.world=self.g.overworld_world;self.g.player.position.update(-876,232)
+        seed_mill_completed(self.g);self.g.social.flags.add(MILL_FLAG);self.g.world=self.g.overworld_world;self.g.player.position.update(-876,232)
         self.until(lambda:self.f.state['loaded']==1 and self.f.stage=='carry')
         self.assertTrue(self.g.save_progress())
         other=self.make_game(True)
@@ -113,7 +113,7 @@ class GrainFarmTests(unittest.TestCase):
         self.assertFalse(any(a in world.npcs for a in farm.actors for world in other.scenes.values()))
 
     def test_continue_does_not_repeat_read_exchange_or_completed_scene(self):
-        seed_previous_quests(self.g);self.g.social.flags.add(MILL_FLAG);self.g.world=self.g.overworld_world;self.g.player.position.update(-876,232)
+        seed_mill_completed(self.g);self.g.social.flags.add(MILL_FLAG);self.g.world=self.g.overworld_world;self.g.player.position.update(-876,232)
         self.ready();self.g.player.position.update(-870,203)
         self.g.overworld_travel.interact();self.finish_dialogue()
         other=self.make_game(True);self.assertTrue(other.begin_journey(True))

@@ -5,7 +5,7 @@ import unittest
 
 import pygame
 from dense_art import WorldCanvas, draw_actor
-from regent_actors import StoryActor
+from story_actor import StoryActor
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTIONS = ('front', 'left', 'right', 'back')

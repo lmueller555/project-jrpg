@@ -163,7 +163,7 @@ class ConsumableFieldTests(unittest.TestCase):
         self.assertTrue(other.begin_journey(True), other.save_error)
         self.assertEqual(other.inventory.quantity('potion'), 4)
         self.assertEqual(other.attributes.current_hp, 110)
-        self.assertTrue(other.begin_journey(False, show_cinematic=False))
+        self.assertTrue(other.begin_journey(False))
         self.assertEqual({key: other.inventory.quantity(key) for key in START}, START)
 
     def test_field_target_rules_restore_and_save_failure_roll_back_the_complete_use(self):

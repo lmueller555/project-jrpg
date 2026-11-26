@@ -37,7 +37,7 @@ class OverworldMinimap:
                 ('pause', 'is_open'), ('inventory_ui', 'is_open'),
                 ('status_ui', 'is_open'),
                 ('quest_ui', 'journal_open'), ('world_map_viewer', 'is_open'),
-                ('opening_cinematic', 'active'), ('combat', 'active'),
+                ('cinematic', 'active'), ('combat', 'active'),
                 ('social', 'locked'), ('social', 'active'), ('opening', 'locks_player'),
                 ('opening', 'controls_player'), ('opening', 'in_action'),
                 ('mill_quest', 'encounter_cutscene_active')):

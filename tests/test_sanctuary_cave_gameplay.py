@@ -1,4 +1,4 @@
-"""Production walking, continuous cave exploration and durable MQ03 saves."""
+"""Production walking, continuous cave exploration and durable shared-world saves."""
 import json
 import os
 import tempfile
@@ -10,9 +10,8 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
-from quests import REGENT_QUEST, LANTERN_QUEST
 from sanctuary_cave import SCENE_ID, LEGACY_SCENES, REWARDS
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 
 
 class CaveGameplayTests(unittest.TestCase):
@@ -48,38 +47,24 @@ class CaveGameplayTests(unittest.TestCase):
 
     def assert_pending_party(self):
         game = self.driver.game
-        quest = game.regent_quest
-        self.assertEqual(quest.stage, 'sanctuary_arrival_pending')
-        self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
-        self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
-        self.assertEqual(game.music.desired_track,
-                         'sanctuary_cave' if game.sanctuary_cave.active else 'battle')
+        self.assertEqual(set(game.quests.definitions), {'CH01_MQ01', 'CH01_MQ02'})
         self.assertFalse(game.combat.active)
-        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
-        self.assertIn('mira', game.party.active_ids)
-        self.assertNotIn('lucan', game.party.members)
-        for actor in quest.sanctuary_escorts:
-            self.assertIs(quest._world(actor), game.world)
-            self.assertTrue(actor.story_visible)
-            self.assertEqual(sum(actor in world.npcs for world in game.scenes.values()), 1)
-        self.assertEqual([actor.identifier for actor in game.party_travel.actors()].count('mira'), 1)
+        self.assertIsNone(game.party.current_event_id)
+        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
+        # A fresh scene has no walked trail yet; once gathered below, the
+        # companion must be visible on checked floor. Never publish duplicates.
+        self.assertLessEqual([actor.identifier for actor in game.party_travel.actors()].count('mira'), 1)
 
     def assert_gathered(self):
-        """The real following actors negotiate the same floor as the player."""
+        """The real passive companion negotiates the same floor as the player."""
         game = self.driver.game
-        escorts = game.regent_quest.sanctuary_escorts
         def gathered():
             mira = next((actor for actor in game.party_travel.actors()
                          if actor.identifier == 'mira'), None)
-            return (all(actor.position.distance_to(game.player.position) < 160 for actor in escorts)
-                    and mira is not None and mira.position.distance_to(game.player.position) < 80)
+            return mira is not None and mira.position.distance_to(game.player.position) < 80
         self.driver.until(gathered, seconds=12)
         self.assert_pending_party()
-        for actor in escorts:
-            self.assertTrue(game.world.can_stand(actor.position, actor.probe_size, actor),
-                            (actor.data['id'], list(actor.position)))
         mira = next(actor for actor in game.party_travel.actors() if actor.identifier == 'mira')
-        self.assertLess(mira.position.distance_to(game.player.position), 80)
         self.assertTrue(game.world.can_stand(mira.position))
 
     def guard_continuous_walk(self):
@@ -137,9 +122,9 @@ class CaveGameplayTests(unittest.TestCase):
                 self.assertIsNotNone(game.save_error)
                 self.assertEqual(driver.save.read_text(), raw)
 
-    def test_real_walking_explores_one_instance_and_preserves_pending_mq03_on_continue(self):
+    def test_real_walking_explores_one_instance_and_preserves_party_on_continue(self):
         driver = self.driver
-        driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
+        driver.prepare_cave(lesson_complete=False)
         self.assert_pending_party()
         self.assertTrue(driver.game.party.attributes('caelan').set_current(hp=75, mp=4))
         self.assertTrue(driver.game.party.attributes('mira').set_current(hp=121, mp=7))

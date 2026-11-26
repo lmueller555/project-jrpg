@@ -1,23 +1,16 @@
 # Elden Vale Sanctuary reserve
 
-**Migration status — 2026-11-26:** Current-runtime environment reference.
-[Chapter 1](narrative/game_01/CHAPTER_01.md) owns the approved Fire Veinhold
-opening. The quarry/secret-crew route and lightning explanation for the bridge
-are retired target story; the bridge begins intact and the failed Fire strike
-destroys it after Iselin's arrival. The Sanctuary's natural confluence and cave
-remain, with their revised quest purpose OPEN.
-
-This documentation-only migration preserves the reserve's assets, layout,
-collision, travel, scene ownership and save behavior. The current arrival,
-rescue and return-home resolution are implemented; older statements below that
-describe them as future work record earlier production checkpoints. Their old
-story premise does not govern the later opening rewrite.
+**Current runtime:** The reserve and cave remain freely explorable. Old MQ03
+arrival/rescue actors, markers, conversations and automatic companion recruitment
+are removed. The Sanctuary remains a natural confluence; its purpose in the
+future [Fire Veinhold opening](narrative/game_01/CHAPTER_01.md) remains open.
+The physical regional bridge is still ruined pending a later map/story phase.
 
 The regional miniature opens into a detailed, peaceful woodland reserve built
 from the same native pixel asset packs as Eldenmere. The layout follows the
 sanctuary reference: southern entrance arch and court,
 pale limestone hall and side cloister, a tended memorial grove to the west,
-the cave approach on the eastern ridge, and a surveyed stone face within the
+the cave approach on the eastern ridge, and an ordinary path-guide board within the
 southeastern protected boundary.
 
 The [fantasy expansion](SANCTUARY_FANTASY.md) gives the cave an asymmetric crown
@@ -77,8 +70,7 @@ Recovery is saved before the completion message. A failed save restores the
 previous resources and offers **Retry / Not now**. Walking away or changing
 rooms before confirming cannot heal the party remotely. Saving and Continue
 inside the room preserve its location; **M** uses the Sanctuary overview and
-identifies the relief room. This rest point is available during the pending
-MQ03 Sanctuary outing without resolving its unfinished arrival scene.
+identifies the relief room. This rest point needs no quest or rescue state.
 
 The independently rebuilt room is `elden_vale_sanctuary_relief`; its entrance
 and return use normal reciprocal hall doors. Build it with
@@ -89,86 +81,20 @@ exports. The hall's doorway and plaque are part of
 
 Caretakers and visitors are live sprites rather than people painted into the
 scenery. Optional conversations and inspections introduce local care,
-remembrance, the natural aether currents and the proposed stone survey. They
+remembrance, the natural aether currents and a path-guide board. They
 grant no items, attributes or quest completion. Subtle moving motes communicate
 the natural confluence without establishing a buried control mechanism.
 
 ## Story boundaries
 
-The cave mouth retains its visible keeper rail and public apron. At the apron,
-press **E** to lift the rail and enter the [crystal cave](SANCTUARY_CAVE.md).
-One continuous cave provides branching exploration, one-time treasure and
-pulsing environmental light. Cave exploration does not resolve MQ03's rescue
-storyline. The
-[cave random encounters](CAVE_RANDOM_ENCOUNTERS.md) are live; the level-seven miniboss is live, while the later rescue payoff and quest
-resolution remain future work. This cave is distinct from the
-historically sealed workers' passage beneath the sanctuary.
+At the cave apron, **E** enters the [crystal cave](SANCTUARY_CAVE.md). The cave
+retains its layout, treasure, random encounters, Vespermaw, healing pool and Aqua
+lesson. Entry grants no quest progress and recruits no companions. Party
+availability follows its actual owner; completing MQ02 leaves Mira working at
+her workshop rather than automatically enlisting her for exploration.
 
-[Cave Bat](BESTIARY.md#cave-bat) is authored in the Bestiary as a level-2–3
-species for the eastern-ridge caves, joining Lithrusk and Veylume in the cave's
-weighted encounter roster. The reserve remains non-combat ground, with the
-arrival scene staging caretaker aid and injured workers; the keeper rail marks
-an explicit interaction into the cave.
-
-During the new MQ03 route, a survivor exposes the Crown crew Iselin secretly
-sent ahead to establish authority and prepare mining. Caretakers have heard
-growling since the bridge incident; the attack's cause and the creature's
-identity remain unresolved. Iselin, Lucan, the page, Caelan and Mira arrive
-with MQ03 still active. The [arrival scene](SANCTUARY_ARRIVAL.md) stages wounded crew, caretaker aid
-and a rescue decision before returning control at the apron. Existing survey
-art is not evidence that the emergency has been resolved or permission granted.
-The guarded regional gates and destroyed western bridge retain their restrictions.
-
-The reserve and hall use their own scene identities while preserving old save
-keys and the town's quest actor
-ownership. Continuing a journey saved here resumes in the corresponding scene.
-
-## Review and reproduction
-
-The [current fantasy review](reviews/sanctuary_fantasy/README.md) records the
-landmarks, ordinary movement, atmosphere, hall, local map and continued journeys.
-The earlier [pixel asset review](reviews/sanctuary_pixel_assets/README.md) records the
-reserve and hall at normal character scale, ordinary travel from Eldenmere,
-free exploration, the cloister, cave rail, optional inspections, local map and
-Save/Continue. Its disposable save and settings files leave player journeys
-untouched. Reproduce with `python tools/capture_sanctuary_reserve.py`.
-
-The exterior retains its 48 × 32 tile extent at 24 pixels per tile. Emerald grass
-and matching dirt transitions use the shared approved pack. Ordinary foliage,
-flowers, benches, paving and masonry reuse Eldenmere modules. Sanctuary-specific
-crystals, memorial vegetation, architecture, rock and cave pieces extend those
-packs at the same character scale.
-The hall uses modular floors, walls and individual furnishings.
-
-Ground layers are compiled for runtime efficiency. Trees, architecture and
-furniture remain separately placed, depth-sorted objects. Asset placements own
-their solid ground footprints; visible open ground accepts the complete
-24 × 12 player probe. Full-foot flood, straight movement, independent occlusion
-probes and saved-scene tests check the resulting world. The local map uses an
-overview compiled from these same assets.
-
-The previous painted ground, extracted depth silhouettes and localized repair
-patches have been removed from the scene pipeline. Source asset references and
-deterministic build checks make the replacement reproducible.
-
-Rebuild the checked-in scenes with Pillow available:
-
-```sh
-python tools/build_sanctuary_crystals.py
-python tools/build_sanctuary_grove.py
-python tools/build_elden_vale_sanctuary.py
-python tools/build_sanctuary_reserve_hall.py
-python tools/build_overworld_sanctuary_art.py
-python tools/build_sanctuary_crystals.py --check
-python tools/build_sanctuary_grove.py --check
-python tools/build_elden_vale_sanctuary.py --check
-python tools/build_sanctuary_reserve_hall.py --check
-python tools/build_overworld_sanctuary_art.py --check
-```
-
-The exterior placement recipe is
-[`assets/source/maps/elden_vale_sanctuary/recipe.json`](../assets/source/maps/elden_vale_sanctuary/recipe.json).
-The interior recipe is
-[`assets/source/terrain/elden_vale_sanctuary_hall/recipe.json`](../assets/source/terrain/elden_vale_sanctuary_hall/recipe.json).
-Their exports record the reusable source assets and their hashes. Runtime
-exploration uses the checked-in products and requires no asset-building tools.
+The reserve is non-combat ground with ordinary caretakers and visitors. It has
+no injured workers, missing-crew objective or keeper-rail emergency marker.
+Its confluence does not identify an Ancient machine, selected cave bypass or
+Veinhold connection. The larger regional checkpoints and broken bridge retain
+their physical restrictions pending separate work.

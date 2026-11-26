@@ -4,7 +4,7 @@ Two optional branches extend the continuous Sanctuary cave. **Embravyr** waits
 in the **Embervein Chamber** and **Nivareth** in the **Stillfrost Chamber**.
 Both are fixed level-five, one-time solo encounters. Either can be approached
 first; neither is required to reach or defeat Vespermaw. Completing the earlier
-Aqua Edge bat lesson enables these encounters without resolving MQ03's pending
+Aqua Edge bat lesson enables these encounters without requiring a retired
 Sanctuary arrival.
 
 These guardians are formations of ambient elemental Aether. Embravyr's red
@@ -178,7 +178,7 @@ stats and rewards; newly selected encounters use level five. Lucan remains
 a guest and earns no EXP; each eligible living permanent party member receives
 the full 460 EXP from a new level-five guardian.
 Their existing inventory, party, EXP, treasure, Aqua discovery, Vespermaw entry
-or completion and MQ03 stage remain intact. Boss completion does not recruit
+or completion remain intact. Boss completion does not recruit
 Lucan, conclude the Sanctuary arrival or alter story music ownership.
 
 ## Validation and review

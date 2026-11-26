@@ -17,7 +17,7 @@ sys.path.insert(0,str(ROOT))
 import pygame
 from main import Game
 from garden_orchard import SCENE_ID
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 from tools import capture_regional_audio as audio_capture
 OUT=ROOT/'docs/reviews/garden_orchard'
 audio_capture.OUT=OUT
@@ -73,7 +73,7 @@ def game_at(root,role):
     g=Game(window_size=(960,640),fullscreen=False,start_on_title=False,
            save_path=root/'save.json',settings_path=root/'settings.json')
     g.audio.set_music(0);g.audio.set_effects(1)
-    seed_previous_quests(g)
+    seed_mill_completed(g)
     g.world=g.overworld_world
     g.opening_fade=g.transfer_cooldown=0;g.location_seconds=0
     position=(-526,1214) if role=='gardener' else (-115,-238)

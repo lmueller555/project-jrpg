@@ -430,10 +430,11 @@ class RegionalMapTests(unittest.TestCase):
 
     def test_real_game_update_freezes_regional_world_until_map_closes(self):
         from main import Game
-        game = Game.__new__(Game)
+        game = Game(fullscreen=False, start_on_title=False, save_path=None)
+        self.addCleanup(game.music.stop)
         game.__dict__.update(self.game.__dict__)
-        game.opening_cinematic = SimpleNamespace(active=False)
-        game.regent_arrival = SimpleNamespace(active=False, state='waiting', maybe_start=Mock())
+        game.cinematic = None
+        game.elemental_bosses = SimpleNamespace(sync_audio=Mock())
         game.mill_quest = SimpleNamespace(sync_encounter_music=Mock())
         game.mill_gift = SimpleNamespace(active=False)
         game.music = Mock()

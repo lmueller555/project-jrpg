@@ -50,7 +50,7 @@ class SanctuaryReturnTests(unittest.TestCase):
         self.assertTrue(self.scene.dining.can_stand(TABLE))
         self.assertIsNotNone(find_path(self.scene.dining, SOURCE, TABLE,
                                       self.scene.dining.probe_size, None))
-        self.assertFalse(any(a.story_visible for a in self.game.regent_quest.party))
+        self.assertFalse(self.game.cinematic_active)
 
     def test_collection_and_actual_placement_are_separate_once_only_boundaries(self):
         self.scene.prepare();held = Mock();placed = Mock()

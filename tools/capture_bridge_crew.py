@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 import pygame
 from PIL import Image
 from main import Game
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 import tools.capture_grain_farm as capture
 OUT=ROOT/'docs/reviews/bridge_crew'
 capture.OUT=OUT
@@ -22,7 +22,7 @@ class Recorder(capture.Recorder):
 
 def setup(root):
     g=Game(window_size=(960,640),fullscreen=False,start_on_title=False,save_path=root/'journey.json',settings_path=root/'settings.json')
-    g.audio.set_music(0);g.audio.set_effects(0);seed_previous_quests(g)
+    g.audio.set_music(0);g.audio.set_effects(0);seed_mill_completed(g)
     g.world=g.overworld_world;g.player.position.update(-2376,642)
     g.opening_fade=g.transfer_cooldown=0;g.location_seconds=0
     g.camera.focus((-2376,616),duration=0)

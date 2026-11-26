@@ -307,8 +307,8 @@ def register():
     def line(who,text):return {'speaker':who,'text':text}
     data['characters']['tomas']={'conversations':[
         {'id':'tomas_repeat','requires':['tomas_greeted'],'lines':[
-            line('tomas','One more adjustment. Then I really am getting back to the preparations.'),
-            line('caelan','Should I tell Mother Serene that?'),line('tomas','Tell her the preparations are progressing. That covers both things.')]},
+            line('tomas','One more adjustment. Then I really am getting back to my chores.'),
+            line('caelan','Should I tell Mother Serene that?'),line('tomas','Tell her the chores are progressing. That covers both things.')]},
         {'id':'tomas_greeting','status':'approved',
          'script_reference':'docs/narrative/game_01/TOMAS_AMBIENT_DIALOGUE.md',
          'sets':['tomas_greeted'],'lines':[

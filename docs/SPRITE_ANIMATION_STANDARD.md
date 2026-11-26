@@ -398,7 +398,9 @@ the whole figure rather than stretching a body to match a hand or foot target.
 Her arrival acting should convey composure, warmth and fatigue through restrained
 head, shoulder and hand movement. Establish key poses before intermediate frames.
 
-Camera presentation and source density remain separate. Current Iselin uses:
+The old arrival playback is removed; its approved drawings remain reusable
+character libraries, not live quest bindings. Camera presentation and source
+density stay separate. The retained Iselin libraries use:
 
 | View | Source canvas and registration | Presentation |
 | --- | --- | --- |

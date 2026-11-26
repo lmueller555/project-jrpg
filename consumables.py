@@ -46,7 +46,7 @@ def field_reason(game, item_id, character_id=None):
     if item['effect']['kind'] == 'escape':return 'This item is used during combat.'
     if not game.inventory.quantity(item_id):return 'None remaining.'
     if (game.on_title or game.combat.active or game.social.locked
-            or game.opening_cinematic.active or game.transfer_cooldown):return 'Cannot use an item right now.'
+            or getattr(getattr(game, 'cinematic', None), 'active', False) or game.transfer_cooldown):return 'Cannot use an item right now.'
     if character_id is None:return ''
     if character_id not in game.party.available_ids:return 'That character is unavailable.'
     target = game.party.characters[character_id]

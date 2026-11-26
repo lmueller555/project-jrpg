@@ -1,23 +1,19 @@
 # Sanctuary opening
 
-**Migration status — 2026-11-26:** Current-runtime reference. The approved
-opening is now the [Fire Veinhold sequence in Chapter 1](narrative/game_01/CHAPTER_01.md).
-The old opening flashforward and Festival of Light storyline are retired target
-story. The existing cinematic still runs in the game; this documentation-only
-migration changes no controller, dialogue, asset, quest flag or save contract.
-The playable sequence and former approval labels below describe that unchanged
-implementation, pending the separately scoped opening rewrite.
+**Current runtime:** New Game enters Caelan's bedroom directly. The former
+flashforward and regent/MQ03/MQ04 progression have been removed. The retained
+MQ01/MQ02 dialogue now describes ordinary work, meals and remembrance.
+[Chapter 1](narrative/game_01/CHAPTER_01.md) owns the future Fire Veinhold
+opening; its prologue, invasion and initially intact bridge are not live.
 
-This guide owns the opening controller, audio, rendering, and save contracts.
-The [MQ01 script](narrative/game_01/CH01_MQ01.md) owns the authored opening and
-household dialogue. The separate [flashforward](narrative/scenes/OPENING_CINEMATIC.md) and
-[regent arrival](narrative/scenes/REGENT_ARRIVAL.md) each own their cinematic specification.
-Use the [narrative index](narrative/README.md) to find current story authorities.
+This guide owns retained opening controller, rendering and save contracts.
+The [MQ01 script](narrative/game_01/CH01_MQ01.md) owns its synchronized dialogue;
+[Mira's mill guide](MILL_QUEST.md) owns MQ02. See the
+[narrative index](narrative/README.md) for future story authorities.
 
 ## Playable sequence
 
-1. After the cinematic finishes or is skipped, the title's New Game path enters
-   Caelan's bedroom. His closed-eye head is visible on the
+1. The title's New Game path enters Caelan's bedroom directly. His closed-eye head is visible on the
    existing pillow, with his body beneath the quilt. Tomas speaks from outside
    the bedroom doorway. Click, Space or E advances the approved exchange. Four
    registered wake poses show him waking, sitting at the edge and standing;
@@ -181,18 +177,13 @@ See the [runtime capture and testing notes](reviews/opening_conclusion/README.md
 
 
 
-## Later quest owners
+## Retained progression boundary
 
-| Quest / scene | Narrative owner | Runtime owner |
-| --- | --- | --- |
-| MQ02 | [MQ02 script](narrative/game_01/CH01_MQ02.md) | [Mill implementation](MILL_QUEST.md) |
-| Iselin's arrival | [Arrival scene](narrative/scenes/REGENT_ARRIVAL.md) | Its controller/clip sections |
-| MQ03 | [MQ03 script](narrative/game_01/CH01_MQ03.md) | [Regent runtime](REGENT_QUEST.md), [reserve staging](SANCTUARY_ARRIVAL.md), and [cave](SANCTUARY_CAVE.md) |
-| MQ04 | [Complete MQ04 script](narrative/game_01/CH01_MQ04.md) | [Lantern implementation](LANTERN_QUEST.md) |
-
-Each owner records its own acknowledgments, actor/prop handoffs, compatibility,
-and completion boundaries. This guide does not maintain another walkthrough
-or implementation-status summary of those quests.
+MQ01's household report and acknowledged stopped-mill handoff unlock MQ02.
+MQ02 ends after the physical cup placement and acknowledged thanks at home,
+then returns control to exploration. It starts no regent arrival or new quest.
+The retired scene and quest guides retain small historical permalink notices;
+their controllers and replay fixtures are no longer part of the runtime.
 
 ## Opening dialogue through MQ02
 

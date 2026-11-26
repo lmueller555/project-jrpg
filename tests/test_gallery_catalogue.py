@@ -38,8 +38,7 @@ class GalleryCatalogueTests(unittest.TestCase):
                 self.assertEqual(Path(entry.thumbnail).parent.as_posix(), 'assets/ui/gallery')
                 self.assertEqual(Path(entry.thumbnail).name, entry.id+'.png')
         # Coverage must extend beyond both standalone framing cinematics.
-        for chapter in ('Prologue', 'A Day Like Any Other', 'Mira’s Mill Quest',
-                        'The Regent’s Road', 'Liam’s First Lantern', 'Elden Vale'):
+        for chapter in ('A Day Like Any Other', 'Mira’s Mill Quest', 'Elden Vale', 'Scene Studies'):
             self.assertTrue(any(entry.chapter == chapter for entry in GALLERY_ENTRIES), chapter)
 
     def test_registry_cannot_fixture_a_normal_or_persistent_game(self):
@@ -68,12 +67,11 @@ class GalleryCatalogueTests(unittest.TestCase):
         self.assertEqual(calls, [])
 
     def test_native_cinematic_skip_completes_the_selected_preview_only(self):
-        for identifier in ('later_journey', 'regent_arrival', 'ice_reaper_opening'):
+        for identifier in ('ice_reaper_opening',):
             with self.subTest(scene=identifier):
                 game = self.preview()
                 playback = GALLERY_BY_ID[identifier].start(game)
-                if identifier in ('later_journey', 'ice_reaper_opening'):game.opening_cinematic.skip()
-                else:game.regent_arrival.finish('skipped')
+                game.cinematic.skip()
                 playback.update(.7)
                 self.assertTrue(playback.finished)
                 self.assertFalse(game.opening.active)
@@ -110,14 +108,7 @@ class GalleryCatalogueTests(unittest.TestCase):
                     scripts.add(game.social.script_identifier)
                     game.handle_events([pygame.event.Event(pygame.KEYDOWN,
                                                            key=pygame.K_SPACE, repeat=False)])
-                if game.sanctuary_arrival.active and game.sanctuary_arrival.dialogue is not None:
-                    scripts.add('sanctuary_arrival_'+game.sanctuary_arrival.shot)
-                    game.handle_events([pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False),
-                                        pygame.event.Event(pygame.KEYUP,key=pygame.K_SPACE)])
-                if game.regent_arrival.active:
-                    game.handle_events([pygame.event.Event(pygame.KEYDOWN,
-                                                           key=pygame.K_SPACE, repeat=False)])
-                for controller in (game.mill_quest, game.lantern_quest):
+                for controller in (game.mill_quest,):
                     if controller.action:actions.add(controller.action)
                 if not playback.settling:game.update(1/30, (0, 0), False)
                 if identifier == 'sheep_basket_visit':
@@ -126,7 +117,7 @@ class GalleryCatalogueTests(unittest.TestCase):
                 playback.update(1/30)
                 self.assertFalse(game.combat.active, identifier+' launched unintended combat')
                 if playback.finished:break
-            self.assertTrue(playback.finished, (identifier, game.lantern_quest.stage,
+            self.assertTrue(playback.finished, (identifier,
                             game.mill_quest.action, game.social.script_identifier))
             self.assertTrue(game.world.can_stand(game.player.position), identifier)
             self.assertFalse(game.save_store.enabled)
@@ -136,13 +127,7 @@ class GalleryCatalogueTests(unittest.TestCase):
             if game._overworld_world is not None:worlds.append(game._overworld_world)
             actors = [actor for world in worlds for actor in world.npcs]
             self.assertEqual(len(actors), len({id(actor) for actor in actors}))
-            if identifier == 'later_journey':
-                self.assertEqual(game.opening_cinematic.finished_reason, 'completed')
-                self.assertEqual(game.opening.stage, 'disabled')
-            elif identifier == 'regent_arrival':
-                self.assertEqual(game.regent_arrival.state, 'seen')
-                self.assertEqual(game.regent_arrival.audio.channels, [])
-            elif identifier == 'millrace_threat':
+            if identifier == 'millrace_threat':
                 self.assertIn('mill_encounter_intro', scripts)
                 self.assertFalse(game.mill_quest.encounter_cutscene_active)
                 self.assertTrue(game.mill_quest.encounter_pending)
@@ -206,16 +191,6 @@ class GalleryCatalogueTests(unittest.TestCase):
             elif identifier == 'bridge_tea':
                 self.assertEqual(game.world.bridge_crew.state['tea_beat'], 5)
                 self.assertIn('bridge_crew_tea', scripts)
-            elif identifier == 'lantern_frame':
-                self.assertEqual(game.lantern_quest.stage, 'frame_ready')
-                self.assertTrue({'assemble', 'lift'} <= actions)
-            elif identifier == 'lantern_finishing':
-                self.assertEqual(game.lantern_quest.stage, 'lantern_finished')
-                self.assertTrue({'finish_prepare', 'finish_cover', 'finish_pickup'} <= actions)
-            elif identifier == 'lantern_putaway':
-                self.assertEqual(game.lantern_quest.stage, 'done')
-                self.assertIn('finish_place', actions)
-        return scripts, actions
 
     def test_reduced_motion_encounter_still_reads_warning_and_stops_before_battle(self):
         self.play_to_boundary('millrace_threat', reduced_motion=True)

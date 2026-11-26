@@ -1,4 +1,4 @@
-"""Record MQ02's actual Halden→home→Iselin handoff from a disposable New Game.
+"""Record MQ02's actual Halden→home ending from a disposable New Game.
 
 No quest, actor position, equipment, resources or world progress is seeded.
 Pillow assembles only rendered screenshots; gameplay art is never modified.
@@ -21,7 +21,7 @@ import pygame
 from PIL import Image
 import test_opening_dialogue_pass as opening
 from capture_mq02_spellblade import Video, save_animation
-from quests import MILL_QUEST, REGENT_QUEST
+from quests import MILL_QUEST
 
 
 class Capture:
@@ -40,8 +40,7 @@ class Capture:
             game, quest = self.game, self.game.mill_quest
             home = quest.sanctuary_return
             state = [game.world.data['id'], quest.reported_to_halden, home.action_active,
-                     home.holding_cups, quest.cups_placed, quest.resolved,
-                     game.regent_arrival.state]
+                     home.holding_cups, quest.cups_placed, quest.resolved]
             if state != self.last_state:
                 self.states.append(state);self.last_state = state
             image = self.image();self.frame_budget += seconds
@@ -54,10 +53,6 @@ class Capture:
             if home.action_active and home.holding_cups and game.player.moving:
                 self.still('carrying_cups.png')
             if quest.cups_placed:self.still('cups_placed.png')
-            if game.regent_arrival.active:
-                if game.regent_arrival.shot == 'sanctuary_close':self.still('sanctuary_fade.png')
-                if game.regent_arrival.shot == 'aerial_region' and game.regent_arrival.phase_time >= .8:
-                    self.still('aerial_arrival.png')
         self.driver.tick = tick
         original_key = self.driver.key
 
@@ -65,7 +60,7 @@ class Capture:
             social = self.game.social
             if (self.started and value == pygame.K_SPACE and social.active
                     and social.script_identifier in ('mill_resolution', 'mill_sanctuary_return',
-                                                      'mill_sanctuary_setting', 'regent_preparations')):
+                                                      'mill_sanctuary_setting')):
                 text = ' '.join(social.page['lines'])
                 for _ in range(math.ceil(max(1.5, len(text.split())/3.5)/.05)):
                     self.driver.tick(.05)
@@ -89,9 +84,8 @@ class Capture:
         elif identifier == 'mill_sanctuary_return':
             self.still('sanctuary_checkin.png')
             text = self.game.social._source_lines[page['source_line']]['text']
-            if text.startswith('The tables are finished'):self.still('setting_tables.png')
+            if text.startswith("The table's clean"):self.still('setting_tables.png')
         elif identifier == 'mill_sanctuary_setting':self.still('holding_cups_dialogue.png')
-        elif identifier == 'regent_preparations':self.still('mq03_invitation.png')
 
     def run(self):
         try:
@@ -100,27 +94,18 @@ class Capture:
             assert game.quests.status(MILL_QUEST) == 'completed'
             assert quest.reported_to_halden and quest.cups_placed and quest.resolved
             assert game.world.data['id'] == 'sanctuary_dining'
-            assert game.regent_arrival.state == 'pending'
-            assert game.quests.status(REGENT_QUEST) == 'available'
+            assert game.party.active_ids == ('caelan',)
+            assert not game.cinematic_active
             origin = tuple(game.player.position)
-            for _ in range(240):
-                self.driver.tick(.05)
-                if 'aerial_arrival.png' in self.stills:break
-            else:raise AssertionError('The arrival did not start from the sanctuary')
-            game.draw();self.driver.click(game.regent_arrival.skip_rect.center)
-            assert game.regent_arrival.state == 'seen'
-            assert game.world.data['id'] == 'sanctuary_dining'
-            assert tuple(game.player.position) == origin
-            assert game.quests.status(REGENT_QUEST) == 'available'
-            self.driver.actor(game.regent_quest.serene, 'regent_preparations')
-            assert game.quests.status(REGENT_QUEST) == 'active'
             for _ in range(10):self.driver.tick(.05)
+            assert tuple(game.player.position) == origin
+            self.still('quiet_homecoming.png')
             self.video.close()
             assert self.frames, 'No actual cup action was captured'
             save_animation(self.output/'cup_action.gif', self.frames, 150)
             contact = Image.new('RGB', (1440, 640))
             images = ('mill_farewell.png', 'setting_tables.png', 'carrying_cups.png',
-                      'holding_cups_dialogue.png', 'aerial_arrival.png', 'mq03_invitation.png')
+                      'holding_cups_dialogue.png', 'cups_placed.png', 'quiet_homecoming.png')
             for index, name in enumerate(images):
                 with Image.open(self.output/name) as image:
                     contact.paste(image.convert('RGB').resize((480, 320), Image.Resampling.NEAREST),
@@ -137,33 +122,20 @@ class Capture:
                 'observed_state_transitions': self.states,
                 'sanctuary_return': self.driver.sources['mill_sanctuary_return'],
                 'sanctuary_setting': self.driver.sources['mill_sanctuary_setting'],
-                'mq03_invitation': self.driver.sources['regent_preparations'],
-                'arrival_skip_retained_player_location': list(origin),
-                'post_cinematic_scene': game.world.data['id'],
-                'mq03_accepted_separately': game.quests.status(REGENT_QUEST),
+                'quiet_homecoming': True,
+                'post_mill_party': list(game.party.active_ids),
+                'player_location_after_completion': list(origin),
                 'one_serene': sum(quest.sanctuary_return.serene in w.npcs for w in game.scenes.values()),
                 'one_tomas': sum(quest.sanctuary_return.tomas in w.npcs for w in game.scenes.values()),
                 'one_gift': game.inventory.quantity('caelan_gearblade'),
                 'saved_journey_valid': game._read_saved_journey() is not None}
             (self.output/'verification.json').write_text(json.dumps(verification, ensure_ascii=False, indent=2)+'\n')
             (self.output/'README.md').write_text(
-                '# MQ02 sanctuary homecoming and MQ03 handoff\n\n'
-                '[Watch the complete ending](sanctuary_handoff.mp4) · '
-                '[Cup action](cup_action.gif)\n\n'
-                '![Actual gameplay contact sheet](scene_contact.png)\n\n'
-                'Recorded from an unseeded disposable New Game through MQ01, Mira’s gift, '
-                'the boar encounter and the repaired mill. The ending uses the ordinary '
-                'sanctuary doors, the exact approved Tomas/Serene/Caelan exchange, a visible '
-                'cup collection and carry, the destination dialogue, and physical placement. '
-                'MQ02 finishes only after the cups are set down. Iselin’s aerial cinematic '
-                'then begins; using its Skip button returns to the same dining-room position. '
-                'A separate conversation accepts MQ03.\n\n'
-                f'The review movie is silent, 960×640 at 20 fps, and lasts {self.video.frames/20:.2f} seconds, with readable dialogue. '
-                'The arrival is shown only through its aerial opening because the rest of '
-                'that cinematic is unchanged. No player save or settings file is included.\n\n'
-                'Reproduce with `python tools/capture_mq02_sanctuary_handoff.py`. '
-                '[Verification metadata](verification.json) records the actual observed '
-                'states, dialogue, actor uniqueness and retained player position.\n')
+                '# Retained MQ02 homecoming\n\n'
+                '[Watch the ending](sanctuary_handoff.mp4) · [Cup action](cup_action.gif)\n\n'
+                'Recorded from a disposable New Game through the retained household and mill quests. '
+                'The cups are placed after destination dialogue; MQ02 completes and the temporary '
+                'companion returns to her ordinary role. No retired arrival or next quest is launched.\n')
             print(json.dumps({'output': str(self.output), 'seconds': self.video.frames/20,
                               'mp4_bytes': self.video.path.stat().st_size,
                               'stills': len(self.stills), 'valid': verification['saved_journey_valid']}))
@@ -173,7 +145,7 @@ class Capture:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--output', type=Path, default=ROOT/'docs/reviews/mq02_sanctuary_handoff')
+    parser.add_argument('--output', type=Path, default=ROOT/'docs/reviews/opening_runtime_retirement/mq02_homecoming')
     args = parser.parse_args();Capture(args.output).run()
 
 

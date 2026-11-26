@@ -159,7 +159,7 @@ class SaveSystemGameplayTests(unittest.TestCase):
         g.saves.manual(1);g.saves.request_battle('one');g.saves.update(.1)
         campaign=g.saves.campaign
         before=deepcopy(g.saves.library.autos(campaign))
-        self.assertTrue(g.begin_journey(False,show_cinematic=False))
+        self.assertTrue(g.begin_journey(False))
         self.assertNotEqual(g.saves.campaign,campaign)
         self.assertEqual(g.saves.library.autos(campaign),before)
         self.assertEqual(g.saves.library.manual(1)['metadata']['campaign'],campaign)
@@ -268,7 +268,7 @@ class SaveSystemGameplayTests(unittest.TestCase):
         g=self.game
         self.assertTrue(g.save_progress())
         campaign=g.saves.campaign
-        self.assertTrue(g.begin_journey(False,show_cinematic=False))
+        self.assertTrue(g.begin_journey(False))
         row=next(row for row in g.saves.entries(all_campaigns=True) if row[2][0]=='resume')
         self.assertEqual(row[1]['metadata']['campaign'],campaign)
         self.assertTrue(g.saves.load(row))
@@ -278,8 +278,12 @@ class SaveSystemGameplayTests(unittest.TestCase):
         g=self.game
         self.assertTrue(g.save_progress())
         before=self.path.read_bytes()
+        g.on_title=True;g.title.selected=0
         with patch('save_game.os.replace',side_effect=OSError('read only')):
-            self.assertFalse(g.begin_journey(False,show_cinematic=False))
+            g.title.activate()
+            g.update(.7,(0,0),False)
+        self.assertIsNone(g.cinematic)
+        self.assertFalse(g.cinematic_active)
         self.assertTrue(g.on_title)
         self.assertEqual(self.path.read_bytes(),before)
 

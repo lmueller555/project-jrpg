@@ -177,10 +177,10 @@ class QuestPlaytestSession:
             game = self.game
             game.regional_audio.reset()
             game.opening_audio.reset()
-            game.regent_arrival.reset()
-            game.opening_cinematic.reset()
+            if game.cinematic is not None:
+                game.cinematic.reset()
+                game.cinematic = None
             game.mill_gift.reset()
-            game.sanctuary_rescue.reset()
             game.elemental_bosses.stop_audio()
             game.combat.reset()
             game.music.stop()

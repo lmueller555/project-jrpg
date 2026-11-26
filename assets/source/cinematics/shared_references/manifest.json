@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "status": "Retained shared art references; not a playable scene",
+  "images": [
+    {
+      "file": "caelan_standing.png",
+      "original_path": "assets/story/opening_cinematic/actors/caelan/stand_empty.png",
+      "sha256": "0cc529747860d3d14f5873a14ad077f7cee6a0067d476e871774dfc14bb3fd9b",
+      "dimensions": [
+        96,
+        112
+      ],
+      "purpose": "Companion cinematic scale and Ice Reaper character reference",
+      "pixels_changed": false,
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "file": "mira_standing.png",
+      "original_path": "assets/story/opening_cinematic/actors/mira/stand.png",
+      "sha256": "2852bfbe6855bb5e17ecf2b329c37ae80a72bfebc210408d433f208e70e00786",
+      "dimensions": [
+        96,
+        112
+      ],
+      "purpose": "Ice Reaper character appearance reference",
+      "pixels_changed": false,
+      "anchor": [
+        48,
+        104
+      ]
+    },
+    {
+      "file": "valley_style.png",
+      "original_path": "assets/source/cinematics/opening/valley_generated.png",
+      "sha256": "b3de496f123bfb5591b544feec9fd6c76adf5e28e6079db2409e89f372619e15",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "purpose": "Ice Reaper environment style reference",
+      "pixels_changed": false
+    }
+  ]
+}

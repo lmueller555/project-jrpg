@@ -1,4 +1,4 @@
-"""Quest borrowing preserves real residents, household toys and dog ownership."""
+"""Shared routine borrowing preserves real residents, toys and dog ownership."""
 import os
 os.environ.update(SDL_VIDEODRIVER='dummy', SDL_AUDIODRIVER='dummy', PYGAME_HIDE_SUPPORT_PROMPT='1')
 import unittest
@@ -6,10 +6,9 @@ import unittest
 import pygame
 
 from main import Game
-from lantern_actors import ResidentPose
 
 
-class LanternActorHandoffTests(unittest.TestCase):
+class HouseholdActorHandoffTests(unittest.TestCase):
     def setUp(self):
         self.game = Game(fullscreen=False, start_on_title=False, save_path=None)
         self.shared = self.game.play_routines[0]
@@ -159,23 +158,6 @@ class LanternActorHandoffTests(unittest.TestCase):
         self.assertEqual(self.bone.bone['state'], 'mouth')
         self.assertTrue(dog.play_owned)
 
-    def test_resident_pose_moves_the_existing_teacher_blocker_and_restores_art(self):
-        home = self.shared.home
-        actor = next(npc for npc in home.npcs if npc.data['id'] == 'liam_mother')
-        original = actor.sprite(0)
-        pose = ResidentPose(actor, home)
-        self.assertIs(next(npc for npc in home.npcs if npc.data['id'] == 'liam_mother'), actor)
-        actor.position.update(250, 180);actor.facing = 'left';actor.moving = True;actor.walk_ms = 140
-        pose.sync()
-        self.assertEqual(actor.blocker.center, (250, 180))
-        self.assertIs(actor.story_sprite, pose.walks['left'][1][0])
-        actor.request_conversation('right');pose.sync()
-        self.assertIs(actor.story_sprite, pose.idles['right'])
-        actor.position.update(actor.data['position']);pose.release()
-        self.assertIs(actor.sprite(0), original)
-        self.assertFalse(hasattr(actor, 'story_sprite'))
-        self.assertFalse(hasattr(actor, 'request_conversation'))
-        self.assertEqual(actor.blocker.center, tuple(actor.data['position']))
 
 
 if __name__ == '__main__':

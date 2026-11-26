@@ -95,7 +95,7 @@ class SanctuaryReliefRestTests(unittest.TestCase):
     def durable_facts(self):
         game = self.game
         return deepcopy((game.character_progression.to_dict(), game.quests.to_dict(),
-                         game.mill_quest.to_dict(), game.regent_quest.to_dict(),
+                         game.mill_quest.to_dict(),
                          game.inventory.to_dict(), game.character_abilities.to_dict(),
                          game.mira_rig.to_dict(), game.party.members, game.party.active_ids,
                          game.party.event_id, game.battle_rewards.to_dict(),

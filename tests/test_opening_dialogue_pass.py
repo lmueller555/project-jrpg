@@ -246,12 +246,11 @@ class OpeningDialogueDriver:
         self.offer()
 
     def start_new_game(self):
-        """Use the real title and cinematic Skip before reviewing the morning."""
+        """Use the real title fade into the retained playable morning."""
         self.key(pygame.K_RETURN);self.tick(.7)
-        assert self.g.opening_cinematic.active
+        assert self.g.cinematic is None
+        assert not self.g.cinematic_active
         self.g.draw()
-        self.click(self.g.opening_cinematic.skip_rect.center)
-        assert not self.g.opening_cinematic.active
 
     def offer(self, accept=True):
         serene = next(a for a in self.g.persistent_npcs if a.data['id'] == 'mother_serene')
@@ -441,16 +440,16 @@ class OpeningDialoguePassTests(unittest.TestCase):
     def setUp(self):
         self.driver = OpeningDialogueDriver();self.addCleanup(self.driver.close)
 
-    def test_briefing_introduces_households_needs_landmarks_and_festival(self):
+    def test_briefing_introduces_households_needs_and_landmarks(self):
         data = json.loads((ROOT/'assets/dialogue/eldenmere.json').read_text())
         conversations = data['characters']['mother_serene']['conversations']
         offer = next(c for c in conversations if c['id'] == 'serene_quest_offer')
         text = ' '.join(plain(line['text']) for line in offer['lines'])
-        for fragment in ('Halden', 'medicine', 'flour', 'Festival of Light', 'Elira',
+        for fragment in ('Halden', 'medicine', 'flour', 'Elira',
                          'bread and lamp oil', 'southern bridge', 'Venn', 'eastern terrace'):
             with self.subTest(fragment=fragment):self.assertIn(fragment, text)
         self.assertGreaterEqual(len(offer['lines']), 12)
-        self.assertTrue(any(line['text'] == 'There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light.' for line in offer['lines']))
+        self.assertTrue(any(line['text'] == 'There’s bread and lamp oil for Elira, too. She was running low on oil for her lantern.' for line in offer['lines']))
 
     def test_literal_emotes_are_balanced_selective_and_replace_parentheticals(self):
         passages = dialogue_sets();total = cues = 0

@@ -15,7 +15,7 @@ from overworld_travel import OverworldTravel
 from purposeful_wildlife import (BASKET_HOME, BASKET_PEN, CAT_ROUTE, FLOWERS,
     GATHER_ROUTES, GATHER_STEP, HOMES, PAT_STEP, REPLACED_PROP_IDS, RETURN_STEP,
     SHEEP_ROUTES, VISIT, WORKER_HOME, WORKER_ROUTE, valid_context, valid_state)
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class PurposefulWildlifeTests(unittest.TestCase):
@@ -63,7 +63,7 @@ class PurposefulWildlifeTests(unittest.TestCase):
         self.g.player.position.update(-570,1206)
 
     def continue_game(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.assertTrue(self.g.save_progress())
         g=self.make_game(True);self.assertTrue(g.begin_journey(True))
         g.opening_fade=g.transfer_cooldown=0
@@ -271,7 +271,7 @@ class PurposefulWildlifeTests(unittest.TestCase):
         self.assertTrue(valid_state(self.c.to_dict()))
 
     def test_first_visit_checkpoint_after_long_garden_wait_continues_exactly(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.finish_care();self.c.worker.clock=90.
         self.g.player.position.update(-440,1370)
         self.assertTrue(self.g.world.can_stand(self.g.player.position))

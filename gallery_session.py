@@ -66,8 +66,7 @@ class GallerySession:
         return painter
 
     def _cinematic_active(self):
-        return (self.game.opening_cinematic.active or self.game.regent_arrival.active
-                or bool(getattr(getattr(self.game, 'sanctuary_arrival', None), 'active', False)))
+        return self.game.cinematic_active
 
     def handle_events(self, events):
         if self.closed:return True
@@ -202,12 +201,9 @@ class GallerySession:
         if game is not None:
             game.regional_audio.reset()
             game.opening_audio.reset()
-            game.regent_arrival.reset()
-            arrival = getattr(game, 'sanctuary_arrival', None)
-            if arrival is not None:arrival.reset()
-            rescue = getattr(game, 'sanctuary_rescue', None)
-            if rescue is not None:rescue.reset()
-            game.opening_cinematic.reset()
+            if game.cinematic is not None:
+                game.cinematic.reset()
+                game.cinematic = None
             game.combat.reset()
             game.music.stop()
             # UI ticks are short, but they too belong to this discarded runtime.

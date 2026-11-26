@@ -18,39 +18,17 @@ from post_battle import battle_reward_definition, valid_pending_snapshot
 from sanctuary_boss import APPROACH, BATTLEFIELD, RECEIPT, SCENE_ID
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
 from test_mill_battle_gameplay import wait_for_spoils
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 
 
 class VespermawEncounterOwnerTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with tempfile.TemporaryDirectory(prefix='boss-owner-story-') as directory:
+        # Explicit retained-cave scenario; no later quest or rescue is seeded.
+        with tempfile.TemporaryDirectory(prefix='cave-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal();driver.attack_report();driver.departure()
-            driver.rejoin_mira();driver.arrive()
-            game = driver.game
-            # Arrival now owns a player-paced in-world cinematic. Acknowledge
-            # its real action/dialogue checkpoints before entering the cave.
-            for _ in range(4000):
-                if game.sanctuary_arrival.completed:break
-                if game.sanctuary_arrival.dialogue is not None:
-                    game.handle_events([pygame.event.Event(pygame.KEYDOWN,key=pygame.K_SPACE,repeat=False),
-                                        pygame.event.Event(pygame.KEYUP,key=pygame.K_SPACE)])
-                driver.tick(.05)
-            else:raise AssertionError('Sanctuary arrival did not complete')
-            # Explicit earlier-discovery fixture; production input still owns
-            # the boss approach and every settlement/Continue below.
-            owner = game.character_abilities
-            if not owner.has_weapon():assert owner.acquire_weapon('caelan', 'caelan_gearblade')
-            assert owner.learn_ability('caelan', 'aqua_edge')
-            assert game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
-                                             'battle_cleared': True, 'deferred': False})
-            game.player.position.update(RESERVE_ENTRY_APPROACH)
-            game.opening_fade = game.transfer_cooldown = 0
-            assert game.sanctuary_cave.interact()
-            game.opening_fade = game.transfer_cooldown = 0
+            game = driver.prepare_cave(lesson_complete=True, enter=True)
             game.player.position.update(APPROACH)
-            assert game.world.can_stand(game.player.position)
             assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
@@ -65,7 +43,7 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         self.game = self.load()
         self.game.social.cancel_script()
         # A labelled full-formation fixture exercises three-participant reward
-        # settlement; the actual MQ03 route itself only requires Caelan/Mira.
+        # settlement; the base cave scenario only selects Caelan/Mira.
         if 'lucan' not in self.game.party.members:
             self.assertTrue(self.game.party.recruit('lucan'))
         self.assertTrue(self.game.party.select(('caelan', 'mira', 'lucan')))
@@ -313,14 +291,16 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         self.assertTrue(final.sanctuary_boss.defeated)
         self.assertFalse(final.combat.active)
 
-    def test_defeat_restores_entry_resources_and_calls_retry_owner_without_rewards(self):
+    def test_owner_defeat_restores_entry_resources_and_calls_retry_owner_without_rewards(self):
+        # Isolated owner transaction: normal gameplay defeat is intercepted by
+        # GameOver, covered through Game.update in the elemental/random suites.
         resources, levels = self.resources(), self.totals()
         inventory = self.game.inventory.to_dict()
         owner = self.start();model = self.load_battle()
         for member in model.party:member.hp = member.mp = 0
         model._result('defeat')
         with patch.object(self.game.sanctuary_boss, 'battle_defeated') as callback:
-            self.assertTrue(owner._settle())
+            self.assertTrue(owner._settle_boss())
         callback.assert_called_once_with(self.ticket)
         self.assertEqual(self.resources(), resources)
         self.assertEqual(self.totals(), levels)
@@ -329,6 +309,7 @@ class VespermawEncounterOwnerTests(unittest.TestCase):
         self.assertFalse(self.game.sanctuary_boss.defeated)
         self.assertEqual(self.game.sanctuary_boss.pending, self.ticket)
         self.assertEqual(self.game.cave_random_encounters.to_dict(), self.counter)
+
 
     def test_forged_boss_rewards_ticket_resources_or_completion_flags_are_rejected(self):
         owner = self.victory()

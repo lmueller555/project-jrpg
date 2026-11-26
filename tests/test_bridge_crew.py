@@ -9,7 +9,7 @@ os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 import pygame
 from main import Game
 from bridge_crew import SOURCE, SCENE_ID, valid_state
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class BridgeCrewTests(unittest.TestCase):
@@ -104,7 +104,7 @@ class BridgeCrewTests(unittest.TestCase):
         self.assertEqual(before,self.c.timer);self.g.world=world
 
     def test_continue_at_each_completed_tea_beat(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         for beat in range(1,6):
             self.c.restore({'sorted':3,'tea_beat':beat,'greeted':[]})
             self.g.player.position.update(-2376,642);self.assertTrue(self.g.save_progress())
@@ -121,7 +121,7 @@ class BridgeCrewTests(unittest.TestCase):
                 self.assertEqual(self.c.state['tea_beat'],5)
 
     def test_continue_unplaced_stone_returns_to_source(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.g.player.position.update(-2340,644)
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.g.player.position.update(-2340,644)
         self.until(lambda:self.c.state['sorted']==1 and self.c.stage=='carry')
         self.assertTrue(self.g.save_progress())
         other=self.make_game(True);self.assertTrue(other.begin_journey(True))
@@ -163,7 +163,7 @@ class BridgeCrewTests(unittest.TestCase):
             self.assertTrue(self.g.world.can_stand((-2352,672)))
 
     def test_continue_immediately_after_first_dialogue_skips_read_lines(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.g.player.position.update(-2376,642);self.ready()
         self.g.overworld_travel.interact();self.until(lambda:self.c.stage=='request')
         self.dialogue()

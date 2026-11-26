@@ -7,9 +7,9 @@ cultural foundations and opening regional context.**
 the flashforward, Festival of Light and quarry/excavation Act I. The
 [Chapter 1 chronology](../game_01/CHAPTER_01.md) owns the revised sequence.
 This is future narrative direction, not implemented gameplay or dialogue.
-The current overworld still starts with a ruined western crossing, and its
-arrival and MQ03 scenes retain the older story. Those implementations and
-their captures do not establish the revised starting state. The canonical
+The current overworld still starts with a ruined western crossing; the old
+arrival and MQ03/MQ04 runtime are removed. This retained physical state and
+historical captures do not establish the revised opening chronology. The canonical
 world-map artwork remains authoritative for geography, separately from local
 playable states.
 

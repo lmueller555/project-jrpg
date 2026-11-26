@@ -16,34 +16,19 @@ from cave_random_encounters import CaveRandomEncounters
 from main import Game
 from overworld_travel import HALL_ID, RESERVE_ID, WORLD_ID, OverworldTravel
 from post_battle import valid_pending_snapshot
-from quests import REGENT_QUEST, LANTERN_QUEST
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 from test_mill_battle_gameplay import finish_spoils_presentation
 
 
 class CaveRandomGameplayTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Reach the unfinished Sanctuary handoff through real quest input once.
-        # Every test starts from an independent copy of that valid journey.
-        with tempfile.TemporaryDirectory(prefix='cave-random-story-') as directory:
+        # Explicit retained-cave scenario; no later quest or rescue is seeded.
+        with tempfile.TemporaryDirectory(prefix='cave-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
-            # These independent counter/reward cases begin after the new
-            # Blue-gem lesson. Its actual story/input arc has dedicated tests.
-            if not driver.game.character_abilities.has_weapon():
-                assert driver.game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
-            driver.game.character_abilities.learn_ability('caelan', 'aqua_edge')
-            assert driver.game.cave_lesson.restore({'version': 1,
-                'resonance_seen': True, 'battle_cleared': True, 'deferred': False})
-            driver.walk(RESERVE_ENTRY_APPROACH)
-            driver.game.handle_events([
-                pygame.event.Event(pygame.KEYDOWN, key=pygame.K_e, repeat=False),
-                pygame.event.Event(pygame.KEYUP, key=pygame.K_e)])
-            driver.until(lambda:not driver.game.transfer_cooldown)
-            assert driver.game.world.data['id'] == 'sanctuary_cave'
-            assert driver.game.save_progress()
+            game = driver.prepare_cave(lesson_complete=True, enter=True)
+            assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
 
@@ -69,10 +54,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
     def story(self, game=None):
         game = game or self.game
         self.assertEqual(game.world.data['id'], 'sanctuary_cave')
-        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
-        self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
-        self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
-        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
+        self.assertIsNone(game.party.current_event_id)
         self.assertIn('mira', game.party.active_ids)
         self.assertEqual(game.music.desired_track,
                          'battle' if game.combat.active and not game.combat.post_phase
@@ -225,9 +207,10 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.story(restored)
 
     def test_diagonal_collision_slide_never_checkpoints_an_unstandable_trigger_position(self):
-        self.position((1804.8, 768.4))
+        # A real hostile-region wall edge; Greenwell is now a safe room.
+        self.position((554.8, 1004.4))
         self.near_trigger(.2)
-        self.game.update(1/72, (-1, 1), False)
+        self.game.update(1/72, (1, 1), False)
         self.assertTrue(self.game.combat.active)
         point = list(self.game.player.position)
         self.assertTrue(self.game.world.can_stand(point), point)
@@ -244,9 +227,9 @@ class CaveRandomGameplayTests(unittest.TestCase):
             ('straight-long', (456, 1280), (1, 0), .4, 1),
             ('diagonal-short', (456, 1280), (1, 1), .04, 10),
             ('diagonal-long', (456, 1280), (1, 1), .4, 1),
-            ('collision-slide', (1804.8, 768.4), (1, -1), 1/72, 1),
-            ('blocked-corner', (1804.8, 768.4), (1, 1), 1/72, 1),
-            ('collision-corner', (1804.8, 768.4), (-1, 1), 1/72, 1),
+            ('collision-slide', (554.8, 1004.4), (1, 1), 1/72, 1),
+            ('blocked-edge', (554.8, 1004.4), (0, 1), 1/72, 1),
+            ('diagonal-at-edge', (554.8, 1004.4), (-1, 1), 1/72, 1),
         )
         lengths = {}
         for name, start, direction, seconds, count in cases:
@@ -256,7 +239,7 @@ class CaveRandomGameplayTests(unittest.TestCase):
                 for _ in range(count):self.game.update(seconds, direction, False)
                 length = self.game.player.position.distance_to(start)
                 spent = 200-self.game.cave_random_encounters.to_dict()['remaining']
-                if name == 'blocked-corner':self.assertEqual(length, 0)
+                if name == 'blocked-edge':self.assertEqual(length, 0)
                 else:self.assertGreater(length, 0)
                 self.assertFalse(self.game.combat.active)
                 self.assertAlmostEqual(spent, length, places=6)
@@ -321,8 +304,8 @@ class CaveRandomGameplayTests(unittest.TestCase):
         self.assertEqual(again.battle_rewards.to_dict(), receipt_state)
         self.story(again)
 
-    def test_flee_and_defeat_return_without_rewards_and_roll_one_new_distance(self):
-        for outcome in ('fled', 'defeat'):
+    def test_flee_returns_without_rewards_and_rolls_one_new_distance(self):
+        for outcome in ('fled',):
             with self.subTest(outcome=outcome):
                 if outcome == 'defeat':
                     self.path.write_text(json.dumps(self.journey))
@@ -357,6 +340,25 @@ class CaveRandomGameplayTests(unittest.TestCase):
                 self.assertFalse(restored.combat.active)
                 self.assertEqual(restored.cave_random_encounters.to_dict(), state)
                 self.story(restored)
+
+    def test_defeat_opens_game_over_without_replacing_the_prebattle_save(self):
+        self.assertTrue(self.game.saves.manual(1))
+        before = {
+            key: member.to_dict() for key, member in self.game.party.characters.items()}
+        owner = self.start_four()
+        saved = self.path.read_bytes()
+        rewards = self.game.battle_rewards.to_dict()
+        for member in owner.model.party:member.hp = member.mp = 0
+        owner.model._result('defeat');owner.scene.dismissed = True
+        self.game.update(.05, (0, 0), False)
+        self.assertTrue(self.game.game_over)
+        self.assertFalse(self.game.combat.active)
+        self.assertEqual(self.path.read_bytes(), saved)
+        self.assertEqual(self.game.battle_rewards.to_dict(), rewards)
+        self.assertTrue(self.game.saves.load(self.game.saves.latest('manual')))
+        self.assertFalse(self.game.game_over)
+        self.assertIsNone(self.game.cave_random_encounters.pending)
+        self.assertEqual({key: member.to_dict() for key, member in self.game.party.characters.items()}, before)
 
     def test_failed_return_save_rolls_back_resources_and_distance_then_retries_once(self):
         owner = self.start_four()

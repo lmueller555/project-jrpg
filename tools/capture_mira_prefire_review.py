@@ -105,7 +105,7 @@ def capture(output=OUTPUT, *, baseline_ref='HEAD', protected_hashes=None):
     if protected != {name: digest(ROOT/name) for name in protected}:
         raise AssertionError('A protected asset changed before capture')
     sources = {name: digest(ROOT/name) for name in
-               ('ice_reaper_action.py', 'ice_reaper_opening.py', 'opening_cinematic.py',
+               ('ice_reaper_action.py', 'ice_reaper_opening.py', 'cinematic_player.py',
                 'ice_reaper_audio.py', 'tools/capture_mira_prefire_review.py')}
     assets = {str(path.relative_to(ROOT)): digest(path)
               for folder in ('assets/story/mira_prefire_aim',
@@ -125,7 +125,7 @@ def capture(output=OUTPUT, *, baseline_ref='HEAD', protected_hashes=None):
             settings = (folder/'settings.json').read_bytes()
             assert parent.open_gallery() and parent.launch_gallery_scene('ice_reaper_opening')
             child = parent.gallery_session.game
-            scene = child.opening_cinematic
+            scene = child.cinematic
             scene.elapsed = START
             stage = scene.action_stage
             baseline = Stage(stage.asset_root, strict=True)

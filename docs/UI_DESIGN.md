@@ -83,34 +83,13 @@ near the map edge. Neither panel draws a speech tail toward an offscreen actor.
 Pagination, text scaling and response input use the existing dialogue system.
 Normal conversations retain their live speaker-anchored bubbles.
 
-## New Game cinematic
+## Opening and independent scene studies
 
-**Narrative migration:** The old cinematic is scrapped by the
-[Fire Veinhold opening revision](narrative/game_01/CHAPTER_01.md). The playback
-behavior below is current-runtime reference pending its later removal; it does
-not specify the replacement prologue's UI or narrative.
+New Game begins directly in Caelan's bedroom. The old flashforward and
+post-mill regent-arrival presentation have been removed. Completing MQ02's
+household cup placement returns control without starting another scene.
 
-The opening cinematic uses the battle scenes' detailed visual style with layered
-scenery, separate conversational character poses and authored camera shots.
-Dialogue is timed automatically and rendered at display resolution using the
-shared text-size preference. A compact Skip button stays in the bottom-right
-corner, including while paused. Escape toggles a dedicated cinematic pause;
-it freezes camera, actors, ambient movement, captions and the looping leitmotif.
-Focus loss also freezes the scene, without clearing a manual pause on return.
-Reduced Motion uses static shot changes. Finishing or skipping leads into the
-ordinary bedroom opening; Continue never inserts this flashforward into an
-existing journey. See [the cinematic guide](narrative/scenes/OPENING_CINEMATIC.md).
-
-## Iselin's arrival
-
-The arrival's relief-caravan story and broken-bridge insert are superseded;
-its current runtime UI is described below. A new arrival script follows the
-Fire Veinhold prologue and precedes the bridge's destruction.
-
-The [post-mill arrival](narrative/scenes/REGENT_ARRIVAL.md) uses detailed cinematic scenery and
-separate animated actors, with the existing portrait dialogue frame and
-display-resolution text. Its dialogue advances at the player's pace. Escape
-pauses/resumes, focus loss suspends playback, and a small Skip control remains
-available. Reduced Motion removes continuous camera travel. Exploration and
-its HUD stay suspended until the scene returns control at the mill. The visit
-continues through ordinary, cancelable MQ03 dialogue afterward.
+Independent Gallery cinematics use `CinematicPlayer` with an explicit scene
+path. The retained Ice Reaper study is a scene study, not a New Game opening
+or a playable boss. See [Gallery](GALLERY.md) for its current catalogue and
+[Chapter 1](narrative/game_01/CHAPTER_01.md) for the future Fire Veinhold opening.

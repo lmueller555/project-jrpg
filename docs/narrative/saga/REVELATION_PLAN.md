@@ -2,7 +2,7 @@
 
 **Status:** Approved disclosure constraints; unwritten reveal scenes remain OPEN.
 **Version:** 0.9 (approved Fire Veinhold opening and revised player knowledge).
-**Revision:** 2026-11-26; documentation-only replacement, runtime unchanged.
+**Revision:** 2026-11-26; approved future sequence; old opening runtime now retired.
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), the
 [Story Bible](../game_01/STORY_BIBLE.md), and the [narrative index](../README.md).
 
@@ -39,7 +39,9 @@ are established, not unnamed mysteries awaiting a reveal. Use them where a
 character's knowledge makes them appropriate; naming them does not disclose
 the investigation's full briefing, prove the cause of an unrelated disaster or
 reveal future betrayal. The prologue already shows an infiltration
-to the player. This revision does not rewrite current runtime dialogue.
+to the player in the future sequence. The current retained MQ01/MQ02 dialogue
+has ordinary framing and does not prematurely disclose that unimplemented
+prologue or attack.
 
 The former cosmic catastrophe, ancient race, Great Sacrifice, four surviving
 Ancients and sacrifice-made Aethersphere explanation are **retired**, rather

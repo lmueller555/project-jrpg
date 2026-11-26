@@ -276,9 +276,9 @@ class IceReaperGalleryTests(unittest.TestCase):
         before = (self.path.read_bytes(), self.settings.read_bytes(),
                   self.parent._progress_signature(), self.parent.elapsed_ms,
                   tuple(self.parent.player.position), copy.deepcopy(self.parent.saved_journey),
-                  self.parent.opening_cinematic)
+                  self.parent.cinematic)
         session = self.launch()
-        self.assertIsInstance(session.game.opening_cinematic, IceReaperOpening)
+        self.assertIsInstance(session.game.cinematic, IceReaperOpening)
         self.assertFalse(session.game.save_store.enabled)
         for frame in range(960):
             self.assertIs(self.parent.gallery_session, session, frame)
@@ -291,7 +291,7 @@ class IceReaperGalleryTests(unittest.TestCase):
         after = (self.path.read_bytes(), self.settings.read_bytes(),
                  self.parent._progress_signature(), self.parent.elapsed_ms,
                  tuple(self.parent.player.position), self.parent.saved_journey,
-                 self.parent.opening_cinematic)
+                 self.parent.cinematic)
         self.assertEqual(before, after)
 
     def test_gallery_pause_focus_and_restart_preserve_the_preview_boundary(self):
@@ -299,17 +299,17 @@ class IceReaperGalleryTests(unittest.TestCase):
         self.parent.update(8.5, (0,0), False)
         self.key(pygame.K_p)
         self.parent.update(.5, (0,0), False)
-        self.assertEqual(session.game.opening_cinematic.elapsed, 8.5)
+        self.assertEqual(session.game.cinematic.elapsed, 8.5)
         self.key(pygame.K_p)
         self.parent.handle_events([pygame.event.Event(pygame.WINDOWFOCUSLOST)])
         self.parent.update(.5, (0,0), False)
-        self.assertEqual(session.game.opening_cinematic.elapsed, 8.5)
+        self.assertEqual(session.game.cinematic.elapsed, 8.5)
         self.parent.handle_events([pygame.event.Event(pygame.WINDOWFOCUSGAINED)])
         self.key(pygame.K_r)
         replacement = self.parent.gallery_session
         self.assertIsNot(replacement, session)
         self.assertTrue(session.closed)
-        self.assertEqual(replacement.game.opening_cinematic.elapsed, 0.)
+        self.assertEqual(replacement.game.cinematic.elapsed, 0.)
         self.assertEqual(replacement.game.music.desired_track, 'those_i_swore_to_save')
         self.key(pygame.K_ESCAPE)
         self.assertIsNone(self.parent.gallery_session)
@@ -318,7 +318,7 @@ class IceReaperGalleryTests(unittest.TestCase):
     def test_large_caption_does_not_cover_the_rendered_frozen_character(self):
         self.parent.audio.text_scale = 2.
         session = self.launch()
-        child, scene = session.game, session.game.opening_cinematic
+        child, scene = session.game, session.game.cinematic
         scene.elapsed = 4.2
         self.parent.draw()
         self.assertEqual(' '.join(scene.caption_lines), 'Rhea! No!')

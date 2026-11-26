@@ -135,7 +135,7 @@ class CharacterProgressionGameplayTests(unittest.TestCase):
         plan = game.character_progression.preview(700, ['caelan'], {'caelan': 140})
         self.assertTrue(game.character_progression.apply(plan))
         old_party = game.party
-        self.assertTrue(game.begin_journey(False, show_cinematic=False))
+        self.assertTrue(game.begin_journey(False))
         self.assertIsNot(game.party, old_party)
         self.assertIs(game.character_progression.party, game.party)
         self.assertEqual(game.character_progression.level('caelan'), 1)

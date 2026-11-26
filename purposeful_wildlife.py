@@ -412,7 +412,7 @@ class PurposefulWildlife:
         if game.world is not self.world or game.social.locked:return
         if (game.on_title or game.pause.is_open or game.inventory_ui.is_open or game.world_map_viewer.is_open
                 or game.map_open or game.quest_ui.journal_open or game.combat.active
-                or game.opening_cinematic.active or game.regent_arrival.active):return
+                or getattr(getattr(game, 'cinematic', None), 'active', False)):return
         dt=min(max(seconds,0.),.1)
         if not dt:return
         player=self.world.probe_rect(game.player.position)

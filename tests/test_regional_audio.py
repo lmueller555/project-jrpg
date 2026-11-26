@@ -20,8 +20,8 @@ class Channel:
 class RegionalAudioTests(TestCase):
     def setUp(self):
         self.g=NS(audio=AudioSettings(None),player=NS(position=pygame.Vector2()),
-            overworld_travel=NS(active=True),on_title=False,opening_cinematic=NS(active=False),
-            regent_arrival=NS(active=False,state='done'),combat=NS(active=False),pause=NS(is_open=False),
+            overworld_travel=NS(active=True),on_title=False,cinematic=NS(active=False),
+            combat=NS(active=False),pause=NS(is_open=False),
             inventory_ui=NS(is_open=False),world_map_viewer=NS(is_open=False),map_open=False,
             quest_ui=NS(journal_open=False),_music_focused=True,world=NS(region={'terrain':{}}))
         self.a=RegionalAudio(self.g);self.channels=[]
@@ -67,7 +67,7 @@ class RegionalAudioTests(TestCase):
     def test_pauses_transfers_title_and_script_ownership(self):
         for owner,field in [(self.g.pause,'is_open'),(self.g,'map_open'),(self.g.quest_ui,'journal_open'),
             (self.g.inventory_ui,'is_open'),(self.g.world_map_viewer,'is_open'),(self.g,'on_title'),
-            (self.g.regent_arrival,'active'),(self.g.opening_cinematic,'active'),(self.g.combat,'active')]:
+            (self.g.cinematic,'active'),(self.g.combat,'active')]:
             self.a.reset();self.a.play(self.source());setattr(owner,field,True);self.a.update(.1)
             self.assertFalse(self.a.voices);setattr(owner,field,False);self.a.update(.1);self.assertFalse(self.a.voices)
         self.a.reset();self.a.play(self.source());self.g.overworld_travel.active=False;self.a.update(.1);self.assertFalse(self.a.voices)

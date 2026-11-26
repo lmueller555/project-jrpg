@@ -8,9 +8,9 @@ canon.
 **Chronology owner:** [Chapter 1](CHAPTER_01.md) owns the detailed replacement
 opening. [Story Bible](STORY_BIBLE.md) owns game-wide direction;
 [Revelation Plan](../saga/REVELATION_PLAN.md) separates player and character
-knowledge. No dialogue, quest sequence, save state, map or combat is changed by
-this documentation revision. The currently implemented lightning-damaged
-bridge, relief arrival and Sanctuary rescue still await separate migration.
+knowledge. The old flashforward, relief arrival and rescue/festival quest runtime are now
+removed. MQ01/MQ02 retain ordinary dialogue. The physical bridge remains
+ruined, while the new intact-then-attacked sequence below is not implemented.
 
 ## Approved regional context
 

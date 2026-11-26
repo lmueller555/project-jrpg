@@ -6,7 +6,6 @@ from PIL import Image
 
 from tools.caelan_outline import apply_outline, INK, STYLE
 from tools.build_caelan_overworld import drawing
-from tools.build_mira_combat import _main_component
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'assets/source/characters/caelan/overworld_refresh'
@@ -76,39 +75,16 @@ class CaelanOutlineTests(unittest.TestCase):
         self.assertEqual(apply_outline(outlined).tobytes(),outlined.tobytes())
         self.assertIn(INK,colors(outlined))
 
-    def test_rescue_uses_same_contour_for_caelan_and_preserves_other_actors(self):
-        folder=ROOT/'assets/source/story/sanctuary_rescue'
-        registration=read('assets/source/story/sanctuary_rescue/registration.json')
-        manifest=read('assets/story/sanctuary_rescue/art.json')
-        self.assertEqual(manifest['caelan_outline'],STYLE)
-        count=0
-        for record in registration['frames']:
-            with self.subTest(file=record['file']):
-                sheet=Image.open(folder/record['source']).convert('RGBA')
-                cell=_main_component(sheet.crop(tuple(record['source_rect'])))
-                crop=cell.crop(record['source_bounds']);scale=record['scale']
-                body=crop.resize((round(crop.width*scale),round(crop.height*scale)),Image.Resampling.NEAREST)
-                raw=Image.new('RGBA',tuple(record['canvas']))
-                raw.alpha_composite(body,tuple(record['destination']))
-                image=Image.open(ROOT/record['file']).convert('RGBA')
-                if '/actions/row_5_' in record['file']:
-                    count+=1
-                    self.assert_preserved_silhouette_and_interior(raw,image)
-                    self.assertNotEqual(raw.tobytes(),image.tobytes())
-                    self.assertIn(INK,colors(image))
-                else:self.assertEqual(raw.tobytes(),image.tobytes())
-        self.assertEqual(count,4)
-
     def test_shared_policy_is_recorded_for_dependent_body_exports(self):
         manifest=read('assets/source/characters/caelan/overworld_refresh/dependents.json')
         self.assertEqual(manifest['outline'],STYLE)
         paths={record['file'] for record in manifest['outputs']}
+        self.assertFalse(any(path.startswith('assets/story/lantern/') for path in paths))
         for name in ('assets/story/halden/caelan/hold_front.png',
                      'assets/story/elira/hold_left.png',
                      'assets/story/venn/caelan/give_right.png',
                      'assets/story/sanctuary_opening/poses/caelan_seated.png',
-                     'assets/story/mill/poses/body.png',
-                     'assets/story/lantern/poses/caelan_body.png'):
+                     'assets/story/mill/poses/body.png'):
             with self.subTest(file=name):
                 self.assertIn(name,paths)
                 self.assertIn(INK,colors(Image.open(ROOT/name).convert('RGBA')))

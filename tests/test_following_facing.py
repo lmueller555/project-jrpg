@@ -189,9 +189,8 @@ class FollowingFacingTests(unittest.TestCase):
 
     def test_actual_quest_moves_keep_positions_routes_and_animation_time(self):
         from halden_visit import HaldenVisit
-        from lantern_quest import LanternQuest
         from mill_quest import MillQuest
-        for kind in (HaldenVisit, MillQuest, LanternQuest):
+        for kind in (HaldenVisit, MillQuest):
             results = []
             for following in (False, True):
                 actor = Actor(facing='right', following=following)
@@ -203,20 +202,14 @@ class FollowingFacingTests(unittest.TestCase):
                 controller = kind.__new__(kind)
                 controller.game = game
                 route = deque([(.6, 0), (.6, .4), (1.2, .4), (1.2, .8), (10, 10)])
-                if kind is LanternQuest:
-                    controller.paths = {actor: ((10, 10), route, False)}
-                    controller.retries = {}
-                    controller._world = lambda value: world
-                    controller._move(actor, (10, 10), 1/60, 60)
+                controller.paths = {actor: ((10, 10), route)}
+                controller.retry = {}
+                if kind is HaldenVisit:
+                    controller._move(actor, world, (10, 10), 1/60, 60)
                 else:
-                    controller.paths = {actor: ((10, 10), route)}
-                    controller.retry = {}
-                    if kind is HaldenVisit:
-                        controller._move(actor, world, (10, 10), 1/60, 60)
-                    else:
-                        controller.mira = actor
-                        controller._mira_world = controller.town = world
-                        controller._move((10, 10), 1/60, 60)
+                    controller.mira = actor
+                    controller._mira_world = controller.town = world
+                    controller._move((10, 10), 1/60, 60)
                 results.append((tuple(actor.position), list(route), actor.walk_ms, actor.facing))
             self.assertEqual(results[0][:3], results[1][:3], kind.__name__)
             self.assertEqual(results[0][3], 'front', kind.__name__)

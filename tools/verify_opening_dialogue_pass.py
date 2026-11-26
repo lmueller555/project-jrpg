@@ -1,10 +1,11 @@
 """Capture the revised morning through MQ02 from an actual New Game.
 
 No main-quest progress or actor stations are seeded. The driver starts from the
-real title and uses the cinematic's visible Skip button to focus this review on
-the morning, then production walking, doors, E/Space and explicit choices.
+real title and enters the retained morning directly, then uses production
+walking, doors, E/Space and explicit choices.
 Historical reviews are left untouched; new evidence goes under work/.
 """
+import argparse
 import json
 import os
 from pathlib import Path
@@ -34,7 +35,7 @@ SELECTED = {
     'mill_prepare_done': ('bypass_after_action', lambda text: True),
     'mill_encouragement_failed': ('small_success', lambda text: '*' in text),
     'mill_repair_done': ('repair_after_action', lambda text: True),
-    'mill_resolution': ('festival_flour', lambda text: 'Festival of Light' in text),
+    'mill_resolution': ('mill_resolution', lambda text: 'flour' in text.lower()),
 }
 
 
@@ -88,7 +89,7 @@ class Capture:
             assert d.g.quests.status(OPENING_QUEST) == d.g.quests.status(MILL_QUEST) == 'completed'
             assert d.g.elira_visit.lantern == 'table' and d.g.venn_visit.repaired and d.g.mill_quest.restored
             assert all(Path(OUT/name).exists() for name in self.stills)
-            data = {'start': 'actual New Game; opening cinematic skipped through its visible button; no MQ01/MQ02 progress, actor positions or household receipts seeded',
+            data = {'start': 'actual New Game directly into the morning; no MQ01/MQ02 progress, actor positions or household receipts seeded',
                     'input': 'real walking, animated doors, proximity conversations, E and Space key events, explicit choices',
                     'household_order': list(d.order), 'venn_approach': d.method,
                     'mq01_completed': True, 'mq02_completed': True,
@@ -117,4 +118,8 @@ class Capture:
         finally:d.close()
 
 
-if __name__ == '__main__':Capture().run()
+if __name__ == '__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir',type=Path,default=OUT)
+    OUT=parser.parse_args().output_dir
+    Capture().run()

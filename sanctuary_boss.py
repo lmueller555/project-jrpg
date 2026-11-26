@@ -146,7 +146,7 @@ class SanctuaryBoss:
     def _available(self):
         g = self.game
         return (self.active and not g.on_title and not g.combat.active
-                and not g.opening_cinematic.active and not g.social.active
+                and not getattr(getattr(g, 'cinematic', None), 'active', False) and not g.social.active
                 and not g.social.locked and not g.household_action
                 and not g.opening.locks_player and not g.transfer_cooldown and not g.opening_fade
                 and not g.map_open and not g.quest_ui.journal_open
@@ -192,14 +192,10 @@ class SanctuaryBoss:
             if g.cave_random_encounters.pending is not None:
                 self.offer('Finish the current encounter first.')
                 return
-            rescue = getattr(g, 'sanctuary_rescue', None)
-            if rescue is not None:
-                rescue.start_before(self._begin_battle)
-            else:
-                self._begin_battle()
+            self._begin_battle()
 
     def _begin_battle(self):
-        """Commit the ticket only after the acknowledged rescue confrontation."""
+        """Commit the ticket after the player confirms the boss encounter."""
         g = self.game
         if (self.defeated or self._pending is not None or g.combat.active
                 or g.party.battle_reason() or g.cave_random_encounters.pending is not None):

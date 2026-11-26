@@ -29,7 +29,7 @@ def export(name,layers):
     return path,image,paths
 
 
-def table(name,teacher=False,festival=False):
+def table(name,teacher=False,craft=False):
     size=(72,48) if teacher else (64,40)
     frame=blank(size);d=ImageDraw.Draw(frame);w,h=size
     d.rectangle((3,13,w-4,h-3),fill=WOOD['outline'])
@@ -41,12 +41,9 @@ def table(name,teacher=False,festival=False):
     for y in (14,19):d.line((6,y,w-7,y),fill=WOOD['wood_shadow'])
     for x,y in ((11,12),(35,18),(54,16)):d.line((x,y,min(x+5,w-7),y),fill=WOOD['wood_light'])
     work=blank(size);q=ImageDraw.Draw(work)
-    if festival:
+    if craft:
         q.rectangle((8,11,31,21),fill='#e1d6bc')
         for x in (10,17,24):q.line((x,13,x+4,18),fill='#ac8051');q.line((x+4,13,x,18),fill='#ac8051')
-        q.rectangle((42,12,53,20),fill='#654e3c');q.rectangle((44,13,51,19),fill='#e7bb64')
-        q.line((43,11,52,11),fill='#45382d');q.arc((44,7,51,14),180,360,fill='#45382d')
-        q.point((47,16),fill='#fff0bd');q.rectangle((34,17,38,20),fill='#836347')
     elif teacher:
         q.polygon(((8,11),(22,12),(25,14),(28,12),(42,11),(42,23),(28,22),(25,24),(22,22),(8,23)),fill='#45382d')
         q.polygon(((10,12),(22,13),(24,15),(24,22),(21,21),(10,22)),fill='#e1d6bc')
@@ -150,7 +147,7 @@ def build():
     save(OUT/'structure.png',structure)
     assets={}
     for name,creator in [('pupil_desk',lambda:table('pupil_desk')),('teacher_desk',lambda:table('teacher_desk',True)),
-                         ('festival_corner',lambda:table('festival_corner',festival=True)),('writing_board',board),
+                         ('craft_table',lambda:table('craft_table',craft=True)),('writing_board',board),
                          ('village_map',village_map),('bookshelf',bookcase),('reading_bench',bench)]:assets[name]=creator()
     wall_details();objects=[]
     def new(identifier,asset,pos,foot,access,sort=None):
@@ -165,7 +162,7 @@ def build():
             cx=x+dx;cy=y+26;access=[x-10,cy+32] if seat==0 else [x+78,cy+32]
             objects.append(source_object({'id':f'pupil_chair_{(i-1)*2+seat+1}','pack':'cottage_furniture','sprite':'chair_up','position':[cx,cy],'access':access}))
     new('bookshelf','bookshelf',(352,108),[356,166,40,16],(374,194))
-    new('festival_corner','festival_corner',(286,260),[288,278,60,20],(318,246))
+    new('craft_table','craft_table',(286,260),[288,278,60,20],(318,246))
     new('reading_bench','reading_bench',(286,312),[292,329,60,10],(320,350))
     for name,pos,access in [('coat_pegs',(20,270),(48,298)),('child_drawings',(336,35),(346,110))]:
         im=opened(OUT/'sprites'/f'{name}.png');objects.append(object_record(name,(OUT/'sprites'/f'{name}.png').relative_to(ROOT).as_posix(),pos,im.size,None,access,0))
@@ -213,7 +210,7 @@ def build():
         'room_size':list(SIZE),'floor_rect':meta['floor_rect'],'shell_source':'assets/terrain/eldenmere/cottage_interior',
         'furniture_palette':'assets/terrain/eldenmere/cottage_furniture/furniture.json','objects':objects,
         'world_map_display':meta['world_map_display'],
-        'features':['six pupil seats','three slate desks','teacher book and ink','chalk counting lesson','Auratia world map with polar regions','child house and dog drawings','shared worn books','festival paper patterns and lantern']})
+        'features':['six pupil seats','three slate desks','teacher book and ink','chalk counting lesson','Auratia world map with polar regions','child house and dog drawings','shared worn books','ordinary paper craft patterns']})
     # Validate every destination with the same 24x12 floor probe as the game.
     blocked=Image.new('L',SIZE,255);blocked.paste(0,(24,72,408,360))
     for obj in objects:

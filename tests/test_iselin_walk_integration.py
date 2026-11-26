@@ -6,8 +6,7 @@ import unittest
 
 import pygame
 from dense_art import WorldCanvas, draw_actor
-from regent_actors import StoryActor
-from sanctuary_arrival import CastActor
+from story_actor import StoryActor
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTIONS = ('front', 'left', 'right', 'back')
@@ -91,21 +90,6 @@ class IselinWalkIntegrationTests(unittest.TestCase):
         self.assertEqual(pygame.image.tobytes(target, 'RGB'),
                          pygame.image.tobytes(pygame.transform.scale(expected, (140, 140)), 'RGB'))
 
-    def test_sanctuary_clone_keeps_all_approved_frames_without_sharing_mutable_banks(self):
-        source = self.actor
-        clone = CastActor('iselin', World(), source=source)
-        self.assertEqual(clone.draw_anchor, (12, 30))
-        self.assertFalse(hasattr(clone, 'detailed_sprite'))
-        for direction in DIRECTIONS:
-            clone.facing = direction
-            clone.moving = True
-            clone.walk_ms = 70
-            self.assertEqual(clone.walk_durations[direction], (35,) * 16)
-            self.assertEqual(pygame.image.tobytes(clone.sprite(0), 'RGBA'),
-                             pygame.image.tobytes(source.walks[direction][2], 'RGBA'))
-            self.assertIsNot(clone.walks[direction], source.walks[direction])
-        clone.walks['front'][0] = pygame.Surface((24, 36))
-        self.assertIsNot(clone.walks['front'][0], source.walks['front'][0])
 
     def test_other_path_list_actors_keep_their_existing_140ms_format(self):
         path = 'assets/characters/iselin/native_idles/idle_front.png'

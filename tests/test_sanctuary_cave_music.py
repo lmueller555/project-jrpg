@@ -14,9 +14,8 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from main import Game
-from quests import REGENT_QUEST
 from sanctuary_cave import RESERVE_ENTRY_APPROACH, RESERVE_ID, SCENE_ID
-from tools.capture_mq03_emergency import earlier_quest_fixture
+from tools.cave_scenario import seed_cave_combat
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,31 +53,9 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
     def tick(self, game, seconds=0):
         game.update(seconds, (0, 0), False)
 
-    def enter(self, *, emergency=True):
+    def enter(self):
         game = self.game()
-        earlier_quest_fixture(game)
-        if emergency:
-            self.assertTrue(game.accept_quest(REGENT_QUEST))
-            for objective in ('meet_visitors', 'accompany_visit', 'welcome_party'):
-                self.assertTrue(game.quests.complete_objective(REGENT_QUEST, objective))
-            self.assertTrue(game.regent_quest.restore(
-                {'version': 3, 'stage': 'sanctuary_arrival_pending'}))
-            self.assertTrue(game._sync_story_party())
-            game.regent_quest.emergency.sync_music(restoring=True)
-        # This suite isolates music after the fully acknowledged arrival scene.
-        arrival=getattr(game,'sanctuary_arrival',None)
-        if arrival is not None:
-            self.assertTrue(arrival.restore({'version':1,'beat':7,'completed':True,'cave_entered':False}))
-        self.assertTrue(game.cave_lesson.restore(
-            {'version': 1, 'resonance_seen': True, 'battle_cleared': True, 'deferred': False}))
-        if 'aqua_edge' not in game.character_abilities.known_abilities():
-            self.assertTrue(game.character_abilities.learn_ability('caelan', 'aqua_edge'))
-        reserve = game._scene_by_id(RESERVE_ID)
-        self.assertTrue(game.overworld_travel._commit(
-            reserve, RESERVE_ENTRY_APPROACH, 'back', {'id': 'music_test_arrival'}))
-        game.opening_fade = game.transfer_cooldown = 0
-        self.assertTrue(game.sanctuary_cave.interact())
-        self.assertEqual(game.world.data['id'], SCENE_ID)
+        seed_cave_combat(game, lesson_complete=True, enter=True)
         game.opening_fade = game.transfer_cooldown = 0
         self.tick(game, 1)
         return game
@@ -105,10 +82,8 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
             self.tick(game, .05)
         return game.combat
 
-    def test_entering_during_mq03_selects_the_cave_loop_without_changing_story(self):
+    def test_entering_selects_the_cave_loop_without_changing_quests(self):
         game = self.enter()
-        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
-        self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
         self.assertEqual(game.music.current_track, 'sanctuary_cave')
         self.assertEqual(game.music.desired_track, 'sanctuary_cave')
         self.assertEqual(Path(self.backend.load.call_args.args[0]).name,
@@ -127,19 +102,17 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
             self.assertEqual(game.music.desired_track, 'sanctuary_cave')
         self.assertEqual(self.backend.play.call_count, starts)
 
-    def test_first_cave_exit_restores_normal_area_music_even_during_mq03(self):
-        for emergency in (False, True):
-            with self.subTest(emergency=emergency):
-                game = self.enter(emergency=emergency)
-                self.assertEqual(game.music.desired_track, 'sanctuary_cave')
-                link = next(link for link in game.world.data['cave']['links']
-                            if link['destination'] == RESERVE_ID)
-                game.player.position.update(link.get('approach', link['position']))
-                self.assertTrue(game.sanctuary_cave.interact())
-                self.assertEqual(game.world.data['id'], RESERVE_ID)
-                self.assertEqual(game.music.desired_track, 'eldenmere')
-                self.tick(game, 1)
-                self.assertEqual(game.music.current_track, 'eldenmere')
+    def test_cave_exit_restores_normal_area_music(self):
+        game = self.enter()
+        self.assertEqual(game.music.desired_track, 'sanctuary_cave')
+        link = next(link for link in game.world.data['cave']['links']
+                    if link['destination'] == RESERVE_ID)
+        game.player.position.update(link.get('approach', link['position']))
+        self.assertTrue(game.sanctuary_cave.interact())
+        self.assertEqual(game.world.data['id'], RESERVE_ID)
+        self.assertEqual(game.music.desired_track, 'eldenmere')
+        self.tick(game, 1)
+        self.assertEqual(game.music.current_track, 'eldenmere')
 
     def test_continue_selects_cave_music_before_any_first_update(self):
         game = self.enter()
@@ -148,7 +121,6 @@ class SanctuaryCaveMusicTests(unittest.TestCase):
         self.assertTrue(other.has_saved_journey, other.save_error)
         self.assertTrue(other.begin_journey(True), other.save_error)
         self.assertEqual(other.music.current_track, 'sanctuary_cave')
-        self.assertTrue(other.sanctuary_arrival.cave_entered)
         self.assertEqual(other.music.desired_track, 'sanctuary_cave')
         self.assertFalse(other.combat.active)
 

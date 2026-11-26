@@ -67,21 +67,6 @@
       "name": "Road guard",
       "portrait": "road_guard"
     },
-    "regent_clerk": {
-      "name": "Page",
-      "portrait": "regent_page",
-      "actor_id": "regent_clerk"
-    },
-    "regent_survivor": {
-      "name": "Crown worker",
-      "portrait": "regent_survivor",
-      "actor_id": "regent_survivor"
-    },
-    "regent_driver": {
-      "name": "Driver",
-      "portrait": "male_01",
-      "actor_id": "regent_driver"
-    },
     "liam": {
       "name": "Liam",
       "portrait": "liam",
@@ -177,7 +162,7 @@
             },
             {
               "speaker": "serene",
-              "text": "They were when I saw him. He’s still trying to get everyone’s flour ready for tomorrow’s baking."
+              "text": "They were when I saw him. He’s still trying to finish the flour orders before his hands get too stiff."
             },
             {
               "speaker": "caelan",
@@ -197,7 +182,7 @@
             },
             {
               "speaker": "serene",
-              "text": "There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light."
+              "text": "There’s bread and lamp oil for Elira, too. She was running low on oil for her lantern."
             },
             {
               "speaker": "caelan",
@@ -258,7 +243,7 @@
               },
               {
                 "speaker": "serene",
-                "text": "His hands were troubling him when I saw him. He’s still trying to get everyone’s flour ready for tomorrow’s baking."
+                "text": "His hands were troubling him when I saw him. He’s still trying to finish the flour orders."
               },
               {
                 "speaker": "caelan",
@@ -270,7 +255,7 @@
               },
               {
                 "speaker": "serene",
-                "text": "There’s bread and lamp oil for Elira, too. She’ll be getting her lantern ready for the Festival of Light."
+                "text": "There’s bread and lamp oil for Elira, too. She was running low on oil for her lantern."
               },
               {
                 "speaker": "caelan",
@@ -313,7 +298,7 @@
             },
             {
               "speaker": "caelan",
-              "text": "Everyone has their supplies. Halden asked whether someone could help with the carrying while he finishes the festival flour."
+              "text": "Everyone has their supplies. Halden asked whether someone could help with the carrying while he finishes the flour orders."
             },
             {
               "speaker": "serene",
@@ -337,7 +322,7 @@
             },
             {
               "speaker": "caelan",
-              "text": "Elira’s lantern is down on her table. She wants to bring it herself tomorrow."
+              "text": "Elira’s lantern is down on her table. She wants to clean it this afternoon."
             },
             {
               "speaker": "serene",
@@ -469,7 +454,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Take the medicine across the upper bridge to Halden’s cottage, south of the mill. He may need help moving the festival flour."
+              "text": "Take the medicine across the upper bridge to Halden’s cottage, south of the mill. He may need help moving the flour sacks."
             }
           ]
         },
@@ -561,7 +546,7 @@
           "lines": [
             {
               "speaker": "serene",
-              "text": "Sit and eat. There'll be plenty to do before the festival."
+              "text": "Sit and eat. There'll be plenty to do today."
             },
             {
               "speaker": "caelan",
@@ -585,7 +570,7 @@
           "lines": [
             {
               "speaker": "tomas",
-              "text": "One more adjustment. Then I really am getting back to the preparations."
+              "text": "One more adjustment. Then I really am getting back to my chores."
             },
             {
               "speaker": "caelan",
@@ -593,7 +578,7 @@
             },
             {
               "speaker": "tomas",
-              "text": "Tell her the preparations are progressing. That covers both things."
+              "text": "Tell her the chores are progressing. That covers both things."
             }
           ]
         },
@@ -726,60 +711,8 @@
           ]
         }
       ]
-    },
-    "iselin": {
-      "conversations": [
-        {
-          "id": "iselin_ambient",
-          "lines": [
-            {
-              "speaker": "iselin",
-              "text": "Thank you for bringing us here, Caelan. I'll see you at the festival."
-            }
-          ]
-        }
-      ]
-    },
-    "regent_clerk": {
-      "conversations": [
-        {
-          "id": "regent_clerk_ambient",
-          "lines": [
-            {
-              "speaker": "regent_clerk",
-              "text": "I’m putting the inspection arrangements in order."
-            }
-          ]
-        }
-      ]
-    },
-    "regent_driver": {
-      "conversations": [
-        {
-          "id": "regent_driver_ambient",
-          "lines": [
-            {
-              "speaker": "regent_driver",
-              "text": "If you're looking at the brake, keep your fingers clear of the catch. It closes harder than it looks."
-            }
-          ]
-        }
-      ]
-    },
-    "lucan": {
-      "conversations": [
-        {
-          "id": "lucan_ambient",
-          "lines": [
-            {
-              "speaker": "lucan",
-              "text": "Her ladyship is expected at the festival. I’ll be staying with her."
-            }
-          ]
-        }
-      ]
     }
   },
   "script_reference": "docs/narrative/game_01/CH01_MQ01.md",
-  "note": "Serene offers the opening quest through an explicit clicked choice and responds to its saved progress. Tomas retains his approved ambient conversation. Actual household task gameplay is implemented separately; entering a room never completes an errand."
+  "note": "Ordinary household service, retained MQ01/MQ02 and community dialogue. Retired festival and regent quest conversations are removed."
 }

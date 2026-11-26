@@ -22,8 +22,8 @@ from tools.build_mira_combat import _main_component
 from tools.export_iselin_gate_detail import products as gate_detail_products
 
 SOURCE = ROOT / 'assets/source/characters/iselin/native_scene_work'
-GROUND = ROOT / 'assets/story/regent_arrival/actors/iselin'
-AERIAL = ROOT / 'assets/story/regent_aerial/actors/iselin'
+GROUND = ROOT / 'assets/characters/iselin/cinematic/ground'
+AERIAL = ROOT / 'assets/characters/iselin/cinematic/aerial'
 NATIVE = ROOT / 'assets/characters/iselin'
 GROUND_SCALE = 80 / 34
 GROUND_CANVAS, GROUND_ANCHOR = (80, 96), (40, 92)
@@ -187,7 +187,7 @@ def products():
         'native_canvas': [24, 36], 'native_ground_anchor': list(NATIVE_GROUND_ANCHOR),
         'camera_scale': GROUND_SCALE,
         'source': 'Native-derived generic travel and scene poses, plus the approved directly authored 80x96 gate approach, stop and idle. Native metadata applies to the generic poses; detailed_performances records the gate exception.'})
-    seated = ROOT / 'assets/story/regent/poses/iselin_seated.png'
+    seated = ROOT / 'assets/characters/iselin/cinematic/seated.png'
     outputs[seated] = _stable_png(seated, authored['seated_left'])
     for name in ('overhead', 'oblique'):
         image = presentation(authored[name], AERIAL_SCALE, AERIAL_CANVAS,

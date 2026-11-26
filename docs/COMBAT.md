@@ -41,7 +41,7 @@ and exposed earth at the corners. Shorter, worn grass and footpaths leave the
 middle open for attacks and spell effects. Warm daylight and contact shadows
 keep both combatants connected to the ground while preserving the Bat's
 hovering height. Scenery does not advance the exploration world or introduce
-festival decorations independently of the story.
+unrelated story decorations.
 
 Two small foreground grass tufts sway at the outer corners. Reduced Motion
 keeps them still, and pausing the battle freezes their animation. Background
@@ -295,7 +295,11 @@ rules await design. No damage-limit break is granted by the encounter.
 
 ## Lucan's cave guest combat
 
-Lucan joins the Sanctuary rescue as a **level-five guest**. He is manually
+**Retired automatic route:** Cave entry no longer recruits Lucan or starts a
+rescue. The following retained guest-profile rules are reference for explicit
+combat fixtures and future party work, not a live cave-quest walkthrough.
+
+Lucan's retained temporary profile is **level five**. He is manually
 controlled through Attack, Skills, Items, Guard and Flee; encounter-specific
 Flee restrictions still apply. He has no combat interactable during this guest
 appearance. His full Armsmaster arsenal and interactable remain later work for

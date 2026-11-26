@@ -184,8 +184,6 @@ class OverworldTravel:
         if checkpoint is not None:
             self.game.world, position, self.game.player.facing = checkpoint
             self.game.player.position.update(position)
-            restored=getattr(self.game.regent_quest,'on_travel_restored',None)
-            if restored is not None:restored()
             self._stop_party()
         self._town_armed = self._region_armed = False
         self._reserve_entry_armed = self._reserve_exit_armed = False
@@ -194,7 +192,7 @@ class OverworldTravel:
         g = self.game
         return not (g.on_title or g.pause.is_open or g.inventory_ui.is_open
                     or g.map_open or g.quest_ui.journal_open or g.world_map_viewer.is_open
-                    or g.combat.active or g.opening_cinematic.active or g.social.locked
+                    or g.combat.active or getattr(getattr(g, 'cinematic', None), 'active', False) or g.social.locked
                     or g.household_action or g.opening.locks_player or g.opening.controls_player
                     or g.opening.in_action or g.opening_fade or g.transfer_cooldown
                     or g.mill_quest.encounter_cutscene_active)
@@ -216,21 +214,7 @@ class OverworldTravel:
             members.append((g.halden_visit.tomas, g.halden_visit._place_tomas))
         if g.mill_quest.active and g.mill_quest._done('meet_mira'):
             members.append((g.mill_quest.mira, g.mill_quest._place_mira))
-        if getattr(g.regent_quest,'sanctuary_escort_active',False):
-            members.extend((actor, lambda world, point, actor=actor:
-                            g.regent_quest._place(actor, world, point))
-                           for actor in g.regent_quest.sanctuary_escorts)
-        elif g.regent_quest.stage in ('met', 'escorting'):
-            members.extend((actor, lambda world, point, actor=actor:
-                            g.regent_quest._place(actor, world, point)) for actor in g.regent_quest.party)
-        lantern = g.lantern_quest
-        if lantern.active and lantern._owned:
-            members.append((lantern.tomas, lambda world, point: lantern._place(lantern.tomas, world, point)))
-            if lantern._liam_claimed:
-                members.append((lantern.liam, lambda world, point: lantern._place(lantern.liam, world, point)))
-            if lantern._mira_owned:
-                members.append((lantern.mira, lambda world, point: lantern._place(lantern.mira, world, point)))
-        # Later quest owners have priority for shared Tomas and Mira instances.
+        # Each actor has one authoritative placement owner.
         unique = {}
         for actor, place in members:
             unique[actor] = place
@@ -276,10 +260,8 @@ class OverworldTravel:
         g._mouse_held = False
         self._town_armed = self._region_armed = False
         self._reserve_entry_armed = self._reserve_exit_armed = False
-        for owner in (g.mill_quest, g.regent_quest, g.lantern_quest):
+        for owner in (g.mill_quest,):
             owner.on_enter_scene(origin, transition)
-        arrival=getattr(g,'sanctuary_arrival',None)
-        if arrival is not None:arrival.on_enter_scene(origin,transition)
         if destination is g.town:
             self._restore_party()
         else:
@@ -458,7 +440,7 @@ class OverworldTravel:
         cleared = gate['clearance_flag'] in self.game.social.flags
         if not cleared:
             text = ('The road beyond this checkpoint remains closed. Stay inside the valley walls '
-                    'for now; the village is still preparing for the Festival of Light.')
+                    'while work continues on the road beyond the gate.')
         elif not gate.get('destination_ready', False):
             text = 'The onward road is still closed to travelers. You can explore inside the valley walls.'
         else:

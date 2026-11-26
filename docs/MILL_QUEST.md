@@ -1,25 +1,13 @@
 # Mira and the mill quest
 
-**Migration status — 2026-11-26:** Current-runtime reference. The approved
-[Chapter 1 opening](narrative/game_01/CHAPTER_01.md) now begins at Fire Veinhold
-and changes the opening chronology. The mill's implemented gift, combat lesson,
-repair and homecoming below remain unchanged by this documentation migration;
-their placement and dialogue in the revised opening await the later rewrite.
-All interaction, controller, acquisition and save contracts remain in force
-for the current runtime. Festival-related context belongs to the retired story.
+**Current runtime:** MQ02 remains playable after MQ01. Its blade gift, combat
+lesson, repairs, rewards and physical cup-setting conclusion remain. The old
+festival, expected regent visit and subsequent MQ03 handoff are removed.
+Completing MQ02 returns to exploration; the future Fire Veinhold opening is
+not implemented by this retirement.
 
-Character–object work follows the mandatory
-[global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
-[personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
-contact timings, and captures below describe the current implementation.
-Natural proportions and readable intent take priority over exact hand contact;
-a small, deliberate transfer snap is acceptable.
-
-This is the MQ02 runtime/presentation guide. The
-[MQ02 script](narrative/game_01/CH01_MQ02.md) owns the authored route, dialogue,
-gift premise, magick discoveries, and homecoming. This guide owns interaction,
-action, controller, and save contracts. The separate
-[arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) owns its shots and performances.
+[MQ02's script](narrative/game_01/CH01_MQ02.md) and
+`assets/story/mill/scene.json` record the synchronized ordinary dialogue.
 
 ## The birthday presentation
 
@@ -49,31 +37,21 @@ Inspect the lodged limb and the pressure holding it against the screen. Mira ope
 
 The encouragement follows actual success. Its saved Venn-failure branch lets Caelan be pleased while still wishing he had managed that earlier, heavier task. The direct-tools branch invents no failed spell. After acknowledgment, he grips the haul rope while Mira releases the catch and operates the lever. Only that physical repair removes the limb and restores the intake.
 
-The first post-repair line preserves his held-rope beat; advancing beyond it releases the pose. The same follow-up then lets him thank Mira for bringing the gift early and agree to bring his book to the workshop. That is future intent, not a new appointment or practice objective. Return to inspect the working wheel, then speak with Halden and Mira. Their goodbye gives Caelan a spoken reason to return to the sanctuary and help with the remaining preparations. The mill report is saved separately from MQ02 completion; no arrival cinematic or quest reward starts there.
+The first post-repair line preserves his held-rope beat; advancing beyond it releases the pose. The same follow-up then lets him thank Mira for bringing the gift early and agree to bring his book to the workshop. That is future intent, not a new appointment or practice objective. Return to inspect the working wheel, then speak with Halden and Mira. Their goodbye gives Caelan a spoken reason to return to the sanctuary and help with the remaining household work. The mill report is saved separately from MQ02 completion; no later quest or quest reward starts there.
 
 ## Return to the sanctuary
 
-After Halden's report, Mira returns to her workshop and Caelan walks home under
-player control. The final objective directs him to Mother Serene at the
-sanctuary. The existing Serene and Tomas actors are staged inside the dining
-room before arrival, without exposing Iselin's party or enabling MQ03 early.
-Caelan's earlier morning offer to help is remembered without suggesting he
-forgot the tables: Tomas and Serene already took over that work.
+After Halden's report, Mira returns to her workshop and Caelan walks home.
+Serene and Tomas are doing ordinary household work in the dining room.
+The `sanctuary_return` exchange asks Caelan to bring the clean cups over.
+He visibly collects, carries and places them using the existing registered
+character and prop art. The `sanctuary_setting` exchange concerns drying and
+putting away household cups; it introduces no visitors or festival.
 
-The `sanctuary_return` dialogue is recorded once in the
-[MQ02 homecoming script](narrative/game_01/CH01_MQ02.md); its final request
-hands off to the cup-placement action below.
-
-Caelan visibly collects, carries and places the clean cups in a short staged
-action, using the existing character and prop art. `sanctuary_setting` introduces
-the expected regent and moves Tomas's bow question here from MQ03. Both the
-physical placement and Serene's final acknowledged thanks are required before
-MQ02 can complete. Interrupted prose or movement cannot bypass that boundary.
-
-The dining-room view holds and fades into the arrival. The audience sees
-Iselin's approach while Caelan stays at the sanctuary, and the return preserves
-his room and position. Speaking with Serene afterward accepts MQ03 through the
-short welcome-visitors request rather than repeating the preparations.
+Both the physical placement and Serene's acknowledged final thanks are required
+before MQ02 and its existing rewards complete once. Interrupted prose or
+movement cannot bypass this boundary. Completion returns control at home,
+without an Iselin arrival, fade to another scene or MQ03 invitation.
 
 ## Finding the interactions
 
@@ -87,9 +65,8 @@ Object interactions measure the gap between Caelan’s ground footprint and the 
 
 `mill_quest.py` owns quest staging, accompaniment, physical actions and durable
 milestones. `assets/story/mill/scene.json` holds the current spoken lines. The
-[MQ02 narrative script](narrative/game_01/CH01_MQ02.md) also records the arrival
-handoff. `regent_arrival.py` owns that separate presentation and its saved
-pending/seen checkpoint; it never repeats the mill's rewards.
+[MQ02 narrative script](narrative/game_01/CH01_MQ02.md) also records the retained
+homecoming. No retired regent controller owns a following handoff.
 
 Mira's existing bench actor, directional walking art, portrait and workshop are
 reused. Her bench-work fitting stays at the workbench while she accompanies
@@ -139,7 +116,7 @@ The successful spell is checkpointed before the encouragement. Leaving that
 exchange unread preserves it without replaying the spell. Completed repairs
 stay repaired while the player travels or reloads. Interrupted actions resume
 from a safe unfinished stage. Pause and inventory freeze action clocks; ordinary
-dialogue remains live and cancelable. New Game resets Mira and all mill facts. Carrying or holding the cups is transient: an interrupted unfinished sequence reloads safely before the introduction and carry. Already-completed older MQ02 journeys retain their result; quest migration adds the new final objective as completed without replaying the homecoming, arrival or rewards. The new state never reopens MQ02 for an existing completed journey.
+dialogue remains live and cancelable. New Game resets Mira and all mill facts. Carrying or holding the cups is transient: an interrupted unfinished sequence reloads safely before the introduction and carry. Already-completed older MQ02 journeys retain their result; quest migration adds the new final objective as completed without replaying the homecoming or rewards. The new state never reopens MQ02 for an existing completed journey.
 
 Older saves at the available Mira handoff remain valid and can receive the presentation. Already-active/completed MQ02 journeys preserve their prior progress without replaying the gift presentation or fight. During an active weaponless legacy route, `_speak` chooses the matching `legacy_*` arrays for weapon-dependent aftermath, spell, encouragement, repair follow-up and replies. Their words retain that route’s facts and body registration. Once an explicitly marked legacy-bypass outing is completed, an idempotent migration supplies the missing Blue-only blade and starter Aether Edge so later cave progression remains available; it does not change HP/MP or replay an earlier scene.
 

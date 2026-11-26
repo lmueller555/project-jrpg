@@ -16,7 +16,7 @@ from overworld_travel import OverworldTravel
 from purposeful_wildlife import valid_state as valid_wildlife
 from regional_participation import (BENCH_POSITION, STAND_POSITION, CAT_SCRIPT,
     MASONRY_SCRIPT, empty_state, valid_state, valid_context, progress_state)
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class RegionalParticipationTests(unittest.TestCase):
@@ -24,7 +24,7 @@ class RegionalParticipationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.g = self.make_game()
-        seed_previous_quests(self.g)
+        seed_mill_completed(self.g)
         self.g.world = self.g.overworld_world
         self.c = self.g.world.participation
         self.g.player.position.update(STAND_POSITION)

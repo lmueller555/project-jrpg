@@ -1,7 +1,8 @@
-"""The opening presents timed prose through the game's portrait dialogue UI."""
+"""Timed cinematics share the portrait UI without relying on retired dialogue."""
 import json
 import os
 from pathlib import Path
+import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -13,7 +14,8 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame
 
 from audio_settings import AudioSettings
-from opening_cinematic import OpeningCinematic, ROOT
+from cinematic_player import CinematicPlayer, ROOT
+from cinematic_fixture import write_scene
 import speech_bubble
 from ui_style import Painter, UIStyle
 
@@ -28,7 +30,9 @@ class CinematicDialogueTests(unittest.TestCase):
         self.game.to_canvas = lambda point: (point[0]/2, point[1]/2)
         self.canvas = pygame.Surface((480, 320))
         self.ui = pygame.Surface((960, 640))
-        self.scene = OpeningCinematic(self.game)
+        temporary = tempfile.TemporaryDirectory(prefix='cinematic-dialogue-')
+        self.addCleanup(temporary.cleanup)
+        self.scene = CinematicPlayer(self.game, scene_path=write_scene(Path(temporary.name)))
         self.scene.start()
 
     def tearDown(self):
@@ -126,7 +130,7 @@ class CinematicDialogueTests(unittest.TestCase):
 
     def test_automatic_pages_receive_reading_time_and_freeze_on_pause(self):
         self.game.audio.text_scale = 1.5
-        record = self.passage('small_spell')
+        record = self.passage('long_passage')
         self.layout_at(record['start']+.001)
         pages = self.scene.caption_pages
         self.assertGreater(len(pages), 1)
@@ -149,7 +153,7 @@ class CinematicDialogueTests(unittest.TestCase):
 
     def test_panel_click_is_not_a_manual_page_advance(self):
         self.game.audio.text_scale = 1.5
-        record = self.passage('small_spell')
+        record = self.passage('long_passage')
         self.layout_at(record['start']+.1)
         before = self.scene.elapsed, self.scene.caption_page_index, list(self.scene.caption_lines)
         center = self.scene.caption_rect.center
@@ -162,7 +166,7 @@ class CinematicDialogueTests(unittest.TestCase):
         self.assertTrue(self.scene.active)
 
     def test_display_and_text_size_reflow_do_not_advance_the_scene(self):
-        record = self.passage('small_spell')
+        record = self.passage('long_passage')
         self.layout_at(record['start']+(record['end']-record['start'])*.65)
         elapsed = self.scene.elapsed
         for size, scale in (((480, 320), 1.5), ((1440, 960), 1), ((960, 640), 1.25)):

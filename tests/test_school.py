@@ -104,7 +104,7 @@ class EldenmereSchoolTests(unittest.TestCase):
         ids={entity['id'] for entity in room.entities}
         self.assertTrue({f'pupil_desk_{i}' for i in range(1,4)}<=ids)
         self.assertTrue({f'pupil_chair_{i}' for i in range(1,7)}<=ids)
-        self.assertTrue({'teacher_desk','teacher_chair','writing_board','bookshelf','festival_corner',
+        self.assertTrue({'teacher_desk','teacher_chair','writing_board','bookshelf','craft_table',
                          'village_map','reading_bench','coat_pegs','child_drawings','hearth'}<=ids)
         targets={tuple(p) for p in room.data['destinations'].values()}
         targets.update(tuple(d.data['anchor']) for d in room.doors)

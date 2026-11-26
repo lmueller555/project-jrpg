@@ -72,7 +72,7 @@ def verify_preservation(baseline):
 
 def render(parent, output, start, end, filename, *, snapshots=()):
     child = parent.gallery_session.game
-    scene = child.opening_cinematic
+    scene = child.cinematic
     duel = scene.action_stage.duel
     frozen = (child._progress_signature(), child.elapsed_ms, tuple(child.player.position))
     frames = round((end-start)*FPS)

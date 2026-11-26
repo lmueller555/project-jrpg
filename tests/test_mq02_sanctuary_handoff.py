@@ -12,7 +12,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 from main import Game
 from mill_quest import MillQuest
-from quests import MILL_QUEST, REGENT_QUEST
+from quests import MILL_QUEST
 from test_mill_battle_gameplay import seed_mill_handoff
 
 
@@ -100,7 +100,7 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.assertTrue(self.home.holding_cups)
         self.assertFalse(self.quest.cups_placed)
 
-    def test_halden_report_records_repair_but_keeps_quest_and_arrival_unfinished(self):
+    def test_halden_report_records_repair_but_keeps_homecoming_unfinished(self):
         self.assertTrue(self.quest.interact())
         self.g.social.advance();self.g.social.cancel()
         self.assertFalse(self.quest.reported_to_halden)
@@ -108,17 +108,13 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'active')
         self.assertEqual(self.g.quests.objective_status(MILL_QUEST, 'report'), 'completed')
         self.assertEqual(self.g.quests.objective_status(MILL_QUEST, 'return_sanctuary'), 'active')
-        self.assertEqual(self.g.quests.status(REGENT_QUEST), 'locked')
-        self.assertEqual(self.g.regent_arrival.state, 'waiting')
         self.assertFalse(self.quest.resolved)
         self.assertFalse(self.quest.cups_placed)
         self.assertNotIn('CH01_MQ02_COMPLETE', self.g.social.flags)
-        self.assertTrue(all(not a.story_visible for a in self.g.regent_quest.actors.values()))
         self.assertIsNotNone(self.g._read_saved_journey())
         self.reload()
         self.assertTrue(self.quest.reported_to_halden)
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'active')
-        self.assertEqual(self.g.regent_arrival.state, 'waiting')
 
     def test_family_is_inside_once_and_wrong_room_coordinates_do_not_start_return(self):
         self.report()
@@ -131,7 +127,6 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.g.player.position.update(self.home.serene.position+(-24, 12))
         self.assertFalse(self.quest.try_conversation(self.home.serene))
         self.assertFalse(self.g.social.active)
-        self.assertEqual(self.g.quests.status(REGENT_QUEST), 'locked')
         self.enter_home();self.speak()
         self.assertEqual(self.g.social.script_identifier, 'mill_sanctuary_return')
 
@@ -156,7 +151,6 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.g.social.advance();self.g.social.cancel()
         self.assertFalse(self.quest.resolved)
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'active')
-        self.assertEqual(self.g.regent_arrival.state, 'waiting')
         self.assertFalse(self.quest.cups_placed)
         self.assertIsNotNone(self.g._read_saved_journey())
         self.reload();self.enter_home();self.speak()
@@ -186,27 +180,32 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.until(lambda: self.quest.resolved)
         self.assertTrue(self.quest.cups_placed)
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'completed')
-        self.assertEqual(self.g.quests.status(REGENT_QUEST), 'available')
+        self.assertEqual(self.g.party.active_ids, ('caelan',))
+        self.assertFalse(self.g.cinematic_active)
         self.assertIn('CH01_MQ02_COMPLETE', self.g.social.flags)
         self.assertEqual(self.g.world.data['id'], 'sanctuary_dining')
-        self.assertEqual(self.g.regent_arrival.state, 'pending')
-        self.assertFalse(self.g.regent_arrival.active)
         state = self.g.battle_rewards.to_dict(), self.g.inventory.to_dict()
-        self.assertFalse(self.g.regent_arrival.request())
         self.reload()
         self.assertTrue(self.quest.resolved)
         self.assertEqual(state, (self.g.battle_rewards.to_dict(), self.g.inventory.to_dict()))
         self.assertFalse(self.home.action_active)
         self.assertIsNotNone(self.g._read_saved_journey())
+        self.assertEqual(self.g.quests.tracker_text(), '')
+        self.assertEqual(self.g.party.active_ids, ('caelan',))
+        self.assertFalse(self.g.party.members['mira']['available'])
+        for actor in (self.home.serene, self.home.tomas):
+            self.assertFalse(actor.story_paused)
+            self.assertFalse(getattr(actor, 'story_following', False))
+        self.g.draw()
+
 
     def test_new_game_resets_return_state_and_releases_the_existing_family(self):
         self.reach_setting()
-        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
+        self.assertTrue(self.g.begin_journey(False))
         self.assertFalse(self.quest.reported_to_halden)
         self.assertFalse(self.quest.cups_placed)
         self.assertFalse(self.home.action_active)
         self.assertFalse(self.home.holding_cups)
-        self.assertEqual(self.g.regent_arrival.state, 'waiting')
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'locked')
         for actor in (self.home.serene, self.home.tomas):
             self.assertEqual(sum(actor in room.npcs for room in self.g.scenes.values()), 1)
@@ -219,24 +218,18 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.assertEqual(len(old_objectives), 10)
         journey['quests']['quests'][MILL_QUEST] = {
             'status': 'completed', 'completed_objectives': old_objectives}
-        journey['quests']['quests'][REGENT_QUEST] = {
-            'status': 'available', 'completed_objectives': []}
         journey['mill_quest']['resolved'] = True
         journey['mill_quest'].pop('reported_to_halden', None)
         journey['mill_quest'].pop('cups_placed', None)
-        journey['regent_arrival'] = {'version': 1, 'state': 'seen'}
         self.path.write_text(json.dumps(journey))
         other = self.game(True)
         self.assertTrue(other.has_saved_journey)
         self.assertTrue(other.begin_journey(True));self.g = other
         self.assertEqual(other.quests.status(MILL_QUEST), 'completed')
         self.assertEqual(other.quests.objective_status(MILL_QUEST, 'return_sanctuary'), 'completed')
-        self.assertEqual(other.quests.status(REGENT_QUEST), 'available')
         self.assertTrue(other.mill_quest.resolved)
         self.assertFalse(self.home.action_active)
-        self.assertEqual(other.regent_arrival.state, 'seen')
         other.update(.1, (0, 0), False)
-        self.assertFalse(other.regent_arrival.active)
         self.assertFalse(other.social.script_identifier in ('mill_sanctuary_return', 'mill_sanctuary_setting'))
 
     def test_return_extension_rejects_partial_non_boolean_and_premature_placement(self):
@@ -271,24 +264,19 @@ class SanctuaryHandoffTests(unittest.TestCase):
         self.assertTrue(self.quest.reported_to_halden)
         self.assertFalse(self.quest.resolved)
         self.assertFalse(self.quest.cups_placed)
-        self.assertEqual(other.regent_arrival.state, 'waiting')
-        self.assertEqual(other.quests.status(REGENT_QUEST), 'locked')
 
-    def test_dialogue_uses_exact_approved_lines_and_only_one_bow_question(self):
+    def test_homecoming_dialogue_sets_the_table_without_the_retired_visit(self):
         mill = self.quest.lines
         lines = mill['sanctuary_return']
         tomas = next(i for i, line in enumerate(lines)
-                     if line['speaker'] == 'tomas' and line['text'].startswith('The tables'))
+                     if line['speaker'] == 'tomas' and line['text'].startswith("The table's clean"))
         self.assertEqual([line['text'] for line in lines[tomas:tomas+3]], [
-            "The tables are finished, we're just setting them if you can grab the cups.",
+            "The table's clean. Can you bring over the cups?",
             'You could bring those clean ones over, if you have a moment.',
             'Yep, on it.'])
         self.assertNotIn('I thought they might be.', [line['text'] for line in lines])
-        self.assertTrue(any('Do we have to bow' in line['text']
-                            for line in mill['sanctuary_setting']))
-        self.assertFalse(any('bow' in line['text']
-                             for line in self.g.regent_quest.lines['preparations']))
-        self.assertEqual(len(self.g.regent_quest.lines['preparations']), 2)
+        self.assertFalse(any('bow' in line['text'].lower()
+                             for line in mill['sanctuary_setting']))
 
 
 if __name__ == '__main__':unittest.main()

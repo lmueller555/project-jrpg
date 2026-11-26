@@ -44,7 +44,7 @@ class CaveChasmTests(unittest.TestCase):
         saved={'player':{'scene':SCENE_ID,'position':[2084,230]},
                'sanctuary_boss':{'version':1,'defeated':False,'intro_seen':True,'pending':ticket},
                'post_battle':{'kind':'cave_boss','scene':SCENE_ID,'position':[2084,230],'encounter':deepcopy(ticket)},
-               'inventory':{'potion':2},'quests':{'MQ03':'pending'},'experience':543}
+               'inventory':{'potion':2},'quests':{'CH01_MQ02':'completed'},'experience':543}
         before=deepcopy(saved);moved=migrate_chasm_checkpoint(saved)
         self.assertEqual(saved,before)
         self.assertEqual(moved['player']['position'],self.chasm['safe_landing'])
@@ -95,8 +95,8 @@ class CaveChasmTests(unittest.TestCase):
         g=NS(world=self.world,player=NS(position=pygame.Vector2(2060,360)),
              on_title=False,on_gallery=False,gallery_session=None,_music_focused=True,
              social=NS(locked=False),combat=NS(active=False),quest_ui=NS(journal_open=False),
-             opening=NS(locks_player=False),opening_cinematic=NS(active=False),
-             regent_arrival=NS(active=False,state='done'),overworld_travel=NS(active=False),
+             opening=NS(locks_player=False),cinematic_active=False,
+             overworld_travel=NS(active=False),
              map_open=False,transfer_cooldown=0,opening_fade=0,household_action=False,
              audio=NS(effects_volume=1.,bind_effects=lambda owner:None))
         for key in ('pause','inventory_ui','party_ui','status_ui','world_map_viewer'):

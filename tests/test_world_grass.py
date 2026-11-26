@@ -186,7 +186,7 @@ class GameGrassTests(unittest.TestCase):
         game = self.game
         game._update_grass(.2)
         self.assertGreater(self.grass.clumps[0].strength, 0)
-        self.assertTrue(game.begin_journey(False, show_cinematic=False))
+        self.assertTrue(game.begin_journey(False))
         self.assertEqual(self.grass._previous_positions, {})
         self.assertEqual(self.grass.clumps[0].strength, 0)
         self.assertEqual(self.grass.clumps[0].activations, 0)
