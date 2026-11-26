@@ -1,5 +1,16 @@
 # Liam’s lantern quest — PR1 through PR4
 
+**Migration status — 2026-11-26:** Retired target storyline; current-runtime
+reference retained. [Chapter 1](narrative/game_01/CHAPTER_01.md) owns the approved
+Fire Veinhold opening. The entire Festival of Light storyline, this MQ04 lantern
+quest, the proposed MQ05 festival and post-festival authorization sequence are
+superseded. They are not an approved implementation backlog.
+
+MQ04 still runs in the game. This documentation-only migration changes no
+dialogue, object ownership, objective, quest flag, checkpoint or save behavior.
+The four-segment contracts and historical future-work statements below describe
+the superseded route, pending a separately scoped gameplay and dialogue rewrite.
+
 This guide owns MQ04 controller, object, actor, and save behavior. The
 [consolidated MQ04 script](narrative/game_01/CH01_MQ04.md) owns the complete
 authored story, dialogue, character boundaries, and four-part route.
@@ -69,6 +80,6 @@ For PR3, additionally verify continuation from the real PR2 endpoint; every conv
 
 For PR4, additionally verify continuation from `serene_heard`; all four finish actions and their acknowledged dialogue boundaries; final covering, inspection and directional carry; school actor identities; the mother’s completed exchange without premature quest completion; safe home placement; and one final completion notice only after farewell. Cover cancellation and reload at each new checkpoint, completed-save restore, repeat replies and New Game. Walk the complete MQ04 route through all four segments without replacing the intermediate state with test seeds, while preserving earlier repairs, flour and decoration facts. Capture the real home work, school acknowledgment and final resting lantern.
 
-## Chapter continuity
+## Superseded chapter continuity — implementation-era reference
 
 MQ04 happens on the preparation day and MQ05 on the next day. The broader [chapter structure](narrative/game_01/CHAPTER_01.md) now contains five main quests. The festival’s detailed activities and inciting event remain later work. The authorization letter remains the planned post-festival escalation, while the excavation catastrophe belongs to Chapter 3. In-world religious belief remains distinct from established physical rules and from the Crown's undisclosed investigation; this quest does not reveal the harvesting network or its military purpose.

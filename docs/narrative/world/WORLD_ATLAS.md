@@ -3,10 +3,15 @@
 **Status: Approved world name, broad geography, named kingdoms, regional
 cultural foundations and opening regional context.**
 
-**Implementation:** The Elden Vale overworld shows the ruined western crossing
-and road damage. Iselin's arrival and MQ03 dialogue present the relief and
-covenant context below. The canonical world-map artwork is linked below; its
-continental scale does not replace the local playable map.
+**Opening revision, 2026-11-26:** The approved Fire Veinhold opening replaces
+the flashforward, Festival of Light and quarry/excavation Act I. The
+[Chapter 1 chronology](../game_01/CHAPTER_01.md) owns the revised sequence.
+This is future narrative direction, not implemented gameplay or dialogue.
+The current overworld still starts with a ruined western crossing, and its
+arrival and MQ03 scenes retain the older story. Those implementations and
+their captures do not establish the revised starting state. The canonical
+world-map artwork remains authoritative for geography, separately from local
+playable states.
 
 **Auratia** contains four major continents, a significant central island chain
 and a northern circumpolar ocean region.
@@ -15,8 +20,8 @@ stories places, livelihoods and cultural relationships to draw upon. Exact
 borders and distances remain open; illustrative encounters are story seeds,
 not committed quests.
 
-The existing village, characters, quests and local geography retain their
-approved facts. [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) governs the
+Compatible village, character and local-geography foundations remain.
+[Foundational Lore](../saga/FOUNDATIONAL_LORE.md) governs the
 world's aether, Worldveins and the effects of interrupted circulation. The
 [Revelation Plan](../saga/REVELATION_PLAN.md) governs what characters
 and players may learn. The atlas is a writer's reference; a character's own
@@ -73,7 +78,7 @@ kingdom.
 The image and this atlas now supersede the earlier continental outline and
 Elden Vale's former placement in the upper Leth watershed. The Vale belongs
 to a separate southern watershed. Local village orientation, mill operation,
-the ruined western crossing and the Sanctuary's northeast location remain
+the western crossing's location and the Sanctuary's northeast location remain
 unchanged. [Merovar](continents/MEROVAR.md) and
 [Elden Vale](regions/ELDEN_VALE.md) own the detailed relationships.
 
@@ -133,7 +138,9 @@ The atlas does not settle the planet's total land area, exact distances,
 coastline shapes or the existence of additional landmasses beyond those named
 here. Large interiors, remote coasts and the detailed extent of polar surveys
 remain available for later development. Specific Worldvein routes, Veinhold
-sites and the cannon's location have not been assigned on this map.
+sites and the cannon's location have not been assigned on this map. This
+includes the opening's Fire Veinhold: its exact position and approach remain
+open, and the opening weapon is not yet identified as the later cannon.
 
 ## Where Eldenmere belongs
 
@@ -162,8 +169,9 @@ river or watershed. See the approved
 [Eldenmere elevation and water contract](../../world/eldenmere/blockout/README.md).
 
 Regent Iselin's established authority is regional. Her
-administration's immediate concerns lie in Elden Vale and neighbouring southern
-road and quarry districts. She is the younger sister of Queen Althea of
+administration's concerns include Elden Vale and neighbouring southern
+communities. This does not retain the retired opening quarry dispute.
+She is the younger sister of Queen Althea of
 Adamanthra. This does not establish Adamanthran sovereignty over the entire
 continent. Her precise constitutional powers and exact political boundaries
 remain open. The [royal character foundations](../game_01/CHARACTERS.md#iselin--approved-royal-background)
@@ -172,13 +180,21 @@ A geographic region in the atlas is not automatically an administrative province
 
 ### The region at the opening of Game I
 
-The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the recent
-southern-road damage and relief context. The protected seam lies within
-**Elden Vale Sanctuary**, northeast of Eldenmere, a separate regional site from
-**Serene's home** in the village. See the
-[Sanctuary Covenant](SANCTUARY_COVENANT.md) for the reserve boundaries,
-protected uses and public evidence; [MQ03](../game_01/CH01_MQ03.md) owns the
-emergency and return progression.
+The [Chapter 1 chronology](../game_01/CHAPTER_01.md) owns the revised opening.
+The western bridge is intact during Caelan and Mira's introduction. It is
+destroyed after Iselin and Lucan reach Eldenmere, when the Fire Veinhold's
+fireball aimed at the village misses and strikes the crossing. The former
+pre-opening lightning explanation is retired. The facility's precise site,
+the reason for targeting Eldenmere, bridge repair and the onward route remain
+open; a closed bridge alone does not establish isolation while land gates exist.
+
+**Elden Vale Sanctuary**, northeast of Eldenmere, remains separate from
+**Serene's home** in the village. Its natural confluence and service to the
+dead remain established in the [faith guide](ELDEN_VALE_FAITH.md). The
+[Covenant](SANCTUARY_COVENANT.md) retains background custodial terms, rather
+than an approved future quarry conflict. The Sanctuary and cave's new plot
+roles remain open; their older quest does not supply a required bypass or
+excavation episode for this opening.
 
 The detailed regional setting is in [Elden Vale](regions/ELDEN_VALE.md).
 
@@ -200,8 +216,10 @@ riverlands and Rookfen wetlands have different livelihoods from the uplands.
 | **Marris Coast** | Central-eastern cliffs, estuaries and sheltered Amber Sea harbours | Ship repair, salt production, migrant neighbourhoods and merchant institutions | Transit fees, access to waterfront work and the price of imported necessities |
 | **Redstone March** | Drier grassland and scrub east of the Greyfold range | Pastoral routes, quarry settlements, market centres and well maintenance | Town boundaries and private holdings can interrupt shared access to water |
 
-Game I opens in far-southern Elden Vale and its nearby upland connections,
-then develops the approved northward journey described below. The regions in
+Game I's home region remains far-southern Elden Vale. The Fire Veinhold
+prologue and first party expedition are owned by Chapter 1; the facility's
+exact geographic placement remains open. The longer journey develops the
+approved northward direction described below. The regions in
 this table offer choices for planning that route; they do not require visits
 to every biome, the coast or every central river district. Intermediate
 destinations remain open.
@@ -216,8 +234,9 @@ journey toward Adamanthra's capital in far-northern Merovar. The
 owns the later separation, antiwar threads, descent and surface interval.
 Her exile route reaches an ice-aspected cave near a mountain summit. Its name,
 precise mountain, route and distances remain open. The chasm leading into the
-planetary lifeforce has no assigned location; the existing Sanctuary rupture
-is not identified as that descent by this approval.
+planetary lifeforce has no assigned location. Neither the Sanctuary nor its
+cave is identified as that descent; the retired excavation plot supplies no
+required rupture for the revised opening.
 
 ## Other continents, the island chain and the poles
 
@@ -295,13 +314,15 @@ named atlas region or settle how all confluences behave.
 
 Exploring these sanctuaries and studying their confluences may become a recurring
 thread of the main plot. This is a narrative direction for future development,
-not a completed itinerary or an explanation of the recent surges. A sanctuary's
+not a completed itinerary or an explanation of a particular elemental event. A sanctuary's
 natural confluence does not establish that it contains a machine controlling
 the Worldveins.
 
-Eldenmere's established Festival of Light combines remembrance with living
-community. Other places may express related beliefs through different
-gatherings, household practices or public observances. These practices can
+Remembrance and care for living neighbours remain part of Elden Vale's
+spiritual foundations. The Festival of Light and its preparation story are
+retired; they do not remain as off-screen annual canon or a required departure
+event. Other places may express their beliefs through gatherings, household
+practices or public observances. These practices can
 share historical fragments without establishing one identical religion
 across the world. The names, hierarchy and relationships of major traditions
 remain to be chosen.
@@ -309,8 +330,7 @@ remain to be chosen.
 The continental documents describe such practices as communal meals, repaired
 lamps, remembrance records or household acknowledgements. Their theological
 claims remain beliefs. They do not settle souls, reincarnation or personal
-consciousness after death. The Festival of Light's season and the
-world's calendar also remain open.
+consciousness after death. The world's calendar remains open.
 
 Magicks obey the same established conservation limits everywhere. Regional
 differences can arise through teaching, tools, occupations, access to training
@@ -325,7 +345,10 @@ artificially disrupt that circulation while harvesting aether. Some opponents
 call them **"clots"** with disdain. The foundational owner records their
 connection to the cannon and Ice Dome; this atlas does not assign them to
 particular settlements or make every unusual weather event evidence of a
-Veinhold. The opening lightning's natural or artificial cause remains open.
+Veinhold. The revised opening bridge attack has an approved Fire Veinhold
+cause; it is not an unresolved lightning incident. The complete military
+sequence and its remaining decisions belong to Chapter 1 and the foundational
+owner.
 
 ## Turning the atlas into scenes
 

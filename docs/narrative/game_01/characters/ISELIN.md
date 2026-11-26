@@ -3,7 +3,11 @@
 ## Approved identity and opening role
 
 Iselin replaces Aldric in current game canon, retaining the regional regent title,
-royal role, relief work and Sanctuary breach of trust. She is
+royal role and sincere concern for the people. The
+[replacement opening](../CHAPTER_01.md), approved 2026-11-26, supersedes the
+former relief-visit, quarry and Sanctuary breach-of-trust spine. This is approved
+story direction; its new scenes and playable roles are not implemented by the
+documentation revision. She is
 [Queen Althea's](../CHARACTERS.md#queen-althea) younger sister and Lucan Rooke's
 employer. Althea reigns over **Adamanthra**. The dynasty's name, Iselin's age
 and detailed succession rules remain unresolved; older proposed family names
@@ -27,40 +31,59 @@ The first half to roughly two-thirds of the intended adventure accompanies
 Iselin on a long northward journey from far-southern Elden Vale through
 several affected regions. Landscapes, settlements,
 intermediate incidents and the precise itinerary still need development.
+The opening party's first leg returns to Fire Veinhold; that immediate alliance
+does not yet select the later northward departure trigger or itinerary.
 
 ### Return and parallel antiwar story
 
 She eventually leaves the company's journey and returns to Adamanthra to try
-to prevent war with Carcovia. Main-party travel continues with occasional
+to prevent the broader war with Carcovia. The opening already includes hostile
+Carcovian action; these later efforts cannot presume that no attack has occurred.
+Main-party travel continues with occasional
 Iselin cutaways. The departure's timing, immediate trigger and diplomatic scenes
 remain open; follow the shared chronology rather than inventing a second order.
 
 ## Existing ice magick
 
 Growing up in the cold north, Iselin developed proficiency with ice magick and
-is exceptionally gifted with it. Royal duties have given her few occasions to
-use that talent recently. Future development should explore how it grows and
-what she chooses to do with it, rather than inventing a first acquisition that
-contradicts this foundation. This note does not grant new opening combat skills.
+is exceptionally gifted with it. Before the prologue mission, royal duties had
+given her few recent occasions to use that talent. The approved playable
+prologue now demonstrates her existing magick: an aether cannon breaks her ice
+barrier, killing the ordinary Crown soldier accompanying her and Lucan.
+This failed protection begins the opening's protective ice motif; it does not
+establish a new acquisition of ice magick or the mechanics of every later ice
+prison. Her precise opening command set and progression remain design work.
 
 ## Covert investigation — author knowledge
 
 Before the game begins, the Crown has partial knowledge about the origins of
 the regional phenomena and suspects an approaching catastrophe. It does not
 know the full explanation. It dispatches Iselin primarily to investigate and
-gather information. Her desire to help suffering communities is sincere, even
-though she conceals the main purpose of her travels until much later.
+gather information. Her desire to help suffering communities remains sincere.
 
-The Elden Vale Sanctuary incident gives players their first inkling of concealed
-motives. It does not disclose the catastrophe's full nature, prove the cause of
-the cave creature, or absolve her deception toward Serene. Existing MQ03 relief,
-unauthorized mining preparations, rescue and accountability remain in place.
-The revised investigation belongs to the Worldvein and Veinhold story. Exactly
-what the Crown already knows about Carcovia's harvesting network and cannon,
-and how its concealed excavation relates to that knowledge, remain open. Its
-partial knowledge does not establish that it predicted the whole sequence.
-Do not reveal the covert mission or future identity through opening dialogue,
-quest trackers, Gallery labels or casual NPC exposition.
+In the approved playable opening, Iselin, Lucan and an unnamed ordinary Crown
+soldier infiltrate Fire Veinhold without shutting it down; the precise mission
+objective remains open. They lose a scripted encounter against a boss too
+powerful for them. In the following cutscene, its aether cannon breaks
+Iselin's ice barrier and kills the soldier. Iselin and Lucan survive and retreat
+to Eldenmere offscreen. The
+[Chapter 1 chronology](../CHAPTER_01.md) owns the subsequent arrival, attack,
+village cooperation and return to the damaged facility.
+
+The mission is covert in the world, but the player now witnesses it from the
+start. Do not retain the old rule that its existence must remain hidden from
+players until the Sanctuary incident. Caelan, Mira, Serene and other characters
+learn through the conversations and evidence actually authored; they do not
+automatically share the player's prologue knowledge. Exactly what the Crown
+already knows, what intelligence is sought or recovered, and what Iselin tells
+each person remain open. Participation does not grant either survivor complete
+knowledge of the harvesting network or the later supercannon.
+
+The former unauthorized mining preparations and their accountability sequence
+are retired as the mandatory opening spine. The natural Sanctuary confluence
+remains, with its new narrative purpose undecided. Iselin's future Ice Reaper
+identity retains its author/player knowledge boundary; showing her ordinary
+ice magick does not disclose that future outcome.
 
 ## Eventual Ice Reaper arc — author knowledge
 
@@ -89,7 +112,7 @@ The relationship must include genuine affection, trust, disagreement and prior
 support, so the betrayal breaks an experienced bond. Earlier correspondence
 is one possible presentation, not an approved set of letters or invented
 childhood events. The Crown's covert assignment remains part of their history
-without making all of Iselin's relief work fraudulent.
+without making Iselin's sincere concern for the people fraudulent.
 
 Althea regards commuting execution to exile as protecting her sister.
 Iselin seeks public acknowledgment of what she was entrusted to do, and her
@@ -172,7 +195,8 @@ into bitterness, betrayal and revenge. The injustice of exile and her
 responsibility for subsequent killings and collective punishment remain
 separate facts; neither erases the other.
 
-The ice imagery consequently develops from restraining dangerous enemies to
+The ice imagery consequently develops from attempted protection and restraining
+dangerous enemies to
 enclosing a population for protection, confining herself, and finally turning
 that protection into the means of burial. Existing structural failure is not
 automatically a deliberate attack by her: absorption weakens the barrier during
@@ -184,12 +208,18 @@ by this account of her emotional deterioration.
 
 ## Relationships and continuation
 
-Lucan remains her personal guard and is surprised by the concealed Sanctuary
-crew. His MQ03 cave outing is temporary combat participation; later permanent
-party recruitment retains its existing future scope. Serene recognizes Iselin's
-breach of trust while prioritizing the injured. Caelan and Mira can acknowledge
-both real assistance and concealed decisions without resolving her entire moral
-character in the opening quest.
+Lucan remains her personal guard and participates in the prologue mission.
+Their shared survival and the soldier's death are established; their precise
+responses and follow-up remain to be written. He is no longer introduced as
+ignorant of the mission he has just taken part in. His later permanent party
+recruitment retains its existing future scope.
+
+Caelan and Mira cooperate with Iselin and Lucan during the ground assault and
+the first journey back to Fire Veinhold. This establishes an immediate alliance,
+not the final form of every party commitment or automatic trust. Serene remains
+Caelan and Tomas's caregiver and the Sanctuary's keeper. Her new involvement and any
+disagreement with Iselin require authoring; the removed concealed-crew dispute
+does not remain an event in the replacement opening.
 
 ## Ruling-family development — proposals, not canon
 
@@ -206,14 +236,18 @@ wanting achievement to justify royal standing remain usable development notes.
 Her covert Crown investigation is approved separately; these older family
 proposals do not limit that mission or revive retired explanations of the crisis.
 
-## Opening relief responsibilities
+## Opening responsibilities and remaining decisions
 
-Her immediate relief responsibilities include Elden Vale and nearby southern
-road and quarry districts. The Leth districts lie farther north in central
-Merovar; the revised map does not establish new jurisdictional borders. The
-[regional context](../REGIONAL_SURGES.md),
-[MQ03 script](../CH01_MQ03.md), and
-[covenant](../../world/SANCTUARY_COVENANT.md) own the detailed public needs,
-concealed deployment, Sanctuary emergency and acknowledged resolution. Caelan
-begins as host and guide, then volunteers to help; he gains no quarry or Crown
-policy authority.
+The [replacement opening](../CHAPTER_01.md) owns Iselin's mission and first
+alliance with the villagers. Carcovia tracks the survivors to Eldenmere; its
+overcharged Fire weapon fires a fireball at the village, misses and destroys
+the bridge, then self-destructs and damages much of Fire Veinhold. The return
+objective is still open; a deadline to prevent that weapon's second shot is not
+established after its destruction.
+
+The exact facility location, intelligence, relationship between the guns,
+military roles, repair plan, departure arrangements and reason for the longer
+northward journey remain open. A cave bypass is not approved. Neither the
+prologue nor the village emergency establishes Adamanthran rule over all of
+Merovar or gives Caelan Crown policy authority. The former relief itinerary and
+festival ending no longer determine her opening schedule.

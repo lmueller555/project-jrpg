@@ -1,185 +1,137 @@
-# Game I — Early regional surges and Iselin's relief visit
+# Game I — Fire Veinhold attack and Eldenmere's broken crossing
 
-**Status:** APPROVED OPENING STORY CANON, 2026-10-31; Worldvein and kingdom-name
-context revised 2026-11-24; southern Merovar geography revised 2026-11-25.\
-**Scope:** The damaged southern road, the small number of recent lightning
-incidents, Iselin's reason for visiting Eldenmere, and the narrative handoff
-from MQ02 to MQ03.\
-**Implementation:** The [Elden Vale overworld](../../OVERWORLD.md) now presents
-the lightning-destroyed western bridge and road damage on both banks. The
-arrival cutscene presents the relief visit. Revised MQ03 continues the
-protected-ground disagreement into the exposure of Iselin's secret advance
-crew and an emergency journey to the Sanctuary. See
-[the arrival guide](../scenes/REGENT_ARRIVAL.md) and [MQ03](CH01_MQ03.md).
+**Status:** Approved future narrative direction, 2026-11-26; documentation only. The path
+is retained as the owner of opening regional damage and military escalation.
+It no longer records the former lightning/relief-visit chronology as active
+canon.
 
-References: [Chapter 1](CHAPTER_01.md), [MQ02](CH01_MQ02.md),
-[MQ03](CH01_MQ03.md), [Elden Vale](../world/regions/ELDEN_VALE.md),
-[the covenant](../world/SANCTUARY_COVENANT.md), and the
-[revelation plan](../saga/REVELATION_PLAN.md).
+**Chronology owner:** [Chapter 1](CHAPTER_01.md) owns the detailed replacement
+opening. [Story Bible](STORY_BIBLE.md) owns game-wide direction;
+[Revelation Plan](../saga/REVELATION_PLAN.md) separates player and character
+knowledge. No dialogue, quest sequence, save state, map or combat is changed by
+this documentation revision. The currently implemented lightning-damaged
+bridge, relief arrival and Sanctuary rescue still await separate migration.
 
-## The southern road
+## Approved regional context
 
-Before the opening morning, a sudden, extraordinarily powerful surge of
-lightning destroyed the road connecting Eldenmere with the next town to its
-south, within the separate southern Merovaran setting established by the
-[approved map](../world/WORLD_ATLAS.md#approved-world-map). This remains a
-southward local connection; the Leth districts now lie north in central
-Merovar and are not its assumed destination. The neighbouring town's name,
-exact distance and playable layout remain open. River Leth and Lower Leth are
-geographic names, not a new name for that town.
+The replacement begins with a playable infiltration of a Fire Veinhold by
+Iselin, Lucan and an ordinary Crown soldier. Its precise objective and any
+intelligence or other partial success remain open. They are not there to
+shut it down. A scripted combat defeat is followed by the cannon/barrier
+cutscene that kills the soldier; Iselin and Lucan survive and retreat
+offscreen toward Eldenmere. The player then meets Caelan and Mira through
+village introductions **before the survivors arrive**.
 
-The damage gives the road project a specific purpose: restore the connection
-used by people and deliveries between these communities. Its destruction is
-not ordinary wear or a general modernization project. The first playable
-overworld now establishes a destroyed stone bridge across the western boundary
-river, with road damage on both banks. Eldenmere's southern road bends west to
-this crossing; the far-bank route continues toward the unnamed town south.
-Guarded land gates are separate from the ruined crossing. Detours, repair
-quantities and eventual restoration still need later quest design. The canonical atlas updates the wider geography without moving this local
-crossing.
+The bridge is initially intact. Carcovia tracks the survivors to Elden Vale,
+fires the failed Fire-weapon strike described below, and launches a ground
+assault. Caelan, Mira, Iselin and Lucan cooperate. Their first regional leg
+returns to the Fire Veinhold to put it out of action and end its local threat. Exact mission objectives,
+route and bridge-repair sequence remain open; these are not new runtime quest
+identifiers or implemented encounters.
 
-MQ02's stopped mill remains a separate local problem. The ridgeback tusker
-felled the tree whose broken limb obstructs the intake. Fixing the mill does
-not repair the southern road or explain the lightning.
+## The southern road and western crossing
 
-## Scale and chronology of the incidents
+Eldenmere remains in far-southern Merovar between two north–south rivers in a
+separate watershed from the central Leth districts. Its road bends west to the
+stone crossing over the western boundary river, then continues toward an
+unnamed neighbouring town south. The bridge and the guarded land gates are
+separate places. The [atlas](../world/WORLD_ATLAS.md#approved-world-map) owns
+the continental arrangement and the
+[Elden Vale guide](../world/regions/ELDEN_VALE.md) owns local orientation.
 
-Only a handful of similar events have occurred in different places by this
-point in the story. Each can cause serious local damage. Eldenmere's ordinary
-work, relationships and Festival of Light preparations continue alongside
-recovery; this is not an opening filled with continuous catastrophe.
+The new opening changes the crossing from **intact before the attack** to
+**destroyed by the missed fireball**. It is no longer already ruined by an
+extraordinary pre-opening lightning storm. Exact structural damage, safe
+crossing alternatives, repair materials, labor and duration require design.
+The former proposal for a timber deck on sound surviving supports is not an
+approved assessment after this new impact.
 
-Elemental Worldveins occasionally undergo brief natural imbalances that can
-produce natural disasters. The imbalance may pass while destroyed roads,
-injuries and other consequences remain. Carcovia's artificial
-harvesting through **Veinholds**, disdainfully called **clots**, creates a
-greater, sustained imbalance across the interdependent Worldveins. These are
-different causes with potentially overlapping observable effects.
+Restoration must reconnect people and ordinary traffic as well as any party
+route. Its precise motive, timing and method are open. This revision does not
+name the southern town, open a checkpoint, choose a repair crew or identify a
+cave bypass. An intact initial bridge also does not specify every other early
+travel restriction; those need narrative and gameplay design together.
 
-Whether the particular opening lightning incidents arose naturally, through
-artificial harvesting, or through a combination remains unassigned. The later
-harvesting revelation must not silently turn every early disaster into a
-confirmed Veinhold effect. The [Story Bible](STORY_BIBLE.md#worldveins-veinholds-and-the-cannon)
-owns the later conflict; [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence)
-owns the elemental premises.
+## The Fire-weapon strike and facility damage
 
-The other incidents and their exact locations, dates and individual damage
-remain unspecified. Do not invent an exact regional count or portray every
-storm, monster or broken mechanism as another surge.
+Carcovia overcharges a weapon with fire-aspected aether to launch a massive
+fireball at Eldenmere. It **misses the village and destroys the western
+bridge**. The weapon self-destructs and significantly damages the Veinhold.
+The attack establishes imperfect technology and the danger if such weapons
+are perfected. It is not a deliberate choice to spare the village.
 
-These recent lightning incidents precede Iselin's proposed excavation. They
-are not punishment for her later decision, and the quarry request is not
-their original cause. The small historic discharge recorded at the ridge
-sanctuary is a separate older incident, not one of these recent road strikes.
+The intended target, miss, destroyed bridge and weapon failure are approved.
+The precise mechanical fault, trajectory, reason Eldenmere is targeted,
+tracking method and decision-making chain remain open. Undershooting because
+of a damaged mounting, an excessive-range order, an assassin's mission or
+stolen intelligence were suggestions, not selected facts. No Fire-to-lightning
+conversion is required to preserve the old storm version.
 
-## Iselin's purpose and resource pressure
+Whether this weapon is the same physical cannon that overwhelms Iselin's
+barrier in the prologue is also open. Its destruction is distinct from the
+later combined-Veinhold strategic cannon and the ultimatum that forces the
+Ice Dome. The opening's local failure does not settle that later weapon's
+condition, outcome or status during the three-year surface interval.
 
-Iselin has already travelled to a couple of the affected communities to help
-organize aid and repairs. She reaches Eldenmere with firsthand knowledge of
-their damage and outstanding needs. Her relief work and the material shortages are real. Her later negotiation
-with Serene is deceptive: she has already sent a crew to establish Crown
-control of the Sanctuary's working area and prepare mining.
+## The remaining local threat
 
-She serves **Adamanthra**, her northern Merovaran kingdom, ruled by her elder
-sister, [Queen Althea](CHARACTERS.md#queen-althea). The
-[World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns the kingdom's geography.
-This author context does not add new dialogue to the implemented relief visit.
+The ground assault forces the four principal characters to act together. The
+weapon's self-destruction does not itself resolve those troops, guarantee that
+the entire extraction system has stopped, or make every part of the facility
+safe. The return to the Fire Veinhold needs an authored objective establishing
+what remains dangerous and what success changes.
 
-Repairing several damaged places is straining the available materials. A
-nearer stone seam offers a possible additional supply for regional recovery.
-Long hauling distances and cart availability still matter, but saving money
-on a routine road project is no longer the main explanation for her request.
+There is **no functioning-gun recharge deadline** after the approved
+self-destruction. A window before the garrison regroups, obtaining launch
+records, stopping extraction or denying military reuse
+are possible approaches, not approved objectives. Do not create an instant
+replacement cannon merely to restore the abandoned countdown.
 
-Her visit was arranged in advance; Serene already has the letter describing
-her expected party. MQ02's completion controls the player's encounter with
-that arrival, not Iselin's decision to travel. The repaired mill is useful
-news Caelan can report, not the reason Iselin undertook the visit.
+Carcovia is on Serevin across the Amber Sea. The first facility's actual
+location, jurisdiction and route to Eldenmere must make the prologue, retreat,
+pursuit and return credible. No occupation border, overseas voyage or timetable
+is chosen here. The opening already contains military violence; later attempts
+to avert war concern **wider escalation**, not a world where this attack never
+occurred.
 
-The Festival of Light provides a human and social setting for the visit, and
-Iselin intends to see the villagers there. Her immediate business is the
-relief effort and a discussion with Serene about the protected ridge site.
+## Sanctuary continuity and retired causal claims
 
-## The protected seam and secret deployment
+Elden Vale Sanctuary remains a **natural aether confluence** with its communal
+and spiritual significance. [Elden Vale Faith](../world/ELDEN_VALE_FAITH.md)
+owns that foundation. Its revised cave purpose is open; a route under the river
+or into the Veinhold has not been approved. The confluence is not an Ancient
+machine or automatically part of Carcovia's installation.
 
-The seam lies inside the marked reserve around Elden Vale Sanctuary on the ridge near
-Eldenmere, separate from Serene’s home where Caelan lives. The
-[covenant guide](../world/SANCTUARY_COVENANT.md) defines the protected land,
-ordinary permitted use, restricted excavation and shared custodial duties.
+The old quarry/excavation dispute is retired as the mandatory opening spine,
+including the secret Crown mining crew, rescue/accountability chain,
+festival-ending authorization and later excavation-catastrophe requirement.
+Keeping old implementation or public covenant history does not make those
+steps prerequisites for the new invasion story.
 
-The Sanctuary was deliberately sited near a natural aether confluence to
-guide the region's dead back to the planet and remember them. Mining would
-disrupt that essential service. Serene also reports growling heard by the
-caretakers inside the cave since the bridge incident. The old foundation plan
-and historical passage-injury account remain separate background evidence.
+The former Echo Chamber explanation tying its rupture to the old bridge's
+lightning surge must be reworked if that chamber is reused. The new fireball
+is not automatically its cause. Vespermaw, elemental encounters, the healing
+pool and existing teaching scenes require placement decisions rather than
+being silently carried across with the old rescue logic.
 
-Iselin has secretly sent a Crown crew ahead to establish control and begin
-preparing the mining operation. A survivor interrupts the post-meal discussion
-with news that something from within the cave attacked the crew, exposing
-Iselin's deployment. Lucan was unaware of the secrecy and is taken aback.
+Natural disasters still arise from occasional brief elemental imbalances;
+sustained harvesting can create greater disruption. Those rules belong to
+[Foundational Lore](../saga/FOUNDATIONAL_LORE.md). They do not turn this explicit
+military fireball into a natural event or require the old series of opening
+lightning incidents. The old Festival of Light and flashforward are removed
+from the active narrative, not promises to recreate through a new regional emergency.
 
-Serene stays to care for the survivor while Caelan collects Mira. Iselin,
-Lucan, the page, Caelan and Mira travel to the reserve. The implemented route continues through the Sanctuary arrival, cave rescue,
-Vespermaw fight, healing-pool evacuation and acknowledged return resolution. The earlier limited-inspection agreement and
-immediate lantern handoff are superseded for this route.
+## Knowledge and unresolved human consequences
 
-Growling after the bridge incident, the crew's later presence and the attack
-form an observed chronology. Their causes and relationship remain open.
+The player has witnessed the prologue before meeting Caelan. Caelan and Mira
+do not inherit its knowledge; what Iselin and Lucan tell them needs authoring.
+Witnessing an impact does not reveal the attackers' full orders, a particular
+mechanical failure or the complete Veinhold network. Use the Revelation Plan
+for those boundaries.
 
-## Approved arrival-cutscene goal
-
-At the end of MQ02, show Iselin's caravan arriving in Eldenmere so the player
-witnesses its arrival before finding the visitors already waiting in town.
-The scene should follow the mill quest's acknowledged conclusion and preserve
-the completed repair and rewards.
-
-The arrival should introduce an expected relief visit: a capable, tired
-administrator arriving after helping other communities. It can establish the
-damaged southern connection and her intended discussion with Serene without
-delivering the full covenant debate in the street.
-
-MQ02's homecoming and cup-setting precede the arrival. MQ03 then
-begins with Serene's short request inside the dining room. Caelan welcomes
-Iselin and Lucan, guides the visitors directly to the meal and hears the
-ridge discussion interrupted by the attack report. The former cart dispute is
-removed. Caelan volunteers to help the people at risk; he gains no legal or
-survey authority from the relief context.
-
-The [arrival guide](../scenes/REGENT_ARRIVAL.md) documents the cinematic's dialogue,
-shots, input ownership and saved handoff. The scene grants no new repair,
-checkpoint-release or excavation facts.
-
-## Knowledge and longer-term continuity
-
-The lightning incidents introduce how disruptions in elemental flow can have
-concrete local consequences. They give the opening cinematic's reference to a
-potentially valley-destroying surge a smaller early counterpart. That comparison
-does not assign the natural or artificial cause of either event, establish a
-Veinhold at the Sanctuary, or settle the future scene's exact mechanism.
-
-Villagers and Serene can know the damage and reports from other places
-without knowing why the incidents occur. Iselin privately carries the Crown’s
-incomplete suspicions and covert investigative mission, as established in
-[her character guide](characters/ISELIN.md). Her public relief explanation does
-not reveal that mission. Observation, religious interpretation
-and author knowledge remain distinct. Serene's public maintenance evidence is
-separate from the inherited warning she privately examines after the festival.
-
-The later Chapter 1 authorization and private-warning beat remain in place;
-the excavation catastrophe belongs to Act I, Chapter 3. Later development
-connects sustained artificial harvesting to Carcovia's huge cannon
-and its war ultimatum. Those facts do not make early villagers informed about
-the weapon or Iselin's covert investigation. Refer to the Revelation Plan for
-when evidence establishes those connections.
-
-Carcovia's name and identity as a kingdom on Serevin, east of Merovar, are
-established geography; its expansion into Merovar through aether-powered
-military weapons is approved direction. Naming it does not itself reveal the
-cause of the lightning, the harvesting network or the Crown's investigation.
-Those connections still require evidence and authored disclosure.
-
-No exact firing, first-shot sequence, transport arrangement, enemy Ice Worldvein
-target, party sabotage plan or future route is established by these opening
-incidents. The early strikes still precede Iselin's mining preparations; her
-operation is not their original cause, and their appearance is not divine
-punishment for her later choices. Do not portray every weather event, creature
-or mechanical failure as a Worldvein disaster.
+The Crown soldier's death is established; the soldier's name is not. No new
+casualty, loss of Tomas or Serene, destruction of Mira's workshop, or ultimate
+condition of Eldenmere is selected by this revision. Caelan's personal reason
+to travel, Mira's participation, permanent party recruitment and the transition
+from the local counter-operation to the later northern journey remain to be
+written. Proposed NPC, town and boss names have no approval through repetition.

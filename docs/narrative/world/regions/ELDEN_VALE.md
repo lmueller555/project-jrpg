@@ -6,17 +6,20 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 **Geography revised:** 2026-11-25, following the
 [canonical world-map approval](../WORLD_ATLAS.md#approved-world-map).
 
-**Implementation references:** The [regional overworld](../../../OVERWORLD.md)
-implements the valley landscape; [MQ03](../../game_01/CH01_MQ03.md) owns the
-Sanctuary journey, cave emergency and return progression. The
-[detailed reserve](../../../SANCTUARY_RESERVE.md) owns scene layout and access.
+**Opening revision, 2026-11-26:** [Chapter 1](../../game_01/CHAPTER_01.md)
+owns the approved Fire Veinhold opening. The flashforward, Festival of Light
+and quarry/excavation Act I are retired. The new story is not yet implemented.
+The [regional overworld](../../../OVERWORLD.md), existing MQ03 and
+[detailed reserve](../../../SANCTUARY_RESERVE.md) describe current landscape,
+scene access and older quest behavior; their broken-bridge starting state and
+cave emergency do not establish the revised chronology.
 
 Elden Vale is Eldenmere's home region: a temperate wooded inland valley in
 far-southern Merovar, between two unnamed north–south rivers. The ridges around
 it are southern outliers of the Greyfold Mountains. The valley gives Game I
 a home with agricultural work, practical engineering, religious service and
-connections to neighbouring communities. It also gives the covenant dispute
-specific land, livelihoods and relationships at stake.
+connections to neighbouring communities. These foundations remain relevant
+after retiring the former Sanctuary quarry dispute.
 
 Existing village facts are drawn from
 [Chapter 1](../../game_01/CHAPTER_01.md) and the
@@ -43,7 +46,7 @@ watershed, rather than along this immediate southern connection.
 No lake, seacoast, desert or tropical forest is added to Eldenmere's immediate
 surroundings. Rainfall, elevation and sheltered slopes provide the first
 region's variation. Green vegetation in the current game does not establish
-the festival's date or a world calendar.
+a season or a world calendar.
 
 ## Water and the work it supports
 
@@ -122,12 +125,12 @@ depend on these services more than a prosperous market settlement does.
 Differences in funding, access and responsibility can matter without defining
 a complete religious hierarchy yet.
 
-The Festival of Light is established as a gathering of remembrance and living
-company. Elira's lantern recalls her husband; Liam chooses a purpose for his
-own. Lanterns remain ordinary lamps. Additional valley customs, such as
-bringing a homebound neighbour a portion of food or helping repair an older
-lantern, should emerge from particular relationships. No universal obligation
-to carry a stranger's lantern is created.
+Remembrance, neighbourly service and companionship remain cultural foundations.
+The Festival of Light and its preparation quests are retired, rather than
+retained as a recurring off-screen celebration. Any future community customs
+should emerge from particular relationships and receive their own story role.
+Lanterns can remain ordinary lamps; their presence in existing scenery or
+historical captures does not preserve the removed festival.
 
 ## Authority, development and disagreement
 
@@ -135,14 +138,17 @@ Regent Iselin is an established regional authority and the younger sister of
 **Queen Althea of Adamanthra**. The Adamanthran Crown governs through regional
 governors and local institutions. Her exact jurisdictional borders, appointment history
 and constitutional powers remain open. Elden Vale and nearby southern
-road and quarry districts form the immediate setting of her administration's
-concerns; the map change does not assign her a new political jurisdiction.
+communities form the immediate setting of her administration's concerns;
+the revised opening does not assign her a new political jurisdiction.
 
-The [regional surges guide](../../game_01/REGIONAL_SURGES.md) owns the recent
-road damage, relief visit and material pressures behind Iselin's request. The
-southern connection continues toward an unnamed neighbouring town in southern
-Merovar; it is not automatically a route into the Leth districts. The [covenant](../SANCTUARY_COVENANT.md) owns the protected
-seam and alternative-stone considerations.
+The [Chapter 1 chronology](../../game_01/CHAPTER_01.md) replaces the old
+relief-visit and quarry-request story. Iselin and Lucan reach Eldenmere after
+their failed Fire Veinhold infiltration; Caelan and Mira's introduction occurs
+while the western bridge is intact. Its destruction belongs to the subsequent
+Carcovian attack, not to an earlier lightning surge. The southern connection
+still leads toward an unnamed neighbouring town in southern Merovar, rather
+than automatically entering the Leth districts. No new town name or attack
+route is assigned here.
 
 Road access, affordable building material, reliable mills and safe movement
 between settlements can improve people's lives. The covenant also protects
@@ -150,9 +156,10 @@ sanctuary ground, including what lies beneath it. Serene's concern has a
 legitimate basis even where she cannot explain every inherited boundary.
 
 The [covenant's public evidence](../SANCTUARY_COVENANT.md#the-public-evidence-behind-serenes-caution)
-is distinct from the recent incidents and from Serene's inherited private
-warning. [MQ03](../../game_01/CH01_MQ03.md) owns the concealed deployment,
-emergency and return; completing that rescue grants no excavation agreement.
+can remain background records. It does not require a concealed Crown crew,
+breach of trust, rescue or excavation authorization in the revised opening.
+The Sanctuary's natural confluence remains established; its new plot role and
+the cave's purpose remain open.
 
 Valley residents should have varied positions. A quarry worker may want steady
 work and stronger safety oversight. A farmer may welcome a road while
@@ -160,7 +167,7 @@ objecting to the land it crosses. A sanctuary volunteer may favour new tools
 while wanting an excavation reviewed. None of these positions is a whole
 culture's permanent attitude.
 
-The future conflict can draw its stakes from these relationships. The people
+Future writing can draw stakes from these relationships. The people
 and institutions involved remain responsible for their decisions; their
 different interests should shape the consequences of interference with natural
 aether circulation.
@@ -180,14 +187,21 @@ day outing, a trip requiring an overnight stop, or a longer regional route.
 Exact distances and durations remain open until the playable road network and
 story sequence are designed. A world atlas is not a scale conversion of the
 current 480-pixel game view. Far-southern placement does not make the temperate
-Vale polar or move the Sanctuary, mill or ruined crossing within local play.
+Vale polar or move the Sanctuary, mill or western crossing within local play.
+
+The first four-person expedition now targets the Fire Veinhold. Its precise
+location and access route remain open, as do any use of the Sanctuary cave as
+a bypass, bridge repair and the later northward itinerary. The two bounding
+rivers and guarded north/south land gates remain part of the region. Losing
+the western bridge alone does not prove that every exit is unavailable; new
+quest writing must account for those gates before claiming isolation.
 
 ## Scene foundations for future development
 
 | Situation | Human relationships to develop | What it can establish |
 | --- | --- | --- |
 | A shared footbridge needs repair | A craft worker, nearby households and a traveller | Cooperation, limited time and different ideas about who benefits |
-| An upland family arrives for the festival | Relatives, a host household and children with different memories | Regional variation within a familiar celebration |
+| An upland family visits relatives | A host household and children with different memories of the valley | Regional variation through an ordinary visit |
 | A delivery is delayed by road work | A carrier, a buyer and the people doing the work | The practical value and cost of development |
 | A maintenance task affects two water users | People who know the equipment and households relying on it | Specific responsibilities without giving Caelan authority over the dispute |
 | A visiting healer works with Serene | Caretakers and a patient with preferences of their own | Different techniques and shared commitments |

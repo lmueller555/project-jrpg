@@ -85,6 +85,11 @@ Normal conversations retain their live speaker-anchored bubbles.
 
 ## New Game cinematic
 
+**Narrative migration:** The old cinematic is scrapped by the
+[Fire Veinhold opening revision](narrative/game_01/CHAPTER_01.md). The playback
+behavior below is current-runtime reference pending its later removal; it does
+not specify the replacement prologue's UI or narrative.
+
 The opening cinematic uses the battle scenes' detailed visual style with layered
 scenery, separate conversational character poses and authored camera shots.
 Dialogue is timed automatically and rendered at display resolution using the
@@ -97,6 +102,10 @@ ordinary bedroom opening; Continue never inserts this flashforward into an
 existing journey. See [the cinematic guide](narrative/scenes/OPENING_CINEMATIC.md).
 
 ## Iselin's arrival
+
+The arrival's relief-caravan story and broken-bridge insert are superseded;
+its current runtime UI is described below. A new arrival script follows the
+Fire Veinhold prologue and precedes the bridge's destruction.
 
 The [post-mill arrival](narrative/scenes/REGENT_ARRIVAL.md) uses detailed cinematic scenery and
 separate animated actors, with the existing portrait dialogue frame and

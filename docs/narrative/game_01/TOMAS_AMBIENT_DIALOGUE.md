@@ -4,6 +4,12 @@
 playable town (`tomas_greeting`). This is their conversation about his wheel,
 separate from the wake-up and breakfast scenes in [the opening quest](CH01_MQ01.md).
 
+**Replacement-opening status, 2026-11-26:** The authored exchange and family
+characterization remain approved. Its existing runtime placement is not a new
+scene commitment under the [replacement Chapter 1](CHAPTER_01.md); the removed
+festival and old quest order do not determine its timing. No dialogue changes
+are made by this documentation revision.
+
 Caelan is **18** and Tomas is **14**; see [approved character facts](CHARACTERS.md).
 Tomas asks his brother for help with a specific difficulty, describes what he
 can observe, and wants to solve it himself before asking Mira. Caelan takes

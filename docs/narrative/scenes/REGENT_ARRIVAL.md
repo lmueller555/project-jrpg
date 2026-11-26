@@ -1,5 +1,14 @@
 # Iselin's arrival after the mill
 
+> **Narrative migration, 2026-11-26:** The [Fire Veinhold opening](../game_01/CHAPTER_01.md)
+> replaces this expected relief-caravan/mining visit. Iselin and Lucan arrive
+> after surviving the prologue, and the western bridge is still intact at that
+> point. Their approach, condition, accompanying actors, disclosures and arrival
+> trigger need a new script. The aerial ruined-bridge insert, lightning account
+> and expected negotiation below are superseded story context. This guide
+> preserves current runtime staging and dialogue pending the later rewrite;
+> it does not implement the new arrival or remove approved acting assets.
+
 MQ02's new ending brings Caelan back from Halden's restored mill to help
 Serene and Tomas in the dining room at Serene's home. After the cup placement
 and final exchange at home are acknowledged, the quest and its ordinary

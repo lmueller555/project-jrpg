@@ -1,5 +1,13 @@
 # Iselin's visit and the Sanctuary emergency
 
+**Migration status — 2026-11-26:** Current-runtime reference, pending the
+opening rewrite governed by [Chapter 1](narrative/game_01/CHAPTER_01.md).
+The old quarry dispute and secret Crown crew are retired target story.
+The revised bridge is intact at the start; the failed Fire strike destroys it
+after Iselin's arrival. Existing MQ03 dialogue, scene ownership, checkpoints,
+objectives and save contracts below remain implemented and unchanged by this
+documentation-only migration. They do not prescribe the revised quest's route.
+
 This guide owns MQ03's runtime checkpoints, presentation, actor ownership,
 and save compatibility. The [MQ03 narrative/script](narrative/game_01/CH01_MQ03.md)
 owns its visit, emergency, rescue, and return-home sequence. The runtime source

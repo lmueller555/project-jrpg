@@ -1,5 +1,14 @@
 # Elden Vale overworld
 
+**Narrative status, 2026-11-26:** This guide records the current regional
+implementation. The approved [Fire Veinhold opening](narrative/game_01/CHAPTER_01.md)
+is future work: Caelan and Mira's introduction has an intact western bridge,
+which is destroyed only after Iselin and Lucan arrive. The former pre-opening
+lightning cause, flashforward, Festival of Light and quarry/excavation Act I
+are retired. Existing broken-bridge scenery, quest dialogue, saves and review
+captures remain evidence of the older implementation, not the revised start.
+This documentation alignment changes no runtime behavior or assets.
+
 Eldenmere's southern road now opens into the first playable region of Auratia.
 This is a separate regional scale: the detailed village retains its existing
 layout, while the overworld represents it with a small, recognizable town.
@@ -41,10 +50,12 @@ The revised survey rebuilds the regional manifest and refreshes cartography
 provenance while preserving its physical geometry and existing painted tiles.
 
 Stone walls join the riverbanks to the north and south. Each wall has a guarded
-opening. Both checkpoints are closed during the opening quests. The western
-road bridge lies **inside** the walls, so Caelan can inspect its lightning-damaged
-approach without passing a checkpoint. Broken masonry, scorched ground and
-damaged road on both banks convey the recent surge. The far-bank road continues
+opening. Both checkpoints are closed during the currently implemented opening
+quests. The western road bridge lies **inside** the walls, so Caelan can
+inspect its damaged approach without passing a checkpoint. Broken masonry,
+scorched ground and damaged road on both banks belong to the old broken-bridge
+presentation; they do not establish a lightning cause for the revised story.
+The far-bank road continues
 toward the unnamed town south of Eldenmere; its actual destination scene is
 future work. There is no bridge over the eastern river.
 
@@ -68,8 +79,9 @@ Walking onto the miniature now enters the [detailed sanctuary reserve](SANCTUARY
 at its southern woodland approach. The reserve contains the court and cloister,
 memorial grove, cave approach and surveyed stone face, with an enterable hall.
 The southern exit returns to the overworld outside the miniature's contact
-area. The cave dungeon and its quest remain future work. Eldenmere's existing
-automatic entry and return remain independent. The
+area. The existing cave and MQ03 quest belong to the older story; their
+replacement role remains open. Eldenmere's automatic entry and return remain
+independent. The
 [current in-game review](reviews/sanctuary_pixel_assets/README.md) shows this visit;
 the [original miniature review](reviews/overworld_sanctuary/README.md) records
 the earlier stage before entry was enabled.
@@ -109,7 +121,8 @@ Escape continues to open pause.
 The countryside uses grain, vegetable, fallow, pasture and orchard ground,
 with parcel-specific row directions. Farmhouses, barns, sheds, fences and gates
 form compact regional scenery. Flowers, laundry, resting places, relief carts
-and packed lantern supplies give routes local character. Small wildlife and
+and packed lantern supplies are part of the existing scenery; those supplies
+do not retain the removed Festival of Light as canon. Small wildlife and
 smoke animations are placed in selected scenes. These additions do not create
 new interiors or quests. The regional map reflects crop and road differences;
 farmstead glyphs are scenery rather than new selectable destinations.
@@ -118,23 +131,33 @@ farmstead glyphs are scenery rather than new selectable destinations.
 
 Checkpoint collision belongs to the gate geometry, independently of the guard
 sprites. Passing a gate requires both `CH01_OPENING_REGION_RELEASED` and an
-authored, ready onward destination. Neither destination is ready in this PR.
+authored, ready onward destination. Neither destination is currently ready.
 There is deliberately no producer for the release flag yet: completing MQ04,
 the last currently implemented quest, does not finish the opening chapter.
-The future festival/departure sequence must grant release explicitly.
+The future quest and conditions granting release remain open under the revised
+opening; no festival or old chapter-ending authorization is required. Because
+these land gates exist, the bridge's loss alone cannot establish isolation.
 
 Bridge repair is a separate durable fact,
 `ELDEN_VALE_WEST_BRIDGE_REPAIRED`. Restoring the mill, helping Iselin, or opening
 a checkpoint does not repair the bridge. No current quest grants this flag.
 The engine can reconstruct the repaired crossing from the fact for later work;
-this PR implements the destroyed state experienced during the opening.
+the current implementation starts in the destroyed state. The revised opening
+requires an intact-before-attack state and a later destruction transition;
+those changes are not implemented here, and the repair method remains open.
 
-The intact land checkpoints reserve a route for Iselin's relief caravan, which
-must not arrive across the ruined bridge. The [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md)
-uses the southern land checkpoint and preserves the broken crossing and the
-player's travel restrictions. The new ridge landmark does not open those
-checkpoints, repair the bridge, add an encounter or place the original temple.
-The named southern town, cave dungeon and sanctuary quest remain future work.
+The existing [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) uses the
+southern land checkpoint for the former relief caravan and preserves the
+broken crossing and travel restrictions. That staging is the older
+implementation, not a requirement for Iselin and Lucan's new retreat into
+Eldenmere. The ridge landmark does not open checkpoints, repair the bridge or
+add an encounter.
+
+The revised first expedition targets the Fire Veinhold. Its exact location,
+access route, any Sanctuary-cave bypass and the later northward itinerary
+remain open in Chapter 1. The opening weapon's identity relative to the later
+cannon is also undecided. No new facility marker, onward destination, cave
+objective or bridge-repair condition is introduced by this guide.
 
 ## Streaming and coordinates
 

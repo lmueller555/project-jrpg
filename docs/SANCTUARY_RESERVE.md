@@ -1,5 +1,18 @@
 # Elden Vale Sanctuary reserve
 
+**Migration status — 2026-11-26:** Current-runtime environment reference.
+[Chapter 1](narrative/game_01/CHAPTER_01.md) owns the approved Fire Veinhold
+opening. The quarry/secret-crew route and lightning explanation for the bridge
+are retired target story; the bridge begins intact and the failed Fire strike
+destroys it after Iselin's arrival. The Sanctuary's natural confluence and cave
+remain, with their revised quest purpose OPEN.
+
+This documentation-only migration preserves the reserve's assets, layout,
+collision, travel, scene ownership and save behavior. The current arrival,
+rescue and return-home resolution are implemented; older statements below that
+describe them as future work record earlier production checkpoints. Their old
+story premise does not govern the later opening rewrite.
+
 The regional miniature opens into a detailed, peaceful woodland reserve built
 from the same native pixel asset packs as Eldenmere. The layout follows the
 sanctuary reference: southern entrance arch and court,

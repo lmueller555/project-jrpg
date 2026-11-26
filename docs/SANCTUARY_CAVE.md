@@ -1,5 +1,18 @@
 # Sanctuary crystal cave
 
+**Migration status — 2026-11-26:** Current-runtime reference. The approved
+[Chapter 1 opening](narrative/game_01/CHAPTER_01.md) retires MQ03's quarry/secret-crew
+spine and its lightning explanation for the bridge. The bridge begins intact;
+the failed Fire strike destroys it after Iselin's arrival. The Sanctuary cave
+and natural confluence remain, with their revised quest purpose and the
+rupture's cause OPEN. Neither lightning nor a new Fire connection to the cave
+is established by this migration.
+
+The dungeon, Echo Chamber rupture, encounters, rescue, dialogue and save
+contracts below remain implemented and unchanged. Story explanations from the
+superseded route are retained as labeled reference; gameplay and dialogue
+changes belong to the later opening rewrite.
+
 For nearby recovery, return to the Sanctuary hall and take the bed-marked
 north-wing door to the visitor relief room. Attendant Nessa and the bed both
 offer a free, confirmed short rest that restores travelling party HP/MP and
@@ -213,7 +226,7 @@ When Mira is travelling with the party, a safe inspection has her recognize
 climbing marks and the equipment needed for descent; Caelan feels rising aether
 without claiming the full explanation. Otherwise Caelan inspects it alone.
 
-**Established cause:** the aether surge that caused the lightning storm and
+**Superseded story premise (not current author truth):** the aether surge that caused the lightning storm and
 bridge destruction also disturbed this natural confluence. The floor ruptured,
 opening onto the deeper subterranean region before the Crown crew was attacked.
 That region is later-game content. This does not add a new explanation for the

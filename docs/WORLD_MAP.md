@@ -46,25 +46,34 @@ the historical files are preserved.
 
 ## Opening story route context
 
-**Status:** Approved regional lore. The [Elden Vale overworld](OVERWORLD.md)
-implements the local landscape and ruined western crossing. Its local tile
-coordinates remain stable while the world-map survey places it in southern
-Merovar. Iselin's [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) and MQ03
-dialogue now present the revised relief-visit story in the game.
+**Status:** Approved geography, with a future opening revision. The
+[Chapter 1 chronology](narrative/game_01/CHAPTER_01.md) owns the approved
+2026-11-26 Fire Veinhold opening. The flashforward, Festival of Light and
+quarry/excavation Act I are retired. This documentation change does not
+implement their replacements in gameplay, dialogue or map state.
 
-Before Game I opens, an extraordinarily powerful lightning surge destroyed
-the road from Eldenmere to the next town south, along the map's corresponding
-southward connection. That town has no approved name. **River Leth** and
+The western bridge is intact during Caelan and Mira's introduction, before
+Iselin and Lucan arrive. It is destroyed in the later Fire Veinhold attack;
+the former pre-opening lightning cause is obsolete. The
+[current overworld](OVERWORLD.md) still begins with the broken bridge, and
+existing arrival/MQ03 scenes and review captures record the older story.
+Their local coordinates and geographic survey remain useful references,
+separately from the revised opening's unimplemented sequence.
+
+The southern road's neighbouring town still has no approved name.
+**River Leth** and
 **Lower Leth** belong to central Merovar, north of the Vale's separate southern
-watershed; they do not identify this nearby town or its road. The
-[Regional Surges guide](narrative/game_01/REGIONAL_SURGES.md) records the
-handful of other recent incidents, Iselin's relief visits and the resulting
-repair shortages. The [Sanctuary Covenant](narrative/world/SANCTUARY_COVENANT.md)
-explains how those needs bear on the proposed quarry near the old ridge
-sanctuary.
+watershed; they do not identify that nearby town or its road. The
+[Sanctuary Covenant](narrative/world/SANCTUARY_COVENANT.md) retains background
+custodial terms, with no required quarry storyline. The natural confluence
+remains established; the Sanctuary and cave's new plot roles remain open.
 
 The world-map revision adds no playable onward town or central-river crossing.
 Distances, exact tributary junctions, political boundaries and the unnamed
-town's precise location remain open. The local brook, millrace, two bounding
+town's precise location remain open. The Fire Veinhold's exact map location,
+the identity of its weapon relative to the later cannon, any cave bypass,
+bridge repair and the onward route also remain open. The local brook,
+millrace, two bounding
 rivers, Sanctuary approach and story gates retain their existing gameplay
-contracts; see the [regional guide](OVERWORLD.md).
+contracts; see the [regional guide](OVERWORLD.md). Those land gates must be
+accounted for before the bridge's loss can be said to isolate the village.

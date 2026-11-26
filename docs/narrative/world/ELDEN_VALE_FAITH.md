@@ -1,17 +1,21 @@
 # Elden Vale - Serene's planetary faith
 
-**Status:** Approved foundations. The Sanctuary's guidance of the dead and
-MQ03's concealed Crown deployment supersede the earlier remembrance-only and
-mutually good-faith negotiation framing. Proper names, detailed rites and
+**Status:** Retained spiritual and cultural foundations. The Sanctuary's
+natural confluence, guidance of the dead and remembrance remain established.
+The 2026-11-26 opening revision retires the Festival of Light and the
+quarry/excavation story, including the old MQ03 breach-of-trust sequence.
+Neither is required by this faith. Proper names, detailed rites and
 institutional history remain open.
 
 **Scope:** The planetary spiritual tradition practiced by Mother Serene.
 This descriptive title is not a chosen religion name or a declaration that
 every person in Elden Vale follows the same tradition.
 
-**Quest continuity:** [MQ03](../game_01/CH01_MQ03.md) owns the concealed
-Crown deployment, rescue and acknowledged return sequence. This guide owns the
-faith and Sanctuary responsibilities that the quest draws on.
+**Story continuity:** [Chapter 1](../game_01/CHAPTER_01.md) owns the approved
+Fire Veinhold opening. This guide owns the retained faith and Sanctuary
+responsibilities. Their new plot role, including any purpose for the cave,
+remains open. Older MQ03 gameplay and dialogue are a superseded implementation,
+not the approved future sequence.
 
 Related guides: [Foundational Lore](../saga/FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),
@@ -39,8 +43,8 @@ from her training, responsibilities and experience.
 **Elden Vale Sanctuary**, on the wooded ridge northeast of Eldenmere, was
 **deliberately constructed near a real natural aether confluence to guide the
 region's dead back to the planet and to remember them**. Its caretakers carry
-out a critical societal responsibility. Mining the protected ground would
-disrupt that work. This function is understood by Serene and the Sanctuary
+out a critical societal responsibility. Care of the natural site supports
+that work. This function is understood by Serene and the Sanctuary
 keepers; universal knowledge across Auratia has not been established.
 
 Other greater regions of Auratia also have sanctuaries at natural aetherial
@@ -89,24 +93,26 @@ guidance to neighbours. The Sanctuary's full construction history remains open.
 
 ## Application in the story
 
-The [Sanctuary Covenant](SANCTUARY_COVENANT.md) records the protected-ground
-terms and public evidence behind the dispute. [MQ03](../game_01/CH01_MQ03.md)
-owns the recent cave emergency and its resolution. Emergency aid does not
-surrender the Sanctuary's continuing responsibility to the dead or authorize
-excavation; its relationship to the living community remains part of this faith.
+The [Sanctuary Covenant](SANCTUARY_COVENANT.md) retains the protected-ground
+terms as background custody. It no longer commits the opening to a quarry
+dispute, secret deployment, rescue or excavation authorization. The Sanctuary's
+relationship to living neighbours can inform later writing without making the
+retired festival or an unwritten cave episode necessary to express this faith.
+The revised opening's events belong to Chapter 1; this documentation alignment
+does not change existing gameplay or dialogue.
 
 ## Knowledge and decisions still open
 
 - The faith's proper name, organization, training, ranks and founding history.
 - Detailed guidance and memorial practices, seasonal observances and records.
-- The physical behavior of confluences and the precise effects of excavation.
+- The physical behavior of confluences and the effects of disturbing them.
 - The experience of the dead and consciousness after return to the planet.
 - The buried works' origin, purpose and relationship to the natural confluence.
-- The deeper relation, if any, between the bridge incident, growling, advance
-  crew's activity and attack; quest observations belong to MQ03.
+- The Sanctuary and cave's role, if any, in the revised story.
 
-The old foundation plan and historical passage-injury account remain public
-background evidence, separate from the recent attack. Serene's inherited
-private warning retains its later disclosure limits; its content must be
-developed within the revised Worldvein foundations. No artificial planetary
+The old foundation plan and historical passage-injury account can remain
+background records under the Covenant; they do not explain the Fire Veinhold
+attack or prescribe the next quest. The former private-warning sequence does
+not establish a future reveal in the revised opening. Any later use must follow
+the Worldvein foundations and revelation owner. No artificial planetary
 mechanism, resurrection system or planetary sentience is established here.

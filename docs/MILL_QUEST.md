@@ -1,5 +1,13 @@
 # Mira and the mill quest
 
+**Migration status — 2026-11-26:** Current-runtime reference. The approved
+[Chapter 1 opening](narrative/game_01/CHAPTER_01.md) now begins at Fire Veinhold
+and changes the opening chronology. The mill's implemented gift, combat lesson,
+repair and homecoming below remain unchanged by this documentation migration;
+their placement and dialogue in the revised opening await the later rewrite.
+All interaction, controller, acquisition and save contracts remain in force
+for the current runtime. Festival-related context belongs to the retired story.
+
 Character–object work follows the mandatory
 [global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
 [personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,
