@@ -114,7 +114,7 @@ def capture(output=OUTPUT, *, protected_hashes=None):
     if reference['frames'] != 1920 or reference['duration_seconds'] != 32:
         raise AssertionError('The previous complete cinematic baseline is missing')
     baseline = {record['frame']: record for record in reference['timeline']}
-    source_names = ('opening_cinematic.py', 'ice_reaper_opening.py',
+    source_names = ('cinematic_player.py', 'ice_reaper_opening.py',
                     'ice_reaper_action.py', 'rhea_scene_awakening.py',
                     'ice_reaper_duel.py', 'ice_reaper_audio.py',
                     'tools/capture_rhea_winter_cinematic.py')

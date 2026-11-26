@@ -1,4 +1,4 @@
-"""Actual MQ03 cave approach, one-time boss settlement and Continue ownership."""
+"""Actual shared cave approach, one-time boss settlement and Continue ownership."""
 from copy import deepcopy
 import json
 import os
@@ -15,35 +15,19 @@ import pygame
 from leveling import total_xp_for_level
 from main import Game
 from post_battle import valid_pending_snapshot
-from quests import LANTERN_QUEST, REGENT_QUEST
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
 from test_mill_battle_gameplay import finish_spoils_presentation, wait_for_spoils
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 
 
 class SanctuaryBossGameplayTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Earlier work is the Driver's explicit fixture. MQ03's emergency,
-        # Mira's return and the Sanctuary journey use actual production input.
-        with tempfile.TemporaryDirectory(prefix='boss-story-') as directory:
+        # Explicit retained-cave scenario; no later quest or rescue is seeded.
+        with tempfile.TemporaryDirectory(prefix='cave-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal(); driver.attack_report(); driver.departure()
-            driver.rejoin_mira(); driver.arrive()
-            # Earlier cave discovery is an explicit fixture for these boss
-            # ownership tests; its actual tutorial is exercised separately.
-            owner = driver.game.character_abilities
-            if not owner.has_weapon():assert owner.acquire_weapon('caelan', 'caelan_gearblade')
-            assert owner.learn_ability('caelan', 'aqua_edge')
-            assert driver.game.cave_lesson.restore({'version': 1, 'resonance_seen': True,
-                                                   'battle_cleared': True, 'deferred': False})
-            driver.walk(RESERVE_ENTRY_APPROACH)
-            driver.game.handle_events([
-                pygame.event.Event(pygame.KEYDOWN, key=pygame.K_e, repeat=False),
-                pygame.event.Event(pygame.KEYUP, key=pygame.K_e)])
-            driver.until(lambda: not driver.game.transfer_cooldown)
-            assert driver.game.world.data['id'] == 'sanctuary_cave'
-            assert driver.game.save_progress()
+            game = driver.prepare_cave(lesson_complete=True, enter=True)
+            assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
 
@@ -138,8 +122,8 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
     def context(self):
         game = self.game
         return deepcopy({
-            'quests': game.quests.to_dict(), 'regent': game.regent_quest.to_dict(),
-            'mill': game.mill_quest.to_dict(), 'lantern': game.lantern_quest.to_dict(),
+            'quests': game.quests.to_dict(),
+            'mill': game.mill_quest.to_dict(),
             'flags': sorted(game.social.flags), 'party_event': game.party.event_id,
             'members': game.party.members, 'active': game.party.active_ids,
             'treasure': game.sanctuary_cave.to_dict(),
@@ -152,10 +136,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
 
     def story(self):
         game = self.game
-        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
-        self.assertEqual(game.quests.status(REGENT_QUEST), 'active')
-        self.assertEqual(game.quests.status(LANTERN_QUEST), 'locked')
-        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
+        self.assertIsNone(game.party.current_event_id)
         self.assertIn('mira', game.party.active_ids)
         self.assertNotIn('lucan', game.party.members)
         self.assertEqual(game.music.desired_track,
@@ -307,7 +288,9 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
                           self.game.battle_rewards.to_dict()), expected)
         self.story()
 
-    def test_defeat_retry_and_retreat_restore_entry_resources_without_rewards(self):
+    def test_owner_defeat_retry_and_retreat_restore_entry_resources_without_rewards(self):
+        # Isolated owner transaction: normal gameplay defeat is intercepted by
+        # GameOver, covered through Game.update in the elemental/random suites.
         self.game.attributes.set_current(hp=71, mp=3)
         self.game.party.characters['mira'].set_current(hp=95, mp=4)
         resources, context = self.resources(), self.context()
@@ -316,7 +299,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         owner = self.start()
         for member in owner.model.party:member.hp = member.mp = 0
         owner.model._result('defeat'); owner.scene.dismissed = True
-        self.assertTrue(owner._settle())
+        self.assertTrue(owner._settle_boss())
         self.assertEqual(self.resources(), resources)
         self.choose('Retry')
         owner = self.enter_battle()
@@ -324,7 +307,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.assertEqual(owner.model.combatant('mira').hp, 95)
         for member in owner.model.party:member.hp = member.mp = 0
         owner.model._result('defeat'); owner.scene.dismissed = True
-        self.assertTrue(owner._settle())
+        self.assertTrue(owner._settle_boss())
         self.choose('Return')
         self.assertFalse(self.game.combat.active)
         self.assertIsNone(self.game.sanctuary_boss.pending)
@@ -335,6 +318,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.assertEqual(self.game.character_progression.to_dict(), xp)
         self.assertEqual(self.context(), context)
         self.story()
+
 
     def test_failed_reward_application_rolls_back_boss_flag_exp_items_and_retries(self):
         before = (self.game.character_progression.to_dict(), self.game.inventory.to_dict(),
@@ -379,12 +363,14 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.assertEqual(self.resources(), resources)
         self.story()
 
-    def test_failed_defeat_retreat_save_restores_checkpoint_position_and_camera(self):
+    def test_owner_failed_defeat_retreat_save_restores_checkpoint_position_and_camera(self):
+        # Isolated owner transaction: normal gameplay defeat is intercepted by
+        # GameOver, covered through Game.update in the elemental/random suites.
         owner = self.start()
         resources = self.resources()
         for member in owner.model.party:member.hp = member.mp = 0
         owner.model._result('defeat'); owner.scene.dismissed = True
-        self.assertTrue(owner._settle())
+        self.assertTrue(owner._settle_boss())
         self.choices()
         ticket = deepcopy(self.game.sanctuary_boss.pending)
         position = tuple(self.game.player.position)
@@ -407,6 +393,7 @@ class SanctuaryBossGameplayTests(unittest.TestCase):
         self.assertFalse(self.game.sanctuary_boss.to_dict()['defeated'])
         self.assertEqual(self.resources(), resources)
         self.story()
+
 
     def test_failed_award_save_rolls_back_then_saves_the_reward_once(self):
         owner = self.start()

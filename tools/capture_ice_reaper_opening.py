@@ -93,7 +93,7 @@ def capture(output, fps=FPS):
             if not parent.open_gallery() or not parent.launch_gallery_scene('ice_reaper_opening'):
                 raise RuntimeError(parent.gallery.error if parent.gallery else 'Gallery did not open')
             session = parent.gallery_session
-            child, scene = session.game, session.game.opening_cinematic
+            child, scene = session.game, session.game.cinematic
             duration = scene.duration
             frame_count = round(duration*fps)
             effects_gain = child.audio.effects_volume
@@ -195,7 +195,7 @@ def capture(output, fps=FPS):
         audio_capture_method='Reconstructed from runtime score and timed SFX assets; SDL dummy has no loopback',
         scene_sha256=file_hash(ROOT/'assets/story/ice_reaper_opening/scene.json'),
         runtime_sources={name:file_hash(ROOT/name) for name in
-                         ('opening_cinematic.py', 'ice_reaper_opening.py', 'ice_reaper_action.py',
+                         ('cinematic_player.py', 'ice_reaper_opening.py', 'ice_reaper_action.py',
                           'ice_reaper_audio.py', 'cutscene_gallery.py')},
         source_art_review='awaiting_user_review', snapshots=snapshots, timeline=frames,
         video_sha256=file_hash(output/'preview.mp4'),

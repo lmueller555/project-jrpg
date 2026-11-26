@@ -57,10 +57,9 @@ class GameSaves:
         g = self.game
         return (self.enabled and not g._is_gallery_preview and not g.on_title
                 and not g.game_over and not g.combat.active and g._music_focused
-                and not g.opening_cinematic.active and not g.household_action
+                and not getattr(getattr(g, 'cinematic', None), 'active', False) and not g.household_action
                 and not g.social.active and not g.social.locked
                 and not g.opening.locks_player and not g.opening.controls_player
-                and not g.regent_quest.locks_player
                 and not g.sanctuary_boss.locks_player and not g.elemental_bosses.locks_player
                 and not g.cave_lesson.locks_player
                 and not g.opening_fade and not g.transfer_cooldown

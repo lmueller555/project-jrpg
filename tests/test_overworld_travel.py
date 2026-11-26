@@ -14,8 +14,8 @@ import pygame
 
 import main
 from overworld_travel import OverworldTravel, TOWN_EXIT, TOWN_RETURN, WORLD_ID
-from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST, LANTERN_QUEST
-from tools.capture_lantern_quest import seed_previous_quests
+from quests import OPENING_QUEST, MILL_QUEST
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class OverworldTravelTests(unittest.TestCase):
@@ -53,18 +53,7 @@ class OverworldTravelTests(unittest.TestCase):
         game.opening_conclusion.restore({'version': 1, 'stage': 'done'})
 
     def complete_mill(self, game):
-        self.complete_opening(game)
-        self.assertTrue(game.accept_quest(MILL_QUEST))
-        for objective in game.quests.definitions[MILL_QUEST]['objectives']:
-            self.assertTrue(game.quests.complete_objective(MILL_QUEST, objective['id']))
-        self.assertTrue(game.quests.turn_in(MILL_QUEST, 'mira_worker'))
-        game.mill_quest.restore({'version': 1, 'inspected': ['mechanism', 'race', 'intake'],
-                                'prepared': True, 'spell_done': True, 'encouraged': True,
-                                'restored': True, 'verified': True, 'resolved': True})
-        self.assertTrue(game.quests.unlock(REGENT_QUEST))
-        # This completed-mill prerequisite represents an established old journey.
-        game.regent_arrival.restore(None)
-        game.regent_quest.restore()
+        seed_mill_completed(game)
 
     def test_automatic_roundtrip_uses_south_entrance_and_singleton(self):
         game = self.game()
@@ -127,10 +116,12 @@ class OverworldTravelTests(unittest.TestCase):
     def test_modals_dialogue_and_actions_block_atomic_transfers(self):
         game = self.game()
         game.player.position.update(TOWN_EXIT)
+        from types import SimpleNamespace
+        game.cinematic = SimpleNamespace(active=False)
         for owner, name in ((game.pause, 'is_open'), (game.inventory_ui, 'is_open'),
                             (game, 'map_open'), (game.quest_ui, 'journal_open'),
                             (game.world_map_viewer, 'is_open'), (game.combat, 'active'),
-                            (game.opening_cinematic, 'active')):
+                            (game.cinematic, 'active')):
             mocked = (patch.object(type(owner), name, new_callable=PropertyMock, return_value=True)
                       if isinstance(getattr(type(owner), name, None), property)
                       else patch.object(owner, name, True))
@@ -203,7 +194,7 @@ class OverworldTravelTests(unittest.TestCase):
         self.assertNotIn('ELDEN_VALE_WEST_BRIDGE_REPAIRED', game.social.flags)
 
     def test_virtual_party_owners_and_instances_survive_region_and_continue(self):
-        for phase in ('halden', 'mill', 'regent', 'lantern'):
+        for phase in ('halden', 'mill'):
             with self.subTest(phase=phase):
                 self.path.unlink(missing_ok=True)
                 game = self.game()
@@ -214,16 +205,6 @@ class OverworldTravelTests(unittest.TestCase):
                     game.accept_quest(MILL_QUEST)
                     game.quests.complete_objective(MILL_QUEST, 'meet_mira')
                     game.mill_quest.restore()
-                elif phase == 'regent':
-                    self.complete_mill(game)
-                    game.accept_quest(REGENT_QUEST)
-                    game.quests.complete_objective(REGENT_QUEST, 'meet_visitors')
-                    game.regent_quest.restore({'version': 1, 'stage': 'met'})
-                else:
-                    seed_previous_quests(game)
-                    game.accept_quest(LANTERN_QUEST)
-                    game.quests.complete_objective(LANTERN_QUEST, 'join_preparations')
-                    game.lantern_quest.restore({'version': 1, 'stage': 'permitted'})
                 actors = [actor for actor, _ in game.overworld_travel._party()]
                 self.assertTrue(actors)
                 progress = game.quests.to_dict()

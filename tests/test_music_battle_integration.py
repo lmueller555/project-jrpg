@@ -93,35 +93,21 @@ class MusicBattleIntegrationTests(unittest.TestCase):
         self.assertTrue(game.combat.active)
         return game.combat.scene
 
-    def test_title_to_cinematic_loops_leitmotif_then_skip_restores_eldenmere(self):
+    def test_title_fade_enters_morning_with_exploration_music(self):
         game = self.game(title=True)
         game.title.start_music()
         self.frame(game)
         self.assertEqual(game.music.desired_track, 'title')
         self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere_theme.ogg')
-        loads, starts = self.backend.load.call_count, self.backend.play.call_count
-        self.assertEqual(loads, 1)
-        game.title.activate()  # New Game uses the title's actual fade path.
+        game.title.activate()
         self.frame(game, 1)
         self.assertFalse(game.on_title)
-        self.assertTrue(game.opening_cinematic.active)
-        self.assertEqual(game.music.desired_track, 'opening_leitmotif')
-        self.frame(game, 1)
-        self.assertEqual(game.music.current_track, 'opening_leitmotif')
-        self.assertEqual(self.backend.load.call_count, loads+1)
-        self.assertEqual(self.backend.play.call_count, starts+1)
-        self.backend.play.assert_called_with(-1)
-        for _ in range(4):self.frame(game, .1)
-        self.assertEqual(self.backend.play.call_count, starts+1)
-        game.draw()
-        click(game, game.opening_cinematic.skip_rect.center)
-        self.assertFalse(game.opening_cinematic.active)
+        self.assertIsNone(game.cinematic)
+        self.assertFalse(game.cinematic_active)
         self.assertEqual(game.music.desired_track, 'eldenmere')
         self.frame(game, 1)
         self.assertEqual(game.music.current_track, 'eldenmere')
         self.assertEqual(Path(self.backend.load.call_args.args[0]).name, 'eldenmere.ogg')
-        self.assertEqual(self.backend.load.call_count, loads+2)
-        self.assertEqual(self.backend.play.call_count, starts+2)
         self.assertEqual(game.social.script_identifier, 'opening_wake')
 
     def test_town_interior_and_millrace_share_the_exploration_stream(self):

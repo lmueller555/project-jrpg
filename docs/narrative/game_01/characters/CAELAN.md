@@ -1,5 +1,11 @@
 # Caelan - protagonist character sheet
 
+**Runtime retirement:** The old MQ03 rescue and MQ04 festival quest are removed.
+Their on-screen examples below describe historical portrayal, not current
+quests or obligations of the replacement opening. Approved characterization
+remains; new scenes must deliberately carry those relationship functions.
+
+
 **Scope:** Established opening facts and approved portrayal notes, using the
 [character-sheet template](TEMPLATE.md). This sheet does not rewrite game
 dialogue, introduce player-choice systems or decide later plot outcomes.
@@ -197,7 +203,7 @@ reference only.
   Mira's mechanical knowledge; neither does all the useful work.
 - **MQ03:** Acts as guide, host and witness rather than deciding the adults'
   covenant or authorizing excavation. On entering the Sanctuary cave, he notices
-  concentrated ambient aether resonating with the Blue gem. His first cave
+  concentrated ambient aether resonating with the Blue gem. The retained first cave
   encounter is two Cave Bats; his successful Aqua Edge retry teaches the ability.
   Optional Embravyr and Nivareth encounters crystallize Red/Fire and White/Ice
   focuses, teaching Flame Edge and Ice Edge in either order. These beings are

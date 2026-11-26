@@ -15,9 +15,9 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT/'assets/source/cinematics/regent_arrival/actors/lucan'
-GROUND = ROOT/'assets/story/regent_arrival/actors'
-AERIAL = ROOT/'assets/story/regent_aerial/actors'
+SOURCE = ROOT/'assets/source/characters/lucan/cinematic_travel'
+GROUND = ROOT/'assets/characters/lucan/cinematic/ground'
+AERIAL = ROOT/'assets/characters/lucan/cinematic/aerial'
 
 
 def sha(data):return hashlib.sha256(data).hexdigest()
@@ -66,7 +66,7 @@ def ground_outputs():
         scale = 80/max(cell['bounds'][3]-cell['bounds'][1] for cell in drawings)
         for index,cell in enumerate(drawings):
             filename = f'stand_{direction}.png' if index == 0 else f'walk_{direction}_{index-1}.png'
-            outputs['lucan/'+filename] = encoded(registered(image,cell['bounds'],cell['anchor'],scale))
+            outputs[''+filename] = encoded(registered(image,cell['bounds'],cell['anchor'],scale))
             registrations[filename] = {'source':source_path.relative_to(ROOT).as_posix(),
                 'bounds':cell['bounds'],'source_anchor':cell['anchor'],'scale':scale}
         poses['stand_'+direction] = f'stand_{direction}.png'
@@ -81,8 +81,8 @@ def ground_outputs():
         'gaits':{key:{'stride_pixels':32} for key in loops},
         'source':'imagegen-authored cinematic travel poses matching approved tall Lucan identity and adult regent cast proportions; registered nearest export',
         'view_aliases':{'walk_left_back':'walk_back','turn_left_back':'stand_back'}}
-    outputs['lucan/animation.json'] = json_bytes(manifest)
-    outputs['lucan/provenance.json'] = json_bytes({'version':1,
+    outputs['animation.json'] = json_bytes(manifest)
+    outputs['provenance.json'] = json_bytes({'version':1,
         'exporter':'tools/export_regent_lucan.py','sources':sources,'registrations':registrations,
         'exports':{name:sha(data) for name,data in outputs.items()},
         'notes':['No approved source or existing cinematic actor pixels were changed.',
@@ -103,14 +103,14 @@ def aerial_outputs():
     for pose,record in recipe['poses'].items():
         scale = record['height']/(record['bounds'][3]-record['bounds'][1])
         anchor = ((record['bounds'][0]+record['bounds'][2])/2,record['bounds'][3])
-        outputs['lucan/'+pose+'.png'] = encoded(registered(image,record['bounds'],anchor,scale,
+        outputs[''+pose+'.png'] = encoded(registered(image,record['bounds'],anchor,scale,
                                                           canvas=(48,64),anchor=(24,56)))
         poses[pose] = pose+'.png'
-    outputs['lucan/animation.json'] = json_bytes({'version':1,'canvas':[48,64],
+    outputs['animation.json'] = json_bytes({'version':1,'canvas':[48,64],
         'anchor':[24,56],'poses':poses,'loops':{},'overhead_facing':'north',
         'oblique_facing':'northwest','source':'imagegen-authored camera-specific Lucan travel poses; approved identity, lowered shield and low-carried sword',
         'source_recipe':recipe_path.relative_to(ROOT).as_posix()})
-    outputs['lucan/provenance.json'] = json_bytes({'version':1,
+    outputs['provenance.json'] = json_bytes({'version':1,
         'exporter':'tools/export_regent_lucan.py',
         'sources':{source_path.relative_to(ROOT).as_posix():sha(source_path.read_bytes()),
                    recipe_path.relative_to(ROOT).as_posix():sha(recipe_path.read_bytes())},

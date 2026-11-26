@@ -39,7 +39,7 @@ SOURCE_FILES = (
     'assets/combat/cave_encounters.json', 'assets/maps/sanctuary_cave/map.json',
     'assets/source/maps/sanctuary_cave/recipe.json',
     'assets/source/combat/cave_battlefields/recipe.json',
-    'tools/capture_elemental_cave_encounters.py', 'tools/capture_mq03_emergency.py',
+    'tools/capture_elemental_cave_encounters.py', 'tools/cave_scenario.py',
     'tests/test_elemental_cave_gameplay.py', 'tests/test_mill_battle_gameplay.py',
 )
 
@@ -297,7 +297,7 @@ class Review:
                     'full_runtime_sheet': 'assets/combat/'+enemy_id+'/'+manifest['sheet'],
                     'source_sheets': manifest.get('source_sha256', {})}
             record = {'fixtures': [
-                'Earlier MQ01/MQ02 completion and Aqua discovery are explicitly initialized; MQ03 departure and Sanctuary arrival use production dialogue/travel.',
+                'Retained MQ01/MQ02 completion, selectable cave pair and Aqua discovery are explicit test fixtures; optional encounters use production input and rewards.',
                 'The actual Caelan/Mira story pair receives EXP through public progression APIs to start rested at level four; Caelan MP is explicitly set to zero.',
                 'Near-room placement and fixed entry seed 0 shorten setup only. All combat commands use actual menu/mouse/keyboard input; no enemy HP or outcomes are edited.',
                 'Both fights carry actual remaining HP/MP and earned EXP forward; post-Spoils focus presentations are acknowledged normally.',

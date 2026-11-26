@@ -50,8 +50,8 @@ to Lucan's casting action. Minibosses and bosses are immune to Provoke.
 Attack, Items, Guard and permitted Flee actions remain available. These guest
 skills do not implement his future arsenal progression or permanent-recruit
 interactable. See [combat rules](COMBAT.md#lucans-cave-guest-combat) for targeting,
-expiry and guest eligibility, and [the rescue formation](PARTY.md#sanctuary-rescue-formation)
-for joining and departure.
+expiry and guest-profile reference. The automatic rescue formation is removed;
+cave entry does not recruit Lucan.
 
 ## Mira’s Blade
 

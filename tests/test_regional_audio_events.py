@@ -69,8 +69,8 @@ class BridgeAudioEvents(TestCase):
         self.assertIn('bridge_cup_stone',self.g.regional_audio.voices)
         self.assertEqual(self.g.regional_audio.voices['bridge_cup_stone'][3],0)
     def test_continue_completed_tea_does_not_replay_contacts(self):
-        from tools.capture_lantern_quest import seed_previous_quests
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        from tools.scenario_fixtures import seed_mill_completed
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.g.player.position.update(-2340,644)
         self.scene();self.assertTrue(self.g.save_progress())
         other=self.make_game(True);self.assertTrue(other.begin_journey(True))

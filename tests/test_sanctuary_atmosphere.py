@@ -133,8 +133,8 @@ class Channel:
 class SanctuaryAudioTests(unittest.TestCase):
     def setUp(self):
         self.game=NS(audio=AudioSettings(None),player=NS(position=pygame.Vector2()),
-            overworld_travel=NS(active=False),on_title=False,opening_cinematic=NS(active=False),
-            regent_arrival=NS(active=False,state='done'),combat=NS(active=False),
+            overworld_travel=NS(active=False),on_title=False,cinematic_active=False,
+            combat=NS(active=False),
             pause=NS(is_open=False),inventory_ui=NS(is_open=False),party_ui=NS(is_open=False),
             world_map_viewer=NS(is_open=False),map_open=False,quest_ui=NS(journal_open=False),
             _music_focused=True,world=NS(is_sanctuary_reserve=True,data={'fantasy_effects':{

@@ -1,7 +1,7 @@
 """Review the Sanctuary cave through ordinary movement and production input.
 
-The only fixture is a supported completed-MQ01/MQ02 journey. MQ03, regional
-travel, cave transfers, discoveries and Continue use the game controllers.
+Retained MQ01/MQ02 history, a selectable combat pair and earlier Aqua discovery
+are explicit fixtures. Cave travel, discoveries and Continue use game controllers.
 Every capture uses disposable saves and settings, never a player's journey.
 """
 from __future__ import annotations
@@ -16,6 +16,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from unittest.mock import patch
 
 os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
 os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
@@ -28,16 +29,12 @@ from PIL import Image, ImageDraw, ImageStat
 
 from main import camera_for
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver, cast_visibility
+from tools.cave_scenario import Driver, cast_visibility
 from tools.capture_overworld_sanctuary import frame
 
 OUT = ROOT/'docs/reviews/sanctuary_cave'
-SCENES = ('sanctuary_cave_entrance', 'sanctuary_cave_hollow', 'sanctuary_cave_depths')
-REVIEW_STATIONS = {
-    SCENES[0]:{'cave_entrance':(240,690), 'vein_gallery':(390,440), 'reflecting_grotto':(840,730)},
-    SCENES[1]:{'splitstone_hollow':(310,760), 'keeper_recess':(875,720), 'deep_gallery':(720,325)},
-    SCENES[2]:{'quiet_shelf':(400,440), 'echo_chamber':(795,300)},
-}
+SCENES = ('sanctuary_cave',)
+REVIEW_STATIONS = {'sanctuary_cave': {}}
 
 
 def digest(path):
@@ -48,10 +45,10 @@ def source_hashes():
     names = {
         'main.py', 'sanctuary_cave.py', 'sanctuary_cave_world.py',
         'sanctuary_cave_map.py', 'map_ui.py', 'overworld_travel.py',
-        'regent_quest.py', 'regent_emergency.py', 'party_travel.py',
+        'tools/cave_scenario.py', 'party_travel.py',
         'inventory.py', 'save_game.py', 'game_music.py', 'social.py',
         'tools/build_sanctuary_cave.py', 'tools/capture_sanctuary_cave.py',
-        'tools/capture_mq03_emergency.py', 'tools/capture_sanctuary_reserve.py',
+        'tools/scenario_fixtures.py', 'tools/capture_sanctuary_reserve.py',
         'tools/capture_overworld_sanctuary.py', 'assets/items/catalog.json',
         'assets/maps/elden_vale_sanctuary/map.json',
     }
@@ -221,15 +218,15 @@ def capture(output=OUT, movie_enabled=True):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     before = source_hashes()
-    report = {'fixture':'Completed MQ01/MQ02 only; MQ03 and arrival played normally',
+    report = {'fixture':'Explicit retained MQ01/MQ02, cave pair and prior Aqua fixture; no later quests',
               'ordinary_movement':True, 'disposable_save_and_settings':True,
               'views':{}, 'treasures':[], 'continues':[], 'source_sha256':before}
     movie = Movie(output/'sanctuary_cave.mp4') if movie_enabled else None
     try:
-        with tempfile.TemporaryDirectory(prefix='sanctuary-cave-review-') as temporary:
+        with tempfile.TemporaryDirectory(prefix='sanctuary-cave-review-') as temporary, \
+                patch('main.Game._cave_encounters_available', return_value=False):
             driver = Driver(temporary)
-            driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
-            assert driver.quest.stage == 'sanctuary_arrival_pending'
+            driver.prepare_cave()
             initial_quests = driver.game.quests.to_dict()
             initial_party = driver.game.party.to_dict()
             if movie:driver.observer = lambda seconds:movie.sample(driver.game, seconds)
@@ -244,17 +241,19 @@ def capture(output=OUT, movie_enabled=True):
                 assert driver.game.world.data['id'] == scene_id
                 data = driver.game.world.data['cave']
                 report['views'][scene_id+'_entry'] = photograph(driver,output,scene_id+'_entry.png',movie)
-                for route in data.get('routes', {}).values():
-                    for point in route:walk(driver,point)
+                for name, route in data.get('routes', {}).items():
+                    for point in route:
+                        if name == 'main' and point[0] >= 2000:continue
+                        walk(driver,point)
                 for treasure in data.get('treasures', []):
                     report['treasures'].append(collect(driver, treasure))
-                review = data.get('review_points', REVIEW_STATIONS[scene_id])
+                review = {key: point for key, point in data.get('navigation_points', {}).items() if key != 'echo_chamber'}
                 for key, point in review.items():
                     walk(driver,driver.clear(driver.game.world,point))
                     report['views'][key] = photograph(driver,output,key+'.png',movie)
                 if not review:
                     report['views'][scene_id] = photograph(driver,output,scene_id+'.png',movie)
-                if index == 1:
+                if index == 0:
                     report['pulse'] = record_pulse(driver, output, movie)
                     game = driver.game
                     game.audio.reduced_motion = True
@@ -279,21 +278,20 @@ def capture(output=OUT, movie_enabled=True):
                 assert tuple(driver.game.player.position) == feet
                 assert driver.game.inventory.to_dict() == current
                 assert driver.game.sanctuary_cave.to_dict() == opened
-                assert driver.game.music.desired_track == 'battle'
+                assert driver.game.music.desired_track == 'sanctuary_cave'
                 report['continues'].append(scene_id)
                 report['views'][scene_id+'_continued'] = photograph(driver,output,scene_id+'_continued.png')
-                if index < 2:
+                if index < len(SCENES)-1:
                     view = use_link(driver, SCENES[index+1], output, movie)
                     report['views'][Path(view['file']).stem] = view
             report['cast_at_depths'] = cast_visibility(driver.game)
             assert len(report['treasures']) == 6, report['treasures']
-            for destination in (SCENES[1], SCENES[0], 'elden_vale_sanctuary'):
+            for destination in ('elden_vale_sanctuary',):
                 view = use_link(driver, destination, output, movie)
                 report['views'][Path(view['file']).stem] = view
-            assert driver.quest.stage == 'sanctuary_arrival_pending'
             assert driver.game.quests.to_dict() == initial_quests
             assert driver.game.party.to_dict() == initial_party
-            assert driver.game.music.desired_track == 'battle'
+            assert driver.game.music.desired_track == 'eldenmere'
             report['round_trip_complete'] = True
             report['quest_and_party_unchanged'] = True
             report['views']['returned_to_reserve'] = photograph(driver,output,'returned_to_reserve.png',movie)

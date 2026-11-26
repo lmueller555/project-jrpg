@@ -47,8 +47,8 @@ NPC family; their surname remains unassigned. Removing the lantern quest does
 not remove them, the school or their ordinary family life.
 Their home is the new wide cottage in western Eldenmere, directly south of
 Serene’s home. His parents remain stationary home residents during ordinary life.
-The former MQ04 borrows his mother for a preparation session in the existing
-runtime; that quest attendance is not part of the replacement opening.
+The former MQ04 borrowed his mother for a preparation session. That quest
+attendance has been removed and is not a school schedule for the new opening.
 Liam and Daisy share an ambient invitation, chase and nap
 routine. Liam also builds with five wooden blocks from a toy box between the
 beds, sometimes leaving one out. Daisy can accidentally knock over his creation
@@ -65,7 +65,7 @@ to the same protagonist, whose current game and asset identity is **Caelan**.
 
 Unlisted ages and unapproved biography details remain open. See
 [Chapter 1](CHAPTER_01.md) for the replacement chronology; the
-[former opening quest](CH01_MQ01.md) retains its old-runtime scene context.
+[retained opening quest](CH01_MQ01.md) now uses ordinary household dialogue.
 Serene remains Caelan and Tomas's caregiver and the Sanctuary's keeper. Tomas's
 interest in mechanisms and Liam's interest in building are independent of the
 removed festival. The new attack establishes no death for these villagers and
@@ -238,14 +238,14 @@ has a sandy ponytail, plum dress and blue-gray ribbon. They and eight-year-old
 Liam form the six-child classroom group. Visual designs and animation packs
 are approved. Children are placed in their homes with individual compact
 twin beds; ordinary attendance and other daily routines are a later stage.
-The removed MQ04's quest-scoped attendance is an existing runtime fact, not
-the replacement opening's school schedule.
+The removed MQ04's quest-scoped attendance is historical, not a current
+runtime routine or a replacement school schedule.
 
 ## Retired festival preparation session
 
 The extended lantern preparation in [former MQ04](CH01_MQ04.md), including
 the school outing, tower frame and Liam's chosen lantern intention, belongs to
-the superseded opening and current runtime. It is not retained as a mandatory
+the superseded opening and removed runtime. It is not retained as a mandatory
 or optional festival plot by the replacement approval. The village families,
 Mira's craft expertise, remembrance and care remain usable foundations without
 reinstating that sequence. A memorial for the prologue soldier has not been

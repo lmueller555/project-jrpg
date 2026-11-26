@@ -11,7 +11,7 @@ os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 import pygame
 from main import Game
 from garden_orchard import INITIAL, SCENE_ID, valid_state
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 
 class GardenOrchardTests(unittest.TestCase):
@@ -136,7 +136,7 @@ class GardenOrchardTests(unittest.TestCase):
         self.g.player.position.update(300,500);self.tick(30);self.assertEqual(before,self.c.to_dict())
 
     def test_continue_mid_carry_preserves_feet_and_all_props(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
         self.until(lambda:(self.c.action('gardener') or {}).get('carry')=='can')
         self.tick(15);state=self.c.to_dict();props=self.positions()
         self.continue_journey()
@@ -144,7 +144,7 @@ class GardenOrchardTests(unittest.TestCase):
         self.finish_work('gardener')
 
     def test_continue_mid_watering_preserves_time_and_never_replays_contact(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
         self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.8)
         step=self.c.state['gardener']['step'];state=self.c.to_dict();props=self.positions()
         self.continue_journey();self.assertEqual(state,self.c.to_dict());self.assertEqual(props,self.positions())
@@ -153,7 +153,7 @@ class GardenOrchardTests(unittest.TestCase):
             self.assertFalse(emit.called)
 
     def test_continue_before_contact_emits_exactly_once_at_actor_position(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
         self.until(lambda:(self.c.action('gardener') or {}).get('sound')=='leaves' and self.c.state['gardener']['elapsed']>.3)
         step=self.c.state['gardener']['step'];self.continue_journey()
         with mock.patch.object(self.g.regional_audio,'emit') as emit:
@@ -162,7 +162,7 @@ class GardenOrchardTests(unittest.TestCase):
             self.assertEqual(emit.call_args.args[2],tuple(self.c.actors[0].position))
 
     def test_scene_read_checkpoint_commits_before_physical_payoff(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.read_scene();self.assertTrue(self.c.state['gardener']['read'])
         self.assertEqual(self.c.state['gardener']['phase'],'scene')
         self.continue_journey();self.assertTrue(self.c.state['gardener']['read'])
@@ -174,7 +174,7 @@ class GardenOrchardTests(unittest.TestCase):
         self.assertNotEqual(self.g.social.script_identifier,SCENE_ID)
 
     def test_continue_mid_plant_carry_keeps_single_plant(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.read_scene()
         self.until(lambda:(self.c.action('gardener') or {}).get('carry')=='plant')
         self.tick(12);state=self.c.to_dict();props=self.positions();self.continue_journey()
@@ -248,7 +248,7 @@ class GardenOrchardTests(unittest.TestCase):
         self.assertFalse(any(v[0].sound=='water' for v in self.g.regional_audio.voices.values()))
 
     def test_continue_before_watering_contact_stays_silent(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.visit('gardener')
         self.until(lambda:(self.c.action('gardener') or {}).get('pour') and self.c.state['gardener']['elapsed']>.3)
         step=self.c.state['gardener']['step'];self.continue_journey()
         self.g.audio.set_effects(1)
@@ -257,7 +257,7 @@ class GardenOrchardTests(unittest.TestCase):
             emit.assert_not_called()
 
     def test_complete_scene_and_harvest_continue_stays_quiet(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world
         self.read_scene();self.until(lambda:self.c.state['gardener']['phase']=='rest')
         self.finish_work('picker');before=self.positions();self.continue_journey()
         with mock.patch.object(self.g.regional_audio,'emit') as emit:
@@ -267,7 +267,7 @@ class GardenOrchardTests(unittest.TestCase):
         self.assertEqual(before,self.positions())
 
     def test_continue_mid_fruit_carry_keeps_sort_destination(self):
-        seed_previous_quests(self.g);self.g.world=self.g.overworld_world;self.visit('picker')
+        seed_mill_completed(self.g);self.g.world=self.g.overworld_world;self.visit('picker')
         self.until(lambda:(self.c.action('picker') or {}).get('carry')=='apple_1')
         self.tick(12);before=self.c.to_dict();props=self.positions();self.continue_journey()
         self.assertEqual(before,self.c.to_dict());self.assertEqual(props,self.positions())

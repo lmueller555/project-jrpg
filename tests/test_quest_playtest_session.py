@@ -94,12 +94,12 @@ class QuestPlaytestSessionTests(unittest.TestCase):
         self.assertFalse(self.parent.has_saved_journey)
         self.parent.draw()
         self.key(pygame.K_END)
-        self.assertEqual(self.parent.quest_playtest_menu.selected_entry.id, 'CH01_MQ04')
+        self.assertEqual(self.parent.quest_playtest_menu.selected_entry.id, 'CH01_MQ02')
         self.key(pygame.K_KP_ENTER,
                  pygame.event.Event(pygame.KEYDOWN, key=pygame.K_SPACE, repeat=False))
         session = self.parent.quest_playtest_session
         self.assertIsNotNone(session)
-        self.assertEqual(session.game.quests.status('CH01_MQ04'), 'available')
+        self.assertEqual(session.game.quests.status('CH01_MQ02'), 'available')
         self.assertFalse(session.game.social.active)
         self.key(pygame.K_F9)
         self.key(pygame.K_ESCAPE)
@@ -128,50 +128,6 @@ class QuestPlaytestSessionTests(unittest.TestCase):
                     self.assertEqual(self.snapshot(), before)
                     self.assertEqual(self.parent.has_saved_journey, saved)
 
-    def test_mq03_arrival_acknowledges_every_beat_without_disk_saves(self):
-        from cutscene_gallery import _station
-        from regent_quest import OBJECTIVES, PREFIX
-
-        self.parent.on_title = False
-        self.assertTrue(self.parent.save_progress())
-        self.parent.on_title = True
-        before = self.snapshot()
-        session = self.launch('CH01_MQ03')
-        game = session.game
-        self.assertTrue(game._is_quest_playtest)
-        self.assertFalse(game._is_gallery_preview)
-        self.assertFalse(game.save_store.enabled)
-        # Skip the earlier meal/travel to isolate the live rescue cinematic
-        # inside the actual title-menu playtest session.
-        self.assertTrue(game.regent_arrival.restore({'version': 1, 'state': 'seen'}))
-        self.assertTrue(game.accept_quest('CH01_MQ03'))
-        for objective in OBJECTIVES[:PREFIX['sanctuary_arrival_pending']]:
-            self.assertTrue(game.quests.complete_objective('CH01_MQ03', objective))
-        self.assertTrue(game.regent_quest.restore(
-            {'version': 3, 'stage': 'sanctuary_arrival_pending'}))
-        self.assertTrue(game._sync_story_party())
-        _station(game, game._scene_by_id('elden_vale_sanctuary'), (444, 642), 'back')
-        owner = game.sanctuary_arrival
-        beats = set()
-        with patch.object(game.save_store, 'write',
-                          side_effect=AssertionError('Playtest wrote a journey')):
-            for _ in range(4500):
-                self.tick(.1)
-                self.assertFalse(owner.error, (owner.beat, owner.error))
-                beats.add(owner.beat)
-                if owner.completed:break
-                if owner.dialogue is not None:self.key(pygame.K_SPACE)
-            else:self.fail('Playtest arrival did not finish')
-            self.assertEqual(beats, set(range(8)))
-            self.assertFalse(owner.active)
-            self.assertTrue(owner.rail.opened)
-            self.assertEqual(game.party.active_ids, ('caelan', 'mira', 'lucan'))
-            self.assertEqual(game.character_progression.level('lucan'), 5)
-            self.assertTrue(game.sanctuary_cave.interact())
-            self.assertEqual(game.world.data['id'], 'sanctuary_cave')
-        self.key(pygame.K_F9)
-        self.assertIsNone(self.parent.quest_playtest_session)
-        self.assertEqual(self.snapshot(), before)
 
     def test_each_opening_can_be_accepted_through_normal_gameplay(self):
         for identifier in QUEST_ORDER:
@@ -185,17 +141,6 @@ class QuestPlaytestSessionTests(unittest.TestCase):
                         self.parent.update(.05, (0, -1), False)
                         if game.social.active:
                             break
-                elif identifier == 'CH01_MQ03':
-                    self.parent.draw()
-                    self.click(self.game_point(session, game.regent_arrival.skip_rect.center))
-                    self.assertFalse(game.regent_arrival.active)
-                    serene = game.regent_quest.serene
-                    for offset in ((0, 22), (0, 16), (-16, 0), (16, 0)):
-                        point = serene.position+offset
-                        if game.world.can_stand(point):
-                            game.player.position.update(point)
-                            break
-                    self.key(pygame.K_e)
                 else:
                     self.key(pygame.K_e)
                 self.assertTrue(game.social.active, identifier)
@@ -204,55 +149,9 @@ class QuestPlaytestSessionTests(unittest.TestCase):
                 self.assertIsNone(game.save_error)
                 self.key(pygame.K_F9)
 
-    def test_mq03_straight_to_cave_keeps_mira_in_first_tutorial_battle(self):
-        from overworld_travel import RESERVE_ID
-        from sanctuary_cave import RESERVE_ENTRY_APPROACH
-        from test_aqua_progression_gameplay import AquaProgressionGameplayTests
-        session = self.launch('CH01_MQ03')
-        game = session.game
-        self.parent.draw()
-        self.click(self.game_point(session, game.regent_arrival.skip_rect.center))
-        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
-        # Shorten travel only; do not grant quests, membership or abilities.
-        game.world = game._scene_by_id(RESERVE_ID)
-        game.player.position.update(RESERVE_ENTRY_APPROACH)
-        helper = AquaProgressionGameplayTests()
-        helper.game = game
-        helper.enter_cave()
-        self.assertTrue(game.cave_lesson.resonance_seen)
-        game.player.position.update(456, 1280)
-        game.camera.reset()
-        game.cave_random_encounters.reset(41)
-        state = game.cave_random_encounters.to_dict()
-        state.update(remaining=1., was_safe=False)
-        self.assertTrue(game.cave_random_encounters.restore(state))
-        self.parent.update(.05, (1, 0), False)
-        self.assertEqual(game.cave_random_encounters.pending['formation'], 'bat_pair')
-        self.assertEqual(game.cave_random_encounters.pending['lesson'], 'aqua_edge')
-        model = helper.load_battle()
-        self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
-        self.assertIn('aether_edge', model.learned_abilities)
-        self.assertEqual(model.action_mp_cost('aqua_edge', 'player'), 0)
-        scene = game.combat.scene
-        for _ in range(1000):
-            if scene.tutorial_active:self.key(pygame.K_SPACE)
-            elif model.waiting_for_player:
-                self.assertEqual(model.ready_actor, 'player')
-                self.parent.draw()
-                self.click(self.game_point(session, scene.command_rects['skills'].center))
-                self.parent.draw()
-                self.click(self.game_point(session, scene.command_rects['aqua_edge'].center))
-                self.key(pygame.K_RETURN)
-                break
-            self.tick()
-        for _ in range(1000):
-            if model.aqua_edge_discovered:break
-            if scene.tutorial_active:self.key(pygame.K_SPACE)
-            self.tick()
-        self.assertTrue(model.aqua_edge_discovered)
 
-    def test_later_checkpoint_restart_does_not_stack_exp_or_focus_rewards(self):
-        session = self.launch('CH01_MQ04');game = session.game
+    def test_restart_does_not_stack_exp_or_rewards(self):
+        session = self.launch('CH01_MQ02');game = session.game
         expected = game._progress_signature()
         active = game.party.active_ids
         plan = game.character_progression.preview(100, active,
@@ -263,18 +162,6 @@ class QuestPlaytestSessionTests(unittest.TestCase):
         self.assertIsNot(replacement, session)
         self.assertEqual(replacement.game._progress_signature(), expected)
 
-    def test_mq03_story_rejoin_retains_previously_recruited_mira(self):
-        from tools.capture_mq03_emergency import Driver
-        session = self.launch('CH01_MQ03');game = session.game
-        self.parent.draw()
-        self.click(self.game_point(session, game.regent_arrival.skip_rect.center))
-        driver = Driver.__new__(Driver)
-        driver.game = game;driver.observer = None
-        driver.transitions = [];driver.stages = [];driver.dialogue = []
-        driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
-        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
-        self.assertEqual(game.party.current_event_id, 'mq03_sanctuary')
-        self.assertEqual(game.regent_quest.stage, 'sanctuary_arrival_pending')
 
     def test_normal_movement_encounters_hud_and_menus_are_not_gallery_restricted(self):
         session = self.launch()
@@ -334,7 +221,7 @@ class QuestPlaytestSessionTests(unittest.TestCase):
 
     def test_real_battle_and_victory_rewards_work_without_a_save_file(self):
         before = self.snapshot()
-        session = self.launch('CH01_MQ04')
+        session = self.launch('CH01_MQ02')
         game = session.game
         game.world = game.town
         game.player.position.update(game.combat.position+(0, 24))
@@ -417,12 +304,13 @@ class QuestPlaytestSessionTests(unittest.TestCase):
             self.assertEqual(game._input_offset, session.viewport_rect.topleft)
 
     def test_toolbar_restart_and_return_buttons_consume_clicks(self):
-        session = self.launch('CH01_MQ03')
+        session = self.launch('CH01_MQ02')
         self.parent.draw()
         self.click(session._painter().point(session.restart_rect.center))
         other = self.parent.quest_playtest_session
         self.assertTrue(session.closed)
-        self.assertTrue(other.game.regent_arrival.active)
+        self.assertEqual(other.game.quests.status('CH01_MQ02'), 'available')
+        self.assertIsNone(other.game.cinematic)
         self.click(other._painter().point(other.back_rect.center))
         self.assertTrue(other.closed)
         self.assertIsNone(self.parent.quest_playtest_session)
@@ -466,10 +354,10 @@ class QuestPlaytestSessionTests(unittest.TestCase):
             self.parent.window = pygame.display.set_mode(size)
             for scale in (1, 1.25, 1.5):
                 self.parent.audio.set_text_scale(scale)
-                menu._select(3)
+                menu._select(len(menu.entries)-1)
                 with patch.object(menu, '_thumbnail', side_effect=AssertionError('no quest thumbnails')):
                     self.parent.draw()
-                self.assertGreaterEqual(menu.rows[3].clip(menu.viewport).height, 30)
+                self.assertGreaterEqual(menu.rows[-1].clip(menu.viewport).height, 30)
                 self.assertLessEqual(menu.viewport.bottom+7, menu.play_rect.top)
                 self.assertFalse(menu.play_rect.colliderect(menu.back_rect))
         self.parent.close_quest_playtests()
@@ -481,7 +369,7 @@ class QuestPlaytestSessionTests(unittest.TestCase):
         self.parent.draw()
 
     def test_quit_closes_session_without_creating_a_journey(self):
-        session = self.launch('CH01_MQ04')
+        session = self.launch('CH01_MQ02')
         self.assertFalse(self.parent.handle_events([pygame.event.Event(pygame.QUIT)]))
         self.assertTrue(session.closed)
         self.assertFalse(self.path.exists())

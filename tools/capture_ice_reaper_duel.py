@@ -55,7 +55,7 @@ def capture(output=OUTPUT,*,fps=60):
     baseline=json.loads(BASELINE.read_text())
     if len(baseline['samples'])!=1260:raise ValueError('Missing complete approved opening baseline')
     expected={item['frame']:item for item in baseline['samples']}
-    sources=('opening_cinematic.py','ice_reaper_opening.py','ice_reaper_action.py',
+    sources=('cinematic_player.py','ice_reaper_opening.py','ice_reaper_action.py',
              'rhea_scene_awakening.py','ice_reaper_duel.py','ice_reaper_duel_fx.py',
              'ice_reaper_audio.py','cutscene_gallery.py','tools/capture_ice_reaper_opening.py',
              'tools/capture_ice_reaper_duel.py')

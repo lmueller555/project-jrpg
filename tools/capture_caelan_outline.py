@@ -2,7 +2,7 @@
 
 Before frames come from the pre-outline commit. Current travel uses Player's
 actual selector; world/interaction fixtures use existing production renderers.
-All fixtures disable disk persistence and label seeded rescue victory facts.
+All fixtures disable disk persistence; only retained gameplay owners are used.
 """
 from __future__ import annotations
 import argparse
@@ -59,37 +59,6 @@ def comparison(game):
     card.save(OUT/'comparison.png')
 
 
-def rescue_studies():
-    from tools.capture_sanctuary_rescue import make_game,seed_victory,press
-    game=make_game();game.saves.enabled=False
-    owner=game.sanctuary_rescue
-    seed_victory(game);owner.maybe_start()
-    captured=[]
-    desired={'free_worker','treatment','assisted_stand'}
-    for _ in range(4000):
-        game.update(.05,(0,0),False)
-        if owner.active:
-            key=owner.shot
-            if key in desired and owner._action_elapsed>=owner.phase.get('cue_seconds',1.)+.1:
-                game.draw();file='rescue_'+key+'.png'
-                pygame.image.save(game.window,str(OUT/file))
-                captured.append(dict(file=file,phase=key,action_seconds=owner._action_elapsed,
-                                     camera=list(owner._camera_center),zoom=owner._camera_zoom,
-                                     player=list(game.player.position)))
-                desired.remove(key)
-            if owner.dialogue is not None:press(game)
-        if owner.stage=='greenwell' and not owner.active:break
-    else:raise AssertionError('Rescue pose capture did not reach Greenwell')
-    assert not desired,desired
-    game.player.update((-1,0),.02,game.world,False);game.draw()
-    pygame.image.save(game.window,str(OUT/'rescue_greenwell_walk.png'))
-    captured.append(dict(file='rescue_greenwell_walk.png',stage=owner.stage,
-                         player=list(game.player.position),camera=list(game.camera.position())))
-    assert not game.save_store.enabled and game.saves.library.root is None
-    owner.reset();game.combat.reset();game.music.stop()
-    return captured
-
-
 def capture(output=OUT):
     global OUT
     OUT=Path(output);OUT.mkdir(parents=True,exist_ok=True)
@@ -112,25 +81,20 @@ def capture(output=OUT):
     game.combat.reset();game.music.stop()
     interactions=travel_review.interaction_studies()
     gc.collect()
-    rescue=rescue_studies()
     files=[p for p in (ROOT/'assets/characters/caelan').rglob('*.png')]
-    files += [p for p in (ROOT/'assets/story/sanctuary_rescue/actions').glob('*.png')]
     files += [ROOT/f'assets/characters/mira/idle_{d}.png' for d in DIRECTIONS]
     files += [ROOT/name for name in ('tools/build_caelan_overworld.py','tools/build_caelan_overworld_dependents.py',
-                                    'tools/build_sanctuary_rescue_art.py','tools/capture_caelan_outline.py',
-                                    'sanctuary_rescue.py','sanctuary_arrival.py',
-                                    'assets/story/sanctuary_rescue/art.json',
-                                    'assets/source/story/sanctuary_rescue/registration.json',
                                     'assets/source/characters/caelan/overworld_refresh/travel_authored.png',
                                     'assets/source/characters/caelan/overworld_refresh/actions_authored.png')]
-    files += [ROOT/'assets/source/characters/caelan/overworld_refresh/registration.json']
+    files += [ROOT/'tools/capture_caelan_outline.py',
+              ROOT/'assets/source/characters/caelan/overworld_refresh/registration.json']
     for path in (ROOT/'tools').glob('*contour*.py'):files.append(path)
     for path in (ROOT/'tools').glob('*outline*.py'):files.append(path)
     outputs=sorted(p for p in OUT.iterdir() if p.suffix in ('.png','.gif'))
     evidence=dict(baseline_commit=BASELINE,
-        scope='Isolated actual Player selector, production world and interaction owners. Rescue prerequisites/victory are explicitly seeded; no played fight or full quest walkthrough is claimed.',
+        scope='Isolated actual Player selector, production world and retained interaction owners; no played fight or full quest walkthrough is claimed.',
         travel_loop_ms=clock,disk_persistence_disabled=True,travel_progress_unchanged=True,
-        worlds=worlds,interactions=interactions,rescue=rescue,
+        worlds=worlds,interactions=interactions,
         input_sha256={p.relative_to(ROOT).as_posix():sha256(p.read_bytes()).hexdigest() for p in sorted(set(files))},
         output_sha256={p.name:sha256(p.read_bytes()).hexdigest() for p in outputs})
     (OUT/'evidence.json').write_text(json.dumps(evidence,indent=2)+'\n')

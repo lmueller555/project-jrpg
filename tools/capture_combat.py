@@ -27,7 +27,7 @@ import pygame
 from PIL import Image
 from main import Game
 from ui_style import Painter
-from quests import OPENING_QUEST, MILL_QUEST, REGENT_QUEST
+from quests import OPENING_QUEST, MILL_QUEST
 
 
 def seed_completed_mill(game):
@@ -48,8 +48,6 @@ def seed_completed_mill(game):
         'verified': True, 'resolved': True})
     game.opening_conclusion.restore({'version': 1, 'stage': 'done'})
     game.opening.restore({'version': 1, 'stage': 'disabled'})
-    assert game.quests.unlock(REGENT_QUEST)
-    game.regent_quest.restore(None)
     game.social.blocked.clear();game.quests.drain_events();game.quest_ui.reset()
 
 

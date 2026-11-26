@@ -1,7 +1,8 @@
 # Game I — Opening act: Fire Veinhold and Elden Vale
 
-**Status:** Approved narrative direction, 2026-11-26; gameplay, quest and
-dialogue migration is not implemented by this documentation revision.
+**Status:** Approved future narrative direction. Runtime retirement is now
+implemented: the old flashforward, MQ03 and MQ04 are removed. The replacement
+prologue, arrival, attack, invasion and initially intact bridge remain future work.
 **Version:** 2.0 (Fire Veinhold prologue; Festival of Light removed).
 **Parent:** [Game I Story Bible](STORY_BIBLE.md) ·
 [Revelation Plan](../saga/REVELATION_PLAN.md).
@@ -10,8 +11,8 @@ This is the single owner of the revised opening's sequence, retired plot
 requirements and decisions needed before scripting. It replaces the former
 five-quest festival opening and excavation-driven three-chapter Act I spine.
 Final chapter divisions, quest IDs, durations and detailed scene scripts are
-open. Existing quest documents describe the old implemented journey until
-the later gameplay and dialogue migration.
+open. MQ01 and MQ02 remain playable with ordinary household/mill dialogue.
+The retired quest documents are historical permalinks, not active scripts.
 
 ## Approved opening sequence
 
@@ -86,7 +87,7 @@ rules; the Revelation Plan separates player knowledge from character knowledge.
   evacuation flare, anonymous helmet and sword, unidentified "he" and intended
   Act IV/V reprise create no remaining narrative obligations. The
   [old scene guide](../scenes/OPENING_CINEMATIC.md) is retained only as reference
-  for the runtime that still exists pending removal. Its implied death is not
+  as a historical permalink after its runtime removal. Its implied death is not
   assigned to Tomas or to the new prologue soldier.
 - **The Festival of Light is removed from the narrative.** Its preparation
   arc, MQ04 lantern-making quest, planned MQ05 festival, festival scheduling,
@@ -114,8 +115,9 @@ personal consciousness after death or the presence of souls in the confluence.
 
 ## Existing quests and relationship functions
 
-The old scripts remain current-runtime reference, not a second approved
-opening. Their dialogue is deliberately left for the next revision.
+MQ01 and MQ02 remain synchronized current-runtime scripts, with retired
+framing removed. MQ03/MQ04 and the old scene guides are historical permalink
+notices after their controllers, quest content and replay fixtures were removed.
 
 | Existing script | Relationship or learning function to consider preserving | Required migration |
 | --- | --- | --- |
@@ -218,11 +220,15 @@ where needed before relying on them in dialogue.
 
 ## Implementation boundary and later story
 
-This approval codifies narrative direction. The current game still plays the
-old cinematic, quest sequence, festival dialogue and broken-from-start map.
-Subsequent PRs will revise those systems and scripts. Existing saves must not
-silently reinterpret a rescued mining crew as a completed invasion sequence.
-The supported migration or new-journey policy remains open.
+The old flashforward, regent arrival, MQ03 and MQ04 runtime are removed. New
+Game starts in the bedroom. The retained MQ01/MQ02 journey ends after ordinary
+cup setting and returns to exploration; the school keeps ordinary crafts.
+The reserve/cave remain explorable without a rescue mission or automatic
+companion recruitment. None of this implements the Fire Veinhold prologue,
+new royal arrival, invasion or new quest sequence. The regional bridge remains
+physically ruined until a separate phase implements its initially intact state
+and later destruction. Old rescue completion must not be reinterpreted as a
+completed invasion.
 
 Keep the longer northward journey, Rhea's and Edran's introduction windows,
 Althea's betrayal, Iselin's exile and transformation, the planetary-core

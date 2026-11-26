@@ -63,7 +63,7 @@ class GallerySessionTests(unittest.TestCase):
         for event in events:pygame.event.post(event)
         return game.handle_events()
 
-    def launch(self, game, identifier='later_journey'):
+    def launch(self, game, identifier='ice_reaper_opening'):
         self.assertTrue(game.open_gallery())
         self.assertTrue(game.launch_gallery_scene(identifier))
         self.assertIsNotNone(game.gallery_session)
@@ -89,8 +89,7 @@ class GallerySessionTests(unittest.TestCase):
             session = game.gallery_session
             if session is None:return
             child = session.game
-            if (child.social.active or child.regent_arrival.dialogue is not None and child.regent_arrival.active
-                    or child.sanctuary_arrival.active and child.sanctuary_arrival.dialogue is not None):
+            if child.social.active:
                 self.assertTrue(self.key(game, pygame.K_SPACE))
             game.update(.1, (1, 0), True)
         self.fail('Preview did not return to the catalogue')
@@ -134,7 +133,7 @@ class GallerySessionTests(unittest.TestCase):
         self.assertEqual(game.world.data['id'], payload['player']['scene'])
         self.assertEqual(list(game.player.position), payload['player']['position'])
         self.assertEqual(game.quests.to_dict(), payload['quests'])
-        self.assertFalse(game.opening_cinematic.active)
+        self.assertIsNone(game.cinematic)
 
     def test_legacy_save_remains_byte_identical_until_normal_continue(self):
         payload = self.saved_payload(legacy=True)
@@ -185,7 +184,7 @@ class GallerySessionTests(unittest.TestCase):
 
     def test_staged_completion_cannot_leak_props_actors_rewards_or_flags(self):
         game = self.game();before = self.snapshot(game)
-        session = self.launch(game, 'lantern_finishing')
+        session = self.launch(game, 'mill_repair')
         self.assertIsNot(session.game.town, game.town)
         self.assertIsNot(session.game.inventory, game.inventory)
         self.assertIsNot(session.game.social, game.social)
@@ -199,14 +198,14 @@ class GallerySessionTests(unittest.TestCase):
         first = self.launch(game)
         game.update(8)
         old_world = first.game.town
-        self.assertGreater(first.game.opening_cinematic.elapsed, 0)
+        self.assertGreater(first.game.cinematic.elapsed, 0)
         self.assertTrue(self.key(game, pygame.K_r))
         second = game.gallery_session
         self.assertIsNot(second, first)
         self.assertIsNot(second.game.town, old_world)
         self.assertEqual(second.entry.id, first.entry.id)
-        self.assertEqual(second.game.opening_cinematic.elapsed, 0)
-        self.assertFalse(first.game.opening_cinematic.active)
+        self.assertEqual(second.game.cinematic.elapsed, 0)
+        self.assertIsNone(first.game.cinematic)
         first.close()  # An obsolete owner must not stop the replacement stream.
         self.assertTrue(second.game.music._owns_stream())
         self.assertTrue(self.key(game, pygame.K_ESCAPE))
@@ -283,7 +282,7 @@ class GallerySessionTests(unittest.TestCase):
         session = self.launch(game)
         game.draw()
         child = session.game
-        point = child.opening_cinematic.skip_rect.center
+        point = child.cinematic.skip_rect.center
         scale, _, origin = child._ensure_ui_surface()
         screen = (round(origin[0]+point[0]*scale)+session.viewport_rect.x,
                   round(origin[1]+point[1]*scale)+session.viewport_rect.y)
@@ -303,9 +302,9 @@ class GallerySessionTests(unittest.TestCase):
         self.assertTrue(game.open_gallery())
         game.gallery.selected = 10
         game.gallery.scroll = 170
-        self.assertTrue(game.launch_gallery_scene('later_journey'))
+        self.assertTrue(game.launch_gallery_scene('ice_reaper_opening'))
         session = game.gallery_session
-        for _ in range(int(session.game.opening_cinematic.duration)+3):
+        for _ in range(int(session.game.cinematic.duration)+3):
             if game.gallery_session is None:break
             game.update(1)
         self.assertIsNone(game.gallery_session)
@@ -375,8 +374,7 @@ class GallerySessionTests(unittest.TestCase):
                     if frame % 3 == 0:
                         game.draw()
                         if game.gallery_session is None:break
-                        if (child.social.active or child.regent_arrival.active
-                                or child.sanctuary_arrival.active and child.sanctuary_arrival.dialogue is not None):
+                        if child.social.active:
                             self.assertTrue(self.key(game, pygame.K_SPACE))
                     game.update(.1)
                     if game.gallery_session is None:break
@@ -419,18 +417,18 @@ class GallerySessionTests(unittest.TestCase):
         game = self.game()
         child = self.launch(game).game
         game.update(3)
-        elapsed = child.opening_cinematic.elapsed
+        elapsed = child.cinematic.elapsed
         self.assertTrue(self.key(game, pygame.K_p))
-        self.assertTrue(child.opening_cinematic.paused)
+        self.assertTrue(child.cinematic.paused)
         self.assertTrue(child.music.paused)
         game.update(4)
-        self.assertEqual(child.opening_cinematic.elapsed, elapsed)
+        self.assertEqual(child.cinematic.elapsed, elapsed)
         self.assertTrue(self.key(game, pygame.K_p, repeat=True))
-        self.assertTrue(child.opening_cinematic.paused)
+        self.assertTrue(child.cinematic.paused)
         self.assertTrue(self.key(game, pygame.K_p))
-        self.assertFalse(child.opening_cinematic.paused)
+        self.assertFalse(child.cinematic.paused)
         game.update(.25)
-        self.assertGreater(child.opening_cinematic.elapsed, elapsed)
+        self.assertGreater(child.cinematic.elapsed, elapsed)
         self.assertTrue(self.key(game, pygame.K_ESCAPE))
         self.assertIsNone(game.gallery_session)
 
@@ -518,7 +516,7 @@ class GallerySessionTests(unittest.TestCase):
                                         session._painter().area(session.bar_rect).bottom)
                 scale, pixels, origin = child._ensure_ui_surface()
                 self.assertTrue(child.window.get_rect().contains(pygame.Rect(origin, pixels)))
-                point = child.opening_cinematic.skip_rect.center
+                point = child.cinematic.skip_rect.center
                 local = (round(origin[0]+point[0]*scale), round(origin[1]+point[1]*scale))
                 recovered = child.to_canvas(local)
                 self.assertLess(pygame.Vector2(recovered).distance_to(point), 2)
@@ -531,27 +529,6 @@ class GallerySessionTests(unittest.TestCase):
                 del session, child
                 gc.collect()
 
-    def test_arrival_audio_and_controller_resources_are_released(self):
-        game = self.game()
-        game.audio.effects_volume = 1
-        child = self.launch(game, 'regent_arrival').game
-        # Travel effects begin when the approaching caravan becomes visible.
-        for _ in range(1000):
-            if child.regent_arrival.audio.channels:break
-            game.update(.05)
-        owned = list(child.regent_arrival.audio.channels)
-        self.assertTrue(owned, 'The actual dummy mixer must receive arrival cues')
-        with patch.object(child.regent_arrival.audio, 'stop', wraps=child.regent_arrival.audio.stop) as stop:
-            self.assertTrue(self.key(game, pygame.K_ESCAPE))
-            stop.assert_called()
-        self.assertFalse(child.regent_arrival.active)
-        self.assertEqual(child.regent_arrival.audio.channels, [])
-        self.assertEqual(child.opening_audio._channels, [])
-        self.assertEqual(child.opening_audio._fading_channels, [])
-        self.assertEqual(child.regional_audio.voices, {})
-        self.assertTrue(all(channel.get_sound() is not sound or not channel.get_busy()
-                            for channel, sound in owned))
-        self.assertTrue(game.music._owns_stream())
 
     def test_regional_previews_release_owned_voices_without_stopping_other_audio(self):
         game = self.game();game.audio.effects_volume = 1
@@ -607,7 +584,7 @@ class GallerySessionTests(unittest.TestCase):
         self.assertFalse(game.launch_gallery_scene('unwritten_future_scene'))
         self.assertFalse(game.launch_gallery_scene('regent_cart_release'))
         self.assertIsNone(game.gallery_session)
-        self.assertTrue(game.launch_gallery_scene('later_journey'))
+        self.assertTrue(game.launch_gallery_scene('ice_reaper_opening'))
         current = game.gallery_session
         self.assertFalse(game.launch_gallery_scene('morning_wake'))
         self.assertIs(game.gallery_session, current)
@@ -616,34 +593,16 @@ class GallerySessionTests(unittest.TestCase):
         game = self.game();before = self.snapshot(game)
         self.assertTrue(game.open_gallery())
         with patch('cutscene_gallery.GalleryEntry.start', side_effect=ValueError('Missing scene asset')):
-            self.assertFalse(game.launch_gallery_scene('later_journey'))
+            self.assertFalse(game.launch_gallery_scene('ice_reaper_opening'))
         self.assertIsNone(game.gallery_session)
         self.assertIn('Missing scene asset', game.gallery.error)
         self.assertEqual(self.snapshot(game), before)
         self.assertTrue(game.music._owns_stream())
         self.assertEqual(game.music.desired_track, 'title')
-        self.assertTrue(game.launch_gallery_scene('later_journey'))
+        self.assertTrue(game.launch_gallery_scene('ice_reaper_opening'))
         self.assertTrue(self.key(game, pygame.K_ESCAPE))
         self.assertFalse(self.path.exists())
 
-    def test_missing_arrival_layer_during_draw_restores_gallery_and_saved_journey(self):
-        self.saved_payload()
-        saved_bytes = self.path.read_bytes()
-        game = self.game();before = self.snapshot(game)
-        session = self.launch(game, 'regent_arrival')
-        child = session.game
-        with patch.object(child.regent_arrival, '_load', side_effect=FileNotFoundError('Missing arrival layer')):
-            game.draw()
-        self.assertTrue(session.closed)
-        self.assertIsNone(game.gallery_session)
-        self.assertTrue(game.on_gallery)
-        self.assertIn('Missing arrival layer', game.gallery.error)
-        self.assertTrue(game.music._owns_stream())
-        self.assertEqual(game.music.desired_track, 'title')
-        self.assertFalse(child.music._owns_stream())
-        self.assertEqual(child.regent_arrival.audio.channels, [])
-        self.assertEqual(self.path.read_bytes(), saved_bytes)
-        self.assertEqual(self.snapshot(game), before)
 
 
 if __name__ == '__main__':unittest.main()

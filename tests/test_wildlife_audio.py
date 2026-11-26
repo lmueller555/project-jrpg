@@ -50,8 +50,8 @@ class Channel:
 class WildlifeAllocationTests(TestCase):
     def setUp(self):
         self.g = NS(audio=AudioSettings(None),player=NS(position=pygame.Vector2()),
-            overworld_travel=NS(active=True),on_title=False,opening_cinematic=NS(active=False),
-            regent_arrival=NS(active=False,state='done'),combat=NS(active=False),pause=NS(is_open=False),
+            overworld_travel=NS(active=True),on_title=False,cinematic=NS(active=False),
+            combat=NS(active=False),pause=NS(is_open=False),
             inventory_ui=NS(is_open=False),world_map_viewer=NS(is_open=False),map_open=False,
             quest_ui=NS(journal_open=False),_music_focused=True,world=NS(region={'terrain':{}}))
         self.a = RegionalAudio(self.g);self.channels = []

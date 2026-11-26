@@ -1,0 +1,2561 @@
+{
+  "base_commit": "aa4b7acefcd7822e533e59afd29ed566dc9fa44d",
+  "status": "Complete; no new failure/error records; existing baseline failures remain",
+  "method": "All test_*.py modules under tests/ run in fresh Python processes, with gc.collect after each case. The 39 exporter-related modules ran serially; remaining modules used two workers. Individual JSON results were reloaded after the soundtrack module rerun.",
+  "limitations": "Earlier single-process current and baseline discovery runs exceeded the 16 GiB memory limit and were incomplete. They are not counted here. Every final failure/error method was rerun in a fresh baseline process; matching case IDs, normalized tracebacks and assertions were checked. This is not a green suite.",
+  "environment": {
+    "python": "/workspace/.venvs/project-jrpg/bin/python",
+    "PYTHONPATH": ".:tests",
+    "SDL_VIDEODRIVER": "dummy",
+    "SDL_AUDIODRIVER": "dummy",
+    "PYGAME_HIDE_SUPPORT_PROMPT": "1"
+  },
+  "reproduce_one_module": "PYTHONPATH=.:tests SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 python -m unittest MODULE -v",
+  "reproduce_baseline": "Check out base_commit in a separate tree, use the same environment, and replace MODULE with reproduce_method_on_baseline for each listed failure.",
+  "counts": {
+    "modules": 292,
+    "test_methods_executed": 2636,
+    "failed_methods": 33,
+    "failure_records": 42,
+    "error_records": 12,
+    "skipped_methods": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "new_failure_records": 0,
+    "baseline_identical_failure_or_error_records": 54
+  },
+  "modules": [
+    {
+      "module": "test_aether_edge_battle_model",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_aqua_edge_battle_model",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_aqua_progression_gameplay",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_attribute_caps",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_attribute_icons",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_attribute_modifiers",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_audio_settings",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bat_contact_encounter",
+      "tests": 9,
+      "failure_error_records": 2,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_battle_action_audio",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_action_fx",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_announcements",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_choreography",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_click_targeting",
+      "tests": 19,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_feedback",
+      "tests": 19,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_gameplay",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_model",
+      "tests": 25,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_rewards",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_scene",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_status_ui",
+      "tests": 6,
+      "failure_error_records": 12,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_battle_target_marker",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_transition",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battle_xp_rewards",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_battlefield",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bed_rest",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bestiary",
+      "tests": 25,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bestiary_battle",
+      "tests": 17,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_bestiary_preview",
+      "tests": 8,
+      "failure_error_records": 5,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_bestiary_scene",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bolt_shot_fx",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bridge_crew",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_bridge_worker_animation",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_directional_runs",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_duel_facing",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_left_run",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_outline",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_overworld_refresh",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_caelan_pickup_continuity",
+      "tests": 1,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_camera_director",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_aqua_lesson",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_chasm",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_enemy_battle_scene",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_enemy_combat_assets",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_greenwell",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_lighting",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_random_encounters",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cave_random_gameplay",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_abilities",
+      "tests": 25,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_attributes",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_attributes_gameplay",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_progression",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_progression_gameplay",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_character_skills_gameplay",
+      "tests": 11,
+      "failure_error_records": 5,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_charging_tutorials",
+      "tests": 1,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_charm_integration",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_checkpoint_charm",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_choreography_scene",
+      "tests": 11,
+      "failure_error_records": 7,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_cinematic_actor_actions",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cinematic_dialogue",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cinematic_player",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_combat_assets",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_combat_damage",
+      "tests": 27,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_combat_motion_art",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_compact_battle_ui",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_companion_combat_animations",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_consumables",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_cutscene_dialogue_layout",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_daisy_bone",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_daisy_bowls",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_daisy_routines",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_dense_art",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_doors",
+      "tests": 7,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_dungeon_pack_expansion",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_echo_chamber_battlefield",
+      "tests": 6,
+      "failure_error_records": 2,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_eldenmere_grass",
+      "tests": 4,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_elemental_battle_scene",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elemental_boss_state",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elemental_cave_assets",
+      "tests": 6,
+      "failure_error_records": 3,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_elemental_cave_gameplay",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elemental_focus_presentation",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elemental_miniboss_model",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elemental_room_fx",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_elira_visit",
+      "tests": 15,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_enemy_charge_aura",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_enemy_combat_design",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_enemy_growth",
+      "tests": 20,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_female_profile_chin",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_following_facing",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gallery_catalogue",
+      "tests": 25,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gallery_session",
+      "tests": 27,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gallery_ui",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_game",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_game_music",
+      "tests": 32,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_garden_orchard",
+      "tests": 23,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gardener",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gear_battle_model",
+      "tests": 19,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gear_battle_scene",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gear_persistence",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gear_widget",
+      "tests": 21,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gearblade_art",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_gearblade_fx",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_grain_farm",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_grain_worker_animation",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_grass_asset_proportions",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_grass_demo",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_halden_visit",
+      "tests": 11,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_ice_reaper_action",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_audio",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_blocking",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_duel",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_environment",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_facing",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_opening",
+      "tests": 17,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_requested_corrections",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_rune",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ice_reaper_shoulder_staging",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_interactable_charging",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_interactive_grass",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_inventory",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_inventory_gameplay",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_iselin_idles",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_iselin_native_integration",
+      "tests": 2,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_iselin_replacement",
+      "tests": 2,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_iselin_walk_integration",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_item_gameplay",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lantern_actor_handoffs",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_leveling",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_leveling_combat_integration",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_leveling_policy",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_leveling_preview",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_blocks",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_daisy_directional_runs",
+      "tests": 8,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_liam_daisy_play",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_daisy_run_prototypes",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_family_directional_walks",
+      "tests": 8,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_liam_family_front_walks",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_house",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_liam_household",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_limestone_cave_review",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lucan_forward_intercept",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lucan_guard_facing",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lucan_guest_progression",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lucan_skill_scene",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_lucan_support_model",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_map_ui",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_battle_gameplay",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_combat_assets",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_combat_story",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_gift",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_quest",
+      "tests": 20,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mill_trigger_geometry",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_millrace_cutscene_flow",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_millrace_cutscene_gameplay",
+      "tests": 14,
+      "failure_error_records": 2,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_millrace_departure",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_arm_rig_assets",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_bench",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_bolt_firing",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_combat_scene",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_prefire_facing",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_continuity",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_gameplay",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_legacy",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_model",
+      "tests": 17,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_preview",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_scene",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_state",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_story",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mira_rig_ui",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mq02_sanctuary_handoff",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_mq02_spellblade_gameplay",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_music_battle_integration",
+      "tests": 18,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_nivareth_combat_art",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_npc_traffic",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_audio",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_conclusion",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_dialogue_pass",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_gameplay",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_retirement",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_opening_sequence",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_atlas_survey",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_composition_environment",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_composition_gameplay",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_environment",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_map",
+      "tests": 20,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_minimap",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_polish_gameplay",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_region_contract",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_sanctuary",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_sanctuary_art",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_streaming",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_overworld_travel",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_battle_model",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_battle_scene",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_encounters",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_gameplay",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_state",
+      "tests": 18,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_travel",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_party_ui",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_pause_menu",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_player_running",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_polished_opening",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_production_grass_assets",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_progression_cleanup",
+      "tests": 3,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_progression_menus",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_purposeful_wildlife",
+      "tests": 18,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quest_atomic_completion",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quest_gameplay",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quest_playtest",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quest_playtest_session",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quest_ui",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_quests",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_random_enemy_groups",
+      "tests": 13,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_realtime_dialogue",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_audio",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_audio_events",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_cartography",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_participation",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_prop_transfers",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_regional_wildlife_art",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_reserve_free_roam",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_retired_progression_migration",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_rhea_scene_awakening",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_rhea_winter",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_rhea_winter_capture",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_road_guards",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_atmosphere",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_boss_gameplay",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_boss_state",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_assets",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_controller",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_gameplay",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_map",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_migration",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_cave_music",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_crystal_assets",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_depth",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_fantasy_scene",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_grass",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_grove_assets",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_relief_gameplay",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_relief_map",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_relief_rest",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_reserve_geometry",
+      "tests": 11,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_reserve_hall",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_reserve_life",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_reserve_map",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_reserve_travel",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_sanctuary_return",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_save_game",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_save_library",
+      "tests": 12,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_save_system_gameplay",
+      "tests": 26,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_school",
+      "tests": 6,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_school_world_map",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_scripted_camera",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_scripted_dialogue",
+      "tests": 10,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_serene_routine_assets",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_serene_runtime",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_serene_schedule_data",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_skills_battle_scene",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_social",
+      "tests": 15,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_speech_bubbles",
+      "tests": 18,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_spellblade_battle_model",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_spoils_audio",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_spoils_gameplay",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_spoils_scene",
+      "tests": 14,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_status_ui",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_three_member_battle",
+      "tests": 10,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_title_screen",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_title_water_music",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_tomas_routines",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ui_integration",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_ui_style",
+      "tests": 9,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_upstream_grass",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_venn_magicks",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_venn_visit",
+      "tests": 18,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_vespermaw_art_scene",
+      "tests": 4,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_vespermaw_bestiary",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_channel_art",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_channel_scene",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_combat_assets",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_encounter_owner",
+      "tests": 10,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_live_model",
+      "tests": 16,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_vespermaw_live_scene",
+      "tests": 7,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_victory_spoils_flow",
+      "tests": 7,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_village_children",
+      "tests": 6,
+      "failure_error_records": 1,
+      "skipped": 0,
+      "successful": false
+    },
+    {
+      "module": "test_villager_households",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_well",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_well_drawing",
+      "tests": 13,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_wildlife_audio",
+      "tests": 5,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_wildlife_journey_validation",
+      "tests": 3,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_world_grass",
+      "tests": 8,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_world_map_assets",
+      "tests": 4,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    {
+      "module": "test_world_map_viewer",
+      "tests": 6,
+      "failure_error_records": 0,
+      "skipped": 0,
+      "successful": true
+    }
+  ],
+  "baseline_failures": [
+    {
+      "id": "test_bat_contact_encounter.BatContactEncounterTests.test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress (awarded=False)",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bat_contact_encounter.py\", line 195, in test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress\n    self.assertFalse(restored.combat.active)\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bat_contact_encounter.py\", line 195, in test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress\n    self.assertFalse(restored.combat.active)\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bat_contact_encounter.BatContactEncounterTests.test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress"
+    },
+    {
+      "id": "test_bat_contact_encounter.BatContactEncounterTests.test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress (awarded=True)",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bat_contact_encounter.py\", line 195, in test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress\n    self.assertFalse(restored.combat.active)\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bat_contact_encounter.py\", line 195, in test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress\n    self.assertFalse(restored.combat.active)\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bat_contact_encounter.BatContactEncounterTests.test_pre_mill_victory_resumes_spoils_once_without_inventing_quest_progress"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right (learned=(), size=(480, 320))",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 5 != 4\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 5 != 4\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right (learned=(), size=(960, 640))",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 5 != 4\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 5 != 4\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right (learned=('aether_dart',), size=(480, 320))",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 6 != 5\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 6 != 5\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right (learned=('aether_dart',), size=(960, 640))",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 6 != 5\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 167, in test_single_character_column_keeps_status_above_gear_and_commands_on_right\n    self.assertEqual(len(actions), 5 if learned else 4)\nAssertionError: 6 != 5\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_single_character_column_keeps_status_above_gear_and_commands_on_right"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(480, 320), text_scale=1.0)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(480, 320), text_scale=1.5)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(960, 640), text_scale=1.0)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(960, 640), text_scale=1.5)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(1440, 810), text_scale=1.0)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(1440, 810), text_scale=1.5)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(800, 800), text_scale=1.0)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale (size=(800, 800), text_scale=1.5)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_battle_status_ui.py\", line 225, in test_status_and_maximum_resources_fit_character_column_at_every_scale\n    label = {'attack': 'Attack', 'skills': 'Skills', 'guard': 'Guard', 'flee': 'Flee',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'items'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_battle_status_ui.BattleStatusUITests.test_status_and_maximum_resources_fit_character_column_at_every_scale"
+    },
+    {
+      "id": "test_bestiary_battle.BestiaryBattleTests.test_factory_rejects_invalid_level_and_unsupported_future_style (level=4)",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_battle.py\", line 232, in test_factory_rejects_invalid_level_and_unsupported_future_style\n    with self.subTest(level=level), self.assertRaises((TypeError, ValueError)):\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'TypeError'>, <class 'ValueError'>) not raised\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_battle.py\", line 232, in test_factory_rejects_invalid_level_and_unsupported_future_style\n    with self.subTest(level=level), self.assertRaises((TypeError, ValueError)):\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (<class 'TypeError'>, <class 'ValueError'>) not raised\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_battle.BestiaryBattleTests.test_factory_rejects_invalid_level_and_unsupported_future_style"
+    },
+    {
+      "id": "test_bestiary_preview.BestiaryPreviewTests.test_invalid_id_level_or_mode_exits_cleanly (args=('--enemy', 'cave_bat', '--levels', '4'))",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_preview.py\", line 196, in test_invalid_id_level_or_mode_exits_cleanly\n    self.assertNotEqual(result.returncode, 0)\nAssertionError: 0 == 0\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_preview.py\", line 196, in test_invalid_id_level_or_mode_exits_cleanly\n    self.assertNotEqual(result.returncode, 0)\nAssertionError: 0 == 0\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_preview.BestiaryPreviewTests.test_invalid_id_level_or_mode_exits_cleanly"
+    },
+    {
+      "id": "test_bestiary_preview.BestiaryPreviewTests.test_json_uses_real_species_stats_rewards_and_behavior_outside_repository",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_preview.py\", line 106, in test_json_uses_real_species_stats_rewards_and_behavior_outside_repository\n    self.assertEqual([record['level'] for record in records], [2, 3])\nAssertionError: Lists differ: [2, 3, 4, 5] != [2, 3]\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [2, 3]\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_preview.py\", line 106, in test_json_uses_real_species_stats_rewards_and_behavior_outside_repository\n    self.assertEqual([record['level'] for record in records], [2, 3])\nAssertionError: Lists differ: [2, 3, 4, 5] != [2, 3]\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [2, 3]\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_preview.BestiaryPreviewTests.test_json_uses_real_species_stats_rewards_and_behavior_outside_repository"
+    },
+    {
+      "id": "test_bestiary_preview.BestiaryPreviewTests.test_overview_lists_fixed_and_computed_entries_without_assigning_levels",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_preview.py\", line 34, in test_overview_lists_fixed_and_computed_entries_without_assigning_levels\n    self.assertEqual(rows['cave_bat']['levels'], '2\u20133')\nAssertionError: '2\u20135' != '2\u20133'\n- 2\u20135\n?   ^\n+ 2\u20133\n?   ^\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_preview.py\", line 34, in test_overview_lists_fixed_and_computed_entries_without_assigning_levels\n    self.assertEqual(rows['cave_bat']['levels'], '2\u20133')\nAssertionError: '2\u20135' != '2\u20133'\n- 2\u20135\n?   ^\n+ 2\u20133\n?   ^\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_preview.BestiaryPreviewTests.test_overview_lists_fixed_and_computed_entries_without_assigning_levels"
+    },
+    {
+      "id": "test_bestiary_preview.BestiaryPreviewTests.test_ready_species_preview_in_all_formats_without_side_effects (enemy='lithrusk')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_preview.py\", line 64, in test_ready_species_preview_in_all_formats_without_side_effects\n    self.assertEqual([record['level'] for record in records], levels)\nAssertionError: Lists differ: [2, 3, 4, 5] != [2, 3]\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [2, 3]\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_preview.py\", line 64, in test_ready_species_preview_in_all_formats_without_side_effects\n    self.assertEqual([record['level'] for record in records], levels)\nAssertionError: Lists differ: [2, 3, 4, 5] != [2, 3]\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [2, 3]\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_preview.BestiaryPreviewTests.test_ready_species_preview_in_all_formats_without_side_effects"
+    },
+    {
+      "id": "test_bestiary_preview.BestiaryPreviewTests.test_ready_species_preview_in_all_formats_without_side_effects (enemy='veylume')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_bestiary_preview.py\", line 64, in test_ready_species_preview_in_all_formats_without_side_effects\n    self.assertEqual([record['level'] for record in records], levels)\nAssertionError: Lists differ: [2, 3, 4, 5] != [3, 4]\n\nFirst differing element 0:\n2\n3\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [3, 4]\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_bestiary_preview.py\", line 64, in test_ready_species_preview_in_all_formats_without_side_effects\n    self.assertEqual([record['level'] for record in records], levels)\nAssertionError: Lists differ: [2, 3, 4, 5] != [3, 4]\n\nFirst differing element 0:\n2\n3\n\nFirst list contains 2 additional elements.\nFirst extra element 2:\n4\n\n- [2, 3, 4, 5]\n+ [3, 4]\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_bestiary_preview.BestiaryPreviewTests.test_ready_species_preview_in_all_formats_without_side_effects"
+    },
+    {
+      "id": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey (state=None)",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_character_skills_gameplay.py\", line 409, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_character_skills_gameplay.py\", line 406, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey"
+    },
+    {
+      "id": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey (state={})",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_character_skills_gameplay.py\", line 409, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_character_skills_gameplay.py\", line 406, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey"
+    },
+    {
+      "id": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey (state={'version': True, 'characters': {}})",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_character_skills_gameplay.py\", line 409, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_character_skills_gameplay.py\", line 406, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey"
+    },
+    {
+      "id": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey (state={'version': 1, 'characters': {'caelan': {'equipped_weapon': 'missing_weapon', 'first_weapon_acquired': True}, 'edran': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'lucan': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'mira': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'rhea': {'equipped_weapon': None, 'first_weapon_acquired': False}}, 'gear_gems': {'caelan': ['water']}})",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_character_skills_gameplay.py\", line 409, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_character_skills_gameplay.py\", line 406, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey"
+    },
+    {
+      "id": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey (state={'version': 1, 'characters': {'caelan': {'equipped_weapon': 'skill_test_sword', 'first_weapon_acquired': False}, 'edran': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'lucan': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'mira': {'equipped_weapon': None, 'first_weapon_acquired': False}, 'rhea': {'equipped_weapon': None, 'first_weapon_acquired': False}}, 'gear_gems': {'caelan': ['water']}})",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_character_skills_gameplay.py\", line 409, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_character_skills_gameplay.py\", line 406, in test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey\n    self.assertEqual(resumed.inventory.entries(), [])\nAssertionError: Lists differ: [{'name': 'Ether', 'category': 'items', 'd[1060 chars]: 3}] != []\n\nFirst list contains 5 additional elements.\nFirst extra element 0:\n{'name': 'Ether', 'category': 'items', 'description': 'Restores 15 MP to one living character.', 'use_context': 'consumable', 'effect': {'kind': 'restore_mp', 'amount': 15}, 'id': 'ether', 'quantity': 5}\n\nDiff is 1287 characters long. Set self.maxDiff to None to see it.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_character_skills_gameplay.CharacterSkillsGameplayTests.test_malformed_skill_state_is_rejected_on_title_without_overwriting_the_journey"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_damage_popups_use_the_same_camera_projection_as_actors",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 210, in test_damage_popups_use_the_same_camera_projection_as_actors\n    self.make_scene(enemy='ridgeback_tusker', party=True)\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 210, in test_damage_popups_use_the_same_camera_projection_as_actors\n    self.make_scene(enemy='ridgeback_tusker', party=True)\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_damage_popups_use_the_same_camera_projection_as_actors"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_event_reactions_do_not_depend_on_damage_popup_visibility (enemy='ridgeback_tusker', guarded=False)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 178, in test_event_reactions_do_not_depend_on_damage_popup_visibility\n    self.make_scene(enemy=enemy)\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 178, in test_event_reactions_do_not_depend_on_damage_popup_visibility\n    self.make_scene(enemy=enemy)\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_event_reactions_do_not_depend_on_damage_popup_visibility"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_event_reactions_do_not_depend_on_damage_popup_visibility (enemy='ridgeback_tusker', guarded=True)",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 178, in test_event_reactions_do_not_depend_on_damage_popup_visibility\n    self.make_scene(enemy=enemy)\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 178, in test_event_reactions_do_not_depend_on_damage_popup_visibility\n    self.make_scene(enemy=enemy)\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 52, in make_scene\n    enemies['enemies'][enemy]['attributes'].update(hp=enemy_hp, speed=0)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nKeyError: 'attributes'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_event_reactions_do_not_depend_on_damage_popup_visibility"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action (command='attack')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action (command='aether_edge')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action (command='aether_dart')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action"
+    },
+    {
+      "id": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action (command='guard')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_choreography_scene.py\", line 264, in test_hover_only_slows_gauge_fill_and_never_the_committed_action\n    self.assertEqual(self.scene.atb_multiplier, .25)\nAssertionError: 1.0 != 0.25\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_choreography_scene.ChoreographySceneTests.test_hover_only_slows_gauge_fill_and_never_the_committed_action"
+    },
+    {
+      "id": "test_doors.BuildingDoors.test_all_thirteen_rooms_have_reachable_exits_and_furnishings",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_doors.py\", line 128, in test_all_thirteen_rooms_have_reachable_exits_and_furnishings\n    self.assertEqual(len(scenes),13)\nAssertionError: 15 != 13\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_doors.py\", line 128, in test_all_thirteen_rooms_have_reachable_exits_and_furnishings\n    self.assertEqual(len(scenes),13)\nAssertionError: 15 != 13\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_doors.BuildingDoors.test_all_thirteen_rooms_have_reachable_exits_and_furnishings"
+    },
+    {
+      "id": "test_echo_chamber_battlefield.EchoChamberBattlefieldTests.test_all_exports_are_reproducible_from_a_different_working_directory",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_echo_chamber_battlefield.py\", line 45, in test_all_exports_are_reproducible_from_a_different_working_directory\n    self.assertEqual(result.returncode, 0, result.stdout+result.stderr)\nAssertionError: 1 != 0 : Stale cave battlefield exports: assets/combat/cave_outer/battlefield.json, assets/combat/cave_grotto/battlefield.json, assets/combat/cave_hollow/battlefield.json, assets/combat/cave_depths/battlefield.json, assets/combat/cave_echo_chamber/battlefield.json, assets/combat/cave_embervein/battlefield.json, assets/combat/cave_stillfrost/battlefield.json\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_echo_chamber_battlefield.py\", line 45, in test_all_exports_are_reproducible_from_a_different_working_directory\n    self.assertEqual(result.returncode, 0, result.stdout+result.stderr)\nAssertionError: 1 != 0 : Stale cave battlefield exports: assets/combat/cave_outer/battlefield.json, assets/combat/cave_grotto/battlefield.json, assets/combat/cave_hollow/battlefield.json, assets/combat/cave_depths/battlefield.json, assets/combat/cave_echo_chamber/battlefield.json, assets/combat/cave_embervein/battlefield.json, assets/combat/cave_stillfrost/battlefield.json\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_echo_chamber_battlefield.EchoChamberBattlefieldTests.test_all_exports_are_reproducible_from_a_different_working_directory"
+    },
+    {
+      "id": "test_echo_chamber_battlefield.EchoChamberBattlefieldTests.test_echo_room_identity_and_approved_embedded_crystal_sources (source='assets/maps/sanctuary_cave/map.json')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_echo_chamber_battlefield.py\", line 72, in test_echo_room_identity_and_approved_embedded_crystal_sources\n    self.assertEqual(sha256((ROOT/name).read_bytes()).hexdigest(), digest)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_echo_chamber_battlefield.py\", line 72, in test_echo_room_identity_and_approved_embedded_crystal_sources\n    self.assertEqual(sha256((ROOT/name).read_bytes()).hexdigest(), digest)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_echo_chamber_battlefield.EchoChamberBattlefieldTests.test_echo_room_identity_and_approved_embedded_crystal_sources"
+    },
+    {
+      "id": "test_eldenmere_grass.EldenmereGrassTests.test_rollout_preserves_collision_and_all_non_art_metadata",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_eldenmere_grass.py\", line 29, in test_rollout_preserves_collision_and_all_non_art_metadata\n    self.assertEqual(digest(protected),self.recipe['protected_metadata_sha256'])\nAssertionError: 'f02e6681a96fccf45e374d8b7eaa0a722aeb8d50b6661c6339803c97198fd138' != '2779eb75889196e8fa2feb9a38689aecfba3e824d5d1f5f5db5d63778f55a224'\n- f02e6681a96fccf45e374d8b7eaa0a722aeb8d50b6661c6339803c97198fd138\n+ 2779eb75889196e8fa2feb9a38689aecfba3e824d5d1f5f5db5d63778f55a224\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_eldenmere_grass.py\", line 29, in test_rollout_preserves_collision_and_all_non_art_metadata\n    self.assertEqual(digest(protected),self.recipe['protected_metadata_sha256'])\nAssertionError: 'f02e6681a96fccf45e374d8b7eaa0a722aeb8d50b6661c6339803c97198fd138' != '2779eb75889196e8fa2feb9a38689aecfba3e824d5d1f5f5db5d63778f55a224'\n- f02e6681a96fccf45e374d8b7eaa0a722aeb8d50b6661c6339803c97198fd138\n+ 2779eb75889196e8fa2feb9a38689aecfba3e824d5d1f5f5db5d63778f55a224\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_eldenmere_grass.EldenmereGrassTests.test_rollout_preserves_collision_and_all_non_art_metadata"
+    },
+    {
+      "id": "test_elemental_cave_assets.ElementalCaveAssetTests.test_dedicated_battlefields_are_cached_six_second_native_cycles (enemy='embravyr')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_elemental_cave_assets.py\", line 215, in test_dedicated_battlefields_are_cached_six_second_native_cycles\n    self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),digest,path)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_elemental_cave_assets.py\", line 215, in test_dedicated_battlefields_are_cached_six_second_native_cycles\n    self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),digest,path)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_elemental_cave_assets.ElementalCaveAssetTests.test_dedicated_battlefields_are_cached_six_second_native_cycles"
+    },
+    {
+      "id": "test_elemental_cave_assets.ElementalCaveAssetTests.test_dedicated_battlefields_are_cached_six_second_native_cycles (enemy='nivareth')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_elemental_cave_assets.py\", line 215, in test_dedicated_battlefields_are_cached_six_second_native_cycles\n    self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),digest,path)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_elemental_cave_assets.py\", line 215, in test_dedicated_battlefields_are_cached_six_second_native_cycles\n    self.assertEqual(sha256((ROOT/path).read_bytes()).hexdigest(),digest,path)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_elemental_cave_assets.ElementalCaveAssetTests.test_dedicated_battlefields_are_cached_six_second_native_cycles"
+    },
+    {
+      "id": "test_elemental_cave_assets.ElementalCaveAssetTests.test_two_rooms_preserve_existing_map_routes_landings_and_treasures",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_elemental_cave_assets.py\", line 84, in test_two_rooms_preserve_existing_map_routes_landings_and_treasures\n    self.assertEqual(self.cave['routes']['main'],[[288,1660],[288,1510],[330,1400],\nAssertionError: Lists differ: [[288[126 chars]], [1850, 880], [1920, 820], [1920, 740], [181[42 chars]360]] != [[288[126 chars]], [1730, 800], [1790, 700], [1810, 600], [192[29 chars]360]]\n\nFirst differing element 10:\n[1850, 880]\n[1730, 800]\n\nFirst list contains 1 additional elements.\nFirst extra element 16:\n[2060, 360]\n\n  [[288, 1660],\n   [288, 1510],\n   [330, 1400],\n   [456, 1280],\n   [680, 1270],\n   [875, 1240],\n   [1100, 1200],\n   [1370, 1180],\n   [1510, 1060],\n   [1680, 970],\n-  [1850, 880],\n?    ^^    ^\n\n+  [1730, 800],\n?    ^^    ^\n\n-  [1920, 820],\n-  [1920, 740],\n?     -    ^\n\n+  [1790, 700],\n?    +     ^\n\n   [1810, 600],\n   [1920, 520],\n   [2000, 420],\n   [2060, 360]]\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_elemental_cave_assets.py\", line 84, in test_two_rooms_preserve_existing_map_routes_landings_and_treasures\n    self.assertEqual(self.cave['routes']['main'],[[288,1660],[288,1510],[330,1400],\nAssertionError: Lists differ: [[288[126 chars]], [1850, 880], [1920, 820], [1920, 740], [181[42 chars]360]] != [[288[126 chars]], [1730, 800], [1790, 700], [1810, 600], [192[29 chars]360]]\n\nFirst differing element 10:\n[1850, 880]\n[1730, 800]\n\nFirst list contains 1 additional elements.\nFirst extra element 16:\n[2060, 360]\n\n  [[288, 1660],\n   [288, 1510],\n   [330, 1400],\n   [456, 1280],\n   [680, 1270],\n   [875, 1240],\n   [1100, 1200],\n   [1370, 1180],\n   [1510, 1060],\n   [1680, 970],\n-  [1850, 880],\n?    ^^    ^\n\n+  [1730, 800],\n?    ^^    ^\n\n-  [1920, 820],\n-  [1920, 740],\n?     -    ^\n\n+  [1790, 700],\n?    +     ^\n\n   [1810, 600],\n   [1920, 520],\n   [2000, 420],\n   [2060, 360]]\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_elemental_cave_assets.ElementalCaveAssetTests.test_two_rooms_preserve_existing_map_routes_landings_and_treasures"
+    },
+    {
+      "id": "test_elira_visit.EliraGameplayTests.test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_elira_visit.py\", line 268, in test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts\n    self.assertFalse(broken.has_saved_journey);self.assertEqual(self.path.read_text(), raw)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_elira_visit.py\", line 268, in test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts\n    self.assertFalse(broken.has_saved_journey);self.assertEqual(self.path.read_text(), raw)\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_elira_visit.EliraGameplayTests.test_invalid_progress_never_overwrites_save_and_new_game_clears_local_facts"
+    },
+    {
+      "id": "test_halden_visit.HaldenGameplayTests.test_invalid_cross_quest_save_rejected_and_new_game_resets_progress",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_halden_visit.py\", line 278, in test_invalid_cross_quest_save_rejected_and_new_game_resets_progress\n    self.assertFalse(broken.has_saved_journey)\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_halden_visit.py\", line 278, in test_invalid_cross_quest_save_rejected_and_new_game_resets_progress\n    self.assertFalse(broken.has_saved_journey)\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_halden_visit.HaldenGameplayTests.test_invalid_cross_quest_save_rejected_and_new_game_resets_progress"
+    },
+    {
+      "id": "test_liam_daisy_directional_runs.DirectionalRunTests.test_approved_left_runs_all_walks_and_idles_are_unchanged",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_liam_daisy_directional_runs.py\", line 47, in test_approved_left_runs_all_walks_and_idles_are_unchanged\n    self.assertEqual(hashlib.sha256((ROOT/relative).read_bytes()).hexdigest(),expected,relative)\nAssertionError: '78db6fd273b6fbd25ced1c42da69c20f3b832bc4d6baf69495eb459215627e01' != '8a819f07cc2eeb3493feb414f9f9ea7fe3afcc027fe2acc5a2e7698b9978c345'\n- 78db6fd273b6fbd25ced1c42da69c20f3b832bc4d6baf69495eb459215627e01\n+ 8a819f07cc2eeb3493feb414f9f9ea7fe3afcc027fe2acc5a2e7698b9978c345\n : docs/reviews/liam_daisy_run_prototypes/README.md\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_liam_daisy_directional_runs.py\", line 47, in test_approved_left_runs_all_walks_and_idles_are_unchanged\n    self.assertEqual(hashlib.sha256((ROOT/relative).read_bytes()).hexdigest(),expected,relative)\nAssertionError: '78db6fd273b6fbd25ced1c42da69c20f3b832bc4d6baf69495eb459215627e01' != '8a819f07cc2eeb3493feb414f9f9ea7fe3afcc027fe2acc5a2e7698b9978c345'\n- 78db6fd273b6fbd25ced1c42da69c20f3b832bc4d6baf69495eb459215627e01\n+ 8a819f07cc2eeb3493feb414f9f9ea7fe3afcc027fe2acc5a2e7698b9978c345\n : docs/reviews/liam_daisy_run_prototypes/README.md\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_liam_daisy_directional_runs.DirectionalRunTests.test_approved_left_runs_all_walks_and_idles_are_unchanged"
+    },
+    {
+      "id": "test_liam_family_directional_walks.FamilyDirectionalWalkTests.test_approved_inputs_unchanged (path='docs/reviews/liam_family_front_walks/README.md')",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_liam_family_directional_walks.py\", line 46, in test_approved_inputs_unchanged\n    self.assertEqual(hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(), expected)\nAssertionError: 'db0fd30cbc1e99da0582e92a58f9562f4e9ae0c169e989813059e63909c4012e' != '2df227308fda37ff8ca73700ab79787de3d06e9f782fd303cacaec4b813ca8c9'\n- db0fd30cbc1e99da0582e92a58f9562f4e9ae0c169e989813059e63909c4012e\n+ 2df227308fda37ff8ca73700ab79787de3d06e9f782fd303cacaec4b813ca8c9\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_liam_family_directional_walks.py\", line 46, in test_approved_inputs_unchanged\n    self.assertEqual(hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(), expected)\nAssertionError: 'db0fd30cbc1e99da0582e92a58f9562f4e9ae0c169e989813059e63909c4012e' != '2df227308fda37ff8ca73700ab79787de3d06e9f782fd303cacaec4b813ca8c9'\n- db0fd30cbc1e99da0582e92a58f9562f4e9ae0c169e989813059e63909c4012e\n+ 2df227308fda37ff8ca73700ab79787de3d06e9f782fd303cacaec4b813ca8c9\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_liam_family_directional_walks.FamilyDirectionalWalkTests.test_approved_inputs_unchanged"
+    },
+    {
+      "id": "test_millrace_cutscene_gameplay.MillraceCutsceneGameplayTests.test_awarded_spoils_reload_bypasses_the_arrival_cutscene",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_millrace_cutscene_gameplay.py\", line 249, in test_awarded_spoils_reload_bypasses_the_arrival_cutscene\n    self.restore_spoils(True)\n  File \"/workspace/project-jrpg/tests/test_millrace_cutscene_gameplay.py\", line 238, in restore_spoils\n    self.assertFalse(other.combat.active)\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_millrace_cutscene_gameplay.py\", line 249, in test_awarded_spoils_reload_bypasses_the_arrival_cutscene\n    self.restore_spoils(True)\n  File \"/tmp/jrpg-retirement-base/tests/test_millrace_cutscene_gameplay.py\", line 238, in restore_spoils\n    self.assertFalse(other.combat.active)\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_millrace_cutscene_gameplay.MillraceCutsceneGameplayTests.test_awarded_spoils_reload_bypasses_the_arrival_cutscene"
+    },
+    {
+      "id": "test_millrace_cutscene_gameplay.MillraceCutsceneGameplayTests.test_unawarded_spoils_reload_bypasses_the_arrival_cutscene",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_millrace_cutscene_gameplay.py\", line 246, in test_unawarded_spoils_reload_bypasses_the_arrival_cutscene\n    self.restore_spoils(False)\n  File \"/workspace/project-jrpg/tests/test_millrace_cutscene_gameplay.py\", line 238, in restore_spoils\n    self.assertFalse(other.combat.active)\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_millrace_cutscene_gameplay.py\", line 246, in test_unawarded_spoils_reload_bypasses_the_arrival_cutscene\n    self.restore_spoils(False)\n  File \"/tmp/jrpg-retirement-base/tests/test_millrace_cutscene_gameplay.py\", line 238, in restore_spoils\n    self.assertFalse(other.combat.active)\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_millrace_cutscene_gameplay.MillraceCutsceneGameplayTests.test_unawarded_spoils_reload_bypasses_the_arrival_cutscene"
+    },
+    {
+      "id": "test_progression_cleanup.ProgressionCleanupTests.test_pause_and_character_screen_expose_no_retired_progression",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_progression_cleanup.py\", line 75, in test_pause_and_character_screen_expose_no_retired_progression\n    self.assertEqual(game.pause.options,\nAssertionError: Tuples differ: ('Res[42 chars]'Journal', 'Map', 'Save Game', 'Load Game', 'Settings', 'Quit') != ('Res[42 chars]'Journal', 'Map', 'Settings', 'Quit')\n\nFirst differing element 6:\n'Save Game'\n'Settings'\n\nFirst tuple contains 2 additional elements.\nFirst extra element 8:\n'Settings'\n\n  ('Resume',\n   'Characters',\n   'Party',\n   'Inventory',\n   'Journal',\n   'Map',\n-  'Save Game',\n-  'Load Game',\n   'Settings',\n   'Quit')\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_progression_cleanup.py\", line 75, in test_pause_and_character_screen_expose_no_retired_progression\n    self.assertEqual(game.pause.options,\nAssertionError: Tuples differ: ('Res[42 chars]'Journal', 'Map', 'Save Game', 'Load Game', 'Settings', 'Quit') != ('Res[42 chars]'Journal', 'Map', 'Settings', 'Quit')\n\nFirst differing element 6:\n'Save Game'\n'Settings'\n\nFirst tuple contains 2 additional elements.\nFirst extra element 8:\n'Settings'\n\n  ('Resume',\n   'Characters',\n   'Party',\n   'Inventory',\n   'Journal',\n   'Map',\n-  'Save Game',\n-  'Load Game',\n   'Settings',\n   'Quit')\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_progression_cleanup.ProgressionCleanupTests.test_pause_and_character_screen_expose_no_retired_progression"
+    },
+    {
+      "id": "test_random_enemy_groups.RandomEnemyGroupSceneTests.test_cave_battlefields_retain_real_location_and_native_asset_provenance",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_random_enemy_groups.py\", line 380, in test_cave_battlefields_retain_real_location_and_native_asset_provenance\n    self.assertEqual(sha256((root/name).read_bytes()).hexdigest(), expected, name)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_random_enemy_groups.py\", line 380, in test_cave_battlefields_retain_real_location_and_native_asset_provenance\n    self.assertEqual(sha256((root/name).read_bytes()).hexdigest(), expected, name)\nAssertionError: 'd42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d' != 'd2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff'\n- d42ceb5fb8d96cd95bd56c5e75e9d93e65c0308ca52c9d41cd1aad90d221f05d\n+ d2d2f104397bbb84597669fdef180950bd79641165f987fca846019c811f9cff\n : assets/maps/sanctuary_cave/map.json\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_random_enemy_groups.RandomEnemyGroupSceneTests.test_cave_battlefields_retain_real_location_and_native_asset_provenance"
+    },
+    {
+      "id": "test_school.EldenmereSchoolTests.test_school_sits_on_lower_ground_without_moving_existing_landmarks",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_school.py\", line 57, in test_school_sits_on_lower_ground_without_moving_existing_landmarks\n    self.assertEqual(len(world.data['interior_scenes']),13)\nAssertionError: 15 != 13\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_school.py\", line 57, in test_school_sits_on_lower_ground_without_moving_existing_landmarks\n    self.assertEqual(len(world.data['interior_scenes']),13)\nAssertionError: 15 != 13\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_school.EldenmereSchoolTests.test_school_sits_on_lower_ground_without_moving_existing_landmarks"
+    },
+    {
+      "id": "test_scripted_dialogue.ScriptedDialogueTests.test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_scripted_dialogue.py\", line 114, in test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue\n    self.game.opening.can_speak.assert_called_with('mother_serene')\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py\", line 940, in assert_called_with\n    raise AssertionError(error_message)\nAssertionError: expected call not found.\nExpected: mock('mother_serene')\n  Actual: not called.\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_scripted_dialogue.py\", line 114, in test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue\n    self.game.opening.can_speak.assert_called_with('mother_serene')\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py\", line 940, in assert_called_with\n    raise AssertionError(error_message)\nAssertionError: expected call not found.\nExpected: mock('mother_serene')\n  Actual: not called.\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_scripted_dialogue.ScriptedDialogueTests.test_opening_gate_blocks_ambient_start_but_allows_scripted_dialogue"
+    },
+    {
+      "id": "test_three_member_battle.ThreeMemberBattleTests.test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_three_member_battle.py\", line 125, in test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing\n    self.assertEqual(model.available_actions(identifier), ['attack', 'guard', 'flee'])\nAssertionError: Lists differ: ['attack', 'guard', 'flee', 'inspire', 'bolster', 'provoke'] != ['attack', 'guard', 'flee']\n\nFirst list contains 3 additional elements.\nFirst extra element 3:\n'inspire'\n\n- ['attack', 'guard', 'flee', 'inspire', 'bolster', 'provoke']\n+ ['attack', 'guard', 'flee']\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_three_member_battle.py\", line 125, in test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing\n    self.assertEqual(model.available_actions(identifier), ['attack', 'guard', 'flee'])\nAssertionError: Lists differ: ['attack', 'guard', 'flee', 'inspire', 'bolster', 'provoke'] != ['attack', 'guard', 'flee']\n\nFirst list contains 3 additional elements.\nFirst extra element 3:\n'inspire'\n\n- ['attack', 'guard', 'flee', 'inspire', 'bolster', 'provoke']\n+ ['attack', 'guard', 'flee']\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_three_member_battle.ThreeMemberBattleTests.test_rig_uses_only_miras_party_slot_and_reserve_mira_deploys_nothing"
+    },
+    {
+      "id": "test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_venn_visit.py\", line 314, in test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched\n    broken = self.new_game(True);self.assertFalse(broken.has_saved_journey)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_venn_visit.py\", line 314, in test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched\n    broken = self.new_game(True);self.assertFalse(broken.has_saved_journey)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_venn_visit.VennGameplayTests.test_invalid_snapshots_and_cross_quest_progress_leave_save_untouched"
+    },
+    {
+      "id": "test_vespermaw_art_scene.VespermawArtSceneTests.test_charged_hold_and_idle_honor_reduced_motion_without_changing_art",
+      "kind": "error",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_vespermaw_art_scene.py\", line 132, in test_charged_hold_and_idle_honor_reduced_motion_without_changing_art\n    self.assertEqual(scene._pose('enemy'), ('hurt', hurt_duration/2))\n                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project-jrpg/battle_scene.py\", line 1575, in _pose\n    if reaction is not None and self._bolt_recoil(actor, reaction):reaction_length = .32\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/project-jrpg/battle_scene.py\", line 1456, in _bolt_recoil\n    return (reaction['action'] == 'bolt_shot' and not reaction['guarded']\n            ~~~~~~~~^^^^^^^^^^\nKeyError: 'action'\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_vespermaw_art_scene.py\", line 132, in test_charged_hold_and_idle_honor_reduced_motion_without_changing_art\n    self.assertEqual(scene._pose('enemy'), ('hurt', hurt_duration/2))\n                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/jrpg-retirement-base/battle_scene.py\", line 1575, in _pose\n    if reaction is not None and self._bolt_recoil(actor, reaction):reaction_length = .32\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/jrpg-retirement-base/battle_scene.py\", line 1456, in _bolt_recoil\n    return (reaction['action'] == 'bolt_shot' and not reaction['guarded']\n            ~~~~~~~~^^^^^^^^^^\nKeyError: 'action'\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_vespermaw_art_scene.VespermawArtSceneTests.test_charged_hold_and_idle_honor_reduced_motion_without_changing_art"
+    },
+    {
+      "id": "test_victory_spoils_flow.VictoryCheckpointTests.test_failed_award_checkpoint_retries_save_without_granting_again",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_victory_spoils_flow.py\", line 98, in test_failed_award_checkpoint_retries_save_without_granting_again\n    self.assertEqual(owner.snapshot()['stage'], 'awarded')\nAssertionError: 'pending' != 'awarded'\n- pending\n+ awarded\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_victory_spoils_flow.py\", line 98, in test_failed_award_checkpoint_retries_save_without_granting_again\n    self.assertEqual(owner.snapshot()['stage'], 'awarded')\nAssertionError: 'pending' != 'awarded'\n- pending\n+ awarded\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_victory_spoils_flow.VictoryCheckpointTests.test_failed_award_checkpoint_retries_save_without_granting_again"
+    },
+    {
+      "id": "test_village_children.VillageChildrenTests.test_directional_idles_have_child_scale_palette_and_clear_eyes",
+      "kind": "failure",
+      "current_traceback": "Traceback (most recent call last):\n  File \"/workspace/project-jrpg/tests/test_village_children.py\", line 154, in test_directional_idles_have_child_scale_palette_and_clear_eyes\n    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),digest)\nAssertionError: 'aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086' != 'abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259'\n- aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086\n+ abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259\n\n",
+      "baseline_traceback": "Traceback (most recent call last):\n  File \"/tmp/jrpg-retirement-base/tests/test_village_children.py\", line 154, in test_directional_idles_have_child_scale_palette_and_clear_eyes\n    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),digest)\nAssertionError: 'aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086' != 'abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259'\n- aaaf0bf7d7399e6229513214ccdefac9a87910a0a4e82b4f7587a6342ec97086\n+ abee965ac14e3ac424aa6aa63a0a6e74fab5e52572c2c42efd800d48df184259\n\n",
+      "normalized_tracebacks_match": true,
+      "assertions_match": true,
+      "reproduce_method_on_baseline": "test_village_children.VillageChildrenTests.test_directional_idles_have_child_scale_palette_and_clear_eyes"
+    }
+  ]
+}

@@ -138,7 +138,7 @@ class CaveLesson:
         g = self.game
         return (self.active and not g.on_title and not g.combat.active
                 and not g.social.locked and not g.social.active
-                and not g.opening_cinematic.active and not g.household_action
+                and not getattr(getattr(g, 'cinematic', None), 'active', False) and not g.household_action
                 and not g.opening.locks_player and not g.transfer_cooldown and not g.opening_fade
                 and not g.map_open and not g.quest_ui.journal_open
                 and getattr(g,'_music_focused',True)
@@ -179,34 +179,30 @@ class CaveLesson:
         g = self.game
         g.player.moving = g.player.running = False
         g.player.facing = 'front'
-        opened = g.social.start_script([
-            {'speaker':'caelan','text':"Wow...I've never actually been inside this cave before. What about you, Mira?"},
-            {'speaker':'mira','text':"No...it's beautiful...and haunting at the same time."},
+        accompanied = 'mira' in g.party.active_ids
+        lines = [{'speaker':'caelan','text':
+                  "Wow...I've never actually been inside this cave before."+
+                  (" What about you, Mira?" if accompanied else '')}]
+        if accompanied:
+            lines.append({'speaker':'mira','text':
+                          "No...it's beautiful...and haunting at the same time."})
+        lines.extend([
             {'speaker':'caelan','text':'And the Aether...is so much stronger in here.'},
             {'speaker':'caelan','text':"My blade—the blue gem is glowing. It's like it's resonating with the Aether around us. I wonder..."},
             {'speaker':'caelan','text':'Maybe I can channel it better in here than at the mill.'},
-            {'speaker':'caelan','text':'And Mira… do you think they could be here?'},
-            {'speaker':'mira','text':'Who?'},
-            {'speaker':'caelan','text':'My parents. Somewhere in all this aether. Maybe they were guided back here...?'},
-            {'speaker':'caelan','text':'I know we came for—'},
-            {'speaker':'mira','text':'I know Cael. I was wondering the same thing about mine on the way over.'},
-            {'speaker':'caelan','text':'…You were?'},
-            {'speaker':'mira','text':'Yeah...I wish I knew. I miss them.'},
-            {'speaker':'caelan','text':"I miss mine too...I'm sorry."},
-            {'speaker':'lucan','text':'Keep moving. Stay close.'},
-        ], on_complete=self._resonance_complete, identifier=SCRIPT_ID)
+        ])
+        opened = g.social.start_script(lines,
+            on_complete=self._resonance_complete, identifier=SCRIPT_ID)
         if opened:
             self._glowing = True;self._elapsed = 0.
             travel = getattr(g, 'party_travel', None)
             if travel is not None:
                 # Use checked passive actors, rather than duplicating story NPCs.
                 active = travel._active()
-                if active and set(active) <= {'mira', 'lucan'}:
-                    positions = {'mira':g.player.position+pygame.Vector2(-24,0),
-                                 'lucan':g.player.position+pygame.Vector2(24,24)}
-                    travel.stage_companions({key:tuple(positions[key]) for key in active},
-                                            {key:('right' if key == 'mira' else 'back')
-                                             for key in active})
+                if 'mira' in active:
+                    travel.stage_companions(
+                        {'mira':tuple(g.player.position+pygame.Vector2(-24,0))},
+                        {'mira':'right'})
             self._stage_pose()
         return opened
 

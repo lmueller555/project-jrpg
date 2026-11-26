@@ -70,7 +70,7 @@ class ElementalRoomEffects:
                 and not getattr(game, '_is_gallery_preview', False)
                 and getattr(game, 'gallery_session', None) is None
                 and not getattr(getattr(game, 'combat', None), 'active', False)
-                and not getattr(getattr(game, 'opening_cinematic', None), 'active', False))
+                and not getattr(getattr(game, 'cinematic', None), 'active', False))
 
     def _available(self):
         game = self.game

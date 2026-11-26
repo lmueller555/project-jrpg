@@ -19,17 +19,16 @@ recruited characters, including reserves. Unavailable characters keep their
 resources while away. Existing battle outcome recovery rules remain in effect.
 
 Recruitment remains story-owned and does not itself grant new skills or
-equipment. Mira retains her existing character state. Lucan joins temporarily
-at level 5 for MQ03's cave rescue after the Sanctuary arrival scene; he receives
-no combat EXP during this guest appearance. His permanent recruitment remains
+equipment. Mira retains her existing character state. The automatic MQ03 cave guest is removed; cave entry recruits nobody. Lucan's
+profile is retained for explicit fixtures and later story work. His permanent recruitment remains
 a later story decision. Rhea and Edran remain hidden from
 the roster until explicitly recruited.
 
 The [traditional leveling foundation](LEVELING.md) supplies separate approved
 growth profiles for all five characters. The approved allocation rule gives the
 full encounter XP to each eligible active combatant alive at battle end; KO'd
-characters and reserves receive none. Lucan's level-five cave guest appearance
-is explicitly ineligible for combat EXP. Other recruitment levels and
+characters and reserves receive none. An explicitly configured guest profile may be ineligible for combat EXP; the
+removed automatic cave guest no longer selects such a profile. Other recruitment levels and
 story-absence catch-up remain pending. Allocation uses actual combat-party IDs
 and end-of-battle resources, so reserves cannot receive an accidental share.
 Level-up stat gains leave current HP and MP unchanged.
@@ -136,25 +135,9 @@ it adds no story events to the game.
 
 ### Sanctuary rescue formation
 
-The MQ03 arrival scene temporarily adds level-five Lucan after the rescue plan
-is acknowledged. The existing `mq03_sanctuary` event then requires Caelan, Mira
-and Lucan, preserving resources and the formation from before the outing.
-Iselin and the page remain at the reserve. This is separate from Lucan's later
-permanent recruitment. Earlier checkpoints retain the two-member event until
-the arrival is acknowledged. He stays with the party on healing trips before
-the boss is defeated and while walking back out after victory. He leaves when
-Vespermaw has been defeated **and the party actually exits the cave**. That
-departure persists through Continue and re-entry, so arrival reconciliation
-cannot recruit the guest again. A later permanent Lucan is not removed by this
-guest lifecycle.
-
-The cave's version-one record has optional true-only
-`lucan_guest_initialized` and `lucan_departed` flags. Guest initialization sets
-the authored level-five profile once; subsequent reconciliation does not heal
-or refill him. Legacy temporary Lucan records migrate while preserving current
-HP/MP proportions, including KO. A pending older victory finishes its existing
-settlement before guest-profile migration. The permanent member's future
-progression is separate from these temporary-guest rules.
-
-Quest playtest starts beyond MQ03 preserve the existing Caelan/Mira EXP
-allowance without granting cave EXP to guest Lucan. His guest level remains 5.
+**Removed runtime route.** The old arrival no longer recruits or initializes
+Lucan, forces a Caelan/Mira/Lucan formation or manages his departure after the
+boss. The cave preserves the actual party and grants no companion membership.
+Old MQ03/MQ04 playtest fixtures no longer seed that guest or later cave rewards.
+Lucan's approved character/combat libraries and future permanent recruitment
+remain independent of this removed scene.

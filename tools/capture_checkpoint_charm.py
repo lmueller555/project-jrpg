@@ -30,7 +30,7 @@ import pygame
 from main import Game
 from checkpoint_charm import WITNESS, HOMES, valid_state as valid_checkpoint
 from regional_participation import STAND_POSITION, CAT_SCRIPT, MASONRY_SCRIPT
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 from tools import capture_regional_audio as audio_capture
 
 OUT = ROOT/'docs/reviews/checkpoint_charm'
@@ -73,7 +73,7 @@ def make_game(root, name, point):
                 save_path=folder/'journey.json', settings_path=folder/'settings.json')
     game.audio.set_music(0)
     game.audio.set_effects(1)
-    seed_previous_quests(game)
+    seed_mill_completed(game)
     game.world = game.overworld_world
     game.opening_fade = game.transfer_cooldown = game.location_seconds = 0
     position(game, point)

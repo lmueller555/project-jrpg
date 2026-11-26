@@ -2,7 +2,7 @@
 
 The quest layer provides availability, explicit acceptance, objective updates,
 ready-to-report state and completion. The opening assignment is available from
-Mother Serene after the opening breakfast; its household task implementations remain future work. The
+Mother Serene after the opening breakfast; its household tasks are implemented. The
 approved story order remains in `narrative/game_01/CH01_MQ01.md`.
 
 ## Player controls
@@ -31,81 +31,26 @@ approved story order remains in `narrative/game_01/CH01_MQ01.md`.
 
 ## Title-screen quest playtests
 
-Choose **Quests (Playtest)** on the title screen. All four registered starts
-are available without a saved journey or story unlocks. Mouse, arrows/WASD,
-Home/End, Page Up/Down and wheel browse the same accessible catalogue controls
-as Gallery; Enter or a click starts the highlighted quest.
+Choose **Quests (Playtest)** on the title screen. The two retained starts are
+available without a saved journey or unlocks. Mouse, arrows/WASD, Home/End,
+Page Up/Down and wheel browse; Enter or a click starts the highlighted quest.
 
 | Quest | Starting state |
 | --- | --- |
-| CH01_MQ01 - A Day Like Any Other | Home, before Serene's assignment; approach her normally to begin the offer |
-| CH01_MQ02 - A Little Trouble at the Mill | Mira's workshop, before accepting her outing |
-| CH01_MQ03 - The Regent's Road | The opening arrival cinematic, before accepting the visit; the quest ending remains in development |
-| CH01_MQ04 - A Light of His Own | Home, before Tomas's invitation; uses the supported completed-visit setup only inside this temporary run |
+| CH01_MQ01 — A Day Like Any Other | Home before Serene's assignment; approach her normally |
+| CH01_MQ02 — A Little Trouble at the Mill | Mira's workshop before accepting her outing |
 
-Earlier quest prerequisites are prepared, not replayed. The selected quest stays
-available with no completed objectives, and later quests remain locked. Earlier
-Venn work uses borrowed tools without forcing the optional failed spell. Starts
-after MQ02 include the current mill repair, cups on the table, Blue-focus
-gearblade, Aether Edge, and the Boar's actual drops and EXP. Mira is already
-recruited, available and active alongside Caelan in these playtest checkpoints,
-including when the tester heads straight to the cave. MQ03's ordinary rejoin
-conversation still establishes the required Sanctuary party event.
+Earlier retained prerequisites are prepared, not replayed. Venn work uses tools
+without inventing an optional failed spell. The selected quest is available
+with no completed objectives. MQ03/MQ04 and their seeded rescue, recruitment,
+EXP, focus rewards and lantern progression are removed from the catalogue.
+The new Fire Veinhold sequence has no playtest fixture yet.
 
-Starts after MQ03 additionally grant **5,500 EXP each to Caelan and Mira**, on
-top of their Boar EXP. This fixed cave allowance includes the tutorial and boss
-EXP; boss receipts and item rewards do not add further EXP. The later checkpoint
-assumes both optional focus guardians were defeated: Aqua/Flame/Ice Edge are
-learned, Blue/Red/White focuses are installed, both focus receipts/items and the
-Vespermaw receipt/material drops exist, all three bosses are cleared, and prior
-acquisition dialogue is acknowledged. Optional treasure containers remain
-unopened. Starting MQ03 itself leaves all these cave discoveries unfinished.
-
-Levels and stats follow accumulated EXP; there is no level-one override. Both
-available characters start rested at their resulting maximum HP/MP. Later
-combat awards EXP and handles level-ups normally. No future companions receive
-recruitment or EXP from these checkpoints. Restart builds a fresh checkpoint,
-so the Boar reward and cave allowance never stack across restarts.
-
-Runs use the normal gameplay controllers and input, not Gallery's restricted
-scene playback. The toolbar identifies **PLAYTEST** and **separate saves**:
-
-- **F10 / Restart:** rebuild the original quest start, keeping its separate save library.
-- **F9 / Quests:** leave the run and return to the same catalogue selection.
-- **Save Game / Load Game:** use the playtest's own slots and autosaves. See
-  [save slots, autosaves and Game Over](SAVE_SYSTEM.md).
-- **Escape:** the ordinary pause menu; Restart Quest and Quest List are also
-  present there. Toolbar controls remain usable during combat and cinematics.
-- Completing a quest does not close the run; normal progression can continue
-  where implemented. This feature does not implement MQ03's missing ending.
-
-Each launch owns a fresh game, world, controllers, inventory and party. It copies
-current settings into a non-persistent settings owner. Its internal
-checkpoint/settings stores have no disk path; player saves use a separate
-per-quest library. The normal saved journey, Continue reference and
-settings bytes are neither loaded nor changed. Restart, returning to the list,
-and quitting release the private music and effects. Missing assets or an invalid
-starting state return to the selector with an error, never to a fallback New Game.
-
-`quest_playtest.py` owns metadata and explicit start builders;
-`quest_playtest_ui.py` reuses catalogue browsing; `quest_playtest_session.py`
-owns the disposable gameplay lifecycle. `Game._is_embedded` handles offscreen
-display ownership, scaling and persistence isolation separately from
-`Game._is_gallery_preview`, which alone restricts Gallery gameplay. Keep those
-capabilities separate when extending either feature. Embedded input uses the
-same viewport transform for events, live pointer polling and pause settings.
-
-To register another implemented quest, add its start and metadata to the
-playtest catalogue, prepare only its prerequisites using controller APIs, and
-extend the catalogue/start tests. Do not list document-only quests or treat a
-partially implemented quest as completed content.
-
-Focused launcher verification:
-
-```sh
-PYTHONPATH=.:tests SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy \
-  python3 -m unittest test_quest_playtest test_quest_playtest_session test_title_screen
-```
+A playtest remains a fully playable temporary game. Its manual saves and
+autosaves use a separate library; normal Continue stays untouched. The toolbar
+offers **Restart (F10)** and **Quests (F9)**, including during dialogue/combat.
+Leaving discards unsaved temporary progress; its save library remains separate.
+Map, journal, combat and ordinary interactions use the same production owners.
 
 ## Runtime boundaries
 

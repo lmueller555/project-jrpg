@@ -194,25 +194,6 @@ def products():
     spell_atlas('assets/story/venn/magicks')
     spell_atlas('assets/story/mill/poses')
 
-    # Lantern assembly uses new naturally bent working arms. Frame props and
-    # their transfer remain owned by the existing quest controller.
-    folder='assets/story/lantern/poses';data=authored_meta(metadata(folder+'/caelan.json'))
-    frame_layer=old(folder+'/caelan_frame.png');body=blank(frame_layer.size)
-    for action,frames in data['actions'].items():
-        choices=(24,25,26,26,27) if action=='work' else (24,25,26,27)
-        for phase,record in enumerate(frames):
-            x,y,w,h=record['rect'];index=choices[phase]
-            body.alpha_composite(padded(action_frame(index)),(x,y))
-            record['appearance_source_cell']=index
-    image=body.copy();image.alpha_composite(frame_layer)
-    export(folder+'/caelan.png',image,range(24,28),anchor=(20,38))
-    export(folder+'/caelan_body.png',body,range(24,28),anchor=(20,38))
-    export(folder+'/caelan_working_arm.png',blank(body.size),(),anchor=(20,38))
-    export(folder+'/caelan_source.png',idle('right'),())
-    data['source_sha256']=sha256(encoded(idle('right'))).hexdigest()
-    data.pop('preserved_source_regions',None)
-    document(folder+'/caelan.json',data)
-
     # Elira's lantern remains the existing sprite, behind Caelan in rear view.
     # Shelf/world ownership transitions and logical ladder stations are intact.
     folder='assets/story/elira'

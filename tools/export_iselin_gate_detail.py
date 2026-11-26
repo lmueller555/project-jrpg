@@ -17,7 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'assets/source/characters/iselin/cinematic_gate_left'
-OUT = ROOT / 'assets/story/regent_arrival/actors/iselin'
+OUT = ROOT / 'assets/characters/iselin/cinematic/ground'
 CANVAS = (80, 96)
 ANCHOR = (40, 92)
 

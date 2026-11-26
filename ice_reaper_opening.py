@@ -7,14 +7,14 @@ from pathlib import Path
 
 import pygame
 
-from opening_cinematic import OpeningCinematic, VIEW_SIZE, _smooth
+from cinematic_player import CinematicPlayer, VIEW_SIZE, _smooth
 
 
 SCENE = Path(__file__).resolve().parent/'assets/story/ice_reaper_opening/scene.json'
 ACTION_ASSETS = SCENE.parent.parent/'ice_reaper_rescue'
 
 
-class IceReaperOpening(OpeningCinematic):
+class IceReaperOpening(CinematicPlayer):
     def __init__(self, game, *, scene_path=SCENE):
         super().__init__(game, scene_path=scene_path)
 

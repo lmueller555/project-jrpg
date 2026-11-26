@@ -32,7 +32,7 @@ from main import Game
 from cutscene_gallery import GALLERY_ENTRIES, GALLERY_BY_ID
 
 FPS = 30
-OUT = ROOT/'docs/reviews/gallery'
+OUT = ROOT/'docs/reviews/opening_runtime_retirement/gallery'
 THUMBS = ROOT/'assets/ui/gallery'
 
 
@@ -78,7 +78,7 @@ def acknowledge(game):
     if child.social.choosing:
         child.draw()
         click(game, child.social.choice_rects[0].center)
-    elif child.social.active or (child.regent_arrival.active and child.regent_arrival.dialogue is not None) or (child.sanctuary_arrival.active and child.sanctuary_arrival.caption_layout is not None):
+    elif child.social.active:
         key(game, pygame.K_SPACE)
 
 
@@ -86,9 +86,7 @@ def phase(game):
     return {'opening': game.opening.stage,
             'opening_action': (game.opening._action or {}).get('name'),
             'opening_action_seconds': round(game.opening._action_time, 4),
-            'cinematic_seconds': round(game.opening_cinematic.elapsed, 4),
-            'arrival_shot': game.regent_arrival.shot,
-            'arrival_seconds': round(game.regent_arrival.phase_time, 4),
+            'cinematic_seconds': round(game.cinematic.elapsed, 4) if game.cinematic else None,
             'elira_action': game.elira_visit.action,
             'elira_seconds': round(game.elira_visit.action_time, 4),
             'venn_phase': game.venn_visit.phase,
@@ -96,10 +94,6 @@ def phase(game):
             'mill_action': game.mill_quest.action,
             'mill_seconds': round(game.mill_quest.action_time, 4),
             'mill_camera': game.mill_quest.encounter_cutscene_phase,
-            'lantern_action': game.lantern_quest.action,
-            'lantern_seconds': round(game.lantern_quest.action_time, 4),
-            'lantern_stage': game.lantern_quest.stage,
-            'regent_stage': game.regent_quest.stage,
             'halden_action': game.halden_visit.action,
             'halden_seconds': round(game.halden_visit.action_time,4),
             'tomas_job': game.halden_visit.tomas_job,
@@ -118,7 +112,7 @@ def phase(game):
 
 def thumbnail_ready(identifier, g, seconds):
     if identifier == 'ice_reaper_opening':
-        return g.opening_cinematic.shot == 'frozen_field'
+        return g.cinematic.shot == 'frozen_field'
     if identifier == 'checkpoint_borrowed_seat':
         return g.world.checkpoint_charm.stage == 'banter'
     if identifier == 'sheep_basket_visit':
@@ -136,7 +130,6 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'tomas_sack':return g.halden_visit.tomas_job == 'carry' and g.halden_visit.tomas.position.y < 230
     if identifier == 'bridge_tea':return g.world.bridge_crew.stage == 'reach' and g.world.bridge_crew.timer > .7
     if identifier == 'grain_extra_sack':return g.world.grain_farm.stage == 'help_place' and g.world.grain_farm.timer > .4
-    if identifier == 'later_journey':return seconds >= 27
     if identifier == 'morning_wake':return (g.opening._action or {}).get('name') == 'wake_up' and g.opening._action_time >= .5
     if identifier == 'morning_breakfast':return (g.opening._action or {}).get('name') == 'eat' and g.opening._action_time >= .6
     if identifier.startswith('elira_'):return g.elira_visit.action_time >= (1.45 if identifier.endswith('retrieval') else .7)
@@ -145,26 +138,17 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'halden_arrival':return g.opening_conclusion.settled and g.social.active
     if identifier == 'millrace_threat':return g.mill_quest.encounter_cutscene_phase == 'conversation' and g.mill_quest._encounter_elapsed >= .2
     if identifier.startswith('mill_'):return g.mill_quest.action is not None and g.mill_quest.action_time >= .75
-    if identifier == 'sanctuary_arrival':return g.sanctuary_arrival.active and g.sanctuary_arrival.beat==3 and g.sanctuary_arrival.caption_layout is not None
-    if identifier == 'regent_arrival':return g.regent_arrival.shot == 'aerial_region' and g.regent_arrival.phase_time >= 4.
-    wanted = {'lantern_frame':'assemble', 'lantern_collect':'rest_pickup',
-              'lantern_homecoming':'rest_place', 'lantern_paper_practice':'rest_draft',
-              'lantern_finishing':'finish_pickup', 'lantern_putaway':'finish_place'}
-    return g.lantern_quest.action == wanted.get(identifier) and g.lantern_quest.action_time >= .65
+    return False
 
 
 def crop_rect(identifier, game):
     if identifier == 'ice_reaper_opening':
         return pygame.Rect(0, 0, 480, 270)
-    if identifier in ('later_journey', 'regent_arrival'):
-        return pygame.Rect(0, 25, 480, 270)
     camera = game.camera.position()
     protagonist = getattr(game.player, 'story_position', None) or game.player.position
     center = pygame.Vector2(protagonist)-camera+(0,-20)
     width = 240
-    if identifier == 'sanctuary_arrival' and game.sanctuary_arrival.actors:
-        center=(game.sanctuary_arrival.actors['iselin'].position+game.sanctuary_arrival.actors['caretaker'].position)/2-camera+(0,-18)
-    elif identifier == 'checkpoint_borrowed_seat':
+    if identifier == 'checkpoint_borrowed_seat':
         center = pygame.Vector2(365,-2182)-camera
         width = 240
     elif identifier == 'sheep_basket_visit':
@@ -182,8 +166,7 @@ def crop_rect(identifier, game):
     elif identifier == 'millrace_threat':
         center = pygame.Vector2(240, 105)
         width = 320
-    elif identifier.startswith('lantern_'):
-        center = (pygame.Vector2(protagonist)+game.lantern_quest.liam.position)/2-camera+(0,-14)
+
     elif identifier.startswith('mill_'):
         center = (pygame.Vector2(protagonist)+game.mill_quest.mira.position)/2-camera+(0,-18)
     elif identifier == 'halden_arrival':
@@ -272,7 +255,7 @@ class Review:
         self.directory = Path(directory)
         self.path = self.directory/'journey.json'
         seed = Game(fullscreen=False,start_on_title=False,save_path=self.path)
-        seed.begin_journey(False,show_cinematic=False)
+        seed.begin_journey(False)
         assert seed.save_progress()
         seed.music.stop();seed.opening_audio.reset()
         self.saved_bytes = self.path.read_bytes()
@@ -324,25 +307,21 @@ class Review:
     def run(self):
         g=self.g
         self.mark('title');self.hold(1.4);self.screenshot('title_gallery.png')
-        key(g,pygame.K_DOWN);key(g,pygame.K_DOWN);key(g,pygame.K_RETURN)
+        target=g.title.options.index('Gallery')
+        while g.title.selected != target:
+            key(g,pygame.K_DOWN if g.title.selected < target else pygame.K_UP)
+        key(g,pygame.K_RETURN)
         assert g.on_gallery
         self.mark('gallery_open_keyboard');self.hold(1.8);self.screenshot('gallery_top.png')
         g.handle_events([pygame.event.Event(pygame.MOUSEWHEEL,x=0,y=-4)])
         self.mark('wheel_scroll');self.hold(1);self.screenshot('gallery_middle.png')
         key(g,pygame.K_END);self.hold(1);self.screenshot('gallery_bottom.png')
         key(g,pygame.K_HOME);self.hold(.6)
-        self.select('later_journey')
-        self.hold(27);self.screenshot('replay_prologue.png')
-        child=g.gallery_session.game
-        click(g,child.opening_cinematic.skip_rect.center)
-        self.hold(.8);self.return_check('later_journey')
-        child = None;gc.collect()
-        self.select('regent_arrival',mouse=True)
-        for frame in range(FPS*18):
-            if frame%30==0:acknowledge(g)
-            self.frame()
-        self.screenshot('replay_arrival.png')
-        key(g,pygame.K_ESCAPE);self.return_check('regent_arrival')
+        self.select('ice_reaper_opening')
+        self.hold(2);self.screenshot('replay_ice_reaper.png')
+        key(g,pygame.K_p);self.hold(.5);self.screenshot('replay_ice_reaper_paused.png')
+        key(g,pygame.K_r);self.hold(.2)
+        key(g,pygame.K_ESCAPE);self.return_check('ice_reaper_opening')
         self.select('mill_repair')
         session=g.gallery_session
         screenshot=False
@@ -355,21 +334,13 @@ class Review:
         assert g.gallery_session is None,'Mill repair must complete naturally'
         self.return_check('mill_repair')
         session = None;gc.collect()
-        self.select('lantern_finishing',mouse=True)
-        session=g.gallery_session
-        screenshot=False
-        for frame in range(FPS*100):
-            if g.gallery_session is None:break
-            if frame%12==0:acknowledge(g)
-            self.frame()
-            if not screenshot and session.game.lantern_quest.action=='finish_pickup' and session.game.lantern_quest.action_time>.7:
-                self.screenshot('replay_lantern_finished.png');screenshot=True
-        assert g.gallery_session is None,'Lantern finishing must complete naturally'
-        self.return_check('lantern_finishing')
         self.screenshot('gallery_return_selection.png')
         key(g,pygame.K_ESCAPE);assert g.on_title and not g.on_gallery
         self.hold(.8)
-        key(g,pygame.K_UP);key(g,pygame.K_RETURN)
+        target=g.title.options.index('Continue')
+        while g.title.selected != target:
+            key(g,pygame.K_DOWN if g.title.selected < target else pygame.K_UP)
+        key(g,pygame.K_RETURN)
         self.hold(1)
         assert not g.on_title and g.world.data['id']=='sanctuary_bedroom'
         self.mark('continue_original_journey',scene=g.world.data['id'],opening=g.opening.stage)
@@ -404,8 +375,6 @@ def preview_stills():
     game=Game(fullscreen=False)
     game.open_gallery()
     specs=(
-        ('arrival_dialogue_960x640.png','regent_arrival',(960,640),1.0),
-        ('arrival_dialogue_480x320_text1.5.png','regent_arrival',(480,320),1.5),
         ('millrace_dialogue_960x640.png','millrace_threat',(960,640),1.0),
         ('millrace_dialogue_480x320_text1.5.png','millrace_threat',(480,320),1.5),
         ('regional_bridge_tea.png','bridge_tea',(960,640),1.0),
@@ -422,9 +391,7 @@ def preview_stills():
             if session.closed:break
             child=session.game
             game.draw()
-            if identifier=='regent_arrival':
-                reached=child.regent_arrival.shot=='gate_greeting' and child.regent_arrival.dialogue is not None
-            elif identifier=='millrace_threat':
+            if identifier=='millrace_threat':
                 reached=child.mill_quest.encounter_cutscene_phase=='conversation' and child.social.active
             else:reached=thumbnail_ready(identifier,child,(frame+1)/FPS)
             if reached:
@@ -440,11 +407,14 @@ def preview_stills():
 
 
 def main():
+    global OUT
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode',choices=('all','thumbnails','review'),default='all')
+    parser.add_argument('--out',type=Path,default=OUT,help='Fresh review output; historical Gallery reviews are preserved.')
     parser.add_argument('--scene',action='append',choices=tuple(GALLERY_BY_ID),
                         help='Capture only this thumbnail; repeat to select several. Requires --mode thumbnails.')
     args=parser.parse_args()
+    OUT=args.out
     if args.scene and args.mode != 'thumbnails':parser.error('--scene requires --mode thumbnails')
     OUT.mkdir(parents=True,exist_ok=True)
     if args.mode in ('all','thumbnails'):capture_thumbnails(args.scene)

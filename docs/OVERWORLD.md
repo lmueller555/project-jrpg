@@ -5,9 +5,10 @@ implementation. The approved [Fire Veinhold opening](narrative/game_01/CHAPTER_0
 is future work: Caelan and Mira's introduction has an intact western bridge,
 which is destroyed only after Iselin and Lucan arrive. The former pre-opening
 lightning cause, flashforward, Festival of Light and quarry/excavation Act I
-are retired. Existing broken-bridge scenery, quest dialogue, saves and review
-captures remain evidence of the older implementation, not the revised start.
-This documentation alignment changes no runtime behavior or assets.
+are retired. The old scene/quest runtime is removed; MQ01/MQ02 retain ordinary
+dialogue. Broken-bridge scenery still remains until the future initial-intact
+state is implemented. Historical captures are evidence of their recorded
+versions, not the revised start.
 
 Eldenmere's southern road now opens into the first playable region of Auratia.
 This is a separate regional scale: the detailed village retains its existing
@@ -79,8 +80,8 @@ Walking onto the miniature now enters the [detailed sanctuary reserve](SANCTUARY
 at its southern woodland approach. The reserve contains the court and cloister,
 memorial grove, cave approach and surveyed stone face, with an enterable hall.
 The southern exit returns to the overworld outside the miniature's contact
-area. The existing cave and MQ03 quest belong to the older story; their
-replacement role remains open. Eldenmere's automatic entry and return remain
+area. The cave remains freely explorable, without the removed MQ03 rescue
+quest or automatic companion recruitment; its future story role remains open. Eldenmere's automatic entry and return remain
 independent. The
 [current in-game review](reviews/sanctuary_pixel_assets/README.md) shows this visit;
 the [original miniature review](reviews/overworld_sanctuary/README.md) records
@@ -132,8 +133,8 @@ farmstead glyphs are scenery rather than new selectable destinations.
 Checkpoint collision belongs to the gate geometry, independently of the guard
 sprites. Passing a gate requires both `CH01_OPENING_REGION_RELEASED` and an
 authored, ready onward destination. Neither destination is currently ready.
-There is deliberately no producer for the release flag yet: completing MQ04,
-the last currently implemented quest, does not finish the opening chapter.
+There is deliberately no producer for the release flag yet. The current
+retained quest sequence ends at MQ02 and returns to exploration.
 The future quest and conditions granting release remain open under the revised
 opening; no festival or old chapter-ending authorization is required. Because
 these land gates exist, the bridge's loss alone cannot establish isolation.
@@ -146,12 +147,9 @@ the current implementation starts in the destroyed state. The revised opening
 requires an intact-before-attack state and a later destruction transition;
 those changes are not implemented here, and the repair method remains open.
 
-The existing [arrival cinematic](narrative/scenes/REGENT_ARRIVAL.md) uses the
-southern land checkpoint for the former relief caravan and preserves the
-broken crossing and travel restrictions. That staging is the older
-implementation, not a requirement for Iselin and Lucan's new retreat into
-Eldenmere. The ridge landmark does not open checkpoints, repair the bridge or
-add an encounter.
+The former arrival cinematic is removed; its southern-checkpoint staging does
+not prescribe the future survivors' route. The ridge landmark does not open
+checkpoints, repair the bridge or add an encounter.
 
 The revised first expedition targets the Fire Veinhold. Its exact location,
 access route, any Sanctuary-cave bypass and the later northward itinerary

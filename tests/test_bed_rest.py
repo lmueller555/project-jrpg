@@ -79,8 +79,7 @@ class BedRestTests(unittest.TestCase):
     def journey(self, game):
         return (game.battle_rewards.to_dict(), game.inventory.to_dict(),
                 game.quests.to_dict(), sorted(game.social.flags),
-                game.opening.to_dict(), game.mill_quest.to_dict(),
-                game.regent_quest.to_dict(), game.lantern_quest.to_dict())
+                game.opening.to_dict(), game.mill_quest.to_dict())
 
     def grow_resources(self, game):
         record = game.attributes.to_dict()

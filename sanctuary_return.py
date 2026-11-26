@@ -85,7 +85,7 @@ class SanctuaryReturn:
         self._pose_wrist = None
 
     def release(self):
-        """Release family before RegentQuest claims it; keep placed tableware."""
+        """Release the family after the mill homecoming; keep placed tableware."""
         self._clear_player_pose()
         if self._owned:
             for actor in (self.serene, self.tomas):
@@ -106,7 +106,8 @@ class SanctuaryReturn:
     def restore(self, reported=False, placed=False, complete=False):
         self.reset()
         if not reported:return self
-        self.prepare();self.placed = bool(placed)
+        self._reported = True;self.placed = bool(placed)
+        if not complete:self.prepare()
         return self
 
     def _landing(self, actor, preferred):

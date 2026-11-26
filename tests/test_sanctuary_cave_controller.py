@@ -41,7 +41,7 @@ class CaveControllerTests(unittest.TestCase):
                        world_map_viewer=NS(is_open=False), map_open=False,
                        quest_ui=NS(journal_open=False), combat=NS(active=False),
                        transfer_cooldown=0, opening_fade=0, household_action=False,
-                       opening=NS(locks_player=False), opening_cinematic=NS(active=False),
+                       opening=NS(locks_player=False), cinematic_active=False,
                        player=NS(position=pygame.Vector2(120, 90), moving=True))
         self.checkpoints = []
         self.game.save_progress = lambda: self.checkpoints.append(self.scene.to_dict())

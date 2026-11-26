@@ -1,5 +1,11 @@
 # Lucan Rooke - character sheet
 
+**Runtime retirement:** The old MQ03 rescue and MQ04 festival quest are removed.
+Their on-screen examples below describe historical portrayal, not current
+quests or obligations of the replacement opening. Approved characterization
+remains; new scenes must deliberately carry those relationship functions.
+
+
 **Scope:** Authoritative detailed profile for Lucan. Established entries retain
 the approved companion foundations of 2026-10-30 and the personal-guard revision
 of 2026-11-03. New interpretations, dialogue and nonverbal scenarios are
@@ -108,19 +114,19 @@ insignificance into a canonical childhood humiliation.
 | Blind spot | Treats his own protective judgment as authority over others | Established |
 | Help he needs | Other people can offer better plans; he must learn to recognize and accept that | Established growth direction |
 | Noncombat crafts and natural talents | A wagonwright upbringing does not yet establish his own craft proficiency | Open |
-| Mechanics | The superseded cave guest implementation has the skills below. The new prologue and opening-alliance loadouts, full arsenal progression, weapon rules and later unlock methods remain open | Existing runtime subset / New opening design open |
+| Mechanics | The superseded cave guest implementation has the skills below. The new prologue and opening-alliance loadouts, full arsenal progression, weapon rules and later unlock methods remain open | Retained combat data / New opening design open |
 
 ## Combat progression concept
 
-### Implemented Sanctuary guest appearance
+### Retired Sanctuary guest appearance
 
-**Superseded runtime reference:** This section records the existing game,
-which this documentation-only revision does not change. It does not assign
+**Removed runtime appearance:** The old rescue no longer recruits Lucan.
+The retained combat-profile reference does not assign
 Lucan a level, exact skill set or departure point in the replacement opening.
 
 In that former Sanctuary route, Lucan assists in the cave as a **level-five
 guest** and earns no combat EXP.
-Players command his Attack, Skills, Items, Guard and permitted Flee actions,
+The old route exposed Attack, Skills, Items, Guard and permitted Flee actions,
 but his full Armsmaster mechanics and character interactable wait for permanent
 recruitment later in the story. His guest skills establish his protective role:
 
@@ -132,15 +138,15 @@ recruitment later in the story. His guest skills establish his protective role:
 Inspire and Bolster can coexist; recasting refreshes duration without stacking
 the bonus. His newly granted self-buff does not lose a turn to its casting
 action. Provoke preserves telegraphed-attack response opportunities and ends
-if Lucan is incapacitated. He accompanies early healing trips, then leaves
-after the cave boss is defeated and the party exits the cave. This departure
+if Lucan is incapacitated. He accompanied early healing trips, then left
+after the cave boss was defeated and the party exited the cave. This departure
 does not decide his later permanent recruitment or ultimate ability.
 
 **Current author direction, 2026-11-07:** Lucan's combat identity is
 **Armsmaster**, replacing Knight as his intended job. His employment as Iselin's
 personal guard and his protective characterization remain established.
 The arsenal and ultimate directions below remain future combat concepts; the
-implemented guest skills above are a separate limited appearance.
+retained guest-profile skills above do not create a current cave appearance.
 
 ### A growing arsenal
 

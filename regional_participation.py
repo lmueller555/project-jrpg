@@ -99,8 +99,8 @@ class RegionalParticipation:
 
     @staticmethod
     def _other_owner(game):
-        return (game.combat.active or game.opening_cinematic.active
-                or game.regent_arrival.active or game.social.locked
+        return (game.combat.active or getattr(getattr(game, 'cinematic', None), 'active', False)
+                or game.social.locked
                 or game.household_action or game.opening.locks_player
                 or game.opening.controls_player or game.opening.in_action
                 or game.mill_quest.encounter_cutscene_active)

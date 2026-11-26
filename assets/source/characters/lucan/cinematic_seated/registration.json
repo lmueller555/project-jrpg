@@ -1,0 +1,50 @@
+{
+  "status": "Retained approved character art; no scene or quest playback.",
+  "source": "generated_source.png",
+  "sha256": "7c332f6bff576965949e3721cc5dc0528cdf306b2b2d04f942b8d5fc720b729f",
+  "method": "authored seated poses; alpha threshold and uniform nearest-neighbor reduction only; no body warping",
+  "frame": {
+    "actor": "lucan",
+    "file": "assets/characters/lucan/cinematic/seated.png",
+    "source_cell": [
+      397,
+      0,
+      793,
+      793
+    ],
+    "source_bounds": [
+      73,
+      146,
+      352,
+      741
+    ],
+    "uniform_scale": 0.047058823529411764,
+    "export_size": [
+      13,
+      28
+    ],
+    "offset": [
+      5,
+      7
+    ],
+    "anchor": [
+      12,
+      30
+    ],
+    "foot_anchor": [
+      12,
+      34
+    ],
+    "facing": "front"
+  },
+  "alpha_threshold": 180,
+  "canvas": [
+    24,
+    36
+  ],
+  "baseline": 34,
+  "reference": {
+    "file": "lucan_reference.png",
+    "sha256": "0d989e4ee6e627de82943391d59d27650ae11ce9d63c14df2f368090c5dc7fbb"
+  }
+}

@@ -16,7 +16,7 @@ import pygame
 from main import Game
 from grain_farm import MILL_FLAG
 from regional_audio import Source,samples
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 OUT=ROOT/'docs/reviews/regional_audio'
 RATE=48000
 
@@ -73,7 +73,7 @@ def main():
     OUT.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp,patch('pygame.mixer.find_channel',side_effect=Channel):
         g=Game(window_size=(960,640),fullscreen=False,start_on_title=False,save_path=Path(tmp)/'save.json',settings_path=Path(tmp)/'settings.json')
-        g.audio.set_music(0);seed_previous_quests(g);g.social.flags.add(MILL_FLAG)
+        g.audio.set_music(0);seed_mill_completed(g);g.social.flags.add(MILL_FLAG)
         g.world=g.overworld_world;g.opening_fade=g.transfer_cooldown=0;g.location_seconds=0
         def position(p):g.player.position.update(p);g.camera.reset()
         position((-876,232));r=Recorder(g);r.mark('Farm: finite placements, rustles and lashing')

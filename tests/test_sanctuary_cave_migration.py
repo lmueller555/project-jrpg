@@ -19,7 +19,7 @@ class CaveMigrationTests(unittest.TestCase):
                          'sanctuary_cave': {'version': 1, 'opened': ['cave_vein_cache']},
                          'inventory': {'items': {'aether_sapphire': 1}},
                          'party': {'current_hp': 19, 'current_mp': 3},
-                         'regent_quest': {'stage': 'sanctuary_arrival_pending'}}
+                         'quests': {'retained_checkpoint': 'mill_complete'}}
                 before = copy.deepcopy(saved)
                 result = migrate_legacy_cave(saved, LANDINGS)
                 self.assertEqual(saved, before)

@@ -7,8 +7,8 @@ separate from the wake-up and breakfast scenes in [the opening quest](CH01_MQ01.
 **Replacement-opening status, 2026-11-26:** The authored exchange and family
 characterization remain approved. Its existing runtime placement is not a new
 scene commitment under the [replacement Chapter 1](CHAPTER_01.md); the removed
-festival and old quest order do not determine its timing. No dialogue changes
-are made by this documentation revision.
+festival and old quest order do not determine its timing. The greeting remains
+unchanged; the repeat exchange now refers to ordinary chores.
 
 Caelan is **18** and Tomas is **14**; see [approved character facts](CHARACTERS.md).
 Tomas asks his brother for help with a specific difficulty, describes what he

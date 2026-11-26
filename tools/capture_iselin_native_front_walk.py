@@ -27,8 +27,8 @@ import pygame
 from PIL import Image, ImageDraw, ImageFont
 
 from main import camera_for
-from regent_actors import StoryActor
-from tools.capture_sanctuary_rescue import make_game
+from story_actor import StoryActor
+from tools.scenario_fixtures import make_game, place_review_actor, move_review_actor
 
 
 ART = Path('assets/characters/iselin/native_walk_front')
@@ -126,8 +126,6 @@ def capture(output=DEFAULT_OUT):
             mira.moving = False
             mira.facing = 'front'
             mira.end_conversation()
-            for visitor in game.regent_quest.actors.values():
-                visitor.story_visible = False
             actor = StoryActor({
                 'id': 'iselin_native_front_walk_review', 'name': 'Regent Iselin',
                 'position': START, 'draw_anchor': [12, 30], 'probe_size': [8, 4],
@@ -138,7 +136,7 @@ def capture(output=DEFAULT_OUT):
             assert actor.walk_durations['front'] == (35,) * 16
             assert not getattr(actor, 'detail_idles', {}) and not getattr(actor, 'detail_walks', {})
             assert all(frame.get_size() == (24, 36) for frame in actor.walks['front'])
-            game.regent_quest._place(actor, game.world, START)
+            place_review_actor(actor, game.world, START)
             before = game.quests.to_dict()
             clearance = []
             player_blocker = game.world.probe_rect(game.player.position)
@@ -154,7 +152,7 @@ def capture(output=DEFAULT_OUT):
                                        ('WALK', WALK_SAMPLES, GOAL),
                                        ('STOP', HOLD_SAMPLES, GOAL)):
                 for _ in range(count):
-                    game.regent_quest._move(actor, goal, DT, SPEED)
+                    move_review_actor(actor, game.world, goal, DT, SPEED)
                     assert game.world.can_stand(actor.position, actor.probe_size, actor, player_blocker)
                     assert getattr(actor, 'detailed_sprite', lambda _: None)(0) is None
                     assert actor.facing == 'front'
@@ -174,7 +172,7 @@ def capture(output=DEFAULT_OUT):
             assert game.quests.to_dict() == before
             # In-place phase inspection uses the same StoryActor/World renderer.
             # Only this explicitly labelled fixture pins the actor's position.
-            game.regent_quest._place(actor, game.world, START)
+            place_review_actor(actor, game.world, START)
             actor.moving = True
             loop_camera = camera_for(START, game.world.size)
             for index in range(16):

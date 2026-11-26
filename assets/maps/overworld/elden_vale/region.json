@@ -6656,7 +6656,7 @@
       -128,
       34
     ],
-    "description": "A lightning surge shattered this stone crossing. The southern road continues on the far bank.",
+    "description": "The stone crossing is ruined. The southern road continues on the far bank.",
     "deck_width_tiles": 3,
     "deck_center_tile_y": 29,
     "broken_art_key": "broken_bridge_wide"
@@ -12538,7 +12538,7 @@
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "e6588dba9278aaf00816b37d6f74f16c83a00e03eb7e8fdefe5d1cb22885567c",
+    "source_recipe_sha256": "2e54f01d14bbe32414976543efdc9751a841ada7f28d52345361a2c69d1c41e0",
     "atlas_reference": "docs/reviews/merovar_world_map/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",

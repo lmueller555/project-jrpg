@@ -78,12 +78,6 @@ def seed_completed_mill(game):
                                   'prepared': True, 'spell_done': True,
                                   'encouraged': True, 'restored': True,
                                   'verified': True, 'resolved': True})
-    # Continuing a completed MQ02 automatically exposes the next story quest.
-    # Seed that same public handoff so loading does not add unrelated progress.
-    if game.quests.status('CH01_MQ03') == 'locked':
-        assert game.quests.unlock('CH01_MQ03')
-    game.regent_arrival.restore(None)
-    game.regent_quest.restore(None)
     game.quests.drain_events();game.social.blocked.clear()
     assert game.save_progress()
 

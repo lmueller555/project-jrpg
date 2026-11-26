@@ -135,7 +135,7 @@ def capture(output=OUTPUT, *, baseline_ref='HEAD', protected_hashes=None,
     protected = json.loads(Path(protected_hashes).read_text()) if protected_hashes else {}
     if protected != {name: digest(ROOT/name) for name in protected}:
         raise AssertionError('A protected asset changed before capture')
-    source_names = ('ice_reaper_action.py', 'ice_reaper_opening.py', 'opening_cinematic.py',
+    source_names = ('ice_reaper_action.py', 'ice_reaper_opening.py', 'cinematic_player.py',
                     'ice_reaper_audio.py', 'tools/capture_lucan_forward_intercept_review.py',
                     'tools/capture_mira_prefire_review.py', 'tools/build_lucan_guard_correction.py')
     sources = {name: digest(ROOT/name) for name in source_names}
@@ -161,7 +161,7 @@ def capture(output=OUTPUT, *, baseline_ref='HEAD', protected_hashes=None,
             settings = (folder/'settings.json').read_bytes()
             assert parent.open_gallery() and parent.launch_gallery_scene('ice_reaper_opening')
             child = parent.gallery_session.game
-            scene = child.opening_cinematic
+            scene = child.cinematic
             scene.elapsed = START
             stage = scene.action_stage
             frozen = (child._progress_signature(), child.elapsed_ms, tuple(child.player.position))

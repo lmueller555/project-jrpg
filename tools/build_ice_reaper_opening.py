@@ -11,7 +11,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from tools.build_opening_cinematic_scenery import digest, pixel_alpha, record
+from tools.cinematic_asset_helpers import digest, pixel_alpha, record
 
 SOURCE = ROOT/'assets/source/cinematics/ice_reaper_opening'
 TARGET = ROOT/'assets/story/ice_reaper_opening'

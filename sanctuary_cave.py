@@ -1,6 +1,6 @@
-"""Authored cave passages and one-time discoveries, independent of MQ03 progress.
+"""Authored cave passages and one-time discoveries, independent of retired quest progress.
 
-The arrival cutscene and encounters have separate future owners. Walking into
+The revised narrative and encounters have separate owners. Walking into
 this dungeon never accepts unread story, recruits a character or starts a boss.
 """
 from __future__ import annotations
@@ -67,8 +67,6 @@ class SanctuaryCave:
     def __init__(self, game):
         self.game = game
         self.opened = set()
-        self.lucan_guest_initialized = False
-        self.lucan_departed = False
 
     @property
     def active(self):
@@ -76,48 +74,29 @@ class SanctuaryCave:
 
     @staticmethod
     def valid_snapshot(record):
-        if (not isinstance(record, dict) or not {'version', 'opened'} <= set(record)
-                or not set(record) <= {'version', 'opened', 'lucan_guest_initialized', 'lucan_departed'}
-                or any(type(record[key]) is not bool for key in
-                       ('lucan_guest_initialized', 'lucan_departed') if key in record)
-                or record.get('lucan_departed', False) and not record.get('lucan_guest_initialized', False)):
-            return False
-        opened = record['opened']
-        return (type(record['version']) is int and record['version'] == 1
-                and isinstance(opened, list) and len(opened) <= len(REWARDS)
-                and all(isinstance(identifier, str) and identifier in REWARDS
-                        for identifier in opened)
-                and len(opened) == len(set(opened)))
+        if not isinstance(record,dict) or set(record)!={'version','opened'}:return False
+        opened=record['opened']
+        return (type(record['version']) is int and record['version']==1
+                and isinstance(opened,list) and len(opened)<=len(REWARDS)
+                and all(isinstance(identifier,str) and identifier in REWARDS for identifier in opened)
+                and len(opened)==len(set(opened)))
 
     @staticmethod
     def valid_journey(data):
-        if not isinstance(data, dict) or not isinstance(data.get('player'), dict):return False
-        if 'sanctuary_cave' in data:
-            record = data['sanctuary_cave']
-            boss = data.get('sanctuary_boss', {})
-            return (SanctuaryCave.valid_snapshot(record)
-                    and (not record.get('lucan_departed', False)
-                         or isinstance(boss, dict) and boss.get('defeated') is True))
-        # Existing journeys predate the cave. A cave checkpoint itself must
-        # carry its receipts, so malformed new saves cannot silently refill it.
-        return data.get('player', {}).get('scene') not in CAVE_SCENES | LEGACY_SCENES
+        if not isinstance(data,dict) or not isinstance(data.get('player'),dict):return False
+        if 'sanctuary_cave' in data:return SanctuaryCave.valid_snapshot(data['sanctuary_cave'])
+        return data.get('player',{}).get('scene') not in CAVE_SCENES | LEGACY_SCENES
 
     def to_dict(self):
-        record = {'version': 1, 'opened': sorted(self.opened)}
-        if self.lucan_guest_initialized:record['lucan_guest_initialized'] = True
-        if self.lucan_departed:record['lucan_departed'] = True
-        return record
+        return {'version':1,'opened':sorted(self.opened)}
 
     def reset(self):
         self.opened.clear()
-        self.lucan_guest_initialized = self.lucan_departed = False
         self._sync_cached_worlds()
 
     def restore(self, record=None):
         if record is not None and not self.valid_snapshot(record):return False
         self.opened = set(record['opened']) if record is not None else set()
-        self.lucan_guest_initialized = record.get('lucan_guest_initialized', False) if record else False
-        self.lucan_departed = record.get('lucan_departed', False) if record else False
         self._sync_cached_worlds()
         return True
 
@@ -149,19 +128,14 @@ class SanctuaryCave:
                 and not g.quest_ui.journal_open and not g.combat.active
                 and not g.transfer_cooldown and not g.opening_fade
                 and not g.household_action and not g.opening.locks_player
-                and not g.opening_cinematic.active)
+                and not getattr(getattr(g, 'cinematic', None), 'active', False))
 
     def _entry(self):
-        g = self.game
-        if g.world.data.get('id') != RESERVE_ID:return None
-        arrival=getattr(g,'sanctuary_arrival',None)
-        if (arrival is not None and not arrival.completed
-                and getattr(getattr(g,'regent_quest',None),'stage',None)=='sanctuary_arrival_pending'):
-            return None
-        point = g.world.data.get('public_approaches', {}).get('cave', RESERVE_ENTRY_APPROACH)
-        return {'id': 'sanctuary_to_cave', 'position': point, 'radius': 28,
-                'destination': SCENE_ID, 'label': ('Enter the cave' if getattr(arrival,'completed',False)
-                                                    else 'Lift the rail and enter the cave')}
+        g=self.game
+        if g.world.data.get('id')!=RESERVE_ID:return None
+        point=g.world.data.get('public_approaches',{}).get('cave',RESERVE_ENTRY_APPROACH)
+        return {'id':'sanctuary_to_cave','position':point,'radius':28,
+                'destination':SCENE_ID,'label':'Enter the cave'}
 
     def _nearby(self):
         if not self._available():return None
@@ -199,57 +173,16 @@ class SanctuaryCave:
         return self.game.social.start_script([{'speaker': 'caelan', 'text': text}],
                                               identifier='sanctuary_cave_'+identifier)
 
-    def _travel(self, record):
-        g = self.game
-        destination = g._scene_by_id(record['destination'])
-        desired = record.get('landing', destination.data['spawn'])
-        landing = g.overworld_travel._landing(destination, desired)
+    def _travel(self,record):
+        g=self.game
+        destination=g._scene_by_id(record['destination'])
+        desired=record.get('landing',destination.data['spawn'])
+        landing=g.overworld_travel._landing(destination,desired)
         if landing is None:return False
         self._sync_world(destination)
-        rescue = getattr(g, 'sanctuary_rescue', None)
-        if (rescue is not None and getattr(getattr(g, 'sanctuary_arrival', None), 'completed', False)
-                and g.world.data.get('id') in CAVE_SCENES
-                and destination.data.get('id') == RESERVE_ID
-                and getattr(getattr(g, 'sanctuary_boss', None), 'defeated', False)
-                and rescue.stage != 'evacuated'):
-            return self._say('We need to bring the injured worker back. Lucan is waiting with him at Greenwell.',
-                             'worker_waiting')
-        if (g.world.data.get('id') in CAVE_SCENES and destination.data.get('id') == RESERVE_ID
-                and getattr(getattr(g,'sanctuary_boss',None), 'defeated', False)
-                and g.party.is_guest('lucan') and not self.lucan_departed):
-            return self._depart_with_lucan(destination, landing, record)
-        return g.overworld_travel._commit(destination, landing,
-                                          record.get('facing', 'back'), record)
+        return g.overworld_travel._commit(destination,landing,record.get('facing','back'),record)
 
-    def _depart_with_lucan(self, destination, landing, record):
-        """Checkpoint the physical post-boss exit and guest departure together."""
-        from sanctuary_arrival_party import sync_arrival_party
-        g = self.game
-        party_before, cave_before = g.party.to_dict(), self.to_dict()
-        rescue = getattr(g, 'sanctuary_rescue', None)
-        rescue_before = rescue.stage if rescue is not None else None
-        levels_before = g.character_progression.to_dict()
-        origin, position, facing = g.world, tuple(g.player.position), g.player.facing
-        cooldown = g.transfer_cooldown
-        self.lucan_departed = True
-        if rescue is not None:rescue.stage = 'evacuated'
-        if sync_arrival_party(g) is not False:
-            g.overworld_travel._commit(destination, landing, record.get('facing', 'back'),
-                                      record, checkpoint=False)
-            if not g.save_store.enabled or g.save_progress():
-                g.sanctuary_arrival.sync_residents()
-                g.party_travel.reset()
-                return True
-        g.party.restore(party_before)
-        g.character_progression.restore(levels_before)
-        self.restore(cave_before)
-        if rescue is not None:rescue.stage = rescue_before
-        g.world = origin
-        g.player.position.update(position);g.player.facing = facing
-        g.transfer_cooldown = cooldown
-        g.sanctuary_arrival.sync_residents()
-        g.party_travel.reset();g.camera.reset();g._sync_world_music()
-        return False
+
 
     def _open(self, record):
         identifier = record['id']

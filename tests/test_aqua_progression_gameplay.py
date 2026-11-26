@@ -16,7 +16,8 @@ import pygame
 from main import Game
 from overworld_travel import HALL_ID, RELIEF_ID, RESERVE_ID
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
+from tools.scenario_fixtures import make_game
 from tools.capture_sanctuary_reserve import path as clear_path, walk
 from test_mill_battle_gameplay import (
     click, finish_spoils_presentation, key,
@@ -27,24 +28,10 @@ from test_mill_battle_gameplay import (
 class AquaProgressionGameplayTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # The supported completed-Mill fixture skips earlier quests; MQ03 and
-        # the Sanctuary journey then use production dialogue and walking.
-        with tempfile.TemporaryDirectory(prefix='aqua-story-') as directory:
+        # Explicit world/combat fixture, independent of retired opening quests.
+        with tempfile.TemporaryDirectory(prefix='cave-scenario-') as directory:
             driver = Driver(directory)
-            driver.meal();driver.attack_report();driver.departure()
-            driver.rejoin_mira();driver.arrive()
-            game = driver.game
-            # The arrival cinematic now owns the cave handoff. Complete its
-            # real dialogue/actions before testing the introductory battle.
-            for _ in range(4000):
-                if game.sanctuary_arrival.completed:break
-                if game.sanctuary_arrival.dialogue is not None:key(game, pygame.K_SPACE)
-                driver.tick(.05)
-            else:raise AssertionError('Sanctuary arrival did not complete')
-            # This fixture predates the gift. Public acquisition models its
-            # already-earned blade without awarding any cave progression.
-            if not game.character_abilities.has_weapon():
-                assert game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade')
+            game = driver.prepare_cave(lesson_complete=False)
             assert game.save_progress()
             cls.journey = json.loads(driver.save.read_text())
         pygame.quit()
@@ -172,35 +159,60 @@ class AquaProgressionGameplayTests(unittest.TestCase):
         self.assertTrue(restored.cave_lesson.to_dict()['resonance_seen'])
         self.assertNotIn('aqua_edge', restored.character_abilities.known_abilities())
 
-    def test_entry_confidence_shares_resonance_lock_and_stows_blade(self):
+    def test_solo_post_mill_resonance_keeps_mira_unavailable_and_uses_present_speakers(self):
+        directory = self.directory/'solo-post-mill'
+        directory.mkdir()
+        self.game = game = make_game(directory, seed=True, embedded=False)
+        # The retained completed-mill fixture supplies quest history; model its
+        # already-earned blade without selecting or recruiting a cave party.
+        if not game.character_abilities.has_weapon():
+            self.assertTrue(game.character_abilities.acquire_weapon('caelan', 'caelan_gearblade'))
+        self.assertEqual(game.party.active_ids, ('caelan',))
+        self.assertFalse(game.party.is_available('mira'))
+        party = deepcopy(game.party.to_dict())
+        reserve = game._scene_by_id(RESERVE_ID)
+        self.assertTrue(game.overworld_travel._commit(
+            reserve, RESERVE_ENTRY_APPROACH, 'back', {'id': 'solo_cave_test'}))
+        game.opening_fade = game.transfer_cooldown = 0
+        lesson = self.enter_cave(read=False)
+        lines = deepcopy(game.social._source_lines)
+        self.assertEqual({line['speaker'] for line in lines}, {'caelan'})
+        self.assertFalse(any('Mira' in line['text'] or 'Lucan' in line['text'] for line in lines))
+        self.assertNotIn('aqua_edge', game.character_abilities.known_abilities())
+        self.read()
+        self.assertTrue(lesson.resonance_seen)
+        self.assertEqual(game.party.to_dict(), party)
+        self.assertFalse(game.party.is_available('mira'))
+        self.assertNotIn('aqua_edge', game.character_abilities.known_abilities())
+
+    def test_paired_resonance_includes_mira_without_recruitment_or_early_aqua(self):
+        game = self.game
+        self.assertEqual(game.party.active_ids, ('caelan', 'mira'))
+        party = deepcopy(game.party.to_dict())
+        lesson = self.enter_cave(read=False)
+        speakers = {line['speaker'] for line in game.social._source_lines}
+        self.assertEqual(speakers, {'caelan', 'mira'})
+        self.assertNotIn('aqua_edge', game.character_abilities.known_abilities())
+        self.read()
+        self.assertTrue(lesson.resonance_seen)
+        self.assertEqual(game.party.to_dict(), party)
+        self.assertNotIn('aqua_edge', game.character_abilities.known_abilities())
+
+    def test_entry_resonance_owns_input_then_releases_its_blade_pose(self):
         game = self.game
         lesson = self.enter_cave(read=False)
-        self.assertEqual({actor.identifier for actor in game.party_travel.actors()},
-                         {'mira', 'lucan'})
+        self.assertEqual({actor.identifier for actor in game.party_travel.actors()}, {'mira'})
         self.assertTrue(lesson.blade_presented)
         self.assertTrue(hasattr(game.player, 'story_sprite'))
-        speakers = []
-        lines = {}
+        start = tuple(game.player.position)
         for _ in range(100):
             if not game.social.locked:break
-            page = game.social.page
-            source = page['source_line']
-            if source not in lines:
-                speakers.append(page['speaker'])
-                lines[source] = True
             self.assertTrue(lesson.locks_player)
             self.assertFalse(game.combat.active)
-            if source >= 5:
-                self.assertFalse(lesson.blade_presented)
-                self.assertFalse(hasattr(game.player, 'story_sprite'))
-                self.assertEqual(game.player.facing, 'back' if source == 13 else 'left')
-            else:
-                self.assertTrue(lesson.blade_presented)
-            key(game, pygame.K_SPACE)
             game.update(.05, (1, 0), False)
+            self.assertEqual(tuple(game.player.position), start)
+            key(game, pygame.K_SPACE)
         else:self.fail('Cave entry did not finish')
-        self.assertEqual(speakers, ['caelan', 'mira']+['caelan']*4+['mira']+
-                         ['caelan']*2+['mira', 'caelan', 'mira', 'caelan', 'lucan'])
         self.assertTrue(lesson.resonance_seen)
         self.assertFalse(lesson.locks_player)
         self.assertFalse(hasattr(game.player, 'story_sprite'))
@@ -212,7 +224,7 @@ class AquaProgressionGameplayTests(unittest.TestCase):
         model = self.load_battle()
         self.assertEqual(model.player.mp, 0)
         self.assertEqual(model.action_mp_cost('aqua_edge', 'player'), 0)
-        self.assertEqual([member.identifier for member in model.party], ['player', 'mira', 'lucan'])
+        self.assertEqual([member.identifier for member in model.party], ['player', 'mira'])
         self.assertTrue(all(0 <= value <= .5 for value in model.initial_atb_values.values()))
         self.assertFalse(any(enemy.hp < enemy.max_hp for enemy in model.enemies))
         scene = self.cast_aqua()
@@ -356,31 +368,35 @@ class AquaProgressionGameplayTests(unittest.TestCase):
         self.assertEqual(resumed.player.mp, 0)
         self.assertEqual(self.game.cave_random_encounters.pending, ticket)
 
-    def test_defeat_preserves_entry_resources_and_retries_unlearned_lesson(self):
+    def test_defeat_opens_game_over_and_manual_load_retries_unlearned_lesson(self):
         self.game.attributes.set_current(hp=17, mp=0)
-        self.enter_cave();ticket = self.trigger();self.load_battle()
+        self.enter_cave()
+        self.assertTrue(self.game.saves.manual(1))
+        before, rewards = self.resources(), self.game.battle_rewards.to_dict()
+        self.trigger();self.load_battle()
         owner = self.game.combat
-        before = self.resources()
-        rewards = self.game.battle_rewards.to_dict()
+        saved = self.path.read_bytes()
         for member in owner.model.party:member.hp = 0
         owner.model._result('defeat');owner.scene.dismissed = True
-        self.assertTrue(owner._settle())
-        self.assertFalse(owner.active)
+        self.game.update(.05, (0, 0), False)
+        self.assertTrue(self.game.game_over)
+        self.assertFalse(self.game.combat.active)
+        self.assertEqual(self.path.read_bytes(), saved)
         self.assertEqual(self.resources(), before)
-        self.assertEqual(self.game.cave_random_encounters.pending, ticket)
-        self.assertTrue(self.game.cave_lesson.to_dict()['deferred'])
         self.assertNotIn('aqua_edge', self.game.character_abilities.known_abilities())
         self.assertEqual(self.game.battle_rewards.to_dict(), rewards)
-        self.game = self.load()
+        self.assertTrue(self.game.saves.load(self.game.saves.latest('manual')))
+        self.assertFalse(self.game.game_over)
         self.assertEqual(self.resources(), before)
-        self.assertFalse(self.game.combat.active)
-        self.choose_retry()
+        self.settle()
+        self.trigger()
         model = self.load_battle()
         self.assertTrue(model.aqua_edge_guided)
         self.assertEqual(model.player.hp, 17)
         self.assertEqual(model.player.mp, 0)
         self.cast_aqua()
         self.assertIn('aqua_edge', self.game.character_abilities.known_abilities())
+
 
     def test_failed_intro_reward_save_rolls_back_clear_and_rewards_then_retries_once(self):
         self.enter_cave();ticket = self.trigger();self.load_battle();self.cast_aqua()
@@ -508,7 +524,10 @@ class AquaProgressionGameplayTests(unittest.TestCase):
                                          'first_weapon_acquired': False}
         for key in ('gear_gems', 'gear_focus', 'deferred_weapon_training', 'learned_abilities'):
             state.pop(key, None)
-        self.assertTrue(legacy['mill_quest']['legacy_bypass'])
+        # Explicitly model the older weaponless route; the shared base fixture
+        # records the modern armed outing.
+        legacy['mill_quest'].update(legacy_bypass=True, warned=False,
+                                    encounter_cleared=False, aftermath_done=False)
         self.path.write_text(json.dumps(legacy))
         before = (self.resources(), legacy['quests'], legacy['character_levels'],
                   legacy['battle_rewards'])

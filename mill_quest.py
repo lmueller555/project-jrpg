@@ -13,7 +13,7 @@ import pygame
 from halden_visit import point, town_path
 from npc_routines import find_path
 from npc_following import following_facing, idle_following_facing, reset_following_facing
-from quests import MILL_QUEST, REGENT_QUEST, QuestLog
+from quests import MILL_QUEST, QuestLog
 from social import facing_toward
 from sanctuary_return import SanctuaryReturn
 
@@ -726,8 +726,7 @@ class MillQuest:
         if not self.game.quests.complete_and_turn_in(MILL_QUEST, 'return_sanctuary', 'mira_worker'):return False
         self.cups_placed = self.resolved = True
         self.game.social.flags.add('CH01_MQ02_COMPLETE')
-        self.game.quests.unlock(REGENT_QUEST)
-        self.game.regent_arrival.request()
+        self.sanctuary_return.release()
         self.game._mouse_held = False;self.game.social.clear_pointer()
         self._save()
         return True

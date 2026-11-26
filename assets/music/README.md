@@ -30,15 +30,6 @@ scene, creator or generation tool, and any known loop start/end times. These
 notes are optional; you can add the audio on its own.
 
 ## Current game tracks
-| Original upload | Runtime asset | Use |
-| --- | --- | --- |
-| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Iselin's arrival cinematic |
-| `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
-
-**Royalty of the Realm** starts after Eldenmere's one-second fade during the
-arrival blackout and repeats through the Iselin cinematic. Its native Vorbis
-export contains the encoder's documented 56-frame lead-in; no music is trimmed
-or rearranged.
 
 | Original upload | Runtime asset | Use |
 | --- | --- | --- |
@@ -47,25 +38,22 @@ or rearranged.
 | `Elden Vale Sanctuary Cave.m4a` | `runtime/elden_vale_sanctuary_cave.ogg` | Non-battle exploration throughout the Sanctuary cave, including the optional elemental chambers |
 | `Kindled Courage.m4a` | `runtime/kindled_courage.ogg` | Battles; MQ02 begins it after the return camera pan and acknowledgment of Mira's warning |
 | `Triumphal Fanfare.m4a` | `runtime/triumphal_fanfare.ogg` | Retained one-shot cue; combat results now resume the interrupted soundtrack |
-| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Regent Iselin's arrival cinematic |
-| `Dare to Dream Leitmotif.m4a` | `runtime/dare_to_dream_leitmotif.ogg` | The New Game opening cinematic; repeats throughout the scene and retains its playback position while paused |
+| `Royalty of the Realm.m4a` | `runtime/royalty_of_the_realm.ogg` | Retained unassigned cue; the former arrival scene is removed |
 | `Wintermute 2.m4a` | `runtime/wintermute2.ogg` | Retained previous Ice Reaper cue |
 | `Those I Swore to Save.m4a` | `runtime/those_i_swore_to_save.ogg` | Full Ice Reaper cinematic, starting at track position zero |
 
 [`tracks.json`](tracks.json) identifies the approved runtime files and their
 mix levels. `loop: false` marks the victory fanfare and cinematic
 cues as one-shots; the world
-and battle cues use the default repeating playback. The opening leitmotif
-explicitly sets `loop: true`. New uploads remain
+and battle cues use the default repeating playback. There is no registered
+New Game opening leitmotif. New uploads remain
 available for review until assigned to playback.
 
 **Elden Vale Sanctuary Cave** repeats throughout the continuous cave without
 restarting between rooms, including during non-battle dialogue and menus.
-The first successful cave entry permanently ends MQ03's emergency music
-override for that journey. Exiting the cave then restores normal area music,
-including on later visits to the Sanctuary or Eldenmere. Continue preserves
-that release and selects the cave cue before restoring an underground encounter
-or rewards screen. Ordinary battles still bookmark and resume their area cue.
+There is no MQ03 emergency override. Leaving the cave restores ordinary area
+music; Continue selects the cave cue for an underground journey. Battles
+bookmark and resume the actual interrupted area cue.
 The full source is preserved without trimming, normalization or rearrangement.
 Its native Vorbis export includes the encoder's documented 56 extra frames.
 
@@ -80,8 +68,7 @@ When combat resolves through victory, fleeing or defeat, the interrupted
 track fades in from that saved position. Cave encounters return to
 **Elden Vale Sanctuary Cave**. The result banner, rewards screen
 and return to exploration share that resumed stream. Repeated result updates,
-reward retries and dismissal do not restart it. An encounter during MQ03's
-emergency interrupts **Something is Wrong** and resumes it afterward.
+reward retries and dismissal do not restart it.
 Entering from silence returns to silence.
 
 Resume positions use the streamed decoder clock and Ogg seeking, including
@@ -107,7 +94,7 @@ The title's Eldenmere Theme keeps its full 95.0935-second decoded cue.
 The new Eldenmere exploration cue retains its complete decoded audio without
 trimming or rearrangement. Like Royalty of the Realm, its native Vorbis export
 includes the encoder's 56-frame lead-in. The title keeps its original music;
-Continue and the end of the opening cinematic select the new exploration cue.
+Continue and the bedroom opening select the exploration cue.
 The battle runtime removes
 only 1.1485 seconds of the final near-silent tail, retaining 25 ms after the last
 5 ms RMS block above -60 dBFS. Five-millisecond de-clicks at its quiet boundaries
@@ -116,13 +103,10 @@ authored; these exports do not claim a sample-accurate musical loop or recreate
 missing musical transitions. The fanfare keeps its full natural ending and is
 not repeated, faded out early or trimmed into a loop.
 
-The opening uses **Dare to Dream Leitmotif**, not the separate `Dare to Dream`
-upload. Its runtime retains the full 199.1735-second decoded cue. Five-millisecond
-de-clicks at the beginning and end soften the sample discontinuity on repeat;
-there is no trimming, phrase overlap or musical rearrangement. The track repeats
-as authored. Pausing with Esc or losing window focus pauses the stream, and
-resuming continues at the same position. Finishing or skipping the cinematic
-returns to Eldenmere for the sanctuary morning.
+The original **Dare to Dream Leitmotif** and **Dare to Dream** uploads remain
+source material. The retired flashforward's dedicated runtime export,
+registration and exporter target are removed; no new prologue music is assigned
+by this retirement.
 
 ## Rebuild runtime exports
 
@@ -131,12 +115,6 @@ installed:
 
 ```sh
 python tools/build_runtime_music.py
-```
-
-To rebuild just the opening cue while preserving all other runtime exports:
-
-```sh
-python tools/build_runtime_music.py --track opening_leitmotif
 ```
 
 To rebuild only the Eldenmere/millrace exploration cue:
@@ -175,10 +153,7 @@ The full Ice Reaper cinematic uses `Those I Swore to Save.m4a`, exported as
 and follows gallery pause, restart and exit behavior. Rebuild with
 `python tools/build_runtime_music.py --track those_i_swore_to_save`.
 
-**Something is Wrong** (`something_is_wrong`) scores MQ03’s emergency report,
-departure and Sanctuary arrival. It begins after the survivor’s first two
-statements, on Serene’s “What men?”, and loops until the first cave entry
-releases the story override. The runtime Ogg preserves the full uploaded source
-without trimming, normalization or rearrangement. Combat continues to use
-**Kindled Courage** independently. Rebuild with
-`python tools/build_runtime_music.py --track something_is_wrong`.
+**Something is Wrong** (`something_is_wrong`) remains a reusable exported cue,
+with no active MQ03 report, departure, arrival or emergency override. The old
+scene is removed; the track is not automatically assigned to the future Fire
+opening. Its original upload and native Vorbis export remain unaltered.

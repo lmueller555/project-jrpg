@@ -237,12 +237,11 @@ class Capture:
             assert set(ATTEMPTS).isdisjoint(game.character_abilities.known_abilities())
             assert set(self.water_focus) == {'water'}
             assert game._read_saved_journey() is not None
-            assert game.quests.status('CH01_MQ03') == 'available'
-            assert game.regent_arrival.state in ('pending', 'seen')
+            assert game.party.active_ids == ('caelan',)
+            assert not game.cinematic_active
             assert quest.reported_to_halden and quest.cups_placed
             assert game.world.data['id'] == 'sanctuary_dining'
             game.update(.1, (0, 0), False)
-            if game.regent_arrival.active:self.still('iselin_arrival.png')
             gift_frames = save_animation(self.output/'gift_preview.gif', self.frames['gift'], 150)
             water_frames = save_animation(self.output/'water_focus.gif', self.frames['water'], 150)
             sheet = Image.new('RGB', (1440, 640))
@@ -271,7 +270,7 @@ class Capture:
                         'reported_to_halden': quest.reported_to_halden,
                         'cups_placed': quest.cups_placed,
                         'completion_scene': game.world.data['id'],
-                        'iselin_handoff': game.regent_arrival.state,
+                        'optional_cinematic_active': game.cinematic_active,
                         'battle_rewards': self.reward,
                         'receipts_before_battle': self.before_battle_receipts,
                         'receipts_after_quest': len(game.battle_rewards.to_dict()['receipts']),

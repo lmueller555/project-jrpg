@@ -100,11 +100,11 @@
   "survey": [
     {
       "speaker": "caelan",
-      "text": "*studies the marks on the board* The stone face is well clear of the hall."
+      "text": "A sketch of the paths around the grove. The shaded sections mark the steeper ground."
     },
     {
       "speaker": "caelan",
-      "text": "Still inside the sanctuary boundary, though. Nothing's been cut here."
+      "text": "The hall and memorial trees are marked here, too."
     }
   ],
   "records": [
@@ -137,66 +137,10 @@
       "text": "I'd better leave them in order."
     }
   ],
-  "emergency_caretaker": [
-    {
-      "speaker": "arrival_caretaker",
-      "text": "We heard him answer after he was pulled inside. That was before you arrived."
-    },
-    {
-      "speaker": "arrival_caretaker",
-      "text": "If you need rest, Nessa is through the hall, then the north door with the bed plaque."
-    }
-  ],
-  "emergency_visitors": [
-    {
-      "speaker": "reserve_visitor_plum",
-      "text": "We’ll leave the courtyard clear. The caretakers need room to work."
-    }
-  ],
-  "emergency_worker_a": [
-    {
-      "speaker": "arrival_worker",
-      "text": "The dressing is holding. Thank you. Please bring word of the man still inside."
-    }
-  ],
-  "emergency_worker_b": [
-    {
-      "speaker": "arrival_worker_b",
-      "text": "They’re looking after us. I wish I could tell you more about what took him."
-    }
-  ],
-  "emergency_runner": [
-    {
-      "speaker": "arrival_runner",
-      "text": "The clean linen is here. I’ll stay with them while the caretaker watches the entrance."
-    }
-  ],
-  "emergency_sentry": [
-    {
-      "speaker": "arrival_sentry",
-      "text": "I’m watching the entrance. Call out if you need help coming back."
-    }
-  ],
   "cave_open": [
     {
       "speaker": "caelan",
       "text": "The rope’s been lowered. We can get through."
-    }
-  ],
-  "emergency_caretaker_guard": [
-    {
-      "speaker": "arrival_caretaker",
-      "text": "We heard him answer after he was pulled inside. That was before you arrived."
-    },
-    {
-      "speaker": "arrival_caretaker",
-      "text": "If you need rest, Nessa is through the hall, then the north door with the bed plaque."
-    }
-  ],
-  "emergency_caretaker_gardener": [
-    {
-      "speaker": "reserve_caretaker",
-      "text": "We’re keeping the paths clear for the injured. Nessa has the visitor room ready through the hall."
     }
   ]
 }

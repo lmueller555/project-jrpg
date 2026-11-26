@@ -1,5 +1,11 @@
 # Mira - character sheet
 
+**Runtime retirement:** The old MQ03 rescue and MQ04 festival quest are removed.
+Their on-screen examples below describe historical portrayal, not current
+quests or obligations of the replacement opening. Approved characterization
+remains; new scenes must deliberately carry those relationship functions.
+
+
 **Scope:** Authoritative detailed profile for Mira, using the approved
 [sheet design](TEMPLATE.md). Existing story and gameplay facts are retained.
 Her early loss of both parents and its connection to her enjoyment of fixing
@@ -57,7 +63,7 @@ replacement opening or achievements completed before the game.
 | Caregiver and surviving relatives | Halden took her in after the loss. Other relatives and formal adoption or guardianship arrangements remain undecided. | Established / Open |
 | Occupation | Engineer and capable mechanical problem-solver | Role revised, 2026-11-07 |
 | Appearance | Dark brown hair in a short ponytail, cream flower above her left ear, dusty rose shirt, charcoal trousers, brown boots, belt and tool pouch | Established design; see [art guide](../../../../assets/characters/mira/README.md) for individual asset approval status |
-| Narrative role | Caelan's childhood friend; introduced with him in Eldenmere after the prologue. Cooperates in the village defense and first journey; permanent party arrangements remain open. Earlier MQ02 guest participation is runtime history. | Established foundation and approved opening cooperation / Open recruitment |
+| Narrative role | Caelan's childhood friend; introduced with him in Eldenmere after the prologue. Cooperates in the village defense and first journey; permanent party arrangements remain open. The retained MQ02 still uses temporary guest participation. | Established foundation and approved opening cooperation / Open recruitment |
 | Workshop history | Gained mechanical proficiency working with Halden on the mill; opened her workshop at 17 with his encouragement. Property and funding arrangements remain undecided. | Established / Open |
 
 ## Background and the meaning of repair

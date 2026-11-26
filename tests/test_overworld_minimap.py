@@ -105,7 +105,7 @@ class OverworldMinimapTests(unittest.TestCase):
                 setattr(game, field, False)
         for owner, flag in (('pause', 'is_open'), ('inventory_ui', 'is_open'),
                 ('status_ui', 'is_open'),
-                ('world_map_viewer', 'is_open'), ('opening_cinematic', 'active'),
+                ('world_map_viewer', 'is_open'), ('cinematic', 'active'),
                 ('combat', 'active'), ('opening', 'locks_player'),
                 ('opening', 'controls_player'), ('opening', 'in_action'),
                 ('mill_quest', 'encounter_cutscene_active')):

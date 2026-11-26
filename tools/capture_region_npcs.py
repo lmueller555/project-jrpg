@@ -29,7 +29,7 @@ from PIL import Image, ImageChops, ImageSequence
 from main import Game
 from grain_farm import MILL_FLAG, SOURCE, SCENE_ID
 from quests import OPENING_QUEST, MILL_QUEST
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 
 FPS = 30
 VIDEO_FPS = 15
@@ -257,7 +257,7 @@ def make_game(root, *, repaired=False, title=False):
     game.audio.set_music(0);game.audio.set_effects(0)
     if not title:
         if repaired:
-            seed_previous_quests(game)
+            seed_mill_completed(game)
             game.social.flags.add(MILL_FLAG)
         else:
             assert game.accept_quest(OPENING_QUEST)

@@ -136,16 +136,6 @@ class PartyTravelTests(unittest.TestCase):
         self.assertEqual(snapshot(),before)
         self.assertEqual(travel.actors(),followers)
 
-    def test_mq03_story_lucan_is_not_duplicated_by_a_preexisting_roster_member(self):
-        context=game(active=('caelan','mira','lucan'))
-        context.regent_quest=SimpleNamespace(sanctuary_escort_active=True)
-        travel=PartyTravel(context,actor_factory=actor)
-        travel.update(1/60)
-        walk(travel,(130,70))
-        self.assertEqual([value.identifier for value in travel.actors()],['mira'])
-        context.regent_quest.sanctuary_escort_active=False
-        travel.update(1/60)
-        self.assertEqual([value.identifier for value in travel.actors()],['mira','lucan'])
 
     def test_winding_route_keeps_both_followers_on_the_traversed_side_of_wall(self):
         world = World((pygame.Rect(50, 30, 20, 60),))

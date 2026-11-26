@@ -13,10 +13,10 @@ Thumbnails are cropped from actual production-rendered frames, not illustrations
 or prerecorded playback. Scenes run with their current dialogue, animation,
 camera, music and effects.
 
-**Scene Studies** includes **Ice Reaper: Frozen Clearing (5s)**, the isolated
-opening section of the planned 45-second boss cinematic. It uses the detailed
-cinematic party sprites, Wintermute2's first five seconds and the production
-cinematic camera/dialogue controls. It ends before the strike or battle and
+**Scene Studies** includes **Ice Reaper: Frozen Clearing (32s)**, an isolated
+pre-boss cinematic study. It uses the detailed
+cinematic party sprites, its retained Wintermute2 soundtrack and the production
+cinematic camera/dialogue controls. It ends at the authored cinematic handoff before playable combat and
 does not replace New Game's opening or create a main-story encounter.
 See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 [review clip](reviews/ice_reaper_opening/preview.mp4).
@@ -39,7 +39,7 @@ See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 
 Dialogue scenes identify their input in the replay toolbar. Automatic scenes
 identify themselves there as well. Necessary same-station interactions (for
-example lifting the assembled lantern) proceed automatically after the preceding
+example placing Elira’s retrieved lantern) proceed automatically after the preceding
 dialogue/action finishes. Player travel, menus and incidental encounters are
 disabled inside the bounded preview. The millrace threat ends before combat.
 
@@ -51,7 +51,6 @@ it does not duplicate dialogue, animation or camera scripts.
 
 | Stable ID | Name | Production sequence and end boundary |
 | --- | --- | --- |
-| `later_journey` | A Light in the Distance | `OpeningCinematic.start`; complete/Skip ends preview before New Game |
 | `morning_wake` | Morning Bells | `OpeningSequence.start_new_game`; wake animation/dialogue through exploration |
 | `morning_breakfast` | Breakfast at Home | Opening breakfast arrival, seating, meal, cup and standing through assignment |
 | `halden_medicine` | Medicine for Halden | Halden visit conversation and physical medicine handoff |
@@ -65,25 +64,20 @@ it does not duplicate dialogue, animation or camera scripts.
 | `mill_bypass` | Make Room for the Water | Mill preparation dialogue and bypass action |
 | `mill_small_spell` | A Smaller Magical Success | Mill spell introduction/action and Mira's encouragement |
 | `mill_repair` | Freeing the Intake | Mill repair dialogue, lever and haul-rope action until restored |
-| `regent_arrival` | Iselin's Relief Caravan | RegentArrival requested after MQ02's sanctuary homecoming and cup placement; natural finish or Skip |
-| `lantern_frame` | A Frame of His Own | Workshop design, assembly and frame lift until frame ready |
-| `lantern_collect` | Gathering the Materials | Collection dialogue and material pickup |
-| `lantern_homecoming` | A Place at the Table | Home arrival and material placement |
-| `lantern_paper_practice` | The First Paper Window | Home paper practice action |
-| `lantern_finishing` | Finishing Liam's Lantern | Design, preparation, covering, fastening and finished lantern lift |
-| `lantern_putaway` | Safe Until Tomorrow | Final home placement and farewell through quest completion |
 | `grain_extra_sack` | One Sack Too Many | GrainFarm's finite exchange, shared lowering and lashing check |
 | `bridge_tea` | Tea by the Broken Bridge | BridgeCrew's finite request, offer, reception, drink and seated break |
 | `garden_quiet_care` | A Little Shade | GardenOrchard's quiet-care dialogue, plant lift/carry/placement and settling into rest |
 | `sheep_basket_visit` | A Familiar Visitor | PurposefulWildlife's finite gardener visit, sheep gathering, basket nuzzle and pat, basket retrieval and home return through release of the borrowed gardener |
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
+| `ice_reaper_opening` | Ice Reaper: Frozen Clearing (32s) | Independent late-game cinematic study; ends before playable combat |
+| `mira_arm_rig` | Mira: Aether Arm Rig | Independent art/technique preview; no journey changes |
 
-Fixtures use completed prerequisite quest facts for the selected chapter only.
-The regent prerequisites use the current version-two direct-escort checkpoint;
-the retired road-crew cart scene is no longer a replay entry.
-The lantern fixtures use the current controller's stage/objective prefix; mill
-intake scenes use current v2 encounter-complete facts. Regional scenes begin at
-their authored finite vignette stations with the preceding routine work seeded.
+There are 20 retained entries. The old flashforward, relief-caravan arrival
+and MQ04 lantern-assembly fixtures are removed. Elira's private household
+lantern retrieval/placement remains ordinary remembrance, without a festival.
+Mill intake scenes use the retained encounter-complete facts. Regional scenes
+begin at their finite vignette stations with preceding routine work seeded.
+
 The garden preview starts at the completed-work checkpoint and ends only after
 the struggling plant has been moved to its production destination by the hedge.
 Its isolated fixture marks the separately registered pasture follow-up complete
@@ -98,14 +92,12 @@ the two existing guards throughout. It ends after both have returned to their
 original posts and all seven lines have been acknowledged. Sitting, greeting
 the cat and inspecting masonry remain ordinary optional interactions.
 
-Intentional exclusions are ordinary standing conversations, player-controlled
-errands/travel and repeating ambient routines. Specifically: opening quest
-acceptance and household reminders/turn-ins; manually carrying Caelan's sacks;
-mill inspection/report/aftermath exchanges and the playable battle; Regent
-preparations/greeting/welcome/excavation/private dialogue and free escort travel;
-lantern classroom/permission/neighbor/memorial/sanctuary/school conversation
-stations; and recurring resident work, play, patrol and wildlife routines. Their staged
-actions listed above are included. Future unimplemented scenes are not listed.
+Ordinary standing conversations, player-controlled errands/travel, the mill
+battle and repeating ambient routines are excluded. Removed quests do not
+remain as hidden replay fixtures, and future Fire Veinhold scenes are not
+listed. Current retirement captures are under
+`docs/reviews/opening_retirement/gallery/`; older Gallery captures are
+historical evidence.
 
 ## Isolation and cleanup
 
@@ -117,7 +109,7 @@ copied before audio starts into a separate, non-persistent settings object.
 
 No preview checkpoint, reward or completion receipt can reach the normal save.
 Continue resumes the title's original loaded journey. Closing a preview stops
-its owned morning, regional and arrival effects and soundtrack, then restores
+its owned morning and regional effects and soundtrack, then restores
 title music. Regional voice leases are released by sound identity; unrelated
 channels are not globally stopped. Restart constructs another fresh runtime.
 Completion holds only the final world pose briefly and does not advance the

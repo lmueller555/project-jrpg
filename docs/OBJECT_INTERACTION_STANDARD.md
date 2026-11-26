@@ -193,7 +193,6 @@ were checked; completion-only tests do not establish visual quality.
 - [Regional NPC work and transfers](REGION_NPCS.md)
 - [Garden and orchard interactions](GARDEN_ORCHARD.md)
 - [Mill quest work stations](MILL_QUEST.md)
-- [Sanctuary arrival performance](SANCTUARY_ARRIVAL.md)
 
 These guides retain local implementation details. Historical review material is
 preserved as evidence of earlier work; conflicting prescriptions defer to this

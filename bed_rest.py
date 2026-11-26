@@ -18,7 +18,7 @@ class BedRest:
     def available(self, profile):
         """Shared live-play gates; a dialogue callback must pass these again."""
         game = self.game
-        if (game.on_title or game.opening_cinematic.active or game.combat.active
+        if (game.on_title or getattr(getattr(game, 'cinematic', None), 'active', False) or game.combat.active
                 or game.pause.is_open or game.inventory_ui.is_open
                 or getattr(getattr(game, 'party_ui', None), 'is_open', False)
                 or game.world_map_viewer.is_open or game.map_open

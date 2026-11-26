@@ -25,7 +25,7 @@ import numpy as np
 import pygame
 from main import Game
 from garden_orchard import SCENE_ID
-from tools.capture_lantern_quest import seed_previous_quests
+from tools.scenario_fixtures import seed_mill_completed
 from tools import capture_regional_audio as audio_capture
 
 OUT=ROOT/'docs/reviews/purposeful_wildlife'
@@ -77,7 +77,7 @@ def make_game(root,point):
     game=Game(window_size=(960,640),fullscreen=False,start_on_title=False,
               save_path=root/'journey.json',settings_path=root/'settings.json')
     game.audio.set_music(0);game.audio.set_effects(1)
-    seed_previous_quests(game)
+    seed_mill_completed(game)
     game.world=game.overworld_world
     game.opening_fade=game.transfer_cooldown=0;game.location_seconds=0
     position(game,point)

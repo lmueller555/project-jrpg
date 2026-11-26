@@ -248,7 +248,7 @@ class MillTriggerGeometryTests(unittest.TestCase):
         self.assertTrue(self.c.reported_to_halden)
         self.assertFalse(self.c.resolved)
         self.assertEqual(self.g.quests.status(MILL_QUEST), 'active')
-        self.assertEqual(self.g.regent_arrival.state, 'waiting')
+        self.assertFalse(self.g.cinematic_active)
         self.assertEqual(self.c.stage, 'return_sanctuary')
         self.assertEqual(sum(self.c.mira in world.npcs for world in self.g.scenes.values()), 1)
 

@@ -20,8 +20,9 @@ method, then follow the sources relevant to the assignment.
 | Canonical world map, world geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
 | Sanctuary custody background and former quarry-story context; revised cave purpose remains open | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
-| Scene production references and placement limits | [Retired opening cinematic](scenes/OPENING_CINEMATIC.md), [old implemented arrival](scenes/REGENT_ARRIVAL.md), and [independently retained Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
-| Current-runtime quest scripts awaiting the new opening/dialogue rewrite | [MQ01](game_01/CH01_MQ01.md), [MQ02](game_01/CH01_MQ02.md), [MQ03](game_01/CH01_MQ03.md), and [complete MQ04](game_01/CH01_MQ04.md) |
+| Scene production references and placement limits | [Retired opening cinematic](scenes/OPENING_CINEMATIC.md), [retired arrival](scenes/REGENT_ARRIVAL.md), and [independently retained Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
+| Current-runtime ordinary household and mill scripts | [MQ01](game_01/CH01_MQ01.md) and [MQ02](game_01/CH01_MQ02.md) |
+| Retired quest permalinks | [Former MQ03](game_01/CH01_MQ03.md) and [former MQ04](game_01/CH01_MQ04.md) |
 
 Use the owner for a fact rather than maintaining another full copy in a related
 guide. Brief context and a source link are appropriate. A regional guide can
@@ -37,11 +38,13 @@ The old opening cinematic is scrapped entirely as active narrative. The
 Festival of Light and its preparation arc are removed. The old quarry-driven
 opening spine and pre-opening lightning bridge cause are superseded.
 
-This is a documentation-only approval. Existing scripts, scene guides and
-runtime guides describe the still-implemented older journey and are labelled
-accordingly. Quest controllers, dialogue, maps, assets and saved-state behavior
-will change in subsequent work. Prior approval labels in a legacy script do
-not override this revision. Historical reviews remain untouched evidence.
+The old cinematic, regent arrival, MQ03 and MQ04 have now been removed from
+current gameplay, Gallery and Quest Playtests. New Game begins directly in the
+bedroom; MQ01/MQ02 use ordinary household dialogue and retain their actual
+flow, rewards and learning. The Fire Veinhold prologue, new arrival/invasion
+and initially intact bridge remain future implementation. Historical reviews
+stay untouched; retired guides are small permalink notices rather than another
+live opening script.
 
 The replacement has explicit open decisions. A cave bypass, the two early
 weapons being one battery, stolen intelligence, the precise return objective,
@@ -139,9 +142,9 @@ index. The workshop-bot intention belongs to Mira's departure section, and the
 Ice Reaper study belongs to its scene owner. These moves preserve approval and
 knowledge boundaries and introduce no new story facts.
 
-The four legacy MQ04 script installments remain one current-runtime reference
-with part anchors and their original local scene numbers; the festival quest
-is retired from the revised narrative. Dedicated opening and arrival specifications
-live in `scenes/`. Runtime guides retain technical ownership/save/presentation
+The four legacy MQ04 script installments formerly formed one implementation reference
+with part anchors and their original local scene numbers. MQ04 and the old
+opening/arrival runtime are now removed; their files retain only historical
+permalink notices. Runtime guides retain technical ownership/save/presentation
 contracts and refer to quest scripts for narrative. The separately recorded
 later-story approvals above are additions after the structural migration.

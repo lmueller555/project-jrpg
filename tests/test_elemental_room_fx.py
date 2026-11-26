@@ -35,7 +35,7 @@ class ElementalRoomEffectsTests(unittest.TestCase):
             audio=SimpleNamespace(effects_volume=0., reduced_motion=False, bind_effects=Mock()),
             combat=SimpleNamespace(active=False), social=SimpleNamespace(active=False, locked=False),
             pause=SimpleNamespace(is_open=False), quest_ui=SimpleNamespace(journal_open=False),
-            opening=SimpleNamespace(locks_player=False), opening_cinematic=SimpleNamespace(active=False),
+            opening=SimpleNamespace(locks_player=False), cinematic_active=False,
             elemental_bosses=SimpleNamespace(acquisition_active=False), _music_focused=True,
             on_title=False, on_gallery=False, map_open=False, opening_fade=0, transfer_cooldown=0,
             gallery_session=None)

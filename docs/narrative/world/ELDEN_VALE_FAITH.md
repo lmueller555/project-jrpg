@@ -14,8 +14,8 @@ every person in Elden Vale follows the same tradition.
 **Story continuity:** [Chapter 1](../game_01/CHAPTER_01.md) owns the approved
 Fire Veinhold opening. This guide owns the retained faith and Sanctuary
 responsibilities. Their new plot role, including any purpose for the cave,
-remains open. Older MQ03 gameplay and dialogue are a superseded implementation,
-not the approved future sequence.
+remains open. Older MQ03 gameplay and dialogue are removed, rather than an
+alternative current opening.
 
 Related guides: [Foundational Lore](../saga/FOUNDATIONAL_LORE.md),
 [Elden Vale](regions/ELDEN_VALE.md),

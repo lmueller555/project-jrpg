@@ -339,7 +339,7 @@ class MillQuestTests(unittest.TestCase):
         self.g.social.blocked.clear();self.assertTrue(self.g.social.start(halden));self.read_all()
         self.assertTrue(self.c.reported_to_halden);self.assertFalse(self.c.resolved)
         self.assertEqual(self.g.quests.status(MILL_QUEST),'active')
-        self.assertFalse(self.g.regent_arrival.active)
+        self.assertFalse(self.g.cinematic_active)
         self.reload();self.assertTrue(self.c.reported_to_halden)
         home=self.c.sanctuary_return
         self.g.world=home.dining
@@ -352,7 +352,7 @@ class MillQuestTests(unittest.TestCase):
 
     def test_new_game_resets_companion_intake_and_mill(self):
         self.repair();actor=self.c.mira
-        self.assertTrue(self.g.begin_journey(False, show_cinematic=False))
+        self.assertTrue(self.g.begin_journey(False))
         self.assertEqual(self.g.quests.status(MILL_QUEST),'locked')
         self.assertFalse(self.c.prepared);self.assertFalse(self.c.spell_done)
         self.assertFalse(self.c.mill_restored);self.assertFalse(actor.quest_mode)

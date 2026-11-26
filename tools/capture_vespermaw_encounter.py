@@ -1,7 +1,7 @@
 """Review the live Echo Chamber encounter with a disposable production Game.
 
 Earlier quests and level-seven starting resources are labelled review fixtures.
-The MQ03 departure, cave entry, boss offer, combat commands and spoils use the
+Cave entry, boss offer, combat commands and spoils use the
 game. No save or settings outside a temporary directory is read or changed.
 """
 from __future__ import annotations
@@ -27,7 +27,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from leveling import CharacterLevel, character_stats, total_xp_for_level
 from sanctuary_cave import RESERVE_ENTRY_APPROACH
-from tools.capture_mq03_emergency import Driver
+from tools.cave_scenario import Driver
 
 
 OUTPUT = ROOT/'docs/reviews/vespermaw_encounter'
@@ -52,7 +52,7 @@ def sources():
 
 
 def durable_story(game):
-    return deepcopy({'regent': game.regent_quest.to_dict(), 'quests': game.quests.to_dict(),
+    return deepcopy({'quests': game.quests.to_dict(),
                      'event': game.party.current_event_id, 'members': game.party.members,
                      'active': list(game.party.active_ids), 'music': game.music.desired_track,
                      'treasure': game.sanctuary_cave.to_dict(),
@@ -113,7 +113,7 @@ class Review:
 
     def seed(self, directory):
         driver = Driver(directory)
-        driver.meal();driver.attack_report();driver.departure();driver.rejoin_mira();driver.arrive()
+        driver.prepare_cave()
         game = self.game = driver.game
         # The earlier discovery is a labelled fixture, just like the earlier
         # quest completion and level-seven loadout used by this boss review.
@@ -305,7 +305,7 @@ class Review:
             assert game.save_progress()
             assert game._read_saved_journey() is not None, game.save_error
             defeat_check = self.defeat_and_return(entry_journey, directory)
-            metadata = {'fixture': 'Earlier quest fixture followed by real MQ03 travel; level7 resources and near-arena location are review fixtures. No additional companion is recruited.',
+            metadata = {'fixture': 'Explicit retained-quest/cave fixture; level7 resources and near-arena location are review fixtures. No additional companion is recruited.',
                 'captures': self.captures, 'observed_enemy_actions': sorted(observed),
                 'xp_gained': rewards, 'story_unchanged': True,
                 'low_hp_defeat_fixture': defeat_check, 'source_sha256': sources()}
