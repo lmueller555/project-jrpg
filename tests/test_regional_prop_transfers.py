@@ -12,6 +12,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 import pygame
 
 from main import Game
+from bridge_condition import BridgeCondition
 from garden_orchard import GARDEN_SCENE, HAND, PROGRAMS, STARTS
 from grain_farm import DIRECTIONS, PICKUP_SECONDS, SOURCE
 from bridge_crew import CUP_ACTION_SECONDS, HELP, KETTLE, REACH, SAFE, WORK_STONE
@@ -25,6 +26,10 @@ class RegionalPropTransfers(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         self.root=Path(temporary.name)
         self.g=self.game()
+        # Include the damaged site's stone/cup transfers without depending on
+        # the starting journey's physical bridge condition.
+        self.g.overworld_travel.restore_bridge_condition(
+            {'bridge_condition':BridgeCondition('destroyed').to_dict()})
         self.g.world=self.g.overworld_world
 
     def tearDown(self):

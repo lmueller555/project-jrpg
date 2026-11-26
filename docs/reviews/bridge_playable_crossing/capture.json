@@ -1,0 +1,1149 @@
+{
+  "version": 1,
+  "method": "Quest-seeded disposable production Game; retained MQ01/MQ02 are fixture prerequisites. Explicit bridge phases and starting stations are seeded between cases. Each recorded movement step uses Game.update at 30 Hz; screenshots/video use Game.draw. No attack or new-opening playthrough is claimed.",
+  "command": "python tools/capture_bridge_crossing.py",
+  "source_commit": "d199f72a3a9d07e0718c3747156fbcc362916328",
+  "source_state": "Working tree capture before the implementation commit.",
+  "runtime_sha256": {
+    "main.py": "7c426ee1aad179ce2dda6e2df3bbfffbf2da0dcd77b182c0204b4e1dae32c815",
+    "overworld_world.py": "ab83e8ba5e4ab27e17f16973d8f003bcee68ef37e305ce6cfdc9466d674bb9d6",
+    "overworld_travel.py": "c8707f3e1819ba105783759b18d47453041fb74308f240fa834647670e91e296",
+    "bridge_condition.py": "bc8a76e5bebdf4636c5c817419914fac188cada21dac58d3ee4e867ebff64f33",
+    "overworld_map.py": "40686571eb1d76f83ae0da717309594904582236bd1ea7da346a552077f75dab",
+    "overworld_minimap.py": "e8d93786d23689a3d754a7e1c90047d2f3f9dbb7c846c5550481777b52abae28"
+  },
+  "region_sha256": "33da3e39a28cfe244834dfbb4daebf0a02b0dd0ee09817ec0f55bfa021fec2d0",
+  "art_manifest_sha256": "3725679122f7fbe360907d11489f5754639f07b539374bff063912d41686a413",
+  "fps": 30,
+  "probe_size": [
+    24,
+    12
+  ],
+  "walk_speed": 72.0,
+  "run_multiplier": 1.5,
+  "video": "crossing.mp4",
+  "video_silent": true,
+  "video_frames": 678,
+  "video_seconds": 22.6,
+  "all_movement_samples_clear": true,
+  "cases": [
+    {
+      "id": "intact_walk_right_666",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 666,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        666
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_right_666",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 666,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        666
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_walk_left_666",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 666,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        666
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_left_666",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 666,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        666
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_walk_right_696",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 696,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        696
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_right_696",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 696,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        696
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_walk_left_696",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 696,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        696
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_left_696",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 696,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        696
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_walk_right_726",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 726,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        726
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_right_726",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 726,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        726
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_walk_left_726",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 726,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        726
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_left_726",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 726,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        726
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_right_666",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 666,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        666
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_right_666",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 666,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        666
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_left_666",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 666,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        666
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_left_666",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 666,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        666
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        666.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_right_696",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 696,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        696
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_right_696",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 696,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        696
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_left_696",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 696,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        696
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_left_696",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 696,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        696
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_right_726",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 726,
+      "direction": 1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        726
+      ],
+      "target_x": -2424,
+      "end": [
+        -2423.999999999891,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_right_726",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 726,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2904,
+        726
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_walk_left_726",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 726,
+      "direction": -1,
+      "running": false,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        726
+      ],
+      "target_x": -2904,
+      "end": [
+        -2904.000000000109,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 200,
+      "all_samples_clear": true
+    },
+    {
+      "id": "restored_run_left_726",
+      "kind": "crossing",
+      "phase": "restored",
+      "lane_y": 726,
+      "direction": -1,
+      "running": true,
+      "reduced_motion": false,
+      "start": [
+        -2424,
+        726
+      ],
+      "target_x": -2904,
+      "end": [
+        -2906.4000000000487,
+        726.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_west_approach_666",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 666,
+      "direction": 1,
+      "running": true,
+      "start": [
+        -2828,
+        666
+      ],
+      "end": [
+        -2721.7999999999893,
+        666.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_east_approach_666",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 666,
+      "direction": -1,
+      "running": true,
+      "start": [
+        -2500,
+        666
+      ],
+      "end": [
+        -2605.3000000000106,
+        666.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_west_approach_696",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 696,
+      "direction": 1,
+      "running": true,
+      "start": [
+        -2828,
+        696
+      ],
+      "end": [
+        -2720.899999999989,
+        696.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_east_approach_696",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 696,
+      "direction": -1,
+      "running": true,
+      "start": [
+        -2500,
+        696
+      ],
+      "end": [
+        -2606.2000000000107,
+        696.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_west_approach_726",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 726,
+      "direction": 1,
+      "running": true,
+      "start": [
+        -2828,
+        726
+      ],
+      "end": [
+        -2721.7999999999893,
+        726.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "destroyed_east_approach_726",
+      "kind": "destroyed_approach",
+      "phase": "destroyed",
+      "lane_y": 726,
+      "direction": -1,
+      "running": true,
+      "start": [
+        -2500,
+        726
+      ],
+      "end": [
+        -2604.4000000000106,
+        726.0
+      ],
+      "gap_crossed": false,
+      "blocked": true,
+      "sample_count": 60,
+      "all_samples_clear": true
+    },
+    {
+      "id": "far_bank_road_terminus",
+      "kind": "stationary_fixture",
+      "position": [
+        -3552.0,
+        1872.0
+      ],
+      "clear_full_probe": true,
+      "destination_ready": false,
+      "world_unchanged": true,
+      "sample_count": 0,
+      "all_samples_clear": true
+    },
+    {
+      "id": "intact_run_right_696_reduced",
+      "kind": "crossing",
+      "phase": "intact",
+      "lane_y": 696,
+      "direction": 1,
+      "running": true,
+      "reduced_motion": true,
+      "start": [
+        -2904,
+        696
+      ],
+      "target_x": -2424,
+      "end": [
+        -2421.5999999999513,
+        696.0
+      ],
+      "completed": true,
+      "sample_count": 134,
+      "all_samples_clear": true
+    }
+  ],
+  "clips": [
+    {
+      "case": "intact_walk_right_696",
+      "first_frame": 0,
+      "end_frame": 200
+    },
+    {
+      "case": "restored_run_left_726",
+      "first_frame": 200,
+      "end_frame": 334
+    },
+    {
+      "case": "destroyed_west_approach_696",
+      "first_frame": 334,
+      "end_frame": 394
+    },
+    {
+      "case": "destroyed_east_approach_696",
+      "first_frame": 394,
+      "end_frame": 454
+    },
+    {
+      "case": "far_bank_road_terminus",
+      "first_frame": 454,
+      "end_frame": 514
+    },
+    {
+      "case": "far_bank_atlas",
+      "first_frame": 514,
+      "end_frame": 544
+    },
+    {
+      "case": "intact_run_right_696_reduced",
+      "first_frame": 544,
+      "end_frame": 678
+    }
+  ],
+  "stills": [
+    {
+      "name": "intact_run_left_666_center",
+      "position": [
+        -2665.2000000000244,
+        666.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2900,
+        506
+      ],
+      "files": [
+        {
+          "file": "intact_run_left_666_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "84726b56b5820cfc83ca82207d1943ff528472fb41aa216969971b5347e90f05"
+        },
+        {
+          "file": "intact_run_left_666_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "f82f39c30aef1291497206aba531051389143397d558f319751a905ea112a157"
+        }
+      ]
+    },
+    {
+      "name": "intact_walk_right_696_join_2868",
+      "position": [
+        -2867.999999999992,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -3111,
+        536
+      ],
+      "files": [
+        {
+          "file": "intact_walk_right_696_join_2868_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "8300293679f7a4254369f44f0c278cee923243f68ac3c72b4c148aeb359b96f2"
+        },
+        {
+          "file": "intact_walk_right_696_join_2868_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "5bd53a67fd1d833ef9e13f48a3fbf289aef2e9bb7794ad5f4125ae875874dd14"
+        }
+      ]
+    },
+    {
+      "name": "intact_walk_right_696_center",
+      "position": [
+        -2663.9999999999454,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2907,
+        536
+      ],
+      "files": [
+        {
+          "file": "intact_walk_right_696_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "f641d822c016a62491af2f41eb9fa961af76d69fc949618a0c8d79b4fa4e497b"
+        },
+        {
+          "file": "intact_walk_right_696_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "0124dd1b45ae82bc2ae564eb26be434d8d1e75c27cf15da79aa66789618cca6c"
+        }
+      ]
+    },
+    {
+      "name": "intact_walk_right_696_join_2460",
+      "position": [
+        -2459.999999999899,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2703,
+        536
+      ],
+      "files": [
+        {
+          "file": "intact_walk_right_696_join_2460_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "98bac84786df6e38b4a15256616eccb239629ee3407a86041417eb8f52971e07"
+        },
+        {
+          "file": "intact_walk_right_696_join_2460_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "27d86e0afa532a1c45d5b41abdbd24e1e7de04322efe9dead02fd1c87f64d22b"
+        }
+      ]
+    },
+    {
+      "name": "restored_run_right_696_center",
+      "position": [
+        -2662.7999999999756,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "restored",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2908,
+        536
+      ],
+      "files": [
+        {
+          "file": "restored_run_right_696_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "ce28651dbdbc50e3624b91aa245ceaa06352edbe6d524f18ad1b9c767ced124a"
+        },
+        {
+          "file": "restored_run_right_696_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "1103554dcd63f1cd67add0f8f720e2af365cbe1b2de523796c76c3734f736f25"
+        }
+      ]
+    },
+    {
+      "name": "restored_walk_left_726_center",
+      "position": [
+        -2664.0000000000546,
+        726.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "restored",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2901,
+        566
+      ],
+      "files": [
+        {
+          "file": "restored_walk_left_726_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "d93ef098544241d24568eb4be90801580391ae2d8faf8e75160909f1c73069ee"
+        },
+        {
+          "file": "restored_walk_left_726_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "dbf26922b5d6a579d3f9cc9b9f30a8599d3c8c55de7769c053ab15f5f5f85be6"
+        }
+      ]
+    },
+    {
+      "name": "restored_run_left_726_center",
+      "position": [
+        -2665.2000000000244,
+        726.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "restored",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2900,
+        566
+      ],
+      "files": [
+        {
+          "file": "restored_run_left_726_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "91a48b15e1e16aff8378baf6e32614b0449d1252b3111fd35a6750758fe66f75"
+        },
+        {
+          "file": "restored_run_left_726_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "35f0fd253f7ddb4b0d7e6b6f6f8ad3d8a4b7e761f5e10760174b3d491a43f511"
+        }
+      ]
+    },
+    {
+      "name": "destroyed_west_approach_696_blocked",
+      "position": [
+        -2720.899999999989,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "destroyed",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2961,
+        536
+      ],
+      "files": [
+        {
+          "file": "destroyed_west_approach_696_blocked_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "09b8dd64099f91441875817e9ef500b1f533057f08e925f7770c35eea1c75790"
+        },
+        {
+          "file": "destroyed_west_approach_696_blocked_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "ee793e165058a73f0231cbf77666f730aacffa7ffde1e8c8639bb6dea4163095"
+        }
+      ]
+    },
+    {
+      "name": "destroyed_east_approach_696_blocked",
+      "position": [
+        -2606.2000000000107,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "destroyed",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -2846,
+        536
+      ],
+      "files": [
+        {
+          "file": "destroyed_east_approach_696_blocked_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "1a8d867435eed53d4575b7ad1b899f569d20a75483af5a4ff5cfad36ccb001d1"
+        },
+        {
+          "file": "destroyed_east_approach_696_blocked_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "86d917ac018c6a278668689efba23f13451cb93d0fa6a1e590522875d8259447"
+        }
+      ]
+    },
+    {
+      "name": "far_bank_road_terminus",
+      "position": [
+        -3552.0,
+        1872.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": false,
+      "camera": [
+        -3792,
+        1712
+      ],
+      "files": [
+        {
+          "file": "far_bank_road_terminus_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "5ef7491a4112b07ac42634d3a0a661f7551a648b06d1fd137b7e32661358d31c"
+        },
+        {
+          "file": "far_bank_road_terminus_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "5f28952b50f6f87e2c2aeb3b4035823513a11e214fe78e563a17bde0aa8c03ca"
+        }
+      ]
+    },
+    {
+      "name": "far_bank_atlas",
+      "position": [
+        -3552.0,
+        1872.0
+      ],
+      "map_center_tiles": [
+        -134.0,
+        52.0
+      ],
+      "map_zoom": 3.2,
+      "files": [
+        {
+          "file": "far_bank_atlas.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "aea1ce8eb4d3681afb5757fa24a1911af8e95f84e125bebf380f4ae261da56ef"
+        }
+      ]
+    },
+    {
+      "name": "intact_run_right_696_reduced_center",
+      "position": [
+        -2662.7999999999756,
+        696.0
+      ],
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "reduced_motion": true,
+      "camera": [
+        -2908,
+        536
+      ],
+      "files": [
+        {
+          "file": "intact_run_right_696_reduced_center_native.png",
+          "pixels": [
+            480,
+            320
+          ],
+          "sha256": "a201518fd91d7fb071cae8500ba709a64246a648531b752a616cde6e0586f038"
+        },
+        {
+          "file": "intact_run_right_696_reduced_center_window.png",
+          "pixels": [
+            960,
+            640
+          ],
+          "sha256": "b3b2285e03674685c1affbbb3df10ebcb5bf533456414de592c2021ee4c90a22"
+        }
+      ]
+    }
+  ],
+  "save_isolation": "All Game save/settings/library paths are under a TemporaryDirectory; no parent journey is opened.",
+  "video_sha256": "2d8859b0df2c73fc38c59aa169d467f9a1878756939b2e6519013110e5e3e2d2",
+  "movement_samples": {
+    "file": "movement_samples.csv",
+    "columns": [
+      "case_id",
+      "frame",
+      "x",
+      "y",
+      "clear_full_probe"
+    ],
+    "rows": 4502,
+    "sha256": "65293e0ee8bb98e10bb793001297f07d765f6eacb684c924094776fdc8e2bc40"
+  }
+}

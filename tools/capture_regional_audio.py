@@ -14,6 +14,7 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 import pygame
 from main import Game
+from bridge_condition import BridgeCondition
 from grain_farm import MILL_FLAG
 from regional_audio import Source,samples
 from tools.scenario_fixtures import seed_mill_completed
@@ -74,6 +75,9 @@ def main():
     with tempfile.TemporaryDirectory() as tmp,patch('pygame.mixer.find_channel',side_effect=Channel):
         g=Game(window_size=(960,640),fullscreen=False,start_on_title=False,save_path=Path(tmp)/'save.json',settings_path=Path(tmp)/'settings.json')
         g.audio.set_music(0);seed_mill_completed(g);g.social.flags.add(MILL_FLAG)
+        # This recording includes the damaged site's work and tea contacts.
+        g.overworld_travel.restore_bridge_condition(
+            {'bridge_condition':BridgeCondition('destroyed').to_dict()})
         g.world=g.overworld_world;g.opening_fade=g.transfer_cooldown=0;g.location_seconds=0
         def position(p):g.player.position.update(p);g.camera.reset()
         position((-876,232));r=Recorder(g);r.mark('Farm: finite placements, rustles and lashing')

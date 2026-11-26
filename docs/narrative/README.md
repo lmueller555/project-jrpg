@@ -41,8 +41,12 @@ opening spine and pre-opening lightning bridge cause are superseded.
 The old cinematic, regent arrival, MQ03 and MQ04 have now been removed from
 current gameplay, Gallery and Quest Playtests. New Game begins directly in the
 bedroom; MQ01/MQ02 use ordinary household dialogue and retain their actual
-flow, rewards and learning. The Fire Veinhold prologue, new arrival/invasion
-and initially intact bridge remain future implementation. Historical reviews
+flow, rewards and learning. The regional bridge now starts intact, with
+layered phase art and a bounded west-bank road. Explicit damage/repair states
+are retained, while the old `legacy_layout` scenery placeholder loads intact;
+no attack or repair event is inferred. The Fire Veinhold prologue, new arrival,
+attack/invasion and repair quest remain future implementation. The
+[overworld guide](../OVERWORLD.md) owns runtime details. Historical reviews
 stay untouched; retired guides are small permalink notices rather than another
 live opening script.
 

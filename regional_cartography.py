@@ -36,6 +36,10 @@ def geometry_fingerprint(value):
     record = {key:data.get(key,[]) for key in keys}
     record['town'] = data.get('town',{}).get('tile_position')
     record['bridge'] = data.get('bridge',{}).get('tile_position')
+    far_bank = data.get('far_bank',{})
+    record['far_bank'] = ({key:far_bank.get(key) for key in
+                           ('western_river_id','playable_polygon','boundary_segments')}
+                          if far_bank else None)
     record['farms'] = [(s.get('id'),s.get('tile_position'))
                        for s in data.get('setpieces',[]) if s.get('kind')=='farmstead']
     encoded = json.dumps(record,sort_keys=True,separators=(',',':')).encode()
@@ -259,6 +263,13 @@ class RegionalCartography:
                             pygame.draw.line(target,'#87795c' if kind=='stone' else '#97825f',p,q,width+2 if kind=='stone' else width+1)
                             pygame.draw.line(target,color,p,q,width)
                     phase += math.dist(a,b)*scale
+            for segment in self.data.get('far_bank',{}).get('boundary_segments',[]):
+                points = [tile_to_pixel(point,rect,center_tiles,scale)
+                          for point in segment.get('points',[])]
+                if len(points) < 2:continue
+                width = max(1,min(3,round(segment.get('width_tiles',1)*scale)))
+                pygame.draw.lines(target,'#696d61',False,points,width+1)
+                pygame.draw.lines(target,'#a5a18d',False,points,width)
             for wall in self.data.get('walls',[]):
                 gate = wall.get('gate_x',wall['x0']);half = wall.get('gate_width',0)/2
                 spans = [(wall['x0'],gate-half),(gate+half,wall['x1'])] if half else [(wall['x0'],wall['x1'])]

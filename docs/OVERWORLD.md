@@ -1,13 +1,16 @@
 # Elden Vale overworld
 
 **Narrative status, 2026-11-26:** This guide records the current regional
-implementation. The approved [Fire Veinhold opening](narrative/game_01/CHAPTER_01.md)
-is future work: Caelan and Mira's introduction has an intact western bridge,
-which is destroyed only after Iselin and Lucan arrive. The former pre-opening
+implementation. New Game now has an intact, playable western bridge, matching
+Caelan and Mira's introduction in the approved
+[Fire Veinhold opening](narrative/game_01/CHAPTER_01.md). Its later destruction,
+the prologue, survivors' arrival and invasion remain future story work. The
+former pre-opening
 lightning cause, flashforward, Festival of Light and quarry/excavation Act I
 are retired. The old scene/quest runtime is removed; MQ01/MQ02 retain ordinary
-dialogue. Broken-bridge scenery still remains until the future initial-intact
-state is implemented. Historical captures are evidence of their recorded
+dialogue. Explicit destroyed/restored saves retain their condition; the old
+`legacy_layout` scenery placeholder now loads intact. Historical captures are
+evidence of their recorded
 versions, not the revised start.
 
 Eldenmere's southern road now opens into the first playable region of Auratia.
@@ -48,23 +51,28 @@ owns these relationships. The full-size map's pixel coordinates, river traces
 and indicative survey crop are source references; local signed tile coordinates,
 collision, travel timing and saved locations remain separately authored.
 The revised survey rebuilds the regional manifest and refreshes cartography
-provenance while preserving its physical geometry and existing painted tiles.
+provenance. The western landing now has a bounded playable road; continental
+geography and the existing painted tile materials are preserved.
 
 Stone walls join the riverbanks to the north and south. Each wall has a guarded
 opening. Both checkpoints are closed during the currently implemented opening
-quests. The western road bridge lies **inside** the walls, so Caelan can
-inspect its damaged approach without passing a checkpoint. Broken masonry,
-scorched ground and damaged road on both banks belong to the old broken-bridge
-presentation; they do not establish a lightning cause for the revised story.
-The far-bank road continues
-toward the unnamed town south of Eldenmere; its actual destination scene is
-future work. There is no bridge over the eastern river.
+quests. The western road bridge lies **inside** the walls, so Caelan can cross
+it without passing a checkpoint. Beyond it, visible rock shelves bound a
+western landing and a short southbound road ending at a layby, tile
+`[-148,78]`. This is the current playable road extent, with no onward transfer.
+The unnamed southern town and its destination scene remain future work; the
+layby does not establish that town's world-map position. There is no bridge
+over the eastern river.
 
-The ruined stone bridge has a three-tile roadway: 72 pixels north–south between
-its parapets. The artwork retains its east–west span and an empty collapsed
-center. Its approaches and the independently repaired future deck use the
-same width; increasing the bridge's visible roadway does not grant repair or
-open the crossing. The review includes a measured native-width audit.
+The stone bridge has a three-tile roadway: 72 pixels north–south between its
+parapets. Its intact, destroyed and restored artwork uses registered 288×144
+canvases, with the deck below actors and separate far/near parapets sorted
+around them. The 432×72 traversal rectangle includes 72 pixels of approach
+overlap beyond each end of the artwork. In the destroyed phase, surviving
+bank abutments remain approachable, while the central gap, transparent
+fracture tips and water are unsafe. Bridge-specific scorched ground appears
+only after damage and remains in restored presentation. These local visual
+states do not choose a repair method or implement the later attack.
 
 **Elden Vale Sanctuary** stands northeast of Eldenmere, on a wooded rocky
 shoulder inside the northern wall and west of the eastern river. A maintained
@@ -102,7 +110,7 @@ landmark is a locator, not another quest entrance.
 
 Press **M**, or click the overworld minimap, to inspect the
 [illustrated regional atlas](REGIONAL_MAP.md). Its default view frames the
-inhabited vale, both rivers, the ruined crossing and the checkpoints. Scroll or
+inhabited vale, both rivers, the western crossing and the checkpoints. Scroll or
 use +/- to zoom, drag to pan, click a known place or its name for details, or use
 arrows/WASD to select landmarks. **Fit** or **F** restores the local overview;
 zooming farther out shows the wider authored chart. **M**, **Esc** or the close
@@ -145,19 +153,34 @@ Bridge condition is owned by `overworld_travel.py` and shared through the pure
 water highlights, atlas/minimap routes and operational descriptions use the
 same condition. Restoring the mill or opening a checkpoint cannot change it.
 
-This is the first of two bridge PRs. Normal new and older journeys still use
-the destroyed layout, tagged `legacy_layout`: that is scenery provenance, not
-evidence of a completed Carcovian attack. A legacy
+New Game starts intact. The game owner's `opening_condition` also migrates
+the superseded destroyed/`legacy_layout` placeholder to intact; that provenance
+was never evidence of a completed Carcovian attack. A legacy
 `ELDEN_VALE_WEST_BRIDGE_REPAIRED` flag resolves to restored/`legacy_repair` when
 there is no explicit component. No current quest produces that flag. An
-explicit saved condition wins over it. No attack or repair reward is inferred.
+explicit saved condition wins over it. Explicit damage and restored conditions
+are preserved. No attack, repair completion, reward or gate release is inferred.
 
-The next bridge PR must deliver layered intact artwork, matching traversal,
-an authored far-bank limit and safe condition-change staging before enabling
-the intact start. It can migrate the `legacy_layout` placeholder deliberately.
-Current passable fixtures retain the existing procedural deck; they do not
-claim finished intact/restored art or an onward destination. The repair method
-and the attack/repair quests remain open under the narrative owners.
+Layered art, matching traversal and the bounded far-bank road are implemented.
+Standalone world fixtures without an explicit component still use the pure
+resolver's legacy flag fallback; normal journeys use the opening migration.
+The attack scene, repair quest, engineering method and onward destination
+remain future work under the narrative owners.
+
+`OverworldTravel.change_bridge_condition(phase)` is the checkpointed runtime
+hook for a settled physical change, after a future scene finishes staging.
+It rejects conflicting gameplay/UI locks, prepares safe actor footprints
+against the prospective geometry and saves before completing the change.
+If landing or saving fails, it restores the prior condition and actor feet.
+Invalid regional load positions likewise seek a clear position on the same
+riverbank, falling back to that bank's authored bridge approach; they never
+relocate the player across the river. The hook does not play an attack, repair
+the bridge through a quest, or consume a cancelled crew dialogue/cup cue.
+While the western onward destination is unavailable, destruction is refused
+if the active party would be stranded on that bank. An already-destroyed west
+checkpoint is rejected readably on Continue without overwriting its source;
+intact/restored west checkpoints remain valid. Future scenes must stage the
+party safely before committing destruction.
 
 The former arrival cinematic is removed; its southern-checkpoint staging does
 not prescribe the future survivors' route. The ridge landmark does not open
@@ -213,9 +236,11 @@ facing and discovery. Gate state comes from durable dialogue flags. Bridge
 condition uses `overworld.bridge_condition`, containing `version: 1`, `phase`
 and `origin` (`explicit`, `legacy_layout` or `legacy_repair`). Older saves may
 omit the component; explicit malformed records are rejected. Missing records
-retain the current legacy layout or an explicit old repair flag, without
-rewriting a source file during validation. The condition is staged before a
-regional world is constructed. A normal subsequent save writes the component.
+and the old `legacy_layout` placeholder normalize to intact, while an old
+repair flag or explicit physical condition is preserved. Validation does not
+rewrite a source file. The condition is staged before a regional world is
+constructed, and new geometry uses the same-bank landing safeguards above.
+A normal subsequent save writes the component.
 Neither geometry nor progress is reconstructed from cached surfaces.
 
 Quest companions travel virtually at regional scale. Their detailed-scene
@@ -242,6 +267,10 @@ or complete a quest, replay a reward, or add a regional edge to NPC path graphs.
   `assets/terrain/overworld/elden_vale/composition/art.json`.
 - Original composition generations and measured export recipe:
   `assets/source/terrain/overworld/elden_vale/composition/`.
+- Registered bridge phase layers:
+  `assets/terrain/overworld/elden_vale/bridge/art.json`.
+- Bridge source art, export recipe and preserved destroyed reference:
+  `assets/source/terrain/overworld/elden_vale/bridge/`.
 
 The `detail_art_manifest` extends the base art at runtime. Existing art and
 the original review images remain unchanged. The layout recipe adds typed crop
@@ -259,6 +288,7 @@ distances are authored gameplay interpretations of its geography.
 python tools/build_overworld_art.py --check
 python tools/build_overworld_polish_art.py --check
 python tools/build_overworld_composition_art.py --check
+python tools/build_western_bridge_assets.py --check
 python tools/build_elden_vale_overworld.py --check
 python tools/build_cartography_art.py --check
 python tools/build_elden_vale_cartography.py --check
@@ -266,8 +296,8 @@ python -m unittest discover -s tests -p 'test_overworld_*.py' -v
 python tools/capture_elden_vale_atlas.py
 ```
 
-The layout check validates wall–river joins, default enclosure reachability,
-bridge independence and the walking-time target. Runtime tests additionally
+The layout check validates wall–river joins, phase-dependent reachability,
+the far-bank road limit, bridge independence and the walking-time target. Runtime tests additionally
 exercise actor footprints, seams, cache eviction, map coordinate transforms,
 travel locks, legacy/region Continue and quest companion ownership.
 
@@ -334,7 +364,8 @@ inspected and moved into a two-piece reusable stack and a separate rejected
 piece. Afterwards the mason brushes down, checks the barrier and looks toward
 the damage; the surveyor measures along the work area. The batch never grows.
 All stations are on existing connected dry ground, outside the main road.
-The broken bridge, water, checkpoints and main quest facts are unchanged.
+The crew's work never changes bridge condition, water, checkpoints or main
+quest facts.
 
 This damage-work presentation is active only for a destroyed crossing. Intact
 and restored conditions suppress its workers, prop layers, ground/NPC blockers,

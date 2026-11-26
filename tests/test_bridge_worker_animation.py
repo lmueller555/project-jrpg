@@ -10,6 +10,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from main import Game
+from bridge_condition import BridgeCondition
 from bridge_crew import BridgeWorker, SOURCE, STACK, REJECT, KETTLE, HELP, SEAT, SAFE, SCENE_ID
 from grain_farm import DIRECTIONS
 
@@ -102,6 +103,8 @@ class BridgeWorkerPhysicalFlowTests(unittest.TestCase):
                       save_path=root/'journey.json', settings_path=root/'settings.json')
         self.g.audio.set_music(0);self.g.audio.set_effects(0)
         self.g.opening_fade = self.g.transfer_cooldown = 0
+        self.g.overworld_travel.restore_bridge_condition(
+            {'bridge_condition': BridgeCondition('destroyed').to_dict()})
         self.g.world = self.g.overworld_world
         self.g.player.position.update(-2340, 644)
         self.c = self.g.world.bridge_crew

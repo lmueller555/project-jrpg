@@ -127,6 +127,28 @@ class RegionalCartographyTests(unittest.TestCase):
                                  phase != 'destroyed')
         self.assertNotIn('bridge_condition',self.region)
 
+    def test_far_bank_rock_bounds_are_georeferenced_and_invalidate_stale_charts(self):
+        data = {'bounds_tiles':[-64,-64,128,128],'terrain':{},'roads':[],'walls':[],
+                'far_bank':{'boundary_segments':[{'kind':'rock_slope','width_tiles':1.25,
+                                                 'points':[[-30,-10],[-30,10]]}]}}
+        chart = RegionalCartography(data)
+        target = pygame.Surface((240,120));rect = target.get_rect()
+        background = pygame.Color('#213429')[:3]
+        target.fill(background)
+        chart.draw_routes(target,rect,(-20,0),2)
+        sample = tuple(round(value) for value in tile_to_pixel((-30,0),rect,(-20,0),2))
+        self.assertEqual(sample,(100,60))
+        self.assertEqual(target.get_at(sample)[:3],pygame.Color('#a5a18d')[:3])
+        self.assertEqual(target.get_at((sample[0]+10,sample[1]))[:3],background)
+        signature = geometry_fingerprint(data)
+        data['far_bank']['notes'] = 'A geographic note does not repaint the rock shelf.'
+        data['far_bank']['future_exit'] = {'destination_ready':False,'label':'Southern road layby'}
+        self.assertEqual(geometry_fingerprint(data),signature)
+        data['far_bank']['future_exit'].update(destination_ready=True,label='Southern road')
+        self.assertEqual(geometry_fingerprint(data),signature)
+        data['far_bank']['boundary_segments'][0]['points'][0][0] -= 1
+        self.assertNotEqual(geometry_fingerprint(data),signature)
+
     def test_footpath_dash_phase_is_independent_of_curve_sampling(self):
         data = {'bounds_tiles':[-32,-16,64,32],'terrain':{},'walls':[],
                 'roads':[{'kind':'foot','points':[[-20,0],[20,0]],'width':1.2}]}

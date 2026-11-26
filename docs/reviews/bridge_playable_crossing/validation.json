@@ -1,0 +1,204 @@
+{
+  "base_commit": "d199f72a3a9d07e0718c3747156fbcc362916328",
+  "scope": "Bridge PR2: layered art, bounded western shelf, intact opening rollout and safe condition checkpoints",
+  "focused_tests": {
+    "methods": 344,
+    "modules": 30,
+    "failures": 0,
+    "errors": 0,
+    "module_inventory": [
+      {
+        "module": "test_bridge_condition",
+        "cases": 14
+      },
+      {
+        "module": "test_bridge_condition_gameplay",
+        "cases": 11
+      },
+      {
+        "module": "test_bridge_playable_gameplay",
+        "cases": 13
+      },
+      {
+        "module": "test_bridge_layers_world",
+        "cases": 7
+      },
+      {
+        "module": "test_western_bridge_assets",
+        "cases": 5
+      },
+      {
+        "module": "test_overworld_streaming",
+        "cases": 12
+      },
+      {
+        "module": "test_overworld_region_contract",
+        "cases": 4
+      },
+      {
+        "module": "test_overworld_map",
+        "cases": 23
+      },
+      {
+        "module": "test_overworld_minimap",
+        "cases": 10
+      },
+      {
+        "module": "test_regional_cartography",
+        "cases": 10
+      },
+      {
+        "module": "test_bridge_crew",
+        "cases": 14
+      },
+      {
+        "module": "test_regional_audio_events",
+        "cases": 6
+      },
+      {
+        "module": "test_regional_participation",
+        "cases": 14
+      },
+      {
+        "module": "test_bridge_worker_animation",
+        "cases": 8
+      },
+      {
+        "module": "test_regional_prop_transfers",
+        "cases": 9
+      },
+      {
+        "module": "test_overworld_sanctuary",
+        "cases": 6
+      },
+      {
+        "module": "test_save_game",
+        "cases": 6
+      },
+      {
+        "module": "test_save_library",
+        "cases": 12
+      },
+      {
+        "module": "test_save_system_gameplay",
+        "cases": 26
+      },
+      {
+        "module": "test_game",
+        "cases": 14
+      },
+      {
+        "module": "test_title_screen",
+        "cases": 16
+      },
+      {
+        "module": "test_opening_retirement",
+        "cases": 12
+      },
+      {
+        "module": "test_regional_audio",
+        "cases": 15
+      },
+      {
+        "module": "test_gallery_catalogue",
+        "cases": 25
+      },
+      {
+        "module": "test_gallery_session",
+        "cases": 27
+      },
+      {
+        "module": "test_overworld_travel",
+        "cases": 8
+      },
+      {
+        "module": "test_overworld_composition_environment",
+        "cases": 4
+      },
+      {
+        "module": "test_overworld_composition_gameplay",
+        "cases": 4
+      },
+      {
+        "module": "test_overworld_environment",
+        "cases": 5
+      },
+      {
+        "module": "test_overworld_polish_gameplay",
+        "cases": 4
+      }
+    ],
+    "note": "All final module cases passed. The 13-case PR2 gameplay module was rerun cleanly after adding west-bank return guards; checkpoint rollback asserts the actual failed write was attempted."
+  },
+  "full_suite_rerun": false,
+  "production_default": "intact/explicit",
+  "legacy_layout_rolls_forward": true,
+  "explicit_damage_and_legacy_repair_preserved": true,
+  "attack_or_repair_quest_added": false,
+  "onward_destination_ready": false,
+  "offline_reachability": {
+    "destroyed": 43637,
+    "intact": 44540,
+    "restored": 44540,
+    "shared_required_points": 22,
+    "approach_seconds": 46.05
+  },
+  "production_foot_probe_check": {
+    "probe": [
+      24,
+      12
+    ],
+    "intact_reachable_tiles": 42905,
+    "west_approach_reachable": true,
+    "layby_reachable": true,
+    "former_escape_points_blocked": [
+      [
+        -140,
+        -110
+      ],
+      [
+        -140,
+        110
+      ],
+      [
+        -160,
+        0
+      ]
+    ]
+  },
+  "builders": {
+    "western_bridge_assets": "passed --check",
+    "regional_manifest": "passed --check",
+    "cartography": "passed --check",
+    "unchanged_painted_atlas_tiles": 43
+  },
+  "captures": {
+    "cases": 32,
+    "passable_crossings": 24,
+    "destroyed_approaches": 6,
+    "full_footprint_samples": 4502,
+    "all_clear": true,
+    "video_seconds": 22.6,
+    "video_frames": 678,
+    "video_silent": true,
+    "metadata": "capture.json",
+    "samples": "movement_samples.csv"
+  },
+  "independent_safety_review": "No blockers: rollout, same-bank landing and transactional checkpoint rollback reviewed and exercised in production Game",
+  "visual_review": "Native bridge layer/depth and bank joins inspected; repetitive shelf dressing replaced with irregular gravel/rock groups and captures regenerated",
+  "historical_review_artifacts_modified": false,
+  "local_links": {
+    "documents": 538,
+    "links_checked": 2068,
+    "baseline_broken": 2,
+    "current_broken": 2,
+    "new_broken": [],
+    "fixed_broken": []
+  },
+  "changed_python_files_compiled": 27,
+  "return_route_safety": {
+    "west_bank_destruction_refused_without_onward_route": true,
+    "unsupported_explicit_destroyed_west_save_rejected_without_overwrite": true,
+    "intact_restored_and_legacy_layout_west_saves_supported": true
+  }
+}

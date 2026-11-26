@@ -247,7 +247,7 @@ def capture_overview(game: Game) -> dict:
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
     labels = [
         ("Eldenmere", world.region["town"]["tile_position"], (30, -8)),
-        ("Western bridge — broken", world.region["bridge"]["tile_position"], (-205, 26)),
+        (f"Western bridge — {world.bridge_condition.phase}", world.region["bridge"]["tile_position"], (-205, 26)),
         ("Northern checkpoint", world.region["gates"][0]["tile_position"], (20, -28)),
         ("Southern checkpoint", world.region["gates"][1]["tile_position"], (20, 16)),
     ]
@@ -264,7 +264,8 @@ def capture_overview(game: Game) -> dict:
         draw.text(label, title, font=font, fill="#f2e1b5")
     draw.text((20, 18), "ELDEN VALE  /  environment pass  /  actual renderer at 1:8", font=font, fill="#f2e1b5", stroke_width=2, stroke_fill="#243d33")
     annotated.save(OUT / "region_overview_annotated.png")
-    report = {"streamed_chunks": completed, "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
+    report = {"streamed_chunks": completed, "bridge_condition": world.bridge_condition.to_dict(),
+              "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
               "overview_size": list(overview.get_size()), "max_render_cache_bytes": max_render_bytes,
               "max_metadata_chunks": max_metadata, "configured_render_budget": world._render_cache.limit}
     assert max_render_bytes <= world._render_cache.limit
@@ -310,12 +311,18 @@ def capture(skip_overview=False, only_overview=False, early=False, stills_only=F
             assert (ROOT/world.region['detail_art_manifest']).exists(), 'Polish art is not ready'
             assert 'farm_house' in world._art.get('props', {}), 'Polish art is not loaded by the renderer'
             input_paths = {world.path, ROOT/'overworld_world.py', ROOT/'overworld_environment.py',
+                           ROOT/'bridge_condition.py', ROOT/'overworld_travel.py',
                            ROOT/world.region['art_manifest'], ROOT/world.region['detail_art_manifest']}
+            if world._bridge_art is not None:
+                input_paths.add(ROOT/world.region['bridge']['layers_manifest'])
+                input_paths.update(ROOT/layer['image'] for phase in world._bridge_art['phases'].values()
+                                   for layer in phase.values())
             input_paths.update(ROOT/record['image'] for group in ('tiles', 'props')
                                for record in world._art.get(group, {}).values())
             input_hashes = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                             for path in sorted(input_paths)}
             report = {"actual_renderer": True, "quest_progress_seeded": False,
+                      'bridge_condition': world.bridge_condition.to_dict(),
                       'capture_stage': 'early_composition' if early else ('stills_review' if stills_only else 'final'),
                       'views': {}}
             if not only_overview:

@@ -202,21 +202,31 @@ def capture_bridge_width(game: Game, view: dict) -> dict:
     """Put a measured three-tile guide on the actual rendered abutments.
 
     The review overlay never alters the runtime image or its collision. The
-    clearance comes from the native art record and must match the world's
-    future repaired deck; the broken gap is independently checked by alpha.
+    clearance comes from the current phase's native art record and must match
+    the world's physical deck. A destroyed phase also verifies its open gap.
     """
     world = game.overworld_world
     bridge = world.region['bridge']
-    key = bridge.get('broken_art_key', 'broken_bridge')
-    record = world._art['props'][key]
-    sprite, anchor = world._prop_image(key)
+    condition = world.bridge_condition
+    layers = world._bridge_art
+    if layers is not None:
+        layer = layers['phases'][condition.phase]['deck']
+        key = bridge['layers_manifest']+':'+condition.phase+'/deck'
+        record = {**layers, **layer}
+        sprite, anchor = layer['surface'], layer['foot_anchor']
+    else:
+        # Legacy region fixtures can still audit their damaged single sprite.
+        assert condition.destroyed, 'Passable bridge audit requires its layered art'
+        key = bridge.get('broken_art_key', 'broken_bridge')
+        record = world._art['props'][key]
+        sprite, anchor = world._prop_image(key)
     top = record['deck_top_px']
     bottom = record['deck_bottom_px']
     clear = record.get('deck_clear_width_px', bottom-top)
     assert bottom-top == clear == 72, ('Bridge roadway is not three native tiles', record)
     assert sprite.get_width() == 288, ('River span changed', sprite.get_size())
     deck = world._tile_rect(bridge['deck_rect_tiles'])
-    assert deck.height == 72, ('Physical repaired deck must also be three tiles', deck)
+    assert deck.height == 72, ('Physical deck must also be three tiles', deck)
     position = world._tile_point(bridge['tile_position'])
     sprite_origin = (position[0]-anchor[0], position[1]-anchor[1])
     world_top = sprite_origin[1]+top
@@ -224,16 +234,20 @@ def capture_bridge_width(game: Game, view: dict) -> dict:
     assert abs(world_top-deck.top) <= 1 and abs(world_bottom-deck.bottom) <= 1, (
         'Artwork and physical deck do not align', world_top, world_bottom, deck)
 
+    left = right = None
     with Image.open(ROOT/record['image']) as source:
         alpha = source.convert('RGBA').getchannel('A')
         mid = source.width//2
-        assert alpha.crop((mid, 0, mid+1, source.height)).getbbox() is None, 'Broken gap has visible crossing pixels'
-        left = right = mid
-        while left > 0 and alpha.crop((left-1, 0, left, source.height)).getbbox() is None:
-            left -= 1
-        while right < source.width and alpha.crop((right, 0, right+1, source.height)).getbbox() is None:
-            right += 1
-        assert right-left >= 48, ('Broken gap is not visibly clear', left, right)
+        if condition.destroyed:
+            assert alpha.crop((mid, 0, mid+1, source.height)).getbbox() is None, 'Broken gap has visible crossing pixels'
+            left = right = mid
+            while left > 0 and alpha.crop((left-1, 0, left, source.height)).getbbox() is None:
+                left -= 1
+            while right < source.width and alpha.crop((right, 0, right+1, source.height)).getbbox() is None:
+                right += 1
+            assert right-left >= 48, ('Broken gap is not visibly clear', left, right)
+        else:
+            assert alpha.crop((mid, top, mid+1, bottom)).getextrema()[0] == 255, 'Passable deck has a transparent crossing pixel'
 
     with Image.open(OUT/'western_bridge.png') as source:
         image = source.convert('RGBA')
@@ -257,12 +271,15 @@ def capture_bridge_width(game: Game, view: dict) -> dict:
     draw.text((22, 19), title, font=font, fill=(249, 236, 201, 255))
     image.alpha_composite(overlay)
     image.convert('RGB').save(OUT/'bridge_width_audit.png')
-    print('Captured bridge_width_audit.png: clear roadway 72px; transparent broken gap '+str(right-left)+'px', flush=True)
-    return {'art_key': key, 'native_sprite_size': list(sprite.get_size()),
+    gap = right-left if left is not None else 0
+    print(f'Captured bridge_width_audit.png: {condition.phase}; clear roadway 72px; gap {gap}px', flush=True)
+    return {'art_key': key, 'bridge_condition': condition.to_dict(),
+            'native_sprite_size': list(sprite.get_size()),
             'deck_top_px': top, 'deck_bottom_px': bottom, 'clear_roadway_pixels': clear,
             'clear_roadway_tiles': clear/24, 'art_world_top': world_top,
-            'art_world_bottom': world_bottom, 'repaired_deck_rect_pixels': list(deck),
-            'transparent_gap_columns': [left, right], 'transparent_gap_width_px': right-left,
+            'art_world_bottom': world_bottom, 'deck_rect_pixels': list(deck),
+            'transparent_gap_columns': [left, right] if left is not None else None,
+            'transparent_gap_width_px': gap,
             'audit_uses': 'Production western_bridge.png plus review-only measured grid overlay'}
 
 
@@ -336,7 +353,7 @@ def capture_overview(game: Game) -> dict:
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
     labels = [
         ("Eldenmere", world.region["town"]["tile_position"], (30, -8)),
-        ("Western bridge — broken", world.region["bridge"]["tile_position"], (-205, 26)),
+        (f"Western bridge — {world.bridge_condition.phase}", world.region["bridge"]["tile_position"], (-205, 26)),
         ("Northern checkpoint", world.region["gates"][0]["tile_position"], (20, -28)),
         ("Southern checkpoint", world.region["gates"][1]["tile_position"], (20, 16)),
     ]
@@ -353,7 +370,8 @@ def capture_overview(game: Game) -> dict:
         draw.text(label, title, font=font, fill="#f2e1b5")
     draw.text((20, 18), "ELDEN VALE  /  place composition  /  actual renderer at 1:8", font=font, fill="#f2e1b5", stroke_width=2, stroke_fill="#243d33")
     annotated.save(OUT / "region_overview_annotated.png")
-    report = {"streamed_chunks": completed, "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
+    report = {"streamed_chunks": completed, "bridge_condition": world.bridge_condition.to_dict(),
+              "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
               "overview_size": list(overview.get_size()), "max_render_cache_bytes": max_render_bytes,
               "max_metadata_chunks": max_metadata, "configured_render_budget": world._render_cache.limit}
     assert max_render_bytes <= world._render_cache.limit
@@ -408,7 +426,12 @@ def capture(skip_overview=False, only_overview=False, early=False, stills_only=F
             assert (ROOT/world.region['detail_art_manifest']).exists(), 'Detailed region art is not ready'
             assert 'farm_house' in world._art.get('props', {}), 'Detailed art is not loaded by the renderer'
             input_paths = {world.path, ROOT/'overworld_world.py', ROOT/'overworld_environment.py',
+                           ROOT/'bridge_condition.py', ROOT/'overworld_travel.py',
                            ROOT/world.region['art_manifest'], ROOT/world.region['detail_art_manifest'], Path(__file__).resolve()}
+            if world._bridge_art is not None:
+                input_paths.add(ROOT/world.region['bridge']['layers_manifest'])
+                input_paths.update(ROOT/layer['image'] for phase in world._bridge_art['phases'].values()
+                                   for layer in phase.values())
             if world.region.get('composition_art_manifest'):
                 input_paths.add(ROOT/world.region['composition_art_manifest'])
             input_paths.update(ROOT/record['image'] for group in ('tiles', 'props')
@@ -416,14 +439,14 @@ def capture(skip_overview=False, only_overview=False, early=False, stills_only=F
             input_hashes = {path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                             for path in sorted(input_paths)}
             report = {"actual_renderer": True, "quest_progress_seeded": False,
+                      'bridge_condition': world.bridge_condition.to_dict(),
                       'capture_stage': ('early_composition' if early else
                                         'stills_review' if stills_only else
                                         'overview_review' if only_overview else
                                         'partial_review' if skip_overview else 'final'),
                       'started_at_utc': datetime.now(timezone.utc).isoformat(), 'views': {}}
             if report['capture_stage'] == 'final':
-                assert world.region.get('bridge', {}).get('broken_art_key') == 'broken_bridge_wide', 'Wide bridge layout is not ready'
-                assert 'broken_bridge_wide' in world._art.get('props', {}), 'Wide bridge artwork is not ready'
+                assert world._bridge_art is not None, 'Layered bridge artwork is not ready'
             if not only_overview:
                 views = [('town_miniature.png', (12, -25), (12, -29), 'front'),
                          ('village_outskirts.png', (3, -11), (3, -13), 'back'),
@@ -456,7 +479,7 @@ def capture(skip_overview=False, only_overview=False, early=False, stills_only=F
                     path.write_text(json.dumps(report, indent=2)+'\n')
                     print('Early composition views ready', flush=True)
                     return
-                if world.region.get('bridge', {}).get('broken_art_key') in world._art.get('props', {}):
+                if world._bridge_art is not None or world.region.get('bridge', {}).get('broken_art_key') in world._art.get('props', {}):
                     report['bridge_width'] = capture_bridge_width(game, report['views']['western_bridge.png'])
                 if not stills_only:
                     report["transitions"] = capture_transition(game)

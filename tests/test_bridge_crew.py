@@ -8,6 +8,7 @@ os.environ.setdefault('SDL_VIDEODRIVER','dummy')
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 import pygame
 from main import Game
+from bridge_condition import BridgeCondition
 from bridge_crew import SOURCE, SCENE_ID, valid_state
 from tools.scenario_fixtures import seed_mill_completed
 
@@ -16,6 +17,10 @@ class BridgeCrewTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.g=self.make_game()
+        # This suite exercises the damaged-site crew, independently of the
+        # intact crossing used by a new journey.
+        self.g.overworld_travel.restore_bridge_condition(
+            {'bridge_condition':BridgeCondition('destroyed').to_dict()})
         self.g.world=self.g.overworld_world;self.g.player.position.update(-2340,644)
         self.c=self.g.world.bridge_crew
 

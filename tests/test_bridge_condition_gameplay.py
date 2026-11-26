@@ -1,7 +1,7 @@
 """Bridge conditions survive real journey ownership without inventing events.
 
-Selected conditions below are save/render fixtures. PR1 exposes no playable
-attack or safe live destruction transition; revision-two layout stays broken.
+Selected conditions below are save/render fixtures. Playable transition safety
+is covered separately; retired layout placeholders now roll forward to intact.
 """
 from copy import deepcopy
 import json
@@ -73,7 +73,7 @@ class BridgeConditionGameplayTests(unittest.TestCase):
     def deck(world):
         return world._tile_rect(world.region['bridge']['deck_rect_tiles'])
 
-    def test_revision_two_missing_component_validates_without_mutation_and_continues_legacy_layout(self):
+    def test_revision_two_missing_component_validates_without_mutation_then_rolls_forward(self):
         original, payload = self.payload(completed_mill=True)
         payload['overworld'].pop('bridge_condition')
         before = deepcopy(payload)
@@ -86,12 +86,12 @@ class BridgeConditionGameplayTests(unittest.TestCase):
         self.assertIsNone(loaded._overworld_world)
         self.assertEqual(self.path.read_bytes(), raw)
         self.assertTrue(loaded.begin_journey(True), loaded.save_error)
-        expected = {'version': 1, 'phase': 'destroyed', 'origin': 'legacy_layout'}
+        expected = {'version': 1, 'phase': 'intact', 'origin': 'explicit'}
         self.assertEqual(loaded.overworld_travel.bridge_condition.to_dict(), expected)
         snapshot = loaded.journey_snapshot()
         self.assertEqual(snapshot['overworld']['bridge_condition'], expected)
         self.assertEqual(self.facts(snapshot), self.facts(before))
-        self.assertFalse(loaded.overworld_world.can_stand(self.deck(loaded.overworld_world).center))
+        self.assertTrue(loaded.overworld_world.can_stand(self.deck(loaded.overworld_world).center))
 
     def test_legacy_repair_flag_survives_continue_without_fabricating_story_receipts(self):
         _, payload = self.payload(completed_mill=True)
@@ -156,6 +156,7 @@ class BridgeConditionGameplayTests(unittest.TestCase):
 
     def test_selected_fixture_conditions_refresh_cached_collision_and_real_rendering(self):
         game = self.game()
+        self.stage(game, 'destroyed')
         world = game.overworld_world
         center = self.deck(world).center
         game.world = world
@@ -182,6 +183,7 @@ class BridgeConditionGameplayTests(unittest.TestCase):
 
     def test_inactive_crew_keeps_interrupted_cup_receipts_without_invisible_blockers(self):
         game = self.game()
+        self.stage(game, 'destroyed')
         world = game.overworld_world
         crew = world.bridge_crew
         state = {'sorted': 3, 'tea_beat': 3, 'request_read': True,
@@ -234,6 +236,7 @@ class BridgeConditionGameplayTests(unittest.TestCase):
 
     def test_phase_suppression_cancels_owned_dialogue_without_acknowledging_it(self):
         game = self.game()
+        self.stage(game, 'destroyed')
         world = game.overworld_world;game.world = world
         crew = world.bridge_crew
         state = {'sorted': 3, 'tea_beat': 1, 'request_read': False,
@@ -259,6 +262,7 @@ class BridgeConditionGameplayTests(unittest.TestCase):
 
     def test_phase_suppression_releases_bridge_audio_and_preserves_the_river_voice(self):
         game = self.game()
+        self.stage(game, 'destroyed')
         world = game.overworld_world;game.world = world
         game.player.position.update(-2376, 642)
         game.audio.set_effects(1)
@@ -285,12 +289,12 @@ class BridgeConditionGameplayTests(unittest.TestCase):
         world = loaded.overworld_world
         self.assertTrue(world.can_stand(self.deck(world).center))
         self.assertTrue(loaded.begin_journey(False), loaded.save_error)
-        expected = {'version': 1, 'phase': 'destroyed', 'origin': 'legacy_layout'}
+        expected = {'version': 1, 'phase': 'intact', 'origin': 'explicit'}
         self.assertEqual(loaded.overworld_travel.bridge_condition.to_dict(), expected)
         self.assertNotIn(DEFAULT_REPAIR_FLAG, loaded.social.flags)
         self.assertIs(loaded.overworld_world, world)
         self.assertEqual(world.bridge_condition.to_dict(), expected)
-        self.assertFalse(world.can_stand(self.deck(world).center))
+        self.assertTrue(world.can_stand(self.deck(world).center))
         self.assertEqual(loaded.world.data['id'], 'sanctuary_bedroom')
 
     def test_manual_and_scene_autosave_reconstruct_their_own_conditions(self):

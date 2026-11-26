@@ -76,6 +76,17 @@ def resolve_condition(value=None, *, flags=(), repair_flag=DEFAULT_REPAIR_FLAG):
     return BridgeCondition('destroyed', 'legacy_layout')
 
 
+def opening_condition(value=None, *, flags=(), repair_flag=DEFAULT_REPAIR_FLAG):
+    """Roll the superseded scenery placeholder into the intact opening.
+
+    Explicit damage and legacy repair facts retain their physical condition.
+    No attack, reconstruction, reward or checkpoint permission is inferred.
+    """
+    condition = resolve_condition(value, flags=flags, repair_flag=repair_flag)
+    if condition.origin == 'legacy_layout':return BridgeCondition('intact')
+    return condition
+
+
 def condition_for_game(game, region=None):
     """Read existing owners and flags without allocating a region or a world."""
     for owner_name in ('overworld_travel', 'world'):

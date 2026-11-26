@@ -81,16 +81,58 @@ def _road_distance(road, target):
     return best[1]
 
 
-def _blocked(data, point, repaired=False):
+def _inside_polygon(point, polygon):
+    x, y = point
+    inside = False
+    for a, b in zip(polygon, polygon[1:] + polygon[:1]):
+        if _distance(point, a, b)[0] < 1e-9:
+            return True
+        if (a[1] > y) != (b[1] > y):
+            crossing = a[0] + (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1])
+            if x < crossing:
+                inside = not inside
+    return inside
+
+
+def _river_x_at_y(river, y):
+    for a, b in zip(river["points"], river["points"][1:]):
+        if a[1] != b[1] and min(a[1], b[1]) <= y <= max(a[1], b[1]):
+            return a[0] + (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1])
+    return min(river["points"], key=lambda point: abs(point[1] - y))[0]
+
+
+def _phase(repaired, phase):
+    if phase is None:
+        return "restored" if repaired else "destroyed"
+    if phase not in ("intact", "destroyed", "restored"):
+        raise ValueError("Unknown bridge phase")
+    return phase
+
+
+def _blocked(data, point, repaired=False, *, phase=None):
+    phase = _phase(repaired, phase)
     bridge = data["bridge"]
-    on_deck = repaired and _inside(point, bridge["deck_rect_tiles"])
-    if not on_deck:
+    supports = (bridge.get("destroyed_walkable_rect_tiles", []) if phase == "destroyed"
+                else [bridge["deck_rect_tiles"]])
+    supported = any(_inside(point, rect) for rect in supports)
+    if not supported:
         for river in data["terrain"]["rivers"]:
             if any(_distance(point, a, b)[0] <= river["width"] / 2
                    for a, b in zip(river["points"], river["points"][1:])):
                 return True
-    if not repaired and _inside(point, bridge["damage_rect_tiles"]):
+    if phase == "destroyed" and not supported and _inside(point, bridge["damage_rect_tiles"]):
         return True
+    far_bank = data.get("far_bank")
+    if far_bank and not supported:
+        river = next(river for river in data["terrain"]["rivers"]
+                     if river["id"] == far_bank["western_river_id"])
+        if (point[0] < _river_x_at_y(river, point[1])
+                and not _inside_polygon(point, far_bank["playable_polygon"])):
+            return True
+        for segment in far_bank["boundary_segments"]:
+            if any(_distance(point, a, b)[0] <= segment["width_tiles"] / 2
+                   for a, b in zip(segment["points"], segment["points"][1:])):
+                return True
     for wall in data["walls"]:
         if abs(point[1] - wall["y"]) <= 1 and wall["x0"] <= point[0] <= wall["x1"]:
             if not wall["gate_x"] - wall["gate_width"] / 2 <= point[0] < wall["gate_x"] + wall["gate_width"] / 2:
@@ -99,10 +141,11 @@ def _blocked(data, point, repaired=False):
     return any(_inside(point, gate["rect_tiles"]) for gate in data["gates"])
 
 
-def _flood(data, repaired=False):
+def _flood(data, repaired=False, *, phase=None):
+    phase = _phase(repaired, phase)
     bounds = data["bounds_tiles"]
     spawn = tuple(data["spawn_tile"])
-    if _blocked(data, spawn, repaired):
+    if _blocked(data, spawn, phase=phase):
         raise ValueError("Spawn is blocked by authored vector geometry")
     reached = {spawn}
     pending = deque([spawn])
@@ -113,7 +156,7 @@ def _flood(data, repaired=False):
             if point in tested or not _inside(point, bounds):
                 continue
             tested.add(point)
-            if not _blocked(data, point, repaired):
+            if not _blocked(data, point, phase=phase):
                 reached.add(point)
                 pending.append(point)
     return reached
@@ -171,6 +214,41 @@ def validate(data):
         raise ValueError("The bridge roadway must span exactly three tiles north-south")
     if bridge.get("broken_art_key") != "broken_bridge_wide":
         raise ValueError("The widened roadway requires its matching broken bridge artwork")
+    if bridge.get("layers_manifest") != "assets/terrain/overworld/elden_vale/bridge/art.json":
+        raise ValueError("The phased crossing requires its layered bridge artwork")
+    supports = bridge.get("destroyed_walkable_rect_tiles", [])
+    deck = bridge["deck_rect_tiles"]
+    if (len(supports) != 2
+            or any(len(rect) != 4 or rect[1] != deck[1] or rect[3] != deck[3]
+                   or rect[2] <= 0 for rect in supports)
+            or supports[0][0] != deck[0]
+            or not math.isclose(supports[1][0] + supports[1][2], deck[0] + deck[2])
+            or supports[0][0] + supports[0][2] >= supports[1][0]):
+        raise ValueError("Destroyed bridge supports must preserve two safe ends and an open gap")
+    composition = json.loads((ROOT / data["composition_art_manifest"]).read_text())
+    broken_art = composition["props"][bridge["broken_art_key"]]
+    art_left = bridge["tile_position"][0] * data["tile_size"] - broken_art["foot_anchor"][0]
+    expected_gap = [art_left + value for value in broken_art["central_gap_x_px"]]
+    actual_gap = [(supports[0][0] + supports[0][2]) * data["tile_size"],
+                  supports[1][0] * data["tile_size"]]
+    if not all(math.isclose(actual, expected) for actual, expected in zip(actual_gap, expected_gap)):
+        raise ValueError("Destroyed bridge collision must match the authored artwork's central gap")
+    far_bank = data.get("far_bank", {})
+    polygon = far_bank.get("playable_polygon", [])
+    segments = far_bank.get("boundary_segments", [])
+    if (far_bank.get("western_river_id") != "western_boundary_river"
+            or len(polygon) < 3 or not segments
+            or any(len(point) != 2 or not _inside(point, data["bounds_tiles"])
+                   or not -96 < point[1] < 96 for point in polygon)
+            or any(segment.get("kind") != "rock_slope"
+                   or segment.get("width_tiles", 0) <= 0
+                   or len(segment.get("points", [])) < 2 for segment in segments)):
+        raise ValueError("The far bank needs a bounded local shelf and visible rock boundaries")
+    future_exit = far_bank.get("future_exit", {})
+    if (future_exit.get("destination_ready") is not False
+            or future_exit.get("tile_position") != far_bank.get("terminal_tile")
+            or not _inside_polygon(far_bank["terminal_tile"], polygon)):
+        raise ValueError("The west-bank terminal cannot expose an unauthored destination")
     for piece in setpieces:
         if piece.get("kind") == "farmstead" and len(piece.get("door_approaches", [])) < 3:
             raise ValueError("A farm needs clear fronts for its home, barn and shed")
@@ -188,29 +266,49 @@ def validate(data):
     if not low <= seconds <= high:
         raise ValueError(f"Authored bridge approach {seconds:.2f}s is outside {low}-{high}s")
     validation["measured_bridge_approach_seconds"] = round(seconds, 2)
-    reached = _flood(data)
+    phase_reached = {phase: _flood(data, phase=phase)
+                     for phase in ("destroyed", "intact", "restored")}
+    reached = phase_reached["destroyed"]
     required = [data["town"]["exit_tile"], data["bridge"]["east_approach_tile"]]
     required.extend(mark["tile_position"] for mark in data["landmarks"]
                     if mark["id"] in validation["reachable_landmark_ids"])
     required.extend(point for gate in data["gates"] for point in gate["guard_tiles"])
     required.extend(piece["approach_tile"] for piece in setpieces)
-    if any(tuple(point) not in reached for point in required):
-        raise ValueError("An authored spawn, landmark, guard or bridge approach is unreachable")
     north = min(wall["y"] for wall in data["walls"])
     south = max(wall["y"] for wall in data["walls"])
-    if any(y <= north or y >= south for _, y in reached):
-        raise ValueError("The opening enclosure has a wall/river/checkpoint bypass")
+    terminal = tuple(far_bank["terminal_tile"])
+    if road["points"][-1] != far_bank["terminal_tile"]:
+        raise ValueError("The southern road must terminate at its authored west-bank layby")
+    for phase, reachable in phase_reached.items():
+        if any(tuple(point) not in reachable for point in required):
+            raise ValueError(f"An authored spawn, landmark, guard or approach is unreachable: {phase}")
+        if any(y <= north or y >= south for _, y in reachable):
+            raise ValueError(f"The opening enclosure has an outer-route bypass: {phase}")
+        if (terminal in reachable) != (phase != "destroyed"):
+            raise ValueError(f"The west-bank layby disagrees with the bridge phase: {phase}")
+        western_river = next(river for river in data["terrain"]["rivers"]
+                             if river["id"] == far_bank["western_river_id"])
+        for point in reachable:
+            if (point[0] < _river_x_at_y(western_river, point[1])
+                    and not _inside(point, deck) and not _inside_polygon(point, polygon)):
+                raise ValueError(f"Unused western terrain is accessible: {phase}")
     if tuple(data["bridge"]["west_approach_tile"]) in reached:
         raise ValueError("The destroyed bridge can be crossed without repair")
-    repaired = _flood(data, repaired=True)
-    if tuple(data["bridge"]["west_approach_tile"]) not in repaired:
-        raise ValueError("The independent repaired deck does not join both banks")
+    if any(tuple(bridge["west_approach_tile"]) not in phase_reached[phase]
+           for phase in ("intact", "restored")):
+        raise ValueError("A passable bridge does not join both banks")
     validation["geometry_checks"] = {
         "opening_reachable_tiles": len(reached),
+        "initial_intact_reachable_tiles": len(phase_reached["intact"]),
         "required_points_reachable": len(required),
         "closed_perimeter": True,
         "broken_bridge_blocks_crossing": True,
         "repaired_bridge_connects_banks": True,
+        "intact_bridge_connects_banks": True,
+        "bounded_far_bank_in_all_phases": True,
+        "west_bank_terminal_tile": list(terminal),
+        "west_bank_onward_destination_ready": False,
+        "phase_reachable_tiles": {phase: len(points) for phase, points in phase_reached.items()},
         "scope": "Offline four-neighbour tile sampling of continuous vector barriers and authored approaches; runtime actor/decoration probes have separate engine checks."
     }
 
@@ -345,8 +443,9 @@ def build(check=False):
             path.write_bytes(content)
     verb = "Verified" if check else "Built"
     timing = data["route_validation"]["measured_bridge_approach_seconds"]
-    count = data["route_validation"]["geometry_checks"]["opening_reachable_tiles"]
-    print(f"{verb} Elden Vale vector manifest and atlas reference; bridge walk {timing}s; {count} opening tiles reachable.")
+    counts = data["route_validation"]["geometry_checks"]["phase_reachable_tiles"]
+    totals = ", ".join(f"{phase} {count}" for phase, count in counts.items())
+    print(f"{verb} Elden Vale vector manifest and atlas reference; bridge walk {timing}s; reachable tiles: {totals}.")
     return data
 
 

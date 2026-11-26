@@ -12,6 +12,7 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 import pygame
 
 from main import Game
+from bridge_condition import BridgeCondition
 from overworld_travel import OverworldTravel
 from purposeful_wildlife import valid_state as valid_wildlife
 from regional_participation import (BENCH_POSITION, STAND_POSITION, CAT_SCRIPT,
@@ -25,6 +26,10 @@ class RegionalParticipationTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.g = self.make_game()
         seed_mill_completed(self.g)
+        # Keep optional masonry coverage tied to an explicit damaged-site
+        # fixture, rather than making that condition a new-game assumption.
+        self.g.overworld_travel.restore_bridge_condition(
+            {'bridge_condition': BridgeCondition('destroyed').to_dict()})
         self.g.world = self.g.overworld_world
         self.c = self.g.world.participation
         self.g.player.position.update(STAND_POSITION)
