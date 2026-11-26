@@ -12,6 +12,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 import pygame
 
+from bridge_condition import BridgeCondition
 from main import Game
 from overworld_minimap import OverworldMinimap
 from ui_style import Painter, UIStyle
@@ -21,14 +22,16 @@ class ChartFixture:
     def __init__(self):
         self.terrain_calls = []
         self.route_flags = []
+        self.route_conditions = []
         self.icons = []
 
     def draw_terrain(self, target, rect, center, scale):
         self.terrain_calls.append((pygame.Rect(rect), tuple(center), scale))
         pygame.draw.rect(target, '#587b55', rect)
 
-    def draw_routes(self, target, rect, center, scale, flags=()):
+    def draw_routes(self, target, rect, center, scale, flags=(),*,bridge_condition=None):
         self.route_flags.append(set(flags))
+        self.route_conditions.append(bridge_condition)
 
     def icon(self, key, size):
         self.icons.append(key)
@@ -213,6 +216,45 @@ class OverworldMinimapTests(unittest.TestCase):
         self.assertLess(centers['back'][1], center[1])
         self.assertLess(centers['left'][0], center[0])
         self.assertGreater(centers['right'][0], center[0])
+
+    def test_explicit_condition_controls_icons_fallback_symbols_and_route_overlay(self):
+        game,minimap = self.fixture();chart = ChartFixture()
+        target = pygame.Surface((960,640))
+        sample = game.ui.painter(target).point(minimap.tile_to_map((-20,-20)))
+        before_discovery = set(game.overworld_travel.discovered)
+        for phase,flags in (('intact',set()),('restored',set()),('destroyed',{'REPAIRED'})):
+            with self.subTest(phase=phase):
+                condition = BridgeCondition(phase)
+                game.overworld_travel.bridge_condition = condition
+                game.world.bridge_condition = BridgeCondition('destroyed' if condition.passable else 'intact')
+                game.social.flags = flags.copy();chart.icons.clear()
+                with patch.object(minimap,'cartography',return_value=chart):
+                    minimap.draw(target)
+                self.assertIn('bridge_repaired' if condition.passable else 'bridge_broken',chart.icons)
+                self.assertIs(chart.route_conditions[-1],condition)
+                self.assertEqual(target.get_at(sample)[:3],
+                                 pygame.Color('#b5a17b' if condition.passable else '#8b4f3e')[:3])
+                self.assertEqual(game.social.flags,flags)
+                self.assertEqual(game.overworld_travel.discovered,before_discovery)
+
+        # The actual route must agree below the icons, including an explicit
+        # destroyed span carrying a stale legacy repair flag.
+        from regional_cartography import RegionalCartography
+        game.world.region['bridge'].update(tile_position=[-30,-20],
+                                          damage_rect_tiles=[-34,-21,8,2])
+        game.world.region['roads'] = [{'kind':'stone','width':3,
+                                      'points':[[-38,-20],[-22,-20]]}]
+        actual = RegionalCartography(game.world,
+            manifest_path=Path(self.directory.name)/'absent-chart.json')
+        sample = game.ui.painter(target).point(minimap.tile_to_map((-30,-20)))
+        pixels = {}
+        with patch.object(minimap,'cartography',return_value=actual), \
+                patch.object(minimap,'_places',return_value=[]):
+            for phase in ('intact','destroyed','restored'):
+                game.overworld_travel.bridge_condition = BridgeCondition(phase)
+                minimap.draw(target);pixels[phase] = target.get_at(sample)
+        self.assertEqual(pixels['intact'],pixels['restored'])
+        self.assertNotEqual(pixels['intact'],pixels['destroyed'])
 
     def test_old_corner_button_is_gone_in_town_and_interior_and_escape_still_pauses(self):
         game = self.game()

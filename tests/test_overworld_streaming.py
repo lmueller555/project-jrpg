@@ -15,6 +15,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from overworld_world import OverworldWorld
+from bridge_condition import BridgeCondition
 from camera_director import CameraDirector
 from social import clear_sight
 
@@ -64,6 +65,20 @@ class OverworldStreamingTests(unittest.TestCase):
 
     def world(self, **options):
         return OverworldWorld(path=self.path, **options)
+
+    def bridge_manifest(self, **changes):
+        return self.manifest(terrain={
+            'rivers': [{'id': 'west_boundary', 'points': [[0, -32], [0, 32]], 'width': 3}],
+            'forests': [], 'fields': [], 'hills': [],
+        }, bridge={
+            'id': 'west_bridge', 'tile_position': [0, 4],
+            'repair_flag': 'WEST_BRIDGE_REPAIRED',
+            'damage_rect_tiles': [-6, 2, 12, 4],
+            'deck_rect_tiles': [-6, 2, 12, 4],
+        }, **changes)
+
+    def condition(self, phase):
+        return BridgeCondition(phase=phase, origin='explicit')
 
     def test_negative_global_coordinates_and_probe_bounds(self):
         self.manifest(landmarks=[{
@@ -213,6 +228,74 @@ class OverworldStreamingTests(unittest.TestCase):
         restored = self.world(progress_flags={'WEST_BRIDGE_REPAIRED'})
         self.assertTrue(restored.can_stand(bridge))
         self.assertFalse(restored.can_stand(gate))
+
+    def test_explicit_bridge_condition_controls_cached_collision_and_survives_flag_updates(self):
+        self.bridge_manifest()
+        world = self.world(progress_flags={'WEST_BRIDGE_REPAIRED'},
+                           bridge_condition=self.condition('destroyed'))
+        bridge = (0, 4*TILE)
+        self.assertFalse(world.can_stand(bridge))
+        damaged = world._render_chunk(0, 0)
+        revision = world._revision
+        world.set_progress({'WEST_BRIDGE_REPAIRED'}, bridge_condition=self.condition('intact'))
+        self.assertEqual(world._revision, revision+1)
+        self.assertEqual(world.cache_stats['render_chunks'], 0)
+        self.assertEqual(world.cache_stats['collision_chunks'], 0)
+        self.assertTrue(world.can_stand(bridge))
+        self.assertFalse(world.can_stand((0, -4*TILE)), 'Only the deck cuts through river collision')
+        self.assertIsNot(world._render_chunk(0, 0), damaged)
+        revision = world._revision
+        world.set_progress({'UNRELATED_FACT'})
+        self.assertEqual(world.bridge_condition.phase, 'intact')
+        self.assertEqual(world._revision, revision)
+        world.set_progress(set(), bridge_condition=self.condition('destroyed'))
+        self.assertFalse(world.can_stand(bridge))
+
+    def test_intact_to_restored_invalidates_chunks_even_though_both_are_passable(self):
+        self.bridge_manifest()
+        snapshot = self.condition('intact').to_dict()
+        world = self.world(bridge_condition=snapshot, collision_cache_limit=1,
+                           render_budget_bytes=CHUNK_PIXELS*CHUNK_PIXELS*4)
+        snapshot['phase'] = 'destroyed'
+        self.assertEqual(world.bridge_condition.phase, 'intact', 'The constructor copies its input snapshot')
+        self.assertTrue(world.can_stand((0, 4*TILE)))
+        world._render_chunk(0, 0)
+        revision = world._revision
+        world.set_progress(set(), bridge_condition=self.condition('restored'))
+        self.assertEqual(world._revision, revision+1)
+        self.assertEqual(world.cache_stats['render_chunks'], 0)
+        self.assertEqual(world.cache_stats['collision_chunks'], 0)
+        for cx, cy in ((1, 1), (-1, -1), (1, -1)):
+            world._collision_chunk(cx, cy)
+            world._render_chunk(cx, cy)
+        self.assertTrue(world.can_stand((0, 4*TILE)))
+        self.assertEqual(world.bridge_condition.phase, 'restored')
+
+    def test_bridge_scorch_changes_with_phase_without_hiding_unrelated_damage(self):
+        from overworld_environment import EnvironmentDetail
+
+        def scar(identifier, x):
+            return {'id': identifier, 'polygon': [[x, 5], [x+2, 5], [x+2, 9], [x, 9]]}
+
+        self.manifest(terrain={'rivers': [], 'forests': [], 'fields': [], 'hills': [],
+            'scorched': [scar('broken_bridge_east_bank', 2), scar('broken_bridge_west_bank', 6),
+                         scar('unrelated_burn', 10)]},
+            roads=[{'id': 'road', 'points': [[0, 7], [15, 7]], 'width': 1}])
+        # Test both the artless fixture path and EnvironmentDetail.ground's
+        # separate material layer, including scars beside and across a road.
+        for detailed in (False, True):
+            with self.subTest(environment_detail=detailed):
+                world = self.world(bridge_condition=self.condition('intact'))
+                if detailed:world.environment = EnvironmentDetail(world)
+                samples = [(x*TILE, round(y*TILE)) for x in (3, 7, 11) for y in (5.5, 7)]
+                intact = [world._render_chunk(0, 0).get_at(p) for p in samples]
+                world.set_progress(set(), bridge_condition=self.condition('destroyed'))
+                destroyed = [world._render_chunk(0, 0).get_at(p) for p in samples]
+                world.set_progress(set(), bridge_condition=self.condition('restored'))
+                restored = [world._render_chunk(0, 0).get_at(p) for p in samples]
+                self.assertEqual(restored, destroyed, 'Restoring the crossing does not erase its scars')
+                for before, after in zip(intact[:4], destroyed[:4]):self.assertNotEqual(before, after)
+                self.assertEqual(intact[4:], destroyed[4:], 'Unrelated scorched ground is phase independent')
 
     def test_absent_sparse_chunk_is_solid_even_inside_region_bounds(self):
         self.manifest(bounds_tiles=[-16, -16, 48, 48], spawn_tile=[8, 8],

@@ -72,6 +72,7 @@ class BridgeWorker(FarmWorker):
     }
 
     def __init__(self, role, variant, position):
+        self.crew = None
         super().__init__(role, variant, position, asset_root=ART,
                          required_clips=self.REQUIRED[role], identifier_prefix='bridge',
                          name='Bridge mason' if role == 'mason' else 'Bridge surveyor')
@@ -80,6 +81,14 @@ class BridgeWorker(FarmWorker):
             for name,subset in (('set_stone',frames[:2]),('take_stone',frames[1:3]),
                                 ('set_tray',frames[2:])):
                 self.clips[name]={'loop':False,'frames':subset}
+
+    @property
+    def story_visible(self):
+        return self.crew is None or self.crew.active
+
+    @property
+    def blocker(self):
+        return super().blocker if self.story_visible else pygame.Rect(0, 0, 0, 0)
 
     @property
     def animation_key(self):
@@ -106,9 +115,14 @@ class BridgeCrew:
         self.mason = BridgeWorker('mason', 'male_01', SOURCE)
         self.tender = BridgeWorker('tender', 'male_03', KETTLE)
         self.actors = [self.mason, self.tender]
+        for actor in self.actors:actor.crew = self
         self.art = {name: pygame.image.load(str(ART/(name+'.png'))).convert_alpha()
                     for name in ('stone','cup','kettle','bench','tray','tool','barrier','keep_mark','reject_mark')}
         self.restore()
+
+    @property
+    def active(self):
+        return self.world.bridge_condition.destroyed
 
     def restore(self, data=None):
         self.state = {**empty_state(), **(data or {})}
@@ -223,6 +237,17 @@ class BridgeCrew:
         return pygame.Vector2(REJECT if index==2 else (STACK[0]+index*7-7,STACK[1]))
 
     def update(self, seconds, game):
+        if not self.active:
+            # Dormant scene receipts and prop ownership stay exactly as saved.
+            # Cancel only this scene's presentation, never its completion cue.
+            if game.social.script_identifier in (SCENE_ID, 'bridge_crew_greeting'):
+                game.social.cancel()
+            self.dialogue_running=False
+            for actor in self.actors:actor.moving=False
+            audio=getattr(game,'regional_audio',None)
+            if audio:audio.stop_sources(('bridge_tool','bridge_cup_stone',
+                                         'bridge_cup_tray','bridge_cup_return'))
+            return
         if game.player.position.distance_to(SOURCE)>260:return
         if game.social.locked:
             for actor in self.actors:actor.moving=False;actor.advance(0)
@@ -351,6 +376,7 @@ class BridgeCrew:
         return next((actor for actor in self.actors if actor.pose=='work'),self.mason)
 
     def nearby(self,game):
+        if not self.active:return None
         actor=min(self.actors,key=lambda a:a.position.distance_squared_to(game.player.position))
         return actor if actor.position.distance_to(game.player.position)<=34 else None
 
@@ -380,6 +406,7 @@ class BridgeCrew:
         return game.social.start_script([{'speaker':'bridge_'+role,'text':text}],on_complete=done,identifier='bridge_crew_greeting')
 
     def ground_blockers(self,actor=None):
+        if not self.active:return []
         blocks=[pygame.Rect(-2318,568,28,7),pygame.Rect(-2413,594,26,3),
                 pygame.Rect(-2435,631,38,3),pygame.Rect(SAFE[0]-12,SAFE[1]-5,24,4)]
         if actor not in self.actors and self.state['tea_beat'] in (1,2,3,4):blocks.append(HANDOFF)
@@ -434,6 +461,7 @@ class BridgeCrew:
         return held_prop_sort(actor,actor.attachment.get(kind+'_layer'))
 
     def props(self):
+        if not self.active:return []
         result=[]
         def add(key,point,sort=None):
             image=self.art[key];x,y=point

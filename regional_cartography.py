@@ -13,6 +13,8 @@ from pathlib import Path
 
 import pygame
 
+from bridge_condition import resolve_condition
+
 
 ROOT = Path(__file__).resolve().parent
 MANIFEST = ROOT/'assets/cartography/elden_vale/manifest.json'
@@ -228,14 +230,16 @@ class RegionalCartography:
             if len(points)>1:
                 pygame.draw.lines(target,WATER,False,points,max(1,round(river.get('width',10)*scale)))
 
-    def draw_routes(self,target,map_rect,center_tiles,scale_px_per_tile,flags=()):
+    def draw_routes(self,target,map_rect,center_tiles,scale_px_per_tile,flags=(),*,
+                    bridge_condition=None):
         rect = pygame.Rect(map_rect);scale = float(scale_px_per_tile)
         old = target.get_clip();target.set_clip(rect.clip(old))
         flags = set(flags)
         try:
             bridge = self.data.get('bridge',{})
-            blocked = (bridge.get('damage_rect_tiles') if bridge and
-                       bridge.get('repair_flag') not in flags else None)
+            condition = resolve_condition(bridge_condition,flags=flags,
+                                          repair_flag=bridge.get('repair_flag'))
+            blocked = bridge.get('damage_rect_tiles') if bridge and condition.destroyed else None
             for road in sorted(self.data.get('roads',[]),key=lambda r:{'foot':0,'cart':1,'stone':2}.get(r.get('kind'),1)):
                 kind = road.get('kind','cart')
                 width = (max(3,round(scale*.95)) if kind=='stone' else

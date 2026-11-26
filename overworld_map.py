@@ -10,6 +10,9 @@ import math
 
 import pygame
 
+from bridge_condition import condition_for_game
+from regional_cartography import _outside
+
 
 PAPER = '#e8d8ad'
 INK = '#344337'
@@ -115,6 +118,9 @@ class RegionalMapUI:
 
     def _flags(self):
         return getattr(getattr(self.game, 'social', None), 'flags', set())
+
+    def _bridge_condition(self):
+        return condition_for_game(self.game,self.data)
 
     def _collect_landmarks(self):
         records = []
@@ -384,6 +390,9 @@ class RegionalMapUI:
                                   ('hills', '#d5caa3', '#aca87f'),
                                   ('scorched', '#beb099', '#97866f')):
             for record in terrain.get(kind, []):
+                if (kind == 'scorched'
+                        and record.get('id') in {'broken_bridge_east_bank','broken_bridge_west_bank'}
+                        and self._bridge_condition().phase == 'intact'):continue
                 polygon = record.get('polygon', [])
                 points = [self.tile_to_map(point) for point in polygon]
                 parcel_fill, parcel_edge = (FIELD_STYLES.get(record.get('crop'), FIELD_STYLES['grain'])
@@ -395,16 +404,17 @@ class RegionalMapUI:
         for record in terrain.get('rivers', []):
             self._draw_route(painter, record, WATER_EDGE, WATER, minimum=3)
 
-    def _draw_route(self, painter, record, edge, fill, minimum=2):
+    def _draw_route(self, painter, record, edge, fill, minimum=2, blocked=None):
         points = [self.tile_to_map(point) for point in record.get('points', [])]
         width = max(minimum, record.get('width', 2)*self.scale)
         for start, end in zip(points, points[1:]):
-            painter.line(edge, start, end, width+2)
-            painter.line(fill, start, end, width)
-            self._circle(painter, fill, start, width/2)
-        if points:self._circle(painter, fill, points[-1], width/2)
+            for first,last in (_outside(start,end,blocked) if blocked else [(start,end)]):
+                painter.line(edge, first, last, width+2)
+                painter.line(fill, first, last, width)
+                self._circle(painter, fill, first, width/2)
+                self._circle(painter, fill, last, width/2)
 
-    def _draw_footpath(self, painter, record):
+    def _draw_footpath(self, painter, record, blocked=None):
         # Accumulate dashes along the route rather than restarting at each
         # sampled curve point, so densified paths remain a coherent fine line.
         points = [self.tile_to_map(point) for point in record.get('points', [])]
@@ -419,8 +429,10 @@ class RegionalMapUI:
                 step = min(length-offset, 7-phase)
                 if phase < 4:
                     visible = min(step, 4-phase)
-                    painter.line('#a28f6b', pygame.Vector2(start)+direction*offset,
-                                 pygame.Vector2(start)+direction*(offset+visible), 1)
+                    first = pygame.Vector2(start)+direction*offset
+                    last = pygame.Vector2(start)+direction*(offset+visible)
+                    for a,b in (_outside(first,last,blocked) if blocked else [(first,last)]):
+                        painter.line('#a28f6b', a, b, 1)
                 offset += step
                 phase = (phase+step)%7
 
@@ -440,11 +452,16 @@ class RegionalMapUI:
             painter.line('#a39370', (x-5, y+5), (x+5, y+5))
 
     def _draw_roads_walls(self, painter):
+        damage = self.data.get('bridge',{}).get('damage_rect_tiles')
+        blocked = None
+        if damage and self._bridge_condition().destroyed:
+            left,top = self.tile_to_map(damage[:2])
+            blocked = (left,top,damage[2]*self.scale,damage[3]*self.scale)
         for road in self.data.get('roads', []):
             kind = road.get('kind', 'stone' if road.get('surface') == 'stone_road' else 'cart')
-            if kind == 'foot':self._draw_footpath(painter, road)
-            elif kind == 'stone':self._draw_route(painter, road, '#a79e83', '#ded2af', minimum=2.2)
-            else:self._draw_route(painter, road, '#b49d75', '#d2bc8c', minimum=1.3)
+            if kind == 'foot':self._draw_footpath(painter, road,blocked=blocked)
+            elif kind == 'stone':self._draw_route(painter, road, '#a79e83', '#ded2af', minimum=2.2,blocked=blocked)
+            else:self._draw_route(painter, road, '#b49d75', '#d2bc8c', minimum=1.3,blocked=blocked)
         for wall in self.data.get('walls', []):
             left = self.tile_to_map((wall['x0'], wall['y']))
             right = self.tile_to_map((wall['x1'], wall['y']))
@@ -469,11 +486,11 @@ class RegionalMapUI:
                 painter.rect('#b5a17b', (x+dx-2, y+dy, 5, 5))
                 self._polygon(painter, '#796b56', [(x+dx-3, y+dy+1), (x+dx, y+dy-3), (x+dx+3, y+dy+1)])
         elif kind == 'bridge':
-            repaired = record.get('repair_flag') in self._flags()
+            passable = self._bridge_condition().passable
             for dx in (-6, 3):
                 painter.rect('#88745a', (x+dx, y-3, 4, 7))
                 painter.line('#d9c49c', (x+dx+1, y-3), (x+dx+1, y+3), 1)
-            if repaired:painter.rect('#88745a', (x-2, y-3, 5, 7))
+            if passable:painter.rect('#88745a', (x-2, y-3, 5, 7))
             else:
                 painter.line('#8b4f3e', (x-2, y-4), (x+2, y+4), 2)
                 painter.line('#8b4f3e', (x+2, y-4), (x-2, y+4), 2)
@@ -503,7 +520,7 @@ class RegionalMapUI:
 
     def _marker_status(self, record):
         if record.get('kind') == 'bridge':
-            return 'Passable' if record.get('repair_flag') in self._flags() else 'Ruined'
+            return 'Passable' if self._bridge_condition().passable else 'Ruined'
         if record.get('kind') == 'checkpoint':
             return ('Open' if record.get('clearance_flag') in self._flags() and
                     record.get('destination_ready',False) else 'Closed')
@@ -542,8 +559,10 @@ class RegionalMapUI:
 
     def _description(self, record):
         if record.get('kind') == 'bridge':
-            return ('The western crossing is passable.' if record.get('repair_flag') in self._flags() else
-                    'The western crossing is broken. The far bank cannot be reached here.')
+            phase = self._bridge_condition().phase
+            if phase == 'intact':return 'The western crossing is intact and passable.'
+            if phase == 'restored':return 'The western crossing has been restored and is passable.'
+            return 'The western crossing is broken. The far bank cannot be reached here.'
         if record.get('kind') == 'checkpoint':
             return ('The watch has granted passage.' if record.get('clearance_flag') in self._flags() and
                     record.get('destination_ready', False) else 'The watch keeps this checkpoint closed.')
@@ -772,7 +791,8 @@ class RegionalMapUI:
             if chart is not None:
                 used_art = chart.draw_terrain(canvas,painter.area(self.map_rect),self.center,self.scale*painter.scale)
                 if not used_art:self._draw_terrain(painter)
-                chart.draw_routes(canvas,painter.area(self.map_rect),self.center,self.scale*painter.scale,flags=self._flags())
+                chart.draw_routes(canvas,painter.area(self.map_rect),self.center,self.scale*painter.scale,
+                                  flags=self._flags(),bridge_condition=self._bridge_condition())
             else:
                 self._draw_terrain(painter)
                 self._draw_roads_walls(painter)

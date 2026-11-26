@@ -1,0 +1,95 @@
+{
+  "base_commit": "71ad8b6ba819495f64229556ce0e82645dbf0c10",
+  "scope": "Bridge PR1: condition/saves/logical presentation; current default ruined layout retained",
+  "test_methods_executed": 286,
+  "failures": 0,
+  "errors": 0,
+  "full_suite_rerun": false,
+  "groups": [
+    {
+      "name": "condition_travel_crew",
+      "passed": 36,
+      "modules": [
+        "test_bridge_condition",
+        "test_overworld_travel",
+        "test_bridge_crew"
+      ]
+    },
+    {
+      "name": "world",
+      "passed": 16,
+      "modules": [
+        "test_overworld_streaming",
+        "test_overworld_region_contract"
+      ]
+    },
+    {
+      "name": "maps",
+      "passed": 42,
+      "modules": [
+        "test_overworld_map",
+        "test_overworld_minimap",
+        "test_regional_cartography"
+      ]
+    },
+    {
+      "name": "gameplay_condition",
+      "passed": 11,
+      "modules": [
+        "test_bridge_condition_gameplay"
+      ]
+    },
+    {
+      "name": "save_title",
+      "passed": 86,
+      "modules": [
+        "test_save_game",
+        "test_save_library",
+        "test_save_system_gameplay",
+        "test_game",
+        "test_title_screen",
+        "test_opening_retirement"
+      ]
+    },
+    {
+      "name": "shared_systems",
+      "passed": 95,
+      "modules": [
+        "test_regional_audio",
+        "test_regional_audio_events",
+        "test_regional_participation",
+        "test_bridge_worker_animation",
+        "test_gallery_catalogue",
+        "test_gallery_session"
+      ]
+    }
+  ],
+  "builders": {
+    "regional_manifest_check": "passed:46.05 second approach,43616 opening tiles reachable",
+    "cartography_check": "passed:43 atlas tiles",
+    "cartography_changed_products": [
+      "assets/cartography/elden_vale/manifest.json input_sha256.regional_cartography.py"
+    ],
+    "terrain_art_or_geography_changed": false
+  },
+  "captures": {
+    "current_start": "afbd4bc83fa6a3d397575277d0ba39c2c65a4a0f306ea3c8e3fe21ed0104905d",
+    "destroyed_fixture": "afbd4bc83fa6a3d397575277d0ba39c2c65a4a0f306ea3c8e3fe21ed0104905d",
+    "intact_fixture": "6b85af0e50c237e3adac12b5407092ab4e59e6443c61e30c44947c70c185e092",
+    "restored_fixture": "90f5eabb0efa792ca113f814dc95baed8147790408f672d39cbf63c13cd45acf"
+  },
+  "production_default": "destroyed/legacy_layout",
+  "initial_intact_rollout_enabled": false,
+  "public_live_destruction_api_added": false,
+  "attack_or_repair_quest_added": false,
+  "far_bank_routing_changed": false,
+  "independent_review": "No blockers; fallback scorch finding fixed and 23 map tests passed",
+  "local_links": {
+    "documents": 536,
+    "links_checked": 2055,
+    "baseline_broken": 2,
+    "current_broken": 2,
+    "new_broken": [],
+    "fixed_broken": []
+  }
+}

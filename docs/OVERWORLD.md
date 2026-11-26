@@ -139,13 +139,25 @@ The future quest and conditions granting release remain open under the revised
 opening; no festival or old chapter-ending authorization is required. Because
 these land gates exist, the bridge's loss alone cannot establish isolation.
 
-Bridge repair is a separate durable fact,
-`ELDEN_VALE_WEST_BRIDGE_REPAIRED`. Restoring the mill, helping Iselin, or opening
-a checkpoint does not repair the bridge. No current quest grants this flag.
-The engine can reconstruct the repaired crossing from the fact for later work;
-the current implementation starts in the destroyed state. The revised opening
-requires an intact-before-attack state and a later destruction transition;
-those changes are not implemented here, and the repair method remains open.
+Bridge condition is owned by `overworld_travel.py` and shared through the pure
+`bridge_condition.py` resolver. Its three phases are `intact`, `destroyed` and
+`restored`; intact/restored are passable. World geometry, cached surfaces,
+water highlights, atlas/minimap routes and operational descriptions use the
+same condition. Restoring the mill or opening a checkpoint cannot change it.
+
+This is the first of two bridge PRs. Normal new and older journeys still use
+the destroyed layout, tagged `legacy_layout`: that is scenery provenance, not
+evidence of a completed Carcovian attack. A legacy
+`ELDEN_VALE_WEST_BRIDGE_REPAIRED` flag resolves to restored/`legacy_repair` when
+there is no explicit component. No current quest produces that flag. An
+explicit saved condition wins over it. No attack or repair reward is inferred.
+
+The next bridge PR must deliver layered intact artwork, matching traversal,
+an authored far-bank limit and safe condition-change staging before enabling
+the intact start. It can migrate the `legacy_layout` placeholder deliberately.
+Current passable fixtures retain the existing procedural deck; they do not
+claim finished intact/restored art or an onward destination. The repair method
+and the attack/repair quests remain open under the narrative owners.
 
 The former arrival cinematic is removed; its southern-checkpoint staging does
 not prescribe the future survivors' route. The ridge landmark does not open
@@ -197,8 +209,14 @@ then move the leader, reset the camera/map, and checkpoint the journey. Existing
 village/interior saves load without a migration. New saves add a versioned
 `overworld` block containing the region identity and discovered landmark IDs;
 the outer journey format remains version 1. Continue restores global position,
-facing and discovery. Gate and bridge state come from durable dialogue flags,
-never from cached surfaces.
+facing and discovery. Gate state comes from durable dialogue flags. Bridge
+condition uses `overworld.bridge_condition`, containing `version: 1`, `phase`
+and `origin` (`explicit`, `legacy_layout` or `legacy_repair`). Older saves may
+omit the component; explicit malformed records are rejected. Missing records
+retain the current legacy layout or an explicit old repair flag, without
+rewriting a source file during validation. The condition is staged before a
+regional world is constructed. A normal subsequent save writes the component.
+Neither geometry nor progress is reconstructed from cached surfaces.
 
 Quest companions travel virtually at regional scale. Their detailed-scene
 instances, placement owners and quest progress are retained while physical
@@ -317,6 +335,13 @@ piece. Afterwards the mason brushes down, checks the barrier and looks toward
 the damage; the surveyor measures along the work area. The batch never grows.
 All stations are on existing connected dry ground, outside the main road.
 The broken bridge, water, checkpoints and main quest facts are unchanged.
+
+This damage-work presentation is active only for a destroyed crossing. Intact
+and restored conditions suppress its workers, prop layers, ground/NPC blockers,
+interaction targets and contact sounds together. Saved sorting, tea, read and
+cup-ownership receipts remain dormant; condition checks never replay transfers
+or finish a cancelled exchange. The Gallery stages destroyed condition inside
+its isolated preview journey.
 
 Once sorting finishes, E near the resting mason starts an optional tea visit.
 The surveyor returns to the visible kettle, picks up the cup and walks around
