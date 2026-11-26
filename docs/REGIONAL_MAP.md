@@ -24,6 +24,17 @@ places gain labels when space permits. Selection and Caelan's directional
 position marker remain distinct even when they occupy the same location.
 Closed gates and the ruined bridge have shape and text cues as well as color.
 
+Bridge passage is resolved from the same versioned condition as the physical
+world: intact/restored show a continuous route and passable icon, while
+destroyed interrupts the road and shows the broken marker. Detail text
+distinguishes original intact masonry from a restored crossing. Explicit saved
+conditions override the legacy repair flag. Standalone legacy fixtures without
+a condition can still resolve that flag. Fallback chart routes and glyphs obey
+the same rule; intact suppresses bridge-specific scorch, while restoration
+retains damage history. The [overworld guide](OVERWORLD.md) owns the staged
+rollout and save format. The production start remains ruined until the second
+bridge PR supplies the new artwork and far-bank routing.
+
 Terrain is illustrated pixel cartography, while text is rendered separately at
 display resolution. The header is compact and the selected-place card appears
 when requested. Text size, wrapping and scrolling follow the game's readability

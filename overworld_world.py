@@ -154,7 +154,7 @@ class OverworldWorld:
     """One world identity across every sparse chunk in the regional manifest."""
     is_overworld = True
 
-    def __init__(self, path=REGION_FILE, progress_flags=(), *,
+    def __init__(self, path=REGION_FILE, progress_flags=(), *, bridge_condition=None,
                  render_budget_bytes=RENDER_BUDGET, collision_cache_limit=64,
                  metadata_cache_limit=64):
         self.path = Path(path).resolve()
@@ -181,6 +181,7 @@ class OverworldWorld:
         self._collision_cache = _LRU(collision_cache_limit)
         self._metadata_cache = _LRU(metadata_cache_limit)
         self._flags = frozenset(progress_flags)
+        self._bridge_condition = self._resolve_bridge_condition(bridge_condition) if bridge_condition is not None else None
         self._revision = 0
         self._whitelist = (set(map(tuple, self.region['chunk_whitelist']))
                            if 'chunk_whitelist' in self.region else None)
@@ -234,6 +235,15 @@ class OverworldWorld:
     @property
     def progress_flags(self):return self._flags
 
+    def _resolve_bridge_condition(self, value):
+        from bridge_condition import resolve_condition
+        return resolve_condition(value, flags=self._flags,
+                                 repair_flag=self.region.get('bridge', {}).get('repair_flag'))
+
+    @property
+    def bridge_condition(self):
+        return self._resolve_bridge_condition(self._bridge_condition)
+
     @property
     def cache_stats(self):
         return {'render_bytes': self._render_cache.weight,
@@ -241,13 +251,16 @@ class OverworldWorld:
                 'collision_chunks': len(self._collision_cache.items),
                 'metadata_chunks': len(self._metadata_cache.items)}
 
-    def set_progress(self, flags):
+    def set_progress(self, flags, *, bridge_condition=None):
         flags = frozenset(flags)
-        if flags == self._flags:return
+        previous = self.bridge_condition
+        explicit = (self._resolve_bridge_condition(bridge_condition)
+                    if bridge_condition is not None else self._bridge_condition)
         relevant = {gate.get('clearance_flag') for gate in self.gates}
-        relevant.add(self.region.get('bridge',{}).get('repair_flag'))
         changed = self._flags.intersection(relevant) != flags.intersection(relevant)
         self._flags = flags
+        self._bridge_condition = explicit
+        changed = changed or previous != self.bridge_condition
         if not changed:return
         self._revision += 1
         # Geometry is derived from durable facts, never from cache contents.
@@ -383,13 +396,16 @@ class OverworldWorld:
         ox, oy = cx*CHUNK_PIXELS, cy*CHUNK_PIXELS
         return [(x*TILE_SIZE-ox, y*TILE_SIZE-oy) for x, y in record['points']]
 
-    def _bridge_repaired(self):
-        bridge = self.region.get('bridge', {})
-        return bool(bridge.get('repair_flag') and bridge['repair_flag'] in self._flags)
+    def _bridge_passable(self):
+        return self.bridge_condition.passable
+
+    def _scorched_feature_visible(self, feature):
+        bridge_scorch = {'broken_bridge_east_bank', 'broken_bridge_west_bank'}
+        return feature.get('id') not in bridge_scorch or self.bridge_condition.phase != 'intact'
 
     def _bridge_debris(self):
         bridge = self.region.get('bridge')
-        if not bridge or self._bridge_repaired():return []
+        if not bridge or not self.bridge_condition.destroyed:return []
         x,y = bridge['tile_position']
         return [{'key':'rock','position':self._tile_point((x+dx,y+dy)), 'solid':(16,8)}
                 for dx,dy in ((11,4),(8,-6),(-18,-2),(-16,6))]
@@ -413,7 +429,7 @@ class OverworldWorld:
             self._draw_path(surface, 'white', self._local_path(river, cx, cy), river.get('width', 8)*TILE_SIZE)
         bridge = self.region.get('bridge')
         if bridge:
-            if self._bridge_repaired():
+            if self._bridge_passable():
                 rect = self._tile_rect(bridge.get('deck_rect_tiles', bridge['damage_rect_tiles'])).move(-origin[0], -origin[1])
                 pygame.draw.rect(surface, 'black', rect)
             else:
@@ -501,6 +517,7 @@ class OverworldWorld:
             self._pattern(surface, 'grass')
             for category, key in (('forests','forest_floor'), ('fields','field'), ('hills','grass'), ('scorched','scorched')):
                 for feature in terrain.get(category, []):
+                    if category == 'scorched' and not self._scorched_feature_visible(feature):continue
                     if not self._feature_intersects(feature['polygon'], chunk_rect):continue
                     polygon = [(round(x*TILE_SIZE-ox), round(y*TILE_SIZE-oy)) for x, y in feature['polygon']]
                     self._paint_shape(surface, key, lambda mask, polygon=polygon: pygame.draw.polygon(mask, 'white', polygon))
@@ -509,16 +526,16 @@ class OverworldWorld:
                 points = self._local_path(road, cx, cy);width = road.get('width', 3)*TILE_SIZE
                 self._draw_path(surface, '#8e9568', points, width+10)
                 self._paint_shape(surface, road.get('surface','dirt'), lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
-        if not self._bridge_repaired():
-            # The strike destroyed road approaches as well as the span. Let the
-            # authored scorched polygons interrupt the stone road on both banks.
-            for feature in terrain.get('scorched',[]):
-                if self.environment is not None:
-                    self.environment.polygon(surface,feature,'scorched',cx,cy,4)
-                    continue
-                if not self._feature_intersects(feature['polygon'],chunk_rect):continue
-                polygon = [(round(x*TILE_SIZE-ox),round(y*TILE_SIZE-oy)) for x,y in feature['polygon']]
-                self._paint_shape(surface,'scorched',lambda mask,p=polygon:pygame.draw.polygon(mask,'white',p))
+        # Only the bridge's named damage features depend on its condition.
+        # Unrelated scorched terrain remains visible in every bridge phase.
+        for feature in terrain.get('scorched',[]):
+            if not self._scorched_feature_visible(feature):continue
+            if self.environment is not None:
+                self.environment.polygon(surface,feature,'scorched',cx,cy,4)
+                continue
+            if not self._feature_intersects(feature['polygon'],chunk_rect):continue
+            polygon = [(round(x*TILE_SIZE-ox),round(y*TILE_SIZE-oy)) for x,y in feature['polygon']]
+            self._paint_shape(surface,'scorched',lambda mask,p=polygon:pygame.draw.polygon(mask,'white',p))
         for river in terrain.get('rivers', []):
             fringe = 40 if self.environment is not None else 24
             if not self._feature_intersects(river['points'], chunk_rect, river.get('width',8)*TILE_SIZE/2+fringe):continue
@@ -527,7 +544,7 @@ class OverworldWorld:
             else:self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
             self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
         bridge = self.region.get('bridge')
-        if bridge and self._bridge_repaired():
+        if bridge and self._bridge_passable():
             rect = self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).move(-ox,-oy)
             if chunk_rect.colliderect(self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles']))):
                 pygame.draw.rect(surface, '#77786c', rect.inflate(0,8))
@@ -555,7 +572,7 @@ class OverworldWorld:
         town = self.region.get('town')
         if town:yield {'key':'eldenmere', 'position': self._tile_point(town['tile_position'])}
         bridge = self.region.get('bridge')
-        if bridge and not self._bridge_repaired():
+        if bridge and self.bridge_condition.destroyed:
             key = bridge.get('broken_art_key','broken_bridge')
             if key not in self._art.get('props',{}):key = 'broken_bridge'
             yield {'key':key,'position':self._tile_point(bridge['tile_position'])}
@@ -588,7 +605,7 @@ class OverworldWorld:
                 point = (x/TILE_SIZE, y/TILE_SIZE)
                 if any(_distance_to_path(point, r['points']) < r.get('width',8)/2-.75 for r in self.region.get('terrain', {}).get('rivers', [])):
                     bridge = self.region.get('bridge')
-                    if bridge and self._bridge_repaired() and self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).collidepoint(x,y):continue
+                    if bridge and self._bridge_passable() and self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).collidepoint(x,y):continue
                     key = f'water_glint_{1+phase%2}'
                     if key in self._art.get('tiles',{}):
                         target.blit(self._tile_image(key),(x-camera[0]-12,y-camera[1]-12))

@@ -13,6 +13,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 
 import pygame
 
+from bridge_condition import BridgeCondition
 from regional_cartography import (RegionalCartography,get_cartography,
                                    geometry_fingerprint,tile_to_pixel,ROOT)
 
@@ -111,6 +112,20 @@ class RegionalCartographyTests(unittest.TestCase):
         chart.draw_routes(target,rect,center,4,flags={self.region['bridge']['repair_flag']})
         self.assertNotEqual(target.get_at(rect.center)[:3],baseline)
         self.assertNotIn('flags',self.region)
+
+    def test_explicit_condition_controls_routes_even_when_legacy_flags_disagree(self):
+        chart = RegionalCartography(self.region)
+        target = pygame.Surface((400,240));rect = target.get_rect()
+        background = pygame.Color('#213429')[:3]
+        for phase,flags in (('intact',set()),('restored',set()),
+                            ('destroyed',{self.region['bridge']['repair_flag']})):
+            with self.subTest(phase=phase):
+                target.fill(background)
+                chart.draw_routes(target,rect,(-111,29),4,flags=flags,
+                                  bridge_condition=BridgeCondition(phase))
+                self.assertEqual(target.get_at(rect.center)[:3] != background,
+                                 phase != 'destroyed')
+        self.assertNotIn('bridge_condition',self.region)
 
     def test_footpath_dash_phase_is_independent_of_curve_sampling(self):
         data = {'bounds_tiles':[-32,-16,64,32],'terrain':{},'walls':[],

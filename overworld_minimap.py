@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import pygame
 
+from bridge_condition import condition_for_game
+
 
 FRAME = pygame.Rect(364, 230, 104, 78)
 TILES_ACROSS = 80
@@ -90,7 +92,8 @@ class OverworldMinimap:
         flags = getattr(getattr(self.game, 'social', None), 'flags', set())
         kind = record.get('kind')
         if kind == 'bridge':
-            return 'bridge_repaired' if record.get('repair_flag') in flags else 'bridge_broken'
+            return ('bridge_repaired' if condition_for_game(self.game,self.data).passable
+                    else 'bridge_broken')
         if kind == 'checkpoint':
             opened = (record.get('destination_ready', False)
                       and record.get('clearance_flag') in flags)
@@ -109,6 +112,24 @@ class OverworldMinimap:
         if icon is not None:
             rect = icon.get_rect(center=point)
             target.blit(icon, rect)
+        elif kind == 'bridge':
+            rect = pygame.Rect(0,0,size,size);rect.center = point
+            deck = rect.inflate(0,-max(2,size//2))
+            if condition_for_game(self.game,self.data).passable:
+                pygame.draw.rect(target,'#344337',deck.inflate(0,2))
+                pygame.draw.rect(target,'#b5a17b',deck)
+            else:
+                gap = max(3,size//3)
+                for side in (pygame.Rect(deck.left,deck.top,(size-gap)//2,deck.height),
+                             pygame.Rect(deck.centerx+(gap+1)//2,deck.top,
+                                         (size-gap)//2,deck.height)):
+                    pygame.draw.rect(target,'#344337',side.inflate(0,2))
+                    pygame.draw.rect(target,'#b5a17b',side)
+                offset = max(1,gap//2)
+                for sign in (-1,1):
+                    pygame.draw.line(target,'#8b4f3e',
+                                     (point[0]-offset,point[1]-sign*offset),
+                                     (point[0]+offset,point[1]+sign*offset),1)
         else:
             # Small compatible fixtures and an unavailable art pack still have
             # a readable landmark, without any world-sized fallback image.
@@ -151,7 +172,7 @@ class OverworldMinimap:
             chart.draw_terrain(target, content, self.center_tiles, self.scale*painter.scale)
             flags = getattr(getattr(self.game, 'social', None), 'flags', set())
             chart.draw_routes(target, content, self.center_tiles, self.scale*painter.scale,
-                              flags=flags)
+                              flags=flags,bridge_condition=condition_for_game(self.game,self.data))
             for record in self._places():
                 self._draw_place(target, painter, chart, record)
             self._draw_player(target, painter)

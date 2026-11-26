@@ -893,6 +893,7 @@ class Game:
             self.quests.restore(QuestLog().to_dict())
             self.inventory=Inventory() if self._is_gallery_preview else Inventory.new_journey()
             self.social.flags.clear()
+            self.overworld_travel.restore_bridge_condition()
             self.world=self.town
             position=self.town.data['spawn']
             self.player.facing='front'
@@ -902,6 +903,7 @@ class Game:
             self.inventory=Inventory()
             if 'inventory' in data:self.inventory.restore(data['inventory'])
             self.social.flags=set(data['dialogue_flags'])
+            self.overworld_travel.restore_bridge_condition(data.get('overworld'))
             self.world=self._scene_by_id(data['player']['scene'])
             position=data['player']['position']
             self.player.facing=data['player']['facing']
@@ -1264,7 +1266,8 @@ class Game:
         """The streamed region is one lazy world, outside town routine graphs."""
         if self._overworld_world is None:
             from overworld_world import OverworldWorld
-            self._overworld_world=OverworldWorld(REGION_FILE,progress_flags=self.social.flags)
+            self._overworld_world=OverworldWorld(REGION_FILE,progress_flags=self.social.flags,
+                                               bridge_condition=self.overworld_travel.bridge_condition)
             self._overworld_world.discovered=self.overworld_travel.discovered
             self._overworld_world.grain_farm.restore(self.overworld_travel.farm_state)
             self._overworld_world.bridge_crew.restore(self.overworld_travel.bridge_state)
@@ -1272,7 +1275,8 @@ class Game:
             self._overworld_world.wildlife.restore(self.overworld_travel.wildlife_state)
             self._overworld_world.checkpoint_charm.restore(self.overworld_travel.checkpoint_state)
             self._overworld_world.participation.restore(self.overworld_travel.participation_state)
-        self._overworld_world.set_progress(self.social.flags)
+        self._overworld_world.set_progress(self.social.flags,
+                                          bridge_condition=self.overworld_travel.bridge_condition)
         return self._overworld_world
 
     def _scene_by_id(self,scene_id):

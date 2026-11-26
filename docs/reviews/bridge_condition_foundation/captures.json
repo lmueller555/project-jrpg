@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "image": "current_start.png",
+      "condition": {
+        "version": 1,
+        "phase": "destroyed",
+        "origin": "legacy_layout"
+      },
+      "deck_center_passable": false,
+      "crew_active": true
+    },
+    {
+      "image": "destroyed_fixture.png",
+      "condition": {
+        "version": 1,
+        "phase": "destroyed",
+        "origin": "explicit"
+      },
+      "deck_center_passable": false,
+      "crew_active": true
+    },
+    {
+      "image": "intact_fixture.png",
+      "condition": {
+        "version": 1,
+        "phase": "intact",
+        "origin": "explicit"
+      },
+      "deck_center_passable": true,
+      "crew_active": false
+    },
+    {
+      "image": "restored_fixture.png",
+      "condition": {
+        "version": 1,
+        "phase": "restored",
+        "origin": "explicit"
+      },
+      "deck_center_passable": true,
+      "crew_active": false
+    }
+  ],
+  "quest_and_dialogue_facts_unchanged": true,
+  "intact_and_restored_are_interim_fixtures": true
+}

@@ -234,6 +234,9 @@ def _mill_encounter(game, playback):
 
 
 def _bridge_tea(game, playback):
+    from bridge_condition import BridgeCondition
+    game.overworld_travel.restore_bridge_condition(
+        {'bridge_condition': BridgeCondition('destroyed').to_dict()})
     world = game.overworld_world
     _station(game, world, (-2376, 642))
     controller = world.bridge_crew

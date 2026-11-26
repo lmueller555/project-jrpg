@@ -140,7 +140,7 @@ class RegionalParticipation:
             return 'bench'
         if self._cat_available(game):return 'cat'
         crew = self.world.bridge_crew
-        if (crew.stage in crew.AMBIENT
+        if (crew.active and crew.stage in crew.AMBIENT
                 and crew.nearby(game) is None
                 and player.position.distance_to(INSPECT_POSITION) <= 28
                 and self.world.can_stand(player.position)):

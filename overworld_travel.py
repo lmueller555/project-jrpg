@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pygame
 
+from bridge_condition import resolve_condition, valid_snapshot as valid_bridge_condition
 from sanctuary_cave import CAVE_SCENES, LEGACY_SCENES
 
 
@@ -39,6 +40,7 @@ class OverworldTravel:
         self._speaking_guard = None
         self._guard_script = None
         self.bridge_state = None
+        self._bridge_condition = None
         self.garden_state = None
         self.wildlife_state = None
         self.checkpoint_state = None
@@ -57,6 +59,21 @@ class OverworldTravel:
         """Regional exploration keeps borrowed town actors with their owners."""
         return self.active or self.in_reserve or self.game.world.data.get('id') in CAVE_SCENES
 
+    @property
+    def bridge_condition(self):
+        """One physical condition, independent of crew milestones or quests.
+
+        Until the layered crossing and far bank ship, missing records retain
+        the legacy ruined layout. Its origin lets that later migration identify
+        scenery defaults without inventing a completed attack.
+        """
+        return resolve_condition(self._bridge_condition, flags=self.game.social.flags)
+
+    def restore_bridge_condition(self, data=None):
+        """Stage geography before any saved regional world is constructed."""
+        record = (data or {}).get('bridge_condition')
+        self._bridge_condition = resolve_condition(record) if record is not None else None
+
     def to_dict(self):
         world = self.game._overworld_world
         garden = world.garden_orchard.to_dict() if world is not None else self.garden_state
@@ -66,6 +83,7 @@ class OverworldTravel:
         checkpoint = world.checkpoint_charm.to_dict() if world is not None else self.checkpoint_state
         participation = world.participation.to_dict() if world is not None else self.participation_state
         return {'version': 1, 'region': REGION_ID, 'discovered': sorted(self.discovered),
+                'bridge_condition': self.bridge_condition.to_dict(),
                 **({'checkpoint_charm': checkpoint} if checkpoint is not None else {}),
                 **({'participation': participation} if participation is not None else {}),
                 **({'wildlife': wildlife} if wildlife is not None else {}),
@@ -125,7 +143,8 @@ class OverworldTravel:
         from checkpoint_charm import valid_state as valid_checkpoint_state
         from regional_participation import valid_context as valid_participation_context
         if not (isinstance(record, dict) and {'version', 'region'} <= set(record)
-                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'garden_orchard', 'wildlife', 'checkpoint_charm', 'participation'}
+                and set(record) <= {'version', 'region', 'discovered', 'grain_farm', 'bridge_crew', 'bridge_condition', 'garden_orchard', 'wildlife', 'checkpoint_charm', 'participation'}
+                and ('bridge_condition' not in record or valid_bridge_condition(record['bridge_condition']))
                 and ('checkpoint_charm' not in record or valid_checkpoint_state(record['checkpoint_charm']))
                 and ('participation' not in record or valid_participation_context(record['participation'], data.get('player')))
                 and ('wildlife' not in record or valid_wildlife_context(
@@ -151,6 +170,7 @@ class OverworldTravel:
     def restore(self, data=None):
         """Rearm only after leaving a destination's contact footprint."""
         self._clear_guard()
+        self.restore_bridge_condition(data)
         self._town_armed = False
         self._region_armed = False
         self._reserve_entry_armed = self._reserve_exit_armed = False
@@ -163,7 +183,8 @@ class OverworldTravel:
         self.discovered.clear()
         self.discovered.update((data or {}).get('discovered', ['eldenmere']))
         if self.game._overworld_world is not None:
-            self.game._overworld_world.set_progress(self.game.social.flags)
+            self.game._overworld_world.set_progress(self.game.social.flags,
+                                                    bridge_condition=self.bridge_condition)
             self.game._overworld_world.grain_farm.restore(self.farm_state)
             self.game._overworld_world.bridge_crew.restore(self.bridge_state)
             self.game._overworld_world.garden_orchard.restore(self.garden_state)
@@ -279,7 +300,7 @@ class OverworldTravel:
         if g.world is not g.town or not self.can_travel():
             return False
         destination = g.overworld_world
-        destination.set_progress(g.social.flags)
+        destination.set_progress(g.social.flags, bridge_condition=self.bridge_condition)
         landing = self._landing(destination, destination.town_exit,
                                 lambda point: not destination.town_entry_rect.collidepoint(point))
         if landing is None:
@@ -352,7 +373,7 @@ class OverworldTravel:
                 or g.social.script_identifier != self._guard_script):
             self._clear_guard()
         if g._overworld_world is not None:
-            g._overworld_world.set_progress(g.social.flags)
+            g._overworld_world.set_progress(g.social.flags, bridge_condition=self.bridge_condition)
         if self.active:
             g.world.grain_farm.update(seconds, g)
             g.world.bridge_crew.update(seconds, g)

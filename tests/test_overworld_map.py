@@ -11,6 +11,7 @@ os.environ.update(SDL_VIDEODRIVER='dummy', SDL_AUDIODRIVER='dummy',
 
 import pygame
 
+from bridge_condition import BridgeCondition
 from map_ui import MapUI
 from overworld_map import FIELD_STYLES, PAPER, RegionalMapUI
 from ui_style import UIStyle
@@ -188,6 +189,74 @@ class RegionalMapTests(unittest.TestCase):
         self.assertEqual(self.game.overworld_travel.discovered, before_discovery)
         self.assertEqual(self.game.player.position, before_position)
         self.assertIs(self.game.world, before_world)
+
+    def test_explicit_condition_keeps_status_icon_and_route_reader_in_agreement(self):
+        bridge = next(record for record in self.map.landmarks if record['kind']=='bridge')
+        chart = self.map._chart()
+        target = pygame.Surface((960,640))
+        before_discovery = [record['id'] for record in self.map.landmarks]
+        for phase,flags in (('intact',set()),('restored',set()),
+                            ('destroyed',{bridge['repair_flag']})):
+            with self.subTest(phase=phase):
+                condition = BridgeCondition(phase)
+                self.game.overworld_travel = SimpleNamespace(bridge_condition=condition)
+                self.game.world.bridge_condition = BridgeCondition('destroyed' if condition.passable else 'intact')
+                self.game.social.flags = flags.copy()
+                self.assertEqual(self.map._marker_status(bridge),'Passable' if condition.passable else 'Ruined')
+                self.assertIn({'intact':'intact','destroyed':'broken','restored':'restored'}[phase],
+                              self.map._description(bridge))
+                with patch.object(chart,'draw_routes',wraps=chart.draw_routes) as routes, \
+                        patch.object(self.map,'_art_icon',return_value=False) as icons:
+                    self.map.draw(target)
+                self.assertIs(routes.call_args.kwargs['bridge_condition'],condition)
+                self.assertIn('bridge_repaired' if condition.passable else 'bridge_broken',
+                              [call.args[1] for call in icons.call_args_list])
+                self.assertEqual(self.game.social.flags,flags)
+                self.assertEqual([record['id'] for record in self.map.landmarks],before_discovery)
+
+    def test_vector_fallback_bridge_symbol_routes_and_scars_follow_condition(self):
+        bridge = next(record for record in self.map.landmarks if record['kind']=='bridge')
+        point = bridge['tile_position']
+        self.map.center.update(point)
+        self.data['roads'] = [{'kind':'stone','width':3,
+                               'points':[[point[0]-20,point[1]],[point[0]+20,point[1]]]}]
+        self.data['walls'] = []
+        self.data['terrain'] = {'scorched':[{'id':'broken_bridge_east_bank','polygon':[[point[0]-5,point[1]-5],
+            [point[0]+5,point[1]-5],[point[0]+5,point[1]+5],[point[0]-5,point[1]+5]]}]}
+        target = pygame.Surface((480,320));painter = self.game.ui.painter(target)
+        sample = tuple(round(v) for v in self.map.tile_to_map(point))
+        route_pixels = {};symbol_pixels = {};scar_pixels = {}
+        for phase in ('intact','destroyed','restored'):
+            with self.subTest(phase=phase):
+                self.game.world.bridge_condition = BridgeCondition(phase)
+                self.game.social.flags = {bridge['repair_flag']}
+                target.fill(PAPER);self.map._draw_roads_walls(painter)
+                route_pixels[phase] = target.get_at(sample)
+                self.assertEqual(route_pixels[phase][:3] != pygame.Color(PAPER)[:3],phase!='destroyed')
+                target.fill(PAPER);self.map._legacy_marker(painter,bridge)
+                symbol_pixels[phase] = target.get_at(sample)
+                self.map._draw_terrain(painter);scar_pixels[phase] = target.get_at(sample)
+        self.assertEqual(symbol_pixels['intact'],symbol_pixels['restored'])
+        self.assertNotEqual(symbol_pixels['intact'],symbol_pixels['destroyed'])
+        self.assertEqual(scar_pixels['intact'][:3],pygame.Color(PAPER)[:3])
+        self.assertNotEqual(scar_pixels['destroyed'][:3],pygame.Color(PAPER)[:3])
+        self.assertNotEqual(scar_pixels['restored'][:3],pygame.Color(PAPER)[:3])
+
+    def test_intact_bridge_hides_only_its_bank_scars_in_vector_fallback(self):
+        self.game.world.bridge_condition = BridgeCondition('intact')
+        records = []
+        for index,identifier in enumerate(('broken_bridge_east_bank','broken_bridge_west_bank',
+                                           'unrelated_burn')):
+            rect = pygame.Rect(90+index*50,140,30,30)
+            records.append({'id':identifier,'polygon':[list(self.map.map_to_tile(point))
+                for point in (rect.topleft,rect.topright,rect.bottomright,rect.bottomleft)]})
+        self.data['terrain'] = {'scorched':records}
+        target = pygame.Surface((480,320))
+        self.map._draw_terrain(self.game.ui.painter(target))
+        for index,record in enumerate(records):
+            with self.subTest(feature=record['id']):
+                pixel = target.get_at((105+index*50,155))[:3]
+                self.assertEqual(pixel != pygame.Color(PAPER)[:3],record['id']=='unrelated_burn')
 
     def test_display_resize_large_text_and_long_description_remain_bounded_and_scrollable(self):
         before = json.dumps(self.data, sort_keys=True)

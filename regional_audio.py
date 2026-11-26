@@ -154,7 +154,12 @@ class RegionalAudio:
         self.stop(); self.cooldowns.clear(); self.clock = 0.; self.failed = False
 
     def stop(self):
-        for key in list(self.voices):
+        self.stop_sources(tuple(self.voices))
+
+    def stop_sources(self, keys):
+        """Release only an inactive scene's leased voices."""
+        for key in keys:
+            if key not in self.voices:continue
             try:self._stop(key)
             except pygame.error:self.voices.pop(key, None)
 

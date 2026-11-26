@@ -337,6 +337,7 @@ class EnvironmentDetail:
         for feature in terrain.get('yards',[]):
             self.polygon(target,feature,self.key(feature.get('surface','gravel'),'dirt'),cx,cy,4)
         for feature in terrain.get('scorched',[]):
+            if not self.world._scorched_feature_visible(feature):continue
             self.polygon(target,feature,'scorched',cx,cy,4)
 
     def _nearby_ground_props(self, cx, cy):
