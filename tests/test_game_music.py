@@ -551,24 +551,25 @@ class SoundtrackTests(unittest.TestCase):
         self.assertTrue(music.playing)
         self.assertEqual(music.desired_track, 'opening_leitmotif')
 
-    def test_shipped_opening_track_is_the_user_leitmotif_and_matches_provenance(self):
+    def test_retired_opening_track_is_absent_and_original_uploads_remain(self):
         root = Path(__file__).resolve().parents[1] / 'assets/music'
         catalog = json.loads((root/'tracks.json').read_text())
-        track = catalog['tracks']['opening_leitmotif']
-        self.assertEqual(track['file'], 'runtime/dare_to_dream_leitmotif.ogg')
-        self.assertIs(track['loop'], True)
+        self.assertNotIn('opening_leitmotif', catalog['tracks'])
         audit = json.loads((root/'runtime/provenance.json').read_text())
-        record = next(item for item in audit['tracks']
-                      if item['identifier'] == 'opening_leitmotif')
-        self.assertEqual(record['source'], 'Dare to Dream Leitmotif.m4a')
-        self.assertEqual(record['source_git_blob_sha'],
-                         'c057902f21e2d84ac786f5f4ee37ac98f3c073e2')
-        self.assertEqual(record['source_decoded_frames'],
-                         record['verification']['decoded_frames'])
-        self.assertEqual(record['boundaries']['removed_tail_frames'], 0)
-        self.assertIs(record['verification']['pygame_stream_with_repeat'], True)
-        self.assertEqual(hashlib.sha256((root/track['file']).read_bytes()).hexdigest(),
-                         record['verification']['sha256'])
+        self.assertNotIn('opening_leitmotif', {item['identifier'] for item in audit['tracks']})
+        self.assertFalse((root/'runtime/dare_to_dream_leitmotif.ogg').exists())
+        music = GameMusic(SimpleNamespace(audio=AudioSettings()), mixer=FakeMixer())
+        self.addCleanup(music.stop)
+        self.assertFalse(music.play('opening_leitmotif'))
+        originals = {
+            'Dare to Dream Leitmotif.m4a':
+                '42cd87f4ab621c82ce930cf0264e07830357025042e2559f27bb08fa7cedb5c1',
+            'Dare to Dream.m4a':
+                'c7d3784a6ba1a4da4239f8708358dcb18fa3da077b56ba99549edce13a033a2e',
+        }
+        for filename, expected in originals.items():
+            with self.subTest(original=filename):
+                self.assertEqual(hashlib.sha256((root/filename).read_bytes()).hexdigest(), expected)
 
     def test_exploration_uses_new_upload_and_title_keeps_original_theme(self):
         root = Path(__file__).resolve().parents[1] / 'assets/music'

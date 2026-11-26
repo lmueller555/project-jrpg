@@ -54,7 +54,8 @@ The retired scene supplied code used by the retained Ice Reaper. Its shared
 player is now an explicitly installed optional cinematic; ordinary startup does
 not load a scene. The old lamp, helmet, flare and other scene-specific behavior
 is removed. The retained production Ice Reaper's world pixels and portrait UI
-match the baseline in all 20 sampled normal/reduced-motion frames.
+match the baseline in all 20 sampled normal/reduced-motion frames
+([frame hashes and reproduction script](ice_reaper_frames.json)).
 
 The [fresh Gallery capture](gallery/capture.json) records 20 retained entries,
 responsive layouts and actual input through Ice Reaper playback, pause,
@@ -89,5 +90,22 @@ Historical captures and review data are preserved. Old guides that have incoming
 references are short retirement notices with historical commit links. The few
 remaining original-path fields in archived/provenance manifests are historical
 origins, not active builder inputs.
+
+## Regression scope and remaining failures
+
+The final sweep executed all 2,636 test methods in
+292 modules, using fresh processes to release rendered fixtures.
+The earlier single-process attempts exceeded the environment's memory limit and
+are not counted as completed runs.
+
+There are 54 existing failure/error records across 33 methods.
+Each exact case was reproduced in a fresh process at the baseline commit; its
+normalized traceback and assertion match. No new failure/error records remain.
+This is not a green suite; the existing failures are listed with reproduction
+methods in [the complete regression comparison](regression.json).
+
+The stale opening-music assertion was replaced with retirement and original-upload
+preservation coverage; all 32 soundtrack tests pass. The six bedroom inspection
+metadata lines also match the current script.
 
 See [validation.json](validation.json) for final test and preservation results.

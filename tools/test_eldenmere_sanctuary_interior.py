@@ -102,8 +102,11 @@ class SanctuaryInteriorTests(unittest.TestCase):
 
     def test_approved_inspection_lines_and_three_household_provisions(self):
         text=(ROOT/'docs/narrative/game_01/CH01_MQ01.md').read_text()
-        section=text.split('**Optional inspect lines:**',1)[1].split('**Exit:**',1)[0]
-        approved=dict(re.findall(r'^- (.*?) — Caelen: "(.*?)"$',section,re.M));seen={}
+        section=text.split('**Optional bedroom inspections:**',1)[1].split('\n### ',1)[0]
+        lines=dict(re.findall(r'^- \*\*Caelan, ([^:]+):\*\* “(.*?)”$',section,re.M))
+        labels={'Bed after waking':'bed','Desk notes':'desk notes','Wardrobe':'wardrobe',
+                'Bookshelf':'bookshelf','Childhood family drawing':'family drawing','Window':'window'}
+        approved={key:lines[label] for key,label in labels.items()};seen={}
         for obj in self.rooms['bedroom']['objects']+self.rooms['bedroom']['story_anchors']:
             if obj.get('inspect_key'):
                 self.assertEqual(obj['approved_inspect_text'],approved[obj['inspect_key']]);seen[obj['inspect_key']]=obj['approved_inspect_text']

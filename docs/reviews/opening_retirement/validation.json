@@ -1,5 +1,5 @@
 {
-  "status": "Final broad regression run in progress",
+  "status": "Complete; no new regression failures; baseline failures documented",
   "base_commit": "aa4b7acefcd7822e533e59afd29ed566dc9fa44d",
   "story_revision": 2,
   "played_main_scenes": 37,
@@ -13,5 +13,42 @@
   "moved_raster_images_byte_identical": 100,
   "old_review_artifacts_modified": false,
   "new_fire_prologue_implemented": false,
-  "bridge_phase_migration_implemented": false
+  "bridge_phase_migration_implemented": false,
+  "regression": {
+    "modules": 292,
+    "test_methods_executed": 2636,
+    "failed_methods": 33,
+    "failure_records": 42,
+    "error_records": 12,
+    "skipped_methods": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "new_failure_records": 0,
+    "baseline_identical_failure_or_error_records": 54
+  },
+  "regression_evidence": "regression.json",
+  "gallery_entries": 20,
+  "quest_playtests": 2,
+  "changed_python_files_compiled": 144,
+  "bedroom_inspection_metadata_consistency": "Six current inspection lines checked; focused source test passes",
+  "retained_builders_checked": [
+    "Caelan scene actors",
+    "Iselin scene actors",
+    "Elden Vale region and cartography"
+  ],
+  "executable_retired_controller_imports": 0,
+  "unexplained_live_missing_asset_references": 0,
+  "historical_original_path_references": 4,
+  "preserved_region_metrics": {
+    "bridge_walk_seconds": 46.05,
+    "reachable_tiles": 43616,
+    "unchanged_terrain_pngs": 43
+  },
+  "documentation_links": {
+    "documents": 535,
+    "links_checked": 2048,
+    "baseline_broken": 9,
+    "current_broken": 2,
+    "new_broken": 0
+  }
 }

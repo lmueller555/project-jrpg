@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "purpose": "Verify that extracting CinematicPlayer preserves the retained Ice Reaper scene and portrait UI.",
+  "baseline_commit": "aa4b7acefcd7822e533e59afd29ed566dc9fa44d",
+  "current_revision": "Uncommitted feature/retire-opening-runtime working tree; sampled again after full runtime integration.",
+  "method": "Instantiate the production IceReaperOpening with the same lightweight UI host in each tree; start once, assign identical elapsed times in the same order, and call the full production draw method. Hash complete RGBA world and UI surfaces without cropping.",
+  "environment": {
+    "python": "/workspace/.venvs/project-jrpg/bin/python",
+    "SDL_VIDEODRIVER": "dummy",
+    "SDL_AUDIODRIVER": "dummy",
+    "display_pixels": [
+      960,
+      640
+    ],
+    "world_pixels": [
+      480,
+      320
+    ],
+    "ui_pixels": [
+      960,
+      640
+    ],
+    "text_scale": 1.0,
+    "pixel_format": "RGBA",
+    "hash": "SHA-256"
+  },
+  "sample_count": 20,
+  "all_samples_match": true,
+  "limits": "This comparison verifies rendering at the listed times in normal and reduced-motion modes. Playback completion, pause, focus, restart and save isolation are covered separately by the focused tests.",
+  "original_commands": [
+    {
+      "cwd": "/tmp/jrpg-retirement-base",
+      "command": "/workspace/.venvs/project-jrpg/bin/python /tmp/retirement_ice_pixel_check.py --baseline"
+    },
+    {
+      "cwd": "/workspace/project-jrpg",
+      "command": "/workspace/.venvs/project-jrpg/bin/python /tmp/retirement_ice_pixel_check.py"
+    },
+    {
+      "cwd": "/workspace/project-jrpg",
+      "command": "/workspace/.venvs/project-jrpg/bin/python /tmp/retirement_ice_pixel_capture.py"
+    }
+  ],
+  "reproduction": "Save sampling_python below as a temporary Python file and run it with the project dependencies from the baseline checkout and the retirement checkout. Compare the resulting JSON maps. Run each command in a fresh process; the script inserts its working directory into the import path.",
+  "sampling_python": "import os,json,hashlib,sys\nfrom pathlib import Path\nfrom types import SimpleNamespace\nos.environ['SDL_VIDEODRIVER']='dummy'\nos.environ['SDL_AUDIODRIVER']='dummy'\nos.environ['PYGAME_HIDE_SUPPORT_PROMPT']='1'\nsys.path.insert(0,str(Path.cwd()))\nimport pygame\nfrom ice_reaper_opening import IceReaperOpening\nfrom audio_settings import AudioSettings\nfrom ui_style import UIStyle\npygame.init();pygame.display.set_mode((960,640))\ngame=SimpleNamespace(audio=AudioSettings(),_music_focused=True,to_canvas=lambda p:p)\ngame.ui=UIStyle(game)\nscene=IceReaperOpening(game);scene.start()\ncanvas=pygame.Surface((480,320));ui=pygame.Surface((960,640))\nresult={}\nfor reduced in (False,True):\n game.audio.reduced_motion=reduced\n for elapsed in (0.,1.,4.2,8.5,13.8,17.5,19.5,24.5,27.9,31.):\n  scene.elapsed=elapsed;scene.draw(canvas,ui)\n  result[f'{reduced}:{elapsed}']=[hashlib.sha256(pygame.image.tobytes(surface,'RGBA')).hexdigest() for surface in (canvas,ui)]\npygame.quit()\nprint(json.dumps(result, indent=2))\n",
+  "frames": [
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 0.0,
+      "baseline": {
+        "world_rgba_sha256": "1f6486bbec376a762197784ee3cb5f5f9431819b947f24ec63ee500ad3383a5a",
+        "ui_rgba_sha256": "a34c7c54d51c7bdb9b0966a41d12fb78d8a7bc0369641be7e6e10c7d68e44e9e"
+      },
+      "current": {
+        "world_rgba_sha256": "1f6486bbec376a762197784ee3cb5f5f9431819b947f24ec63ee500ad3383a5a",
+        "ui_rgba_sha256": "a34c7c54d51c7bdb9b0966a41d12fb78d8a7bc0369641be7e6e10c7d68e44e9e"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 1.0,
+      "baseline": {
+        "world_rgba_sha256": "473e6287414295dd8e9896953e2c56f484a7cbdd3c017c64f2379eb603211d44",
+        "ui_rgba_sha256": "6f933f5355ff6f1d86d6a04122378902b7158a474a2b6c93412752380201f55a"
+      },
+      "current": {
+        "world_rgba_sha256": "473e6287414295dd8e9896953e2c56f484a7cbdd3c017c64f2379eb603211d44",
+        "ui_rgba_sha256": "6f933f5355ff6f1d86d6a04122378902b7158a474a2b6c93412752380201f55a"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 4.2,
+      "baseline": {
+        "world_rgba_sha256": "b04697b6085fd04484b2727b070f653d98b3537de21eb84641e53a7108b80686",
+        "ui_rgba_sha256": "94eb58332ecd7b0759bf80931ded1fcfcae13f0cbd5701c604c34fd09957f7de"
+      },
+      "current": {
+        "world_rgba_sha256": "b04697b6085fd04484b2727b070f653d98b3537de21eb84641e53a7108b80686",
+        "ui_rgba_sha256": "94eb58332ecd7b0759bf80931ded1fcfcae13f0cbd5701c604c34fd09957f7de"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 8.5,
+      "baseline": {
+        "world_rgba_sha256": "5352747f58a26c47c48abf165884571554dd23daf1f21896b3125cb83fb7e944",
+        "ui_rgba_sha256": "722ab6f0922cea4595918f1a40f0b6591c4f883ada7987a6d07f74e4d5bcdf83"
+      },
+      "current": {
+        "world_rgba_sha256": "5352747f58a26c47c48abf165884571554dd23daf1f21896b3125cb83fb7e944",
+        "ui_rgba_sha256": "722ab6f0922cea4595918f1a40f0b6591c4f883ada7987a6d07f74e4d5bcdf83"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 13.8,
+      "baseline": {
+        "world_rgba_sha256": "69075c3c1f8e5d5751e915e6ef8566afc35caffe9258d7c6d96019cae4e736a3",
+        "ui_rgba_sha256": "7a8c2a15eafded50364ff97e965ef5e0d84865bae3e22b9a7bbb0d661474af01"
+      },
+      "current": {
+        "world_rgba_sha256": "69075c3c1f8e5d5751e915e6ef8566afc35caffe9258d7c6d96019cae4e736a3",
+        "ui_rgba_sha256": "7a8c2a15eafded50364ff97e965ef5e0d84865bae3e22b9a7bbb0d661474af01"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 17.5,
+      "baseline": {
+        "world_rgba_sha256": "c63011007bf6dc7f6cecdc4588c74116b0babf38301bc4813207bee40bedcbb5",
+        "ui_rgba_sha256": "44a6498d0a6644db5c860dd46910ea64a0def0da773ca407e371297d98fc9584"
+      },
+      "current": {
+        "world_rgba_sha256": "c63011007bf6dc7f6cecdc4588c74116b0babf38301bc4813207bee40bedcbb5",
+        "ui_rgba_sha256": "44a6498d0a6644db5c860dd46910ea64a0def0da773ca407e371297d98fc9584"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 19.5,
+      "baseline": {
+        "world_rgba_sha256": "e4b087b0210bdef06a9d730cc9dc5f0a4ed4f1bcd22708bb4e1abc0aabf8b653",
+        "ui_rgba_sha256": "c5bbc0adc3499b4abb026eec4818218deae98ffbf4a86a71e16bae9b63314e60"
+      },
+      "current": {
+        "world_rgba_sha256": "e4b087b0210bdef06a9d730cc9dc5f0a4ed4f1bcd22708bb4e1abc0aabf8b653",
+        "ui_rgba_sha256": "c5bbc0adc3499b4abb026eec4818218deae98ffbf4a86a71e16bae9b63314e60"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 24.5,
+      "baseline": {
+        "world_rgba_sha256": "14c4a82994fdd1b9597b5178280f622c6d3cf71403411c410762c725f09fd2a5",
+        "ui_rgba_sha256": "793962c5290a740551252b982c64d00700df47c1e6b2a4e05ae4b4c6683ab065"
+      },
+      "current": {
+        "world_rgba_sha256": "14c4a82994fdd1b9597b5178280f622c6d3cf71403411c410762c725f09fd2a5",
+        "ui_rgba_sha256": "793962c5290a740551252b982c64d00700df47c1e6b2a4e05ae4b4c6683ab065"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 27.9,
+      "baseline": {
+        "world_rgba_sha256": "20c0d501bc8deae55bdc4751f8c2380055c85f9e13179cf953ba6c19b4ab7f4d",
+        "ui_rgba_sha256": "4abc4401b776476e19965642e321fbcb5dce907d2bd224a2cd02623a9d1cd110"
+      },
+      "current": {
+        "world_rgba_sha256": "20c0d501bc8deae55bdc4751f8c2380055c85f9e13179cf953ba6c19b4ab7f4d",
+        "ui_rgba_sha256": "4abc4401b776476e19965642e321fbcb5dce907d2bd224a2cd02623a9d1cd110"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": false,
+      "elapsed_seconds": 31.0,
+      "baseline": {
+        "world_rgba_sha256": "696d9b6ee31d18aa0e478f47ac3cfb62055a89eb5f3dd204461766f723852a77",
+        "ui_rgba_sha256": "ef9df483249685eb839f7c1cb29575df5376c8a2ceb9089da8809c1c5c02faf9"
+      },
+      "current": {
+        "world_rgba_sha256": "696d9b6ee31d18aa0e478f47ac3cfb62055a89eb5f3dd204461766f723852a77",
+        "ui_rgba_sha256": "ef9df483249685eb839f7c1cb29575df5376c8a2ceb9089da8809c1c5c02faf9"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 0.0,
+      "baseline": {
+        "world_rgba_sha256": "c9e6281e6100e28cb310882ca969fe272f3cd7a57265593933d23e43b85ae40d",
+        "ui_rgba_sha256": "cee15c054c085b40b0809c628e0dde79274adcab86b2ea12e05f9731b56d9a47"
+      },
+      "current": {
+        "world_rgba_sha256": "c9e6281e6100e28cb310882ca969fe272f3cd7a57265593933d23e43b85ae40d",
+        "ui_rgba_sha256": "cee15c054c085b40b0809c628e0dde79274adcab86b2ea12e05f9731b56d9a47"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 1.0,
+      "baseline": {
+        "world_rgba_sha256": "cedb20eb4c5e796b2c6c3b5a3e1b26eaa5776a054376e34c2021eb51cb35c1fc",
+        "ui_rgba_sha256": "75ab8c7d558c2fdabed38c9e63e8bed6e8adfc6385034d6c7c1ca0703f14298a"
+      },
+      "current": {
+        "world_rgba_sha256": "cedb20eb4c5e796b2c6c3b5a3e1b26eaa5776a054376e34c2021eb51cb35c1fc",
+        "ui_rgba_sha256": "75ab8c7d558c2fdabed38c9e63e8bed6e8adfc6385034d6c7c1ca0703f14298a"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 4.2,
+      "baseline": {
+        "world_rgba_sha256": "3c926cf5a1ba2dd2343b33f065b680c9b37bcc1f525e2883c576eaf7c7533b48",
+        "ui_rgba_sha256": "997672252b65de7fcbb0e06eb46a4f9a0191e7f5ac63632713479f087d7c539d"
+      },
+      "current": {
+        "world_rgba_sha256": "3c926cf5a1ba2dd2343b33f065b680c9b37bcc1f525e2883c576eaf7c7533b48",
+        "ui_rgba_sha256": "997672252b65de7fcbb0e06eb46a4f9a0191e7f5ac63632713479f087d7c539d"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 8.5,
+      "baseline": {
+        "world_rgba_sha256": "1949132e3b7610b7915bf1b738a1fd96d047644d2fefd2833dfadc53ec454f15",
+        "ui_rgba_sha256": "015e08fece9da47b0db88b3727f7e1487b3205e68c7b0016d2ea0cb7b16d643c"
+      },
+      "current": {
+        "world_rgba_sha256": "1949132e3b7610b7915bf1b738a1fd96d047644d2fefd2833dfadc53ec454f15",
+        "ui_rgba_sha256": "015e08fece9da47b0db88b3727f7e1487b3205e68c7b0016d2ea0cb7b16d643c"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 13.8,
+      "baseline": {
+        "world_rgba_sha256": "104847c2b3dc50140ebb7e9efbc187d5f592e45575cc2c29a74c0fd162751bf9",
+        "ui_rgba_sha256": "2c8fcdc1bec6b0f3bca6a9df1e3271bf3d3200fcfcd0894b90298298bc76dfb7"
+      },
+      "current": {
+        "world_rgba_sha256": "104847c2b3dc50140ebb7e9efbc187d5f592e45575cc2c29a74c0fd162751bf9",
+        "ui_rgba_sha256": "2c8fcdc1bec6b0f3bca6a9df1e3271bf3d3200fcfcd0894b90298298bc76dfb7"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 17.5,
+      "baseline": {
+        "world_rgba_sha256": "d5262acb789e32bf6beee0f97c64896a8e93e91020f3024a1ca057a275f93874",
+        "ui_rgba_sha256": "ef7c9d9bbb3c3617b7e02c8dbda94beea3fafdf6aee9e471b702411d609e836b"
+      },
+      "current": {
+        "world_rgba_sha256": "d5262acb789e32bf6beee0f97c64896a8e93e91020f3024a1ca057a275f93874",
+        "ui_rgba_sha256": "ef7c9d9bbb3c3617b7e02c8dbda94beea3fafdf6aee9e471b702411d609e836b"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 19.5,
+      "baseline": {
+        "world_rgba_sha256": "f0b468a86aca8c23c5b6aedd91ef1d3a4e5fc069b8a3403d7b1f3436b9162169",
+        "ui_rgba_sha256": "c963e1ec73fcafae353d6bba1f1ef0c8713b892c4b761477336d1b4b70aadd76"
+      },
+      "current": {
+        "world_rgba_sha256": "f0b468a86aca8c23c5b6aedd91ef1d3a4e5fc069b8a3403d7b1f3436b9162169",
+        "ui_rgba_sha256": "c963e1ec73fcafae353d6bba1f1ef0c8713b892c4b761477336d1b4b70aadd76"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 24.5,
+      "baseline": {
+        "world_rgba_sha256": "aa340d396e38282e7ebb5dbd1a3403fd356d7fa37077e1ab4d50bb36619f4765",
+        "ui_rgba_sha256": "1f786f93283aa9464e1e271ed8c631d982c8b291a932b94f24d7309ca19dd6e9"
+      },
+      "current": {
+        "world_rgba_sha256": "aa340d396e38282e7ebb5dbd1a3403fd356d7fa37077e1ab4d50bb36619f4765",
+        "ui_rgba_sha256": "1f786f93283aa9464e1e271ed8c631d982c8b291a932b94f24d7309ca19dd6e9"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 27.9,
+      "baseline": {
+        "world_rgba_sha256": "4b89131b70da045a031dbb38746a0cab6019661d731c3bd09cd098f0b69daf17",
+        "ui_rgba_sha256": "5e60635067a4f93d331faf611dc0221091b7e556557841dd100cc6636a98b7fe"
+      },
+      "current": {
+        "world_rgba_sha256": "4b89131b70da045a031dbb38746a0cab6019661d731c3bd09cd098f0b69daf17",
+        "ui_rgba_sha256": "5e60635067a4f93d331faf611dc0221091b7e556557841dd100cc6636a98b7fe"
+      },
+      "matches": true
+    },
+    {
+      "reduced_motion": true,
+      "elapsed_seconds": 31.0,
+      "baseline": {
+        "world_rgba_sha256": "5eec6f0bab0566adf6ca77570fedb2646a52f7b935b0b791fa89bfdbed69d062",
+        "ui_rgba_sha256": "074bfdaee6e96d01e10180946f70ec9f9ba22b15a3348e0298d7b71fe35c433b"
+      },
+      "current": {
+        "world_rgba_sha256": "5eec6f0bab0566adf6ca77570fedb2646a52f7b935b0b791fa89bfdbed69d062",
+        "ui_rgba_sha256": "074bfdaee6e96d01e10180946f70ec9f9ba22b15a3348e0298d7b71fe35c433b"
+      },
+      "matches": true
+    }
+  ]
+}

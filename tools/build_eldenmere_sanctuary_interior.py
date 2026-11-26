@@ -79,8 +79,13 @@ def resolve(record,recipe):
 
 
 def approved_inspections():
-    text=STORY.read_text();section=text.split('**Optional inspect lines:**',1)[1].split('**Exit:**',1)[0]
-    return dict(re.findall(r'^- (.*?) — Caelen: "(.*?)"$',section,re.M))
+    section=STORY.read_text().split('**Optional bedroom inspections:**',1)[1].split('\n### ',1)[0]
+    lines=dict(re.findall(r'^- \*\*Caelan, ([^:]+):\*\* “(.*?)”$',section,re.M))
+    labels={'Bed after waking':'bed','Desk notes':'desk notes','Wardrobe':'wardrobe',
+            'Bookshelf':'bookshelf','Childhood family drawing':'family drawing','Window':'window'}
+    if set(lines)!=set(labels.values()):
+        raise ValueError('Bedroom inspection script labels do not match the six authored objects')
+    return {key:lines[label] for key,label in labels.items()}
 
 
 def room_shell(room):
