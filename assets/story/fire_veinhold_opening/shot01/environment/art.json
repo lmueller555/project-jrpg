@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "density": 2,
+  "layers": {
+    "sky": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/sky.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "distant": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/distant.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "mid": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/mid.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "foreground_a": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/foreground_a.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "foreground_b": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/foreground_b.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "crest": {
+      "image": "assets/story/fire_veinhold_opening/shot01/environment/crest.png",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ]
+    }
+  }
+}

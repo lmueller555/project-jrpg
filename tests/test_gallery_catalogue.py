@@ -12,7 +12,8 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
 from main import Game
-from cutscene_gallery import GALLERY_ENTRIES, GALLERY_BY_ID, GalleryPlayback
+from cutscene_gallery import (GALLERY_ENTRIES, GALLERY_BY_ID, GalleryPlayback,
+                              _fire_veinhold_entries)
 
 
 class GalleryCatalogueTests(unittest.TestCase):
@@ -38,8 +39,44 @@ class GalleryCatalogueTests(unittest.TestCase):
                 self.assertEqual(Path(entry.thumbnail).parent.as_posix(), 'assets/ui/gallery')
                 self.assertEqual(Path(entry.thumbnail).name, entry.id+'.png')
         # Coverage must extend beyond both standalone framing cinematics.
-        for chapter in ('A Day Like Any Other', 'Mira’s Mill Quest', 'Elden Vale', 'Scene Studies'):
+        for chapter in ('Fire Veinhold Prologue', 'A Day Like Any Other',
+                        'Mira’s Mill Quest', 'Elden Vale', 'Scene Studies'):
             self.assertTrue(any(entry.chapter == chapter for entry in GALLERY_ENTRIES), chapter)
+
+    def test_fire_veinhold_lists_complete_replay_and_only_completed_shots(self):
+        from fire_veinhold_opening import available_shots, sequence_duration
+        shots = available_shots()
+        entries = [entry for entry in GALLERY_ENTRIES if entry.chapter == 'Fire Veinhold Prologue']
+        self.assertEqual(len(entries), len(shots)+1)
+        self.assertEqual(entries[0].id, 'fire_veinhold_opening')
+        self.assertIn(f'{sequence_duration():g}s', entries[0].description)
+        for entry, shot in zip(entries[1:], shots):
+            self.assertEqual(entry.fixture.keywords['shot_id'], shot['id'])
+            if 'gallery_id' in shot:self.assertEqual(entry.id, shot['gallery_id'])
+            self.assertEqual(entry.description, shot['description'])
+            self.assertIn(f'{shot["duration"]:g}s', entry.name)
+        thumbnails = [Path(GALLERY_BY_ID[identifier].thumbnail) for identifier in
+                      ('fire_veinhold_opening', 'fire_veinhold_shot_01')]
+        self.assertTrue(all(path.is_file() for path in thumbnails))
+        images = [pygame.image.load(str(path)) for path in thumbnails]
+        self.assertTrue(all(image.get_size() == (320, 180) for image in images))
+        self.assertNotEqual(*(pygame.image.tobytes(image, 'RGB') for image in images))
+
+    def test_fire_veinhold_registry_adds_a_new_completed_shot_without_another_fixture(self):
+        from fire_veinhold_opening import available_shots
+        first = available_shots()[0]
+        total = first['duration']+8.
+        next_shot = dict(id='completed_test_shot', gallery_id='fire_veinhold_shot_02',
+                         name='Completed Test Shot', duration=8.,
+                         description='Synthetic completed-shot metadata for registry coverage.')
+        with patch('fire_veinhold_opening.available_shots', return_value=[first, next_shot]), \
+                patch('fire_veinhold_opening.sequence_duration', return_value=total):
+            entries = _fire_veinhold_entries()
+        self.assertEqual([entry.id for entry in entries],
+                         ['fire_veinhold_opening', 'fire_veinhold_shot_01', 'fire_veinhold_shot_02'])
+        self.assertIn(f'{total:g}s', entries[0].description)
+        self.assertIn('Shot 2 (8s)', entries[0].description)
+        self.assertEqual(entries[2].fixture.keywords['shot_id'], 'completed_test_shot')
 
     def test_registry_cannot_fixture_a_normal_or_persistent_game(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -67,7 +104,7 @@ class GalleryCatalogueTests(unittest.TestCase):
         self.assertEqual(calls, [])
 
     def test_native_cinematic_skip_completes_the_selected_preview_only(self):
-        for identifier in ('ice_reaper_opening',):
+        for identifier in ('ice_reaper_opening', 'fire_veinhold_opening', 'fire_veinhold_shot_01'):
             with self.subTest(scene=identifier):
                 game = self.preview()
                 playback = GALLERY_BY_ID[identifier].start(game)

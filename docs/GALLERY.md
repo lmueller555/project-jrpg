@@ -21,6 +21,16 @@ does not replace New Game's opening or create a main-story encounter.
 See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 [review clip](reviews/ice_reaper_opening/preview.mp4).
 
+**Fire Veinhold Prologue** includes **Shot 1 — Eagle Ascent (10s)** and
+**Fire Veinhold — Complete Cutscene**. The complete entry automatically plays
+all finished shots in the production scene list; currently both entries play
+the ten-second eagle ascent. Later shot PRs extend that list and add their own
+individual entries. These use native 960×640 cinematic detail with wind and
+flight Foley. New Game keeps the bedroom opening until the full prologue and
+playable handoff are ready. See the
+[scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
+[review evidence](reviews/fire_veinhold_opening/README.md).
+
 ## Controls
 
 | Where | Input | Action |
@@ -71,8 +81,10 @@ it does not duplicate dialogue, animation or camera scripts.
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 | `ice_reaper_opening` | Ice Reaper: Frozen Clearing (32s) | Independent late-game cinematic study; ends before playable combat |
 | `mira_arm_rig` | Mira: Aether Arm Rig | Independent art/technique preview; no journey changes |
+| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Ordered implemented clips; currently the ten-second eagle ascent |
+| `fire_veinhold_shot_01` | Shot 1 — Eagle Ascent (10s) | Individual production eagle shot through summit crest |
 
-There are 20 retained entries. The old flashforward, relief-caravan arrival
+There are 22 current entries. The old flashforward, relief-caravan arrival
 and MQ04 lantern-assembly fixtures are removed. Elira's private household
 lantern retrieval/placement remains ordinary remembrance, without a festival.
 Mill intake scenes use the retained encounter-complete facts. Regional scenes
@@ -94,7 +106,7 @@ the cat and inspecting masonry remain ordinary optional interactions.
 
 Ordinary standing conversations, player-controlled errands/travel, the mill
 battle and repeating ambient routines are excluded. Removed quests do not
-remain as hidden replay fixtures, and future Fire Veinhold scenes are not
+remain as hidden replay fixtures. Unimplemented Fire Veinhold shots are not
 listed. Current retirement captures are under
 `docs/reviews/opening_retirement/gallery/`; older Gallery captures are
 historical evidence.
@@ -113,7 +125,9 @@ its owned morning and regional effects and soundtrack, then restores
 title music. Regional voice leases are released by sound identity; unrelated
 channels are not globally stopped. Restart constructs another fresh runtime.
 Completion holds only the final world pose briefly and does not advance the
-next scene. Window focus loss freezes preview progression and dialogue input.
+next scene. Standalone Fire Veinhold films return immediately, without exposing
+an underlying world after their final clip. Window focus loss freezes preview
+progression and dialogue input.
 
 The toolbar has its own display area, and scene input coordinates account for
 that viewport. This keeps the complete production dialogue and Skip controls

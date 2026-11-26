@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "density": 2,
+  "source_records": [
+    {
+      "file": "master_generated.png",
+      "sha256": "408b8f7c6ed032c454a0a88292245d2ee71070a537668a00538d49187b9ea788",
+      "prompt": "Detailed JRPG mountain-flight environment master: final high-altitude uphill approach through a southern Merovar slate ravine, cool dawn sky, pale warm upper-left light, sparse alpine vegetation, layered ridges and open center flight corridor. Requested2048x1536; generator returned1448x1086 native. No bird, characters, volcano, fortress, lava, red cues or typography.",
+      "generation_id": "exec-ab6184bd-d25d-465b-b272-f1b8c5d60253",
+      "native_canvas": [
+        1448,
+        1086
+      ]
+    },
+    {
+      "file": "sky_generated.png",
+      "sha256": "e0479b2aa12522addf8a58c695911d76f3ecd55b7352cf5e1200c27cc468e551",
+      "prompt": "Opaque sky-only background edit referenced to master: remove all terrain and reconstruct cool silver-blue/lavender dawn sky and fine high wind-streak clouds. Preserve upper-left pale light and reference pixel-art palette. No sun disc, terrain, bird or words.",
+      "generation_id": "exec-87ba474f-12f9-44f1-a4a6-0498b478ef03",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "distant_generated.png",
+      "sha256": "17c43667fc4f1240c658c45ae478be25fb65ae03fd9161ca2615b6f8accb0ce7",
+      "prompt": "Transparent distant mountain-ridge layer edit referenced to master: cool hazy blue-gray/slate southern-temperate alpine chain, sparse old snow patches, low-contrast overlapping ridge silhouettes and central saddle. No close cliffs, foreground, riverbed, volcano, fortress, red cues or bird.",
+      "generation_id": "exec-f93744a4-e9c1-45d1-9572-c2c44d01fc59",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "mid_generated.png",
+      "sha256": "1c9448138d0c6ba6eceb0a93e846df8da316346396799443500668f90dc69fcc",
+      "prompt": "Transparent midground ravine slopes edit referenced to master: immense warm-gray/slate stratified flanks form a V-shaped ascending aerial ravine, sunlit left cliffs and cool right shadows. Fine ledges, scree, sparse alpine vegetation and tiny distant conifers. Clear central flight corridor, remove sky/distant chain/nearest spurs, no volcano, fortress, red cues or bird.",
+      "generation_id": "exec-07d85b88-2fac-471b-987e-1253960e6976",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "foreground_a_generated.png",
+      "sha256": "a3dc8d00ae7a942de4e655fbef0919594dcf6485e8d306f8e83b68fe150bcb5f",
+      "prompt": "Transparent close left foreground rock-spur edit referenced to master: jagged warm-gray/slate buttress entering left/lower-left, cropped rock ledges, sparse alpine grass and lichen. Right silhouette slopes toward lower center, leaving central/right flight corridor empty. Coherent pale upper-left dawn lighting. No backdrop, bird, volcano, fortress, fire, red cues or text.",
+      "generation_id": "exec-9b1fdde2-bf69-4288-80c2-1e384d577be0",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "foreground_b_generated.png",
+      "sha256": "292e1d0c62dfb6a4eeeadec859d8128ea53fa5ebca0245ed1d61f36921431af6",
+      "prompt": "Transparent close right foreground rock-spur edit referenced to master: different rugged right/lower-right buttress, left boundary confined toward right third, taller cooler shaded strata and sparse alpine grass. Keep central/left flight corridor empty; natural asymmetry, no mirror copy. No sky, bird, volcano, fortress, red cues or text.",
+      "generation_id": "exec-4c2f26fb-5e99-409f-9c78-169d7f2f7fac",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "crest_generated.png",
+      "sha256": "fd66be3a614c59cf9d2e736e7bcc58b94c06db98d8e1baea4bd6269a73354080",
+      "prompt": "Transparent final summit ridge-cap edit referenced to master: nearby continuous jagged slate-gray crest across lower half, higher left/right thirds and lower central saddle. Upper half transparent; slope descends toward camera/bottom with detailed ledges, sparse alpine vegetation and upper-left dawn light. Hide everything beyond summit. No sky backdrop, bird, volcano, fortress, smoke, lava, red cues or text.",
+      "generation_id": "exec-beb839cb-89aa-4787-a92a-1e0005bfd6c5",
+      "native_canvas": [
+        1448,
+        1086
+      ],
+      "referenced_source": "master_generated.png"
+    }
+  ],
+  "layers": {
+    "sky": {
+      "source": "sky_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "distant": {
+      "source": "distant_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "mid": {
+      "source": "mid_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "foreground_a": {
+      "source": "foreground_a_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "foreground_b": {
+      "source": "foreground_b_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    },
+    "crest": {
+      "source": "crest_generated.png",
+      "alpha_threshold": 128,
+      "anchor": [
+        724,
+        543
+      ]
+    }
+  },
+  "framing": {
+    "native_master_canvas": [
+      1448,
+      1086
+    ],
+    "preserve_native_pixels": true,
+    "mid_flight_saddle": [
+      895,
+      253
+    ],
+    "mid_lower_ravine": [
+      820,
+      1086
+    ],
+    "distant_center_saddle": [
+      730,
+      538
+    ],
+    "crest_center_saddle": [
+      750,
+      640
+    ],
+    "notes": "Native image-generation output retained without enlargement or padding. Renderer frames a960x640 detailed viewport independently for each depth plane; fast foreground parallax supplies near travel. Start already high on the final approach. Crest passes down below camera before Shot2; no volcano or fortress is present in any Shot1 layer."
+  }
+}

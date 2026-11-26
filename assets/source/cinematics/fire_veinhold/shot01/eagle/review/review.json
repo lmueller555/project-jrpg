@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "method": "Complete exported poses on a neutral review background; no wings/body parts are transformed separately. Filmstrips show native artwork pixels. GIF timing is quantized to50ms for the flap review (800ms cycle) and380ms bank exposures; runtime manifest remains750ms flap and3000ms bank. The10second timeline samples the agreed controller phase offsets at20fps.",
+  "files": {
+    "bank_filmstrip.png": "648320ee192988a0f27125fd72156af607e9fbcf7aeb063e122a0b1a55276864",
+    "bank_transition.gif": "1ba669f9e6b4fd652b16469ff157ce407d98581113419f096a5064d377fb4e05",
+    "flap_filmstrip.png": "9520e95512e89a80983fcf3ed0840b6a3f52a87d008fc6bbfbd00523af63e405",
+    "flap_native.gif": "8a4739c3e78f6638f7b5470f8a7ea1c2a1059b6b76ef2c833f22552b9b873f9b",
+    "flap_slow.gif": "29cb64c0a6935fba783b0f66923f69fe19f6c36bbc0805bb1982eeb7a753e51d",
+    "glide_filmstrip.png": "d38615cda8b228beb127456de4642a5d5f7a6933d77a2833a3703d03ebd6e133",
+    "glide_native.gif": "cd3b8c690165271816bb3aaab44e5d67e32b31253b6b64721d15ae464cd16a5b",
+    "handoff_filmstrip.png": "fd0df06562e7d92d75cbf65028fd062802f0078098a28a18f3f6f39ac550fc72",
+    "shot01_pose_timeline.gif": "93666d4a51128a3eace96c8f4173ae1061d847fda2f8549b5ec1b3b48084daa8"
+  },
+  "animation_sha256": "61683709996834ee068bcd1980e3e35d2110444b1a13576462d44c24331a1bd1",
+  "export_provenance_sha256": "af3229c0ea4fc6aecffac2fa3da083e3ea1f62a5c0f24fd5b83e90db332d2b6f"
+}

@@ -20,7 +20,7 @@ method, then follow the sources relevant to the assignment.
 | Canonical world map, world geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
 | Sanctuary custody background and former quarry-story context; revised cave purpose remains open | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
-| Scene production references and placement limits | [Retired opening cinematic](scenes/OPENING_CINEMATIC.md), [retired arrival](scenes/REGENT_ARRIVAL.md), and [independently retained Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
+| Scene production references and placement limits | [New Fire Veinhold cinematic](scenes/FIRE_VEINHOLD_PROLOGUE.md), [retired opening cinematic](scenes/OPENING_CINEMATIC.md), [retired arrival](scenes/REGENT_ARRIVAL.md), and [independently retained Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
 | Current-runtime ordinary household and mill scripts | [MQ01](game_01/CH01_MQ01.md) and [MQ02](game_01/CH01_MQ02.md) |
 | Retired quest permalinks | [Former MQ03](game_01/CH01_MQ03.md) and [former MQ04](game_01/CH01_MQ04.md) |
 
@@ -44,7 +44,10 @@ bedroom; MQ01/MQ02 use ordinary household dialogue and retain their actual
 flow, rewards and learning. The regional bridge now starts intact, with
 layered phase art and a bounded west-bank road. Explicit damage/repair states
 are retained, while the old `legacy_layout` scenery placeholder loads intact;
-no attack or repair event is inferred. The Fire Veinhold prologue, new arrival,
+no attack or repair event is inferred. The new cinematic's
+[first ten-second eagle shot](scenes/FIRE_VEINHOLD_PROLOGUE.md) is implemented in
+the Gallery, with separate individual/complete entries. The playable
+Fire Veinhold prologue, new arrival,
 attack/invasion and repair quest remain future implementation. The
 [overworld guide](../OVERWORLD.md) owns runtime details. Historical reviews
 stay untouched; retired guides are small permalink notices rather than another

@@ -2,7 +2,10 @@
 
 **Status:** Approved future narrative direction. Runtime retirement is now
 implemented: the old flashforward, MQ03 and MQ04 are removed. The replacement
-prologue, arrival, attack and invasion remain future work. The initially intact
+playable prologue, arrival, attack and invasion remain future work. The cinematic's
+[first eagle-ascent shot](../scenes/FIRE_VEINHOLD_PROLOGUE.md) is now available
+in the Gallery, individually and in an appendable complete entry; New Game
+still starts in the bedroom. The initially intact
 regional bridge and its bounded western landing are now implemented.
 **Version:** 2.0 (Fire Veinhold prologue; Festival of Light removed).
 **Parent:** [Game I Story Bible](STORY_BIBLE.md) ·
