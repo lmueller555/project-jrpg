@@ -1,5 +1,13 @@
 # Sanctuary arrival: MQ03 emergency response
 
+**Migration status — 2026-11-26:** Current-runtime staging reference. The
+[approved Chapter 1 opening](narrative/game_01/CHAPTER_01.md) retires the quarry
+and secret Crown crew premise that motivates this scene. The natural confluence
+and cave remain, with their revised quest purpose OPEN. This documentation-only
+migration leaves the existing arrival scene, its dialogue, actor ownership,
+checkpoints and three-member rescue handoff running as implemented. The scene
+below is not an approved script for the revised opening; its rewrite comes later.
+
 Character–object work follows the mandatory
 [global interaction standard](OBJECT_INTERACTION_STANDARD.md) and its
 [personal-prop visibility companion](PERSONAL_PROPS.md). Local coordinates,

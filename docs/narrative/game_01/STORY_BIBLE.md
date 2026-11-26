@@ -8,8 +8,10 @@ kingdom is **Adamanthra** in northern Merovar, ruled by her elder sister,
 destination; the capital's name remains open. The intended first half
 to roughly two-thirds of the adventure accompanies her through affected regions
 before her late-story Ice Reaper descent. Her sheet owns her background,
-existing ice proficiency, concealed mission, motive and future identity; these
-author-facing facts are not opening exposition or implemented later quests.
+existing ice proficiency, motive and future identity. The new prologue shows
+her infiltration to the player; it does not give Caelan that knowledge
+or reveal her future identity. Approved future direction is distinct from the
+currently implemented opening.
 Historical act sketches do not override that approved direction.
 
 **Geography revised, 2026-11-25:** The
@@ -21,7 +23,7 @@ Exact routes, crossings and elapsed travel time remain open; this approval
 does not adopt proposed destinations, regional bosses or side adventures.
 
 **Status:** Game-level requirements and explicitly approved structural and opening foundations are CANON. Unwritten acts, scenes and outcomes remain open.
-**Version:** 0.9 (southern Merovar map and journey geography, 2026-11-25)
+**Version:** 1.0 (Fire Veinhold opening replacement, 2026-11-26; documentation only)
 **Parent documents:** [Foundational Lore](../saga/FOUNDATIONAL_LORE.md) and [Revelation Plan](../saga/REVELATION_PLAN.md).
 
 ## Creative brief (CANON)
@@ -56,8 +58,10 @@ disruption across interdependent Worldveins: effects
 cannot be understood solely by examining one element in isolation. The physical
 premises belong to [Foundational Lore](../saga/FOUNDATIONAL_LORE.md#1-foundations-of-existence).
 
-The harvested elemental aether is combined to feed a huge cannon. Carcovia's
-war ultimatum, backed by this weapon, forces the protective decision
+The later strategic weapon combines harvested elemental aether from the
+Veinholds to feed a huge cannon. It is distinct from the local weapon destroyed
+during the new opening; that local failure does not resolve the later threat. Carcovia's
+war ultimatum, backed by the strategic cannon, forces the protective decision
 that leads Iselin to create the Ice Dome. The artificial imbalance and the
 weapon have a shared cause in harvesting; natural Worldvein variation remains
 a distinct phenomenon. The barrier responds to this weapon-backed ultimatum.
@@ -67,8 +71,10 @@ a distinct phenomenon. The barrier responds to this weapon-backed ultimatum.
 The northward journey develops the difference between temporary natural
 variation and the greater sustained imbalance associated with Veinholds.
 The party's observations, affected communities and Iselin's covert Crown
-investigation lead into the harvesting conflict, the cannon threat and efforts
-to prevent war. The precise discoveries, evidence, participants and order of
+investigation develop the extent of the harvesting conflict, the strategic
+cannon threat and efforts to prevent wider war. The prologue already exposes
+one Fire Veinhold and a military weapon to the player; later discovery must
+add information rather than repeat that first exposure. The precise discoveries, evidence, participants and order of
 disclosure remain to be written. This direction creates no new quest IDs,
 recruitment scenes or fixed act assignments.
 
@@ -76,21 +82,31 @@ Carcovia's identity and its goal of expansion into Merovar are established.
 The [World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns the kingdoms'
 geography, adjective forms and naming intentions. Carcovia's ruler, capital,
 dynasty, exact borders, detailed campaign aims and further motives remain open.
-The first firing, any demonstration, exact ultimatum terms, harvesting-to-weapon
-logistics, and the cannon's condition during the three surface years are not
-selected. Reservoir shipping, an enemy goal of targeting the Ice Worldvein,
+The later strategic cannon's first firing, any demonstration, exact ultimatum
+terms, harvesting-to-weapon logistics, and its condition during the three
+surface years are not selected. The approved opening attack does not choose
+those later circumstances. Reservoir shipping, an enemy goal of targeting the Ice Worldvein,
 party sabotage of the cannon, and an upstream Worldvein route to the summit
 cave remain unapproved
 suggestions rather than reasons to fill gaps in the chronology.
 
 ## Approved regional story foundations (CANON)
 
-The opening combines regional relief needs with a Sanctuary breach of trust.
-[Regional surges](REGIONAL_SURGES.md) owns the early incidents and repair
-pressures; the [covenant](../world/SANCTUARY_COVENANT.md) owns reserve custody
-and duties; [MQ03](CH01_MQ03.md) owns the concealed deployment, emergency,
-rescue and acknowledged return resolution. These opening events preserve the
-separate later authorization, private warning and Chapter 3 catastrophe.
+The [new opening chronology](CHAPTER_01.md) owns the replacement progression:
+a playable Fire Veinhold infiltration and defeat, village introductions before
+the survivors' arrival, Carcovia's failed Fire-weapon attack, ground assault
+and a four-person return to put the facility out of action and end the local
+threat. The
+[regional attack guide](REGIONAL_SURGES.md) owns bridge damage and its local
+consequences. The bridge begins intact and is destroyed during this sequence.
+
+This is an approved narrative replacement, **not implemented gameplay**. The
+old lightning-damaged opening, relief/quarry dispute, secret Sanctuary crew,
+mandatory cave rescue/accountability chain, excavation authorization and
+Chapter 3 excavation catastrophe no longer form the required opening spine.
+Their existing scripts and runtime content remain pending separate revision.
+The Sanctuary remains a natural confluence with communal significance; its
+revised cave purpose and any reused encounters remain open.
 
 ## Approved character foundations (CANON)
 
@@ -99,38 +115,42 @@ profiles. [Caelan's sheet](characters/CAELAN.md) owns the brothers' family
 background and its author/character knowledge boundary; each character sheet
 owns the applicable biography, characterization and open decisions.
 
-## Approved opening frame and later reprise
+## Retired opening frame and later reprise
 
-**Approved opening frame:** New Game's [cinematic flashforward](../scenes/OPENING_CINEMATIC.md)
-shows Caelan and Mira sharing a brief, somber rest at a damaged wayside sanctuary,
-then returns to the Eldenmere morning. The current intended location for the
-eventual reprise is the threshold between Acts IV and V. This approves the
-opening scene, not the full five-act plot, the final mechanism or anyone else's
-fate. Later writing must earn and continue this moment; the late-game reprise
-itself is not implemented yet. The expanded opening establishes evacuation
-carts, a threatened valley road and an entrance beyond a ridge as facts of
-this frame. It leaves the crisis's cause and the final plan concealed.
+The former Caelan–Mira flashforward is **entirely retired**. Its damaged wayside
+sanctuary, evacuation carts and threatened valley, hand-holding, lamp repair,
+evacuation flare, bloody helmet on a sword and implied unidentified death no
+longer establish promises for the story. The Act IV/V reprise obligation is
+also retired. Retaining old implementation or review evidence does not retain
+those events as future canon or transfer them into the replacement prologue.
 
-The later author revision adds hand-holding, mechanical lamp restoration,
-Caelan's evacuation flare and a closing focus on an anonymous bloody helmet
-resting on a sword in stone. This approves a deliberate hint of an unidentified
-death by that point in the journey, without assigning the loss to Tomas or
-another character. It does not finalize the cause of that scene's threat or the
-unimplemented later-act events.
+The Festival of Light is removed from the active narrative, including its
+lantern-preparation quest and festival-ending excavation authorization/private
+warning. These are retired requirements rather than scenes to move elsewhere. This does not abolish planetary-return faith, Serene's community role
+or existing character foundations. New ordinary-life scenes must be authored
+under [Chapter 1](CHAPTER_01.md), rather than restoring the old festival through
+unchanged prerequisites.
 
 ## Approved act and companion structure
 
-**Approved structural progression:** Act I comprises three chapters: **Chapter 1 — Life in Eldenmere** (welcoming and predominantly peaceful; five mandatory introductory quests plus optional worldbuilding activities), **Chapter 2 — Beneath the Peace** (exploration, warnings, and growing political tensions), and **Chapter 3 — The Shattered Oath** (excavation catastrophe, its personal consequences, and the decision to investigate). The disaster occurs in Chapter 3, **not Chapter 1**. The approved Chapter 1 structure, proposed scenes, and unresolved details are documented in [CHAPTER_01.md](CHAPTER_01.md). The detailed sequencing of Chapters 2–3 remains proposed.
+**Revised opening scope:** The former three-chapter festival → excavation
+warning → quarry catastrophe progression is retired. Replacement act/chapter
+counts, quest IDs and exact checkpoints remain open beyond the approved
+sequence in [Chapter 1](CHAPTER_01.md). This documentation change does not
+resequence existing quests or create the new prologue in the game.
 
-**Approved companion introduction:** Lucan Rooke, the Armsmaster, enters during
-Act I as Iselin's personal guard. Iselin later entrusts him to Caelan's party,
-providing the approved basis for recruitment rather than a generic road escort.
-His character foundation is recorded in the [Lucan sheet](characters/LUCAN.md);
-the exact recruitment quest remains open.
+**Approved companion introduction:** Lucan Rooke, the Armsmaster and Iselin's
+personal guard, is playable alongside her and an ordinary Crown soldier in the
+new prologue. After the soldier's death, Lucan and Iselin survive to join Caelan
+and Mira during the local crisis. Iselin's later entrustment of Lucan to
+Caelan's party remains the approved basis for permanent recruitment, but its
+exact scene and the revised temporary/permanent party handoff remain open.
+His character foundation belongs to the [Lucan sheet](characters/LUCAN.md).
 
-**Established departure story beat:** Near or after the end of Act I, as the
-party prepares to leave Eldenmere, Mira creates a bot to run her workshop
-while she is gone. The [Mira departure beat](characters/MIRA.md#planned-departure-beat) records
+**Established departure story beat:** As the party prepares for its longer
+departure from Eldenmere, Mira creates a bot to run her workshop while she is
+gone. The exact checkpoint must be reconciled with the revised opening; it is
+not automatically preparation for the first local counter-operation. The [Mira departure beat](characters/MIRA.md#planned-departure-beat) records
 the planned sprite work and workshop-management routines. Exact placement and whether this is a
 cutscene, dialogue sequence or short quest remain open; no implementation is
 implied by this entry.
@@ -146,8 +166,9 @@ The introduction windows above do not approve the surrounding historical
 five-act outline. The current companion sheets own detailed foundations:
 [Lucan](characters/LUCAN.md), [Rhea](characters/RHEA.md), and
 [Edran](characters/EDRAN.md). Their home regions do not require the party to
-visit each one. Detailed Chapter 2/3 sequencing, recruitment quests, remaining
-acts and outcomes are not settled by this consolidation.
+visit each one. These later introduction windows remain approved; they do not
+restore the retired opening chapter progression. New opening checkpoints,
+recruitment scenes, remaining acts and outcomes still require authoring.
 
 ## Approved later progression and parallel chronology
 
@@ -157,7 +178,7 @@ of earlier alternative plots. This section owns the shared ordering and timing.
 
 After a substantial shared northward journey, Iselin leaves the party and returns
 to Adamanthra. The party continues without her. Both pursue efforts to avert
-war with Carcovia; occasional cutaways follow Iselin's attempts within
+wider war with Carcovia; occasional cutaways follow Iselin's attempts within
 Adamanthra. The cannon ultimatum supplies the urgent threat behind the dome's
 protective purpose. The exact ultimatum, military sequence and detailed political
 objectives remain open; observations of earlier disasters do not automatically
@@ -166,7 +187,7 @@ prove which individual incidents resulted from harvesting.
 | Phase | Main party | Iselin | Rhea |
 | --- | --- | --- | --- |
 | Shared journey and separation | Continues its own journey after Iselin returns home. | Leaves the company to return to Adamanthra. | Her departure occurs before the core descent; its relation to Iselin's departure remains open. |
-| Parallel crisis | Attempts to avert war amid the harvesting and cannon conflict, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent war; the cannon ultimatum, authorized dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
+| Parallel crisis | Attempts to avert wider war amid the harvesting and cannon conflict, then falls through a deep chasm into the planet's core lifeforce. The immediate cause remains open. | Attempts to prevent wider war; the cannon ultimatum, authorized dome, accusation, exile and mountain escape lead to self-encasement. | Is absent from the descent and remains on the surface. |
 | Royal betrayal | The party's precise location and knowledge during the royal decisions remain open. | Her elder sister, Queen Althea, privately authorizes protection, then permits a false account of disobedience and refuses to acknowledge that authorization. Exile follows. | What she witnesses or learns about these decisions remains open. |
 | Approximate alignment | The descent occurs roughly when Iselin's exile sequence ends. | Enters the summit cave and encases herself around this period. | Begins living through the party's surface absence. |
 | Different passage of time | Time flows differently within the planet. The subjective duration remains open. | Remains conscious in the naturally Ice-aspected cave for about three surface years, absorbing accumulating Ice aether from the barrier and draining it. | Lives through those years, gaining power and experience. |
@@ -227,10 +248,10 @@ logistics remain open.
 southern road during civilian evacuation; the queen approves sealing before
 everyone returns. The unit, exact orders, who knows them, victims, timing and
 alternatives are not selected. No named character's death is established.
-The precise military leverage, first-shot circumstances and any negotiation or
-armistice terms also remain to be authored; the illustrative withdrawal does
-not establish when or how often the cannon fires, whether war is prevented,
-or how it ends.
+The precise military leverage, strategic cannon's first-shot circumstances and
+any negotiation or armistice terms remain to be authored; the illustrative
+withdrawal does not establish when or how often that later weapon fires,
+whether wider war is prevented, or how the conflict ends.
 
 The [Iselin sheet](characters/ISELIN.md#her-sisters-promise-and-betrayal) owns
 her relationship and response. The
@@ -325,8 +346,9 @@ script or new runtime quest identifier is selected here.
 
 Carcovia's detailed campaign aims, further motives, ruler, capital and dynasty;
 the kingdoms' exact borders; exact Veinhold discoveries and
-harvesting-to-cannon logistics; ultimatum terms, firings and war outcome;
-whether and why firing ceases during the three-year interval; Iselin's
+harvesting-to-strategic-cannon logistics; that weapon's ultimatum terms, firings
+and the wider war's outcome; whether and why its firing ceases during the
+three-year interval; Iselin's
 departure trigger; diplomatic events; the dome's protective mechanics,
 construction and remaining practical effects; the detailed physical failure
 sequence despite its established draining cause; the inquiry, military leverage,
@@ -355,8 +377,11 @@ as the descent site by this approval.
 
 ## Game I player knowledge (CANON boundary)
 
-Players encounter ordinary magicks and local belief before learning how the
-Worldvein disturbances, artificial harvesting and cannon conflict connect.
+The player begins inside a Fire Veinhold with Iselin, Lucan and a Crown
+soldier, then experiences Caelan and Mira's village introductions before the
+survivors arrive. Prologue knowledge is not automatically Caelan's knowledge.
+Early exposure to one facility and weapon does not explain the entire network
+or reveal the later strategic cannon, dome or Ice Reaper.
 Public reports, private Crown knowledge, Iselin's decisions, player-facing
 cutaways and what absent party members know must remain distinct. The
 [Revelation Plan](../saga/REVELATION_PLAN.md) owns those disclosure decisions.
@@ -379,6 +404,7 @@ Two older proposals are retained as historical material:
 - [The Broken Covenant](../archive/BROKEN_COVENANT.md): the former broad five-act
   outline, proposed institutional conflict, mechanisms and outcomes.
 
-Neither alternative is current canon. The independently approved opening frame,
-Act I chapter structure, character introductions and departure beat are kept
-above and in their owners; archiving the alternatives does not revoke them.
+Neither alternative is current canon. The replacement opening above
+supersedes the former flashforward, festival and excavation spine. Compatible
+character foundations, later introduction windows and departure-beat intent
+remain in their owners; historical alternatives do not override that choice.

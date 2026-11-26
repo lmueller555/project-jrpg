@@ -10,23 +10,45 @@ method, then follow the sources relevant to the assignment.
 | --- | --- |
 | Aether conservation, Worldveins, natural and artificial imbalance, Veinholds, cannon and Ice Dome physics, and open foundational decisions | [Foundational Lore](saga/FOUNDATIONAL_LORE.md) |
 | What characters and players may learn, reveal design and disclosure boundaries | [Revelation Plan](saga/REVELATION_PLAN.md) |
-| Game I requirements, approved act/chapter structure, opening frame and introduction windows | [Game I Story Bible](game_01/STORY_BIBLE.md) |
+| Game I requirements, revised opening direction, later chronology and introduction windows | [Game I Story Bible](game_01/STORY_BIBLE.md) |
 | Historical unapproved premises and act outlines | [Historical alternatives](archive/README.md); these do not override active canon |
-| Opening chronology and chapter progression | [Chapter 1](game_01/CHAPTER_01.md) and its linked quest scripts |
-| Early regional lightning incidents, road damage and relief context | [Regional Surges](game_01/REGIONAL_SURGES.md) |
+| Approved Fire Veinhold opening sequence, retired requirements and implementation decisions | [Chapter 1](game_01/CHAPTER_01.md) and its linked quest scripts |
+| Revised Fire attack, bridge chronology, local damage and recovery constraints | [Regional attack guide](game_01/REGIONAL_SURGES.md) |
 | Individual characterization and voice | [Cast index](game_01/CHARACTERS.md) routes to [Caelan](game_01/characters/CAELAN.md), [Mira](game_01/characters/MIRA.md), [Iselin](game_01/characters/ISELIN.md), [Lucan](game_01/characters/LUCAN.md), [Rhea](game_01/characters/RHEA.md) and [Edran](game_01/characters/EDRAN.md); [template](game_01/characters/TEMPLATE.md) defines profile status |
 | Supporting households and characters including Queen Althea, shared party relationships, lore exchanges and approved companion-art references | [Cast and supporting-household index](game_01/CHARACTERS.md) |
 | Mira's established workshop-bot departure beat and open implementation | [Mira's departure section](game_01/characters/MIRA.md#planned-departure-beat) |
 | Canonical world map, world geography, named kingdoms, standard adjective forms and cross-region connections | [World Atlas](world/WORLD_ATLAS.md) and its linked continent, polar and regional guides |
 | Serene's spiritual tradition, Sanctuary guidance and remembrance practices | [Elden Vale Faith](world/ELDEN_VALE_FAITH.md) |
-| Protected-ground terms, public records, permitted use and joint authorization | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
-| Authored standalone cinematics, dialogue, choreography and placement limits | [Opening flashforward](scenes/OPENING_CINEMATIC.md), [Iselin's arrival](scenes/REGENT_ARRIVAL.md), and [Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
-| Detailed opening quest scripts | [MQ01](game_01/CH01_MQ01.md), [MQ02](game_01/CH01_MQ02.md), [MQ03](game_01/CH01_MQ03.md), and [complete MQ04](game_01/CH01_MQ04.md) |
+| Sanctuary custody background and former quarry-story context; revised cave purpose remains open | [Sanctuary Covenant](world/SANCTUARY_COVENANT.md) |
+| Scene production references and placement limits | [Retired opening cinematic](scenes/OPENING_CINEMATIC.md), [old implemented arrival](scenes/REGENT_ARRIVAL.md), and [independently retained Ice Reaper study](scenes/ICE_REAPER_PRE_BOSS.md) |
+| Current-runtime quest scripts awaiting the new opening/dialogue rewrite | [MQ01](game_01/CH01_MQ01.md), [MQ02](game_01/CH01_MQ02.md), [MQ03](game_01/CH01_MQ03.md), and [complete MQ04](game_01/CH01_MQ04.md) |
 
 Use the owner for a fact rather than maintaining another full copy in a related
 guide. Brief context and a source link are appropriate. A regional guide can
 explain why protected ground matters to its residents without reproducing the
 quest's dialogue and saved completion sequence.
+
+## Approved opening revision — 2026-11-26
+
+[Chapter 1](game_01/CHAPTER_01.md) is the detailed owner of the replacement
+opening: playable Fire Veinhold infiltration, Iselin's failed protection,
+survivors' arrival, the misfired Fire attack and the party's return expedition.
+The old opening cinematic is scrapped entirely as active narrative. The
+Festival of Light and its preparation arc are removed. The old quarry-driven
+opening spine and pre-opening lightning bridge cause are superseded.
+
+This is a documentation-only approval. Existing scripts, scene guides and
+runtime guides describe the still-implemented older journey and are labelled
+accordingly. Quest controllers, dialogue, maps, assets and saved-state behavior
+will change in subsequent work. Prior approval labels in a legacy script do
+not override this revision. Historical reviews remain untouched evidence.
+
+The replacement has explicit open decisions. A cave bypass, the two early
+weapons being one battery, stolen intelligence, the precise return objective,
+repair method and a named southern town are not approved through repetition.
+Use Chapter 1's decision table before writing scenes that depend on them.
+General faith, character foundations, southern world geography and the later
+Ice Reaper chronology retain their existing owners.
 
 ## Current map authority
 
@@ -117,8 +139,9 @@ index. The workshop-bot intention belongs to Mira's departure section, and the
 Ice Reaper study belongs to its scene owner. These moves preserve approval and
 knowledge boundaries and introduce no new story facts.
 
-The four MQ04 script installments now form one document with part anchors and
-their original local scene numbers. Dedicated opening and arrival specifications
+The four legacy MQ04 script installments remain one current-runtime reference
+with part anchors and their original local scene numbers; the festival quest
+is retired from the revised narrative. Dedicated opening and arrival specifications
 live in `scenes/`. Runtime guides retain technical ownership/save/presentation
 contracts and refer to quest scripts for narrative. The separately recorded
 later-story approvals above are additions after the structural migration.

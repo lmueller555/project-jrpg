@@ -2,6 +2,13 @@
 
 Explore Eldenmere and the surrounding Elden Vale as Caelan by running `main.py`. The game uses 24×24 terrain and 24×36 character art, with live movement, collision, a following camera and animated scenery. The retained story and asset tooling are documented below.
 
+**Narrative migration — 2026-11-26:** The approved [Fire Veinhold opening](docs/narrative/game_01/CHAPTER_01.md)
+replaces the old opening cinematic, festival storyline and quarry-driven Act I.
+This PR records the story direction only. The playable game, maps, dialogue,
+Gallery and quest playtests below still describe the older implementation until
+subsequent opening-quest revisions. The western bridge will start intact in
+the new story and be destroyed by the later misfired Fire attack.
+
 Eldenmere, the Sanctuary reserve and the upstream mill area use the approved
 [emerald grass terrain pack](docs/GRASS_TERRAIN.md): varied lawn, meadow and
 woodland ground, with leg-height grass that parts around travelling characters.
@@ -54,7 +61,8 @@ separately at display resolution with the bundled Atkinson Hyperlegible fonts,
 so letters have smooth, readable edges instead of enlarged bitmap shapes.
 
 The game now opens on an animated Eldenmere title screen with a **bottom-center
-menu**. Click New Game, or use arrows and Enter, to begin with a somber cinematic
+menu**. In the current runtime awaiting the opening rewrite, click New Game,
+or use arrows and Enter, to begin with a somber cinematic
 glimpse of Caelan and Mira later in their journey. Layered sanctuary and valley
 art, quiet character animation and camera shots lead into Caelan's opening
 morning. **Esc** pauses/resumes the cinematic and its music; a small **Skip**
@@ -144,7 +152,7 @@ The commons now contains a roofed stone well, a rounded dirt-and-stone square an
 
 All nine buildings have separate furnished interiors. Cottages use the approved 10×10, 13×10 and 16×10 layouts; the sanctuary uses its three approved rooms. The workshop and mill workrooms reuse the approved furniture and interior kit. Rooms include furniture collision, ambient lighting and hearth/steam animation where present. Smaller rooms are centered in the viewport, and M still shows the town map while indoors.
 
-The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the lightning-destroyed western bridge. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
+The southern road now leads automatically to the [Elden Vale overworld](docs/OVERWORLD.md), a streamed regional landscape between two rivers, with northern woodland, eastern foothills, southern fields, guarded stone walls and the ruined western bridge from the superseded lightning story. Approach the miniature of Eldenmere to return through the village's southern entrance. Press M for the regional map, with zoom, drag and landmark details. The checkpoints and ruined bridge keep onward exploration closed until future opening-story work explicitly opens it. See the [actual-game region previews](docs/reviews/elden_vale_overworld/README.md).
 
 The sanctuary miniature opens into the [Elden Vale Sanctuary reserve](docs/SANCTUARY_RESERVE.md).
 Its [fantasy asset expansion](docs/SANCTUARY_FANTASY.md) adds a multicolored crystal
@@ -298,8 +306,9 @@ Saves from before this opening was added keep their existing location/progress;
 choose **New Game** to experience the new beginning. See [story implementation](docs/STORY_IMPLEMENTATION.md).
 
 The opening dialogue introduces the household names, their work and needs,
-and the bridges or terrace that lead to them. Festival of Light preparations
-connect the deliveries, Halden’s flour and Mira’s repair work. Spoken reminders
+and the bridges or terrace that lead to them. In this legacy implementation,
+Festival of Light preparations connect the deliveries, Halden’s flour and
+Mira’s repair work; that festival context is retired from the revised story. Spoken reminders
 repeat the destinations, and brief emotional cues appear as literal `*emotes*`.
 
 Tomas now joins Caelan after acceptance and follows through town and doors.
@@ -440,13 +449,13 @@ The [door and interior preview](docs/reviews/building_doors/doors_and_interior.g
 - [Auratia world atlas](docs/narrative/world/WORLD_ATLAS.md): approved continental geography, regional cultures, and Eldenmere's wider setting.
 - [Classroom world map](docs/WORLD_MAP.md): inspect Auratia’s map at the village school, including its northern and southern polar regions.
 - [Revelation plan](docs/narrative/saga/REVELATION_PLAN.md): player knowledge and disclosure constraints.
-- [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements, approved structure, opening frame and character introduction windows.
+- [Game I story bible](docs/narrative/game_01/STORY_BIBLE.md): game-level requirements, revised opening direction, later chronology and character introduction windows.
 - [Historical Game I alternatives](docs/narrative/archive/README.md): unapproved older premises and outlines, preserved outside active canon.
 - [Cast and companion index](docs/narrative/game_01/CHARACTERS.md): supporting households, shared party guidance, approved art and links to individual character sheets.
-- [Chapter 1: Life in Eldenmere](docs/narrative/game_01/CHAPTER_01.md): approved opening structure.
-- [Regional surges and Iselin's relief visit](docs/narrative/game_01/REGIONAL_SURGES.md): southern-road damage, repair pressures and the end-MQ02 caravan arrival.
-- [Sanctuary covenant](docs/narrative/world/SANCTUARY_COVENANT.md): approved protected-ground boundaries, custodial duties, public evidence and restricted excavation.
-- [Opening quest: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): approved first-quest narrative and dialogue.
+- [Fire Veinhold opening and Elden Vale](docs/narrative/game_01/CHAPTER_01.md): approved replacement sequence, retired plot requirements and decisions before implementation.
+- [Regional attack and bridge damage](docs/narrative/game_01/REGIONAL_SURGES.md): initially intact crossing, misfired Fire attack, damaged facility and recovery constraints.
+- [Sanctuary covenant](docs/narrative/world/SANCTUARY_COVENANT.md): retained background custody and records; the quarry storyline is superseded.
+- [Legacy MQ01: A Day Like Any Other](docs/narrative/game_01/CH01_MQ01.md): current-runtime narrative and dialogue awaiting the opening rewrite.
 
 Status labels distinguish approved story decisions, proposals and open questions.
 The approved local revisions above update the opening's canon without approving
@@ -519,7 +528,11 @@ The [wooden bridge](assets/terrain/eldenmere/bridge/README.md) is approved follo
 
 The [watermill](assets/terrain/eldenmere/watermill/README.md) is approved following user review. Its [running scene](assets/terrain/eldenmere/watermill/review_scene.gif), [mill close-up](assets/terrain/eldenmere/watermill/mill_closeup.gif) and [running/stopped comparison](assets/terrain/eldenmere/watermill/states_review.gif) show a slate-roof stone-and-timber building, a level service landing and an eight-paddle wheel driven by the east-to-west race. Clockwise rotation agrees with the current; small left-side droplets and downstream ripples animate while the structure stays still. A blocked-supply alternative holds the wheel stationary. The directed race has a continuous falling grade, and existing artwork/story files are unchanged.
 
-### Liam’s first lantern — MQ04 opening
+### Liam’s first lantern — legacy MQ04 runtime
+
+The festival and this preparation quest are retired from the approved revised
+narrative. The walkthrough below documents the current game while the opening
+and dialogue rewrite is pending.
 
 After Iselin’s visit, speak with Tomas in the sanctuary courtyard. Join the school preparations, look at Liam’s drawing, agree on the outing with his mother, and accompany Liam and Tomas to Mira. Continue from Mira to the working mill, the Venn family and Elira’s memorial lantern. After Elira, collect the materials from Mira, take a break at Liam’s home, and bring his questions to Serene in the sanctuary hall. Return home to finish Liam’s personal lantern, carry it to his mother at school, then put it away safely. MQ04 completes after the final farewell; the finished lantern stays unlit at home for tomorrow’s festival. Existing PR3 saves continue directly from Serene without replaying earlier scenes. See [Liam’s lantern quest](docs/LANTERN_QUEST.md) and its [opening dialogue](docs/narrative/game_01/CH01_MQ04.md), [final section](docs/narrative/game_01/CH01_MQ04.md#part-4), and [actual-game finale preview](docs/reviews/lantern_finish/README.md).
 

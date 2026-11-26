@@ -1,5 +1,13 @@
 # Character abilities and weapon unlocks
 
+**Migration status — 2026-11-26:** Current-runtime ability reference.
+[Chapter 1](narrative/game_01/CHAPTER_01.md) owns the approved Fire Veinhold
+prologue and revised opening progression. Its Iselin/Lucan sequence is future
+implementation; this documentation-only migration adds no combat abilities,
+scripted encounters or unlocks. The current mill/cave lessons, guest roster,
+stable IDs, acquisition rules and persistence contracts below remain unchanged.
+Their placement in the revised opening awaits the later gameplay rewrite.
+
 Caelan is a **Spellblade**. He begins unarmed with his established basic magicks. During MQ02, Mira presents his first weapon before the riverbank outing. His only installed gem is Blue (Water). During the Boar fight, his first **Aqua Edge** attempt fails, then he inadvertently releases and learns **Aether Edge**. The smaller sword-focused water spell later in MQ02 remains a deliberate world action. Aqua Edge itself is learned in the Sanctuary cave’s first encounter.
 
 ## Character dictionaries

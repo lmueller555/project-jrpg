@@ -30,6 +30,12 @@ and cannon belong to the [aether foundations](../../saga/FOUNDATIONAL_LORE.md);
 the [Story Bible](../../game_01/STORY_BIBLE.md) owns their role in the war
 ultimatum and Adamanthra's defense. **Carcovian** is the standard adjective.
 
+The [revised opening](../../game_01/CHAPTER_01.md) also establishes a Carcovian
+Fire Veinhold as the first military objective. This does not place that
+facility on Serevin: its exact location remains open, as does whether its
+opening weapon is the later cannon. The approved opening is future story
+direction, not a newly implemented cross-sea route or campaign map.
+
 These are traits of the kingdom's development and strategy, not a single
 personality assigned to every citizen or Serevin community. The capital,
 ruler, dynasty, borders, local governance and political unification history

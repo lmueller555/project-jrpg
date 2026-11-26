@@ -6,6 +6,13 @@ household ages were approved on 2026-10-25; companion foundations on
 clarification on 2026-11-04. Hypothetical references and open decisions retain
 the statuses in their owners.
 
+**Opening revision, approved 2026-11-26:** The
+[replacement Chapter 1](CHAPTER_01.md) owns the Fire Veinhold prologue, village
+attack and first return journey. The former flashforward, Festival of Light,
+extended lantern preparation and quarry/excavation opening spine are retired.
+Existing runtime references below do not prescribe scenes in that replacement;
+this documentation revision implements no new dialogue or gameplay.
+
 Detailed biographies, growth and individual voice guidance live in character
 sheets. This index owns supporting households, shared party guidance and the
 common approved-art references. It also owns brief supporting-character entries.
@@ -35,11 +42,14 @@ Ages are measured at the opening of Game I.
 | Liam's father | Mid-30s | Liam's father; name unassigned |
 
 Caelan and Tomas are four years apart. These ages guide future dialogue,
-characterization and character design. Liam and his parents are an approved NPC family; their surname remains
-unassigned. MQ04 uses this existing family.
+characterization and character design. Liam and his parents remain an approved
+NPC family; their surname remains unassigned. Removing the lantern quest does
+not remove them, the school or their ordinary family life.
 Their home is the new wide cottage in western Eldenmere, directly south of
-Serene’s home. His parents remain stationary home residents during ordinary life. MQ04
-borrows his mother for the school preparation session and its dialogue. Liam and Daisy share an ambient invitation, chase and nap
+Serene’s home. His parents remain stationary home residents during ordinary life.
+The former MQ04 borrows his mother for a preparation session in the existing
+runtime; that quest attendance is not part of the replacement opening.
+Liam and Daisy share an ambient invitation, chase and nap
 routine. Liam also builds with five wooden blocks from a toy box between the
 beds, sometimes leaving one out. Daisy can accidentally knock over his creation
 and be sent to her rug. Daisy also has indoor wandering, eating, drinking and
@@ -54,8 +64,12 @@ Earlier narrative drafts spell Caelan's name **Caelen**; both spellings refer
 to the same protagonist, whose current game and asset identity is **Caelan**.
 
 Unlisted ages and unapproved biography details remain open. See
-[Chapter 1](CHAPTER_01.md) and the [opening quest](CH01_MQ01.md) for established
-relationships and scene context.
+[Chapter 1](CHAPTER_01.md) for the replacement chronology; the
+[former opening quest](CH01_MQ01.md) retains its old-runtime scene context.
+Serene remains Caelan and Tomas's caregiver and the Sanctuary's keeper. Tomas's
+interest in mechanisms and Liam's interest in building are independent of the
+removed festival. The new attack establishes no death for these villagers and
+does not decide their individual wartime roles or the brothers' later farewell.
 
 ## Caelan - protagonist foundation
 
@@ -92,6 +106,11 @@ regional scope; their home regions do not require visits.
 | [Lucan Rooke](characters/LUCAN.md) | 24 | Redstone March | Armsmaster; Iselin's personal guard; Act I |
 | [Rhea Sorel](characters/RHEA.md) | 22 | Wooded western Greyfold slopes | Aethermage; field naturalist; early Act II |
 | [Edran Hale](characters/EDRAN.md) | 46 | Lower Leth | Sage; healer and support caster; end of Act II |
+
+The opening's four-person cooperation and first return to Fire Veinhold do not
+silently settle permanent recruitment, the workshop handover or the reason for
+the longer northward journey. Rhea's and Edran's introduction windows remain
+unchanged; the new opening does not bring them into its defense party.
 
 The [template](characters/TEMPLATE.md) defines status-aware profile structure.
 Lucan's new voice/nonverbal interpretations remain proposed; Mira's approved
@@ -131,8 +150,24 @@ Running and action animations remain future work.
 sister Althea, Adamanthran background, existing ice proficiency, covert
 investigation, northward journey, future Ice Reaper identity and unapproved
 ruling-family proposals.
-Her covert mission and future identity retain their disclosure limits; the
-approved public names do not themselves constitute secrets.
+The player now witnesses her covert mission in the playable prologue. Knowledge
+held by Caelan, Mira and others still follows their authored encounters and
+evidence. Her future identity retains its disclosure limits; the approved public
+names do not themselves constitute secrets.
+
+## Ordinary Crown soldier — prologue
+
+**Established replacement opening, 2026-11-26; not implemented:** An ordinary
+Crown soldier accompanies Iselin and Lucan into Fire Veinhold. During the
+scripted loss, the boss's aether cannon breaks Iselin's ice barrier and kills
+the soldier; the other two survive and retreat offscreen. The
+[Chapter 1 chronology](CHAPTER_01.md) owns this event.
+
+No personal name, age, family, exact combat role, remains-recovery sequence or
+memorial is selected. The missing name is an authoring decision, not an
+in-world mystery. No suggested name or connection to the removed flashforward
+becomes canon through this entry. The character is not secretly established as
+a relative of an existing companion or a royal figure.
 
 ## Queen Althea
 
@@ -151,19 +186,20 @@ Althea's age, appearance, detailed voice and history remain open. Her approved
 name does not establish a dynasty, succession arrangement or additional family
 members, and no separate character sheet or new artwork is created here.
 
-## Iselin and Serene — relief needs and the Sanctuary breach of trust
+## Iselin and Serene — replacement opening relationship
 
-The [regional surge context](REGIONAL_SURGES.md),
-[covenant](../world/SANCTUARY_COVENANT.md), and [MQ03](CH01_MQ03.md)
-own this sequence and its knowledge boundaries. Their approved concealed-crew
-conflict supersedes the old mutually sincere negotiation/limited-inspection
-compromise. Sincere aid does not resolve Iselin's breach of trust.
+The concealed Crown crew, quarry negotiation, rescue and reckoning in
+[former MQ03](CH01_MQ03.md) are retired as the mandatory opening spine. They
+cannot remain the basis of Serene's judgment of Iselin after their removal.
+Their new relationship scenes and any disagreement require authoring within
+the [replacement Chapter 1](CHAPTER_01.md).
 
-Serene's [planetary tradition](../world/ELDEN_VALE_FAITH.md) owns the local
-beliefs and public foundation/historical passage evidence, while the
-[Revelation Plan](../saga/REVELATION_PLAN.md) limits her private warning and
-other disclosures. The implemented arrival, cave rescue and return resolution
-are part of MQ03; the final acknowledged family exchange unlocks MQ04.
+Serene's [planetary tradition](../world/ELDEN_VALE_FAITH.md) and the Sanctuary's
+natural confluence remain. Its new purpose in the opening is open; no cave
+bypass, private-warning scene or replacement confrontation is assigned here.
+The [Revelation Plan](../saga/REVELATION_PLAN.md) governs what Serene and the
+others actually learn. The old post-rescue family exchange no longer supplies
+a mandatory handoff to a festival quest.
 
 ## Mira's millrace outing
 
@@ -171,7 +207,10 @@ are part of MQ03; the final acknowledged family exchange unlocks MQ04.
 upbringing with Halden, workshop, characterization and Engineer progression.
 Engineer supersedes Machinist. Her [rig guide](../../MIRA_RIG_COMBAT.md)
 owns combat rules; [MQ02](CH01_MQ02.md) owns the outing. Hypothetical scene
-approvals do not add gameplay, dialogue or artwork.
+approvals do not add gameplay, dialogue or artwork. That script describes the
+existing runtime; its placement and individual beats in the replacement opening
+remain to be decided. Mira's gift and Caelan's earned learning retain their
+character functions without automatically replaying the old quest order.
 
 ## Village adults and school
 
@@ -198,13 +237,19 @@ vest; Rowan wears rust and charcoal; Ada has a dark bob and blue dress; Pippa
 has a sandy ponytail, plum dress and blue-gray ribbon. They and eight-year-old
 Liam form the six-child classroom group. Visual designs and animation packs
 are approved. Children are placed in their homes with individual compact
-twin beds; ordinary attendance and other daily routines are a later stage. The MQ04
-preparation session provides quest-scoped attendance.
+twin beds; ordinary attendance and other daily routines are a later stage.
+The removed MQ04's quest-scoped attendance is an existing runtime fact, not
+the replacement opening's school schedule.
 
-## Festival preparation session
+## Retired festival preparation session
 
-In the opening of MQ04, Liam’s mother and the six existing children attend a special preparation session at the school. The quest borrows their actual home actors; ordinary school attendance schedules remain future work. Liam’s mother agrees that Caelan and Tomas may accompany him to Mira’s workshop. Liam makes an unlit tower-shaped frame, inspired by his wooden-block constructions. His personal lantern’s meaning is not chosen in that opening segment; the
-[conclusion](CH01_MQ04.md#part-4) records his later personal intention.
+The extended lantern preparation in [former MQ04](CH01_MQ04.md), including
+the school outing, tower frame and Liam's chosen lantern intention, belongs to
+the superseded opening and current runtime. It is not retained as a mandatory
+or optional festival plot by the replacement approval. The village families,
+Mira's craft expertise, remembrance and care remain usable foundations without
+reinstating that sequence. A memorial for the prologue soldier has not been
+selected as a substitute festival or as Liam's new lantern purpose.
 
 ## Rhea and Edran as sources of lore
 
@@ -257,6 +302,7 @@ with him.
 Specific settlements, family identities, remaining poses and animations,
 recruitment quest scripts, exact abilities, numeric attributes and progression
 unlocks remain open.
-Later character outcomes and the identity associated with the cinematic's
-bloody helmet remain undecided. Future scenes should preserve the
-[opening cinematic's established limits](../scenes/OPENING_CINEMATIC.md).
+Later character outcomes remain governed by their individual owners. The
+removed opening cinematic supplies no helmet identity, unnamed-loss promise or
+required later reprise; it does not decide Tomas's or Serene's fate. New opening
+roles and northward departure decisions follow [Chapter 1](CHAPTER_01.md).

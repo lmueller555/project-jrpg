@@ -4,10 +4,10 @@
 identified separately. Approved future direction is not a claim of runtime
 implementation.
 
-**Version:** 0.9
+**Version:** 1.0
 
-**Last revised:** 2026-11-24 (approved kingdom and queen names following the
-Worldvein revision).
+**Last revised:** 2026-11-26 (approved Fire Veinhold opening revision;
+documentation only).
 
 **Scope:** Aether, planetary circulation, magicks, life and death, the origins
 of the current environmental crisis, and the physical foundations of the later
@@ -105,9 +105,10 @@ Worldvein. Later regional stories must establish specific causes and effects.
 
 **Carcovia** harnesses the planet's elemental flows for power. Its
 fortified harvesting installations are called **Veinholds**. They occupy sites
-where an elemental flow can be accessed; a volcanic location for fire-aspected
-aether is an established example of the intended environmental fit, not an
-assigned dungeon or named fortress.
+where an elemental flow can be accessed. The Fire Veinhold is now an approved
+opening location, but its precise position and terrain are open. A volcano
+remains an example of an appropriate fire-aspected site, not the selected
+location of that facility.
 
 Their interference with circulation drives the artificial aether imbalance
 and growing threat of calamity. Some people contemptuously call Veinholds
@@ -120,26 +121,60 @@ aether-powered military weapons. The
 [World Atlas](../world/WORLD_ATLAS.md#named-kingdoms) owns its location on Serevin,
 east of Merovar, and the kingdoms' geographical context.
 
-Carcovia is building a huge cannon that harnesses the combined power of the
-Veinholds. The weapon supplies the military ultimatum that forces the decision
+Carcovia is building a later **strategic cannon** that harnesses the combined
+power of the Veinholds. It is distinct from the local weapon destroyed during
+the opening. The strategic cannon supplies the military ultimatum that forces
+the decision
 to erect the Ice Dome. The immediate threat of a cannon attack and the broader
 environmental consequences of harvesting are connected, but they are not the
 same event.
+
+### Approved opening weapon incidents
+
+The [opening chronology](../game_01/CHAPTER_01.md) establishes a cannon blast
+that overcomes Iselin's ice barrier during the Fire Veinhold infiltration and
+kills the ordinary Crown soldier accompanying her and Lucan. One failed
+barrier does not establish that ice is inherently unable to resist any aether
+weapon; it does not invalidate her later development or dome defense.
+
+After the survivors reach Eldenmere, Carcovia overcharges a weapon with
+fire-aspected aether and fires a massive fireball at the village. The fireball
+misses the village and destroys the western bridge. The weapon self-destructs,
+significantly damaging the Veinhold. This is a failed military strike, not the former lightning-storm
+cause of bridge damage. The overcharge demonstrates this technology's
+imperfection without establishing that every later weapon will fail.
+
+Whether the prologue cannon and the failed long-range weapon are the same
+physical battery remains **open**. These are two opening weapon incidents,
+not approval of two separate local cannons. The later combined-supply
+strategic cannon is a separate story threat; its firing circumstances and
+three-year status are not determined by the opening weapon's destruction.
+There is no functioning local-gun recharge countdown after that destruction.
+
+Conservation still applies to the discharge and self-destruction. Their exact
+energy distribution, targeting limits, failure mechanism and environmental
+aftermath need authoring. Destruction of the apparatus does not by itself
+establish restoration of a Worldvein, safe release of every accumulated
+reserve or an automatic replacement weapon.
 
 ### Open decisions
 
 Carcovia's ruler, capital, dynasty, detailed political structure, exact borders,
 campaign aims beyond expansion into Merovar and further motives; facility
-names, locations and populations; and the cannon's name, location, firing rules,
-capacity and supply method remain unwritten. The ultimatum's precise demands
-and terms also remain open.
+names, locations and populations; and the later strategic cannon's name,
+location, firing rules, capacity and supply method remain unwritten. The first
+Fire Veinhold's jurisdiction, the two opening weapon incidents' precise
+relationship and the local extraction system's final condition remain open.
+The strategic ultimatum's precise demands and terms also remain open.
 
-Transportable reservoirs, physical conduits, a particular charging limit,
-party sabotage and destruction of the recharge network were suggestions, not
-established events. Before authoring the middle game, define what intervention
-at a Veinhold changes and why the weapon cannot simply continue firing without
-consequence throughout the three surface years. No resolution of that threat
-or outcome of the war is selected here.
+Transportable reservoirs, physical conduits, a particular charging limit and
+a plan to sabotage the later strategic cannon or its supply network remain
+unapproved suggestions. The approved return to the opening Fire Veinhold is
+a separate local operation with its precise objective still open. Before authoring the middle game, define what intervention
+at a Veinhold changes and why the later strategic weapon cannot simply
+continue firing without consequence throughout the three surface years.
+No resolution of that later threat or outcome of the wider war is selected
+here.
 
 ## Ice Dome absorption and restoration
 
@@ -228,9 +263,11 @@ religion, pantheon or explanation of the soul.
 This foundation establishes a planetary environmental conflict driven by
 present-day intervention, military coercion and consequential character
 choices. It does not assign every accident or regional problem to one enemy.
-The [regional surges guide](../game_01/REGIONAL_SURGES.md) owns the early lightning
-incidents and damage. Their particular cause remains unassigned; the lightning
-predates Iselin's mining initiative.
+The [regional attack guide](../game_01/REGIONAL_SURGES.md) owns the new
+opening's Fire-weapon attack, bridge damage and facility failure. That cause is
+now established. The former pre-opening lightning attribution and mandatory
+excavation catastrophe are retired; the Sanctuary remains a natural
+confluence, with its revised cave purpose open.
 
 The [Story Bible](../game_01/STORY_BIBLE.md) owns shared chronology and Game I
 requirements; character sheets own individual development. Game I must resolve
@@ -241,7 +278,10 @@ Their subjects and the eventual number of games remain open.
 The [Revelation Plan](REVELATION_PLAN.md) owns when characters and players learn
 about harvesting, the cannon, royal responsibility, the time interval and the
 Ice Reaper's relationship to the barrier. Author knowledge does not authorize
-opening quest dialogue, trackers or Gallery labels to reveal future events.
+quest dialogue, trackers or Gallery labels to reveal facts outside their
+approved sequence. The prologue permits the player to witness an infiltration
+without transferring its knowledge to Caelan or revealing the
+Ice Reaper arc.
 Retired lore is not material to withhold for a later twist.
 
 ## Outstanding decisions
@@ -250,8 +290,9 @@ Retired lore is not material to withhold for a later twist.
 | --- | --- | --- |
 | High | Elemental routes and particular disruption mechanisms | Makes each environmental consequence traceable rather than arbitrary |
 | High | Carcovian campaign details, Veinhold operations and beneficiaries | Grounds the approved expansion goal in people, motives and institutions |
-| High | Cannon supply, firing limits and ultimatum terms | Defines the military threat and what intervention can accomplish |
-| High | Why further bombardment does not negate the three-year interval | Keeps the weapon and timeskip coherent without inventing a resolved war |
+| High | Strategic cannon supply, firing limits and ultimatum terms | Defines the later military threat and what intervention can accomplish |
+| High | Opening weapon relationship, overcharge failure and damaged facility aftermath | Preserves the established fireball/destruction without inventing a recharge deadline or selected shutdown method |
+| High | Why later strategic bombardment does not negate the three-year interval | Keeps the weapon and timeskip coherent without inventing a resolved war |
 | High | Dome operation, cave connection and absorption limits | Connects protection, transformation and deterioration consistently |
 | High | Defeat, excess-aether release and physical dome safety | Delivers the required restoration without silently deciding Iselin's fate |
 | High | Other disrupted Worldveins and remaining Veinholds | Prevents the Ice resolution from automatically fixing the whole planet |

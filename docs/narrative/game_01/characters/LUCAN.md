@@ -6,6 +6,13 @@ of 2026-11-03. New interpretations, dialogue and nonverbal scenarios are
 explicitly proposed.
 Unless noted otherwise, this describes his opening characterization.
 
+**Opening revision, approved 2026-11-26:** The
+[replacement Chapter 1](../CHAPTER_01.md) introduces him as a playable
+participant in Iselin's Fire Veinhold infiltration. This approved direction is
+not implemented by the documentation revision. The former Sanctuary guest
+details below are explicitly retained as superseded runtime reference, not the
+new prologue's combat design or mandatory recruitment sequence.
+
 **Related guides:** [Character index](../CHARACTERS.md),
 [approved artwork](../CHARACTERS.md#approved-base-sprite-designs),
 [Game I structure](../STORY_BIBLE.md), [sheet template](TEMPLATE.md).
@@ -19,11 +26,11 @@ Unless noted otherwise, this describes his opening characterization.
 | Home region | Redstone March, Merovar | Established |
 | Birthplace and current residence | Specific settlement and residence undecided | Open |
 | Family and upbringing | A wagonwright's household; non-aristocratic upbringing. Relatives' identities remain undecided. | Established / Open |
-| Occupation and affiliations | Iselin's personal guard, serving a member of Merovar's ruling family | Established |
+| Occupation and affiliations | Iselin's personal guard, serving a member of Adamanthra's ruling family | Established |
 | Combat identity | Armsmaster; supersedes the earlier Knight combat designation | Role revised, 2026-11-07 |
 | Appearance | Dark swept hair, polished steel armor, oxblood cloth and gold trim; approved sword-and-shield base design | Established |
-| Narrative role | Eventual party swordsman and protector; introduction during Act I | Established |
-| Recruitment | Iselin later entrusts him to Caelan's party. Exact occasion, reason and scene remain undecided. | Established / Open |
+| Narrative role | Playable guard in the Fire Veinhold prologue and eventual party swordsman and protector; introduction during Act I | Established |
+| Recruitment | Opening cooperation and the first return journey to Fire Veinhold are established. Iselin later entrusts him to Caelan's party; the permanent recruitment occasion, reason and scene remain undecided. | Established / Open |
 
 Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 [Iselin's royal background](ISELIN.md),
@@ -76,7 +83,7 @@ Sources: [approved character facts](../CHARACTERS.md#eventual-party-members),
 | Guard appointment | The circumstances of Iselin selecting him remain undecided | Open |
 | Mentors and significant choices | Not yet defined | Open |
 | Proudest success and greatest failure | No particular event has been approved | Open |
-| Losses, regrets and unfinished obligations | Not yet defined | Open |
+| Losses, regrets and unfinished obligations | The unnamed ordinary Crown soldier on the prologue mission dies when an aether cannon breaks Iselin's ice barrier. Lucan and Iselin survive. His relationship with the soldier, particular regrets and subsequent obligations remain undecided. | Opening loss established / Follow-up open |
 
 Do not turn general bravery into an invented rescue, or the proposed fear of
 insignificance into a canonical childhood humiliation.
@@ -101,13 +108,18 @@ insignificance into a canonical childhood humiliation.
 | Blind spot | Treats his own protective judgment as authority over others | Established |
 | Help he needs | Other people can offer better plans; he must learn to recognize and accept that | Established growth direction |
 | Noncombat crafts and natural talents | A wagonwright upbringing does not yet establish his own craft proficiency | Open |
-| Mechanics | The implemented cave guest has the skills below; full arsenal progression, weapon rules and later unlock methods remain open | Guest subset implemented / Future arsenal direction |
+| Mechanics | The superseded cave guest implementation has the skills below. The new prologue and opening-alliance loadouts, full arsenal progression, weapon rules and later unlock methods remain open | Existing runtime subset / New opening design open |
 
 ## Combat progression concept
 
 ### Implemented Sanctuary guest appearance
 
-Lucan assists in the cave as a **level-five guest** and earns no combat EXP.
+**Superseded runtime reference:** This section records the existing game,
+which this documentation-only revision does not change. It does not assign
+Lucan a level, exact skill set or departure point in the replacement opening.
+
+In that former Sanctuary route, Lucan assists in the cave as a **level-five
+guest** and earns no combat EXP.
 Players command his Attack, Skills, Items, Guard and permitted Flee actions,
 but his full Armsmaster mechanics and character interactable wait for permanent
 recruitment later in the story. His guest skills establish his protective role:
@@ -157,7 +169,7 @@ requirements and name remain undecided.
 
 | Person | Opening dynamic and intended development | Status |
 | --- | --- | --- |
-| Iselin | Personal guard and loyal servant. Iselin later entrusts him to the party. Appointment history, personal intimacy and future tests of loyalty remain open. | Established / Open |
+| Iselin | Personal guard and loyal servant; participates in her opening infiltration and survives the failed barrier with her. Iselin later entrusts him to the party. Appointment history, personal intimacy, responses to the loss and future tests of loyalty remain open. | Established / Open |
 | Caelan | Condescending instruction develops into respect. Caelan challenges his decisions; Lucan helps Caelan become more assertive. Both should have something useful to teach the other. | Established |
 | Rhea | His desire for orderly decisions contrasts with her observation and improvisation. She enjoys puncturing his self-importance. | Established |
 | Edran | Lucan wants a decision and orderly plan; Edran wants enough information to judge consequences. Particular bonds and conflicts remain open. | Established / Open |
@@ -191,11 +203,11 @@ Detailed mannerisms and behavior when safe remain proposals, not approved animat
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Secrets | No personal secret is established | Open |
-| Knowledge and disclosure | Guard service does not grant knowledge of Iselin's covert mission, the full enemy harvesting network or certainty about the Sanctuary | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
+| Knowledge and disclosure | Participates in the covert Fire Veinhold mission; do not portray him as ignorant of that participation. Exact intelligence and disclosures remain open. Neither his guard service nor the mission grants complete knowledge of the enemy harvesting network, the later supercannon or certainty about the Sanctuary | Approved opening / Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
 | Starting outlook | Real competence, pride and sincere protection coexist with an assumption of authority | Established |
 | Mistaken belief | Being responsible for someone's safety entitles him to decide for them | Established flaw |
 | Intended growth | Protect others while respecting their judgment and agency | Established |
-| Tests and setbacks | Specific scenes, failures and pivotal decisions remain unchosen | Open |
+| Tests and setbacks | The prologue defeat and shared loss are established. Their detailed presentation, his responses and later pivotal decisions remain unchosen | Established opening event / Further development open |
 | End state | Direction of growth is established; later outcomes remain undecided | Established / Open |
 
 ## Show, Don't Tell

@@ -50,9 +50,10 @@ become an adventure in her telling. An unusual growth of moss can interrupt
 a conversation; she occasionally forgets that her companions would like to
 reach shelter before examining another hillside.
 
-Her enthusiasm extends to people. Caelan's modest success at the mill
-interests her: she wants to know what he felt, what changed and whether he
-has tried it again. She helps him take his own progress seriously.
+Her enthusiasm extends to people. For example, if Caelan's currently
+implemented mill success is retained in the [revised opening](../CHAPTER_01.md)
+and he tells her about it, she wants to know what he felt, what changed and
+whether he has tried it again. She helps him take his own progress seriously.
 
 Her central blind spot is falling in love with a promising explanation before
 testing it properly. She can move from noticing something to believing she

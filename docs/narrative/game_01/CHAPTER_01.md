@@ -1,148 +1,232 @@
-# Game I — Chapter 1: Life in Eldenmere
+# Game I — Opening act: Fire Veinhold and Elden Vale
 
-**Status:** APPROVED OPENING STRUCTURE; details labeled PROPOSED or OPEN are not canon.\
-**Version:** 1.3 (Sanctuary responsibility and MQ03 emergency revision)\
-**Parent:** [Game I Story Bible](STORY_BIBLE.md) · [Revelation Plan](../saga/REVELATION_PLAN.md)
+**Status:** Approved narrative direction, 2026-11-26; gameplay, quest and
+dialogue migration is not implemented by this documentation revision.
+**Version:** 2.0 (Fire Veinhold prologue; Festival of Light removed).
+**Parent:** [Game I Story Bible](STORY_BIBLE.md) ·
+[Revelation Plan](../saga/REVELATION_PLAN.md).
 
-## Approved chapter structure
+This is the single owner of the revised opening's sequence, retired plot
+requirements and decisions needed before scripting. It replaces the former
+five-quest festival opening and excavation-driven three-chapter Act I spine.
+Final chapter divisions, quest IDs, durations and detailed scene scripts are
+open. Existing quest documents describe the old implemented journey until
+the later gameplay and dialogue migration.
 
-Chapter 1 is the **welcoming, predominantly peaceful opening** of Game I. Players spend time living in **Eldenmere**, building attachment to the community and Caelan's relationships before the inciting catastrophe. The excavation disaster occurs in **Act I, Chapter 3**, not in Chapter 1.
+## Approved opening sequence
 
-The separate [opening flashforward](../scenes/OPENING_CINEMATIC.md) owns its
-approved dialogue, action order, visual promises, and limits. Its eventual
-reprise is currently intended near the Act IV/V boundary; that placement does
-not approve the older later-act proposal or settle the crisis's cause.
+1. **Playable Fire Veinhold infiltration.** The player controls a party of
+   Regent Iselin, Lucan and an ordinary Crown soldier. They infiltrate the
+   Fire Veinhold; shutting it down is not this mission's objective. The
+   mission's precise purpose and any intelligence or other partial success
+   remain to be authored.
+2. **Defeat and failed protection.** They encounter a boss far too powerful
+   for them and lose in a scripted encounter. A following cutscene shows the
+   boss firing a huge aether-powered cannon at them. Iselin attempts an Ice
+   Barrier to protect all three. It fails; the Crown soldier dies, while
+   Iselin and Lucan survive. The staging must explain their different outcomes.
+3. **Change of viewpoint.** The survivors retreat toward Eldenmere offscreen.
+   Gameplay shifts to Caelan and Mira in Eldenmere before Iselin and Lucan
+   arrive. The western bridge is initially intact. A few introductory quests
+   establish home, relationships and the protagonists' capabilities. The exact
+   playable viewpoint and elapsed time remain open; the transition must make
+   the chronology understandable.
+4. **Arrival and pursuit.** Iselin and Lucan arrive following their failed
+   operation. Carcovia tracks them to Eldenmere. The arrival replaces the
+   expected relief-caravan/mining negotiation as the opening's story context.
+   How the survivors travel, why they choose Eldenmere, how the pursuit works,
+   and what they disclose require explicit scenes.
+5. **Attempted bombardment and prototype failure.** The Fire Veinhold
+   overcharges one of its weapons with Fire-aspected aether and launches a
+   massive fireball at **Eldenmere itself**. The shot misses and destroys the
+   western bridge instead. The weapon destroys itself during the operation,
+   significantly damaging the Fire Veinhold. The bridge is not the intended
+   target. The exact aiming failure and weapon arrangement remain open.
+6. **Ground assault and cooperation.** Carcovian troops attack Elden Vale.
+   The threat brings Iselin, Lucan, Mira and Caelan together. Their individual
+   choices, contributions, defensive preparations and civilian arrangements
+   must be authored rather than inferred from a four-member combat roster.
+7. **First outward expedition.** The opening's first outward leg returns to
+   the damaged Fire Veinhold to put it out of action and end the local threat.
+   The precise operational objective, route, surviving opposition, safe
+   handling of extracted aether and permanent victory conditions remain open.
+   **The regional weapon has already destroyed itself:** preventing that same
+   weapon from recharging is not a valid deadline.
 
-- **Five mandatory main quests**, introducing Caelan, Serene, Tomas, Mira, Iselin, Liam, Serene’s home, Elden Vale Sanctuary, everyday faith, practical magicks and technology, and the political dispute. MQ04 is the extended preparation and worldbuilding quest; MQ05 is the festival itself.
-- **Five initial optional community quests** as flexible content ideas; the **optional-content model** is approved, but each specific side-quest premise remains PROPOSED.
-- **The Festival of Light** is the emotional high point of the opening.
-- **Iselin receives a credible, sympathetic introduction**, followed by the exposure of her secret Crown crew in MQ03. Her real relief work and abuse of trust both shape the player's view of her.
-- **Chapter end:** Serene learns that excavation at Elden Vale Sanctuary has been authorized, then privately consults an old warning. This ends the chapter with concern rather than catastrophe.
-- **Act I proceeds through three chapters:** Chapter 1 *Life in Eldenmere*; Chapter 2 *Beneath the Peace*; Chapter 3 *The Shattered Oath*.
+The Sanctuary cave expedition can be retained and repurposed within this arc.
+Its objective, placement and route are not yet selected. A cave bypass,
+evacuation mission or study of safe aether release are proposals rather than
+additional approved steps in the sequence above.
 
-The earlier 60–90-minute main-narrative estimate predates the approved longer festival preparation quest and is being reassessed. MQ04 now targets roughly **45–60 minutes** at a comfortable first-playthrough pace, across four implementation PRs. Duration is a playtest target, not a requirement to pad the game; the complete chapter timing remains OPEN.
+## What the opening establishes
 
-**Authority note:** This chapter structure does not by itself approve every
-biography, line of dialogue, map, mechanic or detail of the coming disaster.
-Later explicit approvals are recorded in their linked guides. The approved
-[regional surges and relief visit](REGIONAL_SURGES.md) and
-[sanctuary covenant](../world/SANCTUARY_COVENANT.md) now govern the revised
-MQ02/MQ03 story. The [arrival cinematic](../scenes/REGENT_ARRIVAL.md) and revised MQ03
-dialogue now implement that approved opening context.
+The prologue introduces Carcovian military aether technology, Iselin's existing
+ice proficiency, Lucan's service and a consequential failure of protection.
+It does not reveal Iselin's future identity as the Ice Reaper.
 
-## Approved regional background
+The fireball establishes both destructive capability and imperfect control.
+Its failure raises the prospect of what Carcovia could achieve by perfecting
+that technology. It is distinct from the later huge strategic cannon supplied
+by multiple Veinholds. Whether the prologue boss's cannon and the overcharged
+regional weapon are the same apparatus is still open.
 
-The [regional surge history](REGIONAL_SURGES.md),
-[Sanctuary covenant](../world/SANCTUARY_COVENANT.md), and
-[local faith](../world/ELDEN_VALE_FAITH.md) own the relief context and
-Sanctuary responsibilities. MQ03 owns the disclosure and rescue sequence.
-These opening events do not move the excavation catastrophe into Chapter 1.
+The attack gives Caelan and Mira an immediate reason to protect their home.
+They still need initiative, personal interests and distinct reasons to join
+the expedition. The failure of a prototype does not make their own victory
+automatic. Preparation and complementary abilities must explain their success.
 
-## Mandatory quests — approved sequence and functions
+The [regional attack guide](REGIONAL_SURGES.md) owns local damage and road
+context. The [aether foundations](../saga/FOUNDATIONAL_LORE.md) own physical
+rules; the Revelation Plan separates player knowledge from character knowledge.
 
-### MQ01 — A Day Like Any Other
+## Retired opening requirements
 
-**Purpose:** Let the player control Caelan quickly; introduce ordinary worship, service, village geography, family dynamics, and the practical community service offered by Serene’s household.
+- **The old opening cinematic is scrapped entirely as active narrative.** Its
+  later-journey Caelan/Mira flashforward, wayside sanctuary, lamp restoration,
+  evacuation flare, anonymous helmet and sword, unidentified "he" and intended
+  Act IV/V reprise create no remaining narrative obligations. The
+  [old scene guide](../scenes/OPENING_CINEMATIC.md) is retained only as reference
+  for the runtime that still exists pending removal. Its implied death is not
+  assigned to Tomas or to the new prologue soldier.
+- **The Festival of Light is removed from the narrative.** Its preparation
+  arc, MQ04 lantern-making quest, planned MQ05 festival, festival scheduling,
+  invitations, optional festival activities and festival-centered chapter
+  transition are retired. This does not establish a replacement celebration
+  or require reskinning all those scenes into new quests.
+- **The old quarry/excavation-driven Act I spine is superseded.** The expected
+  relief visit, secret Crown mining crew, Sanctuary negotiation, worker-rescue
+  disclosure, ensuing accountability, authorization letter, private-warning
+  chapter ending and required Chapter 3 excavation catastrophe no longer
+  prescribe the revised opening. The Sanctuary remains a natural aether
+  confluence. Its other background roles can be retained where compatible;
+  no replacement buried mechanism or excavation plot is approved here.
+- **The bridge's pre-opening lightning destruction is superseded.** The new
+  cause is the misfired Fire-aspected attack after Iselin's arrival. This does
+  not automatically transfer the old lightning surge's cave-rupture history
+  to the fireball, or explain every other natural disaster.
+- **A second-shot recharge countdown is retired.** The local weapon is
+  destroyed. A replacement weapon, timed reconstruction or evacuation of
+  research records would each require a new story decision.
 
-**Narrative owner:** [MQ01 script](CH01_MQ01.md).
+Ordinary faith, remembrance, community service and the established planetary
+life cycle remain available outside the removed festival. They do not prove
+personal consciousness after death or the presence of souls in the confluence.
 
-**Emotional result:** Eldenmere is home rather than an exposition hub.
+## Existing quests and relationship functions
 
-### MQ02 — A Little Trouble at the Mill
+The old scripts remain current-runtime reference, not a second approved
+opening. Their dialogue is deliberately left for the next revision.
 
-**Purpose:** Provide a small, complete adventure through Mira's engineering knowledge and Caelan's practical help and limited learned magicks. After pressure is relieved mechanically, he successfully clears a small pocket of still water; this remains below the force required to push back the Venns' flowing channel. Mira encourages his pleasure in that modest success, with a conditional acknowledgment of the earlier failed attempt. Develop their affectionate, credible differences over technological progress and inherited restrictions through their work together. See the [implemented quest script](CH01_MQ02.md).
-
-**Narrative owner:** [MQ02 script](CH01_MQ02.md).
-
-**Emotional result:** Mira and Caelan succeed through complementary strengths rather than one worldview defeating the other.
-
-### MQ03 — The Regent's Road
-
-**Purpose:** Build familiarity with Iselin and Lucan before revealing Iselin's
-breach of trust. Make Serene's protection of the Sanctuary an active societal
-responsibility. Give Caelan agency in the emergency and bring Mira into an
-outing that uses her existing engineering skills and equipment.
-
-**Narrative owner:** [MQ03 script](CH01_MQ03.md).
-
-**Emotional result:** Caelan has reason to value Iselin's achievements and to
-recognize her deception. Lucan's independent reaction begins separating his
-judgment from his employer's. His temporary cave participation ends after
-the rescue; permanent recruitment remains future work.
-
-### MQ04 — A Light of His Own
-
-**Purpose:** Let the player learn through a child’s genuine curiosity, ordinary village preparations and substantial character scenes. Caelan’s involvement follows his household responsibilities, family relationships and an outing explicitly agreed with Liam’s mother, the village teacher.
-
-**Narrative owner:** [MQ04 script](CH01_MQ04.md). The single script contains all four preparation segments; its final farewell completes MQ04 on the preparation day.
-
-**Emotional result:** Liam feels taken seriously, develops his own understanding through experience and becomes ready to participate. Carrying his lantern for someone without anybody there is his personal intention, not a newly established universal custom or religious rule. His finished lantern keeps the chosen tower shape and an imperfect step. All four preparation segments now conclude within MQ04; tomorrow’s festival remains separate.
-
-### MQ05 — The Festival of Light
-
-**Premise:** The village gathers for remembrance and shared celebration, with the understanding that aether returns to the planet when living things die, paying off the people and preparations encountered in MQ04.
-
-**Purpose:** Celebrate community, present faith through comforting everyday practice and make the main relationships emotionally resonant. Include an inciting event that motivates the narrative to move beyond Eldenmere; its exact form remains PROPOSED.
-
-**Proposed staging:** Lanterns, songs, games and local conversations. Liam carries his finished lantern. Tomas shares a desire to see the wider world; Caelan expresses contentment in Eldenmere. Detailed festival activities, dialogue and its inciting event remain OPEN. MQ03 already establishes an emergency journey from the village to Elden Vale Sanctuary. The formal excavation authorization remains the current planned chapter-closing escalation; the Chapter 3 catastrophe is a separate later event.
-
-**Emotional result:** A warm, memorable high point followed by a credible reason to look beyond home.
-
-## Optional community quests — proposed catalog
-
-These are **ideas**, not commitments to quest count, rewards, or plot canon. Optional activities may add later dialogue callbacks but must not be required for understanding the core narrative.
-
-| Working title | Candidate activity | Relationship / worldbuilding role |
+| Existing script | Relationship or learning function to consider preserving | Required migration |
 | --- | --- | --- |
-| The Miller's Ledger | Help resolve an ordinary mill supply dispute | Local economy and community cooperation |
-| Lanterns for the Lost | Help households prepare memorial offerings | The lived meaning of death and returning aether |
-| Tomas's Big Idea | Assist with a humble mechanical experiment | Tomas's curiosity and admiration for Mira |
-| An Old Song | Recover missing verses of a festival hymn | Oral history and local religious culture |
-| A Merchant's Burden | Help with village deliveries | Trade, roads, and regional tensions |
+| [MQ01 — A Day Like Any Other](CH01_MQ01.md) | Caelan's home, Tomas, Serene, neighbours, useful service, limited magicks and ordinary faith | Remove the flashforward handoff, festival context and assumptions about damage already present before arrival. Select the revised household scenes. |
+| [MQ02 — A Little Trouble at the Mill](CH01_MQ02.md) | Mira's blade gift, friendship, practical engineering, early combat and Caelan's modest success | Reconcile tutorials with the prologue; rewrite the arrival handoff and retired festival/road context. |
+| [MQ03 — The Regent's Road](CH01_MQ03.md) | Selected introductions, Caelan's agency, cave relationships and ability lessons | Replace the old quarry/secret-crew/rescue chain and its completion history. Reauthor the cave expedition's purpose. |
+| [MQ04 — A Light of His Own](CH01_MQ04.md) | Liam's individuality, Tomas's participation, workshop relationships and remembrance | Retire the festival-preparation quest and its MQ03 prerequisite. Retain characters without automatically preserving the lantern plot. |
+| Former MQ05 festival plan | Community warmth and ordinary companionship | Remove the festival and its planned chapter ending. Develop warmth through normal life rather than another mandatory event. |
 
-**Design rule:** Prioritize specific people and small payoffs over repetitive collection or combat. Optional content must not gate important plot evidence, essential relationship context, or later survival outcomes by default.
+The revised story should retain room for meals, sibling humour, workshop
+conversations, curiosity and small successes. It should give the player
+reasons to care about Eldenmere before the attack, without preserving the old
+quest count or festival pacing as requirements.
 
-## Closing beat — the authorization letter
+The existing learning sequence is a migration dependency: blade gift, Guard,
+failed Aqua Edge, accidental Aether Edge, modest deliberate water manipulation,
+cave resonance and successful Aqua Edge. Keep or deliberately replace these
+functions before writing scenes that require the abilities. The prologue does
+not grant Caelan the royal party's equipment, experience or magicks.
 
-After the festival, Caelan helps Serene finish the evening work at home. A messenger brings word that the government has **formally authorized excavation** at Elden Vale Sanctuary, escalating the dispute.
+The old cave's private Caelan/Mira exchange about their parents and its quieter
+follow-up need an intentional place or deferral if the original rescue is
+removed. Caelan and Tomas's parents remain alive in author truth and missing
+from the brothers' lives; the cave provides no proof of death or reunion.
 
-Serene is shaken but shares only that the conflict with the regent is becoming more serious. Alone, she retrieves and examines an inherited warning about disturbances beneath the mountains. **The player does not read the full warning.** The chapter closes with uncertainty, not an immediate disaster.
+## Character and knowledge continuity
 
-Her precise knowledge is limited: the warning and public maintenance records
-do not establish the cause of the recent lightning, the enemy's harvesting
-network, the cannon plan or Iselin's covert mission. The contents and age of
-the inherited warning remain subject to their existing disclosure limits.
+The [cast index](CHARACTERS.md) and character sheets own biographies, ages,
+voices, relationships and later arcs. The new opening does not invent a new
+lineage, kill Tomas or Serene, destroy Mira's workshop, or resolve missing
+parents. The soldier's name, history, contribution, remains and notification
+of their death require authoring.
 
-## Character introductions
+Players witness the infiltration and failed barrier. Caelan, Mira and the
+villagers learn through the scenes available to them. Iselin's covert mission
+is therefore no longer entirely concealed from the audience. The Crown's
+precise prior knowledge, her disclosures and any continuing concealment remain
+subject to the Revelation Plan. Do not preserve an old accusation against her
+after removing the action that justified it.
 
-The [cast index](CHARACTERS.md) and individual character sheets own biographies,
-ages at opening, relationships, and knowledge boundaries. This chapter's quest
-scripts own their authored introductions. Companion introduction windows do not
-approve an entire later-act plot or exact recruitment quest.
+Lucan is a participant in the prologue. His reaction cannot simply reproduce
+the old scene in which he first learned of a secret Sanctuary crew. Prologue
+control, local cooperation and permanent recruitment are separate milestones;
+the existing intention that Iselin entrusts him to Caelan's party needs a
+reconciled scene or an explicitly approved revision.
 
-## Chapter pacing and prerequisites
+Serene needs consequential decisions in the crisis. Tomas, Liam, Halden and
+other households retain lives and interests beyond facilitating the main
+party's departure. Mira's workshop bot remains an established departure
+intention, with its exact timing and duties open.
 
-- **Mandatory spine:** MQ01 → MQ02 → MQ03, including the Sanctuary emergency → MQ04 preparations → MQ05 festival → closing scene. The acknowledged post-rescue family exchange completes MQ03 and unlocks MQ04; arrival alone does not complete it. Existing completed journeys preserve their later quest progress. MQ04 remains on the preparation day and MQ05 on the next day unless explicitly revised.
-- **Optional activities:** Become available naturally as the village opens up; ideally remain available through the festival where continuity permits.
-- **Player agency:** Free exploration and low-pressure activities between main sequences; avoid long mandatory exposition.
-- **No catastrophe in Chapter 1:** First a meaningful ordinary life, then Chapter 2 warnings and exploration, then Chapter 3 disaster and departure.
+## Geography, attack and recovery constraints
 
-## Exit conditions and continuity checks
+Preserve the [approved world geography](../world/WORLD_ATLAS.md#approved-world-map):
+Elden Vale lies in far-southern Merovar; Adamanthra lies far north. The Fire
+Veinhold's exact location and Carcovia's territorial or logistical arrangements
+are not assigned by this revision.
 
-Players should understand why Caelan loves Eldenmere, why Serene's order is useful to the community, how Mira differs from Caelan without becoming a caricature, why Tomas is loved, and why Iselin is respected. The conflict over sanctuary excavation should be understandable, while its precise hazards and the buried works' construction history remain unresolved.
+The western bridge connects the road toward the unnamed neighbouring town
+south of the Vale. It is separate from the guarded land approaches. Destroying
+it alone does not explain complete isolation; troop positions, usable routes
+and civilian transport must agree with the map. No new ford, tunnel exit,
+northward road or capital location becomes canon through this document.
 
-Mechanisms and magicks must obey conservation of aether. Planetary-return
-teaching does not settle personal consciousness after death or disclose the
-enemy harvesting network, cannon or Iselin's future. The
-[aether foundation](../saga/FOUNDATIONAL_LORE.md) now explains elemental
-Worldveins and distinguishes brief natural imbalances from sustained artificial
-disruption. The exact cause of the opening incidents remains open. Preserve
-the regional ending and its Ice Worldvein restoration requirement.
+The bridge's new direct-hit damage needs assessment before choosing a repair
+method. A timber span on surviving stone supports was a proposal for a
+different damage history, not an approved engineering solution. Define what
+restoration enables and keep an opened route reliable on later visits.
 
-## Still to determine
+The prototype's self-destruction and the four-member mission must produce
+distinct consequences. Decide what still endangers the Vale and what the
+party can permanently resolve. A functioning Crown, local defenders and the
+time needed for aid must be considered when explaining the party's role.
 
-1. Approve or revise character names, precise histories, personalities, interpersonal tensions, and speech styles.
-2. Develop MQ05’s precise festival practice, the personal scene between Caelan and Tomas, and its inciting event, following the completed MQ04 preparation quest.
-3. Develop the later site investigation and formal-authorization escalation without giving Serene unearned knowledge of the harvesting network or erasing MQ03's secret deployment.
-4. Develop Chapter 2's first mysteries and Chapter 3's disaster only after the Chapter 1 relationships are strong.
-5. Decide precise side-quest availability, rewards, consequences, and later optional callbacks.
+A deliberate attack on Eldenmere and ground assault establish armed conflict.
+Later diplomacy and antiwar efforts concern preventing wider war or further
+invasion. Decide who orders the shot and what the ground troops are trying to
+achieve; do not conflate assassination and capture without authored orders.
+
+## Decisions required before scene and quest implementation
+
+| Decision | What must be settled |
+| --- | --- |
+| Prologue brief | Infiltration objective, Crown authorization, partial success, location, access and why these three participate. |
+| Soldier and defeat | Name and contribution, loss presentation, barrier/blast geography, survivors' escape, aftermath and notification. |
+| Village introduction | Which household and mill functions survive, viewpoint, elapsed time, arrival trigger and tone. No festival. |
+| Arrival and pursuit | Refuge choice, travel, witnesses, warnings, tracking, Iselin's disclosures and how targeting information reaches Carcovia. |
+| Weapons | Whether the prologue and regional weapons are the same, overcharge/aiming failure, damage, boss survival and clear distinction from the later strategic cannon. |
+| Defense and aftermath | Ground-force objectives, Crown response, routes, injuries, displacement and civilian agency. |
+| Sanctuary and cave | New purpose and placement, Vespermaw, pool, optional encounters, learning beats and a new explanation or removal of the old storm-caused rupture. |
+| Return expedition | Concrete remaining threat, objective, urgency without a recharge countdown, safe handling of aether and the four characters' contributions. |
+| Recovery and bridge | Damage assessment, workers and materials, safe access, restored functions, local victory and return visits. |
+| Longer departure | Why Caelan and Mira continue north with Iselin after securing home, household/workshop handover, Lucan's permanent role and future companion entrances. |
+| Migration | Revised quest IDs and stages, tracker/journal language, ambient dialogue, old-save policy and retirement of old cinematic/festival runtime. |
+
+Previously discussed details such as a named southern town, a named
+bridgewright, a cave bypass, recovered firing records, a convoy deadline or
+Iselin teaching Caelan are not silently adopted. Select and document them
+where needed before relying on them in dialogue.
+
+## Implementation boundary and later story
+
+This approval codifies narrative direction. The current game still plays the
+old cinematic, quest sequence, festival dialogue and broken-from-start map.
+Subsequent PRs will revise those systems and scripts. Existing saves must not
+silently reinterpret a rescued mining crew as a completed invasion sequence.
+The supported migration or new-journey policy remains open.
+
+Keep the longer northward journey, Rhea's and Edran's introduction windows,
+Althea's betrayal, Iselin's exile and transformation, the planetary-core
+interval, approximately three surface years and the Ice Worldvein resolution
+in their existing owners. The [Story Bible's later chronology](STORY_BIBLE.md#approved-later-progression-and-parallel-chronology)
+remains authoritative. Removing the old opening's reprise does not remove the
+independently developed Ice Reaper scene.

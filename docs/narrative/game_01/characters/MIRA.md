@@ -17,8 +17,33 @@ from this earlier profile approval.
 Unless a later scene is identified, this describes her opening characterization.
 
 **Related guides:** [Character index](../CHARACTERS.md),
-[shared party guidance](../CHARACTERS.md#party-relationships-and-future-work), [millrace script](../CH01_MQ02.md),
-[lantern script](../CH01_MQ04.md), [Mira's art](../../../../assets/characters/mira/README.md).
+[current opening chronology](../CHAPTER_01.md),
+[shared party guidance](../CHARACTERS.md#party-relationships-and-future-work), [earlier millrace script](../CH01_MQ02.md),
+[earlier lantern script](../CH01_MQ04.md), [Mira's art](../../../../assets/characters/mira/README.md).
+
+## Opening revision and reference status
+
+**Author-approved replacement opening, 2026-11-26; not implemented:** The
+[chapter chronology](../CHAPTER_01.md) owns the new sequence. Mira and Caelan
+are introduced in Eldenmere after the playable Iselin/Lucan prologue, while
+the bridge is intact and before the royal survivors arrive. They later
+cooperate with Iselin and Lucan against the ground assault; the first journey
+returns to Fire Veinhold. Mira's exact contributions, the return objective and
+the trigger for the longer northward journey remain open. Immediate
+cooperation does not establish permanent recruitment or her workshop handover.
+
+The old flashforward and its later reprise obligations are retired in full.
+The Festival of Light, extended lantern preparation and festival ending are
+removed from the opening; the quarry/excavation dispute no longer supplies its
+mandatory spine. Elden Vale Sanctuary and its natural confluence remain, with
+their purpose in the new opening open.
+
+Mira's family history, engineering skills, workshop, joy in discovery, grief
+and relationships remain established. Her prepared blade gift and its support
+for Caelan's learning retain their character functions; new scene placement
+is open. Earlier quest demonstrations and quoted speech below are retained
+as runtime history and portrayal references, not scenes committed to the
+replacement opening or achievements completed before the game.
 
 ## Identity
 
@@ -32,7 +57,7 @@ Unless a later scene is identified, this describes her opening characterization.
 | Caregiver and surviving relatives | Halden took her in after the loss. Other relatives and formal adoption or guardianship arrangements remain undecided. | Established / Open |
 | Occupation | Engineer and capable mechanical problem-solver | Role revised, 2026-11-07 |
 | Appearance | Dark brown hair in a short ponytail, cream flower above her left ear, dusty rose shirt, charcoal trousers, brown boots, belt and tool pouch | Established design; see [art guide](../../../../assets/characters/mira/README.md) for individual asset approval status |
-| Narrative role | Caelan's childhood friend; temporary player-controlled guest in MQ02; appears with him in the opening flashforward | Established |
+| Narrative role | Caelan's childhood friend; introduced with him in Eldenmere after the prologue. Cooperates in the village defense and first journey; permanent party arrangements remain open. Earlier MQ02 guest participation is runtime history. | Established foundation and approved opening cooperation / Open recruitment |
 | Workshop history | Gained mechanical proficiency working with Halden on the mill; opened her workshop at 17 with his encouragement. Property and funding arrangements remain undecided. | Established / Open |
 
 ## Background and the meaning of repair
@@ -78,7 +103,7 @@ or connection to current events without approval.
 
 | Attribute | Value | Status |
 | --- | --- | --- |
-| Demonstrated strengths | Practical observation, mechanical competence, useful guidance and attention to safety | Established through MQ02 and MQ04 |
+| Demonstrated strengths | Practical observation, mechanical competence, useful guidance and attention to safety | Established portrayal; earlier MQ02 and MQ04 demonstrations |
 | Social manner | Familiar humor with Caelan; patient, collaborative instruction with Liam and Tomas | Established through existing scenes |
 | Response to uncertainty | Investigates before claiming a cause; accepts what she has not yet verified | Established through the mill diagnosis |
 | Central contradiction | Can make a damaged object useful again, but does not know how to mend her own grief | Established background direction |
@@ -92,7 +117,7 @@ or connection to current events without approval.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Present purpose | Maintaining Eldenmere's infrastructure gives her purpose through her own workshop | Established, 2026-11-03 |
-| Opening-story tasks | Help restore the mill and later help with Liam's lantern, as those quests occur | Established story tasks, not completed opening biography |
+| Opening-story tasks | Cooperate in the village defense and first journey to Fire Veinhold; exact roles and tasks remain open | Approved sequence / Open scenes; chapter chronology |
 | Foundational motivation | Threw herself into mill work with Halden to bury her parents' loss; repair now offers enjoyment and purpose without resolving her grief | Established, 2026-11-03 |
 | Long-term aspiration | Build useful devices that give ordinary people more independence and time | Established |
 | Personal definition of success | A real improvement someone can use, rather than praise for how clever she is | Established |
@@ -130,9 +155,16 @@ or connection to current events without approval.
 | Greatest failure | No specific failure has been chosen; parental loss is not proof that she failed or caused it | Open |
 | Regrets and unfinished obligations | Specific regrets, promises and debts remain undecided | Open |
 
-### Established on-screen demonstrations
+### Earlier runtime demonstrations and retained gift function
 
-These occur after the opening and must not be rewritten as earlier biography:
+These record the earlier implemented opening, not the replacement opening's
+quest order or pre-game biography. The prepared early birthday gift expresses
+Mira's familiarity with Caelan's interests and wish to practise magicks. It is
+retained as a friendship and learning beat, not a reward for combat performance
+or a response to his later failure; its new scene placement is open. The blade
+initially contains only the Blue Water gem, and Caelan supplies the magical
+control and effort. The removed lantern quest remains historical portrayal
+reference only.
 
 - **MQ02:** Presents Caelan’s early birthday blade before the outing, helps
   diagnose the restricted mill intake, covers him during the first combat
@@ -151,8 +183,10 @@ and [lantern script](../CH01_MQ04.md).
 
 **Status:** Established story-beat intent, 2026-11-03; not implemented.
 
-**Placement:** Near or after the end of Act I, when the party is preparing to
-leave Eldenmere. The exact story checkpoint remains open.
+**Placement:** Intended near or after the end of Act I, when the party is
+preparing to leave Eldenmere. The revised opening retains the beat; its exact
+placement, construction opportunity and handover remain open. First cooperation
+or the return to Fire Veinhold does not automatically complete this departure.
 
 **Format:** A cutscene, dialogue sequence or short quest; not yet chosen.
 
@@ -177,8 +211,9 @@ absence, allowing the workshop to continue operating without her being there.
   unassigned.
 - This is an independent workshop helper concept; its identity and duties remain open.
 - The exact departure timing, workshop condition and local needs must be
-  reconciled with the eventual Act I catastrophe and its consequences. These
-  notes do not settle Eldenmere's ultimate condition.
+  reconciled with the revised opening's village attack and its consequences.
+  The attack does not establish that the workshop is destroyed, nor do these
+  notes settle Eldenmere's ultimate condition or the longer journey's trigger.
 - Saved progress, behavior when the workshop is off-screen, later visits and
   what happens when Mira returns remain to be designed.
 
@@ -247,8 +282,8 @@ she returns to her ordinary worn equipment.
 | --- | --- | --- |
 | Parents | Lost them at 12; their loss shaped her relationship to repair. Their personalities, individual bonds with her and the circumstances remain unassigned. | Established / Open |
 | Caelan | Childhood friend and practical partner; both are 18 at the opening. Their shared sense of parental loss is a mostly unspoken foundation of the bond, alongside existing humor, concern and several shared childhood memories. Knowing every detail of her loss, romantic feelings and particular memory scenes are not assumed. | Established / Open |
-| Tomas | Knows and recommends her repair abilities; participates in her workshop guidance during MQ04 | Established |
-| Liam | Takes his lantern idea seriously and helps him understand choices instead of replacing his idea with her own | Established scene behavior |
+| Tomas | Knows and recommends her repair abilities; earlier MQ04 runtime demonstrates her patient workshop guidance | Established relationship / Historical scene evidence |
+| Liam | Takes his ideas seriously and helps him understand choices instead of replacing his work with her own; demonstrated by his lantern in the removed MQ04 quest | Established portrayal / Historical scene evidence |
 | Halden | Took her in after her parents' loss at 12, taught her mechanics through mill work, recognized her unresolved grief and encouraged her workshop at 17. Their detailed day-to-day family dynamic remains open. | Established / Open |
 | Serene | Halden is her established caregiver. Any separate family-like role or private knowledge of Mira's grief on Serene's part remains undecided. | Open |
 | Wider party | Specific relationships with Lucan, Rhea and Edran remain to be developed | Open |
@@ -301,7 +336,7 @@ her loss. Grief does not eliminate competence, humor or a future she can want.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal secrets | No secret about the deaths or her family has been established | Open |
-| Disclosure | Halden knows about the loss and recognizes her continuing grief. At the MQ03 cave entrance, Mira admits that she too has wondered whether her parents could be in the confluence, answering Caelan's private question about his own. Detailed personal history and further disclosures remain undecided. | Established / Open |
+| Disclosure | Halden knows about the loss and recognizes her continuing grief. In the earlier MQ03 cave-entry scene, Mira admits wondering whether her parents could be in the confluence, answering Caelan's private question about his own. That scene's placement in the revised story, detailed personal history and further disclosures remain open. | Established family knowledge / Earlier runtime disclosure / Open placement |
 | Shared past with Caelan | Several shared childhood memories exist at the opening. The player learns about them later throughout the game; their specific content, timing and presentation remain unassigned. | Established history and disclosure intent / Open details |
 | Caelan's parents | The shared connection does not establish that she knows they are alive; her knowledge of their survival or whereabouts remains unassigned | Open |
 | Knowledge limits | Bereavement does not give her answers about souls or resurrection; engineering does not grant complete knowledge of the enemy harvesting network | Constraint; follow the [revelation plan](../../saga/REVELATION_PLAN.md) |
@@ -437,10 +472,11 @@ All ten examples were approved as voice and expression references on 2026-11-03,
 with dialogue-structure revisions approved on 2026-11-04. The revised set varies
 turn lengths, practical goals, personal boundaries and unresolved feelings;
 occasional dry humor remains intentional.
-Examples 1 and 3 retain dialogue from existing scenes; the other examples are
-approved reference sketches, not implemented quest dialogue. New contexts and
-acting cues remain hypothetical and do not establish childhood events, the
-cause of death or romance. Later-growth examples illustrate the approved
+Examples 1 and 3 retain dialogue from earlier runtime scenes as historical
+portrayal references, not scenes committed to the replacement opening. The
+other examples are approved reference sketches, not implemented quest dialogue.
+New contexts and acting cues remain hypothetical and do not establish
+childhood events, the cause of death or romance. Later-growth examples illustrate the approved
 direction of development, not changes already completed at the opening.
 
 ### 1. Dry confidence - early village work
@@ -454,7 +490,7 @@ direction of development, not changes already completed at the opening.
 **Acting cue:** Matter-of-fact, with a small smile; her attention returns to the problem.
 
 **Character signal:** Understated humor and a preference for useful results over premature claims.
-**Status / source:** Existing dialogue, [MQ02 mill inspection](../CH01_MQ02.md).
+**Status / source:** Earlier runtime dialogue, [MQ02 mill inspection](../CH01_MQ02.md); new placement open.
 The additional acting cue is approved as a reference, not an implemented action.
 
 ### 2. Patient encouragement - everyday teaching
@@ -482,8 +518,8 @@ The additional acting cue is approved as a reference, not an implemented action.
 **Acting cue:** Checks his hands and shoulders before discussing their next task.
 
 **Character signal:** Practical care and honest acknowledgment of difficulty, not invulnerability.
-**Status / source:** Existing dialogue and injury-check action,
-[MQ02 aftermath](../CH01_MQ02.md).
+**Status / source:** Earlier runtime dialogue and injury-check action,
+[MQ02 aftermath](../CH01_MQ02.md); new placement open.
 
 ### 4. Genuine delight - discovery for its own sake
 

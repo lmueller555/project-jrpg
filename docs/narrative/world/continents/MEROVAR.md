@@ -33,8 +33,10 @@ their local orientation, including the established east-to-west flow beneath
 the mill wheel. The brook is no longer assigned to the Leth system.
 
 **Adamanthra** is Iselin's kingdom in northern Merovar, ruled by her elder
-sister, **Queen Althea**. Iselin serves as regional regent and travels south
-on relief and a covert Crown investigation. Her cold homeland is enclosed by
+sister, **Queen Althea**. Iselin serves as regional regent; her approved
+opening mission now concerns a Carcovian Fire Veinhold, as recorded in the
+[Chapter 1 chronology](../../game_01/CHAPTER_01.md). The former opening relief
+visit and quarry negotiations are retired. Her cold homeland is enclosed by
 mountains to the east, west and north, with its land approach open only from
 the south. No river or ocean channel cuts this northern country off from the
 rest of Merovar. The northern Rimeward coast lies beyond the enclosing
@@ -50,6 +52,10 @@ political names and their authorial associations.
 seeks to expand into Merovar through aether-powered military weapons. Exact
 Merovaran footholds, borders and routes remain open; the
 [Story Bible](../../game_01/STORY_BIBLE.md) owns that conflict's progression.
+The opening Fire Veinhold's exact position and the party's approach to it have
+not been assigned to a named atlas district. Its weapon is not yet identified
+as the later cannon, and the first expedition does not settle the longer
+northward itinerary.
 
 ## Elden Vale
 
@@ -66,9 +72,12 @@ parts of the district. Community care from Serene's home and neighbourly obligat
 are visible in Eldenmere, while road settlements have stronger connections to
 passing carriers and paid seasonal labour. People disagree about how much work
 a household owes its neighbours and what public authorities should provide.
-Road repairs and quarry demands can bring those expectations into conflict with
-protected ground. A damaged crossing or interrupted delivery gives Caelan a
-practical reason to meet those differences through people who need help.
+Road repairs and ordinary resource needs can bring those expectations into
+conflict. Such regional pressures remain useful background; they do not
+reinstate the retired Sanctuary quarry plot. The revised opening's bridge
+loss follows Iselin and Lucan's arrival, rather than preceding Caelan's
+introduction. Existing broken-bridge gameplay remains the older implementation
+until the new chronology is built.
 
 ## Greyfold Uplands
 

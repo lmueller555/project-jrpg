@@ -1,43 +1,28 @@
-# Opening cinematic — a light before the approach
+# Retired opening cinematic — current-runtime reference
 
-New Game opens on a brief glimpse of Caelan and Mira much later in their
-journey. They rest in a damaged wayside sanctuary overlooking an inhabited
-mountain valley. A cup, a traveling lantern and a recollection of the mill
-establish exhaustion and familiarity before the scene returns to Caelan's
-ordinary sanctuary bedroom and Tomas's existing first line.
+**Narrative status:** Scrapped entirely by the approved Fire Veinhold opening
+revision, 2026-11-26. The [revised opening](../game_01/CHAPTER_01.md) owns the
+replacement. This scene is not a future narrative requirement.
 
-The 252.57-second sequence begins with “Later in the journey…” to identify the
-flashforward explicitly. [Watch the captured opening](../../reviews/opening_cinematic/README.md).
+**Implementation status:** The old cinematic still runs in the current game.
+Its removal from New Game, Gallery and any obsolete runtime references is a
+subsequent implementation task. This documentation change does not remove code,
+art, audio or saved-state behavior.
 
-## Story contract
+## Retired story contract
 
-The user approved this opening frame and its somber, cinematic presentation.
-The current working narrative places its eventual reprise near the Act IV/V
-boundary, before the final approach to the regional complex. That later
-placement, the crisis's exact mechanics and the broader five-act outline remain
-working story material. This change does not implement the late-game quests or
-approve their unresolved outcomes.
+The late-journey Caelan/Mira flashforward, damaged wayside sanctuary, threatened
+valley, lamp restoration, evacuation flare, anonymous bloody helmet and sword,
+unidentified “he” and intended Act IV/V reprise are all retired with this
+opening. The story owes no later recreation or explanation of those images.
+Neither Tomas nor the new prologue soldier inherits the helmet's implied death.
+The independently developed Ice Reaper confrontation remains in its own owner.
 
-Caelan and Mira reaching this moment is a deliberate limited disclosure. The
-author's revised ending now hints that someone has died: an anonymous bloody
-metal helmet rests on a sword embedded in stone. It identifies neither the
-helmet's owner nor whose death it suggests, and it does not settle Tomas's fate
-or Eldenmere's ultimate condition. The reference to “he” in Mira's encouragement
-remains the author's exact wording and leaves its context unresolved for the
-player. The lantern is ordinary traveling equipment, not Liam's tower lantern
-or an identified memorial keepsake. The wayside sanctuary establishes no
-connection to a Veinhold or the cannon. Iselin's responsibility and the regional
-mechanism remain concealed; the revised aether foundation does not assign this
-flashforward's threatened surge a cause or identify its unnamed loss.
-
-The author's exchange establishes an entrance beyond the ridge, a threatened
-valley and a caravan returning for another group. Their reassurance, the lamp
-repair and the blue signal connect this pause to the evacuation. These framing
-facts do not settle the cause of the crisis or the wider later-act plot.
-
-The later narrative should return to this scene and continue beyond the final
-line, giving its quiet exchange a context the player has earned. That reprise
-remains future work.
+The production descriptions and original 30-line transcript below are retained
+only as reference for the old implemented scene and its existing checks. Their
+prior approval does not make them active canon or authorize reintroducing the
+scene into the new opening. Historical [captures](../../reviews/opening_cinematic/README.md)
+remain evidence of that version.
 
 ## Presentation
 

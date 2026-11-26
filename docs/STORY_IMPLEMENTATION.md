@@ -1,5 +1,13 @@
 # Sanctuary opening
 
+**Migration status — 2026-11-26:** Current-runtime reference. The approved
+opening is now the [Fire Veinhold sequence in Chapter 1](narrative/game_01/CHAPTER_01.md).
+The old opening flashforward and Festival of Light storyline are retired target
+story. The existing cinematic still runs in the game; this documentation-only
+migration changes no controller, dialogue, asset, quest flag or save contract.
+The playable sequence and former approval labels below describe that unchanged
+implementation, pending the separately scoped opening rewrite.
+
 This guide owns the opening controller, audio, rendering, and save contracts.
 The [MQ01 script](narrative/game_01/CH01_MQ01.md) owns the authored opening and
 household dialogue. The separate [flashforward](narrative/scenes/OPENING_CINEMATIC.md) and

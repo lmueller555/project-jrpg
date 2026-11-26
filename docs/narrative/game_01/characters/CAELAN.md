@@ -15,9 +15,34 @@ events or implemented game content. Unknown biography details remain open.
 Unless another stage is identified, this describes Caelan at the opening.
 
 **Related guides:** [Character facts](../CHARACTERS.md),
-[opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
-[lantern script](../CH01_MQ04.md), [ability guide](../../../CHARACTER_ABILITIES.md)
+[current opening chronology](../CHAPTER_01.md),
+[earlier opening quest](../CH01_MQ01.md), [earlier millrace script](../CH01_MQ02.md),
+[earlier lantern script](../CH01_MQ04.md), [ability guide](../../../CHARACTER_ABILITIES.md)
 and [approved art](../../../../assets/characters/caelan/README.md).
+
+## Opening revision and reference status
+
+**Author-approved replacement opening, 2026-11-26; not implemented:** The
+[chapter chronology](../CHAPTER_01.md) owns the new sequence. Caelan and Mira's
+Eldenmere introduction follows the playable Iselin/Lucan prologue, while the
+bridge is intact and before the royal survivors arrive. They later cooperate
+with Iselin and Lucan against the ground assault; the first journey returns to
+Fire Veinhold. Their exact contributions, the return objective and the trigger
+for the longer northward journey remain open. Immediate cooperation does not
+settle permanent party arrangements.
+
+The old flashforward and its later reprise obligations are retired in full.
+The Festival of Light, extended lantern preparation and festival ending are
+removed from the opening; the quarry/excavation dispute no longer supplies its
+mandatory spine. Elden Vale Sanctuary and its natural confluence remain, with
+their purpose in the new opening open.
+
+Caelan's family, personality, faith, ambitions, basic capabilities and long-term
+growth remain established. His blade gift and learning progression retain
+their character functions; their new scene placement is open. Earlier quest
+demonstrations and quoted speech below are retained as runtime history and
+portrayal references, not a requirement to replay those quests or events in the
+replacement opening. They are not achievements completed before the game.
 
 ## Identity
 
@@ -33,7 +58,7 @@ and [approved art](../../../../assets/characters/caelan/README.md).
 | Opening occupation | Helps Serene with household and community service. Acolyte/record keeper remains a working role, not an approved rank or vocation. | Established helper / Open rank; opening quest and [chapter guide](../CHAPTER_01.md) |
 | Appearance | Chestnut hair, ivory tunic, teal outer tabard, ochre trim, dark trousers and brown belt, pouch and boots. Pouch remains on anatomical left. | Established; approved art |
 | Narrative role | Playable protagonist of Game I; not a new party recruit | Established |
-| Combat identity | Spellblade; begins unarmed with established basic magicks, then receives Mira’s first blade before MQ02’s outing | Established; ability guide |
+| Combat identity | Spellblade; begins unarmed with established basic magicks, then receives his first blade from Mira. Gift and learning functions are retained; their new scene placement remains open. | Established foundation / Open placement; ability guide and chapter chronology |
 
 ## Family background and missing parents
 
@@ -51,12 +76,15 @@ Although they do not talk about it, they probably think their parents are dead
 by now. This is their likely private belief, not an established death or a
 certainty they have discussed with each other.
 
-**MQ03 disclosure:** On first entering the Sanctuary cave, its concentrated
-aether prompts Caelan to ask Mira quietly whether his parents could be there.
+**Earlier MQ03 runtime disclosure; new placement open:** On first entering the
+Sanctuary cave, its concentrated aether prompts Caelan to ask Mira quietly
+whether his parents could be there.
 The question exposes his private grief and uncertainty; it is not proof of
 death or a claim that he can recognize their presence. Mira shares that she has
 wondered about her own parents, before Lucan urges them onward. This moment
 does not establish a conversation about the subject between Caelan and Tomas.
+The confluence's new story purpose does not by itself carry this disclosure
+into the replacement opening.
 
 **Still open:** The parents' names and occupations, when and why they went
 missing, the boys' ages at the time, the exact last sighting or reliable news,
@@ -88,8 +116,8 @@ The exact ages and particular childhood incidents remain unassigned.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Opening temperament | Reserved, thoughtful and self-doubting | Established, 2026-11-04 |
-| Demonstrated strengths | Practical observation, asking useful questions and volunteering to investigate a problem | Established through MQ01 and MQ02 |
-| Demonstrated fallibility | Can reach to help before a child wants assistance, then step back when corrected | Established scene behavior in MQ04 |
+| Demonstrated strengths | Practical observation, asking useful questions and volunteering to investigate a problem | Established portrayal; earlier MQ01 and MQ02 demonstrations |
+| Demonstrated fallibility | Can reach to help before a child wants assistance, then step back when corrected | Established portrayal; earlier MQ04 runtime demonstration |
 | Central contradiction | Wants to develop his abilities and choose a vocation, but doubts whether he is ready to commit to one | Established |
 | Central flaw | Gives his uncertainty too much authority over his decisions, sometimes leaving his own preference unspoken | Established |
 | Self-image | Thinks of himself as someone still preparing, even when he has enough understanding to contribute | Established |
@@ -106,7 +134,7 @@ patient listener or automatic moral authority.
 | Attribute | Value | Status |
 | --- | --- | --- |
 | Personal desire before the crisis | Develop his magicks and find a vocation of his own | Established, 2026-11-04 |
-| Immediate duties | Help with Serene’s requests and village preparations as the opening quests occur | Established story tasks |
+| Immediate duties | Help Serene with household and community service; the specific tasks in the revised introduction remain open | Established role / Open scenes |
 | Why the vocation matters | Wants a direction he has chosen, rather than waiting for the next task someone needs him to perform | Established |
 | Definition of success | Being able to commit to useful work he understands and genuinely wants to pursue | Established |
 | Emotional need | Learn to make choices without requiring certainty that he will succeed or that everyone will approve | Established growth direction |
@@ -128,7 +156,7 @@ mission or using magical advancement as proof that he is worth caring about.
 | Practical fears | Specific phobias and recurring physical fears remain unassigned | Open |
 | Coping habit | Rechecks notes or rehearses a request instead of bringing it to someone | Established |
 | Values | Careful judgment, reliable help and being taken seriously without pretending to know more than he does | Established |
-| Faith and worldview | Familiar with Serene’s service, Elden Vale Sanctuary and Festival of Light traditions. His precise convictions, doubts and formal religious status remain open. | Established familiarity / Open interpretation |
+| Faith and worldview | Familiar with Serene’s service, Elden Vale Sanctuary and local remembrance traditions. His precise convictions, doubts and formal religious status remain open. | Established familiarity / Open interpretation |
 | Loyalties | Existing relationships with Tomas, Serene and Mira matter; specific tests and absolute boundaries remain unchosen | Established relationships / Open |
 | Prejudices and triggers | Not yet defined | Open |
 
@@ -150,9 +178,14 @@ ignorant or unable to disagree. Do not use hesitation as his only expression.
 | Proudest success and greatest failure | No event is assigned as his proudest success or greatest failure; the parents' disappearance is not established as his fault | Open |
 | Losses, regrets and obligations | Years of parental absence are established; further losses, regrets, promises and debts remain undecided | Established absence / Open |
 
-### Established on-screen demonstrations
+### Earlier runtime demonstrations and retained learning functions
 
-These are events during the game, not achievements completed before its opening:
+These record the earlier implemented opening. They retain evidence of his
+portrayal and abilities, not the replacement opening's quest order. The gift,
+failed Aqua attempt, inadvertent Aether Edge discovery, deliberate small water
+success and later Aqua Edge learning retain their development functions; their
+new scene placement remains open. The removed lantern quest is historical
+reference only.
 
 - **MQ01:** Offers to investigate the Venns' irrigation problem and repairs it
   with tools. Only if the player tries magicks first does he fail to move the
@@ -194,8 +227,8 @@ Sources: [opening quest](../CH01_MQ01.md), [millrace script](../CH01_MQ02.md),
 | Practical competence | Can inspect ordinary problems, use borrowed tools and contribute physical work | Established in opening quests |
 | Basic magicks | Learned capability with meaningful limits; not ignorance, limitless power or creating water from nothing | Established |
 | Early magical scale | Can move an isolated pocket after pressure relief; cannot push back the Venns' flowing load on the attempted-magicks route | Established in MQ01 and MQ02 |
-| Combat | Spellblade identity; initially unarmed. Mira’s Blue-only MQ02 gift defers Aether Edge until a failed Aqua attempt inadvertently releases it. The first Sanctuary cave encounter later teaches Aqua Edge; optional Embravyr and Nivareth teach Flame Edge and Ice Edge through their guaranteed focus rewards. | Established; ability guide |
-| Experience relative to Mira | Less experienced than Mira despite carrying her new blade in the opening river-path fight | Established |
+| Combat | Spellblade identity; initially unarmed. Mira’s Blue-only gift precedes a failed Aqua attempt that inadvertently releases Aether Edge; Aqua Edge is learned later. The earlier cave progression and optional elemental rewards are recorded below; new scene placement remains open. | Established abilities and learning functions / Open placement; ability guide |
+| Experience relative to Mira | Less experienced than Mira; demonstrated in the earlier river-path fight | Established |
 | Blind spot | Treats a failed attempt as evidence against a whole possible future, even when the conditions differ | Established |
 | Help he may need | Specific feedback and room to try, rather than either empty praise or someone making his choice for him | Established |
 | Future development | Gear-based combat progression is the current direction below; exact vocation, teachers, unlock methods and detailed later mechanics remain undecided | Direction recorded, 2026-11-07 / Open details |
@@ -216,8 +249,11 @@ Starting numbers are a tunable gameplay baseline. His Spellblade identity
 develops through learned weapon techniques and magicks; these numbers do not
 change his established magical limitations. Aether Edge is his only learned
 first-weapon starter skill, without permanent elemental coverage. He begins
-unarmed. Mira presents his first gear-and-gem blade at the start of MQ02, before
-the outing. The gift contains only the Blue Water gem. His first Aqua Edge
+unarmed; the gift does not itself grant elemental mastery.
+
+**Earlier runtime sequence; new scene placement open:** Mira presents his
+first gear-and-gem blade at the start of MQ02, before the outing. The gift
+contains only the Blue Water gem. His first Aqua Edge
 attempt fails, but inadvertently releases and teaches Aether Edge in the same
 attempt. The first Sanctuary cave encounter later teaches Aqua Edge. It costs
 0 MP throughout that introductory battle and normally 4 MP after it clears.
@@ -235,10 +271,12 @@ runtime integration and save compatibility.
 ## Combat progression concept
 
 **Current author direction, 2026-11-07:** Preserve these broad strokes for later
-development. The later gear combinations and ultimate below remain future concepts. The
-implemented opening has Blue/Water, the cave Aqua Edge lesson and optional
-Red/Fire and White/Ice acquisition through Embravyr and Nivareth. Additional
-gears remain undecided.
+development. The later gear combinations and ultimate below remain future
+concepts. The earlier implemented opening has Blue/Water, the cave Aqua Edge
+lesson and optional Red/Fire and White/Ice acquisition through Embravyr and
+Nivareth. These remain
+the ability reference; their scene placement in the replacement opening is open.
+Additional gears remain undecided.
 
 ### Elemental gems and additional gears
 
@@ -249,9 +287,10 @@ gears remain undecided.
 - Selecting the same element on multiple gears can enable a devastating attack
   of that element.
 
-The Sanctuary cave's optional level-four Aether guardians establish the first
-further gems: Embravyr settles into Red and teaches Flame Edge; Nivareth settles
-into White and teaches Ice Edge. Either can be found first, with acquisition
+In the earlier runtime, the Sanctuary cave's optional level-four Aether
+guardians establish the first further gems: Embravyr settles into Red and
+teaches Flame Edge; Nivareth settles into White and teaches Ice Edge. Either
+can be found first, with acquisition
 prose reflecting that order. Neither is required for Vespermaw. All three cave
 bosses expose a +50% exhaustion window, giving the player's tools another
 opportunity to matter. See [elemental encounters](../../../ELEMENTAL_CAVE_ENCOUNTERS.md).
@@ -286,7 +325,7 @@ or numerical tuning is assigned.
 | Serene | Cares for both brothers because their parents are missing. His personal balance of affection, trust, disagreement and desire for independence needs further development; her knowledge about the parents remains unassigned. | Established / Open |
 | Mira | Childhood friend and practical partner. Growing up without their parents gives them a mostly unspoken connection, supported by several shared childhood memories already present at the opening. He can contribute without matching her expertise. Specific memories and any romance remain unassigned. | Established / Open |
 | Lucan | Condescending instruction develops toward mutual respect; Caelan challenges his decisions and Lucan helps him become more assertive | Established companion direction |
-| Iselin | Guide and witness during the relief visit; deeper admiration, distrust and later personal conflict remain to be earned and specified | Established opening role / Open |
+| Iselin | Cooperates with her and Lucan during the ground assault. Their specific interactions, deeper admiration, distrust and later personal conflict remain to be earned and specified. | Approved opening cooperation / Open development |
 | Rhea and Edran | Eventual companion relationships remain to be developed; they do not automatically become his teachers | Open |
 
 **Approved relational range:** With Tomas he can be affectionate and occasionally
@@ -355,9 +394,10 @@ They do not require new dialogue-choice mechanics or routine animations.
 | Tests and setbacks | Specific commitments, failures and turning points remain unchosen | Open |
 | Later outcomes | Exact later personal losses, the parents' later fates or reunion, Tomas's fate, Eldenmere's ultimate condition and final vocation remain undecided | Open |
 
-The [opening cinematic](../../scenes/OPENING_CINEMATIC.md) establishes only its
-limited late-journey frame with Mira. Its anonymous helmet does not identify a
-particular person's death or resolve these open outcomes. Follow the [revelation plan](../../saga/REVELATION_PLAN.md);
+The retired flashforward establishes no continuing helmet, unidentified-loss
+or later-reprise obligation. The new prologue's ordinary Crown soldier is not
+an identified member of Caelan's household. Tomas's fate and the other later
+outcomes above remain open. Follow the [revelation plan](../../saga/REVELATION_PLAN.md);
 the broader proposed act outline is not blanket approval of later events.
 
 ## Show, Don't Tell
@@ -469,8 +509,10 @@ claim that he is always right, seizes command or stops having doubts.
 ## Ten dialogue and expression references
 
 All ten examples are approved voice references as of 2026-11-04. Examples 1, 2
-and 7 quote existing game scenes; the others remain hypothetical reference
-sketches, not implemented dialogue or established plot events.
+and 7 quote earlier runtime scenes retained as historical portrayal references;
+they do not establish scenes in the replacement opening. The others remain
+hypothetical reference sketches, not implemented dialogue or established plot
+events.
 
 ### 1. Thoughtful initiative - the millrace
 
@@ -489,7 +531,7 @@ the spell afterward, not before the conversation is acknowledged.
 
 **Character signal:** He can reason and act despite self-doubt. Mira's question
 clarifies the task and safety rather than setting up a clever reply.
-**Status / source:** Existing dialogue, [MQ02 small spell](../CH01_MQ02.md).
+**Status / source:** Earlier runtime dialogue, [MQ02 small spell](../CH01_MQ02.md); new placement open.
 
 ### 2. Acknowledging a limit - conditional early setback
 
@@ -500,7 +542,7 @@ clarifies the task and safety rather than setting up a clever reply.
 **Acting cue:** The implemented quiet acknowledgment leads into the practical repair.
 
 **Character signal:** A failed attempt can disappoint him without preventing useful action.
-**Status / source:** Existing dialogue, [MQ01 failed attempt](../CH01_MQ01.md).
+**Status / source:** Earlier runtime dialogue, [MQ01 failed attempt](../CH01_MQ01.md); retained portrayal reference.
 
 ### 3. Familiar irritation - ordinary brotherhood
 
@@ -582,7 +624,7 @@ still needs consideration; the scene does not declare him automatically correct.
 
 **Character signal:** He can misjudge the need for help and adjust without
 a speech about respecting independence.
-**Status / source:** Existing dialogue, [MQ04 agreed outing](../CH01_MQ04.md).
+**Status / source:** Earlier runtime dialogue, [MQ04 agreed outing](../CH01_MQ04.md); retained portrayal reference from the removed lantern quest.
 
 ### 8. Curiosity - a particular detail
 

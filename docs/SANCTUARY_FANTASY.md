@@ -1,5 +1,17 @@
 # Sanctuary fantasy assets
 
+**Migration status — 2026-11-26:** Current-runtime art reference.
+[Chapter 1](narrative/game_01/CHAPTER_01.md) owns the approved Fire Veinhold
+opening. The Sanctuary cave and natural confluence remain, with their revised
+quest purpose OPEN; the quarry/secret-crew storyline and lightning explanation
+for the bridge are retired. Existing terrain, scenery, placement, collision,
+animation and asset-production contracts below remain unchanged.
+
+The current arrival, rescue and return-home resolution are already implemented.
+Older future-work statements below record this asset pack's production stage;
+they neither describe missing runtime scenes nor approve that old story for
+the opening rewrite. This migration changes documentation only.
+
 Elden Vale Sanctuary combines emerald woodland, luminous mineral growth and
 weathered pale stone around its natural aether confluence. The eastern crystal
 ridge and western memorial tree are its principal landmarks. The hall, spring,

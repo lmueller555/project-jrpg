@@ -1,8 +1,8 @@
 # Project JRPG — Revelation Plan
 
 **Status:** Approved disclosure constraints; unwritten reveal scenes remain OPEN.
-**Version:** 0.8 (Adamanthra, Queen Althea and Carcovia disclosure boundaries).
-**Revision:** 2026-11-24.
+**Version:** 0.9 (approved Fire Veinhold opening and revised player knowledge).
+**Revision:** 2026-11-26; documentation-only replacement, runtime unchanged.
 **References:** [Foundational Lore](FOUNDATIONAL_LORE.md), the
 [Story Bible](../game_01/STORY_BIBLE.md), and the [narrative index](../README.md).
 
@@ -15,9 +15,11 @@ Story Bible, characterization to character sheets, and local faith to its
 world guide.
 
 Approved future direction is not implemented content. An author-facing fact
-cannot enter opening dialogue, quest objectives, item descriptions or optional
-conversations merely because it appears here. An unwritten mechanism is an open
-authoring decision, not automatically a secret somebody in the world knows.
+cannot enter dialogue, quest objectives, item descriptions or optional
+conversations outside its approved disclosure sequence merely because it
+appears here. The new playable prologue explicitly authorizes some early
+player knowledge; it does not share that knowledge with absent characters.
+An unwritten mechanism is an open authoring decision, not automatically a secret somebody in the world knows.
 
 ## Game I narrative boundary (CANON)
 
@@ -35,8 +37,9 @@ Serevin, east of Merovar. The
 entry as Adamanthra's reigning queen and Iselin's elder sister. These identities
 are established, not unnamed mysteries awaiting a reveal. Use them where a
 character's knowledge makes them appropriate; naming them does not disclose
-the covert investigation, prove the cause of a disaster or reveal future
-betrayal. This documentation revision does not rewrite opening runtime dialogue.
+the investigation's full briefing, prove the cause of an unrelated disaster or
+reveal future betrayal. The prologue already shows an infiltration
+to the player. This revision does not rewrite current runtime dialogue.
 
 The former cosmic catastrophe, ancient race, Great Sacrifice, four surviving
 Ancients and sacrifice-made Aethersphere explanation are **retired**, rather
@@ -44,6 +47,13 @@ than truths reserved for a later reveal. Do not plant clues that promise their
 return or retain them as the secret cause of the new conflict. Local faith,
 old human ruins and natural magical phenomena may remain without establishing
 those former explanations.
+
+The old flashforward and Festival of Light are retired from active narrative.
+Lantern preparation, the festival-ending letter/private warning and the
+mandatory quarry catastrophe no longer prescribe the opening. Their former future-death hint and Act IV/V reprise are not
+secrets waiting for payoff. [Chapter 1](../game_01/CHAPTER_01.md) owns the new
+opening chronology; the
+[regional attack guide](../game_01/REGIONAL_SURGES.md) owns local damage.
 
 ## Revelation matrix
 
@@ -54,15 +64,17 @@ sets boundaries rather than prescribing an unwritten scene or exact quest ID.
 | --- | --- | --- |
 | Aether and magicks | [Foundations](FOUNDATIONAL_LORE.md#1-foundations-of-existence) | Everyday use and teaching may explain established rules. Do not imply limitless energy or invent an exception to conservation for a dramatic scene. |
 | Elemental Worldveins | [Natural circulation](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Explain circulation through observable regional conditions and credible knowledge. Familiarity with magic does not grant a complete map or understanding of every flow. |
-| Natural disasters | [Natural imbalance](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Occasional brief natural imbalances can cause disasters with lasting damage. This foundation lets players consider the danger of greater artificial disruption; it does not prove the cause of any particular opening lightning incident. |
-| Veinholds and artificial disruption | [Harvesting](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Their actual effects and Carcovia's responsibility require evidence as the investigation develops. Knowing the country's name does not establish those connections. Do not assume every resident, worker or soldier understands the whole network. |
+| Natural disasters | [Natural imbalance](FOUNDATIONAL_LORE.md#worldveins-and-natural-imbalance) | Brief natural imbalances and sustained artificial disruption remain distinct. The bridge now has an explicit Fire-weapon cause; it is not an unidentified natural lightning incident. Other events require their own evidence. |
+| Veinholds and artificial disruption | [Harvesting](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | The prologue introduces a Fire Veinhold directly. This does not disclose every installation, the network's reach or all ecological consequences. Iselin's local firsthand experience does not make the Crown, Caelan or every soldier omniscient. |
 | “Clots” | [Facility terminology](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | A contemptuous name used by some opponents. Its use expresses a speaker's experience or allegiance; it is not universal vocabulary or an omniscient explanation. |
-| Combined supply and cannon | [Weapon and defense](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Discovery connects regional harvesting to Carcovia's military threat. Its broad expansion goal is approved; exact discovery scenes, detailed campaign aims, demands, supply method, firing rules and weapon outcome remain open. The ultimatum forces the dome decision. |
-| Crown investigation | [Iselin's covert mission](../game_01/characters/ISELIN.md#covert-investigation--author-knowledge) | The opening preserves her concealed mission alongside genuine aid. The Adamanthran Crown has partial knowledge; its precise evidence and suspicions require authoring. Do not make it omniscient or disclose the mission through casual opening exposition. |
+| Combined supply and strategic cannon | [Weapon and defense](FOUNDATIONAL_LORE.md#veinholds-and-the-cannon) | Later discoveries reveal the combined-supply strategic threat. Its ultimatum forces the dome decision. An early local weapon's failure does not establish this later cannon's first shot, limits, outcome or three-year status. |
+| Crown investigation | [Opening chronology](../game_01/CHAPTER_01.md), [Iselin](../game_01/characters/ISELIN.md#covert-investigation--author-knowledge) | The player participates in an infiltration, not an attempted shutdown. Its precise mission objective, briefing, evidence gained and any stolen records are open. Caelan and Mira learn only what is shown or communicated after their separate introductions. |
+| Prologue defeat | [Opening chronology](../game_01/CHAPTER_01.md) | The scripted loss, failed ice barrier and ordinary soldier's death are established. The soldier is not yet named. Do not turn this into the retired helmet's unidentified future-death promise or announce Iselin's later identity. |
+| Fireball and facility failure | [Regional attack](../game_01/REGIONAL_SURGES.md) | The intended village strike misses, destroys the western bridge and destroys the weapon, significantly damaging the Veinhold. Viewpoints and evidence determine who knows the tracking, target intention and exact failure; those details are not supplied by observing the bridge wreckage alone. |
 | Ice Dome and absorption | [Physical premises](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | The dome affects the Ice Worldvein. Iselin absorbs the barrier's accumulating ice-aspected aether during confinement, transforming and weakening it. Establish how characters learn this connection; do not substitute an unapproved upstream route or conscious sabotage throughout confinement. |
 | Defeat and restoration | [Restoration requirement](FOUNDATIONAL_LORE.md#ice-dome-absorption-and-restoration) | Defeating Iselin releases the excess aether and is necessary to restore the Ice Worldvein. How the party learns this, the release mechanism, her final fate and safe handling of the physical dome remain open. Do not announce that she must die or that every other damaged flow is thereby restored. |
 | Planetary life cycle and remembrance | [Life and death](FOUNDATIONAL_LORE.md#life-death-and-local-faith), [local faith](../world/ELDEN_VALE_FAITH.md) | Planetary-return teaching and remembrance may be explained. They do not prove personal consciousness after death, resurrection, or planetary sentience. |
-| Sanctuary confluence and buried works | [Local significance](../world/ELDEN_VALE_FAITH.md#why-elden-vale-sanctuary-matters), [covenant](../world/SANCTUARY_COVENANT.md) | Show natural and communal significance, records and observable hazards. The buried works' purpose is not established by their age or proximity to the confluence. |
+| Sanctuary confluence and buried works | [Local significance](../world/ELDEN_VALE_FAITH.md#why-elden-vale-sanctuary-matters) | Natural and communal significance remain. The revised cave purpose, any reused evidence and the buried works' purpose are open. Do not infer an Ancient machine, Carcovian facility or selected bypass from the confluence. |
 
 ## Parallel story and timeskip knowledge
 
@@ -74,8 +86,8 @@ after showing it, or give characters knowledge of unwitnessed scenes.
 
 | Stage | Knowledge boundary |
 | --- | --- |
-| Opening and shared journey | Preserve the covert-investigation boundary. The order of discoveries about Veinholds and the cannon still requires scenes and evidence. |
-| Parallel antiwar story | Player knowledge follows the actual scenes shown. Communications between groups must be authored rather than assumed. The cannon threat must not retroactively give every earlier character full knowledge. |
+| Opening and shared journey | The player witnesses Iselin's infiltration before Caelan's village introductions. Caelan and Mira do not inherit that viewpoint. What the survivors disclose, what the village witnesses and how the network's larger purpose emerges require scenes and evidence. |
+| Parallel wider-war story | Player knowledge follows the actual scenes shown. Communications between groups must be authored rather than assumed. The cannon threat must not retroactively give every earlier character full knowledge. |
 | Playable exile and confinement | The player witnesses Iselin's choices and can later witness her transformation. Her conscious resentment and the aether changing her capabilities are distinct processes. The core party has not thereby witnessed either. |
 | Planetary interior | The party experiences the core lifeforce and different time flow. This does not establish a conscious planet, an artificial origin for the core, or complete understanding of the Worldveins. |
 | Return after about three surface years | Elapsed time and surface events require evidence or testimony. Rhea remained on the surface, but her experiences are not automatically shared memories. |
@@ -104,7 +116,9 @@ for author truth and its remaining illustrative details.
 Do not invent an omniscient Crown, a universally corrupt military or a completed
 inquiry as shortcuts. Exact letters, witnesses, proofs, legal arrangements and
 any later public correction remain open. These later disclosures do not permit
-opening dialogue to reveal the covert mission or the later betrayal.
+opening dialogue to reveal the later betrayal or unassigned parts of the
+Crown's intelligence. The prologue's approved mission exposure is a separate
+disclosure, not a reason to make every villager informed.
 
 ### Collapsing dome, expedition and Rhea's appeal
 
@@ -153,21 +167,28 @@ Iselin's ultimate fate or the kingdom's political recovery.
 
 ## Approved early regional clues
 
-The [regional surge revision](../game_01/REGIONAL_SURGES.md) establishes a
-handful of extraordinary lightning incidents before and around the opening,
-including pre-opening destruction of Eldenmere's southern road. They precede
-Iselin's local mining initiative. They foreshadow the importance of aether flow
-and echo the opening cinematic's larger threatened surge; their natural or
-artificial cause, and the future scene's precise mechanism, remain open.
+The [new opening chronology](../game_01/CHAPTER_01.md) replaces the former
+pre-opening bridge lightning and relief-visit mystery. The bridge is intact
+during Caelan and Mira's introductions, then destroyed by the missed Fire
+attack after Iselin and Lucan arrive. The prologue has already shown a local
+weapon overpowering Iselin's barrier and killing their soldier. These events
+permit early military knowledge without revealing the entire network or the
+later Ice Reaper arc.
 
-The [covenant](../world/SANCTUARY_COVENANT.md) gives Serene public,
-incomplete evidence: an old plan and a historic maintenance account of a small
-discharge injuring workers. She shares these openly. That older incident is
-distinct from the recent lightning events and from the inherited warning she
-privately examines after the festival. The reserve's
-[natural confluence and communal significance](../world/ELDEN_VALE_FAITH.md)
-do not establish the buried works' purpose, a Veinhold, or a direct connection
-to the cannon.
+The failed long-range weapon self-destructs and damages the Veinhold. There is
+no surviving-gun recharge countdown. Whether the prologue and long-range
+incidents involve the same battery, why Eldenmere is targeted, how the royals
+are tracked, what intelligence is gained, and the return operation's precise
+objective remain open. Capture of launch records and a window before the
+garrison regroups are proposals, not established evidence or deadlines.
+
+The Sanctuary retains its
+[natural confluence and communal significance](../world/ELDEN_VALE_FAITH.md).
+Old maintenance records and a private inherited warning no longer define a
+mandatory festival-ending reveal or the quarry catastrophe. Their possible
+reuse must follow the new cave purpose and authored knowledge boundaries.
+The former Echo Chamber link to the bridge's lightning cannot silently become
+proof that the new fireball caused a rupture.
 
 ## Game I possible clue categories (PROPOSED; not required)
 
@@ -196,12 +217,17 @@ fixed order of revelations.
 
 ## Outstanding questions
 
-- What evidence does the Crown possess before the opening, and what does Iselin
-  learn during the shared journey?
-- Which events distinguish natural disasters from artificial disruption for the
-  party, and when is responsibility proved?
-- When and how do the party discover the combined supply, the cannon and its
-  limitations? What accounts for the weapon's status during the three years?
+- What briefing and evidence does the Crown possess before the infiltration?
+  What, if anything, do the infiltrators recover, and what do they tell Caelan
+  and Mira afterward?
+- Which later regional events distinguish natural disasters from artificial
+  disruption for the party, and when is responsibility established for each?
+- What distinguishes the two opening weapon incidents, and when does the
+  player learn their physical relationship, targeting and failure mechanism?
+- What remains dangerous after the local weapon self-destructs, and how does
+  the party establish the return mission's objective?
+- When do the party discover the later combined-supply strategic cannon and
+  its limits? What accounts for its status during the three surface years?
 - What evidence connects the dome, the cave and Iselin's absorption? When does
   the party learn that defeating her is necessary for Ice Worldvein restoration?
 - How are Rhea's earlier encounter and Althea's private authorization shown
