@@ -73,7 +73,13 @@ class OverworldRegionContractTests(unittest.TestCase):
         self.assertLess(player.position.x,130*TILE_SIZE)
         player = self.player((-98,30))
         player.update((-1,0),6,world,running=True)
-        self.assertGreaterEqual(player.position.x,-102*TILE_SIZE+12)
+        bridge = world.region['bridge']
+        deck = world._tile_rect(bridge['deck_rect_tiles'])
+        supports = [world._tile_rect(rect) for rect in bridge['destroyed_walkable_rect_tiles']]
+        self.assertGreater(player.position.x, deck.centerx)
+        self.assertTrue(any(rect.contains(world.probe_rect(player.position)) for rect in supports))
+        self.assertTrue(world.can_stand(player.position))
+        self.assertFalse(world.can_stand(deck.center))
 
     def test_release_does_not_create_an_unauthored_route_or_repair_the_bridge(self):
         world = self.world

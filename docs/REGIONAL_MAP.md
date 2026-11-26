@@ -8,7 +8,7 @@ the exploration HUD in every location; Escape still opens the pause interface.
 ## Regional atlas
 
 Press **M**, or click the overworld minimap, to open the atlas. Its initial view
-frames Eldenmere, the two rivers, the ruined western crossing and both guarded
+frames Eldenmere, the two rivers, the western crossing and both guarded
 checkpoints. The map preserves geographic proportions and supports closer
 inspection and exploration of the surrounding chart.
 
@@ -32,8 +32,10 @@ conditions override the legacy repair flag. Standalone legacy fixtures without
 a condition can still resolve that flag. Fallback chart routes and glyphs obey
 the same rule; intact suppresses bridge-specific scorch, while restoration
 retains damage history. The [overworld guide](OVERWORLD.md) owns the staged
-rollout and save format. The production start remains ruined until the second
-bridge PR supplies the new artwork and far-bank routing.
+rollout and save format. Production journeys now start with an intact bridge;
+explicit damage and old repair facts retain their presentation. The far-bank
+road ends at a sheltered layby bounded by rock shelves, with no onward scene
+transfer. Its live route and boundary geometry match the playable region.
 
 Terrain is illustrated pixel cartography, while text is rendered separately at
 display resolution. The header is compact and the selected-place card appears
@@ -67,8 +69,9 @@ miniature symbols supply the illustration. Roads, walls, operational markers,
 place labels and player position remain live overlays. Geometry fingerprints
 detect stale artwork; nonstandard fixtures can use a bounded geographic fallback.
 
-Gameplay geography, world/landmark identities, discovery saves and independent
-gate/bridge facts remain unchanged. The original Auratia atlas supplies style
+The bounded west-bank road is reflected in the current survey. World/landmark
+identities, discovery saves and independent gate/bridge facts remain stable.
+The original Auratia atlas supplies style
 context; its approved artwork is preserved.
 
 Sources and tools:

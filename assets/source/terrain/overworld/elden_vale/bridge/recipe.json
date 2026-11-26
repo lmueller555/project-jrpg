@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "canvas": [
+    288,
+    144
+  ],
+  "anchor": [
+    144,
+    94
+  ],
+  "deck_top_px": 34,
+  "deck_bottom_px": 106,
+  "destroyed_gap_px": [
+    107,
+    181
+  ],
+  "palette_reference": "destroyed_reference.png",
+  "palette_colors": 64,
+  "alpha_threshold": 128,
+  "sources": {
+    "intact_generated.png": {
+      "sha256": "7283eef25ca7a9717328e335fe3421afbb5a3fb63d05462a474e48d07f7caad2",
+      "method": "image_gen edit of the original broken bridge; continuous overhead stone deck and parapets",
+      "generation_id": "exec-32651af8-b89a-4a65-81b8-81db98746f1a"
+    },
+    "destroyed_reference.png": {
+      "sha256": "6bcbdfc731f77a8d9724883b709a76599d6e346cc6ecf1ec0941d945fc384f25",
+      "original_path": "assets/terrain/overworld/elden_vale/composition/props/broken_bridge_wide.png",
+      "method": "Byte-identical preserved original native broken bridge"
+    }
+  },
+  "intact_bands": {
+    "far": {
+      "source_rect": [
+        0,
+        126,
+        1774,
+        204
+      ],
+      "target_rect": [
+        0,
+        22,
+        288,
+        34
+      ]
+    },
+    "deck": {
+      "source_rect": [
+        0,
+        204,
+        1774,
+        629
+      ],
+      "target_rect": [
+        0,
+        34,
+        288,
+        106
+      ]
+    },
+    "near": {
+      "source_rect": [
+        0,
+        629,
+        1774,
+        756
+      ],
+      "target_rect": [
+        0,
+        106,
+        288,
+        122
+      ]
+    }
+  },
+  "restored_art": "Reuse the finished stone span. This visual state does not establish a repair method, a cause of destruction, or a quest event.",
+  "registration": "Native 24-pixel world grid; horizontal road clear width 72 pixels. Deck is a ground layer; far and near parapets sort at bridge anchor Y minus60 and plus14 respectively."
+}

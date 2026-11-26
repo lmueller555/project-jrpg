@@ -933,14 +933,21 @@ class Game:
         # Residents resume their own routines on launch. A saved standing spot
         # can now be occupied, so use a clear nearby landing or the room entry.
         if not self.world.can_stand(position):
-            candidates=[self.world.data['spawn']]
-            for radius in range(4,49,4):
-                for dx,dy in ((0,radius),(radius,0),(0,-radius),(-radius,0)):
-                    candidates.append((position[0]+dx,position[1]+dy))
-            position=next((p for p in candidates if self.world.can_stand(p)),None)
-            if position is None:
-                self.world=self.town
-                position=self.town.data['spawn']
+            if getattr(self.world,'is_overworld',False):
+                position=self.overworld_travel.resolve_restore_landing(self.world,position)
+                if position is None:
+                    self.save_error='The saved regional position has no safe landing on its riverbank.'
+                    self.on_title=True
+                    return False
+            else:
+                candidates=[self.world.data['spawn']]
+                for radius in range(4,49,4):
+                    for dx,dy in ((0,radius),(radius,0),(0,-radius),(-radius,0)):
+                        candidates.append((position[0]+dx,position[1]+dy))
+                position=next((p for p in candidates if self.world.can_stand(p)),None)
+                if position is None:
+                    self.world=self.town
+                    position=self.town.data['spawn']
         self.player.position.update(position)
         self.player.moving=False;self.player.walk_ms=0
         self.social.blocked.clear()
@@ -977,6 +984,17 @@ class Game:
                 landing=self.town.data['spawn']
             self.player.position.update(landing)
         self.overworld_travel.finish_story_restore(regional_checkpoint)
+        if not self.overworld_travel.bridge_return_safe(self.world,self.player.position):
+            self.save_error='This checkpoint is west of the broken crossing with no onward route. Load another checkpoint.'
+            self.on_title=True
+            return False
+        if self.overworld_travel.active and not self.world.can_stand(self.player.position):
+            landing=self.overworld_travel.resolve_restore_landing(self.world,self.player.position)
+            if landing is None:
+                self.save_error='The saved regional position has no safe landing on its riverbank.'
+                self.on_title=True
+                return False
+            self.player.position.update(landing)
         for scene in self.scenes.values():
             scene.reset_grass(reduced_motion=self.audio.reduced_motion)
         self.opening_audio.reset()

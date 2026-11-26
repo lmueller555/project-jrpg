@@ -227,6 +227,7 @@
       {"id": "ridge_shelf_base", "surface": "grass_dry", "polygon": [[77, -27], [93, -26.8], [93.8, -24.0], [88, -23.4], [80, -23.8], [76.7, -25.0]]},
       {"id": "bridge_east_flare", "surface": "stone_road_worn", "polygon": [[-105, 27.5], [-98.8, 27.5], [-98.4, 28.3], [-98.8, 30.5], [-105, 30.5]]},
       {"id": "bridge_west_flare", "surface": "stone_road_worn", "polygon": [[-124.5, 27.5], [-117, 27.5], [-117, 30.5], [-123.5, 30.5], [-125, 29.5]]},
+      {"id": "west_bank_layby", "surface": "gravel", "polygon": [[-151.5, 75], [-146, 74], [-143, 77], [-143.5, 81], [-147.5, 82], [-151.5, 80]]},
       {
         "id": "sanctuary_forecourt",
         "surface": "gravel",
@@ -244,13 +245,13 @@
     {
       "id": "south_town_road",
       "kind": "stone",
-      "role": "Damaged southern connection; main stone road",
+      "role": "Southern connection over the western crossing to a bounded west-bank layby",
       "surface": "stone_road",
       "width": 2.5,
       "ruts": false,
-      "control_points": [[12, -28], [12, -25], [12, -17], [11, -9], [10, -1], [7, 4], [-3, 8], [-15, 11], [-28, 14], [-42, 17], [-58, 20], [-70, 24], [-84, 27], [-98, 28], [-99, 29], [-111, 29], [-123, 29], [-128, 34], [-139, 50], [-150, 83], [-158, 119], [-174, 182]],
+      "control_points": [[12, -28], [12, -25], [12, -17], [11, -9], [10, -1], [7, 4], [-3, 8], [-15, 11], [-28, 14], [-42, 17], [-58, 20], [-70, 24], [-84, 27], [-98, 28], [-99, 29], [-111, 29], [-123, 29], [-128, 34], [-139, 50], [-146, 68], [-148, 78]],
       "smooth_steps": 6,
-      "points": [[12, -28], [12, -25], [12, -17], [11, -9], [10, -1], [7, 4], [-3, 8], [-15, 11], [-28, 14], [-42, 17], [-58, 20], [-70, 24], [-84, 27], [-98, 28], [-99, 29], [-111, 29], [-123, 29], [-128, 34], [-139, 50], [-150, 83], [-158, 119], [-174, 182]]
+      "points": [[12, -28], [12, -25], [12, -17], [11, -9], [10, -1], [7, 4], [-3, 8], [-15, 11], [-28, 14], [-42, 17], [-58, 20], [-70, 24], [-84, 27], [-98, 28], [-99, 29], [-111, 29], [-123, 29], [-128, 34], [-139, 50], [-146, 68], [-148, 78]]
     },
     {
       "id": "northern_corridor",
@@ -584,10 +585,24 @@
     "deck_rect_tiles": [-120, 27.5, 18, 3],
     "east_approach_tile": [-98, 28],
     "west_approach_tile": [-128, 34],
-    "description": "The stone crossing is ruined. The southern road continues on the far bank.",
+    "description": "The western stone crossing joins the southern road to a sheltered west-bank layby.",
     "deck_width_tiles": 3,
     "deck_center_tile_y": 29,
-    "broken_art_key": "broken_bridge_wide"
+    "broken_art_key": "broken_bridge_wide",
+    "layers_manifest": "assets/terrain/overworld/elden_vale/bridge/art.json",
+    "destroyed_walkable_rect_tiles": [[-120, 27.5, 7.458333333333333, 3], [-109.45833333333333, 27.5, 7.458333333333333, 3]]
+  },
+  "far_bank": {
+    "western_river_id": "western_boundary_river",
+    "playable_polygon": [[-119, 23], [-126, 22], [-133, 25], [-136, 33], [-138, 41], [-144, 49], [-149, 59], [-154, 71], [-155, 80], [-151, 85], [-144, 85], [-140, 81], [-140, 75], [-136, 64], [-131, 54], [-125, 46], [-121, 38], [-118, 34]],
+    "boundary_segments": [
+      {"id": "west_bank_rock_shelf", "kind": "rock_slope", "width_tiles": 1.25, "points": [[-119, 23], [-126, 22], [-133, 25], [-136, 33], [-138, 41], [-144, 49], [-149, 59], [-154, 71], [-155, 80], [-151, 85], [-144, 85], [-140, 81], [-140, 75], [-136, 64], [-131, 54], [-125, 46], [-121, 38], [-118, 34]]},
+      {"id": "west_bank_northern_return", "kind": "rock_slope", "width_tiles": 1.25, "points": [[-119, 23], [-118.8, 26.8]]},
+      {"id": "west_bank_southern_return", "kind": "rock_slope", "width_tiles": 1.25, "points": [[-118.6, 31.2], [-118, 34]]}
+    ],
+    "terminal_tile": [-148, 78],
+    "future_exit": {"id": "western_south_road", "label": "Southern road layby", "tile_position": [-148, 78], "destination_ready": false},
+    "notes": "Local rock shelves bound the western landing and a short southbound road. The layby is the current road extent; it grants no onward transfer or checkpoint clearance and does not locate the unnamed southern town on the world map."
   },
   "gates": [
     {"id": "north_checkpoint", "tile_position": [20, -96], "rect_tiles": [18, -98, 4, 4], "clearance_flag": "CH01_OPENING_REGION_RELEASED", "destination_ready": false, "guard_tiles": [[18, -93], [23, -92]], "label": "Northern checkpoint"},
@@ -597,7 +612,7 @@
     {"id": "upper_millrace", "name": "Upper Millrace", "kind": "millrace", "tile_position": [8, -64], "discovered": true, "description": "Northern woodland surrounds the village's upper millrace."},
     {"id": "woodland_overlook", "name": "Woodland overlook", "kind": "overlook", "tile_position": [-48, -68], "discovered": true, "description": "A clearing on the woodland loop, with views across the inland vale."},
     {"id": "foothill_overlook", "name": "Foothill overlook", "kind": "overlook", "tile_position": [74, -20], "discovered": true, "description": "The eastern walking loop meets the wooded Greyfold foothills."},
-    {"id": "relief_staging", "name": "Road crew staging", "kind": "staging", "tile_position": [-68, 16], "discovered": true, "description": "Road crews gather stone and supplies beside the route to the damaged crossing."},
+    {"id": "relief_staging", "name": "Road crew staging", "kind": "staging", "tile_position": [-68, 16], "discovered": true, "description": "Road crews gather stone and supplies beside the southern road."},
     {
       "id": "ridge_sanctuary",
       "name": "Elden Vale Sanctuary",
@@ -653,11 +668,11 @@
     "reachable_landmark_ids": ["upper_millrace", "woodland_overlook", "foothill_overlook", "relief_staging", "ridge_sanctuary"],
     "opening_enclosure": {"north_wall": "north_wall", "south_wall": "south_wall", "western_river": "western_boundary_river", "eastern_river": "eastern_boundary_river"},
     "notes": [
-      "Gate clearance and bridge repair are independent, absent by default and have no producer.",
-      "The southern checkpoint is a separate future land corridor; the damaged south-town road bends west before the southern wall.",
-      "Rivers meet each end of both walls. No playable shoreline, delta, named next town or original temple location is introduced.",
+      "Explicit bridge phase, legacy repair facts and checkpoint clearance remain independent; bridge passage never authorizes an onward destination.",
+      "The southern checkpoint is a separate future land corridor; the south-town road bends west and ends at a bounded layby before the southern wall latitude.",
+      "Rivers meet each end of both walls. The new west-bank shelf is local implementation geometry, not a new watercourse, delta, named next town or world-map destination.",
       "Environment pass gives roads a hierarchy, farmyards explicit clear approaches and smaller crop parcels; added visual setpieces do not introduce quests or destination scenes.",
-      "Composition pass links door fronts, farm gates and orchard arrivals; bridge roadway is exactly three tiles north-south, independently of the destroyed crossing state."
+      "Composition pass links door fronts, farm gates and orchard arrivals; the bridge has a three-tile roadway in every phase, with two supported ends separated by an impassable gap when destroyed."
     ]
   },
   "geography": {
@@ -826,7 +841,7 @@
   "detail_art_manifest": "assets/terrain/overworld/elden_vale/polish/art.json",
   "environment_pass": {
     "version": 2,
-    "description": "Connected working places, intimate orchard arrivals, shaded canopy groups, shoreline conditions and a three-tile broken bridge.",
+    "description": "Connected working places, intimate orchard arrivals, shaded canopy groups, shoreline conditions, a three-tile phased stone crossing and a bounded west-bank road shelf.",
     "scale": "Regional miniatures; fields and scenery convey place, not a physical kilometre scale.",
     "preserved_contracts": ["World identity and global coordinates", "Town/bridge/checkpoint and existing landmark positions", "Separate story clearance and bridge repair facts", "Approved classroom atlas and original art"]
   },

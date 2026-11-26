@@ -190,6 +190,7 @@ class OverworldWorld:
         self.entities = []
         self._art = {};self._tiles = {};self._props = {}
         self._load_art()
+        self._bridge_art = self._load_bridge_layers()
         self._validate_bridge_width()
         town = self.region.get('town', {})
         self.town_entry_rect = self._tile_rect(town.get('entry_rect_tiles', (9, -33, 6, 6)))
@@ -278,6 +279,25 @@ class OverworldWorld:
                 for group in ('tiles','props'):
                     self._art.setdefault(group,{}).update(additional.get(group,{}))
 
+    def _load_bridge_layers(self):
+        """Load registered ground and parapet layers; old fixture art is optional."""
+        source = self.region.get('bridge', {}).get('layers_manifest')
+        if not source:return None
+        record = json.loads((ROOT/source).read_text(encoding='utf-8'))
+        canvas, anchor = tuple(record['canvas']), tuple(record['anchor'])
+        if record.get('version') != 1 or set(record['phases']) != {'intact','destroyed','restored'}:
+            raise ValueError('Bridge layers require all three version-one phases')
+        for phase in record['phases'].values():
+            if set(phase) != {'deck','far','near'}:raise ValueError('Bridge phase requires deck and both parapets')
+            for name, layer in phase.items():
+                if tuple(layer['foot_anchor']) != anchor:raise ValueError('Bridge layers must share their anchor')
+                image = pygame.image.load(str(ROOT/layer['image'])).convert_alpha()
+                if image.get_size() != canvas:raise ValueError('Bridge layers must share their canvas')
+                layer['surface'] = image
+                if name != 'deck' and 'sort_offset' not in layer:
+                    raise ValueError('Bridge parapets require a depth offset')
+        return record
+
     def _validate_bridge_width(self):
         """A declared roadway width agrees in world geometry and exported art."""
         bridge = self.region.get('bridge',{})
@@ -299,6 +319,12 @@ class OverworldWorld:
             offset = bridge['tile_position'][1]*TILE_SIZE-deck.centery
             if record['foot_anchor'][1] != art_center+offset:
                 raise ValueError('Bridge artwork roadway is not aligned with the world deck')
+        if self._bridge_art is not None:
+            record = self._bridge_art
+            if record['deck_bottom_px']-record['deck_top_px'] != width:
+                raise ValueError('Bridge layer roadway differs from its collision width')
+            top = bridge['tile_position'][1]*TILE_SIZE-record['anchor'][1]+record['deck_top_px']
+            if top != deck.top:raise ValueError('Bridge layers are not aligned with the world roadway')
 
     def _tile_image(self, key):
         if key not in self._tiles:
@@ -399,6 +425,80 @@ class OverworldWorld:
     def _bridge_passable(self):
         return self.bridge_condition.passable
 
+    def _bridge_river(self):
+        rivers = self.region.get('terrain', {}).get('rivers', [])
+        if not rivers:return None
+        identifier = self.region.get('far_bank', {}).get('western_river_id', 'western_boundary_river')
+        return next((river for river in rivers if river.get('id') == identifier),
+                    min(rivers, key=lambda river: _distance_to_path(
+                        self.region.get('bridge', {}).get('tile_position', (0,0)), river['points'])))
+
+    def bridge_bank(self, position):
+        """Classify a landing against the nearby bend, rather than a fixed meridian."""
+        river = self._bridge_river()
+        point = (position[0]/TILE_SIZE, position[1]/TILE_SIZE)
+        if river is None:
+            nearest_x = self.region.get('bridge', {}).get('tile_position', (0,0))[0]
+        else:
+            nearest = (math.inf, river['points'][0][0])
+            for a,b in zip(river['points'], river['points'][1:]):
+                dx,dy = b[0]-a[0],b[1]-a[1];length2 = dx*dx+dy*dy
+                t = 0 if not length2 else max(0,min(1,((point[0]-a[0])*dx+(point[1]-a[1])*dy)/length2))
+                x,y = a[0]+t*dx,a[1]+t*dy
+                candidate = ((point[0]-x)**2+(point[1]-y)**2,x)
+                if candidate[0] < nearest[0]:nearest = candidate
+            nearest_x = nearest[1]
+        return 'west' if point[0] < nearest_x else 'east'
+
+    def _bridge_walkable_rects(self):
+        bridge = self.region.get('bridge')
+        if not bridge:return []
+        rects = ([bridge.get('deck_rect_tiles', bridge['damage_rect_tiles'])]
+                 if self._bridge_passable() else bridge.get('destroyed_walkable_rect_tiles', []))
+        return [self._tile_rect(rect) for rect in rects]
+
+    def _far_bank_collision(self, surface, cx, cy):
+        boundary = self.region.get('far_bank')
+        river = self._bridge_river()
+        if not boundary or not river:return
+        ox,oy = cx*CHUNK_PIXELS,cy*CHUNK_PIXELS
+        # Only territory west of the boundary river is constrained. The central
+        # vale and its north/south checkpoints retain their independent geometry.
+        points = sorted(river['points'], key=lambda point:point[1])
+        left = self.bounds.left/TILE_SIZE-1
+        western = [(left, self.bounds.top/TILE_SIZE-1), (points[0][0], self.bounds.top/TILE_SIZE-1)]
+        western += points
+        western += [(points[-1][0], self.bounds.bottom/TILE_SIZE+1), (left,self.bounds.bottom/TILE_SIZE+1)]
+        local = lambda polygon:[(round(x*TILE_SIZE-ox),round(y*TILE_SIZE-oy)) for x,y in polygon]
+        mask = pygame.Surface((CHUNK_PIXELS,CHUNK_PIXELS));mask.fill('black')
+        pygame.draw.polygon(mask,'white',local(western))
+        pygame.draw.polygon(mask,'black',local(boundary['playable_polygon']))
+        surface.blit(mask,(0,0),special_flags=pygame.BLEND_RGB_MAX)
+        for segment in boundary.get('boundary_segments', []):
+            self._draw_path(surface,'white',local(segment['points']),segment.get('width_tiles',1)*TILE_SIZE)
+
+    def _far_bank_dressing(self):
+        """Stable irregular shelf dressing, displaced toward the unwalkable side."""
+        boundary = self.region.get('far_bank', {})
+        polygon = boundary.get('playable_polygon', [])
+        for index,segment in enumerate(boundary.get('boundary_segments', [])):
+            count = 0;remaining = 0
+            for a,b in zip(segment['points'],segment['points'][1:]):
+                length = math.dist(a,b)*TILE_SIZE
+                if not length:continue
+                tx,ty = (b[0]-a[0])*TILE_SIZE/length,(b[1]-a[1])*TILE_SIZE/length
+                nx,ny = -ty,tx
+                while remaining <= length:
+                    seed = _stable_hash(index,count,83)
+                    x,y = a[0]*TILE_SIZE+tx*remaining,a[1]*TILE_SIZE+ty*remaining
+                    outward = -1 if _point_in_polygon((x/TILE_SIZE+nx*.75,y/TILE_SIZE+ny*.75),polygon) else 1
+                    normal = (nx*outward,ny*outward)
+                    width = segment.get('width_tiles',1)*TILE_SIZE
+                    yield (x,y),normal,width/2-3+seed%6,seed
+                    remaining += 12+seed%9
+                    count += 1
+                remaining -= length
+
     def _scorched_feature_visible(self, feature):
         bridge_scorch = {'broken_bridge_east_bank', 'broken_bridge_west_bank'}
         return feature.get('id') not in bridge_scorch or self.bridge_condition.phase != 'intact'
@@ -427,14 +527,26 @@ class OverworldWorld:
         origin = (cx*CHUNK_PIXELS, cy*CHUNK_PIXELS)
         for river in self.region.get('terrain', {}).get('rivers', []):
             self._draw_path(surface, 'white', self._local_path(river, cx, cy), river.get('width', 8)*TILE_SIZE)
+        self._far_bank_collision(surface,cx,cy)
         bridge = self.region.get('bridge')
         if bridge:
-            if self._bridge_passable():
-                rect = self._tile_rect(bridge.get('deck_rect_tiles', bridge['damage_rect_tiles'])).move(-origin[0], -origin[1])
-                pygame.draw.rect(surface, 'black', rect)
-            else:
+            if not self._bridge_passable():
                 rect = self._tile_rect(bridge['damage_rect_tiles']).move(-origin[0], -origin[1])
                 pygame.draw.rect(surface, 'white', rect)
+            for rect in self._bridge_walkable_rects():
+                pygame.draw.rect(surface,'black',rect.move(-origin[0],-origin[1]))
+            if self._bridge_art is not None and self.bridge_condition.destroyed:
+                # The authored rectangles bound the surviving supports; their
+                # broken tips are jagged. Transparent floor pixels remain unsafe.
+                record = self._bridge_art
+                layer = record['phases']['destroyed']['deck']
+                holes = pygame.mask.from_surface(layer['surface']).to_surface(
+                    setcolor='black',unsetcolor='white')
+                area = pygame.Rect(0,record['deck_top_px'],record['canvas'][0],
+                                   record['deck_bottom_px']-record['deck_top_px'])
+                x,y = self._tile_point(bridge['tile_position']);anchor = layer['foot_anchor']
+                surface.blit(holes,(round(x)-anchor[0]-origin[0],round(y)-anchor[1]+area.y-origin[1]),
+                             area,special_flags=pygame.BLEND_RGB_MAX)
         for wall in self.region.get('walls', []):
             for left, right in self._wall_segments(wall):
                 if right <= left:continue
@@ -543,8 +655,18 @@ class OverworldWorld:
             if self.environment is not None:self.environment.bank(surface,river,cx,cy)
             else:self._paint_shape(surface, 'bank', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w+24))
             self._paint_shape(surface, 'water', lambda mask, p=points, w=width: self._draw_path(mask, 'white', p, w))
+        if self.region.get('far_bank', {}).get('boundary_segments'):
+            def shelf_gravel(mask):
+                for (x,y),(nx,ny),radius,seed in self._far_bank_dressing():
+                    center = (round(x+nx*(seed%4)-ox),round(y+ny*(seed%4)-oy))
+                    pygame.draw.circle(mask,'white',center,round(radius))
+            self._paint_shape(surface,'gravel' if 'gravel' in self._art.get('tiles',{}) else 'dirt',shelf_gravel)
         bridge = self.region.get('bridge')
-        if bridge and self._bridge_passable():
+        if self._bridge_art is not None:
+            layer = self._bridge_art['phases'][self.bridge_condition.phase]['deck']
+            x,y = self._tile_point(bridge['tile_position']);anchor = layer['foot_anchor']
+            surface.blit(layer['surface'],(round(x)-anchor[0]-ox,round(y)-anchor[1]-oy))
+        elif bridge and self._bridge_passable():
             rect = self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).move(-ox,-oy)
             if chunk_rect.colliderect(self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles']))):
                 pygame.draw.rect(surface, '#77786c', rect.inflate(0,8))
@@ -572,11 +694,25 @@ class OverworldWorld:
         town = self.region.get('town')
         if town:yield {'key':'eldenmere', 'position': self._tile_point(town['tile_position'])}
         bridge = self.region.get('bridge')
-        if bridge and self.bridge_condition.destroyed:
+        if bridge and self.bridge_condition.destroyed and self._bridge_art is None:
             key = bridge.get('broken_art_key','broken_bridge')
             if key not in self._art.get('props',{}):key = 'broken_bridge'
             yield {'key':key,'position':self._tile_point(bridge['tile_position'])}
         yield from self._bridge_debris()
+        for (x,y),(nx,ny),_,seed in self._far_bank_dressing():
+            preferred = 'rock_outcrop' if seed%3 == 0 else 'river_rocks' if seed%2 else 'rock'
+            key = preferred if preferred in self._art.get('props',{}) else 'rock'
+            # Larger silhouettes sit farther out. Their inner edge stays on
+            # the solid shelf rather than overhanging the usable road.
+            distance = 26 if key == 'rock_outcrop' else 14+seed%5
+            tangent_jitter = seed%11-5
+            position = (x+nx*distance-ny*tangent_jitter,y+ny*distance+nx*tangent_jitter)
+            if expanded.collidepoint(position):yield {'key':key,'position':position}
+            if key == 'rock_outcrop':
+                position = (x+nx*13+ny*17,y+ny*13-nx*17)
+                if expanded.collidepoint(position):
+                    key = 'river_rocks' if 'river_rocks' in self._art.get('props',{}) else 'rock'
+                    yield {'key':key,'position':position}
         for landmark in self.region.get('landmarks', []):
             if landmark.get('prop'):yield {'key':landmark['prop'], 'position':self._tile_point(landmark['tile_position'])}
         for wall in self.region.get('walls', []):
@@ -604,8 +740,7 @@ class OverworldWorld:
                 if seed%3 != phase:continue
                 point = (x/TILE_SIZE, y/TILE_SIZE)
                 if any(_distance_to_path(point, r['points']) < r.get('width',8)/2-.75 for r in self.region.get('terrain', {}).get('rivers', [])):
-                    bridge = self.region.get('bridge')
-                    if bridge and self._bridge_passable() and self._tile_rect(bridge.get('deck_rect_tiles',bridge['damage_rect_tiles'])).collidepoint(x,y):continue
+                    if any(rect.collidepoint(x,y) for rect in self._bridge_walkable_rects()):continue
                     key = f'water_glint_{1+phase%2}'
                     if key in self._art.get('tiles',{}):
                         target.blit(self._tile_image(key),(x-camera[0]-12,y-camera[1]-12))
@@ -621,6 +756,13 @@ class OverworldWorld:
                 target.blit(self._render_chunk(cx,cy), (cx*CHUNK_PIXELS-camera[0],cy*CHUNK_PIXELS-camera[1]))
         self._draw_water(target,camera,elapsed_ms)
         ordered = []
+        if self._bridge_art is not None:
+            x,y = self._tile_point(self.region['bridge']['tile_position'])
+            for name in ('far','near'):
+                layer = self._bridge_art['phases'][self.bridge_condition.phase][name]
+                anchor = layer['foot_anchor'];image = layer['surface']
+                rect = image.get_rect(topleft=(round(x)-anchor[0],round(y)-anchor[1]))
+                if rect.colliderect(viewport):ordered.append((y+layer['sort_offset'],1,image,rect.topleft))
         for prop in self._static_props(viewport):
             key,position = (self.environment.prop_frame(prop,elapsed_ms) if self.environment is not None
                             else (prop['key'],prop['position']))

@@ -1,7 +1,8 @@
 """Record regional NPC work and guard conversations in the production Game.
 
-Only earlier quest completion, the mill-restored fact and clear player/camera
-stations are fixtures. Every work phase, sack transfer, conversation and pose
+Earlier quest completion, the mill-restored fact, clear player/camera stations
+and the damaged bridge condition for crew clips are fixtures. Every work phase,
+sack transfer, conversation and pose
 clock proceeds through normal Game input/update/draw. No actor positions,
 animation clocks or farm milestones are assigned during the recordings.
 """
@@ -27,6 +28,7 @@ import pygame
 from PIL import Image, ImageChops, ImageSequence
 
 from main import Game
+from bridge_condition import BridgeCondition
 from grain_farm import MILL_FLAG, SOURCE, SCENE_ID
 from quests import OPENING_QUEST, MILL_QUEST
 from tools.scenario_fixtures import seed_mill_completed
@@ -250,7 +252,7 @@ class Recorder:
                 'gif_validation':gif_validation}
 
 
-def make_game(root, *, repaired=False, title=False):
+def make_game(root, *, repaired=False, title=False, damaged_bridge=False):
     game = Game(window_size=(960,640), fullscreen=False, start_on_title=title,
                 save_path=Path(root)/'journey.json',
                 settings_path=Path(root)/'settings.json')
@@ -269,6 +271,9 @@ def make_game(root, *, repaired=False, title=False):
             assert game.quests.unlock(MILL_QUEST)
             game.opening_conclusion.restore({'version':1,'stage':'done'})
             game.opening.restore({'version':1,'stage':'disabled'})
+        if damaged_bridge:
+            game.overworld_travel.restore_bridge_condition(
+                {'bridge_condition': BridgeCondition('destroyed').to_dict()})
         game.world = game.overworld_world
         game.player.position.update(-876,232)
         game.opening_fade = game.transfer_cooldown = 0
@@ -461,11 +466,16 @@ def guard_conversations(output, root):
 
 
 def game_at_bridge(root):
-    game = make_game(root,repaired=True)
+    game = make_game(root,repaired=True,damaged_bridge=True)
     game.player.position.update(-2376,642)
     game.camera.reset();game.camera.focus((-2376,616),duration=0)
     game.location_seconds = 0
-    assert len(game.world.npcs) == 8
+    bridge_actors = [actor for actor in game.world.npcs
+                     if actor.data['id'].startswith('bridge_')]
+    assert bridge_actors == game.world.bridge_crew.actors
+    assert len(bridge_actors) == 2
+    identifiers = [actor.data['id'] for actor in game.world.npcs]
+    assert len(identifiers) == len(set(identifiers)), 'Regional actors have duplicate owners'
     return game
 
 
@@ -613,13 +623,14 @@ def bridge_tea_continue(output, root):
 def inputs():
     paths = {ROOT/'main.py', ROOT/'grain_farm.py', ROOT/'overworld_world.py',
              ROOT/'regional_audio.py',ROOT/'audio_settings.py',
-             ROOT/'bridge_crew.py',ROOT/'overworld_travel.py', ROOT/'social.py', ROOT/'speech_bubble.py',
+             ROOT/'bridge_crew.py',ROOT/'bridge_condition.py',ROOT/'overworld_travel.py', ROOT/'social.py', ROOT/'speech_bubble.py',
              ROOT/'assets/dialogue/eldenmere.json',
              ROOT/'assets/portraits/eldenmere/portraits.json',
              ROOT/'assets/maps/overworld/elden_vale/region.json', Path(__file__).resolve()}
     for folder in ('assets/characters/grain_workers', 'assets/characters/road_guards',
                    'assets/characters/bridge_workers','assets/characters/npcs/male_01',
-                   'assets/characters/npcs/male_02', 'assets/characters/npcs/male_03'):
+                   'assets/characters/npcs/male_02', 'assets/characters/npcs/male_03',
+                   'assets/terrain/overworld/elden_vale/bridge'):
         paths.update(path for path in (ROOT/folder).rglob('*') if path.is_file())
     portrait_data = json.loads((ROOT/'assets/portraits/eldenmere/portraits.json').read_text())
     profiles = json.loads((ROOT/'assets/dialogue/eldenmere.json').read_text())['speakers']

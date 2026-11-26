@@ -124,9 +124,10 @@ class OverworldSanctuaryTests(unittest.TestCase):
         self.assertIn(LANDMARK, {p['id'] for p in restored.minimap._places()})
         self.assertEqual(restored.saved_journey['overworld']['version'], 1)
 
-    def test_starting_boundaries_remain_closed(self):
+    def test_starting_boundaries_remain_closed_while_the_intact_bridge_is_passable(self):
         for gate in self.world.gates:self.assertFalse(self.world.can_stand(gate['position']))
-        self.assertFalse(self.world.can_stand(self.world._tile_point(self.world.region['bridge']['tile_position'])))
+        self.assertEqual(self.world.bridge_condition.phase, 'intact')
+        self.assertTrue(self.world.can_stand(self.world._tile_point(self.world.region['bridge']['tile_position'])))
         for river in self.world.region['terrain']['rivers']:
             self.assertFalse(self.world.can_stand(self.world._tile_point(river['points'][6])))
         self.assertNotIn('CH01_OPENING_REGION_RELEASED', self.g.social.flags)

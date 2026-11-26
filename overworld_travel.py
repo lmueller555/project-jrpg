@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pygame
 
-from bridge_condition import resolve_condition, valid_snapshot as valid_bridge_condition
+from bridge_condition import BridgeCondition, opening_condition, valid_snapshot as valid_bridge_condition
 from sanctuary_cave import CAVE_SCENES, LEGACY_SCENES
 
 
@@ -63,16 +63,15 @@ class OverworldTravel:
     def bridge_condition(self):
         """One physical condition, independent of crew milestones or quests.
 
-        Until the layered crossing and far bank ship, missing records retain
-        the legacy ruined layout. Its origin lets that later migration identify
-        scenery defaults without inventing a completed attack.
+        The old ruined scenery placeholder rolls forward to the intact opening.
+        Explicit damage and legacy repairs retain their physical condition.
         """
-        return resolve_condition(self._bridge_condition, flags=self.game.social.flags)
+        return opening_condition(self._bridge_condition, flags=self.game.social.flags)
 
     def restore_bridge_condition(self, data=None):
         """Stage geography before any saved regional world is constructed."""
         record = (data or {}).get('bridge_condition')
-        self._bridge_condition = resolve_condition(record) if record is not None else None
+        self._bridge_condition = opening_condition(record) if record is not None else None
 
     def to_dict(self):
         world = self.game._overworld_world
@@ -208,6 +207,115 @@ class OverworldTravel:
             self._stop_party()
         self._town_armed = self._region_armed = False
         self._reserve_entry_armed = self._reserve_exit_armed = False
+
+    @staticmethod
+    def bridge_return_safe(world, position, condition=None):
+        """A blocked crossing cannot strand the party in the unfinished shelf."""
+        if not getattr(world,'is_overworld',False) or not world.region.get('far_bank'):
+            return True
+        condition = world.bridge_condition if condition is None else condition
+        onward_ready = world.region['far_bank'].get('future_exit',{}).get('destination_ready',False)
+        return (not condition.destroyed or world.bridge_bank(position) != 'west'
+                or onward_ready)
+
+    @staticmethod
+    def resolve_restore_landing(world, position, *, size=None, ignore_npc=None,
+                                player_blocker=None):
+        """Keep regional feet on their bank when new geometry invalidates a save."""
+        def clear(point):
+            return world.can_stand(point, size=size, ignore_npc=ignore_npc,
+                                   player_blocker=player_blocker)
+        if clear(position):return tuple(position)
+        if not getattr(world, 'is_overworld', False):return None
+        bank = world.bridge_bank(position)
+        def acceptable(point):return world.bridge_bank(point) == bank and clear(point)
+        for radius in range(4, 97, 4):
+            for dx,dy in ((0,-radius),(-radius,0),(radius,0),(0,radius),
+                          (-radius,-radius),(radius,-radius),(-radius,radius),(radius,radius)):
+                point = (position[0]+dx, position[1]+dy)
+                if acceptable(point):return point
+        bridge = world.region.get('bridge', {})
+        anchor = bridge.get(bank+'_approach_tile')
+        if anchor is None:return None
+        anchor = world._tile_point(anchor)
+        if acceptable(anchor):return anchor
+        for radius in range(4, 97, 4):
+            for dx,dy in ((0,-radius),(-radius,0),(radius,0),(0,radius)):
+                point = (anchor[0]+dx, anchor[1]+dy)
+                if acceptable(point):return point
+        return None
+
+    def change_bridge_condition(self, phase):
+        """Commit a settled physical change; cinematics call after their staging.
+
+        Prepare feet against prospective geometry before saving. A failed
+        checkpoint restores condition and actor feet without consuming dialogue
+        or cup cues. This operation never completes an attack or repair quest.
+        """
+        try:condition = BridgeCondition(phase)
+        except ValueError:return False
+        g = self.game
+        owned_scripts = {'bridge_crew_tea', 'bridge_crew_greeting', 'regional_masonry_inspection'}
+        owned_dialogue = g.social.script_identifier in owned_scripts
+        if (g.on_title or g.game_over or g._is_gallery_preview or not g.save_store.enabled
+                or not g._music_focused or g.combat.active or g.cinematic_active
+                or g.household_action or g.opening.locks_player or g.opening.controls_player
+                or g.opening.in_action or g.opening_fade or g.transfer_cooldown
+                or g.sanctuary_boss.locks_player or g.elemental_bosses.locks_player
+                or g.cave_lesson.locks_player or g.mill_quest.encounter_cutscene_active
+                or (self.active and g.world.participation.locks_player)
+                or not any(g.party.characters[key].current_hp > 0 for key in g.party.active_ids)
+                or any((g.pause.is_open, g.inventory_ui.is_open, g.party_ui.is_open,
+                        g.status_ui.is_open, g.save_menu.is_open, g.map_open,
+                        g.world_map_viewer.is_open, g.quest_ui.journal_open))
+                or ((g.social.active or g.social.locked) and not owned_dialogue)):
+            return False
+        world = g._overworld_world
+        if self.active and (world is not g.world or
+                not self.bridge_return_safe(world,g.player.position,condition)):
+            return False
+        if self.bridge_condition.phase == phase:return True
+        old = self._bridge_condition
+        old_world_condition = world.bridge_condition if world is not None else None
+        actors = ([] if world is None else list(world.npcs))
+        if world is not None and g.world is world:actors.insert(0, g.player)
+        before = [(actor, tuple(actor.position),
+                   {key:getattr(actor,key) for key in ('moving','running') if hasattr(actor,key)})
+                  for actor in actors]
+        self._bridge_condition = condition
+        committed = False
+        try:
+            if world is not None:
+                world.set_progress(g.social.flags, bridge_condition=condition)
+                for actor in actors:
+                    if actor is not g.player and not getattr(actor,'story_visible',True):continue
+                    size = world.probe_size if actor is g.player else actor.blocker.size
+                    blocker = (world.probe_rect(g.player.position)
+                               if actor is not g.player and g.world is world else None)
+                    landing = self.resolve_restore_landing(world, actor.position, size=size,
+                        ignore_npc=None if actor is g.player else actor, player_blocker=blocker)
+                    if landing is None:return False
+                    actor.position.update(landing)
+                    actor.moving=False
+                    if hasattr(actor,'running'):actor.running=False
+            if not g.save_progress():return False
+            committed = True
+        except (OSError, ValueError, pygame.error):
+            g.save_error='The bridge change could not be checkpointed.'
+            return False
+        finally:
+            if not committed:
+                self._bridge_condition = old
+                if world is not None:
+                    world.set_progress(g.social.flags, bridge_condition=old_world_condition)
+                for actor,point,fields in before:
+                    actor.position.update(point)
+                    for key,value in fields.items():setattr(actor,key,value)
+        if owned_dialogue:g.social.cancel_script()
+        if world is not None and not world.bridge_crew.active:
+            world.bridge_crew.update(0, g)
+        if g.world is world:g.camera.reset()
+        return True
 
     def can_travel(self):
         g = self.game

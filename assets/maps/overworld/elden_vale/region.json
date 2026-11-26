@@ -2089,6 +2089,36 @@
         ]
       },
       {
+        "id": "west_bank_layby",
+        "surface": "gravel",
+        "polygon": [
+          [
+            -151.5,
+            75
+          ],
+          [
+            -146,
+            74
+          ],
+          [
+            -143,
+            77
+          ],
+          [
+            -143.5,
+            81
+          ],
+          [
+            -147.5,
+            82
+          ],
+          [
+            -151.5,
+            80
+          ]
+        ]
+      },
+      {
         "id": "sanctuary_forecourt",
         "surface": "gravel",
         "polygon": [
@@ -2234,7 +2264,7 @@
     {
       "id": "south_town_road",
       "kind": "stone",
-      "role": "Damaged southern connection; main stone road",
+      "role": "Southern connection over the western crossing to a bounded west-bank layby",
       "surface": "stone_road",
       "width": 2.5,
       "ruts": false,
@@ -2316,16 +2346,12 @@
           50
         ],
         [
-          -150,
-          83
+          -146,
+          68
         ],
         [
-          -158,
-          119
-        ],
-        [
-          -174,
-          182
+          -148,
+          78
         ]
       ],
       "smooth_steps": 6,
@@ -2743,100 +2769,76 @@
           34.0
         ],
         [
-          -129.2847,
-          35.6389
+          -129.3171,
+          35.7604
         ],
         [
-          -131.1111,
-          37.9667
+          -131.2148,
+          38.3556
         ],
         [
-          -133.2375,
-          40.775
+          -133.4125,
+          41.4313
         ],
         [
-          -135.4222,
-          43.8556
+          -135.6296,
+          44.6333
         ],
         [
-          -137.4236,
-          47.0
+          -137.5856,
+          47.6076
         ],
         [
           -139.0,
           50.0
         ],
         [
-          -140.5521,
-          53.8704
+          -140.1748,
+          52.4838
         ],
         [
-          -142.5,
-          59.3074
+          -141.5148,
+          55.7037
         ],
         [
-          -144.6312,
-          65.625
+          -142.8937,
+          59.2625
         ],
         [
-          -146.7333,
-          72.137
+          -144.1852,
+          62.763
         ],
         [
-          -148.5938,
-          78.1574
+          -145.2627,
+          65.8079
         ],
         [
-          -150.0,
-          83.0
+          -146.0,
+          68.0
         ],
         [
-          -151.1678,
-          87.6597
+          -146.4965,
+          69.794
         ],
         [
-          -152.437,
-          93.3444
+          -146.9333,
+          71.7852
         ],
         [
-          -153.7812,
-          99.6875
+          -147.3063,
+          73.7875
         ],
         [
-          -155.1741,
-          106.3222
+          -147.6111,
+          75.6148
         ],
         [
-          -156.5891,
-          112.8819
+          -147.8438,
+          77.081
         ],
         [
-          -158.0,
-          119.0
-        ],
-        [
-          -160.0278,
-          127.1667
-        ],
-        [
-          -162.9778,
-          138.8333
-        ],
-        [
-          -166.35,
-          152.075
-        ],
-        [
-          -169.6444,
-          164.9667
-        ],
-        [
-          -172.3611,
-          175.5833
-        ],
-        [
-          -174.0,
-          182.0
+          -148.0,
+          78.0
         ]
       ]
     },
@@ -6656,10 +6658,227 @@
       -128,
       34
     ],
-    "description": "The stone crossing is ruined. The southern road continues on the far bank.",
+    "description": "The western stone crossing joins the southern road to a sheltered west-bank layby.",
     "deck_width_tiles": 3,
     "deck_center_tile_y": 29,
-    "broken_art_key": "broken_bridge_wide"
+    "broken_art_key": "broken_bridge_wide",
+    "layers_manifest": "assets/terrain/overworld/elden_vale/bridge/art.json",
+    "destroyed_walkable_rect_tiles": [
+      [
+        -120,
+        27.5,
+        7.458333333333333,
+        3
+      ],
+      [
+        -109.45833333333333,
+        27.5,
+        7.458333333333333,
+        3
+      ]
+    ]
+  },
+  "far_bank": {
+    "western_river_id": "western_boundary_river",
+    "playable_polygon": [
+      [
+        -119,
+        23
+      ],
+      [
+        -126,
+        22
+      ],
+      [
+        -133,
+        25
+      ],
+      [
+        -136,
+        33
+      ],
+      [
+        -138,
+        41
+      ],
+      [
+        -144,
+        49
+      ],
+      [
+        -149,
+        59
+      ],
+      [
+        -154,
+        71
+      ],
+      [
+        -155,
+        80
+      ],
+      [
+        -151,
+        85
+      ],
+      [
+        -144,
+        85
+      ],
+      [
+        -140,
+        81
+      ],
+      [
+        -140,
+        75
+      ],
+      [
+        -136,
+        64
+      ],
+      [
+        -131,
+        54
+      ],
+      [
+        -125,
+        46
+      ],
+      [
+        -121,
+        38
+      ],
+      [
+        -118,
+        34
+      ]
+    ],
+    "boundary_segments": [
+      {
+        "id": "west_bank_rock_shelf",
+        "kind": "rock_slope",
+        "width_tiles": 1.25,
+        "points": [
+          [
+            -119,
+            23
+          ],
+          [
+            -126,
+            22
+          ],
+          [
+            -133,
+            25
+          ],
+          [
+            -136,
+            33
+          ],
+          [
+            -138,
+            41
+          ],
+          [
+            -144,
+            49
+          ],
+          [
+            -149,
+            59
+          ],
+          [
+            -154,
+            71
+          ],
+          [
+            -155,
+            80
+          ],
+          [
+            -151,
+            85
+          ],
+          [
+            -144,
+            85
+          ],
+          [
+            -140,
+            81
+          ],
+          [
+            -140,
+            75
+          ],
+          [
+            -136,
+            64
+          ],
+          [
+            -131,
+            54
+          ],
+          [
+            -125,
+            46
+          ],
+          [
+            -121,
+            38
+          ],
+          [
+            -118,
+            34
+          ]
+        ]
+      },
+      {
+        "id": "west_bank_northern_return",
+        "kind": "rock_slope",
+        "width_tiles": 1.25,
+        "points": [
+          [
+            -119,
+            23
+          ],
+          [
+            -118.8,
+            26.8
+          ]
+        ]
+      },
+      {
+        "id": "west_bank_southern_return",
+        "kind": "rock_slope",
+        "width_tiles": 1.25,
+        "points": [
+          [
+            -118.6,
+            31.2
+          ],
+          [
+            -118,
+            34
+          ]
+        ]
+      }
+    ],
+    "terminal_tile": [
+      -148,
+      78
+    ],
+    "future_exit": {
+      "id": "western_south_road",
+      "label": "Southern road layby",
+      "tile_position": [
+        -148,
+        78
+      ],
+      "destination_ready": false
+    },
+    "notes": "Local rock shelves bound the western landing and a short southbound road. The layby is the current road extent; it grants no onward transfer or checkpoint clearance and does not locate the unnamed southern town on the world map."
   },
   "gates": [
     {
@@ -6758,7 +6977,7 @@
         16
       ],
       "discovered": true,
-      "description": "Road crews gather stone and supplies beside the route to the damaged crossing."
+      "description": "Road crews gather stone and supplies beside the southern road."
     },
     {
       "id": "ridge_sanctuary",
@@ -6978,19 +7197,32 @@
       "eastern_river": "eastern_boundary_river"
     },
     "notes": [
-      "Gate clearance and bridge repair are independent, absent by default and have no producer.",
-      "The southern checkpoint is a separate future land corridor; the damaged south-town road bends west before the southern wall.",
-      "Rivers meet each end of both walls. No playable shoreline, delta, named next town or original temple location is introduced.",
+      "Explicit bridge phase, legacy repair facts and checkpoint clearance remain independent; bridge passage never authorizes an onward destination.",
+      "The southern checkpoint is a separate future land corridor; the south-town road bends west and ends at a bounded layby before the southern wall latitude.",
+      "Rivers meet each end of both walls. The new west-bank shelf is local implementation geometry, not a new watercourse, delta, named next town or world-map destination.",
       "Environment pass gives roads a hierarchy, farmyards explicit clear approaches and smaller crop parcels; added visual setpieces do not introduce quests or destination scenes.",
-      "Composition pass links door fronts, farm gates and orchard arrivals; bridge roadway is exactly three tiles north-south, independently of the destroyed crossing state."
+      "Composition pass links door fronts, farm gates and orchard arrivals; the bridge has a three-tile roadway in every phase, with two supported ends separated by an impassable gap when destroyed."
     ],
     "measured_bridge_approach_seconds": 46.05,
     "geometry_checks": {
-      "opening_reachable_tiles": 43616,
+      "opening_reachable_tiles": 43637,
+      "initial_intact_reachable_tiles": 44540,
       "required_points_reachable": 22,
       "closed_perimeter": true,
       "broken_bridge_blocks_crossing": true,
       "repaired_bridge_connects_banks": true,
+      "intact_bridge_connects_banks": true,
+      "bounded_far_bank_in_all_phases": true,
+      "west_bank_terminal_tile": [
+        -148,
+        78
+      ],
+      "west_bank_onward_destination_ready": false,
+      "phase_reachable_tiles": {
+        "destroyed": 43637,
+        "intact": 44540,
+        "restored": 44540
+      },
       "scope": "Offline four-neighbour tile sampling of continuous vector barriers and authored approaches; runtime actor/decoration probes have separate engine checks."
     }
   },
@@ -7839,7 +8071,7 @@
   "detail_art_manifest": "assets/terrain/overworld/elden_vale/polish/art.json",
   "environment_pass": {
     "version": 2,
-    "description": "Connected working places, intimate orchard arrivals, shaded canopy groups, shoreline conditions and a three-tile broken bridge.",
+    "description": "Connected working places, intimate orchard arrivals, shaded canopy groups, shoreline conditions, a three-tile phased stone crossing and a bounded west-bank road shelf.",
     "scale": "Regional miniatures; fields and scenery convey place, not a physical kilometre scale.",
     "preserved_contracts": [
       "World identity and global coordinates",
@@ -12538,7 +12770,7 @@
   "build": {
     "tool": "tools/build_elden_vale_overworld.py",
     "source_recipe": "assets/source/maps/overworld/elden_vale/recipe.json",
-    "source_recipe_sha256": "2e54f01d14bbe32414976543efdc9751a841ada7f28d52345361a2c69d1c41e0",
+    "source_recipe_sha256": "169bcfbfdcf06acc8cd89ee9023d04dae7b325e8fb15b74be4546210881603cc",
     "atlas_reference": "docs/reviews/merovar_world_map/atlas_reference.png",
     "exports": [
       "assets/maps/overworld/elden_vale/region.json",

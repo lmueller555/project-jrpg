@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "canvas": [
+    288,
+    144
+  ],
+  "anchor": [
+    144,
+    94
+  ],
+  "deck_top_px": 34,
+  "deck_bottom_px": 106,
+  "phases": {
+    "intact": {
+      "deck": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/intact/deck.png",
+        "foot_anchor": [
+          144,
+          94
+        ]
+      },
+      "far": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/intact/far.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": -60
+      },
+      "near": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/intact/near.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": 14
+      }
+    },
+    "destroyed": {
+      "deck": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/destroyed/deck.png",
+        "foot_anchor": [
+          144,
+          94
+        ]
+      },
+      "far": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/destroyed/far.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": -60
+      },
+      "near": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/destroyed/near.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": 14
+      }
+    },
+    "restored": {
+      "deck": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/restored/deck.png",
+        "foot_anchor": [
+          144,
+          94
+        ]
+      },
+      "far": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/restored/far.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": -60
+      },
+      "near": {
+        "image": "assets/terrain/overworld/elden_vale/bridge/restored/near.png",
+        "foot_anchor": [
+          144,
+          94
+        ],
+        "sort_offset": 14
+      }
+    }
+  }
+}

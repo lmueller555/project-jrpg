@@ -1,6 +1,7 @@
 # Game I — Fire Veinhold attack and Eldenmere's broken crossing
 
-**Status:** Approved future narrative direction, 2026-11-26; documentation only. The path
+**Status:** Approved future narrative direction, 2026-11-26. The initial intact
+bridge is implemented; the attack and recovery story remain future work. The path
 is retained as the owner of opening regional damage and military escalation.
 It no longer records the former lightning/relief-visit chronology as active
 canon.
@@ -9,8 +10,10 @@ canon.
 opening. [Story Bible](STORY_BIBLE.md) owns game-wide direction;
 [Revelation Plan](../saga/REVELATION_PLAN.md) separates player and character
 knowledge. The old flashforward, relief arrival and rescue/festival quest runtime are now
-removed. MQ01/MQ02 retain ordinary dialogue. The physical bridge remains
-ruined, while the new intact-then-attacked sequence below is not implemented.
+removed. MQ01/MQ02 retain ordinary dialogue. The physical bridge now starts
+intact, with saved destroyed/restored presentation and bounded far-bank access.
+This does not implement the attack sequence below or a repair quest; the
+[overworld guide](../../OVERWORLD.md) owns runtime state and save migration.
 
 ## Approved regional context
 
@@ -41,8 +44,10 @@ the continental arrangement and the
 
 The new opening changes the crossing from **intact before the attack** to
 **destroyed by the missed fireball**. It is no longer already ruined by an
-extraordinary pre-opening lightning storm. Exact structural damage, safe
-crossing alternatives, repair materials, labor and duration require design.
+extraordinary pre-opening lightning storm. The implemented destroyed visual
+retains bank abutments around an unsafe central gap. This local presentation
+does not establish structural repair suitability. Safe crossing alternatives,
+repair materials, labor and duration require design.
 The former proposal for a timber deck on sound surviving supports is not an
 approved assessment after this new impact.
 

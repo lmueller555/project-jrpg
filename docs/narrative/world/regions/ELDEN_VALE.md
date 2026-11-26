@@ -8,11 +8,15 @@ regional context around Eldenmere. Illustrative encounters remain story seeds.**
 
 **Opening revision, 2026-11-26:** [Chapter 1](../../game_01/CHAPTER_01.md)
 owns the approved Fire Veinhold opening. The flashforward, Festival of Light
-and quarry/excavation Act I are retired. The new story is not yet implemented.
+and quarry/excavation Act I are retired. The replacement story scenes are not
+yet implemented; the initially intact regional bridge is playable.
 The [regional overworld](../../../OVERWORLD.md) and
 [detailed reserve](../../../SANCTUARY_RESERVE.md) describe retained exploration.
-The bridge remains physically ruined, but the old cave emergency and quest
-runtime are removed. Neither state implements the future attack chronology.
+Visible rock shelves bound its western landing and the short road to a layby;
+the unnamed southern town is not yet an onward destination. Saved explicit
+damage and repair conditions remain supported. The old cave emergency and
+quest runtime are removed; none of these mechanics implements the future
+attack chronology.
 
 Elden Vale is Eldenmere's home region: a temperate wooded inland valley in
 far-southern Merovar, between two unnamed north–south rivers. The ridges around

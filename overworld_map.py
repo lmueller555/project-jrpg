@@ -462,6 +462,12 @@ class RegionalMapUI:
             if kind == 'foot':self._draw_footpath(painter, road,blocked=blocked)
             elif kind == 'stone':self._draw_route(painter, road, '#a79e83', '#ded2af', minimum=2.2,blocked=blocked)
             else:self._draw_route(painter, road, '#b49d75', '#d2bc8c', minimum=1.3,blocked=blocked)
+        for segment in self.data.get('far_bank',{}).get('boundary_segments',[]):
+            points = [self.tile_to_map(point) for point in segment.get('points',[])]
+            width = max(1,min(3,segment.get('width_tiles',1)*self.scale))
+            for start,end in zip(points,points[1:]):
+                painter.line('#696d61',start,end,width+1)
+                painter.line('#a5a18d',start,end,width)
         for wall in self.data.get('walls', []):
             left = self.tile_to_map((wall['x0'], wall['y']))
             right = self.tile_to_map((wall['x1'], wall['y']))

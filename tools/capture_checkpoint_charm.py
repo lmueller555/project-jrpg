@@ -1,6 +1,7 @@
 """Record production checkpoint/participation at 30 Hz and 15 fps.
 
-Only completed predecessor quests and initial player stations are fixtures.
+Completed predecessor quests, initial player stations and the damaged bridge
+condition for the masonry clip are fixtures.
 Every route, contact, dialogue acknowledgment, optional response and return uses
 Game.update and the production controllers. Site changes are separate labelled
 clips. Regional effects use capture_regional_audio.Recorder's accepted-source
@@ -28,6 +29,7 @@ sys.path.insert(0, str(ROOT))
 import numpy as np
 import pygame
 from main import Game
+from bridge_condition import BridgeCondition
 from checkpoint_charm import WITNESS, HOMES, valid_state as valid_checkpoint
 from regional_participation import STAND_POSITION, CAT_SCRIPT, MASONRY_SCRIPT
 from tools.scenario_fixtures import seed_mill_completed
@@ -51,11 +53,12 @@ def write_json(path, value):
 def source_hashes():
     paths = [ROOT/name for name in ('main.py', 'overworld_world.py', 'overworld_travel.py',
         'checkpoint_charm.py', 'regional_participation.py', 'purposeful_wildlife.py',
-        'bridge_crew.py', 'regional_audio.py', 'social.py', 'save_game.py',
+        'bridge_crew.py', 'bridge_condition.py', 'regional_audio.py', 'social.py', 'save_game.py',
         'tools/capture_checkpoint_charm.py', 'tools/capture_regional_audio.py',
         'assets/characters/caelan/participation_sit_front.png',
         'assets/maps/overworld/elden_vale/region.json')]
     paths += list((ROOT/'assets/characters/checkpoint_charm').rglob('*'))
+    paths += list((ROOT/'assets/terrain/overworld/elden_vale/bridge').rglob('*'))
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in paths if p.is_file()}
 
@@ -66,7 +69,7 @@ def position(game, point):
     game.camera.reset()
 
 
-def make_game(root, name, point):
+def make_game(root, name, point, *, damaged_bridge=False):
     folder = root/name
     folder.mkdir()
     game = Game(window_size=(960, 640), fullscreen=False, start_on_title=False,
@@ -74,6 +77,9 @@ def make_game(root, name, point):
     game.audio.set_music(0)
     game.audio.set_effects(1)
     seed_mill_completed(game)
+    if damaged_bridge:
+        game.overworld_travel.restore_bridge_condition(
+            {'bridge_condition': BridgeCondition('destroyed').to_dict()})
     game.world = game.overworld_world
     game.opening_fade = game.transfer_cooldown = game.location_seconds = 0
     position(game, point)
@@ -418,7 +424,7 @@ def cat_clip(root):
 
 
 def masonry_clip(root):
-    game = make_game(root, 'masonry', (-2420, 642))
+    game = make_game(root, 'masonry', (-2420, 642), damaged_bridge=True)
     crew = game.world.bridge_crew
     recorder = Recorder(game, 'unfinished_masonry')
     recorder.mark('Site cut: unfinished bridge; workers sort blocks through real production updates')

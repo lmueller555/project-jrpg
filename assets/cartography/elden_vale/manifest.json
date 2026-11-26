@@ -1,7 +1,7 @@
 {
   "version": 1,
   "region_id": "elden_vale_start",
-  "geometry_sha256": "d60674cf863cbb3d8f2939cccedaf25cd64d59f8719cd2da16692803290fc9fc",
+  "geometry_sha256": "2aca98205c690981f2ecd50aef9fe5a5597de5ef5964f7b04394f4f3dc125edf",
   "bounds_tiles": [
     -256,
     -192,
@@ -24,12 +24,12 @@
   "art_manifest": "assets/cartography/elden_vale/art/art.json",
   "art_sha256": "84d9adffb9089628f8b0298a6a45b1de8a0c603070f245e1ed0cffcd9f88b902",
   "source": "assets/maps/overworld/elden_vale/region.json",
-  "source_sha256": "97f01941d7e1e0c2d714c5bd75a32de2913585dad629621a3e48bb7c79cb80d6",
+  "source_sha256": "33da3e39a28cfe244834dfbb4daebf0a02b0dd0ee09817ec0f55bfa021fec2d0",
   "input_sha256": {
-    "assets/maps/overworld/elden_vale/region.json": "97f01941d7e1e0c2d714c5bd75a32de2913585dad629621a3e48bb7c79cb80d6",
+    "assets/maps/overworld/elden_vale/region.json": "33da3e39a28cfe244834dfbb4daebf0a02b0dd0ee09817ec0f55bfa021fec2d0",
     "assets/cartography/elden_vale/art/art.json": "84d9adffb9089628f8b0298a6a45b1de8a0c603070f245e1ed0cffcd9f88b902",
     "tools/build_elden_vale_cartography.py": "83be8f4d8735eeb6694adf367d6d3468c1cd4f4c2c016720661506e0fdc3cabd",
-    "regional_cartography.py": "ea291dfb3c2327e35822cbc71b1ffe57028a6048b0b07e6f7a6e45533498f0a4",
+    "regional_cartography.py": "ffa12cc0a96e77477c9d3011a818d0a65abcbc4a18e965caeee8c0fb615ca3b3",
     "assets/cartography/elden_vale/art/tiles/land.png": "d4ef64d871f6e9b8bbc7fb89d54573751754197257aa3371b04eb1c915cc4523",
     "assets/cartography/elden_vale/art/tiles/water.png": "4567826376d33d5976c12490ad5464e117d83eae65c0f499eab232eb2e79bd21",
     "assets/cartography/elden_vale/art/tiles/grain.png": "6c575269a975e722f3b562630e003a801b1025b55b4ee772263776e90e9583a5",

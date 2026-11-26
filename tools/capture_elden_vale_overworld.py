@@ -172,7 +172,7 @@ def capture_overview(game: Game) -> dict:
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
     labels = [
         ("Eldenmere", world.region["town"]["tile_position"], (30, -8)),
-        ("Western bridge — broken", world.region["bridge"]["tile_position"], (-205, 26)),
+        (f"Western bridge — {world.bridge_condition.phase}", world.region["bridge"]["tile_position"], (-205, 26)),
         ("Northern checkpoint", world.region["gates"][0]["tile_position"], (20, -28)),
         ("Southern checkpoint", world.region["gates"][1]["tile_position"], (20, 16)),
     ]
@@ -186,7 +186,8 @@ def capture_overview(game: Game) -> dict:
         draw.text(label, title, font=font, fill="#f2e1b5")
     draw.text((20, 18), "ELDEN VALE  /  actual renderer  /  complete authored bounds at 1:8", font=font, fill="#f2e1b5", stroke_width=2, stroke_fill="#243d33")
     annotated.save(OUT / "region_overview_annotated.png")
-    report = {"streamed_chunks": completed, "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
+    report = {"streamed_chunks": completed, "bridge_condition": world.bridge_condition.to_dict(),
+              "largest_world_render_surface": [CHUNK_PIXELS, CHUNK_PIXELS],
               "overview_size": list(overview.get_size()), "max_render_cache_bytes": max_render_bytes,
               "max_metadata_chunks": max_metadata, "configured_render_budget": world._render_cache.limit}
     assert max_render_bytes <= world._render_cache.limit
@@ -205,7 +206,8 @@ def capture(skip_overview=False, only_overview=False) -> None:
             game.audio.set_music(0)
             game.audio.set_effects(0)
             game.opening_fade = game.transfer_cooldown = 0
-            report = {"actual_renderer": True, "quest_progress_seeded": False}
+            report = {"actual_renderer": True, "quest_progress_seeded": False,
+                      "bridge_condition": game.overworld_travel.bridge_condition.to_dict()}
             if not only_overview:
                 save_view(game, "town_miniature.png", (12, -25), focus_tile=(12, -29))
                 save_view(game, "western_bridge.png", (-101, 29), focus_tile=(-109, 29))
@@ -229,6 +231,13 @@ def capture(skip_overview=False, only_overview=False) -> None:
             report["region_sha256"] = hashlib.sha256(game.overworld_world.path.read_bytes()).hexdigest()
             report["art_manifest_sha256"] = hashlib.sha256(
                 (ROOT / "assets/terrain/overworld/elden_vale/art.json").read_bytes()).hexdigest()
+            world = game.overworld_world
+            if world._bridge_art is not None:
+                paths = {ROOT/world.region['bridge']['layers_manifest'], ROOT/'bridge_condition.py'}
+                paths.update(ROOT/layer['image'] for phase in world._bridge_art['phases'].values()
+                             for layer in phase.values())
+                report['bridge_input_sha256'] = {path.relative_to(ROOT).as_posix():
+                    hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(paths)}
             report["captures"] = {}
             for path in sorted(OUT.glob("*")):
                 if path.suffix not in (".png", ".gif") or path.name == "atlas_reference.png":

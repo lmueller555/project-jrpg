@@ -46,19 +46,21 @@ the historical files are preserved.
 
 ## Opening story route context
 
-**Status:** Approved geography, with a future opening revision. The
+**Status:** Approved geography, with the intact bridge implemented and the
+replacement opening's story scenes still future work. The
 [Chapter 1 chronology](narrative/game_01/CHAPTER_01.md) owns the approved
 2026-11-26 Fire Veinhold opening. The flashforward, Festival of Light and
-quarry/excavation Act I are retired. This documentation change does not
-implement their replacements in gameplay, dialogue or map state.
+quarry/excavation Act I are retired. Their prologue, arrival and invasion
+replacements remain unimplemented.
 
 The western bridge is intact during Caelan and Mira's introduction, before
 Iselin and Lucan arrive. It is destroyed in the later Fire Veinhold attack;
 the former pre-opening lightning cause is obsolete. The
-[current overworld](OVERWORLD.md) still begins with the broken bridge, and
-existing arrival/MQ03 scenes and review captures record the older story.
-Their local coordinates and geographic survey remain useful references,
-separately from the revised opening's unimplemented sequence.
+[current overworld](OVERWORLD.md) now begins with a playable intact bridge and
+a bounded west-bank road ending in a layby. This adds no onward destination
+or new town location. Historical arrival/MQ03 captures record the older story;
+their scene runtime is removed. Earlier local coordinates and surveys remain
+historical references rather than current bridge-state specifications.
 
 The southern road's neighbouring town still has no approved name.
 **River Leth** and

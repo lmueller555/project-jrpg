@@ -2,7 +2,8 @@
 
 **Status:** Approved future narrative direction. Runtime retirement is now
 implemented: the old flashforward, MQ03 and MQ04 are removed. The replacement
-prologue, arrival, attack, invasion and initially intact bridge remain future work.
+prologue, arrival, attack and invasion remain future work. The initially intact
+regional bridge and its bounded western landing are now implemented.
 **Version:** 2.0 (Fire Veinhold prologue; Festival of Light removed).
 **Parent:** [Game I Story Bible](STORY_BIBLE.md) ·
 [Revelation Plan](../saga/REVELATION_PLAN.md).
@@ -182,10 +183,13 @@ it alone does not explain complete isolation; troop positions, usable routes
 and civilian transport must agree with the map. No new ford, tunnel exit,
 northward road or capital location becomes canon through this document.
 
-The bridge's new direct-hit damage needs assessment before choosing a repair
-method. A timber span on surviving stone supports was a proposal for a
-different damage history, not an approved engineering solution. Define what
-restoration enables and keep an opened route reliable on later visits.
+The implemented destroyed presentation retains bank abutments around an unsafe
+central gap. That local visual choice does not certify the supports for a
+particular repair. The new direct-hit damage still needs engineering/story
+assessment before choosing materials, labor and duration. A timber span on
+surviving stone supports was a proposal for a different damage history, not an
+approved solution. Define what restoration enables and keep an opened route
+reliable on later visits.
 
 The prototype's self-destruction and the four-member mission must produce
 distinct consequences. Decide what still endangers the Vale and what the
@@ -225,10 +229,13 @@ Game starts in the bedroom. The retained MQ01/MQ02 journey ends after ordinary
 cup setting and returns to exploration; the school keeps ordinary crafts.
 The reserve/cave remain explorable without a rescue mission or automatic
 companion recruitment. None of this implements the Fire Veinhold prologue,
-new royal arrival, invasion or new quest sequence. The regional bridge remains
-physically ruined until a separate phase implements its initially intact state
-and later destruction. Old rescue completion must not be reinterpreted as a
-completed invasion.
+new royal arrival, invasion or new quest sequence. The regional bridge now
+starts intact and supports saved intact/destroyed/restored physical states,
+with a bounded west-bank road. The old scenery placeholder migrates to intact;
+explicit damage and legacy repair are preserved without inventing an attack
+or repair event. The later destruction scene remains unimplemented. The
+[overworld guide](../../OVERWORLD.md) owns traversal and save safeguards. Old
+rescue completion must not be reinterpreted as a completed invasion.
 
 Keep the longer northward journey, Rhea's and Edran's introduction windows,
 Althea's betrayal, Iselin's exile and transformation, the planetary-core
