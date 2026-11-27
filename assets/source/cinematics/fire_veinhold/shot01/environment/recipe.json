@@ -94,19 +94,86 @@
         "assets/source/cinematics/fire_veinhold/shot01/environment/night_panorama_generated.png",
         "assets/world/auratia/world_map.png"
       ]
+    },
+    {
+      "file": "cinder_bridges_generated.png",
+      "sha256": "ccbe685cf33907246b6df77d7f1db900f65bf4607af67df5ea7de0ad131d51c2",
+      "generation_id": "exec-4e611741-d227-4b94-bcfd-d0bea657f38b",
+      "prompt_file": "cinder_bridges_prompt.txt"
+    },
+    {
+      "file": "smoke_generated.png",
+      "sha256": "b74f079dc650f94855c1ee65edbe94829f773334bed6d82bf69b333290f8959b",
+      "generation_id": "exec-046f8f1d-c560-465f-b507-513142ad7189",
+      "prompt_file": "smoke_prompt.txt"
     }
   ],
   "layers": {
     "panorama": {
-      "source": "cinder_crest_generated.png"
+      "source": "cinder_bridges_generated.png"
     }
   },
   "framing": {
     "ascent_start_y": 650,
-    "vista_y": 0,
+    "vista_y": 50,
     "heading": "east-southeast",
     "crest_seconds": 15,
     "vista_seconds": 10
   },
-  "composition": "single_panorama"
+  "composition": "single_panorama",
+  "smoke": {
+    "source": "smoke_generated.png",
+    "crop": [
+      150,
+      156,
+      294,
+      300
+    ],
+    "canvas": [
+      128,
+      128
+    ],
+    "emitters": [
+      {
+        "id": "main_steam",
+        "origin": [
+          538,
+          266
+        ],
+        "interval": 0.38,
+        "lifetime": 9.0,
+        "rise": 9.0,
+        "wind": 3.5,
+        "start_size": 10.0,
+        "end_size": 80.0,
+        "opacity": 65,
+        "tint": [
+          210,
+          224,
+          239
+        ],
+        "seed": 11
+      },
+      {
+        "id": "distant_ash",
+        "origin": [
+          783,
+          262
+        ],
+        "interval": 0.3,
+        "lifetime": 11.0,
+        "rise": 10.0,
+        "wind": 7.0,
+        "start_size": 5.0,
+        "end_size": 60.0,
+        "opacity": 165,
+        "tint": [
+          154,
+          164,
+          185
+        ],
+        "seed": 29
+      }
+    ]
+  }
 }

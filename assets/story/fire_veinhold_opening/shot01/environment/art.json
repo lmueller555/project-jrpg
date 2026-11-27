@@ -12,9 +12,54 @@
   },
   "framing": {
     "ascent_start_y": 650,
-    "vista_y": 0,
+    "vista_y": 50,
     "heading": "east-southeast",
     "crest_seconds": 15,
     "vista_seconds": 10
+  },
+  "smoke": {
+    "texture": "smoke_puff.png",
+    "emitters": [
+      {
+        "id": "main_steam",
+        "origin": [
+          538,
+          266
+        ],
+        "interval": 0.38,
+        "lifetime": 9.0,
+        "rise": 9.0,
+        "wind": 3.5,
+        "start_size": 10.0,
+        "end_size": 80.0,
+        "opacity": 65,
+        "tint": [
+          210,
+          224,
+          239
+        ],
+        "seed": 11
+      },
+      {
+        "id": "distant_ash",
+        "origin": [
+          783,
+          262
+        ],
+        "interval": 0.3,
+        "lifetime": 11.0,
+        "rise": 10.0,
+        "wind": 7.0,
+        "start_size": 5.0,
+        "end_size": 60.0,
+        "opacity": 165,
+        "tint": [
+          154,
+          164,
+          185
+        ],
+        "seed": 29
+      }
+    ]
   }
 }

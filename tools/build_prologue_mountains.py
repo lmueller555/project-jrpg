@@ -93,6 +93,23 @@ def products(source=SOURCE, target=TARGET):
             record['anchor'] = spec['anchor']
         manifest['layers'][name] = record
         output[target/(name+'.png')] = _png(image)
+    if 'smoke' in recipe:
+        spec = recipe['smoke']
+        if spec['source'] not in records:
+            raise ValueError('Unrecorded smoke artwork')
+        with Image.open(_source_path(source, spec['source'])) as original:
+            smoke = original.convert('RGBA')
+        crop = spec['crop']
+        if (not _integers(crop, 4) or not 0 <= crop[0] < crop[2] <= smoke.width
+                or not 0 <= crop[1] < crop[3] <= smoke.height):
+            raise ValueError('Invalid smoke artwork crop')
+        smoke = smoke.crop(crop)
+        # Discard the generator's invisible low-alpha matte noise; retain the
+        # authored cloud's semitransparent lobes and transparent edge margins.
+        smoke.putalpha(smoke.getchannel('A').point(lambda a:a if a >= 8 else 0))
+        smoke = smoke.resize(tuple(spec['canvas']), Image.Resampling.NEAREST)
+        output[target/'smoke_puff.png'] = _png(smoke)
+        manifest['smoke'] = {'texture':'smoke_puff.png', 'emitters':spec['emitters']}
     output[target/'art.json'] = (json.dumps(manifest, indent=2)+'\n').encode()
     return output
 

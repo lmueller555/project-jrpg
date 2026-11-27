@@ -48,7 +48,7 @@ main view. The eagle occupies the lower sea corridor, leaving the main crater
 visible, then becomes smaller as it travels toward the islands.
 
 Nighttime remains readable: cool silver rock and eagle lighting, a dark starry
-sky, moonlight on the sea, and warm red ash slopes/lava on the islands. This is
+sky, moonlight on the sea, rust-red main-island ash, and lava on the distant island. This is
 not a sunrise, tropical archipelago or view of Adamanthra's Ice Dome.
 
 ## Geographic composition
@@ -60,8 +60,19 @@ island lies farther beyond its right shoulder; southern rocky skerries appear
 to the right. Othara's distant rust-colored headlands occupy the left horizon.
 Istrava lies south of the archipelago and outside this framing.
 
-The red island terrain uses volcanic ash, dark rock and lava illumination.
-Othara's extensive Damar Drylands remain a separate landmass. The approved
+The main island is substantially wider, with broad flat coastal terraces for
+the future fortress, reservoir and military infrastructure. Its volcano is
+inactive because the Veinhold is extracting Fire-aspected aether: no glowing
+crater, lava flows or eruptive fire remain. It still releases light steam/gas.
+The distant volcano retains its active glow and a denser ash plume. Othara's
+Damar Drylands remain a separate landmass.
+
+Two large steel bridges are visible. The nearer bridge runs from Merovar's
+rocky mainland coast to the main island's front terrace. The farther bridge
+runs from the Damar headlands on the left to the island's rear-west approach.
+Both have complete abutments, steel decks and piers scaled to perspective.
+The final source window begins at y50 so the nearer Merovar landing remains
+visible along with the island and both volcanoes. The approved
 Fire Veinhold site is on the main island near the volcano; the fortress and
 reservoir receive their closer reveal in Shot 2. Exact distances, travel
 times, facility coordinates and the infiltration party's route remain open.
@@ -97,6 +108,26 @@ music channels. The audio source folder retains its deterministic export recipe
 and CC0 Foley attribution. Preview movies reconstruct audio from those exports
 and cue metadata, rather than claiming hardware-loopback listening review.
 
+## Animated volcanic plumes
+
+The revised panorama contains no painted smoke plumes. `cinematic_smoke.py`
+composites textured billows from both crater mouths in source-art coordinates,
+using the same scale and origin as the terrain. Billows rise, expand, drift
+with varied turbulence, and fade continuously; the main vent uses light steam
+and the distant vent denser ash. One complete authored cloud from the generated
+VFX sheet is cropped and exported as `smoke_puff.png`; scaling and alpha over
+each particle's life supply the motion. This is a particle effect, not a
+creature animation assembled from body parts.
+
+The particle samples are pure functions of shot time and deterministic seeds.
+The plumes are prewarmed, remain bounded after seeks, and freeze with pause or
+focus loss. Restart reproduces the same initial state. Reduced Motion lowers
+lateral drift/turbulence without freezing the plumes. Texture and emitter
+configuration live in the environment recipe/export manifest; malformed or
+unbounded values fail before playback. The source atlas, exact prompts and
+hashes are preserved. The wider island and bridges remain in the single
+opaque landscape, retaining consistent geographic movement.
+
 ## Gallery and handoff
 
 Both **Shot 1 — Eagle Ascent and Cinder Isles (25s)** and **Fire Veinhold —
@@ -111,5 +142,5 @@ end fade. The terminal camera, eagle and wind state is exposed for later clip
 integration. New Game retains its bedroom opening until the full cinematic and
 playable infiltration handoff are ready.
 
-See [current review evidence](../../reviews/cinder_crest/README.md).
+See [current review evidence](../../reviews/cinder_bridges_smoke/README.md).
 Earlier ten-second studies remain historical evidence of their own revisions.

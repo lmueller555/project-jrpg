@@ -54,10 +54,10 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         record = crest['layers']['panorama']
         scale = max(960/image.get_width(), 640/image.get_height())*record['scale']
         # The source window has passed the approach and exposes the authored
-        # upper vista (volcano around sourcey260, coast starts belowy530).
+        # upper vista and Merovar bridge landing around sourcey650.
         top = (640-image.get_height()*scale)/2+record['offset'][1]
-        self.assertAlmostEqual(top, 0., delta=1.)
-        self.assertLess(530*scale, 640)
+        self.assertAlmostEqual(top, -50.*scale, delta=1.)
+        self.assertLess((650.-50.)*scale, 640)
         self.scene.update(10.-1e-6)
         self.assertTrue(self.scene.active)
         self.assertAlmostEqual(self.scene.state_at(self.scene.elapsed)['vista_elapsed'], 10., places=5)
@@ -70,6 +70,24 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.assertGreater(state['camera']['velocity'][1], 22.)
         self.assertEqual(self.scene.state_at(15.)['eagle']['scale'], 1.)
         self.assertLess(self.scene.state_at(25.)['eagle']['scale'], .5)
+
+    def test_smoke_freezes_with_pause_and_focus_and_restarts_from_the_same_clock(self):
+        self.scene.start()
+        initial = self.scene.state_at(0.)['smoke']
+        self.scene.update(15.)
+        held = self.scene.state_at(self.scene.elapsed)['smoke']
+        escape = pygame.event.Event(pygame.KEYDOWN, key=pygame.K_ESCAPE, repeat=False)
+        self.scene.handle_event(escape);self.scene.update(.5)
+        self.assertEqual(self.scene.state_at(self.scene.elapsed)['smoke'], held)
+        self.scene.handle_event(escape)
+        self.scene.handle_event(pygame.event.Event(pygame.WINDOWFOCUSLOST))
+        self.scene.update(.5)
+        self.assertEqual(self.scene.state_at(self.scene.elapsed)['smoke'], held)
+        self.scene.handle_event(pygame.event.Event(pygame.WINDOWFOCUSGAINED))
+        self.scene.update(.5)
+        self.assertNotEqual(self.scene.state_at(self.scene.elapsed)['smoke'], held)
+        self.scene.reset();self.scene.start()
+        self.assertEqual(self.scene.state_at(0.)['smoke'], initial)
 
     def test_terrain_is_one_opaque_panorama_with_one_shared_transform(self):
         self.scene.start()
