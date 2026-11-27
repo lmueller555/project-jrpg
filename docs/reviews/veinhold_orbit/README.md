@@ -7,6 +7,7 @@ records the approved staging and future party-reveal shots.
 
 ## Review outputs
 
+- [Small complete preview, 2.5 MB, 60 FPS](complete_small.mp4)
 - [Complete production film, 60 FPS](complete.mp4)
 - [Complete Reduced Motion film, 60 FPS](complete_reduced_motion.mp4)
 - [Complete sequence contact sheet](complete_filmstrip.png)
@@ -18,7 +19,12 @@ records the approved staging and future party-reveal shots.
 - [One-second bridge rush](shot04.mp4)
 - [Frozen Carcovian guards](shot05.mp4)
 
-Every movie is captured through production `Game.draw` in the disposable,
+The small preview is a compressed 600×400 copy of the complete production film,
+retaining all 39 seconds, 60 FPS and audio. Download it and open it in QuickTime,
+VLC or a browser to review without launching the game. Its source/output hashes
+and transcode settings are recorded in [the preview recipe](complete_small.json).
+
+Production movies are captured through `Game.draw` in the disposable,
 save-disabled Gallery at native 960×640. The complete movie contains 2,340
 displayed frames at 60 FPS. The orbit's 301 inclusive camera samples describe
 300 intervals, exactly five seconds; sample 300 supplies the next shot's camera
@@ -61,7 +67,7 @@ reveal frame took **17.66 ms**, exceeding the 16.67 ms budget; the other 839
 frames remained within it. Peak recorded cache reservations were **54.5 MiB**.
 The JSON records the exact playback conditions and source/art fingerprints.
 
-[Capture validation](capture_validation.json) verifies all seven movies' native
+[Capture validation](capture_validation.json) verifies all seven production movies' native
 dimensions, exact durations and 60 FPS frame counts, all three pixel-exact RGB
 camera joins, current source/runtime/movie hashes, empty caches at completion,
 and natural Gallery return without persistent writes. The six updated Gallery
@@ -90,6 +96,15 @@ PYTHONPATH=.:tests SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python -m unittes
 ```
 
 ## Reproduction
+
+To recreate the small preview from the complete production film:
+
+```sh
+ffmpeg -hide_banner -loglevel error -y -i docs/reviews/veinhold_orbit/complete.mp4 \
+  -vf scale=600:400:flags=lanczos -r 60 -c:v libx264 -preset medium -crf 30 \
+  -maxrate 500k -bufsize 1000k -pix_fmt yuv420p -c:a aac -b:a 64k \
+  -movflags +faststart docs/reviews/veinhold_orbit/complete_small.mp4
+```
 
 Run from the repository root with pygame, numpy, Pillow and ffmpeg available:
 
