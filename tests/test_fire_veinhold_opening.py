@@ -69,7 +69,32 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.assertGreater(state['camera']['position'][2], 110.)
         self.assertGreater(state['camera']['velocity'][1], 22.)
         self.assertEqual(self.scene.state_at(15.)['eagle']['scale'], 1.)
-        self.assertLess(self.scene.state_at(25.)['eagle']['scale'], .5)
+        self.assertFalse(self.scene.state_at(25.)['eagle']['visible'])
+
+    def test_eagle_exits_below_frame_after_crest_without_fading_or_shrinking(self):
+        before = self.scene.state_at(15.-1e-4)['eagle']
+        crest = self.scene.state_at(15.)['eagle']
+        self.assertAlmostEqual(before['position'][1], crest['position'][1], delta=.01)
+        heights = []
+        for time in (15., 15.5, 16., 16.5, 17.):
+            bird = self.scene.state_at(time)['eagle']
+            heights.append(bird['position'][1])
+            self.assertEqual(bird['scale'], 1.)
+        self.assertEqual(heights, sorted(heights))
+        self.assertTrue(self.scene.state_at(16.)['eagle']['visible'])
+        for time in (17., 20., 25.):
+            bird = self.scene.state_at(time)['eagle']
+            self.assertFalse(bird['visible'])
+            self.assertGreaterEqual(bird['position'][1]-bird['anchor'][1], 640)
+
+    def test_camera_keeps_moving_after_eagle_leaves(self):
+        previous = self.scene.state_at(17.)
+        for time in (18., 20., 24., 25.):
+            current = self.scene.state_at(time)
+            self.assertGreater(current['layers']['panorama']['scale'], previous['layers']['panorama']['scale'])
+            self.assertGreater(current['camera']['position'][1], previous['camera']['position'][1])
+            self.assertFalse(current['eagle']['visible'])
+            previous = current
 
     def test_smoke_freezes_with_pause_and_focus_and_restarts_from_the_same_clock(self):
         self.scene.start()

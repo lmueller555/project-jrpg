@@ -31,7 +31,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 30
-OUT = ROOT/'docs/reviews/veinhold_reveal'
+OUT = ROOT/'docs/reviews/eagle_exit'
 
 
 def _samples(name):

@@ -243,12 +243,15 @@ class FireVeinholdOpening:
                 break
             frame_clock -= duration
         bird_x = 480.+20.*math.sin(math.pi*climb)*sway
-        bird_y = 410.+40.*_smooth(climb)-100.*_smooth(vista)
+        # Release the chase at the crest. The eagle glides down beneath the
+        # continuing camera, clearing the frame without fading or shrinking.
+        exit_seconds = max(0., local-ascent)
+        bird_y = 410.+40.*_smooth(climb)+85.*exit_seconds*exit_seconds
         bird_y += 1.5*math.sin(local*math.tau/period)*sway
         # A single tall painting supplies approach AND offshore vista. Panning
         # its source window over the ridge preserves every terrain relationship.
         panorama = self._assets[shot['id']]['layers']['panorama']
-        zoom = 1.05-.05*_smooth(climb)+.01*vista
+        zoom = 1.05-.05*_smooth(climb)+.035*vista
         factor = max(960/panorama.get_width(), 640/panorama.get_height())*zoom
         framing = self._assets[shot['id']]['framing']
         source_y = (framing.get('ascent_start_y', 650.)*(1.-_smooth(climb))
@@ -260,7 +263,8 @@ class FireVeinholdOpening:
                 'eagle':{'position':[bird_x, bird_y], 'sequence':sequence,
                          'frame':index, 'wing_phase':phase,
                          'anchor':list(self._assets[shot['id']]['anchor']),
-                         'scale':1.-.65*_smooth(vista)},
+                         'scale':1.,
+                         'visible':bird_y-self._assets[shot['id']]['anchor'][1] < RENDER_SIZE[1]},
                 'phase':'ascent' if local < ascent else 'cinder_vista',
                 'crest_time':ascent, 'vista_elapsed':max(0., local-ascent),
                 'smoke':self._assets[shot['id']]['smoke'].samples(local, self.reduced_motion),
@@ -395,8 +399,9 @@ class FireVeinholdOpening:
         scale = eagle['scale']
         if scale != 1.:
             image = pygame.transform.scale(image, (round(256*scale), round(256*scale)))
-        target.blit(image, (round(eagle['position'][0]-eagle['anchor'][0]*scale),
-                            round(eagle['position'][1]-eagle['anchor'][1]*scale)))
+        if eagle['visible']:
+            target.blit(image, (round(eagle['position'][0]-eagle['anchor'][0]*scale),
+                                round(eagle['position'][1]-eagle['anchor'][1]*scale)))
         return target
 
     def draw(self, canvas, ui_surface):
