@@ -1,0 +1,1346 @@
+{
+  "actor": "iselin",
+  "measurements": [
+    {
+      "frame": 0,
+      "source": "run_v3/key_00.png",
+      "sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 2598,
+      "centroid_exported": [
+        718.7409545804464,
+        305.95919938414164
+      ],
+      "centroid_neck_relative": [
+        206.98456998353663,
+        105.5865310629504
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "33ea2044f5af915cfda48a212213a6868e4d56104430a1fc5684c81a57a2758f",
+      "neck_exported": [
+        511.7563845969098,
+        200.37266832119124
+      ]
+    },
+    {
+      "frame": 1,
+      "source": "run_v3/key_01_d.png",
+      "sha256": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 2714,
+      "centroid_exported": [
+        720.4053058216655,
+        309.0198968312454
+      ],
+      "centroid_neck_relative": [
+        208.45209481969465,
+        107.82742515668764
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "87bd1f08e03262164802a873c1cba972d929bd640bbd33e159e9367963969b4a",
+      "neck_exported": [
+        511.9532110019708,
+        201.19247167455774
+      ]
+    },
+    {
+      "frame": 2,
+      "source": "run_v3/key_02_c.png",
+      "sha256": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 1114,
+      "centroid_exported": [
+        705.4093357271095,
+        317.54488330341115
+      ],
+      "centroid_neck_relative": [
+        193.46102650083117,
+        115.55121345526919
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "b88ed3df772a0deb07704ba7ca803df768b55ced6a6190604989b6c460954855",
+      "neck_exported": [
+        511.9483092262783,
+        201.99366984814196
+      ]
+    },
+    {
+      "frame": 3,
+      "source": "run_v3/key_03.png",
+      "sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 1198,
+      "centroid_exported": [
+        702.567612687813,
+        322.88647746243737
+      ],
+      "centroid_neck_relative": [
+        190.7087543097809,
+        120.1810895831643
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "bcef529d6fe0d64bde3df97925058633786f09f81782aac3cc96ae9ef827242a",
+      "neck_exported": [
+        511.85885837803215,
+        202.70538787927308
+      ]
+    },
+    {
+      "frame": 4,
+      "source": "run_v2/repairs/frame_04.png",
+      "sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 1476,
+      "centroid_exported": [
+        705.3285907859079,
+        326.7215447154472
+      ],
+      "centroid_neck_relative": [
+        193.1124778539472,
+        123.15458656174329
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "881a13c08fcde577116a7a2aa21e80cd4b372167ac0fb527c0164f89318c6712",
+      "neck_exported": [
+        512.2161129319607,
+        203.5669581537039
+      ]
+    },
+    {
+      "frame": 5,
+      "source": "run_v2/repairs/frame_05.png",
+      "sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 1388,
+      "centroid_exported": [
+        701.6224783861671,
+        325.4373198847262
+      ],
+      "centroid_neck_relative": [
+        189.75231940397344,
+        121.29720473438363
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "51e5de49205eb175ed26c311a112b8dbdfbf82ff804d09dacce5f38f9039660f",
+      "neck_exported": [
+        511.8701589821937,
+        204.14011515034258
+      ]
+    },
+    {
+      "frame": 6,
+      "source": "run_v2/repairs/frame_06.png",
+      "sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 876,
+      "centroid_exported": [
+        690.0388127853881,
+        323.9041095890411
+      ],
+      "centroid_neck_relative": [
+        177.68830474954882,
+        119.52042411092705
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "ff6ebb8e8b0cea38cab78447a9a7c2c9fa52bbff60dbb238df5bbd460bbfb1a8",
+      "neck_exported": [
+        512.3505080358393,
+        204.38368547811407
+      ]
+    },
+    {
+      "frame": 7,
+      "source": "run_v2/repairs/frame_07.png",
+      "sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 1107,
+      "centroid_exported": [
+        692.1309846431798,
+        323.77868112014454
+      ],
+      "centroid_neck_relative": [
+        180.2608256609861,
+        120.2995929827647
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "1d9621935b8538988428f79f3f28eacf63d353d4701ae2c33a44b77794fa9ae9",
+      "neck_exported": [
+        511.8701589821937,
+        203.47908813737985
+      ]
+    },
+    {
+      "frame": 8,
+      "source": "run_v2/repairs/frame_08.png",
+      "sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "selected_pixels": 959,
+      "centroid_exported": [
+        691.0834202294056,
+        321.37330552659023
+      ],
+      "centroid_neck_relative": [
+        179.18584799358098,
+        117.6306925611687
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "7147265ab83258be50b8d6d1501e156d5a5b8c0364dfa4f174e1c4ea7e626e8e",
+      "neck_exported": [
+        511.89757223582467,
+        203.74261296542153
+      ]
+    },
+    {
+      "frame": 9,
+      "source": "run_v3/helper_braid_frame_09_b.png",
+      "sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+      "box_exported": [
+        625,
+        285,
+        710,
+        340
+      ],
+      "selected_pixels": 1242,
+      "centroid_exported": [
+        658.6924315619967,
+        313.26731078904993
+      ],
+      "centroid_neck_relative": [
+        146.40278301504304,
+        110.93499151917564
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "081924ccae89587553d039cb63ae5fd4b1d9d6b7a9f9488ff710df58b869d170",
+      "neck_exported": [
+        512.2896485469537,
+        202.3323192698743
+      ]
+    },
+    {
+      "frame": 10,
+      "source": "run_v3/helper_braid_frame_10_d.png",
+      "sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+      "box_exported": [
+        585,
+        275,
+        650,
+        325
+      ],
+      "selected_pixels": 1047,
+      "centroid_exported": [
+        614.3486150907354,
+        298.35530085959886
+      ],
+      "centroid_neck_relative": [
+        102.01407593132956,
+        96.67639900513089
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "9529e7a22715daecc4d62c2418de4b2af87ba8efe705016239512ef07db0e26b",
+      "neck_exported": [
+        512.3345391594058,
+        201.67890185446797
+      ]
+    },
+    {
+      "frame": 11,
+      "source": "run_v3/helper_braid_frame_11_d.png",
+      "sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+      "box_exported": [
+        585,
+        285,
+        640,
+        325
+      ],
+      "selected_pixels": 632,
+      "centroid_exported": [
+        596.751582278481,
+        304.28322784810126
+      ],
+      "centroid_neck_relative": [
+        84.94097318660681,
+        103.36375144336833
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "4f1e13bdd3c418388fd2a96b966e85e3535778793c6566832d89a080914f8b70",
+      "neck_exported": [
+        511.8106090918742,
+        200.91947640473293
+      ]
+    },
+    {
+      "frame": 12,
+      "source": "run_v2/repairs/frame_12.png",
+      "sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+      "box_exported": [
+        545,
+        280,
+        625,
+        355
+      ],
+      "selected_pixels": 1117,
+      "centroid_exported": [
+        581.4064458370635,
+        305.59982094897043
+      ],
+      "centroid_neck_relative": [
+        69.9011059644871,
+        105.9269773604189
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "428588b0e72cfd39903ab7035a1c057e423798b0318cbecd2e7fcf4514cf4bc1",
+      "neck_exported": [
+        511.5053398725764,
+        199.67284358855153
+      ]
+    },
+    {
+      "frame": 13,
+      "source": "run_v3/key_13_recolor.png",
+      "sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+      "box_exported": [
+        580,
+        310,
+        630,
+        370
+      ],
+      "selected_pixels": 989,
+      "centroid_exported": [
+        606.551061678463,
+        337.474216380182
+      ],
+      "centroid_neck_relative": [
+        94.9759354460042,
+        138.81728195734706
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "a6139432fc5e6a25c9712e5e923fa9f660fe60e0a530034f4e4f4ea7dfbb558f",
+      "neck_exported": [
+        511.57512623245884,
+        198.65693442283492
+      ]
+    },
+    {
+      "frame": 14,
+      "source": "run_v3/key_14_recolor.png",
+      "sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+      "box_exported": [
+        655,
+        300,
+        720,
+        365
+      ],
+      "selected_pixels": 1590,
+      "centroid_exported": [
+        679.9742138364779,
+        330.7314465408805
+      ],
+      "centroid_neck_relative": [
+        168.29064885964226,
+        132.7734090113001
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "6c374b0cfc8d0abad2bf38d5b7ba8adf06c3005babfb4c4295ee279ca40eae8b",
+      "neck_exported": [
+        511.68356497683567,
+        197.9580375295804
+      ]
+    },
+    {
+      "frame": 15,
+      "source": "run_v3/key_15_hair.png",
+      "sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+      "box_exported": [
+        685,
+        320,
+        755,
+        390
+      ],
+      "selected_pixels": 1389,
+      "centroid_exported": [
+        704.86249100072,
+        355.979841612671
+      ],
+      "centroid_neck_relative": [
+        193.17343488031327,
+        158.490289134887
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "c4dd860566327d77a3d16f22b89ec72f8bf01be80100412778e11213df72401f",
+      "neck_exported": [
+        511.6890561204067,
+        197.489552477784
+      ]
+    },
+    {
+      "frame": 16,
+      "source": "run_v3/key_16_c.png",
+      "sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+      "box_exported": [
+        675,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 2050,
+      "centroid_exported": [
+        706.209268292683,
+        351.05121951219513
+      ],
+      "centroid_neck_relative": [
+        193.79366358473146,
+        154.10815306223873
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "6dd1f53c6c5835ac98b95be4dc8ab6214a900c770d12045a70cef5453c1aea5e",
+      "neck_exported": [
+        512.4156047079515,
+        196.9430664499564
+      ]
+    },
+    {
+      "frame": 17,
+      "source": "run_v3/helper_frame_17.png",
+      "sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "box_exported": [
+        675,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 2341,
+      "centroid_exported": [
+        707.0636480136694,
+        351.3566851772747
+      ],
+      "centroid_neck_relative": [
+        194.80538206218432,
+        155.10162153144972
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "72174fdbc49243239ace44b1beccca96b17a66c3e7f229b05968bc9fadbb47dd",
+      "neck_exported": [
+        512.2582659514851,
+        196.25506364582498
+      ]
+    },
+    {
+      "frame": 18,
+      "source": "run_v2/repairs/frame_18.png",
+      "sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 1054,
+      "centroid_exported": [
+        709.022770398482,
+        354.2248576850095
+      ],
+      "centroid_neck_relative": [
+        197.27905154228205,
+        157.9817772562482
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "f4bb4f2a7865565eb756e07281fe171dde60ec52f516a4cfe7946fcde98859fd",
+      "neck_exported": [
+        511.7437188561999,
+        196.24308042876132
+      ]
+    },
+    {
+      "frame": 19,
+      "source": "run_v2/repairs/frame_19.png",
+      "sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 1495,
+      "centroid_exported": [
+        715.1732441471572,
+        350.7230769230769
+      ],
+      "centroid_neck_relative": [
+        203.42952529095732,
+        154.53746151176594
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "fb72edf7a0f0e875661ea79c00257ba68d068dd52f88b4fdbc873168231c39bb",
+      "neck_exported": [
+        511.7437188561999,
+        196.18561541131098
+      ]
+    },
+    {
+      "frame": 20,
+      "source": "run_v2/repairs/frame_20.png",
+      "sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 2052,
+      "centroid_exported": [
+        723.9434697855751,
+        361.57553606237815
+      ],
+      "centroid_neck_relative": [
+        211.7760681403796,
+        164.91444233426907
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "d4aeef232500af694eac183cde26f3528029df847e66c083d61b218cb269fdac",
+      "neck_exported": [
+        512.1674016451955,
+        196.66109372810908
+      ]
+    },
+    {
+      "frame": 21,
+      "source": "run_v2/repairs/frame_21.png",
+      "sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 1606,
+      "centroid_exported": [
+        722.8007471980075,
+        359.78580323785803
+      ],
+      "centroid_neck_relative": [
+        210.87352007963483,
+        162.40752168659748
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "d0b9e94890dd5447f5de298cbc728cfcd3ba1289adc0f3bc56828807b90e4cbf",
+      "neck_exported": [
+        511.9272271183726,
+        197.37828155126056
+      ]
+    },
+    {
+      "frame": 22,
+      "source": "run_v2/repairs/frame_22.png",
+      "sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 1677,
+      "centroid_exported": [
+        725.0655933214073,
+        362.05963029218844
+      ],
+      "centroid_neck_relative": [
+        213.13836620303465,
+        163.6813487409279
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "8322a4e84b9ec213591e44035141839a4cbc52b37acd424ccdc86de13d68441f",
+      "neck_exported": [
+        511.9272271183726,
+        198.37828155126056
+      ]
+    },
+    {
+      "frame": 23,
+      "source": "run_v3/key_23.png",
+      "sha256": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 1784,
+      "centroid_exported": [
+        718.2096412556053,
+        350.3615470852018
+      ],
+      "centroid_neck_relative": [
+        206.08899438986202,
+        151.24426264040153
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "e445b91de39295cf44760fd794b9453f30d65ffa6f1826da17a0d96b3408a0dd",
+      "neck_exported": [
+        512.1206468657433,
+        199.11728444480025
+      ]
+    },
+    {
+      "frame": 24,
+      "source": "run_v2/repairs/frame_24.png",
+      "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+      "box_exported": [
+        715,
+        280,
+        790,
+        415
+      ],
+      "selected_pixels": 658,
+      "centroid_exported": [
+        726.3237082066869,
+        350.77963525835867
+      ],
+      "centroid_neck_relative": [
+        214.0242866828478,
+        151.13821975972354
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "12297c78556f27fb444a1aaabb17b13718fdc398d1ad80d321b15f2d283a3db4",
+      "neck_exported": [
+        512.2994215238391,
+        199.64141549863513
+      ]
+    },
+    {
+      "frame": 25,
+      "source": "run_v3/key_25_b.png",
+      "sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 2420,
+      "centroid_exported": [
+        703.4305785123967,
+        317.1644628099174
+      ],
+      "centroid_neck_relative": [
+        191.74152239198997,
+        116.06735289077562
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "d61ec29eb5d0772b65e849912243ff6f66645b58a63fee75dfd72456465f966c",
+      "neck_exported": [
+        511.6890561204067,
+        201.09710991914176
+      ]
+    },
+    {
+      "frame": 26,
+      "source": "run_v2/repairs/frame_26.png",
+      "sha256": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 2362,
+      "centroid_exported": [
+        707.3111769686706,
+        317.0939881456393
+      ],
+      "centroid_neck_relative": [
+        195.32577240211367,
+        115.0895355235032
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "7df2c70b67a7107ea2bb546447450249396244fc17d8612aa8a2833001934c2e",
+      "neck_exported": [
+        511.9854045665569,
+        202.00445262213609
+      ]
+    },
+    {
+      "frame": 27,
+      "source": "run_v2/repairs/frame_27.png",
+      "sha256": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 2349,
+      "centroid_exported": [
+        703.988080034057,
+        318.89442315879097
+      ],
+      "centroid_neck_relative": [
+        191.49635084609451,
+        115.89594038509554
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "02cb7aa29414024f92b42b0778e7a2d84bda680b7126ba69549999b8bd96a5b1",
+      "neck_exported": [
+        512.4917291879625,
+        202.99848277369543
+      ]
+    },
+    {
+      "frame": 28,
+      "source": "run_v2/repairs/frame_28.png",
+      "sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 2104,
+      "centroid_exported": [
+        697.3122623574144,
+        314.3593155893536
+      ],
+      "centroid_neck_relative": [
+        185.8047402246646,
+        110.69822186124455
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "ac6885018f900769fedafaee9642091f753576252555fb0e86ad15e962f8b05d",
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ]
+    },
+    {
+      "frame": 29,
+      "source": "run_v2/repairs/frame_30.png",
+      "sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 1893,
+      "centroid_exported": [
+        685.2039091389329,
+        323.81774960380346
+      ],
+      "centroid_neck_relative": [
+        173.0573000071288,
+        120.33604136841689
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "0724ba46f3c279f67f7dae7cfc672dbd64b88df1e5c8732fb3c6c6b76c5fb35e",
+      "neck_exported": [
+        512.1466091318041,
+        203.48170823538658
+      ]
+    },
+    {
+      "frame": 30,
+      "source": "run_v2/repairs/frame_29.png",
+      "sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "selected_pixels": 1954,
+      "centroid_exported": [
+        685.7379733879222,
+        322.46212896622313
+      ],
+      "centroid_neck_relative": [
+        174.23045125517245,
+        118.80103523811405
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "78fa4bf468f126a1e2595571e9622978037e47a04f53274c8c5459e9a9ecc9e6",
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ]
+    },
+    {
+      "frame": 31,
+      "source": "run_v3/key_31_braid_path.png",
+      "sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+      "box_exported": [
+        640,
+        300,
+        700,
+        365
+      ],
+      "selected_pixels": 1235,
+      "centroid_exported": [
+        678.6939271255061,
+        330.78623481781375
+      ],
+      "centroid_neck_relative": [
+        166.60842556438217,
+        126.47401001595642
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "d2c19579ec7f269706101e420e49d2848adb8b7be2a95127fe77f4b82168f752",
+      "neck_exported": [
+        512.0855015611239,
+        204.31222480185733
+      ]
+    },
+    {
+      "frame": 32,
+      "source": "run_v3/key_32_braid_path.png",
+      "sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+      "box_exported": [
+        625,
+        295,
+        675,
+        350
+      ],
+      "selected_pixels": 1417,
+      "centroid_exported": [
+        650.8602681721948,
+        321.6753705010586
+      ],
+      "centroid_neck_relative": [
+        139.25788863911885,
+        118.1166865118702
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "65564b4c58b487d1499a5279bea285f8ffaa1c732ecce541dd993887735f5b77",
+      "neck_exported": [
+        511.6023795330759,
+        203.55868398918838
+      ]
+    },
+    {
+      "frame": 33,
+      "source": "run_v3/key_33_braid_path.png",
+      "sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+      "box_exported": [
+        570,
+        315,
+        620,
+        365
+      ],
+      "selected_pixels": 728,
+      "centroid_exported": [
+        583.6002747252747,
+        333.57005494505495
+      ],
+      "centroid_neck_relative": [
+        71.47396512466719,
+        130.8916512083551
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "e10e3e9ff2d528f976f63b0053e26b60d59e3f5d6c9ca6627e4d317eb7b36611",
+      "neck_exported": [
+        512.1263096006076,
+        202.67840373669983
+      ]
+    },
+    {
+      "frame": 34,
+      "source": "run_v2/repairs/frame_33.png",
+      "sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+      "box_exported": [
+        580,
+        300,
+        620,
+        365
+      ],
+      "selected_pixels": 929,
+      "centroid_exported": [
+        595.9300322927879,
+        325.6469321851453
+      ],
+      "centroid_neck_relative": [
+        83.73393928253745,
+        123.876324847783
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "aae77e28aa29a332a727f5127e63cccafb1bde9f6e77e9e41da18b34a6f6b3f7",
+      "neck_exported": [
+        512.1960930102505,
+        201.77060733736232
+      ]
+    },
+    {
+      "frame": 35,
+      "source": "run_v2/repairs/frame_35.png",
+      "sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+      "box_exported": [
+        550,
+        290,
+        620,
+        365
+      ],
+      "selected_pixels": 1048,
+      "centroid_exported": [
+        595.8110687022901,
+        320.4131679389313
+      ],
+      "centroid_neck_relative": [
+        83.840350769201,
+        119.3247246527221
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "c8ebd9bd1ffc4c72389e1222d496463b6a7ffd2014ad09a393cc3f9d0f72a917",
+      "neck_exported": [
+        511.9707179330891,
+        201.08844328620918
+      ]
+    },
+    {
+      "frame": 36,
+      "source": "run_v2/repairs/frame_36.png",
+      "sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+      "box_exported": [
+        550,
+        290,
+        620,
+        365
+      ],
+      "selected_pixels": 750,
+      "centroid_exported": [
+        585.6426666666666,
+        312.1906666666667
+      ],
+      "centroid_neck_relative": [
+        73.68199379688616,
+        111.81457069956372
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "6e3a7c0d10614966ae704ff6ee5e1d59369c3ff25bcf25341e9be7480faa618b",
+      "neck_exported": [
+        511.96067286978047,
+        200.37609596710297
+      ]
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/repairs/frame_37.png",
+      "sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+      "box_exported": [
+        550,
+        290,
+        605,
+        340
+      ],
+      "selected_pixels": 668,
+      "centroid_exported": [
+        583.2440119760479,
+        309.6841317365269
+      ],
+      "centroid_neck_relative": [
+        71.65399656484914,
+        110.33968810748982
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "4a7625bb34ad456f4b56216cd89c13f1552e1f272193f402f4bfd7f4325bd1f6",
+      "neck_exported": [
+        511.59001541119875,
+        199.3444436290371
+      ]
+    },
+    {
+      "frame": 38,
+      "source": "run_v3/key_38_braid_clean.png",
+      "sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+      "box_exported": [
+        620,
+        270,
+        690,
+        330
+      ],
+      "selected_pixels": 1126,
+      "centroid_exported": [
+        653.8525754884547,
+        294.22291296625224
+      ],
+      "centroid_neck_relative": [
+        141.67758916627872,
+        96.58284796596644
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "b7cbf9f68e63785798dafa4ddaae54b66c274013b2d3fb30cc37cfdce9d105f4",
+      "neck_exported": [
+        512.174986322176,
+        197.6400650002858
+      ]
+    },
+    {
+      "frame": 39,
+      "source": "run_v3/key_39_braid_mid.png",
+      "sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+      "box_exported": [
+        660,
+        285,
+        710,
+        345
+      ],
+      "selected_pixels": 1243,
+      "centroid_exported": [
+        685.0893000804505,
+        312.6588897827836
+      ],
+      "centroid_neck_relative": [
+        173.2055451573923,
+        115.74033848147215
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "c3d0e3f1f49b1d613e3bd4edc3223ccac253c80a54e0cb2b89e7d72ba668f6c9",
+      "neck_exported": [
+        511.8837549230582,
+        196.91855130131145
+      ]
+    },
+    {
+      "frame": 40,
+      "source": "run_v3/key_40_b.png",
+      "sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+      "box_exported": [
+        680,
+        285,
+        755,
+        365
+      ],
+      "selected_pixels": 1903,
+      "centroid_exported": [
+        716.0793483972675,
+        312.72727272727275
+      ],
+      "centroid_neck_relative": [
+        204.32296380035768,
+        116.56971928879705
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "e528d9db9f59d616e397c0f42b5728a438241abb6a0d874c9bf4a120ba552aae",
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ]
+    },
+    {
+      "frame": 41,
+      "source": "run_v2/repairs/frame_40.png",
+      "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 1829,
+      "centroid_exported": [
+        712.082558775287,
+        309.8747949699289
+      ],
+      "centroid_neck_relative": [
+        200.5739121759771,
+        113.92780736524318
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "61a1ff1807d280d651ea00202d7c571c768d6eff84168d518b76bddf3270ee15",
+      "neck_exported": [
+        511.5086465993099,
+        195.94698760468575
+      ]
+    },
+    {
+      "frame": 42,
+      "source": "run_v3/key_43_c.png",
+      "sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 2154,
+      "centroid_exported": [
+        710.786443825441,
+        311.20009285051066
+      ],
+      "centroid_neck_relative": [
+        199.03005922853117,
+        115.04253941203496
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "32838fac6a6510be2be81ff8c939722f83af53d72050df24cad9e49711a38e47",
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ]
+    },
+    {
+      "frame": 43,
+      "source": "run_v3/key_43_d.png",
+      "sha256": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 1803,
+      "centroid_exported": [
+        711.5762617859124,
+        309.2518025513034
+      ],
+      "centroid_neck_relative": [
+        199.2866132389587,
+        113.34971304686022
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "8bff62f149f0f321e5589e533ad277c5649ab8a06d5dc4e6854581a8293d886c",
+      "neck_exported": [
+        512.2896485469537,
+        195.90208950444318
+      ]
+    },
+    {
+      "frame": 44,
+      "source": "run_v2/repairs/frame_43.png",
+      "sha256": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 2509,
+      "centroid_exported": [
+        710.2837783977681,
+        313.5727381426863
+      ],
+      "centroid_neck_relative": [
+        197.87025708266708,
+        116.58851472468402
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "b6cfb76f7979da4a38ef25de08d5c3a519305a00789ea74c94e14003851cabd3",
+      "neck_exported": [
+        512.413521315101,
+        196.9842234180023
+      ]
+    },
+    {
+      "frame": 45,
+      "source": "run_v2/repairs/frame_46.png",
+      "sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 1914,
+      "centroid_exported": [
+        712.9514106583072,
+        299.80407523510974
+      ],
+      "centroid_neck_relative": [
+        201.1331693130914,
+        102.54290930290747
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "6bbec5e78f6561d376c71454d7ab41500b373b597432e388aaacb089541ad75f",
+      "neck_exported": [
+        511.81824134521577,
+        197.26116593220226
+      ]
+    },
+    {
+      "frame": 46,
+      "source": "run_v2/repairs/frame_47.png",
+      "sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 1596,
+      "centroid_exported": [
+        706.4185463659148,
+        310.812656641604
+      ],
+      "centroid_neck_relative": [
+        194.07175912922526,
+        113.08686613747551
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "c4592fecc2d5d5cd4c67ae7a10a45edcfc51d5c56112fc201f7cecaf865cdcc3",
+      "neck_exported": [
+        512.3467872366896,
+        197.7257905041285
+      ]
+    },
+    {
+      "frame": 47,
+      "source": "run_v2/repairs/frame_45.png",
+      "sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "selected_pixels": 2338,
+      "centroid_exported": [
+        725.7459366980326,
+        298.9704875962361
+      ],
+      "centroid_neck_relative": [
+        213.93608330716438,
+        100.2821449538668
+      ],
+      "visible_end_observation_uncertainty_px": 20,
+      "meaning": "Centroid of actual selected distal-region pixels; not an exact tip or persistent particle.",
+      "exported_pixels_sha256": "5f111579d803790c91bfb846b81361411835b2762c2cb91d2cc127afd1176653",
+      "neck_exported": [
+        511.80985339086817,
+        198.68834264236932
+      ]
+    }
+  ],
+  "violations": [],
+  "diagnostics": [
+    {
+      "check": "reviewed_braid_region_step",
+      "frames": [
+        13,
+        14
+      ],
+      "pixels": 73.563,
+      "limit": 65,
+      "review_id": "iselin_final_braid_13_14",
+      "maximum_reviewed_value": 74.563,
+      "reason": "Root and independent native sequence review find continuous braid bending/unrolling. The regional centroid mixes different amounts of last-plait core and loose curl and is not a persistent material particle; this exact reviewed breach remains visible diagnostically. The default65px guard is unchanged."
+    },
+    {
+      "check": "reviewed_braid_region_step",
+      "frames": [
+        32,
+        33
+      ],
+      "pixels": 68.977,
+      "limit": 65,
+      "review_id": "iselin_final_braid_32_33",
+      "maximum_reviewed_value": 69.977,
+      "reason": "Root and independent native sequence review find continuous braid bending/unrolling. The regional centroid mixes different amounts of last-plait core and loose curl and is not a persistent material particle; this exact reviewed breach remains visible diagnostically. The default65px guard is unchanged."
+    },
+    {
+      "check": "reviewed_braid_region_step",
+      "frames": [
+        37,
+        38
+      ],
+      "pixels": 71.362,
+      "limit": 65,
+      "review_id": "iselin_final_braid_37_38",
+      "maximum_reviewed_value": 72.362,
+      "reason": "Root and independent native36\u201340 review accepted continuous braid bending/unrolling. Independent QA inspected the actual selected lower plait/tassel pixels and excluded fist/cuff contamination. The regional centroid is not a persistent material particle; its exact observed71.362px step remains visible diagnostically. Default65px, cycle5px and support50 guards remain unchanged."
+    }
+  ],
+  "unmeasured": [],
+  "coverage": {
+    "visible": 48,
+    "occluded_or_ambiguous": 0
+  },
+  "maximum_centroid_excursion": 137.853
+}

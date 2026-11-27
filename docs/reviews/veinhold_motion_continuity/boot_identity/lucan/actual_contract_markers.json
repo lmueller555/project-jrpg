@@ -1,0 +1,2452 @@
+[
+  {
+    "frame": 0,
+    "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
+    "source": "run_v2/frames/frame_00.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -54.93600000000003,
+        "y": 758.5956,
+        "opaque_pixels": 74476,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          345.09839999999997,
+          1000
+        ],
+        "source_xy": [
+          462.0,
+          1457.0
+        ],
+        "exported_xy": [
+          332.06,
+          962.91
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 17.51399999999997,
+        "y": 533.0556,
+        "opaque_pixels": 22576,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          345.09839999999997,
+          1000
+        ],
+        "source_xy": [
+          577.0,
+          1099.0
+        ],
+        "exported_xy": [
+          404.51,
+          737.37
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 1,
+    "sha256": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
+    "source": "run_v2/frames/frame_01.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -44.8875,
+        "y": 732.1229999999999,
+        "opaque_pixels": 74127,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.9886,
+          1000
+        ],
+        "source_xy": [
+          493.0,
+          1411.0
+        ],
+        "exported_xy": [
+          345.59,
+          939.93
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 21.892500000000002,
+        "y": 546.903,
+        "opaque_pixels": 28035,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.9886,
+          1000
+        ],
+        "source_xy": [
+          599.0,
+          1117.0
+        ],
+        "exported_xy": [
+          412.37,
+          754.71
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 2,
+    "sha256": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
+    "source": "run_v2/frames/frame_02.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -53.10899999999997,
+        "y": 737.5284,
+        "opaque_pixels": 77217,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.5968,
+          1000
+        ],
+        "source_xy": [
+          480.0,
+          1427.0
+        ],
+        "exported_xy": [
+          337.4,
+          946.01
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 27.531000000000027,
+        "y": 552.3084,
+        "opaque_pixels": 29316,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.5968,
+          1000
+        ],
+        "source_xy": [
+          608.0,
+          1133.0
+        ],
+        "exported_xy": [
+          418.04,
+          760.79
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 3,
+    "sha256": "1a7a4d5a9121eae60a9c1feeea1cf1a4c048fbee3f8005b7f3c969e37e3a1bec",
+    "source": "run_v2/frames/frame_03.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -52.88850000000003,
+        "y": 734.0886,
+        "opaque_pixels": 76059,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.8442,
+          1000
+        ],
+        "source_xy": [
+          479.5,
+          1433.0
+        ],
+        "exported_xy": [
+          339.085,
+          945.79
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 17.356499999999972,
+        "y": 552.0186,
+        "opaque_pixels": 27240,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.8442,
+          1000
+        ],
+        "source_xy": [
+          591.0,
+          1144.0
+        ],
+        "exported_xy": [
+          409.33,
+          763.72
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 4,
+    "sha256": "d24cdf0bc1e846e576aa4388e03010b4853b02a848a18194bebe1aa81c6e9722",
+    "source": "run_v2/frames/frame_04.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -52.22699999999998,
+        "y": 734.8572,
+        "opaque_pixels": 79096,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          336.27840000000003,
+          1000
+        ],
+        "source_xy": [
+          480.0,
+          1435.0
+        ],
+        "exported_xy": [
+          339.4,
+          948.05
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 18.648000000000017,
+        "y": 551.5272,
+        "opaque_pixels": 27753,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          336.27840000000003,
+          1000
+        ],
+        "source_xy": [
+          592.5,
+          1144.0
+        ],
+        "exported_xy": [
+          410.275,
+          764.72
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 5,
+    "sha256": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
+    "source": "run_v2/frames/frame_05.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -51.15600000000003,
+        "y": 733.3956,
+        "opaque_pixels": 78136,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.72399999999993,
+          1000
+        ],
+        "source_xy": [
+          479.0,
+          1427.0
+        ],
+        "exported_xy": [
+          338.77,
+          946.01
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 20.03399999999997,
+        "y": 552.5856,
+        "opaque_pixels": 27207,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.72399999999993,
+          1000
+        ],
+        "source_xy": [
+          592.0,
+          1140.0
+        ],
+        "exported_xy": [
+          409.96,
+          765.2
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 6,
+    "sha256": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
+    "source": "run_v2/frames/frame_06.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -56.196000000000026,
+        "y": 747.2556,
+        "opaque_pixels": 77572,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          343.0572,
+          1000
+        ],
+        "source_xy": [
+          478.0,
+          1448.0
+        ],
+        "exported_xy": [
+          336.14,
+          957.24
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 15.623999999999972,
+        "y": 563.2956,
+        "opaque_pixels": 24732,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          343.0572,
+          1000
+        ],
+        "source_xy": [
+          592.0,
+          1156.0
+        ],
+        "exported_xy": [
+          407.96,
+          773.28
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 7,
+    "sha256": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
+    "source": "run_v2/frames/frame_07.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -68.8275,
+        "y": 732.6270000000001,
+        "opaque_pixels": 78250,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          336.6186,
+          1000
+        ],
+        "source_xy": [
+          463.5,
+          1423.0
+        ],
+        "exported_xy": [
+          322.005,
+          943.49
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 13.3875,
+        "y": 560.637,
+        "opaque_pixels": 24780,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          336.6186,
+          1000
+        ],
+        "source_xy": [
+          594.0,
+          1150.0
+        ],
+        "exported_xy": [
+          404.22,
+          771.5
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 8,
+    "sha256": "17332d6e4ed6ab1362919f9e2547362ffa94274df32b5a74cd6f84e3a9c538aa",
+    "source": "run_v3/frames/frame_08.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -46.74600000000003,
+        "y": 723.3155999999999,
+        "opaque_pixels": 72537,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.2188,
+          1000
+        ],
+        "source_xy": [
+          492.0,
+          1415.0
+        ],
+        "exported_xy": [
+          344.96,
+          932.45
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 37.04399999999997,
+        "y": 560.7756,
+        "opaque_pixels": 32974,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.2188,
+          1000
+        ],
+        "source_xy": [
+          625.0,
+          1157.0
+        ],
+        "exported_xy": [
+          428.75,
+          769.91
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 9,
+    "sha256": "359bcde4c49eb7c65aa4446f4ca843149109734bcfcaa50aca15acfca809df17",
+    "source": "run_v3/frames/frame_09.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -57.393000000000015,
+        "y": 741.8628,
+        "opaque_pixels": 83198,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          336.0516,
+          1000
+        ],
+        "source_xy": [
+          470.0,
+          1445.0
+        ],
+        "exported_xy": [
+          332.1,
+          951.35
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 39.62699999999999,
+        "y": 590.0328,
+        "opaque_pixels": 39278,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          336.0516,
+          1000
+        ],
+        "source_xy": [
+          624.0,
+          1204.0
+        ],
+        "exported_xy": [
+          429.12,
+          799.52
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 10,
+    "sha256": "9d97cd3e4d6b1aaccca7de82afd054754b3b079409345a334c3e6a1188e57a42",
+    "source": "run_v3/frames/frame_10.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -85.96350000000002,
+        "y": 682.4286000000001,
+        "opaque_pixels": 60729,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          334.2246,
+          1000
+        ],
+        "source_xy": [
+          408.0,
+          1349.0
+        ],
+        "exported_xy": [
+          301.04,
+          890.87
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 38.146499999999975,
+        "y": 596.1186,
+        "opaque_pixels": 38336,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          334.2246,
+          1000
+        ],
+        "source_xy": [
+          605.0,
+          1212.0
+        ],
+        "exported_xy": [
+          425.15,
+          804.5600000000001
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 11,
+    "sha256": "918139d733420bbfee9eea3be31df67492116dec49290372fd465a595279a647",
+    "source": "run_v3/frames/frame_11.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -83.44350000000003,
+        "y": 618.1686,
+        "opaque_pixels": 50893,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          333.9474,
+          1000
+        ],
+        "source_xy": [
+          412.0,
+          1248.0
+        ],
+        "exported_xy": [
+          303.56,
+          825.24
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 33.10649999999997,
+        "y": 621.3186000000001,
+        "opaque_pixels": 42130,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          333.9474,
+          1000
+        ],
+        "source_xy": [
+          597.0,
+          1253.0
+        ],
+        "exported_xy": [
+          420.11,
+          828.39
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 12,
+    "sha256": "7eaf74ffc4ab4e3cb4c2610d0a17035cb06b8d5ef55616ed263203b772881a61",
+    "source": "run_v3/frames/frame_12.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -80.07300000000002,
+        "y": 592.5527999999999,
+        "opaque_pixels": 49944,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.0,
+          1000
+        ],
+        "source_xy": [
+          413.0,
+          1199.9999999999998
+        ],
+        "exported_xy": [
+          307.19,
+          796.9999999999999
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 12.536999999999987,
+        "y": 637.2828,
+        "opaque_pixels": 40827,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.0,
+          1000
+        ],
+        "source_xy": [
+          560.0,
+          1271.0
+        ],
+        "exported_xy": [
+          399.8,
+          841.73
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 13,
+    "sha256": "7b94bafd472700ced674217f0bfbeb7d7d5b30ec78183112a30c7534b4eecaa7",
+    "source": "run_v3/frames/frame_13.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -120.61350000000003,
+        "y": 579.7386,
+        "opaque_pixels": 46177,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.283,
+          1000
+        ],
+        "source_xy": [
+          357.0,
+          1187.0
+        ],
+        "exported_xy": [
+          268.90999999999997,
+          784.8100000000001
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 22.39649999999997,
+        "y": 681.1686,
+        "opaque_pixels": 50534,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.283,
+          1000
+        ],
+        "source_xy": [
+          584.0,
+          1348.0
+        ],
+        "exported_xy": [
+          411.92,
+          886.24
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 14,
+    "sha256": "7c865246af0a861e2b178e28f9d3a5544daedfc01410f6ebcbf56278052dc342",
+    "source": "run_v3/frames/frame_14.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -117.6525,
+        "y": 592.137,
+        "opaque_pixels": 47278,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.91979999999995,
+          1000
+        ],
+        "source_xy": [
+          368.0,
+          1216.0
+        ],
+        "exported_xy": [
+          272.84000000000003,
+          797.08
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 29.1375,
+        "y": 693.567,
+        "opaque_pixels": 49893,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.91979999999995,
+          1000
+        ],
+        "source_xy": [
+          601.0,
+          1377.0
+        ],
+        "exported_xy": [
+          419.63,
+          898.51
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 15,
+    "sha256": "5602a9732720da197a1ca4d1ddbffc436ebde0fce038c8760998d1ae6e57d000",
+    "source": "run_v3/frames/frame_15.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -87.69600000000003,
+        "y": 551.3256,
+        "opaque_pixels": 38818,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          342.62879999999996,
+          1000
+        ],
+        "source_xy": [
+          415.0,
+          1142.0
+        ],
+        "exported_xy": [
+          302.45,
+          755.46
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 35.153999999999975,
+        "y": 731.5056,
+        "opaque_pixels": 67118,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          342.62879999999996,
+          1000
+        ],
+        "source_xy": [
+          610.0,
+          1428.0
+        ],
+        "exported_xy": [
+          425.3,
+          935.64
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 16,
+    "sha256": "f0d3126ac4a11d5edd4761912871e1f98f756e681123c953c32644891fd5734e",
+    "source": "run_v3/frames/frame_16.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -83.85300000000001,
+        "y": 513.8027999999999,
+        "opaque_pixels": 32270,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          340.89000000000004,
+          1000
+        ],
+        "source_xy": [
+          423.0,
+          1083.0
+        ],
+        "exported_xy": [
+          306.49,
+          719.29
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 44.036999999999985,
+        "y": 725.4828,
+        "opaque_pixels": 64445,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          340.89000000000004,
+          1000
+        ],
+        "source_xy": [
+          626.0,
+          1419.0
+        ],
+        "exported_xy": [
+          434.38,
+          930.97
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 17,
+    "sha256": "7b414ec433ef495e58db645667b9af569c887943effc969d5a769e4f9668860c",
+    "source": "run_v3/frames/frame_17.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -82.49850000000004,
+        "y": 526.8186000000001,
+        "opaque_pixels": 36016,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          336.89580000000007,
+          1000
+        ],
+        "source_xy": [
+          427.5,
+          1103.0
+        ],
+        "exported_xy": [
+          309.325,
+          733.89
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 33.73649999999997,
+        "y": 720.8586,
+        "opaque_pixels": 60311,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          336.89580000000007,
+          1000
+        ],
+        "source_xy": [
+          612.0,
+          1411.0
+        ],
+        "exported_xy": [
+          425.56,
+          927.93
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 18,
+    "sha256": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
+    "source": "run_v2/frames/frame_18.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -68.57550000000002,
+        "y": 525.8358000000001,
+        "opaque_pixels": 29450,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          340.7514,
+          1000
+        ],
+        "source_xy": [
+          448.5,
+          1093.0
+        ],
+        "exported_xy": [
+          322.555,
+          731.59
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 30.649499999999986,
+        "y": 745.7058000000001,
+        "opaque_pixels": 51297,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          340.7514,
+          1000
+        ],
+        "source_xy": [
+          606.0,
+          1442.0
+        ],
+        "exported_xy": [
+          421.78000000000003,
+          951.46
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 19,
+    "sha256": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
+    "source": "run_v2/frames/frame_19.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -84.07350000000002,
+        "y": 524.2986,
+        "opaque_pixels": 30061,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.41580000000005,
+          1000
+        ],
+        "source_xy": [
+          428.0,
+          1092.0
+        ],
+        "exported_xy": [
+          306.64,
+          730.96
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 33.10649999999997,
+        "y": 739.1286,
+        "opaque_pixels": 55783,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.41580000000005,
+          1000
+        ],
+        "source_xy": [
+          614.0,
+          1433.0
+        ],
+        "exported_xy": [
+          423.82,
+          945.79
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 20,
+    "sha256": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
+    "source": "run_v2/frames/frame_20.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -78.97050000000002,
+        "y": 534.0258,
+        "opaque_pixels": 32687,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          337.80300000000005,
+          1000
+        ],
+        "source_xy": [
+          433.0,
+          1106.0
+        ],
+        "exported_xy": [
+          311.79,
+          741.78
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 28.759499999999985,
+        "y": 733.1058,
+        "opaque_pixels": 52754,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          337.80300000000005,
+          1000
+        ],
+        "source_xy": [
+          604.0,
+          1422.0
+        ],
+        "exported_xy": [
+          419.52,
+          940.86
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 21,
+    "sha256": "cff27ec48daf4afead95d91d43a2769d7537afa756d871425ba056aba7dce58f",
+    "source": "run_v2/frames/frame_21.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -81.01800000000001,
+        "y": 529.0488,
+        "opaque_pixels": 30353,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.9072,
+          1000
+        ],
+        "source_xy": [
+          434.0,
+          1093.0
+        ],
+        "exported_xy": [
+          309.42,
+          734.59
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 30.491999999999987,
+        "y": 730.6488,
+        "opaque_pixels": 47271,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.9072,
+          1000
+        ],
+        "source_xy": [
+          611.0,
+          1413.0
+        ],
+        "exported_xy": [
+          420.93,
+          936.19
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 22,
+    "sha256": "60934177bc14dddde96e25620cd27723d8a23ad25a4d14735679528044e324c0",
+    "source": "run_v2/frames/frame_22.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -79.19100000000003,
+        "y": 528.1415999999999,
+        "opaque_pixels": 29786,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.3528,
+          1000
+        ],
+        "source_xy": [
+          442.0,
+          1103.9999999999998
+        ],
+        "exported_xy": [
+          312.46,
+          736.5199999999999
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 26.01899999999997,
+        "y": 729.7416,
+        "opaque_pixels": 55184,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.3528,
+          1000
+        ],
+        "source_xy": [
+          609.0,
+          1424.0
+        ],
+        "exported_xy": [
+          417.67,
+          938.12
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 23,
+    "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+    "source": "run_v2/frames/frame_23.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -21.671999999999986,
+        "y": 511.3332,
+        "opaque_pixels": 27968,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          343.61159999999995,
+          1000
+        ],
+        "source_xy": [
+          537.0,
+          1071.0
+        ],
+        "exported_xy": [
+          372.31,
+          717.73
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 29.358000000000015,
+        "y": 739.3932,
+        "opaque_pixels": 50147,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          343.61159999999995,
+          1000
+        ],
+        "source_xy": [
+          618.0,
+          1433.0
+        ],
+        "exported_xy": [
+          423.34,
+          945.79
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 24,
+    "sha256": "2a1f0f2582efaa66c720796e8a491e86971dbf44a4aee23574495175a3f7f8ee",
+    "source": "run_v2/frames/frame_24.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -107.91899999999997,
+        "y": 504.05039999999997,
+        "opaque_pixels": 27495,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          342.55319999999995,
+          1000
+        ],
+        "source_xy": [
+          382.0,
+          1062.0
+        ],
+        "exported_xy": [
+          285.65999999999997,
+          712.0600000000001
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 32.886000000000024,
+        "y": 745.9703999999999,
+        "opaque_pixels": 52386,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          342.55319999999995,
+          1000
+        ],
+        "source_xy": [
+          605.5,
+          1446.0
+        ],
+        "exported_xy": [
+          426.465,
+          953.98
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 25,
+    "sha256": "50374185a6aa6e9ca545de88b1ead1da9e89ee4df2bd1f4e510e537ee467e446",
+    "source": "run_v2/frames/frame_25.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -73.61550000000001,
+        "y": 532.2618,
+        "opaque_pixels": 34106,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.8374,
+          1000
+        ],
+        "source_xy": [
+          447.0,
+          1101.0
+        ],
+        "exported_xy": [
+          317.61,
+          741.63
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 27.184499999999986,
+        "y": 732.6018000000001,
+        "opaque_pixels": 44114,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.8374,
+          1000
+        ],
+        "source_xy": [
+          607.0,
+          1419.0
+        ],
+        "exported_xy": [
+          418.41,
+          941.97
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 26,
+    "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+    "source": "run_v2/frames/frame_26.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -21.325500000000016,
+        "y": 560.9898000000001,
+        "opaque_pixels": 37401,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          340.6758,
+          1000
+        ],
+        "source_xy": [
+          524.0,
+          1165.0
+        ],
+        "exported_xy": [
+          373.12,
+          771.95
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 29.074499999999986,
+        "y": 753.7698,
+        "opaque_pixels": 46386,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          340.6758,
+          1000
+        ],
+        "source_xy": [
+          604.0,
+          1471.0
+        ],
+        "exported_xy": [
+          423.52,
+          964.73
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 27,
+    "sha256": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+    "source": "run_v2/frames/frame_27.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -76.04100000000003,
+        "y": 577.9115999999999,
+        "opaque_pixels": 40192,
+        "window_x": [
+          -140,
+          -40
+        ],
+        "window_y": [
+          338.6472,
+          1000
+        ],
+        "observed_y_error": 0.6199999999998909,
+        "observed_y_tolerance": 4,
+        "source_xy": [
+          448.0,
+          1173.9999999999998
+        ],
+        "exported_xy": [
+          315.24,
+          787.6199999999999
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 21.60899999999997,
+        "y": 734.7028499999999,
+        "opaque_pixels": 42426,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.6472,
+          1000
+        ],
+        "source_xy": [
+          603.0,
+          1422.875
+        ],
+        "exported_xy": [
+          412.89,
+          944.41125
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 28,
+    "sha256": "16d7e31967e1a239e77c03d7ce5fe82c00fd9497b2e2e9caf10a648bd27a91c8",
+    "source": "run_v2/frames/frame_28.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -87.53850000000003,
+        "y": 515.6046,
+        "opaque_pixels": 28858,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.7102,
+          1000
+        ],
+        "source_xy": [
+          431.0,
+          1076.0
+        ],
+        "exported_xy": [
+          304.53000000000003,
+          726.88
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 21.45149999999997,
+        "y": 732.3246,
+        "opaque_pixels": 47113,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.7102,
+          1000
+        ],
+        "source_xy": [
+          604.0,
+          1420.0
+        ],
+        "exported_xy": [
+          413.52,
+          943.6
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 29,
+    "sha256": "a83e47d4d7b1a22355425aa2d271a8aa0e4f3a22b58fba09d7606031296a522e",
+    "source": "run_v2/frames/frame_29.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -77.74199999999999,
+        "y": 541.5732,
+        "opaque_pixels": 35491,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          336.8832,
+          1000
+        ],
+        "source_xy": [
+          442.0,
+          1117.0
+        ],
+        "exported_xy": [
+          312.46,
+          752.71
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 23.37300000000001,
+        "y": 733.0931999999999,
+        "opaque_pixels": 47390,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          336.8832,
+          1000
+        ],
+        "source_xy": [
+          602.5,
+          1421.0
+        ],
+        "exported_xy": [
+          413.575,
+          944.23
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 30,
+    "sha256": "8d13751c39727c72f02dd4c8919910f7dde1631fd00af27fc160219eb12e323a",
+    "source": "run_v2/frames/frame_30.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -67.85100000000003,
+        "y": 550.1916,
+        "opaque_pixels": 36581,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          341.64599999999996,
+          1000
+        ],
+        "source_xy": [
+          450.0,
+          1131.0
+        ],
+        "exported_xy": [
+          322.5,
+          759.53
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 22.238999999999972,
+        "y": 741.0816,
+        "opaque_pixels": 43909,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          341.64599999999996,
+          1000
+        ],
+        "source_xy": [
+          593.0,
+          1434.0
+        ],
+        "exported_xy": [
+          412.59,
+          950.42
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 31,
+    "sha256": "faa02b4a2865e2ea5501ce97cb91279b05ff90a1aedc86498d1bdb1c50c8fff9",
+    "source": "run_v2/frames/frame_31.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -89.68050000000001,
+        "y": 532.1358,
+        "opaque_pixels": 32928,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          332.13300000000004,
+          1000
+        ],
+        "source_xy": [
+          426.0,
+          1112.0
+        ],
+        "exported_xy": [
+          301.38,
+          743.5600000000001
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 25.609499999999986,
+        "y": 733.1058,
+        "opaque_pixels": 53238,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          332.13300000000004,
+          1000
+        ],
+        "source_xy": [
+          609.0,
+          1431.0
+        ],
+        "exported_xy": [
+          416.67,
+          944.53
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 32,
+    "sha256": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
+    "source": "run_v2/frames/frame_32.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -91.53899999999997,
+        "y": 517.0284,
+        "opaque_pixels": 30802,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.22,
+          1000
+        ],
+        "source_xy": [
+          415.0,
+          1082.0
+        ],
+        "exported_xy": [
+          296.45,
+          726.66
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 38.87100000000003,
+        "y": 725.5584,
+        "opaque_pixels": 64720,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.22,
+          1000
+        ],
+        "source_xy": [
+          622.0,
+          1413.0
+        ],
+        "exported_xy": [
+          426.86,
+          935.19
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 33,
+    "sha256": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
+    "source": "run_v2/frames/frame_33.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -91.16100000000003,
+        "y": 545.7815999999999,
+        "opaque_pixels": 34905,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.126,
+          1000
+        ],
+        "source_xy": [
+          416.0,
+          1130.9999999999998
+        ],
+        "exported_xy": [
+          300.08,
+          754.5299999999999
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 30.74399999999997,
+        "y": 728.4816,
+        "opaque_pixels": 53072,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.126,
+          1000
+        ],
+        "source_xy": [
+          609.5,
+          1421.0
+        ],
+        "exported_xy": [
+          421.985,
+          937.23
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 34,
+    "sha256": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
+    "source": "run_v2/frames/frame_34.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -78.18300000000002,
+        "y": 527.6628,
+        "opaque_pixels": 30400,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          340.5372,
+          1000
+        ],
+        "source_xy": [
+          437.0,
+          1101.0
+        ],
+        "exported_xy": [
+          313.31,
+          732.63
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 29.861999999999988,
+        "y": 724.8528,
+        "opaque_pixels": 59208,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          340.5372,
+          1000
+        ],
+        "source_xy": [
+          608.5,
+          1414.0
+        ],
+        "exported_xy": [
+          421.355,
+          929.82
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 35,
+    "sha256": "7bf1a2947064cf2175eb7fa65710df06c28931236bc952c505f7be904758231b",
+    "source": "run_v3/frames/frame_35.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -109.43100000000003,
+        "y": 526.2515999999999,
+        "opaque_pixels": 32493,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.47880000000004,
+          1000
+        ],
+        "source_xy": [
+          390.0,
+          1094.0
+        ],
+        "exported_xy": [
+          280.7,
+          731.22
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 26.648999999999972,
+        "y": 739.1916,
+        "opaque_pixels": 61614,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.47880000000004,
+          1000
+        ],
+        "source_xy": [
+          606.0,
+          1432.0
+        ],
+        "exported_xy": [
+          416.78000000000003,
+          944.16
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 36,
+    "sha256": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+    "source": "run_v2/frames/frame_36.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -73.83600000000003,
+        "y": 531.1656,
+        "opaque_pixels": 32265,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.4972,
+          1000
+        ],
+        "source_xy": [
+          423.0,
+          1112.0
+        ],
+        "exported_xy": [
+          314.49,
+          737.5600000000001
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 35.46899999999997,
+        "y": 727.7256,
+        "opaque_pixels": 64754,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.4972,
+          1000
+        ],
+        "source_xy": [
+          596.5,
+          1424.0
+        ],
+        "exported_xy": [
+          423.795,
+          934.12
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 37,
+    "sha256": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
+    "source": "run_v2/frames/frame_37.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -92.95649999999998,
+        "y": 530.9514,
+        "opaque_pixels": 34092,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          330.94860000000006,
+          1000
+        ],
+        "source_xy": [
+          415.0,
+          1112.0
+        ],
+        "exported_xy": [
+          299.45,
+          738.5600000000001
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 23.593500000000027,
+        "y": 723.7314,
+        "opaque_pixels": 55825,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          330.94860000000006,
+          1000
+        ],
+        "source_xy": [
+          600.0,
+          1418.0
+        ],
+        "exported_xy": [
+          416.0,
+          931.34
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 38,
+    "sha256": "1baed51ec7c4e65e6908730c9f6356da6af826b26bebc68a7c0253fade745790",
+    "source": "run_v3/frames/frame_38.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -88.76699999999998,
+        "y": 557.8272000000001,
+        "opaque_pixels": 40442,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          328.84440000000006,
+          1000
+        ],
+        "source_xy": [
+          419.0,
+          1153.0
+        ],
+        "exported_xy": [
+          303.97,
+          765.39
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 32.19300000000001,
+        "y": 674.3772,
+        "opaque_pixels": 57219,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          328.84440000000006,
+          1000
+        ],
+        "source_xy": [
+          611.0,
+          1338.0
+        ],
+        "exported_xy": [
+          424.93,
+          881.94
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 39,
+    "sha256": "c1b11fc5a642d91ecbc3869eea317b378b97b40a429a0e49f050a8d3a144e46b",
+    "source": "run_v3/frames/frame_39.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -95.13,
+        "y": 611.73,
+        "opaque_pixels": 47105,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          332.34720000000004,
+          1000
+        ],
+        "source_xy": [
+          416.0,
+          1239.0
+        ],
+        "exported_xy": [
+          298.08,
+          819.57
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 26.46,
+        "y": 616.14,
+        "opaque_pixels": 46517,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          332.34720000000004,
+          1000
+        ],
+        "source_xy": [
+          609.0,
+          1246.0
+        ],
+        "exported_xy": [
+          419.67,
+          823.98
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 40,
+    "sha256": "88edf8cc6a0f730a497fbe6491ac1b465ea75e7075bab662b7b00a986465061c",
+    "source": "run_v3/frames/frame_40.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -92.67300000000002,
+        "y": 670.6727999999999,
+        "opaque_pixels": 63344,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          332.90160000000003,
+          1000
+        ],
+        "source_xy": [
+          422.0,
+          1333.0
+        ],
+        "exported_xy": [
+          300.86,
+          878.79
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 13.166999999999986,
+        "y": 572.3928,
+        "opaque_pixels": 37533,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          332.90160000000003,
+          1000
+        ],
+        "source_xy": [
+          590.0,
+          1177.0
+        ],
+        "exported_xy": [
+          406.7,
+          780.51
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 41,
+    "sha256": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+    "source": "run_v3/frames/frame_41.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -89.52300000000001,
+        "y": 705.3227999999999,
+        "opaque_pixels": 67991,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          333.1788,
+          1000
+        ],
+        "source_xy": [
+          433.0,
+          1386.0
+        ],
+        "exported_xy": [
+          303.79,
+          914.18
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 12.536999999999987,
+        "y": 553.4928,
+        "opaque_pixels": 30652,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          333.1788,
+          1000
+        ],
+        "source_xy": [
+          595.0,
+          1145.0
+        ],
+        "exported_xy": [
+          405.85,
+          762.35
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 42,
+    "sha256": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
+    "source": "run_v2/frames/frame_42.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -55.2825,
+        "y": 754.047,
+        "opaque_pixels": 76640,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.7102,
+          1000
+        ],
+        "source_xy": [
+          486.0,
+          1457.0
+        ],
+        "exported_xy": [
+          338.18,
+          960.91
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 15.9075,
+        "y": 558.747,
+        "opaque_pixels": 26914,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.7102,
+          1000
+        ],
+        "source_xy": [
+          599.0,
+          1147.0
+        ],
+        "exported_xy": [
+          409.37,
+          765.61
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 43,
+    "sha256": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
+    "source": "run_v2/frames/frame_43.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -55.56600000000003,
+        "y": 737.8055999999999,
+        "opaque_pixels": 75375,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          339.2772,
+          1000
+        ],
+        "source_xy": [
+          483.0,
+          1426.0
+        ],
+        "exported_xy": [
+          334.29,
+          943.38
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 24.44399999999997,
+        "y": 541.2456,
+        "opaque_pixels": 25262,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          339.2772,
+          1000
+        ],
+        "source_xy": [
+          610.0,
+          1114.0
+        ],
+        "exported_xy": [
+          414.3,
+          746.82
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 44,
+    "sha256": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
+    "source": "run_v2/frames/frame_44.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -52.38449999999999,
+        "y": 727.8642,
+        "opaque_pixels": 74433,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          335.9886,
+          1000
+        ],
+        "source_xy": [
+          488.5,
+          1420.0
+        ],
+        "exported_xy": [
+          340.755,
+          936.6
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 16.600500000000014,
+        "y": 542.0142,
+        "opaque_pixels": 25988,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          335.9886,
+          1000
+        ],
+        "source_xy": [
+          598.0,
+          1125.0
+        ],
+        "exported_xy": [
+          409.74,
+          750.75
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 45,
+    "sha256": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
+    "source": "run_v2/frames/frame_45.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -55.09350000000003,
+        "y": 731.5686000000001,
+        "opaque_pixels": 73375,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.15580000000006,
+          1000
+        ],
+        "source_xy": [
+          479.0,
+          1418.0
+        ],
+        "exported_xy": [
+          335.77,
+          938.34
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 15.466499999999971,
+        "y": 526.1886000000001,
+        "opaque_pixels": 23203,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.15580000000006,
+          1000
+        ],
+        "source_xy": [
+          591.0,
+          1092.0
+        ],
+        "exported_xy": [
+          406.33,
+          732.96
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 46,
+    "sha256": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
+    "source": "run_v2/frames/frame_46.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -50.52600000000003,
+        "y": 737.8055999999999,
+        "opaque_pixels": 76836,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          338.7228,
+          1000
+        ],
+        "source_xy": [
+          485.0,
+          1426.0
+        ],
+        "exported_xy": [
+          339.55,
+          944.38
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 15.623999999999972,
+        "y": 533.6856,
+        "opaque_pixels": 22929,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          338.7228,
+          1000
+        ],
+        "source_xy": [
+          590.0,
+          1102.0
+        ],
+        "exported_xy": [
+          405.7,
+          740.26
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  },
+  {
+    "frame": 47,
+    "sha256": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
+    "source": "run_v2/frames/frame_47.png",
+    "points": {
+      "viewer_left_boot": {
+        "x": -55.849499999999985,
+        "y": 730.3842,
+        "opaque_pixels": 73353,
+        "window_x": [
+          -140,
+          -20
+        ],
+        "window_y": [
+          341.5326,
+          1000
+        ],
+        "source_xy": [
+          481.0,
+          1413.0
+        ],
+        "exported_xy": [
+          336.03000000000003,
+          936.19
+        ],
+        "anatomical_identity": "right"
+      },
+      "viewer_right_boot": {
+        "x": 19.120500000000014,
+        "y": 531.9342,
+        "opaque_pixels": 22356,
+        "window_x": [
+          8,
+          140
+        ],
+        "window_y": [
+          341.5326,
+          1000
+        ],
+        "source_xy": [
+          600.0,
+          1098.0
+        ],
+        "exported_xy": [
+          411.0,
+          737.74
+        ],
+        "anatomical_identity": "left"
+      }
+    }
+  }
+]

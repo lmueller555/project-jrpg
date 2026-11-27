@@ -28,77 +28,77 @@
       "file": "frame_00.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          512.6002,
+          139.5225
+        ],
         "neck": [
-          511.5633,
-          200.0647
+          511.7564,
+          200.3727
         ],
         "belt": [
-          510.8568,
-          383.2358
-        ],
-        "face": [
-          514.5841,
-          140.2125
+          504.9731,
+          375.1793
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_01.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          513.5314,
+          140.7633
+        ],
         "neck": [
-          512.2161,
-          200.567
+          511.9532,
+          201.1925
         ],
         "belt": [
-          511.1832,
-          386.1655
-        ],
-        "face": [
-          515.5922,
-          139.0058
+          506.1892,
+          374.4774
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_02.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          513.3547,
+          140.4921
+        ],
         "neck": [
-          512.0185,
-          202.2011
+          511.9483,
+          201.9937
         ],
         "belt": [
-          510.7986,
-          387.2625
-        ],
-        "face": [
-          514.5922,
-          141.0058
+          508.2007,
+          381.9871
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_03.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          514.2037,
+          140.74
+        ],
         "neck": [
-          512.2161,
-          202.567
+          511.8589,
+          202.7054
         ],
         "belt": [
-          508.4633,
-          388.1655
-        ],
-        "face": [
-          514.2323,
-          141.0058
+          507.4829,
+          384.6684
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_04.png",
@@ -199,58 +199,58 @@
       "file": "frame_09.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          513.6002,
+          142.3483
+        ],
         "neck": [
-          511.8976,
-          202.7426
+          512.2896,
+          202.3323
         ],
         "belt": [
-          506.4576,
-          386.3654
-        ],
-        "face": [
-          513.5841,
-          141.5521
+          505.9026,
+          381.9368
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_10.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          514.5271,
+          141.2752
+        ],
         "neck": [
-          511.8976,
-          201.7426
+          512.3345,
+          201.6789
         ],
         "belt": [
-          507.6652,
-          384.9324
-        ],
-        "face": [
-          513.5841,
-          140.5521
+          506.8152,
+          386.0347
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_11.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          511.8915,
+          141.2752
+        ],
         "neck": [
-          512.2703,
-          201.3761
+          511.8106,
+          200.9195
         ],
         "belt": [
-          507.3436,
-          380.2117
-        ],
-        "face": [
-          512.5656,
-          141.1531
+          505.8152,
+          381.1352
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_12.png",
@@ -275,96 +275,96 @@
       "file": "frame_13.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          506.0313,
+          137.9777
+        ],
         "neck": [
-          512.2703,
-          199.3761
+          511.5751,
+          198.6569
         ],
         "belt": [
-          506.034,
-          380.8394
-        ],
-        "face": [
-          509.9464,
-          140.4679
+          504.5451,
+          384.1597
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_14.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          506.5541,
+          138.2807
+        ],
         "neck": [
-          512.2703,
-          198.3761
+          511.6836,
+          197.958
         ],
         "belt": [
-          504.8488,
-          378.9502
-        ],
-        "face": [
-          509.9464,
-          139.4679
+          506.1575,
+          378.9133
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_15.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          508.3931,
+          138.1316
+        ],
         "neck": [
-          511.9202,
-          196.9671
+          511.6891,
+          197.4896
         ],
         "belt": [
-          507.733,
-          377.1815
-        ],
-        "face": [
-          509.5897,
-          137.6777
+          504.8786,
+          380.4661
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_16.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          510.9481,
+          139.1851
+        ],
         "neck": [
-          511.6725,
-          196.2431
+          512.4156,
+          196.9431
         ],
         "belt": [
-          506.6351,
-          378.8327
-        ],
-        "face": [
-          509.1136,
-          136.7272
+          507.436,
+          372.6315
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_17.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          509.9966,
+          136.5225
+        ],
         "neck": [
-          512.3629,
-          196.2431
+          512.2583,
+          196.2551
         ],
         "belt": [
-          506.016,
-          377.5191
-        ],
-        "face": [
-          509.804,
-          136.7272
+          506.2043,
+          372.6493
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_18.png",
@@ -465,20 +465,20 @@
       "file": "frame_23.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          510.9966,
+          140.1316
+        ],
         "neck": [
-          512.2745,
-          199.0198
+          512.1206,
+          199.1173
         ],
         "belt": [
-          507.5432,
-          375.2584
-        ],
-        "face": [
-          510.5922,
-          139.0247
+          505.6,
+          371.447
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_24.png",
@@ -503,20 +503,20 @@
       "file": "frame_25.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          509.9966,
+          140.1316
+        ],
         "neck": [
-          512.2807,
-          201.4798
+          511.6891,
+          201.0971
         ],
         "belt": [
-          506.8308,
-          380.1989
-        ],
-        "face": [
-          513.1136,
-          141.6156
+          504.6,
+          382.655
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_26.png",
@@ -617,58 +617,58 @@
       "file": "frame_31.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          508.7887,
+          146.565
+        ],
         "neck": [
-          511.6097,
-          204.1301
+          512.0855,
+          204.3122
         ],
         "belt": [
-          501.884,
-          387.3096
-        ],
-        "face": [
-          509.3519,
-          145.6717
+          501.5107,
+          384.4459
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_32.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          508.6194,
+          144.5562
+        ],
         "neck": [
-          512.1466,
-          203.4817
+          511.6024,
+          203.5587
         ],
         "belt": [
-          516.188,
-          385.6509
-        ],
-        "face": [
-          509.3519,
-          144.6717
+          515.8993,
+          387.8786
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_33.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          509.6194,
+          144.5562
+        ],
         "neck": [
-          512.1716,
-          203.0717
+          512.1263,
+          202.6784
         ],
         "belt": [
-          504.8359,
-          384.8
-        ],
-        "face": [
-          509.2256,
-          144.5567
+          504.3271,
+          384.9813
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_34.png",
@@ -750,58 +750,58 @@
       "file": "frame_38.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          508.9838,
+          137.9933
+        ],
         "neck": [
-          512.3505,
-          198.0616
+          512.175,
+          197.6401
         ],
         "belt": [
-          504.6623,
-          380.2714
-        ],
-        "face": [
-          510.5812,
-          137.2314
+          504.544,
+          376.2357
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_39.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          510.3831,
+          135.5689
+        ],
         "neck": [
-          511.7327,
-          197.3386
+          511.8838,
+          196.9186
         ],
         "belt": [
-          503.4148,
-          376.5259
-        ],
-        "face": [
-          509.9464,
-          137.4679
+          505.3029,
+          378.6636
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_40.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          510.9966,
+          135.3057
+        ],
         "neck": [
-          512.0372,
-          196.04
+          511.7564,
+          196.1576
         ],
         "belt": [
-          506.2724,
-          381.3489
-        ],
-        "face": [
-          510.1848,
-          134.4124
+          505.6,
+          377.8516
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_41.png",
@@ -826,39 +826,39 @@
       "file": "frame_42.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          509.3931,
+          135.3057
+        ],
         "neck": [
-          512.1277,
-          195.6939
+          511.7564,
+          196.1576
         ],
         "belt": [
-          505.3041,
-          378.051
-        ],
-        "face": [
-          511.0181,
-          134.6777
+          504.275,
+          379.2638
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint. This complete unique drawing is selected at effective phase42 after visible right-knee/left-release path review; source filename is authoring history, not timeline order."
     },
     {
       "file": "frame_43.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
+        "face": [
+          510.3931,
+          134.3057
+        ],
         "neck": [
-          512.0456,
-          196.2986
+          512.2896,
+          195.9021
         ],
         "belt": [
-          504.0872,
-          381.7739
-        ],
-        "face": [
-          510.4944,
-          134.4124
+          505.275,
+          378.2638
         ]
       },
-      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
     },
     {
       "file": "frame_44.png",

@@ -1,0 +1,176 @@
+[
+  {
+    "frame": 6,
+    "source_bounds": [
+      3,
+      9
+    ],
+    "guide_only": true,
+    "planned_joint_coordinates": {
+      "right_knee": [
+        328.59999999999997,
+        683
+      ],
+      "right_toe": [
+        318.59999999999997,
+        923
+      ],
+      "left_knee": [
+        429.59999999999997,
+        609
+      ],
+      "left_toe": [
+        401.59999999999997,
+        724
+      ],
+      "right_hip": [
+        332.59999999999997,
+        486.59999999999997
+      ],
+      "left_hip": [
+        432.59999999999997,
+        486.59999999999997
+      ],
+      "right_ankle": [
+        318.59999999999997,
+        868
+      ],
+      "left_ankle": [
+        401.59999999999997,
+        669
+      ]
+    },
+    "approved_upper_sha256": "ac79cf012638e0eb7d531ac4b0d0d906ec75057f5b59bd1068f79c3defe947e2"
+  },
+  {
+    "frame": 18,
+    "source_bounds": [
+      15,
+      21
+    ],
+    "guide_only": true,
+    "planned_joint_coordinates": {
+      "right_knee": [
+        334.0,
+        638
+      ],
+      "right_toe": [
+        322.0,
+        777
+      ],
+      "left_knee": [
+        446.0,
+        586
+      ],
+      "left_toe": [
+        406.0,
+        805
+      ],
+      "right_hip": [
+        334.0,
+        487.59999999999997
+      ],
+      "left_hip": [
+        434.0,
+        487.59999999999997
+      ],
+      "right_ankle": [
+        322.0,
+        722
+      ],
+      "left_ankle": [
+        406.0,
+        750
+      ]
+    },
+    "approved_upper_sha256": "2e98c11c4f281fb66abdec98e3440ffae1568c63b6cd0ad15afc46646ae015c9"
+  },
+  {
+    "frame": 30,
+    "source_bounds": [
+      27,
+      33
+    ],
+    "guide_only": true,
+    "planned_joint_coordinates": {
+      "right_knee": [
+        328,
+        600
+      ],
+      "right_toe": [
+        335,
+        749
+      ],
+      "left_knee": [
+        435,
+        666
+      ],
+      "left_toe": [
+        412,
+        895
+      ],
+      "right_hip": [
+        339.2,
+        488.2
+      ],
+      "left_hip": [
+        439.2,
+        488.2
+      ],
+      "right_ankle": [
+        335,
+        694
+      ],
+      "left_ankle": [
+        412,
+        840
+      ]
+    },
+    "approved_upper_sha256": "2cc98569bda872eedce26dea5a0edf8c1e0d4f8a739d5cbb64e877d40d167c77",
+    "basis": "Midpoint of independently viewed painted rough-key joint and toe observations; planning data only."
+  },
+  {
+    "frame": 42,
+    "source_bounds": [
+      39,
+      45
+    ],
+    "guide_only": true,
+    "planned_joint_coordinates": {
+      "right_knee": [
+        334,
+        591
+      ],
+      "right_toe": [
+        317,
+        815
+      ],
+      "left_knee": [
+        436,
+        660
+      ],
+      "left_toe": [
+        394,
+        783
+      ],
+      "right_hip": [
+        340.8,
+        482.2
+      ],
+      "left_hip": [
+        440.8,
+        482.2
+      ],
+      "right_ankle": [
+        317,
+        760
+      ],
+      "left_ankle": [
+        394,
+        728
+      ]
+    },
+    "approved_upper_sha256": "55ebba8994cb6488925b030175e91a28f0a6e8fb31ea64fb3f221613e94b8437",
+    "basis": "Midpoint of independently viewed painted rough-key joint and toe observations; planning data only."
+  }
+]

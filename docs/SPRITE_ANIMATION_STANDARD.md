@@ -495,6 +495,54 @@ unrelated visible component. Do not add anatomy-distorting tests to satisfy
 arbitrary joint angles or exact hand positions. Count/uniqueness checks alone
 cannot certify a gait, and passing tests never replaces viewing the frames.
 
+### Bind motion evidence to the painted frames
+
+Measure the actual drawings, using reviewed anatomical landmarks or image-based
+extraction whose matches were visually checked. Planned guides, phase labels
+and copied target coordinates are not measurements of the finished pixels.
+Bind retained measurements to the exact PNG hashes and record their crop,
+registration, density and coordinate space. Changed pixels invalidate that
+evidence until it is measured again. Account for occlusion and camera perspective;
+do not substitute a coat edge or another limb when the intended point is hidden.
+An alpha contour cannot detect internal movement over opaque clothing, such as
+a braid crossing a coat. Inspect the actual RGB material in a region whose
+identity was visually reviewed. Bind that region to the cropped or exported
+pixel view and its crop, scale, origin and registration; an unchanged source
+file can still produce a different view after an export-geometry change.
+Record ambiguous or hidden material and centroid uncertainty rather than
+presenting an estimated region center as an exact anatomical tip or joint.
+
+If a statistic flags visually coherent movement, inspect its extraction and
+sampling before changing anatomy. A reviewed statistical artifact may remain a
+visible diagnostic only with an explicit reason and a tightly bounded case tied
+to the source hashes, rendered RGBA view, export geometry, registration, metric
+configuration and observed-value band. Changed inputs invalidate that case.
+Retain the default bounds and real rejected-art controls; a blanket exemption
+is not evidence that the movement was repaired.
+
+For a regression check intended to catch a visible defect, retain a small,
+hash-bound rejected-art fixture and demonstrate that the check rejects that
+specific defect before applying it to the corrected drawings. An invented
+coordinate jump alone does not prove that extraction detects the original art
+failure. Completion, frame-count and export checks remain separate evidence.
+
+If a regional statistic flags a visually continuous bend or a change in which
+pixels contribute, retain the measured excess and the review explanation.
+Use a diagnostic or an explicitly reviewed, image-bound case rather than
+distorting coherent anatomy, moving the measurement window to hide the result,
+or silently relaxing a general threshold. Changed artwork needs fresh review.
+
+Inspect a loop as a periodic motion path: compare position **and velocity**
+through the final two and first two poses, allowing authored acceleration and
+projection. Similar endpoints can still hide an abrupt reversal or a held pose
+followed by a reset. A passing metric supports review; it cannot certify anatomy,
+weight, cloth continuity or the complete performance by itself.
+
+When a viewing tool supports it, inspect actual normal-speed playback as well
+as consecutive frames. If that capability is unavailable, state that limitation
+and identify the frame sequences, stills and measurements actually inspected.
+Generating a movie or running a paced capture is not evidence that it was watched.
+
 ### Completion checklist
 
 - [ ] Approved design and direction references; explicit anatomical sides.

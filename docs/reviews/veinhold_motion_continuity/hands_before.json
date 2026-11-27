@@ -1,0 +1,4599 @@
+[
+  {
+    "actor": "lucan",
+    "measurements": [
+      {
+        "frame": 0,
+        "source": "run_v2/frames/frame_00.png",
+        "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              333.8124501197127,
+              653.4090183559457
+            ],
+            "point_neck_relative": [
+              -135.69415642458102,
+              252.3332815642458
+            ],
+            "bounds_source": [
+              301,
+              609,
+              365,
+              702
+            ],
+            "area": 2506,
+            "candidate_count": 41
+          }
+        }
+      },
+      {
+        "frame": 1,
+        "source": "run_v2/frames/frame_01.png",
+        "sha256": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              334.61762471511776,
+              587.4899974677134
+            ],
+            "point_neck_relative": [
+              -144.66839642947582,
+              213.31169840465944
+            ],
+            "bounds_source": [
+              295,
+              544,
+              378,
+              642
+            ],
+            "area": 3949,
+            "candidate_count": 38
+          }
+        }
+      },
+      {
+        "frame": 2,
+        "source": "run_v2/frames/frame_02.png",
+        "sha256": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              329.05119696610575,
+              604.6366437544442
+            ],
+            "point_neck_relative": [
+              -148.20674591135335,
+              219.43948556529986
+            ],
+            "bounds_source": [
+              291,
+              556,
+              372,
+              661
+            ],
+            "area": 4219,
+            "candidate_count": 30
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "source": "run_v2/frames/frame_03.png",
+        "sha256": "1a7a4d5a9121eae60a9c1feeea1cf1a4c048fbee3f8005b7f3c969e37e3a1bec",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              331.0934409161895,
+              598.9372722540344
+            ],
+            "point_neck_relative": [
+              -146.38463222280066,
+              208.62908152004167
+            ],
+            "bounds_source": [
+              297,
+              551,
+              368,
+              653
+            ],
+            "area": 3842,
+            "candidate_count": 32
+          }
+        }
+      },
+      {
+        "frame": 4,
+        "source": "run_v2/frames/frame_04.png",
+        "sha256": "d24cdf0bc1e846e576aa4388e03010b4853b02a848a18194bebe1aa81c6e9722",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              339.6997985224983,
+              606.5263040071636
+            ],
+            "point_neck_relative": [
+              -140.61612693082603,
+              212.9187715245131
+            ],
+            "bounds_source": [
+              296,
+              561,
+              389,
+              661
+            ],
+            "area": 4467,
+            "candidate_count": 36
+          }
+        }
+      },
+      {
+        "frame": 5,
+        "source": "run_v2/frames/frame_05.png",
+        "sha256": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              340.0036588798199,
+              597.9102167182663
+            ],
+            "point_neck_relative": [
+              -138.7236949057135,
+              211.06903653250777
+            ],
+            "bounds_source": [
+              302,
+              557,
+              378,
+              645
+            ],
+            "area": 3553,
+            "candidate_count": 30
+          }
+        }
+      },
+      {
+        "frame": 6,
+        "source": "run_v2/frames/frame_06.png",
+        "sha256": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              310.0689875439157,
+              619.1922708399873
+            ],
+            "point_neck_relative": [
+              -161.99253784733315,
+              225.106730629192
+            ],
+            "bounds_source": [
+              275,
+              577,
+              344,
+              662
+            ],
+            "area": 3131,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "source": "run_v2/frames/frame_07.png",
+        "sha256": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              395.17064846416383,
+              584.4829351535836
+            ],
+            "point_neck_relative": [
+              -111.87499146757679,
+              204.36124914675767
+            ],
+            "bounds_source": [
+              343,
+              545,
+              444,
+              635
+            ],
+            "area": 3516,
+            "candidate_count": 37
+          }
+        }
+      },
+      {
+        "frame": 8,
+        "source": "run_v2/frames/frame_08.png",
+        "sha256": "c9526df52c6289b16d999fa96c88cbbe4375be1219b07e52cfc5207db27e8287",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              390.946505608283,
+              609.2679033649698
+            ],
+            "point_neck_relative": [
+              -115.44970146678173,
+              220.74437911993098
+            ],
+            "bounds_source": [
+              354,
+              570,
+              429,
+              652
+            ],
+            "area": 2318,
+            "candidate_count": 39
+          }
+        }
+      },
+      {
+        "frame": 9,
+        "source": "run_v2/frames/frame_09.png",
+        "sha256": "e9af2e8c36fd1b1b87a1c10c320d03b505bde99eb587a68172db7078df0bae83",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              401.927417519909,
+              584.6536973833902
+            ],
+            "point_neck_relative": [
+              -100.27872696245734,
+              199.84462935153581
+            ],
+            "bounds_source": [
+              346,
+              541,
+              462,
+              635
+            ],
+            "area": 4395,
+            "candidate_count": 35
+          }
+        }
+      },
+      {
+        "frame": 10,
+        "source": "run_v2/frames/frame_10.png",
+        "sha256": "99739333014db6936e333fff112c81b449611397a8f5b4d79b0ed9299bc70872",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              345.7729699353751,
+              589.2292778870469
+            ],
+            "point_neck_relative": [
+              -135.1835289407137,
+              209.72024506883957
+            ],
+            "bounds_source": [
+              304,
+              553,
+              393,
+              639
+            ],
+            "area": 3559,
+            "candidate_count": 37
+          }
+        }
+      },
+      {
+        "frame": 11,
+        "source": "run_v2/frames/frame_11.png",
+        "sha256": "0e3a8f5b9ace16fb3a7f602692d5944650d7894578c7c1b7a4dc28efdc3aed5b",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              359.75204425204424,
+              580.7943722943724
+            ],
+            "point_neck_relative": [
+              -126.84921212121215,
+              201.19325454545458
+            ],
+            "bounds_source": [
+              315,
+              542,
+              411,
+              635
+            ],
+            "area": 4158,
+            "candidate_count": 30
+          }
+        }
+      },
+      {
+        "frame": 12,
+        "source": "run_v2/frames/frame_12.png",
+        "sha256": "8d0255e92011898bbf816eb4bd30f5d358b87ede148df5efa5b597403f3c39c3",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              360.67127539503383,
+              591.6526523702032
+            ],
+            "point_neck_relative": [
+              -113.0400965011287,
+              209.29397099322802
+            ],
+            "bounds_source": [
+              315,
+              560,
+              412,
+              642
+            ],
+            "area": 3544,
+            "candidate_count": 28
+          }
+        }
+      },
+      {
+        "frame": 13,
+        "source": "run_v2/frames/frame_13.png",
+        "sha256": "fdff66b940e5ee304b3683f5e995a572f043d9e5be0e019bffd133b09851d861",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              364.5356738391846,
+              566.6851642129105
+            ],
+            "point_neck_relative": [
+              -112.49552548131372,
+              189.78445345413365
+            ],
+            "bounds_source": [
+              318,
+              529,
+              416,
+              619
+            ],
+            "area": 4415,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 14,
+        "source": "run_v2/frames/frame_14.png",
+        "sha256": "aede861d64fd5a569b63623e110e26ce521cc93c2a3e65752b32fda5ab10bd41",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              388.6519158121964,
+              599.32559812916
+            ],
+            "point_neck_relative": [
+              -106.90979303831627,
+              216.0809268213708
+            ],
+            "bounds_source": [
+              335,
+              557,
+              445,
+              652
+            ],
+            "area": 5559,
+            "candidate_count": 34
+          }
+        }
+      },
+      {
+        "frame": 15,
+        "source": "run_v2/frames/frame_15.png",
+        "sha256": "a1eee9c8fdcc0af1a8b3d061a098988cd50a5c89a7d1bf2f74e7c4bac3a5c68f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              421.31763766959295,
+              546.5424980047885
+            ],
+            "point_neck_relative": [
+              -89.70088826815646,
+              181.98337374301676
+            ],
+            "bounds_source": [
+              353,
+              502,
+              482,
+              591
+            ],
+            "area": 5012,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 16,
+        "source": "run_v2/frames/frame_16.png",
+        "sha256": "a3f2b47f63b85a627865aeda96bca4f59ae925b8971e0a11756986de7c88bd7a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              428.19511638521226,
+              516.3612505705157
+            ],
+            "point_neck_relative": [
+              -86.6280766773163,
+              162.3391878594249
+            ],
+            "bounds_source": [
+              361,
+              472,
+              489,
+              561
+            ],
+            "area": 4382,
+            "candidate_count": 25
+          }
+        }
+      },
+      {
+        "frame": 17,
+        "source": "run_v2/frames/frame_17.png",
+        "sha256": "883db64b31f97294e5a5f5be85a4d29640bf8cb0b829861264fb942d9999955c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              454.2720720720721,
+              482.8368082368082
+            ],
+            "point_neck_relative": [
+              -69.5695945945946,
+              144.99878918918918
+            ],
+            "bounds_source": [
+              394,
+              437,
+              501,
+              529
+            ],
+            "area": 3885,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 18,
+        "source": "run_v2/frames/frame_18.png",
+        "sha256": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              440.63639355051004,
+              467.2033563672261
+            ],
+            "point_neck_relative": [
+              -73.52957206317869,
+              131.58391451135245
+            ],
+            "bounds_source": [
+              377,
+              426,
+              486,
+              508
+            ],
+            "area": 3039,
+            "candidate_count": 27
+          }
+        }
+      },
+      {
+        "frame": 19,
+        "source": "run_v2/frames/frame_19.png",
+        "sha256": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              440.71607098225445,
+              481.01974506373404
+            ],
+            "point_neck_relative": [
+              -76.06237528117973,
+              139.38103939015247
+            ],
+            "bounds_source": [
+              373,
+              439,
+              498,
+              524
+            ],
+            "area": 4001,
+            "candidate_count": 21
+          }
+        }
+      },
+      {
+        "frame": 20,
+        "source": "run_v2/frames/frame_20.png",
+        "sha256": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              452.02486459871983,
+              454.2210733628755
+            ],
+            "point_neck_relative": [
+              -66.98483530280652,
+              123.40507621861157
+            ],
+            "bounds_source": [
+              383,
+              407,
+              504,
+              499
+            ],
+            "area": 4062,
+            "candidate_count": 21
+          }
+        }
+      },
+      {
+        "frame": 21,
+        "source": "run_v2/frames/frame_21.png",
+        "sha256": "cff27ec48daf4afead95d91d43a2769d7537afa756d871425ba056aba7dce58f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              462.44064053009384,
+              473.7476532302595
+            ],
+            "point_neck_relative": [
+              -63.10039646604089,
+              138.91982153506348
+            ],
+            "bounds_source": [
+              400,
+              432,
+              510,
+              515
+            ],
+            "area": 3622,
+            "candidate_count": 23
+          }
+        }
+      },
+      {
+        "frame": 22,
+        "source": "run_v2/frames/frame_22.png",
+        "sha256": "60934177bc14dddde96e25620cd27723d8a23ad25a4d14735679528044e324c0",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              463.22957105200095,
+              442.72657560508026
+            ],
+            "point_neck_relative": [
+              -65.81637023723943,
+              111.53934263120055
+            ],
+            "bounds_source": [
+              399,
+              395,
+              517,
+              485
+            ],
+            "area": 4173,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 23,
+        "source": "run_v2/frames/frame_23.png",
+        "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              481.80737479361585,
+              391.2245459548707
+            ],
+            "point_neck_relative": [
+              -56.443353880022,
+              83.07466395156852
+            ],
+            "bounds_source": [
+              422,
+              344,
+              521,
+              431
+            ],
+            "area": 3634,
+            "candidate_count": 17
+          }
+        }
+      },
+      {
+        "frame": 24,
+        "source": "run_v2/frames/frame_24.png",
+        "sha256": "2a1f0f2582efaa66c720796e8a491e86971dbf44a4aee23574495175a3f7f8ee",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              467.86612111292965,
+              375.4183306055646
+            ],
+            "point_neck_relative": [
+              -53.823343698854295,
+              71.5039482815057
+            ],
+            "bounds_source": [
+              409,
+              330,
+              503,
+              411
+            ],
+            "area": 3055,
+            "candidate_count": 21
+          }
+        }
+      },
+      {
+        "frame": 25,
+        "source": "run_v2/frames/frame_25.png",
+        "sha256": "50374185a6aa6e9ca545de88b1ead1da9e89ee4df2bd1f4e510e537ee467e446",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              468.05443276744813,
+              423.69603880355703
+            ],
+            "point_neck_relative": [
+              -60.35120735650769,
+              105.56030444624093
+            ],
+            "bounds_source": [
+              404,
+              378,
+              514,
+              463
+            ],
+            "area": 3711,
+            "candidate_count": 23
+          }
+        }
+      },
+      {
+        "frame": 26,
+        "source": "run_v2/frames/frame_26.png",
+        "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              427.13381555153705,
+              473.8571428571429
+            ],
+            "point_neck_relative": [
+              -82.35119620253167,
+              125.56980000000001
+            ],
+            "bounds_source": [
+              358,
+              413,
+              479,
+              522
+            ],
+            "area": 4424,
+            "candidate_count": 33
+          }
+        }
+      },
+      {
+        "frame": 27,
+        "source": "run_v2/frames/frame_27.png",
+        "sha256": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              451.63714454976304,
+              454.86137440758296
+            ],
+            "point_neck_relative": [
+              -73.74959893364931,
+              124.85426587677726
+            ],
+            "bounds_source": [
+              408,
+              409,
+              493,
+              502
+            ],
+            "area": 3376,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 28,
+        "source": "run_v2/frames/frame_28.png",
+        "sha256": "16d7e31967e1a239e77c03d7ce5fe82c00fd9497b2e2e9caf10a648bd27a91c8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              456.7624732170187,
+              458.06611570247935
+            ],
+            "point_neck_relative": [
+              -71.30814187327826,
+              126.306252892562
+            ],
+            "bounds_source": [
+              418,
+              409,
+              497,
+              508
+            ],
+            "area": 3267,
+            "candidate_count": 32
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "source": "run_v2/frames/frame_29.png",
+        "sha256": "a83e47d4d7b1a22355425aa2d271a8aa0e4f3a22b58fba09d7606031296a522e",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              454.21816479400746,
+              490.32209737827714
+            ],
+            "point_neck_relative": [
+              -70.04455617977528,
+              146.76612134831458
+            ],
+            "bounds_source": [
+              415,
+              446,
+              496,
+              533
+            ],
+            "area": 3204,
+            "candidate_count": 28
+          }
+        }
+      },
+      {
+        "frame": 30,
+        "source": "run_v2/frames/frame_30.png",
+        "sha256": "8d13751c39727c72f02dd4c8919910f7dde1631fd00af27fc160219eb12e323a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              412.03632148377125,
+              453.507341576507
+            ],
+            "point_neck_relative": [
+              -91.76811746522415,
+              123.3712251931994
+            ],
+            "bounds_source": [
+              373,
+              413,
+              451,
+              500
+            ],
+            "area": 2588,
+            "candidate_count": 26
+          }
+        }
+      },
+      {
+        "frame": 31,
+        "source": "run_v2/frames/frame_31.png",
+        "sha256": "faa02b4a2865e2ea5501ce97cb91279b05ff90a1aedc86498d1bdb1c50c8fff9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              398.44924471299095,
+              526.8235649546828
+            ],
+            "point_neck_relative": [
+              -107.03747583081572,
+              163.47464592145016
+            ],
+            "bounds_source": [
+              357,
+              484,
+              445,
+              572
+            ],
+            "area": 3310,
+            "candidate_count": 27
+          }
+        }
+      },
+      {
+        "frame": 32,
+        "source": "run_v2/frames/frame_32.png",
+        "sha256": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              431.2381601362862,
+              499.92844974446336
+            ],
+            "point_neck_relative": [
+              -81.30895911413968,
+              150.32332333901192
+            ],
+            "bounds_source": [
+              396,
+              458,
+              471,
+              543
+            ],
+            "area": 2935,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 33,
+        "source": "run_v2/frames/frame_33.png",
+        "sha256": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              432.98653414555946,
+              481.7864700224431
+            ],
+            "point_neck_relative": [
+              -80.45948348829756,
+              136.77707611413913
+            ],
+            "bounds_source": [
+              395,
+              437,
+              473,
+              527
+            ],
+            "area": 3119,
+            "candidate_count": 35
+          }
+        }
+      },
+      {
+        "frame": 34,
+        "source": "run_v2/frames/frame_34.png",
+        "sha256": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              405.3102649006622,
+              511.72781456953646
+            ],
+            "point_neck_relative": [
+              -98.14753311258282,
+              156.42132317880797
+            ],
+            "bounds_source": [
+              370,
+              470,
+              446,
+              555
+            ],
+            "area": 3020,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 35,
+        "source": "run_v2/frames/frame_35.png",
+        "sha256": "f0bdc4d4b3470b4f6d54a7ecf1e6d5091761c774e5f4c5006c93da8904c6d150",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              427.5323693723299,
+              483.0450213604995
+            ],
+            "point_neck_relative": [
+              -93.47160729543214,
+              136.3855634571147
+            ],
+            "bounds_source": [
+              388,
+              440,
+              469,
+              526
+            ],
+            "area": 3043,
+            "candidate_count": 36
+          }
+        }
+      },
+      {
+        "frame": 36,
+        "source": "run_v2/frames/frame_36.png",
+        "sha256": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              358.90859193582435,
+              594.8252058264725
+            ],
+            "point_neck_relative": [
+              -114.21358708043068,
+              205.34547967067766
+            ],
+            "bounds_source": [
+              310,
+              550,
+              413,
+              642
+            ],
+            "area": 4737,
+            "candidate_count": 41
+          }
+        }
+      },
+      {
+        "frame": 37,
+        "source": "run_v2/frames/frame_37.png",
+        "sha256": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              357.0855357142857,
+              589.6689285714285
+            ],
+            "point_neck_relative": [
+              -129.4426125,
+              201.88282499999994
+            ],
+            "bounds_source": [
+              292,
+              539,
+              414,
+              653
+            ],
+            "area": 5600,
+            "candidate_count": 34
+          }
+        }
+      },
+      {
+        "frame": 38,
+        "source": "run_v2/frames/frame_38.png",
+        "sha256": "234c2f46a82755f4e04f25a6a4b5e9ecc84c4bed6a0bd8be8629c738e8ef6c0d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              351.7071081268812,
+              612.7216948367677
+            ],
+            "point_neck_relative": [
+              -139.54052188006486,
+              219.14026774716365
+            ],
+            "bounds_source": [
+              311,
+              567,
+              402,
+              656
+            ],
+            "area": 4319,
+            "candidate_count": 35
+          }
+        }
+      },
+      {
+        "frame": 39,
+        "source": "run_v2/frames/frame_39.png",
+        "sha256": "777af5732cfb4f60bbf50546bb43a98fa6d91cefe1442749f62b9b17685e3056",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              341.31723596387906,
+              637.8798586572439
+            ],
+            "point_neck_relative": [
+              -146.08614134275624,
+              234.35991095406362
+            ],
+            "bounds_source": [
+              303,
+              586,
+              386,
+              702
+            ],
+            "area": 5094,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 40,
+        "source": "run_v2/frames/frame_40.png",
+        "sha256": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              336.48025751072964,
+              635.1079399141631
+            ],
+            "point_neck_relative": [
+              -150.33043776824033,
+              232.26080214592278
+            ],
+            "bounds_source": [
+              302,
+              586,
+              384,
+              695
+            ],
+            "area": 4660,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 41,
+        "source": "run_v2/frames/frame_41.png",
+        "sha256": "ae55dede516dbad81f60866b6a87d09bee021580155fff378c4162ba2f3bb163",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              340.85031781833095,
+              645.9610416239491
+            ],
+            "point_neck_relative": [
+              -147.01029977445154,
+              238.82105622308794
+            ],
+            "bounds_source": [
+              298,
+              590,
+              385,
+              713
+            ],
+            "area": 4877,
+            "candidate_count": 34
+          }
+        }
+      },
+      {
+        "frame": 42,
+        "source": "run_v2/frames/frame_42.png",
+        "sha256": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              326.24549019607844,
+              625.6515032679738
+            ],
+            "point_neck_relative": [
+              -155.9278411764706,
+              230.29744705882348
+            ],
+            "bounds_source": [
+              295,
+              580,
+              368,
+              672
+            ],
+            "area": 3825,
+            "candidate_count": 35
+          }
+        }
+      },
+      {
+        "frame": 43,
+        "source": "run_v2/frames/frame_43.png",
+        "sha256": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              359.3046530284797,
+              646.5750100280786
+            ],
+            "point_neck_relative": [
+              -133.4940685920578,
+              246.76785631768954
+            ],
+            "bounds_source": [
+              321,
+              592,
+              404,
+              718
+            ],
+            "area": 4986,
+            "candidate_count": 34
+          }
+        }
+      },
+      {
+        "frame": 44,
+        "source": "run_v2/frames/frame_44.png",
+        "sha256": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              336.6368085106383,
+              640.8402127659574
+            ],
+            "point_neck_relative": [
+              -148.05831063829788,
+              236.99353404255314
+            ],
+            "bounds_source": [
+              300,
+              591,
+              382,
+              709
+            ],
+            "area": 4700,
+            "candidate_count": 38
+          }
+        }
+      },
+      {
+        "frame": 45,
+        "source": "run_v2/frames/frame_45.png",
+        "sha256": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              348.11304549675026,
+              592.0452646239554
+            ],
+            "point_neck_relative": [
+              -137.55228133704736,
+              211.2171167130919
+            ],
+            "bounds_source": [
+              312,
+              543,
+              391,
+              652
+            ],
+            "area": 4308,
+            "candidate_count": 34
+          }
+        }
+      },
+      {
+        "frame": 46,
+        "source": "run_v2/frames/frame_46.png",
+        "sha256": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              336.89526337280523,
+              628.016129032258
+            ],
+            "point_neck_relative": [
+              -143.83198407513274,
+              235.0757612903226
+            ],
+            "bounds_source": [
+              301,
+              572,
+              381,
+              693
+            ],
+            "area": 4898,
+            "candidate_count": 33
+          }
+        }
+      },
+      {
+        "frame": 47,
+        "source": "run_v2/frames/frame_47.png",
+        "sha256": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              347.0574580556194,
+              612.0958400367731
+            ],
+            "point_neck_relative": [
+              -140.23330142495976,
+              225.81457922316707
+            ],
+            "bounds_source": [
+              306,
+              566,
+              393,
+              673
+            ],
+            "area": 4351,
+            "candidate_count": 29
+          }
+        }
+      }
+    ],
+    "violations": [
+      {
+        "check": "hand_gross_step",
+        "side": "anatomical_right",
+        "frames": [
+          35,
+          36
+        ],
+        "pixels": 72.012,
+        "maximum": 60.0
+      }
+    ],
+    "diagnostics": [
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          0,
+          1
+        ],
+        "pixels": 40.04,
+        "review_above": 40.0
+      },
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          6,
+          7
+        ],
+        "pixels": 54.242,
+        "review_above": 40.0
+      },
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          30,
+          31
+        ],
+        "pixels": 42.912,
+        "review_above": 40.0
+      },
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          35,
+          36
+        ],
+        "pixels": 72.012,
+        "review_above": 40.0
+      }
+    ],
+    "occluded": [
+      "anatomical_left_wrist_behind_shield"
+    ]
+  },
+  {
+    "actor": "iselin",
+    "measurements": [
+      {
+        "frame": 0,
+        "source": "run_v2/frame_00.png",
+        "sha256": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              309.97480222677996,
+              676.3287430413127
+            ],
+            "point_neck_relative": [
+              -174.76312638732145,
+              274.149043665939
+            ],
+            "bounds_source": [
+              277,
+              631,
+              341,
+              718
+            ],
+            "area": 3413,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              683.3338870431894,
+              405.52948504983385
+            ],
+            "point_neck_relative": [
+              74.32393342041178,
+              93.48492241017397
+            ],
+            "bounds_source": [
+              635,
+              361,
+              729,
+              456
+            ],
+            "area": 4816,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 1,
+        "source": "run_v2/repairs/frame_01.png",
+        "sha256": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              271.6189801699717,
+              673.2235599622286
+            ],
+            "point_neck_relative": [
+              -204.51919586978846,
+              276.21517452654564
+            ],
+            "bounds_source": [
+              238,
+              633,
+              314,
+              714
+            ],
+            "area": 4236,
+            "candidate_count": 16
+          },
+          "anatomical_left": {
+            "point_source": [
+              677.9184461023926,
+              392.0604579367121
+            ],
+            "point_neck_relative": [
+              71.75847336660226,
+              85.02839478363688
+            ],
+            "bounds_source": [
+              636,
+              356,
+              718,
+              434
+            ],
+            "area": 3887,
+            "candidate_count": 11
+          }
+        }
+      },
+      {
+        "frame": 2,
+        "source": "run_v2/repairs/frame_02.png",
+        "sha256": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              308.72786677908937,
+              684.3988195615514
+            ],
+            "point_neck_relative": [
+              -180.08808068767632,
+              284.1800190134442
+            ],
+            "bounds_source": [
+              276,
+              639,
+              351,
+              727
+            ],
+            "area": 4744,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              678.2623103850642,
+              422.0028004667445
+            ],
+            "point_neck_relative": [
+              71.18991335971512,
+              105.75458001845783
+            ],
+            "bounds_source": [
+              634,
+              383,
+              724,
+              462
+            ],
+            "area": 4285,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "source": "run_v2/repairs/frame_03.png",
+        "sha256": "1dd96ae3a51fe18cfba5008365ab0e60a3955dd5c79ba47403e97bcd4a85d2f4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              411.1877658497063,
+              631.341097832692
+            ],
+            "point_neck_relative": [
+              -109.61447154961425,
+              247.73571543477712
+            ],
+            "bounds_source": [
+              368,
+              590,
+              456,
+              674
+            ],
+            "area": 4937,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              677.369020501139,
+              467.5298405466971
+            ],
+            "point_neck_relative": [
+              71.38487202753868,
+              136.34646648807785
+            ],
+            "bounds_source": [
+              632,
+              429,
+              725,
+              506
+            ],
+            "area": 4390,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 4,
+        "source": "run_v2/repairs/frame_04.png",
+        "sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              410.6446264872245,
+              631.1008386970939
+            ],
+            "point_neck_relative": [
+              -109.98379833864321,
+              247.57234275142036
+            ],
+            "bounds_source": [
+              368,
+              588,
+              456,
+              675
+            ],
+            "area": 5127,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              680.3417410714286,
+              469.8149553571428
+            ],
+            "point_neck_relative": [
+              73.406278352959,
+              137.90031099613958
+            ],
+            "bounds_source": [
+              634,
+              431,
+              728,
+              506
+            ],
+            "area": 4480,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 5,
+        "source": "run_v2/repairs/frame_05.png",
+        "sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              412.98682343401583,
+              628.0942631258869
+            ],
+            "point_neck_relative": [
+              -106.34539536462107,
+              240.89389164518673
+            ],
+            "bounds_source": [
+              370,
+              586,
+              459,
+              671
+            ],
+            "area": 4933,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              679.8144960362401,
+              467.752208380521
+            ],
+            "point_neck_relative": [
+              71.66907688669775,
+              133.9214551777765
+            ],
+            "bounds_source": [
+              633,
+              429,
+              728,
+              504
+            ],
+            "area": 4415,
+            "candidate_count": 5
+          }
+        }
+      },
+      {
+        "frame": 6,
+        "source": "run_v2/repairs/frame_06.png",
+        "sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              420.01760777170614,
+              618.0979558793766
+            ],
+            "point_neck_relative": [
+              -102.1351463585498,
+              232.98127030934253
+            ],
+            "bounds_source": [
+              375,
+              579,
+              466,
+              660
+            ],
+            "area": 4941,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              686.8373300370828,
+              482.2845488257108
+            ],
+            "point_neck_relative": [
+              75.8740218139066,
+              142.37315704459292
+            ],
+            "bounds_source": [
+              644,
+              446,
+              732,
+              517
+            ],
+            "area": 4045,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "source": "run_v2/repairs/frame_07.png",
+        "sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              427.26387201296075,
+              611.8841636289997
+            ],
+            "point_neck_relative": [
+              -96.82044151219169,
+              228.7403270569945
+            ],
+            "bounds_source": [
+              381,
+              575,
+              475,
+              653
+            ],
+            "area": 4938,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              687.9198656429942,
+              475.4287428023033
+            ],
+            "point_neck_relative": [
+              77.07658608121513,
+              137.7038933640467
+            ],
+            "bounds_source": [
+              643,
+              439,
+              733,
+              511
+            ],
+            "area": 4168,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 8,
+        "source": "run_v2/repairs/frame_08.png",
+        "sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              441.5961538461538,
+              600.5701923076923
+            ],
+            "point_neck_relative": [
+              -88.28605196699345,
+              220.92866970511392
+            ],
+            "bounds_source": [
+              392,
+              564,
+              490,
+              643
+            ],
+            "area": 5200,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              688.4182083739046,
+              490.3291139240506
+            ],
+            "point_neck_relative": [
+              76.38164290978418,
+              147.3811729350332
+            ],
+            "bounds_source": [
+              644,
+              455,
+              734,
+              524
+            ],
+            "area": 4108,
+            "candidate_count": 3
+          }
+        }
+      },
+      {
+        "frame": 9,
+        "source": "run_v2/repairs/frame_09.png",
+        "sha256": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              462.0434390771449,
+              577.4493511175199
+            ],
+            "point_neck_relative": [
+              -74.6446157026473,
+              205.50356667012687
+            ],
+            "bounds_source": [
+              409,
+              543,
+              513,
+              619
+            ],
+            "area": 5548,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              682.4262182566919,
+              517.5980324868451
+            ],
+            "point_neck_relative": [
+              72.38407793442694,
+              165.57367185944793
+            ],
+            "bounds_source": [
+              637,
+              483,
+              730,
+              551
+            ],
+            "area": 4371,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 10,
+        "source": "run_v2/repairs/frame_10.png",
+        "sha256": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              458.75475214312337,
+              583.4904957137533
+            ],
+            "point_neck_relative": [
+              -76.83866800333348,
+              209.53392512809523
+            ],
+            "bounds_source": [
+              408,
+              549,
+              509,
+              625
+            ],
+            "area": 5366,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              698.7582256885206,
+              509.0896904703875
+            ],
+            "point_neck_relative": [
+              83.28000059277784,
+              159.8973190320883
+            ],
+            "bounds_source": [
+              654,
+              476,
+              744,
+              542
+            ],
+            "area": 4103,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 11,
+        "source": "run_v2/repairs/frame_11.png",
+        "sha256": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              462.9594488188976,
+              574.8297244094488
+            ],
+            "point_neck_relative": [
+              -72.12563674533125,
+              199.0208974714664
+            ],
+            "bounds_source": [
+              413,
+              542,
+              512,
+              614
+            ],
+            "area": 5080,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              710.9794180269695,
+              520.873669268985
+            ],
+            "point_neck_relative": [
+              90.27718753198322,
+              163.6906143105868
+            ],
+            "bounds_source": [
+              668,
+              488,
+              759,
+              557
+            ],
+            "area": 4227,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 12,
+        "source": "run_v2/repairs/frame_12.png",
+        "sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              458.21639062163905,
+              551.6928371692837
+            ],
+            "point_neck_relative": [
+              -75.46645104954911,
+              184.5741768668494
+            ],
+            "bounds_source": [
+              410,
+              517,
+              504,
+              590
+            ],
+            "area": 4649,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              703.787568468683,
+              553.2498213860442
+            ],
+            "point_neck_relative": [
+              85.33291107765444,
+              185.59368604171337
+            ],
+            "bounds_source": [
+              661,
+              521,
+              750,
+              591
+            ],
+            "area": 4199,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 13,
+        "source": "run_v2/repairs/frame_13.png",
+        "sha256": "28273d51a999dd6583821c493168cc8742a42d921b092329e8ea063665409e02",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              485.2978866906475,
+              506.8606115107914
+            ],
+            "point_neck_relative": [
+              -57.49848631103697,
+              154.51490090348378
+            ],
+            "bounds_source": [
+              440,
+              472,
+              525,
+              542
+            ],
+            "area": 4448,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              713.906296114117,
+              582.0927201180521
+            ],
+            "point_neck_relative": [
+              92.19369961440096,
+              203.77668798122832
+            ],
+            "bounds_source": [
+              674,
+              547,
+              757,
+              621
+            ],
+            "area": 4066,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 14,
+        "source": "run_v2/repairs/frame_14.png",
+        "sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              486.2060742407199,
+              498.05669291338586
+            ],
+            "point_neck_relative": [
+              -56.903807489101,
+              148.7501181342111
+            ],
+            "bounds_source": [
+              441,
+              462,
+              525,
+              532
+            ],
+            "area": 4445,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              718.1849160611375,
+              589.496366825357
+            ],
+            "point_neck_relative": [
+              94.99532871557402,
+              208.62457639544326
+            ],
+            "bounds_source": [
+              677,
+              558,
+              763,
+              628
+            ],
+            "area": 3991,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 15,
+        "source": "run_v2/repairs/frame_15.png",
+        "sha256": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              511.4706636742546,
+              499.22346906059636
+            ],
+            "point_neck_relative": [
+              -48.0995045393003,
+              141.97989614752865
+            ],
+            "bounds_source": [
+              478,
+              455,
+              537,
+              535
+            ],
+            "area": 3119,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              758.3885112913835,
+              627.3871957903968
+            ],
+            "point_neck_relative": [
+              110.64212829008818,
+              224.3753950834133
+            ],
+            "bounds_source": [
+              717,
+              595,
+              802,
+              669
+            ],
+            "area": 4561,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 16,
+        "source": "run_v2/repairs/frame_16.png",
+        "sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              516.3759909399773,
+              473.9992449981125
+            ],
+            "point_neck_relative": [
+              -46.55086077044941,
+              127.1303799776796
+            ],
+            "bounds_source": [
+              485,
+              427,
+              539,
+              507
+            ],
+            "area": 2649,
+            "candidate_count": 10
+          },
+          "anatomical_left": {
+            "point_source": [
+              771.9459770114943,
+              647.1567816091954
+            ],
+            "point_neck_relative": [
+              120.79569471479928,
+              240.51348005761915
+            ],
+            "bounds_source": [
+              730,
+              611,
+              813,
+              687
+            ],
+            "area": 4350,
+            "candidate_count": 12
+          }
+        }
+      },
+      {
+        "frame": 17,
+        "source": "run_v2/repairs/frame_17.png",
+        "sha256": "6537eb01080bd963456aa91fbcba0ac90e25eb56f34c37ee96fbbab538f821ba",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              513.1148429035753,
+              473.9566630552546
+            ],
+            "point_neck_relative": [
+              -47.3766571915902,
+              127.10249743336101
+            ],
+            "bounds_source": [
+              480,
+              430,
+              537,
+              507
+            ],
+            "area": 2769,
+            "candidate_count": 6
+          },
+          "anatomical_left": {
+            "point_source": [
+              773.0145134427789,
+              644.8558172733761
+            ],
+            "point_neck_relative": [
+              122.80496430881486,
+              239.0068146552663
+            ],
+            "bounds_source": [
+              732,
+              613,
+              815,
+              684
+            ],
+            "area": 4203,
+            "candidate_count": 6
+          }
+        }
+      },
+      {
+        "frame": 18,
+        "source": "run_v2/repairs/frame_18.png",
+        "sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              511.5121951219512,
+              468.8036585365854
+            ],
+            "point_neck_relative": [
+              -45.80687725695477,
+              123.72832361172179
+            ],
+            "bounds_source": [
+              484,
+              425,
+              533,
+              502
+            ],
+            "area": 2460,
+            "candidate_count": 8
+          },
+          "anatomical_left": {
+            "point_source": [
+              771.8459556929417,
+              639.0801133436373
+            ],
+            "point_neck_relative": [
+              124.65898525588943,
+              235.22489889511937
+            ],
+            "bounds_source": [
+              731,
+              606,
+              812,
+              675
+            ],
+            "area": 3882,
+            "candidate_count": 7
+          }
+        }
+      },
+      {
+        "frame": 19,
+        "source": "run_v2/repairs/frame_19.png",
+        "sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              508.3314878892734,
+              471.16539792387545
+            ],
+            "point_neck_relative": [
+              -47.88959599704463,
+              121.33224937556915
+            ],
+            "bounds_source": [
+              478,
+              430,
+              533,
+              506
+            ],
+            "area": 2890,
+            "candidate_count": 9
+          },
+          "anatomical_left": {
+            "point_source": [
+              781.3044792525419,
+              624.0107172300083
+            ],
+            "point_neck_relative": [
+              130.85240163472912,
+              221.41496292537815
+            ],
+            "bounds_source": [
+              743,
+              590,
+              817,
+              663
+            ],
+            "area": 3639,
+            "candidate_count": 10
+          }
+        }
+      },
+      {
+        "frame": 20,
+        "source": "run_v2/repairs/frame_20.png",
+        "sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              512.7312338222605,
+              455.4784296807593
+            ],
+            "point_neck_relative": [
+              -46.09800867146092,
+              115.2120071790563
+            ],
+            "bounds_source": [
+              485,
+              410,
+              534,
+              489
+            ],
+            "area": 2318,
+            "candidate_count": 7
+          },
+          "anatomical_left": {
+            "point_source": [
+              786.7571389719881,
+              627.8262170247484
+            ],
+            "point_neck_relative": [
+              136.71877495779472,
+              230.1940857187879
+            ],
+            "bounds_source": [
+              748,
+              595,
+              823,
+              665
+            ],
+            "area": 3677,
+            "candidate_count": 11
+          }
+        }
+      },
+      {
+        "frame": 21,
+        "source": "run_v2/repairs/frame_21.png",
+        "sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              513.971158392435,
+              455.68983451536644
+            ],
+            "point_neck_relative": [
+              -45.030616653144605,
+              114.63585840068212
+            ],
+            "bounds_source": [
+              489,
+              412,
+              534,
+              489
+            ],
+            "area": 2115,
+            "candidate_count": 5
+          },
+          "anatomical_left": {
+            "point_source": [
+              785.828773168579,
+              626.8561341571051
+            ],
+            "point_neck_relative": [
+              136.3395888803057,
+              228.8297056908721
+            ],
+            "bounds_source": [
+              749,
+              593,
+              820,
+              662
+            ],
+            "area": 3399,
+            "candidate_count": 5
+          }
+        }
+      },
+      {
+        "frame": 22,
+        "source": "run_v2/repairs/frame_22.png",
+        "sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              510.2024306874288,
+              423.59703759969614
+            ],
+            "point_neck_relative": [
+              -47.54492885668331,
+              93.22510197389846
+            ],
+            "bounds_source": [
+              478,
+              381,
+              534,
+              460
+            ],
+            "area": 2633,
+            "candidate_count": 5
+          },
+          "anatomical_left": {
+            "point_source": [
+              792.3789954337899,
+              611.0787671232877
+            ],
+            "point_neck_relative": [
+              140.70957925011504,
+              218.30381218571338
+            ],
+            "bounds_source": [
+              754,
+              579,
+              827,
+              651
+            ],
+            "area": 3504,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 23,
+        "source": "run_v2/repairs/frame_23.png",
+        "sha256": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              510.6493096646943,
+              404.6126232741617
+            ],
+            "point_neck_relative": [
+              -47.040493353351444,
+              80.11085343199582
+            ],
+            "bounds_source": [
+              481,
+              364,
+              533,
+              441
+            ],
+            "area": 2535,
+            "candidate_count": 5
+          },
+          "anatomical_left": {
+            "point_source": [
+              791.916509730069,
+              609.0059635907094
+            ],
+            "point_neck_relative": [
+              144.21707152770196,
+              219.09532278271024
+            ],
+            "bounds_source": [
+              757,
+              574,
+              822,
+              643
+            ],
+            "area": 3186,
+            "candidate_count": 3
+          }
+        }
+      },
+      {
+        "frame": 24,
+        "source": "run_v2/repairs/frame_24.png",
+        "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              512.019197805965,
+              410.8988687007199
+            ],
+            "point_neck_relative": [
+              -48.20785694668899,
+              89.93951367036753
+            ],
+            "bounds_source": [
+              482,
+              364,
+              535,
+              454
+            ],
+            "area": 2917,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              796.6129714487134,
+              635.4413112442721
+            ],
+            "point_neck_relative": [
+              153.05218410018912,
+              248.7322399645504
+            ],
+            "bounds_source": [
+              765,
+              600,
+              825,
+              674
+            ],
+            "area": 2837,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 25,
+        "source": "run_v2/repairs/frame_25.png",
+        "sha256": "298a70aca98c85a6b988d5b32bea66fd4e10c3f345f8f14f645fcd5c603856bd",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              515.1641954969797,
+              449.5826468973092
+            ],
+            "point_neck_relative": [
+              -43.952490851184415,
+              102.90575953045082
+            ],
+            "bounds_source": [
+              492,
+              413,
+              534,
+              478
+            ],
+            "area": 1821,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              820.8659003831417,
+              673.3740053050399
+            ],
+            "point_neck_relative": [
+              156.22018241550933,
+              249.44375310540266
+            ],
+            "bounds_source": [
+              786,
+              634,
+              850,
+              712
+            ],
+            "area": 3393,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 26,
+        "source": "run_v2/repairs/frame_26.png",
+        "sha256": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              527.5533940397352,
+              429.9412251655629
+            ],
+            "point_neck_relative": [
+              -45.54482805693127,
+              101.51993214044285
+            ],
+            "bounds_source": [
+              500,
+              384,
+              549,
+              463
+            ],
+            "area": 2416,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              839.8016726403823,
+              659.6723416965352
+            ],
+            "point_neck_relative": [
+              158.91452447985012,
+              251.94726373046916
+            ],
+            "bounds_source": [
+              806,
+              619,
+              870,
+              702
+            ],
+            "area": 3348,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 27,
+        "source": "run_v2/repairs/frame_27.png",
+        "sha256": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              521.6680672268908,
+              445.54789915966387
+            ],
+            "point_neck_relative": [
+              -44.11524026378472,
+              98.440920853288
+            ],
+            "bounds_source": [
+              495,
+              395,
+              541,
+              482
+            ],
+            "area": 2380,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              833.2982403817477,
+              672.3540113331345
+            ],
+            "point_neck_relative": [
+              156.22946143721688,
+              244.25286976485214
+            ],
+            "bounds_source": [
+              800,
+              631,
+              867,
+              714
+            ],
+            "area": 3353,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 28,
+        "source": "run_v2/repairs/frame_28.png",
+        "sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              527.9470013947001,
+              437.92608089260807
+            ],
+            "point_neck_relative": [
+              -45.28690755635752,
+              103.50193199899131
+            ],
+            "bounds_source": [
+              502,
+              395,
+              548,
+              469
+            ],
+            "area": 2151,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              816.8189276296514,
+              646.8535013184882
+            ],
+            "point_neck_relative": [
+              147.4344207655239,
+              242.8881662798221
+            ],
+            "bounds_source": [
+              785,
+              608,
+              848,
+              687
+            ],
+            "area": 3413,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "source": "run_v2/repairs/frame_30.png",
+        "sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              520.1231429514692,
+              494.48794981842195
+            ],
+            "point_neck_relative": [
+              -49.571341515155815,
+              137.30770226260123
+            ],
+            "bounds_source": [
+              486,
+              455,
+              547,
+              524
+            ],
+            "area": 3029,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              774.083183105846,
+              649.6093226886428
+            ],
+            "point_neck_relative": [
+              116.72102561295326,
+              238.88076970687524
+            ],
+            "bounds_source": [
+              736,
+              608,
+              805,
+              692
+            ],
+            "area": 3883,
+            "candidate_count": 3
+          }
+        }
+      },
+      {
+        "frame": 30,
+        "source": "run_v2/repairs/frame_29.png",
+        "sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              516.0338569880823,
+              510.2253521126761
+            ],
+            "point_neck_relative": [
+              -53.23477928088921,
+              151.73649659597712
+            ],
+            "bounds_source": [
+              477,
+              473,
+              548,
+              542
+            ],
+            "area": 3692,
+            "candidate_count": 7
+          },
+          "anatomical_left": {
+            "point_source": [
+              731.3049592894153,
+              613.3940291142364
+            ],
+            "point_neck_relative": [
+              90.38365164647328,
+              220.5656304342732
+            ],
+            "bounds_source": [
+              693,
+              579,
+              771,
+              654
+            ],
+            "area": 4053,
+            "candidate_count": 10
+          }
+        }
+      },
+      {
+        "frame": 31,
+        "source": "run_v2/repairs/frame_32.png",
+        "sha256": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              522.7129595246936,
+              512.7942814704791
+            ],
+            "point_neck_relative": [
+              -47.33860258075711,
+              149.64626632604921
+            ],
+            "bounds_source": [
+              491,
+              473,
+              547,
+              541
+            ],
+            "area": 2693,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              761.5850931677019,
+              631.4145962732919
+            ],
+            "point_neck_relative": [
+              109.07424300034825,
+              227.31853683778175
+            ],
+            "bounds_source": [
+              726,
+              598,
+              793,
+              668
+            ],
+            "area": 3220,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 32,
+        "source": "run_v2/repairs/frame_31.png",
+        "sha256": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              519.8433179723502,
+              529.1846609611587
+            ],
+            "point_neck_relative": [
+              -49.75457017636954,
+              160.0270175689722
+            ],
+            "bounds_source": [
+              485,
+              491,
+              547,
+              559
+            ],
+            "area": 3038,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              749.0260211800303,
+              596.8432677760968
+            ],
+            "point_neck_relative": [
+              100.31366181027266,
+              204.32969556904956
+            ],
+            "bounds_source": [
+              713,
+              566,
+              781,
+              635
+            ],
+            "area": 3305,
+            "candidate_count": 5
+          }
+        }
+      },
+      {
+        "frame": 33,
+        "source": "run_v2/repairs/frame_34.png",
+        "sha256": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              503.11077354522087,
+              561.2682869829399
+            ],
+            "point_neck_relative": [
+              -52.281572558400036,
+              162.40914469660837
+            ],
+            "bounds_source": [
+              458,
+              522,
+              537,
+              594
+            ],
+            "area": 4279,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              733.6974408036355,
+              637.4893566132505
+            ],
+            "point_neck_relative": [
+              88.831157242473,
+              209.05435333662805
+            ],
+            "bounds_source": [
+              691,
+              606,
+              777,
+              678
+            ],
+            "area": 4181,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 34,
+        "source": "run_v2/repairs/frame_33.png",
+        "sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              505.6542517388378,
+              548.9089073367736
+            ],
+            "point_neck_relative": [
+              -55.85810043350697,
+              166.05526683365656
+            ],
+            "bounds_source": [
+              459,
+              513,
+              544,
+              583
+            ],
+            "area": 4457,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              729.7097543524923,
+              593.9878368709755
+            ],
+            "point_neck_relative": [
+              86.52682995729018,
+              194.70245544962503
+            ],
+            "bounds_source": [
+              687,
+              563,
+              775,
+              633
+            ],
+            "area": 4193,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 35,
+        "source": "run_v2/repairs/frame_35.png",
+        "sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              488.1265288907634,
+              579.6020666385491
+            ],
+            "point_neck_relative": [
+              -64.37357095007282,
+              180.40319853623816
+            ],
+            "bounds_source": [
+              438,
+              545,
+              536,
+              617
+            ],
+            "area": 4742,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              728.858064516129,
+              588.8993548387097
+            ],
+            "point_neck_relative": [
+              85.35278703088616,
+              186.18577744802536
+            ],
+            "bounds_source": [
+              687,
+              559,
+              775,
+              626
+            ],
+            "area": 3875,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 36,
+        "source": "run_v2/repairs/frame_36.png",
+        "sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              458.4856291249734,
+              550.9303810943155
+            ],
+            "point_neck_relative": [
+              -73.74548738207207,
+              183.37167025341674
+            ],
+            "bounds_source": [
+              411,
+              517,
+              505,
+              590
+            ],
+            "area": 4697,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              697.7137809187279,
+              549.4892815076561
+            ],
+            "point_neck_relative": [
+              82.9004779488655,
+              182.42804202990857
+            ],
+            "bounds_source": [
+              652,
+              516,
+              745,
+              586
+            ],
+            "area": 4245,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 37,
+        "source": "run_v2/repairs/frame_37.png",
+        "sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              436.21789450255955,
+              598.3049187625195
+            ],
+            "point_neck_relative": [
+              -91.56660873397362,
+              217.81555848084238
+            ],
+            "bounds_source": [
+              389,
+              567,
+              482,
+              638
+            ],
+            "area": 4493,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              692.5560713413145,
+              524.6662594673833
+            ],
+            "point_neck_relative": [
+              79.44978106845274,
+              168.68741916951868
+            ],
+            "bounds_source": [
+              648,
+              491,
+              742,
+              559
+            ],
+            "area": 4093,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 38,
+        "source": "run_v2/repairs/frame_38.png",
+        "sha256": "a33562ce62df893f481e70770738548938010900b259a9ca04835334f7e975e8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              444.6086235489221,
+              593.3619402985075
+            ],
+            "point_neck_relative": [
+              -85.72921419636799,
+              213.80065534188677
+            ],
+            "bounds_source": [
+              396,
+              562,
+              494,
+              635
+            ],
+            "area": 4824,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              680.9176598049837,
+              508.40411700975085
+            ],
+            "point_neck_relative": [
+              71.92470515573561,
+              157.12091920779156
+            ],
+            "bounds_source": [
+              649,
+              477,
+              710,
+              544
+            ],
+            "area": 2769,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 39,
+        "source": "run_v2/repairs/frame_39.png",
+        "sha256": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              419.76129032258063,
+              624.415531660693
+            ],
+            "point_neck_relative": [
+              -99.87408880192993,
+              230.5270016570911
+            ],
+            "bounds_source": [
+              376,
+              592,
+              465,
+              662
+            ],
+            "area": 4185,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              658.3778464998594,
+              485.5574922687658
+            ],
+            "point_neck_relative": [
+              56.37140532602976,
+              139.60312224986137
+            ],
+            "bounds_source": [
+              621,
+              451,
+              699,
+              519
+            ],
+            "area": 3557,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 40,
+        "source": "run_v2/repairs/frame_41.png",
+        "sha256": "c239587fca8f8dbdb5065b8bd2e1abeb7f94a3e654d0b48e2af6e779e38ef224",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              389.5013999066729,
+              649.7592160522631
+            ],
+            "point_neck_relative": [
+              -124.99269907040194,
+              241.4206588913384
+            ],
+            "bounds_source": [
+              353,
+              613,
+              432,
+              691
+            ],
+            "area": 4286,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              688.9478623566215,
+              476.41501564129305
+            ],
+            "point_neck_relative": [
+              71.08405788187552,
+              127.91533184560731
+            ],
+            "bounds_source": [
+              648,
+              439,
+              731,
+              513
+            ],
+            "area": 3836,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 41,
+        "source": "run_v2/repairs/frame_40.png",
+        "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              386.6444895886236,
+              667.0035551041137
+            ],
+            "point_neck_relative": [
+              -127.33485054994887,
+              252.8051880277593
+            ],
+            "bounds_source": [
+              350,
+              632,
+              428,
+              706
+            ],
+            "area": 3938,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              679.0531589201224,
+              488.61063178402446
+            ],
+            "point_neck_relative": [
+              64.13357795698138,
+              135.9939704843696
+            ],
+            "bounds_source": [
+              639,
+              453,
+              720,
+              526
+            ],
+            "area": 3593,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 42,
+        "source": "run_v2/repairs/frame_42.png",
+        "sha256": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              383.6441084713223,
+              665.394048476122
+            ],
+            "point_neck_relative": [
+              -126.48581555972005,
+              247.08290643736103
+            ],
+            "bounds_source": [
+              346,
+              630,
+              427,
+              705
+            ],
+            "area": 4167,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              685.1695050558808,
+              469.3243746673763
+            ],
+            "point_neck_relative": [
+              67.36260105040971,
+              121.03118328696553
+            ],
+            "bounds_source": [
+              645,
+              433,
+              725,
+              507
+            ],
+            "area": 3758,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 43,
+        "source": "run_v2/repairs/frame_44.png",
+        "sha256": "5eeab8cd9bb4c40a38f2202b4d0e4a863b5a71b8891f297739c9bc1a07b4ae7f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              386.83632286995515,
+              668.2424015944196
+            ],
+            "point_neck_relative": [
+              -127.74617246710942,
+              253.2647552658278
+            ],
+            "bounds_source": [
+              349,
+              634,
+              429,
+              707
+            ],
+            "area": 4014,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              680.4680286548156,
+              499.1061289466702
+            ],
+            "point_neck_relative": [
+              64.52309709650773,
+              142.51476826502937
+            ],
+            "bounds_source": [
+              639,
+              463,
+              722,
+              534
+            ],
+            "area": 3769,
+            "candidate_count": 1
+          }
+        }
+      },
+      {
+        "frame": 44,
+        "source": "run_v2/repairs/frame_43.png",
+        "sha256": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              403.2031433262961,
+              660.4832277738682
+            ],
+            "point_neck_relative": [
+              -115.19724371007088,
+              242.6354913780839
+            ],
+            "bounds_source": [
+              363,
+              626,
+              447,
+              700
+            ],
+            "area": 4263,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              682.8640585420771,
+              510.02561215873914
+            ],
+            "point_neck_relative": [
+              64.59466176916118,
+              145.90741843863213
+            ],
+            "bounds_source": [
+              642,
+              477,
+              725,
+              543
+            ],
+            "area": 3553,
+            "candidate_count": 3
+          }
+        }
+      },
+      {
+        "frame": 45,
+        "source": "run_v2/repairs/frame_46.png",
+        "sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              350.9328063241107,
+              663.7675395256917
+            ],
+            "point_neck_relative": [
+              -152.0283616811853,
+              249.37207520065726
+            ],
+            "bounds_source": [
+              322,
+              624,
+              390,
+              705
+            ],
+            "area": 4048,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              686.5401350337585,
+              433.4938734683671
+            ],
+            "point_neck_relative": [
+              67.7264355016458,
+              98.58948360607856
+            ],
+            "bounds_source": [
+              645,
+              394,
+              728,
+              477
+            ],
+            "area": 3999,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 46,
+        "source": "run_v2/repairs/frame_47.png",
+        "sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              332.3722537645026,
+              670.518637373488
+            ],
+            "point_neck_relative": [
+              -163.71030862924547,
+              256.32805176401627
+            ],
+            "bounds_source": [
+              299,
+              630,
+              369,
+              709
+            ],
+            "area": 4051,
+            "candidate_count": 3
+          },
+          "anatomical_left": {
+            "point_source": [
+              690.6851269142018,
+              419.01153765470946
+            ],
+            "point_neck_relative": [
+              70.91201940439745,
+              91.64186358914702
+            ],
+            "bounds_source": [
+              643,
+              376,
+              736,
+              466
+            ],
+            "area": 4767,
+            "candidate_count": 2
+          }
+        }
+      },
+      {
+        "frame": 47,
+        "source": "run_v2/repairs/frame_45.png",
+        "sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              359.9470297029703,
+              689.7663366336633
+            ],
+            "point_neck_relative": [
+              -145.11748393914945,
+              267.96884253672647
+            ],
+            "bounds_source": [
+              326,
+              652,
+              401,
+              727
+            ],
+            "area": 4040,
+            "candidate_count": 2
+          },
+          "anatomical_left": {
+            "point_source": [
+              683.4322363306557,
+              459.0645244882094
+            ],
+            "point_neck_relative": [
+              66.6997795497978,
+              116.90590200840064
+            ],
+            "bounds_source": [
+              641,
+              423,
+              726,
+              495
+            ],
+            "area": 3859,
+            "candidate_count": 2
+          }
+        }
+      }
+    ],
+    "violations": [
+      {
+        "check": "hand_gross_step",
+        "side": "anatomical_right",
+        "frames": [
+          2,
+          3
+        ],
+        "pixels": 79.339,
+        "maximum": 60.0
+      }
+    ],
+    "diagnostics": [
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          2,
+          3
+        ],
+        "pixels": 79.339,
+        "review_above": 40.0
+      },
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_left",
+        "frames": [
+          44,
+          45
+        ],
+        "pixels": 47.421,
+        "review_above": 40.0
+      }
+    ],
+    "occluded": []
+  },
+  {
+    "actor": "crown_soldier",
+    "measurements": [
+      {
+        "frame": 0,
+        "source": "run_v2/frame_00.png",
+        "sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              259.1687074829932,
+              606.2659863945578
+            ],
+            "point_neck_relative": [
+              -181.69877551020406,
+              181.95959183673466
+            ],
+            "bounds_source": [
+              227,
+              583,
+              287,
+              629
+            ],
+            "area": 1470,
+            "candidate_count": 17
+          }
+        }
+      },
+      {
+        "frame": 1,
+        "source": "run_v2/frame_01.png",
+        "sha256": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              258.1784847667835,
+              619.8368832569427
+            ],
+            "point_neck_relative": [
+              -188.2929091399299,
+              184.7021299541656
+            ],
+            "bounds_source": [
+              215,
+              576,
+              296,
+              658
+            ],
+            "area": 3709,
+            "candidate_count": 24
+          }
+        }
+      },
+      {
+        "frame": 2,
+        "source": "run_v2/frame_02.png",
+        "sha256": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              258.09496004917025,
+              593.6920712968654
+            ],
+            "point_neck_relative": [
+              -183.54302397049784,
+              172.6152427781192
+            ],
+            "bounds_source": [
+              218,
+              553,
+              295,
+              631
+            ],
+            "area": 3254,
+            "candidate_count": 32
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "source": "run_v2/frame_03.png",
+        "sha256": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              247.5823403605255,
+              611.8564008554843
+            ],
+            "point_neck_relative": [
+              -188.65059578368468,
+              178.11384051329054
+            ],
+            "bounds_source": [
+              195,
+              571,
+              291,
+              648
+            ],
+            "area": 3273,
+            "candidate_count": 20
+          }
+        }
+      },
+      {
+        "frame": 4,
+        "source": "run_v2/frame_04.png",
+        "sha256": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              252.96379196840024,
+              613.3675663813913
+            ],
+            "point_neck_relative": [
+              -185.42172481895986,
+              180.22053982883475
+            ],
+            "bounds_source": [
+              199,
+              570,
+              293,
+              667
+            ],
+            "area": 4557,
+            "candidate_count": 17
+          }
+        }
+      },
+      {
+        "frame": 5,
+        "source": "run_v2/frame_05.png",
+        "sha256": "8ba3d3864b4dfeb683a06dd72a289bb853484ef18a46b4fecf6429b6bc6c168b",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              280.1571020514152,
+              627.4772786289275
+            ],
+            "point_neck_relative": [
+              -170.30573876915085,
+              188.6863671773565
+            ],
+            "bounds_source": [
+              232,
+              586,
+              317,
+              676
+            ],
+            "area": 3851,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 6,
+        "source": "run_v2/frame_06.png",
+        "sha256": "c0a634c8b14150392cd682dbfb74212aa2297756a4ce204241e254620398b7f0",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              274.2350576253015,
+              660.3655856338783
+            ],
+            "point_neck_relative": [
+              -188.25896542481908,
+              194.61935138032695
+            ],
+            "bounds_source": [
+              226,
+              619,
+              314,
+              703
+            ],
+            "area": 3731,
+            "candidate_count": 16
+          }
+        }
+      },
+      {
+        "frame": 7,
+        "source": "run_v2/frame_07.png",
+        "sha256": "a5a3339f872fae623df3b0b34fe24b3336f86f02d6d9cb7c33234aefef54fde7",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              289.9239235373624,
+              628.4520177640471
+            ],
+            "point_neck_relative": [
+              -151.24564587758258,
+              192.27121065842826
+            ],
+            "bounds_source": [
+              234,
+              581,
+              332,
+              686
+            ],
+            "area": 5179,
+            "candidate_count": 40
+          }
+        }
+      },
+      {
+        "frame": 8,
+        "source": "run_v2/frame_08.png",
+        "sha256": "557cfaf22fffdd9f8d2a7d0a49007dbdd4c6a1b07603ba4a86f2786583e0501f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              291.43331576172903,
+              618.6007731505886
+            ],
+            "point_neck_relative": [
+              -155.14001054296259,
+              185.76046389035312
+            ],
+            "bounds_source": [
+              239,
+              575,
+              354,
+              679
+            ],
+            "area": 5691,
+            "candidate_count": 29
+          }
+        }
+      },
+      {
+        "frame": 9,
+        "source": "run_v2/frame_09.png",
+        "sha256": "6fad637c03b83eb7d9387352f84718b12e1da3014c9c3bbb5e50bdca8eac1e50",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              311.1203081462055,
+              607.2901163743649
+            ],
+            "point_neck_relative": [
+              -140.32781511227668,
+              177.1740698246189
+            ],
+            "bounds_source": [
+              250,
+              564,
+              366,
+              666
+            ],
+            "area": 6101,
+            "candidate_count": 30
+          }
+        }
+      },
+      {
+        "frame": 10,
+        "source": "run_v2/frame_10.png",
+        "sha256": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              336.982176520994,
+              613.4116538131962
+            ],
+            "point_neck_relative": [
+              -124.21069408740358,
+              180.2469922879177
+            ],
+            "bounds_source": [
+              285,
+              557,
+              385,
+              670
+            ],
+            "area": 5835,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 11,
+        "source": "run_v2/frame_11.png",
+        "sha256": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              319.8794642857143,
+              636.1789285714285
+            ],
+            "point_neck_relative": [
+              -153.07232142857143,
+              184.9073571428571
+            ],
+            "bounds_source": [
+              271,
+              585,
+              376,
+              698
+            ],
+            "area": 5600,
+            "candidate_count": 36
+          }
+        }
+      },
+      {
+        "frame": 12,
+        "source": "run_v2/frame_12.png",
+        "sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              325.2030965391621,
+              645.9706739526412
+            ],
+            "point_neck_relative": [
+              -133.67814207650272,
+              202.7824043715847
+            ],
+            "bounds_source": [
+              276,
+              599,
+              372,
+              705
+            ],
+            "area": 5490,
+            "candidate_count": 43
+          }
+        }
+      },
+      {
+        "frame": 13,
+        "source": "run_v2/frame_13.png",
+        "sha256": "6c03f5450e4bd029859550e7df2e4ac35fd2ad1bf86468607b2427f4d03479e3",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              296.22445913461536,
+              635.5070612980769
+            ],
+            "point_neck_relative": [
+              -149.26532451923077,
+              192.90423677884613
+            ],
+            "bounds_source": [
+              231,
+              569,
+              356,
+              695
+            ],
+            "area": 6656,
+            "candidate_count": 53
+          }
+        }
+      },
+      {
+        "frame": 14,
+        "source": "run_v2/frame_14.png",
+        "sha256": "faacf486ca7584e0b7ec2496fff1837d6c8160bf826e4be989a3a25e1c474175",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              309.1657013702501,
+              612.8857183217968
+            ],
+            "point_neck_relative": [
+              -144.50057917784994,
+              178.7314309930781
+            ],
+            "bounds_source": [
+              240,
+              552,
+              381,
+              677
+            ],
+            "area": 7079,
+            "candidate_count": 53
+          }
+        }
+      },
+      {
+        "frame": 15,
+        "source": "run_v2/frame_15.png",
+        "sha256": "a9dedda00da5c2de0366abe1f8e867e5f9b013953f10bc8dea44df292ae2294d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              306.4033613445378,
+              598.0734616427217
+            ],
+            "point_neck_relative": [
+              -144.3579831932773,
+              174.04407698563298
+            ],
+            "bounds_source": [
+              241,
+              540,
+              381,
+              665
+            ],
+            "area": 7378,
+            "candidate_count": 43
+          }
+        }
+      },
+      {
+        "frame": 16,
+        "source": "run_v2/frame_16.png",
+        "sha256": "afc0b1f22e84d0b50d8b7bd6e75b7bc443e1028ce59279a714da851a41b51d49",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              292.04380000000003,
+              544.2936
+            ],
+            "point_neck_relative": [
+              -147.57371999999998,
+              145.37615999999997
+            ],
+            "bounds_source": [
+              209,
+              437,
+              363,
+              626
+            ],
+            "area": 5000,
+            "candidate_count": 58
+          }
+        }
+      },
+      {
+        "frame": 17,
+        "source": "run_v2/frame_17.png",
+        "sha256": "d65d488ae5d1d5f82e8fcd7b414ae18c6de905386ec9adfc4796dfa994478bc6",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              372.7533059735522,
+              565.047803617571
+            ],
+            "point_neck_relative": [
+              -100.34801641586868,
+              157.2286821705426
+            ],
+            "bounds_source": [
+              214,
+              490,
+              487,
+              627
+            ],
+            "area": 13158,
+            "candidate_count": 41
+          }
+        }
+      },
+      {
+        "frame": 18,
+        "source": "run_v2/frame_18.png",
+        "sha256": "c192121a2b982e72d00b45cfe32d8bd7119ef548e332c96fbfc8c3fb8b3f2de0",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              384.1003359264498,
+              558.1092644978784
+            ],
+            "point_neck_relative": [
+              -98.33979844413011,
+              150.665558698727
+            ],
+            "bounds_source": [
+              268,
+              482,
+              495,
+              621
+            ],
+            "area": 11312,
+            "candidate_count": 62
+          }
+        }
+      },
+      {
+        "frame": 19,
+        "source": "run_v2/frame_19.png",
+        "sha256": "33dffe107dcd8220c83fc38ca4cd52cfd322ac83e35ea06c007ed1620a6c4fce",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              373.6904920953017,
+              550.080605655756
+            ],
+            "point_neck_relative": [
+              -109.98570474281898,
+              144.6483633934536
+            ],
+            "bounds_source": [
+              296,
+              497,
+              451,
+              600
+            ],
+            "area": 4491,
+            "candidate_count": 52
+          }
+        }
+      },
+      {
+        "frame": 20,
+        "source": "run_v2/frame_20.png",
+        "sha256": "4524dc80403436e4d00d974e29d92b4712502746e36754ad270485cec25947a8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              420.13529971455756,
+              557.3362511893434
+            ],
+            "point_neck_relative": [
+              -83.91882017126547,
+              147.80175071360605
+            ],
+            "bounds_source": [
+              325,
+              488,
+              507,
+              619
+            ],
+            "area": 10510,
+            "candidate_count": 46
+          }
+        }
+      },
+      {
+        "frame": 21,
+        "source": "run_v2/frame_21.png",
+        "sha256": "08b1bb1e7acfbd83521623cbc0accf6f966aa4fd7a399d9966e6fb6b2c9b045c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              406.98592392932017,
+              559.1777478286913
+            ],
+            "point_neck_relative": [
+              -84.00844564240789,
+              157.30664869721477
+            ],
+            "bounds_source": [
+              336,
+              501,
+              494,
+              600
+            ],
+            "area": 6678,
+            "candidate_count": 44
+          }
+        }
+      },
+      {
+        "frame": 22,
+        "source": "run_v2/frame_22.png",
+        "sha256": "c78ef3d65556b56d85628dfe69a9f1659a3ceb2b639acdea434ee6f0bef81046",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              417.62059546571976,
+              515.9726850587272
+            ],
+            "point_neck_relative": [
+              -84.22764272056814,
+              124.1836110352363
+            ],
+            "bounds_source": [
+              344,
+              453,
+              481,
+              568
+            ],
+            "area": 7322,
+            "candidate_count": 42
+          }
+        }
+      },
+      {
+        "frame": 23,
+        "source": "run_v2/frame_23.png",
+        "sha256": "3f0a9f00ca3fe21e62cc5088537f0c1dd1bad8aa84667b214e15bfe8af38661a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              423.35982077542064,
+              539.9190746159474
+            ],
+            "point_neck_relative": [
+              -81.38410753474761,
+              139.1514447695684
+            ],
+            "bounds_source": [
+              332,
+              464,
+              506,
+              616
+            ],
+            "area": 10936,
+            "candidate_count": 45
+          }
+        }
+      },
+      {
+        "frame": 24,
+        "source": "run_v2/frame_24.png",
+        "sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              431.72020972354625,
+              488.9485224022879
+            ],
+            "point_neck_relative": [
+              -76.36787416587225,
+              111.56911344137274
+            ],
+            "bounds_source": [
+              370,
+              440,
+              494,
+              538
+            ],
+            "area": 6294,
+            "candidate_count": 25
+          }
+        }
+      },
+      {
+        "frame": 25,
+        "source": "run_v2/frame_25.png",
+        "sha256": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              412.79700296218857,
+              518.5326711970727
+            ],
+            "point_neck_relative": [
+              -90.72179822268686,
+              122.71960271824359
+            ],
+            "bounds_source": [
+              352,
+              461,
+              473,
+              565
+            ],
+            "area": 5739,
+            "candidate_count": 19
+          }
+        }
+      },
+      {
+        "frame": 26,
+        "source": "run_v2/frame_26.png",
+        "sha256": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              407.5390594636611,
+              527.2331908278275
+            ],
+            "point_neck_relative": [
+              -91.47656432180334,
+              118.93991449669647
+            ],
+            "bounds_source": [
+              333,
+              472,
+              469,
+              574
+            ],
+            "area": 5146,
+            "candidate_count": 9
+          }
+        }
+      },
+      {
+        "frame": 27,
+        "source": "run_v2/frame_27.png",
+        "sha256": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              402.848,
+              565.3945714285715
+            ],
+            "point_neck_relative": [
+              -92.49119999999999,
+              134.63674285714288
+            ],
+            "bounds_source": [
+              357,
+              520,
+              445,
+              612
+            ],
+            "area": 3500,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 28,
+        "source": "run_v2/frame_28.png",
+        "sha256": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              378.45211122554065,
+              573.9581874356334
+            ],
+            "point_neck_relative": [
+              -111.92873326467561,
+              146.97491246138
+            ],
+            "bounds_source": [
+              322,
+              524,
+              431,
+              622
+            ],
+            "area": 4855,
+            "candidate_count": 9
+          }
+        }
+      },
+      {
+        "frame": 29,
+        "source": "run_v2/frame_29.png",
+        "sha256": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              368.24941850062623,
+              563.4401502952228
+            ],
+            "point_neck_relative": [
+              -116.25034889962426,
+              146.66409017713366
+            ],
+            "bounds_source": [
+              317,
+              514,
+              424,
+              614
+            ],
+            "area": 5589,
+            "candidate_count": 10
+          }
+        }
+      },
+      {
+        "frame": 30,
+        "source": "run_v2/frame_30.png",
+        "sha256": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              337.1589539648108,
+              586.7175222945289
+            ],
+            "point_neck_relative": [
+              -130.70462762111353,
+              143.2305133767173
+            ],
+            "bounds_source": [
+              213,
+              530,
+              404,
+              646
+            ],
+            "area": 8298,
+            "candidate_count": 45
+          }
+        }
+      },
+      {
+        "frame": 31,
+        "source": "run_v2/frame_31.png",
+        "sha256": "09e9c5f1c1d76eb21993a7d415eb6ffc60bd8592f3819324784b1bdb7dd1bc2e",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              337.2934461455815,
+              622.4896588772496
+            ],
+            "point_neck_relative": [
+              -134.82393231265107,
+              160.49379532634973
+            ],
+            "bounds_source": [
+              282,
+              565,
+              399,
+              685
+            ],
+            "area": 7446,
+            "candidate_count": 40
+          }
+        }
+      },
+      {
+        "frame": 32,
+        "source": "run_v2/frame_32.png",
+        "sha256": "7682b5f72a278ab294d9702da0044de94422213d0c301e3f141ccfc3fcbf3890",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              325.09172617581874,
+              621.1798818025117
+            ],
+            "point_neck_relative": [
+              -137.94496429450876,
+              166.90792908150698
+            ],
+            "bounds_source": [
+              260,
+              563,
+              399,
+              686
+            ],
+            "area": 8122,
+            "candidate_count": 41
+          }
+        }
+      },
+      {
+        "frame": 33,
+        "source": "run_v2/frame_33.png",
+        "sha256": "a2e4bccd3a3d3b6d260820772a8d4ffa5842d14d105a14869d69beb158ef7874",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              300.3188000745295,
+              604.5822619713061
+            ],
+            "point_neck_relative": [
+              -146.20871995528228,
+              174.94935718278367
+            ],
+            "bounds_source": [
+              254,
+              555,
+              343,
+              671
+            ],
+            "area": 5367,
+            "candidate_count": 32
+          }
+        }
+      },
+      {
+        "frame": 34,
+        "source": "run_v2/frame_34.png",
+        "sha256": "d844e04c2064ab4aaaa5d5faa235c67bf2884ad271a4b4b4a7d6a508ee2fdb26",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              318.37022100338766,
+              621.5531537344733
+            ],
+            "point_neck_relative": [
+              -133.5778673979674,
+              183.33189224068397
+            ],
+            "bounds_source": [
+              269,
+              567,
+              377,
+              677
+            ],
+            "area": 6199,
+            "candidate_count": 64
+          }
+        }
+      },
+      {
+        "frame": 35,
+        "source": "run_v2/frame_35.png",
+        "sha256": "f33d6dec0c9af2ca80035e59530a9773476dd334dac82df219f54c8fc49b1b89",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              277.7067969791204,
+              639.0604175921812
+            ],
+            "point_neck_relative": [
+              -161.57592181252775,
+              178.23625055530874
+            ],
+            "bounds_source": [
+              237,
+              597,
+              319,
+              683
+            ],
+            "area": 4502,
+            "candidate_count": 49
+          }
+        }
+      },
+      {
+        "frame": 36,
+        "source": "run_v2/frame_36.png",
+        "sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              291.6153110047847,
+              622.7148325358852
+            ],
+            "point_neck_relative": [
+              -150.23081339712917,
+              187.6288995215311
+            ],
+            "bounds_source": [
+              240,
+              573,
+              333,
+              687
+            ],
+            "area": 5225,
+            "candidate_count": 44
+          }
+        }
+      },
+      {
+        "frame": 37,
+        "source": "run_v2/frame_37.png",
+        "sha256": "59d760dd4d1e7f026bbb0d4f0e79c92ed8dcbb91bd542ab0a7e01914fed952b8",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              230.4273816778387,
+              608.6684948202316
+            ],
+            "point_neck_relative": [
+              -186.9435709932968,
+              179.20109689213893
+            ],
+            "bounds_source": [
+              181,
+              566,
+              270,
+              668
+            ],
+            "area": 4923,
+            "candidate_count": 42
+          }
+        }
+      },
+      {
+        "frame": 38,
+        "source": "run_v2/frame_38.png",
+        "sha256": "218f0f1b58b20ff2bd54bd66b7d0a936c38e45af0a4d8cd870408b72ad09ce9b",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              194.70392122991882,
+              647.9854897218863
+            ],
+            "point_neck_relative": [
+              -203.5776472620487,
+              200.99129383313178
+            ],
+            "bounds_source": [
+              146,
+              600,
+              236,
+              706
+            ],
+            "area": 5789,
+            "candidate_count": 41
+          }
+        }
+      },
+      {
+        "frame": 39,
+        "source": "run_v2/frame_39.png",
+        "sha256": "00e05fcb9b52b291dded7429aee1150b0bd7d8044a7eb83a27c75036edd9f99d",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              201.1730089415679,
+              662.3541276772718
+            ],
+            "point_neck_relative": [
+              -197.29619463505927,
+              208.41247660636307
+            ],
+            "bounds_source": [
+              157,
+              616,
+              240,
+              718
+            ],
+            "area": 4809,
+            "candidate_count": 46
+          }
+        }
+      },
+      {
+        "frame": 40,
+        "source": "run_v2/frame_40.png",
+        "sha256": "1438f499e5f54260e4a10580a0ae46d378c110b1f96e416e4ad75d8f8bc82a06",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              196.4904900425151,
+              661.5578429178787
+            ],
+            "point_neck_relative": [
+              -204.30570597449093,
+              207.3347057507272
+            ],
+            "bounds_source": [
+              151,
+              618,
+              238,
+              713
+            ],
+            "area": 4469,
+            "candidate_count": 35
+          }
+        }
+      },
+      {
+        "frame": 41,
+        "source": "run_v2/frame_41.png",
+        "sha256": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              214.5388349514563,
+              649.9205825242718
+            ],
+            "point_neck_relative": [
+              -200.6766990291262,
+              199.1523495145631
+            ],
+            "bounds_source": [
+              170,
+              604,
+              257,
+              697
+            ],
+            "area": 5150,
+            "candidate_count": 39
+          }
+        }
+      },
+      {
+        "frame": 42,
+        "source": "run_v2/frame_42.png",
+        "sha256": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              204.15840687938447,
+              554.3419325639285
+            ],
+            "point_neck_relative": [
+              -197.9049558723693,
+              154.40515953835708
+            ],
+            "bounds_source": [
+              149,
+              511,
+              244,
+              600
+            ],
+            "area": 4419,
+            "candidate_count": 16
+          }
+        }
+      },
+      {
+        "frame": 43,
+        "source": "run_v2/frame_43.png",
+        "sha256": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              250.5705816969248,
+              573.9955539088551
+            ],
+            "point_neck_relative": [
+              -173.05765098184511,
+              165.59733234531305
+            ],
+            "bounds_source": [
+              210,
+              517,
+              282,
+              615
+            ],
+            "area": 2699,
+            "candidate_count": 18
+          }
+        }
+      },
+      {
+        "frame": 44,
+        "source": "run_v2/frame_44.png",
+        "sha256": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              211.25369299935772,
+              606.072575465639
+            ],
+            "point_neck_relative": [
+              -198.44778420038537,
+              186.6435452793834
+            ],
+            "bounds_source": [
+              167,
+              566,
+              245,
+              647
+            ],
+            "area": 3114,
+            "candidate_count": 12
+          }
+        }
+      },
+      {
+        "frame": 45,
+        "source": "run_v2/frame_45.png",
+        "sha256": "c483a37b0e103feabbef96281397c430c43baead275487b0209e2200016db748",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              226.1276467029643,
+              595.8835450695705
+            ],
+            "point_neck_relative": [
+              -184.1234119782214,
+              179.93012704174228
+            ],
+            "bounds_source": [
+              180,
+              553,
+              264,
+              638
+            ],
+            "area": 3306,
+            "candidate_count": 31
+          }
+        }
+      },
+      {
+        "frame": 46,
+        "source": "run_v2/frame_46.png",
+        "sha256": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              236.4601096224117,
+              606.6976248477466
+            ],
+            "point_neck_relative": [
+              -183.323934226553,
+              184.61857490864796
+            ],
+            "bounds_source": [
+              196,
+              557,
+              268,
+              653
+            ],
+            "area": 3284,
+            "candidate_count": 18
+          }
+        }
+      },
+      {
+        "frame": 47,
+        "source": "run_v2/frame_47.png",
+        "sha256": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              218.38787878787878,
+              607.7132376395534
+            ],
+            "point_neck_relative": [
+              -189.96727272727273,
+              186.42794258373206
+            ],
+            "bounds_source": [
+              179,
+              555,
+              253,
+              646
+            ],
+            "area": 3135,
+            "candidate_count": 18
+          }
+        }
+      }
+    ],
+    "violations": [],
+    "diagnostics": [
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          16,
+          17
+        ],
+        "pixels": 48.69,
+        "review_above": 40.0
+      },
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          41,
+          42
+        ],
+        "pixels": 44.833,
+        "review_above": 40.0
+      }
+    ],
+    "occluded": [
+      "anatomical_left_wrist_behind_shield"
+    ]
+  }
+]

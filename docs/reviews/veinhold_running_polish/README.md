@@ -1,5 +1,11 @@
 # Veinhold running correction
 
+Historical review of PR #663. The subsequent
+[motion continuity correction](../veinhold_motion_continuity/README.md) records
+the leg-transition and secondary-motion defects found after this revision,
+their replacements and the additional regression evidence. The results below
+describe this original revision, not a visual approval of later artwork.
+
 This revision replaces the frontal performance reviewed in
 [the original face reveal](../veinhold_face_reveal/README.md). That review's
 passing timing/cache checks did not establish convincing motion. The player

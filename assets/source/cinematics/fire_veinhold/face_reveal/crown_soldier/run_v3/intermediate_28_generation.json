@@ -1,0 +1,54 @@
+{
+  "frame": 28,
+  "source_bounds": [
+    27,
+    30
+  ],
+  "primary_frame": 27,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_28_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_27_caae34273bed.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_28.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_28.png"
+  ],
+  "guide_only_planned_points": {
+    "right_toe": [
+      328,
+      741
+    ],
+    "right_knee": [
+      316,
+      594
+    ],
+    "left_toe": [
+      408,
+      918
+    ],
+    "left_knee": [
+      437,
+      682
+    ],
+    "right_hip": [
+      340,
+      480
+    ],
+    "left_hip": [
+      440,
+      480
+    ],
+    "right_ankle": [
+      328,
+      691
+    ],
+    "left_ankle": [
+      408,
+      868
+    ]
+  },
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_28.png",
+  "prompt": "Draw ONE complete coherent painted Crown soldier frontal running phase 28/48. Make a SMALL whole-character pose adjustment to reference1, the actual accepted SAME-CHARACTER neighboring pose 27. This drawing must advance slightly from that close pose as phase 28 progresses continuously between accepted phases 27 and 30. Do not copy its legs unchanged and do not jump to a different distant phase. Reference2 shows the exact approved upper-body performance for THIS frame. Reference3 is an AUTHORING-ONLY joint guide: red RIGHT/viewerLEFT, blue LEFT/viewerRIGHT. Remove every guide mark and caption.\nRIGHT/viewerLEFT boot tip around y741 (actual neighboring boundaries y746 and y732). LEFT/viewerRIGHT boot tip around y918 (actual neighboring boundaries y926 and y901). Both hip-knee-ankle-boot chains must stay connected with real constant leg lengths. Follow the small knee, ankle and boot displacement together, with natural depth foreshortening and support/flight progression. Never hold a fully reached boot and then abruptly snap it behind, and do not kick sideways or add old limb fragments. Keep the nearby folded/support pose's character and armor model.\nPreserve reference2's shoulder/elbow/hand action, sword in anatomical RIGHT/viewerLEFT hand pointed DOWN and OUTSIDE, plain steel boss shield on LEFT/viewerRIGHT forearm. Same focused young male face, steel helmet and plate armor, navy blue split tabard, charcoal trousers, brown boots. Keep face/head/neck/torso dimensions, belt position and whole-body density exact; tabard panels follow thighs while waist attachment stays stable. Exactly two arms, two legs, two boots, one sword and one shield.\nONE complete detailed painted fantasy cinematic figure in the same 768x1024 reference composition at high source detail. Helmet, sword tip and both boots inside generous transparent margins; lifted feet leave empty space below. TRUE CLEAN TRANSPARENT RGBA, no gray haze, background square, glow, floor, shadows, text, sheet or colored guide pixels. Whole ImageGen drawing, no procedural deformation. Coordinate examples are reference-image authoring plans; natural anatomy takes priority.\n",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen redraw. Raw output copied unchanged; guide plan is not measurement evidence.",
+  "source_path": "/workspace/generated_images/exec-22daa9a2-68ba-4b10-9b96-d79ee9b1c9bb.png",
+  "generation_id": "exec-22daa9a2-68ba-4b10-9b96-d79ee9b1c9bb"
+}

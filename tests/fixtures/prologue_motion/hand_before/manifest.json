@@ -1,0 +1,124 @@
+{
+  "crown_soldier": {
+    "profile_sha256": "5c6e117612ab77ff23841b1df341493c11aa92928b9d2767c2de057b46187798",
+    "frames": [
+      {
+        "source": "crown_soldier/frame_29.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.7,
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "landmarks": {
+          "eyes": [
+            544.0,
+            272.0
+          ],
+          "neck": [
+            550.0,
+            368.57143
+          ],
+          "belt": [
+            542.85714,
+            601.42857
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.907244,
+          "neck": 0.871906,
+          "belt": 0.84596
+        },
+        "generation_id": "exec-71a01ef6-d64f-495f-9aaf-d91264b870e7",
+        "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy.",
+        "index": 29,
+        "original_source": "run_v3/intermediate_29.png",
+        "sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+        "context": "Rejected v3 candidate source30 carry dip between coherent29/31; distinct from original production gait fixtures. A below-gross-threshold continuity issue identified by actual-image review."
+      },
+      {
+        "source": "crown_soldier/frame_30.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.7,
+        "origin": [
+          -1.0,
+          5.0
+        ],
+        "landmarks": {
+          "eyes": [
+            550.57143,
+            268.0
+          ],
+          "neck": [
+            550.0,
+            367.14286
+          ],
+          "belt": [
+            552.85714,
+            604.28571
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.860337,
+          "neck": 0.868283,
+          "belt": 0.605856
+        },
+        "generation_id": "exec-6d80e74f-c23a-4d47-bffe-781748f2d6d2",
+        "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy.",
+        "index": 30,
+        "original_source": "run_v3/midpoints/phase_30.png",
+        "sha256": "e00da883e878983dca5d9578419c81af5fccc2205370a25488b0fcce2e8d5ac3",
+        "context": "Rejected v3 candidate source30 carry dip between coherent29/31; distinct from original production gait fixtures. A below-gross-threshold continuity issue identified by actual-image review."
+      },
+      {
+        "source": "crown_soldier/frame_31.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.7,
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "landmarks": {
+          "eyes": [
+            543.71429,
+            271.14286
+          ],
+          "neck": [
+            544.28571,
+            372.85714
+          ],
+          "belt": [
+            547.14286,
+            607.14286
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.853639,
+          "neck": 0.900994,
+          "belt": 0.76374
+        },
+        "generation_id": "exec-10e23c5e-6761-47f9-a63a-c759f6efc9a5",
+        "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy.",
+        "index": 31,
+        "original_source": "run_v3/intermediate_31.png",
+        "sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+        "context": "Rejected v3 candidate source30 carry dip between coherent29/31; distinct from original production gait fixtures. A below-gross-threshold continuity issue identified by actual-image review."
+      }
+    ]
+  }
+}

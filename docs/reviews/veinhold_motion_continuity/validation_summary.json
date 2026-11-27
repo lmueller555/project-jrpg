@@ -1,0 +1,24 @@
+{
+  "base_main": "4719ce33534e7c0f93c898f39536bb2e7b5d07c3",
+  "test_counts": {
+    "painted_motion_tests": 35,
+    "core_tests": 144,
+    "gallery_tests": 71
+  },
+  "unique_tests_passed": 250,
+  "production_hard_violations": 0,
+  "reviewed_boot_endpoints": 288,
+  "reviewed_visible_hand_regions": 192,
+  "reviewed_braid_regions": 48,
+  "artifact_sha256": {
+    "tests/fixtures/prologue_motion/contract.json": "e844d34b37060f406f4a0ddd919d37479e0ed76da1735bcf127a1d15ec7aa7bc",
+    "tests/fixtures/prologue_motion/braid_contract.json": "4d9a0443ec6eb3732ec3e34df8c12b4501e2442752e1a32c7d90b07bbdcc827e",
+    "tests/fixtures/prologue_motion/registration_observations.json": "d86837f505e57f94ea25e3d36f579714795d7cc399e564badfda6bd3dc223291",
+    "tests/fixtures/prologue_hands/reviewed_windows.json": "29a3d1b74462fc057a3ee12752150788fc4e7d9c554b9731e681bc78f9df199f",
+    "docs/reviews/veinhold_motion_continuity/independent_review/review.json": "232370f3c091da7dc109d0c6a423356c633596af871e23891a7ee8d0feab2480",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/source_art_48.json": "b1850ac1f078f5334c58a17269432485e4a4c7f0bd7037560c9a2c5bf733762e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_48.json": "99b5d07cf0960acb9e88a2f1e0ca42cf301590ed0f6f112513dc63adbfe19a17",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/source_art_48.json": "b4314ad973a206abfbe9e0c92a9f3e735719ea2a0ada2c7380b84afebd06f48c"
+  },
+  "method_limit": "Chronological native/source frame inspection; no watched real-time video or world-ground foot-locking claim."
+}

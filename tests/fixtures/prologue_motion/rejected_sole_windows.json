@@ -1,0 +1,74 @@
+{
+  "records": [
+    {
+      "frame": 25,
+      "source": "run_v3/key_25_b.png",
+      "sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+      "wrong_window_x": [
+        -140,
+        -20
+      ],
+      "wrong_below_belt": 150,
+      "wrong_measured_y_neck_relative": 577.8608598190697,
+      "reason": "Independent actual-pixel identity review found this generic region selects the foreground calf rather than the intended recovered boot sole. The corrected independent observed sole point must reject this region.",
+      "actor": "iselin",
+      "wrong_measured_x_neck_relative": -20.941477864062136
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/repairs/frame_37.png",
+      "sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+      "wrong_window_x": [
+        -140,
+        -20
+      ],
+      "wrong_below_belt": 150,
+      "wrong_measured_y_neck_relative": 573.8710129360669,
+      "reason": "Independent actual-pixel identity review found this generic region selects the foreground calf rather than the intended recovered boot sole. The corrected independent observed sole point must reject this region.",
+      "actor": "iselin",
+      "wrong_measured_x_neck_relative": -21.661073713565163
+    },
+    {
+      "frame": 38,
+      "source": "run_v3/key_38_braid_clean.png",
+      "sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+      "wrong_window_x": [
+        -140,
+        -20
+      ],
+      "wrong_below_belt": 150,
+      "wrong_measured_y_neck_relative": 571.5844227958288,
+      "reason": "Independent actual-pixel identity review found this generic region selects the foreground calf rather than the intended recovered boot sole. The corrected independent observed sole point must reject this region.",
+      "actor": "iselin",
+      "wrong_measured_x_neck_relative": -22.039669772417348
+    },
+    {
+      "actor": "lucan",
+      "frame": 23,
+      "source": "run_v2/frames/frame_23.png",
+      "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+      "wrong_window_x": [
+        -140,
+        -20
+      ],
+      "wrong_below_belt": 150,
+      "reason": "Independent native-source identity review found the generic ROI selects the opposite greave/calf rather than the folded anatomical-right boot sole.",
+      "wrong_measured_x_neck_relative": -21.671999999999986,
+      "wrong_measured_y_neck_relative": 511.3332
+    },
+    {
+      "actor": "lucan",
+      "frame": 26,
+      "source": "run_v2/frames/frame_26.png",
+      "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+      "wrong_window_x": [
+        -140,
+        -20
+      ],
+      "wrong_below_belt": 150,
+      "reason": "Independent native-source identity review found the generic ROI selects the opposite greave/calf rather than the folded anatomical-right boot sole.",
+      "wrong_measured_x_neck_relative": -21.325500000000016,
+      "wrong_measured_y_neck_relative": 560.9898000000001
+    }
+  ]
+}

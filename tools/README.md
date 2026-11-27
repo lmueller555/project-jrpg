@@ -10,7 +10,7 @@ the standard.
 
 Capture the Fire Veinhold prologue through its actual save-disabled Gallery
 runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
-complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_running_polish/`.
+complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_motion_continuity/`.
 Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`,
 `bridge_running`, `face_reveal` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
 `--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
@@ -52,8 +52,25 @@ than a requirement to finish the gait in 24 display ticks. Shot 6 retains its
 complete lower-body drawings with the separate `bridge_running/playback.json`
 timing recipe, exported by `tools/export_prologue_runners.py`. The current run
 cycle is 800 ms in both shots; contact audio reads that same exported timing.
-The [running correction review](../docs/reviews/veinhold_running_polish/README.md)
+The [motion continuity review](../docs/reviews/veinhold_motion_continuity/README.md)
 records current construction, Gallery validation and reproduction commands.
+
+Run `python tools/audit_prologue_motion.py` for the scoped painted boot and
+material-contour regression checks, and `python tools/audit_prologue_hands.py`
+for visible hand-pump coverage and range. Both follow the selected source profile
+order and measure actual RGBA artwork; `--output PATH` records source hashes and
+results. Both tools' `--before` option intentionally rejects their retained
+faulty drawings. Use `--overlay PATH` for motion measurement windows, or
+`--overlays PATH` for the hand tool. Review these overlays: regional contours and
+skin/glove centroids are not anatomical joint solvers. Hidden shield wrists and
+world-ground foot locking are not certified by these checks.
+
+Use `python tools/audit_prologue_braid.py` for Iselin's reviewed distal braid
+regions, including light hair painted over opaque clothing. It measures RGB
+pixels rather than the outer alpha silhouette. Its `--before`, `--output PATH`
+and `--overlay PATH` options retain the same rejected-art and inspection flow.
+Region approval binds to the actual rendered pixels and registration; changed
+sources or export geometry require a new material-identity review.
 
 Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
 individual banks with `tools/export_iselin_native_idles.py` and

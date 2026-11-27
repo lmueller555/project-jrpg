@@ -18,7 +18,7 @@ from PIL import Image, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/face_reveal'
 OUTPUT = ROOT/'assets/story/fire_veinhold_opening/shot07/characters'
-REVIEW = ROOT/'docs/reviews/veinhold_running_polish'
+REVIEW = ROOT/'docs/reviews/veinhold_motion_continuity'
 ACTORS = ('lucan', 'iselin', 'crown_soldier')
 
 

@@ -35,7 +35,7 @@ from cinematic_perspective import _png_size
 
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/face_reveal/environment'
 OUTPUT = ROOT/'assets/story/fire_veinhold_opening/shot07/environment'
-REVIEW = ROOT/'docs/reviews/veinhold_running_polish'
+REVIEW = ROOT/'docs/reviews/veinhold_motion_continuity'
 APPROACH_SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png'
 WIDTH, HEIGHT, FPS, COUNT = 960, 640, 60, 301
 PROOFS = (0, 45, 90, 180, 300)

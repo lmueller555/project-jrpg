@@ -1,0 +1,1994 @@
+{
+  "version": 1,
+  "mask_review_state": "reviewed",
+  "meaning": "Actual cool-light pixel centroid in an identity-reviewed visible distal braid region; not an exact hair tip or persistent material particle. Diffuse end annotations are uncertain and do not steer the computed statistic.",
+  "maximum_region_centroid_step": 65,
+  "minimum_cycle_centroid_excursion": 5,
+  "minimum_selected_pixels": 50,
+  "color_mask": {
+    "alpha_min": 128,
+    "red_min": 95,
+    "green_min": 100,
+    "blue_min": 110,
+    "warm_tolerance": 30,
+    "maximum_chroma": 80
+  },
+  "required_visible_joins": [
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      14,
+      15
+    ],
+    [
+      15,
+      16
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      17,
+      18
+    ],
+    [
+      30,
+      31
+    ],
+    [
+      31,
+      32
+    ],
+    [
+      32,
+      33
+    ],
+    [
+      33,
+      34
+    ],
+    [
+      37,
+      38
+    ],
+    [
+      38,
+      39
+    ],
+    [
+      39,
+      40
+    ],
+    [
+      40,
+      41
+    ],
+    [
+      47,
+      0
+    ]
+  ],
+  "observations": [
+    {
+      "frame": 0,
+      "source": "run_v3/key_00.png",
+      "source_sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+      "exported_snapshot_sha256": "b6093bad03f91b4333ee5c0c5dbf1f5b149d1a3fcab42cbc336fdf12407790cb",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "33ea2044f5af915cfda48a212213a6868e4d56104430a1fc5684c81a57a2758f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        200.37266832119124
+      ]
+    },
+    {
+      "frame": 1,
+      "source": "run_v3/key_01_d.png",
+      "source_sha256": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+      "exported_snapshot_sha256": "7e20a5996feb2879ed78265dd5f8cc02058b8f401bffe8c3383f4310e207ad71",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "87bd1f08e03262164802a873c1cba972d929bd640bbd33e159e9367963969b4a",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9532110019708,
+        201.19247167455774
+      ]
+    },
+    {
+      "frame": 2,
+      "source": "run_v3/key_02_c.png",
+      "source_sha256": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+      "exported_snapshot_sha256": "ac4fd1eeb7159abdb7b72503b34935c62e5f95d99b68c73c0fe7e14c4a86bd3b",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "b88ed3df772a0deb07704ba7ca803df768b55ced6a6190604989b6c460954855",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9483092262783,
+        201.99366984814196
+      ]
+    },
+    {
+      "frame": 3,
+      "source": "run_v3/key_03.png",
+      "source_sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+      "exported_snapshot_sha256": "43eebfee00a155a33b51fb9efc5f974ce3b508addca09980dcf0282dcfbe72ef",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "bcef529d6fe0d64bde3df97925058633786f09f81782aac3cc96ae9ef827242a",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.85885837803215,
+        202.70538787927308
+      ]
+    },
+    {
+      "frame": 4,
+      "source": "run_v2/repairs/frame_04.png",
+      "source_sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+      "exported_snapshot_sha256": "3c171fc39f93481232c2f9bf24b89cb6be6996f450911c74d1ec4b9401775f27",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "881a13c08fcde577116a7a2aa21e80cd4b372167ac0fb527c0164f89318c6712",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2161129319607,
+        203.5669581537039
+      ]
+    },
+    {
+      "frame": 5,
+      "source": "run_v2/repairs/frame_05.png",
+      "source_sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+      "exported_snapshot_sha256": "98559b36f1d321efceb4d2d3de38160f786df931641177e5a17414538c1389cd",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "51e5de49205eb175ed26c311a112b8dbdfbf82ff804d09dacce5f38f9039660f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.8701589821937,
+        204.14011515034258
+      ]
+    },
+    {
+      "frame": 6,
+      "source": "run_v2/repairs/frame_06.png",
+      "source_sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+      "exported_snapshot_sha256": "1a0c505ecffe2374ede337a89deb2f7a55e21fd3d133b7755c0a5dfcb1cfcdf9",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "ff6ebb8e8b0cea38cab78447a9a7c2c9fa52bbff60dbb238df5bbd460bbfb1a8",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.3505080358393,
+        204.38368547811407
+      ]
+    },
+    {
+      "frame": 7,
+      "source": "run_v2/repairs/frame_07.png",
+      "source_sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+      "exported_snapshot_sha256": "2b46609a69fd7ac41732b2c0e1c3b1d0fb9e0d25256161ed2e5ad0d9b01aa497",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "1d9621935b8538988428f79f3f28eacf63d353d4701ae2c33a44b77794fa9ae9",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.8701589821937,
+        203.47908813737985
+      ]
+    },
+    {
+      "frame": 8,
+      "source": "run_v2/repairs/frame_08.png",
+      "source_sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+      "exported_snapshot_sha256": "aacf200fa6cb9e9cce40e83b6619177c34e4cafa5c9801811e5a6458a6cafeaa",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "7147265ab83258be50b8d6d1501e156d5a5b8c0364dfa4f174e1c4ea7e626e8e",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.89757223582467,
+        203.74261296542153
+      ]
+    },
+    {
+      "frame": 9,
+      "source": "run_v2/repairs/frame_09.png",
+      "source_sha256": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+      "exported_snapshot_sha256": "5092269eaae05fbdeb8a969a77d92e926f743e0ebe810d738c4b9ac1de0428cd",
+      "box_exported": [
+        670,
+        260,
+        790,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": false,
+      "exported_pixels_sha256": "620236d3297c99b4647e6764f366ffdc5ed7461467af679d865903e1f0027973",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.89757223582467,
+        202.74261296542153
+      ]
+    },
+    {
+      "frame": 10,
+      "source": "run_v2/repairs/frame_10.png",
+      "source_sha256": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+      "exported_snapshot_sha256": "2827ce6808742c75e7c65552392f121cf599526ae6f044ae9fbb7249ff9b3cf1",
+      "box_exported": [
+        670,
+        275,
+        745,
+        355
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        710,
+        340
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "08570d99b59c8e9315f4f88e6c021a7222ea233b56e33dbe5471713251600771",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.89757223582467,
+        201.74261296542153
+      ]
+    },
+    {
+      "frame": 11,
+      "source": "run_v2/repairs/frame_11.png",
+      "source_sha256": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+      "exported_snapshot_sha256": "7b59435f7e020ea2724d1d5371772ea6a9587a31492189d4adedcfec11ad87e8",
+      "box_exported": [
+        545,
+        295,
+        610,
+        345
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        568,
+        330
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "3ef24bfdc0d79fef943f3e5d6746e255ff98e80eae94de56c3536d4e12ab7a04",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2702676156864,
+        201.37609596710297
+      ]
+    },
+    {
+      "frame": 12,
+      "source": "run_v2/repairs/frame_12.png",
+      "source_sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+      "exported_snapshot_sha256": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2",
+      "box_exported": [
+        545,
+        280,
+        625,
+        355
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "428588b0e72cfd39903ab7035a1c057e423798b0318cbecd2e7fcf4514cf4bc1",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.5053398725764,
+        199.67284358855153
+      ]
+    },
+    {
+      "frame": 13,
+      "source": "run_v3/helper_frame_13.png",
+      "source_sha256": "ed3c2bcf63402c4abb2ffd0a2b783d12323aa975c1fd64cfb6aac9fc52c6da6c",
+      "exported_snapshot_sha256": "99e2cfef5c13dae59be206d7de6df3149f6709a38b01fd778c23497d0a4eeda0",
+      "box_exported": [
+        545,
+        280,
+        625,
+        355
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": false,
+      "exported_pixels_sha256": "ecb912aa00bcb71e2e57005c64852e70668a1a203c92f394a7b5ad723f9c4bb1",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.4995167149951,
+        199.18311502183116
+      ]
+    },
+    {
+      "frame": 14,
+      "source": "run_v3/key_14_b.png",
+      "source_sha256": "1454d3426b73828c3669c5fed91f506bc1789478b968262b27f325aab8115d84",
+      "exported_snapshot_sha256": "e247093e2c7db7e7cfcc9078d25402775a884cc79a0e92c6239f07cca282d935",
+      "box_exported": [
+        545,
+        295,
+        610,
+        345
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        568,
+        328
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "e6f7df2e2b11e7721371d9c4454d3c79cd2c1f57d2141cb08178d349e2ca7b9d",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.8858330407231,
+        198.05893304807245
+      ]
+    },
+    {
+      "frame": 15,
+      "source": "run_v3/helper_frame_15.png",
+      "source_sha256": "d90bc69770f7a693bd480051b6764f85f7f84d9979173a3eb22cd4e08cce8aec",
+      "exported_snapshot_sha256": "b5a4ad6a6a4fff5bebf617caa88b78534d0b7b696fbbeb29aff7f29fdf7f00b8",
+      "box_exported": [
+        675,
+        320,
+        765,
+        405
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        725,
+        380
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "a096f0d30dcf9e1ee6b2d9a835d9af3d84f1f86d2f52f1c6cc5b60f48ba3f98f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.65391081578736,
+        197.25506364582498
+      ]
+    },
+    {
+      "frame": 16,
+      "source": "run_v3/key_16_c.png",
+      "source_sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+      "exported_snapshot_sha256": "7482b96d56018e8d02cfa843766ed7a9479aad4a18ebac4cd4f617ec6420fe68",
+      "box_exported": [
+        675,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "6dd1f53c6c5835ac98b95be4dc8ab6214a900c770d12045a70cef5453c1aea5e",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.4156047079515,
+        196.9430664499564
+      ]
+    },
+    {
+      "frame": 17,
+      "source": "run_v3/helper_frame_17.png",
+      "source_sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "exported_snapshot_sha256": "99a838fbd361ac5bea77f009db6ddacf930be9adfbe707e035e70fa2b34300b0",
+      "box_exported": [
+        675,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "72174fdbc49243239ace44b1beccca96b17a66c3e7f229b05968bc9fadbb47dd",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2582659514851,
+        196.25506364582498
+      ]
+    },
+    {
+      "frame": 18,
+      "source": "run_v2/repairs/frame_18.png",
+      "source_sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+      "exported_snapshot_sha256": "0b61631f38ac05de1dbe9593de87fcc3ffa618fe6c3b17532a6b5fe958646461",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "f4bb4f2a7865565eb756e07281fe171dde60ec52f516a4cfe7946fcde98859fd",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.7437188561999,
+        196.24308042876132
+      ]
+    },
+    {
+      "frame": 19,
+      "source": "run_v2/repairs/frame_19.png",
+      "source_sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+      "exported_snapshot_sha256": "a1044390b68cba8264662259578134ca27ed67a0e948116e56148fefeff8dd94",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "fb72edf7a0f0e875661ea79c00257ba68d068dd52f88b4fdbc873168231c39bb",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.7437188561999,
+        196.18561541131098
+      ]
+    },
+    {
+      "frame": 20,
+      "source": "run_v2/repairs/frame_20.png",
+      "source_sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+      "exported_snapshot_sha256": "3d0b6af0f58526f20bc7d9d4208847c88342423e64fba419561bb8eb650be55d",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "d4aeef232500af694eac183cde26f3528029df847e66c083d61b218cb269fdac",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1674016451955,
+        196.66109372810908
+      ]
+    },
+    {
+      "frame": 21,
+      "source": "run_v2/repairs/frame_21.png",
+      "source_sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+      "exported_snapshot_sha256": "8b20a853da99ae8da400469fc3818b0a45fe6f2e6d12f11da7b52626b83f9852",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "d0b9e94890dd5447f5de298cbc728cfcd3ba1289adc0f3bc56828807b90e4cbf",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9272271183726,
+        197.37828155126056
+      ]
+    },
+    {
+      "frame": 22,
+      "source": "run_v2/repairs/frame_22.png",
+      "source_sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+      "exported_snapshot_sha256": "31698f0fc2492e7477bbf4b23029d36fb6a18868dc98460af2638a36ce2ed91a",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "8322a4e84b9ec213591e44035141839a4cbc52b37acd424ccdc86de13d68441f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9272271183726,
+        198.37828155126056
+      ]
+    },
+    {
+      "frame": 23,
+      "source": "run_v3/key_23.png",
+      "source_sha256": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+      "exported_snapshot_sha256": "d6740598e230f88387092a537bd758804b6909f180225a864c3d1307eabeb68b",
+      "box_exported": [
+        700,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "e445b91de39295cf44760fd794b9453f30d65ffa6f1826da17a0d96b3408a0dd",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1206468657433,
+        199.11728444480025
+      ]
+    },
+    {
+      "frame": 24,
+      "source": "run_v2/repairs/frame_24.png",
+      "source_sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+      "exported_snapshot_sha256": "3479f2e7362ad30de655b84582f9610c7a8517d9d3ab048a6cd65d794d66cc82",
+      "box_exported": [
+        715,
+        280,
+        790,
+        415
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "12297c78556f27fb444a1aaabb17b13718fdc398d1ad80d321b15f2d283a3db4",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2994215238391,
+        199.64141549863513
+      ]
+    },
+    {
+      "frame": 25,
+      "source": "run_v3/key_25_b.png",
+      "source_sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+      "exported_snapshot_sha256": "ba0d25a132fe63198fec96d6a3a708418146cb511c2522535980034aef2f8207",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "d61ec29eb5d0772b65e849912243ff6f66645b58a63fee75dfd72456465f966c",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.6890561204067,
+        201.09710991914176
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 26,
+      "source": "run_v2/repairs/frame_26.png",
+      "source_sha256": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+      "exported_snapshot_sha256": "a0248b27021867d919577b8c64c5a1ffe6683cfae2fd9fa091f8e9b4568ab14b",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "7df2c70b67a7107ea2bb546447450249396244fc17d8612aa8a2833001934c2e",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9854045665569,
+        202.00445262213609
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 27,
+      "source": "run_v2/repairs/frame_27.png",
+      "source_sha256": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+      "exported_snapshot_sha256": "5a9aa640d8d813cf2d7d6bb1b62a4cc5eb31d0213ed57ced280dc2bbc32a1ce4",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "02cb7aa29414024f92b42b0778e7a2d84bda680b7126ba69549999b8bd96a5b1",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.4917291879625,
+        202.99848277369543
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 28,
+      "source": "run_v2/repairs/frame_28.png",
+      "source_sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+      "exported_snapshot_sha256": "e9b843ccaae489c9b722630b0366433660bdca11a72a5ddcbd7a0cb3d21a6303",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "ac6885018f900769fedafaee9642091f753576252555fb0e86ad15e962f8b05d",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 29,
+      "source": "run_v2/repairs/frame_30.png",
+      "source_sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+      "exported_snapshot_sha256": "959fa57e798231fd32c8753edd461bb51b9c27a672429b8313ba96d0916b48c8",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "0724ba46f3c279f67f7dae7cfc672dbd64b88df1e5c8732fb3c6c6b76c5fb35e",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1466091318041,
+        203.48170823538658
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 30,
+      "source": "run_v2/repairs/frame_29.png",
+      "source_sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+      "exported_snapshot_sha256": "29151aed879e289fe7d512a6e09d282c8ebe125b0b9117892b2445e310208dd3",
+      "box_exported": [
+        650,
+        280,
+        790,
+        360
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Actual distal braid above the cuff; prototype common upper y boundary360 based on independent native geometry review. Selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "78fa4bf468f126a1e2595571e9622978037e47a04f53274c8c5459e9a9ecc9e6",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ],
+      "identity_review": "Independent QA inspected actual selected cyan pixels on final exported RGBA: distal braid/plait/tassel only; embroidered cuff excluded. Some fine tails extend outside this regional statistic."
+    },
+    {
+      "frame": 31,
+      "source": "run_v2/repairs/frame_32.png",
+      "source_sha256": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+      "exported_snapshot_sha256": "fcd7aaea059000f1db2ecbf0cb5e441ef61f69914ee8a09f40f5238d015e58c4",
+      "box_exported": [
+        650,
+        290,
+        715,
+        380
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        670,
+        360
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "be0e60bd7b0652d71207be851c351ecfc1828f5f6c51427bcb3044c3b233cd33",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.6096752859828,
+        204.1300820461108
+      ]
+    },
+    {
+      "frame": 32,
+      "source": "run_v2/repairs/frame_31.png",
+      "source_sha256": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+      "exported_snapshot_sha256": "5d9e65e1529dcc50a6a1891b8bed87cf318021e55ae5a8eeda0d295e95eb2c30",
+      "box_exported": [
+        650,
+        290,
+        715,
+        380
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        670,
+        356
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "02538eb614407f893000449983763b7c795f46c76b6708bad096bdb838a42521",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1466091318041,
+        203.48170823538658
+      ]
+    },
+    {
+      "frame": 33,
+      "source": "run_v2/repairs/frame_34.png",
+      "source_sha256": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+      "exported_snapshot_sha256": "4f2cd9875cef5d827b914b5929eaf067951da184e2a7a5a495624a50ddc8a858",
+      "box_exported": [
+        570,
+        310,
+        615,
+        375
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        590,
+        360
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "1c5ceec173a5163565572d856767e3447ff3a50f4f02a307ad62343e13cd5fbd",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1715971261765,
+        203.07168647418086
+      ]
+    },
+    {
+      "frame": 34,
+      "source": "run_v2/repairs/frame_33.png",
+      "source_sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+      "exported_snapshot_sha256": "2c10097a4a12407cda1e5b5dfbeb66b879d743696c9e01b02526d06d34b37fb2",
+      "box_exported": [
+        580,
+        300,
+        620,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        610,
+        348
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "aae77e28aa29a332a727f5127e63cccafb1bde9f6e77e9e41da18b34a6f6b3f7",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1960930102505,
+        201.77060733736232
+      ]
+    },
+    {
+      "frame": 35,
+      "source": "run_v2/repairs/frame_35.png",
+      "source_sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+      "exported_snapshot_sha256": "dc83629e71cc9d5bae100b0a785cf923690a8ff5e1dc61765bf123be582d019f",
+      "box_exported": [
+        550,
+        290,
+        620,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "c8ebd9bd1ffc4c72389e1222d496463b6a7ffd2014ad09a393cc3f9d0f72a917",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.9707179330891,
+        201.08844328620918
+      ]
+    },
+    {
+      "frame": 36,
+      "source": "run_v2/repairs/frame_36.png",
+      "source_sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+      "exported_snapshot_sha256": "eb81c94af3929e56fbf9b7e14349ebe0e9fc50a85ed36bafa404301939cbbb25",
+      "box_exported": [
+        550,
+        290,
+        620,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "6e3a7c0d10614966ae704ff6ee5e1d59369c3ff25bcf25341e9be7480faa618b",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.96067286978047,
+        200.37609596710297
+      ]
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/repairs/frame_37.png",
+      "source_sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+      "exported_snapshot_sha256": "995a2c96c4ecb62f277450a5f4af95303c21589eb1c53ad3d7acb1f904e91e3d",
+      "box_exported": [
+        550,
+        290,
+        605,
+        340
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Warm-silver prototype removes fist/cuff pixels below/right of the actual inward distal curl; selected-pixel identity confirmation pending.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "4a7625bb34ad456f4b56216cd89c13f1552e1f272193f402f4bfd7f4325bd1f6",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.59001541119875,
+        199.3444436290371
+      ]
+    },
+    {
+      "frame": 38,
+      "source": "run_v2/repairs/frame_38.png",
+      "source_sha256": "a33562ce62df893f481e70770738548938010900b259a9ca04835334f7e975e8",
+      "exported_snapshot_sha256": "5766b15daa799e7425a25387a920a97e4bf4f226c28d1108c1be1560a2aa11f3",
+      "box_exported": [
+        550,
+        290,
+        620,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": false,
+      "exported_pixels_sha256": "10c9670e809048a8854d2bb2829cbef2405a78f6ed769148911849128d89cd8f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.3505080358393,
+        198.06163145218858
+      ]
+    },
+    {
+      "frame": 39,
+      "source": "run_v2/repairs/frame_39.png",
+      "source_sha256": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+      "exported_snapshot_sha256": "cd63cfac367f81ae1e477579eb246d6a2ffa2727245920865869bbb708ebe8c6",
+      "box_exported": [
+        555,
+        300,
+        585,
+        345
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Independent QA confirmed selected pixels on the visible braid immediately above the fist; close hand clearance remains a visual review item.",
+      "approximate_visible_free_end": [
+        568,
+        330
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "289f805e6c710638ef4ff4809b315ab75ad1cf73b6cc94725baee8108b7ec23d",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.73267897249195,
+        197.33864810534382
+      ]
+    },
+    {
+      "frame": 40,
+      "source": "run_v3/key_40_b.png",
+      "source_sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+      "exported_snapshot_sha256": "df654e18746def5634288a78f24a74f9bd88fbf6778b28eaa6cd06821c684693",
+      "box_exported": [
+        680,
+        285,
+        755,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "approximate_visible_free_end": [
+        716,
+        350
+      ],
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "e528d9db9f59d616e397c0f42b5728a438241abb6a0d874c9bf4a120ba552aae",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ]
+    },
+    {
+      "frame": 41,
+      "source": "run_v2/repairs/frame_40.png",
+      "source_sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+      "exported_snapshot_sha256": "f4e8bb18cf6231c4b4cf8c9c5ca2c81f8b76405d9b3f01a1dae80bbd3ef55909",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "61a1ff1807d280d651ea00202d7c571c768d6eff84168d518b76bddf3270ee15",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.5086465993099,
+        195.94698760468575
+      ]
+    },
+    {
+      "frame": 42,
+      "source": "run_v3/key_43_c.png",
+      "source_sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+      "exported_snapshot_sha256": "451f7b76affbaa5e20342c7e92a893e31f99e8271cce77fc3636ae1e74cd4e3f",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "32838fac6a6510be2be81ff8c939722f83af53d72050df24cad9e49711a38e47",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ]
+    },
+    {
+      "frame": 43,
+      "source": "run_v3/key_43_d.png",
+      "source_sha256": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+      "exported_snapshot_sha256": "a2ea4499056e485ccade4f2c85f99e2685ef0169208b51dc20101d5f1a3ad345",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "8bff62f149f0f321e5589e533ad277c5649ab8a06d5dc4e6854581a8293d886c",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2896485469537,
+        195.90208950444318
+      ]
+    },
+    {
+      "frame": 44,
+      "source": "run_v2/repairs/frame_43.png",
+      "source_sha256": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+      "exported_snapshot_sha256": "cb4f12c21b23c86b2633fdd0d815b21d2993cd1fe8a73ae7b93ba955fd55fa44",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "b6cfb76f7979da4a38ef25de08d5c3a519305a00789ea74c94e14003851cabd3",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.413521315101,
+        196.9842234180023
+      ]
+    },
+    {
+      "frame": 45,
+      "source": "run_v2/repairs/frame_46.png",
+      "source_sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+      "exported_snapshot_sha256": "e6fa3d6e7785f001f6357fb2ba71f7e338c2f54fb5dd77ebd76c1483ae5d18c5",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "6bbec5e78f6561d376c71454d7ab41500b373b597432e388aaacb089541ad75f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.81824134521577,
+        197.26116593220226
+      ]
+    },
+    {
+      "frame": 46,
+      "source": "run_v2/repairs/frame_47.png",
+      "source_sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+      "exported_snapshot_sha256": "42321b32d1a1e9c881471e417ca026c1bdc54076dadf7385e4bea80ff99d14b8",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "c4592fecc2d5d5cd4c67ae7a10a45edcfc51d5c56112fc201f7cecaf865cdcc3",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.3467872366896,
+        197.7257905041285
+      ]
+    },
+    {
+      "frame": 47,
+      "source": "run_v2/repairs/frame_45.png",
+      "source_sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+      "exported_snapshot_sha256": "f6d369db73a020a61ace27522e73a83843f5532a2be0de66e6670b3d99112900",
+      "box_exported": [
+        675,
+        275,
+        780,
+        385
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "review": "Starting extraction box from actual frozen output. Selected-pixel identity review is pending; broad windows are not automatic braid segmentation.",
+      "pixel_identity_reviewed": true,
+      "exported_pixels_sha256": "5f111579d803790c91bfb846b81361411835b2762c2cb91d2cc127afd1176653",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.80985339086817,
+        198.68834264236932
+      ]
+    },
+    {
+      "frame": 9,
+      "source": "run_v3/helper_braid_frame_09_b.png",
+      "source_sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+      "exported_snapshot_sha256": "746fe6ccdb64d74dc62e245a7854723ee0f20372ac321fbf5e396f7b75f63919",
+      "exported_pixels_sha256": "081924ccae89587553d039cb63ae5fd4b1d9d6b7a9f9488ff710df58b869d170",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.2896485469537,
+        202.3323192698743
+      ],
+      "box_exported": [
+        625,
+        285,
+        710,
+        340
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 10,
+      "source": "run_v3/helper_braid_frame_10_d.png",
+      "source_sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+      "exported_snapshot_sha256": "b267ba33cd54923153c50698f691213652306f9ad35e1c45159b8746a52e3dab",
+      "exported_pixels_sha256": "9529e7a22715daecc4d62c2418de4b2af87ba8efe705016239512ef07db0e26b",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.3345391594058,
+        201.67890185446797
+      ],
+      "box_exported": [
+        585,
+        275,
+        650,
+        325
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 11,
+      "source": "run_v3/helper_braid_frame_11_d.png",
+      "source_sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+      "exported_snapshot_sha256": "798097c93208b1bf5686cd4cff08a0cbdfe88c502c0465d439e57031d5567ac0",
+      "exported_pixels_sha256": "4f1e13bdd3c418388fd2a96b966e85e3535778793c6566832d89a080914f8b70",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.8106090918742,
+        200.91947640473293
+      ],
+      "box_exported": [
+        585,
+        285,
+        640,
+        325
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 13,
+      "source": "run_v3/key_13_subdivision.png",
+      "source_sha256": "5ed727ad0d8df9e7870ff50bd7a0c50e2ee95a5692f3a240bd06b9e358fcff23",
+      "exported_snapshot_sha256": "7bac354e8e3347723d8011adf5c9faaf04d69970a1ecc697ed5e06d0d9878ec8",
+      "exported_pixels_sha256": "bb7600a9fc16127909558bcb36a264393baabfc27d308446f8dc3cf27ec8ab15",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.787849827177,
+        199.45931093802267
+      ],
+      "box_exported": [
+        580,
+        310,
+        630,
+        370
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": false,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 14,
+      "source": "run_v3/key_14_braid_mid.png",
+      "source_sha256": "f52fc68b11606a95392c24d53e3ffc05f1b96cffa31d56e728672c4b780d5c4f",
+      "exported_snapshot_sha256": "b33dfa35328cc2d7cf00984abfbda70e2e0ce1f9e6d71364f0c48981e4a5fd0b",
+      "exported_pixels_sha256": "1d72ffb3a8c77ad23b8eaa0e48023b96776f44519119efa5d8eec3a3fb86a717",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.68356497683567,
+        197.9580375295804
+      ],
+      "box_exported": [
+        655,
+        300,
+        720,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": false,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 15,
+      "source": "run_v3/key_15_hair.png",
+      "source_sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+      "exported_snapshot_sha256": "7ccc784735edafe7f4f89313c4c3cf8275df74205029f5954fe8191819e80c87",
+      "exported_pixels_sha256": "c4dd860566327d77a3d16f22b89ec72f8bf01be80100412778e11213df72401f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.6890561204067,
+        197.489552477784
+      ],
+      "box_exported": [
+        685,
+        320,
+        755,
+        390
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 31,
+      "source": "run_v3/key_31_braid_path.png",
+      "source_sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+      "exported_snapshot_sha256": "b9b76a42c256404eea7d56df2ea38bf1af673b6cf3dacc2c108ce51ced854cb6",
+      "exported_pixels_sha256": "d2c19579ec7f269706101e420e49d2848adb8b7be2a95127fe77f4b82168f752",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.0855015611239,
+        204.31222480185733
+      ],
+      "box_exported": [
+        640,
+        300,
+        700,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 32,
+      "source": "run_v3/key_32_braid_path.png",
+      "source_sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+      "exported_snapshot_sha256": "a5319f2fab4a1d30447b2d8796f0247d251a70489622980b95b4f66f47c1df9a",
+      "exported_pixels_sha256": "65564b4c58b487d1499a5279bea285f8ffaa1c732ecce541dd993887735f5b77",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.6023795330759,
+        203.55868398918838
+      ],
+      "box_exported": [
+        625,
+        295,
+        675,
+        350
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 33,
+      "source": "run_v3/key_33_braid_path.png",
+      "source_sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+      "exported_snapshot_sha256": "96607296631983212d1a57a5fbb00926e727cb62ab63c6b48aa6e6d36469e387",
+      "exported_pixels_sha256": "e10e3e9ff2d528f976f63b0053e26b60d59e3f5d6c9ca6627e4d317eb7b36611",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.1263096006076,
+        202.67840373669983
+      ],
+      "box_exported": [
+        570,
+        315,
+        620,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 38,
+      "source": "run_v3/key_38_braid_final.png",
+      "source_sha256": "8388422ff621d9d753fc354038ab79d818598281e501c608d38152995d841544",
+      "exported_snapshot_sha256": "6deab3ae9006bec566d24556a75c37ae94bf2a2e593ce87c2278f83a702668d6",
+      "exported_pixels_sha256": "b45b7d4ad96d0b091f2b7c04e28c0f0373bcf78877cdbc0ba416191a26c8614a",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.66191369605997,
+        197.8956848030019
+      ],
+      "box_exported": [
+        575,
+        285,
+        630,
+        335
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending.",
+      "identity_review": "Archived rejected lower plait/free-end pixels independently reviewed as clean braid/tassel rather than cuff. Actual38\u201339 release remains a genuine gross-step negative; this old source is not selected in production."
+    },
+    {
+      "frame": 39,
+      "source": "run_v3/key_39_braid_mid.png",
+      "source_sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+      "exported_snapshot_sha256": "26b532a1d387edde4a0cac37abc923dde4f2e7a300c17a3e85dacc82bd61f1e3",
+      "exported_pixels_sha256": "c3d0e3f1f49b1d613e3bd4edc3223ccac253c80a54e0cb2b89e7d72ba668f6c9",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.8837549230582,
+        196.91855130131145
+      ],
+      "box_exported": [
+        660,
+        285,
+        710,
+        345
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Independent final-source distal-region box review; actual selected-pixel tint/centroid identity ratification pending."
+    },
+    {
+      "frame": 13,
+      "source": "run_v3/key_13_recolor.png",
+      "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+      "exported_snapshot_sha256": "534eca6cf482ce46bae5e756269af8ab8e785c879cf593388de805561b383eab",
+      "exported_pixels_sha256": "a6139432fc5e6a25c9712e5e923fa9f660fe60e0a530034f4e4f4ea7dfbb558f",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.57512623245884,
+        198.65693442283492
+      ],
+      "box_exported": [
+        580,
+        310,
+        630,
+        370
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Final root/native-image accepted source. Actual distal-region box identity verified independently; final warm-silver selected-pixel ratification pending."
+    },
+    {
+      "frame": 14,
+      "source": "run_v3/key_14_recolor.png",
+      "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+      "exported_snapshot_sha256": "c14fb86db3726b4fb475226dda152460596e17a5e9d2ddddef15b95adf5a6c8e",
+      "exported_pixels_sha256": "6c374b0cfc8d0abad2bf38d5b7ba8adf06c3005babfb4c4295ee279ca40eae8b",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        511.68356497683567,
+        197.9580375295804
+      ],
+      "box_exported": [
+        655,
+        300,
+        720,
+        365
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Final root/native-image accepted source. Actual distal-region box identity verified independently; final warm-silver selected-pixel ratification pending."
+    },
+    {
+      "frame": 38,
+      "source": "run_v3/key_38_braid_clean.png",
+      "source_sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+      "exported_snapshot_sha256": "80a1b14d3b989d848909548688783066819fd925e7c0150ec4dcc47399104acb",
+      "exported_pixels_sha256": "b7cbf9f68e63785798dafa4ddaae54b66c274013b2d3fb30cc37cfdce9d105f4",
+      "exported_size": [
+        1024,
+        1024
+      ],
+      "neck_exported": [
+        512.174986322176,
+        197.6400650002858
+      ],
+      "box_exported": [
+        620,
+        270,
+        690,
+        330
+      ],
+      "visibility": "visible",
+      "uncertainty_px": 20,
+      "pixel_identity_reviewed": true,
+      "review": "Final root/native-image accepted source. Actual distal-region box identity verified independently; final warm-silver selected-pixel ratification pending."
+    }
+  ],
+  "reviewed_metric_exceptions": [
+    {
+      "id": "iselin_final_braid_13_14",
+      "review_state": "accepted",
+      "context": {
+        "metric": "braid_region_centroid",
+        "region": "visible_distal_braid",
+        "frames": [
+          {
+            "frame": 13,
+            "source": "run_v3/key_13_recolor.png",
+            "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+            "cell": [
+              0,
+              0,
+              1199,
+              1312
+            ],
+            "scale": 0.7964192988324493,
+            "origin": [
+              8.424873767541158,
+              1.308065577165081
+            ],
+            "neck": [
+              632.299,
+              248.182
+            ],
+            "belt": [
+              623.472,
+              481.103
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "a6139432fc5e6a25c9712e5e923fa9f660fe60e0a530034f4e4f4ea7dfbb558f"
+          },
+          {
+            "frame": 14,
+            "source": "run_v3/key_14_recolor.png",
+            "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8332500083325001,
+            "origin": [
+              -10.683564976835669,
+              -4.958037529580395
+            ],
+            "neck": [
+              627.283,
+              243.574
+            ],
+            "belt": [
+              620.651,
+              460.742
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "6c374b0cfc8d0abad2bf38d5b7ba8adf06c3005babfb4c4295ee279ca40eae8b"
+          }
+        ],
+        "configuration": {
+          "color_mask": {
+            "alpha_min": 128,
+            "red_min": 95,
+            "green_min": 100,
+            "blue_min": 110,
+            "warm_tolerance": 30,
+            "maximum_chroma": 80
+          },
+          "minimum_selected_pixels": 50,
+          "boxes": [
+            [
+              580,
+              310,
+              630,
+              370
+            ],
+            [
+              655,
+              300,
+              720,
+              365
+            ]
+          ],
+          "normalization": "neck_relative",
+          "statistic_version": 1
+        }
+      },
+      "default_limit": 65,
+      "reviewed_value": 73.563,
+      "sampling_tolerance": 1.0,
+      "maximum_reviewed_value": 74.563,
+      "reason": "Root and independent native sequence review find continuous braid bending/unrolling. The regional centroid mixes different amounts of last-plait core and loose curl and is not a persistent material particle; this exact reviewed breach remains visible diagnostically. The default65px guard is unchanged.",
+      "evidence": "Independent native12\u201316 and31\u201334 source sequence review; final source/render/registration, color mask and region boxes are bound here."
+    },
+    {
+      "id": "iselin_final_braid_32_33",
+      "review_state": "accepted",
+      "context": {
+        "metric": "braid_region_centroid",
+        "region": "visible_distal_braid",
+        "frames": [
+          {
+            "frame": 32,
+            "source": "run_v3/key_32_braid_path.png",
+            "source_sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8165865050914168,
+            "origin": [
+              -0.6023795330759185,
+              -0.09468398918838261
+            ],
+            "neck": [
+              627.738,
+              249.28
+            ],
+            "belt": [
+              633,
+              475
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "65564b4c58b487d1499a5279bea285f8ffaa1c732ecce541dd993887735f5b77"
+          },
+          {
+            "frame": 33,
+            "source": "run_v3/key_33_braid_path.png",
+            "source_sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8165865050914168,
+            "origin": [
+              -0.1263096006075557,
+              0.14959626330016818
+            ],
+            "neck": [
+              627.155,
+              248.202
+            ],
+            "belt": [
+              617.604,
+              471.452
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "e10e3e9ff2d528f976f63b0053e26b60d59e3f5d6c9ca6627e4d317eb7b36611"
+          }
+        ],
+        "configuration": {
+          "color_mask": {
+            "alpha_min": 128,
+            "red_min": 95,
+            "green_min": 100,
+            "blue_min": 110,
+            "warm_tolerance": 30,
+            "maximum_chroma": 80
+          },
+          "minimum_selected_pixels": 50,
+          "boxes": [
+            [
+              625,
+              295,
+              675,
+              350
+            ],
+            [
+              570,
+              315,
+              620,
+              365
+            ]
+          ],
+          "normalization": "neck_relative",
+          "statistic_version": 1
+        }
+      },
+      "default_limit": 65,
+      "reviewed_value": 68.977,
+      "sampling_tolerance": 1.0,
+      "maximum_reviewed_value": 69.977,
+      "reason": "Root and independent native sequence review find continuous braid bending/unrolling. The regional centroid mixes different amounts of last-plait core and loose curl and is not a persistent material particle; this exact reviewed breach remains visible diagnostically. The default65px guard is unchanged.",
+      "evidence": "Independent native12\u201316 and31\u201334 source sequence review; final source/render/registration, color mask and region boxes are bound here."
+    },
+    {
+      "id": "iselin_final_braid_37_38",
+      "review_state": "accepted",
+      "context": {
+        "metric": "braid_region_centroid",
+        "region": "visible_distal_braid",
+        "frames": [
+          {
+            "frame": 37,
+            "source": "run_v2/repairs/frame_37.png",
+            "source_sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+            "cell": [
+              0,
+              0,
+              1086,
+              1448
+            ],
+            "scale": 0.6671514633967349,
+            "origin": [
+              129.40998458880125,
+              17.620556370962902
+            ],
+            "neck": [
+              573.468,
+              271.819
+            ],
+            "belt": [
+              559.775,
+              546.658
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "4a7625bb34ad456f4b56216cd89c13f1552e1f272193f402f4bfd7f4325bd1f6"
+          },
+          {
+            "frame": 38,
+            "source": "run_v3/key_38_braid_clean.png",
+            "source_sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8165865050914168,
+            "origin": [
+              0.8250136778239607,
+              0.3599349997141985
+            ],
+            "neck": [
+              625.99,
+              242.032
+            ],
+            "belt": [
+              616.645,
+              460.742
+            ],
+            "rendered_size": [
+              1024,
+              1024
+            ],
+            "rendered_rgba_sha256": "b7cbf9f68e63785798dafa4ddaae54b66c274013b2d3fb30cc37cfdce9d105f4"
+          }
+        ],
+        "configuration": {
+          "color_mask": {
+            "alpha_min": 128,
+            "red_min": 95,
+            "green_min": 100,
+            "blue_min": 110,
+            "warm_tolerance": 30,
+            "maximum_chroma": 80
+          },
+          "minimum_selected_pixels": 50,
+          "boxes": [
+            [
+              550,
+              290,
+              605,
+              340
+            ],
+            [
+              620,
+              270,
+              690,
+              330
+            ]
+          ],
+          "normalization": "neck_relative",
+          "statistic_version": 1
+        }
+      },
+      "default_limit": 65,
+      "reviewed_value": 71.362,
+      "sampling_tolerance": 1.0,
+      "maximum_reviewed_value": 72.362,
+      "reason": "Root and independent native36\u201340 review accepted continuous braid bending/unrolling. Independent QA inspected the actual selected lower plait/tassel pixels and excluded fist/cuff contamination. The regional centroid is not a persistent material particle; its exact observed71.362px step remains visible diagnostically. Default65px, cycle5px and support50 guards remain unchanged.",
+      "evidence": "iselin_final37_38_selected_pixels_native.png; final source/render/registration, mask and both identity-reviewed boxes are bound here."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "revision": "Lucan run_v3 continuity repair",
+  "selected_frames": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    35,
+    38,
+    39,
+    40,
+    41
+  ],
+  "timing": {
+    "poses": 48,
+    "cycle_ms": 800,
+    "ground_speed_mps": 4,
+    "canvas": [
+      768,
+      1024
+    ],
+    "anchor": [
+      384,
+      960
+    ]
+  },
+  "construction": "Complete ImageGen-authored character drawings plus explicitly recorded unchanged whole-pose chronology; no final pixel/limb assembly.",
+  "actual_pixel_motion_guard_violations": [],
+  "review_diagnostics": [
+    {
+      "check": "distal_border_intrusion",
+      "region": "viewer_left_boot",
+      "frame": 23,
+      "x": -21.672,
+      "note": "Review foot identity; contour approaches measurement-window boundary."
+    },
+    {
+      "check": "distal_border_intrusion",
+      "region": "viewer_left_boot",
+      "frame": 26,
+      "x": -21.326,
+      "note": "Review foot identity; contour approaches measurement-window boundary."
+    },
+    {
+      "check": "distal_border_intrusion",
+      "region": "viewer_right_boot",
+      "frame": 12,
+      "x": 12.537,
+      "note": "Review foot identity; contour approaches measurement-window boundary."
+    },
+    {
+      "check": "distal_border_intrusion",
+      "region": "viewer_right_boot",
+      "frame": 41,
+      "x": 12.537,
+      "note": "Review foot identity; contour approaches measurement-window boundary."
+    },
+    {
+      "check": "concentrated_exchange",
+      "region": "viewer_left_boot",
+      "frames": [
+        7,
+        18
+      ],
+      "three_tick_pixels": 149.31,
+      "net_pixels": 206.791,
+      "review_trigger": 0.7,
+      "note": "Review timing in the actual sequence; projected toe rotation and contour variation prevent this ratio from defining natural anatomy."
+    }
+  ],
+  "anatomy_review": "Independent review of actual selected shoulder/elbow/grip and hip/knee/ankle/boot chains supports both exchanges; actual neighboring frames and loop were reviewed rather than frame labels.",
+  "material_review": "Scoped palette correction removes isolated warmer/brighter15/35/38/40 drawings; final same-pose palette edits are remeasured.",
+  "landmark_observations": "reviewed_landmarks.json records actual selected runtime PNG hashes; hidden ankles and heels are not invented.",
+  "reviewed_registration_manifest": "Final observation fingerprints and focused regressions are owned by tests/fixtures/prologue_motion/registration_observations.json.",
+  "limits": [
+    "Upright billboard source art and the cropped frontal shot do not prove3D support-point ground locking at4m/s.",
+    "Rear boot distal-Y reversals can reflect ankle flex and foreshortening; their actual connected anatomy was reviewed rather than forcing monotonic silhouettes.",
+    "Counts, unique files and passing timing/completion checks do not certify visual movement quality."
+  ]
+}

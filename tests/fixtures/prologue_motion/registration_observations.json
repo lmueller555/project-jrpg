@@ -1,0 +1,3758 @@
+{
+  "version": 1,
+  "purpose": "Hash-bound registration inputs retained from measured source-art profiles; changing source path, source crop, PNG bytes, requested whole-image origin, neck/belt measurement or uniform density requires visual registration-overlay review and a reviewed artifact update. These are not gait/joint targets.",
+  "initial_provenance": "Existing production measured face/neck/belt registration. Independent QA reviewed the motion-region overlays; new candidate measurements must be reviewed before production adoption.",
+  "uncertainty": "Template registration uncertainty has not been independently calibrated. It is not a claim of subpixel anatomical joint accuracy. Boot/cloth checks include conservative pixel margins; selected toe observations have explicit uncertainty in contract.json.",
+  "actors": {
+    "lucan": {
+      "0": {
+        "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
+        "source": "run_v2/frames/frame_00.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          41.3921,
+          45.2441
+        ],
+        "neck": [
+          549.2,
+          252.88
+        ],
+        "belt": [
+          555.66,
+          562.56
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "1": {
+        "sha256": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
+        "source": "run_v2/frames/frame_01.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          35.4997,
+          50.847
+        ],
+        "neck": [
+          564.25,
+          248.9
+        ],
+        "belt": [
+          556.32,
+          544.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "2": {
+        "sha256": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
+        "source": "run_v2/frames/frame_02.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          34.7891,
+          47.3821
+        ],
+        "neck": [
+          564.3,
+          256.32
+        ],
+        "belt": [
+          556.98,
+          555.68
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "3": {
+        "sha256": "1a7a4d5a9121eae60a9c1feeea1cf1a4c048fbee3f8005b7f3c969e37e3a1bec",
+        "source": "run_v2/frames/frame_03.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          36.618,
+          42.5639
+        ],
+        "neck": [
+          563.45,
+          267.78
+        ],
+        "belt": [
+          554.32,
+          569.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "4": {
+        "sha256": "d24cdf0bc1e846e576aa4388e03010b4853b02a848a18194bebe1aa81c6e9722",
+        "source": "run_v2/frames/frame_04.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          37.0394,
+          43.8276
+        ],
+        "neck": [
+          562.9,
+          268.56
+        ],
+        "belt": [
+          553.64,
+          564.24
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "5": {
+        "sha256": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
+        "source": "run_v2/frames/frame_05.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          37.35,
+          46.5749
+        ],
+        "neck": [
+          560.2,
+          262.88
+        ],
+        "belt": [
+          554.98,
+          557.68
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "6": {
+        "sha256": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
+        "source": "run_v2/frames/frame_06.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          35.3548,
+          45.1394
+        ],
+        "neck": [
+          567.2,
+          261.88
+        ],
+        "belt": [
+          553.02,
+          568.32
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "7": {
+        "sha256": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
+        "source": "run_v2/frames/frame_07.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          30.2455,
+          46.9396
+        ],
+        "neck": [
+          572.75,
+          260.1
+        ],
+        "belt": [
+          568.02,
+          556.32
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "8": {
+        "sha256": "17332d6e4ed6ab1362919f9e2547362ffa94274df32b5a74cd6f84e3a9c538aa",
+        "source": "run_v3/frames/frame_08.png",
+        "cell": [
+          0,
+          0,
+          1076,
+          1462
+        ],
+        "origin": [
+          35.24709000000001,
+          41.489859999999986
+        ],
+        "neck": [
+          566.2,
+          266.88
+        ],
+        "belt": [
+          559.04,
+          565.64
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "9": {
+        "sha256": "359bcde4c49eb7c65aa4446f4ca843149109734bcfcaa50aca15acfca809df17",
+        "source": "run_v3/frames/frame_09.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          35.69691,
+          41.48522
+        ],
+        "neck": [
+          561.1,
+          267.44
+        ],
+        "belt": [
+          559.36,
+          562.76
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "10": {
+        "sha256": "9d97cd3e4d6b1aaccca7de82afd054754b3b079409345a334c3e6a1188e57a42",
+        "source": "run_v3/frames/frame_10.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          44.232149999999976,
+          40.85431999999997
+        ],
+        "neck": [
+          544.45,
+          265.78
+        ],
+        "belt": [
+          551.7,
+          558.2
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "11": {
+        "sha256": "918139d733420bbfee9eea3be31df67492116dec49290372fd465a595279a647",
+        "source": "run_v3/frames/frame_11.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          44.01606,
+          39.145480000000006
+        ],
+        "neck": [
+          544.45,
+          266.78
+        ],
+        "belt": [
+          552.36,
+          558.76
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "12": {
+        "sha256": "7eaf74ffc4ab4e3cb4c2610d0a17035cb06b8d5ef55616ed263203b772881a61",
+        "source": "run_v3/frames/frame_12.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          47.27693999999999,
+          41.07019999999999
+        ],
+        "neck": [
+          540.1,
+          259.44
+        ],
+        "belt": [
+          541.34,
+          559.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "13": {
+        "sha256": "7b94bafd472700ced674217f0bfbeb7d7d5b30ec78183112a30c7534b4eecaa7",
+        "source": "run_v3/frames/frame_13.png",
+        "cell": [
+          0,
+          0,
+          1054,
+          1492
+        ],
+        "origin": [
+          43.731930000000006,
+          37.3673
+        ],
+        "neck": [
+          548.45,
+          266.78
+        ],
+        "belt": [
+          546.68,
+          560.88
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "14": {
+        "sha256": "7c865246af0a861e2b178e28f9d3a5544daedfc01410f6ebcbf56278052dc342",
+        "source": "run_v3/frames/frame_14.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          41.262960000000014,
+          30.682760000000002
+        ],
+        "neck": [
+          554.75,
+          276.1
+        ],
+        "belt": [
+          543.66,
+          577.56
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "15": {
+        "sha256": "5602a9732720da197a1ca4d1ddbffc436ebde0fce038c8760998d1ae6e57d000",
+        "source": "run_v3/frames/frame_15.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          40.62413999999999,
+          36.13506
+        ],
+        "neck": [
+          554.2,
+          266.88
+        ],
+        "belt": [
+          550.04,
+          572.64
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "16": {
+        "sha256": "f0d3126ac4a11d5edd4761912871e1f98f756e681123c953c32644891fd5734e",
+        "source": "run_v3/frames/frame_16.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          40.33434,
+          37.26959999999999
+        ],
+        "neck": [
+          556.1,
+          267.44
+        ],
+        "belt": [
+          549.34,
+          570.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "17": {
+        "sha256": "7b414ec433ef495e58db645667b9af569c887943effc969d5a769e4f9668860c",
+        "source": "run_v3/frames/frame_17.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          40.13589000000002,
+          39.03665999999998
+        ],
+        "neck": [
+          558.45,
+          266.78
+        ],
+        "belt": [
+          548.34,
+          563.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "18": {
+        "sha256": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
+        "source": "run_v2/frames/frame_18.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          40.2342,
+          42.9165
+        ],
+        "neck": [
+          557.35,
+          258.34
+        ],
+        "belt": [
+          547.32,
+          561.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "19": {
+        "sha256": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
+        "source": "run_v2/frames/frame_19.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          36.8441,
+          43.387
+        ],
+        "neck": [
+          561.45,
+          259.78
+        ],
+        "belt": [
+          556.34,
+          560.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "20": {
+        "sha256": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
+        "source": "run_v2/frames/frame_20.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          39.4744,
+          44.7456
+        ],
+        "neck": [
+          558.35,
+          258.34
+        ],
+        "belt": [
+          552.34,
+          556.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "21": {
+        "sha256": "cff27ec48daf4afead95d91d43a2769d7537afa756d871425ba056aba7dce58f",
+        "source": "run_v2/frames/frame_21.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          36.0522,
+          45.9405
+        ],
+        "neck": [
+          562.6,
+          253.24
+        ],
+        "belt": [
+          554.98,
+          554.68
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "22": {
+        "sha256": "60934177bc14dddde96e25620cd27723d8a23ad25a4d14735679528044e324c0",
+        "source": "run_v2/frames/frame_22.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          33.9556,
+          41.3383
+        ],
+        "neck": [
+          567.7,
+          265.68
+        ],
+        "belt": [
+          558.64,
+          566.24
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "23": {
+        "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+        "source": "run_v2/frames/frame_23.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          33.5511,
+          43.3459
+        ],
+        "neck": [
+          571.4,
+          259.36
+        ],
+        "belt": [
+          559.98,
+          566.68
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "24": {
+        "sha256": "2a1f0f2582efaa66c720796e8a491e86971dbf44a4aee23574495175a3f7f8ee",
+        "source": "run_v2/frames/frame_24.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          44.6555,
+          43.16
+        ],
+        "neck": [
+          553.3,
+          261.92
+        ],
+        "belt": [
+          540.66,
+          567.56
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "25": {
+        "sha256": "50374185a6aa6e9ca545de88b1ead1da9e89ee4df2bd1f4e510e537ee467e446",
+        "source": "run_v2/frames/frame_25.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          35.8305,
+          48.4984
+        ],
+        "neck": [
+          563.85,
+          256.14
+        ],
+        "belt": [
+          555.32,
+          551.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "26": {
+        "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+        "source": "run_v2/frames/frame_26.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          43.3218,
+          38.4487
+        ],
+        "neck": [
+          557.85,
+          274.54
+        ],
+        "belt": [
+          540.7,
+          577.2
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "27": {
+        "sha256": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+        "source": "run_v2/frames/frame_27.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          33.0364,
+          48.0197
+        ],
+        "neck": [
+          568.7,
+          256.68
+        ],
+        "belt": [
+          558.32,
+          556.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "28": {
+        "sha256": "16d7e31967e1a239e77c03d7ce5fe82c00fd9497b2e2e9caf10a648bd27a91c8",
+        "source": "run_v2/frames/frame_28.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          32.6962,
+          48.9003
+        ],
+        "neck": [
+          569.95,
+          257.58
+        ],
+        "belt": [
+          563.32,
+          557.12
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "29": {
+        "sha256": "a83e47d4d7b1a22355425aa2d271a8aa0e4f3a22b58fba09d7606031296a522e",
+        "source": "run_v2/frames/frame_29.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          34.1774,
+          49.4527
+        ],
+        "neck": [
+          565.4,
+          257.36
+        ],
+        "belt": [
+          564.0,
+          554.0
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "30": {
+        "sha256": "8d13751c39727c72f02dd4c8919910f7dde1631fd00af27fc160219eb12e323a",
+        "source": "run_v2/frames/frame_30.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          39.3314,
+          47.4276
+        ],
+        "neck": [
+          557.7,
+          257.68
+        ],
+        "belt": [
+          550.68,
+          561.88
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "31": {
+        "sha256": "faa02b4a2865e2ea5501ce97cb91279b05ff90a1aedc86498d1bdb1c50c8fff9",
+        "source": "run_v2/frames/frame_31.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          32.7554,
+          43.4847
+        ],
+        "neck": [
+          568.35,
+          267.34
+        ],
+        "belt": [
+          559.34,
+          556.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "32": {
+        "sha256": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
+        "source": "run_v2/frames/frame_32.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          35.2509,
+          45.2245
+        ],
+        "neck": [
+          560.3,
+          261.32
+        ],
+        "belt": [
+          561.02,
+          555.32
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "33": {
+        "sha256": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
+        "source": "run_v2/frames/frame_33.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          37.7438,
+          41.7725
+        ],
+        "neck": [
+          560.7,
+          264.68
+        ],
+        "belt": [
+          550.68,
+          564.88
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "34": {
+        "sha256": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
+        "source": "run_v2/frames/frame_34.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          38.273,
+          39.4078
+        ],
+        "neck": [
+          561.1,
+          263.44
+        ],
+        "belt": [
+          545.68,
+          565.88
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "35": {
+        "sha256": "7bf1a2947064cf2175eb7fa65710df06c28931236bc952c505f7be904758231b",
+        "source": "run_v3/frames/frame_35.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          35.20298999999998,
+          41.725959999999986
+        ],
+        "neck": [
+          563.7,
+          258.68
+        ],
+        "belt": [
+          557.34,
+          559.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "36": {
+        "sha256": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+        "source": "run_v2/frames/frame_36.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          47.5705,
+          37.0306
+        ],
+        "neck": [
+          540.2,
+          268.88
+        ],
+        "belt": [
+          539.02,
+          563.32
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "37": {
+        "sha256": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
+        "source": "run_v2/frames/frame_37.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          37.6096,
+          37.899
+        ],
+        "neck": [
+          562.55,
+          269.22
+        ],
+        "belt": [
+          556.34,
+          556.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "38": {
+        "sha256": "1baed51ec7c4e65e6908730c9f6356da6af826b26bebc68a7c0253fade745790",
+        "source": "run_v3/frames/frame_38.png",
+        "cell": [
+          0,
+          0,
+          1067,
+          1474
+        ],
+        "origin": [
+          40.01619000000003,
+          39.32887999999998
+        ],
+        "neck": [
+          559.9,
+          267.56
+        ],
+        "belt": [
+          551.34,
+          551.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "39": {
+        "sha256": "c1b11fc5a642d91ecbc3869eea317b378b97b40a429a0e49f050a8d3a144e46b",
+        "source": "run_v3/frames/frame_39.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          36.38423999999999,
+          38.69033999999999
+        ],
+        "neck": [
+          567.0,
+          268.0
+        ],
+        "belt": [
+          555.34,
+          557.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "40": {
+        "sha256": "88edf8cc6a0f730a497fbe6491ac1b465ea75e7075bab662b7b00a986465061c",
+        "source": "run_v3/frames/frame_40.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          35.010210000000015,
+          39.149519999999995
+        ],
+        "neck": [
+          569.1,
+          268.44
+        ],
+        "belt": [
+          558.36,
+          558.76
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "41": {
+        "sha256": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+        "source": "run_v3/frames/frame_41.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          31.424249999999994,
+          40.80065999999997
+        ],
+        "neck": [
+          575.1,
+          266.44
+        ],
+        "belt": [
+          565.7,
+          557.2
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "42": {
+        "sha256": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
+        "source": "run_v2/frames/frame_42.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          32.4877,
+          42.9744
+        ],
+        "neck": [
+          573.75,
+          260.1
+        ],
+        "belt": [
+          564.04,
+          559.64
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "43": {
+        "sha256": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
+        "source": "run_v2/frames/frame_43.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          30.4818,
+          44.7704
+        ],
+        "neck": [
+          571.2,
+          254.88
+        ],
+        "belt": [
+          568.02,
+          555.32
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "44": {
+        "sha256": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
+        "source": "run_v2/frames/frame_44.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          32.9684,
+          41.6989
+        ],
+        "neck": [
+          571.65,
+          264.66
+        ],
+        "belt": [
+          562.68,
+          559.88
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "45": {
+        "sha256": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
+        "source": "run_v2/frames/frame_45.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          34.2044,
+          44.6075
+        ],
+        "neck": [
+          566.45,
+          256.78
+        ],
+        "belt": [
+          559.34,
+          555.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "46": {
+        "sha256": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
+        "source": "run_v2/frames/frame_46.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          34.447,
+          45.6475
+        ],
+        "neck": [
+          565.2,
+          254.88
+        ],
+        "belt": [
+          560.34,
+          554.44
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      },
+      "47": {
+        "sha256": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
+        "source": "run_v2/frames/frame_47.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          33.0786,
+          45.7651
+        ],
+        "neck": [
+          569.65,
+          253.66
+        ],
+        "belt": [
+          556.98,
+          557.68
+        ],
+        "scale": 0.63,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final selected runtime drawings accepted by parent and independent visual QA.",
+        "review": "Final runtime07\u201318 and34\u201342 motion, palette/carry continuity and reproducible source export accepted."
+      }
+    },
+    "iselin": {
+      "0": {
+        "sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+        "source": "run_v3/key_00.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.243615403090189,
+          4.627331678808758
+        ],
+        "neck": [
+          627.993,
+          244.04
+        ],
+        "belt": [
+          619.52,
+          462.391
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "1": {
+        "sha256": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+        "source": "run_v3/key_01_d.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          11.046788998029172,
+          7.8425283254422595
+        ],
+        "neck": [
+          638.009,
+          246.048
+        ],
+        "belt": [
+          630.668,
+          466.742
+        ],
+        "scale": 0.7851820444570073,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "2": {
+        "sha256": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+        "source": "run_v3/key_02_c.png",
+        "cell": [
+          0,
+          0,
+          1048,
+          1501
+        ],
+        "origin": [
+          128.0516907737217,
+          5.006330151858037
+        ],
+        "neck": [
+          585.31,
+          300.307
+        ],
+        "belt": [
+          579.597,
+          574.698
+        ],
+        "scale": 0.6559742858079963,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "3": {
+        "sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+        "source": "run_v3/key_03.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.141141621967847,
+          3.1226121207269273
+        ],
+        "neck": [
+          628.121,
+          249.452
+        ],
+        "belt": [
+          622.655,
+          476.742
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "4": {
+        "sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+        "source": "run_v2/repairs/frame_04.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          122.78388706803935,
+          21.897041846296105
+        ],
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          565.775,
+          540.639
+        ],
+        "scale": 0.6799853123172539,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "5": {
+        "sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+        "source": "run_v2/repairs/frame_05.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          130.1298410178063,
+          25.723884849657424
+        ],
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          567.395,
+          541.348
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "6": {
+        "sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+        "source": "run_v2/repairs/frame_06.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          129.64949196416063,
+          24.616314521885926
+        ],
+        "neck": [
+          573.109,
+          268.88
+        ],
+        "belt": [
+          565.775,
+          542.646
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "7": {
+        "sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+        "source": "run_v2/repairs/frame_07.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          130.1298410178063,
+          24.384911862620157
+        ],
+        "neck": [
+          572.389,
+          269.023
+        ],
+        "belt": [
+          567.585,
+          544.003
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "8": {
+        "sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+        "source": "run_v2/repairs/frame_08.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          129.10242776417533,
+          23.72138703457847
+        ],
+        "neck": [
+          573.929,
+          269.418
+        ],
+        "belt": [
+          565.775,
+          542.646
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "9": {
+        "sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+        "source": "run_v3/helper_braid_frame_09_b.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.710351453046258,
+          3.495680730125713
+        ],
+        "neck": [
+          627.41,
+          248.986
+        ],
+        "belt": [
+          619.432,
+          473.33
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "10": {
+        "sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+        "source": "run_v3/helper_braid_frame_10_d.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          -0.33453915940583556,
+          0.32109814553203364
+        ],
+        "neck": [
+          627.41,
+          246.978
+        ],
+        "belt": [
+          620.651,
+          472.742
+        ],
+        "scale": 0.8165865050914168,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "11": {
+        "sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+        "source": "run_v3/helper_braid_frame_11_d.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          -0.8106090918741984,
+          0.11552359526706368
+        ],
+        "neck": [
+          627.993,
+          246.048
+        ],
+        "belt": [
+          620.651,
+          466.742
+        ],
+        "scale": 0.8165865050914168,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "12": {
+        "sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+        "source": "run_v2/repairs/frame_12.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          136.49466012742357,
+          23.32715641144847
+        ],
+        "neck": [
+          573.468,
+          269.813
+        ],
+        "belt": [
+          561.775,
+          546.658
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "13": {
+        "sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+        "source": "run_v3/key_13_recolor.png",
+        "cell": [
+          0,
+          0,
+          1199,
+          1312
+        ],
+        "origin": [
+          8.424873767541158,
+          1.308065577165081
+        ],
+        "neck": [
+          632.299,
+          248.182
+        ],
+        "belt": [
+          623.472,
+          481.103
+        ],
+        "scale": 0.7964192988324493,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "14": {
+        "sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+        "source": "run_v3/key_14_recolor.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          -10.683564976835669,
+          -4.958037529580395
+        ],
+        "neck": [
+          627.283,
+          243.574
+        ],
+        "belt": [
+          620.651,
+          460.742
+        ],
+        "scale": 0.8332500083325001,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "15": {
+        "sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+        "source": "run_v3/key_15_hair.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          8.31094387959331,
+          1.6824475222159947
+        ],
+        "neck": [
+          629.158,
+          244.186
+        ],
+        "belt": [
+          620.651,
+          472.742
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "16": {
+        "sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+        "source": "run_v3/key_16_c.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          20.584395292048498,
+          7.592933550043597
+        ],
+        "neck": [
+          625.862,
+          240.636
+        ],
+        "belt": [
+          619.52,
+          464.391
+        ],
+        "scale": 0.7851820444570073,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "17": {
+        "sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+        "source": "run_v3/helper_frame_17.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          7.741734048514957,
+          1.8809363541750201
+        ],
+        "neck": [
+          629.869,
+          242.644
+        ],
+        "belt": [
+          622.307,
+          462.978
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "18": {
+        "sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+        "source": "run_v2/repairs/frame_18.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          131.2562811438001,
+          12.756919571238683
+        ],
+        "neck": [
+          581.468,
+          279.847
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "19": {
+        "sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+        "source": "run_v2/repairs/frame_19.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          131.2562811438001,
+          8.950384588689019
+        ],
+        "neck": [
+          581.468,
+          285.868
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "20": {
+        "sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+        "source": "run_v2/repairs/frame_20.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          123.83259835480453,
+          7.8749062718909215
+        ],
+        "neck": [
+          581.828,
+          282.786
+        ],
+        "belt": [
+          573.775,
+          554.683
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "21": {
+        "sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+        "source": "run_v2/repairs/frame_21.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          124.07277288162737,
+          7.79371844873944
+        ],
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "22": {
+        "sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+        "source": "run_v2/repairs/frame_22.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          124.07277288162737,
+          8.621718448739443
+        ],
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "23": {
+        "sha256": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+        "source": "run_v3/key_23.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          8.87935313425669,
+          3.8477155551997555
+        ],
+        "neck": [
+          628.448,
+          243.721
+        ],
+        "belt": [
+          620.303,
+          458.978
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "24": {
+        "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+        "source": "run_v2/repairs/frame_24.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          101.70057847616084,
+          -0.6414154986351264
+        ],
+        "neck": [
+          580.188,
+          283.719
+        ],
+        "belt": [
+          572.155,
+          547.956
+        ],
+        "scale": 0.7071835707112852,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "25": {
+        "sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+        "source": "run_v3/key_25_b.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          8.31094387959331,
+          3.9378900808582387
+        ],
+        "neck": [
+          629.158,
+          246.194
+        ],
+        "belt": [
+          620.303,
+          472.978
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "26": {
+        "sha256": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+        "source": "run_v2/repairs/frame_26.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          121.0145954334431,
+          21.995547377863915
+        ],
+        "neck": [
+          597.109,
+          274.901
+        ],
+        "belt": [
+          583.775,
+          558.696
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "27": {
+        "sha256": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+        "source": "run_v2/repairs/frame_27.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          132.5082708120375,
+          14.829517226304574
+        ],
+        "neck": [
+          590.288,
+          292.426
+        ],
+        "belt": [
+          580.87,
+          568.049
+        ],
+        "scale": 0.6428925019447499,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "28": {
+        "sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+        "source": "run_v2/repairs/frame_28.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          114.49247786725022,
+          14.802906271890919
+        ],
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          579.965,
+          559.345
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "29": {
+        "sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+        "source": "run_v2/repairs/frame_30.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          121.85339086819585,
+          17.382291764613427
+        ],
+        "neck": [
+          595.828,
+          284.793
+        ],
+        "belt": [
+          576.87,
+          566.042
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "30": {
+        "sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+        "source": "run_v2/repairs/frame_29.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          114.49247786725022,
+          15.33890627189092
+        ],
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          577.965,
+          561.351
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "31": {
+        "sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+        "source": "run_v3/key_31_braid_path.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.914498438876024,
+          3.5517751981426784
+        ],
+        "neck": [
+          627.155,
+          250.21
+        ],
+        "belt": [
+          613.946,
+          475.215
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "32": {
+        "sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+        "source": "run_v3/key_32_braid_path.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          -0.6023795330759185,
+          -0.09468398918838261
+        ],
+        "neck": [
+          627.738,
+          249.28
+        ],
+        "belt": [
+          633,
+          475
+        ],
+        "scale": 0.8165865050914168,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "33": {
+        "sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+        "source": "run_v3/key_33_braid_path.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          -0.1263096006075557,
+          0.14959626330016818
+        ],
+        "neck": [
+          627.155,
+          248.202
+        ],
+        "belt": [
+          617.604,
+          471.452
+        ],
+        "scale": 0.8165865050914168,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "34": {
+        "sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+        "source": "run_v2/repairs/frame_33.png",
+        "cell": [
+          0,
+          0,
+          1054,
+          1492
+        ],
+        "origin": [
+          134.80390698974952,
+          19.22939266263768
+        ],
+        "neck": [
+          593.552,
+          287.606
+        ],
+        "belt": [
+          582.119,
+          574.269
+        ],
+        "scale": 0.6354895493743605,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "35": {
+        "sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+        "source": "run_v2/repairs/frame_35.png",
+        "cell": [
+          0,
+          0,
+          1070,
+          1470
+        ],
+        "origin": [
+          144.02928206691092,
+          20.946556713790812
+        ],
+        "neck": [
+          591.627,
+          289.548
+        ],
+        "belt": [
+          580.775,
+          574.223
+        ],
+        "scale": 0.6219640380393205,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "36": {
+        "sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+        "source": "run_v2/repairs/frame_36.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          138.03932713021953,
+          22.62390403289703
+        ],
+        "neck": [
+          571.109,
+          270.887
+        ],
+        "belt": [
+          559.585,
+          546.01
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "37": {
+        "sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+        "source": "run_v2/repairs/frame_37.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          129.40998458880125,
+          17.620556370962902
+        ],
+        "neck": [
+          573.468,
+          271.819
+        ],
+        "belt": [
+          559.775,
+          546.658
+        ],
+        "scale": 0.6671514633967349,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "38": {
+        "sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+        "source": "run_v3/key_38_braid_clean.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          0.8250136778239607,
+          0.3599349997141985
+        ],
+        "neck": [
+          625.99,
+          242.032
+        ],
+        "belt": [
+          616.645,
+          460.742
+        ],
+        "scale": 0.8165865050914168,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "39": {
+        "sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+        "source": "run_v3/key_39_braid_mid.png",
+        "cell": [
+          0,
+          0,
+          1247,
+          1261
+        ],
+        "origin": [
+          5.116245076941823,
+          3.253448698688544
+        ],
+        "neck": [
+          624.202,
+          238.801
+        ],
+        "belt": [
+          616.098,
+          462.611
+        ],
+        "scale": 0.8120508343822324,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "40": {
+        "sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+        "source": "run_v3/key_40_b.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.243615403090189,
+          4.378446561524299
+        ],
+        "neck": [
+          627.993,
+          240.024
+        ],
+        "belt": [
+          620.303,
+          466.978
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "41": {
+        "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+        "source": "run_v2/repairs/frame_40.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          131.49135340069012,
+          12.18901239531425
+        ],
+        "neck": [
+          581.109,
+          280.922
+        ],
+        "belt": [
+          569.775,
+          564.715
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "42": {
+        "sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+        "source": "run_v3/key_43_c.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.243615403090189,
+          3.842446561524298
+        ],
+        "neck": [
+          627.993,
+          240.024
+        ],
+        "belt": [
+          618.648,
+          468.742
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "43": {
+        "sha256": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+        "source": "run_v3/key_43_d.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "origin": [
+          9.710351453046258,
+          3.233910495556813
+        ],
+        "neck": [
+          627.41,
+          240.954
+        ],
+        "belt": [
+          618.648,
+          468.742
+        ],
+        "scale": 0.8005764150188135,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "44": {
+        "sha256": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+        "source": "run_v2/repairs/frame_43.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          137.58647868489902,
+          14.5517765819977
+        ],
+        "neck": [
+          582.389,
+          283.071
+        ],
+        "belt": [
+          571.395,
+          565.424
+        ],
+        "scale": 0.6428925019447499,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "45": {
+        "sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+        "source": "run_v2/repairs/frame_46.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          130.18175865478423,
+          11.910834067797737
+        ],
+        "neck": [
+          583.109,
+          282.929
+        ],
+        "belt": [
+          571.775,
+          554.683
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "46": {
+        "sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+        "source": "run_v2/repairs/frame_47.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          130.65321276331036,
+          15.274209495871503
+        ],
+        "neck": [
+          582.389,
+          279.057
+        ],
+        "belt": [
+          573.775,
+          548.665
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      },
+      "47": {
+        "sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+        "source": "run_v2/repairs/frame_45.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          131.19014660913183,
+          15.276657357630683
+        ],
+        "neck": [
+          581.569,
+          280.527
+        ],
+        "belt": [
+          570.87,
+          554.005
+        ],
+        "scale": 0.6547973729529397,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Final source features and whole-figure registration independently/native reviewed; final13/14 palette and38 braid accepted without body/limb changes.",
+        "review": "Final48 source poses accepted. Source32 circular buckle has a source-hash-bound manual observation, independently verified against the rejected higher NCC clasp."
+      }
+    },
+    "crown_soldier": {
+      "0": {
+        "sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+        "source": "run_v3/retained/phase_00.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          48.0,
+          75.8
+        ],
+        "neck": [
+          562.0,
+          303.0
+        ],
+        "belt": [
+          573.0,
+          585.0
+        ],
+        "scale": 0.6,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "1": {
+        "sha256": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+        "source": "run_v3/root_helper_01.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          2.0,
+          1.0
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          551.42857,
+          601.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "2": {
+        "sha256": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+        "source": "run_v3/root_helper_02.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          1.0
+        ],
+        "neck": [
+          544.28571,
+          367.14286
+        ],
+        "belt": [
+          551.42857,
+          602.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "3": {
+        "sha256": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+        "source": "run_v3/rough_keys/phase_03.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          0.0,
+          19.0
+        ],
+        "neck": [
+          548.57143,
+          342.85714
+        ],
+        "belt": [
+          552.85714,
+          582.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "4": {
+        "sha256": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+        "source": "run_v3/root_helper_04.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          555.71429,
+          604.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "5": {
+        "sha256": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+        "source": "run_v3/root_helper_05.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          1.0,
+          2.0
+        ],
+        "neck": [
+          548.57143,
+          370.0
+        ],
+        "belt": [
+          552.85714,
+          604.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "6": {
+        "sha256": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+        "source": "run_v3/midpoints/phase_06_partial_repaired.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          1.0,
+          5.0
+        ],
+        "neck": [
+          548.57143,
+          365.71429
+        ],
+        "belt": [
+          551.42857,
+          600.0
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "7": {
+        "sha256": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+        "source": "run_v3/root_helper_07.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          548.57143,
+          611.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "8": {
+        "sha256": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+        "source": "run_v3/root_helper_08.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          1.0,
+          3.0
+        ],
+        "neck": [
+          552.85714,
+          362.85714
+        ],
+        "belt": [
+          542.85714,
+          602.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "9": {
+        "sha256": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+        "source": "run_v3/rough_keys/phase_09.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          7.0
+        ],
+        "neck": [
+          547.14286,
+          352.85714
+        ],
+        "belt": [
+          540.0,
+          598.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "10": {
+        "sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+        "source": "run_v3/helper_10.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -1.0,
+          1.0
+        ],
+        "neck": [
+          554.28571,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          594.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "11": {
+        "sha256": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+        "source": "run_v3/helper_11.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          554.28571,
+          352.85714
+        ],
+        "belt": [
+          540.0,
+          602.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "12": {
+        "sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+        "source": "run_v3/retained/phase_12.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          61.19999999999999,
+          65.60000000000001
+        ],
+        "neck": [
+          548.0,
+          308.0
+        ],
+        "belt": [
+          537.0,
+          602.0
+        ],
+        "scale": 0.6,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "13": {
+        "sha256": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+        "source": "run_v3/root_helper_13_b.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          5.0,
+          2.0
+        ],
+        "neck": [
+          552.85714,
+          352.85714
+        ],
+        "belt": [
+          542.85714,
+          604.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "14": {
+        "sha256": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+        "source": "run_v3/root_helper_14.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          552.85714,
+          355.71429
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "15": {
+        "sha256": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+        "source": "run_v3/rough_keys/phase_15_repaired.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          6.0
+        ],
+        "neck": [
+          551.42857,
+          352.85714
+        ],
+        "belt": [
+          542.85714,
+          607.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "16": {
+        "sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+        "source": "run_v3/first_half_final/bounded_16.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          551.42857,
+          354.28571
+        ],
+        "belt": [
+          545.71429,
+          598.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "17": {
+        "sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+        "source": "run_v3/first_half_final/bounded_17.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          554.28571,
+          355.71429
+        ],
+        "belt": [
+          545.71429,
+          597.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "18": {
+        "sha256": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+        "source": "run_v3/midpoints/phase_18_partial_repaired.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          4.0
+        ],
+        "neck": [
+          550.0,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          608.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "19": {
+        "sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+        "source": "run_v3/first_half_final/bounded_19.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          547.14286,
+          362.85714
+        ],
+        "belt": [
+          541.42857,
+          608.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "20": {
+        "sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+        "source": "run_v3/first_half_final/bounded_20.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          2.0,
+          2.0
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          542.85714,
+          595.71429
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "21": {
+        "sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+        "source": "run_v3/rough_keys/phase_21.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          541.42857,
+          598.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "22": {
+        "sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+        "source": "run_v3/root_helper_22.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          552.85714,
+          367.14286
+        ],
+        "belt": [
+          548.57143,
+          607.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "23": {
+        "sha256": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+        "source": "run_v3/first_half_final/phase_23.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          551.42857,
+          367.14286
+        ],
+        "belt": [
+          542.85714,
+          607.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "24": {
+        "sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+        "source": "run_v3/retained/phase_24.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          54.60000000000002,
+          77.0
+        ],
+        "neck": [
+          559.0,
+          303.0
+        ],
+        "belt": [
+          546.0,
+          586.0
+        ],
+        "scale": 0.6,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "25": {
+        "sha256": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+        "source": "run_v3/intermediate_25.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          552.85714,
+          362.85714
+        ],
+        "belt": [
+          545.71429,
+          602.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "26": {
+        "sha256": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+        "source": "run_v3/intermediate_26.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          551.42857,
+          365.71429
+        ],
+        "belt": [
+          541.42857,
+          602.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "27": {
+        "sha256": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+        "source": "run_v3/rough_keys/phase_27.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          548.57143,
+          367.14286
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "28": {
+        "sha256": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+        "source": "run_v3/intermediate_28.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          3.0
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          540.0,
+          608.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "29": {
+        "sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+        "source": "run_v3/intermediate_29.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          542.85714,
+          601.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "30": {
+        "sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+        "source": "run_v3/join_repairs/hand30.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -7.0,
+          2.0
+        ],
+        "neck": [
+          560.0,
+          371.42857
+        ],
+        "belt": [
+          560.0,
+          605.71429
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "31": {
+        "sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+        "source": "run_v3/intermediate_31.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          544.28571,
+          372.85714
+        ],
+        "belt": [
+          547.14286,
+          607.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "32": {
+        "sha256": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+        "source": "run_v3/intermediate_32.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          3.0
+        ],
+        "neck": [
+          545.71429,
+          364.28571
+        ],
+        "belt": [
+          547.14286,
+          601.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "33": {
+        "sha256": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+        "source": "run_v3/rough_keys/phase_33.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          2.0,
+          2.0
+        ],
+        "neck": [
+          545.71429,
+          361.42857
+        ],
+        "belt": [
+          554.28571,
+          608.57143
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "34": {
+        "sha256": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+        "source": "run_v3/join_repairs/phase_34.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          3.0
+        ],
+        "neck": [
+          542.85714,
+          355.71429
+        ],
+        "belt": [
+          548.57143,
+          595.71429
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "35": {
+        "sha256": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+        "source": "run_v3/intermediate_35.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          552.85714,
+          597.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "36": {
+        "sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+        "source": "run_v3/retained/phase_36.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "origin": [
+          60.0,
+          64.4
+        ],
+        "neck": [
+          542.0,
+          310.0
+        ],
+        "belt": [
+          550.0,
+          607.0
+        ],
+        "scale": 0.6,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "37": {
+        "sha256": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+        "source": "run_v3/intermediate_37.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          3.0
+        ],
+        "neck": [
+          544.28571,
+          354.28571
+        ],
+        "belt": [
+          552.85714,
+          600.0
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "38": {
+        "sha256": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+        "source": "run_v3/intermediate_38.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          4.0,
+          2.0
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          555.71429,
+          600.0
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "39": {
+        "sha256": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+        "source": "run_v3/join_repairs/phase39.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          -0.0
+        ],
+        "neck": [
+          544.28571,
+          358.57143
+        ],
+        "belt": [
+          555.71429,
+          601.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "40": {
+        "sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+        "source": "run_v3/join_repairs/middle40_A.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          551.42857,
+          592.85714
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "41": {
+        "sha256": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+        "source": "run_v3/join_repairs/direct_41.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          3.0,
+          2.0
+        ],
+        "neck": [
+          544.28571,
+          358.57143
+        ],
+        "belt": [
+          554.28571,
+          597.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "42": {
+        "sha256": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+        "source": "run_v3/join_repairs/phase_42.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          0.0,
+          9.0
+        ],
+        "neck": [
+          548.57143,
+          348.57143
+        ],
+        "belt": [
+          555.71429,
+          587.14286
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "43": {
+        "sha256": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+        "source": "run_v3/intermediate_43.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -1.0,
+          1.0
+        ],
+        "neck": [
+          548.57143,
+          361.42857
+        ],
+        "belt": [
+          561.42857,
+          601.42857
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "44": {
+        "sha256": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+        "source": "run_v3/intermediate_44.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -2.0,
+          2.0
+        ],
+        "neck": [
+          550.0,
+          361.42857
+        ],
+        "belt": [
+          564.28571,
+          600.0
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "45": {
+        "sha256": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+        "source": "run_v3/rough_keys/phase_45.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -3.0,
+          4.0
+        ],
+        "neck": [
+          551.42857,
+          358.57143
+        ],
+        "belt": [
+          564.28571,
+          595.71429
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "46": {
+        "sha256": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+        "source": "run_v3/intermediate_46.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          -0.0,
+          2.0
+        ],
+        "neck": [
+          545.71429,
+          362.85714
+        ],
+        "belt": [
+          558.57143,
+          600.0
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      },
+      "47": {
+        "sha256": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+        "source": "run_v3/intermediate_47.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "origin": [
+          1.0,
+          1.0
+        ],
+        "neck": [
+          548.57143,
+          364.28571
+        ],
+        "belt": [
+          558.57143,
+          605.71429
+        ],
+        "scale": 0.7,
+        "visibility": "Measured visible neck/belt registration; hidden joints are not inferred.",
+        "method": "Measured source features and uniform whole-figure registration; final runtime body/boot and corrected30 carry accepted by independent visual QA.",
+        "review": "Both final boot-only identity sheets and final30 upper-body continuity independently accepted; source export/check reproduce."
+      }
+    }
+  }
+}

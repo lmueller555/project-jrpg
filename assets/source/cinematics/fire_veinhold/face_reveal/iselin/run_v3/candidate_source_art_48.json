@@ -1,0 +1,1976 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "cycle_ms": 800,
+  "alpha_floor": 16,
+  "facing": "front",
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 24,
+      "foot": "far"
+    }
+  ],
+  "approval_state": "implemented_for_ingame_review",
+  "construction": "Forty-eight complete individually image-authored frontal running drawings. Verified whole-frame female-model keys and hierarchical midpoint subdivision establish phase and continuous limb/cloth/hair paths. Initial authoring diagrams remain planning history; no guide pixels, detached limbs, idle warps, head pastes or pixel-interpolated anatomy enter production.",
+  "registration": "Each complete master has a measured uniform model density calibrated by face detail, checked against neck/belt proportions; whole drawing uniformly sampled and translated only. Extra transparent canvas width preserves flowing hair/mantle at the existing body size.",
+  "source_sha256": {
+    "run_v2/frame_00.png": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50",
+    "run_v2/repairs/frame_01.png": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
+    "run_v2/repairs/frame_02.png": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+    "run_v2/repairs/frame_03.png": "1dd96ae3a51fe18cfba5008365ab0e60a3955dd5c79ba47403e97bcd4a85d2f4",
+    "run_v2/repairs/frame_04.png": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+    "run_v2/repairs/frame_05.png": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+    "run_v2/repairs/frame_06.png": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+    "run_v2/repairs/frame_07.png": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+    "run_v2/repairs/frame_08.png": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+    "run_v2/repairs/frame_09.png": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+    "run_v2/repairs/frame_10.png": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+    "run_v2/repairs/frame_11.png": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+    "run_v2/repairs/frame_12.png": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+    "run_v2/repairs/frame_13.png": "28273d51a999dd6583821c493168cc8742a42d921b092329e8ea063665409e02",
+    "run_v2/repairs/frame_14.png": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+    "run_v2/repairs/frame_15.png": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+    "run_v2/repairs/frame_16.png": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+    "run_v2/repairs/frame_17.png": "6537eb01080bd963456aa91fbcba0ac90e25eb56f34c37ee96fbbab538f821ba",
+    "run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+    "run_v2/repairs/frame_19.png": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+    "run_v2/repairs/frame_20.png": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+    "run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+    "run_v2/repairs/frame_22.png": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+    "run_v2/repairs/frame_23.png": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+    "run_v2/repairs/frame_24.png": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+    "run_v2/repairs/frame_25.png": "298a70aca98c85a6b988d5b32bea66fd4e10c3f345f8f14f645fcd5c603856bd",
+    "run_v2/repairs/frame_26.png": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+    "run_v2/repairs/frame_27.png": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+    "run_v2/repairs/frame_28.png": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+    "run_v2/repairs/frame_30.png": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+    "run_v2/repairs/frame_29.png": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+    "run_v2/repairs/frame_32.png": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+    "run_v2/repairs/frame_31.png": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+    "run_v2/repairs/frame_34.png": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+    "run_v2/repairs/frame_33.png": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+    "run_v2/repairs/frame_35.png": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+    "run_v2/repairs/frame_36.png": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+    "run_v2/repairs/frame_37.png": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+    "run_v2/repairs/frame_38.png": "a33562ce62df893f481e70770738548938010900b259a9ca04835334f7e975e8",
+    "run_v2/repairs/frame_39.png": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+    "run_v2/repairs/frame_41.png": "c239587fca8f8dbdb5065b8bd2e1abeb7f94a3e654d0b48e2af6e779e38ef224",
+    "run_v2/repairs/frame_40.png": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+    "run_v2/repairs/frame_42.png": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1",
+    "run_v2/repairs/frame_44.png": "5eeab8cd9bb4c40a38f2202b4d0e4a863b5a71b8891f297739c9bc1a07b4ae7f",
+    "run_v2/repairs/frame_43.png": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+    "run_v2/repairs/frame_46.png": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+    "run_v2/repairs/frame_47.png": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+    "run_v2/repairs/frame_45.png": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+    "run_v2/generation_records.json": "d2a26b17af077d6b5c674a280b3abc3dc2915d7bd528a56d900fab6781c77445",
+    "run_v2/appearance_reference.png": "910bd19f139343d8a16427810549b409f47ff6e9fb8dc91a82c80ac8b5f9e010",
+    "run_v2/manual_landmark_overrides.json": "a19a6912d1b7356e8816a968a1bccad502d71db2b9affeba68a9759eacbdb794",
+    "run_v2/frame_00.txt": "6fc084afbbe333b854149b51c2abef4dce9f82b2cb9d9a1afdde6924c89d68b0",
+    "run_v2/repairs/frame_01_fist_target_prompt.txt": "4aef6f18a03779382ac0a6bf0ea5a25acce50db2a8df3521f24a49fe645d1297",
+    "run_v2/repairs/frame_02_fist_target_prompt.txt": "b0cfa0573e19330347e26276f0d3871a0c9eebf9f66848a537500239b8accd43",
+    "run_v2/repairs/frame_03_midpoint_prompt.txt": "880045ab3f261f6474dd937d5d3db879418a8e86f95e982ad31880dfda97dc45",
+    "run_v2/repairs/frame_04_accepted_bounds_prompt.txt": "30987aeb2176d519d36109455fe350b84fa54f0b9909f5e7e4ffd18e55cf5f1b",
+    "run_v2/repairs/frame_05_accepted_bounds_prompt.txt": "0dc0724b9ff63a18c3ce67b057fc7107c72f15465661eb8703430e0c5253ad36",
+    "run_v2/repairs/frame_06_midpoint_prompt.txt": "adca92c7afc0e5acbfafe69a6e310092fbff81b6454a24db9ebb4450ce39b441",
+    "run_v2/repairs/frame_07_nearest_bounds_prompt.txt": "e3f3c6a8ced408d10cf4c6e316062012866c25677dfd65c8c70e499c4e75c1f2",
+    "run_v2/repairs/frame_08_nearest_bounds_prompt.txt": "781c2fbd2592cd89c70d02bda696a31eec4fcd776000964a0d459ab79ed8e155",
+    "run_v2/repairs/frame_09_arm_prompt.txt": "b1102750af5d3162aee44ef2789542ea92b9f9f1d4d73ee1534ec61292cc9a69",
+    "run_v2/repairs/frame_10_nearest_bounds_prompt.txt": "9316768eff21a0ca22859f475c5922e10622805b1c159426f6c4a50db48ece66",
+    "run_v2/repairs/frame_11_nearest_bounds_prompt.txt": "49e698fecaa5403be50f44ee384f425340ca8712ac1831d2e57032646098f1c1",
+    "run_v2/repairs/frame_12_female_prompt.txt": "e52759ad211db47209f4ae836e2611b4f6adbdb03586de4c3487a9da02b84143",
+    "run_v2/repairs/frame_13_nearest_bounds_minimal_prompt.txt": "ac9e76d34c9c3030a03fe3b29ad0e75c5935cbbb9d0eb14d5de7569cfb857183",
+    "run_v2/repairs/frame_14_nearest_bounds_minimal_prompt.txt": "c9f7144fddd964ae991b3aac55585a1c2db62a12e6ed6e88bac58b6d73c322de",
+    "run_v2/repairs/frame_15_actual_target_prompt.txt": "c20e83feceaa165144f4ce08eb77cea32d3405d179200e202968ed30f4cd71eb",
+    "run_v2/repairs/frame_16_nearest_bounds_prompt.txt": "f9c3b639185a5987de69f76e5f05004a653e14e334fccced8fa9b67128185323",
+    "run_v2/repairs/frame_17_nearest_bounds_prompt.txt": "1c6a74fc2db61c8fc35fe3a46cf04599a7133dbdfcfb9fa504cacbb2d70a41d3",
+    "run_v2/repairs/frame_18_flight_prompt.txt": "e9338dcedba7cef5e74c1490d3a0d69e6b85dcae69833f5709b74420716563f3",
+    "run_v2/repairs/frame_19_nearest_bounds_prompt.txt": "9861b6b2268d45df2b4f68411e0e9b037ea0d4ce23b1a0d3be3d93bb6dee74eb",
+    "run_v2/repairs/frame_20_nearest_bounds_prompt.txt": "83ad5629fd3522aa5206258ffb6f8a7715c4fd9c4619731d53df69616b0ab1de",
+    "run_v2/repairs/frame_21_midpoint_prompt.txt": "fe2e8626acf1cbfd1279130d6c5b8c34ba47f3a05d5e225a939aedf27a19e672",
+    "run_v2/repairs/frame_22_nearest_bounds_prompt.txt": "c0915672c15c33c49e1218824d7309cbb9879004f7b96b8897303f5424d768bb",
+    "run_v2/repairs/frame_23_nearest_bounds_prompt.txt": "e154f3b1acf7d37409dcc463ea72cdff55723d7af3812cb52a6e857bab8ecfd4",
+    "run_v2/repairs/frame_24.txt": "26ccdc3d035cde79e92a2f6404bea4ebbc5a5b9500189acc485ae8754f0c81b3",
+    "run_v2/repairs/frame_25.txt": "999582a01be38f36d27837afd94afbe233d9a487738a2457500a34dc6aa81eeb",
+    "run_v2/repairs/frame_26.txt": "0ce4c455651d404a86fc8fa127a2de3fda12f79f1518627f69ed10375b4e81a2",
+    "run_v2/repairs/frame_27.txt": "69f98a167439e1d516c48a99f582707fdacf66f593840ed09f1e2bbcf7a2d591",
+    "run_v2/repairs/frame_28.txt": "d9ea328809e6759c3446271b3fb84208a06eddc025884553dc46217d8de556c3",
+    "run_v2/repairs/frame_30.txt": "700556cc4c7b4fc993ab3ccb2eeda81e03c09bd61cd3a7404bda4976f4036825",
+    "run_v2/repairs/frame_29.txt": "d9fd3686826c250759cbaa4ecd3969fbb4a6ddab93a337f95da6aa4a3709d2a8",
+    "run_v2/repairs/frame_32.txt": "e2c93b0d932629b3ce51b956bc530d8b31fdbac9b7daf3aad26c0d24fe91ee8b",
+    "run_v2/repairs/frame_31.txt": "f7781d230a66527575dd3a0cf074da22021982f0df4802c1477d6267695044bf",
+    "run_v2/repairs/frame_34.txt": "f64aa900848db8c35f6e0b0b4be7a78b0cfd7dcf5688972c76e20f9860188e86",
+    "run_v2/repairs/frame_33.txt": "a050e9527d2882443216ca4f902cb80f457851bc7e630c94bfeb58be60100e05",
+    "run_v2/repairs/frame_35.txt": "60085284d565bbdb40fca07f698c472682bf4d143fb1ea791c548c12cae95a40",
+    "run_v2/repairs/frame_36.txt": "a518de182972a378fc1cadd1f917c4763b252c4371b5ce3e3575e48469ad5cfc",
+    "run_v2/repairs/frame_37.txt": "0bb3a0d27e9d327511e00bdce8d7c5e5841b99bbc03850798d2b7109a7333f05",
+    "run_v2/repairs/frame_38.txt": "d6c8511ef34dbcda00bef5d105ef31210fd26640260b1b5e8f0d7c178f817d87",
+    "run_v2/repairs/frame_39.txt": "4e7a496adb5159589b96e277330cf459c361da8cca033a15a199b42e51b9eb4d",
+    "run_v2/repairs/frame_41.txt": "43c68de47c56aeddcdc3d019409a2822c09c96795607d140050ad1454cd7bced",
+    "run_v2/repairs/frame_40.txt": "1d7f8fd85b223562f72d1b86a8f84b16d39759049834a70be45fd1ab0694cadb",
+    "run_v2/repairs/frame_42.txt": "78b96a0c71ac6b73ced347c0052968494bdf66f980274eacc79ad7e1c58471a8",
+    "run_v2/repairs/frame_44.txt": "ca9dab013d40a090ed2d5de29b3753f7f2e8bded6d9052ab27f749bd47fd6a48",
+    "run_v2/repairs/frame_43.txt": "29233c620cb9ede444f3ed444628124fc1615ca8b4ee554f456692a7e78d6137",
+    "run_v2/repairs/frame_46.txt": "285aacaf939ad6c7b0d7ab3079fff39bd5af32f47eaf82ce0338d24f3c9edb62",
+    "run_v2/repairs/frame_47.txt": "7e71f2d692b960c7ceec476b9aba8c4a3d2eca5e86affdb32aae1c5f5680c9f1",
+    "run_v2/repairs/frame_45.txt": "4d1001130497114c9e40bcfea51886bac0afe18b8e2913b0f5d97df0c04a00ba",
+    "run_v3/key_00.png": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+    "run_v3/key_03.png": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+    "run_v3/key_14_recolor.png": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+    "run_v3/key_16_c.png": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+    "run_v3/key_23.png": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+    "run_v3/key_43_c.png": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+    "run_v3/key_25_b.png": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+    "run_v3/key_40_b.png": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+    "run_v3/key_43_d.png": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+    "run_v3/key_01_d.png": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+    "run_v3/key_02_c.png": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+    "run_v3/key_13_recolor.png": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+    "run_v3/key_15_hair.png": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+    "run_v3/helper_frame_17.png": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+    "run_v3/key_31_braid_path.png": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+    "run_v3/key_32_braid_path.png": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+    "run_v3/key_33_braid_path.png": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+    "run_v3/key_38_braid_clean.png": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+    "run_v3/key_39_braid_mid.png": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+    "run_v3/helper_braid_frame_09_b.png": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+    "run_v3/helper_braid_frame_10_d.png": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+    "run_v3/helper_braid_frame_11_d.png": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab"
+  },
+  "frames": [
+    {
+      "source": "run_v3/key_00.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.243615403090189,
+        4.627331678808758
+      ],
+      "landmarks": {
+        "face": [
+          629.047,
+          168.032
+        ],
+        "neck": [
+          627.993,
+          244.04
+        ],
+        "belt": [
+          619.52,
+          462.391
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8913,
+        "neck": 0.8584,
+        "belt": 0.7487
+      },
+      "generation_id": "exec-2ac1a239-90c1-49b8-8e31-7249d6ddfe56",
+      "prompt_file": "run_v3/key_00_prompt.txt",
+      "prompt_sha256": "6cdfd9ae30a0511a8be964ced7352b72506c83ff3ef0e15ffd3915915776609a",
+      "authored_weight_offset_y": 0.0,
+      "phase": "right_contact",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_01_d.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.7851820444570073,
+      "origin": [
+        11.046788998029172,
+        7.8425283254422595
+      ],
+      "landmarks": {
+        "face": [
+          640.019,
+          169.086
+        ],
+        "neck": [
+          638.009,
+          246.048
+        ],
+        "belt": [
+          630.668,
+          466.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8684,
+        "neck": 0.8856,
+        "belt": 0.6991
+      },
+      "generation_id": "exec-f427c235-aae5-4f38-b015-8c4ff0c24fd7",
+      "prompt_file": "run_v3/key_01_d_prompt.txt",
+      "prompt_sha256": "fcb31312ceb6becdc285f67b1e9ef8d1e6f844eae8915759e81c48d0f15113b4",
+      "authored_weight_offset_y": 1.035,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_02_c.png",
+      "cell": [
+        0,
+        0,
+        1048,
+        1501
+      ],
+      "scale": 0.6559742858079963,
+      "origin": [
+        128.0516907737217,
+        5.006330151858037
+      ],
+      "landmarks": {
+        "face": [
+          587.454,
+          206.551
+        ],
+        "neck": [
+          585.31,
+          300.307
+        ],
+        "belt": [
+          579.597,
+          574.698
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8443,
+        "neck": 0.8828,
+        "belt": 0.7244
+      },
+      "generation_id": "exec-7041157f-e3b6-41ec-94a9-197bd035ab39",
+      "prompt_file": "run_v3/key_02_c_prompt.txt",
+      "prompt_sha256": "75aa5f83faf1d7e28bf9ea8f057b2cb3cd2d65f17832f2a5e3a3b714fddb3224",
+      "authored_weight_offset_y": 2.0,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_03.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.141141621967847,
+        3.1226121207269273
+      ],
+      "landmarks": {
+        "face": [
+          631.05,
+          172.051
+        ],
+        "neck": [
+          628.121,
+          249.452
+        ],
+        "belt": [
+          622.655,
+          476.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8714,
+        "neck": 0.9046,
+        "belt": 0.7565
+      },
+      "generation_id": "exec-f3a4f331-d99b-4090-adfd-555e71014261",
+      "prompt_file": "run_v3/key_03_prompt.txt",
+      "prompt_sha256": "3ea24d32373ce07b94d7fea30477145cc0716b7721969e57d7fc545e7239fd91",
+      "authored_weight_offset_y": 2.828,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_04.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6799853123172539,
+      "origin": [
+        122.78388706803935,
+        21.897041846296105
+      ],
+      "landmarks": {
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          565.775,
+          540.639
+        ],
+        "face": [
+          575.354,
+          176.483
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8938,
+        "belt": 0.7459,
+        "face": 0.8657
+      },
+      "authored_weight_offset_y": 3.464,
+      "generation_id": "exec-32774738-adc7-4536-8234-33f5f69fead0",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_05.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        130.1298410178063,
+        25.723884849657424
+      ],
+      "landmarks": {
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          567.395,
+          541.348
+        ],
+        "face": [
+          576.457,
+          175.691
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.9009,
+        "belt": 0.7385,
+        "face": 0.8684
+      },
+      "authored_weight_offset_y": 3.864,
+      "generation_id": "exec-3118e6c4-6bc4-4b40-86af-fa561d61029d",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_06.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        129.64949196416063,
+        24.616314521885926
+      ],
+      "landmarks": {
+        "neck": [
+          573.109,
+          268.88
+        ],
+        "belt": [
+          565.775,
+          542.646
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.9126,
+        "belt": 0.7428,
+        "face": 0.8844
+      },
+      "authored_weight_offset_y": 4.0,
+      "generation_id": "exec-04ae866d-613b-45f6-b549-b6c8fa5e4a63",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_07.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        130.1298410178063,
+        24.384911862620157
+      ],
+      "landmarks": {
+        "neck": [
+          572.389,
+          269.023
+        ],
+        "belt": [
+          567.585,
+          544.003
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8942,
+        "belt": 0.7023,
+        "face": 0.8689
+      },
+      "authored_weight_offset_y": 3.864,
+      "generation_id": "exec-121065e5-fec3-4a06-bd41-e15248c9d65a",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_08.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        129.10242776417533,
+        23.72138703457847
+      ],
+      "landmarks": {
+        "neck": [
+          573.929,
+          269.418
+        ],
+        "belt": [
+          565.775,
+          542.646
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8735,
+        "belt": 0.6888,
+        "face": 0.8667
+      },
+      "authored_weight_offset_y": 3.464,
+      "generation_id": "exec-cf470bcb-fb1a-4163-a785-6a31b15a7b47",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/helper_braid_frame_09_b.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.710351453046258,
+        3.495680730125713
+      ],
+      "landmarks": {
+        "face": [
+          629.047,
+          174.06
+        ],
+        "neck": [
+          627.41,
+          248.986
+        ],
+        "belt": [
+          619.432,
+          473.33
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8613,
+        "neck": 0.8713,
+        "belt": 0.6955
+      },
+      "generation_id": "exec-3c79026f-3088-4e43-a684-78c1a60110bf",
+      "prompt_file": "run_v3/helper_braid_frame_09_b_prompt.txt",
+      "prompt_sha256": "4125e3d2520f869c06a187cb3f02c599edfa16deae19aace5d494212be2a8fb1",
+      "authored_weight_offset_y": 2.828,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/helper_braid_frame_10_d.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "origin": [
+        -0.33453915940583556,
+        0.32109814553203364
+      ],
+      "landmarks": {
+        "face": [
+          630.095,
+          173.007
+        ],
+        "neck": [
+          627.41,
+          246.978
+        ],
+        "belt": [
+          620.651,
+          472.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8388,
+        "neck": 0.8296,
+        "belt": 0.6506
+      },
+      "generation_id": "exec-c2b2223a-e3d0-4269-8cd0-3a2aebcf2aa3",
+      "prompt_file": "run_v3/helper_braid_frame_10_d_prompt.txt",
+      "prompt_sha256": "86632ca13264155a62dc1dab014ed3b2a73f4114ae7ce7b392f7936d866b7123",
+      "authored_weight_offset_y": 2.0,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/helper_braid_frame_11_d.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "origin": [
+        -0.8106090918741984,
+        0.11552359526706368
+      ],
+      "landmarks": {
+        "face": [
+          628.092,
+          173.007
+        ],
+        "neck": [
+          627.993,
+          246.048
+        ],
+        "belt": [
+          620.651,
+          466.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8851,
+        "neck": 0.8502,
+        "belt": 0.7133
+      },
+      "generation_id": "exec-b08203f8-1e53-42a3-a459-7f615e2681ed",
+      "prompt_file": "run_v3/helper_braid_frame_11_d_prompt.txt",
+      "prompt_sha256": "cda2a719182a69af5e85d9c6b3e81e7d38d4be62620390c2062218560b0eddf5",
+      "authored_weight_offset_y": 1.035,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_12.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        136.49466012742357,
+        23.32715641144847
+      ],
+      "landmarks": {
+        "neck": [
+          573.468,
+          269.813
+        ],
+        "belt": [
+          561.775,
+          546.658
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8309,
+        "belt": 0.8006,
+        "face": 0.9069
+      },
+      "authored_weight_offset_y": 0.0,
+      "generation_id": "exec-e7f7baad-86d9-4b59-a031-d022c147e622",
+      "phase": "passing_flight",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_13_recolor.png",
+      "cell": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "scale": 0.7964192988324493,
+      "origin": [
+        8.424873767541158,
+        1.308065577165081
+      ],
+      "landmarks": {
+        "face": [
+          625.338,
+          171.992
+        ],
+        "neck": [
+          632.299,
+          248.182
+        ],
+        "belt": [
+          623.472,
+          481.103
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8268,
+        "neck": 0.7623,
+        "belt": 0.7381
+      },
+      "generation_id": "exec-5633616a-69fe-4948-a530-d19570dd612b",
+      "prompt_file": "run_v3/key_13_recolor_prompt.txt",
+      "prompt_sha256": "64ac9d1f44c8a679e1701dbdcca700cda36fb25cbd859b408e6f3eb141dd3d82",
+      "authored_weight_offset_y": -1.035,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_14_recolor.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8332500083325001,
+      "origin": [
+        -10.683564976835669,
+        -4.958037529580395
+      ],
+      "landmarks": {
+        "face": [
+          621.127,
+          171.954
+        ],
+        "neck": [
+          627.283,
+          243.574
+        ],
+        "belt": [
+          620.651,
+          460.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8119,
+        "neck": 0.7732,
+        "belt": 0.6873
+      },
+      "generation_id": "exec-1c304d6d-0993-42f8-9943-debceff79ac2",
+      "prompt_file": "run_v3/key_14_recolor_prompt.txt",
+      "prompt_sha256": "64ac9d1f44c8a679e1701dbdcca700cda36fb25cbd859b408e6f3eb141dd3d82",
+      "authored_weight_offset_y": -2.0,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_15_hair.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        8.31094387959331,
+        1.6824475222159947
+      ],
+      "landmarks": {
+        "face": [
+          625.041,
+          170.042
+        ],
+        "neck": [
+          629.158,
+          244.186
+        ],
+        "belt": [
+          620.651,
+          472.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8279,
+        "neck": 0.7636,
+        "belt": 0.7019
+      },
+      "generation_id": "exec-a24a243f-a3d8-4b49-8808-ad3308ab8627",
+      "prompt_file": "run_v3/key_15_hair_prompt.txt",
+      "prompt_sha256": "5d9346d97d807197247471fe741fdb956553297fa7bc9d07199da7df38c42562",
+      "authored_weight_offset_y": -2.828,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_16_c.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.7851820444570073,
+      "origin": [
+        20.584395292048498,
+        7.592933550043597
+      ],
+      "landmarks": {
+        "face": [
+          623.993,
+          167.076
+        ],
+        "neck": [
+          625.862,
+          240.636
+        ],
+        "belt": [
+          619.52,
+          464.391
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8285,
+        "neck": 0.7781,
+        "belt": 0.6977
+      },
+      "generation_id": "exec-f417d7d9-c625-4239-a027-bf30f26ec9b0",
+      "prompt_file": "run_v3/key_16_c_prompt.txt",
+      "prompt_sha256": "ed9d3e07dc835c024f176862a673c6b712d0753cf9ec8a4c3d61238a45b9e100",
+      "authored_weight_offset_y": -3.464,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/helper_frame_17.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        7.741734048514957,
+        1.8809363541750201
+      ],
+      "landmarks": {
+        "face": [
+          627.044,
+          168.032
+        ],
+        "neck": [
+          629.869,
+          242.644
+        ],
+        "belt": [
+          622.307,
+          462.978
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8377,
+        "neck": 0.7811,
+        "belt": 0.7435
+      },
+      "generation_id": "exec-bd5e8faf-9ffc-40af-83f0-50626201124c",
+      "prompt_file": "run_v3/helper_frame_17_prompt.txt",
+      "prompt_sha256": "abd1fc729d744814145b65cbc44763ebf417723c2165195867185c1ea0d8bd5c",
+      "authored_weight_offset_y": -3.864,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_18.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        131.2562811438001,
+        12.756919571238683
+      ],
+      "landmarks": {
+        "neck": [
+          581.468,
+          279.847
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "face": [
+          577.56,
+          188.955
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8136,
+        "belt": 0.8024,
+        "face": 0.8824
+      },
+      "authored_weight_offset_y": -4.0,
+      "generation_id": "exec-0966554d-f2eb-4019-8f07-10b86d7fc57d",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        131.2562811438001,
+        8.950384588689019
+      ],
+      "landmarks": {
+        "neck": [
+          581.468,
+          285.868
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "face": [
+          579.56,
+          194.979
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7816,
+        "belt": 0.7858,
+        "face": 0.8479
+      },
+      "authored_weight_offset_y": -3.864,
+      "generation_id": "exec-6e9dbe5a-aae7-47d9-8cda-d5c4efcdabcb",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        123.83259835480453,
+        7.8749062718909215
+      ],
+      "landmarks": {
+        "neck": [
+          581.828,
+          282.786
+        ],
+        "belt": [
+          573.775,
+          554.683
+        ],
+        "face": [
+          578.457,
+          193.762
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8049,
+        "belt": 0.7788,
+        "face": 0.8395
+      },
+      "authored_weight_offset_y": -3.464,
+      "generation_id": "exec-4ecfc388-f85f-483a-b637-a949b20ced32",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        124.07277288162737,
+        7.79371844873944
+      ],
+      "landmarks": {
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "face": [
+          578.457,
+          193.762
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8036,
+        "belt": 0.7837,
+        "face": 0.8646
+      },
+      "authored_weight_offset_y": -2.828,
+      "generation_id": "exec-c886380e-3eb4-4df9-acc6-7132bad9f7a7",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        124.07277288162737,
+        8.621718448739443
+      ],
+      "landmarks": {
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "face": [
+          578.457,
+          195.77
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8043,
+        "belt": 0.7669,
+        "face": 0.8648
+      },
+      "authored_weight_offset_y": -2.0,
+      "generation_id": "exec-5e3574a9-7d65-4fe8-951f-9a863e66fcbe",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_23.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        8.87935313425669,
+        3.8477155551997555
+      ],
+      "landmarks": {
+        "face": [
+          627.044,
+          170.042
+        ],
+        "neck": [
+          628.448,
+          243.721
+        ],
+        "belt": [
+          620.303,
+          458.978
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.9023,
+        "neck": 0.8018,
+        "belt": 0.7936
+      },
+      "generation_id": "exec-faa92756-5bc2-4159-8811-ea46e52db644",
+      "prompt_file": "run_v3/key_23_prompt.txt",
+      "prompt_sha256": "688aef92345673f82a263d4c812ae88a83162823dc44df9798b3d3fdb5e948bf",
+      "authored_weight_offset_y": -1.035,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_24.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7071835707112852,
+      "origin": [
+        101.70057847616084,
+        -0.6414154986351264
+      ],
+      "landmarks": {
+        "neck": [
+          580.188,
+          283.719
+        ],
+        "belt": [
+          572.155,
+          547.956
+        ],
+        "face": [
+          579.148,
+          196.138
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8162,
+        "belt": 0.8374,
+        "face": 0.9533
+      },
+      "authored_weight_offset_y": -0.0,
+      "generation_id": "exec-cbec89fd-f8f9-4b76-b73e-2d29d5acc7e3",
+      "phase": "left_contact",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_25_b.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        8.31094387959331,
+        3.9378900808582387
+      ],
+      "landmarks": {
+        "face": [
+          627.044,
+          170.042
+        ],
+        "neck": [
+          629.158,
+          246.194
+        ],
+        "belt": [
+          620.303,
+          472.978
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.9371,
+        "neck": 0.8147,
+        "belt": 0.8279
+      },
+      "generation_id": "exec-9f2a2320-1e3c-42f0-8276-11a4673fce0d",
+      "prompt_file": "run_v3/key_25_b_prompt.txt",
+      "prompt_sha256": "f521310bfd2a22741b267a208f188ba117841169fd1e6abfe934064f77fc65c8",
+      "authored_weight_offset_y": 1.035,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_26.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        121.0145954334431,
+        21.995547377863915
+      ],
+      "landmarks": {
+        "neck": [
+          597.109,
+          274.901
+        ],
+        "belt": [
+          583.775,
+          558.696
+        ],
+        "face": [
+          593.56,
+          180.923
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8272,
+        "belt": 0.7758,
+        "face": 0.9265
+      },
+      "authored_weight_offset_y": 2.0,
+      "generation_id": "exec-a9abd064-6e21-423b-b386-5df7c8254254",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_27.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "origin": [
+        132.5082708120375,
+        14.829517226304574
+      ],
+      "landmarks": {
+        "neck": [
+          590.288,
+          292.426
+        ],
+        "belt": [
+          580.87,
+          568.049
+        ],
+        "face": [
+          588.663,
+          198.203
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7821,
+        "belt": 0.8022,
+        "face": 0.9314
+      },
+      "authored_weight_offset_y": 2.828,
+      "generation_id": "exec-0d9b0f78-2299-4ce5-8ffc-680ad7608775",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_28.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        114.49247786725022,
+        14.802906271890919
+      ],
+      "landmarks": {
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          579.965,
+          559.345
+        ],
+        "face": [
+          590.457,
+          193.762
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7773,
+        "belt": 0.8015,
+        "face": 0.9218
+      },
+      "authored_weight_offset_y": 3.464,
+      "generation_id": "exec-68138f7b-6b44-4d5b-8a62-0f958d040f81",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_30.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        121.85339086819585,
+        17.382291764613427
+      ],
+      "landmarks": {
+        "neck": [
+          595.828,
+          284.793
+        ],
+        "belt": [
+          576.87,
+          566.042
+        ],
+        "face": [
+          591.56,
+          194.979
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.774,
+        "belt": 0.7283,
+        "face": 0.9129
+      },
+      "authored_weight_offset_y": 3.864,
+      "generation_id": "exec-57b3dcd1-175a-4a98-809a-a25f49ad70bd",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_29.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        114.49247786725022,
+        15.33890627189092
+      ],
+      "landmarks": {
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          577.965,
+          561.351
+        ],
+        "face": [
+          590.457,
+          193.762
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.768,
+        "belt": 0.6734,
+        "face": 0.902
+      },
+      "authored_weight_offset_y": 4.0,
+      "generation_id": "exec-dc40aa50-acbe-4c7a-97e6-372f171d670c",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_31_braid_path.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.914498438876024,
+        3.5517751981426784
+      ],
+      "landmarks": {
+        "face": [
+          623.037,
+          178.078
+        ],
+        "neck": [
+          627.155,
+          250.21
+        ],
+        "belt": [
+          613.946,
+          475.215
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.9117,
+        "neck": 0.7694,
+        "belt": 0.6937
+      },
+      "generation_id": "exec-9be8a0ed-a7cc-46ae-aba7-580693cef593",
+      "prompt_file": "run_v3/key_31_braid_path_prompt.txt",
+      "prompt_sha256": "37bca4f21be021a67b638941025a6cfee06e864631c942068395516c246b048a",
+      "authored_weight_offset_y": 3.864,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_32_braid_path.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "origin": [
+        -0.6023795330759185,
+        -0.09468398918838261
+      ],
+      "landmarks": {
+        "face": [
+          624.085,
+          177.025
+        ],
+        "neck": [
+          627.738,
+          249.28
+        ],
+        "belt": [
+          633,
+          475
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.9033,
+        "neck": 0.7585,
+        "belt": null
+      },
+      "generation_id": "exec-35402ce7-c288-4efe-a0ff-710d8d56ee3e",
+      "prompt_file": "run_v3/key_32_braid_path_prompt.txt",
+      "prompt_sha256": "14ab2541781b4555eb8678b04af1be1724dfb04f5545a35c07f77d0280adfb34",
+      "authored_weight_offset_y": 3.464,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+      "reviewed_landmarks": "run_v3/manual_landmark_observations.json"
+    },
+    {
+      "source": "run_v3/key_33_braid_path.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "origin": [
+        -0.1263096006075557,
+        0.14959626330016818
+      ],
+      "landmarks": {
+        "face": [
+          624.085,
+          177.025
+        ],
+        "neck": [
+          627.155,
+          248.202
+        ],
+        "belt": [
+          617.604,
+          471.452
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.9125,
+        "neck": 0.8081,
+        "belt": 0.6422
+      },
+      "generation_id": "exec-146a758c-9ee3-43c0-adc0-b0be621a8c99",
+      "prompt_file": "run_v3/key_33_braid_path_prompt.txt",
+      "prompt_sha256": "6c3d6bf0d73e637b308b0179c1f0cf15bd5dd83f7e511bae52b49d88525be942",
+      "authored_weight_offset_y": 2.828,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_33.png",
+      "cell": [
+        0,
+        0,
+        1054,
+        1492
+      ],
+      "scale": 0.6354895493743605,
+      "origin": [
+        134.80390698974952,
+        19.22939266263768
+      ],
+      "landmarks": {
+        "neck": [
+          593.552,
+          287.606
+        ],
+        "belt": [
+          582.119,
+          574.269
+        ],
+        "face": [
+          587.777,
+          195.957
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7786,
+        "belt": 0.6594,
+        "face": 0.9001
+      },
+      "authored_weight_offset_y": 2.0,
+      "generation_id": "exec-5436f9d2-a501-44c4-95c4-27bf48afbd45",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_35.png",
+      "cell": [
+        0,
+        0,
+        1070,
+        1470
+      ],
+      "scale": 0.6219640380393205,
+      "origin": [
+        144.02928206691092,
+        20.946556713790812
+      ],
+      "landmarks": {
+        "neck": [
+          591.627,
+          289.548
+        ],
+        "belt": [
+          580.775,
+          574.223
+        ],
+        "face": [
+          587.705,
+          196.136
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8183,
+        "belt": 0.753,
+        "face": 0.8949
+      },
+      "authored_weight_offset_y": 1.035,
+      "generation_id": "exec-0ee09e83-bbcd-4822-b191-1f1c4c52845e",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_36.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        138.03932713021953,
+        22.62390403289703
+      ],
+      "landmarks": {
+        "neck": [
+          571.109,
+          270.887
+        ],
+        "belt": [
+          559.585,
+          546.01
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8558,
+        "belt": 0.8509,
+        "face": 0.922
+      },
+      "authored_weight_offset_y": 0.0,
+      "generation_id": "exec-1f71c6b6-6603-4c43-9d08-64ba22e14e72",
+      "phase": "passing_flight",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_37.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "origin": [
+        129.40998458880125,
+        17.620556370962902
+      ],
+      "landmarks": {
+        "neck": [
+          573.468,
+          271.819
+        ],
+        "belt": [
+          559.775,
+          546.658
+        ],
+        "face": [
+          568.457,
+          179.707
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8661,
+        "belt": 0.8331,
+        "face": 0.9131
+      },
+      "authored_weight_offset_y": -1.035,
+      "generation_id": "exec-61dd29ba-3cac-437e-962d-0aa1b88f4103",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_38_braid_clean.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "origin": [
+        0.8250136778239607,
+        0.3599349997141985
+      ],
+      "landmarks": {
+        "face": [
+          622.082,
+          168.988
+        ],
+        "neck": [
+          625.99,
+          242.032
+        ],
+        "belt": [
+          616.645,
+          460.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8585,
+        "neck": 0.8363,
+        "belt": 0.801
+      },
+      "generation_id": "exec-03b6b1f4-156a-4049-9e6e-58f5d92e3751",
+      "prompt_file": "run_v3/key_38_braid_clean_prompt.txt",
+      "prompt_sha256": "d3245eec507d41ad4b57a85fc56853407e200e256f2374ddf06d795c0bb52d07",
+      "authored_weight_offset_y": -2.0,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_39_braid_mid.png",
+      "cell": [
+        0,
+        0,
+        1247,
+        1261
+      ],
+      "scale": 0.8120508343822324,
+      "origin": [
+        5.116245076941823,
+        3.253448698688544
+      ],
+      "landmarks": {
+        "face": [
+          622.354,
+          163.252
+        ],
+        "neck": [
+          624.202,
+          238.801
+        ],
+        "belt": [
+          616.098,
+          462.611
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8776,
+        "neck": 0.8473,
+        "belt": 0.8069
+      },
+      "generation_id": "exec-8c939887-a222-45f7-ae09-9a183317c6fd",
+      "prompt_file": "run_v3/key_39_braid_mid_prompt.txt",
+      "prompt_sha256": "3a41eb35f03efbcd02bd537cddea76e78062792dcea5b913c605c4bf7bacadbc",
+      "authored_weight_offset_y": -2.828,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v3/key_40_b.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.243615403090189,
+        4.378446561524299
+      ],
+      "landmarks": {
+        "face": [
+          627.044,
+          164.014
+        ],
+        "neck": [
+          627.993,
+          240.024
+        ],
+        "belt": [
+          620.303,
+          466.978
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8804,
+        "neck": 0.8106,
+        "belt": 0.7784
+      },
+      "generation_id": "exec-046d36ff-27f2-4256-8101-ca15ca8473b2",
+      "prompt_file": "run_v3/key_40_b_prompt.txt",
+      "prompt_sha256": "36cec635fb595e999b0225077de6e367b801f91d33344a7be7a94eb0c19d995a",
+      "authored_weight_offset_y": -3.464,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_40.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        131.49135340069012,
+        12.18901239531425
+      ],
+      "landmarks": {
+        "neck": [
+          581.109,
+          280.922
+        ],
+        "belt": [
+          569.775,
+          564.715
+        ],
+        "face": [
+          577.56,
+          186.947
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8112,
+        "belt": 0.7912,
+        "face": 0.8978
+      },
+      "authored_weight_offset_y": -3.864,
+      "generation_id": "exec-88b5863c-03d2-4df4-874c-305c36d8a841",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v3/key_43_c.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.243615403090189,
+        3.842446561524298
+      ],
+      "landmarks": {
+        "face": [
+          625.041,
+          164.014
+        ],
+        "neck": [
+          627.993,
+          240.024
+        ],
+        "belt": [
+          618.648,
+          468.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8917,
+        "neck": 0.7959,
+        "belt": 0.7815
+      },
+      "generation_id": "exec-abfe88d4-74e4-454c-8676-12a526b39bc6",
+      "prompt_file": "run_v3/key_43_c_prompt.txt",
+      "prompt_sha256": "14c95b42ecc60ccf185b3e7b253fc3f4f8967df421099f6aae573019a71152c2",
+      "authored_weight_offset_y": -4.0,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint. This complete unique drawing is selected at effective phase42 after visible right-knee/left-release path review; source filename is authoring history, not timeline order."
+    },
+    {
+      "source": "run_v3/key_43_d.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "origin": [
+        9.710351453046258,
+        3.233910495556813
+      ],
+      "landmarks": {
+        "face": [
+          625.041,
+          164.014
+        ],
+        "neck": [
+          627.41,
+          240.954
+        ],
+        "belt": [
+          618.648,
+          468.742
+        ]
+      },
+      "landmark_match_scores": {
+        "face": 0.8738,
+        "neck": 0.7872,
+        "belt": 0.7577
+      },
+      "generation_id": "exec-83691d57-1ad1-42b6-b2a9-1121879c99dd",
+      "prompt_file": "run_v3/key_43_d_prompt.txt",
+      "prompt_sha256": "005226582771cdd9f8ac02aee22e1f07f5f79a249bd9f188cf3a1ec5aff0bdfa",
+      "authored_weight_offset_y": -3.864,
+      "phase": "transition",
+      "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint."
+    },
+    {
+      "source": "run_v2/repairs/frame_43.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "origin": [
+        137.58647868489902,
+        14.5517765819977
+      ],
+      "landmarks": {
+        "neck": [
+          582.389,
+          283.071
+        ],
+        "belt": [
+          571.395,
+          565.424
+        ],
+        "face": [
+          580.663,
+          186.155
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.792,
+        "belt": 0.7638,
+        "face": 0.873
+      },
+      "authored_weight_offset_y": -3.464,
+      "generation_id": "exec-31185407-4f1a-4d13-8895-9248f9e57121",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_46.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        130.18175865478423,
+        11.910834067797737
+      ],
+      "landmarks": {
+        "neck": [
+          583.109,
+          282.929
+        ],
+        "belt": [
+          571.775,
+          554.683
+        ],
+        "face": [
+          581.56,
+          188.955
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7921,
+        "belt": 0.7347,
+        "face": 0.8733
+      },
+      "authored_weight_offset_y": -2.828,
+      "generation_id": "exec-a4ea824b-e968-453f-a336-0113013eb2c1",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_47.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        130.65321276331036,
+        15.274209495871503
+      ],
+      "landmarks": {
+        "neck": [
+          582.389,
+          279.057
+        ],
+        "belt": [
+          573.775,
+          548.665
+        ],
+        "face": [
+          581.56,
+          184.939
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8339,
+        "belt": 0.7746,
+        "face": 0.884
+      },
+      "authored_weight_offset_y": -2.0,
+      "generation_id": "exec-7b88e6de-9f4c-4d95-9676-ee68cd70f0bf",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    },
+    {
+      "source": "run_v2/repairs/frame_45.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "origin": [
+        131.19014660913183,
+        15.276657357630683
+      ],
+      "landmarks": {
+        "neck": [
+          581.569,
+          280.527
+        ],
+        "belt": [
+          570.87,
+          554.005
+        ],
+        "face": [
+          579.56,
+          186.947
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.827,
+        "belt": 0.7146,
+        "face": 0.8825
+      },
+      "authored_weight_offset_y": -1.035,
+      "generation_id": "exec-ac53d6f3-8b2f-4ed2-b70e-73dce4169102",
+      "phase": "transition",
+      "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting."
+    }
+  ]
+}

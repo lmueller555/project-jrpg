@@ -23,182 +23,183 @@
   ],
   "near": "anatomical_right",
   "far": "anatomical_left",
-  "approval_state": "internally_reviewed_for_ingame_review",
-  "construction": "Forty-eight complete individually ImageGen-authored front-facing running drawings; key/body/weapon and intermediate motion reviewed separately. No rigged, warped, blended or duplicate-pose filling.",
-  "registration": "Fixed0.60 whole-source density, calibrated against the previous bank eyes-to-belt torso scale, measured eyes/neck/belt landmarks and modest authored recoil, never occupied bounds or foot fitting. No pasted head/limbs.",
+  "approval_state": "implemented_for_ingame_review",
+  "construction": "Forty-eight complete painted figures: four retained approved contact/recovery drawings and forty-four ImageGen-authored leg-continuity repairs. No detached rigs, pose warps, pixel restoration or crossfaded anatomy.",
+  "registration": "Fixed 0.70 whole-source density for new masters, calibrated against the approved body model; measured eyes/neck/belt locate each complete drawing. Retained raw keys keep their original 0.60 density and registration. No occupied-height or foot fitting.",
   "source_sha256": {
-    "run_v2/arm_forward_authoring_guide.png": "5825d9e862f4a85134509b4c4ac0126e0993185f2c8abde64e07771dd9e818e8",
-    "run_v2/frame_00.png": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
-    "run_v2/frame_00_generation.json": "e51f51e6a12ae8513098192d9d3dcd2c17e0885d2628497335c944654b619ad8",
-    "run_v2/frame_00_prompt.txt": "f0294696cfcb5bb99bda1903f4106fa8d1a7f73c86fc8fbf9b666add196d3697",
-    "run_v2/frame_01.png": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
-    "run_v2/frame_01_generation.json": "e233f1a204157f33af66048a5491bd984f0594cb8616e8b6aa33de19d759f1cf",
-    "run_v2/frame_01_prompt.txt": "be3f4ace40af92bd7c2c5ecec8dc01f8f001580936a2c397fcabfe0aa987b6e4",
-    "run_v2/frame_02.png": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
-    "run_v2/frame_02_generation.json": "935bb02c7a26c0e5b155080cffb0f434671401c4df56e62da7dc8364ac859206",
-    "run_v2/frame_02_prompt.txt": "171783c9ce39abd68142ef61fc9ebffd98ac059de671142d35f8a75d0f0d868b",
-    "run_v2/frame_03.png": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
-    "run_v2/frame_03_generation.json": "4a4c1198bf466344edc105dedfe3ad5e76549586018ee0c48504c8d2c38bdaaa",
-    "run_v2/frame_03_prompt.txt": "1ad23abbbb37360f571498cd158626330fbba03b23293bf28b93d18309cbba64",
-    "run_v2/frame_04.png": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
-    "run_v2/frame_04_generation.json": "e30645258ed59efdd88431a22d8f460999a17dcc66e6fd34591bf404c604af69",
-    "run_v2/frame_04_prompt.txt": "facfea3cfc51c30668360ca32ad13575801bc63c79d71c051ee5dc50f0bbe2ac",
-    "run_v2/frame_05.png": "8ba3d3864b4dfeb683a06dd72a289bb853484ef18a46b4fecf6429b6bc6c168b",
-    "run_v2/frame_05_generation.json": "43869d6ef5fb84888e252353f4f56e2c8375a0fb90b6b2a20ec3caceca4eb7ba",
-    "run_v2/frame_05_prompt.txt": "3690f115611a9c580de00aabfb0ba0c6639d89781a0a50536ca043c1082e0e39",
-    "run_v2/frame_06.png": "c0a634c8b14150392cd682dbfb74212aa2297756a4ce204241e254620398b7f0",
-    "run_v2/frame_06_generation.json": "27cfc10154340fa683c9ed22ebc798b7c18d1d15a860213c5a67784565e31c8a",
-    "run_v2/frame_06_prompt.txt": "c7145661cc6c4af44bbd35b45ed19f349896da98321bcb8e51af3d8871b2808d",
-    "run_v2/frame_07.png": "a5a3339f872fae623df3b0b34fe24b3336f86f02d6d9cb7c33234aefef54fde7",
-    "run_v2/frame_07_generation.json": "6cafd0fcfd0aafec28a0310e4c0cffc9609c518b3292c24720e95c7e52609382",
-    "run_v2/frame_07_prompt.txt": "50f775f252195be0eff13b7d3c751f5d7e6eadf78601806a2c1115984f54ba76",
-    "run_v2/frame_08.png": "557cfaf22fffdd9f8d2a7d0a49007dbdd4c6a1b07603ba4a86f2786583e0501f",
-    "run_v2/frame_08_generation.json": "271122a24392067efea9012bdffd020d5abb6ef8049266de8c805a1a92f5d158",
-    "run_v2/frame_08_prompt.txt": "a3b54d563628ea0cff410e19d2bcaa1d5e5b170a9a37b8c6d16d9c5ffe9b3f57",
-    "run_v2/frame_09.png": "6fad637c03b83eb7d9387352f84718b12e1da3014c9c3bbb5e50bdca8eac1e50",
-    "run_v2/frame_09_generation.json": "c4ec42cc64abc80e36f79b90e97370e41ca3bff4fac2ef890941d30b49c73f2b",
-    "run_v2/frame_09_prompt.txt": "e4308f5e59ae9ee15cff0b862dac98b851e7eb5c117180a0b0cc2c7a8f7ed79f",
-    "run_v2/frame_10.png": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed",
-    "run_v2/frame_10_generation.json": "e459418f89437cb5cd992a3585ce550a0a5776c5e4cc28dd4ef28741eee40751",
-    "run_v2/frame_10_prompt.txt": "780d5e28bed488e2d12b9b9b995bfb8cd5f31a6ce44d9c6b11237fda00028992",
-    "run_v2/frame_11.png": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670",
-    "run_v2/frame_11_generation.json": "2c8b4da9f27baaacd41f052688fdadfe9bd93339c8e28145956e5ff808a26611",
-    "run_v2/frame_11_prompt.txt": "8dde5fa0ee21f8a2f3a43048927052c811cc9216309459738b01aed7622d341a",
-    "run_v2/frame_12.png": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
-    "run_v2/frame_12_generation.json": "aeda45408f720ac739248ec67677565d70b9b066657ec8a0cc57c762ee3fe4b2",
-    "run_v2/frame_12_prompt.txt": "c2ca1b31861832f2ceedc1df2ae341968871182b7cfd8d2d908c98276a957b40",
-    "run_v2/frame_13.png": "6c03f5450e4bd029859550e7df2e4ac35fd2ad1bf86468607b2427f4d03479e3",
-    "run_v2/frame_13_generation.json": "f6d56dce7f646ef2ed670353da54a931a341d20ef20c171ce5d34bdee9b51dee",
-    "run_v2/frame_13_prompt.txt": "0686a858849688f4b533dc48639e97e081f04c4ef479f39bc36a73a52bf70f45",
-    "run_v2/frame_13_repair_generation.json": "b7f6d03a2fa57132371c8e5bd7ed2811f3235c44f4f5c34267edc9c94b5916ab",
-    "run_v2/frame_14.png": "faacf486ca7584e0b7ec2496fff1837d6c8160bf826e4be989a3a25e1c474175",
-    "run_v2/frame_14_generation.json": "6e072d5707800ce4e85803f5c3d46ef06d62d654c503da5b772ed026ade7891e",
-    "run_v2/frame_14_prompt.txt": "4e318022b66d138c10b089f0f3a894d01d380fad38686d72e31cd5d034b17a20",
-    "run_v2/frame_14_repair_generation.json": "218448e3a913efb27ee16858610062869c75206e90a32044ece454f81a0d2d55",
-    "run_v2/frame_15.png": "a9dedda00da5c2de0366abe1f8e867e5f9b013953f10bc8dea44df292ae2294d",
-    "run_v2/frame_15_generation.json": "0e1d7ff47018d3907e4904dcea0e0b4f1c09141665535d432f0cdd0e126cf7ca",
-    "run_v2/frame_15_prompt.txt": "74620fd78d220e09755a1d9ab724f3d2d6d47a09e931c9d301afad1e5fedb8ab",
-    "run_v2/frame_16.png": "afc0b1f22e84d0b50d8b7bd6e75b7bc443e1028ce59279a714da851a41b51d49",
-    "run_v2/frame_16_generation.json": "f963e0fd78d32d533da642e53484ba293ee96845940317dab5901fde2c528e8f",
-    "run_v2/frame_16_prompt.txt": "042b354f977ba4a56bd12fbea2cef2434b3327dc7ecda80a08b4a07e9570f13f",
-    "run_v2/frame_17.png": "d65d488ae5d1d5f82e8fcd7b414ae18c6de905386ec9adfc4796dfa994478bc6",
-    "run_v2/frame_17_generation.json": "9c3a42b8f97d3bbedeeec27205e2334c36ec466993526497fe5911cf930d6caa",
-    "run_v2/frame_17_prompt.txt": "d125e237f88e24e47d943ec370fae6eb4c52e2ea0268f9799cdb9e8e5e856d9b",
-    "run_v2/frame_18.png": "c192121a2b982e72d00b45cfe32d8bd7119ef548e332c96fbfc8c3fb8b3f2de0",
-    "run_v2/frame_18_generation.json": "2764d8a27a0b3208be2bb970f51c5b08bd2263c1ddc238de2af12c323f052cdc",
-    "run_v2/frame_18_prompt.txt": "88692397b6829d3e84269f4cc49d10bb5442ef59a7f24e1d7587312a1d6fff27",
-    "run_v2/frame_19.png": "33dffe107dcd8220c83fc38ca4cd52cfd322ac83e35ea06c007ed1620a6c4fce",
-    "run_v2/frame_19_generation.json": "d1ee798c4b43fe7d23ac87d158fbea6203359917ca34831950e02157d35ef95b",
-    "run_v2/frame_19_prompt.txt": "c760044299653e6c50fe5b2912893a8354a9ecb79b52f686d4179bfc6ec8139e",
-    "run_v2/frame_20.png": "4524dc80403436e4d00d974e29d92b4712502746e36754ad270485cec25947a8",
-    "run_v2/frame_20_generation.json": "443928bbeab70302ec44a22d35c78f587cf2126ac307f9b2d876038afac465c7",
-    "run_v2/frame_20_prompt.txt": "1cba58d22a621d3a2fbb879284031f064ae7921a5f1283b05e184c5c4c3a02a0",
-    "run_v2/frame_21.png": "08b1bb1e7acfbd83521623cbc0accf6f966aa4fd7a399d9966e6fb6b2c9b045c",
-    "run_v2/frame_21_generation.json": "27f3cbe45ef8209def77dfed86770a891f186f43a762c531a5b087b0ab18de20",
-    "run_v2/frame_21_prompt.txt": "b3292f71b7c215c169697cfc3c7cacc4c63b1f77782f1bddfd358901f699eeb0",
-    "run_v2/frame_22.png": "c78ef3d65556b56d85628dfe69a9f1659a3ceb2b639acdea434ee6f0bef81046",
-    "run_v2/frame_22_generation.json": "e85698495168ac8b8acbcb27a4e7d62c85652137b9e6e3f453fd354c03dff848",
-    "run_v2/frame_22_prompt.txt": "a03ff29990ce1489e131d57e0d4246b53d5dea81c2f202147bef41be03ff3c9d",
-    "run_v2/frame_23.png": "3f0a9f00ca3fe21e62cc5088537f0c1dd1bad8aa84667b214e15bfe8af38661a",
-    "run_v2/frame_23_generation.json": "91829e4b5ab7ec09450ea205016f54f64f0a4f817e34ccb7c8e1b58c7055ad5b",
-    "run_v2/frame_23_prompt.txt": "ed0b43d2f5af4a2fabb61ab00e7f0c5b056f802147219d7b740e6ee9673e74e8",
-    "run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
-    "run_v2/frame_24_generation.json": "75416e685432a8d740b4d2b7d30d3ed105d2aa0e790e9cfae9b8c1e7dcddd4f8",
-    "run_v2/frame_24_prompt.txt": "73e8671d949d44379246c6f7af38fcce753ff7558f7114dfdbec2054f2c17665",
-    "run_v2/frame_25.png": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
-    "run_v2/frame_25_29_wrist_guide_recipe.json": "50c63151c70641f7eac8bf02ac045ef8bcb39c06d9e67999f4cdeb091011ac6b",
-    "run_v2/frame_25_generation.json": "37c4408e5377daf35f2ec60caee9d2e4786af3c6e022422ae42953d6b5afbf20",
-    "run_v2/frame_25_prompt.txt": "c3bc301994a0cc82a6126411e9b11fe3f7beb79ed7f300e002e48a1c2a9ec07c",
-    "run_v2/frame_25_wrist_authoring_guide.png": "96aa6ab132c4570f5555fad7444cd6000225296dc628cc7429495f6a51d1aed9",
-    "run_v2/frame_26.png": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
-    "run_v2/frame_26_generation.json": "206108cc69386f0cf1f4b2e0199d45b1ec5f7b6831f2518b34812a3a188a8f7e",
-    "run_v2/frame_26_prompt.txt": "e4db1869a9c8182ed8bb31c1f0cccdff32a30b75a13104d2036397fbaeaec8be",
-    "run_v2/frame_27.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
-    "run_v2/frame_27_generation.json": "8df718bc0f3ab567606377f655f1a3bd07e835e4f6500f2a9da410af236a7ab9",
-    "run_v2/frame_27_prompt.txt": "157b621c41decb7281b5084bee2e11eac3b5b89114c901f12ccaaff98ebb0b02",
-    "run_v2/frame_28.png": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
-    "run_v2/frame_28_generation.json": "cb9df94f8ff8e50eb4c67c329085f593ddcab0be24616cd65c5e08c5dce34b70",
-    "run_v2/frame_28_prompt.txt": "3df7769ed42e6d53d84d60b96e47c125c5724a5cf4181a6b267b5902372a1878",
-    "run_v2/frame_28_wrist_authoring_guide.png": "ecf991be1411ee914b465f739c30efc364dd97e812f70780cf7fb1f8137f243b",
-    "run_v2/frame_29.png": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
-    "run_v2/frame_29_generation.json": "1a2162d7e4ff782d228681ebd85dfa0ccad3dbc3fa3b076de30b0afe3144f815",
-    "run_v2/frame_29_prompt.txt": "4d12fb82139e25e892ebfb81ef08e691cbb6ee769ffbcc81694007b95181ef6e",
-    "run_v2/frame_29_wrist_authoring_guide.png": "3c52c0ff59a6b7b3e8a9edfb3357ff337d362b43e7444ec179fba3ee16bdd266",
-    "run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
-    "run_v2/frame_30_generation.json": "0597ce043fb5e2d8b75aa11e2ec5930f870b07de04819b9fff649147557995a9",
-    "run_v2/frame_30_prompt.txt": "5c49017847f2fd1c659d9fde81b5e49bb6631d162094c1cc254b6e7f2dfc3e49",
-    "run_v2/frame_31.png": "09e9c5f1c1d76eb21993a7d415eb6ffc60bd8592f3819324784b1bdb7dd1bc2e",
-    "run_v2/frame_31_generation.json": "0e615a0feba5bf81fd6e3f63e83bc53cb4cd0b5ea9d9267583daf09cd52dc04e",
-    "run_v2/frame_31_prompt.txt": "febe3413e59a827e74fb1468f92615f7ace4355700aeea16abcc9334a6b59419",
-    "run_v2/frame_32.png": "7682b5f72a278ab294d9702da0044de94422213d0c301e3f141ccfc3fcbf3890",
-    "run_v2/frame_32_generation.json": "a94251bf8f62903129b9bdfe5df90fdd01bdf5ba3b0d0bf9cfbd00070a1eabbd",
-    "run_v2/frame_32_prompt.txt": "3287e7825898b06286c416147d0197657d0eb945edd5943b288d772e85080c60",
-    "run_v2/frame_33.png": "a2e4bccd3a3d3b6d260820772a8d4ffa5842d14d105a14869d69beb158ef7874",
-    "run_v2/frame_33_generation.json": "2ee78cb06284c92e7581a8ab9ce1c6d44042a54ffcfc4e9c60d3d4a6eb4f038a",
-    "run_v2/frame_33_prompt.txt": "f2b820f70caf1168b32d1ecdd8044a7c156234e6758f566bea8997a1ba3e0750",
-    "run_v2/frame_34.png": "d844e04c2064ab4aaaa5d5faa235c67bf2884ad271a4b4b4a7d6a508ee2fdb26",
-    "run_v2/frame_34_generation.json": "f1ef9699668ab41406b57b12ee7290935785bdb9e2b707013b82dff1dd57f4a7",
-    "run_v2/frame_34_prompt.txt": "b736b5999b8e590a86a19f7550ecbb3a1289b32b7622f46364baff188f1c950f",
-    "run_v2/frame_35.png": "f33d6dec0c9af2ca80035e59530a9773476dd334dac82df219f54c8fc49b1b89",
-    "run_v2/frame_35_generation.json": "8c22c29d96cf27186a889ba588826e8ea4949dbd67cfad876bec693996d939ea",
-    "run_v2/frame_35_prompt.txt": "7f46da801e50d0778ab3c92f4227f80fbfe7069c3948a7dfa1762be0f3ca6383",
-    "run_v2/frame_36.png": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
-    "run_v2/frame_36_generation.json": "d10805bb456281b9ce3a2ad918500bb04b5046ec0ee76dff273d48f58a48c8b3",
-    "run_v2/frame_36_prompt.txt": "5fa726c74c5bca7dba6deacd07c47291b97216ac667c6df447196cb26c21e8ef",
-    "run_v2/frame_37.png": "59d760dd4d1e7f026bbb0d4f0e79c92ed8dcbb91bd542ab0a7e01914fed952b8",
-    "run_v2/frame_37_generation.json": "c0eec1d4acd3708ab120a73932885ec80d1d4db3000dfa6a6d5d0ef4ad9a722d",
-    "run_v2/frame_37_prompt.txt": "3aee07f2892ea3e4b7cf4c2f1a02448296a5dce7325976dcba9220f31f68d4a4",
-    "run_v2/frame_38.png": "218f0f1b58b20ff2bd54bd66b7d0a936c38e45af0a4d8cd870408b72ad09ce9b",
-    "run_v2/frame_38_generation.json": "1a07b2b7163a6906403031bb1f0618b733980bae105ddde99fda577acaaf81f4",
-    "run_v2/frame_38_prompt.txt": "f4c3bd28f532837af50c415834e77bcb3a1b71c4cd9df4da833f9f20f5b2ce7e",
-    "run_v2/frame_39.png": "00e05fcb9b52b291dded7429aee1150b0bd7d8044a7eb83a27c75036edd9f99d",
-    "run_v2/frame_39_generation.json": "e3aeacb9ae803bf33fdfdf6323720d6412fb71f105198cc32d1c29ced18e3b81",
-    "run_v2/frame_39_prompt.txt": "759f781d8197e52bb94b2937de0229d28783a678119acc62d591ef8f2c858943",
-    "run_v2/frame_40.png": "1438f499e5f54260e4a10580a0ae46d378c110b1f96e416e4ad75d8f8bc82a06",
-    "run_v2/frame_40_generation.json": "b06ddeda89a7c267728fa5acd19ff7e113f830037b02f13a0509cbb62cfc7673",
-    "run_v2/frame_40_prompt.txt": "592d4334bfee4b7ddc23efdc66aa83f88fc71c58f80202316529daecc0f6e819",
-    "run_v2/frame_41.png": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
-    "run_v2/frame_41_generation.json": "f53f95aac70bb494206f27173eae5a388b5f32c4e5a55e9c06154abc67f20e89",
-    "run_v2/frame_41_prompt.txt": "e9f41bd538875476e801fd136d541205863dc1fe12ebf450d5e6596137c190f8",
-    "run_v2/frame_42.png": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
-    "run_v2/frame_42_generation.json": "199e83f78161f10ccada05b27effd9206233b66cd6312437e5d7530c18375e73",
-    "run_v2/frame_42_prompt.txt": "a130d81b7a8938b7e17fda42af4de8901916b8a0ab0c4ef38ef3622e4130d880",
-    "run_v2/frame_43.png": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
-    "run_v2/frame_43_generation.json": "48bbb20c66ea6bfa918bbb010d0073bfb6fc46749f6320e30097bc159a645f4f",
-    "run_v2/frame_43_prompt.txt": "edf120a2b60f8ace2cc90947c6a0b37f219f4ef01df820344cfa2398feabaf02",
-    "run_v2/frame_44.png": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
-    "run_v2/frame_44_generation.json": "faab01860757f8c66998958933286dcc05d2746310e764a9c87f60b3a2fcf021",
-    "run_v2/frame_44_prompt.txt": "9f545b4cbe05ae1c13952c4b1789177092f7ce0f1358e3f237422fdabb2b1b0e",
-    "run_v2/frame_45.png": "c483a37b0e103feabbef96281397c430c43baead275487b0209e2200016db748",
-    "run_v2/frame_45_generation.json": "0522861e2f2319fc4210ff5b3545ddfb841077cab7872d8623e8a35f6c94aa5b",
-    "run_v2/frame_45_prompt.txt": "b9072c43c93808fdaf2fc1332e515b95c43687164667422810ac80efe6eb1fe2",
-    "run_v2/frame_46.png": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
-    "run_v2/frame_46_generation.json": "15473d8ebc1e1507955c5be85875d53c26cd18a1b47746e478ee20ef86c312d2",
-    "run_v2/frame_46_prompt.txt": "5a44f7e23826346ffb765476139eedb82b0fb661d505ada32a1b9cc5f5709341",
-    "run_v2/frame_47.png": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
-    "run_v2/frame_47_generation.json": "d8afd20a7ec198f40673914ed0399df4dfeccc069831464eea3a4cc812b3a897",
-    "run_v2/frame_47_prompt.txt": "0b3f447767a8758f5af6c935d18f4e9de62902cad14ee57f640b9ae0c3d17cd9",
-    "run_v2/key_00.png": "7fa8b0ef3c033385fc8755065d29c376eda694034fb240ce0593cfac0cc2213f",
-    "run_v2/key_06.png": "994e0ea3b5d5c99745563a85529dc89d785e33b353b8f4bd55349ecb924e7efd",
-    "run_v2/key_12.png": "3c64aec593fba76940cb60bf89a537edd9d141218e3deadb6cd34cbab3687f14",
-    "run_v2/key_18.png": "0f2da024f1e73187e7c5208dd1b36af041f9dbfdbb47839330a64f28d7c752d8",
-    "run_v2/key_24.png": "16c2083c954ae7e732657d2a8c2372828b57496a9c7deaa418d2780d6f50fb8f",
-    "run_v2/key_30.png": "e2f629503f14bf3242a638dc8812c07710be782c639594dc63b9193d1f02bbce",
-    "run_v2/key_36.png": "5ea5c66fb6f4983cc1aea05f8da5f3199cdac460c57ce88c527f605befdc6f3a",
-    "run_v2/key_42.png": "6d7711816811d0040cbb13d79ef6c7585604a30feb4a50a8523f4cb0ec88d04d",
-    "run_v2/keys.png": "47825aa873afd290eb84c176148f9502713fcb1d1eab3e02f6533862635cf148",
-    "run_v2/keys_prompt.txt": "e8cd9db587e8b5aba49067d6ab6250c044e1e231f3673f93588024d681573939",
-    "run_v2/leg_13_authoring_guide.png": "bc61654e6c4ab6401b546ed68ebd7f4dd0ec2138ff63092b9faf60a02c65a725",
-    "run_v2/leg_14_authoring_guide.png": "95b490b39b0df84a0aacb8483d2e4e016f06ff4210eea0f312a92fa33a682900",
-    "run_v2/leg_38_authoring_guide.png": "abd3440d638243f3e53454f5d905502c1d1aa40ea2483bc6108dae225cca7127",
-    "run_v2/leg_39_authoring_guide.png": "c0d4112b47f3787f70460a04cf093c3a667a4cabfb9f2fb4a59b3407f96013fb",
-    "run_v2/leg_40_authoring_guide.png": "be02dbe31565280c4cff2b873cd5b2992a9cb57a521b46dd3c58cbad74429f13",
-    "run_v2/leg_41_authoring_guide.png": "2aaabb6181ea956b17902ec404b6835f9f61470995162171aa518a78fdba2327",
-    "run_v2/register_source.py": "68948c5483d44ab6ff0be2b7bd5a8f540bd7ff7c3eb8f1551a0414a4a8d2db05"
+    "run_v3/retained/phase_00.png": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+    "run_v3/root_helper_01.png": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+    "run_v3/root_helper_02.png": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+    "run_v3/rough_keys/phase_03.png": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+    "run_v3/root_helper_04.png": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+    "run_v3/root_helper_05.png": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+    "run_v3/midpoints/phase_06_partial_repaired.png": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+    "run_v3/root_helper_07.png": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+    "run_v3/root_helper_08.png": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+    "run_v3/rough_keys/phase_09.png": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+    "run_v3/helper_10.png": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+    "run_v3/helper_11.png": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+    "run_v3/retained/phase_12.png": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+    "run_v3/root_helper_13_b.png": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+    "run_v3/root_helper_14.png": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+    "run_v3/rough_keys/phase_15_repaired.png": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+    "run_v3/first_half_final/bounded_16.png": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+    "run_v3/first_half_final/bounded_17.png": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+    "run_v3/midpoints/phase_18_partial_repaired.png": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+    "run_v3/first_half_final/bounded_19.png": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+    "run_v3/first_half_final/bounded_20.png": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+    "run_v3/rough_keys/phase_21.png": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+    "run_v3/root_helper_22.png": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+    "run_v3/first_half_final/phase_23.png": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+    "run_v3/retained/phase_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+    "run_v3/intermediate_25.png": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+    "run_v3/intermediate_26.png": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+    "run_v3/rough_keys/phase_27.png": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+    "run_v3/intermediate_28.png": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+    "run_v3/intermediate_29.png": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+    "run_v3/join_repairs/hand30.png": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+    "run_v3/intermediate_31.png": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+    "run_v3/intermediate_32.png": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+    "run_v3/rough_keys/phase_33.png": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+    "run_v3/join_repairs/phase_34.png": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+    "run_v3/intermediate_35.png": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+    "run_v3/retained/phase_36.png": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+    "run_v3/intermediate_37.png": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+    "run_v3/intermediate_38.png": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+    "run_v3/join_repairs/phase39.png": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+    "run_v3/join_repairs/middle40_A.png": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+    "run_v3/join_repairs/direct_41.png": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+    "run_v3/join_repairs/phase_42.png": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+    "run_v3/intermediate_43.png": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+    "run_v3/intermediate_44.png": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+    "run_v3/rough_keys/phase_45.png": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+    "run_v3/intermediate_46.png": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+    "run_v3/intermediate_47.png": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+    "run_v3/selected_sources.json": "db35b2cee9e17cf7670e91b34eca1342180b6f57b99b6d03e34d85bbf5380c65",
+    "run_v3/history/baseline_profile_48.json": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+    "run_v3/register_sources.py": "0a7d464065472f9472fec6d4045e26cff8d4d1a591aa6376d75b296369085915",
+    "run_v3/rough_keys/guide_03.png": "2491ac7c3b834e2502c85445d3c5d523da6a5fcf428f9da70c4b3bc92630d89f",
+    "run_v3/rough_keys/upper_03.png": "9c25e6d0910417162c3542f80c090bdacb446b79acacba4fb5d5a9c8b86f7c31",
+    "run_v3/rough_keys/boot_reference.png": "1b71f72dd9e35ed0db4738c74ed9368335476684dcb633bd2103f02ffa0c2257",
+    "run_v3/rough_keys/sword_reference.png": "fdd5482978ffb6a51c728e37abd9c5aea23b882e1cd7cf163278612abc967f3a",
+    "run_v3/rough_keys/shield_reference.png": "bf2f955ca868dde8cad261b8270feef3d94fb9bc4f9f7881130963e4e0fb5e30",
+    "run_v3/rough_keys/guide_09.png": "01a3104ce3b2ee39e4c88db8e1cbdc0bf18535d0557ca20ca664e1f233127b24",
+    "run_v3/rough_keys/upper_09.png": "6915867f504d91c08731a267d898fb33dd09c6a859feca897bf83dc9a46e4525",
+    "run_v3/rough_keys/phase_15.png": "9aa11f236d7cd2805cc4d0c7fc3fc3919cc5f86c217f639f936a8a8e5a72ee85",
+    "run_v3/rough_keys/guide_15.png": "b1c701d5c3e6a34a1ff6d3b50d995d949ccf044bc4c7b7455f6691c9b7a8300f",
+    "run_v3/rough_keys/folded_leg_reference_12.png": "d0e29591948ddb5ca0972719e27db244bb21845ff55d6f69fd6f25c915ec6cee",
+    "run_v3/rough_keys/guide_21.png": "e98749933a218b56faac16a41fc4f1446aefd5c50b0376bef133b32f6d62ce7f",
+    "run_v3/rough_keys/upper_21.png": "9f65011ea3f64d5fddef93bdcf106ce2d400a4edbf71b6a0f4b70923d6ffbcae",
+    "run_v3/rough_keys/guide_27.png": "864e06bcc9db4a0105123d8aaeed0f2d2ec63de69636faf4add153a106ca7f7f",
+    "run_v3/rough_keys/upper_27.png": "d15921dd7b34a650fdafc8c5a034ebcbe055b99a052dda117f36d18a9befcdae",
+    "run_v3/rough_keys/boot_materials.png": "55ac9f2e5ce3849c883962152f1d2323b09caf9544843df2b47f0d2b0078b9d8",
+    "run_v3/rough_keys/guide_33.png": "69ed6fdbe6717bbefc0f6f5e75635f268543054c468dbfe756ca0840b2aa12d0",
+    "run_v3/rough_keys/upper_33.png": "98f44aa337dd76223de1b1e10b34f2c06f37b773da90360be3afc5725ea7ac1f",
+    "run_v3/authoring_bounds/frame_38_68e291bb91b4.png": "c3cfa21b90446363afd5048e960249ec354c4f3cdc0faafac5c63e16350dfd98",
+    "run_v3/join_repairs/phase39_guide.png": "58b51d9856dc3f0ab282c6e22bd32faa186609aa643610339da536ed0b52f1c7",
+    "run_v3/rough_keys/upper_39.png": "1e4ff87bcb46cfc43f86c6e901ff722393477ac2f0a2b1fe1e326c61d9e25f41",
+    "run_v3/rough_keys/guide_45.png": "5410d7369d01fa6608afb891fe097d189b437d22949eec1005e7ec4a3921293b",
+    "run_v3/rough_keys/upper_45.png": "0b1935297a9e504a45668e2085b0f46369a8fb5601898490bce6fc62c54270cb",
+    "run_v3/authoring_bounds/frame_03_452b552f3ac5.png": "dab43a8dde463873aaee8cd54ae4b7781ae76f1c89ec13d77bb93d755807fb77",
+    "run_v3/midpoints/upper_06.png": "b9216cb6568fc95b2472298935c2351a9d15b9d0f9890e57a24e65f17255f708",
+    "run_v3/midpoints/guide_06.png": "f31b6022d86e59a3901b68c4b1185f6756a73f639fa0f5b4614160b430b26dba",
+    "run_v3/authoring_bounds/frame_15_823a1438796f.png": "d21929f2bcbda091e4b83a67bfe896621bdbd3698f51f8d18b9876f618029dc0",
+    "run_v3/midpoints/upper_18.png": "c5280c33360ecddb417927961620cded09c15dc9ccc0117a858dcd627c15c866",
+    "run_v3/midpoints/guide_18.png": "dad54649a951d3f7dc581e8b9370e54155bef67c12b21d91542f83feda5668f0",
+    "run_v3/authoring_bounds/frame_30_66caf118ef23.png": "1bacdfdbfa328fc467dde146f23b4a5d41312ac57dcc1646f1223a8d2d333e3a",
+    "run_v3/join_repairs/upper_actual31.png": "0c487a8a825472d28fa50f49b2f3674d3c511de9203be7e96146259c3fa9b2b6",
+    "run_v3/join_repairs/hand30_guide.png": "482690eba5967e749641d125fa7cf922910a248722218fe9de77e18ccea33ea2",
+    "run_v3/authoring_bounds/frame_41_d415183e6479.png": "ad2989982a0372b52c691e6309645bb3818803ae5f7e655a693aee0dd39e1fc0",
+    "run_v3/midpoints/upper_42.png": "5e2fd4907aa86212e59a61470d1b54639219eeff1a2c4f3b9cf82404577d4837",
+    "run_v3/join_repairs/guide_42.png": "af1a4f79a4f84f16226577a3602b0b2b3942d1c00e7ab6cfbbc22bba02d0fe40",
+    "run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png": "4cd1eeb2ced6d1096a5c0fe29b0c611198aa53ce4345a7a93133216395263200",
+    "run_v3/intermediates/upper_10.png": "120da7a8936d4ecfa2e3a1d3f6816505bd4cf50920344847efac0bd2329aa0a7",
+    "run_v3/intermediates/guide_10.png": "e652350671d252441f8dce4adf84022f3cd8d89d65192f4a6202368333486090",
+    "run_v3/helper_11_b_guide.png": "007eb4177714ab07f143710f7ea2ba6537cf675fb1c26e131682ac899a6e77ba",
+    "run_v3/helper_11_a_reference_registered.png": "19970526e6a674ec743015c7723d821c555fff0d22b6479463ad753997311b3f",
+    "run_v3/intermediates/upper_11.png": "0373eb7bcecd13ba2f2253245cd4c15207aedbfc89621f61629687446ab78864",
+    "run_v3/authoring_bounds/frame_12_8fd4a2deb081.png": "fb4b20fad921f863b6920d0a5328b3ea431e9cef247084b44ec4c409ae332f0b",
+    "run_v3/authoring_bounds/frame_24_9f08262536df.png": "c9fe3e23d5bea0d2958472627fc48490d87dc225fca503fabb215dcb2b56a912",
+    "run_v3/intermediates/upper_25.png": "c9e0c6c7d7def0bc8cc3d4e10cd38463c673b5ce85fb3e890d87220556f14495",
+    "run_v3/intermediates/guide_25.png": "c35c42fe588903c4a93f49a8638a9417ac9c9398ecef0c281d6802c196863849",
+    "run_v3/authoring_bounds/frame_27_caae34273bed.png": "687da43d7627461e5ef2421794969537dfa99d4ff4f2227d645545e5a208412c",
+    "run_v3/intermediates/upper_26.png": "1ba01ced1062089127ab22c70c42ea897f73047dfc5d3058c82a79258c8fa5ae",
+    "run_v3/intermediates/guide_26.png": "10466ff4e3326b2a6f2c4091b44d12ab5eee956606742db3e8d49582ee9caeff",
+    "run_v3/intermediates/upper_28.png": "7877c3cf99c22f2b5d78d307ab61d447bcb875a30c5242226159542c8d09002a",
+    "run_v3/intermediates/guide_28.png": "3251a2ae31232da0cfb71af644c65fe74e639993eca20e9e758fdc3c9d261903",
+    "run_v3/intermediates/upper_29.png": "0688f3db9ba49ac67f6c0cc38fa2c5e117ae02efd3cd6fba3012eac5217db768",
+    "run_v3/intermediates/guide_29.png": "4b40afc80607607a5ee9791b37e1c78ef25f0fc6b1bf8e149135bd948df67c97",
+    "run_v3/intermediates/upper_31.png": "38893053514f733d1ec8c62eb4eb782cdf81ea0f087396e11743de38e4263efd",
+    "run_v3/intermediates/guide_31.png": "453e4ee255f125d516198ae3f721a90299f96ad815bb069da39a9182b9f1360f",
+    "run_v3/authoring_bounds/frame_33_8d8b4648c732.png": "de30c73e104ada2a923e70dcb96b4332e98808136239da43ad2ed71e36f8f611",
+    "run_v3/intermediates/upper_32.png": "d9e22b1d71887cd6b7c51dc2f657c683aedcc20074f3fd7aa4600c90ec7596f7",
+    "run_v3/intermediates/guide_32.png": "1e7f6590bda8138bda6ff9aae47010e0108b5f62dc0326085bc85541ccc53ca5",
+    "run_v3/authoring_bounds/frame_35_8f24801a5d35.png": "78bbdf6ea7b76ddf165e81d901aa498f0785ff6a078bd6d1a24e8cf85c016625",
+    "run_v3/intermediates/upper_34.png": "3cd7aafb570edbb668a09f96cf15ccaa54dc8609b0ae1a6b244acc6446bd02a0",
+    "run_v3/join_repairs/guide_34.png": "efad845bf5aecfdbaeb78586908e8a3dfaea90814adaccd673d77fb02ef64806",
+    "run_v3/authoring_bounds/frame_36_33495aed4fc3.png": "bf20ec82a36e41fb06a4199a3c670d7372068552a37441000c2af8bfc9c3077d",
+    "run_v3/intermediates/upper_35.png": "2aaa999356fd47797eb1ed8317148f319adfdc8b8997c0d3c92d53c320521c2f",
+    "run_v3/intermediates/guide_35.png": "50c46363c7f0967299395034ec8c95a697395b63915581c0942d7a8e65850476",
+    "run_v3/intermediates/upper_37.png": "c78f388a903fac6db724f72fce7fb1c8ac5229c7fd8720f54b11feb7d12b1b71",
+    "run_v3/intermediates/guide_37.png": "61d066c1c8462ad2404ddd92ce9d174379fa2a1a5e4b4da715e6bb800a9ec922",
+    "run_v3/authoring_bounds/frame_39_474ceae89f01.png": "c5181b775390df824081767c2d75dd914512a85478aed250f0cd10dd87d871cd",
+    "run_v3/intermediates/upper_38.png": "9352d66e147bd925265a818089bb3f8a331a9c23f0f201aed00fe89f214e65b4",
+    "run_v3/intermediates/guide_38.png": "2fc1d84d983b9cc19207bc33eaa1908744e6d25ca199685178dda592f76df58b",
+    "run_v3/authoring_bounds/frame_40_f5ed3a99d445.png": "f6b69ae431d0fa6fed6829ce7a3354572a54d8c353af5719f6003bd7d2e0b92d",
+    "run_v3/join_repairs/middle40_A_guide.png": "7a2d955ef67e1fba01eaa8545a9d77d990825dfe69df345c75d93da5c1aa480b",
+    "run_v3/authoring_bounds/frame_40_f8987bd5dff2.png": "dfca53497f766bc0941418c76643ae08b39b18530b5a04d3b97a7f18f93dfa9f",
+    "run_v3/join_repairs/direct_guide_41.png": "04679094a9042193c3dd754bfd96c2c0a63d258f19a68e254a53f90ee2899f0b",
+    "run_v3/intermediates/upper_41.png": "98ab468edc8db9d3bee9e5879ad671f0c7b175427dd33aa18965616c224086a9",
+    "run_v3/authoring_bounds/frame_42_be01e1b11216.png": "0e8d43b0c7e2a3dd8116571550ff1cf6303d2c6bf8cf5a6705c7b4f03918c58d",
+    "run_v3/intermediates/upper_43.png": "1ad8dda71e51dd172c71454ea437b08826380cb545d374c077aa60b38462c873",
+    "run_v3/intermediates/guide_43.png": "4d2b7efa4ed106a912a9aaf1b4a84176cfbb30807f39225ea11fb587023129cf",
+    "run_v3/authoring_bounds/frame_45_b6e24f6bbe7c.png": "a2cb3475aedfdc8cbf4badef3d8a089a951d5650cc4ef9be5a394638bc1d6988",
+    "run_v3/intermediates/upper_44.png": "0c8dd466a05dfc89edf0df0f6afb0e3e9ca24bf3b8fc2da7e8d758e66b88e91f",
+    "run_v3/intermediates/guide_44.png": "67c89055651bf4f06f37aa74deb7f6aac0c745ec7f0a447f4d15940cbc34b351",
+    "run_v3/intermediates/upper_46.png": "eeaf89aa061be15bd5ab0c23c4983561c19665c2da2f849e8212b18984d522f1",
+    "run_v3/intermediates/guide_46.png": "9e82fda166d547fbe44952e5ca840fa2877b14d5cc9ff5b1836b598b10837bd2",
+    "run_v3/authoring_bounds/frame_00_d2068e0759a7.png": "ee7d965b3f0f6d28afec83efee1f6af2b19dcf597439e5506e556be0c2421c89",
+    "run_v3/intermediates/upper_47.png": "c6039b30624d10a5f0ef209fd75d21535143da42720c7e3379eef219ecf2870f",
+    "run_v3/intermediates/guide_47.png": "c7b4647a84aa3e99ca00529931ccba7a15ee2900e843e7654bd6c74e47f45903",
+    "run_v3/intermediates/upper_01.png": "3d1edcca146c2511015371f2720d137788c5e98920e9db49688079b2be761684",
+    "run_v3/intermediates/guide_01.png": "90019884e910607bcc1f1c976c8aa5e583d365cd13bca01e6041ed9c2b1bc74f",
+    "run_v3/intermediates/upper_02.png": "7c349bb03d8e7a4932bbd4bd5d864a624d0bd09d107dda820bb9694e7cace3a4",
+    "run_v3/intermediates/guide_02.png": "71a261853bfc7b7f424084cfbbbc8763b8e0e979b0917604b010774f858d86dc",
+    "run_v3/intermediates/upper_04.png": "8665b5492f51e4a276fd6d0ea39ce45bf6d555a49cc3b116eb57220b0d698fa5",
+    "run_v3/intermediates/guide_04.png": "171af219c700e3133b7949505f9dd12e4bbfa87d504a06dac8222f1bd49ee7fb",
+    "run_v3/authoring_bounds/frame_06_5a9fe4631c3a.png": "f99b95b3c6b6b08a9aba2d8de3e26f232ac9429170c7452df45ac4d147976a10",
+    "run_v3/intermediates/upper_05.png": "a9195b834d7965b41a5360340894f9f534fd54b54c9f8cf0b25fb795c2a128d7",
+    "run_v3/intermediates/guide_05.png": "c55a822aee2dd69b5d103f268ff04fae99d2973a663ae10bdd33bc552da1b56c",
+    "run_v3/intermediates/upper_07.png": "a54edcbc817d240bdc238fa93e345046ca23cf8ba90dee8de502b92450822a6d",
+    "run_v3/intermediates/guide_07.png": "1195b7d67b28e3d3661a190ddbb48449261271e632ee8d18ed9103b44deb0d39",
+    "run_v3/intermediates/upper_08.png": "2065de26b765dda795258707baff7f2506361c4121c3b91b41055f91ef01cd4c",
+    "run_v3/intermediates/guide_08.png": "6c6c9cbfb310cf1b0bc02f0db300ce57f379482f75cf48ada3be4037e14b369a",
+    "run_v3/intermediates/upper_14.png": "80a921a2fc32426ab98a8e2f77b21a8bcf3ef87f5c9a05b05b3d4f56af19af4b",
+    "run_v3/intermediates/guide_14.png": "f15d7eb32e1d169ec2a3fdf92cf83458af6a3842e8820872d21b3db19b9fd230",
+    "run_v3/authoring_bounds/frame_21_5b3999bb5b0b.png": "c056d58194ada37d71e83f8ae2eac501776b41446b8aa8995fb8ca860735eabc",
+    "run_v3/first_half_final/bounded_20_guide.png": "d47a762d3026ce84ec43e1d8b98641226bca6db73ebbce8052601941771ce0ad",
+    "run_v3/intermediates/upper_20.png": "3547b3f25e6af8f041a21a4c5f19df43b21473081b2372310a9865389cf4d747",
+    "run_v3/intermediates/upper_22.png": "15d066f0ef3bac15c79f1920ba93a864987ce7454ac12495f4308f4d247d7234",
+    "run_v3/intermediates/guide_22.png": "4d45b041d1c5eaf1ae4895cebd0697160f11d510ccc8e76b3766b48a7d16df36",
+    "run_v3/root_helper_lower_reference_12.png": "f170b8a12ad12190f0feefc550f01abf9834c7d4a8d97b6f338264f89c3562cb",
+    "run_v3/intermediates/upper_13.png": "0938e575c3b5fa26429074363a2e0db37876f4c6c40349205fca67af94165ca6",
+    "run_v3/intermediates/guide_13.png": "c6da424e13e6ba34a83c83a96ebaf3479582492872262a495c5e56696609990b",
+    "run_v3/authoring_bounds/frame_18_8415f2e15c85.png": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+    "run_v3/first_half_final/bounded_19_guide.png": "67c212d348015b3051dd1ba4bdaab73f517127e1de66d5ddbb70a0d5ef864519",
+    "run_v3/intermediates/upper_19.png": "26fb6f1aebd53dbd5595694e419337bf4ea15b44687e9b2822d899ef9c18dbeb",
+    "run_v3/authoring_bounds/frame_16_f825fde52237.png": "dafc94f6d80f169b042a3280c40e3b49c05c329a9180a18c3380e40c0acc8a79",
+    "run_v3/first_half_final/bounded_16_guide.png": "cbc26393e85dbeb41b3687970739810fc5ae388a44290c344e0c3fbb911d0bde",
+    "run_v3/intermediates/upper_16.png": "23ad38935962ac694aa5b1a939cb098ca6da3eb5cb18c72c7f274562daf579f1",
+    "run_v3/authoring_bounds/frame_17_7cd194009fa6.png": "639e9dffea8b3b10eb01917cfa7e3ab2cd4ec5626937ef2396c06cab96b2b640",
+    "run_v3/first_half_final/bounded_17_guide.png": "26c09189a63996fc813ecc721b2813b9af6d6ba3509decf987c3e80d1ce6c1a1",
+    "run_v3/intermediates/upper_17.png": "ff6163860dc00921cda6e2d9cc038d3c9fdbecb99c913ead0f15965ac56848f0",
+    "run_v3/authoring_bounds/root_helper_23_eb5fc0ea5255.png": "76110fb85528ab07663aeb77298a6302617d4bf59d86fc031892352a5cd45118",
+    "run_v3/first_half_final/guide_23.png": "d0444b1ad42b0ad4cfdb5bf3b71224d3fc1be82423302abeeb5f359c74ab91dc",
+    "run_v3/intermediates/upper_23.png": "753b7a2a73cb2351661c8e11e91613013e78abd27db18e54476c055aa52ba62f"
   },
   "frames": [
     {
-      "source": "run_v2/frame_00.png",
+      "source": "run_v3/retained/phase_00.png",
       "cell": [
         0,
         0,
@@ -234,403 +235,392 @@
       "generation_id": "exec-61983a85-08ed-4af2-84c7-65588dc5ac5d"
     },
     {
-      "source": "run_v2/frame_01.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        43.19999999999999,
-        68.9349364905389
-      ],
-      "landmarks": {
-        "eyes": [
-          568.0,
-          199.0
-        ],
-        "neck": [
-          572.0,
-          312.0
-        ],
-        "belt": [
-          570.0,
-          593.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9688420474361583,
-        "neck": 0.930094213487607,
-        "belt": 0.8805118050818106
-      },
-      "authored_weight_offset_y": 0.33493649053890323,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-95df8b7c-df2f-4d38-8665-57ae2a9d2aff"
-    },
-    {
-      "source": "run_v2/frame_02.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        47.400000000000034,
-        75.85000000000001
-      ],
-      "landmarks": {
-        "eyes": [
-          561.0,
-          189.0
-        ],
-        "neck": [
-          564.0,
-          306.0
-        ],
-        "belt": [
-          572.0,
-          585.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.960245659306029,
-        "neck": 0.9068818282048199,
-        "belt": 0.8919243114733473
-      },
-      "authored_weight_offset_y": 1.2499999999999998,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-2fba1052-128f-4b8c-b125-d086962863c5"
-    },
-    {
-      "source": "run_v2/frame_03.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        46.80000000000001,
-        71.7
-      ],
-      "landmarks": {
-        "eyes": [
-          562.0,
-          198.0
-        ],
-        "neck": [
-          562.0,
-          315.0
-        ],
-        "belt": [
-          566.0,
-          592.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9690615896239243,
-        "neck": 0.9091516292479329,
-        "belt": 0.9305880167403137
-      },
-      "authored_weight_offset_y": 2.4999999999999996,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-a8a642f2-0a11-4d33-aa1f-6d7e336f687a"
-    },
-    {
-      "source": "run_v2/frame_04.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        48.60000000000002,
-        72.95
-      ],
-      "landmarks": {
-        "eyes": [
-          559.0,
-          198.0
-        ],
-        "neck": [
-          562.0,
-          313.0
-        ],
-        "belt": [
-          571.0,
-          591.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9417717043970202,
-        "neck": 0.8643943090464534,
-        "belt": 0.8485558770608896
-      },
-      "authored_weight_offset_y": 3.7499999999999996,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-a1c1987a-4a6a-4700-a80e-0abaf6b1a525"
-    },
-    {
-      "source": "run_v2/frame_05.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        47.400000000000034,
-        72.6650635094611
-      ],
-      "landmarks": {
-        "eyes": [
-          561.0,
-          200.0
-        ],
-        "neck": [
-          564.0,
-          313.0
-        ],
-        "belt": [
-          574.0,
-          591.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9644393695419956,
-        "neck": 0.9255118980097655,
-        "belt": 0.8470402015442433
-      },
-      "authored_weight_offset_y": 4.665063509461097,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-c4b31ef5-70f4-4110-b72f-230d462f723e"
-    },
-    {
-      "source": "run_v2/frame_06.png",
+      "source": "run_v3/root_helper_01.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        31.19999999999999,
-        59.20000000000002
+        2.0,
+        1.0
       ],
       "landmarks": {
         "eyes": [
-          588.0,
-          223.0
+          545.42857,
+          267.71429
         ],
         "neck": [
-          588.0,
-          336.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          586.0,
-          621.0
+          551.42857,
+          601.42857
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9333159340775414,
-        "neck": 0.805202613767075,
-        "belt": 0.8048889635938572
+        "eyes": 0.926721,
+        "neck": 0.932749,
+        "belt": 0.860969
       },
-      "authored_weight_offset_y": 5.0,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-b9823f2c-7e96-45f5-973c-ad98c852c213"
+      "generation_id": "exec-010cec7b-22ba-4a45-8819-7ead90eb4106",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_07.png",
+      "source": "run_v3/root_helper_02.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        60.0,
-        74.66313972081443
+        3.0,
+        1.0
       ],
       "landmarks": {
         "eyes": [
+          543.71429,
+          269.14286
+        ],
+        "neck": [
+          544.28571,
+          367.14286
+        ],
+        "belt": [
+          551.42857,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.918235,
+        "neck": 0.849513,
+        "belt": 0.776144
+      },
+      "generation_id": "exec-f696fcd4-2d3e-454b-b780-30bb632cb7f3",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/rough_keys/phase_03.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        0.0,
+        19.0
+      ],
+      "landmarks": {
+        "eyes": [
+          548.85714,
+          245.42857
+        ],
+        "neck": [
+          548.57143,
+          342.85714
+        ],
+        "belt": [
+          552.85714,
+          582.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.926043,
+        "neck": 0.776179,
+        "belt": 0.83779
+      },
+      "generation_id": "exec-efab99ba-118b-468d-b1c9-96c0bed2d026",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/root_helper_04.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          271.14286
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          555.71429,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.913281,
+        "neck": 0.862284,
+        "belt": 0.870156
+      },
+      "generation_id": "exec-5757f8bd-b0ac-4fc3-87ef-8e844025f1b2",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/root_helper_05.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.57143,
+          272.85714
+        ],
+        "neck": [
+          548.57143,
+          370.0
+        ],
+        "belt": [
+          552.85714,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.934024,
+        "neck": 0.929773,
+        "belt": 0.789902
+      },
+      "generation_id": "exec-818ff558-0815-4887-b359-2b2b7f75add0",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/midpoints/phase_06_partial_repaired.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        5.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.85714,
+          268.28571
+        ],
+        "neck": [
+          548.57143,
+          365.71429
+        ],
+        "belt": [
+          551.42857,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.915987,
+        "neck": 0.907514,
+        "belt": 0.741252
+      },
+      "generation_id": "exec-11863894-de5f-468e-a684-2d689e2dbaa6",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/root_helper_07.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          272.28571
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          548.57143,
+          611.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.91157,
+        "neck": 0.896486,
+        "belt": 0.846299
+      },
+      "generation_id": "exec-47b957f0-266d-4390-860b-b9a1ca120575",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/root_helper_08.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.85714,
+          267.42857
+        ],
+        "neck": [
+          552.85714,
+          362.85714
+        ],
+        "belt": [
+          542.85714,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.895404,
+        "neck": 0.860577,
+        "belt": 0.882968
+      },
+      "generation_id": "exec-d98a35cd-f038-4cb4-8a12-a9dbd3f71377",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/rough_keys/phase_09.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        7.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          257.71429
+        ],
+        "neck": [
+          547.14286,
+          352.85714
+        ],
+        "belt": [
           540.0,
-          196.0
-        ],
-        "neck": [
-          542.0,
-          308.0
-        ],
-        "belt": [
-          545.0,
-          596.0
+          598.57143
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9171925371712376,
-        "neck": 0.7756848431084897,
-        "belt": 0.8300628705073378
+        "eyes": 0.948036,
+        "neck": 0.890265,
+        "belt": 0.880184
       },
-      "authored_weight_offset_y": 4.263139720814413,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4585fed5-7663-47b5-a3f6-a2cd5f8ea890"
+      "generation_id": "exec-ab28e977-3273-49ea-b245-8e75dd6e109a",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_08.png",
+      "source": "run_v3/helper_10.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        58.19999999999999,
-        72.05000000000001
+        -1.0,
+        1.0
       ],
       "landmarks": {
         "eyes": [
-          543.0,
-          197.0
+          550.57143,
+          263.14286
         ],
         "neck": [
-          550.0,
-          309.0
+          554.28571,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          594.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.880643,
+        "neck": 0.87684,
+        "belt": 0.724971
+      },
+      "generation_id": "exec-d3ee0f49-d4f1-4389-bda3-00337376d6ec",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/helper_11.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          258.28571
+        ],
+        "neck": [
+          554.28571,
+          352.85714
         ],
         "belt": [
           540.0,
-          592.0
+          602.85714
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9127450220256847,
-        "neck": 0.8012069082320569,
-        "belt": 0.8333790751982796
+        "eyes": 0.845044,
+        "neck": 0.87892,
+        "belt": 0.665739
       },
-      "authored_weight_offset_y": 2.2500000000000004,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-5a341d55-f7b1-49bb-85ec-ddeeff8d9f5b"
+      "generation_id": "exec-c0848ada-5237-4967-813f-1f0cfec940fa",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_09.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        60.0,
-        68.10000000000001
-      ],
-      "landmarks": {
-        "eyes": [
-          540.0,
-          199.0
-        ],
-        "neck": [
-          545.0,
-          312.0
-        ],
-        "belt": [
-          536.0,
-          603.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9203819764285069,
-        "neck": 0.7836135013272592,
-        "belt": 0.7906237702117189
-      },
-      "authored_weight_offset_y": -0.49999999999999956,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-b641a25d-1e53-45c1-9d0c-71872cbc3a5a"
-    },
-    {
-      "source": "run_v2/frame_10.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        60.60000000000002,
-        66.55000000000001
-      ],
-      "landmarks": {
-        "eyes": [
-          539.0,
-          197.0
-        ],
-        "neck": [
-          544.0,
-          313.0
-        ],
-        "belt": [
-          525.0,
-          596.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9146291595916004,
-        "neck": 0.8024463447350706,
-        "belt": 0.7643313884435612
-      },
-      "authored_weight_offset_y": -3.2499999999999987,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-d4e968d3-2f6d-453a-a961-1bdf162def31"
-    },
-    {
-      "source": "run_v2/frame_11.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        43.80000000000001,
-        51.936860279185595
-      ],
-      "landmarks": {
-        "eyes": [
-          567.0,
-          218.0
-        ],
-        "neck": [
-          575.0,
-          328.0
-        ],
-        "belt": [
-          549.0,
-          606.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9327285698199755,
-        "neck": 0.7783288464311268,
-        "belt": 0.7589638426450052
-      },
-      "authored_weight_offset_y": -5.263139720814413,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-14c456ee-788b-467f-8c50-c56c3e8f4382"
-    },
-    {
-      "source": "run_v2/frame_12.png",
+      "source": "run_v3/retained/phase_12.png",
       "cell": [
         0,
         0,
@@ -666,403 +656,392 @@
       "generation_id": "exec-538f3d0d-32e6-4133-a416-69fb22cf2a3b"
     },
     {
-      "source": "run_v2/frame_13.png",
+      "source": "run_v3/root_helper_13_b.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        63.60000000000002,
-        63.400961894323345
+        5.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          534.0,
-          198.0
+          542.0,
+          256.85714
         ],
         "neck": [
-          545.0,
-          314.0
+          552.85714,
+          352.85714
         ],
         "belt": [
-          534.0,
-          610.0
+          542.85714,
+          604.28571
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8756253676729892,
-        "neck": 0.7255628765151976,
-        "belt": 0.6677791739427681
+        "eyes": 0.789239,
+        "neck": 0.893654,
+        "belt": 0.840832
       },
-      "authored_weight_offset_y": -5.799038105676658,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-a74294f7-1f77-43cf-a6ac-b672e560d2d3"
+      "generation_id": "exec-d1f63c07-430c-48e8-a79e-090edb7719de",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_14.png",
+      "source": "run_v3/root_helper_14.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        60.60000000000002,
-        63.35000000000001
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          539.0,
-          199.0
+          543.42857,
+          257.71429
+        ],
+        "neck": [
+          552.85714,
+          355.71429
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.912204,
+        "neck": 0.8979,
+        "belt": 0.843255
+      },
+      "generation_id": "exec-463e917c-5c1d-4f80-9d94-dcfed1d4f2fd",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/rough_keys/phase_15_repaired.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        6.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          254.0
+        ],
+        "neck": [
+          551.42857,
+          352.85714
+        ],
+        "belt": [
+          542.85714,
+          607.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.919943,
+        "neck": 0.883539,
+        "belt": 0.824359
+      },
+      "generation_id": "exec-b5fe243e-500c-4cec-8197-c2d2f666d671",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/first_half_final/bounded_16.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          260.57143
+        ],
+        "neck": [
+          551.42857,
+          354.28571
+        ],
+        "belt": [
+          545.71429,
+          598.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.815249,
+        "neck": 0.814843,
+        "belt": 0.743796
+      },
+      "generation_id": "exec-cfb9e026-4a81-48ea-a24e-dd54f3d7b420",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/first_half_final/bounded_17.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          260.57143
+        ],
+        "neck": [
+          554.28571,
+          355.71429
+        ],
+        "belt": [
+          545.71429,
+          597.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.865614,
+        "neck": 0.786268,
+        "belt": 0.659602
+      },
+      "generation_id": "exec-e7e3d504-8b76-46f0-aad8-8837e442dfc6",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/midpoints/phase_18_partial_repaired.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        4.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          259.14286
         ],
         "neck": [
           550.0,
-          315.0
+          360.0
         ],
         "belt": [
-          530.0,
-          608.0
+          541.42857,
+          608.57143
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8679488390659369,
-        "neck": 0.7089750885811361,
-        "belt": 0.6383681271208466
+        "eyes": 0.866823,
+        "neck": 0.880139,
+        "belt": 0.714359
       },
-      "authored_weight_offset_y": -5.25,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-e6c8fa2b-9bd1-496c-bb84-c91e1940b897"
+      "generation_id": "exec-25846829-18e6-4635-a412-6ef03c1a9d00",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_15.png",
+      "source": "run_v3/first_half_final/bounded_19.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        61.80000000000001,
-        67.7
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          537.0,
-          193.0
+          543.42857,
+          262.28571
         ],
         "neck": [
-          547.0,
-          308.0
+          547.14286,
+          362.85714
         ],
         "belt": [
-          536.0,
-          603.0
+          541.42857,
+          608.57143
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8709409130952468,
-        "neck": 0.740447739396611,
-        "belt": 0.6142691966578596
+        "eyes": 0.787572,
+        "neck": 0.890584,
+        "belt": 0.759642
       },
-      "authored_weight_offset_y": -4.5,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-31953280-4c3c-4089-9f02-0d3eaa30df6f"
+      "generation_id": "exec-9d5f85be-4bb7-4611-bb0c-b39af74cdfe5",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_16.png",
+      "source": "run_v3/first_half_final/bounded_20.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        66.60000000000002,
-        70.85000000000001
+        2.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          529.0,
-          189.0
+          545.71429,
+          263.14286
         ],
         "neck": [
-          538.0,
-          302.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          533.0,
-          593.0
+          542.85714,
+          595.71429
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.880993877488327,
-        "neck": 0.6937063490870571,
-        "belt": 0.6376764408425754
+        "eyes": 0.71656,
+        "neck": 0.776679,
+        "belt": 0.430746
       },
-      "authored_weight_offset_y": -3.75,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-6742c1e1-cba2-46b9-95ea-126fb9502426"
+      "generation_id": "exec-6d9964e9-697f-4350-ae3f-add5f1dada1f",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_17.png",
+      "source": "run_v3/rough_keys/phase_21.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        66.60000000000002,
-        71.39903810567667
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          529.0,
-          189.0
+          542.85714,
+          262.85714
         ],
         "neck": [
-          540.0,
-          303.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          529.0,
-          597.0
+          541.42857,
+          598.57143
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8850266051678167,
-        "neck": 0.7037229314089741,
-        "belt": 0.5477335891680223
+        "eyes": 0.956562,
+        "neck": 0.876252,
+        "belt": 0.679082
       },
-      "authored_weight_offset_y": -3.2009618943233416,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-3e6ff401-dcaa-4f74-90ed-424d707e05f6"
+      "generation_id": "exec-0378aee3-f024-4efd-94fc-3de560bdcd29",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_18.png",
+      "source": "run_v3/root_helper_22.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        60.0,
-        74.60000000000001
+        3.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          540.0,
-          184.0
+          544.85714,
+          264.57143
         ],
         "neck": [
-          548.0,
-          307.0
+          552.85714,
+          367.14286
         ],
         "belt": [
-          540.0,
-          596.0
+          548.57143,
+          607.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9074530065742245,
-        "neck": 0.7342590180352576,
-        "belt": 0.5935516052787754
+        "eyes": 0.90063,
+        "neck": 0.900719,
+        "belt": 0.855283
       },
-      "authored_weight_offset_y": -3.0,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-55d94972-fb02-4a61-8999-5814cf324491"
+      "generation_id": "exec-6f28cd39-bac6-4645-aad3-87af0114f717",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_19.png",
+      "source": "run_v3/first_half_final/phase_23.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        54.60000000000002,
-        73.60096189432335
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          549.0,
-          186.0
+          542.85714,
+          266.0
         ],
         "neck": [
-          557.0,
-          309.0
+          551.42857,
+          367.14286
         ],
         "belt": [
-          552.0,
-          592.0
+          542.85714,
+          607.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8998747327413008,
-        "neck": 0.7108611968314527,
-        "belt": 0.6830691879678729
+        "eyes": 0.921221,
+        "neck": 0.838935,
+        "belt": 0.782031
       },
-      "authored_weight_offset_y": -2.799038105676658,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-99501c90-dd1b-44d1-9579-ff3e81b7daa2"
+      "generation_id": "exec-0fb52ef4-2840-4989-baa2-baff05531318",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_20.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        54.0,
-        73.55
-      ],
-      "landmarks": {
-        "eyes": [
-          550.0,
-          187.0
-        ],
-        "neck": [
-          560.0,
-          311.0
-        ],
-        "belt": [
-          553.0,
-          595.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8974639495301223,
-        "neck": 0.6986424834575249,
-        "belt": 0.6232805560457854
-      },
-      "authored_weight_offset_y": -2.25,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-9f2a3266-df73-4ac4-b595-91d532bc5c27"
-    },
-    {
-      "source": "run_v2/frame_21.png",
-      "cell": [
-        0,
-        0,
-        1039,
-        1513
-      ],
-      "scale": 0.6,
-      "origin": [
-        60.0,
-        78.5
-      ],
-      "landmarks": {
-        "eyes": [
-          540.0,
-          180.0
-        ],
-        "neck": [
-          547.0,
-          297.0
-        ],
-        "belt": [
-          538.0,
-          576.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9286646400093869,
-        "neck": 0.7540481304393513,
-        "belt": 0.7753476506842927
-      },
-      "authored_weight_offset_y": -1.5,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-1fd072a7-cbb2-41ad-91da-91df5e7ae359"
-    },
-    {
-      "source": "run_v2/frame_22.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        54.60000000000002,
-        75.05
-      ],
-      "landmarks": {
-        "eyes": [
-          549.0,
-          187.0
-        ],
-        "neck": [
-          558.0,
-          309.0
-        ],
-        "belt": [
-          554.0,
-          592.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.904098449070565,
-        "neck": 0.755693166227802,
-        "belt": 0.7280457530358593
-      },
-      "authored_weight_offset_y": -0.7500000000000003,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-88e04fec-7f7d-4d51-b11e-c8b765152044"
-    },
-    {
-      "source": "run_v2/frame_23.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        54.0,
-        75.59903810567666
-      ],
-      "landmarks": {
-        "eyes": [
-          550.0,
-          187.0
-        ],
-        "neck": [
-          559.0,
-          308.0
-        ],
-        "belt": [
-          547.0,
-          592.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9089244181053128,
-        "neck": 0.7414559546599896,
-        "belt": 0.7170459228071395
-      },
-      "authored_weight_offset_y": -0.20096189432334177,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-2ec232e4-1065-4f0e-813f-b4adec2c2734"
-    },
-    {
-      "source": "run_v2/frame_24.png",
+      "source": "run_v3/retained/phase_24.png",
       "cell": [
         0,
         0,
@@ -1098,403 +1077,392 @@
       "generation_id": "exec-ca512c7a-89df-4614-942a-1353f1d2fd77"
     },
     {
-      "source": "run_v2/frame_25.png",
+      "source": "run_v3/intermediate_25.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        51.60000000000002,
-        68.9349364905389
+        3.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          554.0,
-          199.0
+          544.85714,
+          266.28571
         ],
         "neck": [
-          564.0,
-          314.0
+          552.85714,
+          362.85714
         ],
         "belt": [
-          558.0,
-          596.0
+          545.71429,
+          602.85714
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9030157449950055,
-        "neck": 0.7489102239037587,
-        "belt": 0.6851062811791296
+        "eyes": 0.941953,
+        "neck": 0.848577,
+        "belt": 0.886247
       },
-      "authored_weight_offset_y": 0.33493649053890323,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-91700eed-06bb-4271-86a0-76265176fcdf"
+      "generation_id": "exec-6f05e005-4832-4941-97ad-01c262f790d3",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_26.png",
+      "source": "run_v3/intermediate_26.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        52.80000000000001,
-        62.05000000000001
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          552.0,
-          212.0
+          543.14286,
+          267.42857
+        ],
+        "neck": [
+          551.42857,
+          365.71429
+        ],
+        "belt": [
+          541.42857,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.904538,
+        "neck": 0.885871,
+        "belt": 0.821956
+      },
+      "generation_id": "exec-1a34bd9e-405d-4b0b-9258-6ad249e45789",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/rough_keys/phase_27.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          269.42857
+        ],
+        "neck": [
+          548.57143,
+          367.14286
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93725,
+        "neck": 0.927064,
+        "belt": 0.856453
+      },
+      "generation_id": "exec-87010e6c-93a4-4bd0-8f38-85fcb8c6ea7d",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/intermediate_28.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          269.71429
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          540.0,
+          608.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.919681,
+        "neck": 0.917974,
+        "belt": 0.899024
+      },
+      "generation_id": "exec-22daa9a2-68ba-4b10-9b96-d79ee9b1c9bb",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/intermediate_29.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.0,
+          272.0
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          542.85714,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.907244,
+        "neck": 0.871906,
+        "belt": 0.84596
+      },
+      "generation_id": "exec-71a01ef6-d64f-495f-9aaf-d91264b870e7",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/join_repairs/hand30.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        -7.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          559.14286,
+          272.28571
         ],
         "neck": [
           560.0,
-          329.0
+          371.42857
         ],
         "belt": [
-          549.0,
-          610.0
+          560.0,
+          605.71429
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9106109335555677,
-        "neck": 0.7722449208666492,
-        "belt": 0.7231380146958132
+        "eyes": 0.856358,
+        "neck": 0.83375,
+        "belt": 0.706355
       },
-      "authored_weight_offset_y": 1.2499999999999998,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-41d1b86b-6918-48f5-830d-a0fdcedc9789"
+      "generation_id": "exec-851e8bdf-3762-435c-8d0d-c61a2208d54d",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_27.png",
+      "source": "run_v3/intermediate_31.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        52.80000000000001,
-        54.900000000000006
+        3.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          552.0,
-          226.0
+          543.71429,
+          271.14286
         ],
         "neck": [
-          557.0,
-          341.0
+          544.28571,
+          372.85714
         ],
         "belt": [
-          546.0,
-          623.0
+          547.14286,
+          607.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9025334376265731,
-        "neck": 0.7239581283527129,
-        "belt": 0.7248211466401492
+        "eyes": 0.853639,
+        "neck": 0.900994,
+        "belt": 0.76374
       },
-      "authored_weight_offset_y": 2.4999999999999996,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8"
+      "generation_id": "exec-10e23c5e-6761-47f9-a63a-c759f6efc9a5",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_28.png",
+      "source": "run_v3/intermediate_32.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        48.60000000000002,
-        63.95
+        3.0,
+        3.0
       ],
       "landmarks": {
         "eyes": [
-          559.0,
-          213.0
+          544.85714,
+          267.71429
         ],
         "neck": [
-          565.0,
-          329.0
+          545.71429,
+          364.28571
         ],
         "belt": [
-          554.0,
-          611.0
+          547.14286,
+          601.42857
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9143550210234818,
-        "neck": 0.7354600901827003,
-        "belt": 0.6033654721003344
+        "eyes": 0.852344,
+        "neck": 0.901228,
+        "belt": 0.713018
       },
-      "authored_weight_offset_y": 3.7499999999999996,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-dc54779c-bf2e-49aa-8a33-8f801bdd8c31"
+      "generation_id": "exec-c26daa5d-4ad3-4e9a-95a8-48c70cb226ae",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_29.png",
+      "source": "run_v3/rough_keys/phase_33.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        52.19999999999999,
-        70.26506350946111
+        2.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          553.0,
-          204.0
+          546.28571,
+          265.71429
         ],
         "neck": [
-          562.0,
-          319.0
+          545.71429,
+          361.42857
         ],
         "belt": [
-          549.0,
-          590.0
+          554.28571,
+          608.57143
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9038903130167621,
-        "neck": 0.7735694085465978,
-        "belt": 0.7200644424352207
+        "eyes": 0.891771,
+        "neck": 0.927606,
+        "belt": 0.850911
       },
-      "authored_weight_offset_y": 4.665063509461097,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f"
+      "generation_id": "exec-5e5725f6-f5e4-431c-9ac3-a912d6bab18c",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_30.png",
+      "source": "run_v3/join_repairs/phase_34.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        51.60000000000002,
-        54.400000000000006
-      ],
-      "landmarks": {
-        "eyes": [
-          554.0,
-          231.0
-        ],
-        "neck": [
-          555.0,
-          348.0
-        ],
-        "belt": [
-          562.0,
-          632.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8686700898969318,
-        "neck": 0.716185730965535,
-        "belt": 0.683713873208614
-      },
-      "authored_weight_offset_y": 5.0,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-6ab9db2e-b027-4bd9-844c-013298f6f93e"
-    },
-    {
-      "source": "run_v2/frame_31.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        47.400000000000034,
-        52.46313972081444
-      ],
-      "landmarks": {
-        "eyes": [
-          561.0,
-          233.0
-        ],
-        "neck": [
-          562.0,
-          355.0
-        ],
-        "belt": [
-          564.0,
-          634.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8393470122266519,
-        "neck": 0.7648551393728433,
-        "belt": 0.669401100135541
-      },
-      "authored_weight_offset_y": 4.263139720814413,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-c6120377-f18c-405e-9e8f-71586487dbb7"
-    },
-    {
-      "source": "run_v2/frame_32.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        51.60000000000002,
-        52.849999999999994
-      ],
-      "landmarks": {
-        "eyes": [
-          554.0,
-          229.0
-        ],
-        "neck": [
-          555.0,
-          343.0
-        ],
-        "belt": [
-          557.0,
-          621.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8630709877693741,
-        "neck": 0.7200347804139543,
-        "belt": 0.7165476765723543
-      },
-      "authored_weight_offset_y": 2.2500000000000004,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-52a4d266-7d3c-44c0-87b6-67aa3c83c3d3"
-    },
-    {
-      "source": "run_v2/frame_33.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        57.60000000000002,
-        67.5
+        3.0,
+        3.0
       ],
       "landmarks": {
         "eyes": [
           544.0,
-          200.0
+          259.42857
         ],
         "neck": [
-          544.0,
-          313.0
+          542.85714,
+          355.71429
         ],
         "belt": [
-          552.0,
-          601.0
+          548.57143,
+          595.71429
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9005720017913118,
-        "neck": 0.7320294305956259,
-        "belt": 0.6180952656612339
+        "eyes": 0.877674,
+        "neck": 0.827237,
+        "belt": 0.8099
       },
-      "authored_weight_offset_y": -0.49999999999999956,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-ebd75822-535b-4b8d-8197-2401fb4e817a"
+      "generation_id": "exec-d54614a1-989f-421e-b14f-f0876f764738",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_34.png",
+      "source": "run_v3/intermediate_35.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        58.19999999999999,
-        64.15
+        3.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          543.0,
-          201.0
+          544.57143,
+          258.28571
         ],
         "neck": [
-          541.0,
-          316.0
+          544.28571,
+          355.71429
         ],
         "belt": [
-          544.0,
-          592.0
+          552.85714,
+          597.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8928447086521621,
-        "neck": 0.7355979669826631,
-        "belt": 0.7663290952324114
+        "eyes": 0.919235,
+        "neck": 0.872432,
+        "belt": 0.774592
       },
-      "authored_weight_offset_y": -3.2499999999999987,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4db84124-5e1d-4fa1-acc4-eb3358679216"
+      "generation_id": "exec-c4d9b798-2ece-4cd3-92b9-c23a428d1122",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_35.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        55.80000000000001,
-        45.936860279185595
-      ],
-      "landmarks": {
-        "eyes": [
-          547.0,
-          228.0
-        ],
-        "neck": [
-          547.0,
-          342.0
-        ],
-        "belt": [
-          561.0,
-          628.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.879123499251612,
-        "neck": 0.7005349646389033,
-        "belt": 0.7651092717313867
-      },
-      "authored_weight_offset_y": -5.263139720814413,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-cff19beb-bd57-4f3c-84de-29ac4c9b3aa1"
-    },
-    {
-      "source": "run_v2/frame_36.png",
+      "source": "run_v3/retained/phase_36.png",
       "cell": [
         0,
         0,
@@ -1530,400 +1498,389 @@
       "generation_id": "exec-a6b13b5d-b543-4961-bb6c-fc23b8e8822a"
     },
     {
-      "source": "run_v2/frame_37.png",
+      "source": "run_v3/intermediate_37.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        60.0,
-        64.60096189432335
+        4.0,
+        3.0
       ],
       "landmarks": {
         "eyes": [
-          540.0,
-          196.0
+          542.85714,
+          256.57143
         ],
         "neck": [
-          542.0,
-          310.0
+          544.28571,
+          354.28571
         ],
         "belt": [
-          551.0,
-          597.0
+          552.85714,
+          600.0
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8887236273986645,
-        "neck": 0.6768377719810351,
-        "belt": 0.8077768348508603
+        "eyes": 0.9248,
+        "neck": 0.874989,
+        "belt": 0.818177
       },
-      "authored_weight_offset_y": -5.799038105676658,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-9d7b18e4-95c8-435e-a560-8009888e6349"
+      "generation_id": "exec-18f57ceb-2bdf-4f71-852b-ae425547a844",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_38.png",
+      "source": "run_v3/intermediate_38.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        63.60000000000002,
-        63.95
+        4.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          534.0,
-          198.0
+          543.42857,
+          258.28571
         ],
         "neck": [
-          534.0,
-          313.0
+          544.28571,
+          355.71429
         ],
         "belt": [
+          555.71429,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.917625,
+        "neck": 0.7799,
+        "belt": 0.783521
+      },
+      "generation_id": "exec-b8d47548-cc94-4bcf-94a1-97ce88c5f522",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/join_repairs/phase39.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        -0.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          262.57143
+        ],
+        "neck": [
+          544.28571,
+          358.57143
+        ],
+        "belt": [
+          555.71429,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.887018,
+        "neck": 0.813544,
+        "belt": 0.841074
+      },
+      "generation_id": "exec-fae6534c-d394-499f-8053-ea077e66e22c",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/join_repairs/middle40_A.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          260.57143
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          551.42857,
+          592.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.787335,
+        "neck": 0.630338,
+        "belt": 0.703534
+      },
+      "generation_id": "exec-facb1320-7cbe-4785-97de-2e5e7579b6f9",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/join_repairs/direct_41.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
           544.0,
-          601.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8746583783735914,
-        "neck": 0.6909636313177079,
-        "belt": 0.7866046728293278
-      },
-      "authored_weight_offset_y": -5.25,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4ec7fae0-eb96-4c14-bbb5-f69a2e83cc06"
-    },
-    {
-      "source": "run_v2/frame_39.png",
-      "cell": [
-        0,
-        0,
-        1039,
-        1513
-      ],
-      "scale": 0.6,
-      "origin": [
-        66.0,
-        64.7
-      ],
-      "landmarks": {
-        "eyes": [
-          530.0,
-          198.0
+          260.85714
         ],
         "neck": [
-          530.0,
-          315.0
+          544.28571,
+          358.57143
         ],
         "belt": [
-          543.0,
-          604.0
+          554.28571,
+          597.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.8808957495683286,
-        "neck": 0.654695962901719,
-        "belt": 0.7797123740677472
+        "eyes": 0.785733,
+        "neck": 0.848836,
+        "belt": 0.804876
       },
-      "authored_weight_offset_y": -4.5,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-e20a4f82-c47a-4578-8bf5-f28a7793c2b7"
+      "generation_id": "exec-3bdda8ce-8bd2-42bd-8832-88ea55d4bd47",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_40.png",
+      "source": "run_v3/join_repairs/phase_42.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        63.0,
-        64.85000000000001
-      ],
-      "landmarks": {
-        "eyes": [
-          535.0,
-          199.0
-        ],
-        "neck": [
-          537.0,
-          316.0
-        ],
-        "belt": [
-          546.0,
-          612.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.8738547382105105,
-        "neck": 0.6909348091827153,
-        "belt": 0.7952572987439699
-      },
-      "authored_weight_offset_y": -3.75,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-68d69609-6ce3-445e-9577-c87f64cc6a81"
-    },
-    {
-      "source": "run_v2/frame_41.png",
-      "cell": [
-        0,
-        0,
-        1039,
-        1513
-      ],
-      "scale": 0.6,
-      "origin": [
-        55.19999999999999,
-        64.19903810567666
+        0.0,
+        9.0
       ],
       "landmarks": {
         "eyes": [
           548.0,
-          201.0
+          252.0
         ],
         "neck": [
-          549.0,
-          318.0
+          548.57143,
+          348.57143
         ],
         "belt": [
-          556.0,
-          607.0
+          555.71429,
+          587.14286
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.869810286036207,
-        "neck": 0.6664109178905098,
-        "belt": 0.7811649827719838
+        "eyes": 0.883598,
+        "neck": 0.711319,
+        "belt": 0.745104
       },
-      "authored_weight_offset_y": -3.2009618943233416,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-10db7c54-7db3-453c-ab69-f90230ba4b26"
+      "generation_id": "exec-9f820b3c-9216-4784-83c2-48772fa28917",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_42.png",
+      "source": "run_v3/intermediate_43.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        62.400000000000034,
-        77.60000000000001
+        -1.0,
+        1.0
       ],
       "landmarks": {
         "eyes": [
-          536.0,
-          179.0
-        ],
-        "neck": [
-          534.0,
-          297.0
-        ],
-        "belt": [
-          548.0,
-          582.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.932986651624066,
-        "neck": 0.7756792540846754,
-        "belt": 0.7471964922857318
-      },
-      "authored_weight_offset_y": -3.0,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-b117064c-f466-47e7-8f99-6b9453c0555a"
-    },
-    {
-      "source": "run_v2/frame_43.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        60.0,
-        76.00096189432334
-      ],
-      "landmarks": {
-        "eyes": [
-          540.0,
-          182.0
-        ],
-        "neck": [
-          539.0,
-          298.0
-        ],
-        "belt": [
-          552.0,
-          581.0
-        ]
-      },
-      "landmark_match_scores": {
-        "eyes": 0.9453470843082943,
-        "neck": 0.773537193602013,
-        "belt": 0.7614502615519506
-      },
-      "authored_weight_offset_y": -2.799038105676658,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4445d753-729e-4b98-b5b2-eed0d23c36e8"
-    },
-    {
-      "source": "run_v2/frame_44.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.6,
-      "origin": [
-        59.400000000000034,
-        78.35000000000001
-      ],
-      "landmarks": {
-        "eyes": [
-          541.0,
-          179.0
-        ],
-        "neck": [
-          542.0,
-          295.0
-        ],
-        "belt": [
           550.0,
-          578.0
+          263.14286
+        ],
+        "neck": [
+          548.57143,
+          361.42857
+        ],
+        "belt": [
+          561.42857,
+          601.42857
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9431710304751912,
-        "neck": 0.8364436497149513,
-        "belt": 0.7937387172813657
+        "eyes": 0.946015,
+        "neck": 0.835041,
+        "belt": 0.809344
       },
-      "authored_weight_offset_y": -2.25,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-bc967520-2e1f-49ee-a6a5-a42995fafc00"
+      "generation_id": "exec-03c92d23-d6d8-4285-8854-866fe037fae2",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_45.png",
+      "source": "run_v3/intermediate_44.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        62.400000000000034,
-        78.5
+        -2.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          536.0,
-          180.0
+          550.85714,
+          262.0
         ],
         "neck": [
-          533.0,
-          296.0
+          550.0,
+          361.42857
         ],
         "belt": [
-          547.0,
-          576.0
+          564.28571,
+          600.0
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9368831889945268,
-        "neck": 0.8099885038572389,
-        "belt": 0.7581672750166392
+        "eyes": 0.921614,
+        "neck": 0.895413,
+        "belt": 0.872788
       },
-      "authored_weight_offset_y": -1.5,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-2206e7c4-c5cf-496d-b4b1-67be602907f6"
+      "generation_id": "exec-31c3ca6e-2a66-4c03-acbe-2670eb457794",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_46.png",
+      "source": "run_v3/rough_keys/phase_45.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        57.0,
-        78.05
+        -3.0,
+        4.0
       ],
       "landmarks": {
         "eyes": [
-          545.0,
-          182.0
+          552.28571,
+          260.0
         ],
         "neck": [
-          542.0,
-          299.0
+          551.42857,
+          358.57143
         ],
         "belt": [
-          546.0,
-          585.0
+          564.28571,
+          595.71429
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.93219272587081,
-        "neck": 0.7729899078972207,
-        "belt": 0.7899217368266281
+        "eyes": 0.939989,
+        "neck": 0.917036,
+        "belt": 0.792989
       },
-      "authored_weight_offset_y": -0.7500000000000003,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-8dcfbeda-d8fd-4bac-b621-ff9be9fc560e"
+      "generation_id": "exec-e8b504ce-d30c-4187-b64d-4b297ecdf6d9",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     },
     {
-      "source": "run_v2/frame_47.png",
+      "source": "run_v3/intermediate_46.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "origin": [
-        63.0,
-        80.39903810567667
+        -0.0,
+        2.0
       ],
       "landmarks": {
         "eyes": [
-          535.0,
-          179.0
+          548.57143,
+          264.57143
         ],
         "neck": [
-          535.0,
-          297.0
+          545.71429,
+          362.85714
         ],
         "belt": [
-          552.0,
-          581.0
+          558.57143,
+          600.0
         ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9290338502369134,
-        "neck": 0.81090897051447,
-        "belt": 0.7677550683832326
+        "eyes": 0.905977,
+        "neck": 0.915436,
+        "belt": 0.618647
       },
-      "authored_weight_offset_y": -0.20096189432334177,
-      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
-      "generation_id": "exec-4c1d85a0-56d7-4ef6-bb22-6e6ec47125b7"
+      "generation_id": "exec-7c4af69b-4c4e-4ad9-a639-4c28264d6b4e",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
+    },
+    {
+      "source": "run_v3/intermediate_47.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          547.14286,
+          266.28571
+        ],
+        "neck": [
+          548.57143,
+          364.28571
+        ],
+        "belt": [
+          558.57143,
+          605.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.898579,
+        "neck": 0.93299,
+        "belt": 0.838135
+      },
+      "generation_id": "exec-168cc9a8-e20e-4afb-9e2f-c6008e3d391c",
+      "notes": "Complete ImageGen-authored leg-continuity repair with the corresponding approved upper-body action as reference. Whole source sampled uniformly and registered by painted body landmarks only; no old pixels, part transforms or interpolated anatomy."
     }
   ]
 }

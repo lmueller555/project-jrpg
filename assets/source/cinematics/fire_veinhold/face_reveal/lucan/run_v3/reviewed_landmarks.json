@@ -1,0 +1,1241 @@
+{
+  "units": "Exported 768x1024 artwork pixels before cinematic projection.",
+  "purpose": "Actual selected-artwork observations, not authoring targets or a source of generated limb coordinates.",
+  "method": "Opaque alpha >128 distal boot edge in visually selected anatomical ROIs; visible kneecap plate observations with explicit uncertainty. Hidden ankle/heel joints are not inferred.",
+  "review_limit": "Connected anatomy was reviewed in the actual selected drawings. These observations and a cropped frontal billboard shot do not prove3D foot locking at4m/s.",
+  "frames": [
+    {
+      "frame": 0,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_00.png",
+      "png_sha256": "06f641fca4d085af6888112ddff033aaf2c121ec07d04d65f67849cfc49c06d7",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            333.5,
+            661.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            331.8,
+            965
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            290,
+            820,
+            380,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            404.5,
+            740
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            650,
+            450,
+            790
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_07.png",
+      "png_sha256": "5c24c53aa2f55f81011956d3370a8c8f1a7ad79ff9d9c1f7b7071b510f6a7b91",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            325.5,
+            643.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            321.94,
+            946
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            280,
+            800,
+            380,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            425.5,
+            602.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            402.11,
+            775
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            680,
+            455,
+            820
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_08.png",
+      "png_sha256": "46353c765e1b523e37b340f4d3ef20ab0d6f741c9e6db4f267cbc26edbbd9f41",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            333.5,
+            656.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            341.96,
+            938
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            270,
+            800,
+            380,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            441.5,
+            580.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            429.12,
+            773
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            650,
+            470,
+            840
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_09.png",
+      "png_sha256": "693cb4cb627fd540ecd46628f4ba90d393abf4cdb3bd790ad6b209fbf08f9c47",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            325.5,
+            656.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            330.8,
+            955
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            280,
+            800,
+            385,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            437.5,
+            585.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            429.5,
+            803
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            690,
+            460,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_10.png",
+      "png_sha256": "d061d2b8e7ab5edd2efe2b9808cefe11b3322957aa6d50eaee1431d469c9fddd",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            300.59,
+            895
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            700,
+            370,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            424.69,
+            807
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            650,
+            475,
+            865
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_11.png",
+      "png_sha256": "28fa4814cc12e0f11fbabd43142e782f81d3a2242fe24f65b14acf6f1dc0c8a9",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            306.5,
+            649.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            303.39,
+            829
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            680,
+            365,
+            930
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            437.5,
+            589.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            419.5,
+            830
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            650,
+            465,
+            890
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_12.png",
+      "png_sha256": "7a769cb108ca404b3c6b85759cf11124430cddabb0ee724806c17bfbf854d62d",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            312.5,
+            649.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            302.0,
+            800
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            270,
+            680,
+            350,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            437.5,
+            600.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            392.17,
+            850
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            345,
+            700,
+            440,
+            890
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_13.png",
+      "png_sha256": "b50eedeb69c5e79253b794e013f34b7736d67c2a775f8b7581393c007a911b12",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            267.5,
+            789
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            230,
+            620,
+            340,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            438.5,
+            626.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            412.5,
+            891
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            740,
+            480,
+            945
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_14.png",
+      "png_sha256": "8f3e35510aa173174b17f9ef4be94e773ce391759653062377c1f62f9019e2e3",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            272.5,
+            802
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            230,
+            620,
+            340,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            433.5,
+            617.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            421.58,
+            902
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            740,
+            480,
+            960
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_15.png",
+      "png_sha256": "c2d8b37ca6f97db6479cd9874a68eda1aded4bac272214ac6c1617795986d66b",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            313,
+            633
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Manual visible kneecap-center observation",
+          "visible_boot_distal_edge": [
+            302.5,
+            759
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            600,
+            370,
+            810
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            431.5,
+            627.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            422.38,
+            938
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_16.png",
+      "png_sha256": "40639406ae15cc751bfe15edb4571831d023f632c2ea4787e14e18e8ac9a60a8",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            306.22,
+            723
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            230,
+            600,
+            370,
+            810
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            432.5,
+            626.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            433.16,
+            933
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_17.png",
+      "png_sha256": "797e84867ca6e50fa3e76dd7863279b7ba8031c68b6ee30b4831dd4fcb771d65",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            309.19,
+            738
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            230,
+            600,
+            370,
+            810
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            427.5,
+            635.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            423.58,
+            930
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_18.png",
+      "png_sha256": "841bae0941ca0cb142c0383c9d9260ae37706804c9c47768bfb6bd61539965fe",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            322.5,
+            735
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            275,
+            630,
+            360,
+            810
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            417.5,
+            642.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            417.47,
+            953
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_24.png",
+      "png_sha256": "9263711bf9525ec7687ebe240425016fadfb1fa8fa4eb1a882d12dcc0db49723",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            285.5,
+            715
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            270,
+            650,
+            345,
+            780
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            423.5,
+            640.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            425.11,
+            955
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            820,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_27.png",
+      "png_sha256": "35e4171bacfac016e909f203897d87064b2e893c04a2dc250796c9a7fc6a3b35",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            313.5,
+            619.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            315.24,
+            792
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            280,
+            680,
+            350,
+            825
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            411.5,
+            675.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            400.68,
+            947
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            810,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_34.png",
+      "png_sha256": "14fe8298275f02280e5fe65f7a6030982a3980efc068ca33500401ac22ab2ec6",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            321.5,
+            588.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            313.12,
+            735
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            600,
+            365,
+            840
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            423.5,
+            667.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            419.78,
+            932
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_35.png",
+      "png_sha256": "5a14cb6481aa183bc9a35c7d5f251693b5fe2bf193320b36ccb686126dabccf4",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            342.5,
+            541.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            280.38,
+            734
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            600,
+            365,
+            840
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            420.5,
+            681.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            410.19,
+            947
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_36.png",
+      "png_sha256": "07d9ac23aee2e615a17b000e7e60b9281c5ca56ca226dca556a9a92481177a8e",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            314.36,
+            741
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            600,
+            365,
+            840
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            424.07,
+            937
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_37.png",
+      "png_sha256": "4f607107e728ab391d1bc269d01be70b14639b5e96fa20030a616306d6c6c0d0",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            340.5,
+            553.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            299.44,
+            742
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            620,
+            360,
+            820
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            423.5,
+            674.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            410.79,
+            934
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            790,
+            480,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 38,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_38.png",
+      "png_sha256": "73b9bbf263527d3e99222f7538c9804e1c31d1693260f1766413dd818f9015c3",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            321.5,
+            580.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            303.64,
+            769
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            620,
+            365,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            428.5,
+            671.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            424.21,
+            886
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            700,
+            485,
+            935
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_39.png",
+      "png_sha256": "2b661c02aa7a05c554c7c983abb08b9740969e75499aa2254df5fd5a4ff3f345",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            333.5,
+            568.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            297.78,
+            823
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            650,
+            360,
+            920
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            432.5,
+            679.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            419.67,
+            826
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            370,
+            650,
+            480,
+            920
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_40.png",
+      "png_sha256": "83fa93fef827e3e3a7282afe3c06d3bb2fcba023168ed427d3fcb6a22c51e93a",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            330.5,
+            595.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            299.56,
+            883
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            700,
+            365,
+            960
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": [
+            416.5,
+            681.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            401.0,
+            787
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            375,
+            630,
+            480,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 41,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_41.png",
+      "png_sha256": "aa37715538c8dedcaa57e882ca22a295953c676904f40ad7f3d8543d5f75fb6f",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            332.5,
+            586.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            305.19,
+            916
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            250,
+            760,
+            365,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            401.29,
+            768
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            375,
+            630,
+            480,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    },
+    {
+      "frame": 42,
+      "png": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_42.png",
+      "png_sha256": "89ab816d196691100eb94dbf3c0a040e54957fe36e44aff74ccd6a0ab473e77c",
+      "limbs": {
+        "anatomical_right": {
+          "visible_kneecap_center": [
+            339.5,
+            633.5
+          ],
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "Circular plate-edge proposal, visually reviewed",
+          "visible_boot_distal_edge": [
+            338.42,
+            962
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            260,
+            800,
+            390,
+            985
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        },
+        "anatomical_left": {
+          "visible_kneecap_center": null,
+          "knee_uncertainty_pixels": 8,
+          "knee_method": "No reliable center annotated for this oblique/partially hidden plate; inspect the full connected chain.",
+          "visible_boot_distal_edge": [
+            409.23,
+            769
+          ],
+          "boot_uncertainty_pixels": 3,
+          "boot_measurement_roi": [
+            380,
+            620,
+            480,
+            850
+          ],
+          "ankle_joint": null,
+          "ankle_visibility": "Anatomical joint is hidden by greave/boot shaft. Visible calf and boot continuity was reviewed; no hidden joint is invented.",
+          "heel_contact": null,
+          "heel_visibility": "Rear heel contact is obscured in this frontal view. The visible distal sole edge is recorded; no ground-plane contact is inferred."
+        }
+      }
+    }
+  ]
+}

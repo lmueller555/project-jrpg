@@ -1,0 +1,102 @@
+[
+  {
+    "frame": 10,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/frame_10_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_10.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_10.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10.png",
+    "metadata": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10_generation.json",
+    "guide_only_planned_points": {
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_knee": [
+        320,
+        704
+      ],
+      "right_toe": [
+        314,
+        890
+      ],
+      "left_knee": [
+        445,
+        561
+      ],
+      "left_toe": [
+        411,
+        703
+      ],
+      "right_ankle": [
+        314,
+        835
+      ],
+      "left_ankle": [
+        411,
+        648
+      ]
+    },
+    "status": "Generate complete figure, inspect actual limb identities, alpha and continuous foot progression; no profile/registry edits."
+  },
+  {
+    "frame": 11,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/frame_11_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_12_8fd4a2deb081.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_11.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_11.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_11.png",
+    "metadata": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_11_generation.json",
+    "guide_only_planned_points": {
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_knee": [
+        313,
+        688
+      ],
+      "right_toe": [
+        309,
+        864
+      ],
+      "left_knee": [
+        447,
+        532
+      ],
+      "left_toe": [
+        416,
+        677
+      ],
+      "right_ankle": [
+        309,
+        809
+      ],
+      "left_ankle": [
+        416,
+        622
+      ]
+    },
+    "status": "Generate complete figure, inspect actual limb identities, alpha and continuous foot progression; no profile/registry edits."
+  }
+]

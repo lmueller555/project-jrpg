@@ -1,0 +1,149 @@
+{
+  "frame": 16,
+  "source_bounds": [
+    15,
+    18
+  ],
+  "primary_frame": 18,
+  "prompt_file": "root_helper_16_b_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_18_8415f2e15c85.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_lower_reference_18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_16.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_16.png"
+  ],
+  "guide_only_planned_points": {
+    "right_toe": [
+      323,
+      800
+    ],
+    "right_knee": [
+      329,
+      645
+    ],
+    "left_toe": [
+      409,
+      745
+    ],
+    "left_knee": [
+      447,
+      571
+    ],
+    "right_hip": [
+      340,
+      480
+    ],
+    "left_hip": [
+      440,
+      480
+    ],
+    "right_ankle": [
+      323,
+      750
+    ],
+    "left_ankle": [
+      409,
+      695
+    ]
+  },
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_16_b.png",
+  "prompt": "Draw ONE COMPLETE coherent painted Crown soldier frontal running frame16/48, between actual accepted bounds[15, 18]. References1 and2 are the accepted SAME-CROWN motion pose;2 is only lower-body anatomy detail. Reference3 is this frames approved upper-body action. Reference4 is an AUTHORING-ONLY guide, never artwork. Remove every mark and caption.\nUse the clearly identified anatomical LEFT/viewerRIGHT forward knee from references1/2, but keep its calf MORE FOLDED than reference18: left boot tip around745 rather than841 or697. The RIGHT/viewerLEFT rear foot sits around800, slightly lower than reference18s745, still trailing and folded. Never swap which knee advances. This is a partly unfolding transition between15 and18, not held fully-folded15 or final straight contact.\nDraw both whole hip-knee-ankle-boot chains naturally connected with constant physical leg lengths and depth foreshortening. A projected folded calf must not become a long hanging support leg. Do not use a generic new heroic contact, repeated extreme, sideways kick, stale outline, extra foot or old limb fragment. The target positions describe reference-image motion; natural anatomy takes priority.\nPreserve reference3s focused young male face, helmet, shoulder/elbow/hand performance, plate armor, navy split tabard, charcoal trousers and brown leather boots. Sword stays anatomical RIGHT/viewerLEFT, blade DOWN/OUTSIDE; plain boss shield stays LEFT/viewerRIGHT. Same face/head/neck/torso dimensions, belt placement, cool steel palette and complete-figure density. Exactly two arms, two legs, two boots, one sword, one shield. Tabard waist stays attached and panels follow thighs.\nONE complete detailed fantasy cinematic drawing on the same768x1024 reference composition at high source detail. Entire helmet, sword and boots inside generous transparent margins. TRUE CLEAN TRANSPARENT RGBA, no gray haze, background, glow, floor, shadow, words, sheet or colored guide pixels. Complete ImageGen redraw; no procedural deformation or endpoint blending.\n",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_18_8415f2e15c85.png": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_lower_reference_18.png": "9d847a12f4b6286192e7aa975b9e6a412a673f911ed7d95961528e2ba1a89998",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_16.png": "23ad38935962ac694aa5b1a939cb098ca6da3eb5cb18c72c7f274562daf579f1",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_16.png": "20822f07e2089c174f2e36b786792b8409e8d91eeee7d2ed0c097f2b597f208e"
+  },
+  "source_path": "/workspace/generated_images/exec-9b950118-7e2d-47f0-af32-9ef673ef5222.png",
+  "generation_id": "exec-9b950118-7e2d-47f0-af32-9ef673ef5222",
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-9b950118-7e2d-47f0-af32-9ef673ef5222.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_master": "root_helper_16_b.png",
+  "source_sha256": "8de026f1a0a9231421fd9185c078868b5e51adc7e68b65916a614e11939cb9c8",
+  "transparent_background": true,
+  "prompt_sha256": "ce514ff0f0e5ca385253b222343ca79ef2edc9484f77f347b26ad77078df4d1f",
+  "construction": "Complete ImageGen-authored drawing. Raw output copied unchanged; no region restoration, limb transforms, warps or endpoint blends.",
+  "status": "candidate_pending_main_artist_selection_and_independent_QA",
+  "diagnostic_registration": {
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      -1.0
+    ],
+    "landmarks": {
+      "eyes": [
+        544.85714,
+        264.85714
+      ],
+      "neck": [
+        552.85714,
+        362.85714
+      ],
+      "belt": [
+        544.28571,
+        608.57143
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.901919,
+      "neck": 0.863315,
+      "belt": 0.76996
+    }
+  },
+  "opaque_bounds": [
+    76,
+    85,
+    634,
+    780
+  ],
+  "diagnostic_canonical": "/tmp/crown_root_registered/frame_16.png",
+  "actual_distal_contours_not_joints": {
+    "viewer_left_boot": {
+      "x": -60.099997999999964,
+      "y": 510.4000019999999,
+      "opaque_pixels": 31296,
+      "window_x": [
+        -140,
+        -20
+      ],
+      "window_y": [
+        322.000003,
+        1000
+      ],
+      "canonical_y": 763.3999999999999,
+      "canonical_x": 329.9
+    },
+    "viewer_right_boot": {
+      "x": 43.850002000000025,
+      "y": 521.6000019999999,
+      "opaque_pixels": 28703,
+      "window_x": [
+        8,
+        140
+      ],
+      "window_y": [
+        322.000003,
+        1000
+      ],
+      "canonical_y": 774.5999999999999,
+      "canonical_x": 433.84999999999997
+    }
+  },
+  "actual_visible_glove_component": {
+    "point_source": [
+      417.35685320356856,
+      418.39821573398217
+    ],
+    "point_neck_relative": [
+      -94.85020075750197,
+      38.8787530137875
+    ],
+    "bounds_source": [
+      360,
+      391,
+      470,
+      453
+    ],
+    "area": 2466,
+    "candidate_count": 35
+  }
+}

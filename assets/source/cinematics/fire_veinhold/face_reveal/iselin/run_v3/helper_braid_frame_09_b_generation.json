@@ -1,0 +1,77 @@
+{
+  "frame": 9,
+  "attempt": "b",
+  "generation_id": "exec-3c79026f-3088-4e43-a684-78c1a60110bf",
+  "source_master": "helper_braid_frame_09_b.png",
+  "source_path": "/workspace/generated_images/exec-3c79026f-3088-4e43-a684-78c1a60110bf.png",
+  "prompt_file": "helper_braid_frame_09_b_prompt.txt",
+  "prompt": "Create one COMPLETE unified painted Iselin running figure on transparent background. Repair ONLY the viewer-right BRAID, preserving the accepted full-body pose. Reference 1 is an authoring guide on this exact body: orange is the new root-to-tip BRAID CENTERLINE, the circle is the free terminal end, and the red X marks the obsolete old tail. Paint the ordinary narrow plait FOLLOWING THE ORANGE PATH; remove the obsolete tail and every guide mark in the finished art. Reference 2 is the identical unmarked accepted figure. References 3 and 4 are actual neighboring braid motion details, not body or arm pose references. Keep the braid's head attachment, upper plaits, ordinary taper, approximate length and volume consistent; move the traveling bend through the lower two thirds. No fat expanded plait, giant loop or additional tail. This frame lies BETWEEN the earlier outward braid in reference 3 and the later near-vertical braid in reference 4. Its lower plaits should still reach a little outward, with their lowest bend near[650,330] and a small loose wisp turning softly upward/outward to the orange tip circle around[673,325] in the shared 1024 composition. Draw this actual intermediate curve. Do NOT keep the old large outward return loop marked by the red X at x710. Do not jump to the fully retracted later pose. The circle/path are guidance only; natural length and continuous motion take priority. Keep the free tuft clearly separated from the pumping fist. Preserve every other part of reference 2's appearance and pose: face/expression, head/neck/shoulders/torso dimensions, loose windblown hair, blue/silver royal costume, mantle and coat folds/silhouettes, exact two arm/elbow/fist stages, connected hips/knees/ankles and boot heights. One braid on anatomical left/viewer right, mantle on anatomical right/viewer left. Exactly two arms and two legs. Full coherent female figure with all hair/cloth/boots inside transparent margins. No colored marks, circles, X marks, text, diagrams, floor, shadow, background, pasted regions, regional restoration, piece transforms, ghosts or blended endpoints.",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_09_b_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_reference_frame_09.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_outward_08_detail.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png"
+  ],
+  "transparent_background": true,
+  "status": "candidate: complete braid bend transitions from actual8 toward actual10d",
+  "diagnostic_json": "/tmp/helper_braid_frame_09_b_canonical.json",
+  "source_sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+  "prompt_file_sha256": "4125e3d2520f869c06a187cb3f02c599edfa16deae19aace5d494212be2a8fb1",
+  "exact_prompt_sha256": "50f3f7e16a572f0494963a481697377e693a0e605d42731a73eaaadcb3a8a67f",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_09_b_guide.png": "87ff38171095915468aa88582fa5d4073c9327aa3e54257974c1e0849f99d007",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_reference_frame_09.png": "5092269eaae05fbdeb8a969a77d92e926f743e0ebe810d738c4b9ac1de0428cd",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_outward_08_detail.png": "10513acc845583e68dec8dfb25bcedda2ffef4390a1e43eb7568a5b767c36943",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png": "0c9f8cc8d53f971269c04dfa632ba44133df60e08756b2a394fa52747ddbbc21"
+  },
+  "raw_source_byte_preservation_verified": true,
+  "helper_observed_registration": {
+    "frame": 9,
+    "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_09_b.png",
+    "features": {
+      "face": {
+        "point": [
+          629.047,
+          174.06
+        ],
+        "score": 0.8613,
+        "template_scale": 1.2491
+      },
+      "neck": {
+        "point": [
+          627.41,
+          248.986
+        ],
+        "score": 0.8713,
+        "template_scale": 1.34707
+      },
+      "belt": {
+        "point": [
+          619.432,
+          473.33
+        ],
+        "score": 0.6955,
+        "template_scale": 1.34707
+      }
+    },
+    "scale": 0.8005764150188135,
+    "origin": [
+      9.710351453046258,
+      3.495680730125713
+    ],
+    "canonical_landmarks": {
+      "face": [
+        513.311,
+        142.844
+      ],
+      "neck": [
+        512.0,
+        202.828
+      ],
+      "belt": [
+        505.613,
+        382.433
+      ]
+    }
+  }
+}

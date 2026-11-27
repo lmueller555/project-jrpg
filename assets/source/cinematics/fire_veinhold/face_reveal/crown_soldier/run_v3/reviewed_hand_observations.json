@@ -1,0 +1,226 @@
+[
+  {
+    "frame": 19,
+    "source": "run_v3/first_half_final/bounded_19.png",
+    "source_sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      214,
+      392,
+      294,
+      458
+    ],
+    "source_hand_box": [
+      300,
+      557,
+      414,
+      651
+    ],
+    "observed_component_source": [
+      350.99201277955274,
+      596.3924387646432
+    ],
+    "observed_component_exported": [
+      249.6944089456869,
+      419.47470713525024
+    ],
+    "observed_component_neck_relative": [
+      -137.3055930543131,
+      163.4747091352502
+    ],
+    "component_area": 1878,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 20,
+    "source": "run_v3/first_half_final/bounded_20.png",
+    "source_sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      260,
+      376,
+      326,
+      437
+    ],
+    "source_hand_box": [
+      369,
+      534,
+      463,
+      621
+    ],
+    "observed_component_source": [
+      398.34668608885653,
+      596.3794610342316
+    ],
+    "observed_component_exported": [
+      280.84268026219956,
+      419.46562272396204
+    ],
+    "observed_component_neck_relative": [
+      -105.1573207378004,
+      163.46562472396207
+    ],
+    "component_area": 1373,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 21,
+    "source": "run_v3/rough_keys/phase_21.png",
+    "source_sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      235,
+      384,
+      298,
+      432
+    ],
+    "source_hand_box": [
+      330,
+      546,
+      420,
+      614
+    ],
+    "observed_component_source": [
+      391.7741935483871,
+      586.6759856630824
+    ],
+    "observed_component_exported": [
+      278.2419354838709,
+      412.6731899641577
+    ],
+    "observed_component_neck_relative": [
+      -109.75806551612902,
+      156.67319196415767
+    ],
+    "component_area": 1395,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 22,
+    "source": "run_v3/root_helper_22.png",
+    "source_sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      267,
+      352,
+      340,
+      414
+    ],
+    "source_hand_box": [
+      377,
+      500,
+      481,
+      589
+    ],
+    "observed_component_source": [
+      408.6999419616947,
+      558.7997678467789
+    ],
+    "observed_component_exported": [
+      289.0899593731863,
+      393.15983749274517
+    ],
+    "observed_component_neck_relative": [
+      -100.91003862681366,
+      134.15983549274523
+    ],
+    "component_area": 1723,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 29,
+    "source": "run_v3/intermediate_29.png",
+    "source_sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      236,
+      382,
+      300,
+      438
+    ],
+    "source_hand_box": [
+      333,
+      543,
+      424,
+      623
+    ],
+    "observed_component_source": [
+      381.1641092327698,
+      581.6426527958388
+    ],
+    "observed_component_exported": [
+      269.81487646293886,
+      409.14985695708714
+    ],
+    "observed_component_neck_relative": [
+      -118.18512353706112,
+      149.1498559570871
+    ],
+    "component_area": 3845,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 30,
+    "source": "run_v3/join_repairs/hand30.png",
+    "source_sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      229,
+      382,
+      296,
+      439
+    ],
+    "source_hand_box": [
+      337,
+      543,
+      433,
+      624
+    ],
+    "observed_component_source": [
+      348.6735751295337,
+      594.9054404145078
+    ],
+    "observed_component_exported": [
+      237.07150259067356,
+      418.4338082901554
+    ],
+    "observed_component_neck_relative": [
+      -147.9284974093264,
+      156.43380929015544
+    ],
+    "component_area": 772,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  },
+  {
+    "frame": 40,
+    "source": "run_v3/join_repairs/middle40_A.png",
+    "source_sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+    "side": "anatomical_right",
+    "exported_hand_box": [
+      153,
+      434,
+      209,
+      477
+    ],
+    "source_hand_box": [
+      214,
+      617,
+      294,
+      679
+    ],
+    "observed_component_source": [
+      225.91954022988506,
+      651.0747126436781
+    ],
+    "observed_component_exported": [
+      161.14367816091954,
+      457.7522988505747
+    ],
+    "observed_component_neck_relative": [
+      -222.85631883908044,
+      206.75229585057468
+    ],
+    "component_area": 174,
+    "method": "Same reviewed glove color thresholds and connected-component extraction, inside actual glove-only crop excluding sword pommel/belt/pauldron. Observed pixels, not desired gait points."
+  }
+]

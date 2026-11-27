@@ -1,0 +1,1270 @@
+{
+  "lucan": {
+    "profile_sha256": "c8095e4ce218623327442aae9d0a2e3f35c49f050f0f050b4d6c0d0ec2595614",
+    "frames": [
+      {
+        "source": "lucan/frame_07.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          30.2455,
+          46.9396
+        ],
+        "landmarks": {
+          "eyes": [
+            556.68,
+            148.88
+          ],
+          "neck": [
+            572.75,
+            260.1
+          ],
+          "belt": [
+            568.02,
+            556.32
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.92864,
+          "neck": 0.6318,
+          "belt": 0.84418
+        },
+        "generation_id": "exec-a3bc742c-1593-433a-8380-07a2197ddfb9",
+        "authored_weight_offset_y": 2.3079,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 7,
+        "original_source": "run_v2/frames/frame_07.png",
+        "sha256": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8"
+      },
+      {
+        "source": "lucan/frame_08.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          27.2908,
+          46.9935
+        ],
+        "landmarks": {
+          "eyes": [
+            563.68,
+            145.88
+          ],
+          "neck": [
+            574.2,
+            258.88
+          ],
+          "belt": [
+            571.02,
+            555.32
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.95653,
+          "neck": 0.67945,
+          "belt": 0.84345
+        },
+        "generation_id": "exec-514d3c36-dcbe-49e2-aa53-f3c9d6a89fd6",
+        "authored_weight_offset_y": 1.0741,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 8,
+        "original_source": "run_v2/frames/frame_08.png",
+        "sha256": "c9526df52c6289b16d999fa96c88cbbe4375be1219b07e52cfc5207db27e8287"
+      },
+      {
+        "source": "lucan/frame_09.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.63,
+        "origin": [
+          36.0762,
+          41.7574
+        ],
+        "landmarks": {
+          "eyes": [
+            548.23,
+            150.68
+          ],
+          "neck": [
+            561.1,
+            267.44
+          ],
+          "belt": [
+            559.02,
+            561.32
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.9377,
+          "neck": 0.76464,
+          "belt": 0.8026
+        },
+        "generation_id": "exec-05c75b11-751c-4753-97c1-05f8624686b8",
+        "authored_weight_offset_y": -0.4375,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 9,
+        "original_source": "run_v2/frames/frame_09.png",
+        "sha256": "e9af2e8c36fd1b1b87a1c10c320d03b505bde99eb587a68172db7078df0bae83"
+      },
+      {
+        "source": "lucan/frame_10.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          35.6623,
+          46.0959
+        ],
+        "landmarks": {
+          "eyes": [
+            551.26,
+            147.16
+          ],
+          "neck": [
+            560.35,
+            256.34
+          ],
+          "belt": [
+            556.66,
+            543.56
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.95697,
+          "neck": 0.72569,
+          "belt": 0.84502
+        },
+        "generation_id": "exec-9efc3a80-a6b2-4444-a5c6-fcd57a4d1bac",
+        "authored_weight_offset_y": -1.963,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 10,
+        "original_source": "run_v2/frames/frame_10.png",
+        "sha256": "99739333014db6936e333fff112c81b449611397a8f5b4d79b0ed9299bc70872"
+      },
+      {
+        "source": "lucan/frame_11.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          37.3652,
+          41.6252
+        ],
+        "landmarks": {
+          "eyes": [
+            552.55,
+            147.8
+          ],
+          "neck": [
+            561.1,
+            261.44
+          ],
+          "belt": [
+            545.0,
+            556.0
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.95731,
+          "neck": 0.82309,
+          "belt": 0.79274
+        },
+        "generation_id": "exec-b308ee18-e40c-4266-ad78-52b884a2556d",
+        "authored_weight_offset_y": -3.2384,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 11,
+        "original_source": "run_v2/frames/frame_11.png",
+        "sha256": "0e3a8f5b9ace16fb3a7f602692d5944650d7894578c7c1b7a4dc28efdc3aed5b"
+      },
+      {
+        "source": "lucan/frame_12.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.63,
+        "origin": [
+          47.4363,
+          40.7854
+        ],
+        "landmarks": {
+          "eyes": [
+            530.97,
+            146.52
+          ],
+          "neck": [
+            540.1,
+            259.44
+          ],
+          "belt": [
+            541.68,
+            559.88
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.96432,
+          "neck": 0.73467,
+          "belt": 0.83163
+        },
+        "generation_id": "exec-9450e724-7ea8-44d1-b07b-85f2b13c91f4",
+        "authored_weight_offset_y": -4.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 12,
+        "original_source": "run_v2/frames/frame_12.png",
+        "sha256": "8d0255e92011898bbf816eb4bd30f5d358b87ede148df5efa5b597403f3c39c3"
+      },
+      {
+        "source": "lucan/frame_13.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          44.6259,
+          38.2821
+        ],
+        "landmarks": {
+          "eyes": [
+            532.68,
+            151.88
+          ],
+          "neck": [
+            543.1,
+            265.44
+          ],
+          "belt": [
+            551.7,
+            559.2
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.95799,
+          "neck": 0.70949,
+          "belt": 0.84542
+        },
+        "generation_id": "exec-78fa3137-3e06-4901-a3c6-30e925574c79",
+        "authored_weight_offset_y": -4.1875,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 13,
+        "original_source": "run_v2/frames/frame_13.png",
+        "sha256": "fdff66b940e5ee304b3683f5e995a572f043d9e5be0e019bffd133b09851d861"
+      },
+      {
+        "source": "lucan/frame_14.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          37.1446,
+          42.1992
+        ],
+        "landmarks": {
+          "eyes": [
+            549.55,
+            146.8
+          ],
+          "neck": [
+            558.35,
+            256.34
+          ],
+          "belt": [
+            553.0,
+            554.0
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.94417,
+          "neck": 0.80842,
+          "belt": 0.82336
+        },
+        "generation_id": "exec-79f54513-2d35-42df-89ee-5b71e3eed0f4",
+        "authored_weight_offset_y": -4.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 14,
+        "original_source": "run_v2/frames/frame_14.png",
+        "sha256": "aede861d64fd5a569b63623e110e26ce521cc93c2a3e65752b32fda5ab10bd41"
+      },
+      {
+        "source": "lucan/frame_15.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          35.1425,
+          41.8202
+        ],
+        "landmarks": {
+          "eyes": [
+            550.97,
+            145.52
+          ],
+          "neck": [
+            563.7,
+            257.68
+          ],
+          "belt": [
+            557.66,
+            559.56
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.94482,
+          "neck": 0.74024,
+          "belt": 0.77408
+        },
+        "generation_id": "exec-bf1953bb-b136-4f30-ab21-ab3003b90148",
+        "authored_weight_offset_y": -3.5625,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 15,
+        "original_source": "run_v2/frames/frame_15.png",
+        "sha256": "a1eee9c8fdcc0af1a8b3d061a098988cd50a5c89a7d1bf2f74e7c4bac3a5c68f"
+      },
+      {
+        "source": "lucan/frame_16.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          34.6461,
+          42.3146
+        ],
+        "landmarks": {
+          "eyes": [
+            552.55,
+            146.8
+          ],
+          "neck": [
+            565.7,
+            258.68
+          ],
+          "belt": [
+            556.32,
+            557.12
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.93727,
+          "neck": 0.80016,
+          "belt": 0.80466
+        },
+        "generation_id": "exec-a8054121-c0c1-4eb9-82c6-bb1496470183",
+        "authored_weight_offset_y": -3.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 16,
+        "original_source": "run_v2/frames/frame_16.png",
+        "sha256": "a3f2b47f63b85a627865aeda96bca4f59ae925b8971e0a11756986de7c88bd7a"
+      },
+      {
+        "source": "lucan/frame_17.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          36.2803,
+          45.3997
+        ],
+        "landmarks": {
+          "eyes": [
+            552.55,
+            142.8
+          ],
+          "neck": [
+            564.7,
+            252.68
+          ],
+          "belt": [
+            548.34,
+            554.44
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.9492,
+          "neck": 0.77706,
+          "belt": 0.76289
+        },
+        "generation_id": "exec-83721915-eb21-4602-8223-fb591cef26ad",
+        "authored_weight_offset_y": -2.4375,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 17,
+        "original_source": "run_v2/frames/frame_17.png",
+        "sha256": "883db64b31f97294e5a5f5be85a4d29640bf8cb0b829861264fb942d9999955c"
+      },
+      {
+        "source": "lucan/frame_18.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.63,
+        "origin": [
+          40.2342,
+          42.9165
+        ],
+        "landmarks": {
+          "eyes": [
+            543.55,
+            145.8
+          ],
+          "neck": [
+            557.35,
+            258.34
+          ],
+          "belt": [
+            547.32,
+            561.12
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.96734,
+          "neck": 0.78569,
+          "belt": 0.76549
+        },
+        "generation_id": "exec-5a729ace-3f4a-40be-b90c-ae9ff2e21495",
+        "authored_weight_offset_y": -2.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 18,
+        "original_source": "run_v2/frames/frame_18.png",
+        "sha256": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6"
+      },
+      {
+        "source": "lucan/frame_37.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          37.6096,
+          37.899
+        ],
+        "landmarks": {
+          "eyes": [
+            544.39,
+            153.24
+          ],
+          "neck": [
+            562.55,
+            269.22
+          ],
+          "belt": [
+            556.34,
+            556.44
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.95327,
+          "neck": 0.723,
+          "belt": 0.8308
+        },
+        "generation_id": "exec-59775f70-6101-4ccb-ba7f-2e94bd8607e4",
+        "authored_weight_offset_y": -4.1875,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 37,
+        "original_source": "run_v2/frames/frame_37.png",
+        "sha256": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041"
+      },
+      {
+        "source": "lucan/frame_38.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.63,
+        "origin": [
+          31.9887,
+          40.541
+        ],
+        "landmarks": {
+          "eyes": [
+            552.97,
+            150.52
+          ],
+          "neck": [
+            573.2,
+            264.88
+          ],
+          "belt": [
+            564.68,
+            550.88
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.94455,
+          "neck": 0.66027,
+          "belt": 0.8296
+        },
+        "generation_id": "exec-7937c1eb-ee41-4a5b-886c-2543ab8da7d8",
+        "authored_weight_offset_y": -4.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 38,
+        "original_source": "run_v2/frames/frame_38.png",
+        "sha256": "234c2f46a82755f4e04f25a6a4b5e9ecc84c4bed6a0bd8be8629c738e8ef6c0d"
+      },
+      {
+        "source": "lucan/frame_39.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.63,
+        "origin": [
+          31.9824,
+          40.4367
+        ],
+        "landmarks": {
+          "eyes": [
+            552.39,
+            151.24
+          ],
+          "neck": [
+            573.2,
+            265.88
+          ],
+          "belt": [
+            565.68,
+            551.88
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.93226,
+          "neck": 0.65649,
+          "belt": 0.80627
+        },
+        "generation_id": "exec-840956f6-8885-49e6-a522-c8f889eed47b",
+        "authored_weight_offset_y": -3.5625,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 39,
+        "original_source": "run_v2/frames/frame_39.png",
+        "sha256": "777af5732cfb4f60bbf50546bb43a98fa6d91cefe1442749f62b9b17685e3056"
+      },
+      {
+        "source": "lucan/frame_40.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.63,
+        "origin": [
+          31.4242,
+          40.2382
+        ],
+        "landmarks": {
+          "eyes": [
+            553.39,
+            150.24
+          ],
+          "neck": [
+            575.1,
+            266.44
+          ],
+          "belt": [
+            565.7,
+            557.2
+          ],
+          "right_sole": null,
+          "left_sole": null
+        },
+        "landmark_match_scores": {
+          "eyes": 0.93518,
+          "neck": 0.62923,
+          "belt": 0.82544
+        },
+        "generation_id": "exec-0aa58514-21aa-4a7b-abb8-c7dedf0acf91",
+        "authored_weight_offset_y": -3.0,
+        "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade.",
+        "index": 40,
+        "original_source": "run_v2/frames/frame_40.png",
+        "sha256": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a"
+      }
+    ]
+  },
+  "iselin": {
+    "profile_sha256": "fc65735f10c5902e920160c08985e11d12acafe08e11db5fb1635490f1865717",
+    "frames": [
+      {
+        "source": "iselin/frame_00.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6671514633967349,
+        "origin": [
+          130.43673069096883,
+          22.935333008652975
+        ],
+        "landmarks": {
+          "neck": [
+            571.929,
+            265.404
+          ],
+          "belt": [
+            570.87,
+            539.961
+          ],
+          "face": [
+            576.457,
+            175.691
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.92,
+          "belt": 0.7831,
+          "face": 0.8934
+        },
+        "authored_weight_offset_y": 0.0,
+        "generation_id": "exec-866f77bf-9049-48b2-8e27-c4a4488cf874",
+        "phase": "right_contact",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 0,
+        "original_source": "run_v2/frame_00.png",
+        "sha256": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50"
+      },
+      {
+        "source": "iselin/frame_01.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6799853123172539,
+        "origin": [
+          122.78388706803935,
+          19.468041846296103
+        ],
+        "landmarks": {
+          "neck": [
+            572.389,
+            267.016
+          ],
+          "belt": [
+            570.87,
+            539.961
+          ],
+          "face": [
+            577.354,
+            176.483
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8938,
+          "belt": 0.7136,
+          "face": 0.8686
+        },
+        "authored_weight_offset_y": 1.035,
+        "generation_id": "exec-254bba01-c14c-4f93-9efe-d99612a9ec8e",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 1,
+        "original_source": "run_v2/repairs/frame_01.png",
+        "sha256": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738"
+      },
+      {
+        "source": "iselin/frame_14.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          136.72973238431365,
+          20.62390403289703
+        ],
+        "landmarks": {
+          "neck": [
+            573.109,
+            270.887
+          ],
+          "belt": [
+            561.775,
+            546.658
+          ],
+          "face": [
+            569.56,
+            180.923
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8165,
+          "belt": 0.779,
+          "face": 0.9026
+        },
+        "authored_weight_offset_y": -2.0,
+        "generation_id": "exec-a964cf60-31f6-489f-9103-013bcc76ca21",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 14,
+        "original_source": "run_v2/repairs/frame_14.png",
+        "sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c"
+      },
+      {
+        "source": "iselin/frame_15.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6428925019447499,
+        "origin": [
+          135.07984081981647,
+          18.204871093624433
+        ],
+        "landmarks": {
+          "neck": [
+            586.288,
+            278.378
+          ],
+          "belt": [
+            579.775,
+            558.696
+          ],
+          "face": [
+            582.663,
+            186.155
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7906,
+          "belt": 0.7417,
+          "face": 0.859
+        },
+        "authored_weight_offset_y": -2.828,
+        "generation_id": "exec-07448c39-a5be-4ae5-a6f6-5ad6f04e91cd",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 15,
+        "original_source": "run_v2/repairs/frame_15.png",
+        "sha256": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d"
+      },
+      {
+        "source": "iselin/frame_16.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          127.32749690608244,
+          13.292919571238684
+        ],
+        "landmarks": {
+          "neck": [
+            587.468,
+            279.847
+          ],
+          "belt": [
+            579.775,
+            558.696
+          ],
+          "face": [
+            583.56,
+            188.955
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8003,
+          "belt": 0.7228,
+          "face": 0.8494
+        },
+        "authored_weight_offset_y": -3.464,
+        "generation_id": "exec-cacd9ee4-4419-4068-93ef-ec48f71b09f5",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 16,
+        "original_source": "run_v2/repairs/frame_16.png",
+        "sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055"
+      },
+      {
+        "source": "iselin/frame_23.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6799853123172539,
+        "origin": [
+          117.72547632971134,
+          3.945212427411576
+        ],
+        "landmarks": {
+          "neck": [
+            579.828,
+            286.8
+          ],
+          "belt": [
+            572.87,
+            545.98
+          ],
+          "face": [
+            577.354,
+            198.57
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7945,
+          "belt": 0.7839,
+          "face": 0.8947
+        },
+        "authored_weight_offset_y": -1.035,
+        "generation_id": "exec-d556d78c-5028-4d73-a24a-588d221d9d81",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 23,
+        "original_source": "run_v2/repairs/frame_23.png",
+        "sha256": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519"
+      },
+      {
+        "source": "iselin/frame_24.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.7071835707112852,
+        "origin": [
+          101.70057847616084,
+          -0.6414154986351264
+        ],
+        "landmarks": {
+          "neck": [
+            580.188,
+            283.719
+          ],
+          "belt": [
+            572.155,
+            547.956
+          ],
+          "face": [
+            579.148,
+            196.138
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8162,
+          "belt": 0.8374,
+          "face": 0.9533
+        },
+        "authored_weight_offset_y": -0.0,
+        "generation_id": "exec-cbec89fd-f8f9-4b76-b73e-2d29d5acc7e3",
+        "phase": "left_contact",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 24,
+        "original_source": "run_v2/repairs/frame_24.png",
+        "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967"
+      },
+      {
+        "source": "iselin/frame_41.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          131.49135340069012,
+          12.18901239531425
+        ],
+        "landmarks": {
+          "neck": [
+            581.109,
+            280.922
+          ],
+          "belt": [
+            569.775,
+            564.715
+          ],
+          "face": [
+            577.56,
+            186.947
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8112,
+          "belt": 0.7912,
+          "face": 0.8978
+        },
+        "authored_weight_offset_y": -3.864,
+        "generation_id": "exec-88b5863c-03d2-4df4-874c-305c36d8a841",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 41,
+        "original_source": "run_v2/repairs/frame_40.png",
+        "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036"
+      },
+      {
+        "source": "iselin/frame_42.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6428925019447499,
+        "origin": [
+          138.87226368878856,
+          15.306061833400804
+        ],
+        "landmarks": {
+          "neck": [
+            580.389,
+            281.064
+          ],
+          "belt": [
+            569.775,
+            564.715
+          ],
+          "face": [
+            578.663,
+            186.155
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7953,
+          "belt": 0.7855,
+          "face": 0.8899
+        },
+        "authored_weight_offset_y": -4.0,
+        "generation_id": "exec-5ebc587c-ca22-4957-87b6-f19f8c6caf15",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 42,
+        "original_source": "run_v2/repairs/frame_42.png",
+        "sha256": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1"
+      },
+      {
+        "source": "iselin/frame_45.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          130.18175865478423,
+          11.910834067797737
+        ],
+        "landmarks": {
+          "neck": [
+            583.109,
+            282.929
+          ],
+          "belt": [
+            571.775,
+            554.683
+          ],
+          "face": [
+            581.56,
+            188.955
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7921,
+          "belt": 0.7347,
+          "face": 0.8733
+        },
+        "authored_weight_offset_y": -2.828,
+        "generation_id": "exec-a4ea824b-e968-453f-a336-0113013eb2c1",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 45,
+        "original_source": "run_v2/repairs/frame_46.png",
+        "sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2"
+      },
+      {
+        "source": "iselin/frame_46.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          130.65321276331036,
+          15.274209495871503
+        ],
+        "landmarks": {
+          "neck": [
+            582.389,
+            279.057
+          ],
+          "belt": [
+            573.775,
+            548.665
+          ],
+          "face": [
+            581.56,
+            184.939
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8339,
+          "belt": 0.7746,
+          "face": 0.884
+        },
+        "authored_weight_offset_y": -2.0,
+        "generation_id": "exec-7b88e6de-9f4c-4d95-9676-ee68cd70f0bf",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 46,
+        "original_source": "run_v2/repairs/frame_47.png",
+        "sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc"
+      },
+      {
+        "source": "iselin/frame_47.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          131.19014660913183,
+          15.276657357630683
+        ],
+        "landmarks": {
+          "neck": [
+            581.569,
+            280.527
+          ],
+          "belt": [
+            570.87,
+            554.005
+          ],
+          "face": [
+            579.56,
+            186.947
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.827,
+          "belt": 0.7146,
+          "face": 0.8825
+        },
+        "authored_weight_offset_y": -1.035,
+        "generation_id": "exec-ac53d6f3-8b2f-4ed2-b70e-73dce4169102",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 47,
+        "original_source": "run_v2/repairs/frame_45.png",
+        "sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec"
+      }
+    ]
+  },
+  "crown_soldier": {
+    "profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+    "frames": [
+      {
+        "source": "crown_soldier/frame_10.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.6,
+        "origin": [
+          60.60000000000002,
+          66.55000000000001
+        ],
+        "landmarks": {
+          "eyes": [
+            539.0,
+            197.0
+          ],
+          "neck": [
+            544.0,
+            313.0
+          ],
+          "belt": [
+            525.0,
+            596.0
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.9146291595916004,
+          "neck": 0.8024463447350706,
+          "belt": 0.7643313884435612
+        },
+        "authored_weight_offset_y": -3.2499999999999987,
+        "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+        "generation_id": "exec-d4e968d3-2f6d-453a-a961-1bdf162def31",
+        "index": 10,
+        "original_source": "run_v2/frame_10.png",
+        "sha256": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed"
+      },
+      {
+        "source": "crown_soldier/frame_11.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.6,
+        "origin": [
+          43.80000000000001,
+          51.936860279185595
+        ],
+        "landmarks": {
+          "eyes": [
+            567.0,
+            218.0
+          ],
+          "neck": [
+            575.0,
+            328.0
+          ],
+          "belt": [
+            549.0,
+            606.0
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.9327285698199755,
+          "neck": 0.7783288464311268,
+          "belt": 0.7589638426450052
+        },
+        "authored_weight_offset_y": -5.263139720814413,
+        "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+        "generation_id": "exec-14c456ee-788b-467f-8c50-c56c3e8f4382",
+        "index": 11,
+        "original_source": "run_v2/frame_11.png",
+        "sha256": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670"
+      },
+      {
+        "source": "crown_soldier/frame_12.png",
+        "cell": [
+          0,
+          0,
+          1055,
+          1491
+        ],
+        "scale": 0.6,
+        "origin": [
+          61.19999999999999,
+          65.60000000000001
+        ],
+        "landmarks": {
+          "eyes": [
+            538.0,
+            194.0
+          ],
+          "neck": [
+            548.0,
+            308.0
+          ],
+          "belt": [
+            537.0,
+            602.0
+          ]
+        },
+        "landmark_match_scores": {
+          "eyes": 0.9052539786872668,
+          "neck": 0.7695329187617286,
+          "belt": 0.6650065580473585
+        },
+        "authored_weight_offset_y": -6.0,
+        "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+        "generation_id": "exec-538f3d0d-32e6-4133-a416-69fb22cf2a3b",
+        "index": 12,
+        "original_source": "run_v2/frame_12.png",
+        "sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2"
+      }
+    ]
+  }
+}

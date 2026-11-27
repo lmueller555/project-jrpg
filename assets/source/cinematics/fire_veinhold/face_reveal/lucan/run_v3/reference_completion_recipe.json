@@ -1,0 +1,71 @@
+[
+  {
+    "frame": 9,
+    "upper_frame": 9,
+    "upper_source": "run_v2/frames/frame_09.png",
+    "upper_crop": [
+      0,
+      0,
+      1055,
+      700
+    ],
+    "source_canvas": [
+      1055,
+      1491
+    ],
+    "lower_review_source": "/tmp/lucan_run_v3_candidates/frame_09.png",
+    "whole_review_to_source_scale": 1.5873015873015872,
+    "whole_review_to_source_origin": [
+      -57.26380952380952,
+      -66.2815873015873
+    ],
+    "lower_reference_crop_y": 650,
+    "purpose": "Reference images only; final master must be a complete ImageGen redraw. No final sprite assembly."
+  },
+  {
+    "frame": 12,
+    "upper_frame": 12,
+    "upper_source": "run_v2/frames/frame_12.png",
+    "upper_crop": [
+      0,
+      0,
+      1055,
+      700
+    ],
+    "source_canvas": [
+      1055,
+      1491
+    ],
+    "lower_review_source": "/tmp/lucan_run_v3_candidates/frame_12.png",
+    "whole_review_to_source_scale": 1.5873015873015872,
+    "whole_review_to_source_origin": [
+      -75.29571428571428,
+      -64.73873015873016
+    ],
+    "lower_reference_crop_y": 650,
+    "purpose": "Reference images only; final master must be a complete ImageGen redraw. No final sprite assembly."
+  },
+  {
+    "frame": 35,
+    "upper_frame": 15,
+    "upper_source": "run_v2/frames/frame_15.png",
+    "upper_crop": [
+      0,
+      0,
+      1086,
+      700
+    ],
+    "source_canvas": [
+      1086,
+      1448
+    ],
+    "lower_review_source": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_35.png",
+    "whole_review_to_source_scale": 1.5873015873015872,
+    "whole_review_to_source_origin": [
+      -55.78174603174603,
+      -66.38126984126984
+    ],
+    "lower_reference_crop_y": 650,
+    "purpose": "Reference images only; final master must be a complete ImageGen redraw. No final sprite assembly."
+  }
+]

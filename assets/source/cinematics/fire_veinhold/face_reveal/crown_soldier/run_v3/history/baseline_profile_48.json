@@ -1,0 +1,1929 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "cycle_ms": 800,
+  "alpha_floor": 16,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 24,
+      "foot": "far"
+    }
+  ],
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "approval_state": "internally_reviewed_for_ingame_review",
+  "construction": "Forty-eight complete individually ImageGen-authored front-facing running drawings; key/body/weapon and intermediate motion reviewed separately. No rigged, warped, blended or duplicate-pose filling.",
+  "registration": "Fixed0.60 whole-source density, calibrated against the previous bank eyes-to-belt torso scale, measured eyes/neck/belt landmarks and modest authored recoil, never occupied bounds or foot fitting. No pasted head/limbs.",
+  "source_sha256": {
+    "run_v2/arm_forward_authoring_guide.png": "5825d9e862f4a85134509b4c4ac0126e0993185f2c8abde64e07771dd9e818e8",
+    "run_v2/frame_00.png": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+    "run_v2/frame_00_generation.json": "e51f51e6a12ae8513098192d9d3dcd2c17e0885d2628497335c944654b619ad8",
+    "run_v2/frame_00_prompt.txt": "f0294696cfcb5bb99bda1903f4106fa8d1a7f73c86fc8fbf9b666add196d3697",
+    "run_v2/frame_01.png": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
+    "run_v2/frame_01_generation.json": "e233f1a204157f33af66048a5491bd984f0594cb8616e8b6aa33de19d759f1cf",
+    "run_v2/frame_01_prompt.txt": "be3f4ace40af92bd7c2c5ecec8dc01f8f001580936a2c397fcabfe0aa987b6e4",
+    "run_v2/frame_02.png": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
+    "run_v2/frame_02_generation.json": "935bb02c7a26c0e5b155080cffb0f434671401c4df56e62da7dc8364ac859206",
+    "run_v2/frame_02_prompt.txt": "171783c9ce39abd68142ef61fc9ebffd98ac059de671142d35f8a75d0f0d868b",
+    "run_v2/frame_03.png": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
+    "run_v2/frame_03_generation.json": "4a4c1198bf466344edc105dedfe3ad5e76549586018ee0c48504c8d2c38bdaaa",
+    "run_v2/frame_03_prompt.txt": "1ad23abbbb37360f571498cd158626330fbba03b23293bf28b93d18309cbba64",
+    "run_v2/frame_04.png": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
+    "run_v2/frame_04_generation.json": "e30645258ed59efdd88431a22d8f460999a17dcc66e6fd34591bf404c604af69",
+    "run_v2/frame_04_prompt.txt": "facfea3cfc51c30668360ca32ad13575801bc63c79d71c051ee5dc50f0bbe2ac",
+    "run_v2/frame_05.png": "8ba3d3864b4dfeb683a06dd72a289bb853484ef18a46b4fecf6429b6bc6c168b",
+    "run_v2/frame_05_generation.json": "43869d6ef5fb84888e252353f4f56e2c8375a0fb90b6b2a20ec3caceca4eb7ba",
+    "run_v2/frame_05_prompt.txt": "3690f115611a9c580de00aabfb0ba0c6639d89781a0a50536ca043c1082e0e39",
+    "run_v2/frame_06.png": "c0a634c8b14150392cd682dbfb74212aa2297756a4ce204241e254620398b7f0",
+    "run_v2/frame_06_generation.json": "27cfc10154340fa683c9ed22ebc798b7c18d1d15a860213c5a67784565e31c8a",
+    "run_v2/frame_06_prompt.txt": "c7145661cc6c4af44bbd35b45ed19f349896da98321bcb8e51af3d8871b2808d",
+    "run_v2/frame_07.png": "a5a3339f872fae623df3b0b34fe24b3336f86f02d6d9cb7c33234aefef54fde7",
+    "run_v2/frame_07_generation.json": "6cafd0fcfd0aafec28a0310e4c0cffc9609c518b3292c24720e95c7e52609382",
+    "run_v2/frame_07_prompt.txt": "50f775f252195be0eff13b7d3c751f5d7e6eadf78601806a2c1115984f54ba76",
+    "run_v2/frame_08.png": "557cfaf22fffdd9f8d2a7d0a49007dbdd4c6a1b07603ba4a86f2786583e0501f",
+    "run_v2/frame_08_generation.json": "271122a24392067efea9012bdffd020d5abb6ef8049266de8c805a1a92f5d158",
+    "run_v2/frame_08_prompt.txt": "a3b54d563628ea0cff410e19d2bcaa1d5e5b170a9a37b8c6d16d9c5ffe9b3f57",
+    "run_v2/frame_09.png": "6fad637c03b83eb7d9387352f84718b12e1da3014c9c3bbb5e50bdca8eac1e50",
+    "run_v2/frame_09_generation.json": "c4ec42cc64abc80e36f79b90e97370e41ca3bff4fac2ef890941d30b49c73f2b",
+    "run_v2/frame_09_prompt.txt": "e4308f5e59ae9ee15cff0b862dac98b851e7eb5c117180a0b0cc2c7a8f7ed79f",
+    "run_v2/frame_10.png": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed",
+    "run_v2/frame_10_generation.json": "e459418f89437cb5cd992a3585ce550a0a5776c5e4cc28dd4ef28741eee40751",
+    "run_v2/frame_10_prompt.txt": "780d5e28bed488e2d12b9b9b995bfb8cd5f31a6ce44d9c6b11237fda00028992",
+    "run_v2/frame_11.png": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670",
+    "run_v2/frame_11_generation.json": "2c8b4da9f27baaacd41f052688fdadfe9bd93339c8e28145956e5ff808a26611",
+    "run_v2/frame_11_prompt.txt": "8dde5fa0ee21f8a2f3a43048927052c811cc9216309459738b01aed7622d341a",
+    "run_v2/frame_12.png": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+    "run_v2/frame_12_generation.json": "aeda45408f720ac739248ec67677565d70b9b066657ec8a0cc57c762ee3fe4b2",
+    "run_v2/frame_12_prompt.txt": "c2ca1b31861832f2ceedc1df2ae341968871182b7cfd8d2d908c98276a957b40",
+    "run_v2/frame_13.png": "6c03f5450e4bd029859550e7df2e4ac35fd2ad1bf86468607b2427f4d03479e3",
+    "run_v2/frame_13_generation.json": "f6d56dce7f646ef2ed670353da54a931a341d20ef20c171ce5d34bdee9b51dee",
+    "run_v2/frame_13_prompt.txt": "0686a858849688f4b533dc48639e97e081f04c4ef479f39bc36a73a52bf70f45",
+    "run_v2/frame_13_repair_generation.json": "b7f6d03a2fa57132371c8e5bd7ed2811f3235c44f4f5c34267edc9c94b5916ab",
+    "run_v2/frame_14.png": "faacf486ca7584e0b7ec2496fff1837d6c8160bf826e4be989a3a25e1c474175",
+    "run_v2/frame_14_generation.json": "6e072d5707800ce4e85803f5c3d46ef06d62d654c503da5b772ed026ade7891e",
+    "run_v2/frame_14_prompt.txt": "4e318022b66d138c10b089f0f3a894d01d380fad38686d72e31cd5d034b17a20",
+    "run_v2/frame_14_repair_generation.json": "218448e3a913efb27ee16858610062869c75206e90a32044ece454f81a0d2d55",
+    "run_v2/frame_15.png": "a9dedda00da5c2de0366abe1f8e867e5f9b013953f10bc8dea44df292ae2294d",
+    "run_v2/frame_15_generation.json": "0e1d7ff47018d3907e4904dcea0e0b4f1c09141665535d432f0cdd0e126cf7ca",
+    "run_v2/frame_15_prompt.txt": "74620fd78d220e09755a1d9ab724f3d2d6d47a09e931c9d301afad1e5fedb8ab",
+    "run_v2/frame_16.png": "afc0b1f22e84d0b50d8b7bd6e75b7bc443e1028ce59279a714da851a41b51d49",
+    "run_v2/frame_16_generation.json": "f963e0fd78d32d533da642e53484ba293ee96845940317dab5901fde2c528e8f",
+    "run_v2/frame_16_prompt.txt": "042b354f977ba4a56bd12fbea2cef2434b3327dc7ecda80a08b4a07e9570f13f",
+    "run_v2/frame_17.png": "d65d488ae5d1d5f82e8fcd7b414ae18c6de905386ec9adfc4796dfa994478bc6",
+    "run_v2/frame_17_generation.json": "9c3a42b8f97d3bbedeeec27205e2334c36ec466993526497fe5911cf930d6caa",
+    "run_v2/frame_17_prompt.txt": "d125e237f88e24e47d943ec370fae6eb4c52e2ea0268f9799cdb9e8e5e856d9b",
+    "run_v2/frame_18.png": "c192121a2b982e72d00b45cfe32d8bd7119ef548e332c96fbfc8c3fb8b3f2de0",
+    "run_v2/frame_18_generation.json": "2764d8a27a0b3208be2bb970f51c5b08bd2263c1ddc238de2af12c323f052cdc",
+    "run_v2/frame_18_prompt.txt": "88692397b6829d3e84269f4cc49d10bb5442ef59a7f24e1d7587312a1d6fff27",
+    "run_v2/frame_19.png": "33dffe107dcd8220c83fc38ca4cd52cfd322ac83e35ea06c007ed1620a6c4fce",
+    "run_v2/frame_19_generation.json": "d1ee798c4b43fe7d23ac87d158fbea6203359917ca34831950e02157d35ef95b",
+    "run_v2/frame_19_prompt.txt": "c760044299653e6c50fe5b2912893a8354a9ecb79b52f686d4179bfc6ec8139e",
+    "run_v2/frame_20.png": "4524dc80403436e4d00d974e29d92b4712502746e36754ad270485cec25947a8",
+    "run_v2/frame_20_generation.json": "443928bbeab70302ec44a22d35c78f587cf2126ac307f9b2d876038afac465c7",
+    "run_v2/frame_20_prompt.txt": "1cba58d22a621d3a2fbb879284031f064ae7921a5f1283b05e184c5c4c3a02a0",
+    "run_v2/frame_21.png": "08b1bb1e7acfbd83521623cbc0accf6f966aa4fd7a399d9966e6fb6b2c9b045c",
+    "run_v2/frame_21_generation.json": "27f3cbe45ef8209def77dfed86770a891f186f43a762c531a5b087b0ab18de20",
+    "run_v2/frame_21_prompt.txt": "b3292f71b7c215c169697cfc3c7cacc4c63b1f77782f1bddfd358901f699eeb0",
+    "run_v2/frame_22.png": "c78ef3d65556b56d85628dfe69a9f1659a3ceb2b639acdea434ee6f0bef81046",
+    "run_v2/frame_22_generation.json": "e85698495168ac8b8acbcb27a4e7d62c85652137b9e6e3f453fd354c03dff848",
+    "run_v2/frame_22_prompt.txt": "a03ff29990ce1489e131d57e0d4246b53d5dea81c2f202147bef41be03ff3c9d",
+    "run_v2/frame_23.png": "3f0a9f00ca3fe21e62cc5088537f0c1dd1bad8aa84667b214e15bfe8af38661a",
+    "run_v2/frame_23_generation.json": "91829e4b5ab7ec09450ea205016f54f64f0a4f817e34ccb7c8e1b58c7055ad5b",
+    "run_v2/frame_23_prompt.txt": "ed0b43d2f5af4a2fabb61ab00e7f0c5b056f802147219d7b740e6ee9673e74e8",
+    "run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+    "run_v2/frame_24_generation.json": "75416e685432a8d740b4d2b7d30d3ed105d2aa0e790e9cfae9b8c1e7dcddd4f8",
+    "run_v2/frame_24_prompt.txt": "73e8671d949d44379246c6f7af38fcce753ff7558f7114dfdbec2054f2c17665",
+    "run_v2/frame_25.png": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
+    "run_v2/frame_25_29_wrist_guide_recipe.json": "50c63151c70641f7eac8bf02ac045ef8bcb39c06d9e67999f4cdeb091011ac6b",
+    "run_v2/frame_25_generation.json": "37c4408e5377daf35f2ec60caee9d2e4786af3c6e022422ae42953d6b5afbf20",
+    "run_v2/frame_25_prompt.txt": "c3bc301994a0cc82a6126411e9b11fe3f7beb79ed7f300e002e48a1c2a9ec07c",
+    "run_v2/frame_25_wrist_authoring_guide.png": "96aa6ab132c4570f5555fad7444cd6000225296dc628cc7429495f6a51d1aed9",
+    "run_v2/frame_26.png": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
+    "run_v2/frame_26_generation.json": "206108cc69386f0cf1f4b2e0199d45b1ec5f7b6831f2518b34812a3a188a8f7e",
+    "run_v2/frame_26_prompt.txt": "e4db1869a9c8182ed8bb31c1f0cccdff32a30b75a13104d2036397fbaeaec8be",
+    "run_v2/frame_27.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+    "run_v2/frame_27_generation.json": "8df718bc0f3ab567606377f655f1a3bd07e835e4f6500f2a9da410af236a7ab9",
+    "run_v2/frame_27_prompt.txt": "157b621c41decb7281b5084bee2e11eac3b5b89114c901f12ccaaff98ebb0b02",
+    "run_v2/frame_28.png": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
+    "run_v2/frame_28_generation.json": "cb9df94f8ff8e50eb4c67c329085f593ddcab0be24616cd65c5e08c5dce34b70",
+    "run_v2/frame_28_prompt.txt": "3df7769ed42e6d53d84d60b96e47c125c5724a5cf4181a6b267b5902372a1878",
+    "run_v2/frame_28_wrist_authoring_guide.png": "ecf991be1411ee914b465f739c30efc364dd97e812f70780cf7fb1f8137f243b",
+    "run_v2/frame_29.png": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
+    "run_v2/frame_29_generation.json": "1a2162d7e4ff782d228681ebd85dfa0ccad3dbc3fa3b076de30b0afe3144f815",
+    "run_v2/frame_29_prompt.txt": "4d12fb82139e25e892ebfb81ef08e691cbb6ee769ffbcc81694007b95181ef6e",
+    "run_v2/frame_29_wrist_authoring_guide.png": "3c52c0ff59a6b7b3e8a9edfb3357ff337d362b43e7444ec179fba3ee16bdd266",
+    "run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
+    "run_v2/frame_30_generation.json": "0597ce043fb5e2d8b75aa11e2ec5930f870b07de04819b9fff649147557995a9",
+    "run_v2/frame_30_prompt.txt": "5c49017847f2fd1c659d9fde81b5e49bb6631d162094c1cc254b6e7f2dfc3e49",
+    "run_v2/frame_31.png": "09e9c5f1c1d76eb21993a7d415eb6ffc60bd8592f3819324784b1bdb7dd1bc2e",
+    "run_v2/frame_31_generation.json": "0e615a0feba5bf81fd6e3f63e83bc53cb4cd0b5ea9d9267583daf09cd52dc04e",
+    "run_v2/frame_31_prompt.txt": "febe3413e59a827e74fb1468f92615f7ace4355700aeea16abcc9334a6b59419",
+    "run_v2/frame_32.png": "7682b5f72a278ab294d9702da0044de94422213d0c301e3f141ccfc3fcbf3890",
+    "run_v2/frame_32_generation.json": "a94251bf8f62903129b9bdfe5df90fdd01bdf5ba3b0d0bf9cfbd00070a1eabbd",
+    "run_v2/frame_32_prompt.txt": "3287e7825898b06286c416147d0197657d0eb945edd5943b288d772e85080c60",
+    "run_v2/frame_33.png": "a2e4bccd3a3d3b6d260820772a8d4ffa5842d14d105a14869d69beb158ef7874",
+    "run_v2/frame_33_generation.json": "2ee78cb06284c92e7581a8ab9ce1c6d44042a54ffcfc4e9c60d3d4a6eb4f038a",
+    "run_v2/frame_33_prompt.txt": "f2b820f70caf1168b32d1ecdd8044a7c156234e6758f566bea8997a1ba3e0750",
+    "run_v2/frame_34.png": "d844e04c2064ab4aaaa5d5faa235c67bf2884ad271a4b4b4a7d6a508ee2fdb26",
+    "run_v2/frame_34_generation.json": "f1ef9699668ab41406b57b12ee7290935785bdb9e2b707013b82dff1dd57f4a7",
+    "run_v2/frame_34_prompt.txt": "b736b5999b8e590a86a19f7550ecbb3a1289b32b7622f46364baff188f1c950f",
+    "run_v2/frame_35.png": "f33d6dec0c9af2ca80035e59530a9773476dd334dac82df219f54c8fc49b1b89",
+    "run_v2/frame_35_generation.json": "8c22c29d96cf27186a889ba588826e8ea4949dbd67cfad876bec693996d939ea",
+    "run_v2/frame_35_prompt.txt": "7f46da801e50d0778ab3c92f4227f80fbfe7069c3948a7dfa1762be0f3ca6383",
+    "run_v2/frame_36.png": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+    "run_v2/frame_36_generation.json": "d10805bb456281b9ce3a2ad918500bb04b5046ec0ee76dff273d48f58a48c8b3",
+    "run_v2/frame_36_prompt.txt": "5fa726c74c5bca7dba6deacd07c47291b97216ac667c6df447196cb26c21e8ef",
+    "run_v2/frame_37.png": "59d760dd4d1e7f026bbb0d4f0e79c92ed8dcbb91bd542ab0a7e01914fed952b8",
+    "run_v2/frame_37_generation.json": "c0eec1d4acd3708ab120a73932885ec80d1d4db3000dfa6a6d5d0ef4ad9a722d",
+    "run_v2/frame_37_prompt.txt": "3aee07f2892ea3e4b7cf4c2f1a02448296a5dce7325976dcba9220f31f68d4a4",
+    "run_v2/frame_38.png": "218f0f1b58b20ff2bd54bd66b7d0a936c38e45af0a4d8cd870408b72ad09ce9b",
+    "run_v2/frame_38_generation.json": "1a07b2b7163a6906403031bb1f0618b733980bae105ddde99fda577acaaf81f4",
+    "run_v2/frame_38_prompt.txt": "f4c3bd28f532837af50c415834e77bcb3a1b71c4cd9df4da833f9f20f5b2ce7e",
+    "run_v2/frame_39.png": "00e05fcb9b52b291dded7429aee1150b0bd7d8044a7eb83a27c75036edd9f99d",
+    "run_v2/frame_39_generation.json": "e3aeacb9ae803bf33fdfdf6323720d6412fb71f105198cc32d1c29ced18e3b81",
+    "run_v2/frame_39_prompt.txt": "759f781d8197e52bb94b2937de0229d28783a678119acc62d591ef8f2c858943",
+    "run_v2/frame_40.png": "1438f499e5f54260e4a10580a0ae46d378c110b1f96e416e4ad75d8f8bc82a06",
+    "run_v2/frame_40_generation.json": "b06ddeda89a7c267728fa5acd19ff7e113f830037b02f13a0509cbb62cfc7673",
+    "run_v2/frame_40_prompt.txt": "592d4334bfee4b7ddc23efdc66aa83f88fc71c58f80202316529daecc0f6e819",
+    "run_v2/frame_41.png": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
+    "run_v2/frame_41_generation.json": "f53f95aac70bb494206f27173eae5a388b5f32c4e5a55e9c06154abc67f20e89",
+    "run_v2/frame_41_prompt.txt": "e9f41bd538875476e801fd136d541205863dc1fe12ebf450d5e6596137c190f8",
+    "run_v2/frame_42.png": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
+    "run_v2/frame_42_generation.json": "199e83f78161f10ccada05b27effd9206233b66cd6312437e5d7530c18375e73",
+    "run_v2/frame_42_prompt.txt": "a130d81b7a8938b7e17fda42af4de8901916b8a0ab0c4ef38ef3622e4130d880",
+    "run_v2/frame_43.png": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
+    "run_v2/frame_43_generation.json": "48bbb20c66ea6bfa918bbb010d0073bfb6fc46749f6320e30097bc159a645f4f",
+    "run_v2/frame_43_prompt.txt": "edf120a2b60f8ace2cc90947c6a0b37f219f4ef01df820344cfa2398feabaf02",
+    "run_v2/frame_44.png": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
+    "run_v2/frame_44_generation.json": "faab01860757f8c66998958933286dcc05d2746310e764a9c87f60b3a2fcf021",
+    "run_v2/frame_44_prompt.txt": "9f545b4cbe05ae1c13952c4b1789177092f7ce0f1358e3f237422fdabb2b1b0e",
+    "run_v2/frame_45.png": "c483a37b0e103feabbef96281397c430c43baead275487b0209e2200016db748",
+    "run_v2/frame_45_generation.json": "0522861e2f2319fc4210ff5b3545ddfb841077cab7872d8623e8a35f6c94aa5b",
+    "run_v2/frame_45_prompt.txt": "b9072c43c93808fdaf2fc1332e515b95c43687164667422810ac80efe6eb1fe2",
+    "run_v2/frame_46.png": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
+    "run_v2/frame_46_generation.json": "15473d8ebc1e1507955c5be85875d53c26cd18a1b47746e478ee20ef86c312d2",
+    "run_v2/frame_46_prompt.txt": "5a44f7e23826346ffb765476139eedb82b0fb661d505ada32a1b9cc5f5709341",
+    "run_v2/frame_47.png": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
+    "run_v2/frame_47_generation.json": "d8afd20a7ec198f40673914ed0399df4dfeccc069831464eea3a4cc812b3a897",
+    "run_v2/frame_47_prompt.txt": "0b3f447767a8758f5af6c935d18f4e9de62902cad14ee57f640b9ae0c3d17cd9",
+    "run_v2/key_00.png": "7fa8b0ef3c033385fc8755065d29c376eda694034fb240ce0593cfac0cc2213f",
+    "run_v2/key_06.png": "994e0ea3b5d5c99745563a85529dc89d785e33b353b8f4bd55349ecb924e7efd",
+    "run_v2/key_12.png": "3c64aec593fba76940cb60bf89a537edd9d141218e3deadb6cd34cbab3687f14",
+    "run_v2/key_18.png": "0f2da024f1e73187e7c5208dd1b36af041f9dbfdbb47839330a64f28d7c752d8",
+    "run_v2/key_24.png": "16c2083c954ae7e732657d2a8c2372828b57496a9c7deaa418d2780d6f50fb8f",
+    "run_v2/key_30.png": "e2f629503f14bf3242a638dc8812c07710be782c639594dc63b9193d1f02bbce",
+    "run_v2/key_36.png": "5ea5c66fb6f4983cc1aea05f8da5f3199cdac460c57ce88c527f605befdc6f3a",
+    "run_v2/key_42.png": "6d7711816811d0040cbb13d79ef6c7585604a30feb4a50a8523f4cb0ec88d04d",
+    "run_v2/keys.png": "47825aa873afd290eb84c176148f9502713fcb1d1eab3e02f6533862635cf148",
+    "run_v2/keys_prompt.txt": "e8cd9db587e8b5aba49067d6ab6250c044e1e231f3673f93588024d681573939",
+    "run_v2/leg_13_authoring_guide.png": "bc61654e6c4ab6401b546ed68ebd7f4dd0ec2138ff63092b9faf60a02c65a725",
+    "run_v2/leg_14_authoring_guide.png": "95b490b39b0df84a0aacb8483d2e4e016f06ff4210eea0f312a92fa33a682900",
+    "run_v2/leg_38_authoring_guide.png": "abd3440d638243f3e53454f5d905502c1d1aa40ea2483bc6108dae225cca7127",
+    "run_v2/leg_39_authoring_guide.png": "c0d4112b47f3787f70460a04cf093c3a667a4cabfb9f2fb4a59b3407f96013fb",
+    "run_v2/leg_40_authoring_guide.png": "be02dbe31565280c4cff2b873cd5b2992a9cb57a521b46dd3c58cbad74429f13",
+    "run_v2/leg_41_authoring_guide.png": "2aaabb6181ea956b17902ec404b6835f9f61470995162171aa518a78fdba2327",
+    "run_v2/register_source.py": "68948c5483d44ab6ff0be2b7bd5a8f540bd7ff7c3eb8f1551a0414a4a8d2db05"
+  },
+  "frames": [
+    {
+      "source": "run_v2/frame_00.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        48.0,
+        75.8
+      ],
+      "landmarks": {
+        "eyes": [
+          560.0,
+          187.0
+        ],
+        "neck": [
+          562.0,
+          303.0
+        ],
+        "belt": [
+          573.0,
+          585.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9999999999999998,
+        "neck": 0.9999999999999999,
+        "belt": 1.0000000000000002
+      },
+      "authored_weight_offset_y": 0.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-61983a85-08ed-4af2-84c7-65588dc5ac5d"
+    },
+    {
+      "source": "run_v2/frame_01.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        43.19999999999999,
+        68.9349364905389
+      ],
+      "landmarks": {
+        "eyes": [
+          568.0,
+          199.0
+        ],
+        "neck": [
+          572.0,
+          312.0
+        ],
+        "belt": [
+          570.0,
+          593.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9688420474361583,
+        "neck": 0.930094213487607,
+        "belt": 0.8805118050818106
+      },
+      "authored_weight_offset_y": 0.33493649053890323,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-95df8b7c-df2f-4d38-8665-57ae2a9d2aff"
+    },
+    {
+      "source": "run_v2/frame_02.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        47.400000000000034,
+        75.85000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          561.0,
+          189.0
+        ],
+        "neck": [
+          564.0,
+          306.0
+        ],
+        "belt": [
+          572.0,
+          585.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.960245659306029,
+        "neck": 0.9068818282048199,
+        "belt": 0.8919243114733473
+      },
+      "authored_weight_offset_y": 1.2499999999999998,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-2fba1052-128f-4b8c-b125-d086962863c5"
+    },
+    {
+      "source": "run_v2/frame_03.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        46.80000000000001,
+        71.7
+      ],
+      "landmarks": {
+        "eyes": [
+          562.0,
+          198.0
+        ],
+        "neck": [
+          562.0,
+          315.0
+        ],
+        "belt": [
+          566.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9690615896239243,
+        "neck": 0.9091516292479329,
+        "belt": 0.9305880167403137
+      },
+      "authored_weight_offset_y": 2.4999999999999996,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-a8a642f2-0a11-4d33-aa1f-6d7e336f687a"
+    },
+    {
+      "source": "run_v2/frame_04.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        48.60000000000002,
+        72.95
+      ],
+      "landmarks": {
+        "eyes": [
+          559.0,
+          198.0
+        ],
+        "neck": [
+          562.0,
+          313.0
+        ],
+        "belt": [
+          571.0,
+          591.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9417717043970202,
+        "neck": 0.8643943090464534,
+        "belt": 0.8485558770608896
+      },
+      "authored_weight_offset_y": 3.7499999999999996,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-a1c1987a-4a6a-4700-a80e-0abaf6b1a525"
+    },
+    {
+      "source": "run_v2/frame_05.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        47.400000000000034,
+        72.6650635094611
+      ],
+      "landmarks": {
+        "eyes": [
+          561.0,
+          200.0
+        ],
+        "neck": [
+          564.0,
+          313.0
+        ],
+        "belt": [
+          574.0,
+          591.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9644393695419956,
+        "neck": 0.9255118980097655,
+        "belt": 0.8470402015442433
+      },
+      "authored_weight_offset_y": 4.665063509461097,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-c4b31ef5-70f4-4110-b72f-230d462f723e"
+    },
+    {
+      "source": "run_v2/frame_06.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6,
+      "origin": [
+        31.19999999999999,
+        59.20000000000002
+      ],
+      "landmarks": {
+        "eyes": [
+          588.0,
+          223.0
+        ],
+        "neck": [
+          588.0,
+          336.0
+        ],
+        "belt": [
+          586.0,
+          621.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9333159340775414,
+        "neck": 0.805202613767075,
+        "belt": 0.8048889635938572
+      },
+      "authored_weight_offset_y": 5.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-b9823f2c-7e96-45f5-973c-ad98c852c213"
+    },
+    {
+      "source": "run_v2/frame_07.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        74.66313972081443
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          196.0
+        ],
+        "neck": [
+          542.0,
+          308.0
+        ],
+        "belt": [
+          545.0,
+          596.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9171925371712376,
+        "neck": 0.7756848431084897,
+        "belt": 0.8300628705073378
+      },
+      "authored_weight_offset_y": 4.263139720814413,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4585fed5-7663-47b5-a3f6-a2cd5f8ea890"
+    },
+    {
+      "source": "run_v2/frame_08.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        58.19999999999999,
+        72.05000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          543.0,
+          197.0
+        ],
+        "neck": [
+          550.0,
+          309.0
+        ],
+        "belt": [
+          540.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9127450220256847,
+        "neck": 0.8012069082320569,
+        "belt": 0.8333790751982796
+      },
+      "authored_weight_offset_y": 2.2500000000000004,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-5a341d55-f7b1-49bb-85ec-ddeeff8d9f5b"
+    },
+    {
+      "source": "run_v2/frame_09.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        68.10000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          199.0
+        ],
+        "neck": [
+          545.0,
+          312.0
+        ],
+        "belt": [
+          536.0,
+          603.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9203819764285069,
+        "neck": 0.7836135013272592,
+        "belt": 0.7906237702117189
+      },
+      "authored_weight_offset_y": -0.49999999999999956,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-b641a25d-1e53-45c1-9d0c-71872cbc3a5a"
+    },
+    {
+      "source": "run_v2/frame_10.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.60000000000002,
+        66.55000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          539.0,
+          197.0
+        ],
+        "neck": [
+          544.0,
+          313.0
+        ],
+        "belt": [
+          525.0,
+          596.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9146291595916004,
+        "neck": 0.8024463447350706,
+        "belt": 0.7643313884435612
+      },
+      "authored_weight_offset_y": -3.2499999999999987,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-d4e968d3-2f6d-453a-a961-1bdf162def31"
+    },
+    {
+      "source": "run_v2/frame_11.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        43.80000000000001,
+        51.936860279185595
+      ],
+      "landmarks": {
+        "eyes": [
+          567.0,
+          218.0
+        ],
+        "neck": [
+          575.0,
+          328.0
+        ],
+        "belt": [
+          549.0,
+          606.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9327285698199755,
+        "neck": 0.7783288464311268,
+        "belt": 0.7589638426450052
+      },
+      "authored_weight_offset_y": -5.263139720814413,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-14c456ee-788b-467f-8c50-c56c3e8f4382"
+    },
+    {
+      "source": "run_v2/frame_12.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        61.19999999999999,
+        65.60000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          538.0,
+          194.0
+        ],
+        "neck": [
+          548.0,
+          308.0
+        ],
+        "belt": [
+          537.0,
+          602.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9052539786872668,
+        "neck": 0.7695329187617286,
+        "belt": 0.6650065580473585
+      },
+      "authored_weight_offset_y": -6.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-538f3d0d-32e6-4133-a416-69fb22cf2a3b"
+    },
+    {
+      "source": "run_v2/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        63.60000000000002,
+        63.400961894323345
+      ],
+      "landmarks": {
+        "eyes": [
+          534.0,
+          198.0
+        ],
+        "neck": [
+          545.0,
+          314.0
+        ],
+        "belt": [
+          534.0,
+          610.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8756253676729892,
+        "neck": 0.7255628765151976,
+        "belt": 0.6677791739427681
+      },
+      "authored_weight_offset_y": -5.799038105676658,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-a74294f7-1f77-43cf-a6ac-b672e560d2d3"
+    },
+    {
+      "source": "run_v2/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.60000000000002,
+        63.35000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          539.0,
+          199.0
+        ],
+        "neck": [
+          550.0,
+          315.0
+        ],
+        "belt": [
+          530.0,
+          608.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8679488390659369,
+        "neck": 0.7089750885811361,
+        "belt": 0.6383681271208466
+      },
+      "authored_weight_offset_y": -5.25,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-e6c8fa2b-9bd1-496c-bb84-c91e1940b897"
+    },
+    {
+      "source": "run_v2/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        61.80000000000001,
+        67.7
+      ],
+      "landmarks": {
+        "eyes": [
+          537.0,
+          193.0
+        ],
+        "neck": [
+          547.0,
+          308.0
+        ],
+        "belt": [
+          536.0,
+          603.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8709409130952468,
+        "neck": 0.740447739396611,
+        "belt": 0.6142691966578596
+      },
+      "authored_weight_offset_y": -4.5,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-31953280-4c3c-4089-9f02-0d3eaa30df6f"
+    },
+    {
+      "source": "run_v2/frame_16.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        66.60000000000002,
+        70.85000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          529.0,
+          189.0
+        ],
+        "neck": [
+          538.0,
+          302.0
+        ],
+        "belt": [
+          533.0,
+          593.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.880993877488327,
+        "neck": 0.6937063490870571,
+        "belt": 0.6376764408425754
+      },
+      "authored_weight_offset_y": -3.75,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-6742c1e1-cba2-46b9-95ea-126fb9502426"
+    },
+    {
+      "source": "run_v2/frame_17.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        66.60000000000002,
+        71.39903810567667
+      ],
+      "landmarks": {
+        "eyes": [
+          529.0,
+          189.0
+        ],
+        "neck": [
+          540.0,
+          303.0
+        ],
+        "belt": [
+          529.0,
+          597.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8850266051678167,
+        "neck": 0.7037229314089741,
+        "belt": 0.5477335891680223
+      },
+      "authored_weight_offset_y": -3.2009618943233416,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-3e6ff401-dcaa-4f74-90ed-424d707e05f6"
+    },
+    {
+      "source": "run_v2/frame_18.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        74.60000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          184.0
+        ],
+        "neck": [
+          548.0,
+          307.0
+        ],
+        "belt": [
+          540.0,
+          596.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9074530065742245,
+        "neck": 0.7342590180352576,
+        "belt": 0.5935516052787754
+      },
+      "authored_weight_offset_y": -3.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-55d94972-fb02-4a61-8999-5814cf324491"
+    },
+    {
+      "source": "run_v2/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        54.60000000000002,
+        73.60096189432335
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          186.0
+        ],
+        "neck": [
+          557.0,
+          309.0
+        ],
+        "belt": [
+          552.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8998747327413008,
+        "neck": 0.7108611968314527,
+        "belt": 0.6830691879678729
+      },
+      "authored_weight_offset_y": -2.799038105676658,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-99501c90-dd1b-44d1-9579-ff3e81b7daa2"
+    },
+    {
+      "source": "run_v2/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        54.0,
+        73.55
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          187.0
+        ],
+        "neck": [
+          560.0,
+          311.0
+        ],
+        "belt": [
+          553.0,
+          595.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8974639495301223,
+        "neck": 0.6986424834575249,
+        "belt": 0.6232805560457854
+      },
+      "authored_weight_offset_y": -2.25,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-9f2a3266-df73-4ac4-b595-91d532bc5c27"
+    },
+    {
+      "source": "run_v2/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        78.5
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          180.0
+        ],
+        "neck": [
+          547.0,
+          297.0
+        ],
+        "belt": [
+          538.0,
+          576.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9286646400093869,
+        "neck": 0.7540481304393513,
+        "belt": 0.7753476506842927
+      },
+      "authored_weight_offset_y": -1.5,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-1fd072a7-cbb2-41ad-91da-91df5e7ae359"
+    },
+    {
+      "source": "run_v2/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        54.60000000000002,
+        75.05
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          187.0
+        ],
+        "neck": [
+          558.0,
+          309.0
+        ],
+        "belt": [
+          554.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.904098449070565,
+        "neck": 0.755693166227802,
+        "belt": 0.7280457530358593
+      },
+      "authored_weight_offset_y": -0.7500000000000003,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-88e04fec-7f7d-4d51-b11e-c8b765152044"
+    },
+    {
+      "source": "run_v2/frame_23.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        54.0,
+        75.59903810567666
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          187.0
+        ],
+        "neck": [
+          559.0,
+          308.0
+        ],
+        "belt": [
+          547.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9089244181053128,
+        "neck": 0.7414559546599896,
+        "belt": 0.7170459228071395
+      },
+      "authored_weight_offset_y": -0.20096189432334177,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-2ec232e4-1065-4f0e-813f-b4adec2c2734"
+    },
+    {
+      "source": "run_v2/frame_24.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        54.60000000000002,
+        77.0
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          185.0
+        ],
+        "neck": [
+          559.0,
+          303.0
+        ],
+        "belt": [
+          546.0,
+          586.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9191297729890233,
+        "neck": 0.7712904330610835,
+        "belt": 0.725222812747507
+      },
+      "authored_weight_offset_y": 0.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-ca512c7a-89df-4614-942a-1353f1d2fd77"
+    },
+    {
+      "source": "run_v2/frame_25.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        51.60000000000002,
+        68.9349364905389
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          199.0
+        ],
+        "neck": [
+          564.0,
+          314.0
+        ],
+        "belt": [
+          558.0,
+          596.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9030157449950055,
+        "neck": 0.7489102239037587,
+        "belt": 0.6851062811791296
+      },
+      "authored_weight_offset_y": 0.33493649053890323,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-91700eed-06bb-4271-86a0-76265176fcdf"
+    },
+    {
+      "source": "run_v2/frame_26.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        52.80000000000001,
+        62.05000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          552.0,
+          212.0
+        ],
+        "neck": [
+          560.0,
+          329.0
+        ],
+        "belt": [
+          549.0,
+          610.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9106109335555677,
+        "neck": 0.7722449208666492,
+        "belt": 0.7231380146958132
+      },
+      "authored_weight_offset_y": 1.2499999999999998,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-41d1b86b-6918-48f5-830d-a0fdcedc9789"
+    },
+    {
+      "source": "run_v2/frame_27.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        52.80000000000001,
+        54.900000000000006
+      ],
+      "landmarks": {
+        "eyes": [
+          552.0,
+          226.0
+        ],
+        "neck": [
+          557.0,
+          341.0
+        ],
+        "belt": [
+          546.0,
+          623.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9025334376265731,
+        "neck": 0.7239581283527129,
+        "belt": 0.7248211466401492
+      },
+      "authored_weight_offset_y": 2.4999999999999996,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8"
+    },
+    {
+      "source": "run_v2/frame_28.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        48.60000000000002,
+        63.95
+      ],
+      "landmarks": {
+        "eyes": [
+          559.0,
+          213.0
+        ],
+        "neck": [
+          565.0,
+          329.0
+        ],
+        "belt": [
+          554.0,
+          611.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9143550210234818,
+        "neck": 0.7354600901827003,
+        "belt": 0.6033654721003344
+      },
+      "authored_weight_offset_y": 3.7499999999999996,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-dc54779c-bf2e-49aa-8a33-8f801bdd8c31"
+    },
+    {
+      "source": "run_v2/frame_29.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        52.19999999999999,
+        70.26506350946111
+      ],
+      "landmarks": {
+        "eyes": [
+          553.0,
+          204.0
+        ],
+        "neck": [
+          562.0,
+          319.0
+        ],
+        "belt": [
+          549.0,
+          590.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9038903130167621,
+        "neck": 0.7735694085465978,
+        "belt": 0.7200644424352207
+      },
+      "authored_weight_offset_y": 4.665063509461097,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f"
+    },
+    {
+      "source": "run_v2/frame_30.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        51.60000000000002,
+        54.400000000000006
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          231.0
+        ],
+        "neck": [
+          555.0,
+          348.0
+        ],
+        "belt": [
+          562.0,
+          632.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8686700898969318,
+        "neck": 0.716185730965535,
+        "belt": 0.683713873208614
+      },
+      "authored_weight_offset_y": 5.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-6ab9db2e-b027-4bd9-844c-013298f6f93e"
+    },
+    {
+      "source": "run_v2/frame_31.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        47.400000000000034,
+        52.46313972081444
+      ],
+      "landmarks": {
+        "eyes": [
+          561.0,
+          233.0
+        ],
+        "neck": [
+          562.0,
+          355.0
+        ],
+        "belt": [
+          564.0,
+          634.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8393470122266519,
+        "neck": 0.7648551393728433,
+        "belt": 0.669401100135541
+      },
+      "authored_weight_offset_y": 4.263139720814413,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-c6120377-f18c-405e-9e8f-71586487dbb7"
+    },
+    {
+      "source": "run_v2/frame_32.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        51.60000000000002,
+        52.849999999999994
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          229.0
+        ],
+        "neck": [
+          555.0,
+          343.0
+        ],
+        "belt": [
+          557.0,
+          621.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8630709877693741,
+        "neck": 0.7200347804139543,
+        "belt": 0.7165476765723543
+      },
+      "authored_weight_offset_y": 2.2500000000000004,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-52a4d266-7d3c-44c0-87b6-67aa3c83c3d3"
+    },
+    {
+      "source": "run_v2/frame_33.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        57.60000000000002,
+        67.5
+      ],
+      "landmarks": {
+        "eyes": [
+          544.0,
+          200.0
+        ],
+        "neck": [
+          544.0,
+          313.0
+        ],
+        "belt": [
+          552.0,
+          601.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9005720017913118,
+        "neck": 0.7320294305956259,
+        "belt": 0.6180952656612339
+      },
+      "authored_weight_offset_y": -0.49999999999999956,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-ebd75822-535b-4b8d-8197-2401fb4e817a"
+    },
+    {
+      "source": "run_v2/frame_34.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        58.19999999999999,
+        64.15
+      ],
+      "landmarks": {
+        "eyes": [
+          543.0,
+          201.0
+        ],
+        "neck": [
+          541.0,
+          316.0
+        ],
+        "belt": [
+          544.0,
+          592.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8928447086521621,
+        "neck": 0.7355979669826631,
+        "belt": 0.7663290952324114
+      },
+      "authored_weight_offset_y": -3.2499999999999987,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4db84124-5e1d-4fa1-acc4-eb3358679216"
+    },
+    {
+      "source": "run_v2/frame_35.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        55.80000000000001,
+        45.936860279185595
+      ],
+      "landmarks": {
+        "eyes": [
+          547.0,
+          228.0
+        ],
+        "neck": [
+          547.0,
+          342.0
+        ],
+        "belt": [
+          561.0,
+          628.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.879123499251612,
+        "neck": 0.7005349646389033,
+        "belt": 0.7651092717313867
+      },
+      "authored_weight_offset_y": -5.263139720814413,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-cff19beb-bd57-4f3c-84de-29ac4c9b3aa1"
+    },
+    {
+      "source": "run_v2/frame_36.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        64.4
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          196.0
+        ],
+        "neck": [
+          542.0,
+          310.0
+        ],
+        "belt": [
+          550.0,
+          607.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8968564200778871,
+        "neck": 0.741433573076032,
+        "belt": 0.8054403026366377
+      },
+      "authored_weight_offset_y": -6.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-a6b13b5d-b543-4961-bb6c-fc23b8e8822a"
+    },
+    {
+      "source": "run_v2/frame_37.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        64.60096189432335
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          196.0
+        ],
+        "neck": [
+          542.0,
+          310.0
+        ],
+        "belt": [
+          551.0,
+          597.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8887236273986645,
+        "neck": 0.6768377719810351,
+        "belt": 0.8077768348508603
+      },
+      "authored_weight_offset_y": -5.799038105676658,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-9d7b18e4-95c8-435e-a560-8009888e6349"
+    },
+    {
+      "source": "run_v2/frame_38.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        63.60000000000002,
+        63.95
+      ],
+      "landmarks": {
+        "eyes": [
+          534.0,
+          198.0
+        ],
+        "neck": [
+          534.0,
+          313.0
+        ],
+        "belt": [
+          544.0,
+          601.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8746583783735914,
+        "neck": 0.6909636313177079,
+        "belt": 0.7866046728293278
+      },
+      "authored_weight_offset_y": -5.25,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4ec7fae0-eb96-4c14-bbb5-f69a2e83cc06"
+    },
+    {
+      "source": "run_v2/frame_39.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        66.0,
+        64.7
+      ],
+      "landmarks": {
+        "eyes": [
+          530.0,
+          198.0
+        ],
+        "neck": [
+          530.0,
+          315.0
+        ],
+        "belt": [
+          543.0,
+          604.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8808957495683286,
+        "neck": 0.654695962901719,
+        "belt": 0.7797123740677472
+      },
+      "authored_weight_offset_y": -4.5,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-e20a4f82-c47a-4578-8bf5-f28a7793c2b7"
+    },
+    {
+      "source": "run_v2/frame_40.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        63.0,
+        64.85000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          535.0,
+          199.0
+        ],
+        "neck": [
+          537.0,
+          316.0
+        ],
+        "belt": [
+          546.0,
+          612.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8738547382105105,
+        "neck": 0.6909348091827153,
+        "belt": 0.7952572987439699
+      },
+      "authored_weight_offset_y": -3.75,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-68d69609-6ce3-445e-9577-c87f64cc6a81"
+    },
+    {
+      "source": "run_v2/frame_41.png",
+      "cell": [
+        0,
+        0,
+        1039,
+        1513
+      ],
+      "scale": 0.6,
+      "origin": [
+        55.19999999999999,
+        64.19903810567666
+      ],
+      "landmarks": {
+        "eyes": [
+          548.0,
+          201.0
+        ],
+        "neck": [
+          549.0,
+          318.0
+        ],
+        "belt": [
+          556.0,
+          607.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.869810286036207,
+        "neck": 0.6664109178905098,
+        "belt": 0.7811649827719838
+      },
+      "authored_weight_offset_y": -3.2009618943233416,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-10db7c54-7db3-453c-ab69-f90230ba4b26"
+    },
+    {
+      "source": "run_v2/frame_42.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        62.400000000000034,
+        77.60000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          536.0,
+          179.0
+        ],
+        "neck": [
+          534.0,
+          297.0
+        ],
+        "belt": [
+          548.0,
+          582.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.932986651624066,
+        "neck": 0.7756792540846754,
+        "belt": 0.7471964922857318
+      },
+      "authored_weight_offset_y": -3.0,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-b117064c-f466-47e7-8f99-6b9453c0555a"
+    },
+    {
+      "source": "run_v2/frame_43.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        60.0,
+        76.00096189432334
+      ],
+      "landmarks": {
+        "eyes": [
+          540.0,
+          182.0
+        ],
+        "neck": [
+          539.0,
+          298.0
+        ],
+        "belt": [
+          552.0,
+          581.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9453470843082943,
+        "neck": 0.773537193602013,
+        "belt": 0.7614502615519506
+      },
+      "authored_weight_offset_y": -2.799038105676658,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4445d753-729e-4b98-b5b2-eed0d23c36e8"
+    },
+    {
+      "source": "run_v2/frame_44.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        59.400000000000034,
+        78.35000000000001
+      ],
+      "landmarks": {
+        "eyes": [
+          541.0,
+          179.0
+        ],
+        "neck": [
+          542.0,
+          295.0
+        ],
+        "belt": [
+          550.0,
+          578.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9431710304751912,
+        "neck": 0.8364436497149513,
+        "belt": 0.7937387172813657
+      },
+      "authored_weight_offset_y": -2.25,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-bc967520-2e1f-49ee-a6a5-a42995fafc00"
+    },
+    {
+      "source": "run_v2/frame_45.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        62.400000000000034,
+        78.5
+      ],
+      "landmarks": {
+        "eyes": [
+          536.0,
+          180.0
+        ],
+        "neck": [
+          533.0,
+          296.0
+        ],
+        "belt": [
+          547.0,
+          576.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9368831889945268,
+        "neck": 0.8099885038572389,
+        "belt": 0.7581672750166392
+      },
+      "authored_weight_offset_y": -1.5,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-2206e7c4-c5cf-496d-b4b1-67be602907f6"
+    },
+    {
+      "source": "run_v2/frame_46.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        57.0,
+        78.05
+      ],
+      "landmarks": {
+        "eyes": [
+          545.0,
+          182.0
+        ],
+        "neck": [
+          542.0,
+          299.0
+        ],
+        "belt": [
+          546.0,
+          585.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93219272587081,
+        "neck": 0.7729899078972207,
+        "belt": 0.7899217368266281
+      },
+      "authored_weight_offset_y": -0.7500000000000003,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-8dcfbeda-d8fd-4bac-b621-ff9be9fc560e"
+    },
+    {
+      "source": "run_v2/frame_47.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.6,
+      "origin": [
+        63.0,
+        80.39903810567667
+      ],
+      "landmarks": {
+        "eyes": [
+          535.0,
+          179.0
+        ],
+        "neck": [
+          535.0,
+          297.0
+        ],
+        "belt": [
+          552.0,
+          581.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9290338502369134,
+        "neck": 0.81090897051447,
+        "belt": 0.7677550683832326
+      },
+      "authored_weight_offset_y": -0.20096189432334177,
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy.",
+      "generation_id": "exec-4c1d85a0-56d7-4ef6-bb22-6e6ec47125b7"
+    }
+  ]
+}
