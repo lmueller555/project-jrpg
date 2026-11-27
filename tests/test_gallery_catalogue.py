@@ -55,12 +55,12 @@ class GalleryCatalogueTests(unittest.TestCase):
             if 'gallery_id' in shot:self.assertEqual(entry.id, shot['gallery_id'])
             self.assertEqual(entry.description, shot['description'])
             self.assertIn(f'{shot["duration"]:g}s', entry.name)
-        thumbnails = [Path(GALLERY_BY_ID[identifier].thumbnail) for identifier in
-                      ('fire_veinhold_opening', 'fire_veinhold_shot_01')]
+        thumbnails = [Path(entry.thumbnail) for entry in entries]
         self.assertTrue(all(path.is_file() for path in thumbnails))
         images = [pygame.image.load(str(path)) for path in thumbnails]
         self.assertTrue(all(image.get_size() == (320, 180) for image in images))
-        self.assertNotEqual(*(pygame.image.tobytes(image, 'RGB') for image in images))
+        self.assertNotEqual(pygame.image.tobytes(images[0], 'RGB'),
+                            pygame.image.tobytes(images[1], 'RGB'))
 
     def test_fire_veinhold_registry_adds_a_new_completed_shot_without_another_fixture(self):
         from fire_veinhold_opening import available_shots
@@ -104,7 +104,9 @@ class GalleryCatalogueTests(unittest.TestCase):
         self.assertEqual(calls, [])
 
     def test_native_cinematic_skip_completes_the_selected_preview_only(self):
-        for identifier in ('ice_reaper_opening', 'fire_veinhold_opening', 'fire_veinhold_shot_01'):
+        identifiers = ('ice_reaper_opening', *(entry.id for entry in GALLERY_ENTRIES
+                                               if entry.chapter == 'Fire Veinhold Prologue'))
+        for identifier in identifiers:
             with self.subTest(scene=identifier):
                 game = self.preview()
                 playback = GALLERY_BY_ID[identifier].start(game)

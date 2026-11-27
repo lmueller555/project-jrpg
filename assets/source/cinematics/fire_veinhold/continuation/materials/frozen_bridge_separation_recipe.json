@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "generation_id": "exec-07c2860e-c733-44a8-9296-a6a215fbfcf3",
+  "source": "frozen_bridge_empty_generated.png",
+  "native_canvas": [
+    1536,
+    1024
+  ],
+  "prompt_file": "frozen_bridge_empty_prompt.txt",
+  "references": [
+    "frozen_bridge_final.png"
+  ],
+  "export_tool": "tools/export_frozen_guard_layers.py",
+  "purpose": "Separate complete frozen figure silhouettes from their registered empty bridge backdrop; rigid props avoid connected-depth warping during approach.",
+  "sha256": {
+    "frozen_bridge_empty_generated.png": "4638f61ae12f8ae4c3fdc48615407f55250b76d48811345d2eca1ab5b712bef4",
+    "frozen_bridge_background.png": "188f095863a3c959f86ddffe21d6504bc3e77825a4215965e0dd1694d891a3f8",
+    "frozen_guard_layers.json": "20c5e96819e9340bb111b65426074d60b0018eb131af814dc58bf2ca94465cdd",
+    "frozen_guard_left_back.png": "90dc4371a7b3ada548ff57f9641fb2552b7e38751945501de3afa1a38b8e5a81",
+    "frozen_guard_left_front.png": "2f2cfaab5eb3542063ef05bf6bd77488a59e4df5f06ddac22b77be0d9d97b776",
+    "frozen_guard_right_back.png": "0288b3e7ad4c2819bb508104b0c98f9ba659b38cbb760652a7f1f923bcb90735",
+    "frozen_guard_right_mid.png": "fcd1b602e5155069be81f4267099f8a56c86f3c6cbff5ff386424c002541c315"
+  }
+}

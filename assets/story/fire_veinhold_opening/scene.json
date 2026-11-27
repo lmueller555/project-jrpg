@@ -20,7 +20,52 @@
       "environment": "shot01/environment/art.json",
       "eagle": "shot01/eagle/animation.json",
       "ascent_duration": 15,
-      "vista_duration": 10
+      "vista_duration": 10,
+      "thumbnail_time": 21.0
+    },
+    {
+      "id": "island_orbit",
+      "gallery_id": "fire_veinhold_shot_02",
+      "name": "Fire Veinhold \u2014 Island Orbit",
+      "description": "Circle the dormant volcano to look back toward Merovar and its coastal mountains.",
+      "type": "perspective_sequence",
+      "duration": 5,
+      "sequence": "continuation/manifest.json",
+      "segment": "orbit",
+      "thumbnail_time": 3.0
+    },
+    {
+      "id": "alarm_hold",
+      "gallery_id": "fire_veinhold_shot_03",
+      "name": "Fire Veinhold \u2014 Emergency Alarms",
+      "description": "Warning beacons and industrial sirens announce an emergency across the fortress.",
+      "type": "perspective_sequence",
+      "duration": 4,
+      "sequence": "continuation/manifest.json",
+      "segment": "alarm_hold",
+      "thumbnail_time": 2.0
+    },
+    {
+      "id": "bridge_rush",
+      "gallery_id": "fire_veinhold_shot_04",
+      "name": "Fire Veinhold \u2014 Bridge Rush",
+      "description": "Rush past the fortress and across its steel bridge toward Merovar.",
+      "type": "perspective_sequence",
+      "duration": 1,
+      "sequence": "continuation/manifest.json",
+      "segment": "rush",
+      "thumbnail_time": 0.7
+    },
+    {
+      "id": "frozen_bridge",
+      "gallery_id": "fire_veinhold_shot_05",
+      "name": "Fire Veinhold \u2014 Frozen Guards",
+      "description": "Ice-bound Carcovian guards reveal an unseen assault on the mainland approach.",
+      "type": "perspective_sequence",
+      "duration": 4,
+      "sequence": "continuation/manifest.json",
+      "segment": "reveal",
+      "thumbnail_time": 1.0
     }
   ]
 }

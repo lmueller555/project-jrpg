@@ -1,9 +1,10 @@
 # Fire Veinhold prologue — cinematic production
 
-**Status:** Shot 1 is implemented as a 25-second Gallery presentation: a
-15-second summit approach followed by ten seconds overlooking the Cinder Isles.
-Shots 2–5 await their own implementation. Further scenes follow the overhead
-bridge view; the final playable handoff remains open.
+**Status:** The Gallery presentation contains five production shots totaling
+39 seconds: the existing 25-second summit approach/vista, a five-second island
+orbit, four-second alarm lead-in, one-second bridge rush and four-second frozen
+guard reveal. The later running-party shots and final playable handoff remain
+future implementation.
 
 [Chapter 1](../game_01/CHAPTER_01.md) owns the opening story. This document owns
 cinematography and implementation. The [sprite standard](../../SPRITE_ANIMATION_STANDARD.md)
@@ -12,17 +13,21 @@ owns the approved geography; the canonical world map remains unchanged.
 
 ## Shot order
 
-| Shot | Duration | Picture and disclosure |
+| Shot | Reel time | Picture and disclosure |
 | --- | --- | --- |
-| 1 — Eagle Ascent and Cinder Isles | 25 seconds | Follow the eagle east-southeast over Merovar's coastal summit for 15 seconds, then retain a clear offshore volcanic vista for ten seconds. The wide view now includes the Fire Veinhold and emergency beacons; no cast reveal yet. |
-| 2 — Volcano and Veinhold | 15 seconds, future implementation | Closer establishing view of the volcano, military fortress and reservoir drawing Fire-aspected aether. Red alert lights already signal an emergency before the infiltrators appear. |
-| 3 — Running legs | 3 seconds, future implementation | Side tracking of Iselin, Lucan and the Crown soldier running over a metal fortress access bridge. |
-| 4 — Faces | Exact duration open | Track backward in front of the runners and pan down to reveal faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the soldier is on his anatomical left (screen right), about ten feet behind. |
-| 5 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into a rapidly ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. This does not finish the cinematic or define the gameplay handoff. |
+| 1 — Eagle Ascent and Cinder Isles | 0–25s | Follow the eagle east-southeast over Merovar's coastal summit for 15 seconds, then hold the offshore volcanic vista for ten seconds. The bird leaves below frame by 17s. Amber facility operation is visible; red alarms have not activated. |
+| 2 — Island Orbit | 25–30s | A continuous five-second, 180° orbit around the main isle ends looking back toward Merovar. All 301 camera samples are rendered perspectives from one shared spatial scene. |
+| 3 — Fortress Alarm | 30–34s | Hold the reverse angle for four seconds while red warning lights blink and the industrial siren sounds. The audience has two full warning cycles before the rush. |
+| 4 — Bridge Rush | 34–35s | Fly past the facility and along the Merovar bridge in one second, with directional motion cues and changing sound perspective. |
+| 5 — Frozen Bridge | 35–39s | Settle 20 feet onto the bridge from its Merovar mainland landing, facing mainland. Distinct Carcovian guards are frozen in stasis; ice coats parts of the deck and railings. The attackers remain unseen behind the camera. |
+| 6 — Running legs | 3 seconds, future implementation | Side tracking of Iselin, Lucan and the Crown soldier running over the steel bridge. |
+| 7 — Faces | Exact duration open, future implementation | Track backward and pan down to faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the Crown soldier is on his anatomical left (screen right), about ten feet behind. |
+| 8 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into an ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. The final gameplay handoff remains open. |
 
-The fortress access bridge is distinct from Elden Vale's western bridge.
-The revised Shot 1 introduces the island geography before the closer facility
-view. Its ten-second vista is additional to the fifteen-second ascent.
+The fortress access bridge is distinct from Elden Vale's western bridge. The
+five-second orbit replaces the previously proposed separate 15-second closer
+fortress shot. Later party shots are storyboard direction, not runtime
+placeholders. There is no cast reveal or new dialogue in Shots 2–5.
 
 ## Shot 1 staging
 
@@ -77,8 +82,10 @@ The final source window begins at y50. The lens widens slightly at the crest
 to retain the expanded fortress and nearer Merovar landing, then makes a
 restrained push during the vista. The approved
 Fire Veinhold site is on the main island near the volcano; the fortress and
-reservoir are visible in this wide shot, with a closer view planned for Shot 2. Exact distances, travel
-times, facility coordinates and the infiltration party's route remain open.
+reservoir are visible in this wide shot and remain in the shared orbit layout.
+Exact geographic distances, travel times, political control of the crossings
+and the infiltration mission's detailed route remain open. The cinematic's
+staging dimensions do not establish a geographic survey.
 The world map is illustrative and supplies relationships rather than a precise
 bearing grid or guaranteed real-world line of sight.
 
@@ -90,7 +97,9 @@ The shot explicitly records `ascent_duration:15`, `vista_duration:10`, and
 storyboard rows are not runtime placeholders.
 
 The native picture remains **960×640**, full **3:2**, rendered directly to the
-actual UI surface. The new opaque panorama is **1024×1536**, with vertical
+actual UI surface. The new perspective sequences are authored at **60 FPS**;
+frame selection follows elapsed scene time, so a slow render drops samples
+without lengthening a shot. The new opaque panorama is **1024×1536**, with vertical
 overscan for the climb. Its source, references, prompt, hash and export framing
 are retained under `assets/source/cinematics/fire_veinhold/shot01/environment/`.
 `tools/build_prologue_mountains.py --check` verifies reproduction.
@@ -125,9 +134,11 @@ restrained crimson insignia.
 
 `cinematic_facility.py` draws restrained power packets down the authored
 conduit paths toward the reservoir, floating ember accents within its interior,
-and slow red warning-beacon highlights on gatehouses/reservoir towers. All
+with the red warning fixtures inactive until the 30-second alert cue. All
 landmarks share the terrain projection. Windows and architecture remain
-steady. Reduced Motion uses steady red beacons and static amber accents.
+steady. The continuation uses camera-specific emissive layers with occlusion;
+red alarms remain distinct from steady windows and amber power. Reduced Motion
+uses steady red warning illumination and static amber accents.
 Effects follow the scene clock, including pause/focus/restart; they introduce
 no new dialogue, weapon identity or quest state.
 
@@ -155,19 +166,97 @@ source folder. Tests check transparent boundaries, loop/vent registration,
 visible motion at both vents and correct premultiplied blending. Native frame
 and close-up movie review remain necessary alongside those checks.
 
+## Shared island scene, orbit and bridge camera
+
+The continuation is rendered offline from one spatial scene with painted
+surfaces; Pygame remains a 2D presentation. A limited nonplanar relief preserves
+the approved opening composition over the orbit's first three degrees, then
+the shared island geometry supplies the remaining views. These are rendered
+camera poses, not cross-fades between independent perspective paintings.
+Both bridges, the dormant cone, extraction structure,
+reservoir, fortified compound and mainland terrain occupy consistent world
+positions. Materials retain charcoal basalt, blackened steel, bronze, rust-red
+ash and cool nighttime lighting. The distant active cone remains distinct from
+the drained main crater. Moonlight stays fixed in world space as the camera
+turns; architecture never mirrors or rearranges during the orbit.
+
+The 180° path ends facing approximately west-northwest toward Merovar's coastal
+mountains. Its elevation and route maintain readable geography without clipping
+through the cone or compound. The last orbit pose is the alarm hold's first
+pose. The rush follows the Merovar crossing, not the Damar bridge, and reaches
+the final deck position without passing through structural members.
+
+The final camera is 6.096 metres (20 feet) along the bridge from its Merovar
+abutment, measured toward the isle, and looks back toward mainland. Three
+Carcovian guards are clearly visible in distinct interrupted-action poses;
+the source retains four staged guard planes. Ice covers selected
+deck plates, seams and railings, with a trail continuing fortressward behind
+the camera. They are held in stasis; no blood or newly established deaths are
+implied. Iselin, Lucan and the Crown soldier remain absent from picture,
+reflections, identifying shadows and dialogue until their later reveal.
+
+The four frozen guards use complete RGBA image planes at separately calibrated
+depths. They are rigid full-character drawings, not volumetric character models
+or silhouettes stretched out of the deck's depth field. The empty bridge/deck
+background occupies separate geometry, preserving clean body contours during
+the camera's late approach. The smoke reuses the approved complete plume
+drawings on vent-anchored, camera-facing surfaces with depth occlusion. This
+preserves their registration and painted appearance without claiming a
+volumetric fluid simulation or physically fixed wind direction.
+
+`continuation/manifest.json` supplies the rendered perspectives and separate
+alarm layers. The 301 orbit samples cover times `0/60` through `300/60`: exactly
+300 intervals and five seconds. The terminal sample supplies the following
+shot's pose rather than adding a 301st display interval. The one-second rush
+similarly has 61 inclusive samples. Hold/reveal loops retain fixed cameras;
+they do not duplicate hundreds of identical backgrounds.
+
+`cinematic_perspective.py` validates the manifest and loads a bounded working
+set of frames. Its 24 image slots reserve at most **56.25 MiB** for decoded
+images plus in-flight loads, excluding temporary drawing/conversion buffers.
+PNG decoding runs in background workers; display conversion stays on the main
+thread. No complete 301-frame atlas is eagerly decoded. Scene state queries
+calculate frame and timing state without disk access. The cache
+is released when a replay ends or restarts. Normal playback uses every authored
+perspective when rendering keeps pace; Reduced Motion lowers camera intensity,
+removes heavy rush effects and retains the same timing and disclosures.
+
+## Alert and movement audio
+
+A shared reel clock activates both visible red signals and the siren at 30s.
+The alarm hold lasts four seconds before the 34s rush. Source light cores are
+dimmed when inactive; localized emissive layers make activation perceptible.
+Light and smoke projection respects structures and terrain from every angle.
+
+`prologue_alert_audio.py` owns a quiet machinery bed from 25s, the warning,
+rush and bridge-settle effects. The machinery recedes with the fortress during
+the rush. The near siren continues across the hold/rush boundary, then yields to its
+muffled distant version as the camera leaves the fortress. The rush whoosh
+occupies 34–35s; bridge wind and a restrained ice creak accompany the settled
+view. Existing wind remains continuous. Eagle feather cues are restricted to
+the original powered-flight windows and never replay in the new shots.
+
+Pause, focus loss, effects volume, mute, Skip, restart and Gallery close apply
+to all owned effects. Standalone clips initialize from their full-reel offset:
+the bridge rush starts with the alarm already sounding, rather than replaying
+the lead-in. Offline preview audio is reconstructed from those production
+exports and timing functions; it is not hardware-loopback listening evidence.
+
 ## Gallery and handoff
 
-Both **Shot 1 — Eagle Ascent and Cinder Isles (25s)** and **Fire Veinhold —
-Complete Cutscene** use the same production controller. The complete entry
-currently contains this 25-second shot. Future implemented clips populate their
-own Gallery entries and extend the complete entry from the same ordered list.
-The normal controls, disposable save-disabled runtime and unchanged parent
-save/settings/Continue boundaries remain in force.
+The complete entry and all five individual entries use the same production
+controller and ordered scene manifest. The complete film lasts **39 seconds**;
+individual durations are **25, 5, 4, 1 and 4 seconds**. Each entry has its own
+representative production thumbnail. The Gallery's disposable, save-disabled
+runtime preserves parent journey/settings/Continue state.
 
-At 25s an isolated replay returns directly to the Gallery. There is no black
-end fade. The terminal camera, eagle and wind state is exposed for later clip
-integration. New Game retains its bedroom opening until the full cinematic and
-playable infiltration handoff are ready.
+Individual previews return directly to the Gallery at their own endpoint.
+The complete film continues across the same boundaries without an underlying
+bedroom flash, alarm reset or duplicate endpoint hold. New Game retains its
+bedroom opening until the complete cinematic and playable infiltration handoff
+are ready. No quest, save-schema or mission progression changes belong to this
+presentation extension.
 
-See [current review evidence](../../reviews/eagle_exit/README.md).
-Earlier ten-second studies remain historical evidence of their own revisions.
+See [current orbit review evidence](../../reviews/veinhold_orbit/README.md).
+The [eagle-exit review](../../reviews/eagle_exit/README.md) and earlier studies
+remain historical evidence of their recorded revisions.

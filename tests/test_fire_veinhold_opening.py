@@ -471,7 +471,8 @@ class FireVeinholdOpeningTests(unittest.TestCase):
             path = destination/'scene.json'
             data = json.loads(path.read_text())
             data['shots'] = [data['shots'][0]]
-            data['shots'][0].update(duration=20., ascent_duration=12., vista_duration=8.)
+            data['shots'][0].update(duration=20., ascent_duration=12., vista_duration=8.,
+                                    thumbnail_time=16.)
             path.write_text(json.dumps(data))
             scene = FireVeinholdOpening(self.game, scene_path=path)
             self.addCleanup(scene.reset)

@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "source": "frozen_bridge_final.png",
+  "background": "frozen_bridge_background.png",
+  "background_generated": "frozen_bridge_empty_generated.png",
+  "alpha_method": "Authored ice-silhouette polygons with three-source-pixel safety dilation. Original pixels and source-visible rear-body regions are preserved; no anatomy or limb manipulation.",
+  "flat_reconstruction": "Pixel-exact RGB reconstruction of the approved complete painting.",
+  "guards": [
+    {
+      "id": "left_back",
+      "file": "frozen_guard_left_back.png",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "alpha_bounds": [
+        152,
+        317,
+        333,
+        665
+      ],
+      "polygon_at_960x640": [
+        [
+          172,
+          200
+        ],
+        [
+          205,
+          243
+        ],
+        [
+          220,
+          286
+        ],
+        [
+          215,
+          402
+        ],
+        [
+          174,
+          414
+        ],
+        [
+          97,
+          411
+        ],
+        [
+          98,
+          370
+        ],
+        [
+          108,
+          300
+        ],
+        [
+          114,
+          251
+        ],
+        [
+          134,
+          218
+        ]
+      ]
+    },
+    {
+      "id": "left_front",
+      "file": "frozen_guard_left_front.png",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "alpha_bounds": [
+        227,
+        234,
+        690,
+        898
+      ],
+      "polygon_at_960x640": [
+        [
+          296,
+          148
+        ],
+        [
+          357,
+          208
+        ],
+        [
+          388,
+          295
+        ],
+        [
+          414,
+          403
+        ],
+        [
+          429,
+          530
+        ],
+        [
+          386,
+          558
+        ],
+        [
+          155,
+          559
+        ],
+        [
+          144,
+          523
+        ],
+        [
+          155,
+          436
+        ],
+        [
+          174,
+          354
+        ],
+        [
+          195,
+          279
+        ],
+        [
+          221,
+          221
+        ],
+        [
+          259,
+          170
+        ]
+      ]
+    },
+    {
+      "id": "right_mid",
+      "file": "frozen_guard_right_mid.png",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "alpha_bounds": [
+        957,
+        311,
+        1310,
+        742
+      ],
+      "polygon_at_960x640": [
+        [
+          735,
+          196
+        ],
+        [
+          778,
+          224
+        ],
+        [
+          796,
+          282
+        ],
+        [
+          811,
+          353
+        ],
+        [
+          816,
+          435
+        ],
+        [
+          794,
+          461
+        ],
+        [
+          613,
+          461
+        ],
+        [
+          600,
+          432
+        ],
+        [
+          615,
+          369
+        ],
+        [
+          637,
+          306
+        ],
+        [
+          668,
+          248
+        ],
+        [
+          698,
+          219
+        ]
+      ]
+    },
+    {
+      "id": "right_back",
+      "file": "frozen_guard_right_back.png",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "alpha_bounds": [
+        1278,
+        323,
+        1492,
+        646
+      ],
+      "polygon_at_960x640": [
+        [
+          867,
+          204
+        ],
+        [
+          901,
+          225
+        ],
+        [
+          919,
+          281
+        ],
+        [
+          930,
+          369
+        ],
+        [
+          913,
+          401
+        ],
+        [
+          787,
+          399
+        ],
+        [
+          781,
+          357
+        ],
+        [
+          796,
+          290
+        ],
+        [
+          824,
+          239
+        ]
+      ]
+    }
+  ]
+}

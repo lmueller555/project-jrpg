@@ -1,0 +1,288 @@
+{
+  "method": "Full production controller update + native 960x640 render_frame; real-time 60 Hz deadlines, normal-motion, dummy SDL audio/video; 14-second continuation after full-film 0.5-second upcoming prefetch. Excludes UI scaling, encoding, and the preceding 25-second shot.",
+  "startup_ms": 518.609,
+  "wall_seconds": 14.0001,
+  "overall": {
+    "frames": 840,
+    "mean_ms": 6.269,
+    "median_ms": 8.782,
+    "p95_ms": 11.149,
+    "max_ms": 17.657,
+    "over_16_667_ms": 1
+  },
+  "segments": {
+    "orbit": {
+      "frames": 300,
+      "mean_ms": 1.376,
+      "median_ms": 0.994,
+      "p95_ms": 4.228,
+      "max_ms": 8.735,
+      "over_16_667_ms": 0
+    },
+    "alarm_hold": {
+      "frames": 240,
+      "mean_ms": 8.907,
+      "median_ms": 8.874,
+      "p95_ms": 11.36,
+      "max_ms": 16.227,
+      "over_16_667_ms": 0
+    },
+    "rush": {
+      "frames": 60,
+      "mean_ms": 9.405,
+      "median_ms": 8.49,
+      "p95_ms": 12.81,
+      "max_ms": 15.961,
+      "over_16_667_ms": 0
+    },
+    "reveal": {
+      "frames": 240,
+      "mean_ms": 8.964,
+      "median_ms": 8.962,
+      "p95_ms": 11.133,
+      "max_ms": 17.657,
+      "over_16_667_ms": 1
+    }
+  },
+  "foreground_decode_waits": 0,
+  "foreground_decode_wait_ms": 0.0,
+  "peak_cache": {
+    "surfaces": 24,
+    "bytes": 57139200,
+    "decoded_bytes": 55910400,
+    "pending_bytes": 27033600
+  },
+  "cache_capacity": 24,
+  "initial_cache": {
+    "surfaces": 16,
+    "capacity": 24,
+    "decoded_surfaces": 16,
+    "pending_surfaces": 0,
+    "decoded_bytes": 29491200,
+    "pending_bytes": 0,
+    "bytes": 29491200,
+    "hits": 0,
+    "decodes": 16,
+    "waits": 0,
+    "wait_seconds": 0.0
+  },
+  "final_cache": {
+    "surfaces": 24,
+    "capacity": 24,
+    "decoded_surfaces": 24,
+    "pending_surfaces": 0,
+    "decoded_bytes": 55296000,
+    "pending_bytes": 0,
+    "bytes": 55296000,
+    "hits": 2276,
+    "decodes": 515,
+    "waits": 0,
+    "wait_seconds": 0.0
+  },
+  "endpoint_cleanup_ms": 3.425,
+  "timeline": [
+    {
+      "frame": 0,
+      "reel_time": 25.0,
+      "phase": "orbit",
+      "alarm": {
+        "active": false,
+        "elapsed": 0.0
+      },
+      "cache": {
+        "surfaces": 16,
+        "capacity": 24,
+        "decoded_surfaces": 16,
+        "pending_surfaces": 0,
+        "decoded_bytes": 30105600,
+        "pending_bytes": 0,
+        "bytes": 30105600,
+        "hits": 1,
+        "decodes": 16,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 299,
+      "reel_time": 29.98333333333305,
+      "phase": "orbit",
+      "alarm": {
+        "active": false,
+        "elapsed": 0.0
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 24,
+        "pending_surfaces": 0,
+        "decoded_bytes": 55910400,
+        "pending_bytes": 0,
+        "bytes": 55910400,
+        "hits": 300,
+        "decodes": 309,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 300,
+      "reel_time": 30.0,
+      "phase": "alarm_hold",
+      "alarm": {
+        "active": true,
+        "elapsed": 0.0
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 16,
+        "pending_surfaces": 8,
+        "decoded_bytes": 36864000,
+        "pending_bytes": 19660800,
+        "bytes": 56524800,
+        "hits": 302,
+        "decodes": 317,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 539,
+      "reel_time": 33.98333333333311,
+      "phase": "alarm_hold",
+      "alarm": {
+        "active": true,
+        "elapsed": 3.983333333333107
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 24,
+        "pending_surfaces": 0,
+        "decoded_bytes": 52838400,
+        "pending_bytes": 0,
+        "bytes": 52838400,
+        "hits": 1228,
+        "decodes": 355,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 540,
+      "reel_time": 34.0,
+      "phase": "rush",
+      "alarm": {
+        "active": true,
+        "elapsed": 4.0
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 16,
+        "pending_surfaces": 8,
+        "decoded_bytes": 36249600,
+        "pending_bytes": 19660800,
+        "bytes": 55910400,
+        "hits": 1230,
+        "decodes": 363,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 599,
+      "reel_time": 34.98333333333328,
+      "phase": "rush",
+      "alarm": {
+        "active": true,
+        "elapsed": 4.983333333333277
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 24,
+        "pending_surfaces": 0,
+        "decoded_bytes": 55910400,
+        "pending_bytes": 0,
+        "bytes": 55910400,
+        "hits": 1348,
+        "decodes": 477,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 600,
+      "reel_time": 35.0,
+      "phase": "reveal",
+      "alarm": {
+        "active": true,
+        "elapsed": 5.0
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 16,
+        "pending_surfaces": 8,
+        "decoded_bytes": 36864000,
+        "pending_bytes": 19660800,
+        "bytes": 56524800,
+        "hits": 1350,
+        "decodes": 485,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    },
+    {
+      "frame": 839,
+      "reel_time": 38.98333333333311,
+      "phase": "reveal",
+      "alarm": {
+        "active": true,
+        "elapsed": 8.983333333333107
+      },
+      "cache": {
+        "surfaces": 24,
+        "capacity": 24,
+        "decoded_surfaces": 24,
+        "pending_surfaces": 0,
+        "decoded_bytes": 55296000,
+        "pending_bytes": 0,
+        "bytes": 55296000,
+        "hits": 2276,
+        "decodes": 515,
+        "waits": 0,
+        "wait_seconds": 0.0
+      }
+    }
+  ],
+  "source_sha256": {
+    "fire_veinhold_opening.py": "407fe3e0e953760bf43c9749dac9802344059e228688befccb8699216d7e7581",
+    "cinematic_perspective.py": "d7bae8a41c7f2b0967d8faf9d52b0c3c68427c9ebac5f79e1fdd1032ae2b55f2",
+    "prologue_flight_audio.py": "5c65f2de7df1290528b1143ba51d1851ffbbc1e782e71296d41e0d690033f12a",
+    "prologue_alert_audio.py": "b9d20f1b100ec09df4f50436c2e9504d516fde2dcd7dabcde2941275ce0f13c0",
+    "assets/story/fire_veinhold_opening/scene.json": "256585bd5acd46b92fcd8d314e5010dd134a8711488402fea6f2cf45036a0591",
+    "assets/story/fire_veinhold_opening/continuation/manifest.json": "1b93e2be3a1f2550bd786bbd608ad618f5beb175c4fa14eddc0b1981ce182d46"
+  },
+  "asset_bank": {
+    "png_files": 788,
+    "ordered_name_and_content_sha256": "9af445b95b3b2d9d3cbb8eb1b12acca4fdd4efcc4d378888b0c1cbd199353e64"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "pygame": "2.6.1",
+    "video_driver": "dummy",
+    "mixer": [
+      44100,
+      -16,
+      2
+    ],
+    "effects_volume": 0.4,
+    "render_size": [
+      960,
+      640
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "generation_id": "exec-77da9f9f-8935-4ba7-9c88-8efbb161e757",
+  "source": "orbit_180_final.png",
+  "native_canvas": [
+    1536,
+    1024
+  ],
+  "prompt_file": "reverse_paint_prompt.txt",
+  "references": [
+    "orbit_180_layout_reference.png",
+    "eagle_endpoint_reference.png"
+  ],
+  "presentation": "Paint projected onto actual visible spatial geometry with source-camera occlusion and surface-normal weights, not standalone orbit frames. Animated plumes are separate.",
+  "sha256": {
+    "orbit_180_final.png": "d1439e0aa9f8fa9543d42dd15fbb317fa6808c4d1a2cfa1c0a15d016adb13cb2",
+    "orbit_180_layout_reference.png": "4f82dea545253a9909a17824b86b9ce691838ee9cec8bc9e11746a77436e85bb"
+  }
+}

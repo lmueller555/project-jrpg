@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "renderer": "Blender 4.3 Cycles CPU painted surface pass",
+  "render_size": [
+    960,
+    640
+  ],
+  "fps": 60,
+  "orbit_samples": 301,
+  "orbit_degrees": 180,
+  "orbit_seconds": 5,
+  "rush_samples": 61,
+  "rush_seconds": 1,
+  "metres_per_unit": 1,
+  "mainland_landing_to_final_camera_metres": 6.096,
+  "initial_world_heading": "east-southeast",
+  "reverse_world_heading": "west-northwest",
+  "geometry_axes": "local+x screen-right at initial camera; local+y points east-southeast in canon geography",
+  "bridges": [
+    {
+      "start": [
+        -275,
+        -300,
+        12
+      ],
+      "end": [
+        -40,
+        -115,
+        12
+      ],
+      "width": 14,
+      "length": 299.0819285747636,
+      "name": "Merovar bridge"
+    },
+    {
+      "start": [
+        -550,
+        1700,
+        12
+      ],
+      "end": [
+        -140,
+        50,
+        12
+      ],
+      "width": 10,
+      "length": 1700.176461429813,
+      "name": "Damar bridge"
+    }
+  ],
+  "guards": [
+    {
+      "id": "carcovian_guard_1",
+      "position": [
+        -272.4705810546875,
+        -302.0813903808594,
+        12.75
+      ],
+      "pose": 0
+    },
+    {
+      "id": "carcovian_guard_2",
+      "position": [
+        -275.2892150878906,
+        -297.04595947265625,
+        12.75
+      ],
+      "pose": 1
+    },
+    {
+      "id": "carcovian_guard_3",
+      "position": [
+        -271.9005126953125,
+        -299.0871887207031,
+        12.75
+      ],
+      "pose": 2
+    },
+    {
+      "id": "carcovian_guard_4",
+      "position": [
+        -277.3739318847656,
+        -296.0144958496094,
+        12.75
+      ],
+      "pose": 3
+    }
+  ],
+  "landmarks": {
+    "dormant_crater": [
+      12,
+      65,
+      125
+    ],
+    "active_crater": [
+      720,
+      4200,
+      155
+    ],
+    "reservoir": [
+      110,
+      -45,
+      22
+    ],
+    "merovar_landing": [
+      -275,
+      -300,
+      12
+    ],
+    "island_merovar_gate": [
+      -40,
+      -115,
+      12
+    ],
+    "damar_landing": [
+      -550,
+      1700,
+      12
+    ],
+    "island_damar_gate": [
+      -140,
+      50,
+      12
+    ],
+    "carcovian_guard_1": [
+      -272.4705810546875,
+      -302.0813903808594,
+      12.75
+    ],
+    "carcovian_guard_2": [
+      -275.2892150878906,
+      -297.04595947265625,
+      12.75
+    ],
+    "carcovian_guard_3": [
+      -271.9005126953125,
+      -299.0871887207031,
+      12.75
+    ],
+    "carcovian_guard_4": [
+      -277.3739318847656,
+      -296.0144958496094,
+      12.75
+    ]
+  },
+  "projection_meshes": {
+    "opening": {
+      "vertices": 273707,
+      "faces": 535944
+    },
+    "final": {
+      "vertices": 24,
+      "faces": 7
+    }
+  },
+  "notes": [
+    "Shared geometry and world-anchored moonlight; no image-plane orbit.",
+    "Opening relief applies only over the first three degrees; all remaining orbit views use the shared fully spatial scene.",
+    "Painted 0/90/180 views bake onto actual visible faces; terrain-only versions prevent architecture pixels on geology.",
+    "The relief and shared scene are rendered with the same moving camera.",
+    "Main volcano depleted and dormant; distant crater active.",
+    "301 inclusive orbit samples define 300 1/60-second intervals.",
+    "Beauty lamps inactive; projected alarm masks respect scene ray occlusion.",
+    "Two approved COMPLETE drawn plumes are vent anchored in world space with true depth occlusion, not duplicated puff tiles.",
+    "Smoke uses original four-second phase and global time25+continuation time.",
+    "The final stage uses a rigid far backdrop, four separate RGBA guard planes and an actual horizontal deck; no final depth-field mesh is used."
+  ],
+  "opening_handoff": {
+    "last_orbit_degree": 3,
+    "moon_relief_front_depth_metres": 3340,
+    "matte_edge_feather_uv": 0.045,
+    "full_edge_softness_at_degree": 0.25
+  },
+  "render_samples": 16,
+  "sampling_seed": 0,
+  "animated_seed": false,
+  "frozen_stage": {
+    "backdrop_depth_metres": 700,
+    "backdrop_overscan": 3,
+    "deck_elevation_metres": 12.65,
+    "deck_width_metres": 17,
+    "guard_depths_metres": [
+      5.5,
+      3.4,
+      4.5,
+      5.5
+    ],
+    "ground_photo_polygon_native": [
+      [
+        0,
+        640
+      ],
+      [
+        960,
+        640
+      ],
+      [
+        960,
+        425
+      ],
+      [
+        634,
+        316
+      ],
+      [
+        396,
+        316
+      ],
+      [
+        0,
+        425
+      ]
+    ],
+    "takeover_seconds": [
+      0.6,
+      0.82
+    ]
+  },
+  "rush_eye_height_lock": {
+    "start_seconds": 0.55,
+    "complete_seconds": 0.8,
+    "eye_elevation_metres": 14.649999618530273,
+    "focus_elevation_metres": 13.25
+  }
+}

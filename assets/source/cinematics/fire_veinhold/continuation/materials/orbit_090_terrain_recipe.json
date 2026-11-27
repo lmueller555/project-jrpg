@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "generation_id": "exec-e4ee1665-8f24-4bbc-a988-29faa919dd79",
+  "source": "orbit_090_terrain.png",
+  "native_canvas": [
+    1536,
+    1024
+  ],
+  "prompt_file": "orbit_090_terrain_prompt.txt",
+  "references": [
+    "orbit_090_final.png"
+  ],
+  "presentation": "Terrain-only spatial projection to avoid painting fortress, pipes, banners or reservoir onto rocks. Architecture uses its own reference.",
+  "sha256": "17a4ab4fb492443cd3472c13f9594bd0b141ca7af9f38649d22e8f7b81639814"
+}
