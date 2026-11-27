@@ -1,0 +1,23 @@
+{
+  "purpose": "Authoring-only target overlay; never final character pixels.",
+  "source": "frame_15_overshoot_trial.png",
+  "source_sha256": "1434502f39adbc167c2b0c1eb13ee16a85f4f28d0aa6a608ea1776cfcfae56e1",
+  "targets_source_pixels": {
+    "right_fist": [
+      493,
+      515
+    ],
+    "left_fist": [
+      745,
+      602
+    ],
+    "right_boot_toe": [
+      460,
+      1305
+    ],
+    "left_boot_toe": [
+      630,
+      1120
+    ]
+  }
+}

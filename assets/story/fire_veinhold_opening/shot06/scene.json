@@ -7,12 +7,14 @@
   "duration_seconds": 3,
   "camera": {
     "anchor_x": 620,
-    "pixels_per_metre": 660,
+    "pixels_per_metre": 942.15,
     "actor_scale": 3.0,
-    "speed_metres_per_second": 11.42,
-    "drift_metres": 2.3,
+    "speed_metres_per_second": 4.0,
+    "drift_metres": 2.5240070052539405,
     "drift_start": 1.15,
-    "drift_end": 2.85
+    "drift_end": 2.85,
+    "calibration": "800 ms playback retains authored stance excursion: 660 * 5.71 / 4 = 942.15 px/m. Reframed rear drift preserves the previous final soldier foot at x=126.32. Source foot progress has small pre-existing irregularities; no anatomical warping is applied.",
+    "starting_party_metres": 22.26
   },
   "layers": [
     {
@@ -48,7 +50,7 @@
     {
       "id": "iselin",
       "animation": "characters/iselin/animation.json",
-      "phase_offset_seconds": 0.08333333333333333,
+      "phase_offset_seconds": 0.16666666666666666,
       "offset_metres": -0.5,
       "lane_metres": 0.65,
       "depth_scale": 1.0,
@@ -57,7 +59,7 @@
     {
       "id": "crown_soldier",
       "animation": "characters/crown_soldier/animation.json",
-      "phase_offset_seconds": 0.15,
+      "phase_offset_seconds": 0.3,
       "offset_metres": -3.048,
       "lane_metres": -0.75,
       "depth_scale": 1.0,

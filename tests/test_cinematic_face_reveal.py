@@ -16,7 +16,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 import pygame
 
 from cinematic_face_reveal import (CinematicFaceReveal, DEFAULT_CAMERA, FACE_SCENE,
-                                   camera_at, project_world, read_face_timing)
+                                   camera_at, performance_signature, project_world, read_face_timing)
 
 
 class FaceRevealTests(unittest.TestCase):
@@ -112,9 +112,132 @@ class FaceRevealTests(unittest.TestCase):
         self.assertTrue(140 < project_world(point, last)[1] < 240)
         self.assertEqual(project_world((0., 2000., 0.), last), None)
         later = camera_at(4.)
-        self.assertAlmostEqual(later['position'][1]-last['position'][1], 2.5*11.42)
+        self.assertAlmostEqual(later['position'][1]-last['position'][1], 2.5*DEFAULT_CAMERA['speed_metres_per_second'])
         self.assertEqual(project_world(point, last)[:2],
                          project_world((0., later['party_travel_metres'], 1.76), later)[:2])
+
+    def test_travel_speed_does_not_relocate_the_authored_starting_marker(self):
+        slow = dict(DEFAULT_CAMERA, speed_metres_per_second=2.)
+        fast = dict(DEFAULT_CAMERA, speed_metres_per_second=6.)
+        self.assertEqual(camera_at(0., config=slow)['party_travel_metres'], 34.26)
+        self.assertEqual(camera_at(0., config=fast)['party_travel_metres'], 34.26)
+        self.assertEqual(camera_at(2., config=slow)['party_travel_metres'], 38.26)
+        self.assertEqual(camera_at(2., config=fast)['party_travel_metres'], 46.26)
+
+    def test_baked_performance_streams_pixels_without_loading_source_drawings(self):
+        self.data['baked_characters'] = True
+        self.write()
+        manifest_path = self.root/'environment/manifest.json'
+        manifest = json.loads(manifest_path.read_text())
+        manifest['baked_characters'] = True
+        manifest['performance_signature'] = performance_signature(self.path)
+        manifest_path.write_text(json.dumps(manifest))
+        player = self.player()
+        target = pygame.Surface((960, 640))
+        with patch('cinematic_bridge_run._decode_png', side_effect=AssertionError('Source drawing decoded')):
+            for at in (0., .8, 1.5, 3., 5.):
+                state = player.preload(at, blocking=True)
+                player.draw(target, state)
+                self.assertEqual(target.get_at((480, 320))[:3], (18, 39, 59))
+                info = player.cache_info
+                self.assertEqual(info['actor_cache']['surfaces'], 0)
+                self.assertEqual(info['expected_frames'], 0)
+                self.assertLessEqual(info['bytes'], 8*960*640*4)
+                self.assertEqual(info['byte_capacity'], 8*960*640*4)
+        player.close()
+        self.assertEqual(player.cache_info['bytes'], 0)
+
+    def test_baked_playback_rejects_an_uncomposited_environment_bank(self):
+        self.data['baked_characters'] = True
+        self.write()
+        manifest_path = self.root/'environment/manifest.json'
+        manifest = json.loads(manifest_path.read_text())
+        for marker in (None, False, 'true', 1):
+            if marker is None:
+                manifest.pop('baked_characters', None)
+            else:
+                manifest['baked_characters'] = marker
+            manifest_path.write_text(json.dumps(manifest))
+            with self.subTest(marker=marker):
+                with self.assertRaisesRegex(ValueError, 'character-composited environment bank'):
+                    self.player()
+        # Explicit offline mode can still author the missing full performance.
+        self.assertFalse(self.player(baked_characters=False).baked_characters)
+
+    def test_baked_signature_rejects_changed_phase_camera_segment_and_frame_contract(self):
+        self.data['baked_characters'] = True
+        self.write()
+        manifest_path = self.root/'environment/manifest.json'
+        manifest = json.loads(manifest_path.read_text())
+        manifest.update(baked_characters=True, performance_signature=performance_signature(self.path))
+        manifest_path.write_text(json.dumps(manifest))
+        original_scene = deepcopy(self.data)
+        animation_path = self.root/'lucan/animation.json'
+        original_animation = json.loads(animation_path.read_text())
+        for change in ('phase', 'camera', 'segments', 'duration', 'anchor', 'frame_order', 'frame_count'):
+            self.data = deepcopy(original_scene)
+            animation = deepcopy(original_animation)
+            if change == 'phase':
+                self.data['actors'][0]['phase_offset_seconds'] += 1/60
+            elif change == 'camera':
+                self.data['camera']['speed_metres_per_second'] += 1.
+            elif change == 'segments':
+                self.data['environment_segments']['normal'] = 'face_reveal_reduced'
+            elif change == 'duration':
+                animation['duration_ms'] *= 2
+                for frame in animation['frames']:
+                    frame['duration_ms'] *= 2
+            elif change == 'anchor':
+                animation['anchor'][0] += 1
+            elif change == 'frame_order':
+                animation['frames'][0], animation['frames'][1] = animation['frames'][1], animation['frames'][0]
+            elif change == 'frame_count':
+                animation['frames'].pop()
+                animation['duration_ms'] = sum(frame['duration_ms'] for frame in animation['frames'])
+            self.write()
+            animation_path.write_text(json.dumps(animation))
+            with self.subTest(change=change):
+                with self.assertRaisesRegex(ValueError, 'performance is stale'):
+                    self.player()
+        self.data = original_scene
+        self.write()
+        animation_path.write_text(json.dumps(original_animation))
+        self.player()  # Restoring the exact metadata restores the accepted bake.
+
+    def test_signature_is_portable_canonical_and_reads_no_pose_pixels(self):
+        with patch('pygame.image.load', side_effect=AssertionError('Signature decoded a drawing')):
+            before = performance_signature(self.path)
+        with tempfile.TemporaryDirectory() as destination:
+            relocated = Path(destination)/'relocated'
+            shutil.copytree(self.root, relocated)
+            self.assertEqual(performance_signature(relocated/'scene.json'), before)
+            animation_path = relocated/'lucan/animation.json'
+            metadata = json.loads(animation_path.read_text())
+            animation_path.write_text(json.dumps(metadata, sort_keys=True, indent=7))
+            self.assertEqual(performance_signature(relocated/'scene.json'), before)
+        provenance = self.root/'lucan/provenance.json'
+        provenance.write_text(json.dumps({'registrations':[{'frame':0, 'sha256':'a'*64}]}))
+        declared = performance_signature(self.path)
+        self.assertNotEqual(declared, before)
+        provenance.write_text(json.dumps({'registrations':[{'frame':0, 'sha256':'b'*64}]}))
+        self.assertNotEqual(performance_signature(self.path), declared)
+
+    def test_offline_override_can_draw_source_figures_over_a_fresh_background(self):
+        self.data['baked_characters'] = True
+        self.write()
+        player = self.player(baked_characters=False)
+        target = pygame.Surface((960, 640))
+        target.fill('#12273b')
+        state = player.preload(1.5, blocking=True)
+        player.draw_unbaked(target, state)
+        self.assertNotEqual(target.get_at((480, 160))[:3], (18, 39, 59))
+        manifest_path = self.root/'environment/manifest.json'
+        manifest = json.loads(manifest_path.read_text())
+        manifest['baked_characters'] = True
+        manifest['performance_signature'] = performance_signature(self.path)
+        manifest_path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'unbaked owner'):
+            self.player().draw_unbaked(target, state)
 
     def test_anatomical_sides_and_ten_foot_gap_survive_perspective(self):
         player = self.player()
@@ -275,12 +398,22 @@ class ProductionFaceRevealTests(unittest.TestCase):
         from cinematic_bridge_run import CinematicBridgeRun
         previous, player = CinematicBridgeRun(), CinematicFaceReveal()
         try:
-            expected = [actor['frame_index'] for actor in previous.samples(3.)['runners']]
-            actual = [actor['frame_index'] for actor in player.samples(0.)['runners']]
-            self.assertEqual(actual, expected)
-            for actor in range(3):
-                indices = [player.samples(tick/60)['runners'][actor]['frame_index'] for tick in range(300)]
-                self.assertTrue(all((right-left)%24 == 1 for left,right in zip(indices,indices[1:])))
+            self.assertAlmostEqual(previous.samples(3.)['camera']['party_travel_metres'],
+                                   player.samples(0.)['camera']['party_travel_metres'])
+            previous_stages = previous.samples(3.)['runners']
+            current_stages = player.samples(0.)['runners']
+            for before, after in zip(previous_stages, current_stages):
+                self.assertAlmostEqual(before['cycle_phase'], after['cycle_phase'])
+            for actor_index, actor in enumerate(player.data['actors']):
+                animation = actor['animation']
+                self.assertAlmostEqual(animation['cycle_seconds'], .8)
+                self.assertEqual(len(animation['frames']), 48)
+                indices = [player.samples(tick/60)['runners'][actor_index]['frame_index']
+                           for tick in range(300)]
+                self.assertTrue(all((right-left)%len(animation['frames']) == 1
+                                    for left,right in zip(indices,indices[1:])))
+            self.assertTrue(player.baked_characters)
+            self.assertEqual(player.cache_info['expected_frames'], 0)
         finally:
             previous.close()
             player.close()
@@ -307,13 +440,13 @@ class ProductionFaceRevealTests(unittest.TestCase):
         try:
             scene.start()
             self.assertEqual(scene.elapsed, 0.)
-            self.assertTrue(all(owner.cache_info['prepared_frames'] == 72
+            self.assertTrue(all(owner.cache_info['prepared_frames'] == 0
                                 for owner in scene._face_reveals.values()))
             scene.update(40.99)
-            self.assertTrue(all(owner.cache_info['prepared_frames'] == 72
+            self.assertTrue(all(owner.cache_info['prepared_frames'] == 0
                                 for owner in scene._face_reveals.values()))
             scene.update(.01)
-            self.assertTrue(all(owner.cache_info['actor_cache']['surfaces'] == 72
+            self.assertTrue(all(owner.cache_info['actor_cache']['surfaces'] == 0
                                 for owner in scene._face_reveals.values()))
             scene.update(1.)
             scene.render_frame()

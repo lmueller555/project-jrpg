@@ -18,9 +18,9 @@ from PIL import Image, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/bridge_running'
 OUTPUT = ROOT/'assets/story/fire_veinhold_opening/shot06/characters'
-REVIEW = ROOT/'docs/reviews/veinhold_bridge_run'
+REVIEW = ROOT/'docs/reviews/veinhold_running_polish'
 ACTORS = ('lucan', 'iselin', 'crown_soldier')
-FRAME_MS = 1000/60
+PLAYBACK = SOURCE/'playback.json'
 
 
 def _json(data):
@@ -58,7 +58,13 @@ def build_actor(actor, check=False):
             or data.get('cycle_ms') != 400 or len(data.get('frames', [])) != 24
             or data.get('contacts') != [{'frame':0,'foot':'near'}, {'frame':12,'foot':'far'}]):
         raise ValueError('Expected a complete 24-pose / 400 ms source profile for '+actor)
+    playback = json.loads(PLAYBACK.read_text())
+    if (playback.get('version') != 1 or playback.get('source_pose_count') != len(data['frames'])
+            or not isinstance(playback.get('cycle_ms'), (int, float)) or playback['cycle_ms'] <= 0):
+        raise ValueError('Invalid side-performance playback recipe')
+    frame_ms = playback['cycle_ms']/len(data['frames'])
     images, hashes, animation, registrations, drawings = {}, {}, [], [], []
+    hashes[PLAYBACK.relative_to(ROOT).as_posix()] = sha256(PLAYBACK.read_bytes()).hexdigest()
     hashes[profile.relative_to(ROOT).as_posix()] = sha256(profile.read_bytes()).hexdigest()
     for name, expected in data.get('source_sha256', {}).items():
         source = (folder/name).resolve()
@@ -117,7 +123,7 @@ def build_actor(actor, check=False):
                 landmarks[label] = [round(point[i]*scale+applied_origin[i], 4) for i in (0,1)]
             else:
                 raise ValueError(f'Invalid source-cell landmark {actor}:{index}:{label}')
-        animation.append({'file':filename, 'duration_ms':FRAME_MS, 'landmarks':landmarks,
+        animation.append({'file':filename, 'duration_ms':frame_ms, 'landmarks':landmarks,
                           'notes':record.get('notes', '')})
         registrations.append({'frame':index, 'source':name, 'cell':cell, 'scale':scale,
             'requested_origin':origin, 'applied_origin':list(applied_origin), 'sample_size':list(size),
@@ -125,7 +131,8 @@ def build_actor(actor, check=False):
             'opaque_bounds':placed_bounds, 'sha256':sha256(pixels).hexdigest()})
         drawings.append(frame)
     manifest = {'version':1, 'actor':actor, 'canvas':canvas, 'anchor':anchor,
-                'duration_ms':400, 'fps':60, 'loop':True, 'contacts':data['contacts'],
+                'duration_ms':playback['cycle_ms'], 'fps':len(data['frames'])*1000/playback['cycle_ms'],
+                'presentation_fps':playback.get('presentation_fps', 60), 'loop':True, 'contacts':data['contacts'],
                 'landmark_space':'Exported artwork pixels; null means occluded/unmeasured.',
                 'frames':animation}
     _write(OUTPUT/actor/'animation.json', _json(manifest), check)
@@ -142,14 +149,14 @@ def build_actor(actor, check=False):
     for index, frame in enumerate(drawings):
         x, y = (index%4)*480, (index//4)*(canvas[1]+24)
         sheet.paste(frame, (x,y), frame)
-        text.text((x+8,y+canvas[1]+2), f'{index:02d} / {index/60:.3f}s', fill='white')
+        text.text((x+8,y+canvas[1]+2), f'{index:02d} / {index*frame_ms/1000:.3f}s', fill='white')
         by = (index//4)*264
         lower = frame.crop((0,canvas[1]-240,480,canvas[1]))
         boots.paste(lower, (x,by), lower)
         foot_text.text((x+8,by+242), f'{index:02d}', fill='white')
     _write(REVIEW/f'{actor}_drawn_contact_sheet.png', _png(sheet), check)
     _write(REVIEW/f'{actor}_boots_contact_sheet.png', _png(boots), check)
-    print(f'{actor}: 24 complete poses, 400 ms, 60 Hz; registration and alpha exports match.')
+    print(f"{actor}: {len(drawings)} complete poses, {playback['cycle_ms']} ms, 60 Hz presentation; registration and alpha exports match.")
 
 
 if __name__ == '__main__':

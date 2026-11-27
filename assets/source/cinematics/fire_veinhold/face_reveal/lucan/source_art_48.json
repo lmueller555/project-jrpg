@@ -1,0 +1,2094 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "cycle_ms": 800,
+  "alpha_floor": 16,
+  "facing": "front",
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 24,
+      "foot": "far"
+    }
+  ],
+  "approval_state": "implemented_for_ingame_review",
+  "construction": "48 individually ImageGen-authored complete painted drawings. Low-resolution key sheet and joint charts are authoring guides only. Final keys and inbetweens retain full source detail; no rig, detached anatomy, pasted face or image interpolation.",
+  "registration": "Fixed0.63 source-art density for every master, regardless of canvas or occupied bounds. Eyes/neck/belt template matches register each complete drawing; one authored weight chart controls support/flight recoil. Production exporter only uniformly samples and translates whole figures.",
+  "registration_reference": {
+    "source": "appearance_contact.png",
+    "target_landmarks": {
+      "eyes": [
+        384.0,
+        135.66
+      ],
+      "neck": [
+        386.64,
+        205.62
+      ],
+      "belt": [
+        385.98,
+        401.64
+      ]
+    },
+    "weights": {
+      "eyes": 0.5,
+      "neck": 0.2,
+      "belt": 0.3
+    },
+    "fixed_source_density": 0.63,
+    "authored_recoil_y": [
+      0.0,
+      0.5579,
+      1.2963,
+      2.0625,
+      2.7037,
+      3.0671,
+      3.0,
+      2.3079,
+      1.0741,
+      -0.4375,
+      -1.963,
+      -3.2384,
+      -4.0,
+      -4.1875,
+      -4.0,
+      -3.5625,
+      -3.0,
+      -2.4375,
+      -2.0,
+      -1.6782,
+      -1.3704,
+      -1.0625,
+      -0.7407,
+      -0.3912,
+      0.0,
+      0.5579,
+      1.2963,
+      2.0625,
+      2.7037,
+      3.0671,
+      3.0,
+      2.3079,
+      1.0741,
+      -0.4375,
+      -1.963,
+      -3.2384,
+      -4.0,
+      -4.1875,
+      -4.0,
+      -3.5625,
+      -3.0,
+      -2.4375,
+      -2.0,
+      -1.6782,
+      -1.3704,
+      -1.0625,
+      -0.7407,
+      -0.3912
+    ]
+  },
+  "source_sha256": {
+    "run_v2/frames/frame_00.png": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
+    "run_v2/frames/frame_01.png": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
+    "run_v2/frames/frame_02.png": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
+    "run_v2/frames/frame_03.png": "1a7a4d5a9121eae60a9c1feeea1cf1a4c048fbee3f8005b7f3c969e37e3a1bec",
+    "run_v2/frames/frame_04.png": "d24cdf0bc1e846e576aa4388e03010b4853b02a848a18194bebe1aa81c6e9722",
+    "run_v2/frames/frame_05.png": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
+    "run_v2/frames/frame_06.png": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
+    "run_v2/frames/frame_07.png": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
+    "run_v2/frames/frame_08.png": "c9526df52c6289b16d999fa96c88cbbe4375be1219b07e52cfc5207db27e8287",
+    "run_v2/frames/frame_09.png": "e9af2e8c36fd1b1b87a1c10c320d03b505bde99eb587a68172db7078df0bae83",
+    "run_v2/frames/frame_10.png": "99739333014db6936e333fff112c81b449611397a8f5b4d79b0ed9299bc70872",
+    "run_v2/frames/frame_11.png": "0e3a8f5b9ace16fb3a7f602692d5944650d7894578c7c1b7a4dc28efdc3aed5b",
+    "run_v2/frames/frame_12.png": "8d0255e92011898bbf816eb4bd30f5d358b87ede148df5efa5b597403f3c39c3",
+    "run_v2/frames/frame_13.png": "fdff66b940e5ee304b3683f5e995a572f043d9e5be0e019bffd133b09851d861",
+    "run_v2/frames/frame_14.png": "aede861d64fd5a569b63623e110e26ce521cc93c2a3e65752b32fda5ab10bd41",
+    "run_v2/frames/frame_15.png": "a1eee9c8fdcc0af1a8b3d061a098988cd50a5c89a7d1bf2f74e7c4bac3a5c68f",
+    "run_v2/frames/frame_16.png": "a3f2b47f63b85a627865aeda96bca4f59ae925b8971e0a11756986de7c88bd7a",
+    "run_v2/frames/frame_17.png": "883db64b31f97294e5a5f5be85a4d29640bf8cb0b829861264fb942d9999955c",
+    "run_v2/frames/frame_18.png": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
+    "run_v2/frames/frame_19.png": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
+    "run_v2/frames/frame_20.png": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
+    "run_v2/frames/frame_21.png": "cff27ec48daf4afead95d91d43a2769d7537afa756d871425ba056aba7dce58f",
+    "run_v2/frames/frame_22.png": "60934177bc14dddde96e25620cd27723d8a23ad25a4d14735679528044e324c0",
+    "run_v2/frames/frame_23.png": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+    "run_v2/frames/frame_24.png": "2a1f0f2582efaa66c720796e8a491e86971dbf44a4aee23574495175a3f7f8ee",
+    "run_v2/frames/frame_25.png": "50374185a6aa6e9ca545de88b1ead1da9e89ee4df2bd1f4e510e537ee467e446",
+    "run_v2/frames/frame_26.png": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+    "run_v2/frames/frame_27.png": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+    "run_v2/frames/frame_28.png": "16d7e31967e1a239e77c03d7ce5fe82c00fd9497b2e2e9caf10a648bd27a91c8",
+    "run_v2/frames/frame_29.png": "a83e47d4d7b1a22355425aa2d271a8aa0e4f3a22b58fba09d7606031296a522e",
+    "run_v2/frames/frame_30.png": "8d13751c39727c72f02dd4c8919910f7dde1631fd00af27fc160219eb12e323a",
+    "run_v2/frames/frame_31.png": "faa02b4a2865e2ea5501ce97cb91279b05ff90a1aedc86498d1bdb1c50c8fff9",
+    "run_v2/frames/frame_32.png": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
+    "run_v2/frames/frame_33.png": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
+    "run_v2/frames/frame_34.png": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
+    "run_v2/frames/frame_35.png": "f0bdc4d4b3470b4f6d54a7ecf1e6d5091761c774e5f4c5006c93da8904c6d150",
+    "run_v2/frames/frame_36.png": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+    "run_v2/frames/frame_37.png": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
+    "run_v2/frames/frame_38.png": "234c2f46a82755f4e04f25a6a4b5e9ecc84c4bed6a0bd8be8629c738e8ef6c0d",
+    "run_v2/frames/frame_39.png": "777af5732cfb4f60bbf50546bb43a98fa6d91cefe1442749f62b9b17685e3056",
+    "run_v2/frames/frame_40.png": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+    "run_v2/frames/frame_41.png": "ae55dede516dbad81f60866b6a87d09bee021580155fff378c4162ba2f3bb163",
+    "run_v2/frames/frame_42.png": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
+    "run_v2/frames/frame_43.png": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
+    "run_v2/frames/frame_44.png": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
+    "run_v2/frames/frame_45.png": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
+    "run_v2/frames/frame_46.png": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
+    "run_v2/frames/frame_47.png": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
+    "run_v2/frames/frame_00_prompt.txt": "a1f8d2d595b70af9a3407b42d038226b11baba2c38546ab51cdb16fb97fd4d9e",
+    "run_v2/frames/frame_01_prompt.txt": "6d33289af3093c46a96484002df3e37e10d3853644963312aa806901d3e34e9d",
+    "run_v2/frames/frame_02_prompt.txt": "e1ff118db35b03fae1b90bfd476dd1bf58943ea5e5c59745a305439fe8446c2d",
+    "run_v2/frames/frame_03_prompt.txt": "ca7fe9af91a9fb391f5388fbc0ec62b1fd29f79272cbed1de59f7738bea92bca",
+    "run_v2/frames/frame_04_prompt.txt": "250d191502688c4572ed98c1c9d3838af312959dab91ba71bf979f7deda022c9",
+    "run_v2/frames/frame_05_prompt.txt": "51d5b957edfa013521a1f4e26e20e26cdeee3a3ece72d702de161c4da745d51d",
+    "run_v2/frames/frame_06_prompt.txt": "f2f0cbb0c2be7d4f58cc29fb102cd66baa242ab31632bbb269f174fc46c29ba1",
+    "run_v2/frames/frame_07_prompt.txt": "c474f4e197980a7229c476ca08be5c9307740e784dff19d318dc58558efc65b9",
+    "run_v2/frames/frame_08_prompt.txt": "3af8889595c1936c84721d3b9bd0c56b91f965907f4a1a2228fb48dcbca72b38",
+    "run_v2/frames/frame_09_prompt.txt": "c5cdcfdc677287dc9d3ffbda7fd9af3052d9cc1748c332d39dbb6fd50c6245a9",
+    "run_v2/frames/frame_10_prompt.txt": "b18e928c4ffdb159dbb3da16e8b3443ea0711b36dce95ac77a90d319cb557479",
+    "run_v2/frames/frame_11_prompt.txt": "a5c90589bd44160651a0584957c70fe9db8f4283400e75df195f76bb43a8b346",
+    "run_v2/frames/frame_12_prompt.txt": "ecd1b5d29d416f29e87249a9b81f51bff5350588aaa0450da9bafc47466a4a6b",
+    "run_v2/frames/frame_13_prompt.txt": "a42b0519bbc29bcdbd49c0851917ab4e0dff43ac6d2ecb4c4e0bc9f3702c498e",
+    "run_v2/frames/frame_14_prompt.txt": "62d03d452c6185568c01351e91bdf58b33d1fd26db9597b6a9549e1441f1a34e",
+    "run_v2/frames/frame_15_prompt.txt": "e02e25809ae90b5fd8e9fe24790b1a688e8872ccc806349bdf046002b23d22b3",
+    "run_v2/frames/frame_16_prompt.txt": "b83b4b68e9af5b085d00c50a2eb7d64367dcdb9e7c7ad61dfae967b3679fbf8b",
+    "run_v2/frames/frame_17_prompt.txt": "069ec82d93c16e0e094244b635723f6481ea09b8d6d7379b7925c8869be95994",
+    "run_v2/frames/frame_18_prompt.txt": "7c31af6d3984a92a5a8fc4ec8d197d1ed0279b24d8859f9158f4894ccac10b25",
+    "run_v2/frames/frame_19_prompt.txt": "9c3446818c04ab840d8e0415fad10c22b63f5a7134c327eab87aa8e6e7f30fb0",
+    "run_v2/frames/frame_20_prompt.txt": "fa407a13b6adba1cabb853399aca834ba8a368acfeb51b32ce320ef625816f11",
+    "run_v2/frames/frame_21_prompt.txt": "24ba735d3dc25b2efe13a3fd132500508d4a6dd3d2cc597ae7e89c51e51f1094",
+    "run_v2/frames/frame_22_prompt.txt": "a9fff58eb10ec70bd324328110c615575248ee04fc0d07594070dd4ec59491f2",
+    "run_v2/frames/frame_23_prompt.txt": "297b12e6cbd34b23a2f4efb4d18a8c884256f7924058159946ae91d80982a7d5",
+    "run_v2/frames/frame_24_prompt.txt": "eeca0ac928ce1bd28284383973879b34f96e518e20d494f87f146ab2fc416361",
+    "run_v2/frames/frame_25_prompt.txt": "40c9da7a655d913f670db18cc3d6b22fee039899704a1cbe22257715da4e7b87",
+    "run_v2/frames/frame_26_prompt.txt": "fd575091046c859078ffb0152c45ab30055c30a610e8b5a00333c6321647db35",
+    "run_v2/frames/frame_27_prompt.txt": "e9b4de52a4402350fa55f9f0169eb71fa220bcb161e6694f72c276b695109612",
+    "run_v2/frames/frame_28_prompt.txt": "230701a549fa1917da407507a0f377d077b674f238367245ff0a035ad2a0c5a0",
+    "run_v2/frames/frame_29_prompt.txt": "36d98b39bdaa0bb2025a5250cf217ccf7c666319756ef80909f41c1c6ae3841b",
+    "run_v2/frames/frame_30_prompt.txt": "14296de4e10dbb2c2a96aaa83a02a76eaa228fef894094a4a4752013f66b2580",
+    "run_v2/frames/frame_31_prompt.txt": "f5a872ef4d79c7096c00175792209c6d920bd2367b27953701f904c5e9d9dbf4",
+    "run_v2/frames/frame_32_prompt.txt": "6889221bc23e1f96c4dfff13ff792908bb693a4ef4040188966fd4c77d900dd5",
+    "run_v2/frames/frame_33_prompt.txt": "c3ffda8f0db21412c095fd053027dbb6548bfffd61bae9b25f04a6e58d810e09",
+    "run_v2/frames/frame_34_prompt.txt": "5b8f2e067eb428c2b71c63e67ff24d1e67915bcf4ef3e7e9981b6472ac157d36",
+    "run_v2/frames/frame_35_prompt.txt": "bd82ddb2f5fc327af6122c330c45bdc832e60a20192a6b7af535ecb105554667",
+    "run_v2/frames/frame_36_prompt.txt": "1793735bec9203ead209cfa55e446cc5aefe26a1425ea349aa9cf105944d0577",
+    "run_v2/frames/frame_37_prompt.txt": "fad5d4d8fda81c45a5be975443f81984b436b528e3d1cce8ab5a0e3188242374",
+    "run_v2/frames/frame_38_prompt.txt": "d115fb042900d0f0d944b616fe85235fc9a6747b47d776b45be2e32c06252b21",
+    "run_v2/frames/frame_39_prompt.txt": "9fe367d461a75ddb35e084ad504f755080a178f18d9327360d386d8723da5b59",
+    "run_v2/frames/frame_40_prompt.txt": "e1c666e47055caf13d17b220b9201520f0e82ba4f3cd81e18a89f918f65fe991",
+    "run_v2/frames/frame_41_prompt.txt": "ff65feccec04b1303e5e9b639a7afa82fa1563ec05df1cd146311b199fe4233b",
+    "run_v2/frames/frame_42_prompt.txt": "9bbc777876cf1fafd389999c640c6ef5f9ce5e074d250a500899125038221225",
+    "run_v2/frames/frame_43_prompt.txt": "02a1059035c6d4929d51796b5fffe06b55080673152f23e42060023f61090b64",
+    "run_v2/frames/frame_44_prompt.txt": "200679bd6b98bd2926e7372b1e91ee01f3992d182179b2b3e75a70c95e37cf11",
+    "run_v2/frames/frame_45_prompt.txt": "f8fef2820af9ebd37119cdd752fa724303c463fefeb1b64dcacb1feac43fa6d0",
+    "run_v2/frames/frame_46_prompt.txt": "fe3e42dbb920efa89650eeaf9980b373c900331fc5f1824f4b6df0be7c91ac0b",
+    "run_v2/frames/frame_47_prompt.txt": "deb8c7518c9659aa6d8d2131cf0f919390ccf5982b3dcaa50276664963472211",
+    "run_v2/guides/phase_00.png": "3ed326f4fb43daa89cf81107276eae895fc60bb83d8fd0d833f0861b6663fe3a",
+    "run_v2/guides/phase_01.png": "c0615cf2d70d832802a82fd8e3786740eafc3848e8a89f2ad38dfa25a13fa567",
+    "run_v2/guides/phase_02.png": "57416562bfd9120131834a9e8d7fd0868335086f296132ca35c79def03f5eaf6",
+    "run_v2/guides/phase_03.png": "b27bf75a5cc92796cbc425ccf86b3f186599027c43e4eb59b8c79719d453ed99",
+    "run_v2/guides/phase_04.png": "89b9d6a4699038360cc90de5fa1d702f7e957f86265d8f8a002801a362cbf751",
+    "run_v2/guides/phase_05.png": "ccb7bf92fa6205cdc733e52a354070bad23d7293d9d126a62d728843a2c88ca1",
+    "run_v2/guides/phase_06.png": "2800dfbca1d8ff283739f8bc0fd39cfb88bcf72e21b1a9336ad52e982ca09bef",
+    "run_v2/guides/phase_07.png": "82aad527fa4f85085789abcd2a3b3f363148304b23b573582a7cd52c60e7f36f",
+    "run_v2/guides/phase_08.png": "020ff4d0864243045f614bba8b6ea5de96583f1c176fe5c74eb6e24bb7d757c8",
+    "run_v2/guides/phase_09.png": "773ec3e794f0badee78bdf187ebdd16702a83d4235141f2a8f050f5391c40365",
+    "run_v2/guides/phase_10.png": "e6b5ff2281f2dcc376326a764bb44545086fa2852c6dc22388d4524b4450ce32",
+    "run_v2/guides/phase_11.png": "1c8003caf5230d3624fab7bdd42e1e1a5941a4c42db50ad2164548333ad04f89",
+    "run_v2/guides/phase_12.png": "8e7a8a1629eb85d0d2bd4e385e819649e3008cba11054c2f0606e46ab3c86919",
+    "run_v2/guides/phase_13.png": "86279e06a84004da99076db8fa6e1367a850b1d5c5d4b0cd263ac35adae2cb42",
+    "run_v2/guides/phase_14.png": "4dfb8c41d81fbfd7757215533764b7d92068f30a8cb1dcb00d158635a993db88",
+    "run_v2/guides/phase_15.png": "81ae7885496c9ba4a9de4ea86c653a53ba7e8fcebabd38a076164fa0cf80f740",
+    "run_v2/guides/phase_16.png": "7a1199665ae5df2380a3e141e242b9125313697810a36db20ea8c6359266755e",
+    "run_v2/guides/phase_17.png": "00800facb7d63c9d734e1d2a634524e4e26933a5fd09edce35523fcc78b5ee39",
+    "run_v2/guides/phase_18.png": "8f94b1746473a730a7f5419b4c54c390fb78615679318c4fe3280e3235de5d50",
+    "run_v2/guides/phase_19.png": "f8004a7513052ee313f34a47849a5124de8911a88aac15387a9bbca3eeb7fa15",
+    "run_v2/guides/phase_20.png": "25ad1f80c199a83b74cde23d8421240827f6dccfd1a34b1b26dad024f0e37145",
+    "run_v2/guides/phase_21.png": "e4b51938cce3c707c44e127a6ac6aff042032a9769a351c2c34556d847d15e53",
+    "run_v2/guides/phase_22.png": "ecd41b433d053999a8c0072eeb1d34ecb8316dc2bef9015dd290306ebfe49c91",
+    "run_v2/guides/phase_23.png": "cd969de13690b65479bb69675067be7880f356835f204505232ab58e05351daa",
+    "run_v2/guides/phase_24.png": "e45ad10164c1aabef38841b50effaa056d42091d82e1d1747f054df64591d871",
+    "run_v2/guides/phase_25.png": "f16cd11467cae688d96fa58da216b657356317814255d927d95c1fc9d9131227",
+    "run_v2/guides/phase_26.png": "9cb77cad0d80286a46361bcb33c463794bc8d666f41a7b140d9d14c921a42cdd",
+    "run_v2/guides/phase_27.png": "f728a4d98b65d674f5c8ece594bad31a5270945681dfd2fa1d348274bd1a227a",
+    "run_v2/guides/phase_28.png": "297484fd6ce704915c35f8d25f7e6f36dbf159401b5c7f2b439822807f1761dc",
+    "run_v2/guides/phase_29.png": "e7034d61d8b661de2d6e688f0ab567bd57535b5e3a5f268a29163c8558c000d0",
+    "run_v2/guides/phase_30.png": "e710efc7c5bdcde52490c2b69da54c2974520614770479789904c4f43cc663a9",
+    "run_v2/guides/phase_31.png": "0144240b0338a87e219159bd3a330992433a11517f78445c85287267db24e259",
+    "run_v2/guides/phase_32.png": "387498d3807de899ef35cee54ae4e84b3d3b843e04fef378d56675c97be1f7b5",
+    "run_v2/guides/phase_33.png": "fb0eef8329bfb962b8e31e48cbdec35362338fc0756e646448d9f73fbe9bb144",
+    "run_v2/guides/phase_34.png": "36a04d3edd7552b0339dafd077d65c23b841b255601327390cb6063e0ce37c7b",
+    "run_v2/guides/phase_35.png": "ae06912dfa78e0941541f628d75bf1cd871fbde75fa52958eec49fa0160a0c25",
+    "run_v2/guides/phase_36.png": "fd189ea391b5a023b6e858881f0188e598409321ff4e68568874810526e7afe9",
+    "run_v2/guides/phase_37.png": "394a66e40055bfc10dad28a00beb807696240404416243f679d65c1f4f8cd9e8",
+    "run_v2/guides/phase_38.png": "69a0fc475cfc3b69d4355acdbe0bcb010193f24ae2c2140ad3865a54bd5ce67b",
+    "run_v2/guides/phase_39.png": "7572d37cf4483db76b0751f41b3c1c02dd5bac9c6b7cb8e23630bfc24efd5574",
+    "run_v2/guides/phase_40.png": "0e6da5588544158dae6f484ee0e114904d58020eef55d38ebbfcfdb9c82ff256",
+    "run_v2/guides/phase_41.png": "d4933fddb35a7a6b755b9692822594b886affa14e69942bbdfe4d17e440cdd5b",
+    "run_v2/guides/phase_42.png": "51f7e18d8c2cd425b0d902481e9e4e8a5514187d56d9f707d4c2df878cbddb96",
+    "run_v2/guides/phase_43.png": "3eec118c5aff2492e926eac4a4d1e911bd30231405a66c3b5494b177e976e42c",
+    "run_v2/guides/phase_44.png": "70243305de33f12034a2cbd9f4bedd1a87af0d6f0e9e2b53dd2e7c75cfc59c29",
+    "run_v2/guides/phase_45.png": "3bf15c4b8ab271ffea3b2c22813637199428da36454c6ae0b61b6e815aa83b9c",
+    "run_v2/guides/phase_46.png": "0923cf2cdc4482cb1bb789e3dca50f1bda66db6a942a4fd95b216b09c5aa1dc5",
+    "run_v2/guides/phase_47.png": "92e0ff7f3835997eea9b8f422657fe4db3c1dd6ca02e6e40c490a72829fe08c2",
+    "run_v2/guide_recipe.py": "973009447a9099a3f474513dba89b8b1097a2f759d4765013eac2194814140bc",
+    "run_v2/measure_landmarks.py": "548d803049567f9ab16882f014f4b184d96842f84d016922075bdefe5c9e024a",
+    "run_v2/measured_landmarks.json": "a78f276a32ccf1bd090f4768e836d6748f6827a1d509f63a1f5fa99b3d8d5d4d",
+    "run_v2/build_profile.py": "64fd0701bc573bfe9af504d53b40d7f71f698c3a5497e627c60ac4b2fd3f441a",
+    "run_v2/keys.png": "4d6e11b091500af54280384b6f46217210d2516be73810ac53989a7e0ef3f2d4",
+    "run_v2/final_fix_results.json": "a3c20277c1b8398e9d486b68d254eeb805e838dcead35b911cf9b4fdf0f3a895",
+    "run_v2/first_results.json": "c30398a752dd78ba2fad4ca31d9bff6c71c0c54910354ed7602f20bffea96ce1",
+    "run_v2/generated_helper_results.json": "e995e2e23ae63fcd01e3c15b0a2a2ed3425d45e5380147e59a402e8f19d3ccc0",
+    "run_v2/repair_results.json": "be22d02a4648b6cb245f930bbcf957784b96b28c6471b0f2ff61b1d65660ebe7",
+    "run_v2/second_results.json": "46dfe2a97f9d47ca3bd4e0497374ea1fe1194375b0fad7595ef6eb1f9d0492c2",
+    "run_v2/generated_keys.json": "08c164d4b5806a060d6a162c420650e6ab72abe4a97d2d17cb450175faa068fb",
+    "run_v2/final4_result.json": "a19c993b1756b87f061bdf9d3af5d79b3a8f7078367f8511478319c88ad3a2f0",
+    "run_v2/helper_leg_repairs.json": "fcc7fe32c1e4335686844b2569ecc132992f77c821fcbfe9b1431ceffaaae321"
+  },
+  "frames": [
+    {
+      "source": "run_v2/frames/frame_00.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        41.3921,
+        45.2441
+      ],
+      "landmarks": {
+        "eyes": [
+          538.13,
+          146.08
+        ],
+        "neck": [
+          549.2,
+          252.88
+        ],
+        "belt": [
+          555.66,
+          562.56
+        ],
+        "right_sole": [
+          470.0,
+          1460.0
+        ],
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.96782,
+        "neck": 0.73414,
+        "belt": 0.74908
+      },
+      "generation_id": "exec-bf2a6b56-3739-43b2-b91c-ab1d562510f6",
+      "authored_weight_offset_y": 0.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_01.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.4997,
+        50.847
+      ],
+      "landmarks": {
+        "eyes": [
+          550.42,
+          142.72
+        ],
+        "neck": [
+          564.25,
+          248.9
+        ],
+        "belt": [
+          556.32,
+          544.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95603,
+        "neck": 0.69785,
+        "belt": 0.86832
+      },
+      "generation_id": "exec-55f0447b-8347-4a02-813f-d9f52b8cf3da",
+      "authored_weight_offset_y": 0.5579,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_02.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        34.7891,
+        47.3821
+      ],
+      "landmarks": {
+        "eyes": [
+          552.26,
+          146.16
+        ],
+        "neck": [
+          564.3,
+          256.32
+        ],
+        "belt": [
+          556.98,
+          555.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95371,
+        "neck": 0.66096,
+        "belt": 0.87347
+      },
+      "generation_id": "exec-98cac6b9-15a8-4503-9b15-d6dad99ee311",
+      "authored_weight_offset_y": 1.2963,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_03.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        36.618,
+        42.5639
+      ],
+      "landmarks": {
+        "eyes": [
+          548.39,
+          151.24
+        ],
+        "neck": [
+          563.45,
+          267.78
+        ],
+        "belt": [
+          554.32,
+          569.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94075,
+        "neck": 0.75208,
+        "belt": 0.82923
+      },
+      "generation_id": "exec-25b01f2b-be2e-4601-85e3-9606b7a6445c",
+      "authored_weight_offset_y": 2.0625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_04.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.0394,
+        43.8276
+      ],
+      "landmarks": {
+        "eyes": [
+          547.68,
+          151.88
+        ],
+        "neck": [
+          562.9,
+          268.56
+        ],
+        "belt": [
+          553.64,
+          564.24
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93187,
+        "neck": 0.7344,
+        "belt": 0.82035
+      },
+      "generation_id": "exec-1e6d29c1-c72d-4924-a46c-03e27a75689b",
+      "authored_weight_offset_y": 2.7037,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_05.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.35,
+        46.5749
+      ],
+      "landmarks": {
+        "eyes": [
+          546.97,
+          150.52
+        ],
+        "neck": [
+          560.2,
+          262.88
+        ],
+        "belt": [
+          554.98,
+          557.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95743,
+        "neck": 0.75607,
+        "belt": 0.82505
+      },
+      "generation_id": "exec-925a96ea-bb6a-4c34-a144-ab79d5ec44e6",
+      "authored_weight_offset_y": 3.0671,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_06.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.3548,
+        45.1394
+      ],
+      "landmarks": {
+        "eyes": [
+          551.68,
+          148.88
+        ],
+        "neck": [
+          567.2,
+          261.88
+        ],
+        "belt": [
+          553.02,
+          568.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9673,
+        "neck": 0.72216,
+        "belt": 0.87434
+      },
+      "generation_id": "exec-3bda804e-eb0b-4217-be1f-9cba1b449f16",
+      "authored_weight_offset_y": 3.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_07.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        30.2455,
+        46.9396
+      ],
+      "landmarks": {
+        "eyes": [
+          556.68,
+          148.88
+        ],
+        "neck": [
+          572.75,
+          260.1
+        ],
+        "belt": [
+          568.02,
+          556.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.92864,
+        "neck": 0.6318,
+        "belt": 0.84418
+      },
+      "generation_id": "exec-a3bc742c-1593-433a-8380-07a2197ddfb9",
+      "authored_weight_offset_y": 2.3079,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_08.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        27.2908,
+        46.9935
+      ],
+      "landmarks": {
+        "eyes": [
+          563.68,
+          145.88
+        ],
+        "neck": [
+          574.2,
+          258.88
+        ],
+        "belt": [
+          571.02,
+          555.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95653,
+        "neck": 0.67945,
+        "belt": 0.84345
+      },
+      "generation_id": "exec-514d3c36-dcbe-49e2-aa53-f3c9d6a89fd6",
+      "authored_weight_offset_y": 1.0741,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_09.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        36.0762,
+        41.7574
+      ],
+      "landmarks": {
+        "eyes": [
+          548.23,
+          150.68
+        ],
+        "neck": [
+          561.1,
+          267.44
+        ],
+        "belt": [
+          559.02,
+          561.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9377,
+        "neck": 0.76464,
+        "belt": 0.8026
+      },
+      "generation_id": "exec-05c75b11-751c-4753-97c1-05f8624686b8",
+      "authored_weight_offset_y": -0.4375,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_10.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.6623,
+        46.0959
+      ],
+      "landmarks": {
+        "eyes": [
+          551.26,
+          147.16
+        ],
+        "neck": [
+          560.35,
+          256.34
+        ],
+        "belt": [
+          556.66,
+          543.56
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95697,
+        "neck": 0.72569,
+        "belt": 0.84502
+      },
+      "generation_id": "exec-9efc3a80-a6b2-4444-a5c6-fcd57a4d1bac",
+      "authored_weight_offset_y": -1.963,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_11.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.3652,
+        41.6252
+      ],
+      "landmarks": {
+        "eyes": [
+          552.55,
+          147.8
+        ],
+        "neck": [
+          561.1,
+          261.44
+        ],
+        "belt": [
+          545.0,
+          556.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95731,
+        "neck": 0.82309,
+        "belt": 0.79274
+      },
+      "generation_id": "exec-b308ee18-e40c-4266-ad78-52b884a2556d",
+      "authored_weight_offset_y": -3.2384,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_12.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        47.4363,
+        40.7854
+      ],
+      "landmarks": {
+        "eyes": [
+          530.97,
+          146.52
+        ],
+        "neck": [
+          540.1,
+          259.44
+        ],
+        "belt": [
+          541.68,
+          559.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.96432,
+        "neck": 0.73467,
+        "belt": 0.83163
+      },
+      "generation_id": "exec-9450e724-7ea8-44d1-b07b-85f2b13c91f4",
+      "authored_weight_offset_y": -4.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        44.6259,
+        38.2821
+      ],
+      "landmarks": {
+        "eyes": [
+          532.68,
+          151.88
+        ],
+        "neck": [
+          543.1,
+          265.44
+        ],
+        "belt": [
+          551.7,
+          559.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95799,
+        "neck": 0.70949,
+        "belt": 0.84542
+      },
+      "generation_id": "exec-78fa3137-3e06-4901-a3c6-30e925574c79",
+      "authored_weight_offset_y": -4.1875,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.1446,
+        42.1992
+      ],
+      "landmarks": {
+        "eyes": [
+          549.55,
+          146.8
+        ],
+        "neck": [
+          558.35,
+          256.34
+        ],
+        "belt": [
+          553.0,
+          554.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94417,
+        "neck": 0.80842,
+        "belt": 0.82336
+      },
+      "generation_id": "exec-79f54513-2d35-42df-89ee-5b71e3eed0f4",
+      "authored_weight_offset_y": -4.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.1425,
+        41.8202
+      ],
+      "landmarks": {
+        "eyes": [
+          550.97,
+          145.52
+        ],
+        "neck": [
+          563.7,
+          257.68
+        ],
+        "belt": [
+          557.66,
+          559.56
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94482,
+        "neck": 0.74024,
+        "belt": 0.77408
+      },
+      "generation_id": "exec-bf1953bb-b136-4f30-ab21-ab3003b90148",
+      "authored_weight_offset_y": -3.5625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_16.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        34.6461,
+        42.3146
+      ],
+      "landmarks": {
+        "eyes": [
+          552.55,
+          146.8
+        ],
+        "neck": [
+          565.7,
+          258.68
+        ],
+        "belt": [
+          556.32,
+          557.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93727,
+        "neck": 0.80016,
+        "belt": 0.80466
+      },
+      "generation_id": "exec-a8054121-c0c1-4eb9-82c6-bb1496470183",
+      "authored_weight_offset_y": -3.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_17.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        36.2803,
+        45.3997
+      ],
+      "landmarks": {
+        "eyes": [
+          552.55,
+          142.8
+        ],
+        "neck": [
+          564.7,
+          252.68
+        ],
+        "belt": [
+          548.34,
+          554.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9492,
+        "neck": 0.77706,
+        "belt": 0.76289
+      },
+      "generation_id": "exec-83721915-eb21-4602-8223-fb591cef26ad",
+      "authored_weight_offset_y": -2.4375,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_18.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        40.2342,
+        42.9165
+      ],
+      "landmarks": {
+        "eyes": [
+          543.55,
+          145.8
+        ],
+        "neck": [
+          557.35,
+          258.34
+        ],
+        "belt": [
+          547.32,
+          561.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.96734,
+        "neck": 0.78569,
+        "belt": 0.76549
+      },
+      "generation_id": "exec-5a729ace-3f4a-40be-b90c-ae9ff2e21495",
+      "authored_weight_offset_y": -2.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        36.8441,
+        43.387
+      ],
+      "landmarks": {
+        "eyes": [
+          547.26,
+          145.16
+        ],
+        "neck": [
+          561.45,
+          259.78
+        ],
+        "belt": [
+          556.34,
+          560.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95154,
+        "neck": 0.64946,
+        "belt": 0.78475
+      },
+      "generation_id": "exec-d0bcd702-129e-4969-9bb8-62dc6b8aac10",
+      "authored_weight_offset_y": -1.6782,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        39.4744,
+        44.7456
+      ],
+      "landmarks": {
+        "eyes": [
+          542.55,
+          144.8
+        ],
+        "neck": [
+          558.35,
+          258.34
+        ],
+        "belt": [
+          552.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94992,
+        "neck": 0.66908,
+        "belt": 0.78758
+      },
+      "generation_id": "exec-109a5494-5872-41fb-8e83-f740fa339335",
+      "authored_weight_offset_y": -1.3704,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        36.0522,
+        45.9405
+      ],
+      "landmarks": {
+        "eyes": [
+          550.13,
+          145.08
+        ],
+        "neck": [
+          562.6,
+          253.24
+        ],
+        "belt": [
+          554.98,
+          554.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95767,
+        "neck": 0.64745,
+        "belt": 0.79561
+      },
+      "generation_id": "exec-9ff46037-775b-4c40-aa4f-ecd1ba6b4942",
+      "authored_weight_offset_y": -1.0625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        33.9556,
+        41.3383
+      ],
+      "landmarks": {
+        "eyes": [
+          552.55,
+          148.8
+        ],
+        "neck": [
+          567.7,
+          265.68
+        ],
+        "belt": [
+          558.64,
+          566.24
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95618,
+        "neck": 0.65602,
+        "belt": 0.79896
+      },
+      "generation_id": "exec-176be738-0eab-4b1b-b75b-acabac1fcc3c",
+      "authored_weight_offset_y": -0.7407,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_23.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        33.5511,
+        43.3459
+      ],
+      "landmarks": {
+        "eyes": [
+          551.55,
+          145.8
+        ],
+        "neck": [
+          571.4,
+          259.36
+        ],
+        "belt": [
+          559.98,
+          566.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95688,
+        "neck": 0.56302,
+        "belt": 0.85053
+      },
+      "generation_id": "exec-5afebb88-59fc-4f85-9283-7e018e23a5d1",
+      "authored_weight_offset_y": -0.3912,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_24.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        44.6555,
+        43.16
+      ],
+      "landmarks": {
+        "eyes": [
+          535.13,
+          146.08
+        ],
+        "neck": [
+          553.3,
+          261.92
+        ],
+        "belt": [
+          540.66,
+          567.56
+        ],
+        "right_sole": null,
+        "left_sole": [
+          600.0,
+          1450.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.96501,
+        "neck": 0.56217,
+        "belt": 0.89682
+      },
+      "generation_id": "exec-84a64c0b-2b06-48d0-8b6b-b6b053c8249b",
+      "authored_weight_offset_y": 0.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_25.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.8305,
+        48.4984
+      ],
+      "landmarks": {
+        "eyes": [
+          550.13,
+          143.08
+        ],
+        "neck": [
+          563.85,
+          256.14
+        ],
+        "belt": [
+          555.32,
+          551.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95505,
+        "neck": 0.66788,
+        "belt": 0.84943
+      },
+      "generation_id": "exec-c02f3997-50fb-427c-b043-832ce9082ea3",
+      "authored_weight_offset_y": 0.5579,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_26.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        43.3218,
+        38.4487
+      ],
+      "landmarks": {
+        "eyes": [
+          537.52,
+          154.32
+        ],
+        "neck": [
+          557.85,
+          274.54
+        ],
+        "belt": [
+          540.7,
+          577.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94017,
+        "neck": 0.62162,
+        "belt": 0.7959
+      },
+      "generation_id": "exec-e0f08532-0684-45dd-b40b-6e050e634c70",
+      "authored_weight_offset_y": 1.2963,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_27.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        33.0364,
+        48.0197
+      ],
+      "landmarks": {
+        "eyes": [
+          555.26,
+          146.16
+        ],
+        "neck": [
+          568.7,
+          256.68
+        ],
+        "belt": [
+          558.32,
+          556.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95702,
+        "neck": 0.67358,
+        "belt": 0.86552
+      },
+      "generation_id": "exec-c5369396-0e82-4e39-b119-042766e7edf7",
+      "authored_weight_offset_y": 2.0625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_28.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        32.6962,
+        48.9003
+      ],
+      "landmarks": {
+        "eyes": [
+          552.84,
+          144.44
+        ],
+        "neck": [
+          569.95,
+          257.58
+        ],
+        "belt": [
+          563.32,
+          557.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95581,
+        "neck": 0.65224,
+        "belt": 0.83155
+      },
+      "generation_id": "exec-a717b0bf-08d6-4c76-852c-99e71b67fe52",
+      "authored_weight_offset_y": 2.7037,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_29.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        34.1774,
+        49.4527
+      ],
+      "landmarks": {
+        "eyes": [
+          549.55,
+          145.8
+        ],
+        "neck": [
+          565.4,
+          257.36
+        ],
+        "belt": [
+          564.0,
+          554.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.96047,
+        "neck": 0.62675,
+        "belt": 0.81413
+      },
+      "generation_id": "exec-3eb88416-6e5e-4a4b-9db1-4d439ce98c1a",
+      "authored_weight_offset_y": 3.0671,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_30.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        39.3314,
+        47.4276
+      ],
+      "landmarks": {
+        "eyes": [
+          544.26,
+          147.16
+        ],
+        "neck": [
+          557.7,
+          257.68
+        ],
+        "belt": [
+          550.68,
+          561.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.97124,
+        "neck": 0.66286,
+        "belt": 0.80048
+      },
+      "generation_id": "exec-50fc79e0-e856-4a5f-a2d3-f10394c6c91e",
+      "authored_weight_offset_y": 3.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_31.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        32.7554,
+        43.4847
+      ],
+      "landmarks": {
+        "eyes": [
+          555.68,
+          156.88
+        ],
+        "neck": [
+          568.35,
+          267.34
+        ],
+        "belt": [
+          559.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94633,
+        "neck": 0.67745,
+        "belt": 0.80408
+      },
+      "generation_id": "exec-c6196ac8-388e-4cd3-9ba0-68997b97a3eb",
+      "authored_weight_offset_y": 2.3079,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_32.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        35.2509,
+        45.2245
+      ],
+      "landmarks": {
+        "eyes": [
+          549.97,
+          150.52
+        ],
+        "neck": [
+          560.3,
+          261.32
+        ],
+        "belt": [
+          561.02,
+          555.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94455,
+        "neck": 0.71267,
+        "belt": 0.79056
+      },
+      "generation_id": "exec-f331df99-f304-4876-925f-9ccae62dcc36",
+      "authored_weight_offset_y": 1.0741,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_33.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.7438,
+        41.7725
+      ],
+      "landmarks": {
+        "eyes": [
+          548.1,
+          149.6
+        ],
+        "neck": [
+          560.7,
+          264.68
+        ],
+        "belt": [
+          550.68,
+          564.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94819,
+        "neck": 0.67897,
+        "belt": 0.74604
+      },
+      "generation_id": "exec-c7530aac-68f8-462a-828b-1ddb91e9a190",
+      "authored_weight_offset_y": -0.4375,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_34.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        38.273,
+        39.4078
+      ],
+      "landmarks": {
+        "eyes": [
+          549.26,
+          152.16
+        ],
+        "neck": [
+          561.1,
+          263.44
+        ],
+        "belt": [
+          545.68,
+          565.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94442,
+        "neck": 0.75197,
+        "belt": 0.81451
+      },
+      "generation_id": "exec-e412ccd8-0854-48c1-bab9-954f1650a736",
+      "authored_weight_offset_y": -1.963,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_35.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        28.176,
+        38.891
+      ],
+      "landmarks": {
+        "eyes": [
+          561.39,
+          154.24
+        ],
+        "neck": [
+          575.9,
+          266.56
+        ],
+        "belt": [
+          569.02,
+          556.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94638,
+        "neck": 0.70695,
+        "belt": 0.80512
+      },
+      "generation_id": "exec-355388fe-5675-40c3-98d3-cc60c597a1f7",
+      "authored_weight_offset_y": -3.2384,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_36.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        47.5705,
+        37.0306
+      ],
+      "landmarks": {
+        "eyes": [
+          532.1,
+          152.6
+        ],
+        "neck": [
+          540.2,
+          268.88
+        ],
+        "belt": [
+          539.02,
+          563.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95836,
+        "neck": 0.8052,
+        "belt": 0.8019
+      },
+      "generation_id": "exec-c881dcd3-9dfb-467a-a875-15dfebd9fafc",
+      "authored_weight_offset_y": -4.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_37.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        37.6096,
+        37.899
+      ],
+      "landmarks": {
+        "eyes": [
+          544.39,
+          153.24
+        ],
+        "neck": [
+          562.55,
+          269.22
+        ],
+        "belt": [
+          556.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95327,
+        "neck": 0.723,
+        "belt": 0.8308
+      },
+      "generation_id": "exec-59775f70-6101-4ccb-ba7f-2e94bd8607e4",
+      "authored_weight_offset_y": -4.1875,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_38.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        31.9887,
+        40.541
+      ],
+      "landmarks": {
+        "eyes": [
+          552.97,
+          150.52
+        ],
+        "neck": [
+          573.2,
+          264.88
+        ],
+        "belt": [
+          564.68,
+          550.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94455,
+        "neck": 0.66027,
+        "belt": 0.8296
+      },
+      "generation_id": "exec-7937c1eb-ee41-4a5b-886c-2543ab8da7d8",
+      "authored_weight_offset_y": -4.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_39.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        31.9824,
+        40.4367
+      ],
+      "landmarks": {
+        "eyes": [
+          552.39,
+          151.24
+        ],
+        "neck": [
+          573.2,
+          265.88
+        ],
+        "belt": [
+          565.68,
+          551.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93226,
+        "neck": 0.65649,
+        "belt": 0.80627
+      },
+      "generation_id": "exec-840956f6-8885-49e6-a522-c8f889eed47b",
+      "authored_weight_offset_y": -3.5625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_40.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        31.4242,
+        40.2382
+      ],
+      "landmarks": {
+        "eyes": [
+          553.39,
+          150.24
+        ],
+        "neck": [
+          575.1,
+          266.44
+        ],
+        "belt": [
+          565.7,
+          557.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93518,
+        "neck": 0.62923,
+        "belt": 0.82544
+      },
+      "generation_id": "exec-0aa58514-21aa-4a7b-abb8-c7dedf0acf91",
+      "authored_weight_offset_y": -3.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_41.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        31.4772,
+        40.4075
+      ],
+      "landmarks": {
+        "eyes": [
+          553.39,
+          151.24
+        ],
+        "neck": [
+          574.2,
+          266.88
+        ],
+        "belt": [
+          566.02,
+          557.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.92858,
+        "neck": 0.67503,
+        "belt": 0.82245
+      },
+      "generation_id": "exec-15461d42-1eb5-42a6-8854-34842cb04587",
+      "authored_weight_offset_y": -2.4375,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_42.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        32.4877,
+        42.9744
+      ],
+      "landmarks": {
+        "eyes": [
+          551.55,
+          145.8
+        ],
+        "neck": [
+          573.75,
+          260.1
+        ],
+        "belt": [
+          564.04,
+          559.64
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9723,
+        "neck": 0.64123,
+        "belt": 0.86892
+      },
+      "generation_id": "exec-a0eaa849-eb59-4a2a-9e5a-6f98557dda18",
+      "authored_weight_offset_y": -2.0,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_43.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        30.4818,
+        44.7704
+      ],
+      "landmarks": {
+        "eyes": [
+          556.55,
+          145.8
+        ],
+        "neck": [
+          571.2,
+          254.88
+        ],
+        "belt": [
+          568.02,
+          555.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9595,
+        "neck": 0.65615,
+        "belt": 0.75676
+      },
+      "generation_id": "exec-99105b33-02ff-44b6-aac1-3cde71704037",
+      "authored_weight_offset_y": -1.6782,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_44.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        32.9684,
+        41.6989
+      ],
+      "landmarks": {
+        "eyes": [
+          551.68,
+          149.88
+        ],
+        "neck": [
+          571.65,
+          264.66
+        ],
+        "belt": [
+          562.68,
+          559.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.94356,
+        "neck": 0.64728,
+        "belt": 0.85469
+      },
+      "generation_id": "exec-1cd6fafe-43b9-4ab7-a65c-68ddeb830d1b",
+      "authored_weight_offset_y": -1.3704,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_45.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        34.2044,
+        44.6075
+      ],
+      "landmarks": {
+        "eyes": [
+          551.84,
+          147.44
+        ],
+        "neck": [
+          566.45,
+          256.78
+        ],
+        "belt": [
+          559.34,
+          555.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95692,
+        "neck": 0.6627,
+        "belt": 0.82514
+      },
+      "generation_id": "exec-a71e6f58-f3c6-40b8-ba06-f50c15d35047",
+      "authored_weight_offset_y": -1.0625,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_46.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        34.447,
+        45.6475
+      ],
+      "landmarks": {
+        "eyes": [
+          550.97,
+          146.52
+        ],
+        "neck": [
+          565.2,
+          254.88
+        ],
+        "belt": [
+          560.34,
+          554.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93773,
+        "neck": 0.65016,
+        "belt": 0.77735
+      },
+      "generation_id": "exec-2b45798b-153a-4083-a11c-66737f3a3273",
+      "authored_weight_offset_y": -0.7407,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "source": "run_v2/frames/frame_47.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "origin": [
+        33.0786,
+        45.7651
+      ],
+      "landmarks": {
+        "eyes": [
+          555.55,
+          145.8
+        ],
+        "neck": [
+          569.65,
+          253.66
+        ],
+        "belt": [
+          556.98,
+          557.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.95801,
+        "neck": 0.70135,
+        "belt": 0.82663
+      },
+      "generation_id": "exec-981fb3f6-e097-4731-a9b5-0d47578229c2",
+      "authored_weight_offset_y": -0.3912,
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    }
+  ]
+}

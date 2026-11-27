@@ -1,0 +1,44 @@
+{
+  "frame": 1,
+  "prompt_file": "frame_01_fist_target_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_early_arms_trial.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_fist_target_guide.png"
+  ],
+  "target_fists_relative_belt_canonical": {
+    "viewer_left": [
+      -151,
+      81
+    ],
+    "viewer_right": [
+      75,
+      -76
+    ]
+  },
+  "source_path": "/workspace/generated_images/exec-254bba01-c14c-4f93-9efe-d99612a9ec8e.png",
+  "generation_id": "exec-254bba01-c14c-4f93-9efe-d99612a9ec8e",
+  "transparent_background": true,
+  "status": "Internal actual arm-path review pending; not user approved.",
+  "construction": "Complete unified image-authored repair using authoring-only target marks; no guide pixels or procedural transforms in finished figure.",
+  "history": [
+    {
+      "frame": 1,
+      "prompt_file": "frame_01_hierarchical_prompt.txt",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png"
+      ],
+      "source_bounds": [
+        0,
+        3
+      ],
+      "fraction": 0.3333333333333333,
+      "source_path": "/workspace/generated_images/exec-ac56c746-2246-46b5-9b56-8e1fdcf63d44.png",
+      "generation_id": "exec-ac56c746-2246-46b5-9b56-8e1fdcf63d44",
+      "transparent_background": true,
+      "status": "Internal actual-pose review pending; not user approved.",
+      "construction": "Complete unified image-authored pose, no procedural body deformation.",
+      "retained_master": "frame_01_early_arms_trial.png"
+    }
+  ]
+}

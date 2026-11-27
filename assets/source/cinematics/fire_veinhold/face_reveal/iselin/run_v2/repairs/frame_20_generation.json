@@ -1,0 +1,56 @@
+{
+  "frame": 20,
+  "prompt_file": "frame_20_nearest_bounds_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png"
+  ],
+  "referenced_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a"
+  },
+  "source_path": "/workspace/generated_images/exec-4ecfc388-f85f-483a-b637-a949b20ced32.png",
+  "generation_id": "exec-4ecfc388-f85f-483a-b637-a949b20ced32",
+  "transparent_background": true,
+  "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+  "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+  "source_bounds": [
+    18,
+    21
+  ],
+  "fraction": 0.6666666666666666,
+  "target_fists_relative_belt_canonical": {
+    "right": [
+      -40.0,
+      -63.0
+    ],
+    "left": [
+      136.7,
+      51.0
+    ]
+  },
+  "history": [
+    {
+      "source": "history/frame_20_246eb0edfc71.png",
+      "sha256": "246eb0edfc71bf5e866b80e5353f0e49728b623932a79f6ec4d94e82270f29ac",
+      "generation_metadata": null,
+      "reason": "Superseded by final female-model nearest-bounds inbetween."
+    }
+  ],
+  "actual_review": {
+    "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+    "fists_relative_belt": {
+      "viewer_left": [
+        -40.34,
+        -66.49
+      ],
+      "viewer_right": [
+        141.77,
+        49.02
+      ]
+    },
+    "torso_art_span": 181.396,
+    "transparent_background_verified": true,
+    "correct_leg_identities_verified": true
+  }
+}

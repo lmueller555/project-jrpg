@@ -1,0 +1,12 @@
+{
+  "repairs/frame_31.png": {
+    "source_sha256": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+    "landmarks": {
+      "belt": [
+        602,
+        563
+      ]
+    },
+    "reason": "The automatic NCC belt template matched the third coat clasp at y472. Native source crop visually confirms the round belt buckle at x602,y563. Face/neck/density and all painted pixels are unchanged."
+  }
+}

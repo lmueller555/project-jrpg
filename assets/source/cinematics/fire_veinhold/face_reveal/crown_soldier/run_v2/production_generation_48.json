@@ -1,0 +1,743 @@
+{
+  "actor": "crown_soldier",
+  "active_source_selection": "../source_art_48.json",
+  "authored_poses": 48,
+  "cycle_ms": 800,
+  "construction": "Complete individually image-authored painted figures; no detached rigs, pose warps or crossfaded anatomy.",
+  "approval_state": "internally_reviewed_for_ingame_review",
+  "frames": [
+    {
+      "frame": 0,
+      "path": "/workspace/generated_images/exec-61983a85-08ed-4af2-84c7-65588dc5ac5d.png",
+      "generation_id": "exec-61983a85-08ed-4af2-84c7-65588dc5ac5d",
+      "prompt": "Draw ONE complete painted frontal running Crown soldier, isolated fullbody on true clean transparent RGBA. NOT a sheet, not multiple figures. This is production drawing0 of48 in800ms two-step run. The references show the same soldier and adjacent key poses. Preserve exact face, helmet, armor design, navy tabard/charcoal trousers/brown leather boots, shield/sword ownership and painted fantasy cinematic quality. First adjacent key is phase0, second adjacent key phase6. Draw the naturally continuous whole-body FIRST key pose itself at this interval. Specific current action:\n0 RIGHT heel contact in front, LEFT boot folded behind; right sword hand back at hip, left shield forward.\nMaintain exact character proportions: same head width, neck length, shoulder width, torso length and leg length, not shorter body when crouched. BOTH arms vary continuously with shoulders and bent elbows, opposite same-side leg; sword anatomicalRIGHT/viewerLEFT hand, shield anatomicalLEFT/viewerRIGHT forearm. Sword arm pump transitions BACK/down hip at right-contact0 toward FORWARD/bent ribs at left-contact24 then backby48. Shield counters with smaller cleartilt/reach. Blade always remains safely outward of body, no crossingface, no changing swordlength, no new weapon poses unrelated to adjacent keys. Ground support and leg exchange progress smoothly, knee bends in depth, no side kicks, exactly2arms2legs1sword1shield. Shoulder/pelvis subtle counterrotation, moderate athletic lean, authored gentle support/flight recoil. Tabard free tips lag hip by few frames, not random shape replacements. Small hairtips under helmet follow movement. Front-facing determined face, stable identity. Preserve exact figure size on canvas across drawings:1086x1448 portrait, full helmet crownaround y60, eyes aroundy180, throat y300, belt buckle aroundy590, logicalgroundy1370; figurecenterx543. These are composition guides, not stretching joints. Plenty of transparent marginsaround allfigure and swordtip; NOparts cropped. Detailed painted metal/leather/cloth texture and natural human proportions. NO background, grayclouds, smoke, glow, floor, shadow, text, numbers or multiple poses. Render only one complete drawing; don'tpaste/warp bodyparts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4"
+    },
+    {
+      "generation_id": "exec-95df8b7c-df2f-4d38-8665-57ae2a9d2aff",
+      "source_path": "/workspace/generated_images/exec-95df8b7c-df2f-4d38-8665-57ae2a9d2aff.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase1/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key0; reference2 is nextkey6. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Next key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Current detailed body action: 1 right heel settles, support knee just begins bending, left boot begins untucking behind..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 1,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9"
+    },
+    {
+      "generation_id": "exec-2fba1052-128f-4b8c-b125-d086962863c5",
+      "source_path": "/workspace/generated_images/exec-2fba1052-128f-4b8c-b125-d086962863c5.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase2/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key0; reference2 is nextkey6. Draw exactly the 2/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 2/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Next key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Current detailed body action: 2 right sole takes load, support knee slightly deeper, left thigh moves forward behind support knee..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 2,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9"
+    },
+    {
+      "frame": 3,
+      "path": "/workspace/generated_images/exec-a8a642f2-0a11-4d33-aa1f-6d7e336f687a.png",
+      "generation_id": "exec-a8a642f2-0a11-4d33-aa1f-6d7e336f687a",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase3/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key0; reference2 is nextkey6. Draw exactly the 3/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 3/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Next key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Current detailed body action: 3 right knee compresses, left knee approaches support knee from behind..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c"
+    },
+    {
+      "generation_id": "exec-a1c1987a-4a6a-4700-a80e-0abaf6b1a525",
+      "source_path": "/workspace/generated_images/exec-a1c1987a-4a6a-4700-a80e-0abaf6b1a525.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase4/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key0; reference2 is nextkey6. Draw exactly the 4/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 4/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Next key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Current detailed body action: 4 right knee down compression, left knee closes gap behind it.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 4,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463"
+    },
+    {
+      "generation_id": "exec-c4b31ef5-70f4-4110-b72f-230d462f723e",
+      "source_path": "/workspace/generated_images/exec-c4b31ef5-70f4-4110-b72f-230d462f723e.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase5/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key0; reference2 is nextkey6. Draw exactly the 5/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 5/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Next key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Current detailed body action: 5 right leg support ankle moves under body, left knee almost passes it..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 5,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "8ba3d3864b4dfeb683a06dd72a289bb853484ef18a46b4fecf6429b6bc6c168b"
+    },
+    {
+      "frame": 6,
+      "path": "/workspace/generated_images/exec-b9823f2c-7e96-45f5-973c-ad98c852c213.png",
+      "generation_id": "exec-b9823f2c-7e96-45f5-973c-ad98c852c213",
+      "rejected_path": "/workspace/generated_images/exec-08ac09af-8e28-433c-97eb-a21391803421.png",
+      "prompt": "Draw ONE complete painted frontal running soldier, same exact identity and appearance as reference. Replicate the precise LEG IDENTITY and ARM CARRY of this single key reference. His anatomicalRIGHT leg(viewerLEFT) supports him, right boot GROUNDED directly under viewerLEFT hip, right knee compressing. His anatomicalLEFT leg(viewerRIGHT) is BEHIND him: left boot raised/folded back, left knee moving forward but not yet passing support leg. Right swordarm BACK/down at right hip, shield left forearm counterbalances forward. Do NOT swap legs or draw the next contact. Keep same helmet/headwidth, throat, shoulder, chest, belt/torso length, uniform density. Whole figure fully inside1086x1448portraitcanvas with transparent margins, swordtip/helmet/bootsallvisible. Detailed naturallyproportioned painted steel/leather/navycloth fantasycinematicstyle. Exactly2arms2legs1sword1shield, no extra anatomy. Shield on anatomicalLEFT/viewerRIGHT forearm, sword anatomicalRIGHT/viewerLEFT hand. Tabard tips slight delayed flutter. Actual transparent RGBA background, NOhaze/clouds/floor/shadows/text. Singlefigure only.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "c0a634c8b14150392cd682dbfb74212aa2297756a4ce204241e254620398b7f0"
+    },
+    {
+      "generation_id": "exec-4585fed5-7663-47b5-a3f6-a2cd5f8ea890",
+      "source_path": "/workspace/generated_images/exec-4585fed5-7663-47b5-a3f6-a2cd5f8ea890.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase7/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key6; reference2 is nextkey12. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Next key: bothfeetairborne, LEFT/viewerRIGHT knee liftedhigh and heel tuckedunderthigh; RIGHT/viewerLEFT legtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 7 right heel releases, left knee passing forward.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 7,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "a5a3339f872fae623df3b0b34fe24b3336f86f02d6d9cb7c33234aefef54fde7"
+    },
+    {
+      "generation_id": "exec-5a341d55-f7b1-49bb-85ec-ddeeff8d9f5b",
+      "source_path": "/workspace/generated_images/exec-5a341d55-f7b1-49bb-85ec-ddeeff8d9f5b.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase8/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key6; reference2 is nextkey12. Draw exactly the 2/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 2/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Next key: bothfeetairborne, LEFT/viewerRIGHT knee liftedhigh and heel tuckedunderthigh; RIGHT/viewerLEFT legtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 8 right late support toe push-off, left thigh forward bent, left boot tucked..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 8,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "557cfaf22fffdd9f8d2a7d0a49007dbdd4c6a1b07603ba4a86f2786583e0501f"
+    },
+    {
+      "frame": 9,
+      "path": "/workspace/generated_images/exec-b641a25d-1e53-45c1-9d0c-71872cbc3a5a.png",
+      "generation_id": "exec-b641a25d-1e53-45c1-9d0c-71872cbc3a5a",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase9/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key6; reference2 is nextkey12. Draw exactly the 3/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 3/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Next key: bothfeetairborne, LEFT/viewerRIGHT knee liftedhigh and heel tuckedunderthigh; RIGHT/viewerLEFT legtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 9 right push-off continues, left knee rises gradually..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "6fad637c03b83eb7d9387352f84718b12e1da3014c9c3bbb5e50bdca8eac1e50"
+    },
+    {
+      "generation_id": "exec-d4e968d3-2f6d-453a-a961-1bdf162def31",
+      "source_path": "/workspace/generated_images/exec-d4e968d3-2f6d-453a-a961-1bdf162def31.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase10/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key6; reference2 is nextkey12. Draw exactly the 4/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 4/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Next key: bothfeetairborne, LEFT/viewerRIGHT knee liftedhigh and heel tuckedunderthigh; RIGHT/viewerLEFT legtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 10 right toe leaving ground, left thigh forward knee flexed.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 10,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed"
+    },
+    {
+      "generation_id": "exec-14c456ee-788b-467f-8c50-c56c3e8f4382",
+      "source_path": "/workspace/generated_images/exec-14c456ee-788b-467f-8c50-c56c3e8f4382.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase11/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key6; reference2 is nextkey12. Draw exactly the 5/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 5/6 of this small interval toward reference2. Earlier key: right/viewerLEFT leg still supports under body with bentknee; left leg/viewerRIGHT recovering behind. Swordarm halfway fromrear to neutral. Next key: bothfeetairborne, LEFT/viewerRIGHT knee liftedhigh and heel tuckedunderthigh; RIGHT/viewerLEFT legtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 11 brief flight starts, right boot folds behind, left knee approaches peak..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 11,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670"
+    },
+    {
+      "frame": 12,
+      "path": "/workspace/generated_images/exec-538f3d0d-32e6-4133-a416-69fb22cf2a3b.png",
+      "generation_id": "exec-538f3d0d-32e6-4133-a416-69fb22cf2a3b",
+      "rejected_path": "/workspace/generated_images/exec-5e40e448-059f-46ff-86fa-011b7477aa95.png",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-5e40e448-059f-46ff-86fa-011b7477aa95.png",
+        "/workspace/generated_images/exec-5938938e-05c4-4f00-b1d6-d212d93fda18.png"
+      ],
+      "prompt": "Edit reference1 complete frontal running Crown soldier drawing, preserving exact face/head/helmet, torso, shield, waist-height neutral sword carry, characterdesign anddensity. Correct ONLY anatomicalLEFT/viewerRIGHT leg recovery to mirror the natural motion phase of reference2 (anatomy motion guide, DO NOTmirror costume). LEFT thigh swings forward with KNEE HIGHER, leftknee clearlyFLEXEDabout90degrees, leftheel tucked back beneaththigh towardbuttock, leftboot foreshortenedindepth. This is MIDFLIGHT halfway between RIGHTcontact and next LEFTcontact, NOTlanding. AnatomicalRIGHT/viewerLEFT leg trailsbehind naturallyflexed afterpush-off. BOTHfeet airborne, one bootforwardhigher, onebootbehindlower. No sidekick/extralimbs. Sameactualleglengthbendatjoints. Sword hand remainsNEUTRALbywaist, bladepointedDOWNOUTSIDEviewerLEFT, shieldleftforearmneutral. Repaint onecoherentfullfigure, samepaintedmetal/leather/navytexturedstyle. Fullbodyinsideportraitcanvas matchingreference1 with consistent density, allpartsvisible. TRUE cleantransparentRGBA, no smoke/glow/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2"
+    },
+    {
+      "frame": 13,
+      "path": "/workspace/generated_images/exec-a74294f7-1f77-43cf-a6ac-b672e560d2d3.png",
+      "prompt": "Draw ONE complete painted Crown soldier runningpose between ACTUALcorrect reference1phase12 and reference2phase15, at1/3 ofthisshortinterval. Reference3containscoloredlegguideonly, removeallcoloredmarks/text. Mainrepair isLEFT/viewerRIGHT lowerleg: keep leftKNEEFLEXED, heelonlySLIGHTLYunfoldingfromtuckedflight, NOTfullyextendeddownnearcontact! Phase13isbefore15; forwardleftboot must remainHIGHERandMORETUCKEDthanreference2. Leftheelaroundy1050, noty1300ground. ThisisONLY1/3 of the modest12\u219215 bootpath, no overshootandretuck. Forwardleftknee stayshighwhilelowerlegbeginsunfolding in depth. Right/viewerLEFT legtrailsbehindnaturallybent. Noearlycontact,nofullstraightleg,no sidewayskick. Exactly2arms2legs1sword1shield. Preserveexactface/helmet/neck/torso/armor/navytabard/bodydensity. Rightarm swordpump must also progressonly1/3 fromreference1neutral toreference2slightlyforward; swordbladealwaysDOWNOUTSIDEviewerLEFT, lefthandshield. Same1055x1491portraitcomposition, wholefigurefullmarginsswordtip/helmet/bootsvisible, fullcoherentdrawingnotdetachedparts. Detailednaturalisticpaintedfantasycinematicstyle. TruecleantransparentRGBA,nohaze/floor/shadow/text/guidelines. Guidepointsareapproximatemotiondirection,naturaljointanatomycomesfirst.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_13_authoring_guide.png"
+      ],
+      "generation_id": "exec-a74294f7-1f77-43cf-a6ac-b672e560d2d3",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "6c03f5450e4bd029859550e7df2e4ac35fd2ad1bf86468607b2427f4d03479e3"
+    },
+    {
+      "frame": 14,
+      "path": "/workspace/generated_images/exec-e6c8fa2b-9bd1-496c-bb84-c91e1940b897.png",
+      "prompt": "Draw ONE complete painted Crown soldier runningpose between ACTUALcorrect reference1phase12 and reference2phase15, at2/3 ofthisshortinterval. Reference3containscoloredlegguideonly, removeallcoloredmarks/text. Mainrepair isLEFT/viewerRIGHT lowerleg: keep leftKNEEFLEXED, heelonlySLIGHTLYunfoldingfromtuckedflight, NOTfullyextendeddownnearcontact! Phase14isbefore15; forwardleftboot must remainHIGHERandMORETUCKEDthanreference2. Leftheelaroundy1100, noty1300ground. ThisisONLY2/3 of the modest12\u219215 bootpath, no overshootandretuck. Forwardleftknee stayshighwhilelowerlegbeginsunfolding in depth. Right/viewerLEFT legtrailsbehindnaturallybent. Noearlycontact,nofullstraightleg,no sidewayskick. Exactly2arms2legs1sword1shield. Preserveexactface/helmet/neck/torso/armor/navytabard/bodydensity. Rightarm swordpump must also progressonly2/3 fromreference1neutral toreference2slightlyforward; swordbladealwaysDOWNOUTSIDEviewerLEFT, lefthandshield. Same1055x1491portraitcomposition, wholefigurefullmarginsswordtip/helmet/bootsvisible, fullcoherentdrawingnotdetachedparts. Detailednaturalisticpaintedfantasycinematicstyle. TruecleantransparentRGBA,nohaze/floor/shadow/text/guidelines. Guidepointsareapproximatemotiondirection,naturaljointanatomycomesfirst.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_14_authoring_guide.png"
+      ],
+      "generation_id": "exec-e6c8fa2b-9bd1-496c-bb84-c91e1940b897",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "faacf486ca7584e0b7ec2496fff1837d6c8160bf826e4be989a3a25e1c474175"
+    },
+    {
+      "frame": 15,
+      "path": "/workspace/generated_images/exec-31953280-4c3c-4089-9f02-0d3eaa30df6f.png",
+      "generation_id": "exec-31953280-4c3c-4089-9f02-0d3eaa30df6f",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-5ba22039-a6d6-4b4d-9851-2c4a437d5e87.png"
+      ],
+      "prompt": "Edit reference1completepaintedCrownsoldierrunningdrawing. Preserve exactface/head/torso/armor/shield/navytabardandbodydensity. Correct the LEFT/viewerRIGHT forwardSWINGleg: we are ONLYHALFWAY between reference2midflight and reference3precontact, so doNOTextendforwardboottocontactheightyet. Knee muststillbe clearly BENT~65degrees, forwardHEEL tuckedpartwayunderthigh, footlowerthanreference2butHIGHERthanreference3. ForwardbootENDaroundy1130\u20131180, notfullgroundy1380; naturalankleflex. RIGHT/viewerLEFTlegtrailsbackafterpush-off. Bothfeetairborne, exactlyonebootperleg. RightSWORDARM isMIDWAYfromneutralwaisttoforwardribs for15 orreverse for39, elbowflex; swordbladeDOWNOUTSIDEviewerLEFT, neverup/acrosschest. Keepalllimblengths, no stretch orsidekick. Sameportraitcanvas1055x1491, artdensityandfullbodyregistration; wholefigurepaintedredraw,nodetachedparts. Tabardtipscontinuoussmallflutter. TruecleantransparentRGBA,nohaze/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "a9dedda00da5c2de0366abe1f8e867e5f9b013953f10bc8dea44df292ae2294d"
+    },
+    {
+      "frame": 16,
+      "path": "/workspace/generated_images/exec-6742c1e1-cba2-46b9-95ea-126fb9502426.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningpose at1/3 IN-BETWEEN actualcorrect reference1phase15 and reference2phase18. Mainrepair is anatomicalLEFT/viewerRIGHT swingboot progress. Phase15forwardleftbootendsaroundy1130; phase18aroundy1440; thisphase16forwardleftbootendsabout1230, notalreadyatcontactfullreach. Leftkneeremainsmoderatelybent, lowerlegunfoldsCONTINUOUSLY towardnextkey WITHOUTjumpingtostraightlegandholding. Phase16only1/3ofthesmall15\u219218interval;17only2/3. Naturalleftleglength/ankleflex and foreshortening in depth,no sidekick. Right/viewerLEFT legtrailstuckedbehind. DoNOTexchange legidentity or landearly. Preserve exactface/head/helmet, neck/torso/armor/navytabard/scale/density. RightSWORDARMalso1/3 fromreference1waistcarrytowardreference2forwardbentarm, fistabovebelt, swordbladeDOWNOUTSIDEviewerLEFT continuously, shieldleftforearmsmallcounterbalance. Exactly2arms2legs1sword1shield. Detailednaturalisticpaintedfantasycinematicstyle, same1055x1491portraitcomposition, allhelmet/swordtip/bootsinsidegenerousmargins. CleantransparentRGBA,nohaze/floor/shadow/text. Wholecoherentdrawing,notpartmanipulation. Pixelvaluesareapproximatepathguides,naturaljointanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png"
+      ],
+      "generation_id": "exec-6742c1e1-cba2-46b9-95ea-126fb9502426",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "afc0b1f22e84d0b50d8b7bd6e75b7bc443e1028ce59279a714da851a41b51d49"
+    },
+    {
+      "frame": 17,
+      "path": "/workspace/generated_images/exec-3e6ff401-dcaa-4f74-90ed-424d707e05f6.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningpose at2/3 IN-BETWEEN actualcorrect reference1phase15 and reference2phase18. Mainrepair is anatomicalLEFT/viewerRIGHT swingboot progress. Phase15forwardleftbootendsaroundy1130; phase18aroundy1440; thisphase17forwardleftbootendsabout1340, notalreadyatcontactfullreach. Leftkneeremainsmoderatelybent, lowerlegunfoldsCONTINUOUSLY towardnextkey WITHOUTjumpingtostraightlegandholding. Phase16only1/3ofthesmall15\u219218interval;17only2/3. Naturalleftleglength/ankleflex and foreshortening in depth,no sidekick. Right/viewerLEFT legtrailstuckedbehind. DoNOTexchange legidentity or landearly. Preserve exactface/head/helmet, neck/torso/armor/navytabard/scale/density. RightSWORDARMalso2/3 fromreference1waistcarrytowardreference2forwardbentarm, fistabovebelt, swordbladeDOWNOUTSIDEviewerLEFT continuously, shieldleftforearmsmallcounterbalance. Exactly2arms2legs1sword1shield. Detailednaturalisticpaintedfantasycinematicstyle, same1055x1491portraitcomposition, allhelmet/swordtip/bootsinsidegenerousmargins. CleantransparentRGBA,nohaze/floor/shadow/text. Wholecoherentdrawing,notpartmanipulation. Pixelvaluesareapproximatepathguides,naturaljointanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png"
+      ],
+      "generation_id": "exec-3e6ff401-dcaa-4f74-90ed-424d707e05f6",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "d65d488ae5d1d5f82e8fcd7b414ae18c6de905386ec9adfc4796dfa994478bc6"
+    },
+    {
+      "frame": 18,
+      "path": "/workspace/generated_images/exec-55d94972-fb02-4a61-8999-5814cf324491.png",
+      "generation_id": "exec-55d94972-fb02-4a61-8999-5814cf324491",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-9ed4f573-33c2-4307-bc9c-14bf9c65c457.png",
+        "/workspace/generated_images/exec-fd7a78e9-2788-45ed-9f26-2138c40da3be.png"
+      ],
+      "prompt": "Repaint ONE COMPLETE Crown soldier frontal running drawing: preserve exactface/head/torso/costume/ALLLEGSandbodydensity fromreference1. Correct rightSWORDARMtohalfwaybetween reference2NEUTRALarmandreference3FORWARDarm. Fist shouldbeHALFWAYbetweenwaistandlowerchest, ABOVE BELT aroundsourcex365,y560; elbowvisiblyBENT, rightforearmpumpingFORWARD towardcamera andinward alittle, notstraightdown. Forearmforeshorteningnatural. Reference3armistheforwardapex butTHISposeisONLYHALFasfarforward. SwordbladepointsDOWNandOUTSIDEviewerLEFT inallreferences, NEVERupacrosschest. Maintainpropergrip, wholeoriginalswordlength, no wristflip. Leftforearmshieldcounterbalanceswithsmalltilt/reach. AnatomicalRIGHT/viewerLEFT swordarm + anatomicalLEFT/viewerRIGHT shield. Nootherlimbchanges, alllegpositionssupportphasesandbodyproportionspreserved. Thisisphase18/48: LEFT/viewerRIGHT bootapproachescontact,RIGHTlegback. Keep same1055x1491portraitregistrationandartdensity withfullhelmet/swordtip/bootsinside generousmargins. Detailedpaintedsteel/navycloth/leathercinematicstyle. Onecoherentfulldrawingno detachedoverlays. Exactly2arms2legs1sword1shield. TruecleantransparentRGBA,no guide marks/haze/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "c192121a2b982e72d00b45cfe32d8bd7119ef548e332c96fbfc8c3fb8b3f2de0"
+    },
+    {
+      "generation_id": "exec-99501c90-dd1b-44d1-9579-ff3e81b7daa2",
+      "source_path": "/workspace/generated_images/exec-99501c90-dd1b-44d1-9579-ff3e81b7daa2.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase19/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key18; reference2 is nextkey24. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT boot forward low approaching ground, rightleg tuckedbehind; swordarm halfwayfromneutraltoforward. Next key: LEFT/viewerRIGHT heelCONTACTsupport, rightlegfoldedback. SwordarmFORWARD bentfistnearribs; shieldsmallbackcounterbalance. Current detailed body action: 19 left boot descends progressively toward ground, not high kick..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 19,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "33dffe107dcd8220c83fc38ca4cd52cfd322ac83e35ea06c007ed1620a6c4fce"
+    },
+    {
+      "generation_id": "exec-9f2a3266-df73-4ac4-b595-91d532bc5c27",
+      "source_path": "/workspace/generated_images/exec-9f2a3266-df73-4ac4-b595-91d532bc5c27.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase20/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key18; reference2 is nextkey24. Draw exactly the 2/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 2/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT boot forward low approaching ground, rightleg tuckedbehind; swordarm halfwayfromneutraltoforward. Next key: LEFT/viewerRIGHT heelCONTACTsupport, rightlegfoldedback. SwordarmFORWARD bentfistnearribs; shieldsmallbackcounterbalance. Current detailed body action: 20 left heel approaches contact, right knee starts moving under body..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 20,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "4524dc80403436e4d00d974e29d92b4712502746e36754ad270485cec25947a8"
+    },
+    {
+      "frame": 21,
+      "path": "/workspace/generated_images/exec-1fd072a7-cbb2-41ad-91da-91df5e7ae359.png",
+      "generation_id": "exec-1fd072a7-cbb2-41ad-91da-91df5e7ae359",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-c1dde381-9666-47a3-a259-49b927295b5e.png"
+      ],
+      "prompt": "Repaint ONE COMPLETE frontal runningCrown soldier atphase21/48, preserving exactface/helmet/torso/armor/tabard/ALLLEGSandbodydensityfromreference1. Correct rightSWORDARMtoexactlyHALFWAYbetweenreference2earlierarmandreference3nextarm: rightFISTisforwardnearLOWER CHEST ABOVE BELT, slightlylessforwardthanapex24, elbowvisiblyBENT. Swordbladepoints DOWN OUTSIDEviewerLEFT throughout, NEVERup/acrosschest. Bladefulllengthandnaturalgrip; no wristfliporattackpose. Forearmpumps towardcamera in depth, swordarmNOTstraightdown. Leftforearmshieldsmallopposingcounterbalance. Keepallotheracceptedanatomyandlegphases unchanged, logicalsamehead/neck/torso/limblengthandartdensity. Detailednaturalisticpaintedsteel/navycloth/leathercinematicstyle, fullfigureinside1055x1491portraitcanvaswithallhelmet/swordtip/bootsinsidegenerousmargins. Exactly2arms2legs1sword1shield. TRUEcleantransparentRGBA,noextra background/haze/shadows/text/guidemarks.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_21.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "08b1bb1e7acfbd83521623cbc0accf6f966aa4fd7a399d9966e6fb6b2c9b045c"
+    },
+    {
+      "generation_id": "exec-88e04fec-7f7d-4d51-b11e-c8b765152044",
+      "source_path": "/workspace/generated_images/exec-88e04fec-7f7d-4d51-b11e-c8b765152044.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase22/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key18; reference2 is nextkey24. Draw exactly the 4/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 4/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT boot forward low approaching ground, rightleg tuckedbehind; swordarm halfwayfromneutraltoforward. Next key: LEFT/viewerRIGHT heelCONTACTsupport, rightlegfoldedback. SwordarmFORWARD bentfistnearribs; shieldsmallbackcounterbalance. Current detailed body action: 22 left heel a little closer to contact; smaller differences, avoid freeze..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 22,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "c78ef3d65556b56d85628dfe69a9f1659a3ceb2b639acdea434ee6f0bef81046"
+    },
+    {
+      "generation_id": "exec-2ec232e4-1065-4f0e-813f-b4adec2c2734",
+      "source_path": "/workspace/generated_images/exec-2ec232e4-1065-4f0e-813f-b4adec2c2734.png",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase23/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key18; reference2 is nextkey24. Draw exactly the 5/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 5/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT boot forward low approaching ground, rightleg tuckedbehind; swordarm halfwayfromneutraltoforward. Next key: LEFT/viewerRIGHT heelCONTACTsupport, rightlegfoldedback. SwordarmFORWARD bentfistnearribs; shieldsmallbackcounterbalance. Current detailed body action: 23 final left landing anticipation one tick before heel contact..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png"
+      ],
+      "transparent_background": true,
+      "construction": "Complete unified image-authored drawing; no procedural anatomy or temporal interpolation.",
+      "frame": 23,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "3f0a9f00ca3fe21e62cc5088537f0c1dd1bad8aa84667b214e15bfe8af38661a"
+    },
+    {
+      "frame": 24,
+      "path": "/workspace/generated_images/exec-ca512c7a-89df-4614-942a-1353f1d2fd77.png",
+      "generation_id": "exec-ca512c7a-89df-4614-942a-1353f1d2fd77",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-f279f5c2-37ad-457b-8050-76ff1d4dda33.png",
+        "/workspace/generated_images/exec-f7643075-1f99-43d7-a858-ff8ae39f1104.png"
+      ],
+      "prompt": "Repaint ONE COMPLETE running Crown soldier using reference1 exact face/helmet/armor/costume/legpose as appearance. Reference2 is an AUTHORING GUIDE only: RED shoulder/elbow/hand chain shows a visibly BENT right arm pumping FORWARD, hand near LOWER CHEST ABOVE BELT; CYANline shows sword blade DOWN OUTSIDE LEFT, not up/acrossbody. REMOVE allcoloredguidelines/dots/text. Important: DO NOT straighten/lower swordarm simplybecause swordpointsdown. Elbow is distinctly bent, hand raised IN FRONT ofrightchest, forearmforeshortenedcomingtowardcamera, just as anatomical runningarmforward. Shoulder/viewerLEFT swingsforward, elbowoutside bodylowerthanraisedhand; fistabovebelt. Naturalanatomyandactualarmlength. SwordisheldinrighthandandpointsdiagonallyDOWNOUTSIDEviewerLEFTtowardlowerleft, neverupacrosschest. Leftshieldforearmcountersbackwithsmalltilt. Preserveallotherlegs, proportions,density andfullbodyregistration. Phase24LEFT/viewerRIGHT footcontact,RIGHT/viewerLEFT legback. Detailednaturallyproportionedpaintedfantasycinematicart. CleantransparentRGBA, fullhelmet/swordtip/bootsvisible, NOguidemarks/background/haze/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976"
+    },
+    {
+      "frame": 25,
+      "path": "/workspace/generated_images/exec-91700eed-06bb-4271-86a0-76265176fcdf.png",
+      "generation_id": "exec-91700eed-06bb-4271-86a0-76265176fcdf",
+      "prompt": "Edit the complete painted soldier from reference1 into ONE coherent full-body running drawing on TRANSPARENT background. Reference1 is an AUTHORING DIAGRAM over the exact current body. CYANline shows connected anatomicalRIGHT/viewerLEFT SHOULDER\u2192ELBOW\u2192FIST. CYANcross is the actual new fist/knuckle-center position. REDX marks the OLD lowered fist that MUST disappear. You MUST relocate/redrawthe complete right arm naturally along the cyan guide, with glove centered on the cyan cross. This position is anatomically reachable, ordinary bentelbow. Do not leave oldfist or oldarm and add another. No guideline/cross/text pixels in finished artwork.\n\nThis is frame25/48 of armoredrunning. Reference2 and3 are approved neighboring armposes and appearance. Follow the primaryCYANguide for this exact intermediate pose, not the neighbors' pose. Keep all unguided body, helmet, face, shoulder/torso/waist/hips/legs/knees/boots, costume navyquiltedtabard/silverarmor/brownleather, bodydensity and transparentcanvas from reference1. Legs are ALREADYcorrect LEFT/viewerRIGHT supporting,RIGHT/viewerLEFTtrailing/recovering; do NOT swap or redrawwronglegphase. Face size and armor model muststayconsistent. Coolnightlighting,detailedpaintedcinematicstyle.\n\nKeep theONEswordgrippedbythecorrected fist andbladecontinuingDOWN/OUTSIDE towardviewerLEFT, like reference2/3. No bladepointingUP/acrosschest, duplicateweapons, extraarms, stretchedanatomy, detachedparts, grid, diagrams,text,panels,background,groundorshadow. Exactly2arms2legs1shield1sword. Wholefigure+bladetipwithgeneroustransparentmargins. Finalisacompleteunifiedredrawing. The cyan/redo marks are AUTHORINGGUIDES ONLY: replace allthemwithfinishedpaintedarmor/glove/cloth/transparency.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_wrist_authoring_guide.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png",
+        "/workspace/generated_images/exec-41d1b86b-6918-48f5-830d-a0fdcedc9789.png"
+      ],
+      "referenced_sha256": {
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_wrist_authoring_guide.png": "96aa6ab132c4570f5555fad7444cd6000225296dc628cc7429495f6a51d1aed9",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+        "/workspace/generated_images/exec-41d1b86b-6918-48f5-830d-a0fdcedc9789.png": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034"
+      },
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "revision": "continuous_forward_apex_release",
+      "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+      "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+      "reference_archives": {
+        "original_current_body": "history/wrist_25_29_before_guided/frame_25.png",
+        "neighbor26": "history/wrist_25_29_before_guided/accepted_reference_26.png"
+      },
+      "selected_master_sha256": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030"
+    },
+    {
+      "frame": 26,
+      "path": "/workspace/generated_images/exec-41d1b86b-6918-48f5-830d-a0fdcedc9789.png",
+      "generation_id": "exec-41d1b86b-6918-48f5-830d-a0fdcedc9789",
+      "prompt": "Edit ONE COMPLETE painted Crown soldier running figure on TRANSPARENT background. Reference1 is the approved FORWARD sword-arm apex, reference2 is THIS frame's exact whole-body design/leg pose to preserve, reference3 is the later MID-PUMP arm pose. Final result is ONE full body figure, no panels or guides. Preserve reference2's helmet/face/neck/torso scale, silver plate armor, navy blue quilted tabard, brown leather gloves and boots, round silver shield on anatomicalLEFT/viewerRIGHT, and EXACT hip/knee/boot positions. Preserve all existing leg anatomy and contacts. Keep the same straight-frontal camera, complete margins, cool cinematic night lighting and detailed painted style.\n\nThis is corrected running frame 26 out of 48, after reference1/frame24 and before reference3/frame30. Fix ONLY the coherent anatomicalRIGHT/viewerLEFT shoulder-elbow-forearm-glove and its gripped sword. The fist must remain HIGH in front of the lower chest, clearly ABOVE the belt. It must NOT drop to the belt/hip yet. Set the actual fist/knuckle mass center approximately 83 source pixels ABOVE the belt buckle center; target is about x=397,y=516 in the reference2 canvas, but natural anatomy and the described height take priority. Relative to the eyes it is 159px toward viewerLEFT. This is 0.333 of the way from frame24's forward apex to frame30's midpump, so the elbow gradually opens and the fist gradually travels down/outward across the five intervening drawings. Keep an ordinary bent elbow and connected shoulder-to-elbow-to-wrist chain; do not stretch it.\n\nSword remains firmly held by the SAME fist, blade pointing DOWN and OUTSIDE the body toward viewerLEFT, at the continuous diagonal shown in references1/3. Blade must NEVER point up/across the chest. Include the full sword tip within canvas with generous transparent margin. Shield arm can retain reference2's small counterbalance, shield firmly attached. Exactly TWO arms/TWO legs/ONE sword/ONE shield. Remove the original lowered fist/sword rather than leaving a duplicate. Redraw a single complete coherent character; no pasted pieces, leftover hands, detached wrists, cropping, labels, guides, text, ground or shadow. Do not copy reference1's legs: reference2 owns this frame's legs and all non-arm appearance. Keep existing body density and face size.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/history/wrist_25_29_before_guided/frame_26.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png"
+      ],
+      "referenced_sha256": {
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/history/wrist_25_29_before_guided/frame_26.png": "ea81d648b18e5d7fbca50944ba6acefbfa0556cdaf21305f73e13327411cb2ac",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+      },
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "revision": "continuous_forward_apex_release",
+      "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+      "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+      "reference_archives": {
+        "original_current_body": "history/wrist_25_29_before_guided/frame_26.png"
+      },
+      "selected_master_sha256": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034"
+    },
+    {
+      "frame": 27,
+      "path": "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png",
+      "generation_id": "exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8",
+      "prompt": "Edit ONE COMPLETE painted Crown soldier running figure on TRANSPARENT background. Reference1 is the approved FORWARD sword-arm apex, reference2 is THIS frame's exact whole-body design/leg pose to preserve, reference3 is the later MID-PUMP arm pose. Final result is ONE full body figure, no panels or guides. Preserve reference2's helmet/face/neck/torso scale, silver plate armor, navy blue quilted tabard, brown leather gloves and boots, round silver shield on anatomicalLEFT/viewerRIGHT, and EXACT hip/knee/boot positions. Preserve all existing leg anatomy and contacts. Keep the same straight-frontal camera, complete margins, cool cinematic night lighting and detailed painted style.\n\nThis is corrected running frame 27 out of 48, after reference1/frame24 and before reference3/frame30. Fix ONLY the coherent anatomicalRIGHT/viewerLEFT shoulder-elbow-forearm-glove and its gripped sword. The fist must remain HIGH in front of the lower chest, clearly ABOVE the belt. It must NOT drop to the belt/hip yet. Set the actual fist/knuckle mass center approximately 75 source pixels ABOVE the belt buckle center; target is about x=367,y=505 in the reference2 canvas, but natural anatomy and the described height take priority. Relative to the eyes it is 175px toward viewerLEFT. This is 0.500 of the way from frame24's forward apex to frame30's midpump, so the elbow gradually opens and the fist gradually travels down/outward across the five intervening drawings. Keep an ordinary bent elbow and connected shoulder-to-elbow-to-wrist chain; do not stretch it.\n\nSword remains firmly held by the SAME fist, blade pointing DOWN and OUTSIDE the body toward viewerLEFT, at the continuous diagonal shown in references1/3. Blade must NEVER point up/across the chest. Include the full sword tip within canvas with generous transparent margin. Shield arm can retain reference2's small counterbalance, shield firmly attached. Exactly TWO arms/TWO legs/ONE sword/ONE shield. Remove the original lowered fist/sword rather than leaving a duplicate. Redraw a single complete coherent character; no pasted pieces, leftover hands, detached wrists, cropping, labels, guides, text, ground or shadow. Do not copy reference1's legs: reference2 owns this frame's legs and all non-arm appearance. Keep existing body density and face size.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/history/wrist_25_29_before_guided/frame_27.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png"
+      ],
+      "referenced_sha256": {
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/history/wrist_25_29_before_guided/frame_27.png": "d9bf1bbe2055c99a63c7d17de8bbdb8f8fe61a9297abb3021bb79cd7bfa4935a",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+      },
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "revision": "continuous_forward_apex_release",
+      "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+      "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+      "reference_archives": {
+        "original_current_body": "history/wrist_25_29_before_guided/frame_27.png"
+      },
+      "selected_master_sha256": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067"
+    },
+    {
+      "frame": 28,
+      "path": "/workspace/generated_images/exec-dc54779c-bf2e-49aa-8a33-8f801bdd8c31.png",
+      "generation_id": "exec-dc54779c-bf2e-49aa-8a33-8f801bdd8c31",
+      "prompt": "Edit the complete painted soldier from reference1 into ONE coherent full-body running drawing on TRANSPARENT background. Reference1 is an AUTHORING DIAGRAM over the exact current body. CYANline shows connected anatomicalRIGHT/viewerLEFT SHOULDER\u2192ELBOW\u2192FIST. CYANcross is the actual new fist/knuckle-center position. REDX marks the OLD lowered fist that MUST disappear. You MUST relocate/redrawthe complete right arm naturally along the cyan guide, with glove centered on the cyan cross. This position is anatomically reachable, ordinary bentelbow. Do not leave oldfist or oldarm and add another. No guideline/cross/text pixels in finished artwork.\n\nThis is frame28/48 of armoredrunning. Reference2 and3 are approved neighboring armposes and appearance. Follow the primaryCYANguide for this exact intermediate pose, not the neighbors' pose. Keep all unguided body, helmet, face, shoulder/torso/waist/hips/legs/knees/boots, costume navyquiltedtabard/silverarmor/brownleather, bodydensity and transparentcanvas from reference1. Legs are ALREADYcorrect LEFT/viewerRIGHT supporting,RIGHT/viewerLEFTtrailing/recovering; do NOT swap or redrawwronglegphase. Face size and armor model muststayconsistent. Coolnightlighting,detailedpaintedcinematicstyle.\n\nKeep theONEswordgrippedbythecorrected fist andbladecontinuingDOWN/OUTSIDE towardviewerLEFT, like reference2/3. No bladepointingUP/acrosschest, duplicateweapons, extraarms, stretchedanatomy, detachedparts, grid, diagrams,text,panels,background,groundorshadow. Exactly2arms2legs1shield1sword. Wholefigure+bladetipwithgeneroustransparentmargins. Finalisacompleteunifiedredrawing. The cyan/redo marks are AUTHORINGGUIDES ONLY: replace allthemwithfinishedpaintedarmor/glove/cloth/transparency.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28_wrist_authoring_guide.png",
+        "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png"
+      ],
+      "referenced_sha256": {
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28_wrist_authoring_guide.png": "ecf991be1411ee914b465f739c30efc364dd97e812f70780cf7fb1f8137f243b",
+        "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+      },
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "revision": "continuous_forward_apex_release",
+      "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+      "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+      "reference_archives": {
+        "original_current_body": "history/wrist_25_29_before_guided/frame_28.png",
+        "neighbor27": "history/wrist_25_29_before_guided/accepted_reference_27.png"
+      },
+      "selected_master_sha256": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76"
+    },
+    {
+      "frame": 29,
+      "path": "/workspace/generated_images/exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f.png",
+      "generation_id": "exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f",
+      "prompt": "Edit the complete painted soldier from reference1 into ONE coherent full-body running drawing on TRANSPARENT background. Reference1 is an AUTHORING DIAGRAM over the exact current body. CYANline shows connected anatomicalRIGHT/viewerLEFT SHOULDER\u2192ELBOW\u2192FIST. CYANcross is the actual new fist/knuckle-center position. REDX marks the OLD lowered fist that MUST disappear. You MUST relocate/redrawthe complete right arm naturally along the cyan guide, with glove centered on the cyan cross. This position is anatomically reachable, ordinary bentelbow. Do not leave oldfist or oldarm and add another. No guideline/cross/text pixels in finished artwork.\n\nThis is frame29/48 of armoredrunning. Reference2 and3 are approved neighboring armposes and appearance. Follow the primaryCYANguide for this exact intermediate pose, not the neighbors' pose. Keep all unguided body, helmet, face, shoulder/torso/waist/hips/legs/knees/boots, costume navyquiltedtabard/silverarmor/brownleather, bodydensity and transparentcanvas from reference1. Legs are ALREADYcorrect LEFT/viewerRIGHT supporting,RIGHT/viewerLEFTtrailing/recovering; do NOT swap or redrawwronglegphase. Face size and armor model muststayconsistent. Coolnightlighting,detailedpaintedcinematicstyle.\n\nKeep theONEswordgrippedbythecorrected fist andbladecontinuingDOWN/OUTSIDE towardviewerLEFT, like reference2/3. No bladepointingUP/acrosschest, duplicateweapons, extraarms, stretchedanatomy, detachedparts, grid, diagrams,text,panels,background,groundorshadow. Exactly2arms2legs1shield1sword. Wholefigure+bladetipwithgeneroustransparentmargins. Finalisacompleteunifiedredrawing. The cyan/redo marks are AUTHORINGGUIDES ONLY: replace allthemwithfinishedpaintedarmor/glove/cloth/transparency.\n",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_wrist_authoring_guide.png",
+        "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png"
+      ],
+      "referenced_sha256": {
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_wrist_authoring_guide.png": "3c52c0ff59a6b7b3e8a9edfb3357ff337d362b43e7444ec179fba3ee16bdd266",
+        "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+      },
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "revision": "continuous_forward_apex_release",
+      "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+      "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+      "reference_archives": {
+        "original_current_body": "history/wrist_25_29_before_guided/frame_29.png",
+        "neighbor27": "history/wrist_25_29_before_guided/accepted_reference_27.png"
+      },
+      "selected_master_sha256": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16"
+    },
+    {
+      "frame": 30,
+      "path": "/workspace/generated_images/exec-6ab9db2e-b027-4bd9-844c-013298f6f93e.png",
+      "generation_id": "exec-6ab9db2e-b027-4bd9-844c-013298f6f93e",
+      "rejected_path": "/workspace/generated_images/exec-458c7f20-595b-4f2a-8901-6e4822149c58.png",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-e08b9392-0c0e-473b-ba34-30df1a9572d5.png",
+        "/workspace/generated_images/exec-1e21514b-dce6-436b-a8e2-554478aba9d1.png"
+      ],
+      "prompt": "Repaint ONE COMPLETE Crown soldier frontal running drawing: preserve exactface/head/torso/costume/ALLLEGSandbodydensity fromreference1. Correct rightSWORDARMtohalfwaybetween reference2NEUTRALarmandreference3FORWARDarm. Fist shouldbeHALFWAYbetweenwaistandlowerchest, ABOVE BELT aroundsourcex365,y560; elbowvisiblyBENT, rightforearmpumpingFORWARD towardcamera andinward alittle, notstraightdown. Forearmforeshorteningnatural. Reference3armistheforwardapex butTHISposeisONLYHALFasfarforward. SwordbladepointsDOWNandOUTSIDEviewerLEFT inallreferences, NEVERupacrosschest. Maintainpropergrip, wholeoriginalswordlength, no wristflip. Leftforearmshieldcounterbalanceswithsmalltilt/reach. AnatomicalRIGHT/viewerLEFT swordarm + anatomicalLEFT/viewerRIGHT shield. Nootherlimbchanges, alllegpositionssupportphasesandbodyproportionspreserved. Thisisphase30/48: LEFT/viewerRIGHT legsupportswithkneebent,RIGHTlegbehind. Keep same1055x1491portraitregistrationandartdensity withfullhelmet/swordtip/bootsinside generousmargins. Detailedpaintedsteel/navycloth/leathercinematicstyle. Onecoherentfulldrawingno detachedoverlays. Exactly2arms2legs1sword1shield. TruecleantransparentRGBA,no guide marks/haze/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+    },
+    {
+      "frame": 31,
+      "path": "/workspace/generated_images/exec-c6120377-f18c-405e-9e8f-71586487dbb7.png",
+      "generation_id": "exec-c6120377-f18c-405e-9e8f-71586487dbb7",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase31/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key30; reference2 is nextkey36. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT legstillsupportsunderbodywithbentknee; rightleg/viewerLEFT recoveringbehind; swordarmhalfwayfromforwardtoneutral. Next key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 31 left heel releases, right knee passing forward.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "09e9c5f1c1d76eb21993a7d415eb6ffc60bd8592f3819324784b1bdb7dd1bc2e"
+    },
+    {
+      "frame": 32,
+      "path": "/workspace/generated_images/exec-52a4d266-7d3c-44c0-87b6-67aa3c83c3d3.png",
+      "generation_id": "exec-52a4d266-7d3c-44c0-87b6-67aa3c83c3d3",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase32/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key30; reference2 is nextkey36. Draw exactly the 2/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 2/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT legstillsupportsunderbodywithbentknee; rightleg/viewerLEFT recoveringbehind; swordarmhalfwayfromforwardtoneutral. Next key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 32 left late support toe push-off, right thigh forward bent, right boot tucked..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "7682b5f72a278ab294d9702da0044de94422213d0c301e3f141ccfc3fcbf3890"
+    },
+    {
+      "frame": 33,
+      "path": "/workspace/generated_images/exec-ebd75822-535b-4b8d-8197-2401fb4e817a.png",
+      "generation_id": "exec-ebd75822-535b-4b8d-8197-2401fb4e817a",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase33/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key30; reference2 is nextkey36. Draw exactly the 3/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 3/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT legstillsupportsunderbodywithbentknee; rightleg/viewerLEFT recoveringbehind; swordarmhalfwayfromforwardtoneutral. Next key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 33 left push-off continues, right knee rises gradually..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "a2e4bccd3a3d3b6d260820772a8d4ffa5842d14d105a14869d69beb158ef7874"
+    },
+    {
+      "frame": 34,
+      "path": "/workspace/generated_images/exec-4db84124-5e1d-4fa1-acc4-eb3358679216.png",
+      "generation_id": "exec-4db84124-5e1d-4fa1-acc4-eb3358679216",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase34/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key30; reference2 is nextkey36. Draw exactly the 4/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 4/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT legstillsupportsunderbodywithbentknee; rightleg/viewerLEFT recoveringbehind; swordarmhalfwayfromforwardtoneutral. Next key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 34 left toe leaving ground, right thigh ahead flexed knee.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "d844e04c2064ab4aaaa5d5faa235c67bf2884ad271a4b4b4a7d6a508ee2fdb26"
+    },
+    {
+      "frame": 35,
+      "path": "/workspace/generated_images/exec-cff19beb-bd57-4f3c-84de-29ac4c9b3aa1.png",
+      "generation_id": "exec-cff19beb-bd57-4f3c-84de-29ac4c9b3aa1",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase35/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key30; reference2 is nextkey36. Draw exactly the 5/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 5/6 of this small interval toward reference2. Earlier key: LEFT/viewerRIGHT legstillsupportsunderbodywithbentknee; rightleg/viewerLEFT recoveringbehind; swordarmhalfwayfromforwardtoneutral. Next key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Current detailed body action: 35 brief flight starts, left boot folds behind, right knee approaches peak..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "f33d6dec0c9af2ca80035e59530a9773476dd334dac82df219f54c8fc49b1b89"
+    },
+    {
+      "frame": 36,
+      "path": "/workspace/generated_images/exec-a6b13b5d-b543-4961-bb6c-fc23b8e8822a.png",
+      "generation_id": "exec-a6b13b5d-b543-4961-bb6c-fc23b8e8822a",
+      "rejected_path": "/workspace/generated_images/exec-a007b3dd-9d6c-49c4-8c2a-709569afd944.png",
+      "rejected_paths": [
+        "/workspace/generated_images/exec-a007b3dd-9d6c-49c4-8c2a-709569afd944.png",
+        "/workspace/generated_images/exec-f21653d8-1e61-4311-af56-7e4a59eac277.png"
+      ],
+      "prompt": "Edit this complete frontal running Crown soldier drawing, preserving exact face, head/helmet, torso proportions, shield, waist-height sword carry and most costume details. Correct ONLY the right-leg running recovery: anatomicalRIGHT/viewerLEFT THIGH must swing forward with KNEE HIGHER (about hip plus180imagepixels), knee clearly FLEXED about90degrees, rightHEEL tucked back under thigh toward buttock, boot foreshortened in depth and ending near y1180 rather than straight down at1350. This is MIDFLIGHT halfway between LEFT contact and next RIGHT contact, NOT right landing. AnatomicalLEFT/viewerRIGHT leg trails behind flexed naturally afterpush-off, leftbootbehind. BOTHfeet airborne. No sidekick, no extra boot, no long straight forward lowerleg. Keep natural same leglength; bend at actual joints. Sword hand stays in NEUTRAL carry by waist (not forwardapex, not straightdown) with blade pointeddownoutsideviewerLEFT. Repaint whole coherentfigure with EXACTsamecharacterdesign and texture, no detachedpartoverlays. Fullbodyinsideportraitcanvas with consistent density and allpartsvisible, true transparentbackground, no smoke/glow/floor/shadow/text.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3"
+    },
+    {
+      "frame": 37,
+      "path": "/workspace/generated_images/exec-9d7b18e4-95c8-435e-a560-8009888e6349.png",
+      "generation_id": "exec-9d7b18e4-95c8-435e-a560-8009888e6349",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase37/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key36; reference2 is nextkey42. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: bothfeetairborne, RIGHT/viewerLEFT knee liftedhigh withheel tuckedbackunderthigh; LEFT/viewerRIGHTlegtrails. SwordarmNEUTRAL fistbywaist. Next key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Current detailed body action: 37 right thigh starts lowering from peak, boot untucks forward..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "59d760dd4d1e7f026bbb0d4f0e79c92ed8dcbb91bd542ab0a7e01914fed952b8"
+    },
+    {
+      "frame": 38,
+      "path": "/workspace/generated_images/exec-4ec7fae0-eb96-4c14-bbb5-f69a2e83cc06.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningdrawing atphase38/48, 1/5 betweenactualcorrectreference1phase37(foldedRIGHTknee/boot) andactualcorrectreference2phase42(RIGHTapproach). Reference3is authoring-onlyRED knee/ankle/toelineguide; REMOVEallcoloredlines/dots/text.\nCRITICAL: anatomicalRIGHT/viewerLEFT bootmustunfoldCONTINUOUSLY DOWN/forward towardnextcontact, neverfullyextendearlythenrefoldup. Atthisphase38theRIGHTforwardbootendshouldbearoundy1212, gentlybetween1154inref1and1446inref2. Kneegraduallylowersandextends, bootturnsnaturallytowardcontact. Keepfullnaturalleglengthanddepthforeshortening, NOTsidewayskicks. DoNOTcopystartposeagainorjumpstraighttoreference2. Exactly1/5 ofthemodestinterval, notfullcycle. AnatomicalLEFT/viewerRIGHT legtrailsafterpush-off, maintainingcoherentbacklegflex.\nPreserveexactface/helmet, neck/torso/armour/navytabard/boots/limbproportionsanddensity. RightSWORDARMisafterNEUTRAL36, passingtowardBACK42; wristgraduallylowersawayfromlowerchesttowardhip, elbowbendloosensnaturally. SwordbladeDOWNOUTSIDEviewerLEFT throughout, neverup/acrosschest. LEFTforearmcarriessteelbossshieldwithsmallcounterbalance. Exactly2arms2legs1sword1shield. Tabardtipssmalllaggingflutter, notrandomshapes.\nOnecompletecoherentpainting,nopartoverlays. Same1055x1491portraitcomposition/densityasreferences, allhelmet/swordtip/bootsinsidegenerousmargins. Detailednaturalisticpaintedfantasycinematicstyle. TRUEcleantransparentRGBA,nohaze/floor/shadows/text/guidemarks. Guidelocationsareillustrativemotiontargets, actualnaturalanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_38_authoring_guide.png"
+      ],
+      "generation_id": "exec-4ec7fae0-eb96-4c14-bbb5-f69a2e83cc06",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "218f0f1b58b20ff2bd54bd66b7d0a936c38e45af0a4d8cd870408b72ad09ce9b"
+    },
+    {
+      "frame": 39,
+      "path": "/workspace/generated_images/exec-e20a4f82-c47a-4578-8bf5-f28a7793c2b7.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningdrawing atphase39/48, 2/5 betweenactualcorrectreference1phase37(foldedRIGHTknee/boot) andactualcorrectreference2phase42(RIGHTapproach). Reference3is authoring-onlyRED knee/ankle/toelineguide; REMOVEallcoloredlines/dots/text.\nCRITICAL: anatomicalRIGHT/viewerLEFT bootmustunfoldCONTINUOUSLY DOWN/forward towardnextcontact, neverfullyextendearlythenrefoldup. Atthisphase39theRIGHTforwardbootendshouldbearoundy1271, gentlybetween1154inref1and1446inref2. Kneegraduallylowersandextends, bootturnsnaturallytowardcontact. Keepfullnaturalleglengthanddepthforeshortening, NOTsidewayskicks. DoNOTcopystartposeagainorjumpstraighttoreference2. Exactly2/5 ofthemodestinterval, notfullcycle. AnatomicalLEFT/viewerRIGHT legtrailsafterpush-off, maintainingcoherentbacklegflex.\nPreserveexactface/helmet, neck/torso/armour/navytabard/boots/limbproportionsanddensity. RightSWORDARMisafterNEUTRAL36, passingtowardBACK42; wristgraduallylowersawayfromlowerchesttowardhip, elbowbendloosensnaturally. SwordbladeDOWNOUTSIDEviewerLEFT throughout, neverup/acrosschest. LEFTforearmcarriessteelbossshieldwithsmallcounterbalance. Exactly2arms2legs1sword1shield. Tabardtipssmalllaggingflutter, notrandomshapes.\nOnecompletecoherentpainting,nopartoverlays. Same1055x1491portraitcomposition/densityasreferences, allhelmet/swordtip/bootsinsidegenerousmargins. Detailednaturalisticpaintedfantasycinematicstyle. TRUEcleantransparentRGBA,nohaze/floor/shadows/text/guidemarks. Guidelocationsareillustrativemotiontargets, actualnaturalanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_39_authoring_guide.png"
+      ],
+      "generation_id": "exec-e20a4f82-c47a-4578-8bf5-f28a7793c2b7",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "00e05fcb9b52b291dded7429aee1150b0bd7d8044a7eb83a27c75036edd9f99d"
+    },
+    {
+      "frame": 40,
+      "path": "/workspace/generated_images/exec-68d69609-6ce3-445e-9577-c87f64cc6a81.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningdrawing atphase40/48, 3/5 betweenactualcorrectreference1phase37(foldedRIGHTknee/boot) andactualcorrectreference2phase42(RIGHTapproach). Reference3is authoring-onlyRED knee/ankle/toelineguide; REMOVEallcoloredlines/dots/text.\nCRITICAL: anatomicalRIGHT/viewerLEFT bootmustunfoldCONTINUOUSLY DOWN/forward towardnextcontact, neverfullyextendearlythenrefoldup. Atthisphase40theRIGHTforwardbootendshouldbearoundy1329, gentlybetween1154inref1and1446inref2. Kneegraduallylowersandextends, bootturnsnaturallytowardcontact. Keepfullnaturalleglengthanddepthforeshortening, NOTsidewayskicks. DoNOTcopystartposeagainorjumpstraighttoreference2. Exactly3/5 ofthemodestinterval, notfullcycle. AnatomicalLEFT/viewerRIGHT legtrailsafterpush-off, maintainingcoherentbacklegflex.\nPreserveexactface/helmet, neck/torso/armour/navytabard/boots/limbproportionsanddensity. RightSWORDARMisafterNEUTRAL36, passingtowardBACK42; wristgraduallylowersawayfromlowerchesttowardhip, elbowbendloosensnaturally. SwordbladeDOWNOUTSIDEviewerLEFT throughout, neverup/acrosschest. LEFTforearmcarriessteelbossshieldwithsmallcounterbalance. Exactly2arms2legs1sword1shield. Tabardtipssmalllaggingflutter, notrandomshapes.\nOnecompletecoherentpainting,nopartoverlays. Same1055x1491portraitcomposition/densityasreferences, allhelmet/swordtip/bootsinsidegenerousmargins. Detailednaturalisticpaintedfantasycinematicstyle. TRUEcleantransparentRGBA,nohaze/floor/shadows/text/guidemarks. Guidelocationsareillustrativemotiontargets, actualnaturalanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_40_authoring_guide.png"
+      ],
+      "generation_id": "exec-68d69609-6ce3-445e-9577-c87f64cc6a81",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "1438f499e5f54260e4a10580a0ae46d378c110b1f96e416e4ad75d8f8bc82a06"
+    },
+    {
+      "frame": 41,
+      "path": "/workspace/generated_images/exec-10db7c54-7db3-453c-ab69-f90230ba4b26.png",
+      "prompt": "Draw ONE complete painted frontal Crown soldier runningdrawing atphase41/48, 4/5 betweenactualcorrectreference1phase37(foldedRIGHTknee/boot) andactualcorrectreference2phase42(RIGHTapproach). Reference3is authoring-onlyRED knee/ankle/toelineguide; REMOVEallcoloredlines/dots/text.\nCRITICAL: anatomicalRIGHT/viewerLEFT bootmustunfoldCONTINUOUSLY DOWN/forward towardnextcontact, neverfullyextendearlythenrefoldup. Atthisphase41theRIGHTforwardbootendshouldbearoundy1388, gentlybetween1154inref1and1446inref2. Kneegraduallylowersandextends, bootturnsnaturallytowardcontact. Keepfullnaturalleglengthanddepthforeshortening, NOTsidewayskicks. DoNOTcopystartposeagainorjumpstraighttoreference2. Exactly4/5 ofthemodestinterval, notfullcycle. AnatomicalLEFT/viewerRIGHT legtrailsafterpush-off, maintainingcoherentbacklegflex.\nPreserveexactface/helmet, neck/torso/armour/navytabard/boots/limbproportionsanddensity. RightSWORDARMisafterNEUTRAL36, passingtowardBACK42; wristgraduallylowersawayfromlowerchesttowardhip, elbowbendloosensnaturally. SwordbladeDOWNOUTSIDEviewerLEFT throughout, neverup/acrosschest. LEFTforearmcarriessteelbossshieldwithsmallcounterbalance. Exactly2arms2legs1sword1shield. Tabardtipssmalllaggingflutter, notrandomshapes.\nOnecompletecoherentpainting,nopartoverlays. Same1055x1491portraitcomposition/densityasreferences, allhelmet/swordtip/bootsinsidegenerousmargins. Detailednaturalisticpaintedfantasycinematicstyle. TRUEcleantransparentRGBA,nohaze/floor/shadows/text/guidemarks. Guidelocationsareillustrativemotiontargets, actualnaturalanatomytakespriority.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_41_authoring_guide.png"
+      ],
+      "generation_id": "exec-10db7c54-7db3-453c-ab69-f90230ba4b26",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab"
+    },
+    {
+      "frame": 42,
+      "path": "/workspace/generated_images/exec-b117064c-f466-47e7-8f99-6b9453c0555a.png",
+      "generation_id": "exec-b117064c-f466-47e7-8f99-6b9453c0555a",
+      "prompt": "Draw ONE complete painted frontal running Crown soldier, isolated fullbody on true clean transparent RGBA. NOT a sheet, not multiple figures. This is production drawing42 of48 in800ms two-step run. The references show the same soldier and adjacent key poses. Preserve exact face, helmet, armor design, navy tabard/charcoal trousers/brown leather boots, shield/sword ownership and painted fantasy cinematic quality. First adjacent key is phase42, second adjacent key phase0. Draw the naturally continuous whole-body FIRST key pose itself at this interval. Specific current action:\n42 flight before right contact: right boot forward/low, left boot tucked rear.\nMaintain exact character proportions: same head width, neck length, shoulder width, torso length and leg length, not shorter body when crouched. BOTH arms vary continuously with shoulders and bent elbows, opposite same-side leg; sword anatomicalRIGHT/viewerLEFT hand, shield anatomicalLEFT/viewerRIGHT forearm. Sword arm pump transitions BACK/down hip at right-contact0 toward FORWARD/bent ribs at left-contact24 then backby48. Shield counters with smaller cleartilt/reach. Blade always remains safely outward of body, no crossingface, no changing swordlength, no new weapon poses unrelated to adjacent keys. Ground support and leg exchange progress smoothly, knee bends in depth, no side kicks, exactly2arms2legs1sword1shield. Shoulder/pelvis subtle counterrotation, moderate athletic lean, authored gentle support/flight recoil. Tabard free tips lag hip by few frames, not random shape replacements. Small hairtips under helmet follow movement. Front-facing determined face, stable identity. Preserve exact figure size on canvas across drawings:1086x1448 portrait, full helmet crownaround y60, eyes aroundy180, throat y300, belt buckle aroundy590, logicalgroundy1370; figurecenterx543. These are composition guides, not stretching joints. Plenty of transparent marginsaround allfigure and swordtip; NOparts cropped. Detailed painted metal/leather/cloth texture and natural human proportions. NO background, grayclouds, smoke, glow, floor, shadow, text, numbers or multiple poses. Render only one complete drawing; don'tpaste/warp bodyparts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848"
+    },
+    {
+      "frame": 43,
+      "path": "/workspace/generated_images/exec-4445d753-729e-4b98-b5b2-eed0d23c36e8.png",
+      "generation_id": "exec-4445d753-729e-4b98-b5b2-eed0d23c36e8",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase43/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key42; reference2 is nextkey0. Draw exactly the 1/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 1/6 of this small interval toward reference2. Earlier key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Next key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Current detailed body action: 43 right boot descends progressively, not high kick..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f"
+    },
+    {
+      "frame": 44,
+      "path": "/workspace/generated_images/exec-bc967520-2e1f-49ee-a6a5-a42995fafc00.png",
+      "generation_id": "exec-bc967520-2e1f-49ee-a6a5-a42995fafc00",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase44/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key42; reference2 is nextkey0. Draw exactly the 2/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 2/6 of this small interval toward reference2. Earlier key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Next key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Current detailed body action: 44 right heel approaches contact, left knee begins moving under body..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c"
+    },
+    {
+      "frame": 45,
+      "path": "/workspace/generated_images/exec-2206e7c4-c5cf-496d-b4b1-67be602907f6.png",
+      "generation_id": "exec-2206e7c4-c5cf-496d-b4b1-67be602907f6",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase45/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key42; reference2 is nextkey0. Draw exactly the 3/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 3/6 of this small interval toward reference2. Earlier key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Next key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Current detailed body action: 45 right boot almost grounded.\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "references_note": "Initial adjacent key-cell study or explicit complete-frame repair; generation source pixels retained unchanged. Final selected file is the unmodified complete tool output.",
+      "selected_master_sha256": "c483a37b0e103feabbef96281397c430c43baead275487b0209e2200016db748"
+    },
+    {
+      "frame": 46,
+      "path": "/workspace/generated_images/exec-8dcfbeda-d8fd-4bac-b621-ff9be9fc560e.png",
+      "generation_id": "exec-8dcfbeda-d8fd-4bac-b621-ff9be9fc560e",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase46/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key42; reference2 is nextkey0. Draw exactly the 4/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 4/6 of this small interval toward reference2. Earlier key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Next key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Current detailed body action: 46 right heel closer to contact; do not freeze..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a"
+    },
+    {
+      "frame": 47,
+      "path": "/workspace/generated_images/exec-4c1d85a0-56d7-4ef6-bb22-6e6ec47125b7.png",
+      "generation_id": "exec-4c1d85a0-56d7-4ef6-bb22-6e6ec47125b7",
+      "prompt": "Create ONE complete whole-body frontal painted Crown soldier drawing at phase47/48 of an800ms runningcycle. NOT a sheet. Reference1 is earlier key42; reference2 is nextkey0. Draw exactly the 5/6 IN-BETWEEN pose between these adjacent complete drawings; neither copy anendpoint nor jump toanother phase. Begin at reference1 and move 5/6 of this small interval toward reference2. Earlier key: RIGHT/viewerLEFT bootforwardlowapproachingground,leftlegfoldedback;swordarmhalfwayfromneutraltoREAR. Next key: right/viewerLEFT leg is the forward CONTACT support, right swordarm REAR/down; left leg is folded behind and left shieldarm forward. Current detailed body action: 47 final right landing anticipation one tick before pose0: right heel just above ground..\nArmclock: right swordarm REARat0, NEUTRALat12, FORWARDat24, NEUTRALat36, REARagain48. AnatomicalRIGHT/viewerLEFT hand holds sword; anatomicalLEFT/viewerRIGHT forearm carries plain boss shield. Draw continuous elbow flex/shoulder pump and small shieldcounterbalance, no parked limbs and no sudden sword-angle switches. Blade stays safely pointedoutward/downawayfrombody, neverthroughface. Swordlengthconstant. Legidentities NEVERexchangeearly: rightleg supports0\u20138 then leftknee advancesduringflight12\u201323; leftlegsupports24\u201332 then rightknee advancesduringflight36\u201347. Knee motions in depth, natural flexion and footunfolding toward contact, not sidewayskicks. Exactly2arms2legs1sword1shield.\nPreserve preciselysamepainted naturalisticcharacteridentity and proportions, steelhelmet/platearmor, navytabard, charcoaltrousers, brownboots. Consistentheadwidth, neck/torso/limblength and artdensity. Subtlesamebodycounterrotation, authoredgentlerecoil; rigidplatesstayrigid, jointsarticulate. Tabardtips lag hips/thighsmovement byfewposes; small hairtipsmove, not randomoutlinechanges. Consistentfront-facingfocusedface. Keep figurethe same size/placement/densityoncanvas asreferences,1086x1448portraitcomposition, allhelmet/swordtip/bootsinsidewithgeneroustransparentmargins. TRUE CLEAN TRANSPARENTRGBA. NOgrayclouds/haze/floor/shadow/glow/text/numbers. Onecompletecoherent redraw, no detachedlimbs/parts.",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png"
+      ],
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "approval_state": "internally_reviewed_for_ingame_review",
+      "selected_master_sha256": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53"
+    }
+  ]
+}

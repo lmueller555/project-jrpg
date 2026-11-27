@@ -1,0 +1,27 @@
+{
+  "frame": 29,
+  "path": "/workspace/generated_images/exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f.png",
+  "generation_id": "exec-4f1f02d9-6c1f-48c0-8cc3-530ce463d39f",
+  "prompt": "Edit the complete painted soldier from reference1 into ONE coherent full-body running drawing on TRANSPARENT background. Reference1 is an AUTHORING DIAGRAM over the exact current body. CYANline shows connected anatomicalRIGHT/viewerLEFT SHOULDER\u2192ELBOW\u2192FIST. CYANcross is the actual new fist/knuckle-center position. REDX marks the OLD lowered fist that MUST disappear. You MUST relocate/redrawthe complete right arm naturally along the cyan guide, with glove centered on the cyan cross. This position is anatomically reachable, ordinary bentelbow. Do not leave oldfist or oldarm and add another. No guideline/cross/text pixels in finished artwork.\n\nThis is frame29/48 of armoredrunning. Reference2 and3 are approved neighboring armposes and appearance. Follow the primaryCYANguide for this exact intermediate pose, not the neighbors' pose. Keep all unguided body, helmet, face, shoulder/torso/waist/hips/legs/knees/boots, costume navyquiltedtabard/silverarmor/brownleather, bodydensity and transparentcanvas from reference1. Legs are ALREADYcorrect LEFT/viewerRIGHT supporting,RIGHT/viewerLEFTtrailing/recovering; do NOT swap or redrawwronglegphase. Face size and armor model muststayconsistent. Coolnightlighting,detailedpaintedcinematicstyle.\n\nKeep theONEswordgrippedbythecorrected fist andbladecontinuingDOWN/OUTSIDE towardviewerLEFT, like reference2/3. No bladepointingUP/acrosschest, duplicateweapons, extraarms, stretchedanatomy, detachedparts, grid, diagrams,text,panels,background,groundorshadow. Exactly2arms2legs1shield1sword. Wholefigure+bladetipwithgeneroustransparentmargins. Finalisacompleteunifiedredrawing. The cyan/redo marks are AUTHORINGGUIDES ONLY: replace allthemwithfinishedpaintedarmor/glove/cloth/transparency.\n",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_wrist_authoring_guide.png",
+    "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png"
+  ],
+  "referenced_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_wrist_authoring_guide.png": "3c52c0ff59a6b7b3e8a9edfb3357ff337d362b43e7444ec179fba3ee16bdd266",
+    "/workspace/generated_images/exec-9f9ca2de-d701-4da1-ac61-5e646ba698a8.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6"
+  },
+  "tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "approval_state": "internally_reviewed_for_ingame_review",
+  "revision": "continuous_forward_apex_release",
+  "construction": "Whole complete figure redraw from actual adjacent poses and phase-specific reference. No production part transforms, warps, cutouts or guide pixels.",
+  "review": "Actual painted glove progression, elbow chain, equipment handedness, down/outside sword, preserved left-support/right-recovery legs and body model visually inspected. Small natural projected wrist curvature retained; no arbitrary exact-coordinate anatomy test.",
+  "reference_archives": {
+    "original_current_body": "history/wrist_25_29_before_guided/frame_29.png",
+    "neighbor27": "history/wrist_25_29_before_guided/accepted_reference_27.png"
+  },
+  "selected_master_sha256": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16"
+}

@@ -18,9 +18,8 @@ from PIL import Image, ImageDraw
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/face_reveal'
 OUTPUT = ROOT/'assets/story/fire_veinhold_opening/shot07/characters'
-REVIEW = ROOT/'docs/reviews/veinhold_face_reveal'
+REVIEW = ROOT/'docs/reviews/veinhold_running_polish'
 ACTORS = ('lucan', 'iselin', 'crown_soldier')
-FRAME_MS = 1000/60
 
 
 def _json(data):
@@ -49,15 +48,20 @@ def _point(value):
 
 def build_actor(actor, check=False):
     folder = SOURCE/actor
-    profile = folder/'source_art_24.json'
+    profile = folder/'source_art_48.json'
     data = json.loads(profile.read_text())
     canvas, anchor = data.get('canvas'), data.get('anchor')
+    count, cycle = len(data.get('frames', [])), data.get('cycle_ms')
+    alpha_floor = data.get('alpha_floor', 16)
     if (data.get('version') != 1 or data.get('actor') != actor
-            or canvas != [768,1024] or not _point(anchor)
+            or canvas not in ([768,1024], [1024,1024]) or not _point(anchor)
             or not 0 < anchor[0] < canvas[0] or not 0 < anchor[1] < canvas[1]
-            or data.get('cycle_ms') != 400 or len(data.get('frames', [])) != 24
-            or data.get('contacts') != [{'frame':0,'foot':'near'}, {'frame':12,'foot':'far'}]):
-        raise ValueError('Expected a complete 24-pose / 400 ms source profile for '+actor)
+            or count < 8 or count > 64 or count % 2
+            or type(alpha_floor) is not int or not 0 <= alpha_floor <= 32
+            or type(cycle) not in (int, float) or not math.isfinite(cycle) or cycle <= 0
+            or data.get('contacts') != [{'frame':0,'foot':'near'}, {'frame':count//2,'foot':'far'}]):
+        raise ValueError('Expected a registered complete two-step source profile for '+actor)
+    frame_ms = cycle/count
     images, hashes, animation, registrations, drawings = {}, {}, [], [], []
     hashes[profile.relative_to(ROOT).as_posix()] = sha256(profile.read_bytes()).hexdigest()
     for name, expected in data.get('source_sha256', {}).items():
@@ -89,6 +93,12 @@ def build_actor(actor, check=False):
                 or not _point(origin)):
             raise ValueError(f'Invalid {actor} whole-drawing registration {index}')
         crop = master.crop(tuple(cell))
+        if crop.getchannel('A').getextrema()[0] > alpha_floor:
+            raise ValueError(f'Complete drawing needs a transparent background {actor}:{index}')
+        # Generated masters can contain vivid hidden RGB in near-transparent
+        # hair-edge pixels. Discard only the documented low-opacity fringe;
+        # preserve the original master and all substantive painted anatomy.
+        crop.putalpha(crop.getchannel('A').point(lambda alpha:0 if alpha <= alpha_floor else alpha))
         size = (max(1, round(crop.width*scale)), max(1, round(crop.height*scale)))
         # Premultiplied-alpha sampling prevents hidden RGB from coloring edges.
         sampled = crop.convert('RGBa').resize(size, Image.Resampling.LANCZOS).convert('RGBA')
@@ -117,7 +127,7 @@ def build_actor(actor, check=False):
                 landmarks[label] = [round(point[i]*scale+applied_origin[i], 4) for i in (0,1)]
             else:
                 raise ValueError(f'Invalid source-cell landmark {actor}:{index}:{label}')
-        animation.append({'file':filename, 'duration_ms':FRAME_MS, 'landmarks':landmarks,
+        animation.append({'file':filename, 'duration_ms':frame_ms, 'landmarks':landmarks,
                           'notes':record.get('notes', '')})
         registrations.append({'frame':index, 'source':name, 'cell':cell, 'scale':scale,
             'requested_origin':origin, 'applied_origin':list(applied_origin), 'sample_size':list(size),
@@ -125,35 +135,38 @@ def build_actor(actor, check=False):
             'opaque_bounds':placed_bounds, 'sha256':sha256(pixels).hexdigest()})
         drawings.append(frame)
     manifest = {'version':1, 'actor':actor, 'canvas':canvas, 'anchor':anchor,
-                'duration_ms':400, 'fps':60, 'loop':True, 'contacts':data['contacts'],
+                'duration_ms':cycle, 'fps':count*1000/cycle, 'loop':True, 'contacts':data['contacts'],
                 'landmark_space':'Exported artwork pixels; null means occluded/unmeasured.',
                 'frames':animation}
     _write(OUTPUT/actor/'animation.json', _json(manifest), check)
     provenance = {'version':1, 'exporter':'tools/export_prologue_faces.py',
         'exporter_sha256':sha256(Path(__file__).read_bytes()).hexdigest(),
         'construction':'Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.',
+        'alpha_floor':alpha_floor,
         'source_landmark_space':'Source-cell pixels, before uniform scaling and whole-figure translation.',
         'source_sha256':hashes, 'registrations':registrations}
     _write(OUTPUT/actor/'provenance.json', _json(provenance), check)
     # Whole-figure previews are uniformly reduced; the face sheet retains
     # source-resolution facial pixels. Individual runtime PNGs remain native.
-    sheet = Image.new('RGB', (384*4,536*6), '#152235')
-    faces = Image.new('RGB', (320*4,344*6), '#152235')
+    rows = math.ceil(count/4)
+    thumbnail_width = canvas[0]//2
+    sheet = Image.new('RGB', (thumbnail_width*4,536*rows), '#152235')
+    faces = Image.new('RGB', (320*4,344*rows), '#152235')
     text, face_text = ImageDraw.Draw(sheet), ImageDraw.Draw(faces)
     for index, frame in enumerate(drawings):
-        x, y = (index%4)*384, (index//4)*536
-        small = frame.convert('RGBa').resize((384,512), Image.Resampling.LANCZOS).convert('RGBA')
+        x, y = (index%4)*thumbnail_width, (index//4)*536
+        small = frame.convert('RGBa').resize((thumbnail_width,512), Image.Resampling.LANCZOS).convert('RGBA')
         sheet.paste(small, (x,y), small)
-        text.text((x+8,y+514), f'{index:02d} / {index/60:.3f}s', fill='white')
+        text.text((x+8,y+514), f'{index:02d} / {index*frame_ms/1000:.3f}s', fill='white')
         fx, fy = (index%4)*320, (index//4)*344
-        face = frame.crop((224,24,544,344))
+        face = frame.crop((round(anchor[0])-160,24,round(anchor[0])+160,344))
         faces.paste(face, (fx,fy), face)
         face_text.text((fx+8,fy+322), f'{index:02d}', fill='white')
     stream = BytesIO()
     sheet.save(stream, format='JPEG', quality=94, subsampling=0)
     _write(REVIEW/f'{actor}_drawn_contact_sheet.jpg', stream.getvalue(), check)
     _write(REVIEW/f'{actor}_faces_contact_sheet.png', _png(faces), check)
-    print(f'{actor}: 24 complete poses, 400 ms, 60 Hz; registration and alpha exports match.')
+    print(f'{actor}: {count} complete poses, {cycle} ms; registration and alpha exports match.')
 
 
 if __name__ == '__main__':

@@ -151,6 +151,7 @@ def _metadata(path, root, *, check_images):
             or any(not _number(camera.get(name), positive=True)
                    for name in ('pixels_per_metre', 'actor_scale', 'speed_metres_per_second'))
             or not _number(camera.get('anchor_x'))
+            or not _number(camera.get('starting_party_metres', 0.))
             or not _number(camera.get('drift_metres'))
             or not _number(camera.get('drift_start'))
             or not _number(camera.get('drift_end'), positive=True)
@@ -268,6 +269,8 @@ class CinematicBridgeRun:
         return {'local_time':local, 'phase':'bridge_running', 'reduced_motion':bool(reduced_motion),
                 'camera':{'space':'local_bridge_tracking',
                           'position_metres':[along, 0., .55], 'drift_metres':drift,
+                          'party_travel_metres':camera.get('starting_party_metres', 0.)
+                                                +camera['speed_metres_per_second']*local,
                           'direction':'toward_veinhold', 'screen_direction':'right'},
                 'runners':actors}
 

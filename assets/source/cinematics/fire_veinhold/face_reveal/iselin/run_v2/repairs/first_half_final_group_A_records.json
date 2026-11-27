@@ -1,0 +1,78 @@
+{
+  "7": {
+    "frame": 7,
+    "prompt_file": "repairs/frame_07_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png"
+    ],
+    "source_bounds": [
+      6,
+      9
+    ],
+    "fraction": 0.3333333333333333,
+    "generation_id": "exec-121065e5-fec3-4a06-bd41-e15248c9d65a",
+    "source_path": "/workspace/generated_images/exec-121065e5-fec3-4a06-bd41-e15248c9d65a.png",
+    "source_master": "repairs/frame_07.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed."
+  },
+  "8": {
+    "frame": 8,
+    "prompt_file": "repairs/frame_08_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png"
+    ],
+    "source_bounds": [
+      6,
+      9
+    ],
+    "fraction": 0.6666666666666666,
+    "generation_id": "exec-cf470bcb-fb1a-4163-a785-6a31b15a7b47",
+    "source_path": "/workspace/generated_images/exec-cf470bcb-fb1a-4163-a785-6a31b15a7b47.png",
+    "source_master": "repairs/frame_08.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed."
+  },
+  "10": {
+    "frame": 10,
+    "prompt_file": "repairs/frame_10_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "fraction": 0.3333333333333333,
+    "generation_id": "exec-b42bf5ec-20e1-44f4-9778-6b368b793a14",
+    "source_path": "/workspace/generated_images/exec-b42bf5ec-20e1-44f4-9778-6b368b793a14.png",
+    "source_master": "repairs/frame_10.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed."
+  },
+  "11": {
+    "frame": 11,
+    "prompt_file": "repairs/frame_11_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "fraction": 0.6666666666666666,
+    "generation_id": "exec-90e8b9aa-cedd-456c-8938-4da6cc54ad37",
+    "source_path": "/workspace/generated_images/exec-90e8b9aa-cedd-456c-8938-4da6cc54ad37.png",
+    "source_master": "repairs/frame_11.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed."
+  }
+}

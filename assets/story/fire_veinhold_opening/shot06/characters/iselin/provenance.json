@@ -1,10 +1,11 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_runners.py",
-  "exporter_sha256": "669fc0043770a22e5019fa0efa7aa34729d9e73691c5ea434af27d873e8cf2c7",
+  "exporter_sha256": "a01bf8b9a3c722583ab28e23f5ed1fd2ab07ac57536b2ff39425b814192364b1",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
+    "assets/source/cinematics/fire_veinhold/bridge_running/playback.json": "b720767523a26e2a9c8f7e41fe6aaa7de42215163337df1f4948665c00c38242",
     "assets/source/cinematics/fire_veinhold/bridge_running/iselin/source_art_24.json": "095e1d1c94cfcb71d9715ffe2464211fb1263595b5db8aebfd9c04ea99328d53",
     "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_00_03.png": "3e28b71daa3b0f802a78b087460689ac735adff073a09a776c95c12baeed5f39",
     "assets/source/cinematics/fire_veinhold/bridge_running/iselin/repairs_02_03/phase_02.png": "ccf33f8f08857cd1ccee317278581bbb833368f982e6caf71dabfbd9f2a80575",

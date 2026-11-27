@@ -1,0 +1,37 @@
+{
+  "front_normal": {
+    "entry": "fire_veinhold_shot_07",
+    "fps": 60,
+    "frames": 300,
+    "duration": 5.0,
+    "reduced_motion": false,
+    "natural_completion": true,
+    "no_persistent_files_written": true,
+    "peak_face_cache_bytes": 19660800
+  },
+  "front_reduced": {
+    "entry": "fire_veinhold_shot_07",
+    "fps": 60,
+    "frames": 300,
+    "duration": 5.0,
+    "reduced_motion": true,
+    "natural_completion": true,
+    "no_persistent_files_written": true,
+    "peak_face_cache_bytes": 19660800
+  },
+  "complete": {
+    "entry": "fire_veinhold_opening",
+    "fps": 60,
+    "frames": 2820,
+    "duration": 47.0,
+    "reduced_motion": false,
+    "natural_completion": true,
+    "no_persistent_files_written": true,
+    "peak_face_cache_bytes": 19660800
+  },
+  "preservation": {
+    "baseline": "eb3a009430b8164628c1fd8270e59618251b2e5f",
+    "first_39_second_picture_asset_bytes_retained": true,
+    "wav_files_changed": []
+  }
+}

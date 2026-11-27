@@ -1,0 +1,136 @@
+[
+  {
+    "frame": 13,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -59.7,
+        -11
+      ],
+      "left": [
+        100,
+        17.3
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 13/48. Reference1 is accepted earlier actual key 12; reference2 is accepted later actual key 15. Draw precisely 1/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-59.7, -11.0]; LEFT/anatomical on VIEWER RIGHT [100.0, 17.3]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n",
+    "generation_id": "exec-64a617f3-83ee-49d1-ae34-4f6ac8ad62ec",
+    "source_path": "/workspace/generated_images/exec-64a617f3-83ee-49d1-ae34-4f6ac8ad62ec.png",
+    "transparent_background": true,
+    "construction": "Complete coherent image-authored redraw; no procedural anatomy, warping or temporal interpolation.",
+    "status": "Internal actual-motion verification pending; not user approved.",
+    "selected": false,
+    "reason": "Actual fist/boot progression advanced too close to later bound; replaced by final minimal female12 edit.",
+    "retained_source": "frame_13_exec-64a617f3-83ee-49d1-ae34-4f6ac8ad62ec.png",
+    "sha256": "654e0ba95062f68dc0fa493e035a97035ef13aa05d32509e18a5c8b2f30899ce"
+  },
+  {
+    "frame": 13,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_nearest_bounds_guided_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_final_b_joint_guide.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -59.7,
+        -11
+      ],
+      "left": [
+        100,
+        17.3
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 13/48. Reference1 is accepted earlier actual key 12; reference2 is accepted later actual key 15. Draw precisely 1/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-59.7, -11.0]; LEFT/anatomical on VIEWER RIGHT [100.0, 17.3]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n\nFOCUSED REPAIR: The previous output jumped immediately to reference15. This new FIRST reference is a complete female12 drawing with AUTHORING-ONLY colored joint/path guides for THIS precise13/14 intermediate. RED shoulder/elbow/fist chains and YELLOW hand centers specify both hands; CYAN hip/knee/boot chains specify lifted forwardleftboot and still-lower righttoe-offboot. FOLLOW THESE SMALL TARGET DISPLACEMENTS; remove every colored mark and all guide text from final painting. Do not copy15 hands/boots yet. Rightfist ONLY a little ABOVE BELT (about17rawpixels), not chest; leftfist ONLY a little BELOWBELT(about26rawpixels). Keep actualcorrect female12 body/face/proportions/costume and fully redraw coherent arms, legs, hairandcloth into guided small intermediatepose. Do not redraw a new girl or male body. Generoustransparentmargin, cleanRGBA, noextraoldhands or braidgrip. Source15 remains laterbound, notcurrentpose.",
+    "generation_id": "exec-389bf601-5652-487e-a0a3-fcf87373da18",
+    "source_path": "/workspace/generated_images/exec-389bf601-5652-487e-a0a3-fcf87373da18.png",
+    "transparent_background": true,
+    "construction": "Complete coherent ImageGen-authored figure with source-only joint-guide reference; no guide pixels or procedural anatomy in selected output.",
+    "status": "Internal actual-motion verification pending; not user approved.",
+    "selected": false,
+    "reason": "Actual fist/boot progression advanced too close to later bound; replaced by final minimal female12 edit.",
+    "retained_source": "frame_13_exec-389bf601-5652-487e-a0a3-fcf87373da18.png",
+    "sha256": "ad9510d116256522f6142c3e5d9748940566f445e71b5b0d6b6528992c375664"
+  },
+  {
+    "frame": 14,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -51.3,
+        -25
+      ],
+      "left": [
+        107,
+        30.7
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 14/48. Reference1 is accepted earlier actual key 12; reference2 is accepted later actual key 15. Draw precisely 2/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-51.3, -25.0]; LEFT/anatomical on VIEWER RIGHT [107.0, 30.7]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n",
+    "generation_id": "exec-20d5c98c-a718-4325-85ef-817b32c528a7",
+    "source_path": "/workspace/generated_images/exec-20d5c98c-a718-4325-85ef-817b32c528a7.png",
+    "transparent_background": true,
+    "construction": "Complete coherent image-authored redraw; no procedural anatomy, warping or temporal interpolation.",
+    "status": "Internal actual-motion verification pending; not user approved.",
+    "selected": false,
+    "reason": "Actual fist/boot progression advanced too close to later bound; replaced by final minimal female12 edit.",
+    "retained_source": "frame_14_exec-20d5c98c-a718-4325-85ef-817b32c528a7.png",
+    "sha256": "653efaea97c6ac8c7db437c470629a0ded20219170dee68023e8496245c7dca5"
+  },
+  {
+    "frame": 14,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_nearest_bounds_guided_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_final_b_joint_guide.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -51.3,
+        -25
+      ],
+      "left": [
+        107,
+        30.7
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 14/48. Reference1 is accepted earlier actual key 12; reference2 is accepted later actual key 15. Draw precisely 2/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-51.3, -25.0]; LEFT/anatomical on VIEWER RIGHT [107.0, 30.7]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n\nFOCUSED REPAIR: The previous output jumped immediately to reference15. This new FIRST reference is a complete female12 drawing with AUTHORING-ONLY colored joint/path guides for THIS precise13/14 intermediate. RED shoulder/elbow/fist chains and YELLOW hand centers specify both hands; CYAN hip/knee/boot chains specify lifted forwardleftboot and still-lower righttoe-offboot. FOLLOW THESE SMALL TARGET DISPLACEMENTS; remove every colored mark and all guide text from final painting. Do not copy15 hands/boots yet. Rightfist ONLY modestly ABOVE BELT (about38rawpixels), not near full15chest; leftfist ONLY modestly BELOWBELT(about47rawpixels). Keep actualcorrect female12 body/face/proportions/costume and fully redraw coherent arms, legs, hairandcloth into guided small intermediatepose. Do not redraw a new girl or male body. Generoustransparentmargin, cleanRGBA, noextraoldhands or braidgrip. Source15 remains laterbound, notcurrentpose.",
+    "generation_id": "exec-61117f5e-fae4-47b3-8b33-1702be4ddb44",
+    "source_path": "/workspace/generated_images/exec-61117f5e-fae4-47b3-8b33-1702be4ddb44.png",
+    "transparent_background": true,
+    "construction": "Complete coherent ImageGen-authored figure with source-only joint-guide reference; no guide pixels or procedural anatomy in selected output.",
+    "status": "Internal actual-motion verification pending; not user approved.",
+    "selected": false,
+    "reason": "Actual fist/boot progression advanced too close to later bound; replaced by final minimal female12 edit.",
+    "retained_source": "frame_14_exec-61117f5e-fae4-47b3-8b33-1702be4ddb44.png",
+    "sha256": "196e3dc8acb40ca3db3914f8d99f41b98c69815a66c61c249950615379e1f62a"
+  }
+]

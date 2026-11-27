@@ -1,5 +1,11 @@
 # Fire Veinhold frontal running-party reveal
 
+Historical review of the original 24-pose/400 ms implementation. The player
+subsequently identified insufficient arm action, excessive cadence and poor
+hair/cloth follow-through. The [running correction](../veinhold_running_polish/README.md)
+supersedes its motion, timing and runtime cache facts. These captures retain
+the original result; the checks below did not establish convincing animation.
+
 The production Gallery film now contains seven shots over 47 seconds. The new
 42–47s shot tracks backward in front of Lucan, Iselin and the Crown soldier,
 tilting down from above their heads over 1.5 seconds to reveal their faces.

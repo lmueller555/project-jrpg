@@ -1,0 +1,74 @@
+[
+  {
+    "frame": 1,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -151,
+        81
+      ],
+      "viewer_right": [
+        75,
+        -76
+      ]
+    }
+  },
+  {
+    "frame": 2,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -129,
+        72
+      ],
+      "viewer_right": [
+        75,
+        -63
+      ]
+    }
+  },
+  {
+    "frame": 4,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -103,
+        58
+      ],
+      "viewer_right": [
+        77,
+        -46
+      ]
+    }
+  },
+  {
+    "frame": 5,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -100,
+        54
+      ],
+      "viewer_right": [
+        79,
+        -43
+      ]
+    }
+  }
+]

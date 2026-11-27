@@ -38,16 +38,22 @@ python tools/build_prologue_face_environment.py
 python tools/build_prologue_face_environment.py --check
 ```
 
-The first command writes five native camera proofs and a review contact sheet.
-The full build writes 301 inclusive 960×640 perspective samples, a shared
+Export the current character drawings first with `tools/export_prologue_faces.py`.
+The first command writes five native full-performance proofs and a contact sheet.
+The full build composites complete authored figures over freshly projected
+scenery, then writes 301 inclusive 960×640 full-performance samples, a shared
 transparent alarm layer, and camera/manifest JSON under
 `assets/story/fire_veinhold_opening/shot07/environment/`. The five-second shot
 displays 300 intervals at 60 FPS; the final image supplies its endpoint.
 Normal and Reduced Motion share these perspectives because the down-tilt is the
 essential face reveal and contains no optional camera shake.
 
-The export recipe records actual world geometry, camera settings, source and
+`performance_recipe.json` records actual world geometry, camera settings, source and
 output hashes, and a fingerprint of the shared projection helpers. `--check`
 re-renders every view from the masters, compares exact PNG bytes, checks PNG
 dimensions/chunk CRCs and compares camera/manifest/recipe metadata. Geometry
 figures are cinematic staging values rather than a geographic survey.
+The original `export_recipe.json` retains the earlier background-only revision.
+Runtime streams the new combined bank; its baked marker and performance
+signature prevent accepting a stale pose/camera contract. Rebuilding always
+starts from the original painted surfaces, avoiding double-composited actors.

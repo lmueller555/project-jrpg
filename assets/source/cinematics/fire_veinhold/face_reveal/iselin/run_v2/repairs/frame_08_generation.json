@@ -1,0 +1,23 @@
+{
+  "frame": 8,
+  "prompt_file": "frame_08_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_06.png"
+  ],
+  "target_fists_relative_belt_canonical": {
+    "right": [
+      -148,
+      50
+    ],
+    "left": [
+      95,
+      -50
+    ]
+  },
+  "generation_id": "exec-af4a4541-e3ab-4368-80fb-b96f9d26f333",
+  "source_path": "/workspace/generated_images/exec-af4a4541-e3ab-4368-80fb-b96f9d26f333.png",
+  "transparent_background": true,
+  "construction": "Complete coherent image-authored repair; no procedural anatomy/warping/temporal interpolation.",
+  "status": "Internal actual-motion verification pending; not user approved."
+}

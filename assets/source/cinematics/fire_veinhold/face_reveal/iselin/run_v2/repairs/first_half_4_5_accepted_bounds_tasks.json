@@ -1,0 +1,30 @@
+[
+  {
+    "frame": 4,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_accepted_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_accepted_bounds_target.png"
+    ],
+    "source_bounds": [
+      3,
+      6
+    ],
+    "fraction": 0.3333333333333333
+  },
+  {
+    "frame": 5,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_accepted_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_accepted_bounds_target.png"
+    ],
+    "source_bounds": [
+      3,
+      6
+    ],
+    "fraction": 0.6666666666666666
+  }
+]

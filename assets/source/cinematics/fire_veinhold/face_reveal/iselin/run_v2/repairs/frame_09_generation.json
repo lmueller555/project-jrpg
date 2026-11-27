@@ -1,0 +1,33 @@
+{
+  "frame": 9,
+  "prompt_file": "frame_09_arm_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09_midpoint_held_trial.png"
+  ],
+  "source_bounds": [
+    6,
+    12
+  ],
+  "fraction": 0.5,
+  "source_path": "/workspace/generated_images/exec-a72d9458-a98c-4105-9280-05c0efbe9546.png",
+  "generation_id": "exec-a72d9458-a98c-4105-9280-05c0efbe9546",
+  "transparent_background": true,
+  "status": "Internal actual-pose review pending; not user approved.",
+  "construction": "Complete unified image-authored pose, no procedural body deformation.",
+  "history": [
+    {
+      "frame": 9,
+      "prompt_file": "frame_09_midpoint_prompt.txt",
+      "referenced_image_paths": [
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+        "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+      ],
+      "source_path": "/workspace/generated_images/exec-fa2d453c-7c68-4541-a53c-1ab1f9834b03.png",
+      "generation_id": "exec-fa2d453c-7c68-4541-a53c-1ab1f9834b03",
+      "transparent_background": true,
+      "status": "Internal midpoint review pending; not user approved.",
+      "construction": "Complete unified image-authored pose, no procedural transforms.",
+      "retained_master": "history/frame_09_ca6a7b0efbc5.png"
+    }
+  ]
+}

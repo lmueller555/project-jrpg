@@ -1,0 +1,94 @@
+[
+  {
+    "frame": 13,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -59.7,
+        -11.0
+      ],
+      "left": [
+        100.0,
+        17.3
+      ]
+    }
+  },
+  {
+    "frame": 14,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -51.3,
+        -25.0
+      ],
+      "left": [
+        107.0,
+        30.7
+      ]
+    }
+  },
+  {
+    "frame": 16,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_16_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+    ],
+    "source_bounds": [
+      15,
+      18
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -42.0,
+        -45.0
+      ],
+      "left": [
+        119.3,
+        47.7
+      ]
+    }
+  },
+  {
+    "frame": 17,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_17_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+    ],
+    "source_bounds": [
+      15,
+      18
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -41.0,
+        -51.0
+      ],
+      "left": [
+        124.7,
+        51.3
+      ]
+    }
+  }
+]

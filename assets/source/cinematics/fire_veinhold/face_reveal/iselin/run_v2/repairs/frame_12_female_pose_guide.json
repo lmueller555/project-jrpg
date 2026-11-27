@@ -1,0 +1,10 @@
+{
+  "purpose": "Authoring-only whole-figure reflected pose guide; never rendered source artwork. Final drawing must restore anatomical costume sides and approved wind.",
+  "source": "frame_36.png",
+  "source_sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+  "transforms": [
+    "whole-figure horizontal reflection for opposite passing limb phase",
+    "grayscale to distinguish motion guide from approved colored design"
+  ],
+  "guide": "frame_12_female_pose_guide.png"
+}

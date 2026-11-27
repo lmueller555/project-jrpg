@@ -1,912 +1,768 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_faces.py",
-  "exporter_sha256": "b87d1acec2059a434a381733ebc0dc062d1510a1c7276066ab7ed426a021151a",
+  "exporter_sha256": "dab0232f50dde7ad30b779c9f71f79fe3de678acdf61eebc09b4c30d0f43336f",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
+  "alpha_floor": 16,
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_24.json": "e7c4d63dc232f06773ff63e0a52e01ffa313e8c51f83247380c8a5072f97c5e5",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_00_03.png": "85974a868949480a1370098ba12a3b61793775937fcf2740791ed017e42156c4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_04_07.png": "23c0ba24fa26173ed8d3c58ab55821dfca69422d305aeba20b908bb8e02106d6",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_08_11.png": "8ecc33b7fe59e85f3e3a21c0de07d57843e989a13fe21d18057531907bf7df6d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_12_15.png": "b3fd6b283c44d371e23602d4325fc6d566c27fb6ffff4a0b13715ceffdce70f1",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_16_19.png": "683b9434b8bd5bd86c8bb469c451db575b221a557f412c81cf767baed6eb32c2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_20_23.png": "dbf7f3d44a239d818307972d0faf4ef97df968d71a05ecf8e89a0c8035ff6999",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_01.png": "2d9bcf2548be5c77d52cdcd31f37495d568760f5610edebf16df1360e25f37d4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_02_alpha_clean.png": "850551f85688a0d99501bd5dad69e8b2897f3059f27fe9d0ca3360ddc98ee816",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_03.png": "60443b890857638e53294534ec2882c8ef52856554e8c37ec65a8f650380836c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_13.png": "0b4b37aa032080e0a6e6c561869d46f75af59e6528765f450198ddfb944e39f3",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_14.png": "47b8cd7651bdd60ff0b81d1b17adf9d1c8a263cb0fee929c01b9f0b287a70571",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_15.png": "2a35aef9819653cab354730609db87689ff49002b1fdff3e8a242c54b4763699"
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_48.json": "fc65735f10c5902e920160c08985e11d12acafe08e11db5fb1635490f1865717",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01.png": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02.png": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png": "1dd96ae3a51fe18cfba5008365ab0e60a3955dd5c79ba47403e97bcd4a85d2f4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04.png": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05.png": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_07.png": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_08.png": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_10.png": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_11.png": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13.png": "28273d51a999dd6583821c493168cc8742a42d921b092329e8ea063665409e02",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14.png": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_16.png": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_17.png": "6537eb01080bd963456aa91fbcba0ac90e25eb56f34c37ee96fbbab538f821ba",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_19.png": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_20.png": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_22.png": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_23.png": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_25.png": "298a70aca98c85a6b988d5b32bea66fd4e10c3f345f8f14f645fcd5c603856bd",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_26.png": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_27.png": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_28.png": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_30.png": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_29.png": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_32.png": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_31.png": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_34.png": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_33.png": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_35.png": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_36.png": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_37.png": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_38.png": "a33562ce62df893f481e70770738548938010900b259a9ca04835334f7e975e8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_39.png": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_41.png": "c239587fca8f8dbdb5065b8bd2e1abeb7f94a3e654d0b48e2af6e779e38ef224",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_40.png": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_42.png": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_44.png": "5eeab8cd9bb4c40a38f2202b4d0e4a863b5a71b8891f297739c9bc1a07b4ae7f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_43.png": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_46.png": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_47.png": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_45.png": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/generation_records.json": "d2a26b17af077d6b5c674a280b3abc3dc2915d7bd528a56d900fab6781c77445",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/appearance_reference.png": "910bd19f139343d8a16427810549b409f47ff6e9fb8dc91a82c80ac8b5f9e010",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/manual_landmark_overrides.json": "a19a6912d1b7356e8816a968a1bccad502d71db2b9affeba68a9759eacbdb794",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.txt": "6fc084afbbe333b854149b51c2abef4dce9f82b2cb9d9a1afdde6924c89d68b0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_fist_target_prompt.txt": "4aef6f18a03779382ac0a6bf0ea5a25acce50db2a8df3521f24a49fe645d1297",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_fist_target_prompt.txt": "b0cfa0573e19330347e26276f0d3871a0c9eebf9f66848a537500239b8accd43",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03_midpoint_prompt.txt": "880045ab3f261f6474dd937d5d3db879418a8e86f95e982ad31880dfda97dc45",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_accepted_bounds_prompt.txt": "30987aeb2176d519d36109455fe350b84fa54f0b9909f5e7e4ffd18e55cf5f1b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_accepted_bounds_prompt.txt": "0dc0724b9ff63a18c3ce67b057fc7107c72f15465661eb8703430e0c5253ad36",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06_midpoint_prompt.txt": "adca92c7afc0e5acbfafe69a6e310092fbff81b6454a24db9ebb4450ce39b441",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_07_nearest_bounds_prompt.txt": "e3f3c6a8ced408d10cf4c6e316062012866c25677dfd65c8c70e499c4e75c1f2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_08_nearest_bounds_prompt.txt": "781c2fbd2592cd89c70d02bda696a31eec4fcd776000964a0d459ab79ed8e155",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09_arm_prompt.txt": "b1102750af5d3162aee44ef2789542ea92b9f9f1d4d73ee1534ec61292cc9a69",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_10_nearest_bounds_prompt.txt": "9316768eff21a0ca22859f475c5922e10622805b1c159426f6c4a50db48ece66",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_11_nearest_bounds_prompt.txt": "49e698fecaa5403be50f44ee384f425340ca8712ac1831d2e57032646098f1c1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12_female_prompt.txt": "e52759ad211db47209f4ae836e2611b4f6adbdb03586de4c3487a9da02b84143",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_nearest_bounds_minimal_prompt.txt": "ac9e76d34c9c3030a03fe3b29ad0e75c5935cbbb9d0eb14d5de7569cfb857183",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_nearest_bounds_minimal_prompt.txt": "c9f7144fddd964ae991b3aac55585a1c2db62a12e6ed6e88bac58b6d73c322de",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15_actual_target_prompt.txt": "c20e83feceaa165144f4ce08eb77cea32d3405d179200e202968ed30f4cd71eb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_16_nearest_bounds_prompt.txt": "f9c3b639185a5987de69f76e5f05004a653e14e334fccced8fa9b67128185323",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_17_nearest_bounds_prompt.txt": "1c6a74fc2db61c8fc35fe3a46cf04599a7133dbdfcfb9fa504cacbb2d70a41d3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18_flight_prompt.txt": "e9338dcedba7cef5e74c1490d3a0d69e6b85dcae69833f5709b74420716563f3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_19_nearest_bounds_prompt.txt": "9861b6b2268d45df2b4f68411e0e9b037ea0d4ce23b1a0d3be3d93bb6dee74eb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_20_nearest_bounds_prompt.txt": "83ad5629fd3522aa5206258ffb6f8a7715c4fd9c4619731d53df69616b0ab1de",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21_midpoint_prompt.txt": "fe2e8626acf1cbfd1279130d6c5b8c34ba47f3a05d5e225a939aedf27a19e672",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_22_nearest_bounds_prompt.txt": "c0915672c15c33c49e1218824d7309cbb9879004f7b96b8897303f5424d768bb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_23_nearest_bounds_prompt.txt": "e154f3b1acf7d37409dcc463ea72cdff55723d7af3812cb52a6e857bab8ecfd4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.txt": "26ccdc3d035cde79e92a2f6404bea4ebbc5a5b9500189acc485ae8754f0c81b3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_25.txt": "999582a01be38f36d27837afd94afbe233d9a487738a2457500a34dc6aa81eeb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_26.txt": "0ce4c455651d404a86fc8fa127a2de3fda12f79f1518627f69ed10375b4e81a2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_27.txt": "69f98a167439e1d516c48a99f582707fdacf66f593840ed09f1e2bbcf7a2d591",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_28.txt": "d9ea328809e6759c3446271b3fb84208a06eddc025884553dc46217d8de556c3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_30.txt": "700556cc4c7b4fc993ab3ccb2eeda81e03c09bd61cd3a7404bda4976f4036825",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_29.txt": "d9fd3686826c250759cbaa4ecd3969fbb4a6ddab93a337f95da6aa4a3709d2a8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_32.txt": "e2c93b0d932629b3ce51b956bc530d8b31fdbac9b7daf3aad26c0d24fe91ee8b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_31.txt": "f7781d230a66527575dd3a0cf074da22021982f0df4802c1477d6267695044bf",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_34.txt": "f64aa900848db8c35f6e0b0b4be7a78b0cfd7dcf5688972c76e20f9860188e86",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_33.txt": "a050e9527d2882443216ca4f902cb80f457851bc7e630c94bfeb58be60100e05",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_35.txt": "60085284d565bbdb40fca07f698c472682bf4d143fb1ea791c548c12cae95a40",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_36.txt": "a518de182972a378fc1cadd1f917c4763b252c4371b5ce3e3575e48469ad5cfc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_37.txt": "0bb3a0d27e9d327511e00bdce8d7c5e5841b99bbc03850798d2b7109a7333f05",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_38.txt": "d6c8511ef34dbcda00bef5d105ef31210fd26640260b1b5e8f0d7c178f817d87",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_39.txt": "4e7a496adb5159589b96e277330cf459c361da8cca033a15a199b42e51b9eb4d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_41.txt": "43c68de47c56aeddcdc3d019409a2822c09c96795607d140050ad1454cd7bced",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_40.txt": "1d7f8fd85b223562f72d1b86a8f84b16d39759049834a70be45fd1ab0694cadb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_42.txt": "78b96a0c71ac6b73ced347c0052968494bdf66f980274eacc79ad7e1c58471a8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_44.txt": "ca9dab013d40a090ed2d5de29b3753f7f2e8bded6d9052ab27f749bd47fd6a48",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_43.txt": "29233c620cb9ede444f3ed444628124fc1615ca8b4ee554f456692a7e78d6137",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_46.txt": "285aacaf939ad6c7b0d7ab3079fff39bd5af32f47eaf82ce0338d24f3c9edb62",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_47.txt": "7e71f2d692b960c7ceec476b9aba8c4a3d2eca5e86affdb32aae1c5f5680c9f1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_45.txt": "4d1001130497114c9e40bcfea51886bac0afe18b8e2913b0f5d97df0c04a00ba"
   },
   "registrations": [
     {
       "frame": 0,
-      "source": "batch_00_03.png",
-      "cell": [
-        0,
-        0,
-        599,
-        656
-      ],
-      "scale": 1.4619467445288672,
-      "requested_origin": [
-        -78.46638537728376,
-        30.323536936490626
-      ],
-      "applied_origin": [
-        -78,
-        30
-      ],
-      "sample_size": [
-        876,
-        959
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          316.336,
-          116.062
-        ],
-        "belt": [
-          324.82,
-          240.305
-        ],
-        "face": [
-          316.589,
-          69.867
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.4664,
-          199.6765
-        ],
-        "belt": [
-          396.8695,
-          381.3131
-        ],
-        "face": [
-          384.8363,
-          132.1418
-        ]
-      },
-      "opaque_bounds": [
-        65,
-        44,
-        598,
-        945
-      ],
-      "sha256": "910bd19f139343d8a16427810549b409f47ff6e9fb8dc91a82c80ac8b5f9e010"
-    },
-    {
-      "frame": 1,
-      "source": "repairs/frame_01.png",
-      "cell": [
-        0,
-        0,
-        1199,
-        1312
-      ],
-      "scale": 0.7157513002815289,
-      "requested_origin": [
-        -66.6878369995706,
-        38.0034833229947
-      ],
-      "applied_origin": [
-        -67,
-        38
-      ],
-      "sample_size": [
-        858,
-        939
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          629.671,
-          229.125
-        ],
-        "belt": [
-          646.64,
-          480.609
-        ],
-        "face": [
-          628.429,
-          142.066
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.6878,
-          201.9965
-        ],
-        "belt": [
-          395.8334,
-          381.9965
-        ],
-        "face": [
-          382.7989,
-          139.6839
-        ]
-      },
-      "opaque_bounds": [
-        62,
-        50,
-        596,
-        935
-      ],
-      "sha256": "59b0b030664ab8a14048662cf813e19f75c3ffe6e7c6a6546b59db2440dff1da"
-    },
-    {
-      "frame": 2,
-      "source": "repairs/frame_02_alpha_clean.png",
-      "cell": [
-        0,
-        0,
-        1199,
-        1312
-      ],
-      "scale": 0.7411219763252703,
-      "requested_origin": [
-        -83.09879567678854,
-        32.25683993823981
-      ],
-      "applied_origin": [
-        -83,
-        32
-      ],
-      "sample_size": [
-        889,
-        972
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          630.259,
-          231.734
-        ],
-        "belt": [
-          643.64,
-          474.609
-        ],
-        "face": [
-          628.429,
-          142.066
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.0988,
-          203.7432
-        ],
-        "belt": [
-          394.0157,
-          383.7432
-        ],
-        "face": [
-          382.7425,
-          137.2882
-        ]
-      },
-      "opaque_bounds": [
-        46,
-        46,
-        607,
-        963
-      ],
-      "sha256": "3bbd8749a40bc0dd1ff9262c09b8b91a2bc8044977fda6581cb9195577a3245c"
-    },
-    {
-      "frame": 3,
-      "source": "repairs/frame_03.png",
+      "source": "run_v2/frame_00.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6435006435006436,
+      "scale": 0.6671514633967349,
       "requested_origin": [
-        -1.0193050193051363,
-        19.628056628056612
+        130.43673069096883,
+        22.935333008652975
       ],
       "applied_origin": [
-        -1,
-        20
-      ],
-      "sample_size": [
-        699,
-        932
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          598.32,
-          284.96
-        ],
-        "belt": [
-          611.16,
-          564.68
-        ],
-        "face": [
-          593.38,
-          179.47
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.0193,
-          203.3719
-        ],
-        "belt": [
-          392.2819,
-          383.3719
-        ],
-        "face": [
-          380.8404,
-          135.4891
-        ]
-      },
-      "opaque_bounds": [
-        34,
-        40,
-        597,
-        928
-      ],
-      "sha256": "a81c29110cbdf892c20803a066694356dd8c97c4ff0bb2b4f5c80b697d4b359b"
-    },
-    {
-      "frame": 4,
-      "source": "batch_04_07.png",
-      "cell": [
-        0,
-        0,
-        543,
-        724
-      ],
-      "scale": 1.273705066515709,
-      "requested_origin": [
-        4.028304557033664,
-        27.8270591565242
-      ],
-      "applied_origin": [
-        4,
-        28
-      ],
-      "sample_size": [
-        692,
-        922
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          298.32,
-          135.96
-        ],
-        "belt": [
-          306.84,
-          276.32
-        ],
-        "face": [
-          299.69,
-          85.235
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.9717,
-          201.1729
-        ],
-        "belt": [
-          394.8237,
-          379.9502
-        ],
-        "face": [
-          385.7167,
-          136.5643
-        ]
-      },
-      "opaque_bounds": [
-        46,
-        47,
-        607,
-        913
-      ],
-      "sha256": "aee46cc942728c06b1fccf8fce8117002ba95d5e729ed8c435f08a5744ccd2ca"
-    },
-    {
-      "frame": 5,
-      "source": "batch_04_07.png",
-      "cell": [
-        543,
-        0,
-        1086,
-        724
-      ],
-      "scale": 1.273705066515709,
-      "requested_origin": [
-        42.239456552504976,
-        24.8270591565242
-      ],
-      "applied_origin": [
-        42,
-        25
-      ],
-      "sample_size": [
-        692,
-        922
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          268.32,
-          135.96
-        ],
-        "belt": [
-          278.46,
-          277.58
-        ],
-        "face": [
-          269.69,
-          85.235
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.7605,
-          198.1729
-        ],
-        "belt": [
-          396.6759,
-          378.5551
-        ],
-        "face": [
-          385.5055,
-          133.5643
-        ]
-      },
-      "opaque_bounds": [
-        46,
-        44,
-        624,
-        878
-      ],
-      "sha256": "99d850c0e7c76c6c73499f2560cdf23b7865f2fffa255bdd2c5648b456434817"
-    },
-    {
-      "frame": 6,
-      "source": "batch_04_07.png",
-      "cell": [
-        0,
-        724,
-        543,
-        1448
-      ],
-      "scale": 1.273705066515709,
-      "requested_origin": [
-        4.028304557033664,
-        22.8270591565242
-      ],
-      "applied_origin": [
-        4,
+        130,
         23
       ],
       "sample_size": [
-        692,
-        922
+        725,
+        966
       ],
       "source_cell_landmarks": {
         "neck": [
-          298.32,
-          135.96
+          571.929,
+          265.404
         ],
         "belt": [
-          307.92,
-          277.16
+          570.87,
+          539.961
         ],
         "face": [
-          299.69,
-          85.235
+          576.457,
+          175.691
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.9717,
-          196.1729
+          511.5633,
+          200.0647
         ],
         "belt": [
-          396.1993,
-          376.0201
+          510.8568,
+          383.2358
         ],
         "face": [
-          385.7167,
-          131.5643
+          514.5841,
+          140.2125
         ]
       },
       "opaque_bounds": [
-        44,
-        42,
-        633,
-        862
+        148,
+        40,
+        748,
+        962
       ],
-      "sha256": "accda5d0428214947c12b3801021bde455df58f8329098a05a99d2ba48ce0128"
+      "sha256": "881b365d7f970a0bbf547d7f1d71beaa315632bcd1af8006f31f9cf5a73f05e4"
     },
     {
-      "frame": 7,
-      "source": "batch_04_07.png",
+      "frame": 1,
+      "source": "run_v2/repairs/frame_01.png",
       "cell": [
-        543,
-        724,
+        0,
+        0,
         1086,
         1448
       ],
-      "scale": 1.273705066515709,
+      "scale": 0.6799853123172539,
       "requested_origin": [
-        39.71752052080382,
-        21.99292386074157
+        122.78388706803935,
+        19.468041846296103
       ],
       "applied_origin": [
-        40,
+        123,
+        19
+      ],
+      "sample_size": [
+        738,
+        985
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          570.87,
+          539.961
+        ],
+        "face": [
+          577.354,
+          176.483
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2161,
+          200.567
+        ],
+        "belt": [
+          511.1832,
+          386.1655
+        ],
+        "face": [
+          515.5922,
+          139.0058
+        ]
+      },
+      "opaque_bounds": [
+        144,
+        35,
+        773,
+        980
+      ],
+      "sha256": "a10141aff69971ad94b05554223d8785316a34904e9c1ba098fe48d9392982a1"
+    },
+    {
+      "frame": 2,
+      "source": "run_v2/repairs/frame_02.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6799853123172539,
+      "requested_origin": [
+        121.98150439950501,
+        20.79887394432282
+      ],
+      "applied_origin": [
+        122,
+        21
+      ],
+      "sample_size": [
+        738,
+        985
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.569,
+          266.478
+        ],
+        "belt": [
+          571.775,
+          538.633
+        ],
+        "face": [
+          577.354,
+          176.483
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.0185,
+          202.2011
+        ],
+        "belt": [
+          510.7986,
+          387.2625
+        ],
+        "face": [
+          514.5922,
+          141.0058
+        ]
+      },
+      "opaque_bounds": [
+        141,
+        37,
+        779,
+        994
+      ],
+      "sha256": "5db59d7d169c75bb5cc9a228f1a635936f2ffb556022634fe315c8fb1d2d166f"
+    },
+    {
+      "frame": 3,
+      "source": "run_v2/repairs/frame_03.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6799853123172539,
+      "requested_origin": [
+        122.78388706803935,
+        21.26104184629611
+      ],
+      "applied_origin": [
+        123,
+        21
+      ],
+      "sample_size": [
+        738,
+        985
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          572.389,
+          267.016
+        ],
+        "belt": [
+          566.87,
+          539.961
+        ],
+        "face": [
+          575.354,
+          176.483
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2161,
+          202.567
+        ],
+        "belt": [
+          508.4633,
+          388.1655
+        ],
+        "face": [
+          514.2323,
+          141.0058
+        ]
+      },
+      "opaque_bounds": [
+        152,
+        39,
+        774,
+        989
+      ],
+      "sha256": "05336d3ad5e1a6c12615f3aa7c11a201bec0097f29ca565661e4267be5018105"
+    },
+    {
+      "frame": 4,
+      "source": "run_v2/repairs/frame_04.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6799853123172539,
+      "requested_origin": [
+        122.78388706803935,
+        21.897041846296105
+      ],
+      "applied_origin": [
+        123,
         22
       ],
       "sample_size": [
-        692,
-        922
+        738,
+        985
       ],
       "source_cell_landmarks": {
         "neck": [
-          270.3,
-          137.4
+          572.389,
+          267.016
         ],
         "belt": [
-          280.08,
-          278.84
+          565.775,
+          540.639
         ],
         "face": [
-          269.69,
-          85.235
+          575.354,
+          176.483
         ]
       },
       "exported_landmarks": {
         "neck": [
-          384.2825,
-          197.0071
+          512.2161,
+          203.567
         ],
         "belt": [
-          396.7393,
-          377.1599
+          507.7187,
+          389.6266
         ],
         "face": [
-          383.5055,
-          130.5643
+          514.2323,
+          142.0058
         ]
       },
       "opaque_bounds": [
-        53,
-        41,
-        620,
-        911
-      ],
-      "sha256": "ebac4dfedf2c43c31f82f6f043f8ba67eb67dd501b7c8a35dc7df66981ab23e3"
-    },
-    {
-      "frame": 8,
-      "source": "batch_08_11.png",
-      "cell": [
-        0,
-        0,
-        608,
-        646
-      ],
-      "scale": 1.5350437700674993,
-      "requested_origin": [
-        -114.95216206651003,
-        21.703293095287847
-      ],
-      "applied_origin": [
-        -115,
-        22
-      ],
-      "sample_size": [
-        933,
+        151,
+        37,
+        776,
         992
       ],
-      "source_cell_landmarks": {
-        "neck": [
-          325.041,
-          114.848
-        ],
-        "belt": [
-          336.206,
-          231.494
-        ],
-        "face": [
-          321.059,
-          71.237
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.9522,
-          198.2967
-        ],
-        "belt": [
-          401.0909,
-          377.3534
-        ],
-        "face": [
-          377.8396,
-          131.3519
-        ]
-      },
-      "opaque_bounds": [
-        49,
-        42,
-        625,
-        892
-      ],
-      "sha256": "9269823275fe19c588798365b2615f2aeb57217273efaa159002e83cb0fb9bbe"
+      "sha256": "3c171fc39f93481232c2f9bf24b89cb6be6996f450911c74d1ec4b9401775f27"
     },
     {
-      "frame": 9,
-      "source": "batch_08_11.png",
-      "cell": [
-        608,
-        0,
-        1217,
-        646
-      ],
-      "scale": 1.5350437700674993,
-      "requested_origin": [
-        -9.03414193185256,
-        18.098161785085352
-      ],
-      "applied_origin": [
-        -9,
-        18
-      ],
-      "sample_size": [
-        935,
-        992
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          256.041,
-          117.848
-        ],
-        "belt": [
-          267.206,
-          234.494
-        ],
-        "face": [
-          253.291,
-          72.549
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.0341,
-          198.9018
-        ],
-        "belt": [
-          401.1729,
-          377.9586
-        ],
-        "face": [
-          379.8128,
-          129.3659
-        ]
-      },
-      "opaque_bounds": [
-        56,
-        41,
-        626,
-        935
-      ],
-      "sha256": "de26c22ca62266a303c4cf048da53ea137e609f1513ae9dd271d19ab70984c55"
-    },
-    {
-      "frame": 10,
-      "source": "batch_08_11.png",
-      "cell": [
-        0,
-        646,
-        608,
-        1292
-      ],
-      "scale": 1.5350437700674993,
-      "requested_origin": [
-        -113.14388050537053,
-        20.413694296033185
-      ],
-      "applied_origin": [
-        -113,
-        20
-      ],
-      "sample_size": [
-        933,
-        992
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          323.863,
-          116.991
-        ],
-        "belt": [
-          334.543,
-          234.866
-        ],
-        "face": [
-          322.291,
-          72.549
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.1439,
-          199.5863
-        ],
-        "belt": [
-          400.5381,
-          380.5296
-        ],
-        "face": [
-          381.7308,
-          131.3659
-        ]
-      },
-      "opaque_bounds": [
-        57,
-        44,
-        625,
-        966
-      ],
-      "sha256": "28272d5dc3515bebf1d1c9f16429aaae67369699222d1bb66e0a495650b1d66a"
-    },
-    {
-      "frame": 11,
-      "source": "batch_08_11.png",
-      "cell": [
-        608,
-        646,
-        1217,
-        1292
-      ],
-      "scale": 1.5350437700674993,
-      "requested_origin": [
-        -14.543414022624802,
-        14.836031741293965
-      ],
-      "applied_origin": [
-        -15,
-        15
-      ],
-      "sample_size": [
-        935,
-        992
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          259.63,
-          121.276
-        ],
-        "belt": [
-          268.543,
-          240.866
-        ],
-        "face": [
-          256.291,
-          78.549
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.5434,
-          201.164
-        ],
-        "belt": [
-          397.2253,
-          384.7399
-        ],
-        "face": [
-          378.4179,
-          135.5762
-        ]
-      },
-      "opaque_bounds": [
-        67,
-        46,
-        618,
-        972
-      ],
-      "sha256": "a24cbfc681b1016eaf7196356185668d393060f7eee1b699702d95f8cf11d3db"
-    },
-    {
-      "frame": 12,
-      "source": "batch_12_15.png",
+      "frame": 5,
+      "source": "run_v2/repairs/frame_05.png",
       "cell": [
         0,
         0,
-        543,
-        724
+        1086,
+        1448
       ],
-      "scale": 1.2873694750393363,
+      "scale": 0.6671514633967349,
       "requested_origin": [
-        13.23759118867116,
-        26.20512086968961
+        130.1298410178063,
+        25.723884849657424
       ],
       "applied_origin": [
-        13,
+        130,
         26
       ],
       "sample_size": [
-        699,
-        932
+        725,
+        966
       ],
       "source_cell_landmarks": {
         "neck": [
-          288.0,
-          135.0
+          572.389,
+          267.016
         ],
         "belt": [
-          298.08,
-          275.84
+          567.395,
+          541.348
         ],
         "face": [
-          287.69,
-          82.235
+          576.457,
+          175.691
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.7624,
-          199.7949
+          511.8702,
+          204.1401
         ],
         "belt": [
-          396.7391,
-          381.108
+          508.5384,
+          387.1611
         ],
         "face": [
-          383.3633,
-          131.8668
+          514.5841,
+          143.2125
         ]
       },
       "opaque_bounds": [
-        47,
-        43,
-        607,
-        928
+        159,
+        41,
+        773,
+        976
       ],
-      "sha256": "5eb8cedc7eb5e49a951d6fb94b35b3811378f9f29dacd0197320801352af9995"
+      "sha256": "98559b36f1d321efceb4d2d3de38160f786df931641177e5a17414538c1389cd"
     },
     {
-      "frame": 13,
-      "source": "repairs/frame_13.png",
+      "frame": 6,
+      "source": "run_v2/repairs/frame_06.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6361323155216284,
+      "scale": 0.6671514633967349,
       "requested_origin": [
-        13.160305343511482,
-        30.956743002544556
+        129.64949196416063,
+        24.616314521885926
       ],
       "applied_origin": [
-        13,
-        31
+        130,
+        25
       ],
       "sample_size": [
-        691,
-        921
+        725,
+        966
       ],
       "source_cell_landmarks": {
         "neck": [
-          582.96,
+          573.109,
           268.88
         ],
         "belt": [
-          598.08,
-          551.84
+          565.775,
+          542.646
         ],
         "face": [
-          581.38,
-          164.47
+          576.457,
+          177.699
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.8397,
-          202.0433
+          512.3505,
+          204.3837
         ],
         "belt": [
-          393.458,
-          382.0433
+          507.4576,
+          387.0271
         ],
         "face": [
-          382.8346,
-          135.6247
+          514.5841,
+          143.5521
         ]
       },
       "opaque_bounds": [
-        45,
-        44,
-        601,
-        926
+        151,
+        41,
+        771,
+        971
       ],
-      "sha256": "799298ebc7bbb56f364a60a737eb2ba28fc00ad23368815616abedda04c3bc6c"
+      "sha256": "1a0c505ecffe2374ede337a89deb2f7a55e21fd3d133b7755c0a5dfcb1cfcdf9"
     },
     {
-      "frame": 14,
-      "source": "repairs/frame_14.png",
+      "frame": 7,
+      "source": "run_v2/repairs/frame_07.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6339814032121724,
+      "scale": 0.6671514633967349,
       "requested_origin": [
-        11.447168216399007,
-        32.24175824175822
+        130.1298410178063,
+        24.384911862620157
       ],
       "applied_origin": [
-        11,
-        32
+        130,
+        24
       ],
       "sample_size": [
-        689,
-        918
+        725,
+        966
       ],
       "source_cell_landmarks": {
         "neck": [
-          587.64,
-          270.92
+          572.389,
+          269.023
         ],
         "belt": [
-          598.08,
-          554.84
+          567.585,
+          544.003
         ],
         "face": [
-          583.0,
-          166.0
+          576.457,
+          177.699
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.5528,
-          203.7582
+          511.8702,
+          203.4791
         ],
         "belt": [
-          390.1716,
-          383.7582
+          508.6652,
+          386.9324
         ],
         "face": [
-          380.6112,
-          137.2409
+          514.5841,
+          142.5521
         ]
       },
       "opaque_bounds": [
-        48,
-        48,
-        604,
-        926
+        150,
+        37,
+        771,
+        970
       ],
-      "sha256": "b4e21d26a60dbb8b05d70176daeceffb7b6feddcb828fa4e3c64c4d62ed516c9"
+      "sha256": "2b46609a69fd7ac41732b2c0e1c3b1d0fb9e0d25256161ed2e5ad0d9b01aa497"
     },
     {
-      "frame": 15,
-      "source": "repairs/frame_15.png",
+      "frame": 8,
+      "source": "run_v2/repairs/frame_08.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6547359231776516,
+      "scale": 0.6671514633967349,
       "requested_origin": [
-        3.1793976429507325,
-        19.726320384111744
+        129.10242776417533,
+        23.72138703457847
       ],
       "applied_origin": [
-        3,
-        20
+        129,
+        24
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.929,
+          269.418
+        ],
+        "belt": [
+          565.775,
+          542.646
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.8976,
+          203.7426
+        ],
+        "belt": [
+          506.4576,
+          386.0271
+        ],
+        "face": [
+          513.5841,
+          142.5521
+        ]
+      },
+      "opaque_bounds": [
+        150,
+        33,
+        776,
+        972
+      ],
+      "sha256": "aacf200fa6cb9e9cce40e83b6619177c34e4cafa5c9801811e5a6458a6cafeaa"
+    },
+    {
+      "frame": 9,
+      "source": "run_v2/repairs/frame_09.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.10242776417533,
+        23.085387034578474
+      ],
+      "applied_origin": [
+        129,
+        23
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.929,
+          269.418
+        ],
+        "belt": [
+          565.775,
+          544.652
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.8976,
+          202.7426
+        ],
+        "belt": [
+          506.4576,
+          386.3654
+        ],
+        "face": [
+          513.5841,
+          141.5521
+        ]
+      },
+      "opaque_bounds": [
+        149,
+        34,
+        775,
+        971
+      ],
+      "sha256": "5092269eaae05fbdeb8a969a77d92e926f743e0ebe810d738c4b9ac1de0428cd"
+    },
+    {
+      "frame": 10,
+      "source": "run_v2/repairs/frame_10.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.10242776417533,
+        22.25738703457847
+      ],
+      "applied_origin": [
+        129,
+        22
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.929,
+          269.418
+        ],
+        "belt": [
+          567.585,
+          544.003
+        ],
+        "face": [
+          576.457,
+          177.699
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.8976,
+          201.7426
+        ],
+        "belt": [
+          507.6652,
+          384.9324
+        ],
+        "face": [
+          513.5841,
+          140.5521
+        ]
+      },
+      "opaque_bounds": [
+        148,
+        31,
+        776,
+        978
+      ],
+      "sha256": "2827ce6808742c75e7c65552392f121cf599526ae6f044ae9fbb7249ff9b3cf1"
+    },
+    {
+      "frame": 11,
+      "source": "run_v2/repairs/frame_11.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        136.72973238431365,
+        23.658904032897027
+      ],
+      "applied_origin": [
+        137,
+        24
       ],
       "sample_size": [
         711,
@@ -914,503 +770,2127 @@
       ],
       "source_cell_landmarks": {
         "neck": [
-          581.64,
-          279.92
+          573.109,
+          270.887
         ],
         "belt": [
-          592.08,
-          554.84
+          565.585,
+          544.003
         ],
         "face": [
-          584.38,
-          173.47
+          573.56,
+          178.915
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.8206,
-          203.2737
+          512.2703,
+          201.3761
         ],
         "belt": [
-          390.656,
-          383.2737
+          507.3436,
+          380.2117
         ],
         "face": [
-          385.6146,
-          133.577
+          512.5656,
+          141.1531
         ]
       },
       "opaque_bounds": [
-        50,
-        39,
-        612,
-        933
+        158,
+        31,
+        782,
+        962
       ],
-      "sha256": "e02583476f5dc4e2a072e07fe6186dd60ad594a6b8c2fa6c23c43fab2cb1e5d9"
+      "sha256": "7b59435f7e020ea2724d1d5371772ea6a9587a31492189d4adedcfec11ad87e8"
     },
     {
-      "frame": 16,
-      "source": "batch_16_19.png",
+      "frame": 12,
+      "source": "run_v2/repairs/frame_12.png",
       "cell": [
         0,
         0,
-        543,
-        724
-      ],
-      "scale": 1.2645777715329496,
-      "requested_origin": [
-        16.007868483911693,
-        26.48826752845295
-      ],
-      "applied_origin": [
-        16,
-        26
-      ],
-      "sample_size": [
-        687,
-        916
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          291.0,
-          138.0
-        ],
-        "belt": [
-          298.08,
-          281.84
-        ],
-        "face": [
-          293.69,
-          85.235
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.9921,
-          200.5117
-        ],
-        "belt": [
-          392.9453,
-          382.4086
-        ],
-        "face": [
-          387.3938,
-          133.7863
-        ]
-      },
-      "opaque_bounds": [
-        65,
-        44,
-        598,
-        878
-      ],
-      "sha256": "8f0d22816c26304d847078d0e03ed72e4306a5e404e469767159ef5e117d20e0"
-    },
-    {
-      "frame": 17,
-      "source": "batch_16_19.png",
-      "cell": [
-        543,
-        0,
-        1086,
-        724
-      ],
-      "scale": 1.2645777715329496,
-      "requested_origin": [
-        32.85204440073056,
-        24.70226218912461
-      ],
-      "applied_origin": [
-        33,
-        25
-      ],
-      "sample_size": [
-        687,
-        916
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          277.68,
-          137.04
-        ],
-        "belt": [
-          286.08,
-          278.84
-        ],
-        "face": [
-          278.69,
-          85.235
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.148,
-          198.2977
-        ],
-        "belt": [
-          394.7704,
-          377.6149
-        ],
-        "face": [
-          385.4252,
-          132.7863
-        ]
-      },
-      "opaque_bounds": [
-        68,
-        42,
-        605,
-        871
-      ],
-      "sha256": "5057ea07ee9fc228595b6905a8035efdc0c4ee72b1dcc90df66215640684d970"
-    },
-    {
-      "frame": 18,
-      "source": "batch_16_19.png",
-      "cell": [
-        0,
-        724,
-        543,
-        1448
-      ],
-      "scale": 1.2645777715329496,
-      "requested_origin": [
-        16.007868483911693,
-        21.48826752845295
-      ],
-      "applied_origin": [
-        16,
-        21
-      ],
-      "sample_size": [
-        687,
-        916
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          291.0,
-          138.0
-        ],
-        "belt": [
-          302.46,
-          277.58
-        ],
-        "face": [
-          292.31,
-          86.765
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.9921,
-          195.5117
-        ],
-        "belt": [
-          398.4842,
-          372.0215
-        ],
-        "face": [
-          385.6487,
-          130.7211
-        ]
-      },
-      "opaque_bounds": [
-        59,
-        40,
-        615,
-        860
-      ],
-      "sha256": "c134464372d3c896998fad61e0427430deaa2d5caf35166118e8e7a3cae0f20d"
-    },
-    {
-      "frame": 19,
-      "source": "batch_16_19.png",
-      "cell": [
-        543,
-        724,
         1086,
         1448
       ],
-      "scale": 1.2645777715329496,
+      "scale": 0.6547973729529397,
       "requested_origin": [
-        33.307292398482446,
-        21.27427286778132
+        136.49466012742357,
+        23.32715641144847
       ],
       "applied_origin": [
-        33,
-        21
-      ],
-      "sample_size": [
-        687,
-        916
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          277.32,
-          138.96
-        ],
-        "belt": [
-          289.08,
-          281.84
-        ],
-        "face": [
-          278.69,
-          88.235
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.6927,
-          196.7257
-        ],
-        "belt": [
-          398.5641,
-          377.4086
-        ],
-        "face": [
-          385.4252,
-          132.58
-        ]
-      },
-      "opaque_bounds": [
-        54,
-        39,
-        626,
-        902
-      ],
-      "sha256": "52667c8d0255b0df5afc0fcb9181f0da859573528c03ed01b68b00a62128c03e"
-    },
-    {
-      "frame": 20,
-      "source": "batch_20_23.png",
-      "cell": [
-        0,
-        0,
-        631,
-        623
-      ],
-      "scale": 1.5278644274964668,
-      "requested_origin": [
-        -137.14080543919738,
-        33.44441756534803
-      ],
-      "applied_origin": [
-        -137,
-        33
-      ],
-      "sample_size": [
-        964,
-        952
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          341.091,
-          107.703
-        ],
-        "belt": [
-          348.56,
-          224.324
-        ],
-        "face": [
-          340.01,
-          65.185
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          384.1408,
-          197.5556
-        ],
-        "belt": [
-          395.5524,
-          375.7367
-        ],
-        "face": [
-          382.4892,
-          132.5938
-        ]
-      },
-      "opaque_bounds": [
-        42,
-        44,
-        623,
-        866
-      ],
-      "sha256": "afd1971bd5961768a3fef4a396e297d45a5270c68ff7e1d1e555e027bbce83d6"
-    },
-    {
-      "frame": 21,
-      "source": "batch_20_23.png",
-      "cell": [
-        631,
-        0,
-        1262,
-        623
-      ],
-      "scale": 1.5278644274964668,
-      "requested_origin": [
-        -125.99350657618317,
-        32.551393539679935
-      ],
-      "applied_origin": [
-        -126,
-        33
-      ],
-      "sample_size": [
-        964,
-        952
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          333.795,
-          108.942
-        ],
-        "belt": [
-          340.954,
-          225.408
-        ],
-        "face": [
-          334.01,
-          65.185
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          383.9935,
-          199.4486
-        ],
-        "belt": [
-          394.9315,
-          377.3929
-        ],
-        "face": [
-          384.322,
-          132.5938
-        ]
-      },
-      "opaque_bounds": [
-        48,
-        44,
-        618,
-        899
-      ],
-      "sha256": "d81d387f9b8778df4e69f75f165e9fe8cadae1492d2250d7eeb4e0f15152ef4b"
-    },
-    {
-      "frame": 22,
-      "source": "batch_20_23.png",
-      "cell": [
-        0,
-        623,
-        631,
-        1246
-      ],
-      "scale": 1.5278644274964668,
-      "requested_origin": [
-        -132.3127538483085,
-        23.122190957589027
-      ],
-      "applied_origin": [
-        -132,
+        136,
         23
       ],
       "sample_size": [
-        964,
-        952
+        711,
+        948
       ],
       "source_cell_landmarks": {
         "neck": [
-          337.931,
-          115.768
+          573.468,
+          269.813
         ],
         "belt": [
-          347.418,
-          234.77
+          561.775,
+          546.658
         ],
         "face": [
-          336.385,
-          73.715
+          569.56,
+          180.923
         ]
       },
       "exported_landmarks": {
         "neck": [
-          384.3128,
-          199.8778
+          511.5053,
+          199.6728
         ],
         "belt": [
-          398.8076,
-          381.6967
+          503.8488,
+          380.9502
         ],
         "face": [
-          381.9507,
-          135.6265
+          508.9464,
+          141.4679
         ]
       },
       "opaque_bounds": [
-        49,
-        45,
-        615,
-        932
+        150,
+        35,
+        776,
+        949
       ],
-      "sha256": "52a8c3413c8bb563773248a47fabf31111146da0c4c2d4e5e404445df7ea1296"
+      "sha256": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2"
+    },
+    {
+      "frame": 13,
+      "source": "run_v2/repairs/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        136.72973238431365,
+        21.588904032897034
+      ],
+      "applied_origin": [
+        137,
+        22
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.109,
+          270.887
+        ],
+        "belt": [
+          563.585,
+          548.016
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2703,
+          199.3761
+        ],
+        "belt": [
+          506.034,
+          380.8394
+        ],
+        "face": [
+          509.9464,
+          140.4679
+        ]
+      },
+      "opaque_bounds": [
+        155,
+        34,
+        779,
+        950
+      ],
+      "sha256": "008915953312a07e1e5927876179b6886e83c03c35e65aa9f126f8e5df1a9296"
+    },
+    {
+      "frame": 14,
+      "source": "run_v2/repairs/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        136.72973238431365,
+        20.62390403289703
+      ],
+      "applied_origin": [
+        137,
+        21
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.109,
+          270.887
+        ],
+        "belt": [
+          561.775,
+          546.658
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2703,
+          198.3761
+        ],
+        "belt": [
+          504.8488,
+          378.9502
+        ],
+        "face": [
+          509.9464,
+          139.4679
+        ]
+      },
+      "opaque_bounds": [
+        153,
+        32,
+        778,
+        950
+      ],
+      "sha256": "019b829d3c0355eff5108126d5e1b5146cefe5237edefe71ce49e9c2521bfa0f"
+    },
+    {
+      "frame": 15,
+      "source": "run_v2/repairs/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        135.07984081981647,
+        18.204871093624433
+      ],
+      "applied_origin": [
+        135,
+        18
+      ],
+      "sample_size": [
+        698,
+        931
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          586.288,
+          278.378
+        ],
+        "belt": [
+          579.775,
+          558.696
+        ],
+        "face": [
+          582.663,
+          186.155
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9202,
+          196.9671
+        ],
+        "belt": [
+          507.733,
+          377.1815
+        ],
+        "face": [
+          509.5897,
+          137.6777
+        ]
+      },
+      "opaque_bounds": [
+        157,
+        33,
+        791,
+        903
+      ],
+      "sha256": "bc9dc9533400d397cb0ad3b46485efe1a3f4529548b5c99b358e0b44d641d48a"
+    },
+    {
+      "frame": 16,
+      "source": "run_v2/repairs/frame_16.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        127.32749690608244,
+        13.292919571238684
+      ],
+      "applied_origin": [
+        127,
+        13
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          587.468,
+          279.847
+        ],
+        "belt": [
+          579.775,
+          558.696
+        ],
+        "face": [
+          583.56,
+          188.955
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.6725,
+          196.2431
+        ],
+        "belt": [
+          506.6351,
+          378.8327
+        ],
+        "face": [
+          509.1136,
+          136.7272
+        ]
+      },
+      "opaque_bounds": [
+        149,
+        29,
+        796,
+        849
+      ],
+      "sha256": "85991be3d0b97e43fb49712018f595f7c4c3d14fd6f7918b586561a61e4f271b"
+    },
+    {
+      "frame": 17,
+      "source": "run_v2/repairs/frame_17.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        128.63709165198833,
+        12.892919571238679
+      ],
+      "applied_origin": [
+        129,
+        13
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          585.468,
+          279.847
+        ],
+        "belt": [
+          575.775,
+          556.69
+        ],
+        "face": [
+          581.56,
+          188.955
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.3629,
+          196.2431
+        ],
+        "belt": [
+          506.016,
+          377.5191
+        ],
+        "face": [
+          509.804,
+          136.7272
+        ]
+      },
+      "opaque_bounds": [
+        152,
+        30,
+        797,
+        839
+      ],
+      "sha256": "e14260dc0606167ae2c5f82f8bc8e95e29703fa4eb18cd751f75f88663bc8422"
+    },
+    {
+      "frame": 18,
+      "source": "run_v2/repairs/frame_18.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.2562811438001,
+        12.756919571238683
+      ],
+      "applied_origin": [
+        131,
+        13
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.468,
+          279.847
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "face": [
+          577.56,
+          188.955
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.7437,
+          196.2431
+        ],
+        "belt": [
+          506.1138,
+          377.0745
+        ],
+        "face": [
+          509.1848,
+          136.7272
+        ]
+      },
+      "opaque_bounds": [
+        160,
+        34,
+        788,
+        824
+      ],
+      "sha256": "0b61631f38ac05de1dbe9593de87fcc3ffa618fe6c3b17532a6b5fe958646461"
+    },
+    {
+      "frame": 19,
+      "source": "run_v2/repairs/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.2562811438001,
+        8.950384588689019
+      ],
+      "applied_origin": [
+        131,
+        9
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.468,
+          285.868
+        ],
+        "belt": [
+          572.87,
+          556.011
+        ],
+        "face": [
+          579.56,
+          194.979
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.7437,
+          196.1856
+        ],
+        "belt": [
+          506.1138,
+          373.0745
+        ],
+        "face": [
+          510.4944,
+          136.6717
+        ]
+      },
+      "opaque_bounds": [
+        155,
+        33,
+        799,
+        873
+      ],
+      "sha256": "a1044390b68cba8264662259578134ca27ed67a0e948116e56148fefeff8dd94"
+    },
+    {
+      "frame": 20,
+      "source": "run_v2/repairs/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        123.83259835480453,
+        7.8749062718909215
+      ],
+      "applied_origin": [
+        124,
+        8
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.828,
+          282.786
+        ],
+        "belt": [
+          573.775,
+          554.683
+        ],
+        "face": [
+          578.457,
+          193.762
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1674,
+          196.6611
+        ],
+        "belt": [
+          506.7948,
+          378.0576
+        ],
+        "face": [
+          509.9184,
+          137.2686
+        ]
+      },
+      "opaque_bounds": [
+        146,
+        33,
+        807,
+        903
+      ],
+      "sha256": "3d0b6af0f58526f20bc7d9d4208847c88342423e64fba419561bb8eb650be55d"
+    },
+    {
+      "frame": 21,
+      "source": "run_v2/repairs/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        124.07277288162737,
+        7.79371844873944
+      ],
+      "applied_origin": [
+        124,
+        8
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "face": [
+          578.457,
+          193.762
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9272,
+          197.3783
+        ],
+        "belt": [
+          507.5254,
+          377.6052
+        ],
+        "face": [
+          509.9184,
+          137.2686
+        ]
+      },
+      "opaque_bounds": [
+        146,
+        35,
+        800,
+        915
+      ],
+      "sha256": "8b20a853da99ae8da400469fc3818b0a45fe6f2e6d12f11da7b52626b83f9852"
+    },
+    {
+      "frame": 22,
+      "source": "run_v2/repairs/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        124.07277288162737,
+        8.621718448739443
+      ],
+      "applied_origin": [
+        124,
+        9
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.468,
+          283.861
+        ],
+        "belt": [
+          574.87,
+          554.005
+        ],
+        "face": [
+          578.457,
+          195.77
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9272,
+          198.3783
+        ],
+        "belt": [
+          507.5254,
+          378.6052
+        ],
+        "face": [
+          509.9184,
+          139.6082
+        ]
+      },
+      "opaque_bounds": [
+        147,
+        37,
+        801,
+        918
+      ],
+      "sha256": "31698f0fc2492e7477bbf4b23029d36fb6a18868dc98460af2638a36ce2ed91a"
     },
     {
       "frame": 23,
-      "source": "batch_20_23.png",
+      "source": "run_v2/repairs/frame_23.png",
       "cell": [
-        631,
-        623,
-        1262,
-        1246
+        0,
+        0,
+        1086,
+        1448
       ],
-      "scale": 1.5278644274964668,
+      "scale": 0.6799853123172539,
       "requested_origin": [
-        -125.99350657618317,
-        16.217020409722323
+        117.72547632971134,
+        3.945212427411576
       ],
       "applied_origin": [
-        -126,
-        16
+        118,
+        4
       ],
       "sample_size": [
-        964,
-        952
+        738,
+        985
       ],
       "source_cell_landmarks": {
         "neck": [
-          333.795,
-          120.942
+          579.828,
+          286.8
         ],
         "belt": [
-          343.954,
-          243.408
+          572.87,
+          545.98
         ],
         "face": [
-          333.385,
-          79.715
+          577.354,
+          198.57
         ]
       },
       "exported_landmarks": {
         "neck": [
-          383.9935,
-          200.783
+          512.2745,
+          199.0198
         ],
         "belt": [
-          399.5151,
-          387.8944
+          507.5432,
+          375.2584
         ],
         "face": [
-          383.3671,
-          137.7937
+          510.5922,
+          139.0247
         ]
       },
       "opaque_bounds": [
-        54,
-        44,
-        613,
-        942
+        140,
+        36,
+        801,
+        930
       ],
-      "sha256": "a7660f2673fc47b5b97da4a5a8a0e4d939616920398393688d0b6607724423f2"
+      "sha256": "ba21c4078bb745affb6e74c3124c8aeec5475e820968c68b0c0e43ea2904ab40"
+    },
+    {
+      "frame": 24,
+      "source": "run_v2/repairs/frame_24.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7071835707112852,
+      "requested_origin": [
+        101.70057847616084,
+        -0.6414154986351264
+      ],
+      "applied_origin": [
+        102,
+        -1
+      ],
+      "sample_size": [
+        768,
+        1024
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          580.188,
+          283.719
+        ],
+        "belt": [
+          572.155,
+          547.956
+        ],
+        "face": [
+          579.148,
+          196.138
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2994,
+          199.6414
+        ],
+        "belt": [
+          506.6186,
+          386.5055
+        ],
+        "face": [
+          511.564,
+          137.7056
+        ]
+      },
+      "opaque_bounds": [
+        125,
+        33,
+        800,
+        1004
+      ],
+      "sha256": "3479f2e7362ad30de655b84582f9610c7a8517d9d3ab048a6cd65d794d66cc82"
+    },
+    {
+      "frame": 25,
+      "source": "run_v2/repairs/frame_25.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.71934729797863,
+        9.555223416863669
+      ],
+      "applied_origin": [
+        131,
+        10
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          582.288,
+          292.426
+        ],
+        "belt": [
+          573.965,
+          565.364
+        ],
+        "face": [
+          583.56,
+          201.002
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.2807,
+          201.4798
+        ],
+        "belt": [
+          506.8308,
+          380.1989
+        ],
+        "face": [
+          513.1136,
+          141.6156
+        ]
+      },
+      "opaque_bounds": [
+        154,
+        32,
+        783,
+        952
+      ],
+      "sha256": "9e4b3ea634f1871f646b10392d60b3696469fcb3075f682ffa0388f333988082"
+    },
+    {
+      "frame": 26,
+      "source": "run_v2/repairs/frame_26.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        121.0145954334431,
+        21.995547377863915
+      ],
+      "applied_origin": [
+        121,
+        22
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          597.109,
+          274.901
+        ],
+        "belt": [
+          583.775,
+          558.696
+        ],
+        "face": [
+          593.56,
+          180.923
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9854,
+          202.0045
+        ],
+        "belt": [
+          503.2543,
+          387.8327
+        ],
+        "face": [
+          509.6615,
+          140.4679
+        ]
+      },
+      "opaque_bounds": [
+        128,
+        37,
+        794,
+        965
+      ],
+      "sha256": "a0248b27021867d919577b8c64c5a1ffe6683cfae2fd9fa091f8e9b4568ab14b"
+    },
+    {
+      "frame": 27,
+      "source": "run_v2/repairs/frame_27.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        132.5082708120375,
+        14.829517226304574
+      ],
+      "applied_origin": [
+        133,
+        15
+      ],
+      "sample_size": [
+        698,
+        931
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          590.288,
+          292.426
+        ],
+        "belt": [
+          580.87,
+          568.049
+        ],
+        "face": [
+          588.663,
+          198.203
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.4917,
+          202.9985
+        ],
+        "belt": [
+          506.437,
+          380.1944
+        ],
+        "face": [
+          511.447,
+          142.4232
+        ]
+      },
+      "opaque_bounds": [
+        150,
+        34,
+        787,
+        939
+      ],
+      "sha256": "5a9aa640d8d813cf2d7d6bb1b62a4cc5eb31d0213ed57ced280dc2bbc32a1ce4"
+    },
+    {
+      "frame": 28,
+      "source": "run_v2/repairs/frame_28.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        114.49247786725022,
+        14.802906271890919
+      ],
+      "applied_origin": [
+        114,
+        15
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          579.965,
+          559.345
+        ],
+        "face": [
+          590.457,
+          193.762
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.5075,
+          203.6611
+        ],
+        "belt": [
+          500.9245,
+          388.1678
+        ],
+        "face": [
+          507.9243,
+          144.2686
+        ]
+      },
+      "opaque_bounds": [
+        131,
+        33,
+        783,
+        969
+      ],
+      "sha256": "e9b843ccaae489c9b722630b0366433660bdca11a72a5ddcbd7a0cb3d21a6303"
+    },
+    {
+      "frame": 29,
+      "source": "run_v2/repairs/frame_30.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        121.85339086819585,
+        17.382291764613427
+      ],
+      "applied_origin": [
+        122,
+        17
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          595.828,
+          284.793
+        ],
+        "belt": [
+          576.87,
+          566.042
+        ],
+        "face": [
+          591.56,
+          194.979
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1466,
+          203.4817
+        ],
+        "belt": [
+          499.733,
+          387.6428
+        ],
+        "face": [
+          509.3519,
+          144.6717
+        ]
+      },
+      "opaque_bounds": [
+        139,
+        34,
+        780,
+        958
+      ],
+      "sha256": "959fa57e798231fd32c8753edd461bb51b9c27a672429b8313ba96d0916b48c8"
+    },
+    {
+      "frame": 30,
+      "source": "run_v2/repairs/frame_29.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        114.49247786725022,
+        15.33890627189092
+      ],
+      "applied_origin": [
+        114,
+        15
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          595.828,
+          282.786
+        ],
+        "belt": [
+          577.965,
+          561.351
+        ],
+        "face": [
+          590.457,
+          193.762
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.5075,
+          203.6611
+        ],
+        "belt": [
+          499.5902,
+          389.5061
+        ],
+        "face": [
+          507.9243,
+          144.2686
+        ]
+      },
+      "opaque_bounds": [
+        129,
+        30,
+        784,
+        971
+      ],
+      "sha256": "29151aed879e289fe7d512a6e09d282c8ebe125b0b9117892b2445e310208dd3"
+    },
+    {
+      "frame": 31,
+      "source": "run_v2/repairs/frame_32.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        122.3903247140172,
+        17.733917953889204
+      ],
+      "applied_origin": [
+        122,
+        18
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          595.008,
+          284.256
+        ],
+        "belt": [
+          580.155,
+          564.006
+        ],
+        "face": [
+          591.56,
+          194.979
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.6097,
+          204.1301
+        ],
+        "belt": [
+          501.884,
+          387.3096
+        ],
+        "face": [
+          509.3519,
+          145.6717
+        ]
+      },
+      "opaque_bounds": [
+        136,
+        35,
+        782,
+        957
+      ],
+      "sha256": "fcd7aaea059000f1db2ecbf0cb5e441ef61f69914ee8a09f40f5238d015e58c4"
+    },
+    {
+      "frame": 32,
+      "source": "run_v2/repairs/frame_31.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        121.85339086819585,
+        16.98229176461342
+      ],
+      "applied_origin": [
+        122,
+        17
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          595.828,
+          284.793
+        ],
+        "belt": [
+          602,
+          563
+        ],
+        "face": [
+          591.56,
+          194.979
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1466,
+          203.4817
+        ],
+        "belt": [
+          516.188,
+          385.6509
+        ],
+        "face": [
+          509.3519,
+          144.6717
+        ]
+      },
+      "opaque_bounds": [
+        137,
+        33,
+        783,
+        958
+      ],
+      "sha256": "5d9e65e1529dcc50a6a1891b8bed87cf318021e55ae5a8eeda0d295e95eb2c30"
+    },
+    {
+      "frame": 33,
+      "source": "run_v2/repairs/frame_34.png",
+      "cell": [
+        0,
+        0,
+        1053,
+        1494
+      ],
+      "scale": 0.6119726325838708,
+      "requested_origin": [
+        151.8284028738235,
+        21.756313525819138
+      ],
+      "applied_origin": [
+        152,
+        22
+      ],
+      "sample_size": [
+        644,
+        914
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          588.542,
+          295.882
+        ],
+        "belt": [
+          576.555,
+          592.837
+        ],
+        "face": [
+          583.728,
+          200.265
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1716,
+          203.0717
+        ],
+        "belt": [
+          504.8359,
+          384.8
+        ],
+        "face": [
+          509.2256,
+          144.5567
+        ]
+      },
+      "opaque_bounds": [
+        162,
+        38,
+        776,
+        927
+      ],
+      "sha256": "4f2cd9875cef5d827b914b5929eaf067951da184e2a7a5a495624a50ddc8a858"
+    },
+    {
+      "frame": 34,
+      "source": "run_v2/repairs/frame_33.png",
+      "cell": [
+        0,
+        0,
+        1054,
+        1492
+      ],
+      "scale": 0.6354895493743605,
+      "requested_origin": [
+        134.80390698974952,
+        19.22939266263768
+      ],
+      "applied_origin": [
+        135,
+        19
+      ],
+      "sample_size": [
+        670,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          593.552,
+          287.606
+        ],
+        "belt": [
+          582.119,
+          574.269
+        ],
+        "face": [
+          587.777,
+          195.957
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1961,
+          201.7706
+        ],
+        "belt": [
+          504.9305,
+          383.9419
+        ],
+        "face": [
+          508.5261,
+          143.5286
+        ]
+      },
+      "opaque_bounds": [
+        145,
+        29,
+        781,
+        944
+      ],
+      "sha256": "2c10097a4a12407cda1e5b5dfbeb66b879d743696c9e01b02526d06d34b37fb2"
+    },
+    {
+      "frame": 35,
+      "source": "run_v2/repairs/frame_35.png",
+      "cell": [
+        0,
+        0,
+        1070,
+        1470
+      ],
+      "scale": 0.6219640380393205,
+      "requested_origin": [
+        144.02928206691092,
+        20.946556713790812
+      ],
+      "applied_origin": [
+        144,
+        21
+      ],
+      "sample_size": [
+        666,
+        914
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          591.627,
+          289.548
+        ],
+        "belt": [
+          580.775,
+          574.223
+        ],
+        "face": [
+          587.705,
+          196.136
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9707,
+          201.0884
+        ],
+        "belt": [
+          505.2212,
+          378.1461
+        ],
+        "face": [
+          509.5314,
+          142.9895
+        ]
+      },
+      "opaque_bounds": [
+        162,
+        34,
+        783,
+        925
+      ],
+      "sha256": "dc83629e71cc9d5bae100b0a785cf923690a8ff5e1dc61765bf123be582d019f"
+    },
+    {
+      "frame": 36,
+      "source": "run_v2/repairs/frame_36.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        138.03932713021953,
+        22.62390403289703
+      ],
+      "applied_origin": [
+        138,
+        23
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          571.109,
+          270.887
+        ],
+        "belt": [
+          559.585,
+          546.01
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.9607,
+          200.3761
+        ],
+        "belt": [
+          504.4148,
+          380.5259
+        ],
+        "face": [
+          510.9464,
+          141.4679
+        ]
+      },
+      "opaque_bounds": [
+        151,
+        35,
+        757,
+        960
+      ],
+      "sha256": "eb81c94af3929e56fbf9b7e14349ebe0e9fc50a85ed36bafa404301939cbbb25"
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/repairs/frame_37.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.40998458880125,
+        17.620556370962902
+      ],
+      "applied_origin": [
+        129,
+        18
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.468,
+          271.819
+        ],
+        "belt": [
+          559.775,
+          546.658
+        ],
+        "face": [
+          568.457,
+          179.707
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.59,
+          199.3444
+        ],
+        "belt": [
+          502.4547,
+          382.7037
+        ],
+        "face": [
+          508.2469,
+          137.8918
+        ]
+      },
+      "opaque_bounds": [
+        143,
+        29,
+        764,
+        974
+      ],
+      "sha256": "995a2c96c4ecb62f277450a5f4af95303c21589eb1c53ad3d7acb1f904e91e3d"
+    },
+    {
+      "frame": 38,
+      "source": "run_v2/repairs/frame_38.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.64949196416063,
+        15.938368547811422
+      ],
+      "applied_origin": [
+        130,
+        16
+      ],
+      "sample_size": [
+        725,
+        966
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          573.109,
+          272.894
+        ],
+        "belt": [
+          561.585,
+          546.01
+        ],
+        "face": [
+          570.457,
+          181.715
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.3505,
+          198.0616
+        ],
+        "belt": [
+          504.6623,
+          380.2714
+        ],
+        "face": [
+          510.5812,
+          137.2314
+        ]
+      },
+      "opaque_bounds": [
+        145,
+        28,
+        771,
+        972
+      ],
+      "sha256": "5766b15daa799e7425a25387a920a97e4bf4f226c28d1108c1be1560a2aa11f3"
+    },
+    {
+      "frame": 39,
+      "source": "run_v2/repairs/frame_39.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        137.26732102750805,
+        18.833351894656175
+      ],
+      "applied_origin": [
+        137,
+        19
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          572.288,
+          272.357
+        ],
+        "belt": [
+          559.585,
+          546.01
+        ],
+        "face": [
+          569.56,
+          180.923
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.7327,
+          197.3386
+        ],
+        "belt": [
+          503.4148,
+          376.5259
+        ],
+        "face": [
+          509.9464,
+          137.4679
+        ]
+      },
+      "opaque_bounds": [
+        150,
+        30,
+        762,
+        957
+      ],
+      "sha256": "cd63cfac367f81ae1e477579eb246d6a2ffa2727245920865869bbb708ebe8c6"
+    },
+    {
+      "frame": 40,
+      "source": "run_v2/repairs/frame_41.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.96280750921625,
+        12.496031168354932
+      ],
+      "applied_origin": [
+        132,
+        12
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          580.389,
+          281.064
+        ],
+        "belt": [
+          571.585,
+          564.066
+        ],
+        "face": [
+          577.56,
+          186.947
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.0372,
+          196.04
+        ],
+        "belt": [
+          506.2724,
+          381.3489
+        ],
+        "face": [
+          510.1848,
+          134.4124
+        ]
+      },
+      "opaque_bounds": [
+        143,
+        25,
+        806,
+        952
+      ],
+      "sha256": "4d3c8b7e76df141e85e13264799fdd3f668e2b71c51b565c852c5b35edc10d1d"
+    },
+    {
+      "frame": 41,
+      "source": "run_v2/repairs/frame_40.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.49135340069012,
+        12.18901239531425
+      ],
+      "applied_origin": [
+        131,
+        12
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.109,
+          280.922
+        ],
+        "belt": [
+          569.775,
+          564.715
+        ],
+        "face": [
+          577.56,
+          186.947
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.5086,
+          195.947
+        ],
+        "belt": [
+          504.0872,
+          381.7739
+        ],
+        "face": [
+          509.1848,
+          134.4124
+        ]
+      },
+      "opaque_bounds": [
+        141,
+        26,
+        801,
+        954
+      ],
+      "sha256": "f4e8bb18cf6231c4b4cf8c9c5ca2c81f8b76405d9b3f01a1dae80bbd3ef55909"
+    },
+    {
+      "frame": 42,
+      "source": "run_v2/repairs/frame_42.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        138.87226368878856,
+        15.306061833400804
+      ],
+      "applied_origin": [
+        139,
+        15
+      ],
+      "sample_size": [
+        698,
+        931
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          580.389,
+          281.064
+        ],
+        "belt": [
+          569.775,
+          564.715
+        ],
+        "face": [
+          578.663,
+          186.155
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.1277,
+          195.6939
+        ],
+        "belt": [
+          505.3041,
+          378.051
+        ],
+        "face": [
+          511.0181,
+          134.6777
+        ]
+      },
+      "opaque_bounds": [
+        149,
+        29,
+        798,
+        869
+      ],
+      "sha256": "93b57f13b2693685bec021a52e988059c5e3b242874f29553e470dc5b9c85aad"
+    },
+    {
+      "frame": 43,
+      "source": "run_v2/repairs/frame_44.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.95441955486876,
+        11.83738620603853
+      ],
+      "applied_origin": [
+        131,
+        12
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.929,
+          281.459
+        ],
+        "belt": [
+          569.775,
+          564.715
+        ],
+        "face": [
+          579.56,
+          186.947
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.0456,
+          196.2986
+        ],
+        "belt": [
+          504.0872,
+          381.7739
+        ],
+        "face": [
+          510.4944,
+          134.4124
+        ]
+      },
+      "opaque_bounds": [
+        141,
+        25,
+        802,
+        878
+      ],
+      "sha256": "d6956861597b89210d48839650b683a840e39a2634e3d0dc3019d98076e9b933"
+    },
+    {
+      "frame": 44,
+      "source": "run_v2/repairs/frame_43.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        137.58647868489902,
+        14.5517765819977
+      ],
+      "applied_origin": [
+        138,
+        15
+      ],
+      "sample_size": [
+        698,
+        931
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          582.389,
+          283.071
+        ],
+        "belt": [
+          571.395,
+          565.424
+        ],
+        "face": [
+          580.663,
+          186.155
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.4135,
+          196.9842
+        ],
+        "belt": [
+          505.3456,
+          378.5069
+        ],
+        "face": [
+          511.3039,
+          134.6777
+        ]
+      },
+      "opaque_bounds": [
+        149,
+        28,
+        799,
+        894
+      ],
+      "sha256": "cb4f12c21b23c86b2633fdd0d815b21d2993cd1fe8a73ae7b93ba955fd55fa44"
+    },
+    {
+      "frame": 45,
+      "source": "run_v2/repairs/frame_46.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.18175865478423,
+        11.910834067797737
+      ],
+      "applied_origin": [
+        130,
+        12
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          583.109,
+          282.929
+        ],
+        "belt": [
+          571.775,
+          554.683
+        ],
+        "face": [
+          581.56,
+          188.955
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.8182,
+          197.2612
+        ],
+        "belt": [
+          504.3968,
+          375.205
+        ],
+        "face": [
+          510.804,
+          135.7272
+        ]
+      },
+      "opaque_bounds": [
+        147,
+        28,
+        797,
+        909
+      ],
+      "sha256": "e6fa3d6e7785f001f6357fb2ba71f7e338c2f54fb5dd77ebd76c1483ae5d18c5"
+    },
+    {
+      "frame": 46,
+      "source": "run_v2/repairs/frame_47.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.65321276331036,
+        15.274209495871503
+      ],
+      "applied_origin": [
+        131,
+        15
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          582.389,
+          279.057
+        ],
+        "belt": [
+          573.775,
+          548.665
+        ],
+        "face": [
+          581.56,
+          184.939
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          512.3468,
+          197.7258
+        ],
+        "belt": [
+          506.7064,
+          374.2644
+        ],
+        "face": [
+          511.804,
+          136.0976
+        ]
+      },
+      "opaque_bounds": [
+        151,
+        32,
+        764,
+        916
+      ],
+      "sha256": "42321b32d1a1e9c881471e417ca026c1bdc54076dadf7385e4bea80ff99d14b8"
+    },
+    {
+      "frame": 47,
+      "source": "run_v2/repairs/frame_45.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.19014660913183,
+        15.276657357630683
+      ],
+      "applied_origin": [
+        131,
+        15
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.569,
+          280.527
+        ],
+        "belt": [
+          570.87,
+          554.005
+        ],
+        "face": [
+          579.56,
+          186.947
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          511.8099,
+          198.6883
+        ],
+        "belt": [
+          504.8042,
+          377.761
+        ],
+        "face": [
+          510.4944,
+          137.4124
+        ]
+      },
+      "opaque_bounds": [
+        146,
+        27,
+        798,
+        927
+      ],
+      "sha256": "f6d369db73a020a61ace27522e73a83843f5532a2be0de66e6670b3d99112900"
     }
   ]
 }

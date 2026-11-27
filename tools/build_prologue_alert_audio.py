@@ -175,6 +175,8 @@ def products():
                           'sequence_end':47,'siren_period':2},
               'running_foley':{'duration':STEP_DURATION,
                   'contact_source':'assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts',
+                  'timing_authority':'The referenced animation durations and contact cues determine cadence independently of display FPS; the frontal shot continues those same phases.',
+                  'retiming_boundary_seconds':39,
                   'scheduling':'One continuous global contact table from 39 to 47 seconds; the frontal cut at 42 advances the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'},
               'frontal_breath':{'start':42,'period':BREATH_PERIOD,'gain':.075,
                   'source':'Unvoiced band-limited air, three varied inhale/exhale phrases approximately 1.2 seconds apart; independent synthesis seed.',
