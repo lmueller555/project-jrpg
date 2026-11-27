@@ -98,11 +98,11 @@ def build(check=False):
                   'title':'Wing Flap 1.wav','creator':'_stubb','license':'CC0-1.0',
                   'original_url':'https://freesound.org/people/_stubb/sounds/389634/'},
         'sounds':sounds,
-        'handoff':{'shot_duration':10.,'wind_loop_seconds':6.,'automatic_end_fade':False,
+        'handoff':{'shot_duration':25.,'wind_loop_seconds':6.,'automatic_end_fade':False,
                    'stop_owner':'cinematic controller'},
-        'wing_sync':{'period':.75,'downstroke_phase':.25,'flap_windows':[[0,2],[5,8]],
+        'wing_sync':{'period':.75,'downstroke_phase':.25,'flap_windows':[[0,2],[5,13.25]],
                      'first_phase_offset_seconds':.391,'second_phase_offset_seconds':.141,
-                     'bank_hold_phase':3.188,'crest_hold_phase':7.188}}
+                     'bank_hold_phase':3.188,'crest_hold_phase':14.188}}
     products[OUTPUT/'manifest.json'] = (json.dumps(manifest,indent=2)+'\n').encode()
     for path,content in products.items():
         if check:

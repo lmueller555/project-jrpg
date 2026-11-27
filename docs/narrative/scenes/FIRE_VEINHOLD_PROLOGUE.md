@@ -1,128 +1,115 @@
 # Fire Veinhold prologue — cinematic production
 
-**Status:** Shot 1 implemented as a Gallery presentation. Shots 2–5 are approved
-cinematography awaiting their own implementation PRs. Additional shots follow
-the overhead bridge view; the sequence's ending and playable handoff are open.
+**Status:** Shot 1 is implemented as a 25-second Gallery presentation: a
+15-second summit approach followed by ten seconds overlooking the Cinder Isles.
+Shots 2–5 await their own implementation. Further scenes follow the overhead
+bridge view; the final playable handoff remains open.
 
-[Chapter 1](../game_01/CHAPTER_01.md) owns the infiltration and opening-act story.
-This document owns this cinematic's staging, timing and production contracts.
-The [sprite standard](../../SPRITE_ANIMATION_STANDARD.md) owns asset construction.
-No former flashforward, relief-caravan scene or festival is restored.
+[Chapter 1](../game_01/CHAPTER_01.md) owns the opening story. This document owns
+cinematography and implementation. The [sprite standard](../../SPRITE_ANIMATION_STANDARD.md)
+owns artwork construction. The [Cinder Isles guide](../world/POLAR_REGIONS.md#cinder-isles)
+owns the approved geography; the canonical world map remains unchanged.
 
-## Approved shot order
+## Shot order
 
-| Shot | Duration | Picture and movement | Sound and disclosure |
-| --- | --- | --- | --- |
-| 1 — Eagle Ascent | 10 seconds | Follow an eagle flying quickly uphill through alpine rock spurs to the summit. The camera follows from above and behind; one continuous moonlit mountain landscape preserves consistent terrain placement. | High-altitude wind and close feather/downstroke sounds. No dialogue or facility alarm yet. |
-| 2 — Volcano and Veinhold | 15 seconds | Crest into a huge establishing view of the volcano, military fortress and reservoir drawing Fire-aspected aether. | Red alert lights are already active during the reveal, establishing an emergency before the infiltrators appear. Detailed audio staging belongs to that shot's PR. |
-| 3 — Running legs | 3 seconds | Side tracking shot of Iselin, Lucan and the Crown soldier's legs running over a metal fortress access bridge. | Metal footfalls and equipment movement; exact mix is future work. |
-| 4 — Faces | Exact duration open | Track backward in front of the runners and pan down to reveal their faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left in this view); the soldier is on his anatomical left (screen right), about ten feet behind. | Exact performance and transition timing remain to be authored. |
-| 5 — Bridge ascent | 8 seconds | Move up over Lucan's head into a rapidly ascending top-down view of the long bridge leading into the Veinhold. Several guards are already frozen behind the party; more guards come out of the entrance toward them. | The emergency continues. This is not the end of the cinematic or a decided gameplay handoff. |
+| Shot | Duration | Picture and disclosure |
+| --- | --- | --- |
+| 1 — Eagle Ascent and Cinder Isles | 25 seconds | Follow the eagle east-southeast over Merovar's coastal summit for 15 seconds, then retain a clear offshore volcanic vista for ten seconds. No fortress close-up or cast reveal yet. |
+| 2 — Volcano and Veinhold | 15 seconds, future implementation | Closer establishing view of the volcano, military fortress and reservoir drawing Fire-aspected aether. Red alert lights already signal an emergency before the infiltrators appear. |
+| 3 — Running legs | 3 seconds, future implementation | Side tracking of Iselin, Lucan and the Crown soldier running over a metal fortress access bridge. |
+| 4 — Faces | Exact duration open | Track backward in front of the runners and pan down to reveal faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the soldier is on his anatomical left (screen right), about ten feet behind. |
+| 5 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into a rapidly ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. This does not finish the cinematic or define the gameplay handoff. |
 
-The bridge is a fortress access structure, distinct from Elden Vale's western
-bridge. Shot 1 does not show the volcano, Veinhold, reservoir, alert lights,
-frozen guards or party early. The exact facility location and mountain name
-are not established by this scenery.
+The fortress access bridge is distinct from Elden Vale's western bridge.
+The revised Shot 1 introduces the island geography before the closer facility
+view. Its ten-second vista is additional to the fifteen-second ascent.
 
-## Shot 1 performance
+## Shot 1 staging
 
-The shot starts already in the final high-altitude approach rather than
-attempting a ground-to-summit climb in ten seconds. Silver moonlight catches slate
-rock, sparse alpine vegetation and small snow remnants beneath a starry sky; this is not a depiction
-of Adamanthra's later Ice Dome.
+The eagle starts high on the final approach, closer to the summit than the
+previous valley composition. Its authored forward speed begins at 28 scene
+units/second (previously 18), and its initial height is 145 (previously 110).
+These are staging units, not canonical geographic distances.
 
-- **0–2s:** Powered flight between nearby rock spurs.
-- **2–5s:** A shallow bank and recovery through the approach, preserving a
-  readable complete body and a stable chase distance.
-- **5–8s:** Another powered climb.
-- **8–10s:** Level-wing glide over the final crest. The near ridge falls below
-  the camera and the view opens beyond it.
+- **0–2s:** Powered flight over close moonlit rock.
+- **2–5s:** A shallow bank and recovery toward the saddle.
+- **5–13.25s:** Powered climb with complete authored wing strokes.
+- **13.25–15s:** Glide across the crest; the camera clears the near ridge.
+- **15–25s:** A full ten-second view of the Cinder Isles. A restrained camera
+  push preserves the composition while the eagle flies onward and recedes.
 
-The camera retains forward and upward velocity at ten seconds. There is no
-ease to a stop, black fade or implied ending. Its terminal pose, velocity,
-eagle registration/phase, depth-layer offsets and wind playhead are exposed by
-`FireVeinholdOpening.handoff_state` for Shot 2. For now the isolated Gallery
-presentation returns directly to its catalogue when the ten seconds finish.
+A single tall opaque painting contains the summit approach, coastal descent,
+open sea and islands. The camera's source window pans upward from the rocky
+approach into the upper vista. Every geographic landmark shares one transform;
+there are no independently scrolling foreground/background mountain groups,
+terrain-card seams, panorama cross-fades or hard cut at the crest. At 15s the
+upper vista is fully framed; the nearer mainland ridge has passed below the
+main view. The eagle occupies the lower sea corridor, leaving the main crater
+visible, then becomes smaller as it travels toward the islands.
 
-## Artwork and rendering
+Nighttime remains readable: cool silver rock and eagle lighting, a dark starry
+sky, moonlight on the sea, and warm red ash slopes/lava on the islands. This is
+not a sunrise, tropical archipelago or view of Adamanthra's Ice Dome.
 
-`assets/story/fire_veinhold_opening/scene.json` is the ordered implemented-shot
-list. Only completed shots go here; future storyboard rows above are not blank
-runtime clips.
+## Geographic composition
 
-The picture is composed at **960×640** in the game's full **3:2** frame. Its
-mountains and sky form one opaque **1448×1086** nighttime panorama. One bounded
-camera transform moves the entire landscape; there are no independently
-scrolling foreground or background mountain groups. The eagle uses complete **256×256** frames,
-density two, registered at the chest **[128,144]**. Wing extent never changes
-body scale. No detached-wing rig or warped idle constructs the flight poses.
+The camera faces **east-southeast** from the mountains southeast of Eldenmere.
+Eldenmere lies behind the camera. Merovar's rocky coast gives way to a broad
+sea channel, followed by the main Cinder volcanic island. The smaller active
+island lies farther beyond its right shoulder; southern rocky skerries appear
+to the right. Othara's distant rust-colored headlands occupy the left horizon.
+Istrava lies south of the archipelago and outside this framing.
 
-The eagle's 16-frame powered cycle lasts **750ms**. Its first and second
-powered windows enter at **391ms** and **141ms** respectively so the two glides
-and bank share the same level-wing boundary pose. Eight complete bank poses
-span three seconds including the shared neutral entry/exit; the glide retains
-level wings. Inspect loop seams, head/chest/tail registration and both wings at
-normal and reduced playback speed; export checks alone do not certify motion.
+The red island terrain uses volcanic ash, dark rock and lava illumination.
+Othara's extensive Damar Drylands remain a separate landmass. The approved
+Fire Veinhold site is on the main island near the volcano; the fortress and
+reservoir receive their closer reveal in Shot 2. Exact distances, travel
+times, facility coordinates and the infiltration party's route remain open.
+The world map is illustrative and supplies relationships rather than a precise
+bearing grid or guaranteed real-world line of sight.
 
-`FireVeinholdOpening.draw` sends the detailed picture directly to the actual UI
-surface before drawing pause/skip controls. It does not enlarge an already
-reduced 480×320 world image. A downsampled logical copy exists for legacy debug
-consumers; Gallery thumbnails and dedicated captures use the detailed renderer.
-Full frame aspect is preserved at all output sizes.
+## Art and runtime contract
 
-The opaque panorama always covers the viewport. All mountain landmarks share
-one scale and offset during the uphill approach, preserving their relative
-placement. The eagle rises toward the saddle and receives a cool nighttime
-lighting tint. Reduced Motion lowers lateral camera and eagle sway while
-retaining the ascent, wing animation and ten-second duration.
+The implemented shot list is `assets/story/fire_veinhold_opening/scene.json`.
+The shot explicitly records `ascent_duration:15`, `vista_duration:10`, and
+`duration:25`. Durations must be positive, finite and sum correctly. Future
+storyboard rows are not runtime placeholders.
 
-Preserved generation sources, exact prompts, hashes, registration and recipes:
+The native picture remains **960×640**, full **3:2**, rendered directly to the
+actual UI surface. The new opaque panorama is **1024×1536**, with vertical
+overscan for the climb. Its source, references, prompt, hash and export framing
+are retained under `assets/source/cinematics/fire_veinhold/shot01/environment/`.
+`tools/build_prologue_mountains.py --check` verifies reproduction.
 
-- `assets/source/cinematics/fire_veinhold/shot01/environment/`
-- `assets/source/cinematics/fire_veinhold/shot01/eagle/`
-- `assets/source/audio/fire_veinhold/shot01/`
+The eagle retains its complete 256×256 drawings, density two, chest anchor
+[128,144], and 750ms powered-wing cycle. Animation follows real elapsed time:
+extending the shot does not slow its wing cadence. The bank spans three seconds.
+The second powered window ends at 13.25s on the shared neutral wing pose.
+Whole-body scale during the vista represents increasing distance; changing wing
+bounds never drive registration or body proportions. Reduced Motion lowers
+lateral sway while retaining the same phase durations, wings and geographic
+reveal. Focus/pause freeze the entire presentation.
 
-Rebuild/check with `tools/build_prologue_mountains.py`,
-`tools/build_prologue_eagle.py` and the audio source folder's recorded command.
-These exporters handle sampling, alpha and registration; they do not synthesize
-new creature anatomy or redraw terrain procedurally.
+Wind continues across the crest and through the ten-second vista. The crest
+rush is cued at 14.65s; feather Foley follows actual powered downstrokes only.
+Audio leases respect effects volume, mute, focus and cleanup without stealing
+music channels. The audio source folder retains its deterministic export recipe
+and CC0 Foley attribution. Preview movies reconstruct audio from those exports
+and cue metadata, rather than claiming hardware-loopback listening review.
 
-## Audio and lifecycle
+## Gallery and handoff
 
-The stereo mountain wind is a seamless offline-generated loop, with distinct
-near pass, bank gust, climb rush and crest gust cues. Soft retained CC0 Foley
-marks actual downstrokes in powered flight only. No eagle screech, human
-dialogue, alarm or Fire reservoir sound belongs to this first shot. There is
-no newly selected score.
+Both **Shot 1 — Eagle Ascent and Cinder Isles (25s)** and **Fire Veinhold —
+Complete Cutscene** use the same production controller. The complete entry
+currently contains this 25-second shot. Future implemented clips populate their
+own Gallery entries and extend the complete entry from the same ordered list.
+The normal controls, disposable save-disabled runtime and unchanged parent
+save/settings/Continue boundaries remain in force.
 
-`PrologueFlightAudio` leases available mixer channels without resizing the
-mixer or stealing music. Effects volume, mute, pause, focus, replay and close
-apply to its own sounds. `begin_shot` resets local cues while retaining the wind
-channel for a following compatible clip; final Gallery completion releases it.
-Offline preview audio is a reconstruction of authored cues, distinct from a
-live hardware listening capture.
+At 25s an isolated replay returns directly to the Gallery. There is no black
+end fade. The terminal camera, eagle and wind state is exposed for later clip
+integration. New Game retains its bedroom opening until the full cinematic and
+playable infiltration handoff are ready.
 
-## Gallery and integration
-
-The **Fire Veinhold Prologue** section has:
-
-- **Fire Veinhold — Complete Cutscene** (`fire_veinhold_opening`): all implemented
-  clips in the scene's ordered list. Currently ten seconds.
-- **Shot 1 — Eagle Ascent (10s)** (`fire_veinhold_shot_01`): only `eagle_ascent`.
-
-The registry derives individual entries from the same list. Each future shot
-PR adds its renderer/assets and scene record, thumbnail and validation; the
-complete entry then includes it automatically. It must preserve the preceding
-shot's intended cut or continuous handoff and its audio cleanup.
-
-Both entries use the same production controller in disposable, save-disabled
-Gallery games. Pause/focus freeze the scene clock; restart recreates the shot;
-skip/natural completion return without showing the bedroom or starting a quest.
-Continue, party/inventory facts, settings and saved journey bytes remain intact.
-
-New Game deliberately retains the current bedroom morning until the full
-opening cinematic and its playable infiltration handoff are ready. This first
-shot does not implement the infiltration, scripted defeat or later attack.
-
-See [review evidence](../../reviews/fire_veinhold_opening/README.md) for captures,
-commands, verification and remaining production scope.
+See [current review evidence](../../reviews/cinder_crest/README.md).
+Earlier ten-second studies remain historical evidence of their own revisions.

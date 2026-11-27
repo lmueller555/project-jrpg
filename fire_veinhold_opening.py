@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pygame
 
-from prologue_flight_audio import PrologueFlightAudio
+from prologue_flight_audio import PrologueFlightAudio, wing_phase_at
 from ui_style import BRASS, MUTED
 
 ROOT = Path(__file__).resolve().parent
@@ -39,6 +39,14 @@ def _read_scene(path):
                 or not math.isfinite(shot['duration']) or shot['duration'] <= 0
                 or shot['id'] in identifiers or shot['gallery_id'] in gallery_ids):
             raise ValueError('Invalid or duplicate implemented prologue shot')
+        ascent = shot.get('ascent_duration', shot['duration']*.6)
+        if type(ascent) not in (int, float) or not math.isfinite(ascent):
+            raise ValueError('Invalid ascent timing')
+        vista = shot.get('vista_duration', shot['duration']-ascent)
+        if (any(type(value) not in (int, float) or not math.isfinite(value)
+                or value <= 0 for value in (ascent, vista))
+                or abs(ascent+vista-shot['duration']) > 1e-9):
+            raise ValueError('Invalid ascent and vista timing')
         identifiers.add(shot['id']); gallery_ids.add(shot['gallery_id'])
     return data
 
@@ -157,8 +165,17 @@ class FireVeinholdOpening:
                     or not 0 <= timing['downstroke_phase'] < 1
                     or abs(timing['period_ms']/1000.-sequences['flap']['duration']) > 1e-9):
                 raise ValueError('Invalid eagle phase timing')
+            framing = environment.get('framing', {})
+            if not isinstance(framing, dict):
+                raise ValueError('Invalid panorama framing')
+            for key in ('ascent_start_y', 'vista_y'):
+                value = framing.get(key, 0.)
+                if (type(value) not in (int, float) or not math.isfinite(value)
+                        or not 0 <= value <= layers['panorama'].get_height()):
+                    raise ValueError('Invalid panorama source window')
             assets[shot['id']] = {'layers':layers, 'eagle':sequences,
-                                 'anchor':anchor, 'timing':timing}
+                                 'anchor':anchor, 'timing':timing,
+                                 'framing':framing}
         return assets
 
     @property
@@ -177,32 +194,34 @@ class FireVeinholdOpening:
     def state_at(self, seconds):
         """Deterministic shot-local staging, independent of update frame rate.
 
-        Camera units describe the authored flight path. Terrain parallax maps
-        that path into this shot's 2.5D composition; they are not world tiles.
+        Camera units describe the authored flight path, not world tiles.
+        One continuous panorama supplies both the summit and offshore view.
         """
         self._load()
         shot, local, _ = self._locate(float(seconds))
-        t = local*10./shot['duration']
-        u = t/10.
+        # Staging follows authored phase lengths; wing cadence uses real time.
+        ascent = shot.get('ascent_duration', shot['duration']*.6)
+        climb = min(1., local/ascent)
+        vista = max(0., (local-ascent)/(shot['duration']-ascent))
+        u = local/shot['duration']
         sway = .3 if self.reduced_motion else 1.
-        x = 10.*math.sin(math.pi*u)*sway
-        position = [x, 180.*u+20.*u*u, 110.+55.*u+10.*u*u]
-        velocity = [10.*math.pi*math.cos(math.pi*u)*sway/shot['duration'],
-                    (180.+40.*u)/shot['duration'], (55.+20.*u)/shot['duration']]
+        x = 7.*math.sin(math.pi*u)*sway
+        position = [x, 28.*local+.8*local*local,
+                    145.+150.*_smooth(climb)]
+        velocity = [7.*math.pi*math.cos(math.pi*u)*sway/shot['duration'],
+                    28.+1.6*local,
+                    150.*6.*climb*(1.-climb)/ascent if local < ascent else 0.]
         timing = self._assets[shot['id']]['timing']
         period = timing['period_ms']/1000.
-        if t < 2.:
-            sequence, clock = 'flap', t+timing['first_phase_ms']/1000.
-            phase = clock/period
-        elif 5. <= t < 8.:
-            sequence, clock = 'flap', t-5.+timing['second_phase_ms']/1000.
-            phase = 4.+clock/period
-        elif t < 5.:
-            sequence, clock = 'bank', t-2.
-            phase = 3.+timing['second_phase_ms']/1000./period+(t-2.)/3.
+        if local < 2.:
+            sequence, clock = 'flap', local+timing['first_phase_ms']/1000.
+        elif 5. <= local < 13.25:
+            sequence, clock = 'flap', local-5.+timing['second_phase_ms']/1000.
+        elif local < 5.:
+            sequence, clock = 'bank', local-2.
         else:
-            sequence, clock = 'glide', t-8.
-            phase = 8.+timing['second_phase_ms']/1000./period+(t-8.)/period
+            sequence, clock = 'glide', local-13.25
+        phase = wing_phase_at(local)
         animation = self._assets[shot['id']]['eagle'][sequence]
         if animation['loop']:
             frame_clock = clock % animation['duration']
@@ -214,18 +233,27 @@ class FireVeinholdOpening:
             if frame_clock < duration:
                 break
             frame_clock -= duration
-        bird_x = 480.+28.*math.sin(math.pi*u)*sway
-        bird_y = 378.-25.*u+1.5*math.sin(t*math.tau/period)*sway
-        # One opaque painting, one camera transform: every mountain landmark
-        # retains its relationship to every other landmark through the ascent.
-        layers = {'panorama':{'offset':[-25.-x, -145.+230.*u],
-                              'scale':1.08+.24*u}}
-        bird_y = 378.-230.*u+1.5*math.sin(t*math.tau/period)*sway
+        bird_x = 480.+20.*math.sin(math.pi*climb)*sway
+        bird_y = 410.+40.*_smooth(climb)-100.*_smooth(vista)
+        bird_y += 1.5*math.sin(local*math.tau/period)*sway
+        # A single tall painting supplies approach AND offshore vista. Panning
+        # its source window over the ridge preserves every terrain relationship.
+        panorama = self._assets[shot['id']]['layers']['panorama']
+        zoom = 1.05+.05*_smooth(climb)+.01*vista
+        factor = max(960/panorama.get_width(), 640/panorama.get_height())*zoom
+        framing = self._assets[shot['id']]['framing']
+        source_y = (framing.get('ascent_start_y', 650.)*(1.-_smooth(climb))
+                    +framing.get('vista_y', 0.)*_smooth(climb))
+        layers = {'panorama':{'offset':[-x, (panorama.get_height()*factor-640)/2-source_y*factor],
+                              'scale':zoom}}
         return {'shot_id':shot['id'], 'local_time':local,
                 'camera':{'position':position, 'velocity':velocity, 'progress':u},
                 'eagle':{'position':[bird_x, bird_y], 'sequence':sequence,
                          'frame':index, 'wing_phase':phase,
-                         'anchor':list(self._assets[shot['id']]['anchor'])},
+                         'anchor':list(self._assets[shot['id']]['anchor']),
+                         'scale':1.-.65*_smooth(vista)},
+                'phase':'ascent' if local < ascent else 'cinder_vista',
+                'crest_time':ascent, 'vista_elapsed':max(0., local-ascent),
                 'layers':layers}
 
     @property
@@ -347,8 +375,11 @@ class FireVeinholdOpening:
         image = art['eagle'][eagle['sequence']]['frames'][eagle['frame']][0]
         image = image.copy()
         image.fill((145, 175, 220, 255), special_flags=pygame.BLEND_RGBA_MULT)
-        target.blit(image, (round(eagle['position'][0]-eagle['anchor'][0]),
-                            round(eagle['position'][1]-eagle['anchor'][1])))
+        scale = eagle['scale']
+        if scale != 1.:
+            image = pygame.transform.scale(image, (round(256*scale), round(256*scale)))
+        target.blit(image, (round(eagle['position'][0]-eagle['anchor'][0]*scale),
+                            round(eagle['position'][1]-eagle['anchor'][1]*scale)))
         return target
 
     def draw(self, canvas, ui_surface):

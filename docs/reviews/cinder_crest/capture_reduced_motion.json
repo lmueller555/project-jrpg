@@ -1,0 +1,436 @@
+{
+  "fps": 30,
+  "frames": 750,
+  "duration": 25.0,
+  "render_size": [
+    960,
+    640
+  ],
+  "entry": "fire_veinhold_shot_01",
+  "reduced_motion": true,
+  "source": "Production Game.draw in the save-disabled Gallery session",
+  "natural_completion": true,
+  "no_persistent_files_written": true,
+  "audio": {
+    "method": "Offline reconstruction from production WAVs, phase and cue metadata; not live loopback.",
+    "events": [
+      {
+        "id": "wing",
+        "time": 0.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "foreground_pass",
+        "time": 0.85,
+        "file": "air_pass.wav",
+        "gain": 0.29,
+        "pan": -0.45
+      },
+      {
+        "id": "wing",
+        "time": 1.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "bank_gust",
+        "time": 2.7,
+        "file": "bank_gust.wav",
+        "gain": 0.36,
+        "pan": 0.38
+      },
+      {
+        "id": "wing",
+        "time": 5.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "climb_rush",
+        "time": 5.45,
+        "file": "climb_rush.wav",
+        "gain": 0.32,
+        "pan": -0.18
+      },
+      {
+        "id": "wing",
+        "time": 5.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 6.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 7.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 9.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 10.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 12.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "crest_gust",
+        "time": 14.65,
+        "file": "crest_gust.wav",
+        "gain": 0.3,
+        "pan": 0.12
+      }
+    ],
+    "peak": 0.16651687401546295
+  },
+  "states": [
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 0.0,
+      "camera": {
+        "position": [
+          0.0,
+          0.0,
+          145.0
+        ],
+        "velocity": [
+          0.26389378290154264,
+          28.0,
+          0.0
+        ],
+        "progress": 0.0
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          410.0
+        ],
+        "sequence": "flap",
+        "frame": 8,
+        "wing_phase": 0.5213333333333333,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -0.0,
+            -203.84375
+          ],
+          "scale": 1.05
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 4.999999999999992,
+      "camera": {
+        "position": [
+          1.2343490298141917,
+          159.99999999999972,
+          183.8888888888888
+        ],
+        "velocity": [
+          0.21349455507724105,
+          35.999999999999986,
+          13.333333333333323
+        ],
+        "progress": 0.19999999999999968
+      },
+      "eagle": {
+        "position": [
+          485.19615242270663,
+          419.9806589386673
+        ],
+        "sequence": "bank",
+        "frame": 7,
+        "wing_phase": 3.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.2343490298141917,
+            -34.47633744856006
+          ],
+          "scale": 1.0629629629629629
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 9.999999999999975,
+      "camera": {
+        "position": [
+          1.9972186842198205,
+          359.9999999999989,
+          256.11111111111074
+        ],
+        "velocity": [
+          0.08154766362647038,
+          43.99999999999996,
+          13.33333333333337
+        ],
+        "progress": 0.399999999999999
+      },
+      "eagle": {
+        "position": [
+          485.19615242270663,
+          440.0193410613326
+        ],
+        "sequence": "flap",
+        "frame": 13,
+        "wing_phase": 9.854666666666635,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.9972186842198205,
+            290.92991255143886
+          ],
+          "scale": 1.087037037037037
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 14.999999999999957,
+      "camera": {
+        "position": [
+          1.9972186842198258,
+          599.9999999999977,
+          295.0
+        ],
+        "velocity": [
+          -0.08154766362646823,
+          51.99999999999993,
+          1.7319479184152392e-13
+        ],
+        "progress": 0.5999999999999983
+      },
+      "eagle": {
+        "position": [
+          480.00000000000006,
+          449.99999999999983
+        ],
+        "sequence": "glide",
+        "frame": 0,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.9972186842198258,
+            472.0
+          ],
+          "scale": 1.1
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 20.000000000000153,
+      "camera": {
+        "position": [
+          1.2343490298141604,
+          880.0000000000093,
+          295.0
+        ],
+        "velocity": [
+          -0.21349455507724394,
+          60.00000000000025,
+          0.0
+        ],
+        "progress": 0.8000000000000062
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          399.61028856829444
+        ],
+        "sequence": "glide",
+        "frame": 1,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 0.6749999999999851
+      },
+      "phase": "cinder_vista",
+      "crest_time": 15,
+      "vista_elapsed": 5.000000000000153,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.2343490298141604,
+            475.60000000000014
+          ],
+          "scale": 1.1050000000000002
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 24.966666666667066,
+      "camera": {
+        "position": [
+          0.008796433706242479,
+          1197.7342222222494,
+          295.0
+        ],
+        "velocity": [
+          -0.26389146776960226,
+          67.94666666666731,
+          0.0
+        ],
+        "progress": 0.9986666666666827
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          350.43995900274973
+        ],
+        "sequence": "glide",
+        "frame": 0,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 0.350021618518518
+      },
+      "phase": "cinder_vista",
+      "crest_time": 15,
+      "vista_elapsed": 9.966666666667066,
+      "layers": {
+        "panorama": {
+          "offset": [
+            -0.008796433706242479,
+            479.1760000000004
+          ],
+          "scale": 1.1099666666666672
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "assets/story/fire_veinhold_opening/scene.json": "0d602d7212680798a5e5a364803c22bdb28258f8ebe2ceb586690ace07759a6f",
+    "assets/story/fire_veinhold_opening/shot01/eagle/animation.json": "61683709996834ee068bcd1980e3e35d2110444b1a13576462d44c24331a1bd1",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_01.png": "0108185378c962ae64ae7f2d0c5642972f18275173a8ad9c072d648ed65499bd",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_02.png": "628056fb38f183d7d2aba33c9dc0b31adf9a74592a692f8a9917bfc0385b56d7",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_03.png": "a1893f5549111ae894e5fa2bbc1b3b175939d89239fe3ba57f1d9f647fe81bff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_04.png": "580d16517ed957b90ab9a77271f1226ae9f64574631b1da3befcf139d5a07910",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_05.png": "322468c11a9c4edb0365ec8af462cdd16b10ef50887ee92937ccd9659a8a9366",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_06.png": "4fd66ada572b7ae41e07684aec932cbb85e009e6e4397f59a44d6f88fe367fd9",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_07.png": "a0632f4944b73da9f78955eb5407f61f9d22942b56f0c1bb7f148058f82b076d",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_08.png": "7819fadf7881ae3837f8d05a1ec039e4b73af60657846adf8f6dda4301cbd135",
+    "assets/story/fire_veinhold_opening/shot01/eagle/export_provenance.json": "af3229c0ea4fc6aecffac2fa3da083e3ea1f62a5c0f24fd5b83e90db332d2b6f",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_01.png": "9874daadc257a970955b5e3ef914d95e43d48ba8bfa619bfdb9e2def3969e1a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_02.png": "33d261813cad9b329cb8dcf8ea532dbf1685d25f90ac547c8803976b296e0476",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_03.png": "ec3ca82c617edbf91b7746f82612d9672557eb922dd8923560ee492c9f411a20",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_04.png": "9484c200a4e5e2ebcc4280e145647b3568e273d9e048b6c8b8b6d5b758ecb3b8",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_05.png": "8c3f18595bc5e98c0840319c6110a1a2c55ecd43ffc480803ee542ebc6aef022",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_06.png": "d24abf4d183c394c6681213288718d6618eebe507b82ecf8702591206ddaf530",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_07.png": "2f718dfd5df9ee6b848d67f2d45e904c22ffe54f800e7db8e62099faf36cb5a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_08.png": "f519528b7540b87402825090f5a88699c4259af303809afec598016d3e4f52c4",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_09.png": "9bc1f2f017e7c2ee37ddf11a8d7638465e1fa9acceb87f856f8facf0279677ff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_10.png": "b4ad7a0467ccf682320277b315f977bff2eef2532bde50a0fb97ee4eadfeb1ee",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_11.png": "a8bb39250714bdec8527b00acf3ba6c5d538c3d0d48ea12115ff247cc16db502",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_12.png": "193c7dd5ffeb11af9aab313c1fd914da814ef2ff77793071fdc867ff29cb08ad",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_13.png": "1cfbea45945b6a173cb87ec4e0356e356e66cb4c2fbcf2a829d5010ed0a9c70e",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
+    "assets/story/fire_veinhold_opening/shot01/environment/art.json": "afa0dfeaeff6b04b8161493d8567066d7161b58a0abdc500c311bd0525a22e73",
+    "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "9b04cb10128a13bb229cdfa76d589f40d35836b7ca9860d9117fd9afd8644e5a"
+  },
+  "runtime_sha256": {
+    "fire_veinhold_opening.py": "7c853411d2b0fc71853bcbab129680572f2ace6d68212b41947c96fdc72813e4",
+    "prologue_flight_audio.py": "1400e5c788333713ee4ff67a0598ead54d8958069f30fbfdcceb193637d252bf",
+    "cutscene_gallery.py": "0fa2fb1a45cb8510b971fcaf55bfe2934d0d798fc650f02b617517fb9ab3adb1"
+  },
+  "video_sha256": "8c29f739014923b3f2bfe879eebb4ab8e6b38d0b08e8bebb53cfbc54833364b5"
+}

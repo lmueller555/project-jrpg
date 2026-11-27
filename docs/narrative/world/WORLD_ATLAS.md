@@ -266,7 +266,9 @@ occupy the region's continental margins and islands; their lives include
 fishing, boatbuilding, trade, teaching and the maintenance of rescue stores.
 
 **Istrava** contains the **White Expanse**, **Bluewall Coast** and **Cinder
-Isles**. The South Pole lies on its interior ice plateau. Small island
+Isles**. The Cinder Isles also lie offshore from southeastern Merovar and
+host the opening Fire Veinhold; their approved viewing geography is recorded
+in [Polar Regions](POLAR_REGIONS.md#cinder-isles). The South Pole lies on its interior ice plateau. Small island
 communities, including families with generations of residence, differ from
 the rotating crews at mainland shore stations. Fisheries, imported supplies
 and local geothermal sites support limited settlement; the deep interior is

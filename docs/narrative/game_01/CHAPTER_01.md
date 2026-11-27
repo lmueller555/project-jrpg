@@ -177,8 +177,10 @@ intention, with its exact timing and duties open.
 
 Preserve the [approved world geography](../world/WORLD_ATLAS.md#approved-world-map):
 Elden Vale lies in far-southern Merovar; Adamanthra lies far north. The Fire
-Veinhold's exact location and Carcovia's territorial or logistical arrangements
-are not assigned by this revision.
+Veinhold is on the main volcanic island of the
+[Cinder Isles](../world/POLAR_REGIONS.md#cinder-isles), offshore east-southeast
+of Eldenmere's southeastern coastal mountains. Exact facility coordinates and
+Carcovia's territorial/logistical arrangements remain open.
 
 The western bridge connects the road toward the unnamed neighbouring town
 south of the Vale. It is separate from the guarded land approaches. Destroying

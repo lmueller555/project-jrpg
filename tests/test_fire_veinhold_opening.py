@@ -42,6 +42,35 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.scene.reset()
         pygame.quit()
 
+    def test_summit_is_cleared_at_fifteen_with_ten_full_seconds_of_vista(self):
+        self.scene.start()
+        self.scene.update(15.-1e-6)
+        self.assertEqual(self.scene.state_at(self.scene.elapsed)['phase'], 'ascent')
+        self.scene.update(1e-6)
+        crest = self.scene.state_at(self.scene.elapsed)
+        self.assertEqual(crest['phase'], 'cinder_vista')
+        self.assertEqual(crest['vista_elapsed'], 0.)
+        image = self.scene._assets['eagle_ascent']['layers']['panorama']
+        record = crest['layers']['panorama']
+        scale = max(960/image.get_width(), 640/image.get_height())*record['scale']
+        # The source window has passed the approach and exposes the authored
+        # upper vista (volcano around sourcey260, coast starts belowy530).
+        top = (640-image.get_height()*scale)/2+record['offset'][1]
+        self.assertAlmostEqual(top, 0., delta=1.)
+        self.assertLess(530*scale, 640)
+        self.scene.update(10.-1e-6)
+        self.assertTrue(self.scene.active)
+        self.assertAlmostEqual(self.scene.state_at(self.scene.elapsed)['vista_elapsed'], 10., places=5)
+        self.scene.update(1e-6)
+        self.assertFalse(self.scene.active)
+
+    def test_climb_starts_higher_and_flies_faster_than_the_previous_approach(self):
+        state = self.scene.state_at(0.)
+        self.assertGreater(state['camera']['position'][2], 110.)
+        self.assertGreater(state['camera']['velocity'][1], 22.)
+        self.assertEqual(self.scene.state_at(15.)['eagle']['scale'], 1.)
+        self.assertLess(self.scene.state_at(25.)['eagle']['scale'], .5)
+
     def test_terrain_is_one_opaque_panorama_with_one_shared_transform(self):
         self.scene.start()
         self.assertEqual(set(self.scene._assets['eagle_ascent']['layers']), {'panorama'})
@@ -51,33 +80,33 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         for time in (0., 2., 5., 8., 10.):
             self.assertEqual(set(self.scene.state_at(time)['layers']), {'panorama'})
 
-    def test_single_shot_finishes_at_ten_seconds_for_both_frame_rates(self):
-        self.assertEqual(self.scene.duration, 10.)
+    def test_single_shot_finishes_at_twenty_five_seconds_for_both_frame_rates(self):
+        self.assertEqual(self.scene.duration, 25.)
         for fps in (30, 60):
             with self.subTest(fps=fps):
                 calls = []
                 self.scene.start(lambda: calls.append('finished'))
-                for _ in range(fps*10-1):
+                for _ in range(fps*25-1):
                     self.scene.update(1/fps)
                 self.assertTrue(self.scene.active)
                 self.assertEqual(calls, [])
                 self.scene.update(1/fps)
                 self.assertFalse(self.scene.active)
-                self.assertEqual(self.scene.elapsed, 10.)
+                self.assertEqual(self.scene.elapsed, 25.)
                 self.assertEqual(calls, ['finished'])
-                self.scene.update(10.)
+                self.scene.update(25.)
                 self.scene.skip()
                 self.assertEqual(calls, ['finished'])
 
     def test_genuinely_before_boundary_remains_active(self):
         calls = []
         self.scene.start(lambda: calls.append('finished'))
-        self.scene.update(10.-1e-6)
+        self.scene.update(25.-1e-6)
         self.assertTrue(self.scene.active)
         self.assertEqual(calls, [])
         self.scene.update(1e-6)
         self.assertFalse(self.scene.active)
-        self.assertEqual(self.scene.elapsed, 10.)
+        self.assertEqual(self.scene.elapsed, 25.)
         self.assertEqual(calls, ['finished'])
 
     def test_pause_focus_and_host_focus_freeze_the_whole_shot_clock(self):
@@ -118,13 +147,13 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.scene.update(.4)
         self.scene.skip()
         self.scene.skip()
-        self.scene.update(10.)
+        self.scene.update(25.)
         self.assertFalse(self.scene.active)
         self.assertEqual(calls, ['second'])
 
     def test_endpoint_retains_camera_velocity_wing_phase_and_audio_handoff(self):
-        end = self.scene.state_at(10.)
-        just_before = self.scene.state_at(10.-1e-4)
+        end = self.scene.state_at(25.)
+        just_before = self.scene.state_at(25.-1e-4)
         velocity = end['camera']['velocity']
         self.assertGreater(math.dist(velocity, [0, 0, 0]), .01)
         difference = [(last-first)/1e-4 for first, last in zip(
@@ -135,11 +164,11 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.assertLess(abs(end['eagle']['wing_phase']-
                             just_before['eagle']['wing_phase']), .01)
         self.scene.start()
-        self.scene.update(10.)
+        self.scene.update(25.)
         handoff = self.scene.handoff_state
         self.assertEqual(handoff['camera'], end['camera'])
         self.assertEqual(handoff['eagle'], end['eagle'])
-        self.assertEqual(handoff['audio']['wind_playhead'], 10.)
+        self.assertEqual(handoff['audio']['wind_playhead'], 25.)
         self.assertTrue(handoff['audio']['wind_continues'])
 
     def test_reduced_motion_preserves_authored_flight_and_wing_locomotion(self):
@@ -179,8 +208,8 @@ class FireVeinholdOpeningTests(unittest.TestCase):
                                  self.scene.state_at(self.scene.elapsed)))
 
     def test_final_frame_stays_visible_without_an_end_fade(self):
-        before = self.scene.render_frame(9.99)
-        end = self.scene.render_frame(10.)
+        before = self.scene.render_frame(24.99)
+        end = self.scene.render_frame(25.)
         before_light = sum(pygame.image.tobytes(before, 'RGB'))
         end_light = sum(pygame.image.tobytes(end, 'RGB'))
         self.assertGreater(before_light, 0)
@@ -234,6 +263,10 @@ class FireVeinholdOpeningTests(unittest.TestCase):
             invalid = deepcopy(source)
             invalid['shots'][0]['duration'] = duration
             cases.append((f'duration {duration}', invalid))
+        for ascent, vista in ((0, 25), ('bad', 10), (15, 5), (float('nan'), 10)):
+            invalid = deepcopy(source)
+            invalid['shots'][0].update(ascent_duration=ascent, vista_duration=vista)
+            cases.append(('invalid phase lengths', invalid))
         for field, value in (('shots', []), ('render_size', [480, 320]),
                              ('logical_size', [960, 640])):
             invalid = deepcopy(source)
@@ -305,6 +338,10 @@ class FireVeinholdOpeningTests(unittest.TestCase):
             invalid_environment = deepcopy(environment)
             invalid_environment['density'] = 1
             cases.append(('wrong scenery density', invalid_environment, eagle))
+            for framing in ([], {'ascent_start_y':float('inf')}, {'vista_y':-1}):
+                invalid_environment = deepcopy(environment)
+                invalid_environment['framing'] = framing
+                cases.append(('invalid source framing', invalid_environment, eagle))
             for label, environment_record, eagle_record in cases:
                 with self.subTest(case=label):
                     environment_path.write_text(json.dumps(environment_record))
@@ -391,7 +428,7 @@ class FireVeinholdOpeningTests(unittest.TestCase):
             path = destination/'scene.json'
             data = json.loads(path.read_text())
             data['shots'] = [data['shots'][0]]
-            data['shots'][0]['duration'] = 20.
+            data['shots'][0].update(duration=20., ascent_duration=12., vista_duration=8.)
             path.write_text(json.dumps(data))
             scene = FireVeinholdOpening(self.game, scene_path=path)
             self.addCleanup(scene.reset)
@@ -456,7 +493,7 @@ class FireVeinholdGalleryTests(unittest.TestCase):
         before = self.parent_state()
         for identifier, duration in (
                 ('fire_veinhold_opening', sequence_duration()),
-                ('fire_veinhold_shot_01', 10.)):
+                ('fire_veinhold_shot_01', 25.)):
             with self.subTest(entry=identifier):
                 session = self.launch(identifier)
                 scene = session.game.cinematic

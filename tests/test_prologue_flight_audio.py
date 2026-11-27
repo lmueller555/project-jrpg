@@ -57,18 +57,18 @@ class FlightAudioTests(unittest.TestCase):
         self.assertFalse(self.audio.voices)
         for fps in (30,60):
             with self.subTest(fps=fps):
-                self.audio.start();self.advance(0,10,fps)
+                self.audio.start();self.advance(0,25,fps)
                 ids = [event['id'] for event in self.audio.events]
                 self.assertEqual([identifier for identifier in ids if identifier in {cue['id'] for cue in CUES}],
                                  [cue['id'] for cue in CUES])
                 wings = [event for event in self.audio.events if event['id'].startswith('wing_')]
-                expected = [.5465,1.2965,5.0465,5.7965,6.5465,7.2965]
-                self.assertEqual(len(wings),6)
+                expected = [.5465,1.2965]+[5.0465+.75*index for index in range(11)]
+                self.assertEqual(len(wings),13)
                 for event,at in zip(wings,expected):
                     self.assertGreaterEqual(event['time']+1e-8,at)
                     self.assertLessEqual(event['time']-at,1/fps+1e-8)
                 self.assertEqual(ids.count('wind_bed'),1)
-                self.audio.update(9.99,10,wing_phase=(13.8,13.9))
+                self.audio.update(24.99,25,wing_phase=(14.188,14.188))
                 self.assertEqual([event['id'] for event in self.audio.events],ids)
 
     def test_renderer_phase_controls_stroke_and_glide_mode_suppresses_it(self):

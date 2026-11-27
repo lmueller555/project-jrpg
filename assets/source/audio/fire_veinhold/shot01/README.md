@@ -1,22 +1,22 @@
 # Fire Veinhold prologue — mountain flight, shot 1
 
-This source pack owns only the first ten-second exterior flight shot. It contains
+This source pack owns only the 25-second exterior flight and Cinder Isles reveal. It contains
 air and close feather movement, with no hawk call, dialogue, music, alarms,
 machinery, artillery or volcanic sound revealing the later destination.
 
 `prologue_flight_audio.py` starts a continuous stereo wind loop, adds short air
-passes at 0.85, 2.70, 5.45 and 8.35 seconds, and follows the actual flight-cycle
+passes at 0.85, 2.70, 5.45 and 14.65 seconds, and follows the actual flight-cycle
 downstroke at phase 0.25 of a 0.75-second cycle. The first flap uses `(t+.391)/.75`;
 the second uses `3+(t-5+.141)/.75`, with bank and crest holding phases 3.188
-and 7.188. These offsets match the art's neutral-frame transitions. Feather Foley sounds only during
-the authored flap intervals [0,2) and [5,8); the banking and crest glides have
+and 14.188. These offsets match the art's neutral-frame transitions. Feather Foley sounds only during
+the authored flap intervals [0,2) and [5,13.25); the banking and crest glides have
 none. The renderer supplies previous/current unwrapped cycles to keep animation
 and sound together. No effect uses an eagle screech or the old hawk recording.
 
 The wind export is a six-second periodic filtered-noise loop with decorrelated
 stereo air. Integer-period modulation and periodic FFT filtering preserve the
 loop boundary. The player applies a short channel fade only when starting the
-bed; the asset contains no repeated fade. Wind retains a nonzero level at ten
+bed; the asset contains no repeated fade. Wind retains a nonzero level through the full 25
 seconds and continues until its cinematic owner stops or hands off the flight
 audio. A composite cinematic can retain this same instance across its shot cut;
 the standalone Gallery controller stops it when closing or restarting playback.

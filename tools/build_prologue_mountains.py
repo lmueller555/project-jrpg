@@ -55,6 +55,7 @@ def products(source=SOURCE, target=TARGET):
         records[filename] = record
     output = {}
     manifest = {'version':1, 'density':2, 'layers':{}}
+    if 'framing' in recipe:manifest['framing'] = recipe['framing']
     for name in recipe['layers']:
         spec = recipe['layers'][name]
         filename = spec['source']

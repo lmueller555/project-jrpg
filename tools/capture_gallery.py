@@ -113,12 +113,12 @@ def phase(game):
 def thumbnail_ready(identifier, g, seconds):
     if identifier == 'fire_veinhold_opening':
         from fire_veinhold_opening import sequence_duration
-        return g.cinematic.elapsed >= min(3., sequence_duration()*.3)
+        return g.cinematic.elapsed >= min(6., sequence_duration()*.3)
     if identifier.startswith('fire_veinhold_shot_'):
         from fire_veinhold_opening import available_shots
         shot_id = GALLERY_BY_ID[identifier].fixture.keywords['shot_id']
         shot = next(record for record in available_shots() if record['id'] == shot_id)
-        return g.cinematic.elapsed >= min(7., shot['duration']*.7)
+        return g.cinematic.elapsed >= shot.get('ascent_duration', shot['duration']*.6)+min(3., shot['duration']*.1)
     if identifier == 'ice_reaper_opening':
         return g.cinematic.shot == 'frozen_field'
     if identifier == 'checkpoint_borrowed_seat':

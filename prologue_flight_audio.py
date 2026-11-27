@@ -1,6 +1,6 @@
 """Owned effects for the prologue's continuous mountain-flight opening shot.
 
-The wind loop can continue across the ten-second shot boundary. Its caller
+The wind loop can continue across the shot boundary. Its caller
 owns the eventual cut, pause/focus policy and any soundtrack; this module
 never resizes the mixer, steals channels or controls music.
 """
@@ -17,14 +17,14 @@ ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT/'assets/audio/sfx/fire_veinhold/shot01'
 WING_PERIOD = .75
 DOWNSTROKE_PHASE = .25
-FLAP_WINDOWS = ((0.,2.),(5.,8.))
+FLAP_WINDOWS = ((0.,2.),(5.,13.25))
 CUES = (
     {'id':'foreground_pass','time':.85,'file':'air_pass.wav','gain':.29,'pan':-.45},
     {'id':'bank_gust','time':2.70,'file':'bank_gust.wav','gain':.36,'pan':.38},
     {'id':'climb_rush','time':5.45,'file':'climb_rush.wav','gain':.32,'pan':-.18},
-    {'id':'crest_gust','time':8.35,'file':'crest_gust.wav','gain':.30,'pan':.12},
+    {'id':'crest_gust','time':14.65,'file':'crest_gust.wav','gain':.30,'pan':.12},
 )
-HANDOFF = {'shot_duration':10.,'wind_continues':True,'wind_file':'wind_loop.wav',
+HANDOFF = {'shot_duration':25.,'wind_continues':True,'wind_file':'wind_loop.wav',
            'stop_owner':'cinematic controller','wing_period':WING_PERIOD,
            'downstroke_phase':DOWNSTROKE_PHASE,'flap_windows':FLAP_WINDOWS,
            'first_phase_offset_seconds':.391,'second_phase_offset_seconds':.141}
@@ -34,8 +34,8 @@ def wing_phase_at(seconds):
     """Match the source animation's neutral-frame-aligned flap/glide joins."""
     if seconds < 2:return (seconds+.391)/WING_PERIOD
     if seconds < 5:return 3.188
-    if seconds < 8:return 3+(seconds-5+.141)/WING_PERIOD
-    return 7.188
+    if seconds < 13.25:return 3+(seconds-5+.141)/WING_PERIOD
+    return 14.188
 
 
 @dataclass

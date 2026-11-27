@@ -28,10 +28,10 @@ import pygame
 
 from main import Game
 from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
-                                   PrologueFlightAudio, wing_phase_at)
+                                   PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 30
-OUT = ROOT/'docs/reviews/fire_veinhold_opening'
+OUT = ROOT/'docs/reviews/cinder_crest'
 
 
 def _samples(name):
@@ -40,7 +40,7 @@ def _samples(name):
         return np.frombuffer(stream.readframes(stream.getnframes()), '<i2').reshape(-1, 2)/32768.
 
 
-def audio_preview(path, seconds=10.):
+def audio_preview(path, seconds=25.):
     rate = 48000
     count = round(seconds*rate)
     times = np.arange(count)/rate
@@ -56,7 +56,7 @@ def audio_preview(path, seconds=10.):
     # using a fine clock so preview timing is independent of video cadence.
     for before in np.arange(0., seconds, .001):
         now = min(seconds, before+.001)
-        if not (0 <= now < 2 or 5 <= now < 8):continue
+        if not any(start <= now < end for start, end in FLAP_WINDOWS):continue
         first, last = wing_phase_at(before), wing_phase_at(now)
         boundary = np.floor(first-DOWNSTROKE_PHASE)+1+DOWNSTROKE_PHASE
         if first < boundary <= last:
@@ -105,14 +105,14 @@ def capture(out=OUT, reduced_motion=False):
             '-an','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p',
             str(silent)], stdin=subprocess.PIPE)
         try:
-            for index in range(FPS*10):
+            for index in range(round(FPS*scene.duration)):
                 parent.draw()
                 encoder.stdin.write(pygame.image.tobytes(session.game.ui_surface, 'RGB'))
-                if index in (0, 60, 120, 180, 240, 299):
+                if index in (0, 150, 300, 450, 600, round(FPS*scene.duration)-1):
                     stem = f'shot01{suffix}_{index:03d}'
                     frame = scene.render_frame()
                     pygame.image.save(frame, str(out/(stem+'.png')))
-                    if index == 120:
+                    if index == 450:
                         pygame.image.save(parent.window, str(out/f'gallery_replay{suffix}.png'))
                     stills.append((index, frame.copy()))
                     states.append(scene.state_at(scene.elapsed))
@@ -127,7 +127,7 @@ def capture(out=OUT, reduced_motion=False):
         parent.draw()
         pygame.image.save(parent.window, str(out/f'gallery_return{suffix}.png'))
         parent.music.stop();parent.opening_audio.reset();parent.regional_audio.reset()
-        audio = audio_preview(folder/'audio.wav')
+        audio = audio_preview(folder/'audio.wav', scene.duration)
         target = out/f'shot01{suffix}.mp4'
         subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(silent),
             '-i',str(folder/'audio.wav'),'-c:v','copy','-c:a','aac','-b:a','160k',
@@ -141,7 +141,7 @@ def capture(out=OUT, reduced_motion=False):
             contact.paste(picture, (x, y))
             draw.text((x+8, y+222), f'{index/FPS:.2f}s', fill='#f8f0d9')
         contact.save(out/f'filmstrip{suffix}.png')
-        metadata = {'fps':FPS, 'frames':300, 'duration':10, 'render_size':[960,640],
+        metadata = {'fps':FPS, 'frames':round(FPS*scene.duration), 'duration':scene.duration, 'render_size':[960,640],
                     'entry':'fire_veinhold_shot_01', 'reduced_motion':reduced_motion,
                     'source':'Production Game.draw in the save-disabled Gallery session',
                     'natural_completion':True, 'no_persistent_files_written':True,
