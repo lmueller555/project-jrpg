@@ -1,0 +1,1184 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "cycle_ms": 400,
+  "facing": "front",
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "construction": "Twenty-four complete individually ImageGen-authored painterly frontal running drawings at full1086x1448 source density, not side-bank crops. Exactly two anatomical arms/legs, sword right and shield left. No detached limb or head rig, pasted face, idle warp or pixel-interpolated anatomy.",
+  "registration": "Fixed0.66 uniform source density for every complete drawing. Independently measured eye, neck and waist landmarks register each whole figure. Small authored periodic complete-body recoil; no occupied-bounds normalization, separate limb translation, or airborne floor snapping.",
+  "registration_reference": {
+    "source": "appearance_contact.png",
+    "source_cell_landmarks": {
+      "eyes": [
+        551.0,
+        141.0
+      ],
+      "face": [
+        552.0,
+        174.0
+      ],
+      "neck": [
+        555.0,
+        247.0
+      ],
+      "belt": [
+        554.0,
+        544.0
+      ]
+    },
+    "target_landmarks": {
+      "eyes": [
+        384.0,
+        135.6599999999999
+      ],
+      "neck": [
+        386.64,
+        205.61999999999992
+      ],
+      "belt": [
+        385.98,
+        401.63999999999993
+      ]
+    },
+    "weights": {
+      "eyes": 0.5,
+      "neck": 0.2,
+      "belt": 0.3
+    },
+    "authored_recoil_y": [
+      0,
+      2,
+      3,
+      2,
+      -1,
+      -3,
+      -4,
+      -3,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      3,
+      2,
+      -1,
+      -3,
+      -4,
+      -3,
+      -1,
+      0,
+      0,
+      0
+    ]
+  },
+  "source_sha256": {
+    "appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+    "appearance_prompt.txt": "dae6baf0a13d08be7017a0a6ba7640c65198e9bc8128951fb7bef9e714255318",
+    "frames/frame_01.png": "e07f3c79d7c83dc13875072f32ca10bb0d300af32e93cb54d17a4220ca4aff4c",
+    "frames/frame_01_prompt.txt": "95a4d1b3536ecdee5d66b03f9dffe6ecb8a5b8b0c7e9d0ba14fbc625510dcbad",
+    "frames/frame_02.png": "58291153871dfeab73eb734eb6265630df2ac76e2f1b17b2e323f31228de1976",
+    "frames/frame_02_prompt.txt": "68594c5d9452d97c529ad6de3d144f398d7a0052178f6680037ea44033ba61cc",
+    "frames/frame_03.png": "37633043d8517aa3cffb124460686bd37e4e2e8e339941029fd5bc8472c33401",
+    "frames/frame_03_prompt.txt": "2eff94832bcc3d7dcaf8992dc7c0217240f428751eef5062a2b404287a9a8f4a",
+    "frames/frame_04.png": "35e1bb54a6cd8606fdf177efe9b58973d4e3d1276478a5dd735f051e00949208",
+    "frames/frame_04_prompt.txt": "b8bd7d4acc26b8850bb1b891a8e0a1778159a867feb38ddb7c2b2d57ecd5b6c1",
+    "frames/frame_05.png": "816002d618dd9ecefcc4c946325c6bf941ef129042c5172453586b41618eb7b0",
+    "frames/frame_05_prompt.txt": "f837c966b530d3a42163d3f06261a1add1d0c8cdbf92cdaabdf7fd5bacdcf28d",
+    "keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+    "keys/phase_06_prompt.txt": "e279bd8ccf94081590b9b1d237b48bdc798d9b8a182a13c57f353ac2ea5dcfb8",
+    "frames/frame_07.png": "8e2e9417b864b76dff864e7f716754af4cc55bba17c6226ca4faa2ee56ff27b4",
+    "frames/frame_07_prompt.txt": "f61f07d476125c09b3fc9b0de471b0c6dc3b61261b57ed4eb3e3d4352068560b",
+    "frames/frame_08.png": "2fac01db8df09a720bc7d8dc63ff24c6967470ac8707f056fa9099971430e74a",
+    "frames/frame_08_prompt.txt": "b1d1226fc90c7f49dafa19411e472b847c8574c3348bd5334927b00574c52417",
+    "frames/frame_09.png": "b102cc7b6f4a6ad82c9d2a3658f04c250526b36ef727fedcda856dbca3e4a505",
+    "frames/frame_09_prompt.txt": "45c22f7bdbc10842b91f9a61f44a0eaefdb08978d116f2bd3c3f0dee2abcad1f",
+    "frames/frame_10.png": "62ed7c2769f8830f3724441aec67403217f50ffe737cbd3846848368055c6ae6",
+    "frames/frame_10_prompt.txt": "624535d35f339fae21ae0acb856e507a1f5209af1a7fd786868380878c626cda",
+    "frames/frame_11.png": "068e90dec5cd8ba12f343d9b3874b9f181ea8e20ae2926220e3a464290ede832",
+    "frames/frame_11_prompt.txt": "a6345f5c65834f3dd07c36af0cf343a1d727ba2e38cee8e207b0b634e9d885a2",
+    "keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+    "keys/phase_12_prompt.txt": "c2279173e4336bd71377880606be89ff2b09eedbd1ce3f0da745b9ff96f8056d",
+    "frames/frame_13.png": "3103353d59835dd67a402373535cb483fbd0789d399890339f0b2997e5f07dbb",
+    "frames/frame_13_prompt.txt": "7e756d9b3651c343894a40dab91d6b238f7b48e275d401f0ad903ad3591e2de3",
+    "frames/frame_14.png": "5aeeb98362487df162b0f42c7f6561314fb4b832825b67a09d3a8a919858184a",
+    "frames/frame_14_prompt.txt": "d605126d107839f739acd8233f24169da09d5ad34000e3c1f746f6336f04f8f8",
+    "frames/frame_15.png": "1f26c43a76ebb11eec741333b26448315e0c10bcc41dc776a27dd95e2612ab04",
+    "frames/frame_15_prompt.txt": "2fdbbbdcd6bf12f3753abcaaabf41cc54ba73830496d937f0cc2d49b10dfeead",
+    "frames/frame_16.png": "30a3593c44e43f73da8806416d73d04e035ad98c93ca6de0b347acfc890f3c64",
+    "frames/frame_16_prompt.txt": "78904c129b775e932062f7c3463967bf36ac6ce98b570930d56513167fe8908a",
+    "frames/frame_17.png": "c124363b489cd27f87ba35722515914dcd7bc1c7552a6fdb1a73b656a8525474",
+    "frames/frame_17_prompt.txt": "79868e2d042ec74e87e85c2414b5d9e90446f999eee9f600577c8e4573e46337",
+    "keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7",
+    "keys/phase_18_prompt.txt": "4583ef39d796c0d5840afb4c3b7b68df17354b6e20e1831218d519aa03140821",
+    "frames/frame_19.png": "4aa0b5e071b8453fdde6749cb8b27f552679a5f89dfa3a08c6b6fcaf636eaca1",
+    "frames/frame_19_prompt.txt": "081abd3f664ff2d13ac2ffcce3a84faf4bce36744a26e85913f6c5efff4955c0",
+    "frames/frame_20.png": "5f99c380e6d3f87f0f6625eac0f8210767ce2a856ee29ad117db8e18b61b14e8",
+    "frames/frame_20_prompt.txt": "e9668e23db85dae149f7c9592486e5778b822c79945ad2a019a68d75a3c944b9",
+    "frames/frame_21.png": "eb72b7d35407bd9e0b5c7ebb2e20cd6b25d40962c8c2caa3be848e9767d7ac57",
+    "frames/frame_21_prompt.txt": "bda2c367bcf2f4355f46735da3a887752994c9dc5cd8e54fbbc4a18a2bb7c747",
+    "frames/frame_22.png": "dec07a324d24ea8d447224cb007fdccbdbebc4e012a05c9eb56b3355b13d020d",
+    "frames/frame_22_prompt.txt": "35d45e4f253b2303bed846683aeac6519ed4163b17231da481b6d5830b013ee2",
+    "frames/frame_23.png": "a4fa38e237bac00e4aeacf40d05a201ef9912c78f865171f6325b653c3e33476",
+    "frames/frame_23_prompt.txt": "c3f84e7376a27151104d4d66cb9c962cac5016bcf9971df7fc87b68d2be1b57d"
+  },
+  "frames": [
+    {
+      "source": "appearance_contact.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.339999999999975,
+        42.59999999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          141.0
+        ],
+        "face": [
+          552.0,
+          174.0
+        ],
+        "neck": [
+          555.0,
+          247.0
+        ],
+        "belt": [
+          554.0,
+          544.0
+        ],
+        "right_sole": [
+          482.0,
+          1389.0
+        ],
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9999999999999999,
+        "face": 0.999999999999996,
+        "neck": 0.9999999999999993,
+        "belt": 0.9999999999999997
+      },
+      "generation_id": "exec-6c447cf5-af8d-4a64-978d-6f1882b2207b",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_01.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.87799999999998,
+        27.637999999999895
+      ],
+      "landmarks": {
+        "eyes": [
+          553.0,
+          159.0
+        ],
+        "face": [
+          554.0,
+          197.0
+        ],
+        "neck": [
+          558.0,
+          278.0
+        ],
+        "belt": [
+          551.0,
+          579.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.8921769706769822,
+        "face": 0.8597283423053473,
+        "neck": 0.8821939799108741,
+        "belt": 0.6723218747413182
+      },
+      "generation_id": "exec-876c6d7e-a5d9-46bc-a81d-6b959a511338",
+      "authored_weight_offset_y": 2,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_02.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        18.359999999999978,
+        31.54199999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          155.0
+        ],
+        "face": [
+          556.0,
+          192.0
+        ],
+        "neck": [
+          561.0,
+          272.0
+        ],
+        "belt": [
+          555.0,
+          575.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9061963606211204,
+        "face": 0.9049385819636557,
+        "neck": 0.895325688548709,
+        "belt": 0.6615504771366912
+      },
+      "generation_id": "exec-53809b7b-ea2a-422a-a01b-c566dc46c4d6",
+      "authored_weight_offset_y": 3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_03.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.019999999999975,
+        33.44599999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          152.0
+        ],
+        "face": [
+          556.0,
+          190.0
+        ],
+        "neck": [
+          559.0,
+          268.0
+        ],
+        "belt": [
+          553.0,
+          568.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9136366712903358,
+        "face": 0.8919750354617301,
+        "neck": 0.920511631926987,
+        "belt": 0.6881731899763125
+      },
+      "generation_id": "exec-6b82e283-0ede-4648-b07f-fce3f487af24",
+      "authored_weight_offset_y": 2,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_04.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        18.689999999999962,
+        32.491999999999905
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          151.0
+        ],
+        "face": [
+          556.0,
+          188.0
+        ],
+        "neck": [
+          560.0,
+          267.0
+        ],
+        "belt": [
+          554.0,
+          560.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9152669039154337,
+        "face": 0.9025580322690636,
+        "neck": 0.9033931751758244,
+        "belt": 0.8327425174379597
+      },
+      "generation_id": "exec-232cb3c3-b966-42c4-9754-c1b05bb8d213",
+      "authored_weight_offset_y": -1,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_05.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        18.88799999999997,
+        28.181999999999913
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          154.0
+        ],
+        "face": [
+          556.0,
+          192.0
+        ],
+        "neck": [
+          560.0,
+          271.0
+        ],
+        "belt": [
+          553.0,
+          564.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.903277061460147,
+        "face": 0.8823813985009198,
+        "neck": 0.9060121220421615,
+        "belt": 0.8439314578658218
+      },
+      "generation_id": "exec-2a0e8ee8-ec85-4c0b-b335-9faa4f0a88c5",
+      "authored_weight_offset_y": -3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "keys/phase_06.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.349999999999984,
+        25.531999999999904
+      ],
+      "landmarks": {
+        "eyes": [
+          555.0,
+          153.0
+        ],
+        "face": [
+          556.0,
+          191.0
+        ],
+        "neck": [
+          560.0,
+          271.0
+        ],
+        "belt": [
+          549.0,
+          574.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9118609787883166,
+        "face": 0.9061932947473867,
+        "neck": 0.890044507761138,
+        "belt": 0.690115939168236
+      },
+      "generation_id": "exec-270117e2-d883-4470-9a47-753c32c945c7",
+      "authored_weight_offset_y": -4,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_07.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        18.557999999999964,
+        36.69599999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          554.0,
+          145.0
+        ],
+        "face": [
+          556.0,
+          180.0
+        ],
+        "neck": [
+          558.0,
+          256.0
+        ],
+        "belt": [
+          556.0,
+          546.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9318313891521801,
+        "face": 0.9313400339403693,
+        "neck": 0.8828914190435745,
+        "belt": 0.8905187999976486
+      },
+      "generation_id": "exec-923ba1b2-466d-4e06-bc6d-f06e721431ca",
+      "authored_weight_offset_y": -3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_08.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.349999999999994,
+        34.9339999999999
+      ],
+      "landmarks": {
+        "eyes": [
+          552.0,
+          148.0
+        ],
+        "face": [
+          553.0,
+          183.0
+        ],
+        "neck": [
+          557.0,
+          262.0
+        ],
+        "belt": [
+          556.0,
+          556.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9326517865973517,
+        "face": 0.9280906673596986,
+        "neck": 0.8737203273512736,
+        "belt": 0.8776032681826169
+      },
+      "generation_id": "exec-52ff38cc-8d11-4740-904d-476705c734eb",
+      "authored_weight_offset_y": -1,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_09.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.811999999999994,
+        40.02599999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          144.0
+        ],
+        "face": [
+          551.0,
+          178.0
+        ],
+        "neck": [
+          554.0,
+          256.0
+        ],
+        "belt": [
+          559.0,
+          546.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9402665204882502,
+        "face": 0.9537222296338831,
+        "neck": 0.9009250331628312,
+        "belt": 0.8908529685907259
+      },
+      "generation_id": "exec-f15c0f04-7162-4c16-9419-91845db99ac1",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_10.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.00999999999998,
+        33.02999999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          152.0
+        ],
+        "face": [
+          552.0,
+          189.0
+        ],
+        "neck": [
+          556.0,
+          268.0
+        ],
+        "belt": [
+          555.0,
+          560.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9131390946792544,
+        "face": 0.8923796639782073,
+        "neck": 0.9032207311366874,
+        "belt": 0.9098197342603916
+      },
+      "generation_id": "exec-8bb93a57-b3b4-4c80-9a8a-736011bf2810",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_11.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.93399999999998,
+        41.015999999999906
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          143.0
+        ],
+        "face": [
+          552.0,
+          177.0
+        ],
+        "neck": [
+          555.0,
+          254.0
+        ],
+        "belt": [
+          551.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9496229230923698,
+        "face": 0.9502419355289035,
+        "neck": 0.9324826047785023,
+        "belt": 0.884575626330762
+      },
+      "generation_id": "exec-d3cf47ee-150e-45ea-afe5-dfc7a41e3121",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "keys/phase_12.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.812,
+        41.47799999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          142.0
+        ],
+        "face": [
+          551.0,
+          175.0
+        ],
+        "neck": [
+          551.0,
+          253.0
+        ],
+        "belt": [
+          561.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": [
+          591.0,
+          1387.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9482558977887258,
+        "face": 0.9584997694701423,
+        "neck": 0.9059376476319523,
+        "belt": 0.892482543736254
+      },
+      "generation_id": "exec-322ce1e3-ecfb-4ca7-99b0-f06587f69dbb",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.00999999999998,
+        39.78199999999992
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          149.0
+        ],
+        "face": [
+          552.0,
+          184.0
+        ],
+        "neck": [
+          556.0,
+          262.0
+        ],
+        "belt": [
+          555.0,
+          545.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9425989421031773,
+        "face": 0.9346888308587685,
+        "neck": 0.9258235383548622,
+        "belt": 0.9183070291469744
+      },
+      "generation_id": "exec-f9f5fa62-625e-49ca-a56e-5de977c62e2d",
+      "authored_weight_offset_y": 2,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.877999999999986,
+        40.18799999999992
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          146.0
+        ],
+        "face": [
+          552.0,
+          181.0
+        ],
+        "neck": [
+          557.0,
+          259.0
+        ],
+        "belt": [
+          555.0,
+          555.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9392396350251166,
+        "face": 0.9211341187243622,
+        "neck": 0.8775223221226641,
+        "belt": 0.8824253216955562
+      },
+      "generation_id": "exec-2d9d9f35-fe41-4596-98c6-14cce5819b93",
+      "authored_weight_offset_y": 3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.47199999999997,
+        40.37599999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          149.0
+        ],
+        "face": [
+          551.0,
+          184.0
+        ],
+        "neck": [
+          556.0,
+          259.0
+        ],
+        "belt": [
+          556.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9339298471165403,
+        "face": 0.9344167968440488,
+        "neck": 0.9227540868598088,
+        "belt": 0.9072625039319929
+      },
+      "generation_id": "exec-c9252c04-a654-4728-a98f-a40dbdbc1733",
+      "authored_weight_offset_y": 2,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_16.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.537999999999982,
+        42.1939999999999
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          143.0
+        ],
+        "face": [
+          553.0,
+          176.0
+        ],
+        "neck": [
+          555.0,
+          251.0
+        ],
+        "belt": [
+          553.0,
+          535.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9300237026923949,
+        "face": 0.9437492462462383,
+        "neck": 0.9491008067220582,
+        "belt": 0.9181234894445259
+      },
+      "generation_id": "exec-04437b4f-38af-4a95-84a5-06f3e390d2a0",
+      "authored_weight_offset_y": -1,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_17.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        21.131999999999966,
+        37.94999999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          143.0
+        ],
+        "face": [
+          551.0,
+          177.0
+        ],
+        "neck": [
+          554.0,
+          253.0
+        ],
+        "belt": [
+          554.0,
+          545.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9388798008509068,
+        "face": 0.9428621946408142,
+        "neck": 0.9231846903949529,
+        "belt": 0.8917964606188462
+      },
+      "generation_id": "exec-45d8f94b-7699-42d7-9157-e9243362a56f",
+      "authored_weight_offset_y": -3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "keys/phase_18.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.811999999999973,
+        35.761999999999915
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          146.0
+        ],
+        "face": [
+          552.0,
+          181.0
+        ],
+        "neck": [
+          556.0,
+          256.0
+        ],
+        "belt": [
+          556.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.956746917361869,
+        "face": 0.9449522448843484,
+        "neck": 0.960305388627658,
+        "belt": 0.9302374348575114
+      },
+      "generation_id": "exec-0a3f850f-b668-409e-bb30-1522bfd44d51",
+      "authored_weight_offset_y": -4,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.537999999999982,
+        37.55399999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          144.0
+        ],
+        "face": [
+          552.0,
+          178.0
+        ],
+        "neck": [
+          556.0,
+          255.0
+        ],
+        "belt": [
+          554.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9414985112446687,
+        "face": 0.9074964349633398,
+        "neck": 0.9401367433504734,
+        "belt": 0.9127269519559605
+      },
+      "generation_id": "exec-d61c8050-1e1c-4216-9578-d48462b443a9",
+      "authored_weight_offset_y": -3,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.877999999999986,
+        39.61999999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          144.0
+        ],
+        "face": [
+          553.0,
+          178.0
+        ],
+        "neck": [
+          557.0,
+          253.0
+        ],
+        "belt": [
+          555.0,
+          545.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9512057532558967,
+        "face": 0.9218756732968755,
+        "neck": 0.9267704829045555,
+        "belt": 0.93351116887996
+      },
+      "generation_id": "exec-1caeef96-86fb-45cc-8ef0-8cf891b887f7",
+      "authored_weight_offset_y": -1,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.28399999999998,
+        40.09199999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          145.0
+        ],
+        "face": [
+          553.0,
+          180.0
+        ],
+        "neck": [
+          557.0,
+          256.0
+        ],
+        "belt": [
+          558.0,
+          544.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9445988349801103,
+        "face": 0.9264706562786102,
+        "neck": 0.9340510573345915,
+        "belt": 0.9389078381128133
+      },
+      "generation_id": "exec-965e9f70-e7a4-4edb-a81d-38489e6dddc8",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        20.735999999999972,
+        35.735999999999905
+      ],
+      "landmarks": {
+        "eyes": [
+          549.0,
+          149.0
+        ],
+        "face": [
+          551.0,
+          185.0
+        ],
+        "neck": [
+          557.0,
+          261.0
+        ],
+        "belt": [
+          554.0,
+          556.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9431105496118944,
+        "face": 0.934480269584859,
+        "neck": 0.9348132103360587,
+        "belt": 0.9383051935628437
+      },
+      "generation_id": "exec-ea658228-5281-454a-b9b7-b87def7a4125",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    },
+    {
+      "source": "frames/frame_23.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.66,
+      "origin": [
+        19.877999999999986,
+        40.02599999999991
+      ],
+      "landmarks": {
+        "eyes": [
+          551.0,
+          144.0
+        ],
+        "face": [
+          552.0,
+          179.0
+        ],
+        "neck": [
+          557.0,
+          256.0
+        ],
+        "belt": [
+          555.0,
+          546.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9314243109844317,
+        "face": 0.9300729142620474,
+        "neck": 0.9015153420746184,
+        "belt": 0.8367366120842007
+      },
+      "generation_id": "exec-3a63d755-4fbe-4ed1-b601-a7e48b668177",
+      "authored_weight_offset_y": 0,
+      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+    }
+  ]
+}

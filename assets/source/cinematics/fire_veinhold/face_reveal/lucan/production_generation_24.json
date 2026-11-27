@@ -1,0 +1,437 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "status": "Production bank selected; initial export ready for native frontal-shot review.",
+  "current_source_profile": "source_art_24.json",
+  "frame_count": 24,
+  "cycle_ms": 400,
+  "fps": 60,
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "art_style": "Detailed naturally proportioned painterly realism matched to frozen_bridge_final, cold moonlight with restrained warm rim. Old anime-style side-bank faces are not used.",
+  "appearance": "Lucan24, dark swept hair, nohelmet, polishedsteel/oxblood/gold. Sword anatomicalright(imageleft), redchevronkite shield anatomicalleft(imageright).",
+  "method": "Four complete contact/flight keys plus twenty individual complete-figure in-betweens. Every generated master retained unchanged; complete source uniformly sampled and body-landmark registered. No image body edits.",
+  "masters": [
+    {
+      "frame": 0,
+      "source": "appearance_contact.png",
+      "generation_id": "exec-6c447cf5-af8d-4a64-978d-6f1882b2207b",
+      "prompt": "appearance_prompt.txt",
+      "sha256": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+      "prompt_sha256": "dae6baf0a13d08be7017a0a6ba7640c65198e9bc8128951fb7bef9e714255318",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/repairs/far_crown14.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/repairs/far_crown14.png": "8ffa0052dcb9ff733e26fb0aafa76f0293953b59ade983ec1c2c2e1827e25e8d"
+      }
+    },
+    {
+      "frame": 1,
+      "source": "frames/frame_01.png",
+      "generation_id": "exec-876c6d7e-a5d9-46bc-a81d-6b959a511338",
+      "prompt": "frames/frame_01_prompt.txt",
+      "sha256": "e07f3c79d7c83dc13875072f32ca10bb0d300af32e93cb54d17a4220ca4aff4c",
+      "prompt_sha256": "95a4d1b3536ecdee5d66b03f9dffe6ecb8a5b8b0c7e9d0ba14fbc625510dcbad",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7"
+      }
+    },
+    {
+      "frame": 2,
+      "source": "frames/frame_02.png",
+      "generation_id": "exec-53809b7b-ea2a-422a-a01b-c566dc46c4d6",
+      "prompt": "frames/frame_02_prompt.txt",
+      "sha256": "58291153871dfeab73eb734eb6265630df2ac76e2f1b17b2e323f31228de1976",
+      "prompt_sha256": "68594c5d9452d97c529ad6de3d144f398d7a0052178f6680037ea44033ba61cc",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7"
+      }
+    },
+    {
+      "frame": 3,
+      "source": "frames/frame_03.png",
+      "generation_id": "exec-6b82e283-0ede-4648-b07f-fce3f487af24",
+      "prompt": "frames/frame_03_prompt.txt",
+      "sha256": "37633043d8517aa3cffb124460686bd37e4e2e8e339941029fd5bc8472c33401",
+      "prompt_sha256": "2eff94832bcc3d7dcaf8992dc7c0217240f428751eef5062a2b404287a9a8f4a",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7"
+      }
+    },
+    {
+      "frame": 4,
+      "source": "frames/frame_04.png",
+      "generation_id": "exec-232cb3c3-b966-42c4-9754-c1b05bb8d213",
+      "prompt": "frames/frame_04_prompt.txt",
+      "sha256": "35e1bb54a6cd8606fdf177efe9b58973d4e3d1276478a5dd735f051e00949208",
+      "prompt_sha256": "b8bd7d4acc26b8850bb1b891a8e0a1778159a867feb38ddb7c2b2d57ecd5b6c1",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7"
+      }
+    },
+    {
+      "frame": 5,
+      "source": "frames/frame_05.png",
+      "generation_id": "exec-2a0e8ee8-ec85-4c0b-b335-9faa4f0a88c5",
+      "prompt": "frames/frame_05_prompt.txt",
+      "sha256": "816002d618dd9ecefcc4c946325c6bf941ef129042c5172453586b41618eb7b0",
+      "prompt_sha256": "f837c966b530d3a42163d3f06261a1add1d0c8cdbf92cdaabdf7fd5bacdcf28d",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7"
+      }
+    },
+    {
+      "frame": 6,
+      "source": "keys/phase_06.png",
+      "generation_id": "exec-270117e2-d883-4470-9a47-753c32c945c7",
+      "prompt": "keys/phase_06_prompt.txt",
+      "sha256": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+      "prompt_sha256": "e279bd8ccf94081590b9b1d237b48bdc798d9b8a182a13c57f353ac2ea5dcfb8",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9"
+      }
+    },
+    {
+      "frame": 7,
+      "source": "frames/frame_07.png",
+      "generation_id": "exec-923ba1b2-466d-4e06-bc6d-f06e721431ca",
+      "prompt": "frames/frame_07_prompt.txt",
+      "sha256": "8e2e9417b864b76dff864e7f716754af4cc55bba17c6226ca4faa2ee56ff27b4",
+      "prompt_sha256": "f61f07d476125c09b3fc9b0de471b0c6dc3b61261b57ed4eb3e3d4352068560b",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b"
+      }
+    },
+    {
+      "frame": 8,
+      "source": "frames/frame_08.png",
+      "generation_id": "exec-52ff38cc-8d11-4740-904d-476705c734eb",
+      "prompt": "frames/frame_08_prompt.txt",
+      "sha256": "2fac01db8df09a720bc7d8dc63ff24c6967470ac8707f056fa9099971430e74a",
+      "prompt_sha256": "b1d1226fc90c7f49dafa19411e472b847c8574c3348bd5334927b00574c52417",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b"
+      }
+    },
+    {
+      "frame": 9,
+      "source": "frames/frame_09.png",
+      "generation_id": "exec-f15c0f04-7162-4c16-9419-91845db99ac1",
+      "prompt": "frames/frame_09_prompt.txt",
+      "sha256": "b102cc7b6f4a6ad82c9d2a3658f04c250526b36ef727fedcda856dbca3e4a505",
+      "prompt_sha256": "45c22f7bdbc10842b91f9a61f44a0eaefdb08978d116f2bd3c3f0dee2abcad1f",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b"
+      }
+    },
+    {
+      "frame": 10,
+      "source": "frames/frame_10.png",
+      "generation_id": "exec-8bb93a57-b3b4-4c80-9a8a-736011bf2810",
+      "prompt": "frames/frame_10_prompt.txt",
+      "sha256": "62ed7c2769f8830f3724441aec67403217f50ffe737cbd3846848368055c6ae6",
+      "prompt_sha256": "624535d35f339fae21ae0acb856e507a1f5209af1a7fd786868380878c626cda",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b"
+      }
+    },
+    {
+      "frame": 11,
+      "source": "frames/frame_11.png",
+      "generation_id": "exec-d3cf47ee-150e-45ea-afe5-dfc7a41e3121",
+      "prompt": "frames/frame_11_prompt.txt",
+      "sha256": "068e90dec5cd8ba12f343d9b3874b9f181ea8e20ae2926220e3a464290ede832",
+      "prompt_sha256": "a6345f5c65834f3dd07c36af0cf343a1d727ba2e38cee8e207b0b634e9d885a2",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b"
+      }
+    },
+    {
+      "frame": 12,
+      "source": "keys/phase_12.png",
+      "generation_id": "exec-322ce1e3-ecfb-4ca7-99b0-f06587f69dbb",
+      "prompt": "keys/phase_12_prompt.txt",
+      "sha256": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+      "prompt_sha256": "c2279173e4336bd71377880606be89ff2b09eedbd1ce3f0da745b9ff96f8056d",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9"
+      }
+    },
+    {
+      "frame": 13,
+      "source": "frames/frame_13.png",
+      "generation_id": "exec-f9f5fa62-625e-49ca-a56e-5de977c62e2d",
+      "prompt": "frames/frame_13_prompt.txt",
+      "sha256": "3103353d59835dd67a402373535cb483fbd0789d399890339f0b2997e5f07dbb",
+      "prompt_sha256": "7e756d9b3651c343894a40dab91d6b238f7b48e275d401f0ad903ad3591e2de3",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 14,
+      "source": "frames/frame_14.png",
+      "generation_id": "exec-2d9d9f35-fe41-4596-98c6-14cce5819b93",
+      "prompt": "frames/frame_14_prompt.txt",
+      "sha256": "5aeeb98362487df162b0f42c7f6561314fb4b832825b67a09d3a8a919858184a",
+      "prompt_sha256": "d605126d107839f739acd8233f24169da09d5ad34000e3c1f746f6336f04f8f8",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 15,
+      "source": "frames/frame_15.png",
+      "generation_id": "exec-c9252c04-a654-4728-a98f-a40dbdbc1733",
+      "prompt": "frames/frame_15_prompt.txt",
+      "sha256": "1f26c43a76ebb11eec741333b26448315e0c10bcc41dc776a27dd95e2612ab04",
+      "prompt_sha256": "2fdbbbdcd6bf12f3753abcaaabf41cc54ba73830496d937f0cc2d49b10dfeead",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 16,
+      "source": "frames/frame_16.png",
+      "generation_id": "exec-04437b4f-38af-4a95-84a5-06f3e390d2a0",
+      "prompt": "frames/frame_16_prompt.txt",
+      "sha256": "30a3593c44e43f73da8806416d73d04e035ad98c93ca6de0b347acfc890f3c64",
+      "prompt_sha256": "78904c129b775e932062f7c3463967bf36ac6ce98b570930d56513167fe8908a",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 17,
+      "source": "frames/frame_17.png",
+      "generation_id": "exec-45d8f94b-7699-42d7-9157-e9243362a56f",
+      "prompt": "frames/frame_17_prompt.txt",
+      "sha256": "c124363b489cd27f87ba35722515914dcd7bc1c7552a6fdb1a73b656a8525474",
+      "prompt_sha256": "79868e2d042ec74e87e85c2414b5d9e90446f999eee9f600577c8e4573e46337",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 18,
+      "source": "keys/phase_18.png",
+      "generation_id": "exec-0a3f850f-b668-409e-bb30-1522bfd44d51",
+      "prompt": "keys/phase_18_prompt.txt",
+      "sha256": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7",
+      "prompt_sha256": "4583ef39d796c0d5840afb4c3b7b68df17354b6e20e1831218d519aa03140821",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9"
+      }
+    },
+    {
+      "frame": 19,
+      "source": "frames/frame_19.png",
+      "generation_id": "exec-d61c8050-1e1c-4216-9578-d48462b443a9",
+      "prompt": "frames/frame_19_prompt.txt",
+      "sha256": "4aa0b5e071b8453fdde6749cb8b27f552679a5f89dfa3a08c6b6fcaf636eaca1",
+      "prompt_sha256": "081abd3f664ff2d13ac2ffcce3a84faf4bce36744a26e85913f6c5efff4955c0",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 20,
+      "source": "frames/frame_20.png",
+      "generation_id": "exec-1caeef96-86fb-45cc-8ef0-8cf891b887f7",
+      "prompt": "frames/frame_20_prompt.txt",
+      "sha256": "5f99c380e6d3f87f0f6625eac0f8210767ce2a856ee29ad117db8e18b61b14e8",
+      "prompt_sha256": "e9668e23db85dae149f7c9592486e5778b822c79945ad2a019a68d75a3c944b9",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 21,
+      "source": "frames/frame_21.png",
+      "generation_id": "exec-965e9f70-e7a4-4edb-a81d-38489e6dddc8",
+      "prompt": "frames/frame_21_prompt.txt",
+      "sha256": "eb72b7d35407bd9e0b5c7ebb2e20cd6b25d40962c8c2caa3be848e9767d7ac57",
+      "prompt_sha256": "bda2c367bcf2f4355f46735da3a887752994c9dc5cd8e54fbbc4a18a2bb7c747",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 22,
+      "source": "frames/frame_22.png",
+      "generation_id": "exec-ea658228-5281-454a-b9b7-b87def7a4125",
+      "prompt": "frames/frame_22_prompt.txt",
+      "sha256": "dec07a324d24ea8d447224cb007fdccbdbebc4e012a05c9eb56b3355b13d020d",
+      "prompt_sha256": "35d45e4f253b2303bed846683aeac6519ed4163b17231da481b6d5830b013ee2",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    },
+    {
+      "frame": 23,
+      "source": "frames/frame_23.png",
+      "generation_id": "exec-3a63d755-4fbe-4ed1-b601-a7e48b668177",
+      "prompt": "frames/frame_23_prompt.txt",
+      "sha256": "a4fa38e237bac00e4aeacf40d05a201ef9912c78f865171f6325b653c3e33476",
+      "prompt_sha256": "c3f84e7376a27151104d4d66cb9c962cac5016bcf9971df7fc87b68d2be1b57d",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png"
+      ],
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
+        "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7"
+      }
+    }
+  ],
+  "review_scope": "Frontal whole-body gait and native face reveal. Initial bank requires production-shot visual review; mechanical checks alone do not approve anatomy."
+}

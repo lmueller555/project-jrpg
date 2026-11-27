@@ -1,0 +1,739 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "cycle_ms": 400,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "construction": "Twenty-four complete image-authored frontal figures, selected from six chronological four-pose masters. No detached limb/head rigs or pixel-morphed anatomy.",
+  "registration": "Fixed1.25 uniform whole-master density; exposed-eye source-cell appearance registers whole figures. Small authored whole-figure recoil follows support/flight. Visible throat and buckle points independently measured against each master document source torso foreshortening. No occupied-bound or foot normalization, no frozen/pasted face region.",
+  "source_sha256": {
+    "batch_00_03.png": "23caf7fef8381bacd1e38b94a48e9c2986ccb1c38d4f4f861dea70f221fac48e",
+    "batch_00_03_alpha_clean.png": "47b9b7ea8487a6dbdd6a7d5b1d14edd1fe1e626d6749a59d962bad96d5a19368",
+    "batch_04_07.png": "2eae314789824f30262e261fae37d2aa7b50a993264dbb81e0352ba7e9df1e68",
+    "batch_04_07_alpha_clean.png": "783b591171ab980493ba89a3ece1bebc889670aec2a036e2b6566fb32a835d01",
+    "batch_08_11.png": "f9b6a520afe80d54500a57086668480c12586e682fb880ff19627e89d312a5d9",
+    "batch_08_11_alpha_clean.png": "5162e56752732f649545a1e3588ba0e115b50eee3b614d9e15e21849392786d7",
+    "batch_12_15.png": "7ae364e2d57aca6cb15fbf18c73b28af403195f974f18af418e55bf95e5d1bf5",
+    "batch_12_15_alpha_clean.png": "4808c07281384491cfc8fa724a977d35136cb8a8ce56815d09774d5cdec3ba7b",
+    "batch_16_19.png": "b8843a8ae3d214b22d0c102a5115c9b46e1efad696c7707b35e19e2dbdd6e6ee",
+    "batch_16_19_alpha_clean.png": "9060b4d6319dfd449431f8037f474341724ffcdbfe97b114723522b66cc83a9c",
+    "batch_20_23.png": "e8b84d13539718b8ecb46306269501ecb4b73eda89994ec40a301e9f7f871d9c",
+    "batch_20_23_alpha_clean.png": "af6c2544ab549af745c1c83027a28df81b3e7739c65de4e35be014d452aeb264"
+  },
+  "frames": [
+    {
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        29.0,
+        75.5
+      ],
+      "landmarks": {
+        "eyes": [
+          284.0,
+          90.0
+        ],
+        "neck": [
+          284.0,
+          148.0
+        ],
+        "belt": [
+          289.0,
+          282.0
+        ]
+      },
+      "notes": "Complete frontal pose 0; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        62.75,
+        71.25
+      ],
+      "landmarks": {
+        "eyes": [
+          257.0,
+          95.0
+        ],
+        "neck": [
+          256.0,
+          155.0
+        ],
+        "belt": [
+          264.0,
+          290.0
+        ]
+      },
+      "notes": "Complete frontal pose 1; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        31.5,
+        66.0
+      ],
+      "landmarks": {
+        "eyes": [
+          282.0,
+          100.0
+        ],
+        "neck": [
+          281.0,
+          163.0
+        ],
+        "belt": [
+          290.0,
+          297.0
+        ]
+      },
+      "notes": "Complete frontal pose 2; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        56.5,
+        55.0
+      ],
+      "landmarks": {
+        "eyes": [
+          262.0,
+          108.0
+        ],
+        "neck": [
+          264.0,
+          169.0
+        ],
+        "belt": [
+          270.0,
+          307.0
+        ]
+      },
+      "notes": "Complete frontal pose 3; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        39.0,
+        51.75
+      ],
+      "landmarks": {
+        "eyes": [
+          276.0,
+          109.0
+        ],
+        "neck": [
+          276.0,
+          168.0
+        ],
+        "belt": [
+          276.0,
+          333.0
+        ]
+      },
+      "notes": "Complete frontal pose 4; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        37.75,
+        50.0
+      ],
+      "landmarks": {
+        "eyes": [
+          277.0,
+          108.0
+        ],
+        "neck": [
+          276.0,
+          165.0
+        ],
+        "belt": [
+          276.0,
+          330.0
+        ]
+      },
+      "notes": "Complete frontal pose 5; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        37.75,
+        45.75
+      ],
+      "landmarks": {
+        "eyes": [
+          277.0,
+          109.0
+        ],
+        "neck": [
+          277.0,
+          164.0
+        ],
+        "belt": [
+          278.0,
+          329.0
+        ]
+      },
+      "notes": "Complete frontal pose 6; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        36.5,
+        47.0
+      ],
+      "landmarks": {
+        "eyes": [
+          278.0,
+          108.0
+        ],
+        "neck": [
+          281.0,
+          167.0
+        ],
+        "belt": [
+          279.0,
+          332.0
+        ]
+      },
+      "notes": "Complete frontal pose 7; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        31.5,
+        70.25
+      ],
+      "landmarks": {
+        "eyes": [
+          282.0,
+          91.0
+        ],
+        "neck": [
+          282.0,
+          147.0
+        ],
+        "belt": [
+          281.0,
+          285.0
+        ]
+      },
+      "notes": "Complete frontal pose 8; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        30.25,
+        72.25
+      ],
+      "landmarks": {
+        "eyes": [
+          283.0,
+          91.0
+        ],
+        "neck": [
+          284.0,
+          147.0
+        ],
+        "belt": [
+          282.0,
+          288.0
+        ]
+      },
+      "notes": "Complete frontal pose 9; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        29.0,
+        69.5
+      ],
+      "landmarks": {
+        "eyes": [
+          284.0,
+          94.0
+        ],
+        "neck": [
+          285.0,
+          149.0
+        ],
+        "belt": [
+          284.0,
+          294.0
+        ]
+      },
+      "notes": "Complete frontal pose 10; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        25.25,
+        65.75
+      ],
+      "landmarks": {
+        "eyes": [
+          287.0,
+          97.0
+        ],
+        "neck": [
+          287.0,
+          153.0
+        ],
+        "belt": [
+          285.0,
+          300.0
+        ]
+      },
+      "notes": "Complete frontal pose 11; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        29.0,
+        74.25
+      ],
+      "landmarks": {
+        "eyes": [
+          284.0,
+          91.0
+        ],
+        "neck": [
+          284.0,
+          147.0
+        ],
+        "belt": [
+          286.0,
+          282.0
+        ]
+      },
+      "notes": "Complete frontal pose 12; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        27.75,
+        73.75
+      ],
+      "landmarks": {
+        "eyes": [
+          285.0,
+          93.0
+        ],
+        "neck": [
+          286.0,
+          151.0
+        ],
+        "belt": [
+          288.0,
+          287.0
+        ]
+      },
+      "notes": "Complete frontal pose 13; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        27.75,
+        71.0
+      ],
+      "landmarks": {
+        "eyes": [
+          285.0,
+          96.0
+        ],
+        "neck": [
+          286.0,
+          155.0
+        ],
+        "belt": [
+          290.0,
+          294.0
+        ]
+      },
+      "notes": "Complete frontal pose 14; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        25.25,
+        67.5
+      ],
+      "landmarks": {
+        "eyes": [
+          287.0,
+          98.0
+        ],
+        "neck": [
+          288.0,
+          160.0
+        ],
+        "belt": [
+          291.0,
+          297.0
+        ]
+      },
+      "notes": "Complete frontal pose 15; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        29.0,
+        48.0
+      ],
+      "landmarks": {
+        "eyes": [
+          284.0,
+          112.0
+        ],
+        "neck": [
+          284.0,
+          167.0
+        ],
+        "belt": [
+          284.0,
+          325.0
+        ]
+      },
+      "notes": "Complete frontal pose 16; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        27.75,
+        46.25
+      ],
+      "landmarks": {
+        "eyes": [
+          285.0,
+          111.0
+        ],
+        "neck": [
+          283.0,
+          166.0
+        ],
+        "belt": [
+          287.0,
+          322.0
+        ]
+      },
+      "notes": "Complete frontal pose 17; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        27.75,
+        42.0
+      ],
+      "landmarks": {
+        "eyes": [
+          285.0,
+          112.0
+        ],
+        "neck": [
+          283.0,
+          165.0
+        ],
+        "belt": [
+          286.0,
+          318.0
+        ]
+      },
+      "notes": "Complete frontal pose 18; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        26.5,
+        39.5
+      ],
+      "landmarks": {
+        "eyes": [
+          286.0,
+          114.0
+        ],
+        "neck": [
+          285.0,
+          170.0
+        ],
+        "belt": [
+          287.0,
+          327.0
+        ]
+      },
+      "notes": "Complete frontal pose 19; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        24.0,
+        70.25
+      ],
+      "landmarks": {
+        "eyes": [
+          288.0,
+          91.0
+        ],
+        "neck": [
+          288.0,
+          148.0
+        ],
+        "belt": [
+          288.0,
+          282.0
+        ]
+      },
+      "notes": "Complete frontal pose 20; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "origin": [
+        22.75,
+        66.0
+      ],
+      "landmarks": {
+        "eyes": [
+          289.0,
+          96.0
+        ],
+        "neck": [
+          290.0,
+          154.0
+        ],
+        "belt": [
+          289.0,
+          296.0
+        ]
+      },
+      "notes": "Complete frontal pose 21; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        22.75,
+        62.0
+      ],
+      "landmarks": {
+        "eyes": [
+          289.0,
+          100.0
+        ],
+        "neck": [
+          290.0,
+          159.0
+        ],
+        "belt": [
+          294.0,
+          301.0
+        ]
+      },
+      "notes": "Complete frontal pose 22; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    },
+    {
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "origin": [
+        22.75,
+        58.25
+      ],
+      "landmarks": {
+        "eyes": [
+          289.0,
+          103.0
+        ],
+        "neck": [
+          290.0,
+          165.0
+        ],
+        "belt": [
+          292.0,
+          308.0
+        ]
+      },
+      "notes": "Complete frontal pose 23; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+    }
+  ]
+}

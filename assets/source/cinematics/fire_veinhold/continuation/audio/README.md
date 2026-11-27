@@ -38,18 +38,36 @@ Separate deterministic seeds retain the preceding five WAVs byte-for-byte.
 `cinematic_bridge_run.read_run_timing()` reads the same frame durations,
 near/far contact landmarks and positive phase offsets used by the picture.
 The audio owner reads that metadata once and schedules each contact from the
-global 39-second cut through the 42-second endpoint. Starts within a current
+global 39-second cut through the 47-second endpoint. The side view cuts to the
+frontal reveal at 42 seconds without restarting the audio owner or contact
+table. Frontal phase advances of 0.2, 17/60 and 21/60 seconds continue the
+side view's 0, 5/60 and 9/60 phases after three elapsed seconds. Starts within a current
 contact play only its remaining PCM tail; long seeks and unmute do not replay
 old steps. Preview mixing uses the same contact table and integer sample
 positions so an isolated running clip matches its interval in the complete film.
+At the frontal cut, step panning follows the newly visible formation: Lucan
+central, Iselin on viewer left and the Crown soldier on viewer right. Existing
+contact tails retain their PCM lease and change pan with the camera; their cue
+identity and sample phase do not restart. Wind and siren phases remain continuous.
+
+The close frontal view adds a quiet unvoiced breathing bed at 42 seconds.
+Its 3.6-second source contains three slightly varied inhale/exhale phrases,
+approximately 1.2 seconds apart, independent of the 400 ms running cycle.
+Band-limited air supplies mouth/nose texture without dialogue or pitched voice.
+An independent synthesis seed preserves all eleven earlier WAVs. The bed uses
+gain 0.075 and the silent near-warning channel; that warning has had zero gain
+since the rush ended at 35 seconds. Audible machinery, distant siren and wind
+retain their existing leases and PCM phase. This keeps overlapping contacts
+and breathing within the existing eight-channel mixer budget.
 The current drawings use 24 poses per 0.4-second cycle, with contacts at frames
-0 and 12. Actor phase advances are 0, 5/60 and 9/60 seconds; all 45 contacts
+0 and 12. Actor phase advances are 0, 5/60 and 9/60 seconds at the 39-second
+start; all 120 contacts (45 side-view and 75 frontal-view contacts)
 therefore coincide with exact 60 Hz display ticks. Contact scheduling consumes
 the metadata rather than hard-coding that particular cadence.
 
 `prologue_alert_audio.py` owns playback using the full-reel clock: warning at
 30 seconds, machinery at 25, four-second warning lead-in, rush at 34, distant warning and ice at 35,
-running at 39 and cleanup at 42. It leases free effects channels and respects pause, focus,
+running at 39, the frontal cut at 42 and cleanup at 47. It leases free effects channels and respects pause, focus,
 effects volume, mute, restart, seek and Gallery cleanup. The existing flight
 owner retains wind. Offline preview movies use `mix_alert_audio()` and are
 reconstructions from the exports, not hardware-loopback recordings.

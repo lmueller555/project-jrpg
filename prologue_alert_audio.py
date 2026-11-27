@@ -1,4 +1,4 @@
-"""Scene-clock emergency sound for the orbit, bridge rush and frozen aftermath.
+"""Scene-clock sound for the orbit, bridge rush and running-party reveals.
 
 The existing flight controller owns the continuous wind. This owner leases only
 free effects channels, never changes music/mixer allocation, and keeps warnings
@@ -22,15 +22,20 @@ ALARM_START = 30.
 RUSH_START = 34.
 BRIDGE_ARRIVAL = 35.
 RUNNING_START = 39.
-SEQUENCE_END = 42.
+FRONTAL_START = 42.
+SEQUENCE_END = 47.
 STEP_DURATION = .22
 RUN_SCENE = ROOT/'assets/story/fire_veinhold_opening/shot06/scene.json'
 STEP_MIX = {'lucan':(.30,.16),'iselin':(.21,-.03),'crown_soldier':(.16,-.40)}
+FRONTAL_STEP_PAN = {'lucan':0.,'iselin':-.40,'crown_soldier':.40}
 STEP_SOUNDS = tuple(f'{actor}_step_{foot}.wav'
                     for actor in STEP_MIX for foot in ('near','far'))
 SIREN_PERIOD = 2.
+BREATH_PERIOD = 3.6
+BREATH_GAIN = .075
 LOOPS = (('machinery_bed.wav',MACHINERY_START),
-         ('industrial_siren.wav',ALARM_START),('distant_siren.wav',ALARM_START))
+         ('industrial_siren.wav',ALARM_START),('distant_siren.wav',ALARM_START),
+         ('running_breath.wav',FRONTAL_START))
 TRANSIENTS = (('bridge_rush.wav',RUSH_START,1.),('ice_settle.wav',BRIDGE_ARRIVAL,1.4))
 
 
@@ -49,6 +54,9 @@ def alert_mix_at(seconds):
                        'distant_siren.wav':(.115*travel,-.12)})
     if RUSH_START <= seconds < BRIDGE_ARRIVAL:result['bridge_rush.wav'] = (.53,-.1+.2*travel)
     if BRIDGE_ARRIVAL <= seconds < BRIDGE_ARRIVAL+1.4:result['ice_settle.wav'] = (.20,.14)
+    if seconds >= FRONTAL_START:
+        result.pop('industrial_siren.wav',None)
+        result['running_breath.wav'] = (BREATH_GAIN,0.)
     return result
 
 
@@ -57,7 +65,10 @@ def running_contact_events(timing=None):
 
     Positive animation offsets advance the same cycle in picture and sound.
     Parsing happens once per owner/capture, never on the per-frame audio path.
-    A checkout without the optional running assets retains its earlier audio.
+    One table spans both running shots, so the frontal cut neither restarts the
+    cadence nor duplicates its boundary contact. The frontal picture advances
+    these same phases by its three-second offset from the side shot. A checkout
+    without the optional running assets retains its earlier audio.
     """
     if timing is None:
         if not RUN_SCENE.is_file():return ()
@@ -84,7 +95,8 @@ def running_contact_events(timing=None):
                 at = RUNNING_START+local
                 result.append({'id':f'run:{name}:{foot}:{repeat}', 'actor':name,
                     'foot':foot,'file':f'{name}_step_{foot}.wav',
-                    'time':at,'duration':STEP_DURATION,'gain':gain,'pan':pan})
+                    'time':at,'duration':STEP_DURATION,'gain':gain,
+                    'pan':FRONTAL_STEP_PAN[name] if at >= FRONTAL_START else pan})
     return tuple(sorted(result,key=lambda cue:(cue['time'],cue['id'])))
 
 
@@ -95,6 +107,7 @@ class _Voice:
     ends_at: float = math.inf
     gain: float | None = None
     pan: float = 0.
+    actor: str | None = None
 
 
 class PrologueAlertAudio:
@@ -145,7 +158,7 @@ class PrologueAlertAudio:
             return self.sounds[key]
         except (OSError,pygame.error,ValueError):return None
 
-    def _play(self,name,*,offset=0.,loop=False,ends_at=math.inf,identifier=None,gain=None,pan=0.):
+    def _play(self,name,*,offset=0.,loop=False,ends_at=math.inf,identifier=None,gain=None,pan=0.,actor=None):
         if not self._active or self._paused or self.volume <= 0:return
         try:
             sound = self._sound(name,offset,loop=loop)
@@ -154,7 +167,7 @@ class PrologueAlertAudio:
             channel.set_volume(0.,0.)
             channel.play(sound,loops=-1 if loop else 0,fade_ms=35 if loop else 0)
             identifier = name if identifier is None else identifier
-            self.voices[identifier] = _Voice(channel,sound,ends_at,gain,pan)
+            self.voices[identifier] = _Voice(channel,sound,ends_at,gain,pan,actor)
             self.events.append({'id':identifier,'time':self._clock,'offset':offset})
             self.events[:] = self.events[-64:]
         except (OSError,pygame.error):pass
@@ -176,6 +189,9 @@ class PrologueAlertAudio:
                     self._release(name);continue
                 gain,pan = (mix.get(name,(0.,0.)) if voice.gain is None
                             else (voice.gain,voice.pan))
+                if voice.actor is not None:
+                    pan = (FRONTAL_STEP_PAN[voice.actor] if self._clock >= FRONTAL_START
+                           else STEP_MIX[voice.actor][1])
                 gain *= self.volume
                 voice.channel.set_volume(gain*min(1.,1-pan),gain*min(1.,1+pan))
                 if self._paused:voice.channel.pause()
@@ -184,9 +200,15 @@ class PrologueAlertAudio:
 
     def _ensure_loops(self):
         if not self._active or self._paused or self._clock >= SEQUENCE_END:return
+        # Its gain has already been zero since the bridge rush. Reuse this
+        # silent lease for close running breaths, retaining the eight-channel
+        # mixer budget and the audible distant warning/machinery leases.
+        if self._clock >= FRONTAL_START:self._release('industrial_siren.wav')
         for name,start in LOOPS:
+            if name == 'industrial_siren.wav' and self._clock >= FRONTAL_START:continue
             if self._clock >= start and name not in self.voices:
-                self._play(name,offset=(self._clock-start)%SIREN_PERIOD,loop=True)
+                period = BREATH_PERIOD if name == 'running_breath.wav' else SIREN_PERIOD
+                self._play(name,offset=(self._clock-start)%period,loop=True)
 
     @staticmethod
     def _valid_time(value):
@@ -216,7 +238,7 @@ class PrologueAlertAudio:
 
     def _play_step(self,cue,offset):
         self._play(cue['file'],offset=offset,ends_at=cue['time']+cue['duration'],
-                   identifier=cue['id'],gain=cue['gain'],pan=cue['pan'])
+                   identifier=cue['id'],gain=cue['gain'],pan=cue['pan'],actor=cue['actor'])
 
     def update(self,previous,current,playing=True):
         if not self._active:return
@@ -285,7 +307,8 @@ def mix_alert_audio(start_seconds,duration,*,sample_rate=48000,asset_root=ASSETS
         ('industrial_siren.wav',.34*(1-travel),.12*(1-2*travel),ALARM_START,True),
         ('distant_siren.wav',.115*travel,np.full(count,-.12),ALARM_START,True),
         ('bridge_rush.wav',np.full(count,.53),-.1+.2*travel,RUSH_START,False),
-        ('ice_settle.wav',np.full(count,.20),np.full(count,.14),BRIDGE_ARRIVAL,False))
+        ('ice_settle.wav',np.full(count,.20),np.full(count,.14),BRIDGE_ARRIVAL,False),
+        ('running_breath.wav',np.full(count,BREATH_GAIN),np.zeros(count),FRONTAL_START,True))
     for name,gain,pan,at,loop in tracks:
         with wave.open(str(Path(asset_root)/name),'rb') as reader:
             rate,channels,width = reader.getframerate(),reader.getnchannels(),reader.getsampwidth()
@@ -315,7 +338,11 @@ def mix_alert_audio(start_seconds,duration,*,sample_rate=48000,asset_root=ASSETS
         rate,sound = steps[key]
         positions = np.rint((output_frames-round(cue['time']*sample_rate))*rate/sample_rate).astype(np.int64)
         mask = active&(positions>=0)&(positions<len(sound))
-        gain,pan = cue['gain'],cue['pan']
-        level = np.array((gain*min(1,1-pan),gain*min(1,1+pan)))
+        gain = cue['gain']
+        # Camera-side changes also apply to already sounding contact tails;
+        # neither those PCM voices nor the continuous global cadence restart.
+        pan = np.where(times[mask] >= FRONTAL_START,FRONTAL_STEP_PAN[cue['actor']],
+                       STEP_MIX[cue['actor']][1])
+        level = np.column_stack((gain*np.minimum(1,1-pan),gain*np.minimum(1,1+pan)))
         result[mask] += sound[positions[mask]]*level
     return result.astype(np.float32)

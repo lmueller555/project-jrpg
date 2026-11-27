@@ -1,0 +1,1416 @@
+{
+  "version": 1,
+  "exporter": "tools/export_prologue_faces.py",
+  "exporter_sha256": "b87d1acec2059a434a381733ebc0dc062d1510a1c7276066ab7ed426a021151a",
+  "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
+  "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
+  "source_sha256": {
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/source_art_24.json": "9379d3ba3cd4f8cb108065adbde4b59b375e4b30af0645f6d5913e73df46b138",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_00_03.png": "23caf7fef8381bacd1e38b94a48e9c2986ccb1c38d4f4f861dea70f221fac48e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_00_03_alpha_clean.png": "47b9b7ea8487a6dbdd6a7d5b1d14edd1fe1e626d6749a59d962bad96d5a19368",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_04_07.png": "2eae314789824f30262e261fae37d2aa7b50a993264dbb81e0352ba7e9df1e68",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_04_07_alpha_clean.png": "783b591171ab980493ba89a3ece1bebc889670aec2a036e2b6566fb32a835d01",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_08_11.png": "f9b6a520afe80d54500a57086668480c12586e682fb880ff19627e89d312a5d9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_08_11_alpha_clean.png": "5162e56752732f649545a1e3588ba0e115b50eee3b614d9e15e21849392786d7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_12_15.png": "7ae364e2d57aca6cb15fbf18c73b28af403195f974f18af418e55bf95e5d1bf5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_12_15_alpha_clean.png": "4808c07281384491cfc8fa724a977d35136cb8a8ce56815d09774d5cdec3ba7b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_16_19.png": "b8843a8ae3d214b22d0c102a5115c9b46e1efad696c7707b35e19e2dbdd6e6ee",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_16_19_alpha_clean.png": "9060b4d6319dfd449431f8037f474341724ffcdbfe97b114723522b66cc83a9c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_20_23.png": "e8b84d13539718b8ecb46306269501ecb4b73eda89994ec40a301e9f7f871d9c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/batch_20_23_alpha_clean.png": "af6c2544ab549af745c1c83027a28df81b3e7739c65de4e35be014d452aeb264"
+  },
+  "registrations": [
+    {
+      "frame": 0,
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        29.0,
+        75.5
+      ],
+      "applied_origin": [
+        29,
+        76
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          284.0,
+          90.0
+        ],
+        "neck": [
+          284.0,
+          148.0
+        ],
+        "belt": [
+          289.0,
+          282.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          188.5
+        ],
+        "neck": [
+          384.0,
+          261.0
+        ],
+        "belt": [
+          390.25,
+          428.5
+        ]
+      },
+      "opaque_bounds": [
+        69,
+        96,
+        615,
+        958
+      ],
+      "sha256": "3cd2e9fa16f0353c29b39bf3bf1a60361a902326c0bb8a3d52998c37012e247c"
+    },
+    {
+      "frame": 1,
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        62.75,
+        71.25
+      ],
+      "applied_origin": [
+        63,
+        71
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          257.0,
+          95.0
+        ],
+        "neck": [
+          256.0,
+          155.0
+        ],
+        "belt": [
+          264.0,
+          290.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          189.75
+        ],
+        "neck": [
+          383.0,
+          264.75
+        ],
+        "belt": [
+          393.0,
+          433.5
+        ]
+      },
+      "opaque_bounds": [
+        78,
+        96,
+        619,
+        953
+      ],
+      "sha256": "c8b0968b181b793762532b513cd9cec1d5dfdfa6ab258975c3d4f3a36dbbdf9e"
+    },
+    {
+      "frame": 2,
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        31.5,
+        66.0
+      ],
+      "applied_origin": [
+        32,
+        66
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          282.0,
+          100.0
+        ],
+        "neck": [
+          281.0,
+          163.0
+        ],
+        "belt": [
+          290.0,
+          297.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.5,
+          191.0
+        ],
+        "neck": [
+          383.25,
+          269.75
+        ],
+        "belt": [
+          394.5,
+          437.25
+        ]
+      },
+      "opaque_bounds": [
+        70,
+        96,
+        627,
+        951
+      ],
+      "sha256": "47e48d3447bc96a263a01fc9b1fc8f49a3867253b1fa82c767e1e136b37d6aa0"
+    },
+    {
+      "frame": 3,
+      "source": "batch_00_03_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        56.5,
+        55.0
+      ],
+      "applied_origin": [
+        56,
+        55
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          262.0,
+          108.0
+        ],
+        "neck": [
+          264.0,
+          169.0
+        ],
+        "belt": [
+          270.0,
+          307.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.5,
+          190.0
+        ],
+        "neck": [
+          386.0,
+          266.25
+        ],
+        "belt": [
+          393.5,
+          438.75
+        ]
+      },
+      "opaque_bounds": [
+        76,
+        94,
+        623,
+        939
+      ],
+      "sha256": "6f2407762c88ae219c5076875dcb5cd79275d53c32e89c4dac76a3cf0240181a"
+    },
+    {
+      "frame": 4,
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        39.0,
+        51.75
+      ],
+      "applied_origin": [
+        39,
+        52
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          276.0,
+          109.0
+        ],
+        "neck": [
+          276.0,
+          168.0
+        ],
+        "belt": [
+          276.0,
+          333.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          188.25
+        ],
+        "neck": [
+          384.0,
+          262.0
+        ],
+        "belt": [
+          384.0,
+          468.25
+        ]
+      },
+      "opaque_bounds": [
+        70,
+        79,
+        635,
+        965
+      ],
+      "sha256": "7c555b95a94c56bb16eaa93d11cd80509b965eab5cb9bfd5c665b989d5d01a68"
+    },
+    {
+      "frame": 5,
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        37.75,
+        50.0
+      ],
+      "applied_origin": [
+        38,
+        50
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          277.0,
+          108.0
+        ],
+        "neck": [
+          276.0,
+          165.0
+        ],
+        "belt": [
+          276.0,
+          330.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          185.0
+        ],
+        "neck": [
+          383.0,
+          256.25
+        ],
+        "belt": [
+          383.0,
+          462.5
+        ]
+      },
+      "opaque_bounds": [
+        69,
+        77,
+        634,
+        932
+      ],
+      "sha256": "3adbd1909887a426846cfdcd3ef9779b992f4394ac80f3ccf0896988d17c660f"
+    },
+    {
+      "frame": 6,
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        37.75,
+        45.75
+      ],
+      "applied_origin": [
+        38,
+        46
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          277.0,
+          109.0
+        ],
+        "neck": [
+          277.0,
+          164.0
+        ],
+        "belt": [
+          278.0,
+          329.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          182.25
+        ],
+        "neck": [
+          384.25,
+          251.0
+        ],
+        "belt": [
+          385.5,
+          457.25
+        ]
+      },
+      "opaque_bounds": [
+        69,
+        73,
+        632,
+        812
+      ],
+      "sha256": "7a7625afa897b10654bd29509f7b022eb8b00e3ccc08d93ac522a9a0d70413e1"
+    },
+    {
+      "frame": 7,
+      "source": "batch_04_07_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        36.5,
+        47.0
+      ],
+      "applied_origin": [
+        36,
+        47
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          278.0,
+          108.0
+        ],
+        "neck": [
+          281.0,
+          167.0
+        ],
+        "belt": [
+          279.0,
+          332.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.5,
+          182.0
+        ],
+        "neck": [
+          387.25,
+          255.75
+        ],
+        "belt": [
+          384.75,
+          462.0
+        ]
+      },
+      "opaque_bounds": [
+        67,
+        74,
+        624,
+        959
+      ],
+      "sha256": "fd1a6c94626cabf9224f1f7df96a0f92f9f8e5a4225b82b8c9694b13d1cf6d6e"
+    },
+    {
+      "frame": 8,
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        31.5,
+        70.25
+      ],
+      "applied_origin": [
+        32,
+        70
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          282.0,
+          91.0
+        ],
+        "neck": [
+          282.0,
+          147.0
+        ],
+        "belt": [
+          281.0,
+          285.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.5,
+          183.75
+        ],
+        "neck": [
+          384.5,
+          253.75
+        ],
+        "belt": [
+          383.25,
+          426.25
+        ]
+      },
+      "opaque_bounds": [
+        60,
+        86,
+        607,
+        898
+      ],
+      "sha256": "4104186e9cf664317df3c20d5b291314a9d00580e423818928610224d85a27dc"
+    },
+    {
+      "frame": 9,
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        30.25,
+        72.25
+      ],
+      "applied_origin": [
+        30,
+        72
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          283.0,
+          91.0
+        ],
+        "neck": [
+          284.0,
+          147.0
+        ],
+        "belt": [
+          282.0,
+          288.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.75,
+          185.75
+        ],
+        "neck": [
+          385.0,
+          255.75
+        ],
+        "belt": [
+          382.5,
+          432.0
+        ]
+      },
+      "opaque_bounds": [
+        57,
+        88,
+        608,
+        960
+      ],
+      "sha256": "ed9aaf09e7092f63a92ae647c8745a8a9d3f67cae34fa67cd3dd571a4a6c4f3e"
+    },
+    {
+      "frame": 10,
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        29.0,
+        69.5
+      ],
+      "applied_origin": [
+        29,
+        70
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          284.0,
+          94.0
+        ],
+        "neck": [
+          285.0,
+          149.0
+        ],
+        "belt": [
+          284.0,
+          294.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          187.5
+        ],
+        "neck": [
+          385.25,
+          256.25
+        ],
+        "belt": [
+          384.0,
+          437.5
+        ]
+      },
+      "opaque_bounds": [
+        53,
+        87,
+        612,
+        983
+      ],
+      "sha256": "1e42f9ab4e8406ae9710d5c6add1075910c88e1142a50796eeb8cb147813a158"
+    },
+    {
+      "frame": 11,
+      "source": "batch_08_11_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        25.25,
+        65.75
+      ],
+      "applied_origin": [
+        25,
+        66
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          287.0,
+          97.0
+        ],
+        "neck": [
+          287.0,
+          153.0
+        ],
+        "belt": [
+          285.0,
+          300.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.75,
+          187.25
+        ],
+        "neck": [
+          383.75,
+          257.25
+        ],
+        "belt": [
+          381.25,
+          441.0
+        ]
+      },
+      "opaque_bounds": [
+        52,
+        84,
+        613,
+        999
+      ],
+      "sha256": "42ad05225a5999696877d14c5bd96df699c604d630cc1b0ca321ca796f48d2ba"
+    },
+    {
+      "frame": 12,
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        29.0,
+        74.25
+      ],
+      "applied_origin": [
+        29,
+        74
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          284.0,
+          91.0
+        ],
+        "neck": [
+          284.0,
+          147.0
+        ],
+        "belt": [
+          286.0,
+          282.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          187.75
+        ],
+        "neck": [
+          384.0,
+          257.75
+        ],
+        "belt": [
+          386.5,
+          426.5
+        ]
+      },
+      "opaque_bounds": [
+        58,
+        89,
+        618,
+        992
+      ],
+      "sha256": "28d1e15d099e01e0502b1ff6eb4ebb2cfa2388e643f950e2c2d668f3ba191adb"
+    },
+    {
+      "frame": 13,
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        27.75,
+        73.75
+      ],
+      "applied_origin": [
+        28,
+        74
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          285.0,
+          93.0
+        ],
+        "neck": [
+          286.0,
+          151.0
+        ],
+        "belt": [
+          288.0,
+          287.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          190.25
+        ],
+        "neck": [
+          385.5,
+          262.75
+        ],
+        "belt": [
+          388.0,
+          432.75
+        ]
+      },
+      "opaque_bounds": [
+        60,
+        91,
+        624,
+        996
+      ],
+      "sha256": "0d619776fd38c890c7159080531dab790faddce500e2b0093eca7ae61fa498d1"
+    },
+    {
+      "frame": 14,
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        27.75,
+        71.0
+      ],
+      "applied_origin": [
+        28,
+        71
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          285.0,
+          96.0
+        ],
+        "neck": [
+          286.0,
+          155.0
+        ],
+        "belt": [
+          290.0,
+          294.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          191.0
+        ],
+        "neck": [
+          385.5,
+          264.75
+        ],
+        "belt": [
+          390.5,
+          438.5
+        ]
+      },
+      "opaque_bounds": [
+        61,
+        91,
+        627,
+        1000
+      ],
+      "sha256": "fafeea262e073a5c5f6acb63f75a713572302698e5e453006ad2c539aaf79e3c"
+    },
+    {
+      "frame": 15,
+      "source": "batch_12_15_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        25.25,
+        67.5
+      ],
+      "applied_origin": [
+        25,
+        68
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          287.0,
+          98.0
+        ],
+        "neck": [
+          288.0,
+          160.0
+        ],
+        "belt": [
+          291.0,
+          297.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.75,
+          190.5
+        ],
+        "neck": [
+          385.0,
+          268.0
+        ],
+        "belt": [
+          388.75,
+          439.25
+        ]
+      },
+      "opaque_bounds": [
+        64,
+        89,
+        629,
+        999
+      ],
+      "sha256": "a4d29099d2d4f5e014f0e1682d176e67cceba615ced96b7a0a76d24e64b744bf"
+    },
+    {
+      "frame": 16,
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        29.0,
+        48.0
+      ],
+      "applied_origin": [
+        29,
+        48
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          284.0,
+          112.0
+        ],
+        "neck": [
+          284.0,
+          167.0
+        ],
+        "belt": [
+          284.0,
+          325.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          188.0
+        ],
+        "neck": [
+          384.0,
+          256.75
+        ],
+        "belt": [
+          384.0,
+          454.25
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        83,
+        639,
+        941
+      ],
+      "sha256": "63c4bd35c634f544fa240bf4f199336cb3eeeb1cb73aefa5ab3c05c01080b84e"
+    },
+    {
+      "frame": 17,
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        27.75,
+        46.25
+      ],
+      "applied_origin": [
+        28,
+        46
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          285.0,
+          111.0
+        ],
+        "neck": [
+          283.0,
+          166.0
+        ],
+        "belt": [
+          287.0,
+          322.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          184.75
+        ],
+        "neck": [
+          381.75,
+          253.5
+        ],
+        "belt": [
+          386.75,
+          448.5
+        ]
+      },
+      "opaque_bounds": [
+        48,
+        81,
+        639,
+        877
+      ],
+      "sha256": "4a4a0d2a150f56a91a4406b3cb5b34956cd725bb1c3a213e2197beabe86385d2"
+    },
+    {
+      "frame": 18,
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        27.75,
+        42.0
+      ],
+      "applied_origin": [
+        28,
+        42
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          285.0,
+          112.0
+        ],
+        "neck": [
+          283.0,
+          165.0
+        ],
+        "belt": [
+          286.0,
+          318.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          182.0
+        ],
+        "neck": [
+          381.75,
+          248.25
+        ],
+        "belt": [
+          385.5,
+          439.5
+        ]
+      },
+      "opaque_bounds": [
+        47,
+        76,
+        642,
+        780
+      ],
+      "sha256": "33c046fedab820d79297f4f6179e164e2a825dd04cfba5a83a93dc17eac0ed7f"
+    },
+    {
+      "frame": 19,
+      "source": "batch_16_19_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        26.5,
+        39.5
+      ],
+      "applied_origin": [
+        26,
+        40
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          286.0,
+          114.0
+        ],
+        "neck": [
+          285.0,
+          170.0
+        ],
+        "belt": [
+          287.0,
+          327.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.5,
+          182.5
+        ],
+        "neck": [
+          382.25,
+          252.5
+        ],
+        "belt": [
+          384.75,
+          448.75
+        ]
+      },
+      "opaque_bounds": [
+        36,
+        76,
+        647,
+        916
+      ],
+      "sha256": "7f07b5b1feedb48dd33d156dff318a9d1a4bb9be55e73896c2c25a0676e74cd1"
+    },
+    {
+      "frame": 20,
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        24.0,
+        70.25
+      ],
+      "applied_origin": [
+        24,
+        70
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          288.0,
+          91.0
+        ],
+        "neck": [
+          288.0,
+          148.0
+        ],
+        "belt": [
+          288.0,
+          282.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0,
+          183.75
+        ],
+        "neck": [
+          384.0,
+          255.0
+        ],
+        "belt": [
+          384.0,
+          422.5
+        ]
+      },
+      "opaque_bounds": [
+        46,
+        88,
+        618,
+        931
+      ],
+      "sha256": "65425f7514ef439c0656448f83397da0b14eb35c3144393ec44be4c341af4892"
+    },
+    {
+      "frame": 21,
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        22.75,
+        66.0
+      ],
+      "applied_origin": [
+        23,
+        66
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          289.0,
+          96.0
+        ],
+        "neck": [
+          290.0,
+          154.0
+        ],
+        "belt": [
+          289.0,
+          296.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          186.0
+        ],
+        "neck": [
+          385.5,
+          258.5
+        ],
+        "belt": [
+          384.25,
+          436.0
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        89,
+        624,
+        979
+      ],
+      "sha256": "2be121df7bfee7963fdd3cd36aebc95ec4a2b41fb632fdf654cf96413f921fdb"
+    },
+    {
+      "frame": 22,
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        22.75,
+        62.0
+      ],
+      "applied_origin": [
+        23,
+        62
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          289.0,
+          100.0
+        ],
+        "neck": [
+          290.0,
+          159.0
+        ],
+        "belt": [
+          294.0,
+          301.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          187.0
+        ],
+        "neck": [
+          385.5,
+          260.75
+        ],
+        "belt": [
+          390.5,
+          438.25
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        86,
+        635,
+        988
+      ],
+      "sha256": "70c38c577a7f8e064071f52db4395fa98530bc0f352cfc55f2c16282bdcc15e0"
+    },
+    {
+      "frame": 23,
+      "source": "batch_20_23_alpha_clean.png",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.25,
+      "requested_origin": [
+        22.75,
+        58.25
+      ],
+      "applied_origin": [
+        23,
+        58
+      ],
+      "sample_size": [
+        640,
+        960
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          289.0,
+          103.0
+        ],
+        "neck": [
+          290.0,
+          165.0
+        ],
+        "belt": [
+          292.0,
+          308.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.25,
+          186.75
+        ],
+        "neck": [
+          385.5,
+          264.25
+        ],
+        "belt": [
+          388.0,
+          443.0
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        86,
+        641,
+        994
+      ],
+      "sha256": "7a18d99b1b0977893df924587186c5a40d5d97db2d484fbd01fc6bf2d107101a"
+    }
+  ]
+}

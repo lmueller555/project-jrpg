@@ -49,11 +49,12 @@ class PrologueCaptureTests(unittest.TestCase):
 
     def test_complete_and_late_clip_have_exact_authored_offsets(self):
         complete = clip_spec()
-        self.assertEqual(complete['duration'], 42.)
+        self.assertEqual(complete['duration'], 47.)
         self.assertEqual(complete['offset'], 0.)
         expected = (('eagle_ascent', 0., 25.), ('island_orbit', 25., 5.),
                     ('alarm_hold', 30., 4.), ('bridge_rush', 34., 1.),
-                    ('frozen_bridge', 35., 4.), ('bridge_running', 39., 3.))
+                    ('frozen_bridge', 35., 4.), ('bridge_running', 39., 3.),
+                    ('face_reveal', 42., 5.))
         for index, (identifier, offset, duration) in enumerate(expected, 1):
             with self.subTest(clip=identifier):
                 spec = clip_spec(identifier)
@@ -67,22 +68,43 @@ class PrologueCaptureTests(unittest.TestCase):
         game.cinematic.elapsed = .7
         self.assertTrue(thumbnail_ready('fire_veinhold_shot_04', game, .7))
 
-    def test_complete_thumbnail_uses_the_running_clip_before_completion(self):
+    def test_complete_thumbnail_uses_the_face_reveal_before_completion(self):
         from fire_veinhold_opening import available_shots
         shots = available_shots()
-        self.assertEqual(shots[-1]['id'], 'bridge_running')
-        cue = 39.+shots[-1]['thumbnail_time']
+        self.assertEqual(shots[-1]['id'], 'face_reveal')
+        cue = 42.+shots[-1]['thumbnail_time']
         game = SimpleNamespace(cinematic=SimpleNamespace(elapsed=cue-.01))
         self.assertFalse(thumbnail_ready('fire_veinhold_opening', game, cue-.01))
         game.cinematic.elapsed = cue
         self.assertTrue(thumbnail_ready('fire_veinhold_opening', game, cue))
-        self.assertLess(cue, 42.)
+        self.assertGreater(cue, 43.5)
+        self.assertLess(cue, 47.)
 
     def test_representative_complete_frames_include_new_boundaries(self):
         spec = clip_spec()
-        frames = _sample_frames(spec, 60, 2520)
-        self.assertTrue({1500,1800,2040,2100,2340,2370,2430,2490,2519} <= frames)
-        self.assertTrue(all(0 <= index < 2520 for index in frames))
+        frames = _sample_frames(spec, 60, 2820)
+        self.assertTrue({1500,1800,2040,2100,2340,2370,2430,2490,
+                         2520,2550,2610,2700,2790,2819} <= frames)
+        self.assertTrue(all(0 <= index < 2820 for index in frames))
+
+    def test_face_stills_include_the_completed_tilt_and_final_display_frame(self):
+        frames = _sample_frames(clip_spec('face_reveal'), 60, 300)
+        self.assertEqual(frames, {0, 30, 90, 150, 210, 299})
+
+    def test_face_reveal_capture_preserves_global_steps_without_eagle_cues(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'faces.wav'
+            metadata = audio_preview(path, seconds=5., start_seconds=42.)
+            self.assertEqual(metadata['global_start_seconds'], 42.)
+            self.assertEqual(metadata['events'], [])
+            self.assertEqual(metadata['running']['end_global_seconds'], 47.)
+            self.assertTrue(metadata['running']['events'])
+            self.assertTrue(all(cue['time'] < 47. and cue['time']+cue['duration'] > 42.
+                                for cue in metadata['running']['events']))
+            self.assertGreater(metadata['peak'], .01)
+            self.assertLess(metadata['peak'], 1.)
+            with wave.open(str(path), 'rb') as stream:
+                self.assertEqual(stream.getnframes(), 5*48000)
 
     def test_running_capture_starts_at_contact_audio_clock_without_eagle_cues(self):
         with tempfile.TemporaryDirectory() as folder:

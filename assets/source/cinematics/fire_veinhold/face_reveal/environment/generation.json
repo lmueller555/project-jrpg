@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "generator": "image_gen",
+  "references": [
+    "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png"
+  ],
+  "records": [
+    {
+      "id": "backdrop",
+      "generation_path": "/workspace/generated_images/exec-57471f7b-f6c8-4b62-90ab-60df0d59c8b4.png",
+      "source": "backdrop_generated.png",
+      "prompt": "backdrop_prompt.txt",
+      "sha256": "523c52092f2b87af5ebc1b29de9e185350b6439809c4ef15aa890f671d59e76e",
+      "size": [
+        887,
+        1774
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "deck",
+      "generation_path": "/workspace/generated_images/exec-f7ef7ba1-18df-4e1e-8733-76c7b4d1db8e.png",
+      "source": "deck_generated.png",
+      "prompt": "deck_prompt.txt",
+      "sha256": "501eb8179655d90221c89ba0ac185702cff7acff04ce547eebe52cf5ce30f150",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "id": "rail",
+      "generation_path": "/workspace/generated_images/exec-0972842e-7257-4d54-8c7b-7dbf69a005e6.png",
+      "source": "rail_generated.png",
+      "prompt": "rail_prompt.txt",
+      "sha256": "24bb8959354c63101fdd91f4e368e526b4fc609a9a299ee3aa08ee1f6fecd271",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "method": "Offline production WAV/cue reconstruction; no hardware loopback or listening claim.",
+  "contact_count": 120,
+  "side_contact_count": 45,
+  "frontal_contact_count": 75,
+  "contact_frame_alignment": "All 75 frontal contact cues select the actual landing pose on exact 60 Hz ticks.",
+  "side_timing": [
+    {
+      "id": "lucan",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.0,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "iselin",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.08333333333333333,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "crown_soldier",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.15,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    }
+  ],
+  "frontal_timing": [
+    {
+      "id": "lucan",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.2,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "iselin",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.2833333333333333,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "crown_soldier",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.35,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    }
+  ],
+  "previous_42_seconds_alert_pcm_identical": true,
+  "comparison_base_commit": "c19ad0031442c34a4c31a45ae31f84a6ca0df20a",
+  "alert_standalone_equals_complete_slice": true,
+  "unchanged_wav_exports": 11,
+  "frontal_breath": {
+    "start": 42,
+    "period": 3.6,
+    "gain": 0.075,
+    "source": "running_breath.wav; three varied unvoiced breath phrases.",
+    "channel": "Replaces the already-silent near-warning lease at42."
+  },
+  "mixes": {
+    "0:47": {
+      "peak": 0.4961230525743585,
+      "frames": 2256000,
+      "sample_rate": 48000,
+      "channels": 2,
+      "clipped_samples": 0
+    },
+    "42:5": {
+      "peak": 0.3411958932876587,
+      "frames": 240000,
+      "sample_rate": 48000,
+      "channels": 2,
+      "clipped_samples": 0
+    }
+  },
+  "real_eight_channel_playback": {
+    "method": "Production PCM and audio owner, SDL dummy, stereo48kHz, eight real pygame mixer channels, one reserved wind lease, paced60Hz from41.9 through47 seconds.",
+    "frontal_contacts_played": 75,
+    "max_occupied_channels": 8,
+    "mixer_channel_count": 8,
+    "silent_warning_channel_reused_for_breath": true,
+    "audible_ambient_leases_preserved": true,
+    "wind_lease_preserved_at_cleanup": true,
+    "owned_voices_at_end": 0,
+    "wall_seconds": 5.1001,
+    "audio_source_sha256": "602d791f92a6b0007dd17f9bd23eb4585d0b6be15fb0884b8ad2714dbc847d0f"
+  },
+  "source_sha256": {
+    "prologue_alert_audio.py": "602d791f92a6b0007dd17f9bd23eb4585d0b6be15fb0884b8ad2714dbc847d0f",
+    "prologue_flight_audio.py": "5c65f2de7df1290528b1143ba51d1851ffbbc1e782e71296d41e0d690033f12a",
+    "cinematic_face_reveal.py": "16b661d4a78b39b892139ee1d850964f1e5e73c9c5aa2f0c71492e459a839924",
+    "tools/build_prologue_alert_audio.py": "0d413ef6c4f826c668f434959bd4e5ea308782714c15d0ae28a6006151ac49a4",
+    "assets/story/fire_veinhold_opening/continuation/audio/manifest.json": "57c9ae4c744276f034712d9c4efa88c83321089303871bf357d13571de0284f7",
+    "assets/story/fire_veinhold_opening/shot06/scene.json": "046df2ebfbfd67ca2f5f13641b00f982be177a70944421214788a4c719b22acd",
+    "assets/story/fire_veinhold_opening/shot07/scene.json": "a932f490b41668e2c4d040f059a4e9f831cdff2e29ca338ebabb9c6b668b4269",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/animation.json": "ac5c07db2287288844342834f8a8c8f4254a611abfb747cfc67970281fe4751d",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/animation.json": "b663c6dc9fa623e2398a21edb4ca57f925443079ced922c8a2079c78aa0ee592",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/animation.json": "23e9c0eddce5ab2848954f8bca38466f821ca804028c750d837af95cb0e0e8df",
+    "assets/story/fire_veinhold_opening/shot07/characters/lucan/animation.json": "3d9896043dafb98758ecf5c57282cdb9b3eac5d07a129d6cf9355844bc085a9f",
+    "assets/story/fire_veinhold_opening/shot07/characters/iselin/animation.json": "e0beac020398005f04282304f9c222b5a6bd7ed7fc73d10f5b724b1d0f29387b",
+    "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/animation.json": "03ddaf4ae92d2bbf9b38e89142442d167b90b613527dc78ff9c7df60cc5f5ebf"
+  }
+}

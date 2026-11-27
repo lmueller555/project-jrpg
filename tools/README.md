@@ -10,9 +10,9 @@ the standard.
 
 Capture the Fire Veinhold prologue through its actual save-disabled Gallery
 runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
-complete 42-second film at 60 FPS and writes to `docs/reviews/veinhold_bridge_run/`.
+complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_face_reveal/`.
 Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`,
-`bridge_running` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
+`bridge_running`, `face_reveal` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
 `--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
 960×640 detail and reconstruct sound offline from the production exports and
 global timing; this is not hardware-loopback listening evidence. Capture JSON
@@ -31,6 +31,13 @@ preserving their 3:1 overscan. Use `--check` to verify both PNGs and their recip
 against the retained generated masters.
 Runner drawing exports and their phase/registration metadata are separate from
 this environment-only export.
+
+`tools/build_prologue_face_environment.py` bakes the camera-registered frontal
+bridge view for Shot 7 from retained painted scenery and the runtime's shared
+projection helper. `--proof` produces representative camera checkpoints;
+`--check` rerenders all 301 inclusive views and verifies exact PNG bytes, camera
+metadata and the export recipe. Normal and Reduced Motion retain the same
+essential down-tilt bank. Character drawings use their separate actor exports.
 
 Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
 individual banks with `tools/export_iselin_native_idles.py` and

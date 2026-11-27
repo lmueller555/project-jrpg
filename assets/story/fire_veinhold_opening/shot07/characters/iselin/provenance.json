@@ -1,0 +1,1416 @@
+{
+  "version": 1,
+  "exporter": "tools/export_prologue_faces.py",
+  "exporter_sha256": "b87d1acec2059a434a381733ebc0dc062d1510a1c7276066ab7ed426a021151a",
+  "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
+  "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
+  "source_sha256": {
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_24.json": "e7c4d63dc232f06773ff63e0a52e01ffa313e8c51f83247380c8a5072f97c5e5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_00_03.png": "85974a868949480a1370098ba12a3b61793775937fcf2740791ed017e42156c4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_04_07.png": "23c0ba24fa26173ed8d3c58ab55821dfca69422d305aeba20b908bb8e02106d6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_08_11.png": "8ecc33b7fe59e85f3e3a21c0de07d57843e989a13fe21d18057531907bf7df6d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_12_15.png": "b3fd6b283c44d371e23602d4325fc6d566c27fb6ffff4a0b13715ceffdce70f1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_16_19.png": "683b9434b8bd5bd86c8bb469c451db575b221a557f412c81cf767baed6eb32c2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/batch_20_23.png": "dbf7f3d44a239d818307972d0faf4ef97df968d71a05ecf8e89a0c8035ff6999",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_01.png": "2d9bcf2548be5c77d52cdcd31f37495d568760f5610edebf16df1360e25f37d4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_02_alpha_clean.png": "850551f85688a0d99501bd5dad69e8b2897f3059f27fe9d0ca3360ddc98ee816",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_03.png": "60443b890857638e53294534ec2882c8ef52856554e8c37ec65a8f650380836c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_13.png": "0b4b37aa032080e0a6e6c561869d46f75af59e6528765f450198ddfb944e39f3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_14.png": "47b8cd7651bdd60ff0b81d1b17adf9d1c8a263cb0fee929c01b9f0b287a70571",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/repairs/frame_15.png": "2a35aef9819653cab354730609db87689ff49002b1fdff3e8a242c54b4763699"
+  },
+  "registrations": [
+    {
+      "frame": 0,
+      "source": "batch_00_03.png",
+      "cell": [
+        0,
+        0,
+        599,
+        656
+      ],
+      "scale": 1.4619467445288672,
+      "requested_origin": [
+        -78.46638537728376,
+        30.323536936490626
+      ],
+      "applied_origin": [
+        -78,
+        30
+      ],
+      "sample_size": [
+        876,
+        959
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          316.336,
+          116.062
+        ],
+        "belt": [
+          324.82,
+          240.305
+        ],
+        "face": [
+          316.589,
+          69.867
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.4664,
+          199.6765
+        ],
+        "belt": [
+          396.8695,
+          381.3131
+        ],
+        "face": [
+          384.8363,
+          132.1418
+        ]
+      },
+      "opaque_bounds": [
+        65,
+        44,
+        598,
+        945
+      ],
+      "sha256": "910bd19f139343d8a16427810549b409f47ff6e9fb8dc91a82c80ac8b5f9e010"
+    },
+    {
+      "frame": 1,
+      "source": "repairs/frame_01.png",
+      "cell": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "scale": 0.7157513002815289,
+      "requested_origin": [
+        -66.6878369995706,
+        38.0034833229947
+      ],
+      "applied_origin": [
+        -67,
+        38
+      ],
+      "sample_size": [
+        858,
+        939
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          629.671,
+          229.125
+        ],
+        "belt": [
+          646.64,
+          480.609
+        ],
+        "face": [
+          628.429,
+          142.066
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.6878,
+          201.9965
+        ],
+        "belt": [
+          395.8334,
+          381.9965
+        ],
+        "face": [
+          382.7989,
+          139.6839
+        ]
+      },
+      "opaque_bounds": [
+        62,
+        50,
+        596,
+        935
+      ],
+      "sha256": "59b0b030664ab8a14048662cf813e19f75c3ffe6e7c6a6546b59db2440dff1da"
+    },
+    {
+      "frame": 2,
+      "source": "repairs/frame_02_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "scale": 0.7411219763252703,
+      "requested_origin": [
+        -83.09879567678854,
+        32.25683993823981
+      ],
+      "applied_origin": [
+        -83,
+        32
+      ],
+      "sample_size": [
+        889,
+        972
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          630.259,
+          231.734
+        ],
+        "belt": [
+          643.64,
+          474.609
+        ],
+        "face": [
+          628.429,
+          142.066
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.0988,
+          203.7432
+        ],
+        "belt": [
+          394.0157,
+          383.7432
+        ],
+        "face": [
+          382.7425,
+          137.2882
+        ]
+      },
+      "opaque_bounds": [
+        46,
+        46,
+        607,
+        963
+      ],
+      "sha256": "3bbd8749a40bc0dd1ff9262c09b8b91a2bc8044977fda6581cb9195577a3245c"
+    },
+    {
+      "frame": 3,
+      "source": "repairs/frame_03.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6435006435006436,
+      "requested_origin": [
+        -1.0193050193051363,
+        19.628056628056612
+      ],
+      "applied_origin": [
+        -1,
+        20
+      ],
+      "sample_size": [
+        699,
+        932
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          598.32,
+          284.96
+        ],
+        "belt": [
+          611.16,
+          564.68
+        ],
+        "face": [
+          593.38,
+          179.47
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.0193,
+          203.3719
+        ],
+        "belt": [
+          392.2819,
+          383.3719
+        ],
+        "face": [
+          380.8404,
+          135.4891
+        ]
+      },
+      "opaque_bounds": [
+        34,
+        40,
+        597,
+        928
+      ],
+      "sha256": "a81c29110cbdf892c20803a066694356dd8c97c4ff0bb2b4f5c80b697d4b359b"
+    },
+    {
+      "frame": 4,
+      "source": "batch_04_07.png",
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "scale": 1.273705066515709,
+      "requested_origin": [
+        4.028304557033664,
+        27.8270591565242
+      ],
+      "applied_origin": [
+        4,
+        28
+      ],
+      "sample_size": [
+        692,
+        922
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          298.32,
+          135.96
+        ],
+        "belt": [
+          306.84,
+          276.32
+        ],
+        "face": [
+          299.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9717,
+          201.1729
+        ],
+        "belt": [
+          394.8237,
+          379.9502
+        ],
+        "face": [
+          385.7167,
+          136.5643
+        ]
+      },
+      "opaque_bounds": [
+        46,
+        47,
+        607,
+        913
+      ],
+      "sha256": "aee46cc942728c06b1fccf8fce8117002ba95d5e729ed8c435f08a5744ccd2ca"
+    },
+    {
+      "frame": 5,
+      "source": "batch_04_07.png",
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "scale": 1.273705066515709,
+      "requested_origin": [
+        42.239456552504976,
+        24.8270591565242
+      ],
+      "applied_origin": [
+        42,
+        25
+      ],
+      "sample_size": [
+        692,
+        922
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          268.32,
+          135.96
+        ],
+        "belt": [
+          278.46,
+          277.58
+        ],
+        "face": [
+          269.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.7605,
+          198.1729
+        ],
+        "belt": [
+          396.6759,
+          378.5551
+        ],
+        "face": [
+          385.5055,
+          133.5643
+        ]
+      },
+      "opaque_bounds": [
+        46,
+        44,
+        624,
+        878
+      ],
+      "sha256": "99d850c0e7c76c6c73499f2560cdf23b7865f2fffa255bdd2c5648b456434817"
+    },
+    {
+      "frame": 6,
+      "source": "batch_04_07.png",
+      "cell": [
+        0,
+        724,
+        543,
+        1448
+      ],
+      "scale": 1.273705066515709,
+      "requested_origin": [
+        4.028304557033664,
+        22.8270591565242
+      ],
+      "applied_origin": [
+        4,
+        23
+      ],
+      "sample_size": [
+        692,
+        922
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          298.32,
+          135.96
+        ],
+        "belt": [
+          307.92,
+          277.16
+        ],
+        "face": [
+          299.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9717,
+          196.1729
+        ],
+        "belt": [
+          396.1993,
+          376.0201
+        ],
+        "face": [
+          385.7167,
+          131.5643
+        ]
+      },
+      "opaque_bounds": [
+        44,
+        42,
+        633,
+        862
+      ],
+      "sha256": "accda5d0428214947c12b3801021bde455df58f8329098a05a99d2ba48ce0128"
+    },
+    {
+      "frame": 7,
+      "source": "batch_04_07.png",
+      "cell": [
+        543,
+        724,
+        1086,
+        1448
+      ],
+      "scale": 1.273705066515709,
+      "requested_origin": [
+        39.71752052080382,
+        21.99292386074157
+      ],
+      "applied_origin": [
+        40,
+        22
+      ],
+      "sample_size": [
+        692,
+        922
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          270.3,
+          137.4
+        ],
+        "belt": [
+          280.08,
+          278.84
+        ],
+        "face": [
+          269.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.2825,
+          197.0071
+        ],
+        "belt": [
+          396.7393,
+          377.1599
+        ],
+        "face": [
+          383.5055,
+          130.5643
+        ]
+      },
+      "opaque_bounds": [
+        53,
+        41,
+        620,
+        911
+      ],
+      "sha256": "ebac4dfedf2c43c31f82f6f043f8ba67eb67dd501b7c8a35dc7df66981ab23e3"
+    },
+    {
+      "frame": 8,
+      "source": "batch_08_11.png",
+      "cell": [
+        0,
+        0,
+        608,
+        646
+      ],
+      "scale": 1.5350437700674993,
+      "requested_origin": [
+        -114.95216206651003,
+        21.703293095287847
+      ],
+      "applied_origin": [
+        -115,
+        22
+      ],
+      "sample_size": [
+        933,
+        992
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          325.041,
+          114.848
+        ],
+        "belt": [
+          336.206,
+          231.494
+        ],
+        "face": [
+          321.059,
+          71.237
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9522,
+          198.2967
+        ],
+        "belt": [
+          401.0909,
+          377.3534
+        ],
+        "face": [
+          377.8396,
+          131.3519
+        ]
+      },
+      "opaque_bounds": [
+        49,
+        42,
+        625,
+        892
+      ],
+      "sha256": "9269823275fe19c588798365b2615f2aeb57217273efaa159002e83cb0fb9bbe"
+    },
+    {
+      "frame": 9,
+      "source": "batch_08_11.png",
+      "cell": [
+        608,
+        0,
+        1217,
+        646
+      ],
+      "scale": 1.5350437700674993,
+      "requested_origin": [
+        -9.03414193185256,
+        18.098161785085352
+      ],
+      "applied_origin": [
+        -9,
+        18
+      ],
+      "sample_size": [
+        935,
+        992
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          256.041,
+          117.848
+        ],
+        "belt": [
+          267.206,
+          234.494
+        ],
+        "face": [
+          253.291,
+          72.549
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.0341,
+          198.9018
+        ],
+        "belt": [
+          401.1729,
+          377.9586
+        ],
+        "face": [
+          379.8128,
+          129.3659
+        ]
+      },
+      "opaque_bounds": [
+        56,
+        41,
+        626,
+        935
+      ],
+      "sha256": "de26c22ca62266a303c4cf048da53ea137e609f1513ae9dd271d19ab70984c55"
+    },
+    {
+      "frame": 10,
+      "source": "batch_08_11.png",
+      "cell": [
+        0,
+        646,
+        608,
+        1292
+      ],
+      "scale": 1.5350437700674993,
+      "requested_origin": [
+        -113.14388050537053,
+        20.413694296033185
+      ],
+      "applied_origin": [
+        -113,
+        20
+      ],
+      "sample_size": [
+        933,
+        992
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          323.863,
+          116.991
+        ],
+        "belt": [
+          334.543,
+          234.866
+        ],
+        "face": [
+          322.291,
+          72.549
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.1439,
+          199.5863
+        ],
+        "belt": [
+          400.5381,
+          380.5296
+        ],
+        "face": [
+          381.7308,
+          131.3659
+        ]
+      },
+      "opaque_bounds": [
+        57,
+        44,
+        625,
+        966
+      ],
+      "sha256": "28272d5dc3515bebf1d1c9f16429aaae67369699222d1bb66e0a495650b1d66a"
+    },
+    {
+      "frame": 11,
+      "source": "batch_08_11.png",
+      "cell": [
+        608,
+        646,
+        1217,
+        1292
+      ],
+      "scale": 1.5350437700674993,
+      "requested_origin": [
+        -14.543414022624802,
+        14.836031741293965
+      ],
+      "applied_origin": [
+        -15,
+        15
+      ],
+      "sample_size": [
+        935,
+        992
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          259.63,
+          121.276
+        ],
+        "belt": [
+          268.543,
+          240.866
+        ],
+        "face": [
+          256.291,
+          78.549
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.5434,
+          201.164
+        ],
+        "belt": [
+          397.2253,
+          384.7399
+        ],
+        "face": [
+          378.4179,
+          135.5762
+        ]
+      },
+      "opaque_bounds": [
+        67,
+        46,
+        618,
+        972
+      ],
+      "sha256": "a24cbfc681b1016eaf7196356185668d393060f7eee1b699702d95f8cf11d3db"
+    },
+    {
+      "frame": 12,
+      "source": "batch_12_15.png",
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "scale": 1.2873694750393363,
+      "requested_origin": [
+        13.23759118867116,
+        26.20512086968961
+      ],
+      "applied_origin": [
+        13,
+        26
+      ],
+      "sample_size": [
+        699,
+        932
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          288.0,
+          135.0
+        ],
+        "belt": [
+          298.08,
+          275.84
+        ],
+        "face": [
+          287.69,
+          82.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.7624,
+          199.7949
+        ],
+        "belt": [
+          396.7391,
+          381.108
+        ],
+        "face": [
+          383.3633,
+          131.8668
+        ]
+      },
+      "opaque_bounds": [
+        47,
+        43,
+        607,
+        928
+      ],
+      "sha256": "5eb8cedc7eb5e49a951d6fb94b35b3811378f9f29dacd0197320801352af9995"
+    },
+    {
+      "frame": 13,
+      "source": "repairs/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6361323155216284,
+      "requested_origin": [
+        13.160305343511482,
+        30.956743002544556
+      ],
+      "applied_origin": [
+        13,
+        31
+      ],
+      "sample_size": [
+        691,
+        921
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          582.96,
+          268.88
+        ],
+        "belt": [
+          598.08,
+          551.84
+        ],
+        "face": [
+          581.38,
+          164.47
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.8397,
+          202.0433
+        ],
+        "belt": [
+          393.458,
+          382.0433
+        ],
+        "face": [
+          382.8346,
+          135.6247
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        44,
+        601,
+        926
+      ],
+      "sha256": "799298ebc7bbb56f364a60a737eb2ba28fc00ad23368815616abedda04c3bc6c"
+    },
+    {
+      "frame": 14,
+      "source": "repairs/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6339814032121724,
+      "requested_origin": [
+        11.447168216399007,
+        32.24175824175822
+      ],
+      "applied_origin": [
+        11,
+        32
+      ],
+      "sample_size": [
+        689,
+        918
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          587.64,
+          270.92
+        ],
+        "belt": [
+          598.08,
+          554.84
+        ],
+        "face": [
+          583.0,
+          166.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.5528,
+          203.7582
+        ],
+        "belt": [
+          390.1716,
+          383.7582
+        ],
+        "face": [
+          380.6112,
+          137.2409
+        ]
+      },
+      "opaque_bounds": [
+        48,
+        48,
+        604,
+        926
+      ],
+      "sha256": "b4e21d26a60dbb8b05d70176daeceffb7b6feddcb828fa4e3c64c4d62ed516c9"
+    },
+    {
+      "frame": 15,
+      "source": "repairs/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547359231776516,
+      "requested_origin": [
+        3.1793976429507325,
+        19.726320384111744
+      ],
+      "applied_origin": [
+        3,
+        20
+      ],
+      "sample_size": [
+        711,
+        948
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          581.64,
+          279.92
+        ],
+        "belt": [
+          592.08,
+          554.84
+        ],
+        "face": [
+          584.38,
+          173.47
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.8206,
+          203.2737
+        ],
+        "belt": [
+          390.656,
+          383.2737
+        ],
+        "face": [
+          385.6146,
+          133.577
+        ]
+      },
+      "opaque_bounds": [
+        50,
+        39,
+        612,
+        933
+      ],
+      "sha256": "e02583476f5dc4e2a072e07fe6186dd60ad594a6b8c2fa6c23c43fab2cb1e5d9"
+    },
+    {
+      "frame": 16,
+      "source": "batch_16_19.png",
+      "cell": [
+        0,
+        0,
+        543,
+        724
+      ],
+      "scale": 1.2645777715329496,
+      "requested_origin": [
+        16.007868483911693,
+        26.48826752845295
+      ],
+      "applied_origin": [
+        16,
+        26
+      ],
+      "sample_size": [
+        687,
+        916
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          291.0,
+          138.0
+        ],
+        "belt": [
+          298.08,
+          281.84
+        ],
+        "face": [
+          293.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9921,
+          200.5117
+        ],
+        "belt": [
+          392.9453,
+          382.4086
+        ],
+        "face": [
+          387.3938,
+          133.7863
+        ]
+      },
+      "opaque_bounds": [
+        65,
+        44,
+        598,
+        878
+      ],
+      "sha256": "8f0d22816c26304d847078d0e03ed72e4306a5e404e469767159ef5e117d20e0"
+    },
+    {
+      "frame": 17,
+      "source": "batch_16_19.png",
+      "cell": [
+        543,
+        0,
+        1086,
+        724
+      ],
+      "scale": 1.2645777715329496,
+      "requested_origin": [
+        32.85204440073056,
+        24.70226218912461
+      ],
+      "applied_origin": [
+        33,
+        25
+      ],
+      "sample_size": [
+        687,
+        916
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          277.68,
+          137.04
+        ],
+        "belt": [
+          286.08,
+          278.84
+        ],
+        "face": [
+          278.69,
+          85.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.148,
+          198.2977
+        ],
+        "belt": [
+          394.7704,
+          377.6149
+        ],
+        "face": [
+          385.4252,
+          132.7863
+        ]
+      },
+      "opaque_bounds": [
+        68,
+        42,
+        605,
+        871
+      ],
+      "sha256": "5057ea07ee9fc228595b6905a8035efdc0c4ee72b1dcc90df66215640684d970"
+    },
+    {
+      "frame": 18,
+      "source": "batch_16_19.png",
+      "cell": [
+        0,
+        724,
+        543,
+        1448
+      ],
+      "scale": 1.2645777715329496,
+      "requested_origin": [
+        16.007868483911693,
+        21.48826752845295
+      ],
+      "applied_origin": [
+        16,
+        21
+      ],
+      "sample_size": [
+        687,
+        916
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          291.0,
+          138.0
+        ],
+        "belt": [
+          302.46,
+          277.58
+        ],
+        "face": [
+          292.31,
+          86.765
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9921,
+          195.5117
+        ],
+        "belt": [
+          398.4842,
+          372.0215
+        ],
+        "face": [
+          385.6487,
+          130.7211
+        ]
+      },
+      "opaque_bounds": [
+        59,
+        40,
+        615,
+        860
+      ],
+      "sha256": "c134464372d3c896998fad61e0427430deaa2d5caf35166118e8e7a3cae0f20d"
+    },
+    {
+      "frame": 19,
+      "source": "batch_16_19.png",
+      "cell": [
+        543,
+        724,
+        1086,
+        1448
+      ],
+      "scale": 1.2645777715329496,
+      "requested_origin": [
+        33.307292398482446,
+        21.27427286778132
+      ],
+      "applied_origin": [
+        33,
+        21
+      ],
+      "sample_size": [
+        687,
+        916
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          277.32,
+          138.96
+        ],
+        "belt": [
+          289.08,
+          281.84
+        ],
+        "face": [
+          278.69,
+          88.235
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.6927,
+          196.7257
+        ],
+        "belt": [
+          398.5641,
+          377.4086
+        ],
+        "face": [
+          385.4252,
+          132.58
+        ]
+      },
+      "opaque_bounds": [
+        54,
+        39,
+        626,
+        902
+      ],
+      "sha256": "52667c8d0255b0df5afc0fcb9181f0da859573528c03ed01b68b00a62128c03e"
+    },
+    {
+      "frame": 20,
+      "source": "batch_20_23.png",
+      "cell": [
+        0,
+        0,
+        631,
+        623
+      ],
+      "scale": 1.5278644274964668,
+      "requested_origin": [
+        -137.14080543919738,
+        33.44441756534803
+      ],
+      "applied_origin": [
+        -137,
+        33
+      ],
+      "sample_size": [
+        964,
+        952
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          341.091,
+          107.703
+        ],
+        "belt": [
+          348.56,
+          224.324
+        ],
+        "face": [
+          340.01,
+          65.185
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.1408,
+          197.5556
+        ],
+        "belt": [
+          395.5524,
+          375.7367
+        ],
+        "face": [
+          382.4892,
+          132.5938
+        ]
+      },
+      "opaque_bounds": [
+        42,
+        44,
+        623,
+        866
+      ],
+      "sha256": "afd1971bd5961768a3fef4a396e297d45a5270c68ff7e1d1e555e027bbce83d6"
+    },
+    {
+      "frame": 21,
+      "source": "batch_20_23.png",
+      "cell": [
+        631,
+        0,
+        1262,
+        623
+      ],
+      "scale": 1.5278644274964668,
+      "requested_origin": [
+        -125.99350657618317,
+        32.551393539679935
+      ],
+      "applied_origin": [
+        -126,
+        33
+      ],
+      "sample_size": [
+        964,
+        952
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          333.795,
+          108.942
+        ],
+        "belt": [
+          340.954,
+          225.408
+        ],
+        "face": [
+          334.01,
+          65.185
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9935,
+          199.4486
+        ],
+        "belt": [
+          394.9315,
+          377.3929
+        ],
+        "face": [
+          384.322,
+          132.5938
+        ]
+      },
+      "opaque_bounds": [
+        48,
+        44,
+        618,
+        899
+      ],
+      "sha256": "d81d387f9b8778df4e69f75f165e9fe8cadae1492d2250d7eeb4e0f15152ef4b"
+    },
+    {
+      "frame": 22,
+      "source": "batch_20_23.png",
+      "cell": [
+        0,
+        623,
+        631,
+        1246
+      ],
+      "scale": 1.5278644274964668,
+      "requested_origin": [
+        -132.3127538483085,
+        23.122190957589027
+      ],
+      "applied_origin": [
+        -132,
+        23
+      ],
+      "sample_size": [
+        964,
+        952
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          337.931,
+          115.768
+        ],
+        "belt": [
+          347.418,
+          234.77
+        ],
+        "face": [
+          336.385,
+          73.715
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          384.3128,
+          199.8778
+        ],
+        "belt": [
+          398.8076,
+          381.6967
+        ],
+        "face": [
+          381.9507,
+          135.6265
+        ]
+      },
+      "opaque_bounds": [
+        49,
+        45,
+        615,
+        932
+      ],
+      "sha256": "52a8c3413c8bb563773248a47fabf31111146da0c4c2d4e5e404445df7ea1296"
+    },
+    {
+      "frame": 23,
+      "source": "batch_20_23.png",
+      "cell": [
+        631,
+        623,
+        1262,
+        1246
+      ],
+      "scale": 1.5278644274964668,
+      "requested_origin": [
+        -125.99350657618317,
+        16.217020409722323
+      ],
+      "applied_origin": [
+        -126,
+        16
+      ],
+      "sample_size": [
+        964,
+        952
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          333.795,
+          120.942
+        ],
+        "belt": [
+          343.954,
+          243.408
+        ],
+        "face": [
+          333.385,
+          79.715
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          383.9935,
+          200.783
+        ],
+        "belt": [
+          399.5151,
+          387.8944
+        ],
+        "face": [
+          383.3671,
+          137.7937
+        ]
+      },
+      "opaque_bounds": [
+        54,
+        44,
+        613,
+        942
+      ],
+      "sha256": "a7660f2673fc47b5b97da4a5a8a0e4d939616920398393688d0b6607724423f2"
+    }
+  ]
+}
