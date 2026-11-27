@@ -14,7 +14,7 @@ owns the approved geography; the canonical world map remains unchanged.
 
 | Shot | Duration | Picture and disclosure |
 | --- | --- | --- |
-| 1 — Eagle Ascent and Cinder Isles | 25 seconds | Follow the eagle east-southeast over Merovar's coastal summit for 15 seconds, then retain a clear offshore volcanic vista for ten seconds. No fortress close-up or cast reveal yet. |
+| 1 — Eagle Ascent and Cinder Isles | 25 seconds | Follow the eagle east-southeast over Merovar's coastal summit for 15 seconds, then retain a clear offshore volcanic vista for ten seconds. The wide view now includes the Fire Veinhold and emergency beacons; no cast reveal yet. |
 | 2 — Volcano and Veinhold | 15 seconds, future implementation | Closer establishing view of the volcano, military fortress and reservoir drawing Fire-aspected aether. Red alert lights already signal an emergency before the infiltrators appear. |
 | 3 — Running legs | 3 seconds, future implementation | Side tracking of Iselin, Lucan and the Crown soldier running over a metal fortress access bridge. |
 | 4 — Faces | Exact duration open | Track backward in front of the runners and pan down to reveal faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the soldier is on his anatomical left (screen right), about ten feet behind. |
@@ -61,7 +61,7 @@ to the right. Othara's distant rust-colored headlands occupy the left horizon.
 Istrava lies south of the archipelago and outside this framing.
 
 The main island is substantially wider, with broad flat coastal terraces for
-the future fortress, reservoir and military infrastructure. Its volcano is
+the fortress, reservoir and military infrastructure. Its volcano is
 inactive because the Veinhold is extracting Fire-aspected aether: no glowing
 crater, lava flows or eruptive fire remain. It still releases light steam/gas.
 The distant volcano retains its active glow and a denser ash plume. Othara's
@@ -71,10 +71,11 @@ Two large steel bridges are visible. The nearer bridge runs from Merovar's
 rocky mainland coast to the main island's front terrace. The farther bridge
 runs from the Damar headlands on the left to the island's rear-west approach.
 Both have complete abutments, steel decks and piers scaled to perspective.
-The final source window begins at y50 so the nearer Merovar landing remains
-visible along with the island and both volcanoes. The approved
+The final source window begins at y50. The lens widens slightly at the crest
+to retain the expanded fortress and nearer Merovar landing, then makes a
+restrained push during the vista. The approved
 Fire Veinhold site is on the main island near the volcano; the fortress and
-reservoir receive their closer reveal in Shot 2. Exact distances, travel
+reservoir are visible in this wide shot, with a closer view planned for Shot 2. Exact distances, travel
 times, facility coordinates and the infiltration party's route remain open.
 The world map is illustrative and supplies relationships rather than a precise
 bearing grid or guaranteed real-world line of sight.
@@ -108,25 +109,49 @@ music channels. The audio source folder retains its deterministic export recipe
 and CC0 Foley attribution. Preview movies reconstruct audio from those exports
 and cue metadata, rather than claiming hardware-loopback listening review.
 
-## Animated volcanic plumes
+## Veinhold architecture and operation
 
-The revised panorama contains no painted smoke plumes. `cinematic_smoke.py`
-composites textured billows from both crater mouths in source-art coordinates,
-using the same scale and origin as the terrain. Billows rise, expand, drift
-with varied turbulence, and fade continuously; the main vent uses light steam
-and the distant vent denser ash. One complete authored cloud from the generated
-VFX sheet is cropped and exported as `smoke_puff.png`; scaling and alpha over
-each particle's life supply the motion. This is a particle effect, not a
-creature animation assembled from body parts.
+The fortress occupies the front-right terrace while the cold crater remains
+above it. Its major readable shapes are the braced extraction works, command
+keep and fortified circular reservoir. Two heavy conduits descend from the
+lower-flank extraction structure into the basin. Captured aether glows amber
+inside the channels and reservoir; it does not turn the dormant crater into
+an erupting volcano. Walls, barracks and loading/service yards support the
+main silhouettes. Both bridge gatehouses lead into visible compound roads.
+Materials are charcoal basalt, blackened steel and weathered bronze with
+restrained crimson insignia.
 
-The particle samples are pure functions of shot time and deterministic seeds.
-The plumes are prewarmed, remain bounded after seeks, and freeze with pause or
-focus loss. Restart reproduces the same initial state. Reduced Motion lowers
-lateral drift/turbulence without freezing the plumes. Texture and emitter
-configuration live in the environment recipe/export manifest; malformed or
-unbounded values fail before playback. The source atlas, exact prompts and
-hashes are preserved. The wider island and bridges remain in the single
-opaque landscape, retaining consistent geographic movement.
+`cinematic_facility.py` draws restrained power packets down the authored
+conduit paths toward the reservoir, floating ember accents within its interior,
+and slow red warning-beacon highlights on gatehouses/reservoir towers. All
+landmarks share the terrain projection. Windows and architecture remain
+steady. Reduced Motion uses steady red beacons and static amber accents.
+Effects follow the scene clock, including pause/focus/restart; they introduce
+no new dialogue, weapon identity or quest state.
+
+## Complete drawn volcanic plume cycles
+
+The repeated-puff effect and `smoke_puff.png` are removed from runtime. Both
+vents now use sixteen complete authored plume drawings, registered by explicit
+mouth landmarks to a fixed [70,230] anchor on 256×256 transparent canvases.
+The four-second loop changes connected billows and dissolving wisps while the
+vent stays on the crater mouth. Frame exports preserve transparent margins;
+no cloud crosses a source cell boundary or reaches the exported canvas edge.
+The rejected draft atlas remains only as the refinement source, not runtime art.
+
+`cinematic_smoke.py` selects adjacent drawings from elapsed shot time and
+blends them in premultiplied alpha before compositing. This avoids exposed PNG
+rectangles and the opacity dip of ordinary overlapping cross-fades. It never
+emits, translates or despawns copies of a puff texture. Main-island steam is
+lighter; the farther active vent is denser, with a different cycle phase and
+scale. Source coordinates use the same projection as the terrain.
+
+The loop is deterministic under seeks and restart, freezes with pause/focus,
+and advances more slowly under Reduced Motion. Source images, exact prompts,
+vent landmarks, alpha cleanup and export recipe are retained in the environment
+source folder. Tests check transparent boundaries, loop/vent registration,
+visible motion at both vents and correct premultiplied blending. Native frame
+and close-up movie review remain necessary alongside those checks.
 
 ## Gallery and handoff
 
@@ -142,5 +167,5 @@ end fade. The terminal camera, eagle and wind state is exposed for later clip
 integration. New Game retains its bedroom opening until the full cinematic and
 playable infiltration handoff are ready.
 
-See [current review evidence](../../reviews/cinder_bridges_smoke/README.md).
+See [current review evidence](../../reviews/veinhold_reveal/README.md).
 Earlier ten-second studies remain historical evidence of their own revisions.

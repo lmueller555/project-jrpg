@@ -99,17 +99,34 @@ def products(source=SOURCE, target=TARGET):
             raise ValueError('Unrecorded smoke artwork')
         with Image.open(_source_path(source, spec['source'])) as original:
             smoke = original.convert('RGBA')
-        crop = spec['crop']
-        if (not _integers(crop, 4) or not 0 <= crop[0] < crop[2] <= smoke.width
-                or not 0 <= crop[1] < crop[3] <= smoke.height):
-            raise ValueError('Invalid smoke artwork crop')
-        smoke = smoke.crop(crop)
-        # Discard the generator's invisible low-alpha matte noise; retain the
-        # authored cloud's semitransparent lobes and transparent edge margins.
-        smoke.putalpha(smoke.getchannel('A').point(lambda a:a if a >= 8 else 0))
-        smoke = smoke.resize(tuple(spec['canvas']), Image.Resampling.NEAREST)
-        output[target/'smoke_puff.png'] = _png(smoke)
-        manifest['smoke'] = {'texture':'smoke_puff.png', 'emitters':spec['emitters']}
+        columns, rows = spec['grid']
+        frames = []
+        for index, mouth in enumerate(spec['mouth_positions']):
+            x, y = index % columns, index // columns
+            cell = smoke.crop((round(x*smoke.width/columns), round(y*smoke.height/rows),
+                               round((x+1)*smoke.width/columns), round((y+1)*smoke.height/rows)))
+            cell.putalpha(cell.getchannel('A').point(lambda a:a if a >= 16 else 0))
+            bounds = cell.getchannel('A').getbbox()
+            if bounds is None or min(bounds[0], bounds[1], cell.width-bounds[2], cell.height-bounds[3]) < 16:
+                raise ValueError('Smoke plume overlaps its source cell boundary')
+            # Fixed sampling canvas and explicit vent landmarks avoid frame-size
+            # or registration changes as the billowing silhouette evolves.
+            common = Image.new('RGBA', tuple(spec['source_cell_canvas']))
+            common.paste(cell, (0, 0))
+            scale = spec['scale']
+            sampled = common.resize((round(common.width*scale), round(common.height*scale)), Image.Resampling.NEAREST)
+            frame = Image.new('RGBA', tuple(spec['canvas']))
+            offset = tuple(round(anchor-point*scale) for anchor, point in zip(spec['anchor'], mouth))
+            frame.paste(sampled, offset)
+            edges = frame.getchannel('A').getbbox()
+            if edges is None or min(edges[0], edges[1], frame.width-edges[2], frame.height-edges[3]) < 8:
+                raise ValueError('Exported smoke plume touches canvas edge')
+            filename = f'plume_{index+1:02d}.png'
+            output[target/filename] = _png(frame)
+            frames.append({'file':filename, 'duration_ms':spec['frame_duration_ms']})
+        manifest['smoke'] = {'canvas':spec['canvas'], 'anchor':spec['anchor'],
+                             'frames':frames, 'emitters':spec['emitters']}
+    if 'facility' in recipe:manifest['facility'] = recipe['facility']
     output[target/'art.json'] = (json.dumps(manifest, indent=2)+'\n').encode()
     return output
 

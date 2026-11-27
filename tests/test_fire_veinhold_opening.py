@@ -54,10 +54,10 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         record = crest['layers']['panorama']
         scale = max(960/image.get_width(), 640/image.get_height())*record['scale']
         # The source window has passed the approach and exposes the authored
-        # upper vista and Merovar bridge landing around sourcey650.
+        # upper vista and Merovar bridge landing around sourcey700.
         top = (640-image.get_height()*scale)/2+record['offset'][1]
         self.assertAlmostEqual(top, -50.*scale, delta=1.)
-        self.assertLess((650.-50.)*scale, 640)
+        self.assertLess((700.-50.)*scale, 640)
         self.scene.update(10.-1e-6)
         self.assertTrue(self.scene.active)
         self.assertAlmostEqual(self.scene.state_at(self.scene.elapsed)['vista_elapsed'], 10., places=5)
