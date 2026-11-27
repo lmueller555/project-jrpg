@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generator": "tools/build_prologue_alert_audio.py",
+  "seed": 824613,
+  "sample_rate": 48000,
+  "channels": 2,
+  "sample_width": 2,
+  "source": "Original deterministic synthesis; no third-party samples.",
+  "sounds": {
+    "industrial_siren.wav": {
+      "duration": 2.0,
+      "sha256": "1ae304c0c87d074542dbfc037ee64da5e17d2c6d3ed6458ede998ac450e48f73",
+      "peak": 0.81,
+      "rms": 0.335339,
+      "loop": true,
+      "clipped_samples": 0
+    },
+    "distant_siren.wav": {
+      "duration": 2.0,
+      "sha256": "6fe928ae6d818c82d05faff4034a6c3dc2deb75e02ec6b72eaaabe0d9968ae3a",
+      "peak": 0.73,
+      "rms": 0.283758,
+      "loop": true,
+      "clipped_samples": 0
+    },
+    "bridge_rush.wav": {
+      "duration": 1.0,
+      "sha256": "4bf2ed7f31db28ba065fdf6bd9b98c1804e72da7339cacc556e90c643c3a9f1a",
+      "peak": 0.73,
+      "rms": 0.132064,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "ice_settle.wav": {
+      "duration": 1.4,
+      "sha256": "a4cbdbcc4000af503cb7051c2a3fcdd776c0d6661e067f2f0a4639a9fc27f409",
+      "peak": 0.48,
+      "rms": 0.064643,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "machinery_bed.wav": {
+      "duration": 2.0,
+      "sha256": "2c10ea70dcd4c3008c02ad4645c716c4a39b68bc35aeebeced3f1b8cc23de1df",
+      "peak": 0.64,
+      "rms": 0.161354,
+      "loop": true,
+      "clipped_samples": 0
+    }
+  },
+  "timeline": {
+    "machinery_start": 25,
+    "alarm_start": 30,
+    "alarm_lead_seconds": 4,
+    "rush_start": 34,
+    "bridge_arrival": 35,
+    "sequence_end": 39,
+    "siren_period": 2
+  }
+}

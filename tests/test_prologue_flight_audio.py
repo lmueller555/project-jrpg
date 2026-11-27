@@ -201,5 +201,29 @@ class FlightAudioTests(unittest.TestCase):
                                     np.max(np.abs(np.diff(value.astype(int),axis=0))))
         self.assertLess(total,4*1024*1024)
 
+    def test_real_mixer_later_clip_seeds_pcm_wind_phase_and_preserves_join_lease(self):
+        import pygame
+        pygame.mixer.init(frequency=48000,size=-16,channels=2)
+        try:
+            audio = PrologueFlightAudio(self.game)
+            original = audio._sound('wind_loop.wav')
+            raw = original.get_raw()
+            audio.start(35.)
+            wind = audio.voices['wind_bed']
+            # Six-second source: global35s begins at its five-second mark.
+            cut = round(5.*48000)*4
+            self.assertEqual(wind.sound.get_raw(),raw[cut:]+raw[:cut])
+            audio.update(35.,35.1,mode='glide')
+            audio.begin_shot()
+            self.assertIs(audio.voices['wind_bed'],wind)
+            self.assertEqual([event['id'] for event in audio.events],['wind_bed'])
+            audio.stop()
+            # Repeated standalone seeks retain one shifted copy at most.
+            for phase in (25.,30.25,34.5,35.75):
+                audio.start(phase);audio.stop()
+            shifted = [key for key in audio.sounds if len(key) == 3 and key[0]=='wind_loop.wav']
+            self.assertLessEqual(len(shifted),1)
+        finally:pygame.mixer.quit()
+
 
 if __name__ == '__main__':unittest.main()

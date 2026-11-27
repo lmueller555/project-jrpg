@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "generator": "tools/build_prologue_alert_audio.py",
+  "seed": 824613,
+  "sample_rate": 48000,
+  "channels": 2,
+  "sample_width": 2,
+  "source": "Original deterministic synthesis; no third-party samples.",
+  "timeline": {
+    "machinery_start": 25,
+    "alarm_start": 30,
+    "alarm_lead_seconds": 4,
+    "rush_start": 34,
+    "bridge_arrival": 35,
+    "sequence_end": 39,
+    "siren_period": 2
+  }
+}

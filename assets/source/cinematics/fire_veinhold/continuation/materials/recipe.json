@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "generation_id": "exec-f6f1e0f1-5e20-4826-b7ac-ee2e73413e47",
+  "prompt_file": "prompt.txt",
+  "reference": "eagle_endpoint_reference.png",
+  "reference_description": "Production Shot1 frame at25.0seconds with inactive warning fixtures; native960x640.",
+  "source": "atlas_generated.png",
+  "native_canvas": [
+    1254,
+    1254
+  ],
+  "export_method": "Exact native quadrant crops; no scaling. Texture tiling is performed by the offline spatial scene.",
+  "crops": {
+    "schist.png": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "masonry.png": [
+      627,
+      0,
+      1254,
+      627
+    ],
+    "steel.png": [
+      0,
+      627,
+      627,
+      1254
+    ],
+    "ocean.png": [
+      627,
+      627,
+      1254,
+      1254
+    ]
+  },
+  "sha256": {
+    "atlas_generated.png": "95b26fb10fd5647e86109b298733deeace597e4ab19e76543322599d7cc43dba",
+    "eagle_endpoint_reference.png": "2cac253738595d21011cec611d060b8ad3bc7c6eeabb67f891e01c974372a2d6",
+    "masonry.png": "3ead1270ccc697b0d7fbbacedfeb5a8c8f90de1ecf9f4c4009e42afdaa75f8d3",
+    "ocean.png": "2f1458b65ee8b062097458c45970a1479f54813f9e16bfd2fc2432227a246a06",
+    "schist.png": "e70d9c6378c23a7de809ed655c26858bad92536f4f6e3f6a26238331f1ee356a",
+    "steel.png": "b97138cc93fc14ebdc938f5c2539b030c6a42ec53ce0768f8571d2c3d3da7a07"
+  }
+}

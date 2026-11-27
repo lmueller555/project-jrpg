@@ -2069,16 +2069,28 @@ def main(argv=None):
     clock=pygame.time.Clock()
     limit=args.frames or (1 if args.headless else 0)
     count=0
+    presentation=None
     try:
         while game.handle_events():
             seconds=1/60 if args.headless else min(clock.tick(60)/1000,.1)
+            current_presentation=game.gallery_session or game.cinematic
+            if current_presentation is not presentation:
+                # Opening/restarting a detailed replay can preload images in
+                # the event handler. Show its first frame before advancing its
+                # clock, instead of charging that loading time to the film.
+                seconds=0.
             game.update(seconds);game.draw();count+=1
+            presentation=game.gallery_session or game.cinematic
             if limit and count>=limit:break
         if args.screenshot:
             args.screenshot.parent.mkdir(parents=True,exist_ok=True)
             pygame.image.save(game.window,str(args.screenshot))
     finally:
         game.save_progress()
+        if game.gallery_session is not None:
+            game.gallery_session.close(resume_music=False)
+        if game.cinematic is not None:
+            game.cinematic.reset()
         game.opening_audio.reset()
         game.cave_lesson.release_pose()
         game.elemental_bosses.stop_audio()

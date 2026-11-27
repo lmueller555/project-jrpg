@@ -8,6 +8,21 @@ for reproducing approved assets, not as the construction method for new walks.
 Do not rebuild approved references or migrate unrelated art as part of adopting
 the standard.
 
+Capture the Fire Veinhold prologue through its actual save-disabled Gallery
+runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
+complete 39-second film at 60 FPS and writes to `docs/reviews/veinhold_orbit/`.
+Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`, or
+`eagle_ascent` for an individual clip; its Gallery ID also works. Add
+`--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
+960×640 detail and reconstruct sound offline from the production exports and
+global timing; this is not hardware-loopback listening evidence. Capture JSON
+records frame count, full-reel offset, source/runtime hashes, timing samples,
+natural Gallery return and absence of persistent writes. The
+[scene owner](../docs/narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) records the
+storyboard and camera contract. Use `tools/capture_gallery.py --mode thumbnails
+--scene fire_veinhold_shot_02 --out PATH` for a focused thumbnail recapture;
+repeat `--scene` to include other entries.
+
 Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
 individual banks with `tools/export_iselin_native_idles.py` and
 `tools/export_iselin_native_{front,left,right,back}_walk.py`. Each supports

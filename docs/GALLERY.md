@@ -21,15 +21,16 @@ does not replace New Game's opening or create a main-story encounter.
 See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 [review clip](reviews/ice_reaper_opening/preview.mp4).
 
-**Fire Veinhold Prologue** includes **Shot 1 — Eagle Ascent and Cinder Isles (25s)** and
-**Fire Veinhold — Complete Cutscene**. The complete entry automatically plays
-all finished shots in the production scene list; currently both entries play
-the 25-second ascent and Cinder Isles view. Later shot PRs extend that list and add their own
-individual entries. These use native 960×640 cinematic detail with wind and
-flight Foley. New Game keeps the bedroom opening until the full prologue and
-playable handoff are ready. See the
-[scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
-[review evidence](reviews/eagle_exit/README.md).
+**Fire Veinhold Prologue** contains five individual shots and **Fire Veinhold —
+Complete Cutscene (39s)**. The production list combines the 25-second eagle
+approach/vista, five-second 180° island orbit, four-second alarm lead-in,
+one-second bridge rush and four-second frozen-guard reveal. The orbit has 301
+inclusive perspective samples at 60 FPS. Individual clips initialize their
+correct full-reel state, including an already sounding alarm for the bridge rush.
+All use native 960×640 cinematic detail, continuous wind and owned scene effects.
+New Game keeps the bedroom opening until the full prologue and playable handoff
+are ready. See the [scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
+[60 FPS review evidence](reviews/veinhold_orbit/README.md).
 
 ## Controls
 
@@ -81,10 +82,14 @@ it does not duplicate dialogue, animation or camera scripts.
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 | `ice_reaper_opening` | Ice Reaper: Frozen Clearing (32s) | Independent late-game cinematic study; ends before playable combat |
 | `mira_arm_rig` | Mira: Aether Arm Rig | Independent art/technique preview; no journey changes |
-| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Ordered implemented clips; currently the 25-second ascent and Cinder Isles view |
+| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Five ordered production clips totaling 39 seconds |
 | `fire_veinhold_shot_01` | Shot 1 — Eagle Ascent and Cinder Isles (25s) | 15-second ascent followed by ten seconds overlooking the Cinder Isles |
+| `fire_veinhold_shot_02` | Shot 2 — Fire Veinhold — Island Orbit (5s) | 301 rendered camera samples turn 180° around the main isle toward Merovar |
+| `fire_veinhold_shot_03` | Shot 3 — Fire Veinhold — Emergency Alarms (4s) | Red beacons and siren activate; four seconds precede the rush |
+| `fire_veinhold_shot_04` | Shot 4 — Fire Veinhold — Bridge Rush (1s) | Fast movement from the fortress toward the Merovar bridge landing |
+| `fire_veinhold_shot_05` | Shot 5 — Fire Veinhold — Frozen Guards (4s) | Settle 20 feet onto the bridge, facing frozen guards and mainland |
 
-There are 22 current entries. The old flashforward, relief-caravan arrival
+There are 26 current entries. The old flashforward, relief-caravan arrival
 and MQ04 lantern-assembly fixtures are removed. Elira's private household
 lantern retrieval/placement remains ordinary remembrance, without a festival.
 Mill intake scenes use the retained encounter-complete facts. Regional scenes
@@ -121,13 +126,18 @@ copied before audio starts into a separate, non-persistent settings object.
 
 No preview checkpoint, reward or completion receipt can reach the normal save.
 Continue resumes the title's original loaded journey. Closing a preview stops
-its owned morning and regional effects and soundtrack, then restores
+its owned cinematic, morning and regional effects and soundtrack, then restores
 title music. Regional voice leases are released by sound identity; unrelated
 channels are not globally stopped. Restart constructs another fresh runtime.
 Completion holds only the final world pose briefly and does not advance the
 next scene. Standalone Fire Veinhold films return immediately, without exposing
 an underlying world after their final clip. Window focus loss freezes preview
 progression and dialogue input.
+
+The prologue's bounded background PNG decoder is drained on scene close,
+restart and application exit before SDL shuts down. Starting a newly loaded
+presentation establishes a fresh frame clock so preload time does not skip its
+first displayed frame.
 
 The toolbar has its own display area, and scene input coordinates account for
 that viewport. This keeps the complete production dialogue and Skip controls
@@ -168,5 +178,11 @@ animation and camera timing are unchanged. The video is deliberately silent
 because SDL dummy has no audio loopback. Mixer ownership/lifecycle is tested;
 no perceptual listening is claimed.
 
-See [review evidence](reviews/gallery/README.md) for the final regression result,
+For the Fire Veinhold movie and individual clips at native 60 FPS, use
+`python tools/capture_fire_veinhold_opening.py`, optionally with
+`--shot-id island_orbit` or `--reduced-motion`. Its audio is reconstructed from
+the production exports and clock, separately from the silent general-Gallery
+review workflow.
+
+See [review evidence](reviews/gallery/README.md) for the recorded regression result,
 captured replay paths and remaining limitations.

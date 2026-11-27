@@ -82,14 +82,32 @@ class PrologueFlightAudio:
         try:return max(0.,min(1.,float(value))) if math.isfinite(float(value)) else 0.
         except (TypeError,ValueError):return 0.
 
-    def _sound(self,name):
+    def _sound(self,name,loop_phase=0.):
         try:
             spec = self.mixer.get_init()
             if not spec:return None
             key = name,spec
             if key not in self.sounds:self.sounds[key] = self.mixer.Sound(str(self.asset_root/name))
-            return self.sounds[key]
-        except (OSError,pygame.error):return None
+            original = self.sounds[key]
+            if loop_phase <= 1e-7 or not hasattr(original,'get_raw'):return original
+            # Standalone later clips enter the same global wind sample as the
+            # complete film. Existing leases remain untouched across joins.
+            raw = original.get_raw()
+            stride = abs(spec[1])//8*spec[2]
+            count = len(raw)//stride
+            if not count:return original
+            frame = round(loop_phase*spec[0])%count
+            if not frame:return original
+            phase_key = name,spec,frame
+            if phase_key not in self.sounds:
+                cut = frame*stride
+                self.sounds[phase_key] = self.mixer.Sound(buffer=raw[cut:]+raw[:cut])
+                # Keep only the original and current seek variant per sound.
+                for previous in list(self.sounds):
+                    if len(previous) == 3 and previous[0] == name and previous != phase_key:
+                        self.sounds.pop(previous)
+            return self.sounds[phase_key]
+        except (OSError,pygame.error,ValueError):return None
 
     @staticmethod
     def _wind_gain(seconds):
@@ -116,10 +134,10 @@ class PrologueFlightAudio:
                 else:voice.channel.unpause()
             except pygame.error:self.voices.pop(identifier,None)
 
-    def _play(self,identifier,name,gain,pan=0.,*,loop=False):
+    def _play(self,identifier,name,gain,pan=0.,*,loop=False,loop_phase=0.):
         if not self._active or self._paused or self.volume <= 0:return
         try:
-            sound = self._sound(name)
+            sound = self._sound(name,loop_phase if loop else 0.)
             channel = self.mixer.find_channel() if sound is not None else None
             if channel is None:return
             channel.set_volume(gain*self.volume*min(1.,1-pan),gain*self.volume*min(1.,1+pan))
@@ -132,7 +150,8 @@ class PrologueFlightAudio:
 
     def _ensure_wind(self):
         if 'wind_bed' not in self.voices:
-            self._play('wind_bed','wind_loop.wav',self._wind_gain(self._clock+self._wind_offset),loop=True)
+            phase = self._clock+self._wind_offset
+            self._play('wind_bed','wind_loop.wav',self._wind_gain(phase),loop=True,loop_phase=phase)
 
     def start(self,global_elapsed=0):
         try:now = float(global_elapsed)

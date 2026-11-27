@@ -1,0 +1,10 @@
+test_complete_and_late_clip_have_exact_authored_offsets (tests.test_prologue_capture.PrologueCaptureTests.test_complete_and_late_clip_have_exact_authored_offsets) ... ok
+test_industrial_mix_starts_at_25_while_alarm_stays_off_until_30 (tests.test_prologue_capture.PrologueCaptureTests.test_industrial_mix_starts_at_25_while_alarm_stays_off_until_30) ... ok
+test_late_capture_contains_alarm_without_replaying_eagle_cues (tests.test_prologue_capture.PrologueCaptureTests.test_late_capture_contains_alarm_without_replaying_eagle_cues) ... ok
+test_representative_complete_frames_include_new_boundaries (tests.test_prologue_capture.PrologueCaptureTests.test_representative_complete_frames_include_new_boundaries) ... ok
+test_rush_thumbnail_is_reachable_before_one_second_completion (tests.test_prologue_capture.PrologueCaptureTests.test_rush_thumbnail_is_reachable_before_one_second_completion) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.476s
+
+OK

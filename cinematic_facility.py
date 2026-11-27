@@ -45,12 +45,35 @@ class CinematicFacility:
         self.radii = _point(data['reservoir']['radii'], (200, 100))
         if min(self.radii) <= 0:raise ValueError('Invalid reservoir interior')
 
-    def samples(self, seconds, reduced_motion=False):
+    def inactive_background(self, image):
+        """Shade baked emissive lens pixels as unpowered fixtures.
+
+        The preserved painting contains bright red lamp cores. This small
+        fixture-lighting pass keeps their housings and the surrounding painting
+        intact while permitting the later alert to have an actual onset.
+        It never changes the preserved source/export or amber machinery.
+        """
+        result = image.copy()
+        for center, _ in self.beacons:
+            cx, cy = map(round, center)
+            for y in range(max(0, cy-9), min(image.get_height(), cy+10)):
+                for x in range(max(0, cx-9), min(image.get_width(), cx+10)):
+                    distance = math.hypot(x-cx, y-cy)
+                    color = image.get_at((x, y))
+                    if distance > 9 or color.r < 90 or color.r <= max(color.g*1.3, color.b*1.15):
+                        continue
+                    weight = min(1., (9.-distance)/3.)
+                    result.set_at((x, y), (round(color.r*(1.-.82*weight)),
+                                          round(color.g*(1.-.5*weight)),
+                                          round(color.b*(1.-.25*weight)), color.a))
+        return result
+
+    def samples(self, seconds, reduced_motion=False, *, alarm_active=True):
         if type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds < 0:
             raise ValueError('Invalid facility clock')
-        beacons = [{'origin':point, 'strength':.7 if reduced_motion else
-                    .3+.7*(.5+.5*math.sin(seconds*math.tau/3.2+phase))**3}
-                   for point, phase in self.beacons]
+        beacons = ([{'origin':point, 'strength':.7 if reduced_motion else
+                     .3+.7*(.5+.5*math.sin(seconds*math.tau/3.2+phase))**3}
+                    for point, phase in self.beacons] if alarm_active else [])
         conduits = []
         for identifier, points, phase in self.conduits:
             fraction = .6 if reduced_motion else (seconds*.16+phase)%1.
