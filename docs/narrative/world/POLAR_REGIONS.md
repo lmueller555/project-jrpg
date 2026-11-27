@@ -179,6 +179,18 @@ still billow from it. The farther island retains its active volcano and a
 denser ash plume. The visible contrast is an environmental clue to extraction,
 not a separate explanation of every island's geology.
 
+**Fire Veinhold design approved, 2026-11-27:** The facility is a basalt,
+blackened-steel and weathered-bronze military fortress on the terrace in front
+of and to the right of the dormant cone. A braced extraction structure reaches
+beneath the volcano's lower flank; two reinforced conduits carry Fire-aspected
+aether toward a fortified circular containment reservoir. Its captured power
+resembles suspended, turbulent embers rather than an ordinary lava lake.
+A command keep, defensive walls, barracks and service yards surround the works.
+Both bridge approaches terminate in fortified gatehouses, with roads continuing
+into the compound. Crimson insignia and red emergency beacons distinguish the
+military installation; amber power remains visually distinct from the alarms.
+The [scene owner](../scenes/FIRE_VEINHOLD_PROLOGUE.md) records its presentation.
+
 Two major metal bridges connect the main isle to Merovar's coast and to
 Othara's Damar Drylands respectively. Both have mainland/island abutments;
 open water remains beneath the spans. These establish physical access routes,

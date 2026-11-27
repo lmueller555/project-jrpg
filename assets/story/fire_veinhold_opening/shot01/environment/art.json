@@ -18,7 +18,80 @@
     "vista_seconds": 10
   },
   "smoke": {
-    "texture": "smoke_puff.png",
+    "canvas": [
+      256,
+      256
+    ],
+    "anchor": [
+      70,
+      230
+    ],
+    "frames": [
+      {
+        "file": "plume_01.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_02.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_03.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_04.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_05.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_06.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_07.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_08.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_09.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_10.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_11.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_12.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_13.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_14.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_15.png",
+        "duration_ms": 250
+      },
+      {
+        "file": "plume_16.png",
+        "duration_ms": 250
+      }
+    ],
     "emitters": [
       {
         "id": "main_steam",
@@ -26,19 +99,14 @@
           538,
           266
         ],
-        "interval": 0.38,
-        "lifetime": 9.0,
-        "rise": 9.0,
-        "wind": 3.5,
-        "start_size": 10.0,
-        "end_size": 80.0,
-        "opacity": 65,
+        "scale": 0.65,
+        "opacity": 155,
         "tint": [
           210,
           224,
           239
         ],
-        "seed": 11
+        "phase_seconds": 0.0
       },
       {
         "id": "distant_ash",
@@ -46,20 +114,166 @@
           783,
           262
         ],
-        "interval": 0.3,
-        "lifetime": 11.0,
-        "rise": 10.0,
-        "wind": 7.0,
-        "start_size": 5.0,
-        "end_size": 60.0,
-        "opacity": 165,
+        "scale": 0.7,
+        "opacity": 225,
         "tint": [
           154,
           164,
           185
         ],
-        "seed": 29
+        "phase_seconds": 1.35
       }
     ]
+  },
+  "facility": {
+    "beacons": [
+      {
+        "origin": [
+          248,
+          299
+        ],
+        "phase": 0.0
+      },
+      {
+        "origin": [
+          302,
+          299
+        ],
+        "phase": 0.8
+      },
+      {
+        "origin": [
+          450,
+          450
+        ],
+        "phase": 1.6
+      },
+      {
+        "origin": [
+          528,
+          459
+        ],
+        "phase": 0.0
+      },
+      {
+        "origin": [
+          748,
+          431
+        ],
+        "phase": 0.8
+      },
+      {
+        "origin": [
+          768,
+          408
+        ],
+        "phase": 1.6
+      },
+      {
+        "origin": [
+          865,
+          453
+        ],
+        "phase": 0.0
+      },
+      {
+        "origin": [
+          928,
+          409
+        ],
+        "phase": 0.8
+      },
+      {
+        "origin": [
+          956,
+          433
+        ],
+        "phase": 1.6
+      }
+    ],
+    "conduits": [
+      {
+        "id": "west_line",
+        "phase": 0.0,
+        "points": [
+          [
+            673,
+            330
+          ],
+          [
+            713,
+            343
+          ],
+          [
+            728,
+            365
+          ],
+          [
+            738,
+            380
+          ],
+          [
+            760,
+            392
+          ],
+          [
+            775,
+            409
+          ],
+          [
+            786,
+            426
+          ]
+        ]
+      },
+      {
+        "id": "east_line",
+        "phase": 0.45,
+        "points": [
+          [
+            677,
+            322
+          ],
+          [
+            718,
+            330
+          ],
+          [
+            740,
+            345
+          ],
+          [
+            748,
+            363
+          ],
+          [
+            760,
+            375
+          ],
+          [
+            779,
+            387
+          ],
+          [
+            794,
+            405
+          ],
+          [
+            811,
+            426
+          ]
+        ]
+      }
+    ],
+    "reservoir": {
+      "center": [
+        855,
+        451
+      ],
+      "radii": [
+        66,
+        13
+      ]
+    }
   }
 }

@@ -13,6 +13,7 @@ from pathlib import Path
 import pygame
 
 from cinematic_smoke import CinematicSmoke
+from cinematic_facility import CinematicFacility
 from prologue_flight_audio import PrologueFlightAudio, wing_phase_at
 from ui_style import BRASS, MUTED
 
@@ -175,11 +176,13 @@ class FireVeinholdOpening:
                         or not 0 <= value <= layers['panorama'].get_height()):
                     raise ValueError('Invalid panorama source window')
             smoke_record = environment['smoke']
-            texture = pygame.image.load(str(self._path(smoke_record['texture'], environment_path.parent))).convert_alpha()
-            if not texture.get_bounding_rect().width:
-                raise ValueError('Empty smoke texture')
-            smoke = CinematicSmoke(texture, smoke_record['emitters'], layers['panorama'].get_size())
-            assets[shot['id']] = {'layers':layers, 'eagle':sequences, 'smoke':smoke,
+            plume_frames = []
+            for frame_record in smoke_record['frames']:
+                image = pygame.image.load(str(self._path(frame_record['file'], environment_path.parent))).convert_alpha()
+                plume_frames.append((image, frame_record['duration_ms']/1000.))
+            smoke = CinematicSmoke(plume_frames, smoke_record['anchor'], smoke_record['emitters'], layers['panorama'].get_size())
+            facility = CinematicFacility(environment['facility'], layers['panorama'].get_size())
+            assets[shot['id']] = {'layers':layers, 'eagle':sequences, 'smoke':smoke, 'facility':facility,
                                  'anchor':anchor, 'timing':timing,
                                  'framing':framing}
         return assets
@@ -245,7 +248,7 @@ class FireVeinholdOpening:
         # A single tall painting supplies approach AND offshore vista. Panning
         # its source window over the ridge preserves every terrain relationship.
         panorama = self._assets[shot['id']]['layers']['panorama']
-        zoom = 1.05+.05*_smooth(climb)+.01*vista
+        zoom = 1.05-.05*_smooth(climb)+.01*vista
         factor = max(960/panorama.get_width(), 640/panorama.get_height())*zoom
         framing = self._assets[shot['id']]['framing']
         source_y = (framing.get('ascent_start_y', 650.)*(1.-_smooth(climb))
@@ -261,6 +264,7 @@ class FireVeinholdOpening:
                 'phase':'ascent' if local < ascent else 'cinder_vista',
                 'crest_time':ascent, 'vista_elapsed':max(0., local-ascent),
                 'smoke':self._assets[shot['id']]['smoke'].samples(local, self.reduced_motion),
+                'facility':self._assets[shot['id']]['facility'].samples(local, self.reduced_motion),
                 'layers':layers}
 
     @property
@@ -381,6 +385,7 @@ class FireVeinholdOpening:
         self._terrain(target, art['layers']['panorama'], state['layers']['panorama'])
         scale, origin, _ = self._panorama_projection(art['layers']['panorama'], state['layers']['panorama'])
         art['smoke'].draw(target, state['smoke'], scale, origin)
+        art['facility'].draw(target, state['facility'], scale, origin)
         # Complete eagle frames stay at one chase distance. Wing extent never
         # drives body scale or registration, including during its bank.
         eagle = state['eagle']
