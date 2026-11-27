@@ -1,0 +1,1364 @@
+{
+  "version": 1,
+  "recipe_sha256": "46af3a81d6e8c714f50f1c198ce8fb35af019bc58430b6f2a5c95ea3c1e73525",
+  "canvas": [
+    256,
+    256
+  ],
+  "anchor": [
+    128,
+    144
+  ],
+  "density": 2,
+  "alpha_threshold": 128,
+  "palette_colors": 128,
+  "matte_cleanup": {
+    "red": "r >= 180 and r > 2.5*g and r > 2.5*b",
+    "green": "g >= 80 and g > 1.3*r and g > 1.8*b"
+  },
+  "palette_sha256": "e9e54b7a1a7569e0e29255903e0aac7eb6aa95fe85b6cfd0fbb50ca321b039ed",
+  "palette_rgb": [
+    239,
+    193,
+    137,
+    223,
+    167,
+    111,
+    217,
+    151,
+    90,
+    198,
+    147,
+    105,
+    199,
+    136,
+    86,
+    193,
+    126,
+    76,
+    181,
+    127,
+    89,
+    168,
+    124,
+    93,
+    178,
+    115,
+    73,
+    165,
+    113,
+    81,
+    169,
+    105,
+    66,
+    160,
+    103,
+    71,
+    153,
+    107,
+    77,
+    153,
+    98,
+    69,
+    146,
+    100,
+    73,
+    135,
+    99,
+    77,
+    151,
+    92,
+    62,
+    142,
+    92,
+    65,
+    145,
+    86,
+    58,
+    137,
+    90,
+    65,
+    136,
+    82,
+    59,
+    130,
+    89,
+    66,
+    129,
+    83,
+    61,
+    129,
+    80,
+    58,
+    128,
+    75,
+    54,
+    121,
+    84,
+    64,
+    120,
+    78,
+    58,
+    119,
+    74,
+    58,
+    120,
+    74,
+    52,
+    113,
+    79,
+    62,
+    113,
+    73,
+    55,
+    104,
+    77,
+    65,
+    103,
+    72,
+    59,
+    118,
+    70,
+    52,
+    109,
+    69,
+    53,
+    112,
+    66,
+    50,
+    111,
+    62,
+    46,
+    103,
+    69,
+    54,
+    103,
+    65,
+    51,
+    103,
+    63,
+    49,
+    102,
+    59,
+    45,
+    95,
+    68,
+    57,
+    96,
+    64,
+    51,
+    95,
+    61,
+    50,
+    95,
+    61,
+    45,
+    94,
+    58,
+    48,
+    94,
+    58,
+    43,
+    94,
+    54,
+    43,
+    88,
+    66,
+    59,
+    87,
+    62,
+    54,
+    88,
+    59,
+    49,
+    87,
+    56,
+    47,
+    87,
+    56,
+    42,
+    80,
+    61,
+    55,
+    79,
+    57,
+    52,
+    80,
+    55,
+    48,
+    74,
+    55,
+    51,
+    86,
+    53,
+    45,
+    86,
+    52,
+    40,
+    80,
+    53,
+    45,
+    80,
+    52,
+    40,
+    74,
+    53,
+    50,
+    75,
+    52,
+    44,
+    71,
+    52,
+    49,
+    68,
+    52,
+    49,
+    86,
+    48,
+    39,
+    80,
+    48,
+    39,
+    77,
+    49,
+    41,
+    77,
+    45,
+    38,
+    73,
+    48,
+    44,
+    73,
+    47,
+    38,
+    73,
+    45,
+    37,
+    72,
+    41,
+    35,
+    67,
+    49,
+    48,
+    68,
+    49,
+    44,
+    67,
+    46,
+    45,
+    68,
+    46,
+    39,
+    67,
+    43,
+    39,
+    68,
+    43,
+    35,
+    67,
+    41,
+    35,
+    67,
+    38,
+    33,
+    63,
+    48,
+    46,
+    62,
+    46,
+    44,
+    61,
+    45,
+    44,
+    62,
+    44,
+    42,
+    59,
+    44,
+    43,
+    60,
+    43,
+    43,
+    58,
+    43,
+    43,
+    62,
+    42,
+    38,
+    58,
+    42,
+    40,
+    60,
+    40,
+    39,
+    57,
+    40,
+    40,
+    63,
+    40,
+    34,
+    59,
+    40,
+    34,
+    60,
+    37,
+    35,
+    60,
+    37,
+    31,
+    59,
+    34,
+    30,
+    55,
+    42,
+    41,
+    54,
+    40,
+    40,
+    54,
+    39,
+    39,
+    53,
+    38,
+    38,
+    53,
+    37,
+    37,
+    54,
+    36,
+    32,
+    49,
+    36,
+    37,
+    53,
+    34,
+    34,
+    49,
+    34,
+    35,
+    54,
+    33,
+    29,
+    51,
+    33,
+    29,
+    47,
+    34,
+    35,
+    47,
+    33,
+    31,
+    44,
+    33,
+    33,
+    50,
+    31,
+    29,
+    49,
+    28,
+    27,
+    45,
+    30,
+    30,
+    45,
+    27,
+    27,
+    42,
+    30,
+    31,
+    42,
+    27,
+    27,
+    39,
+    28,
+    29,
+    38,
+    26,
+    27,
+    41,
+    25,
+    25,
+    36,
+    24,
+    26,
+    37,
+    23,
+    24,
+    36,
+    20,
+    22,
+    31,
+    21,
+    23,
+    29,
+    19,
+    20,
+    25,
+    15,
+    17,
+    5,
+    0,
+    5,
+    0,
+    0,
+    0
+  ],
+  "sources": {
+    "flap": {
+      "file": "flap_generated.png",
+      "sha256": "3f1739a64a791281af99f8b33a99c88832e51d238be7473b7ec03f6527916e23",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "scale": 0.63,
+      "chest_anchor": [
+        163,
+        174
+      ],
+      "sampling_canvas": [
+        314,
+        314
+      ],
+      "head_landmark": [
+        163,
+        122
+      ],
+      "tail_landmark": [
+        160,
+        259
+      ]
+    },
+    "bank": {
+      "file": "bank_generated.png",
+      "sha256": "d15bf90fe2d2cb215ab108ebc621a9123945c6c584d3cd1fb5a63a6ded81c0ce",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "scale": 0.445,
+      "chest_anchor": [
+        229.5,
+        240
+      ],
+      "sampling_canvas": [
+        444,
+        444
+      ],
+      "head_landmark": [
+        229,
+        167
+      ],
+      "tail_landmark": [
+        225,
+        347
+      ]
+    }
+  },
+  "frames": {
+    "flap_01.png": {
+      "source": "flap",
+      "cell": 0,
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "source_occupied_bounds": [
+        13,
+        21,
+        305,
+        259
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        33,
+        47,
+        217,
+        197
+      ]
+    },
+    "flap_02.png": {
+      "source": "flap",
+      "cell": 1,
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "source_occupied_bounds": [
+        7,
+        60,
+        305,
+        260
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        29,
+        72,
+        217,
+        198
+      ]
+    },
+    "flap_03.png": {
+      "source": "flap",
+      "cell": 2,
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "source_occupied_bounds": [
+        5,
+        93,
+        307,
+        259
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        28,
+        93,
+        219,
+        197
+      ]
+    },
+    "flap_04.png": {
+      "source": "flap",
+      "cell": 3,
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "source_occupied_bounds": [
+        5,
+        112,
+        312,
+        260
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        28,
+        105,
+        222,
+        198
+      ]
+    },
+    "flap_05.png": {
+      "source": "flap",
+      "cell": 4,
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "source_occupied_bounds": [
+        7,
+        111,
+        308,
+        260
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        29,
+        104,
+        219,
+        198
+      ]
+    },
+    "flap_06.png": {
+      "source": "flap",
+      "cell": 5,
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "source_occupied_bounds": [
+        11,
+        111,
+        303,
+        261
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        32,
+        104,
+        216,
+        199
+      ]
+    },
+    "flap_07.png": {
+      "source": "flap",
+      "cell": 6,
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "source_occupied_bounds": [
+        24,
+        111,
+        294,
+        281
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        40,
+        104,
+        210,
+        211
+      ]
+    },
+    "flap_08.png": {
+      "source": "flap",
+      "cell": 7,
+      "crop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "source_occupied_bounds": [
+        19,
+        112,
+        290,
+        296
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        37,
+        105,
+        208,
+        221
+      ]
+    },
+    "flap_09.png": {
+      "source": "flap",
+      "cell": 8,
+      "crop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "source_occupied_bounds": [
+        22,
+        112,
+        291,
+        291
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        39,
+        105,
+        208,
+        217
+      ]
+    },
+    "flap_10.png": {
+      "source": "flap",
+      "cell": 9,
+      "crop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "source_occupied_bounds": [
+        12,
+        112,
+        299,
+        262
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        33,
+        105,
+        214,
+        199
+      ]
+    },
+    "flap_11.png": {
+      "source": "flap",
+      "cell": 10,
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "source_occupied_bounds": [
+        7,
+        112,
+        306,
+        259
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        29,
+        105,
+        218,
+        197
+      ]
+    },
+    "flap_12.png": {
+      "source": "flap",
+      "cell": 11,
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "source_occupied_bounds": [
+        5,
+        112,
+        312,
+        260
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        28,
+        105,
+        222,
+        198
+      ]
+    },
+    "flap_13.png": {
+      "source": "flap",
+      "cell": 12,
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "source_occupied_bounds": [
+        4,
+        109,
+        309,
+        261
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        28,
+        103,
+        220,
+        199
+      ]
+    },
+    "flap_14.png": {
+      "source": "flap",
+      "cell": 13,
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "source_occupied_bounds": [
+        7,
+        88,
+        304,
+        261
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        29,
+        89,
+        217,
+        199
+      ]
+    },
+    "flap_15.png": {
+      "source": "flap",
+      "cell": 14,
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "source_occupied_bounds": [
+        8,
+        52,
+        305,
+        261
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        30,
+        67,
+        217,
+        199
+      ]
+    },
+    "flap_16.png": {
+      "source": "flap",
+      "cell": 15,
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "source_occupied_bounds": [
+        11,
+        26,
+        307,
+        261
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        103,
+        110
+      ],
+      "offset": [
+        25,
+        34
+      ],
+      "occupied_bounds": [
+        32,
+        50,
+        219,
+        199
+      ]
+    },
+    "bank_01.png": {
+      "source": "bank",
+      "cell": 0,
+      "crop": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "source_occupied_bounds": [
+        15,
+        151,
+        433,
+        348
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        33,
+        104,
+        219,
+        192
+      ]
+    },
+    "bank_02.png": {
+      "source": "bank",
+      "cell": 1,
+      "crop": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "source_occupied_bounds": [
+        21,
+        147,
+        428,
+        347
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        35,
+        103,
+        217,
+        192
+      ]
+    },
+    "bank_03.png": {
+      "source": "bank",
+      "cell": 2,
+      "crop": [
+        887,
+        0,
+        1330,
+        444
+      ],
+      "source_occupied_bounds": [
+        26,
+        120,
+        428,
+        345
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        38,
+        91,
+        217,
+        191
+      ]
+    },
+    "bank_04.png": {
+      "source": "bank",
+      "cell": 3,
+      "crop": [
+        1330,
+        0,
+        1774,
+        444
+      ],
+      "source_occupied_bounds": [
+        34,
+        98,
+        426,
+        362
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        41,
+        81,
+        216,
+        198
+      ]
+    },
+    "bank_05.png": {
+      "source": "bank",
+      "cell": 4,
+      "crop": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "source_occupied_bounds": [
+        24,
+        127,
+        429,
+        346
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        37,
+        94,
+        217,
+        191
+      ]
+    },
+    "bank_06.png": {
+      "source": "bank",
+      "cell": 5,
+      "crop": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "source_occupied_bounds": [
+        21,
+        151,
+        429,
+        346
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        36,
+        104,
+        217,
+        191
+      ]
+    },
+    "bank_07.png": {
+      "source": "bank",
+      "cell": 6,
+      "crop": [
+        887,
+        444,
+        1330,
+        887
+      ],
+      "source_occupied_bounds": [
+        20,
+        152,
+        430,
+        346
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        35,
+        105,
+        218,
+        191
+      ]
+    },
+    "bank_08.png": {
+      "source": "bank",
+      "cell": 7,
+      "crop": [
+        1330,
+        444,
+        1774,
+        887
+      ],
+      "source_occupied_bounds": [
+        20,
+        152,
+        432,
+        346
+      ],
+      "scaled_canvas": [
+        198,
+        198
+      ],
+      "scaled_chest_anchor": [
+        102,
+        107
+      ],
+      "offset": [
+        26,
+        37
+      ],
+      "occupied_bounds": [
+        35,
+        105,
+        219,
+        191
+      ]
+    }
+  },
+  "sequence_sources": {
+    "flap": {
+      "loop": true,
+      "durations_ms": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        46,
+        46
+      ],
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "source": "flap"
+    },
+    "bank": {
+      "loop": false,
+      "duration_ms": 375,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "source": "bank",
+      "frame_files": [
+        "flap_04.png",
+        "bank_02.png",
+        "bank_03.png",
+        "bank_04.png",
+        "bank_05.png",
+        "bank_06.png",
+        "bank_07.png",
+        "flap_04.png"
+      ]
+    },
+    "glide": {
+      "loop": true,
+      "duration_ms": 250,
+      "cells": [
+        6,
+        7
+      ],
+      "source": "bank",
+      "frame_files": [
+        "flap_04.png",
+        "flap_13.png"
+      ]
+    }
+  }
+}

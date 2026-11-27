@@ -26,7 +26,7 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pygame
 from main import Game
 from cutscene_gallery import GALLERY_ENTRIES, GALLERY_BY_ID
@@ -111,6 +111,14 @@ def phase(game):
 
 
 def thumbnail_ready(identifier, g, seconds):
+    if identifier == 'fire_veinhold_opening':
+        from fire_veinhold_opening import sequence_duration
+        return g.cinematic.elapsed >= min(3., sequence_duration()*.3)
+    if identifier.startswith('fire_veinhold_shot_'):
+        from fire_veinhold_opening import available_shots
+        shot_id = GALLERY_BY_ID[identifier].fixture.keywords['shot_id']
+        shot = next(record for record in available_shots() if record['id'] == shot_id)
+        return g.cinematic.elapsed >= min(7., shot['duration']*.7)
     if identifier == 'ice_reaper_opening':
         return g.cinematic.shot == 'frozen_field'
     if identifier == 'checkpoint_borrowed_seat':
@@ -142,6 +150,9 @@ def thumbnail_ready(identifier, g, seconds):
 
 
 def crop_rect(identifier, game):
+    if identifier.startswith('fire_veinhold_'):
+        # Keep native cinematic detail before its pause/skip controls.
+        return pygame.Rect((0, 0), game.cinematic.render_size)
     if identifier == 'ice_reaper_opening':
         return pygame.Rect(0, 0, 480, 270)
     camera = game.camera.position()
@@ -198,21 +209,38 @@ def capture_thumbnails(identifiers=None):
             g = session.game
             if frame % 3 == 0:
                 g.draw()
-                snapshot=pygame.Surface(g.canvas.get_size());snapshot.blit(g.canvas,(0,0))
-                g.canvas.present_detail(snapshot)
-                fallback = (snapshot, phase(g), crop_rect(entry.id,g), frame)
+                if entry.id.startswith('fire_veinhold_'):
+                    snapshot = g.cinematic.render_frame().copy()
+                    source_frame = 'production FireVeinholdOpening.render_frame'
+                else:
+                    snapshot=pygame.Surface(g.canvas.get_size());snapshot.blit(g.canvas,(0,0))
+                    g.canvas.present_detail(snapshot)
+                    source_frame = 'production Game.canvas'
+                fallback = (snapshot, phase(g), crop_rect(entry.id,g), frame, source_frame)
                 if thumbnail_ready(entry.id, g, (frame+1)/FPS):
                     selected = fallback;break
         if selected is None:
             raise AssertionError(('Representative thumbnail cue was never reached', entry.id,
                                   fallback[1] if fallback else None))
-        surface, state, rect, frame = selected
+        surface, state, rect, frame, source_frame = selected
         image = Image.frombytes('RGB', surface.get_size(), pygame.image.tobytes(surface, 'RGB'))
-        image = image.crop((rect.left,rect.top,rect.right,rect.bottom)).resize((320,180),Image.Resampling.NEAREST)
+        image = image.crop((rect.left,rect.top,rect.right,rect.bottom))
+        # Preserve the new scene's 3:2 proportions within the Gallery's 16:9
+        # thumbnail frame, rather than stretching the entire image.
+        if entry.id.startswith('fire_veinhold_'):
+            image = ImageOps.fit(image, (320,180), method=Image.Resampling.NEAREST)
+        else:
+            image = image.resize((320,180), Image.Resampling.NEAREST)
         path = THUMBS/f'{entry.id}.png';image.save(path,optimize=True)
-        records.append({'id':entry.id,'name':entry.name,'source':'production Game.canvas',
+        records.append({'id':entry.id,'name':entry.name,'source':source_frame,
                         'file':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
                         'frame':frame,'seconds':round((frame+1)/FPS,4),'crop':list(rect),'state':state})
+        if entry.id.startswith('fire_veinhold_'):
+            scene = g.cinematic
+            records[-1]['state']['cinematic_shot'] = scene.state_at(scene.elapsed)['shot_id']
+            records[-1]['scene_asset_sha256'] = {
+                source.relative_to(ROOT).as_posix():hashlib.sha256(source.read_bytes()).hexdigest()
+                for source in sorted(scene.scene_path.parent.rglob('*')) if source.is_file()}
         if identifiers is not None:
             records[-1].update(source)
             # A focused addition also leaves its full replay composition for
@@ -227,7 +255,8 @@ def capture_thumbnails(identifiers=None):
         print('thumbnail',entry.id,frame,flush=True)
     parent.music.stop();pygame.quit()
     metadata = {**source,'fps':FPS,
-        'method':'Real isolated Gallery fixtures, normal 30 Hz updates and dialogue input; world canvas cropped before UI.',
+        'method':'Real isolated Gallery fixtures, normal 30 Hz updates and dialogue input; '
+                 'world canvas or native cinematic detail captured before the Gallery toolbar.',
         'entries':records}
     if identifiers is not None and (THUMBS/'capture.json').exists():
         # Retain the original catalogue-wide provenance and every untouched
@@ -414,7 +443,7 @@ def main():
     parser.add_argument('--scene',action='append',choices=tuple(GALLERY_BY_ID),
                         help='Capture only this thumbnail; repeat to select several. Requires --mode thumbnails.')
     args=parser.parse_args()
-    OUT=args.out
+    OUT=args.out.resolve()
     if args.scene and args.mode != 'thumbnails':parser.error('--scene requires --mode thumbnails')
     OUT.mkdir(parents=True,exist_ok=True)
     if args.mode in ('all','thumbnails'):capture_thumbnails(args.scene)

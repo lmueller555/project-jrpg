@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "canvas": [
+    256,
+    256
+  ],
+  "anchor": [
+    128,
+    144
+  ],
+  "density": 2,
+  "sequences": {
+    "flap": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "flap_01.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_02.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_03.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_04.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_05.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_06.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_07.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_08.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_09.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_10.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_11.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_12.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_13.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_14.png",
+          "duration_ms": 47
+        },
+        {
+          "file": "flap_15.png",
+          "duration_ms": 46
+        },
+        {
+          "file": "flap_16.png",
+          "duration_ms": 46
+        }
+      ]
+    },
+    "bank": {
+      "loop": false,
+      "frames": [
+        {
+          "file": "flap_04.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_02.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_03.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_04.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_05.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_06.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "bank_07.png",
+          "duration_ms": 375
+        },
+        {
+          "file": "flap_04.png",
+          "duration_ms": 375
+        }
+      ]
+    },
+    "glide": {
+      "loop": true,
+      "frames": [
+        {
+          "file": "flap_04.png",
+          "duration_ms": 250
+        },
+        {
+          "file": "flap_13.png",
+          "duration_ms": 250
+        }
+      ]
+    }
+  },
+  "timing": {
+    "period_ms": 750,
+    "first_phase_ms": 391,
+    "second_phase_ms": 141,
+    "downstroke_phase": 0.25
+  }
+}

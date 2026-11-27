@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "sample_rate": 48000,
+  "channels": 2,
+  "sample_width": 2,
+  "seed": 741915,
+  "generator": "assets/source/audio/fire_veinhold/shot01/build.py",
+  "source": {
+    "file": "assets/source/audio/fire_veinhold/shot01/wing_flap_source.wav",
+    "sha256": "97b362d11f7d6b184d990cb2a7579f6da431b81bab927ed10c7857d714b5aea6",
+    "title": "Wing Flap 1.wav",
+    "creator": "_stubb",
+    "license": "CC0-1.0",
+    "original_url": "https://freesound.org/people/_stubb/sounds/389634/"
+  },
+  "sounds": {
+    "wind_loop": {
+      "duration": 6.0,
+      "bytes": 1152044,
+      "sha256": "30ad8faa2910c95e96f566008594ead5c960a2aa339d17c53b077ed50a705588",
+      "peak": 0.379986,
+      "rms": 0.074251,
+      "clipped_samples": 0,
+      "loop": true
+    },
+    "air_pass": {
+      "duration": 1.25,
+      "bytes": 240044,
+      "sha256": "a9c1bd44e11ae5c23a8029900290b8213de80a2ade5979c418be1d9fe70ad483",
+      "peak": 0.379986,
+      "rms": 0.062073,
+      "clipped_samples": 0,
+      "loop": false
+    },
+    "bank_gust": {
+      "duration": 1.8,
+      "bytes": 345644,
+      "sha256": "74f2e9217c864dfe361f17ec214364a454218102692e882b3d082502735ef294",
+      "peak": 0.379986,
+      "rms": 0.070413,
+      "clipped_samples": 0,
+      "loop": false
+    },
+    "climb_rush": {
+      "duration": 2.0,
+      "bytes": 384044,
+      "sha256": "4af853254ea91820f92f9767f700db8a208f39bf1d5f3c7c320410f6e051325b",
+      "peak": 0.379986,
+      "rms": 0.058544,
+      "clipped_samples": 0,
+      "loop": false
+    },
+    "crest_gust": {
+      "duration": 1.55,
+      "bytes": 297644,
+      "sha256": "5a83c3dc5562e75a9e033764f2dd90ee5a7cf934fbb14d018b3cba6503edde09",
+      "peak": 0.379986,
+      "rms": 0.062291,
+      "clipped_samples": 0,
+      "loop": false
+    },
+    "wing_feather": {
+      "duration": 0.3,
+      "bytes": 57644,
+      "sha256": "4c08c95bbdc769599df10199f50143009e0a0c383ba632dbe557e05f1298282b",
+      "peak": 0.239998,
+      "rms": 0.030279,
+      "clipped_samples": 0,
+      "loop": false
+    }
+  },
+  "handoff": {
+    "shot_duration": 10.0,
+    "wind_loop_seconds": 6.0,
+    "automatic_end_fade": false,
+    "stop_owner": "cinematic controller"
+  },
+  "wing_sync": {
+    "period": 0.75,
+    "downstroke_phase": 0.25,
+    "flap_windows": [
+      [
+        0,
+        2
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "first_phase_offset_seconds": 0.391,
+    "second_phase_offset_seconds": 0.141,
+    "bank_hold_phase": 3.188,
+    "crest_hold_phase": 7.188
+  }
+}

@@ -148,6 +148,17 @@ def _ice_reaper_film(game, playback):
     game.music.play('those_i_swore_to_save', fade_ms=0)
 
 
+def _fire_veinhold_film(game, playback, shot_id=None):
+    from fire_veinhold_opening import FireVeinholdOpening
+    playback.hold_seconds = 0.
+    game.opening_audio.set_paused(True)
+    game.music.stop()
+    scene = FireVeinholdOpening(game, shot_id=shot_id)
+    game.cinematic = scene
+    scene.start(on_finish=playback.done)
+    playback.watch(lambda: not scene.active)
+
+
 def _morning(game, playback, breakfast=False):
     if breakfast:
         game.opening.restore({'version': 1, 'stage': 'explore'})
@@ -325,6 +336,24 @@ def _entry(identifier, name, chapter, description, fixture, automatic=False):
                         AUTOMATIC_CONTROLS if automatic else DIALOGUE_CONTROLS, fixture)
 
 
+def _fire_veinhold_entries():
+    """Advertise only authored shots; the complete replay uses the same list."""
+    from fire_veinhold_opening import available_shots, sequence_duration
+    shots = available_shots()
+    if not shots:return ()
+    chapter = 'Fire Veinhold Prologue'
+    contents = ', '.join(f'Shot {index} ({shot["duration"]:g}s)'
+                         for index, shot in enumerate(shots, 1))
+    entries = [_entry('fire_veinhold_opening', 'Fire Veinhold — Complete Cutscene',
+        chapter, f'All currently completed shots in sequence; currently {contents}. '
+        f'Total: {sequence_duration():g}s.', _fire_veinhold_film, True)]
+    entries.extend(_entry(shot.get('gallery_id', f'fire_veinhold_shot_{index:02d}'),
+        f'Shot {index} — {shot["name"]} ({shot["duration"]:g}s)', chapter,
+        shot['description'], partial(_fire_veinhold_film, shot_id=shot['id']), True)
+        for index, shot in enumerate(shots, 1))
+    return tuple(entries)
+
+
 
 
 def _mira_arm_rig(game, playback):
@@ -335,6 +364,7 @@ def _mira_arm_rig(game, playback):
 
 
 GALLERY_ENTRIES = (
+    *_fire_veinhold_entries(),
     _entry('morning_wake', 'Morning Bells', 'A Day Like Any Other',
            'A knock at his bedroom door wakes Caelan.', partial(_morning, breakfast=False)),
     _entry('morning_breakfast', 'Breakfast at Home', 'A Day Like Any Other',

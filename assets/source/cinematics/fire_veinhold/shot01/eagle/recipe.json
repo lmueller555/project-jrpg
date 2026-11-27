@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "canvas": [
+    256,
+    256
+  ],
+  "anchor": [
+    128,
+    144
+  ],
+  "density": 2,
+  "alpha_threshold": 128,
+  "palette_colors": 128,
+  "registration": "Chest anchor, head and torso landmarks; fixed whole-drawing scale per source. Never normalize by changing wing bounds or rotate separate limbs.",
+  "sources": {
+    "flap": {
+      "file": "flap_generated.png",
+      "sha256": "3f1739a64a791281af99f8b33a99c88832e51d238be7473b7ec03f6527916e23",
+      "grid": [
+        4,
+        4
+      ],
+      "scale": 0.63,
+      "chest_anchor": [
+        163,
+        174
+      ],
+      "head_landmark": [
+        163,
+        122
+      ],
+      "tail_landmark": [
+        160,
+        259
+      ]
+    },
+    "bank": {
+      "file": "bank_generated.png",
+      "sha256": "d15bf90fe2d2cb215ab108ebc621a9123945c6c584d3cd1fb5a63a6ded81c0ce",
+      "grid": [
+        4,
+        2
+      ],
+      "scale": 0.445,
+      "chest_anchor": [
+        229.5,
+        240
+      ],
+      "head_landmark": [
+        229,
+        167
+      ],
+      "tail_landmark": [
+        225,
+        347
+      ]
+    }
+  },
+  "sequences": {
+    "flap": {
+      "loop": true,
+      "durations_ms": [
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        46,
+        46
+      ],
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "source": "flap"
+    },
+    "bank": {
+      "loop": false,
+      "duration_ms": 375,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "source": "bank",
+      "frame_files": [
+        "flap_04.png",
+        "bank_02.png",
+        "bank_03.png",
+        "bank_04.png",
+        "bank_05.png",
+        "bank_06.png",
+        "bank_07.png",
+        "flap_04.png"
+      ]
+    },
+    "glide": {
+      "loop": true,
+      "duration_ms": 250,
+      "cells": [
+        6,
+        7
+      ],
+      "source": "bank",
+      "frame_files": [
+        "flap_04.png",
+        "flap_13.png"
+      ]
+    }
+  },
+  "timing": {
+    "period_ms": 750,
+    "first_phase_ms": 391,
+    "second_phase_ms": 141,
+    "downstroke_phase": 0.25
+  },
+  "phase_plan": {
+    "flap": "Chronological generated row-major16-pose power-flight cycle; highV, extended downstroke, low sweep, flexed recovery and reopen.",
+    "bank": "Finite level\u2192gentleleft bank\u2192level; exact neutral complete flap04 pose at both handoffs, six newly drawn complete intermediate bank poses.",
+    "glide": "Complete neutral flap04/flap13 poses provide a restrained wing-flex loop; no procedural limb deformation."
+  },
+  "alpha_cleanup": "Remove alpha below128; remove only bright saturated red matte (r>=180,r>2.5g,r>2.5b) and green matte (g>=80,g>1.3r,g>1.8b). Preserve legitimate dark reddish-brown feathers. One shared128-colour palette; no anatomical redraw in exporter.",
+  "design": {
+    "species": "golden_eagle",
+    "view": "above_and_behind_rear_three_quarter",
+    "body": "brown",
+    "nape": "tawny_gold",
+    "wings": "two complete connected wings, fingered dark primaries",
+    "feet": "tucked"
+  },
+  "generation": {
+    "tool": "image_gen",
+    "flap_id": "exec-eebbef1b-43c4-421f-9422-760e69ed0fe6",
+    "bank_id": "exec-eb32ec5b-5a36-4a96-87ee-9c64b514d67e",
+    "reference": "bank sheet references the complete flap sheet; original generated images retained unchanged"
+  }
+}
