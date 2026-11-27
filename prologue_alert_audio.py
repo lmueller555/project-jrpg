@@ -66,7 +66,9 @@ def running_contact_events(timing=None):
     Positive animation offsets advance the same cycle in picture and sound.
     Parsing happens once per owner/capture, never on the per-frame audio path.
     One table spans both running shots, so the frontal cut neither restarts the
-    cadence nor duplicates its boundary contact. The frontal picture advances
+    cadence nor duplicates its boundary contact. Cycle duration, contact phases
+    and actor offsets come from the drawings' metadata; display FPS does not
+    determine step frequency. The frontal picture advances
     these same phases by its three-second offset from the side shot. A checkout
     without the optional running assets retains its earlier audio.
     """

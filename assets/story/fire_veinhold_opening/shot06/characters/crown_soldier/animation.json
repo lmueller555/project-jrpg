@@ -9,8 +9,9 @@
     240,
     456
   ],
-  "duration_ms": 400,
-  "fps": 60,
+  "duration_ms": 800,
+  "fps": 30.0,
+  "presentation_fps": 60,
   "loop": true,
   "contacts": [
     {
@@ -26,7 +27,7 @@
   "frames": [
     {
       "file": "frame_00.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.5455,
@@ -45,7 +46,7 @@
     },
     {
       "file": "frame_01.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.059,
@@ -64,7 +65,7 @@
     },
     {
       "file": "frame_02.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.059,
@@ -83,7 +84,7 @@
     },
     {
       "file": "frame_03.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.5726,
@@ -102,7 +103,7 @@
     },
     {
       "file": "frame_04.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.9091,
@@ -121,7 +122,7 @@
     },
     {
       "file": "frame_05.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.3557,
@@ -140,7 +141,7 @@
     },
     {
       "file": "frame_06.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.9633,
@@ -159,7 +160,7 @@
     },
     {
       "file": "frame_07.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.3971,
@@ -174,7 +175,7 @@
     },
     {
       "file": "frame_08.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.3014,
@@ -189,7 +190,7 @@
     },
     {
       "file": "frame_09.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.3971,
@@ -204,7 +205,7 @@
     },
     {
       "file": "frame_10.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.1404,
@@ -219,7 +220,7 @@
     },
     {
       "file": "frame_11.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           289.37,
@@ -234,7 +235,7 @@
     },
     {
       "file": "frame_12.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           290.3429,
@@ -253,7 +254,7 @@
     },
     {
       "file": "frame_13.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.1675,
@@ -272,7 +273,7 @@
     },
     {
       "file": "frame_14.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           289.3158,
@@ -291,7 +292,7 @@
     },
     {
       "file": "frame_15.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           289.8565,
@@ -310,7 +311,7 @@
     },
     {
       "file": "frame_16.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           293.4641,
@@ -329,7 +330,7 @@
     },
     {
       "file": "frame_17.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           289.748,
@@ -348,7 +349,7 @@
     },
     {
       "file": "frame_18.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           289.9777,
@@ -367,7 +368,7 @@
     },
     {
       "file": "frame_19.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.681,
@@ -382,7 +383,7 @@
     },
     {
       "file": "frame_20.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           288.2073,
@@ -397,7 +398,7 @@
     },
     {
       "file": "frame_21.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           292.1946,
@@ -412,7 +413,7 @@
     },
     {
       "file": "frame_22.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           291.4514,
@@ -427,7 +428,7 @@
     },
     {
       "file": "frame_23.png",
-      "duration_ms": 16.666666666666668,
+      "duration_ms": 33.333333333333336,
       "landmarks": {
         "neck": [
           290.4242,

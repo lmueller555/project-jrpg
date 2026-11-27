@@ -1,0 +1,1008 @@
+{
+  "1": {
+    "frame": 1,
+    "prompt_file": "repairs/frame_01_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -151,
+        81
+      ],
+      "viewer_right": [
+        75,
+        -76
+      ]
+    },
+    "source_path": "/workspace/generated_images/exec-254bba01-c14c-4f93-9efe-d99612a9ec8e.png",
+    "generation_id": "exec-254bba01-c14c-4f93-9efe-d99612a9ec8e",
+    "transparent_background": true,
+    "status": "Internal actual arm-path review pending; not user approved.",
+    "construction": "Complete unified image-authored repair using authoring-only target marks; no guide pixels or procedural transforms in finished figure.",
+    "history": [
+      {
+        "frame": 1,
+        "prompt_file": "frame_01_hierarchical_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png"
+        ],
+        "source_bounds": [
+          0,
+          3
+        ],
+        "fraction": 0.3333333333333333,
+        "source_path": "/workspace/generated_images/exec-ac56c746-2246-46b5-9b56-8e1fdcf63d44.png",
+        "generation_id": "exec-ac56c746-2246-46b5-9b56-8e1fdcf63d44",
+        "transparent_background": true,
+        "status": "Internal actual-pose review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural body deformation.",
+        "retained_master": "frame_01_early_arms_trial.png"
+      }
+    ],
+    "source_master": "repairs/frame_01.png",
+    "source_sha256": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
+    "prompt_sha256": "4aef6f18a03779382ac0a6bf0ea5a25acce50db2a8df3521f24a49fe645d1297",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "2": {
+    "frame": 2,
+    "prompt_file": "repairs/frame_02_fist_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_early_arms_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02_fist_target_guide.png"
+    ],
+    "target_fists_relative_belt_canonical": {
+      "viewer_left": [
+        -129,
+        72
+      ],
+      "viewer_right": [
+        75,
+        -63
+      ]
+    },
+    "source_path": "/workspace/generated_images/exec-338b9c40-5278-46ee-aba7-0784c7ed3a1e.png",
+    "generation_id": "exec-338b9c40-5278-46ee-aba7-0784c7ed3a1e",
+    "transparent_background": true,
+    "status": "Internal actual arm-path review pending; not user approved.",
+    "construction": "Complete unified image-authored repair using authoring-only target marks; no guide pixels or procedural transforms in finished figure.",
+    "history": [
+      {
+        "frame": 2,
+        "prompt_file": "frame_02_hierarchical_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png"
+        ],
+        "source_bounds": [
+          0,
+          3
+        ],
+        "fraction": 0.6666666666666666,
+        "source_path": "/workspace/generated_images/exec-47d0ec4c-fad3-4e16-ba60-343998138c3e.png",
+        "generation_id": "exec-47d0ec4c-fad3-4e16-ba60-343998138c3e",
+        "transparent_background": true,
+        "status": "Internal actual-pose review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural body deformation.",
+        "retained_master": "frame_02_early_arms_trial.png"
+      }
+    ],
+    "source_master": "repairs/frame_02.png",
+    "source_sha256": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+    "prompt_sha256": "b0cfa0573e19330347e26276f0d3871a0c9eebf9f66848a537500239b8accd43",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "3": {
+    "frame": 3,
+    "prompt_file": "repairs/frame_03_midpoint_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png"
+    ],
+    "source_path": "/workspace/generated_images/exec-d0e5d0ea-f5da-46bb-a199-820e729cbbec.png",
+    "generation_id": "exec-d0e5d0ea-f5da-46bb-a199-820e729cbbec",
+    "transparent_background": true,
+    "status": "Internal midpoint review pending; not user approved.",
+    "construction": "Complete unified image-authored pose, no procedural transforms.",
+    "source_master": "repairs/frame_03.png",
+    "source_sha256": "1dd96ae3a51fe18cfba5008365ab0e60a3955dd5c79ba47403e97bcd4a85d2f4",
+    "prompt_sha256": "880045ab3f261f6474dd937d5d3db879418a8e86f95e982ad31880dfda97dc45",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "4": {
+    "frame": 4,
+    "prompt_file": "repairs/frame_04_accepted_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_04_accepted_bounds_target.png"
+    ],
+    "source_bounds": [
+      3,
+      6
+    ],
+    "fraction": 0.3333333333333333,
+    "source_path": "/workspace/generated_images/exec-32774738-adc7-4536-8234-33f5f69fead0.png",
+    "generation_id": "exec-32774738-adc7-4536-8234-33f5f69fead0",
+    "transparent_background": true,
+    "status": "Internal actual arm continuity review pending; not user approved.",
+    "construction": "Complete unified image-authored drawing from nearest accepted actual bounds plus authoring-only target guide; no procedural body transforms.",
+    "history": [
+      {
+        "frame": 4,
+        "prompt_file": "frame_04_hierarchical_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png"
+        ],
+        "source_bounds": [
+          3,
+          6
+        ],
+        "fraction": 0.3333333333333333,
+        "source_path": "/workspace/generated_images/exec-041a1af7-8311-435c-9cd4-f606470ad6c7.png",
+        "generation_id": "exec-041a1af7-8311-435c-9cd4-f606470ad6c7",
+        "transparent_background": true,
+        "status": "Internal actual-pose review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural body deformation.",
+        "retained_master": "history/frame_04_e9519b4b19d9.png"
+      }
+    ],
+    "rejected_followup_record": "frame_04_target_overshoot_generation.json",
+    "source_master": "repairs/frame_04.png",
+    "source_sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+    "prompt_sha256": "30987aeb2176d519d36109455fe350b84fa54f0b9909f5e7e4ffd18e55cf5f1b",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "5": {
+    "frame": 5,
+    "prompt_file": "repairs/frame_05_accepted_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_accepted_bounds_target.png"
+    ],
+    "source_bounds": [
+      3,
+      6
+    ],
+    "fraction": 0.6666666666666666,
+    "source_path": "/workspace/generated_images/exec-3118e6c4-6bc4-4b40-86af-fa561d61029d.png",
+    "generation_id": "exec-3118e6c4-6bc4-4b40-86af-fa561d61029d",
+    "transparent_background": true,
+    "status": "Internal actual arm continuity review pending; not user approved.",
+    "construction": "Complete unified image-authored drawing from nearest accepted actual bounds plus authoring-only target guide; no procedural body transforms.",
+    "history": [
+      {
+        "frame": 5,
+        "prompt_file": "frame_05_hierarchical_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_03.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png"
+        ],
+        "source_bounds": [
+          3,
+          6
+        ],
+        "fraction": 0.6666666666666666,
+        "source_path": "/workspace/generated_images/exec-49cbb294-6026-4a00-8b0e-27607106da7c.png",
+        "generation_id": "exec-49cbb294-6026-4a00-8b0e-27607106da7c",
+        "transparent_background": true,
+        "status": "Internal actual-pose review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural body deformation.",
+        "retained_master": "history/frame_05_2876ed30ed9e.png"
+      }
+    ],
+    "rejected_followup_record": "frame_05_target_overshoot_generation.json",
+    "source_master": "repairs/frame_05.png",
+    "source_sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+    "prompt_sha256": "0dc0724b9ff63a18c3ce67b057fc7107c72f15465661eb8703430e0c5253ad36",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "6": {
+    "frame": 6,
+    "prompt_file": "repairs/frame_06_midpoint_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+    ],
+    "source_path": "/workspace/generated_images/exec-04ae866d-613b-45f6-b549-b6c8fa5e4a63.png",
+    "generation_id": "exec-04ae866d-613b-45f6-b549-b6c8fa5e4a63",
+    "transparent_background": true,
+    "status": "Internal actual midpoint review pending; not user approved.",
+    "construction": "Complete whole-character image-authored midpoint drawing; no procedural anatomy or interpolation.",
+    "source_master": "repairs/frame_06.png",
+    "source_sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+    "prompt_sha256": "adca92c7afc0e5acbfafe69a6e310092fbff81b6454a24db9ebb4450ce39b441",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "7": {
+    "frame": 7,
+    "prompt_file": "repairs/frame_07_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png"
+    ],
+    "source_bounds": [
+      6,
+      9
+    ],
+    "fraction": 0.3333333333333333,
+    "generation_id": "exec-121065e5-fec3-4a06-bd41-e15248c9d65a",
+    "source_path": "/workspace/generated_images/exec-121065e5-fec3-4a06-bd41-e15248c9d65a.png",
+    "source_master": "repairs/frame_07.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed.",
+    "source_sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+    "prompt_sha256": "e3f3c6a8ced408d10cf4c6e316062012866c25677dfd65c8c70e499c4e75c1f2",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "8": {
+    "frame": 8,
+    "prompt_file": "repairs/frame_08_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png"
+    ],
+    "source_bounds": [
+      6,
+      9
+    ],
+    "fraction": 0.6666666666666666,
+    "generation_id": "exec-cf470bcb-fb1a-4163-a785-6a31b15a7b47",
+    "source_path": "/workspace/generated_images/exec-cf470bcb-fb1a-4163-a785-6a31b15a7b47.png",
+    "source_master": "repairs/frame_08.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed.",
+    "source_sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+    "prompt_sha256": "781c2fbd2592cd89c70d02bda696a31eec4fcd776000964a0d459ab79ed8e155",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "9": {
+    "frame": 9,
+    "prompt_file": "repairs/frame_09_arm_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09_midpoint_held_trial.png"
+    ],
+    "source_bounds": [
+      6,
+      12
+    ],
+    "fraction": 0.5,
+    "source_path": "/workspace/generated_images/exec-a72d9458-a98c-4105-9280-05c0efbe9546.png",
+    "generation_id": "exec-a72d9458-a98c-4105-9280-05c0efbe9546",
+    "transparent_background": true,
+    "status": "Internal actual-pose review pending; not user approved.",
+    "construction": "Complete unified image-authored pose, no procedural body deformation.",
+    "history": [
+      {
+        "frame": 9,
+        "prompt_file": "frame_09_midpoint_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_06.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+        ],
+        "source_path": "/workspace/generated_images/exec-fa2d453c-7c68-4541-a53c-1ab1f9834b03.png",
+        "generation_id": "exec-fa2d453c-7c68-4541-a53c-1ab1f9834b03",
+        "transparent_background": true,
+        "status": "Internal midpoint review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural transforms.",
+        "retained_master": "history/frame_09_ca6a7b0efbc5.png"
+      }
+    ],
+    "source_master": "repairs/frame_09.png",
+    "source_sha256": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+    "prompt_sha256": "b1102750af5d3162aee44ef2789542ea92b9f9f1d4d73ee1534ec61292cc9a69",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "10": {
+    "frame": 10,
+    "prompt_file": "repairs/frame_10_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "fraction": 0.3333333333333333,
+    "generation_id": "exec-b42bf5ec-20e1-44f4-9778-6b368b793a14",
+    "source_path": "/workspace/generated_images/exec-b42bf5ec-20e1-44f4-9778-6b368b793a14.png",
+    "source_master": "repairs/frame_10.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed.",
+    "source_sha256": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+    "prompt_sha256": "9316768eff21a0ca22859f475c5922e10622805b1c159426f6c4a50db48ece66",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "11": {
+    "frame": 11,
+    "prompt_file": "repairs/frame_11_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_09.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png"
+    ],
+    "source_bounds": [
+      9,
+      12
+    ],
+    "fraction": 0.6666666666666666,
+    "generation_id": "exec-90e8b9aa-cedd-456c-8938-4da6cc54ad37",
+    "source_path": "/workspace/generated_images/exec-90e8b9aa-cedd-456c-8938-4da6cc54ad37.png",
+    "source_master": "repairs/frame_11.png",
+    "transparent_background": true,
+    "construction": "Complete ImageGen-authored nearest-bound inbetween, no anatomy rigs, warps or frame interpolation.",
+    "status": "Internally inspected for anatomy/phase; pending parent final selection and registration, not user reviewed.",
+    "source_sha256": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+    "prompt_sha256": "49e698fecaa5403be50f44ee384f425340ca8712ac1831d2e57032646098f1c1",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "12": {
+    "frame": 12,
+    "generation_id": "exec-e7f7baad-86d9-4b59-a031-d022c147e622",
+    "source_path": "/workspace/generated_images/exec-e7f7baad-86d9-4b59-a031-d022c147e622.png",
+    "prompt_file": "repairs/frame_12_female_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12_female_pose_guide.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_36.png"
+    ],
+    "transparent_background": true,
+    "status": "Internal actual-pose and female-proportion review pending; not user approved.",
+    "construction": "Complete image-authored full figure. Grayscale whole-figure reflection used only as pose guide; colored source restores costume asymmetry. No guide pixels or procedural body transforms in exported artwork.",
+    "history": [
+      {
+        "frame": 12,
+        "generation_id": "exec-027d1002-d08c-4f25-a992-c5e498f6318c",
+        "source_path": "/workspace/generated_images/exec-027d1002-d08c-4f25-a992-c5e498f6318c.png",
+        "prompt_file": "frame_12_balance_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12_short_torso_trial.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_36.png"
+        ],
+        "transparent_background": true,
+        "status": "Internal reviewed corrected passing key; not user approved.",
+        "construction": "Complete unified image-authored redraw, left-knee-up passing, belt-level fists, plain banded boots and geometric trim.",
+        "history": [
+          {
+            "generation_id": "exec-e2f240ce-708b-4b60-abd0-bd8d51eae6e6",
+            "source_path": "/workspace/generated_images/exec-e2f240ce-708b-4b60-abd0-bd8d51eae6e6.png",
+            "master": "frame_12_pose_trial.png",
+            "prompt_file": "frame_12_prompt.txt",
+            "referenced_image_paths": [
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png",
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/identity_upper_12.png"
+            ]
+          },
+          {
+            "generation_id": "exec-0a470441-f9c3-41cc-964f-54a38c4e68d4",
+            "source_path": "/workspace/generated_images/exec-0a470441-f9c3-41cc-964f-54a38c4e68d4.png",
+            "master": "frame_12_costume_trial.png",
+            "prompt_file": "frame_12_costume_prompt.txt",
+            "referenced_image_paths": [
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_06.png"
+            ],
+            "reference_snapshot_for_original_frame_12": "frame_12_pose_trial.png"
+          },
+          {
+            "generation_id": "exec-40f9f6e2-37b3-41a3-bcdc-20dff5facd15",
+            "source_path": "/workspace/generated_images/exec-40f9f6e2-37b3-41a3-bcdc-20dff5facd15.png",
+            "master": "frame_12_short_torso_trial.png",
+            "prompt_file": "frame_12_short_torso_prompt.txt",
+            "referenced_image_paths": [
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12_costume_trial.png",
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_36.png"
+            ]
+          }
+        ],
+        "master": "frame_12_crown_body_trial.png"
+      }
+    ],
+    "source_master": "repairs/frame_12.png",
+    "source_sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+    "prompt_sha256": "e52759ad211db47209f4ae836e2611b4f6adbdb03586de4c3487a9da02b84143",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "13": {
+    "frame": 13,
+    "prompt_file": "repairs/frame_13_nearest_bounds_minimal_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_final_b_joint_guide.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -59.7,
+        -11
+      ],
+      "left": [
+        100,
+        17.3
+      ]
+    },
+    "prompt": "Edit the exact COMPLETE FEMALE Iselin in reference1 with ONLY SMALL POSE CHANGES. Keep exactsameface/head/neck/torso/limbproportions, blue/silverroyalcoat, whitehair/braid/mantle, artdensity, materials, identity. Reference2hascoloredjointguides; removeallcoloredmarksandtext.\nCurrentRIGHT/viewerLEFT fistcenter(459,552), LEFT/viewerRIGHT fist(703,553), roundwaistbelt(562,547).\nNewRIGHT fistcenter (471,530): only13pixelsright22pixelsUP; staysBARELYABOVEBELT. NOTfullchestpose. NewLEFT fistcenter (714,573): only11pixelsright20pixelsDOWN, staysnearwaist NOTfullydownbyhip. Naturallybendattachedelbows,exactly2hands,nooldfists/nobraidgrip.\nLegmovementalsosmall: LEFT/viewerRIGHT raisedknee/bootstaysLIFTED andPARTLYTUCKED, bootendabout1100, notfullcontact1300+. RIGHT/viewerLEFT bootremainsLOWbehindaftertoe-off,toeabout1395, notsuddenlytuckedhigh. Correcthip/knee/anklechains,sameleglength,no sidewayskicks. Hair/braid/mantle/coattipssmallconnectedfollowthrough, notgiantshapechanges. Sameplainleatherbootswithhorizontalmetalbands,no newbootvines/flowers.\nOnecompletecoherentpaintedwoman, preserveotherappearance/registration,1086x1448fullfigureinsidegeneroustransparentmargins. TRUEcleantransparentRGBA, NOhaze/glow/floor/shadow/text/sheet/extraoldparts. DoNOTinventdramaticnewpose; thisisMINIMALadjustment. Coordinatesillustrativemotionguides; naturaljointanatomytakespriority.",
+    "generation_id": "exec-24434d38-451c-450a-a392-69293a00c035",
+    "source_path": "/workspace/generated_images/exec-24434d38-451c-450a-a392-69293a00c035.png",
+    "transparent_background": true,
+    "construction": "Complete coherent ImageGen-authored minimal adjustment from accepted female12 with source-only joint guide; no procedural transforms or guide pixels in final drawing.",
+    "status": "Internal complete-frame anatomy/actual-limb/costume review performed; selected for parent final bank integration, not user approved.",
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_13_final_b_joint_guide.png": "ffa6aa0ba91f642570e7b8f4ea0d65384a24e297195bced18ad8e65eab0fc52a"
+    },
+    "history": [
+      {
+        "source": "history/frame_13_d439978dc946.png",
+        "sha256": "d439978dc9460f680bc5fb597e42535f495edc7276e879fd438bac84945c779e",
+        "generation_metadata": "history/frame_13_d439978dc946_generation.json",
+        "reason": "Superseded by final female-model closest-bounds complete drawing."
+      }
+    ],
+    "selected_master_sha256": "28273d51a999dd6583821c493168cc8742a42d921b092329e8ea063665409e02",
+    "actual_review": {
+      "method": "Painted skin connected-component fist centroids relative to independently measured buckle, diagnostic face density, plus actual hip-knee-boot, costume/asymmetry and alpha inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -50.93,
+          -26.96
+        ],
+        "viewer_right": [
+          98.19,
+          22.33
+        ]
+      },
+      "torso_art_span": 181.463,
+      "transparent_background_verified": true,
+      "correct_female_model_and_leg_identities_verified": true,
+      "source_dimensions": [
+        1086,
+        1448
+      ]
+    },
+    "source_master": "repairs/frame_13.png",
+    "source_sha256": "28273d51a999dd6583821c493168cc8742a42d921b092329e8ea063665409e02",
+    "prompt_sha256": "ac9e76d34c9c3030a03fe3b29ad0e75c5935cbbb9d0eb14d5de7569cfb857183",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "14": {
+    "frame": 14,
+    "prompt_file": "repairs/frame_14_nearest_bounds_minimal_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_final_b_joint_guide.png"
+    ],
+    "source_bounds": [
+      12,
+      15
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -51.3,
+        -25
+      ],
+      "left": [
+        107,
+        30.7
+      ]
+    },
+    "prompt": "Edit the exact COMPLETE FEMALE Iselin in reference1 with ONLY SMALL POSE CHANGES. Keep exactsameface/head/neck/torso/limbproportions, blue/silverroyalcoat, whitehair/braid/mantle, artdensity, materials, identity. Reference2hascoloredjointguides; removeallcoloredmarksandtext.\nCurrentRIGHT/viewerLEFT fistcenter(459,552), LEFT/viewerRIGHT fist(703,553), roundwaistbelt(562,547).\nNewRIGHT fistcenter (483,508): only25pixelsright44pixelsUP; staysMODESTLYABOVEBELT. NOTfullchestpose. NewLEFT fistcenter (725,594): only22pixelsright41pixelsDOWN, staysnearwaist NOTfullydownbyhip. Naturallybendattachedelbows,exactly2hands,nooldfists/nobraidgrip.\nLegmovementalsosmall: LEFT/viewerRIGHT raisedknee/bootstaysLIFTED andPARTLYTUCKED, bootendabout1170, notfullcontact1300+. RIGHT/viewerLEFT bootremainsLOWbehindaftertoe-off,toeabout1385, notsuddenlytuckedhigh. Correcthip/knee/anklechains,sameleglength,no sidewayskicks. Hair/braid/mantle/coattipssmallconnectedfollowthrough, notgiantshapechanges. Sameplainleatherbootswithhorizontalmetalbands,no newbootvines/flowers.\nOnecompletecoherentpaintedwoman, preserveotherappearance/registration,1086x1448fullfigureinsidegeneroustransparentmargins. TRUEcleantransparentRGBA, NOhaze/glow/floor/shadow/text/sheet/extraoldparts. DoNOTinventdramaticnewpose; thisisMINIMALadjustment. Coordinatesillustrativemotionguides; naturaljointanatomytakespriority.",
+    "generation_id": "exec-a964cf60-31f6-489f-9103-013bcc76ca21",
+    "source_path": "/workspace/generated_images/exec-a964cf60-31f6-489f-9103-013bcc76ca21.png",
+    "transparent_background": true,
+    "construction": "Complete coherent ImageGen-authored minimal adjustment from accepted female12 with source-only joint guide; no procedural transforms or guide pixels in final drawing.",
+    "status": "Internal complete-frame anatomy/actual-limb/costume review performed; selected for parent final bank integration, not user approved.",
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_final_b_joint_guide.png": "1dfdad3ff6f48942ef73d46c4770e72eb39f068d052b9aa0979809494add3344"
+    },
+    "history": [
+      {
+        "source": "history/frame_14_58d31d1aba85.png",
+        "sha256": "58d31d1aba8581240825db2505857790d9879b9042874c1379d1eae2b2ae61e5",
+        "generation_metadata": "history/frame_14_58d31d1aba85_generation.json",
+        "reason": "Superseded by final female-model closest-bounds complete drawing."
+      }
+    ],
+    "selected_master_sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+    "actual_review": {
+      "method": "Painted skin connected-component fist centroids relative to independently measured buckle, diagnostic face density, plus actual hip-knee-boot, costume/asymmetry and alpha inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -49.13,
+          -31.94
+        ],
+        "viewer_right": [
+          101.98,
+          28.19
+        ]
+      },
+      "torso_art_span": 180.574,
+      "transparent_background_verified": true,
+      "correct_female_model_and_leg_identities_verified": true,
+      "source_dimensions": [
+        1086,
+        1448
+      ]
+    },
+    "source_master": "repairs/frame_14.png",
+    "source_sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+    "prompt_sha256": "c9f7144fddd964ae991b3aac55585a1c2db62a12e6ed6e88bac58b6d73c322de",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "15": {
+    "frame": 15,
+    "generation_id": "exec-07448c39-a5be-4ae5-a6f6-5ad6f04e91cd",
+    "source_path": "/workspace/generated_images/exec-07448c39-a5be-4ae5-a6f6-5ad6f04e91cd.png",
+    "prompt_file": "repairs/frame_15_actual_target_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15_actual_target_guide.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+    ],
+    "transparent_background": true,
+    "status": "Internal coherent midpoint review; not user approved.",
+    "source_master": "repairs/frame_15.png",
+    "construction": "Complete unified image-authored drawing using authoring-only marked target guide; no guide pixels in output, no procedural deformation.",
+    "history": [
+      {
+        "frame": 15,
+        "prompt_file": "frame_15_midpoint_prompt.txt",
+        "referenced_image_paths": [
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+          "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+        ],
+        "source_bounds": [
+          12,
+          18
+        ],
+        "fraction": 0.5,
+        "source_path": "/workspace/generated_images/exec-1f270f57-8bca-4673-9002-4a94b192381b.png",
+        "generation_id": "exec-1f270f57-8bca-4673-9002-4a94b192381b",
+        "transparent_background": true,
+        "status": "Internal actual-pose review pending; not user approved.",
+        "construction": "Complete unified image-authored pose, no procedural body deformation.",
+        "history": [
+          {
+            "frame": 15,
+            "prompt_file": "frame_15_prompt.txt",
+            "referenced_image_paths": [
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+              "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_18.png"
+            ],
+            "target_fists_relative_belt_canonical": {
+              "right": [
+                -90,
+                -38
+              ],
+              "left": [
+                130,
+                38
+              ]
+            },
+            "generation_id": "exec-2b809240-ff26-4431-89f3-b61a74734895",
+            "source_path": "/workspace/generated_images/exec-2b809240-ff26-4431-89f3-b61a74734895.png",
+            "transparent_background": true,
+            "construction": "Complete coherent image-authored repair; no procedural anatomy/warping/temporal interpolation.",
+            "status": "Internal actual-motion verification pending; not user approved.",
+            "retained_master": "history/frame_15_b424f12f87e1.png"
+          }
+        ],
+        "retained_master": "frame_15_overshoot_trial.png"
+      }
+    ],
+    "source_sha256": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+    "prompt_sha256": "c20e83feceaa165144f4ce08eb77cea32d3405d179200e202968ed30f4cd71eb",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "16": {
+    "frame": 16,
+    "prompt_file": "repairs/frame_16_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+    ],
+    "source_bounds": [
+      15,
+      18
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -42,
+        -45
+      ],
+      "left": [
+        119.3,
+        47.7
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 16/48. Reference1 is accepted earlier actual key 15; reference2 is accepted later actual key 18. Draw precisely 1/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-42.0, -45.0]; LEFT/anatomical on VIEWER RIGHT [119.3, 47.7]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n",
+    "generation_id": "exec-cacd9ee4-4419-4068-93ef-ec48f71b09f5",
+    "source_path": "/workspace/generated_images/exec-cacd9ee4-4419-4068-93ef-ec48f71b09f5.png",
+    "transparent_background": true,
+    "construction": "Complete coherent image-authored redraw; no procedural anatomy, warping or temporal interpolation.",
+    "status": "Internal complete-frame anatomy/actual-limb/costume review performed; selected for parent final bank integration, not user approved.",
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea"
+    },
+    "history": [
+      {
+        "source": "history/frame_16_e0b38f877192.png",
+        "sha256": "e0b38f877192cac5e425f3be913191d63938642c434bf914c161f670c2722b8d",
+        "generation_metadata": "history/frame_16_e0b38f877192_generation.json",
+        "reason": "Superseded by final female-model closest-bounds complete drawing."
+      }
+    ],
+    "selected_master_sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+    "actual_review": {
+      "method": "Painted skin connected-component fist centroids relative to independently measured buckle, diagnostic face density, plus actual hip-knee-boot, costume/asymmetry and alpha inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -41.18,
+          -55.61
+        ],
+        "viewer_right": [
+          125.45,
+          58.39
+        ]
+      },
+      "torso_art_span": 182.59,
+      "transparent_background_verified": true,
+      "correct_female_model_and_leg_identities_verified": true,
+      "source_dimensions": [
+        1086,
+        1448
+      ]
+    },
+    "source_master": "repairs/frame_16.png",
+    "source_sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+    "prompt_sha256": "f9c3b639185a5987de69f76e5f05004a653e14e334fccced8fa9b67128185323",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "17": {
+    "frame": 17,
+    "prompt_file": "repairs/frame_17_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png"
+    ],
+    "source_bounds": [
+      15,
+      18
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -41,
+        -51
+      ],
+      "left": [
+        124.7,
+        51.3
+      ]
+    },
+    "prompt": "Draw ONE complete, coherent PAINTED Iselin frontal running frame 17/48. Reference1 is accepted earlier actual key 15; reference2 is accepted later actual key 18. Draw precisely 2/3 of this SMALL interval toward reference2. Both references are the SAME approved female model. Preserve their exact face/headwidth, neck/torso/limb proportions and drawing density, with natural elbow/knee flexion and shoulder/pelvis counterrotation. Neither copy an endpoint nor jump to a distant contact phase.\nACTUAL FIST CENTERS relative to the round WAIST BELT BUCKLE, in canonical face-density units: RIGHT/anatomical on VIEWER LEFT [-41.0, -51.0]; LEFT/anatomical on VIEWER RIGHT [124.7, 51.3]; neck-to-belt around182 units. PositiveY is BELOW belt, negativeY ABOVE. Place actual fists along the small continuous painted paths between references, with naturally bent elbows, exactly two hands, no stale old fists or braid grip. Right fist gradually rises from belt toward lowest coat clasps; left fist gradually drops below belt. Do not jump to full chest/hip extremes or hold the same neutral pose.\nLEGS: LEFT/anatomical leg on VIEWER RIGHT continues the raised-knee recovery and partial unfolding toward midflight. Its BOOT stays visibly LIFTED off ground; match the actual small knee/ankle/toe progression between these adjacent keys, not the old fully extended contact at24. RIGHT/viewerLEFT leg transitions from toe-off into folding recovery, with its boot lifting naturally behind. Exactly two coherent hip/knee/ankle chains and constant leg lengths, no sideways kicks or early contact swap. Same female body proportions, never a new male/soldier model or occupied-bounds scaling.\nApproved design remains exact: white flowing hair, blue eyes, blue/silver royal coat, silver geometric/star/knot trim and coat clasps, circular belt, simple dark leather BOOTS with horizontal silver metal bands and plain shins/toes, NO new vine/flower boot embroidery. Mantle attaches RIGHT/viewerLEFT diamond clasp and flows LEFT; heavy braid LEFT/viewerRIGHT clear of hands. Hair, braid and cloth make a small connected intermediate wave with stable volume/length, no giant fan or random silhouette replacement. Preserve costume and material quality.\nONE complete detailed painted woman with all hair/mantle/boots inside transparent margins. TRUE CLEAN TRANSPARENT RGBA outside figure: no gray gradient, haze, glow, shadow, floor, text, diagram, sheet, duplicate limbs or detached parts. Complete image-authored redraw, no procedural deformation.\n",
+    "generation_id": "exec-b7351c3e-b202-48d2-9c57-aa649a83073a",
+    "source_path": "/workspace/generated_images/exec-b7351c3e-b202-48d2-9c57-aa649a83073a.png",
+    "transparent_background": true,
+    "construction": "Complete coherent image-authored redraw; no procedural anatomy, warping or temporal interpolation.",
+    "status": "Internal complete-frame anatomy/actual-limb/costume review performed; selected for parent final bank integration, not user approved.",
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_15.png": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea"
+    },
+    "history": [
+      {
+        "source": "history/frame_17_9257f3a150f4.png",
+        "sha256": "9257f3a150f4240a199ceb0f26748ce9f8337ae8650994b06f756b921b62365c",
+        "generation_metadata": "history/frame_17_9257f3a150f4_generation.json",
+        "reason": "Superseded by final female-model closest-bounds complete drawing."
+      }
+    ],
+    "selected_master_sha256": "6537eb01080bd963456aa91fbcba0ac90e25eb56f34c37ee96fbbab538f821ba",
+    "actual_review": {
+      "method": "Painted skin connected-component fist centroids relative to independently measured buckle, diagnostic face density, plus actual hip-knee-boot, costume/asymmetry and alpha inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -40.77,
+          -54.28
+        ],
+        "viewer_right": [
+          128.8,
+          57.96
+        ]
+      },
+      "torso_art_span": 181.276,
+      "transparent_background_verified": true,
+      "correct_female_model_and_leg_identities_verified": true,
+      "source_dimensions": [
+        1086,
+        1448
+      ]
+    },
+    "source_master": "repairs/frame_17.png",
+    "source_sha256": "6537eb01080bd963456aa91fbcba0ac90e25eb56f34c37ee96fbbab538f821ba",
+    "prompt_sha256": "1c6a74fc2db61c8fc35fe3a46cf04599a7133dbdfcfb9fa504cacbb2d70a41d3",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "18": {
+    "frame": 18,
+    "prompt_file": "repairs/frame_18_flight_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18_contactish_trial.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png"
+    ],
+    "source_path": "/workspace/generated_images/exec-0966554d-f2eb-4019-8f07-10b86d7fc57d.png",
+    "generation_id": "exec-0966554d-f2eb-4019-8f07-10b86d7fc57d",
+    "transparent_background": true,
+    "status": "Internal midpoint review pending; not user approved.",
+    "construction": "Complete unified image-authored pose, no procedural transforms.",
+    "source_master": "repairs/frame_18.png",
+    "source_sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+    "prompt_sha256": "e9338dcedba7cef5e74c1490d3a0d69e6b85dcae69833f5709b74420716563f3",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "19": {
+    "frame": 19,
+    "prompt_file": "repairs/frame_19_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png"
+    ],
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a"
+    },
+    "source_path": "/workspace/generated_images/exec-6e9dbe5a-aae7-47d9-8cda-d5c4efcdabcb.png",
+    "generation_id": "exec-6e9dbe5a-aae7-47d9-8cda-d5c4efcdabcb",
+    "transparent_background": true,
+    "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+    "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+    "source_bounds": [
+      18,
+      21
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -40.0,
+        -60.0
+      ],
+      "left": [
+        133.3,
+        53.0
+      ]
+    },
+    "history": [],
+    "actual_review": {
+      "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -41.31,
+          -55.84
+        ],
+        "viewer_right": [
+          136.16,
+          44.81
+        ]
+      },
+      "torso_art_span": 176.889,
+      "transparent_background_verified": true,
+      "correct_leg_identities_verified": true
+    },
+    "source_master": "repairs/frame_19.png",
+    "source_sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+    "prompt_sha256": "9861b6b2268d45df2b4f68411e0e9b037ea0d4ce23b1a0d3be3d93bb6dee74eb",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "20": {
+    "frame": 20,
+    "prompt_file": "repairs/frame_20_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png"
+    ],
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a"
+    },
+    "source_path": "/workspace/generated_images/exec-4ecfc388-f85f-483a-b637-a949b20ced32.png",
+    "generation_id": "exec-4ecfc388-f85f-483a-b637-a949b20ced32",
+    "transparent_background": true,
+    "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+    "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+    "source_bounds": [
+      18,
+      21
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -40.0,
+        -63.0
+      ],
+      "left": [
+        136.7,
+        51.0
+      ]
+    },
+    "history": [
+      {
+        "source": "history/frame_20_246eb0edfc71.png",
+        "sha256": "246eb0edfc71bf5e866b80e5353f0e49728b623932a79f6ec4d94e82270f29ac",
+        "generation_metadata": null,
+        "reason": "Superseded by final female-model nearest-bounds inbetween."
+      }
+    ],
+    "actual_review": {
+      "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -40.34,
+          -66.49
+        ],
+        "viewer_right": [
+          141.77,
+          49.02
+        ]
+      },
+      "torso_art_span": 181.396,
+      "transparent_background_verified": true,
+      "correct_leg_identities_verified": true
+    },
+    "source_master": "repairs/frame_20.png",
+    "source_sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+    "prompt_sha256": "83ad5629fd3522aa5206258ffb6f8a7715c4fd9c4619731d53df69616b0ab1de",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "21": {
+    "frame": 21,
+    "prompt_file": "repairs/frame_21_midpoint_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png"
+    ],
+    "source_bounds": [
+      18,
+      24
+    ],
+    "fraction": 0.5,
+    "source_path": "/workspace/generated_images/exec-c886380e-3eb4-4df9-acc6-7132bad9f7a7.png",
+    "generation_id": "exec-c886380e-3eb4-4df9-acc6-7132bad9f7a7",
+    "transparent_background": true,
+    "status": "Internal actual-pose review pending; not user approved.",
+    "construction": "Complete unified image-authored pose, no procedural body deformation.",
+    "source_master": "repairs/frame_21.png",
+    "source_sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+    "prompt_sha256": "fe2e8626acf1cbfd1279130d6c5b8c34ba47f3a05d5e225a939aedf27a19e672",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "22": {
+    "frame": 22,
+    "prompt_file": "repairs/frame_22_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png"
+    ],
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967"
+    },
+    "source_path": "/workspace/generated_images/exec-5e3574a9-7d65-4fe8-951f-9a863e66fcbe.png",
+    "generation_id": "exec-5e3574a9-7d65-4fe8-951f-9a863e66fcbe",
+    "transparent_background": true,
+    "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+    "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+    "source_bounds": [
+      21,
+      24
+    ],
+    "fraction": 0.3333333333333333,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -40.7,
+        -76.7
+      ],
+      "left": [
+        146.3,
+        53.3
+      ]
+    },
+    "history": [],
+    "actual_review": {
+      "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -42.66,
+          -87.27
+        ],
+        "viewer_right": [
+          144.89,
+          38.25
+        ]
+      },
+      "torso_art_span": 180.227,
+      "transparent_background_verified": true,
+      "correct_leg_identities_verified": true
+    },
+    "source_master": "repairs/frame_22.png",
+    "source_sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+    "prompt_sha256": "c0915672c15c33c49e1218824d7309cbb9879004f7b96b8897303f5424d768bb",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  },
+  "23": {
+    "frame": 23,
+    "prompt_file": "repairs/frame_23_nearest_bounds_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png"
+    ],
+    "referenced_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_24.png": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967"
+    },
+    "source_path": "/workspace/generated_images/exec-d556d78c-5028-4d73-a24a-588d221d9d81.png",
+    "generation_id": "exec-d556d78c-5028-4d73-a24a-588d221d9d81",
+    "transparent_background": true,
+    "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+    "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+    "source_bounds": [
+      21,
+      24
+    ],
+    "fraction": 0.6666666666666666,
+    "target_fists_relative_belt_canonical": {
+      "right": [
+        -41.3,
+        -87.3
+      ],
+      "left": [
+        152.7,
+        57.7
+      ]
+    },
+    "history": [
+      {
+        "source": "history/frame_23_06ef49a9c46e.png",
+        "sha256": "06ef49a9c46e80a1987593e58a400e26d63687d47072d397d2254c9e8b7aa1f9",
+        "generation_metadata": null,
+        "reason": "Superseded by final female-model nearest-bounds inbetween."
+      }
+    ],
+    "actual_review": {
+      "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+      "fists_relative_belt": {
+        "viewer_left": [
+          -42.11,
+          -96.27
+        ],
+        "viewer_right": [
+          148.69,
+          43.42
+        ]
+      },
+      "torso_art_span": 176.239,
+      "transparent_background_verified": true,
+      "correct_leg_identities_verified": true
+    },
+    "source_master": "repairs/frame_23.png",
+    "source_sha256": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+    "prompt_sha256": "e154f3b1acf7d37409dcc463ea72cdff55723d7af3812cb52a6e857bab8ecfd4",
+    "selection_status": "Current complete first-half drawing after internal actual-pose review; user did not request a pre-merge preview."
+  }
+}

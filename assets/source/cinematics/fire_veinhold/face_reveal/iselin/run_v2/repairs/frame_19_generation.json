@@ -1,0 +1,49 @@
+{
+  "frame": 19,
+  "prompt_file": "frame_19_nearest_bounds_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png"
+  ],
+  "referenced_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_18.png": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_21.png": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a"
+  },
+  "source_path": "/workspace/generated_images/exec-6e9dbe5a-aae7-47d9-8cda-d5c4efcdabcb.png",
+  "generation_id": "exec-6e9dbe5a-aae7-47d9-8cda-d5c4efcdabcb",
+  "transparent_background": true,
+  "status": "Internal complete-frame/actual-limb review performed; parent final selection pending; not user approved.",
+  "construction": "Complete unified image-authored pose from actual accepted female Iselin neighboring bounds; no procedural transforms, pasted limbs or guide pixels.",
+  "source_bounds": [
+    18,
+    21
+  ],
+  "fraction": 0.3333333333333333,
+  "target_fists_relative_belt_canonical": {
+    "right": [
+      -40.0,
+      -60.0
+    ],
+    "left": [
+      133.3,
+      53.0
+    ]
+  },
+  "history": [],
+  "actual_review": {
+    "method": "Painted skin connected-component centroids relative to independently measured buckle, diagnostic face density; visual hip-knee-boot and asymmetry inspection.",
+    "fists_relative_belt": {
+      "viewer_left": [
+        -41.31,
+        -55.84
+      ],
+      "viewer_right": [
+        136.16,
+        44.81
+      ]
+    },
+    "torso_art_span": 176.889,
+    "transparent_background_verified": true,
+    "correct_leg_identities_verified": true
+  }
+}

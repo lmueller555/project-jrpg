@@ -1,0 +1,24 @@
+{
+  "frame": 5,
+  "prompt_file": "frame_05_fist_target_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_early_arms_trial.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_05_fist_target_guide.png"
+  ],
+  "target_fists_relative_belt_canonical": {
+    "viewer_left": [
+      -100,
+      54
+    ],
+    "viewer_right": [
+      79,
+      -43
+    ]
+  },
+  "source_path": "/workspace/generated_images/exec-465557a4-b62c-4100-b280-e3506e40657a.png",
+  "generation_id": "exec-465557a4-b62c-4100-b280-e3506e40657a",
+  "transparent_background": true,
+  "status": "Internal actual arm-path review pending; not user approved.",
+  "construction": "Complete unified image-authored repair using authoring-only target marks; no guide pixels or procedural transforms in finished figure.",
+  "rejected_reason": "Both arms overshot the targets beyond accepted3/6bounds; not selected."
+}

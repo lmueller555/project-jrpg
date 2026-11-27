@@ -1,0 +1,62 @@
+{
+  "frame": 14,
+  "prompt_file": "frame_14_nearest_bounds_minimal_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_final_b_joint_guide.png"
+  ],
+  "source_bounds": [
+    12,
+    15
+  ],
+  "fraction": 0.6666666666666666,
+  "target_fists_relative_belt_canonical": {
+    "right": [
+      -51.3,
+      -25
+    ],
+    "left": [
+      107,
+      30.7
+    ]
+  },
+  "prompt": "Edit the exact COMPLETE FEMALE Iselin in reference1 with ONLY SMALL POSE CHANGES. Keep exactsameface/head/neck/torso/limbproportions, blue/silverroyalcoat, whitehair/braid/mantle, artdensity, materials, identity. Reference2hascoloredjointguides; removeallcoloredmarksandtext.\nCurrentRIGHT/viewerLEFT fistcenter(459,552), LEFT/viewerRIGHT fist(703,553), roundwaistbelt(562,547).\nNewRIGHT fistcenter (483,508): only25pixelsright44pixelsUP; staysMODESTLYABOVEBELT. NOTfullchestpose. NewLEFT fistcenter (725,594): only22pixelsright41pixelsDOWN, staysnearwaist NOTfullydownbyhip. Naturallybendattachedelbows,exactly2hands,nooldfists/nobraidgrip.\nLegmovementalsosmall: LEFT/viewerRIGHT raisedknee/bootstaysLIFTED andPARTLYTUCKED, bootendabout1170, notfullcontact1300+. RIGHT/viewerLEFT bootremainsLOWbehindaftertoe-off,toeabout1385, notsuddenlytuckedhigh. Correcthip/knee/anklechains,sameleglength,no sidewayskicks. Hair/braid/mantle/coattipssmallconnectedfollowthrough, notgiantshapechanges. Sameplainleatherbootswithhorizontalmetalbands,no newbootvines/flowers.\nOnecompletecoherentpaintedwoman, preserveotherappearance/registration,1086x1448fullfigureinsidegeneroustransparentmargins. TRUEcleantransparentRGBA, NOhaze/glow/floor/shadow/text/sheet/extraoldparts. DoNOTinventdramaticnewpose; thisisMINIMALadjustment. Coordinatesillustrativemotionguides; naturaljointanatomytakespriority.",
+  "generation_id": "exec-a964cf60-31f6-489f-9103-013bcc76ca21",
+  "source_path": "/workspace/generated_images/exec-a964cf60-31f6-489f-9103-013bcc76ca21.png",
+  "transparent_background": true,
+  "construction": "Complete coherent ImageGen-authored minimal adjustment from accepted female12 with source-only joint guide; no procedural transforms or guide pixels in final drawing.",
+  "status": "Internal complete-frame anatomy/actual-limb/costume review performed; selected for parent final bank integration, not user approved.",
+  "referenced_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_12.png": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_14_final_b_joint_guide.png": "1dfdad3ff6f48942ef73d46c4770e72eb39f068d052b9aa0979809494add3344"
+  },
+  "history": [
+    {
+      "source": "history/frame_14_58d31d1aba85.png",
+      "sha256": "58d31d1aba8581240825db2505857790d9879b9042874c1379d1eae2b2ae61e5",
+      "generation_metadata": "history/frame_14_58d31d1aba85_generation.json",
+      "reason": "Superseded by final female-model closest-bounds complete drawing."
+    }
+  ],
+  "selected_master_sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+  "actual_review": {
+    "method": "Painted skin connected-component fist centroids relative to independently measured buckle, diagnostic face density, plus actual hip-knee-boot, costume/asymmetry and alpha inspection.",
+    "fists_relative_belt": {
+      "viewer_left": [
+        -49.13,
+        -31.94
+      ],
+      "viewer_right": [
+        101.98,
+        28.19
+      ]
+    },
+    "torso_art_span": 180.574,
+    "transparent_background_verified": true,
+    "correct_female_model_and_leg_identities_verified": true,
+    "source_dimensions": [
+      1086,
+      1448
+    ]
+  }
+}

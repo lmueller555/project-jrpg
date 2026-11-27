@@ -255,15 +255,21 @@ members, with no duplicate body or equipment overlays.
 Each runner uses complete authored drawings with both near and far legs resolved
 in the source pose. Contact, compression, push-off, flight and recovery must
 progress through the cycle with a coherent loop seam. Foot contact metadata
-drives the corresponding metal footfalls. Each production cycle has 24 complete
-poses over 400 ms, advancing one pose at every 60 Hz display tick. Lucan starts
-at pose 0; Iselin is offset five ticks and the Crown soldier nine ticks. These
-phase differences keep their steps from becoming a synchronized march.
-World travel and scenery motion use an approximate source-floor fit;
-this calibration is staging evidence, not a claim of perfect pixel-level foot
-locking throughout every authored pose. Simply accelerating a walk,
-sliding a whole idle or rotating detached limbs cannot supply this performance.
+drives the corresponding metal footfalls. Each side-view production cycle has
+24 complete poses over 800 ms, holding each drawing for two 60 Hz display ticks.
+Lucan starts at phase zero; Iselin is offset 0.166666… seconds and the Crown
+soldier 0.3 seconds. These phase differences keep their steps from becoming a
+synchronized march. Display FPS and authored drawing cadence are separate.
+World travel is 4 m/s. The side view uses a calibrated 942.15 pixels per metre
+to retain the stance-foot excursion of the existing drawings at their slower
+playback rate. Its final camera drift is reframed to preserve the trailing
+soldier's visibility. This calibration is staging evidence, not a claim of
+perfect pixel-level foot locking throughout every authored pose. Simply
+accelerating a walk, sliding a whole idle or rotating detached limbs cannot
+supply this performance.
 Cloth and armor movement follow the same authored phase.
+The party's explicit side-shot starting marker is 22.26 metres, independent of
+camera drift. Three seconds of travel reaches the frontal marker at 34.26 metres.
 
 `shot06/scene.json` supplies the runner sources, registration, cycle phases,
 formation and bridge framing to `cinematic_bridge_run.py`. The shot has its own
@@ -313,28 +319,42 @@ Crown soldier's simpler equipment remains distinct from Carcovian gunmetal,
 charcoal and copper. Running effort belongs in coherent face, head, shoulder,
 arm and cloth movement rather than independently bobbing a static portrait.
 
-Each runner has 24 complete frontal poses over 400 ms. The side view's global
-clock continues through the cut: at 42s Lucan begins at phase 0.2 seconds,
-Iselin at 0.283333… and the Crown soldier at 0.35. Every displayed 60 Hz tick
-advances the authored pose. Near/far or anatomical limb identities, equipment
-occlusion and body proportions must remain coherent through the full cycle.
+Each runner has 48 complete frontal poses over 800 ms. The side view's global
+clock continues through the cut: at 42s Lucan begins at phase 0.6 seconds,
+Iselin at 0.766666… and the Crown soldier at 0.1. These are the preceding
+three seconds plus each side-view offset, modulo the shared 0.8-second cycle.
+The continuous quantities are gait phase and contact timing; the side and front
+frame indices differ because their drawing counts differ. Every displayed
+60 Hz tick advances the authored frontal pose. Near/far or anatomical limb
+identities, equipment occlusion and body proportions must remain coherent
+through the full cycle.
 The source drawings and the visible frontal performance receive their own
 review; the preceding boot-height review does not establish frontal quality.
 
-`cinematic_face_reveal.py` combines those drawings with camera-registered
-environment frames from `shot07/`. Its actor and environment image caches are
-bounded separately because their source dimensions differ. The actor owner
-retains one full 72-drawing cycle across the three characters (216 MiB at the
-production 768×1024 RGBA size); eight 960×640 environment slots add 18.75 MiB.
-The 234.75 MiB face-reveal budget includes pending image reservations and
-excludes temporary drawing/conversion buffers. Full-film and standalone frontal
-playback prepare the complete cycle before the presentation clock and audio
-start. Other individual clips do not load that owner. Capture metadata
-records each owner's decoded/pending bytes and the combined face-reveal cache,
-then verifies that scene completion releases both. Clean full-film and
-standalone views use the same production state, including the existing warning,
-wind and footstep phases. No dialogue, overhead ascent or playable handoff is
-introduced here.
+The frontal party starts at the explicit bridge-local marker 34.26 metres and
+travels at 4 m/s. `starting_party_metres` is independent of speed, so retiming
+the run does not relocate its opening camera or party position. The existing
+camera height, lens, 1.5-second tilt and party formation remain intact.
+
+`cinematic_face_reveal.py` supplies the same camera and complete-drawing
+projection to the offline bake and runtime timing queries. The production
+`shot07/scene.json` selects `baked_characters: true`: all three complete actors
+are composited into the 301 native 960×640 camera samples before shipping.
+There are 300 displayed intervals and one inclusive terminal sample. Runtime
+streams those final pictures through eight image slots, reserving at most
+18.75 MiB for decoded pictures plus pending loads, excluding temporary
+drawing/conversion buffers. It retains no separate actor image bank. The
+RGBA drawing exports (768×1024 for Lucan and the soldier; 1024×1024 for
+Iselin's wider flowing silhouette) and their metadata remain reproducible authoring
+inputs and timing references, rather than an eagerly decoded 144-pose runtime
+cache. The scene's sample metadata still reports actor pose, phase and placement
+for QA and contact synchronization.
+
+Full-film and standalone frontal playback use the same streamed production
+bank, warning, wind and footstep phases. Other individual clips do not load
+that owner. Capture metadata records decoded/pending bytes and verifies that
+completion, restart and close release the temporary owner. No dialogue,
+overhead ascent or playable handoff is introduced here.
 
 ## Alert and movement audio
 
@@ -358,6 +378,11 @@ sits near those contacts; the distant warning remains behind the close movement.
 Those same clocks continue through the 42–47s frontal shot. Contact phase is
 preserved when the viewpoint changes; the face reveal does not restart the
 siren, wind loop or runners' step cadence.
+Both running shots use the 800 ms cycle; contact cues follow that metadata
+rather than preserving the former five-footfalls-per-second cadence. The
+running correction's picture/audio preservation boundary is 39 seconds:
+the first five shots remain unchanged, while the 39–47s performance and its
+contact Foley are retimed together.
 A restrained, unvoiced breathing bed starts with the frontal shot to support
 the visible effort. It uses the warning channel whose near-siren gain has
 already receded to zero; active wind, distant warning and footfalls retain
@@ -384,7 +409,9 @@ bedroom opening until the complete cinematic and playable infiltration handoff
 are ready. No quest, save-schema or mission progression changes belong to this
 presentation extension.
 
-See [current frontal-reveal review evidence](../../reviews/veinhold_face_reveal/README.md).
+See [current running-correction review evidence](../../reviews/veinhold_running_polish/README.md).
+The [original frontal-reveal review](../../reviews/veinhold_face_reveal/README.md)
+records the superseded 400 ms frontal performance and its earlier cache design.
 The [42-second running-shot review](../../reviews/veinhold_bridge_run/README.md)
 records the earlier boot-height performance and faction revision.
 The [39-second orbit review](../../reviews/veinhold_orbit/README.md) records the

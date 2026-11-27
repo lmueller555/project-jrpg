@@ -6,3 +6,5 @@ __pycache__/
 /saves/
 
 /docs/reviews/regional_audio/review.wav
+# Offline frontal-bake bootstrap metadata is temporary, never a shipped asset.
+assets/story/fire_veinhold_opening/shot07/.face-bake-*/

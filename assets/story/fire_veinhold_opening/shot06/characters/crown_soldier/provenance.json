@@ -1,10 +1,11 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_runners.py",
-  "exporter_sha256": "669fc0043770a22e5019fa0efa7aa34729d9e73691c5ea434af27d873e8cf2c7",
+  "exporter_sha256": "a01bf8b9a3c722583ab28e23f5ed1fd2ab07ac57536b2ff39425b814192364b1",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
+    "assets/source/cinematics/fire_veinhold/bridge_running/playback.json": "b720767523a26e2a9c8f7e41fe6aaa7de42215163337df1f4948665c00c38242",
     "assets/source/cinematics/fire_veinhold/bridge_running/crown_soldier/source_art_24.json": "3faed0fd3fee5a83543de79dc5c19a7396cd407c50c9d8f5fcfb28408b0dd41c",
     "assets/source/cinematics/fire_veinhold/bridge_running/crown_soldier/bank24/batch_00_03.png": "7b918576b5528c9be53f546893a38fca12bf8a801300eb973b065f9892f517a3",
     "assets/source/cinematics/fire_veinhold/bridge_running/crown_soldier/bank24/batch_00_03_prompt.txt": "5f655af7361d158518ccd18172363610051bb6e602f302e1faa0d53fbccb2b08",

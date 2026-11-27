@@ -10,7 +10,7 @@ the standard.
 
 Capture the Fire Veinhold prologue through its actual save-disabled Gallery
 runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
-complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_face_reveal/`.
+complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_running_polish/`.
 Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`,
 `bridge_running`, `face_reveal` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
 `--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
@@ -33,11 +33,27 @@ Runner drawing exports and their phase/registration metadata are separate from
 this environment-only export.
 
 `tools/build_prologue_face_environment.py` bakes the camera-registered frontal
-bridge view for Shot 7 from retained painted scenery and the runtime's shared
-projection helper. `--proof` produces representative camera checkpoints;
+performance for Shot 7 from retained painted scenery, complete authored figures
+and the runtime's shared projection helper. `--proof` produces representative checkpoints;
 `--check` rerenders all 301 inclusive views and verifies exact PNG bytes, camera
-metadata and the export recipe. Normal and Reduced Motion retain the same
-essential down-tilt bank. Character drawings use their separate actor exports.
+metadata and `face_reveal/environment/performance_recipe.json`. Normal and
+Reduced Motion retain the same essential down-tilt bank. The builder always starts
+with raw painted surfaces; repeating it cannot composite figures twice.
+Runtime streams the finished native frames with a bounded cache.
+Its performance signature binds the baked picture to the current camera,
+formation, animation timing and declared drawing hashes. Changing those inputs
+requires rebuilding the final bank; the Gallery rejects a stale performance.
+
+First export complete frontal drawings with `tools/export_prologue_faces.py`
+(`--actor` selects one, `--check` verifies). Current source profiles are
+`face_reveal/<actor>/source_art_48.json`; the old 24-pose profiles and their
+review remain historical. Cadence comes from the current source profile rather
+than a requirement to finish the gait in 24 display ticks. Shot 6 retains its
+complete lower-body drawings with the separate `bridge_running/playback.json`
+timing recipe, exported by `tools/export_prologue_runners.py`. The current run
+cycle is 800 ms in both shots; contact audio reads that same exported timing.
+The [running correction review](../docs/reviews/veinhold_running_polish/README.md)
+records current construction, Gallery validation and reproduction commands.
 
 Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
 individual banks with `tools/export_iselin_native_idles.py` and

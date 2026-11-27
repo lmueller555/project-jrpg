@@ -1,30 +1,41 @@
-"""Bake the frontal bridge view from painted surfaces and the runtime camera.
+"""Bake the frontal performance from painted sources and the runtime camera.
 
 This is offline planar environment projection. It never constructs character
-anatomy. Both presentation modes retain the essential tilt and share this bank.
+anatomy. Complete authored figures are composited offline, so both presentation
+modes stream one bounded native bank rather than caching all source drawings.
 """
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
+from copy import deepcopy
 from hashlib import sha256
 from io import BytesIO
 import inspect
 import json
 import math
+import os
 from pathlib import Path
 import sys
+import tempfile
+
+os.environ.setdefault('SDL_VIDEODRIVER', 'dummy')
+os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
+os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT', '1')
 
 import numpy as np
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from cinematic_face_reveal import DEFAULT_CAMERA, camera_at, project_world
+from cinematic_face_reveal import (CinematicFaceReveal, DEFAULT_CAMERA, FACE_SCENE,
+                                   camera_at, performance_signature, project_world)
+from cinematic_bridge_run import CinematicBridgeRun
 from cinematic_perspective import _png_size
 
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/face_reveal/environment'
 OUTPUT = ROOT/'assets/story/fire_veinhold_opening/shot07/environment'
-REVIEW = ROOT/'docs/reviews/veinhold_face_reveal'
+REVIEW = ROOT/'docs/reviews/veinhold_running_polish'
 APPROACH_SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png'
 WIDTH, HEIGHT, FPS, COUNT = 960, 640, 60, 301
 PROOFS = (0, 45, 90, 180, 300)
@@ -195,49 +206,105 @@ class PaintedBridge:
 
 
 def _sources():
-    paths = [Path(__file__), SOURCE/'generation.json',APPROACH_SOURCE]
+    paths = [Path(__file__), SOURCE/'generation.json',APPROACH_SOURCE, FACE_SCENE,
+             ROOT/'cinematic_face_reveal.py', ROOT/'cinematic_bridge_run.py',
+             ROOT/'cinematic_perspective.py']
     paths += sorted(SOURCE.glob('*_generated.png'))+sorted(SOURCE.glob('*_prompt.txt'))
+    paths += sorted((OUTPUT.parent/'characters').glob('*/*.json'))
+    paths += sorted((OUTPUT.parent/'characters').glob('*/*.png'))
     return {path.relative_to(ROOT).as_posix():_entry(path.read_bytes()) for path in paths}
 
 
+def _camera_metadata():
+    return [{'index':index, 'time_seconds':index/FPS, 'camera':camera_at(index/FPS),
+             'bridge':{'width_metres':14., 'rail_height_metres':1.2,
+                       'mainland_landing':[0.,0.,0.]}} for index in range(COUNT)]
+
+
+@contextmanager
+def _compositor(metadata):
+    """Use the production drawing path without reading previously baked pixels.
+
+    A tiny temporary clear bank supplies validated camera metadata while the
+    replacement reel is being built. This avoids both a stale-camera bootstrap
+    and compositing characters twice when the build is run again.
+    """
+    import pygame
+    scene = json.loads(FACE_SCENE.read_text())
+    if scene.get('camera') != DEFAULT_CAMERA or not scene.get('baked_characters'):
+        raise ValueError('Production performance must use the shared camera and baked figures')
+    initialized = pygame.display.get_init()
+    if not initialized:
+        pygame.display.init()
+    if pygame.display.get_surface() is None:
+        pygame.display.set_mode((1,1))
+    owner = None
+    with tempfile.TemporaryDirectory(prefix='.face-bake-', dir=OUTPUT.parent) as name:
+        temporary = Path(name)
+        clear_path = temporary/'clear.png'
+        clear_path.write_bytes(_png(Image.new('RGBA', (WIDTH,HEIGHT))))
+        (temporary/'cameras.json').write_bytes(_json(metadata))
+        segment = {'duration_ms':5000, 'frames':['clear.png']*COUNT,
+                   'alarm_frames':['clear.png']*COUNT, 'metadata_path':'cameras.json'}
+        (temporary/'manifest.json').write_bytes(_json({
+            'version':1, 'width':WIDTH, 'height':HEIGHT, 'fps':FPS,
+            'segments':{'face_reveal':segment, 'face_reveal_reduced':deepcopy(segment)}}))
+        for actor in scene['actors']:
+            actor['animation'] = os.path.relpath(FACE_SCENE.parent/actor['animation'], temporary)
+        scene['environment'] = 'manifest.json'
+        (temporary/'scene.json').write_bytes(_json(scene))
+        try:
+            owner = CinematicFaceReveal(temporary/'scene.json', allowed_root=OUTPUT.parent,
+                                        cache_size=144, baked_characters=False)
+            yield owner
+        finally:
+            if owner is not None:
+                owner.close()
+            if not initialized:
+                pygame.display.quit()
+
+
 def bake(*, proof=False, check=False):
+    import pygame
     renderer = PaintedBridge()
     REVIEW.mkdir(parents=True,exist_ok=True)
     OUTPUT.mkdir(parents=True,exist_ok=True)
     indices = PROOFS if proof else range(COUNT)
-    outputs,metadata,proofs = {},[],[]
-    for index in indices:
-        image,camera = renderer.render(index)
-        payload = _png(image)
-        filename = f'frame_{index:04d}.png'
-        path = OUTPUT/filename
-        if check:
-            if path.read_bytes() != payload or _png_size(path) != (WIDTH,HEIGHT):
-                raise ValueError(f'Stale frontal perspective {index}')
-        elif not proof:
-            path.write_bytes(payload)
-        outputs[filename] = _entry(payload)
-        metadata.append({'index':index,'time_seconds':index/FPS,'camera':camera,
-                         'bridge':{'width_metres':14.,'rail_height_metres':1.2,
-                                   'mainland_landing':[0.,0.,0.]}})
-        if index in PROOFS:
-            proofs.append((index,image))
-            if not check:
-                image.save(REVIEW/f'environment_{index:04d}.png')
+    outputs,metadata,proofs = {},_camera_metadata(),[]
+    with _compositor(metadata) as owner:
+        for index in indices:
+            image,camera = renderer.render(index)
+            surface = pygame.image.frombytes(image.tobytes(), image.size, 'RGB')
+            owner.draw_unbaked(surface, owner.samples(index/FPS))
+            image = Image.frombytes('RGB', (WIDTH,HEIGHT), pygame.image.tobytes(surface, 'RGB'))
+            payload = _png(image)
+            filename = f'frame_{index:04d}.png'
+            path = OUTPUT/filename
+            if check:
+                if path.read_bytes() != payload or _png_size(path) != (WIDTH,HEIGHT):
+                    raise ValueError(f'Stale frontal performance {index}')
+            elif not proof:
+                path.write_bytes(payload)
+            outputs[filename] = _entry(payload)
+            if index in PROOFS:
+                proofs.append((index,image))
+                if not check:
+                    image.save(REVIEW/f'performance_{index:04d}.png')
     if proof:
         sheet = Image.new('RGB',(960*3,670*2),'#101821')
         draw = ImageDraw.Draw(sheet)
         for position,(index,image) in enumerate(proofs):
             x,y=(position%3)*960,(position//3)*670
             sheet.paste(image,(x,y));draw.text((x+10,y+645),f'{index:03d} / {index/FPS:.2f}s',fill='white')
-        sheet.resize((1440,670),Image.Resampling.LANCZOS).save(REVIEW/'environment_contact.jpg',quality=92)
-        print('Five native environment proofs ready.')
+        sheet.resize((1440,670),Image.Resampling.LANCZOS).save(REVIEW/'performance_contact.jpg',quality=92)
+        print('Five native performance proofs ready.')
         return
     clear = _png(Image.new('RGBA',(WIDTH,HEIGHT)))
     paths = [f'frame_{index:04d}.png' for index in range(COUNT)]
     segment = {'duration_ms':5000,'frames':paths,'alarm_frames':['clear.png']*COUNT,
                'metadata_path':'cameras.json'}
-    manifest = {'version':1,'width':WIDTH,'height':HEIGHT,'fps':FPS,
+    manifest = {'version':1,'width':WIDTH,'height':HEIGHT,'fps':FPS,'baked_characters':True,
+                'performance_signature':performance_signature(FACE_SCENE),
                 'segments':{'face_reveal':segment,'face_reveal_reduced':dict(segment)}}
     contents = {'clear.png':clear,'cameras.json':_json(metadata),'manifest.json':_json(manifest)}
     for name,payload in contents.items():
@@ -250,17 +317,21 @@ def bake(*, proof=False, check=False):
     recipe = {'version':1,'command':'python tools/build_prologue_face_environment.py',
               'render_size':[WIDTH,HEIGHT],'fps':FPS,'samples':COUNT,'duration_seconds':5,
               'projection_helper_sha256':_projection_fingerprint(),
+              'compositor_sha256':sha256((inspect.getsource(CinematicFaceReveal.samples)
+                  +inspect.getsource(CinematicFaceReveal.draw_unbaked)
+                  +inspect.getsource(CinematicBridgeRun._whole_drawing)).encode()).hexdigest(),
+              'construction':'Native full frames composite complete authored drawings over freshly projected scenery; no limb transforms or temporal interpolation.',
               'camera':DEFAULT_CAMERA,'geometry':GEOMETRY,
               'sources':_sources(),'outputs':outputs,
               'reduced_motion':'Shares all301 views because the down-tilt is the essential face reveal; no optional camera shake.'}
-    recipe_path = SOURCE/'export_recipe.json'
+    recipe_path = SOURCE/'performance_recipe.json'
     if check:
         if json.loads(recipe_path.read_text()) != recipe:
             raise ValueError('Stale frontal environment export recipe')
-        print('301 native painted perspectives and both camera manifests reproduce exactly.')
+        print('301 native full-performance frames and both camera manifests reproduce exactly.')
     else:
         recipe_path.write_bytes(_json(recipe))
-        print('Baked301 native painted perspectives for both presentation modes.')
+        print('Baked301 native full-performance frames for both presentation modes.')
 
 
 if __name__ == '__main__':

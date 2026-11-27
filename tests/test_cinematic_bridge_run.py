@@ -284,17 +284,34 @@ class ProductionBridgeRunTests(unittest.TestCase):
             self.assertEqual(pygame.image.tobytes(self.scene.render_frame(39.+local), 'RGB'),
                              pygame.image.tobytes(self.clip.render_frame(local), 'RGB'))
 
-    def test_party_appears_only_after_the_guard_hold_and_has_full_sixty_hz_cycle(self):
+    def test_party_appears_only_after_guard_hold_with_independent_gait_and_display_clocks(self):
         for at in (0., 25., 30., 34., 35., 38.999):
             self.assertNotIn('runners', self.scene.state_at(at))
         self.assertEqual(self.scene.state_at(39.)['phase'], 'bridge_running')
         timings = read_run_timing(RUN_SCENE)
         self.assertEqual(len(timings), 3)
         for actor in timings:
-            self.assertAlmostEqual(actor['cycle_seconds'], .4)
+            self.assertAlmostEqual(actor['cycle_seconds'], .8)
             self.assertEqual([contact['frame'] for contact in actor['contacts']], [0, 12])
         indices = [self.clip.state_at(index/60)['runners'][0]['frame_index'] for index in range(180)]
-        self.assertEqual(indices, [frame % 24 for frame in range(180)])
+        self.assertEqual(indices, [(tick//2) % 24 for tick in range(180)])
+        self.assertEqual(self.clip.state_at(0.)['camera']['position_metres'][0], 0.)
+        self.assertEqual(self.clip._assets['bridge_running']['running'].data['camera']['speed_metres_per_second'], 4.)
+
+    def test_retimed_deck_preserves_stride_excursion_and_trailing_soldier_framing(self):
+        self.clip.state_at(0.)
+        owner = self.clip._assets['bridge_running']['running']
+        camera = owner.data['camera']
+        # The new world-density calibration retains the artwork's original
+        # deck distance per two-step cycle while slowing its cadence by half.
+        self.assertAlmostEqual(camera['speed_metres_per_second']*.8*camera['pixels_per_metre'],
+                               11.42*.4*660)
+        last = {actor['id']:actor for actor in owner.samples(3.)['runners']}
+        self.assertAlmostEqual(last['crown_soldier']['ground_anchor'][0], 126.32)
+        self.assertTrue(last['crown_soldier']['visible'])
+        self.assertEqual(owner.samples(0.)['runners'][0]['ground_anchor'][0], 620.)
+        self.assertEqual(owner.samples(0.)['camera']['party_travel_metres'], 22.26)
+        self.assertAlmostEqual(owner.samples(3.)['camera']['party_travel_metres'], 34.26)
 
     def test_pause_focus_and_natural_completion_release_the_running_cache(self):
         self.clip.start()

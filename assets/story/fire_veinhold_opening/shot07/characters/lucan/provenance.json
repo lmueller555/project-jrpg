@@ -1,1650 +1,892 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_faces.py",
-  "exporter_sha256": "b87d1acec2059a434a381733ebc0dc062d1510a1c7276066ab7ed426a021151a",
+  "exporter_sha256": "dab0232f50dde7ad30b779c9f71f79fe3de678acdf61eebc09b4c30d0f43336f",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
+  "alpha_floor": 16,
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/source_art_24.json": "97054cf13a8a32c1795c082f45fab30d4fc3832626840ce8415d452a89c63167",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/appearance_prompt.txt": "dae6baf0a13d08be7017a0a6ba7640c65198e9bc8128951fb7bef9e714255318",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_01.png": "e07f3c79d7c83dc13875072f32ca10bb0d300af32e93cb54d17a4220ca4aff4c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_01_prompt.txt": "95a4d1b3536ecdee5d66b03f9dffe6ecb8a5b8b0c7e9d0ba14fbc625510dcbad",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_02.png": "58291153871dfeab73eb734eb6265630df2ac76e2f1b17b2e323f31228de1976",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_02_prompt.txt": "68594c5d9452d97c529ad6de3d144f398d7a0052178f6680037ea44033ba61cc",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_03.png": "37633043d8517aa3cffb124460686bd37e4e2e8e339941029fd5bc8472c33401",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_03_prompt.txt": "2eff94832bcc3d7dcaf8992dc7c0217240f428751eef5062a2b404287a9a8f4a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_04.png": "35e1bb54a6cd8606fdf177efe9b58973d4e3d1276478a5dd735f051e00949208",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_04_prompt.txt": "b8bd7d4acc26b8850bb1b891a8e0a1778159a867feb38ddb7c2b2d57ecd5b6c1",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_05.png": "816002d618dd9ecefcc4c946325c6bf941ef129042c5172453586b41618eb7b0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_05_prompt.txt": "f837c966b530d3a42163d3f06261a1add1d0c8cdbf92cdaabdf7fd5bacdcf28d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06.png": "81a01db6dcffc633a3d5106d3e240904fe746ff5d09e816477e23984333ab0c7",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_06_prompt.txt": "e279bd8ccf94081590b9b1d237b48bdc798d9b8a182a13c57f353ac2ea5dcfb8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_07.png": "8e2e9417b864b76dff864e7f716754af4cc55bba17c6226ca4faa2ee56ff27b4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_07_prompt.txt": "f61f07d476125c09b3fc9b0de471b0c6dc3b61261b57ed4eb3e3d4352068560b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_08.png": "2fac01db8df09a720bc7d8dc63ff24c6967470ac8707f056fa9099971430e74a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_08_prompt.txt": "b1d1226fc90c7f49dafa19411e472b847c8574c3348bd5334927b00574c52417",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_09.png": "b102cc7b6f4a6ad82c9d2a3658f04c250526b36ef727fedcda856dbca3e4a505",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_09_prompt.txt": "45c22f7bdbc10842b91f9a61f44a0eaefdb08978d116f2bd3c3f0dee2abcad1f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_10.png": "62ed7c2769f8830f3724441aec67403217f50ffe737cbd3846848368055c6ae6",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_10_prompt.txt": "624535d35f339fae21ae0acb856e507a1f5209af1a7fd786868380878c626cda",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_11.png": "068e90dec5cd8ba12f343d9b3874b9f181ea8e20ae2926220e3a464290ede832",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_11_prompt.txt": "a6345f5c65834f3dd07c36af0cf343a1d727ba2e38cee8e207b0b634e9d885a2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12.png": "520c2e4e0bd16679bd66526c972b563b6d4e98a5fa8cd78990136571bd18125b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_12_prompt.txt": "c2279173e4336bd71377880606be89ff2b09eedbd1ce3f0da745b9ff96f8056d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_13.png": "3103353d59835dd67a402373535cb483fbd0789d399890339f0b2997e5f07dbb",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_13_prompt.txt": "7e756d9b3651c343894a40dab91d6b238f7b48e275d401f0ad903ad3591e2de3",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_14.png": "5aeeb98362487df162b0f42c7f6561314fb4b832825b67a09d3a8a919858184a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_14_prompt.txt": "d605126d107839f739acd8233f24169da09d5ad34000e3c1f746f6336f04f8f8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_15.png": "1f26c43a76ebb11eec741333b26448315e0c10bcc41dc776a27dd95e2612ab04",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_15_prompt.txt": "2fdbbbdcd6bf12f3753abcaaabf41cc54ba73830496d937f0cc2d49b10dfeead",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_16.png": "30a3593c44e43f73da8806416d73d04e035ad98c93ca6de0b347acfc890f3c64",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_16_prompt.txt": "78904c129b775e932062f7c3463967bf36ac6ce98b570930d56513167fe8908a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_17.png": "c124363b489cd27f87ba35722515914dcd7bc1c7552a6fdb1a73b656a8525474",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_17_prompt.txt": "79868e2d042ec74e87e85c2414b5d9e90446f999eee9f600577c8e4573e46337",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18.png": "2b3e01df032eaffeff74823f1129358e91bf7eda8c226d6d582d0f341adc2df7",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/keys/phase_18_prompt.txt": "4583ef39d796c0d5840afb4c3b7b68df17354b6e20e1831218d519aa03140821",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_19.png": "4aa0b5e071b8453fdde6749cb8b27f552679a5f89dfa3a08c6b6fcaf636eaca1",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_19_prompt.txt": "081abd3f664ff2d13ac2ffcce3a84faf4bce36744a26e85913f6c5efff4955c0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_20.png": "5f99c380e6d3f87f0f6625eac0f8210767ce2a856ee29ad117db8e18b61b14e8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_20_prompt.txt": "e9668e23db85dae149f7c9592486e5778b822c79945ad2a019a68d75a3c944b9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_21.png": "eb72b7d35407bd9e0b5c7ebb2e20cd6b25d40962c8c2caa3be848e9767d7ac57",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_21_prompt.txt": "bda2c367bcf2f4355f46735da3a887752994c9dc5cd8e54fbbc4a18a2bb7c747",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_22.png": "dec07a324d24ea8d447224cb007fdccbdbebc4e012a05c9eb56b3355b13d020d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_22_prompt.txt": "35d45e4f253b2303bed846683aeac6519ed4163b17231da481b6d5830b013ee2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_23.png": "a4fa38e237bac00e4aeacf40d05a201ef9912c78f865171f6325b653c3e33476",
-    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/frames/frame_23_prompt.txt": "c3f84e7376a27151104d4d66cb9c962cac5016bcf9971df7fc87b68d2be1b57d"
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/source_art_48.json": "c8095e4ce218623327442aae9d0a2e3f35c49f050f0f050b4d6c0d0ec2595614",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_00.png": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_01.png": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_02.png": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_03.png": "1a7a4d5a9121eae60a9c1feeea1cf1a4c048fbee3f8005b7f3c969e37e3a1bec",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_04.png": "d24cdf0bc1e846e576aa4388e03010b4853b02a848a18194bebe1aa81c6e9722",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_05.png": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_06.png": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_07.png": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_08.png": "c9526df52c6289b16d999fa96c88cbbe4375be1219b07e52cfc5207db27e8287",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_09.png": "e9af2e8c36fd1b1b87a1c10c320d03b505bde99eb587a68172db7078df0bae83",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_10.png": "99739333014db6936e333fff112c81b449611397a8f5b4d79b0ed9299bc70872",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_11.png": "0e3a8f5b9ace16fb3a7f602692d5944650d7894578c7c1b7a4dc28efdc3aed5b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_12.png": "8d0255e92011898bbf816eb4bd30f5d358b87ede148df5efa5b597403f3c39c3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_13.png": "fdff66b940e5ee304b3683f5e995a572f043d9e5be0e019bffd133b09851d861",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_14.png": "aede861d64fd5a569b63623e110e26ce521cc93c2a3e65752b32fda5ab10bd41",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_15.png": "a1eee9c8fdcc0af1a8b3d061a098988cd50a5c89a7d1bf2f74e7c4bac3a5c68f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_16.png": "a3f2b47f63b85a627865aeda96bca4f59ae925b8971e0a11756986de7c88bd7a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_17.png": "883db64b31f97294e5a5f5be85a4d29640bf8cb0b829861264fb942d9999955c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_18.png": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_19.png": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_20.png": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_21.png": "cff27ec48daf4afead95d91d43a2769d7537afa756d871425ba056aba7dce58f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_22.png": "60934177bc14dddde96e25620cd27723d8a23ad25a4d14735679528044e324c0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_23.png": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_24.png": "2a1f0f2582efaa66c720796e8a491e86971dbf44a4aee23574495175a3f7f8ee",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_25.png": "50374185a6aa6e9ca545de88b1ead1da9e89ee4df2bd1f4e510e537ee467e446",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_26.png": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_27.png": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_28.png": "16d7e31967e1a239e77c03d7ce5fe82c00fd9497b2e2e9caf10a648bd27a91c8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_29.png": "a83e47d4d7b1a22355425aa2d271a8aa0e4f3a22b58fba09d7606031296a522e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_30.png": "8d13751c39727c72f02dd4c8919910f7dde1631fd00af27fc160219eb12e323a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_31.png": "faa02b4a2865e2ea5501ce97cb91279b05ff90a1aedc86498d1bdb1c50c8fff9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_32.png": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_33.png": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_34.png": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_35.png": "f0bdc4d4b3470b4f6d54a7ecf1e6d5091761c774e5f4c5006c93da8904c6d150",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_36.png": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_37.png": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_38.png": "234c2f46a82755f4e04f25a6a4b5e9ecc84c4bed6a0bd8be8629c738e8ef6c0d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_39.png": "777af5732cfb4f60bbf50546bb43a98fa6d91cefe1442749f62b9b17685e3056",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_40.png": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_41.png": "ae55dede516dbad81f60866b6a87d09bee021580155fff378c4162ba2f3bb163",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_42.png": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_43.png": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_44.png": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_45.png": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_46.png": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_47.png": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_00_prompt.txt": "a1f8d2d595b70af9a3407b42d038226b11baba2c38546ab51cdb16fb97fd4d9e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_01_prompt.txt": "6d33289af3093c46a96484002df3e37e10d3853644963312aa806901d3e34e9d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_02_prompt.txt": "e1ff118db35b03fae1b90bfd476dd1bf58943ea5e5c59745a305439fe8446c2d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_03_prompt.txt": "ca7fe9af91a9fb391f5388fbc0ec62b1fd29f79272cbed1de59f7738bea92bca",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_04_prompt.txt": "250d191502688c4572ed98c1c9d3838af312959dab91ba71bf979f7deda022c9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_05_prompt.txt": "51d5b957edfa013521a1f4e26e20e26cdeee3a3ece72d702de161c4da745d51d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_06_prompt.txt": "f2f0cbb0c2be7d4f58cc29fb102cd66baa242ab31632bbb269f174fc46c29ba1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_07_prompt.txt": "c474f4e197980a7229c476ca08be5c9307740e784dff19d318dc58558efc65b9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_08_prompt.txt": "3af8889595c1936c84721d3b9bd0c56b91f965907f4a1a2228fb48dcbca72b38",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_09_prompt.txt": "c5cdcfdc677287dc9d3ffbda7fd9af3052d9cc1748c332d39dbb6fd50c6245a9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_10_prompt.txt": "b18e928c4ffdb159dbb3da16e8b3443ea0711b36dce95ac77a90d319cb557479",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_11_prompt.txt": "a5c90589bd44160651a0584957c70fe9db8f4283400e75df195f76bb43a8b346",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_12_prompt.txt": "ecd1b5d29d416f29e87249a9b81f51bff5350588aaa0450da9bafc47466a4a6b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_13_prompt.txt": "a42b0519bbc29bcdbd49c0851917ab4e0dff43ac6d2ecb4c4e0bc9f3702c498e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_14_prompt.txt": "62d03d452c6185568c01351e91bdf58b33d1fd26db9597b6a9549e1441f1a34e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_15_prompt.txt": "e02e25809ae90b5fd8e9fe24790b1a688e8872ccc806349bdf046002b23d22b3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_16_prompt.txt": "b83b4b68e9af5b085d00c50a2eb7d64367dcdb9e7c7ad61dfae967b3679fbf8b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_17_prompt.txt": "069ec82d93c16e0e094244b635723f6481ea09b8d6d7379b7925c8869be95994",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_18_prompt.txt": "7c31af6d3984a92a5a8fc4ec8d197d1ed0279b24d8859f9158f4894ccac10b25",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_19_prompt.txt": "9c3446818c04ab840d8e0415fad10c22b63f5a7134c327eab87aa8e6e7f30fb0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_20_prompt.txt": "fa407a13b6adba1cabb853399aca834ba8a368acfeb51b32ce320ef625816f11",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_21_prompt.txt": "24ba735d3dc25b2efe13a3fd132500508d4a6dd3d2cc597ae7e89c51e51f1094",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_22_prompt.txt": "a9fff58eb10ec70bd324328110c615575248ee04fc0d07594070dd4ec59491f2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_23_prompt.txt": "297b12e6cbd34b23a2f4efb4d18a8c884256f7924058159946ae91d80982a7d5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_24_prompt.txt": "eeca0ac928ce1bd28284383973879b34f96e518e20d494f87f146ab2fc416361",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_25_prompt.txt": "40c9da7a655d913f670db18cc3d6b22fee039899704a1cbe22257715da4e7b87",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_26_prompt.txt": "fd575091046c859078ffb0152c45ab30055c30a610e8b5a00333c6321647db35",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_27_prompt.txt": "e9b4de52a4402350fa55f9f0169eb71fa220bcb161e6694f72c276b695109612",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_28_prompt.txt": "230701a549fa1917da407507a0f377d077b674f238367245ff0a035ad2a0c5a0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_29_prompt.txt": "36d98b39bdaa0bb2025a5250cf217ccf7c666319756ef80909f41c1c6ae3841b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_30_prompt.txt": "14296de4e10dbb2c2a96aaa83a02a76eaa228fef894094a4a4752013f66b2580",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_31_prompt.txt": "f5a872ef4d79c7096c00175792209c6d920bd2367b27953701f904c5e9d9dbf4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_32_prompt.txt": "6889221bc23e1f96c4dfff13ff792908bb693a4ef4040188966fd4c77d900dd5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_33_prompt.txt": "c3ffda8f0db21412c095fd053027dbb6548bfffd61bae9b25f04a6e58d810e09",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_34_prompt.txt": "5b8f2e067eb428c2b71c63e67ff24d1e67915bcf4ef3e7e9981b6472ac157d36",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_35_prompt.txt": "bd82ddb2f5fc327af6122c330c45bdc832e60a20192a6b7af535ecb105554667",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_36_prompt.txt": "1793735bec9203ead209cfa55e446cc5aefe26a1425ea349aa9cf105944d0577",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_37_prompt.txt": "fad5d4d8fda81c45a5be975443f81984b436b528e3d1cce8ab5a0e3188242374",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_38_prompt.txt": "d115fb042900d0f0d944b616fe85235fc9a6747b47d776b45be2e32c06252b21",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_39_prompt.txt": "9fe367d461a75ddb35e084ad504f755080a178f18d9327360d386d8723da5b59",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_40_prompt.txt": "e1c666e47055caf13d17b220b9201520f0e82ba4f3cd81e18a89f918f65fe991",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_41_prompt.txt": "ff65feccec04b1303e5e9b639a7afa82fa1563ec05df1cd146311b199fe4233b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_42_prompt.txt": "9bbc777876cf1fafd389999c640c6ef5f9ce5e074d250a500899125038221225",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_43_prompt.txt": "02a1059035c6d4929d51796b5fffe06b55080673152f23e42060023f61090b64",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_44_prompt.txt": "200679bd6b98bd2926e7372b1e91ee01f3992d182179b2b3e75a70c95e37cf11",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_45_prompt.txt": "f8fef2820af9ebd37119cdd752fa724303c463fefeb1b64dcacb1feac43fa6d0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_46_prompt.txt": "fe3e42dbb920efa89650eeaf9980b373c900331fc5f1824f4b6df0be7c91ac0b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_47_prompt.txt": "deb8c7518c9659aa6d8d2131cf0f919390ccf5982b3dcaa50276664963472211",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_00.png": "3ed326f4fb43daa89cf81107276eae895fc60bb83d8fd0d833f0861b6663fe3a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_01.png": "c0615cf2d70d832802a82fd8e3786740eafc3848e8a89f2ad38dfa25a13fa567",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_02.png": "57416562bfd9120131834a9e8d7fd0868335086f296132ca35c79def03f5eaf6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_03.png": "b27bf75a5cc92796cbc425ccf86b3f186599027c43e4eb59b8c79719d453ed99",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_04.png": "89b9d6a4699038360cc90de5fa1d702f7e957f86265d8f8a002801a362cbf751",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_05.png": "ccb7bf92fa6205cdc733e52a354070bad23d7293d9d126a62d728843a2c88ca1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_06.png": "2800dfbca1d8ff283739f8bc0fd39cfb88bcf72e21b1a9336ad52e982ca09bef",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_07.png": "82aad527fa4f85085789abcd2a3b3f363148304b23b573582a7cd52c60e7f36f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_08.png": "020ff4d0864243045f614bba8b6ea5de96583f1c176fe5c74eb6e24bb7d757c8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_09.png": "773ec3e794f0badee78bdf187ebdd16702a83d4235141f2a8f050f5391c40365",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_10.png": "e6b5ff2281f2dcc376326a764bb44545086fa2852c6dc22388d4524b4450ce32",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_11.png": "1c8003caf5230d3624fab7bdd42e1e1a5941a4c42db50ad2164548333ad04f89",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_12.png": "8e7a8a1629eb85d0d2bd4e385e819649e3008cba11054c2f0606e46ab3c86919",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_13.png": "86279e06a84004da99076db8fa6e1367a850b1d5c5d4b0cd263ac35adae2cb42",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_14.png": "4dfb8c41d81fbfd7757215533764b7d92068f30a8cb1dcb00d158635a993db88",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_15.png": "81ae7885496c9ba4a9de4ea86c653a53ba7e8fcebabd38a076164fa0cf80f740",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_16.png": "7a1199665ae5df2380a3e141e242b9125313697810a36db20ea8c6359266755e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_17.png": "00800facb7d63c9d734e1d2a634524e4e26933a5fd09edce35523fcc78b5ee39",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_18.png": "8f94b1746473a730a7f5419b4c54c390fb78615679318c4fe3280e3235de5d50",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_19.png": "f8004a7513052ee313f34a47849a5124de8911a88aac15387a9bbca3eeb7fa15",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_20.png": "25ad1f80c199a83b74cde23d8421240827f6dccfd1a34b1b26dad024f0e37145",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_21.png": "e4b51938cce3c707c44e127a6ac6aff042032a9769a351c2c34556d847d15e53",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_22.png": "ecd41b433d053999a8c0072eeb1d34ecb8316dc2bef9015dd290306ebfe49c91",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_23.png": "cd969de13690b65479bb69675067be7880f356835f204505232ab58e05351daa",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_24.png": "e45ad10164c1aabef38841b50effaa056d42091d82e1d1747f054df64591d871",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_25.png": "f16cd11467cae688d96fa58da216b657356317814255d927d95c1fc9d9131227",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_26.png": "9cb77cad0d80286a46361bcb33c463794bc8d666f41a7b140d9d14c921a42cdd",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_27.png": "f728a4d98b65d674f5c8ece594bad31a5270945681dfd2fa1d348274bd1a227a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_28.png": "297484fd6ce704915c35f8d25f7e6f36dbf159401b5c7f2b439822807f1761dc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_29.png": "e7034d61d8b661de2d6e688f0ab567bd57535b5e3a5f268a29163c8558c000d0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_30.png": "e710efc7c5bdcde52490c2b69da54c2974520614770479789904c4f43cc663a9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_31.png": "0144240b0338a87e219159bd3a330992433a11517f78445c85287267db24e259",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_32.png": "387498d3807de899ef35cee54ae4e84b3d3b843e04fef378d56675c97be1f7b5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_33.png": "fb0eef8329bfb962b8e31e48cbdec35362338fc0756e646448d9f73fbe9bb144",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_34.png": "36a04d3edd7552b0339dafd077d65c23b841b255601327390cb6063e0ce37c7b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_35.png": "ae06912dfa78e0941541f628d75bf1cd871fbde75fa52958eec49fa0160a0c25",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_36.png": "fd189ea391b5a023b6e858881f0188e598409321ff4e68568874810526e7afe9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_37.png": "394a66e40055bfc10dad28a00beb807696240404416243f679d65c1f4f8cd9e8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_38.png": "69a0fc475cfc3b69d4355acdbe0bcb010193f24ae2c2140ad3865a54bd5ce67b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_39.png": "7572d37cf4483db76b0751f41b3c1c02dd5bac9c6b7cb8e23630bfc24efd5574",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_40.png": "0e6da5588544158dae6f484ee0e114904d58020eef55d38ebbfcfdb9c82ff256",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_41.png": "d4933fddb35a7a6b755b9692822594b886affa14e69942bbdfe4d17e440cdd5b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_42.png": "51f7e18d8c2cd425b0d902481e9e4e8a5514187d56d9f707d4c2df878cbddb96",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_43.png": "3eec118c5aff2492e926eac4a4d1e911bd30231405a66c3b5494b177e976e42c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_44.png": "70243305de33f12034a2cbd9f4bedd1a87af0d6f0e9e2b53dd2e7c75cfc59c29",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_45.png": "3bf15c4b8ab271ffea3b2c22813637199428da36454c6ae0b61b6e815aa83b9c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_46.png": "0923cf2cdc4482cb1bb789e3dca50f1bda66db6a942a4fd95b216b09c5aa1dc5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guides/phase_47.png": "92e0ff7f3835997eea9b8f422657fe4db3c1dd6ca02e6e40c490a72829fe08c2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/guide_recipe.py": "973009447a9099a3f474513dba89b8b1097a2f759d4765013eac2194814140bc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/measure_landmarks.py": "548d803049567f9ab16882f014f4b184d96842f84d016922075bdefe5c9e024a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/measured_landmarks.json": "a78f276a32ccf1bd090f4768e836d6748f6827a1d509f63a1f5fa99b3d8d5d4d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/build_profile.py": "64fd0701bc573bfe9af504d53b40d7f71f698c3a5497e627c60ac4b2fd3f441a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/keys.png": "4d6e11b091500af54280384b6f46217210d2516be73810ac53989a7e0ef3f2d4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/final_fix_results.json": "a3c20277c1b8398e9d486b68d254eeb805e838dcead35b911cf9b4fdf0f3a895",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/first_results.json": "c30398a752dd78ba2fad4ca31d9bff6c71c0c54910354ed7602f20bffea96ce1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/generated_helper_results.json": "e995e2e23ae63fcd01e3c15b0a2a2ed3425d45e5380147e59a402e8f19d3ccc0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/repair_results.json": "be22d02a4648b6cb245f930bbcf957784b96b28c6471b0f2ff61b1d65660ebe7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/second_results.json": "46dfe2a97f9d47ca3bd4e0497374ea1fe1194375b0fad7595ef6eb1f9d0492c2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/generated_keys.json": "08c164d4b5806a060d6a162c420650e6ab72abe4a97d2d17cb450175faa068fb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/final4_result.json": "a19c993b1756b87f061bdf9d3af5d79b3a8f7078367f8511478319c88ad3a2f0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/helper_leg_repairs.json": "fcc7fe32c1e4335686844b2569ecc132992f77c821fcbfe9b1431ceffaaae321"
   },
   "registrations": [
     {
       "frame": 0,
-      "source": "appearance_contact.png",
+      "source": "run_v2/frames/frame_00.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        20.339999999999975,
-        42.59999999999991
+        41.3921,
+        45.2441
       ],
       "applied_origin": [
-        20,
-        43
+        41,
+        45
       ],
       "sample_size": [
-        717,
-        956
+        665,
+        939
       ],
       "source_cell_landmarks": {
         "eyes": [
-          551.0,
-          141.0
-        ],
-        "face": [
-          552.0,
-          174.0
+          538.13,
+          146.08
         ],
         "neck": [
-          555.0,
-          247.0
+          549.2,
+          252.88
         ],
         "belt": [
-          554.0,
-          544.0
+          555.66,
+          562.56
         ],
         "right_sole": [
-          482.0,
-          1389.0
+          470.0,
+          1460.0
         ],
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          383.66,
-          136.06
-        ],
-        "face": [
-          384.32,
-          157.84
+          380.0219,
+          137.0304
         ],
         "neck": [
-          386.3,
-          206.02
+          386.996,
+          204.3144
         ],
         "belt": [
-          385.64,
-          402.04
+          391.0658,
+          399.4128
         ],
         "right_sole": [
-          338.12,
-          959.74
+          337.1,
+          964.8
         ],
         "left_sole": null
       },
       "opaque_bounds": [
-        49,
+        67,
         52,
-        605,
-        961
+        568,
+        967
       ],
-      "sha256": "ba6a69a8b05e8b60832fea7528e871cc71c217d92a03f531e0c2ceab92ee1aba"
+      "sha256": "06f641fca4d085af6888112ddff033aaf2c121ec07d04d65f67849cfc49c06d7"
     },
     {
       "frame": 1,
-      "source": "frames/frame_01.png",
+      "source": "run_v2/frames/frame_01.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.87799999999998,
-        27.637999999999895
+        35.4997,
+        50.847
       ],
       "applied_origin": [
-        20,
-        28
+        35,
+        51
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          553.0,
-          159.0
-        ],
-        "face": [
-          554.0,
-          197.0
+          550.42,
+          142.72
         ],
         "neck": [
-          558.0,
-          278.0
+          564.25,
+          248.9
         ],
         "belt": [
-          551.0,
-          579.0
+          556.32,
+          544.12
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.98,
-          132.94
-        ],
-        "face": [
-          385.64,
-          158.02
+          381.7646,
+          140.9136
         ],
         "neck": [
-          388.28,
-          211.48
+          390.4775,
+          207.807
         ],
         "belt": [
-          383.66,
-          410.14
+          385.4816,
+          393.7956
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        33,
-        35,
-        631,
-        947
+        62,
+        55,
+        587,
+        944
       ],
-      "sha256": "cb7d48a7c37904073405338fef77ac5bc3866af01fbcb819d3433569e98fe5f3"
+      "sha256": "5b88112358482ec79bf5c7cec909c4868dc82a70c46ee23acc718e8f7d5ede70"
     },
     {
       "frame": 2,
-      "source": "frames/frame_02.png",
+      "source": "run_v2/frames/frame_02.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        18.359999999999978,
-        31.54199999999991
+        34.7891,
+        47.3821
       ],
       "applied_origin": [
-        18,
-        32
+        35,
+        47
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          155.0
-        ],
-        "face": [
-          556.0,
-          192.0
+          552.26,
+          146.16
         ],
         "neck": [
-          561.0,
-          272.0
+          564.3,
+          256.32
         ],
         "belt": [
-          555.0,
-          575.0
+          556.98,
+          555.68
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          383.64,
-          134.3
-        ],
-        "face": [
-          384.96,
-          158.72
+          382.9238,
+          139.0808
         ],
         "neck": [
-          388.26,
-          211.52
+          390.509,
+          208.4816
         ],
         "belt": [
-          384.3,
-          411.5
+          385.8974,
+          397.0784
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        39,
-        42,
-        631,
-        954
+        59,
+        53,
+        585,
+        950
       ],
-      "sha256": "e178ffe40380be573518098ce1aee87945723629a9c51e04e3c72d1f7a7d0587"
+      "sha256": "71ab9d648ce3280c83a64a535eb41cd29dd7d7ff78f10c1c3960ae8a8e0c9fd2"
     },
     {
       "frame": 3,
-      "source": "frames/frame_03.png",
+      "source": "run_v2/frames/frame_03.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.019999999999975,
-        33.44599999999991
+        36.618,
+        42.5639
       ],
       "applied_origin": [
-        19,
-        33
+        37,
+        43
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          152.0
-        ],
-        "face": [
-          556.0,
-          190.0
+          548.39,
+          151.24
         ],
         "neck": [
-          559.0,
-          268.0
+          563.45,
+          267.78
         ],
         "belt": [
-          553.0,
-          568.0
+          554.32,
+          569.12
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.64,
-          133.32
-        ],
-        "face": [
-          385.96,
-          158.4
+          382.4857,
+          138.2812
         ],
         "neck": [
-          387.94,
-          209.88
+          391.9735,
+          211.7014
         ],
         "belt": [
-          383.98,
-          407.88
+          386.2216,
+          401.5456
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        32,
-        37,
-        629,
-        956
+        58,
+        52,
+        604,
+        949
       ],
-      "sha256": "9a624b9e14a159da56e26a4fe6ea571ca2de17ffac1c2d3ffb038f68b0f80da6"
+      "sha256": "bda9311a2a96d27b58e08596a9c7efb8425ccdf17b98e031c75d24c3aa3e89db"
     },
     {
       "frame": 4,
-      "source": "frames/frame_04.png",
+      "source": "run_v2/frames/frame_04.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        18.689999999999962,
-        32.491999999999905
+        37.0394,
+        43.8276
       ],
       "applied_origin": [
-        19,
-        32
+        37,
+        44
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          151.0
-        ],
-        "face": [
-          556.0,
-          188.0
+          547.68,
+          151.88
         ],
         "neck": [
-          560.0,
-          267.0
+          562.9,
+          268.56
         ],
         "belt": [
-          554.0,
-          560.0
+          553.64,
+          564.24
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.64,
-          131.66
-        ],
-        "face": [
-          385.96,
-          156.08
+          382.0384,
+          139.6844
         ],
         "neck": [
-          388.6,
-          208.22
+          391.627,
+          213.1928
         ],
         "belt": [
-          384.64,
-          401.6
+          385.7932,
+          399.4712
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        38,
-        38,
-        633,
-        898
+        57,
+        52,
+        603,
+        951
       ],
-      "sha256": "8e75bc30738584e71bf867c59f79e31c1ad66580f346f00941092341bcadf8f6"
+      "sha256": "10a481518219f9953ecca4506e0b80fdc93bfd7a14f63c523255eec6699849ed"
     },
     {
       "frame": 5,
-      "source": "frames/frame_05.png",
+      "source": "run_v2/frames/frame_05.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        18.88799999999997,
-        28.181999999999913
+        37.35,
+        46.5749
       ],
       "applied_origin": [
-        19,
-        28
+        37,
+        47
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          154.0
-        ],
-        "face": [
-          556.0,
-          192.0
+          546.97,
+          150.52
         ],
         "neck": [
-          560.0,
-          271.0
+          560.2,
+          262.88
         ],
         "belt": [
-          553.0,
-          564.0
+          554.98,
+          557.68
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.64,
-          129.64
-        ],
-        "face": [
-          385.96,
-          154.72
+          381.5911,
+          141.8276
         ],
         "neck": [
-          388.6,
-          206.86
+          389.926,
+          212.6144
         ],
         "belt": [
-          383.98,
-          400.24
+          386.6374,
+          398.3384
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        34,
-        35,
-        636,
-        866
+        73,
+        53,
+        593,
+        950
       ],
-      "sha256": "e71fbc506708447a6bf5f62c222e4a94dd148c115c3216b92f283e3d54c5bc52"
+      "sha256": "379c5eaf87616bf4bdbf56122c88ab986cb9ba742cbd18bc07fdba5e2c5e0b9e"
     },
     {
       "frame": 6,
-      "source": "keys/phase_06.png",
+      "source": "run_v2/frames/frame_06.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.349999999999984,
-        25.531999999999904
+        35.3548,
+        45.1394
       ],
       "applied_origin": [
-        19,
-        26
+        35,
+        45
       ],
       "sample_size": [
-        717,
-        956
+        665,
+        939
       ],
       "source_cell_landmarks": {
         "eyes": [
-          555.0,
-          153.0
-        ],
-        "face": [
-          556.0,
-          191.0
+          551.68,
+          148.88
         ],
         "neck": [
-          560.0,
-          271.0
+          567.2,
+          261.88
         ],
         "belt": [
-          549.0,
-          574.0
+          553.02,
+          568.32
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          385.3,
-          126.98
-        ],
-        "face": [
-          385.96,
-          152.06
+          382.5584,
+          138.7944
         ],
         "neck": [
-          388.6,
-          204.86
+          392.336,
+          209.9844
         ],
         "belt": [
-          381.34,
-          404.84
+          383.4026,
+          403.0416
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        40,
-        33,
-        633,
-        868
+        54,
+        53,
+        583,
+        960
       ],
-      "sha256": "0e85d119f61976a9863bc2b21b2e2f8fb04b33ff6a124c1424281e7d683c4cf5"
+      "sha256": "f493d5a139027b1979e68c3eca184fa73ed49ccbfb6e23859384596e3657b093"
     },
     {
       "frame": 7,
-      "source": "frames/frame_07.png",
+      "source": "run_v2/frames/frame_07.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        18.557999999999964,
-        36.69599999999991
+        30.2455,
+        46.9396
       ],
       "applied_origin": [
-        19,
-        37
+        30,
+        47
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          145.0
-        ],
-        "face": [
-          556.0,
-          180.0
+          556.68,
+          148.88
         ],
         "neck": [
-          558.0,
-          256.0
+          572.75,
+          260.1
         ],
         "belt": [
-          556.0,
-          546.0
+          568.02,
+          556.32
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.64,
-          132.7
-        ],
-        "face": [
-          385.96,
-          155.8
+          380.7084,
+          140.7944
         ],
         "neck": [
-          387.28,
-          205.96
+          390.8325,
+          210.863
         ],
         "belt": [
-          385.96,
-          397.36
+          387.8526,
+          397.4816
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        43,
-        43,
-        624,
-        938
+        75,
+        52,
+        577,
+        948
       ],
-      "sha256": "7a57ba4b9cd935dde440b78d4a3e2654f24faf950939d2f70a7862034492d2b0"
+      "sha256": "5c24c53aa2f55f81011956d3370a8c8f1a7ad79ff9d9c1f7b7071b510f6a7b91"
     },
     {
       "frame": 8,
-      "source": "frames/frame_08.png",
+      "source": "run_v2/frames/frame_08.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.349999999999994,
-        34.9339999999999
+        27.2908,
+        46.9935
       ],
       "applied_origin": [
-        19,
-        35
+        27,
+        47
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          552.0,
-          148.0
-        ],
-        "face": [
-          553.0,
-          183.0
+          563.68,
+          145.88
         ],
         "neck": [
-          557.0,
-          262.0
+          574.2,
+          258.88
         ],
         "belt": [
-          556.0,
-          556.0
+          571.02,
+          555.32
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          383.32,
-          132.68
-        ],
-        "face": [
-          383.98,
-          155.78
+          382.1184,
+          138.9044
         ],
         "neck": [
-          386.62,
-          207.92
+          388.746,
+          210.0944
         ],
         "belt": [
-          385.96,
-          401.96
+          386.7426,
+          396.8516
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        48,
-        42,
-        618,
-        955
+        66,
+        52,
+        566,
+        946
       ],
-      "sha256": "c3b739134cd3a8fe1abdf1d98c123b98938338b0d6e411e6eb6d9a748b00c5ef"
+      "sha256": "f517fb1ab6728c999dce809e673ae1e33c303894d65fcf3a33a3a207e1e32110"
     },
     {
       "frame": 9,
-      "source": "frames/frame_09.png",
+      "source": "run_v2/frames/frame_09.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.811999999999994,
-        40.02599999999991
+        36.0762,
+        41.7574
       ],
       "applied_origin": [
-        20,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          550.0,
-          144.0
-        ],
-        "face": [
-          551.0,
-          178.0
-        ],
-        "neck": [
-          554.0,
-          256.0
-        ],
-        "belt": [
-          559.0,
-          546.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.0,
-          135.04
-        ],
-        "face": [
-          383.66,
-          157.48
-        ],
-        "neck": [
-          385.64,
-          208.96
-        ],
-        "belt": [
-          388.94,
-          400.36
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        48,
-        47,
-        620,
-        945
-      ],
-      "sha256": "ece72d236289e32af27d9ca7881d70a8741debdaa956f2be6aa63e6a60293ea2"
-    },
-    {
-      "frame": 10,
-      "source": "frames/frame_10.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.00999999999998,
-        33.02999999999991
-      ],
-      "applied_origin": [
-        20,
-        33
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          152.0
-        ],
-        "face": [
-          552.0,
-          189.0
-        ],
-        "neck": [
-          556.0,
-          268.0
-        ],
-        "belt": [
-          555.0,
-          560.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.66,
-          133.32
-        ],
-        "face": [
-          384.32,
-          157.74
-        ],
-        "neck": [
-          386.96,
-          209.88
-        ],
-        "belt": [
-          386.3,
-          402.6
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        45,
-        40,
-        630,
-        956
-      ],
-      "sha256": "008f5a90ad2da201cb36aeeb69221880e0c2075e46b524211e076263a2427290"
-    },
-    {
-      "frame": 11,
-      "source": "frames/frame_11.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.93399999999998,
-        41.015999999999906
-      ],
-      "applied_origin": [
-        21,
-        41
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          143.0
-        ],
-        "face": [
-          552.0,
-          177.0
-        ],
-        "neck": [
-          555.0,
-          254.0
-        ],
-        "belt": [
-          551.0,
-          544.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          384.66,
-          135.38
-        ],
-        "face": [
-          385.32,
-          157.82
-        ],
-        "neck": [
-          387.3,
-          208.64
-        ],
-        "belt": [
-          384.66,
-          400.04
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        50,
-        48,
-        616,
-        962
-      ],
-      "sha256": "b870a245df9ce4b33ec83f7328022ef012e22d5b5bbd65586c2e2fe151b42d46"
-    },
-    {
-      "frame": 12,
-      "source": "keys/phase_12.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        19.812,
-        41.47799999999991
-      ],
-      "applied_origin": [
-        20,
-        41
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          550.0,
-          142.0
-        ],
-        "face": [
-          551.0,
-          175.0
-        ],
-        "neck": [
-          551.0,
-          253.0
-        ],
-        "belt": [
-          561.0,
-          544.0
-        ],
-        "right_sole": null,
-        "left_sole": [
-          591.0,
-          1387.0
-        ]
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.0,
-          134.72
-        ],
-        "face": [
-          383.66,
-          156.5
-        ],
-        "neck": [
-          383.66,
-          207.98
-        ],
-        "belt": [
-          390.26,
-          400.04
-        ],
-        "right_sole": null,
-        "left_sole": [
-          410.06,
-          956.42
-        ]
-      },
-      "opaque_bounds": [
-        52,
-        47,
-        613,
-        958
-      ],
-      "sha256": "3df95dd45c3dd09cb7d11fa73ee44eb1b849938c26fa83f1a4c29db0d9bee71e"
-    },
-    {
-      "frame": 13,
-      "source": "frames/frame_13.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.00999999999998,
-        39.78199999999992
-      ],
-      "applied_origin": [
-        20,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          149.0
-        ],
-        "face": [
-          552.0,
-          184.0
-        ],
-        "neck": [
-          556.0,
-          262.0
-        ],
-        "belt": [
-          555.0,
-          545.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.66,
-          138.34
-        ],
-        "face": [
-          384.32,
-          161.44
-        ],
-        "neck": [
-          386.96,
-          212.92
-        ],
-        "belt": [
-          386.3,
-          399.7
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        46,
-        47,
-        619,
-        955
-      ],
-      "sha256": "46947ec8c9585565eef827da4086339a446fe87dbd2de5f20f14f60aae615570"
-    },
-    {
-      "frame": 14,
-      "source": "frames/frame_14.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        19.877999999999986,
-        40.18799999999992
-      ],
-      "applied_origin": [
-        20,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          146.0
-        ],
-        "face": [
-          552.0,
-          181.0
-        ],
-        "neck": [
-          557.0,
-          259.0
-        ],
-        "belt": [
-          555.0,
-          555.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.66,
-          136.36
-        ],
-        "face": [
-          384.32,
-          159.46
-        ],
-        "neck": [
-          387.62,
-          210.94
-        ],
-        "belt": [
-          386.3,
-          406.3
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        48,
-        48,
-        624,
-        971
-      ],
-      "sha256": "9e5074e0f407d220874409b0b291ddb6dfb74ca096b0a9129529a838e7044c19"
-    },
-    {
-      "frame": 15,
-      "source": "frames/frame_15.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.47199999999997,
-        40.37599999999991
-      ],
-      "applied_origin": [
-        20,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          549.0,
-          149.0
-        ],
-        "face": [
-          551.0,
-          184.0
-        ],
-        "neck": [
-          556.0,
-          259.0
-        ],
-        "belt": [
-          556.0,
-          544.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          382.34,
-          138.34
-        ],
-        "face": [
-          383.66,
-          161.44
-        ],
-        "neck": [
-          386.96,
-          210.94
-        ],
-        "belt": [
-          386.96,
-          399.04
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        46,
-        49,
-        611,
-        956
-      ],
-      "sha256": "0279d41bf6977d6ad9a454e52a7fcc3f479b296dc8a88f1fecb0e5824c882fb6"
-    },
-    {
-      "frame": 16,
-      "source": "frames/frame_16.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.537999999999982,
-        42.1939999999999
-      ],
-      "applied_origin": [
-        21,
+        36,
         42
       ],
       "sample_size": [
-        717,
-        956
+        665,
+        939
       ],
       "source_cell_landmarks": {
         "eyes": [
-          551.0,
-          143.0
-        ],
-        "face": [
-          553.0,
-          176.0
+          548.23,
+          150.68
         ],
         "neck": [
-          555.0,
-          251.0
+          561.1,
+          267.44
         ],
         "belt": [
-          553.0,
-          535.0
+          559.02,
+          561.32
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          384.66,
-          136.38
-        ],
-        "face": [
-          385.98,
-          158.16
+          381.3849,
+          136.9284
         ],
         "neck": [
-          387.3,
-          207.66
+          389.493,
+          210.4872
         ],
         "belt": [
-          385.98,
-          395.1
+          388.1826,
+          395.6316
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        45,
-        50,
-        623,
-        865
-      ],
-      "sha256": "e7ef09d64f0e07dc4f44a2449fc4a2ed8ca91b3aada8b0f4cd6d402d04bbf9bb"
-    },
-    {
-      "frame": 17,
-      "source": "frames/frame_17.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        21.131999999999966,
-        37.94999999999991
-      ],
-      "applied_origin": [
-        21,
-        38
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          549.0,
-          143.0
-        ],
-        "face": [
-          551.0,
-          177.0
-        ],
-        "neck": [
-          554.0,
-          253.0
-        ],
-        "belt": [
-          554.0,
-          545.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.34,
-          132.38
-        ],
-        "face": [
-          384.66,
-          154.82
-        ],
-        "neck": [
-          386.64,
-          204.98
-        ],
-        "belt": [
-          386.64,
-          397.7
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        47,
+        75,
         46,
-        619,
-        850
+        594,
+        971
       ],
-      "sha256": "a12054ce750d97c695f3545f34905a2936f29e9425fe51725ae81cce08f9dbfd"
+      "sha256": "49373dff7a4e0644042a52aa5fe6d1ca7791b32763622724b2daf516c7a9c460"
     },
     {
-      "frame": 18,
-      "source": "keys/phase_18.png",
+      "frame": 10,
+      "source": "run_v2/frames/frame_10.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.811999999999973,
-        35.761999999999915
+        35.6623,
+        46.0959
       ],
       "applied_origin": [
-        20,
-        36
+        36,
+        46
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          551.0,
-          146.0
-        ],
-        "face": [
-          552.0,
-          181.0
+          551.26,
+          147.16
         ],
         "neck": [
-          556.0,
-          256.0
+          560.35,
+          256.34
         ],
         "belt": [
-          556.0,
-          544.0
+          556.66,
+          543.56
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          383.66,
-          132.36
-        ],
-        "face": [
-          384.32,
-          155.46
+          383.2938,
+          138.7108
         ],
         "neck": [
-          386.96,
-          204.96
+          389.0205,
+          207.4942
         ],
         "belt": [
-          386.96,
-          395.04
+          386.6958,
+          388.4428
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        50,
-        45,
-        628,
-        868
+        71,
+        53,
+        585,
+        942
       ],
-      "sha256": "6b3bb6bdff42118e79c0833020768b428cfe789b288cce8c0e4626b5c5da01fc"
+      "sha256": "555807df04f76de9e0f1169b626df2782b60e1769a433877a49d45ac37dff02e"
     },
     {
-      "frame": 19,
-      "source": "frames/frame_19.png",
+      "frame": 11,
+      "source": "run_v2/frames/frame_11.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        20.537999999999982,
-        37.55399999999991
+        37.3652,
+        41.6252
       ],
       "applied_origin": [
-        21,
-        38
+        37,
+        42
       ],
       "sample_size": [
-        717,
-        956
+        684,
+        912
       ],
       "source_cell_landmarks": {
         "eyes": [
-          550.0,
-          144.0
-        ],
-        "face": [
-          552.0,
-          178.0
+          552.55,
+          147.8
         ],
         "neck": [
-          556.0,
-          255.0
+          561.1,
+          261.44
         ],
         "belt": [
-          554.0,
-          544.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          384.0,
-          133.04
-        ],
-        "face": [
-          385.32,
-          155.48
-        ],
-        "neck": [
-          387.96,
-          206.3
-        ],
-        "belt": [
-          386.64,
-          397.04
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        51,
-        47,
-        621,
-        921
-      ],
-      "sha256": "077c13f6f1fac2ec434f75799398d6f94758c0d952deefba7c3dc13213211b1d"
-    },
-    {
-      "frame": 20,
-      "source": "frames/frame_20.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        19.877999999999986,
-        39.61999999999991
-      ],
-      "applied_origin": [
-        20,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          144.0
-        ],
-        "face": [
-          553.0,
-          178.0
-        ],
-        "neck": [
-          557.0,
-          253.0
-        ],
-        "belt": [
-          555.0,
-          545.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          383.66,
-          135.04
-        ],
-        "face": [
-          384.98,
-          157.48
-        ],
-        "neck": [
-          387.62,
-          206.98
-        ],
-        "belt": [
-          386.3,
-          399.7
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        47,
-        48,
-        619,
-        956
-      ],
-      "sha256": "1c2f42a0699d56d93879d2fc056fa5942c686a5451d9719a9cb1244fdba01146"
-    },
-    {
-      "frame": 21,
-      "source": "frames/frame_21.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        19.28399999999998,
-        40.09199999999991
-      ],
-      "applied_origin": [
-        19,
-        40
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          551.0,
-          145.0
-        ],
-        "face": [
-          553.0,
-          180.0
-        ],
-        "neck": [
-          557.0,
-          256.0
-        ],
-        "belt": [
-          558.0,
-          544.0
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "exported_landmarks": {
-        "eyes": [
-          382.66,
-          135.7
-        ],
-        "face": [
-          383.98,
-          158.8
-        ],
-        "neck": [
-          386.62,
-          208.96
-        ],
-        "belt": [
-          387.28,
-          399.04
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "opaque_bounds": [
-        48,
-        45,
-        620,
-        957
-      ],
-      "sha256": "6096bb5e4eb4793d11c5d1e0ba857c79011291287a1b99dc496d5b6b69b338a6"
-    },
-    {
-      "frame": 22,
-      "source": "frames/frame_22.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.66,
-      "requested_origin": [
-        20.735999999999972,
-        35.735999999999905
-      ],
-      "applied_origin": [
-        21,
-        36
-      ],
-      "sample_size": [
-        717,
-        956
-      ],
-      "source_cell_landmarks": {
-        "eyes": [
-          549.0,
-          149.0
-        ],
-        "face": [
-          551.0,
-          185.0
-        ],
-        "neck": [
-          557.0,
-          261.0
-        ],
-        "belt": [
-          554.0,
+          545.0,
           556.0
         ],
         "right_sole": null,
@@ -1652,101 +894,2265 @@
       },
       "exported_landmarks": {
         "eyes": [
-          383.34,
-          134.34
-        ],
-        "face": [
-          384.66,
-          158.1
+          385.1065,
+          135.114
         ],
         "neck": [
-          388.62,
-          208.26
+          390.493,
+          206.7072
         ],
         "belt": [
-          386.64,
-          402.96
+          380.35,
+          392.28
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
+        65,
         47,
-        44,
-        624,
-        959
+        580,
+        937
       ],
-      "sha256": "72aa2bb24abc8ecb21abb95b56fb61873fd223cbc7116255652bb87c0f9a56bd"
+      "sha256": "c3939086902cefae729508d4679122e35ee7fd26a82049c6b0571362cbfdb719"
     },
     {
-      "frame": 23,
-      "source": "frames/frame_23.png",
+      "frame": 12,
+      "source": "run_v2/frames/frame_12.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
-      "scale": 0.66,
+      "scale": 0.63,
       "requested_origin": [
-        19.877999999999986,
-        40.02599999999991
+        47.4363,
+        40.7854
       ],
       "applied_origin": [
-        20,
-        40
+        47,
+        41
       ],
       "sample_size": [
-        717,
-        956
+        665,
+        939
       ],
       "source_cell_landmarks": {
         "eyes": [
-          551.0,
-          144.0
-        ],
-        "face": [
-          552.0,
-          179.0
+          530.97,
+          146.52
         ],
         "neck": [
-          557.0,
-          256.0
+          540.1,
+          259.44
         ],
         "belt": [
-          555.0,
-          546.0
+          541.68,
+          559.88
         ],
         "right_sole": null,
         "left_sole": null
       },
       "exported_landmarks": {
         "eyes": [
-          383.66,
-          135.04
-        ],
-        "face": [
-          384.32,
-          158.14
+          381.5111,
+          133.3076
         ],
         "neck": [
-          387.62,
-          208.96
+          387.263,
+          204.4472
         ],
         "belt": [
-          386.3,
-          400.36
+          388.2584,
+          393.7244
         ],
         "right_sole": null,
         "left_sole": null
       },
       "opaque_bounds": [
-        46,
+        86,
         47,
-        626,
-        958
+        563,
+        941
       ],
-      "sha256": "bcdef8456c205c4c3dd45e4dff6fc6e627397a4dcdb271895653d1156dbf847d"
+      "sha256": "badda8b815be114c2b2e6c8880e904aee97841626c2448e91af60caf5c44281a"
+    },
+    {
+      "frame": 13,
+      "source": "run_v2/frames/frame_13.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        44.6259,
+        38.2821
+      ],
+      "applied_origin": [
+        45,
+        38
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          532.68,
+          151.88
+        ],
+        "neck": [
+          543.1,
+          265.44
+        ],
+        "belt": [
+          551.7,
+          559.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.5884,
+          133.6844
+        ],
+        "neck": [
+          387.153,
+          205.2272
+        ],
+        "belt": [
+          392.571,
+          390.296
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        82,
+        47,
+        580,
+        895
+      ],
+      "sha256": "eed83c20c940fa14d745726c4783eb1dc4b46b2ea1ea3e1165fc27b6b3983549"
+    },
+    {
+      "frame": 14,
+      "source": "run_v2/frames/frame_14.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        37.1446,
+        42.1992
+      ],
+      "applied_origin": [
+        37,
+        42
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          549.55,
+          146.8
+        ],
+        "neck": [
+          558.35,
+          256.34
+        ],
+        "belt": [
+          553.0,
+          554.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.2165,
+          134.484
+        ],
+        "neck": [
+          388.7605,
+          203.4942
+        ],
+        "belt": [
+          385.39,
+          391.02
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        76,
+        47,
+        587,
+        940
+      ],
+      "sha256": "e28c64d342b5c7fb91aac3d46732ebf146ad90f61474535512a2de997ccc2549"
+    },
+    {
+      "frame": 15,
+      "source": "run_v2/frames/frame_15.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        35.1425,
+        41.8202
+      ],
+      "applied_origin": [
+        35,
+        42
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          550.97,
+          145.52
+        ],
+        "neck": [
+          563.7,
+          257.68
+        ],
+        "belt": [
+          557.66,
+          559.56
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.1111,
+          133.6776
+        ],
+        "neck": [
+          390.131,
+          204.3384
+        ],
+        "belt": [
+          386.3258,
+          394.5228
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        72,
+        47,
+        589,
+        935
+      ],
+      "sha256": "cbc5535c8d042984ee72b5994196917ffb720a0c8e10f1abc111f2671630e286"
+    },
+    {
+      "frame": 16,
+      "source": "run_v2/frames/frame_16.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        34.6461,
+        42.3146
+      ],
+      "applied_origin": [
+        35,
+        42
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.55,
+          146.8
+        ],
+        "neck": [
+          565.7,
+          258.68
+        ],
+        "belt": [
+          556.32,
+          557.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.1065,
+          134.484
+        ],
+        "neck": [
+          391.391,
+          204.9684
+        ],
+        "belt": [
+          385.4816,
+          392.9856
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        70,
+        47,
+        581,
+        946
+      ],
+      "sha256": "a7135cc005e9639fec96ae51c378c615ce63e899777dafb0a65763e7f73a8e18"
+    },
+    {
+      "frame": 17,
+      "source": "run_v2/frames/frame_17.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        36.2803,
+        45.3997
+      ],
+      "applied_origin": [
+        36,
+        45
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.55,
+          142.8
+        ],
+        "neck": [
+          564.7,
+          252.68
+        ],
+        "belt": [
+          548.34,
+          554.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.1065,
+          134.964
+        ],
+        "neck": [
+          391.761,
+          204.1884
+        ],
+        "belt": [
+          381.4542,
+          394.2972
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        81,
+        49,
+        588,
+        949
+      ],
+      "sha256": "34d59ba5ab67b3c47bd6c20766a7a22a62cfa66287bbb74e1795efc4be735c35"
+    },
+    {
+      "frame": 18,
+      "source": "run_v2/frames/frame_18.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        40.2342,
+        42.9165
+      ],
+      "applied_origin": [
+        40,
+        43
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          543.55,
+          145.8
+        ],
+        "neck": [
+          557.35,
+          258.34
+        ],
+        "belt": [
+          547.32,
+          561.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.4365,
+          134.854
+        ],
+        "neck": [
+          391.1305,
+          205.7542
+        ],
+        "belt": [
+          384.8116,
+          396.5056
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        72,
+        50,
+        580,
+        955
+      ],
+      "sha256": "841bae0941ca0cb142c0383c9d9260ae37706804c9c47768bfb6bd61539965fe"
+    },
+    {
+      "frame": 19,
+      "source": "run_v2/frames/frame_19.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        36.8441,
+        43.387
+      ],
+      "applied_origin": [
+        37,
+        43
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          547.26,
+          145.16
+        ],
+        "neck": [
+          561.45,
+          259.78
+        ],
+        "belt": [
+          556.34,
+          560.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.7738,
+          134.4508
+        ],
+        "neck": [
+          390.7135,
+          206.6614
+        ],
+        "belt": [
+          387.4942,
+          396.0772
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        78,
+        47,
+        584,
+        949
+      ],
+      "sha256": "1d80e38998c92e5cc16f78a390e0d81dbc9795b7b80a1e8c84ea779155064932"
+    },
+    {
+      "frame": 20,
+      "source": "run_v2/frames/frame_20.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        39.4744,
+        44.7456
+      ],
+      "applied_origin": [
+        39,
+        45
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          542.55,
+          144.8
+        ],
+        "neck": [
+          558.35,
+          258.34
+        ],
+        "belt": [
+          552.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.8065,
+          136.224
+        ],
+        "neck": [
+          390.7605,
+          207.7542
+        ],
+        "belt": [
+          386.9742,
+          395.5572
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        79,
+        50,
+        587,
+        945
+      ],
+      "sha256": "2c92a9a26afb50ee4e0f0d7bf42e7b30ca597327dcfd7e7bd20363bbaf08c4ff"
+    },
+    {
+      "frame": 21,
+      "source": "run_v2/frames/frame_21.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        36.0522,
+        45.9405
+      ],
+      "applied_origin": [
+        36,
+        46
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          550.13,
+          145.08
+        ],
+        "neck": [
+          562.6,
+          253.24
+        ],
+        "belt": [
+          554.98,
+          554.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.5819,
+          137.4004
+        ],
+        "neck": [
+          390.438,
+          205.5412
+        ],
+        "belt": [
+          385.6374,
+          395.4484
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        78,
+        51,
+        580,
+        939
+      ],
+      "sha256": "29aa715ceaecc75f0d8ca7837cff85e80777d2112b7eaf96dd71da39ca277c0d"
+    },
+    {
+      "frame": 22,
+      "source": "run_v2/frames/frame_22.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        33.9556,
+        41.3383
+      ],
+      "applied_origin": [
+        34,
+        41
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.55,
+          148.8
+        ],
+        "neck": [
+          567.7,
+          265.68
+        ],
+        "belt": [
+          558.64,
+          566.24
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.1065,
+          134.744
+        ],
+        "neck": [
+          391.651,
+          208.3784
+        ],
+        "belt": [
+          385.9432,
+          397.7312
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        95,
+        48,
+        588,
+        942
+      ],
+      "sha256": "4a1a96eadee93705dacb9aba1abb460915278c722ac9f9ab080e7cd8bc4fab6d"
+    },
+    {
+      "frame": 23,
+      "source": "run_v2/frames/frame_23.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        33.5511,
+        43.3459
+      ],
+      "applied_origin": [
+        34,
+        43
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          551.55,
+          145.8
+        ],
+        "neck": [
+          571.4,
+          259.36
+        ],
+        "belt": [
+          559.98,
+          566.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.4765,
+          134.854
+        ],
+        "neck": [
+          393.982,
+          206.3968
+        ],
+        "belt": [
+          386.7874,
+          400.0084
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        112,
+        47,
+        577,
+        950
+      ],
+      "sha256": "aef05fb88d5a5971a672da9dca18bea6110cebc2501068f79fb6b0fae214e98e"
+    },
+    {
+      "frame": 24,
+      "source": "run_v2/frames/frame_24.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        44.6555,
+        43.16
+      ],
+      "applied_origin": [
+        45,
+        43
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          535.13,
+          146.08
+        ],
+        "neck": [
+          553.3,
+          261.92
+        ],
+        "belt": [
+          540.66,
+          567.56
+        ],
+        "right_sole": null,
+        "left_sole": [
+          600.0,
+          1450.0
+        ]
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.1319,
+          135.0304
+        ],
+        "neck": [
+          393.579,
+          208.0096
+        ],
+        "belt": [
+          385.6158,
+          400.5628
+        ],
+        "right_sole": null,
+        "left_sole": [
+          423.0,
+          956.5
+        ]
+      },
+      "opaque_bounds": [
+        134,
+        46,
+        570,
+        957
+      ],
+      "sha256": "9263711bf9525ec7687ebe240425016fadfb1fa8fa4eb1a882d12dcc0db49723"
+    },
+    {
+      "frame": 25,
+      "source": "run_v2/frames/frame_25.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        35.8305,
+        48.4984
+      ],
+      "applied_origin": [
+        36,
+        48
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          550.13,
+          143.08
+        ],
+        "neck": [
+          563.85,
+          256.14
+        ],
+        "belt": [
+          555.32,
+          551.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.5819,
+          138.1404
+        ],
+        "neck": [
+          391.2255,
+          209.3682
+        ],
+        "belt": [
+          385.8516,
+          395.2056
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        111,
+        54,
+        592,
+        945
+      ],
+      "sha256": "15c52984ec941386dfe19a8e8f166a7717fd7d4583ee5a10b45db41c7883eff0"
+    },
+    {
+      "frame": 26,
+      "source": "run_v2/frames/frame_26.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        43.3218,
+        38.4487
+      ],
+      "applied_origin": [
+        43,
+        38
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          537.52,
+          154.32
+        ],
+        "neck": [
+          557.85,
+          274.54
+        ],
+        "belt": [
+          540.7,
+          577.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.6376,
+          135.2216
+        ],
+        "neck": [
+          394.4455,
+          210.9602
+        ],
+        "belt": [
+          383.641,
+          401.636
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        80,
+        46,
+        613,
+        968
+      ],
+      "sha256": "23f2c82e44b005f26a8fbe7b565f328df06adbae43ffdbb8ad7ee266364197fd"
+    },
+    {
+      "frame": 27,
+      "source": "run_v2/frames/frame_27.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        33.0364,
+        48.0197
+      ],
+      "applied_origin": [
+        33,
+        48
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          555.26,
+          146.16
+        ],
+        "neck": [
+          568.7,
+          256.68
+        ],
+        "belt": [
+          558.32,
+          556.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.8138,
+          140.0808
+        ],
+        "neck": [
+          391.281,
+          209.7084
+        ],
+        "belt": [
+          384.7416,
+          398.3556
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        92,
+        54,
+        594,
+        948
+      ],
+      "sha256": "35e4171bacfac016e909f203897d87064b2e893c04a2dc250796c9a7fc6a3b35"
+    },
+    {
+      "frame": 28,
+      "source": "run_v2/frames/frame_28.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        32.6962,
+        48.9003
+      ],
+      "applied_origin": [
+        33,
+        49
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.84,
+          144.44
+        ],
+        "neck": [
+          569.95,
+          257.58
+        ],
+        "belt": [
+          563.32,
+          557.12
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.2892,
+          139.9972
+        ],
+        "neck": [
+          392.0685,
+          211.2754
+        ],
+        "belt": [
+          387.8916,
+          399.9856
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        85,
+        55,
+        597,
+        948
+      ],
+      "sha256": "91bd04591e2f0a4d23751d44c52cbd8596e69bf911a3591c05dd195a56c2c955"
+    },
+    {
+      "frame": 29,
+      "source": "run_v2/frames/frame_29.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        34.1774,
+        49.4527
+      ],
+      "applied_origin": [
+        34,
+        49
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          549.55,
+          145.8
+        ],
+        "neck": [
+          565.4,
+          257.36
+        ],
+        "belt": [
+          564.0,
+          554.0
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.2165,
+          140.854
+        ],
+        "neck": [
+          390.202,
+          211.1368
+        ],
+        "belt": [
+          389.32,
+          398.02
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        90,
+        54,
+        598,
+        948
+      ],
+      "sha256": "6e8d68fbfd48d94f9fdccc09122c3f31ed7ed9b9f1d617306e55ad8b9f2261a8"
+    },
+    {
+      "frame": 30,
+      "source": "run_v2/frames/frame_30.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        39.3314,
+        47.4276
+      ],
+      "applied_origin": [
+        39,
+        47
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          544.26,
+          147.16
+        ],
+        "neck": [
+          557.7,
+          257.68
+        ],
+        "belt": [
+          550.68,
+          561.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.8838,
+          139.7108
+        ],
+        "neck": [
+          390.351,
+          209.3384
+        ],
+        "belt": [
+          385.9284,
+          400.9844
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        71,
+        54,
+        598,
+        954
+      ],
+      "sha256": "26e0a295feba2464f17a272fa758206e206e9a1076f8d8eae5954ba4f90181ee"
+    },
+    {
+      "frame": 31,
+      "source": "run_v2/frames/frame_31.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        32.7554,
+        43.4847
+      ],
+      "applied_origin": [
+        33,
+        43
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          555.68,
+          156.88
+        ],
+        "neck": [
+          568.35,
+          267.34
+        ],
+        "belt": [
+          559.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.0784,
+          141.8344
+        ],
+        "neck": [
+          391.0605,
+          211.4242
+        ],
+        "belt": [
+          385.3842,
+          393.5572
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        64,
+        51,
+        597,
+        948
+      ],
+      "sha256": "913f99b8e0889687f4c8cde927c24bf73eb0c9721cad474c14f6dcdc7278ba16"
+    },
+    {
+      "frame": 32,
+      "source": "run_v2/frames/frame_32.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        35.2509,
+        45.2245
+      ],
+      "applied_origin": [
+        35,
+        45
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          549.97,
+          150.52
+        ],
+        "neck": [
+          560.3,
+          261.32
+        ],
+        "belt": [
+          561.02,
+          555.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.4811,
+          139.8276
+        ],
+        "neck": [
+          387.989,
+          209.6316
+        ],
+        "belt": [
+          388.4426,
+          394.8516
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        78,
+        51,
+        604,
+        938
+      ],
+      "sha256": "99f8b277047550f9a32f812d112e2e8dad16aa6dee1808f7a8b854d61f81b143"
+    },
+    {
+      "frame": 33,
+      "source": "run_v2/frames/frame_33.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        37.7438,
+        41.7725
+      ],
+      "applied_origin": [
+        38,
+        42
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          548.1,
+          149.6
+        ],
+        "neck": [
+          560.7,
+          264.68
+        ],
+        "belt": [
+          550.68,
+          564.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.303,
+          136.248
+        ],
+        "neck": [
+          391.241,
+          208.7484
+        ],
+        "belt": [
+          384.9284,
+          397.8744
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        84,
+        45,
+        611,
+        941
+      ],
+      "sha256": "8da1346c9610dbec0e988039b215747803fb289318f439a4584e1652fb0e2101"
+    },
+    {
+      "frame": 34,
+      "source": "run_v2/frames/frame_34.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        38.273,
+        39.4078
+      ],
+      "applied_origin": [
+        38,
+        39
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          549.26,
+          152.16
+        ],
+        "neck": [
+          561.1,
+          263.44
+        ],
+        "belt": [
+          545.68,
+          565.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          384.0338,
+          134.8608
+        ],
+        "neck": [
+          391.493,
+          204.9672
+        ],
+        "belt": [
+          381.7784,
+          395.5044
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        76,
+        44,
+        603,
+        934
+      ],
+      "sha256": "14fe8298275f02280e5fe65f7a6030982a3980efc068ca33500401ac22ab2ec6"
+    },
+    {
+      "frame": 35,
+      "source": "run_v2/frames/frame_35.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        28.176,
+        38.891
+      ],
+      "applied_origin": [
+        28,
+        39
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          561.39,
+          154.24
+        ],
+        "neck": [
+          575.9,
+          266.56
+        ],
+        "belt": [
+          569.02,
+          556.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.6757,
+          136.1712
+        ],
+        "neck": [
+          390.817,
+          206.9328
+        ],
+        "belt": [
+          386.4826,
+          389.4816
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        66,
+        45,
+        608,
+        941
+      ],
+      "sha256": "01b02e1b9b408bf7a91e009a9645a360de851c09cd75ef693ff72a610e20f421"
+    },
+    {
+      "frame": 36,
+      "source": "run_v2/frames/frame_36.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        47.5705,
+        37.0306
+      ],
+      "applied_origin": [
+        48,
+        37
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          532.1,
+          152.6
+        ],
+        "neck": [
+          540.2,
+          268.88
+        ],
+        "belt": [
+          539.02,
+          563.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          383.223,
+          133.138
+        ],
+        "neck": [
+          388.326,
+          206.3944
+        ],
+        "belt": [
+          387.5826,
+          391.8916
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        77,
+        41,
+        593,
+        939
+      ],
+      "sha256": "07d9ac23aee2e615a17b000e7e60b9281c5ca56ca226dca556a9a92481177a8e"
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/frames/frame_37.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        37.6096,
+        37.899
+      ],
+      "applied_origin": [
+        38,
+        38
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          544.39,
+          153.24
+        ],
+        "neck": [
+          562.55,
+          269.22
+        ],
+        "belt": [
+          556.34,
+          556.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.9657,
+          134.5412
+        ],
+        "neck": [
+          392.4065,
+          207.6086
+        ],
+        "belt": [
+          388.4942,
+          388.5572
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        69,
+        43,
+        588,
+        935
+      ],
+      "sha256": "4f607107e728ab391d1bc269d01be70b14639b5e96fa20030a616306d6c6c0d0"
+    },
+    {
+      "frame": 38,
+      "source": "run_v2/frames/frame_38.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        31.9887,
+        40.541
+      ],
+      "applied_origin": [
+        32,
+        41
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.97,
+          150.52
+        ],
+        "neck": [
+          573.2,
+          264.88
+        ],
+        "belt": [
+          564.68,
+          550.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.3711,
+          135.8276
+        ],
+        "neck": [
+          393.116,
+          207.8744
+        ],
+        "belt": [
+          387.7484,
+          388.0544
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        67,
+        45,
+        588,
+        937
+      ],
+      "sha256": "d05519d5abeb62fa22e46c95c14208331e5c573fc835a14b5e1e159865a47ec7"
+    },
+    {
+      "frame": 39,
+      "source": "run_v2/frames/frame_39.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        31.9824,
+        40.4367
+      ],
+      "applied_origin": [
+        32,
+        40
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          552.39,
+          151.24
+        ],
+        "neck": [
+          573.2,
+          265.88
+        ],
+        "belt": [
+          565.68,
+          551.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.0057,
+          135.2812
+        ],
+        "neck": [
+          393.116,
+          207.5044
+        ],
+        "belt": [
+          388.3784,
+          387.6844
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        61,
+        43,
+        591,
+        892
+      ],
+      "sha256": "192e16fb83efda5e3ef27024fde5f33a0d51fe0f4ef357b10dd73876a88bdb92"
+    },
+    {
+      "frame": 40,
+      "source": "run_v2/frames/frame_40.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        31.4242,
+        40.2382
+      ],
+      "applied_origin": [
+        31,
+        40
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          553.39,
+          150.24
+        ],
+        "neck": [
+          575.1,
+          266.44
+        ],
+        "belt": [
+          565.7,
+          557.2
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          379.6357,
+          134.6512
+        ],
+        "neck": [
+          393.313,
+          207.8572
+        ],
+        "belt": [
+          387.391,
+          391.036
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        53,
+        40,
+        589,
+        917
+      ],
+      "sha256": "389d1d4dfcf062c6e23c129747b234849485ff8f973f763562b20282f50a212a"
+    },
+    {
+      "frame": 41,
+      "source": "run_v2/frames/frame_41.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        31.4772,
+        40.4075
+      ],
+      "applied_origin": [
+        31,
+        40
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          553.39,
+          151.24
+        ],
+        "neck": [
+          574.2,
+          266.88
+        ],
+        "belt": [
+          566.02,
+          557.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          379.6357,
+          135.2812
+        ],
+        "neck": [
+          392.746,
+          208.1344
+        ],
+        "belt": [
+          387.5926,
+          391.1116
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        50,
+        44,
+        587,
+        942
+      ],
+      "sha256": "0d7494834ec2f7a913674674b637faff65f10ab75d93eadf0417c11aa8bd91c9"
+    },
+    {
+      "frame": 42,
+      "source": "run_v2/frames/frame_42.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        32.4877,
+        42.9744
+      ],
+      "applied_origin": [
+        32,
+        43
+      ],
+      "sample_size": [
+        665,
+        939
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          551.55,
+          145.8
+        ],
+        "neck": [
+          573.75,
+          260.1
+        ],
+        "belt": [
+          564.04,
+          559.64
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          379.4765,
+          134.854
+        ],
+        "neck": [
+          393.4625,
+          206.863
+        ],
+        "belt": [
+          387.3452,
+          395.5732
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        58,
+        49,
+        577,
+        964
+      ],
+      "sha256": "89ab816d196691100eb94dbf3c0a040e54957fe36e44aff74ccd6a0ab473e77c"
+    },
+    {
+      "frame": 43,
+      "source": "run_v2/frames/frame_43.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        30.4818,
+        44.7704
+      ],
+      "applied_origin": [
+        30,
+        45
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          556.55,
+          145.8
+        ],
+        "neck": [
+          571.2,
+          254.88
+        ],
+        "belt": [
+          568.02,
+          555.32
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.6265,
+          136.854
+        ],
+        "neck": [
+          389.856,
+          205.5744
+        ],
+        "belt": [
+          387.8526,
+          394.8516
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        55,
+        52,
+        582,
+        947
+      ],
+      "sha256": "5e43112e9fe15f7fd37d7af82738d02fdf145a76f5e5d1403125064f3505fc71"
+    },
+    {
+      "frame": 44,
+      "source": "run_v2/frames/frame_44.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        32.9684,
+        41.6989
+      ],
+      "applied_origin": [
+        33,
+        42
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          551.68,
+          149.88
+        ],
+        "neck": [
+          571.65,
+          264.66
+        ],
+        "belt": [
+          562.68,
+          559.88
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          380.5584,
+          136.4244
+        ],
+        "neck": [
+          393.1395,
+          208.7358
+        ],
+        "belt": [
+          387.4884,
+          394.7244
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        50,
+        49,
+        579,
+        940
+      ],
+      "sha256": "16559326168184e9085bc68f4b6edb156d93f72b28d745d07abffe1f52b2fe72"
+    },
+    {
+      "frame": 45,
+      "source": "run_v2/frames/frame_45.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        34.2044,
+        44.6075
+      ],
+      "applied_origin": [
+        34,
+        45
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          551.84,
+          147.44
+        ],
+        "neck": [
+          566.45,
+          256.78
+        ],
+        "belt": [
+          559.34,
+          555.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.6592,
+          137.8872
+        ],
+        "neck": [
+          390.8635,
+          206.7714
+        ],
+        "belt": [
+          386.3842,
+          394.9272
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        61,
+        52,
+        581,
+        942
+      ],
+      "sha256": "ab4c30155e9545f5623fb04bd9df4ff798b65dd1934b27fd62880e097be44ce7"
+    },
+    {
+      "frame": 46,
+      "source": "run_v2/frames/frame_46.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        34.447,
+        45.6475
+      ],
+      "applied_origin": [
+        34,
+        46
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          550.97,
+          146.52
+        ],
+        "neck": [
+          565.2,
+          254.88
+        ],
+        "belt": [
+          560.34,
+          554.44
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          381.1111,
+          138.3076
+        ],
+        "neck": [
+          390.076,
+          206.5744
+        ],
+        "belt": [
+          387.0142,
+          395.2972
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        60,
+        53,
+        588,
+        948
+      ],
+      "sha256": "639838e7c13e11a141c8f01a3c418de4d5fd714234cbc762487ed2d0c60cd973"
+    },
+    {
+      "frame": 47,
+      "source": "run_v2/frames/frame_47.png",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.63,
+      "requested_origin": [
+        33.0786,
+        45.7651
+      ],
+      "applied_origin": [
+        33,
+        46
+      ],
+      "sample_size": [
+        684,
+        912
+      ],
+      "source_cell_landmarks": {
+        "eyes": [
+          555.55,
+          145.8
+        ],
+        "neck": [
+          569.65,
+          253.66
+        ],
+        "belt": [
+          556.98,
+          557.68
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "exported_landmarks": {
+        "eyes": [
+          382.9965,
+          137.854
+        ],
+        "neck": [
+          391.8795,
+          205.8058
+        ],
+        "belt": [
+          383.8974,
+          397.3384
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "opaque_bounds": [
+        64,
+        54,
+        580,
+        941
+      ],
+      "sha256": "6332a595b8932dcca8991992dcb4fb8b044e2cf3993dd8d54c105526bf8c3007"
     }
   ]
 }

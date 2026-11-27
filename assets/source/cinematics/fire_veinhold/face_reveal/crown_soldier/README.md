@@ -1,5 +1,11 @@
 # Crown soldier — frontal running performance
 
+> **Superseded performance.** The current selection is
+> [source_art_48.json](source_art_48.json): 48 complete drawings over 800 ms.
+> See [run_v2/README.md](run_v2/README.md) for its sources, registration and
+> reproduction command. Everything below describes the historical 24-pose,
+> 400 ms implementation; its images, scripts and review evidence are retained.
+
 `source_art_24.json` is the active selection of 24 complete frontal drawings in
 a 400 ms cycle. Anatomical right (viewer left) is the sword side; anatomical
 left (viewer right) carries the plain steel boss shield. Contact metadata uses

@@ -1,0 +1,13 @@
+{
+  "method": "SDL dummy controller update plus native render, paced at 60 Hz; excludes Game UI, encoding and startup.",
+  "frames": 300,
+  "fps": 60,
+  "startup_ms": 317.9940879927017,
+  "mean_frame_ms": 2.3167154499484846,
+  "p95_frame_ms": 3.913475142326207,
+  "max_frame_ms": 16.840236959978938,
+  "frames_above_16_67ms": 1,
+  "foreground_decoder_waits": 0,
+  "peak_face_cache_bytes": 19660800,
+  "cache_bytes_at_completion": 0
+}

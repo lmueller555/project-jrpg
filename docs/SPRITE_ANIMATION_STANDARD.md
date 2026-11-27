@@ -2,9 +2,9 @@
 
 This is the authoritative authoring guide for character and NPC sprites and
 animations: appearances, directional idles, walks, runs, combat and scene poses,
-export recipes, and visual review. Its walking workflow consolidates the lessons
-from Iselin's four approved cycles. Read it before creating or revising artwork,
-builders, or animation tests.
+export recipes, and visual review. Its gait workflow consolidates the lessons
+from Iselin's approved walks and the cinematic running reviews. Read it before
+creating or revising artwork, builders, or animation tests.
 
 This standard replaces conflicting general advice in older character recipes,
 tool descriptions and review notes. Those files retain asset-specific facts,
@@ -147,10 +147,143 @@ profile's screen-space reach. Shorter foot reach is preferable to an exaggerated
 kick followed by a landing snap. Natural anatomy takes priority over a numeric
 angle, exact contact coordinate or old test.
 
+## 2A. Construct running as its own performance
+
+A run needs support, compression, propulsion and flight; accelerating a walk
+does not supply those actions. Plan a full two-step cycle with anatomical limb
+identities, contact/release cues and the intended travel speed before drawing
+intermediates. Establish readable keys for each half-cycle:
+
+| Phase | Required movement |
+| --- | --- |
+| Contact | The advancing foot approaches the ground without a last-frame drop; the other leg finishes recovery. |
+| Compression | The support knee accepts weight and the pelvis settles; the arms continue through their swing. |
+| Push-off | The support leg extends behind and the other knee advances; the shoulders counter the pelvis. |
+| Flight and exchange | Both feet briefly clear the ground; the recovering leg folds and passes before extending toward the next contact. |
+| Opposite contact | The anatomical roles exchange continuously, without a held extreme or a pose reset. |
+
+Flight duration, knee lift, torso lean and arm amplitude depend on effort,
+equipment and character. Keep a coherent shoulder–elbow–hand and
+hip–knee–ankle chain even when an overlapping body part hides part of it.
+Front and rear views express the swing partly through depth and foreshortening;
+do not substitute sideways kicks. Avoid a fixed upper-body carry over rapidly
+cycling legs. Natural shoulder and pelvic counterrotation, a small controlled
+head response and weight transfer should connect the body without changing its
+proportions. Registration preserves scale and identity; it must not erase the
+authored action by pinning every body landmark to an unchanging position.
+
+For an initial two-step phase chart, place opposing arm extremes around the two
+contacts and neutral arm passes around the quarter- and three-quarter-cycle
+positions. Adjust that relationship for the actual carry and action, then trace
+the wrist relative to the shoulder and waist across the entire cycle. A key sheet
+can exchange the arms too early and hold the same apex through several labeled
+phases. File numbers and phase captions do not prove the drawn motion matches
+the chart. Simple anatomical landmark guides may constrain whole-frame image
+authoring; those guides must never become a procedural limb-animation exporter.
+Compare actual drawn hands and feet with the guide before accepting a batch.
+If intermediates keep a held extreme despite different captions, diagnose the
+painted positions relative to the neck, waist or costume fasteners. Repair the
+missing positions with explicit anatomical/costume targets; another phase label
+or a more detailed prompt is not evidence that the drawing followed it.
+If every new pose returns to the same contact despite correct guides, change
+the visual reference hierarchy: use the correct adjacent/opposite-contact pose
+as the primary motion reference and cropped face/costume details for identity.
+A strong full-body appearance reference can inadvertently keep supplying its
+original limb arrangement. Recheck actual anatomy before authoring more frames.
+When a wide-interval in-between repeatedly lands at the wrong phase, establish
+and inspect its midpoint first, then subdivide the shorter accepted intervals.
+Use the closest actual drawings as motion bounds. Do not keep requesting small
+percentage changes against two distant extremes while accepting identical
+intermediate poses. Verify each new interval before densifying it further.
+Establish the actual same-character contacts, passing poses and their midpoints
+before those subdivisions. Another character can supply a motion guide, but a
+full painted body reference can transfer its torso/leg proportions as well as
+its pose. Re-establish the requested character's model first; matching the face
+and costume alone does not establish anatomical continuity.
+
+### Cadence, travel and presentation are separate choices
+
+Record the full two-step duration, poses and exposures, ground speed, contact
+phases and sound cues separately from the display frame rate. At a constant
+speed, the expected distance per step is `speed × cycle_duration / 2`.
+Inspect whether the drawings can plausibly cover that distance, including
+support-foot locking against actual scenery. A 60 FPS cinematic can hold a
+drawing for multiple display ticks; it does not require a 24-pose gait to finish
+in 24 ticks. More drawings do not repair insufficient movement in the keys.
+
+For the Veinhold reveal correction, approximately 800 ms per full cycle at
+4 m/s is the scoped starting target, subject to motion review. Forty-eight
+complete poses over that duration can provide a fresh drawing at every 60 Hz
+tick. These values are not a universal running recipe or an acceptance test for
+other characters. Approve the rough action internally before filling a larger
+drawing bank. Do not satisfy a frame-count target with duplicated poses, blended
+endpoints or procedural limb transformations.
+
+Connected shots must share a coherent gait phase and travel speed. When a run
+is retimed, update the moving ground, camera travel and contact Foley together.
+Preserve an authored starting location independently of velocity; changing
+speed must not silently relocate the group. Derive subsequent shot phases from
+elapsed travel and the actual cycle rather than copying old frame indices.
+Size the runtime cache or bake strategy before increasing detailed source banks.
+
+### Weapon and shield carry
+
+Name each equipment-bearing hand anatomically and define a safe carrying range.
+Draw a clear bent-elbow arm action appropriate to the load, with the opposite
+leg advancing as that arm advances. The sword hand and blade follow a connected
+arm; the shield remains attached to its forearm while bobbing or tilting with
+a smaller counterbalancing action. Heavy equipment can reduce excursion, but
+"restrained" must not mean a straight arm parked in the same silhouette for the
+whole cycle. Preserve the apparent equipment mass, grip and clearance from the
+body and other runners. Rigid plate armor stays rigid while its joints move;
+do not make armor ripple like cloth or redraw equipment in the wrong hand.
+
+### Hair, braid, mantle and coat follow-through
+
+Plan secondary motion after the body keys work. Record the attachment, free
+length, baseline wind and response for each material. Keep wind consistent in
+world space across camera changes and add the stride response to that baseline.
+Use distinct responses rather than shifting every loose part in unison:
+
+- Loose hair and short strands respond quickly, with continuous bends and tips.
+- A heavy braid responds later, bends through its length and overshoots after
+  the shoulders reverse; its root stays attached. Keep hand clearance readable,
+  or resolve an intentional overlap consistently without implying an accidental
+  grip.
+- A mantle or shawl carries tension from its shoulder attachment through the
+  fabric toward its free edge. Successive folds should describe a traveling
+  wave instead of replacing one broad, held sail with another silhouette.
+- Coat panels and tabards lag the hips and thighs, then settle or reverse with
+  weight. Preserve their attachment, material weight and underlying anatomy.
+
+Choose amplitude for the action and material; long hair and flowing cloth can
+need substantial movement during a run. Maintain coherent volume, length and
+costume construction while the silhouette changes. Do not confuse random edge
+variation, disappearing hair masses or a sudden fold replacement with stronger
+animation. Author these responses in complete coherent drawings. A longer
+secondary-motion cycle is optional when needed to avoid an obvious repeat; it
+must join cleanly and retain the same body timing.
+
+### Running acceptance
+
+Inspect sustained normal-speed playback against the moving environment before
+using slow playback to diagnose individual transitions. Review the entry into
+the shot, each limb exchange, every source-batch boundary and the loop seam.
+Trace both arm pumps, leg progression, weight transfer, weapon grip, hair/braid
+paths and cloth lag. Compare stable head/torso proportions without demanding
+pixel-identical upper bodies. Include actual shot framing: a frontal crop may
+hide the feet and make weak arms or a rigid torso especially conspicuous.
+
+Automated checks can protect timing, contacts, export registration, ownership,
+cache bounds and lifecycle. Unique PNGs, a precise 60 Hz clock or a passing
+completion suite cannot certify motion quality. Record what was visually
+inspected and any unresolved defects. Keep historical reviews labeled with
+their revision rather than treating an earlier passing review as current proof.
+
 ## 3. Draw complete, coherent frames
 
-For new or revised walks, author each pose as a complete character drawing with
-its near/far overlaps resolved. Export flattened RGBA frames. Do not manufacture
+For new or revised walks and runs, author each pose as a complete character
+drawing with its near/far overlaps resolved. Export flattened RGBA frames. Do not manufacture
 the cycle by rotating, sliding or stretching detached arms and legs around an
 unchanging body, or by warping a flattened idle. Adding more frames to a limb
 rig does not fix parked far limbs, duplicate hands or incorrect anatomy.
@@ -215,9 +348,11 @@ For Iselin, the mantle is on anatomical right and the braid runs forward over
 anatomical left. Her rear view shows the braid root/bend, not a newly invented
 central ponytail. Keep hairstyle identity intact while adding sway.
 
-Hair, braid tails, mantle and coat may lag the body motion slightly. Draw modest
-secondary motion that follows the gait and loops smoothly. Avoid abrupt hair
-length, volume or silhouette changes that read as character redesigns.
+Hair, braid tails, mantle and coat follow the gait with material-appropriate lag
+and amplitude. Preserve the approved restrained response in existing native
+walks; new runs follow section 2A's more active secondary-motion construction.
+Avoid abrupt hair length, volume or silhouette changes that read as character
+redesigns.
 
 ## 4. Make feet progress continuously
 
@@ -366,7 +501,7 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 - [ ] Coherent full-body drawings; all four limb paths account for occlusion.
 - [ ] Continuous support, passing and contact; no parked-foot snap or extra limbs.
 - [ ] Stable head/torso proportions and landmark registration; deliberate modest bob.
-- [ ] Correct directional costume/hair, restrained secondary motion, readable outlines.
+- [ ] Correct directional costume/hair, material-appropriate secondary motion, readable outlines.
 - [ ] Clean repair boundaries, unclipped pixels and smooth final → first transition.
 - [ ] Reproducible sources, manifests, timing, anchors and current revision/status.
 - [ ] Normal/slow preview, numbered sheet and scale comparison visually inspected.
@@ -385,6 +520,8 @@ cannot certify a gait, and passing tests never replaces viewing the frames.
 | Floating silver hem or broken knee | Partial edit restored stale pixels at its seam | Redraw a coherent boundary and protect artwork beyond it. |
 | Opposite direction swaps braid/mantle | Finished asymmetric sprite was mirrored | Use mirrored motion only as a guide and redraw direction-specific appearance. |
 | Body looks fine enlarged but skates in game | Cadence/stride mismatch or wrong world/art units | Compare stance with actor travel and verify density/anchor use. |
+| Legs race below an almost fixed weapon carry | Gait too fast and upper-body action under-authored | Review cadence separately from FPS; redraw bent-arm pumps, shoulder/pelvis counterrotation and equipment response. |
+| Hair or cloth pops between held silhouettes | Secondary motion lacks a continuous path across source batches | Draw material-specific lag and traveling bends; preserve attachment/volume and inspect each batch join. |
 | First frame pops after the last | Endpoints and secondary motion were reviewed separately | Inspect the loop seam as an ordinary adjacent pair and draw its missing transition. |
 
 ## 10. Cinematic performances and finite actions

@@ -1,0 +1,35 @@
+{
+  "purpose": "Authoring-only landmarks for complete drawing repair; never final figure pixels.",
+  "source": "frame_02_early_arms_trial.png",
+  "source_sha256": "695afb7918fea62675d83b9ac0986cae2663c1fe3b30713ee4c8850e4a39d7f1",
+  "targets": {
+    "viewer_left": {
+      "target_source_point": [
+        380,
+        645
+      ],
+      "old_source_point": [
+        426.8632860040568,
+        591.8070993914807
+      ],
+      "delta": [
+        -47,
+        53
+      ]
+    },
+    "viewer_right": {
+      "target_source_point": [
+        680,
+        446
+      ],
+      "old_source_point": [
+        684.9308398023994,
+        500.16207951070334
+      ],
+      "delta": [
+        -5,
+        -54
+      ]
+    }
+  }
+}

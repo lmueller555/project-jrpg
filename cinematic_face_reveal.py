@@ -1,14 +1,17 @@
 """Frontal bridge performance with shared camera projection and drawn figures.
 
-The environment is baked from the same camera helpers used to place complete
-character drawings. Source artwork owns faces, anatomy, equipment and gait;
-runtime applies one uniform scale and translation per whole drawing.
+The offline bake places complete authored drawings through this projection rig.
+Runtime streams the finished native frames and retains pure staging queries for
+contact timing and review. Source artwork owns faces, anatomy, equipment and gait;
+the source compositor applies one uniform scale/translation per whole drawing.
 """
 from __future__ import annotations
 
 from bisect import bisect_right
 from collections import OrderedDict
 from concurrent.futures import Future
+from hashlib import sha256
+import json
 import math
 from pathlib import Path
 
@@ -21,7 +24,8 @@ from cinematic_perspective import CinematicPerspective
 FACE_SCENE = Path(__file__).resolve().parent/'assets/story/fire_veinhold_opening/shot07/scene.json'
 DEFAULT_CAMERA = {
     'focal_pixels':900., 'height_metres':1.55, 'ahead_metres':3.,
-    'art_pixels_per_metre':500., 'speed_metres_per_second':11.42,
+    'art_pixels_per_metre':500., 'speed_metres_per_second':4.,
+    'starting_party_metres':34.26,
     'preceding_run_seconds':3., 'tilt_seconds':1.5,
     'pitch_start_radians':.48, 'pitch_end_radians':-.08,
     'reduced_motion_pitch_start_radians':.48,
@@ -42,7 +46,9 @@ def camera_at(seconds, reduced_motion=False, *, config=None):
     start = data['reduced_motion_pitch_start_radians'] if reduced_motion else data['pitch_start_radians']
     blend = _smooth(local/data['tilt_seconds'])
     pitch = start+(data['pitch_end_radians']-start)*blend
-    travel = data['speed_metres_per_second']*(data['preceding_run_seconds']+local)
+    # Preserve the authored bridge location when changing the gait/travel tempo.
+    # Earlier versions inferred this marker from velocity times the prior shot.
+    travel = data['starting_party_metres']+data['speed_metres_per_second']*local
     position = [0., travel+data['ahead_metres'], data['height_metres']]
     forward = [0., -math.cos(pitch), math.sin(pitch)]
     return {'space':'local_bridge_frontal', 'position':position,
@@ -85,12 +91,15 @@ def _metadata(path, root, *, check_images):
     if (not isinstance(camera, dict)
             or any(not _number(camera.get(key), positive=True) for key in positive)
             or not _number(camera.get('preceding_run_seconds'))
+            or not _number(camera.get('starting_party_metres'))
             or camera['tilt_seconds'] > data['duration_seconds']):
         raise ValueError('Invalid frontal-reveal camera')
     for key in ('pitch_start_radians', 'pitch_end_radians', 'reduced_motion_pitch_start_radians'):
         value = camera.get(key)
         if type(value) not in (int, float) or not math.isfinite(value) or not -1. < value < 1.:
             raise ValueError('Invalid frontal-reveal camera pitch')
+    if type(data.get('baked_characters', False)) is not bool:
+        raise ValueError('Invalid frontal character-bake selection')
     actors, identifiers = [], set()
     for record in data['actors']:
         if (not isinstance(record, dict) or record.get('id') not in ('lucan', 'iselin', 'crown_soldier')
@@ -117,6 +126,48 @@ def _metadata(path, root, *, check_images):
     return {**data, 'actors':tuple(actors), 'layers':(), 'environment_path':environment}
 
 
+def performance_signature(manifest_path=FACE_SCENE, *, allowed_root=None):
+    """Fingerprint portable inputs that determine the baked character pixels.
+
+    Canonical metadata, rather than filesystem locations or JSON whitespace,
+    binds the baked bank to its camera, formation, pose clock and frame contract.
+    Export provenance contributes declared PNG digests without opening the large
+    source bank; the reproducible exporter separately verifies those PNG bytes.
+    The environment manifest is intentionally excluded, avoiding a self-hash.
+    """
+    path = Path(manifest_path).resolve()
+    root = path.parent if allowed_root is None else Path(allowed_root).resolve()
+    if not path.is_relative_to(root):
+        raise ValueError('Frontal signature manifest leaves its cinematic')
+    data = _read(path)
+    actors = []
+    for record in data.get('actors', []):
+        animation_path = _path(record.get('animation'), path.parent, root)
+        actor = {'formation':record, 'animation':_read(animation_path)}
+        provenance_path = (animation_path.parent/'provenance.json').resolve()
+        if not provenance_path.is_relative_to(root):
+            raise ValueError('Frontal export provenance leaves its cinematic')
+        if provenance_path.is_file():
+            registrations = _read(provenance_path).get('registrations', [])
+            if not isinstance(registrations, list) or any(not isinstance(item, dict) for item in registrations):
+                raise ValueError('Invalid frontal export provenance')
+            actor['exported_png_sha256'] = [
+                {'frame':registration.get('frame'), 'sha256':registration.get('sha256')}
+                for registration in registrations]
+        actors.append(actor)
+    payload = {'signature_version':1, 'scene_version':data.get('version'),
+               'render_size':data.get('render_size'),
+               'duration_seconds':data.get('duration_seconds'),
+               'camera':data.get('camera'), 'actors':actors,
+               'environment_segments':data.get('environment_segments')}
+    try:
+        canonical = json.dumps(payload, sort_keys=True, separators=(',', ':'),
+                               ensure_ascii=True, allow_nan=False).encode('utf-8')
+    except (TypeError, ValueError) as error:
+        raise ValueError('Invalid frontal signature metadata') from error
+    return sha256(canonical).hexdigest()
+
+
 def read_face_timing(manifest_path=FACE_SCENE):
     """Read actual authored contacts and offsets without decoding any artwork."""
     path = Path(manifest_path).resolve()
@@ -128,30 +179,47 @@ def read_face_timing(manifest_path=FACE_SCENE):
 
 
 class CinematicFaceReveal(CinematicBridgeRun):
-    """Bounded full-drawing and environment caches, using one deterministic rig."""
+    """Stream a baked performance; retain the shared rig for export and timing."""
     def __init__(self, manifest_path=FACE_SCENE, *, allowed_root=None, cache_size=72,
-                 environment_cache_size=8):
+                 environment_cache_size=8, baked_characters=None):
         self.path = Path(manifest_path).resolve()
         root = self.path.parent if allowed_root is None else Path(allowed_root).resolve()
         if not self.path.is_relative_to(root):
             raise ValueError('Frontal-reveal manifest leaves its cinematic')
-        if type(cache_size) is not int or not 3 <= cache_size <= 72:
+        if type(cache_size) is not int or not 3 <= cache_size <= 192:
             raise ValueError('Invalid frontal drawing cache size')
         self.data = _metadata(self.path, root, check_images=True)
+        if baked_characters is not None and type(baked_characters) is not bool:
+            raise ValueError('Invalid frontal character-bake override')
+        self.baked_characters = (self.data.get('baked_characters', False)
+                                 if baked_characters is None else baked_characters)
         self.duration = self.data['duration_seconds']
-        self.cache_size = cache_size
+        self.cache_size = 0 if self.baked_characters else cache_size
         self._cache = OrderedDict()
         self._backgrounds = {}
         self._sizes = {}
-        for actor in self.data['actors']:
-            self._sizes.update({frame['path']:actor['animation']['canvas']
-                                for frame in actor['animation']['frames']})
+        # A fixed cinematic can stream complete native frames rather than
+        # reserving the large bank of 144 full-size source drawings. The explicit
+        # override is for the offline compositor and diagnostic fixtures only.
+        if not self.baked_characters:
+            for actor in self.data['actors']:
+                self._sizes.update({frame['path']:actor['animation']['canvas']
+                                    for frame in actor['animation']['frames']})
         if len(self._sizes) > self.cache_size:
             raise ValueError('Complete frontal gait cycle exceeds its drawing cache bound')
         self._window = ()
         self._executor = None
         self._decodes = self._waits = 0
         self._wait_seconds = 0.
+        # A raw scenery rebuild must not silently hide the entire cast when
+        # this owner streams complete performance frames. Offline composition
+        # explicitly disables baked playback and can start from a raw bank.
+        if self.baked_characters:
+            bank = _read(self.data['environment_path'])
+            if bank.get('baked_characters') is not True:
+                raise ValueError('Baked frontal scene requires a character-composited environment bank')
+            if bank.get('performance_signature') != performance_signature(self.path, allowed_root=root):
+                raise ValueError('Baked frontal performance is stale; rebuild its character-composited bank')
         self.environment = CinematicPerspective(self.data['environment_path'], allowed_root=root,
                                                cache_size=environment_cache_size)
         for mode, segment in self.data['environment_segments'].items():
@@ -206,17 +274,18 @@ class CinematicFaceReveal(CinematicBridgeRun):
                 'camera':camera, 'runners':actors, 'environment':environment}
 
     def preload(self, seconds=0., *, reduced_motion=False, blocking=False):
-        """Prepare one complete cycle without repeatedly decoding large poses.
+        """Prepare bounded native frames for the baked cinematic.
 
-        Full-film and standalone playback prepare the bounded cycle before
-        their clocks start. Two software decoders fill the fixed reservations;
-        nonblocking callers convert at most two completed poses per main-thread
-        call rather than doing an unbounded display-conversion burst.
+        Offline/unbaked owners additionally prepare their complete source cycle.
+        Two software decoders fill fixed reservations; nonblocking callers convert
+        at most two completed drawings per main-thread call. Runtime baked owners
+        reserve no source drawings and never allocate their 144-pose source bank.
         """
         state = self.samples(seconds, reduced_motion)
         current = []
-        for stage, actor in zip(state['runners'], self.data['actors']):
-            current.append(actor['animation']['frames'][stage['frame_index']]['path'])
+        if not self.baked_characters:
+            for stage, actor in zip(state['runners'], self.data['actors']):
+                current.append(actor['animation']['frames'][stage['frame_index']]['path'])
         self._window = tuple(dict.fromkeys((*current, *self._sizes)))
         for path in self._window:
             if path not in self._cache:
@@ -242,6 +311,19 @@ class CinematicFaceReveal(CinematicBridgeRun):
         if target.get_size() != RENDER_SIZE:
             raise ValueError('Frontal reveal requires native output dimensions')
         self.environment.draw(target, state['environment'], alarm_active=False, alarm_elapsed=0.)
+        if not self.baked_characters:
+            self.draw_unbaked(target, state)
+
+    def draw_unbaked(self, target, state):
+        """Composite authored figures only, for reproducible offline baking.
+
+        Construct with baked_characters=False and an explicit source-bank cache
+        when using this helper. Runtime baked playback never calls it.
+        """
+        if self.baked_characters:
+            raise ValueError('Source compositor requires an unbaked owner')
+        if target.get_size() != RENDER_SIZE:
+            raise ValueError('Source compositor requires native output dimensions')
         by_id = {actor['id']:actor for actor in self.data['actors']}
         for stage in sorted(state['runners'], key=lambda actor:actor['draw_order']):
             if stage['visible']:
@@ -259,7 +341,7 @@ class CinematicFaceReveal(CinematicBridgeRun):
                 'decoded_bytes':actor['decoded_bytes']+environment['decoded_bytes'],
                 'pending_bytes':actor['pending_bytes']+environment['pending_bytes'],
                 'capacity':actor['capacity']+environment['capacity'],
-                'byte_capacity':self.cache_size*max(width*height*4 for width, height in self._sizes.values())
+                'byte_capacity':self.cache_size*max((width*height*4 for width, height in self._sizes.values()), default=0)
                                 +self.environment.cache_size*960*640*4,
                 'waits':actor['waits']+environment['waits'],
                 'wait_seconds':actor['wait_seconds']+environment['wait_seconds'],

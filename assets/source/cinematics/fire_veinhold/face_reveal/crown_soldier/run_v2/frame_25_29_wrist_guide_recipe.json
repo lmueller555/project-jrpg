@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "purpose": "Authoring-only overlays, not production drawing pixels",
+  "source_history": "history/wrist_25_29_before_guided",
+  "targets_source_pixels": {
+    "25": [
+      430.015873015873,
+      503.93650793650795
+    ],
+    "28": [
+      383.33333333333337,
+      533.8571428571429
+    ],
+    "29": [
+      356.93650793650795,
+      526.031746031746
+    ]
+  },
+  "construction": "RGBA annotation overlay over unchanged current full source; semitransparent black arm region180,340,535,680; cyan shoulder365,345 through elbow300,440(frame25) or280,465(frames28/29) to target; redX marks measured obsolete glove. Complete ImageGen redraw removes every annotation. These diagrams never enter runtime."
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "cadence_source": "shot06 scene and authored animation contacts",
+  "full_cycle_seconds": 0.8,
+  "steps_per_second_per_actor": 2.5,
+  "total_contacts": 60,
+  "side_contacts": 23,
+  "frontal_contacts": 37,
+  "real_sdl_dummy_channels": 8,
+  "wind_lease_preserved": true,
+  "played_unique_step_cues": 60,
+  "audio_files_unchanged": 12,
+  "effects_before_39_seconds_pcm_sha256": "edd57508ff196d8c3b1fb414f24f664d7bf9a1e930708ccb8ad2f075b5654cba",
+  "tests": "All23audio tests passed within the144core checks; productionfront/sideclock alignment verified."
+}

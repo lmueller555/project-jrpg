@@ -36,7 +36,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 60
-OUT = ROOT/'docs/reviews/veinhold_face_reveal'
+OUT = ROOT/'docs/reviews/veinhold_running_polish'
 
 
 def clip_spec(shot_id=None):

@@ -9,8 +9,8 @@
     384,
     960
   ],
-  "duration_ms": 400,
-  "fps": 60,
+  "duration_ms": 800,
+  "fps": 60.0,
   "loop": true,
   "contacts": [
     {
@@ -18,7 +18,7 @@
       "foot": "near"
     },
     {
-      "frame": 12,
+      "frame": 24,
       "foot": "far"
     }
   ],
@@ -29,606 +29,1014 @@
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          136.06
-        ],
-        "face": [
-          384.32,
-          157.84
+          380.0219,
+          137.0304
         ],
         "neck": [
-          386.3,
-          206.02
+          386.996,
+          204.3144
         ],
         "belt": [
-          385.64,
-          402.04
+          391.0658,
+          399.4128
         ],
         "right_sole": [
-          338.12,
-          959.74
+          337.1,
+          964.8
         ],
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_01.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.98,
-          132.94
-        ],
-        "face": [
-          385.64,
-          158.02
+          381.7646,
+          140.9136
         ],
         "neck": [
-          388.28,
-          211.48
+          390.4775,
+          207.807
         ],
         "belt": [
-          383.66,
-          410.14
+          385.4816,
+          393.7956
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_02.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.64,
-          134.3
-        ],
-        "face": [
-          384.96,
-          158.72
+          382.9238,
+          139.0808
         ],
         "neck": [
-          388.26,
-          211.52
+          390.509,
+          208.4816
         ],
         "belt": [
-          384.3,
-          411.5
+          385.8974,
+          397.0784
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_03.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.64,
-          133.32
-        ],
-        "face": [
-          385.96,
-          158.4
+          382.4857,
+          138.2812
         ],
         "neck": [
-          387.94,
-          209.88
+          391.9735,
+          211.7014
         ],
         "belt": [
-          383.98,
-          407.88
+          386.2216,
+          401.5456
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_04.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.64,
-          131.66
-        ],
-        "face": [
-          385.96,
-          156.08
+          382.0384,
+          139.6844
         ],
         "neck": [
-          388.6,
-          208.22
+          391.627,
+          213.1928
         ],
         "belt": [
-          384.64,
-          401.6
+          385.7932,
+          399.4712
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_05.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.64,
-          129.64
-        ],
-        "face": [
-          385.96,
-          154.72
+          381.5911,
+          141.8276
         ],
         "neck": [
-          388.6,
-          206.86
+          389.926,
+          212.6144
         ],
         "belt": [
-          383.98,
-          400.24
+          386.6374,
+          398.3384
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_06.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          385.3,
-          126.98
-        ],
-        "face": [
-          385.96,
-          152.06
+          382.5584,
+          138.7944
         ],
         "neck": [
-          388.6,
-          204.86
+          392.336,
+          209.9844
         ],
         "belt": [
-          381.34,
-          404.84
+          383.4026,
+          403.0416
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_07.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.64,
-          132.7
-        ],
-        "face": [
-          385.96,
-          155.8
+          380.7084,
+          140.7944
         ],
         "neck": [
-          387.28,
-          205.96
+          390.8325,
+          210.863
         ],
         "belt": [
-          385.96,
-          397.36
+          387.8526,
+          397.4816
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_08.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.32,
-          132.68
-        ],
-        "face": [
-          383.98,
-          155.78
+          382.1184,
+          138.9044
         ],
         "neck": [
-          386.62,
-          207.92
+          388.746,
+          210.0944
         ],
         "belt": [
-          385.96,
-          401.96
+          386.7426,
+          396.8516
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_09.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.0,
-          135.04
-        ],
-        "face": [
-          383.66,
-          157.48
+          381.3849,
+          136.9284
         ],
         "neck": [
-          385.64,
-          208.96
+          389.493,
+          210.4872
         ],
         "belt": [
-          388.94,
-          400.36
+          388.1826,
+          395.6316
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_10.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          133.32
-        ],
-        "face": [
-          384.32,
-          157.74
+          383.2938,
+          138.7108
         ],
         "neck": [
-          386.96,
-          209.88
+          389.0205,
+          207.4942
         ],
         "belt": [
-          386.3,
-          402.6
+          386.6958,
+          388.4428
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_11.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.66,
-          135.38
-        ],
-        "face": [
-          385.32,
-          157.82
+          385.1065,
+          135.114
         ],
         "neck": [
-          387.3,
-          208.64
+          390.493,
+          206.7072
         ],
         "belt": [
-          384.66,
-          400.04
+          380.35,
+          392.28
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_12.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.0,
-          134.72
-        ],
-        "face": [
-          383.66,
-          156.5
+          381.5111,
+          133.3076
         ],
         "neck": [
-          383.66,
-          207.98
+          387.263,
+          204.4472
         ],
         "belt": [
-          390.26,
-          400.04
+          388.2584,
+          393.7244
         ],
         "right_sole": null,
-        "left_sole": [
-          410.06,
-          956.42
-        ]
+        "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_13.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          138.34
-        ],
-        "face": [
-          384.32,
-          161.44
+          380.5884,
+          133.6844
         ],
         "neck": [
-          386.96,
-          212.92
+          387.153,
+          205.2272
         ],
         "belt": [
-          386.3,
-          399.7
+          392.571,
+          390.296
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_14.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          136.36
-        ],
-        "face": [
-          384.32,
-          159.46
+          383.2165,
+          134.484
         ],
         "neck": [
-          387.62,
-          210.94
+          388.7605,
+          203.4942
         ],
         "belt": [
-          386.3,
-          406.3
+          385.39,
+          391.02
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_15.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          382.34,
-          138.34
-        ],
-        "face": [
-          383.66,
-          161.44
+          382.1111,
+          133.6776
         ],
         "neck": [
-          386.96,
-          210.94
+          390.131,
+          204.3384
         ],
         "belt": [
-          386.96,
-          399.04
+          386.3258,
+          394.5228
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_16.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.66,
-          136.38
-        ],
-        "face": [
-          385.98,
-          158.16
+          383.1065,
+          134.484
         ],
         "neck": [
-          387.3,
-          207.66
+          391.391,
+          204.9684
         ],
         "belt": [
-          385.98,
-          395.1
+          385.4816,
+          392.9856
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_17.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.34,
-          132.38
-        ],
-        "face": [
-          384.66,
-          154.82
+          384.1065,
+          134.964
         ],
         "neck": [
-          386.64,
-          204.98
+          391.761,
+          204.1884
         ],
         "belt": [
-          386.64,
-          397.7
+          381.4542,
+          394.2972
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_18.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          132.36
-        ],
-        "face": [
-          384.32,
-          155.46
+          382.4365,
+          134.854
         ],
         "neck": [
-          386.96,
-          204.96
+          391.1305,
+          205.7542
         ],
         "belt": [
-          386.96,
-          395.04
+          384.8116,
+          396.5056
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_19.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.0,
-          133.04
-        ],
-        "face": [
-          385.32,
-          155.48
+          381.7738,
+          134.4508
         ],
         "neck": [
-          387.96,
-          206.3
+          390.7135,
+          206.6614
         ],
         "belt": [
-          386.64,
-          397.04
+          387.4942,
+          396.0772
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_20.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          135.04
-        ],
-        "face": [
-          384.98,
-          157.48
+          380.8065,
+          136.224
         ],
         "neck": [
-          387.62,
-          206.98
+          390.7605,
+          207.7542
         ],
         "belt": [
-          386.3,
-          399.7
+          386.9742,
+          395.5572
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_21.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          382.66,
-          135.7
-        ],
-        "face": [
-          383.98,
-          158.8
+          382.5819,
+          137.4004
         ],
         "neck": [
-          386.62,
-          208.96
+          390.438,
+          205.5412
         ],
         "belt": [
-          387.28,
-          399.04
+          385.6374,
+          395.4484
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_22.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.34,
-          134.34
-        ],
-        "face": [
-          384.66,
-          158.1
+          382.1065,
+          134.744
         ],
         "neck": [
-          388.62,
-          208.26
+          391.651,
+          208.3784
         ],
         "belt": [
-          386.64,
-          402.96
+          385.9432,
+          397.7312
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
       "file": "frame_23.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.66,
-          135.04
-        ],
-        "face": [
-          384.32,
-          158.14
+          381.4765,
+          134.854
         ],
         "neck": [
-          387.62,
-          208.96
+          393.982,
+          206.3968
         ],
         "belt": [
-          386.3,
-          400.36
+          386.7874,
+          400.0084
         ],
         "right_sole": null,
         "left_sole": null
       },
-      "notes": "Complete painterly frontal running drawing; anatomical right/viewer-left sword, anatomical left/viewer-right chevron shield. Fixed whole-source density, measured eyes/neck/waist registration and modest authored complete-body support/flight recoil. No pasted face, detached limbs, pose warps or per-pose bounds fitting."
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_24.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          382.1319,
+          135.0304
+        ],
+        "neck": [
+          393.579,
+          208.0096
+        ],
+        "belt": [
+          385.6158,
+          400.5628
+        ],
+        "right_sole": null,
+        "left_sole": [
+          423.0,
+          956.5
+        ]
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_25.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          382.5819,
+          138.1404
+        ],
+        "neck": [
+          391.2255,
+          209.3682
+        ],
+        "belt": [
+          385.8516,
+          395.2056
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_26.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.6376,
+          135.2216
+        ],
+        "neck": [
+          394.4455,
+          210.9602
+        ],
+        "belt": [
+          383.641,
+          401.636
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_27.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          382.8138,
+          140.0808
+        ],
+        "neck": [
+          391.281,
+          209.7084
+        ],
+        "belt": [
+          384.7416,
+          398.3556
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_28.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.2892,
+          139.9972
+        ],
+        "neck": [
+          392.0685,
+          211.2754
+        ],
+        "belt": [
+          387.8916,
+          399.9856
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_29.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.2165,
+          140.854
+        ],
+        "neck": [
+          390.202,
+          211.1368
+        ],
+        "belt": [
+          389.32,
+          398.02
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_30.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.8838,
+          139.7108
+        ],
+        "neck": [
+          390.351,
+          209.3384
+        ],
+        "belt": [
+          385.9284,
+          400.9844
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_31.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.0784,
+          141.8344
+        ],
+        "neck": [
+          391.0605,
+          211.4242
+        ],
+        "belt": [
+          385.3842,
+          393.5572
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_32.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.4811,
+          139.8276
+        ],
+        "neck": [
+          387.989,
+          209.6316
+        ],
+        "belt": [
+          388.4426,
+          394.8516
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_33.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.303,
+          136.248
+        ],
+        "neck": [
+          391.241,
+          208.7484
+        ],
+        "belt": [
+          384.9284,
+          397.8744
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_34.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0338,
+          134.8608
+        ],
+        "neck": [
+          391.493,
+          204.9672
+        ],
+        "belt": [
+          381.7784,
+          395.5044
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_35.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.6757,
+          136.1712
+        ],
+        "neck": [
+          390.817,
+          206.9328
+        ],
+        "belt": [
+          386.4826,
+          389.4816
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_36.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.223,
+          133.138
+        ],
+        "neck": [
+          388.326,
+          206.3944
+        ],
+        "belt": [
+          387.5826,
+          391.8916
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_37.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.9657,
+          134.5412
+        ],
+        "neck": [
+          392.4065,
+          207.6086
+        ],
+        "belt": [
+          388.4942,
+          388.5572
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_38.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.3711,
+          135.8276
+        ],
+        "neck": [
+          393.116,
+          207.8744
+        ],
+        "belt": [
+          387.7484,
+          388.0544
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_39.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.0057,
+          135.2812
+        ],
+        "neck": [
+          393.116,
+          207.5044
+        ],
+        "belt": [
+          388.3784,
+          387.6844
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_40.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          379.6357,
+          134.6512
+        ],
+        "neck": [
+          393.313,
+          207.8572
+        ],
+        "belt": [
+          387.391,
+          391.036
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_41.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          379.6357,
+          135.2812
+        ],
+        "neck": [
+          392.746,
+          208.1344
+        ],
+        "belt": [
+          387.5926,
+          391.1116
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_42.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          379.4765,
+          134.854
+        ],
+        "neck": [
+          393.4625,
+          206.863
+        ],
+        "belt": [
+          387.3452,
+          395.5732
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_43.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.6265,
+          136.854
+        ],
+        "neck": [
+          389.856,
+          205.5744
+        ],
+        "belt": [
+          387.8526,
+          394.8516
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_44.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          380.5584,
+          136.4244
+        ],
+        "neck": [
+          393.1395,
+          208.7358
+        ],
+        "belt": [
+          387.4884,
+          394.7244
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_45.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.6592,
+          137.8872
+        ],
+        "neck": [
+          390.8635,
+          206.7714
+        ],
+        "belt": [
+          386.3842,
+          394.9272
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_46.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          381.1111,
+          138.3076
+        ],
+        "neck": [
+          390.076,
+          206.5744
+        ],
+        "belt": [
+          387.0142,
+          395.2972
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+    },
+    {
+      "file": "frame_47.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          382.9965,
+          137.854
+        ],
+        "neck": [
+          391.8795,
+          205.8058
+        ],
+        "belt": [
+          383.8974,
+          397.3384
+        ],
+        "right_sole": null,
+        "left_sole": null
+      },
+      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     }
   ]
 }

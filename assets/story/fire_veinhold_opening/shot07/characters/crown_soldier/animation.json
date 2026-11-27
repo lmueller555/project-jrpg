@@ -9,8 +9,8 @@
     384,
     960
   ],
-  "duration_ms": 400,
-  "fps": 60,
+  "duration_ms": 800,
+  "fps": 60.0,
   "loop": true,
   "contacts": [
     {
@@ -18,7 +18,7 @@
       "foot": "near"
     },
     {
-      "frame": 12,
+      "frame": 24,
       "foot": "far"
     }
   ],
@@ -30,379 +30,379 @@
       "landmarks": {
         "eyes": [
           384.0,
-          188.5
+          188.2
         ],
         "neck": [
-          384.0,
-          261.0
+          385.2,
+          257.8
         ],
         "belt": [
-          390.25,
-          428.5
+          391.8,
+          427.0
         ]
       },
-      "notes": "Complete frontal pose 0; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_01.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          189.75
+          383.8,
+          188.4
         ],
         "neck": [
-          383.0,
-          264.75
+          386.2,
+          256.2
         ],
         "belt": [
-          393.0,
-          433.5
+          385.0,
+          424.8
         ]
       },
-      "notes": "Complete frontal pose 1; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_02.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.5,
-          191.0
+          383.6,
+          189.4
         ],
         "neck": [
-          383.25,
-          269.75
+          385.4,
+          259.6
         ],
         "belt": [
-          394.5,
-          437.25
+          390.2,
+          427.0
         ]
       },
-      "notes": "Complete frontal pose 2; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_03.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.5,
-          190.0
+          384.2,
+          190.8
         ],
         "neck": [
-          386.0,
-          266.25
+          384.2,
+          261.0
         ],
         "belt": [
-          393.5,
-          438.75
+          386.6,
+          427.2
         ]
       },
-      "notes": "Complete frontal pose 3; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_04.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.0,
-          188.25
+          384.4,
+          191.8
         ],
         "neck": [
-          384.0,
-          262.0
+          386.2,
+          260.8
         ],
         "belt": [
-          384.0,
-          468.25
+          391.6,
+          427.6
         ]
       },
-      "notes": "Complete frontal pose 4; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_05.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          185.0
+          383.6,
+          193.0
         ],
         "neck": [
-          383.0,
-          256.25
+          385.4,
+          260.8
         ],
         "belt": [
-          383.0,
-          462.5
+          391.4,
+          427.6
         ]
       },
-      "notes": "Complete frontal pose 5; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_06.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          182.25
+          383.8,
+          192.8
         ],
         "neck": [
-          384.25,
-          251.0
+          383.8,
+          260.6
         ],
         "belt": [
-          385.5,
-          457.25
+          382.6,
+          431.6
         ]
       },
-      "notes": "Complete frontal pose 6; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_07.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.5,
-          182.0
+          384.0,
+          192.6
         ],
         "neck": [
-          387.25,
-          255.75
+          385.2,
+          259.8
         ],
         "belt": [
-          384.75,
-          462.0
+          387.0,
+          432.6
         ]
       },
-      "notes": "Complete frontal pose 7; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_08.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.5,
-          183.75
+          383.8,
+          190.2
         ],
         "neck": [
-          384.5,
-          253.75
+          388.0,
+          257.4
         ],
         "belt": [
-          383.25,
-          426.25
+          382.0,
+          427.2
         ]
       },
-      "notes": "Complete frontal pose 8; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_09.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.75,
-          185.75
+          384.0,
+          187.4
         ],
         "neck": [
-          385.0,
-          255.75
+          387.0,
+          255.2
         ],
         "belt": [
-          382.5,
-          432.0
+          381.6,
+          429.8
         ]
       },
-      "notes": "Complete frontal pose 9; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_10.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.0,
-          187.5
+          384.4,
+          185.2
         ],
         "neck": [
-          385.25,
-          256.25
+          387.4,
+          254.8
         ],
         "belt": [
-          384.0,
-          437.5
+          376.0,
+          424.6
         ]
       },
-      "notes": "Complete frontal pose 10; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_11.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.75,
-          187.25
+          384.2,
+          182.8
         ],
         "neck": [
-          383.75,
-          257.25
+          389.0,
+          248.8
         ],
         "belt": [
-          381.25,
-          441.0
+          373.4,
+          415.6
         ]
       },
-      "notes": "Complete frontal pose 11; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_12.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.0,
-          187.75
+          383.8,
+          182.4
         ],
         "neck": [
-          384.0,
-          257.75
+          389.8,
+          250.8
         ],
         "belt": [
-          386.5,
-          426.5
+          383.2,
+          427.2
         ]
       },
-      "notes": "Complete frontal pose 12; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_13.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          190.25
+          384.4,
+          181.8
         ],
         "neck": [
-          385.5,
-          262.75
+          391.0,
+          251.4
         ],
         "belt": [
-          388.0,
-          432.75
+          384.4,
+          429.0
         ]
       },
-      "notes": "Complete frontal pose 13; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_14.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          191.0
+          384.4,
+          182.4
         ],
         "neck": [
-          385.5,
-          264.75
+          391.0,
+          252.0
         ],
         "belt": [
-          390.5,
-          438.5
+          379.0,
+          427.8
         ]
       },
-      "notes": "Complete frontal pose 14; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_15.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.75,
-          190.5
+          384.2,
+          183.8
         ],
         "neck": [
-          385.0,
-          268.0
+          390.2,
+          252.8
         ],
         "belt": [
-          388.75,
-          439.25
+          383.6,
+          429.8
         ]
       },
-      "notes": "Complete frontal pose 15; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_16.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.0,
-          188.0
+          384.4,
+          184.4
         ],
         "neck": [
-          384.0,
-          256.75
+          389.8,
+          252.2
         ],
         "belt": [
-          384.0,
-          454.25
+          386.8,
+          426.8
         ]
       },
-      "notes": "Complete frontal pose 16; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_17.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          184.75
+          384.4,
+          184.4
         ],
         "neck": [
-          381.75,
-          253.5
+          391.0,
+          252.8
         ],
         "belt": [
-          386.75,
-          448.5
+          384.4,
+          429.2
         ]
       },
-      "notes": "Complete frontal pose 17; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_18.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          182.0
+          384.0,
+          185.4
         ],
         "neck": [
-          381.75,
-          248.25
+          388.8,
+          259.2
         ],
         "belt": [
-          385.5,
-          439.5
+          384.0,
+          432.6
         ]
       },
-      "notes": "Complete frontal pose 18; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_19.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          383.5,
-          182.5
+          384.4,
+          185.6
         ],
         "neck": [
-          382.25,
-          252.5
+          389.2,
+          259.4
         ],
         "belt": [
-          384.75,
-          448.75
+          386.2,
+          429.2
         ]
       },
-      "notes": "Complete frontal pose 19; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_20.png",
@@ -410,75 +410,531 @@
       "landmarks": {
         "eyes": [
           384.0,
-          183.75
+          186.2
         ],
         "neck": [
-          384.0,
-          255.0
+          390.0,
+          260.6
         ],
         "belt": [
-          384.0,
-          422.5
+          385.8,
+          431.0
         ]
       },
-      "notes": "Complete frontal pose 20; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_21.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
+          384.0,
           186.0
         ],
         "neck": [
-          385.5,
-          258.5
+          388.2,
+          256.2
         ],
         "belt": [
-          384.25,
-          436.0
+          382.8,
+          423.6
         ]
       },
-      "notes": "Complete frontal pose 21; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_22.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          187.0
+          384.4,
+          187.2
         ],
         "neck": [
-          385.5,
-          260.75
+          389.8,
+          260.4
         ],
         "belt": [
-          390.5,
-          438.25
+          387.4,
+          430.2
         ]
       },
-      "notes": "Complete frontal pose 22; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     },
     {
       "file": "frame_23.png",
       "duration_ms": 16.666666666666668,
       "landmarks": {
         "eyes": [
-          384.25,
-          186.75
+          384.0,
+          188.2
         ],
         "neck": [
-          385.5,
-          264.25
+          389.4,
+          260.8
         ],
         "belt": [
-          388.0,
-          443.0
+          382.2,
+          431.2
         ]
       },
-      "notes": "Complete frontal pose 23; right/viewer-left sword, left/viewer-right shield. Whole-frame exposed-eye registration and authored small recoil; throat and buckle independently measured against this master."
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_24.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          188.0
+        ],
+        "neck": [
+          390.4,
+          258.8
+        ],
+        "belt": [
+          382.6,
+          428.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_25.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          188.4
+        ],
+        "neck": [
+          390.4,
+          257.4
+        ],
+        "belt": [
+          386.8,
+          426.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_26.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.2,
+          189.2
+        ],
+        "neck": [
+          389.0,
+          259.4
+        ],
+        "belt": [
+          382.4,
+          428.0
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_27.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.2,
+          190.6
+        ],
+        "neck": [
+          387.2,
+          259.6
+        ],
+        "belt": [
+          380.6,
+          428.8
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_28.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          191.8
+        ],
+        "neck": [
+          388.0,
+          261.4
+        ],
+        "belt": [
+          381.4,
+          430.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_29.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.8,
+          192.4
+        ],
+        "neck": [
+          389.2,
+          261.4
+        ],
+        "belt": [
+          381.4,
+          424.0
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_30.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          192.6
+        ],
+        "neck": [
+          385.0,
+          262.8
+        ],
+        "belt": [
+          389.2,
+          433.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_31.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.6,
+          191.8
+        ],
+        "neck": [
+          384.2,
+          265.0
+        ],
+        "belt": [
+          385.4,
+          432.4
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_32.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          190.4
+        ],
+        "neck": [
+          385.0,
+          258.8
+        ],
+        "belt": [
+          386.2,
+          425.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_33.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          188.0
+        ],
+        "neck": [
+          384.4,
+          255.8
+        ],
+        "belt": [
+          389.2,
+          428.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_34.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.8,
+          184.6
+        ],
+        "neck": [
+          382.6,
+          253.6
+        ],
+        "belt": [
+          384.4,
+          419.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_35.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.2,
+          182.8
+        ],
+        "neck": [
+          384.2,
+          251.2
+        ],
+        "belt": [
+          392.6,
+          422.8
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_36.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          181.6
+        ],
+        "neck": [
+          385.2,
+          250.0
+        ],
+        "belt": [
+          390.0,
+          428.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_37.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          182.6
+        ],
+        "neck": [
+          385.2,
+          251.0
+        ],
+        "belt": [
+          390.6,
+          423.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_38.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.4,
+          182.8
+        ],
+        "neck": [
+          384.4,
+          251.8
+        ],
+        "belt": [
+          390.4,
+          424.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_39.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          183.8
+        ],
+        "neck": [
+          384.0,
+          254.0
+        ],
+        "belt": [
+          391.8,
+          427.4
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_40.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          184.4
+        ],
+        "neck": [
+          385.2,
+          254.6
+        ],
+        "belt": [
+          390.6,
+          432.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_41.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.8,
+          184.6
+        ],
+        "neck": [
+          384.4,
+          254.8
+        ],
+        "belt": [
+          388.6,
+          428.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_42.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.6,
+          185.4
+        ],
+        "neck": [
+          382.4,
+          256.2
+        ],
+        "belt": [
+          390.8,
+          427.2
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_43.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          185.2
+        ],
+        "neck": [
+          383.4,
+          254.8
+        ],
+        "belt": [
+          391.2,
+          424.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_44.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.6,
+          185.4
+        ],
+        "neck": [
+          384.2,
+          255.0
+        ],
+        "belt": [
+          389.0,
+          424.8
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_45.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          383.6,
+          186.0
+        ],
+        "neck": [
+          381.8,
+          255.6
+        ],
+        "belt": [
+          390.2,
+          423.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_46.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          187.2
+        ],
+        "neck": [
+          382.2,
+          257.4
+        ],
+        "belt": [
+          384.6,
+          429.0
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
+    },
+    {
+      "file": "frame_47.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "eyes": [
+          384.0,
+          187.4
+        ],
+        "neck": [
+          384.0,
+          258.2
+        ],
+        "belt": [
+          394.2,
+          428.6
+        ]
+      },
+      "notes": "Complete individually image-authored frontal figure. Fixed whole-source density; eyes register the source translation and independently measured neck/buckle check model continuity. No body-part transforms, face pastes, occupied-bound fitting or interpolated anatomy."
     }
   ]
 }
