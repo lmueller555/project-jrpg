@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "type": "compressed_review_derivative",
+  "source": "complete.mp4",
+  "source_sha256": "97a4aace556119b176daa845fe711f27569614d0ef90868acbafa7ec2b233594",
+  "output": "complete_small.mp4",
+  "output_sha256": "e19dfcb205760964881b04b3077ec1d368b891793758e440ba90649a824aef08",
+  "bytes": 2583181,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 600,
+        "height": 400,
+        "r_frame_rate": "60/1",
+        "duration": "39.000000",
+        "nb_read_frames": "2340"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0",
+        "duration": "39.018000",
+        "nb_read_frames": "1829"
+      }
+    ],
+    "format": {
+      "duration": "39.018000",
+      "size": "2583181"
+    }
+  },
+  "transcode": {
+    "video_filter": "scale=600:400:flags=lanczos",
+    "fps": 60,
+    "video_codec": "libx264",
+    "preset": "medium",
+    "crf": 30,
+    "maxrate": "500k",
+    "bufsize": "1000k",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_bitrate": "64k",
+    "movflags": "+faststart"
+  },
+  "purpose": "Smaller complete preview for viewing outside the game; reduced resolution and lossy compression."
+}
