@@ -30,12 +30,13 @@ class VeinholdContinuationTests(unittest.TestCase):
         self.scene.reset()
         pygame.quit()
 
-    def test_reel_is_39_seconds_with_four_seconds_of_warning_before_the_rush(self):
-        self.assertEqual(sequence_duration(), 39.)
+    def test_reel_is_42_seconds_with_four_seconds_of_warning_before_the_rush(self):
+        self.assertEqual(sequence_duration(), 42.)
         expected = ((25., 'island_orbit', 'orbit', False),
                     (30., 'alarm_hold', 'alarm_hold', True),
                     (34., 'bridge_rush', 'rush', True),
-                    (35., 'frozen_bridge', 'reveal', True))
+                    (35., 'frozen_bridge', 'reveal', True),
+                    (39., 'bridge_running', 'bridge_running', True))
         for time, identifier, phase, alarm in expected:
             with self.subTest(time=time):
                 state = self.scene.state_at(time)
@@ -172,7 +173,10 @@ class VeinholdContinuationTests(unittest.TestCase):
                 self.scene.update(time-self.scene.elapsed)
                 self.assertTrue(self.scene.active)
             self.scene.update(.01)
-        self.assertEqual(self.scene.elapsed, 39.)
+            self.assertEqual(self.scene.elapsed, 39.)
+            self.assertTrue(self.scene.active)
+            self.scene.update(3.)
+        self.assertEqual(self.scene.elapsed, 42.)
         self.assertFalse(self.scene.active)
         self.scene.skip()
         self.scene.update(10.)
@@ -182,11 +186,12 @@ class VeinholdContinuationTests(unittest.TestCase):
     def test_regular_sixty_hz_updates_show_each_exact_first_frame_without_clock_drift(self):
         self.scene.start()
         boundaries = {1500:('island_orbit', 25.), 1800:('alarm_hold', 30.),
-                      2040:('bridge_rush', 34.), 2100:('frozen_bridge', 35.)}
+                      2040:('bridge_rush', 34.), 2100:('frozen_bridge', 35.),
+                      2340:('bridge_running', 39.)}
         # Frame selection and effects use production metadata. Skip image
         # warming here so this clock test does not benchmark the filesystem.
         with patch.object(self.scene, '_preload_at'):
-            for frame in range(1, 2341):
+            for frame in range(1, 2521):
                 self.scene.update(1/60)
                 if frame in boundaries:
                     identifier, time = boundaries[frame]
@@ -194,9 +199,12 @@ class VeinholdContinuationTests(unittest.TestCase):
                     self.assertEqual(self.scene.elapsed, time)
                     self.assertEqual(state['shot_id'], identifier)
                     self.assertEqual(state['local_time'], 0.)
-                    self.assertEqual(state['perspective']['frame_index'], 0)
+                    if 'perspective' in state:
+                        self.assertEqual(state['perspective']['frame_index'], 0)
+                    else:
+                        self.assertEqual(state['runners'][0]['frame_index'], 0)
         self.assertFalse(self.scene.active)
-        self.assertEqual(self.scene.elapsed, 39.)
+        self.assertEqual(self.scene.elapsed, 42.)
 
     def test_standalone_end_does_not_sound_the_following_shots_first_cue(self):
         self.game.audio.effects_volume = .5
@@ -213,7 +221,7 @@ class VeinholdContinuationTests(unittest.TestCase):
                 self.assertNotIn(unwanted, [event['id'] for event in clip.alert_audio.events])
                 self.assertFalse(clip.alert_audio.voices)
 
-    def test_all_later_shots_share_one_bounded_cache(self):
+    def test_perspective_shots_share_one_bounded_cache(self):
         self.scene._load()
         players = [art['perspective'] for art in self.scene._assets.values() if 'perspective' in art]
         self.assertEqual(len({id(player) for player in players}), 1)

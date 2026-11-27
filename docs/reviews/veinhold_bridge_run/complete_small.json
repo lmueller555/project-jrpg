@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "type": "compressed_review_derivative",
+  "source": "complete.mp4",
+  "source_sha256": "35b44caf987a85f5715862a8f3ee6bf568d5dd9ac31062fd9367da0dca451cbf",
+  "output": "complete_small.mp4",
+  "output_sha256": "c6f278b390f3e24dc6d4287ed3a0ebd7da3f922cf1ba5a78ab58666fe8964681",
+  "bytes": 2854108,
+  "stream": {
+    "width": 600,
+    "height": 400,
+    "r_frame_rate": "60/1",
+    "duration": "42.000000",
+    "nb_frames": "2520"
+  },
+  "transcode": {
+    "video_filter": "scale=600:400:flags=lanczos",
+    "fps": 60,
+    "video_codec": "libx264",
+    "preset": "medium",
+    "crf": 30,
+    "maxrate": "500k",
+    "bufsize": "1000k",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_bitrate": "64k",
+    "movflags": "+faststart"
+  }
+}

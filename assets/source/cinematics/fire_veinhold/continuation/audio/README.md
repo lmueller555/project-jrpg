@@ -28,9 +28,28 @@ falls from gain 0.12 to a distant 0.015 as the camera leaves the fortress.
 It has no rhythmic beep or warning pulse and uses its own two-second loop phase.
 Every export is 48 kHz stereo PCM16 and remains below clipping.
 
+The running shot adds six individual 0.22-second contact sounds: near/far boot
+impacts for Lucan, Iselin and the Crown soldier. Lucan has a heavier low deck
+impact and armor response; Iselin has a lighter sole impact and more cloth;
+the trailing soldier is quieter. Each sound includes its short equipment
+response after the impact. These sources contain no prearranged running rhythm.
+Separate deterministic seeds retain the preceding five WAVs byte-for-byte.
+
+`cinematic_bridge_run.read_run_timing()` reads the same frame durations,
+near/far contact landmarks and positive phase offsets used by the picture.
+The audio owner reads that metadata once and schedules each contact from the
+global 39-second cut through the 42-second endpoint. Starts within a current
+contact play only its remaining PCM tail; long seeks and unmute do not replay
+old steps. Preview mixing uses the same contact table and integer sample
+positions so an isolated running clip matches its interval in the complete film.
+The current drawings use 24 poses per 0.4-second cycle, with contacts at frames
+0 and 12. Actor phase advances are 0, 5/60 and 9/60 seconds; all 45 contacts
+therefore coincide with exact 60 Hz display ticks. Contact scheduling consumes
+the metadata rather than hard-coding that particular cadence.
+
 `prologue_alert_audio.py` owns playback using the full-reel clock: warning at
 30 seconds, machinery at 25, four-second warning lead-in, rush at 34, distant warning and ice at 35,
-cleanup at 39. It leases free effects channels and respects pause, focus,
+running at 39 and cleanup at 42. It leases free effects channels and respects pause, focus,
 effects volume, mute, restart, seek and Gallery cleanup. The existing flight
 owner retains wind. Offline preview movies use `mix_alert_audio()` and are
 reconstructions from the exports, not hardware-loopback recordings.

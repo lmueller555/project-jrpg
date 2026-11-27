@@ -1,0 +1,1107 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    480,
+    480
+  ],
+  "anchor": [
+    240,
+    448
+  ],
+  "cycle_ms": 400,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "construction": "Twenty-four complete authored whole-character drawings selected from six 2x2 source atlases. No limb rigs, idle warps or pixel-interpolated anatomy.",
+  "registration": "Uniform whole-master source density466/sourcecellheight. Neck/belt patches register horizontal placement and baseline body layout; an explicitly authored whole-figure weight-transfer curve uses annotated anatomical stance contacts, then separate airborne rise/recovery. No occupied-bounds scaling, detached-limb manipulation, or airborne-foot floor snapping.",
+  "registration_reference": {
+    "source": "bank24/batch_00_03.png",
+    "cell": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "neck": [
+      416,
+      126
+    ],
+    "belt": [
+      380,
+      230
+    ],
+    "logical_ground": [
+      350,
+      560
+    ],
+    "target_neck": [
+      289.0526315789474,
+      125.44178628389155
+    ],
+    "target_belt": [
+      262.29665071770336,
+      202.73684210526315
+    ]
+  },
+  "frames": [
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -20.12759170653908,
+        30.309409888357266
+      ],
+      "landmarks": {
+        "neck": [
+          416.0,
+          126.0
+        ],
+        "belt": [
+          380.0,
+          230.0
+        ],
+        "near_sole": [
+          503,
+          562
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase00; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 1.0000000000000004,
+        "belt": 1.0000000000000002
+      },
+      "generation_id": "exec-d197eb37-6eb0-49b9-a1d5-db681492b408",
+      "raw_cell_phase": 0,
+      "baseline_neck_belt_origin": [
+        -20.12759170653908,
+        31.795853269537474
+      ],
+      "support_foot": "near",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -1.486443
+    },
+    {
+      "source": "repairs/frame_01_linked.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.38376423524244063,
+      "origin": [
+        -32.10427551611201,
+        20.486641939921114
+      ],
+      "landmarks": {
+        "neck": [
+          836.0,
+          272.0
+        ],
+        "belt": [
+          768.0,
+          474.0
+        ],
+        "near_sole": [
+          885.296,
+          1114.0
+        ]
+      },
+      "notes": "Targeted complete-character redraw between actual poses0and4. Both knee/ankle chains progress. Source body registration uses actual neck/belt patches; one uniform complete-source density, never per-limb transforms or boot-bounds fitting. Audited anatomical supporting sole supplies authored stance weight transfer.",
+      "detection_scores": {
+        "neck": 0.8307547493124514,
+        "belt": 0.6862840772162185
+      },
+      "generation_id": "exec-b7900810-4972-4ba7-a62f-b58c0af11485",
+      "raw_cell_phase": 1,
+      "baseline_neck_belt_origin": [
+        -32.10427551611201,
+        20.945254449146987
+      ],
+      "support_foot": "near",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -0.4586125092258726,
+      "source_density_adjustment": 1.0327046158669968
+    },
+    {
+      "source": "repairs/frame_02_linked.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        -9.350877192982466,
+        17.674641148325342
+      ],
+      "landmarks": {
+        "neck": [
+          800.0,
+          272.0
+        ],
+        "belt": [
+          734.0,
+          472.0
+        ],
+        "near_sole": [
+          703.9563106796116,
+          1158.0
+        ]
+      },
+      "notes": "Targeted complete-character redraw between actual poses0and4. Both knee/ankle chains progress. Source body registration uses actual neck/belt patches; one uniform complete-source density, never per-limb transforms or boot-bounds fitting. Audited anatomical supporting sole supplies authored stance weight transfer.",
+      "detection_scores": {
+        "neck": 0.8489812762771993,
+        "belt": 0.8144498060560753
+      },
+      "generation_id": "exec-71ef163d-9136-4364-b7c6-cb0e1e92aace",
+      "raw_cell_phase": 2,
+      "baseline_neck_belt_origin": [
+        -9.350877192982466,
+        25.850079744816576
+      ],
+      "support_foot": "near",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -8.175438596491233,
+      "source_density_adjustment": 1.0
+    },
+    {
+      "source": "repairs/frame_03_linked.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        -8.9792663476874,
+        10.242424242424221
+      ],
+      "landmarks": {
+        "neck": [
+          800.0,
+          268.0
+        ],
+        "belt": [
+          732.0,
+          478.0
+        ],
+        "near_sole": [
+          486.96138996138995,
+          1178.0
+        ]
+      },
+      "notes": "Targeted complete-character redraw between actual poses0and4. Both knee/ankle chains progress. Source body registration uses actual neck/belt patches; one uniform complete-source density, never per-limb transforms or boot-bounds fitting. Audited anatomical supporting sole supplies authored stance weight transfer.",
+      "detection_scores": {
+        "neck": 0.764731312910129,
+        "belt": 0.8457440848957497
+      },
+      "generation_id": "exec-5855e0cc-3cdd-4aa4-b226-f2edf4bfcbfc",
+      "raw_cell_phase": 3,
+      "baseline_neck_belt_origin": [
+        -8.9792663476874,
+        25.478468899521516
+      ],
+      "support_foot": "near",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -15.236044657097295,
+      "source_density_adjustment": 1.0
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -25.701754385964904,
+        8.755980861243998
+      ],
+      "landmarks": {
+        "neck": [
+          424.0,
+          141.0
+        ],
+        "belt": [
+          387.0,
+          252.0
+        ],
+        "near_sole": [
+          192,
+          591
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase04; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8598735669079326,
+        "belt": 0.8203426040094245
+      },
+      "generation_id": "exec-7ed92946-0901-450c-8fa0-6a659bc51e04",
+      "raw_cell_phase": 4,
+      "baseline_neck_belt_origin": [
+        -25.701754385964904,
+        18.046251993620402
+      ],
+      "support_foot": "near",
+      "support_contact": "toe/ball",
+      "authored_weight_offset_y": -9.290271
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -21.24242424242425,
+        9.499202551834102
+      ],
+      "landmarks": {
+        "neck": [
+          415.0,
+          134.0
+        ],
+        "belt": [
+          384.0,
+          242.0
+        ],
+        "near_sole": [
+          225,
+          590
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase05; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8495813535533359,
+        "belt": 0.7943519427654536
+      },
+      "generation_id": "exec-7ed92946-0901-450c-8fa0-6a659bc51e04",
+      "raw_cell_phase": 5,
+      "baseline_neck_belt_origin": [
+        -21.24242424242425,
+        24.36363636363636
+      ],
+      "support_foot": "near",
+      "support_contact": "toe/ball",
+      "authored_weight_offset_y": -14.864434
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -26.816586921850075,
+        13.215311004784645
+      ],
+      "landmarks": {
+        "neck": [
+          426.0,
+          135.0
+        ],
+        "belt": [
+          388.0,
+          244.0
+        ],
+        "near_sole": [
+          151,
+          585
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase06; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8134602907275608,
+        "belt": 0.9041336869157677
+      },
+      "generation_id": "exec-7ed92946-0901-450c-8fa0-6a659bc51e04",
+      "raw_cell_phase": 6,
+      "baseline_neck_belt_origin": [
+        -26.816586921850075,
+        23.248803827751182
+      ],
+      "support_foot": "near",
+      "support_contact": "toe/ball",
+      "authored_weight_offset_y": -10.033493
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -30.532695374800653,
+        11.992025518341293
+      ],
+      "landmarks": {
+        "neck": [
+          432.0,
+          133.0
+        ],
+        "belt": [
+          392.0,
+          244.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase07; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.821822866469578,
+        "belt": 0.7982416802008083
+      },
+      "generation_id": "exec-7ed92946-0901-450c-8fa0-6a659bc51e04",
+      "raw_cell_phase": 7,
+      "baseline_neck_belt_origin": [
+        -30.532695374800653,
+        23.992025518341293
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -12.0
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -3.405103668261546,
+        10.221690590111628
+      ],
+      "landmarks": {
+        "neck": [
+          391.0,
+          132.0
+        ],
+        "belt": [
+          360.0,
+          239.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase09; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8274637334885834,
+        "belt": 0.8574645615430231
+      },
+      "generation_id": "exec-2df2de56-53a0-40c6-81e4-8d1358a47b3f",
+      "raw_cell_phase": 9,
+      "baseline_neck_belt_origin": [
+        -3.405103668261546,
+        26.221690590111628
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -16.0
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -16.4114832535885,
+        12.593301435406694
+      ],
+      "landmarks": {
+        "neck": [
+          409.0,
+          132.0
+        ],
+        "belt": [
+          377.0,
+          238.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase08; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8628482906625209,
+        "belt": 0.8193724151917738
+      },
+      "generation_id": "exec-2df2de56-53a0-40c6-81e4-8d1358a47b3f",
+      "raw_cell_phase": 8,
+      "baseline_neck_belt_origin": [
+        -16.4114832535885,
+        26.593301435406694
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -14.0
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -18.64114832535884,
+        10.16108452950558
+      ],
+      "landmarks": {
+        "neck": [
+          411.0,
+          140.0
+        ],
+        "belt": [
+          381.0,
+          250.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase10; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8362817112005784,
+        "belt": 0.8045262046174205
+      },
+      "generation_id": "exec-2df2de56-53a0-40c6-81e4-8d1358a47b3f",
+      "raw_cell_phase": 10,
+      "baseline_neck_belt_origin": [
+        -18.64114832535884,
+        19.16108452950558
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -9.0
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -11.208931419457741,
+        13.303030303030297
+      ],
+      "landmarks": {
+        "neck": [
+          400.0,
+          142.0
+        ],
+        "belt": [
+          372.0,
+          253.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase11; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8773293542006886,
+        "belt": 0.8731789142018604
+      },
+      "generation_id": "exec-2df2de56-53a0-40c6-81e4-8d1358a47b3f",
+      "raw_cell_phase": 11,
+      "baseline_neck_belt_origin": [
+        -11.208931419457741,
+        17.303030303030297
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -4.0
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -1.1754385964912046,
+        23.62041467304624
+      ],
+      "landmarks": {
+        "neck": [
+          385.0,
+          134.0
+        ],
+        "belt": [
+          360.0,
+          244.0
+        ],
+        "far_sole": [
+          475,
+          571
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase12; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.825803897501597,
+        "belt": 0.7799263166196332
+      },
+      "generation_id": "exec-2b19aa89-b75e-4121-9706-b8aa59206651",
+      "raw_cell_phase": 12,
+      "baseline_neck_belt_origin": [
+        -1.1754385964912046,
+        23.62041467304624
+      ],
+      "support_foot": "far",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": 0.0
+    },
+    {
+      "source": "repairs/far_crown13.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        1.0542264752791084,
+        4.6682615629983815
+      ],
+      "landmarks": {
+        "neck": [
+          766.0,
+          316.0
+        ],
+        "belt": [
+          712.0,
+          538.0
+        ],
+        "far_sole": [
+          902.3254716981132,
+          1193.0
+        ]
+      },
+      "notes": "Targeted whole-character ImageGen redraw of the approved Crown support pose into Lucan identity, rounded silver/gold plate, oxblood cloth and red chevron kite shield. Actual neck/belt registration and audited anatomical far supporting sole determine complete-drawing placement; no limb replacement, pose warping or airborne floor snapping. Reviewed for the lower-body side-on action shot.",
+      "detection_scores": {
+        "neck": 0.7306960307160967,
+        "belt": 0.7426382710699634
+      },
+      "generation_id": "exec-cf858047-0d7e-493f-8b64-002d5da4a934",
+      "raw_cell_phase": 13,
+      "baseline_neck_belt_origin": [
+        1.0542264752791084,
+        5.411483253588514
+      ],
+      "support_foot": "far",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -0.7432216905901328
+    },
+    {
+      "source": "repairs/far_crown14.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        2.5406698564593455,
+        3.9250398724082487
+      ],
+      "landmarks": {
+        "neck": [
+          758.0,
+          300.0
+        ],
+        "belt": [
+          712.0,
+          528.0
+        ],
+        "far_sole": [
+          746.5218446601941,
+          1195.0
+        ]
+      },
+      "notes": "Targeted whole-character ImageGen redraw of the approved Crown support pose into Lucan identity, rounded silver/gold plate, oxblood cloth and red chevron kite shield. Actual neck/belt registration and audited anatomical far supporting sole determine complete-drawing placement; no limb replacement, pose warping or airborne floor snapping. Reviewed for the lower-body side-on action shot.",
+      "detection_scores": {
+        "neck": 0.5807876978957771,
+        "belt": 0.7396613881772477
+      },
+      "generation_id": "exec-40968d3a-5ad8-496d-9b0a-8de4318f1115",
+      "raw_cell_phase": 14,
+      "baseline_neck_belt_origin": [
+        2.5406698564593455,
+        10.242424242424235
+      ],
+      "support_foot": "far",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -6.317384370015986
+    },
+    {
+      "source": "repairs/far_crown15.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        1.7974481658692127,
+        3.925039872408263
+      ],
+      "landmarks": {
+        "neck": [
+          756.0,
+          298.0
+        ],
+        "belt": [
+          718.0,
+          522.0
+        ],
+        "far_sole": [
+          561.7105263157895,
+          1195.0
+        ]
+      },
+      "notes": "Targeted whole-character ImageGen redraw of the approved Crown support pose into Lucan identity, rounded silver/gold plate, oxblood cloth and red chevron kite shield. Actual neck/belt registration and audited anatomical far supporting sole determine complete-drawing placement; no limb replacement, pose warping or airborne floor snapping. Reviewed for the lower-body side-on action shot.",
+      "detection_scores": {
+        "neck": 0.6108892836422152,
+        "belt": 0.5399537991817813
+      },
+      "generation_id": "exec-99cef338-b600-41a5-9cdf-fd042fca406e",
+      "raw_cell_phase": 15,
+      "baseline_neck_belt_origin": [
+        1.7974481658692127,
+        11.728867623604458
+      ],
+      "support_foot": "far",
+      "support_contact": "heel/ball",
+      "authored_weight_offset_y": -7.803827751196195
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -6.377990430621992,
+        19.161084529505544
+      ],
+      "landmarks": {
+        "neck": [
+          395.0,
+          138.0
+        ],
+        "belt": [
+          364.0,
+          241.0
+        ],
+        "far_sole": [
+          203,
+          577
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase16; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.9142036066366566,
+        "belt": 0.8652121313989051
+      },
+      "generation_id": "exec-4042d785-abfb-4891-b28f-c9f678aef6d3",
+      "raw_cell_phase": 16,
+      "baseline_neck_belt_origin": [
+        -6.377990430621992,
+        23.24880382775119
+      ],
+      "support_foot": "far",
+      "support_contact": "toe/ball",
+      "authored_weight_offset_y": -4.087719
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -7.121212121212096,
+        21.39074960127592
+      ],
+      "landmarks": {
+        "neck": [
+          395.0,
+          135.0
+        ],
+        "belt": [
+          366.0,
+          235.0
+        ],
+        "far_sole": [
+          199,
+          574
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase17; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8763189072559372,
+        "belt": 0.871273010198364
+      },
+      "generation_id": "exec-4042d785-abfb-4891-b28f-c9f678aef6d3",
+      "raw_cell_phase": 17,
+      "baseline_neck_belt_origin": [
+        -7.121212121212096,
+        26.59330143540668
+      ],
+      "support_foot": "far",
+      "support_contact": "toe/ball",
+      "authored_weight_offset_y": -5.202552
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -6.749601275917058,
+        13.620414673046234
+      ],
+      "landmarks": {
+        "neck": [
+          395.0,
+          139.0
+        ],
+        "belt": [
+          365.0,
+          239.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase18; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8407978330460227,
+        "belt": 0.8373793947823287
+      },
+      "generation_id": "exec-4042d785-abfb-4891-b28f-c9f678aef6d3",
+      "raw_cell_phase": 18,
+      "baseline_neck_belt_origin": [
+        -6.749601275917058,
+        23.620414673046234
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -10.0
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -6.006379585326954,
+        12.850079744816568
+      ],
+      "landmarks": {
+        "neck": [
+          394.0,
+          137.0
+        ],
+        "belt": [
+          364.0,
+          235.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase19; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8226581257924733,
+        "belt": 0.7840420436354948
+      },
+      "generation_id": "exec-4042d785-abfb-4891-b28f-c9f678aef6d3",
+      "raw_cell_phase": 19,
+      "baseline_neck_belt_origin": [
+        -6.006379585326954,
+        25.85007974481657
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -13.0
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -0.8038277511961667,
+        19.76874003189792
+      ],
+      "landmarks": {
+        "neck": [
+          387.0,
+          123.0
+        ],
+        "belt": [
+          357.0,
+          225.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase21; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.918411492549147,
+        "belt": 0.8911777958452499
+      },
+      "generation_id": "exec-5d0e3a96-e938-416a-9f73-fc53dd1879fc",
+      "raw_cell_phase": 21,
+      "baseline_neck_belt_origin": [
+        -0.8038277511961667,
+        34.76874003189792
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -15.0
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -4.148325358851679,
+        22.0255183413078
+      ],
+      "landmarks": {
+        "neck": [
+          392.0,
+          126.0
+        ],
+        "belt": [
+          361.0,
+          224.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase20; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.9215747574352768,
+        "belt": 0.8852335707255052
+      },
+      "generation_id": "exec-5d0e3a96-e938-416a-9f73-fc53dd1879fc",
+      "raw_cell_phase": 20,
+      "baseline_neck_belt_origin": [
+        -4.148325358851679,
+        34.0255183413078
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -12.0
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -7.864433811802229,
+        22.681020733652304
+      ],
+      "landmarks": {
+        "neck": [
+          396.0,
+          130.0
+        ],
+        "belt": [
+          367.0,
+          229.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase22; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.8477652843211609,
+        "belt": 0.9007693390798989
+      },
+      "generation_id": "exec-5d0e3a96-e938-416a-9f73-fc53dd1879fc",
+      "raw_cell_phase": 22,
+      "baseline_neck_belt_origin": [
+        -7.864433811802229,
+        30.681020733652304
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -8.0
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -16.039872408293462,
+        22.96491228070174
+      ],
+      "landmarks": {
+        "neck": [
+          408.0,
+          134.0
+        ],
+        "belt": [
+          377.0,
+          235.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase23; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-drawing authored weight transfer follows the annotated support heel/ball/toe. Airborne recoil follows a separate authored rise/recovery curve and is never floor-snapped; no limb edits or scale changes.",
+      "detection_scores": {
+        "neck": 0.9092364056005278,
+        "belt": 0.8529376734365512
+      },
+      "generation_id": "exec-5d0e3a96-e938-416a-9f73-fc53dd1879fc",
+      "raw_cell_phase": 23,
+      "baseline_neck_belt_origin": [
+        -16.039872408293462,
+        26.96491228070174
+      ],
+      "support_foot": null,
+      "support_contact": "airborne",
+      "authored_weight_offset_y": -4.0
+    }
+  ],
+  "source_sha256": {
+    "bank24/batch_00_03.png": "4d8214161fa9f09acde4770c46a087e5fc48853091a6f53e2224cd7d17099b3b",
+    "bank24/batch_00_03_prompt.txt": "0acd0712b4fb449d81de96980525526130d61a31d683c0f4ede47407c35d1914",
+    "bank24/batch_04_07.png": "d016bf0e0d164b8e7048a2df000144fc85f7cd949a260e30a994450d613c27cd",
+    "bank24/batch_04_07_prompt.txt": "d0c348d1e31b5c9c7e1737ee9c29c22aa595cf7da19c1796dadcad217acdd73d",
+    "bank24/batch_08_11.png": "d3a273428f3837da0a08303b0417596377d511bb2f5b3da842282169e0c9fb68",
+    "bank24/batch_08_11_prompt.txt": "ee00e31f9419a8bb57fce0ec93b4c038440739401799e4663ebc71e150abb663",
+    "bank24/batch_12_15.png": "bd34a59ec0b8aeef503b14da4fd9c26e3f2db592a060e73a5d302f018283d8ff",
+    "bank24/batch_12_15_prompt.txt": "6933818e03367c1471164a0a7303b53556f1a8e7c1b4030a4329e7fcc8392128",
+    "bank24/batch_16_19.png": "06569056370ae5e82618a2686e992ccbbbd93e9e5b93966822b34fce0f45cf1a",
+    "bank24/batch_16_19_prompt.txt": "43352aeed853b98ac8187a3ed296feb5691e91f0c35676ef94b5ef98faf1c445",
+    "bank24/batch_20_23.png": "a504899712a9c3326b092ab500442b704c7d9f9d02dfcbd534c4b1767020f095",
+    "bank24/batch_20_23_prompt.txt": "c99784ed97c1a2829146429602006c5aa85d58691ea16b95b5823350f2a4a5df",
+    "bank24/repair_18.png": "2ed8b0ab386b3ba6f181baae56f63d213ba3eaa920b3b70839ec05ffaa05fc62",
+    "bank24/repair_18_prompt.txt": "be985d9dcccfeaeab1c2a8647c4ce2adc18dd8227b82ced1370c4249c16f133e",
+    "repairs/frame_01_linked.png": "7b09fc0a3e4fad1fcd10a5bf9af0e0d9861c938b6089e481afd67c81ec69effa",
+    "repairs/frame_01_linked_prompt.txt": "e79558e5175ea22e28266a18a2a00dfcd6c454961a45d2070a619b137f2d95fb",
+    "repairs/guides/frame_01_linked.png": "9c0b398eeeb6e5bb68e37e0e98385c4dde5e23aa865b2e414d43e289ed28f6ba",
+    "repairs/frame_02_linked.png": "2897df78019debc417b439a4d82558baa8138b1309a9cee704037f53758f4ade",
+    "repairs/frame_02_linked_prompt.txt": "da205113a95e97035eb75778c631bedce29b43ab15b5031365b0190d63288236",
+    "repairs/guides/frame_02_linked.png": "0a8ed3698ce06f3420698fdeb62c31375578aae4a83683f02ddbdfbeba24ca65",
+    "repairs/frame_03_linked.png": "ca2ebfcdc898e5d4ea02929e84189c892fefdf69b1d4ae87c292e4d43496b4ab",
+    "repairs/frame_03_linked_prompt.txt": "5be5b75433aa2949a70050f3fad4123d3b7aafdda44254419de48a0a77e17bcc",
+    "repairs/guides/frame_03_linked.png": "511b3258dd9945ffca0f600a601d626d747b7446a722e2b22537b6e19294cd0c",
+    "repairs/far_crown13.png": "6a901d73bdf9361fcdc0b61b8930232729a1ef8b3b1ddc0a1af79bf75bfbbc26",
+    "repairs/far_crown13_prompt.txt": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+    "repairs/far_crown_pose13_reference.png": "a08b6338d6145212a59dc05d9c642525f72ae77623173182d69de6225eee085d",
+    "repairs/far_crown14.png": "8ffa0052dcb9ff733e26fb0aafa76f0293953b59ade983ec1c2c2e1827e25e8d",
+    "repairs/far_crown14_prompt.txt": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+    "repairs/far_crown_pose14_reference.png": "dbe7bf47fe5f50548511ad99efcbdf8c053576989704ac15d0fff7a1faaf990b",
+    "repairs/far_crown15.png": "2091964ca25cf43d840a3a5155bf2fe7f0c6bd8a2f0404a0dd23214b03e74bac",
+    "repairs/far_crown15_prompt.txt": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+    "repairs/far_crown_pose15_reference.png": "1a12774e7d5baaabd16bf37969bc48c4936d776f3bfdccafd63f4eca7766d09b",
+    "repairs/crown_pose_redraws.json": "2afe3c646eedc7b6854285966239c6070f07c3dbcc1c817bef8f7ea49a007ff1"
+  },
+  "weight_transfer": {
+    "floor_y": 448,
+    "support_near_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "support_far_frames": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "flight_frames": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "authoring": "Actual drawn support heel/ball/toe landmarks audited per stance; whole figure rises/recoils coherently. Flight offsets are authored independently from lowest foot pixels."
+  },
+  "targeted_repairs": {
+    "near": [
+      1,
+      2,
+      3
+    ],
+    "far": [
+      13,
+      14,
+      15
+    ],
+    "status": "Active complete-frame repairs selected after native lower-body review. Historical candidates and original atlas cells remain provenance only."
+  }
+}

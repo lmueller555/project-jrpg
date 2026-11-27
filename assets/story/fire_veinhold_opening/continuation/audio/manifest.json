@@ -46,6 +46,54 @@
       "rms": 0.161354,
       "loop": true,
       "clipped_samples": 0
+    },
+    "lucan_step_near.wav": {
+      "duration": 0.22,
+      "sha256": "bdcf1ce840cad48e8dc224e66f975552536f2da4c7f2ec5ddcbfffe12ecfa609",
+      "peak": 0.68,
+      "rms": 0.088085,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "lucan_step_far.wav": {
+      "duration": 0.22,
+      "sha256": "7bd2d2258b9ca89d0e9c04445ea38c3e8d0d6b2903e0ea7b490d389509a45fbe",
+      "peak": 0.68,
+      "rms": 0.079631,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "iselin_step_near.wav": {
+      "duration": 0.22,
+      "sha256": "21edb2de441d6a2276cf496f33c68467811bf9a5a0a14ae7cd436a44228161f7",
+      "peak": 0.68,
+      "rms": 0.086649,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "iselin_step_far.wav": {
+      "duration": 0.22,
+      "sha256": "bcbefae02ac6260bf8cd55d93da83cef8f3c29934f71c55f50c6a9f8645c9a62",
+      "peak": 0.68,
+      "rms": 0.07389,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "crown_soldier_step_near.wav": {
+      "duration": 0.22,
+      "sha256": "208f5e4f3b709493ce5411aaab3eda32fb244133266c9e71a81977d0b9d8249f",
+      "peak": 0.68,
+      "rms": 0.072265,
+      "loop": false,
+      "clipped_samples": 0
+    },
+    "crown_soldier_step_far.wav": {
+      "duration": 0.22,
+      "sha256": "5a94826fe114922f7ca1fbc27771aff6f10176d54e905b01944071507209dccc",
+      "peak": 0.68,
+      "rms": 0.0847,
+      "loop": false,
+      "clipped_samples": 0
     }
   },
   "timeline": {
@@ -54,7 +102,13 @@
     "alarm_lead_seconds": 4,
     "rush_start": 34,
     "bridge_arrival": 35,
-    "sequence_end": 39,
+    "running_start": 39,
+    "sequence_end": 42,
     "siren_period": 2
+  },
+  "running_foley": {
+    "duration": 0.22,
+    "contact_source": "assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts",
+    "scheduling": "One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
   }
 }

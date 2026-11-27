@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "description": "Candidate Lucan far-support intermediate repairs. Parent artist owns registration and activation.",
+  "frames": [
+    {
+      "phase": 13,
+      "output": "far_crown13.png",
+      "generation_id": "exec-cf858047-0d7e-493f-8b64-002d5da4a934",
+      "sha256": "6a901d73bdf9361fcdc0b61b8930232729a1ef8b3b1ddc0a1af79bf75bfbbc26",
+      "size": [
+        1254,
+        1254
+      ],
+      "pose_reference": "far_crown_pose13_reference.png",
+      "pose_reference_sha256": "a08b6338d6145212a59dc05d9c642525f72ae77623173182d69de6225eee085d",
+      "appearance_references": [
+        {
+          "file": "upperbody_appearance_reference.png",
+          "sha256": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552"
+        },
+        {
+          "file": "knee_greave_boot_material_reference.png",
+          "sha256": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+        }
+      ],
+      "prompt": "far_crown13_prompt.txt",
+      "prompt_sha256": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+      "method": "Imagegen complete-figure identity and wardrobe redraw using active Crown source pose; no detached-limb edits or anatomy warps."
+    },
+    {
+      "phase": 14,
+      "output": "far_crown14.png",
+      "generation_id": "exec-40968d3a-5ad8-496d-9b0a-8de4318f1115",
+      "sha256": "8ffa0052dcb9ff733e26fb0aafa76f0293953b59ade983ec1c2c2e1827e25e8d",
+      "size": [
+        1254,
+        1254
+      ],
+      "pose_reference": "far_crown_pose14_reference.png",
+      "pose_reference_sha256": "dbe7bf47fe5f50548511ad99efcbdf8c053576989704ac15d0fff7a1faaf990b",
+      "appearance_references": [
+        {
+          "file": "upperbody_appearance_reference.png",
+          "sha256": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552"
+        },
+        {
+          "file": "knee_greave_boot_material_reference.png",
+          "sha256": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+        }
+      ],
+      "prompt": "far_crown14_prompt.txt",
+      "prompt_sha256": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+      "method": "Imagegen complete-figure identity and wardrobe redraw using active Crown source pose; no detached-limb edits or anatomy warps."
+    },
+    {
+      "phase": 15,
+      "output": "far_crown15.png",
+      "generation_id": "exec-99cef338-b600-41a5-9cdf-fd042fca406e",
+      "sha256": "2091964ca25cf43d840a3a5155bf2fe7f0c6bd8a2f0404a0dd23214b03e74bac",
+      "size": [
+        1254,
+        1254
+      ],
+      "pose_reference": "far_crown_pose15_reference.png",
+      "pose_reference_sha256": "1a12774e7d5baaabd16bf37969bc48c4936d776f3bfdccafd63f4eca7766d09b",
+      "appearance_references": [
+        {
+          "file": "upperbody_appearance_reference.png",
+          "sha256": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552"
+        },
+        {
+          "file": "knee_greave_boot_material_reference.png",
+          "sha256": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+        }
+      ],
+      "prompt": "far_crown15_prompt.txt",
+      "prompt_sha256": "146ec086ec5644513ce329443ac8d7d93eb617e1833e2e86b945c5bdaf56ffb8",
+      "method": "Imagegen complete-figure identity and wardrobe redraw using active Crown source pose; no detached-limb edits or anatomy warps."
+    }
+  ]
+}

@@ -126,6 +126,8 @@ def write_recipe():
     inputs.extend(sorted((SOURCE/'materials').glob('*.txt')))
     guard_exporter=ROOT/'tools/export_frozen_guard_layers.py'
     if guard_exporter.exists(): inputs.append(guard_exporter)
+    faction_exporter=ROOT/'tools/export_prologue_faction.py'
+    if faction_exporter.exists(): inputs.append(faction_exporter)
     inputs.extend(ROOT/f'assets/story/fire_veinhold_opening/shot01/environment/plume_{i:02d}.png' for i in range(1,17))
     record={'version':1,'command':'python tools/build_prologue_orbit.py --render --samples 16','renderer':'Blender 4.3 Cycles CPU, deterministic painted surface pass','render_size':[WIDTH,HEIGHT],'segments':{name:len(data['frames']) for name,data in manifest['segments'].items()},'source_inputs':{str(path.relative_to(ROOT)):entry(path) for path in inputs},'packed_blend':entry(SOURCE/'fire_veinhold_continuation.blend'),'scene_config':entry(SOURCE/'scene_config.json'),'runtime_assets':runtime}
     (SOURCE/'export_recipe.json').write_text(json.dumps(record,indent=2)+'\n')
@@ -294,7 +296,10 @@ def build(bpy, args):
         'window':mat('Steady warm windows',(.95,.48,.13),.12,emission=2.2,texture=False),
         'ember':mat('Contained fire aether',(.95,.24,.018),.1,emission=2.0),
         'ember_hot':mat('White gold aether',(.99,.65,.13),.05,emission=3.3,texture=False),
-        'crimson':mat('Carcovian crimson',(.25,.025,.045)),
+        'banner_charcoal':mat('Carcovian charcoal cloth',(.035,.045,.052)),
+        'guard_cloth':mat('Carcovian charcoal uniform',(.029,.037,.044)),
+        'guard_gunmetal':mat('Carcovian matte gunmetal',(.075,.105,.125),.47,.76),
+        'faction_copper':mat('Carcovian restrained aged copper',(.34,.205,.105),.45,.66),
         'black':mat('Deep shadow',(.012,.021,.04),texture=False),
         'beacon':mat('Inactive red beacon glass',(.14,.013,.022),.25,.18,texture=False),
         'rock':mat('Blue mountain schist',(.16,.25,.37),.05),
@@ -465,12 +470,12 @@ def build(bpy, args):
         # anatomical coordinates rotate toward the facility they were defending.
         f=d; r=side
         def P(x,y,z): return tuple(base+r*x+f*y+Vector((0,0,z)))
-        architecture.cube(P(0,0,1.10),(.47,.28,.62),'steel_light',angle)
-        architecture.cube(P(0,.02,.84),(.50,.31,.11),'bronze',angle)
-        architecture.cube(P(0,-.05,.70),(.46,.33,.28),'crimson',angle)
-        architecture.cone(P(0,0,1.66),.21,.15,.34,'steel',10)
+        architecture.cube(P(0,0,1.10),(.47,.28,.62),'guard_gunmetal',angle)
+        architecture.cube(P(0,.02,.84),(.50,.31,.11),'faction_copper',angle)
+        architecture.cube(P(0,-.05,.70),(.46,.33,.28),'guard_cloth',angle)
+        architecture.cone(P(0,0,1.66),.21,.15,.34,'guard_gunmetal',10)
         architecture.cube(P(0,.16,1.62),(.27,.08,.085),'black',angle)
-        architecture.beam(P(-.20,.13,1.43),P(.20,.13,1.43),.10,'bronze')
+        architecture.beam(P(-.20,.13,1.43),P(.20,.13,1.43),.10,'faction_copper')
         armposes=[((-.42,.03,1.12),(-.48,.39,1.39),(.42,-.06,1.15),(.43,-.12,.91)),((-.39,.07,1.51),(-.15,.47,1.67),(.40,.06,1.50),(.18,.49,1.69)),((-.45,.02,1.07),(-.44,.28,.88),(.50,.10,1.35),(.63,.35,1.46)),((-.42,-.08,1.27),(-.57,.14,1.44),(.36,.02,1.10),(.43,.27,.93))]
         le,re,rr,rh=armposes[pose]
         for sx,elbow,hand in ((-.26,le,re),(.26,rr,rh)):
@@ -635,7 +640,7 @@ def build(bpy, args):
                 for loop_i in polygon.loop_indices:
                     p=world_to_camera_view(scene,camera,obj.matrix_world@obj.data.vertices[obj.data.loops[loop_i].vertex_index].co)
                     uv.data[loop_i].uv=(p.x,p.y)
-        excluded={'ice','ice_edge','skin','leather','ember','ember_hot','window','beacon','foam'}
+        excluded={'ice','ice_edge','skin','leather','ember','ember_hot','window','beacon','foam','banner_charcoal','guard_cloth','guard_gunmetal','faction_copper'}
         for key,m in materials.items():
             if key in excluded or m.name.endswith(' projected'): continue
             nodes=m.node_tree.nodes; links=m.node_tree.links; output=nodes.get('Material Output'); original=output.inputs['Surface'].links[0].from_socket
@@ -723,7 +728,7 @@ def build(bpy, args):
         terrain_path=SOURCE/'materials'/f'orbit_{label}_terrain.png'
         terrain_image=bpy.data.images.load(str(terrain_path),check_existing=True) if terrain_path.exists() else None
         for key,m in materials.items():
-            if key in {'window','ember','ember_hot','ice','ice_edge','skin','leather','beacon','foam','rock_damar'}: continue
+            if key in {'window','ember','ember_hot','ice','ice_edge','skin','leather','beacon','foam','rock_damar','banner_charcoal','guard_cloth','guard_gunmetal','faction_copper'}: continue
             is_geology=key in {'rock','rock_dark','rock_rust','snow'}
             if is_geology and terrain_image is None: continue
             nodes=m.node_tree.nodes; links=m.node_tree.links; output=next(n for n in nodes if n.type=='OUTPUT_MATERIAL'); original=output.inputs[0].links[0].from_socket

@@ -1,0 +1,85 @@
+{
+  "method": "Offline reconstruction from production WAVs and shared contact metadata; no hardware-loopback or listening claim.",
+  "contact_count": 45,
+  "contact_frame_alignment": "All 45 cues match the rendered contact pose on exact 60 Hz display ticks.",
+  "timing": [
+    {
+      "id": "lucan",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.0,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "iselin",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.08333333333333333,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "id": "crown_soldier",
+      "cycle_seconds": 0.4,
+      "phase_offset_seconds": 0.15,
+      "contacts": [
+        {
+          "frame": 0,
+          "foot": "near",
+          "time_seconds": 0.0
+        },
+        {
+          "frame": 12,
+          "foot": "far",
+          "time_seconds": 0.19999999999999998
+        }
+      ]
+    }
+  ],
+  "mixes": {
+    "0:42": {
+      "peak": 0.4961230525743585,
+      "frames": 2016000,
+      "sample_rate": 48000,
+      "channels": 2,
+      "clipped_samples": 0
+    },
+    "39:3": {
+      "peak": 0.2542038845451395,
+      "frames": 144000,
+      "sample_rate": 48000,
+      "channels": 2,
+      "clipped_samples": 0
+    }
+  },
+  "alert_standalone_equals_complete_slice": true,
+  "source_sha256": {
+    "assets/story/fire_veinhold_opening/shot06/scene.json": "046df2ebfbfd67ca2f5f13641b00f982be177a70944421214788a4c719b22acd",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/animation.json": "b663c6dc9fa623e2398a21edb4ca57f925443079ced922c8a2079c78aa0ee592",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/animation.json": "ac5c07db2287288844342834f8a8c8f4254a611abfb747cfc67970281fe4751d",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/animation.json": "23e9c0eddce5ab2848954f8bca38466f821ca804028c750d837af95cb0e0e8df",
+    "prologue_alert_audio.py": "39d5d626c6d94859901a883aa7ad1254b8e02d090014ea62bc66ba98e73e04c6",
+    "tools/build_prologue_alert_audio.py": "1c51c29e13e5c5c9b50cb3c29a45ad21fc29e37e20794bb78e650410caa252c7",
+    "assets/story/fire_veinhold_opening/continuation/audio/manifest.json": "f4299c4009724f6a5b6a7258681a7fc0ff167223f2565b147f95bcce5c03bc45"
+  },
+  "final_verification": "Contacts and offline mixes revalidated against the frozen source bank."
+}

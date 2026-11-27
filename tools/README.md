@@ -10,18 +10,27 @@ the standard.
 
 Capture the Fire Veinhold prologue through its actual save-disabled Gallery
 runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
-complete 39-second film at 60 FPS and writes to `docs/reviews/veinhold_orbit/`.
-Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`, or
-`eagle_ascent` for an individual clip; its Gallery ID also works. Add
+complete 42-second film at 60 FPS and writes to `docs/reviews/veinhold_bridge_run/`.
+Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`,
+`bridge_running` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
 `--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
 960×640 detail and reconstruct sound offline from the production exports and
 global timing; this is not hardware-loopback listening evidence. Capture JSON
 records frame count, full-reel offset, source/runtime hashes, timing samples,
-natural Gallery return and absence of persistent writes. The
+natural Gallery return and absence of persistent writes. The encoder taps the
+clean native picture from the same production draw before pause/Skip controls;
+Gallery replay screenshots retain the toolbar as separate UI evidence. The
 [scene owner](../docs/narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) records the
 storyboard and camera contract. Use `tools/capture_gallery.py --mode thumbnails
 --scene fire_veinhold_shot_02 --out PATH` for a focused thumbnail recapture;
 repeat `--scene` to include other entries.
+
+`tools/export_prologue_bridge_background.py` uniformly exports the registered
+far-scenery and transparent rail/deck paintings for Shot 6 to 1920×640,
+preserving their 3:1 overscan. Use `--check` to verify both PNGs and their recipe
+against the retained generated masters.
+Runner drawing exports and their phase/registration metadata are separate from
+this environment-only export.
 
 Iselin uses the approved native 24×36 idles and four 16-frame walks. Export
 individual banks with `tools/export_iselin_native_idles.py` and

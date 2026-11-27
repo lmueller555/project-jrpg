@@ -21,7 +21,13 @@ MACHINERY_START = 25.
 ALARM_START = 30.
 RUSH_START = 34.
 BRIDGE_ARRIVAL = 35.
-SEQUENCE_END = 39.
+RUNNING_START = 39.
+SEQUENCE_END = 42.
+STEP_DURATION = .22
+RUN_SCENE = ROOT/'assets/story/fire_veinhold_opening/shot06/scene.json'
+STEP_MIX = {'lucan':(.30,.16),'iselin':(.21,-.03),'crown_soldier':(.16,-.40)}
+STEP_SOUNDS = tuple(f'{actor}_step_{foot}.wav'
+                    for actor in STEP_MIX for foot in ('near','far'))
 SIREN_PERIOD = 2.
 LOOPS = (('machinery_bed.wav',MACHINERY_START),
          ('industrial_siren.wav',ALARM_START),('distant_siren.wav',ALARM_START))
@@ -46,24 +52,63 @@ def alert_mix_at(seconds):
     return result
 
 
+def running_contact_events(timing=None):
+    """Schedule single steps from the renderer's authored contact metadata.
+
+    Positive animation offsets advance the same cycle in picture and sound.
+    Parsing happens once per owner/capture, never on the per-frame audio path.
+    A checkout without the optional running assets retains its earlier audio.
+    """
+    if timing is None:
+        if not RUN_SCENE.is_file():return ()
+        from cinematic_bridge_run import read_run_timing
+        timing = read_run_timing(RUN_SCENE)
+    result = []
+    for actor in timing:
+        name = actor['id']
+        if name not in STEP_MIX:raise ValueError('Unknown running Foley actor')
+        cycle = float(actor['cycle_seconds'])
+        offset = float(actor['phase_offset_seconds'])
+        if not math.isfinite(cycle) or cycle <= 0 or not math.isfinite(offset):
+            raise ValueError('Invalid running Foley timing')
+        gain,pan = STEP_MIX[name]
+        for contact in actor['contacts']:
+            foot = contact['foot'];phase = float(contact['time_seconds'])
+            if foot not in ('near','far') or not math.isfinite(phase) or not 0 <= phase < cycle:
+                raise ValueError('Invalid authored foot contact')
+            first = (phase-offset)%cycle
+            if abs(first-cycle) < 1e-8:first = 0.
+            for repeat in range(math.ceil((SEQUENCE_END-RUNNING_START)/cycle)+1):
+                local = first+repeat*cycle
+                if local >= SEQUENCE_END-RUNNING_START-1e-8:break
+                at = RUNNING_START+local
+                result.append({'id':f'run:{name}:{foot}:{repeat}', 'actor':name,
+                    'foot':foot,'file':f'{name}_step_{foot}.wav',
+                    'time':at,'duration':STEP_DURATION,'gain':gain,'pan':pan})
+    return tuple(sorted(result,key=lambda cue:(cue['time'],cue['id'])))
+
+
 @dataclass
 class _Voice:
     channel: object
     sound: object
     ends_at: float = math.inf
+    gain: float | None = None
+    pan: float = 0.
 
 
 class PrologueAlertAudio:
-    def __init__(self,game,*,asset_root=ASSETS,mixer=None):
+    def __init__(self,game,*,asset_root=ASSETS,mixer=None,run_timing=None):
         self.game = game
         self.asset_root = Path(asset_root)
         self.mixer = pygame.mixer if mixer is None else mixer
         self.sounds = {};self.voices = {};self.events = []
         self._active = False;self._paused = False;self._clock = 0.
         self._seen = set()
+        self.run_contacts = running_contact_events(run_timing)
         audio = getattr(game,'audio',None)
         if hasattr(audio,'bind_effects'):audio.bind_effects(self)
-        for name in (*(item[0] for item in LOOPS),*(item[0] for item in TRANSIENTS)):
+        for name in (*(item[0] for item in LOOPS),*(item[0] for item in TRANSIENTS),*STEP_SOUNDS):
             self._sound(name)
 
     @property
@@ -100,7 +145,7 @@ class PrologueAlertAudio:
             return self.sounds[key]
         except (OSError,pygame.error,ValueError):return None
 
-    def _play(self,name,*,offset=0.,loop=False,ends_at=math.inf):
+    def _play(self,name,*,offset=0.,loop=False,ends_at=math.inf,identifier=None,gain=None,pan=0.):
         if not self._active or self._paused or self.volume <= 0:return
         try:
             sound = self._sound(name,offset,loop=loop)
@@ -108,8 +153,9 @@ class PrologueAlertAudio:
             if channel is None:return
             channel.set_volume(0.,0.)
             channel.play(sound,loops=-1 if loop else 0,fade_ms=35 if loop else 0)
-            self.voices[name] = _Voice(channel,sound,ends_at)
-            self.events.append({'id':name,'time':self._clock,'offset':offset})
+            identifier = name if identifier is None else identifier
+            self.voices[identifier] = _Voice(channel,sound,ends_at,gain,pan)
+            self.events.append({'id':identifier,'time':self._clock,'offset':offset})
             self.events[:] = self.events[-64:]
         except (OSError,pygame.error):pass
 
@@ -128,7 +174,8 @@ class PrologueAlertAudio:
                     self.voices.pop(name,None);continue
                 if self.volume <= 0 or not mix or (not self._paused and self._clock >= voice.ends_at):
                     self._release(name);continue
-                gain,pan = mix.get(name,(0.,0.))
+                gain,pan = (mix.get(name,(0.,0.)) if voice.gain is None
+                            else (voice.gain,voice.pan))
                 gain *= self.volume
                 voice.channel.set_volume(gain*min(1.,1-pan),gain*min(1.,1+pan))
                 if self._paused:voice.channel.pause()
@@ -152,14 +199,24 @@ class PrologueAlertAudio:
         now = self._valid_time(global_elapsed)
         self.reset()
         if now is None:return
-        self._active = True;self._clock = now
+        self._active = now < SEQUENCE_END;self._clock = now
+        if not self._active:return
         self._ensure_loops()
         for name,at,duration in TRANSIENTS:
             if now >= at:self._seen.add(name)
             # Standalone mid-shot playback begins at the proper sound sample.
             if at <= now < at+duration:
                 self._play(name,offset=now-at,ends_at=at+duration)
+        for cue in self.run_contacts:
+            at = cue['time']
+            if now >= at:self._seen.add(cue['id'])
+            if at <= now < at+cue['duration']:
+                self._play_step(cue,now-at)
         self._maintain()
+
+    def _play_step(self,cue,offset):
+        self._play(cue['file'],offset=offset,ends_at=cue['time']+cue['duration'],
+                   identifier=cue['id'],gain=cue['gain'],pan=cue['pan'])
 
     def update(self,previous,current,playing=True):
         if not self._active:return
@@ -171,6 +228,8 @@ class PrologueAlertAudio:
         self._paused = False
         before = max(before,self._clock)
         self._clock = now
+        if now >= SEQUENCE_END:
+            self._maintain();return
         # Large seeks re-phase loops; ordinary clip transitions retain leases.
         if now-before > .35:
             for name,_ in LOOPS:self._release(name)
@@ -180,6 +239,12 @@ class PrologueAlertAudio:
                 self._seen.add(name)
                 if now-before <= .35 and now < at+duration:
                     self._play(name,offset=now-at,ends_at=at+duration)
+        for cue in self.run_contacts:
+            at = cue['time']
+            if before < at <= now and cue['id'] not in self._seen:
+                self._seen.add(cue['id'])
+                if now-before <= .35 and now < at+cue['duration']:
+                    self._play_step(cue,now-at)
         self._maintain()
 
     def refresh_volume(self):
@@ -200,7 +265,7 @@ class PrologueAlertAudio:
         self._clock = 0.;self._paused = False
 
 
-def mix_alert_audio(start_seconds,duration,*,sample_rate=48000,asset_root=ASSETS):
+def mix_alert_audio(start_seconds,duration,*,sample_rate=48000,asset_root=ASSETS,run_timing=None):
     """Reconstruct effects from production exports for review movies.
 
     This is an offline reconstruction, not a recording of mixer hardware.
@@ -233,4 +298,24 @@ def mix_alert_audio(start_seconds,duration,*,sample_rate=48000,asset_root=ASSETS
         positions = np.clip(positions,0,len(sound)-1)
         level = np.column_stack((gain*np.minimum(1,1-pan),gain*np.minimum(1,1+pan)))
         result[mask] += sound[positions[mask]]*level[mask]
+    # Integer output-frame positions make isolated clips sample-identical to
+    # the same interval sliced from the complete film, including contact edges.
+    output_frames = round(start_seconds*sample_rate)+np.arange(count)
+    steps = {}
+    contacts = (running_contact_events(run_timing)
+                if start_seconds < SEQUENCE_END and start_seconds+duration > RUNNING_START else ())
+    for cue in contacts:
+        key = cue['file']
+        if key not in steps:
+            with wave.open(str(Path(asset_root)/key),'rb') as reader:
+                rate,channels,width = reader.getframerate(),reader.getnchannels(),reader.getsampwidth()
+                if channels != 2 or width != 2:raise ValueError('Expected stereo PCM16 running Foley')
+                sound = np.frombuffer(reader.readframes(reader.getnframes()),dtype='<i2').reshape(-1,2)/32767.
+                steps[key] = rate,sound
+        rate,sound = steps[key]
+        positions = np.rint((output_frames-round(cue['time']*sample_rate))*rate/sample_rate).astype(np.int64)
+        mask = active&(positions>=0)&(positions<len(sound))
+        gain,pan = cue['gain'],cue['pan']
+        level = np.array((gain*min(1,1-pan),gain*min(1,1+pan)))
+        result[mask] += sound[positions[mask]]*level
     return result.astype(np.float32)

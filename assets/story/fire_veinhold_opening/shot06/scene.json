@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "render_size": [
+    960,
+    640
+  ],
+  "duration_seconds": 3,
+  "camera": {
+    "anchor_x": 620,
+    "pixels_per_metre": 660,
+    "actor_scale": 3.0,
+    "speed_metres_per_second": 11.42,
+    "drift_metres": 2.3,
+    "drift_start": 1.15,
+    "drift_end": 2.85
+  },
+  "layers": [
+    {
+      "id": "far_scenery",
+      "file": "environment/far.png",
+      "plane": "background",
+      "speed_factor": 0.0,
+      "reduced_motion_factor": 0.0,
+      "offset_y": 0,
+      "mirror_repeat": true
+    },
+    {
+      "id": "steel_bridge",
+      "file": "environment/bridge.png",
+      "plane": "background",
+      "speed_factor": 1.0,
+      "reduced_motion_factor": 1.0,
+      "offset_y": 0,
+      "mirror_repeat": true,
+      "ground": true
+    }
+  ],
+  "actors": [
+    {
+      "id": "lucan",
+      "animation": "characters/lucan/animation.json",
+      "phase_offset_seconds": 0.0,
+      "offset_metres": 0.0,
+      "lane_metres": 0.0,
+      "depth_scale": 1.0,
+      "ground_y": 532
+    },
+    {
+      "id": "iselin",
+      "animation": "characters/iselin/animation.json",
+      "phase_offset_seconds": 0.08333333333333333,
+      "offset_metres": -0.5,
+      "lane_metres": 0.65,
+      "depth_scale": 1.0,
+      "ground_y": 558
+    },
+    {
+      "id": "crown_soldier",
+      "animation": "characters/crown_soldier/animation.json",
+      "phase_offset_seconds": 0.15,
+      "offset_metres": -3.048,
+      "lane_metres": -0.75,
+      "depth_scale": 1.0,
+      "ground_y": 506
+    }
+  ],
+  "coordinate_space": "Local side-shot staging farther toward the fortress than the frozen-guard hold; x advances toward the Veinhold, y is the runners' anatomical right."
+}

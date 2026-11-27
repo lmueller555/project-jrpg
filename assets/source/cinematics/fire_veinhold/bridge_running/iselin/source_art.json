@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "scope": "Fire Veinhold boot-height running shot; cinematic source drawings only",
+  "facing": "right",
+  "near_side": "anatomical_right",
+  "far_side": "anatomical_left",
+  "cycle_ms": 600,
+  "frame_budget": 36,
+  "authoring": "Image generation draws complete unified character poses. Motion-guide lines never become runtime anatomy. Export may crop, alpha-clean and register uniformly; it must not warp or articulate isolated limbs.",
+  "sources": [
+    {
+      "file": "keys_generated.png",
+      "sha256": "477c7111aac0ec4e6102d6ec3629492fcbaab82a923107ae4deb9470d8b2a1f2",
+      "generation_id": "exec-41da025d-26c4-4ce4-b920-089809ab6b2a",
+      "prompt": "keys_prompt.txt",
+      "prompt_sha256": "0dd866bd14155b1a20f0b4385a56258e197ae41eb70cd12d0dcdb7299bd0cfb4",
+      "status": "palette/style keys; leg roles require guide review",
+      "canvas": [
+        1263,
+        1246
+      ]
+    },
+    {
+      "file": "batch_00_03.png",
+      "sha256": "8aadfd4c29c1fb450b14c152e868cac40806b85b578296dace234315cd2398bb",
+      "generation_id": "exec-e44e02c6-687c-4b3a-944b-cfb6e90c9952",
+      "prompt": "batch_00_03_prompt.txt",
+      "prompt_sha256": "648d43f92427e850fd4f984f9cd15c4699c14b8e43ce5d2b4d71c3b6684c6d64",
+      "status": "rejected: excessive quarter-cycle progression for adjacent frames",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "batch_00_03_refined.png",
+      "sha256": "45226f30ad1a565b6326d0742b87b27c9bcb1f8e301588ec494717a6eb973a19",
+      "generation_id": "exec-1cae4cc9-f080-400c-af5e-727dac583cb6",
+      "prompt": "batch_00_03_refined_prompt.txt",
+      "prompt_sha256": "2c2e053b7d051ff4d5c583291eb6f074fc325adb885b67993cade5a47e58e1b3",
+      "status": "rejected: excessive first step, parked later foot, soft alpha ghosts",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "batch_00_03_guidefirst.png",
+      "sha256": "be3bbdaafd11aa6917e9196a401191838e74101aad0e17888b21d9429e74c388",
+      "generation_id": "exec-7ddf4a3d-a596-47b7-9141-43f8745b931d",
+      "prompt": "batch_00_03_guidefirst_prompt.txt",
+      "prompt_sha256": "343c77e2996400605e662b14c3e12ff1003e5a4572f6b0c843297561a40b7700",
+      "status": "rejected: source step progression still uneven",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "individual/phase_01.png",
+      "sha256": "b5568a4f500e03722c0c5b490536cf25f3fd71f700722f3b2f3f94185edf07f6",
+      "generation_id": "exec-97089036-9122-4806-9744-495303b59681",
+      "prompt": "individual/phase_01_prompt.txt",
+      "prompt_sha256": "7361f864b37f3af8abf4335ead97b921fe985ce4e4b2da2e633e17d4aef67883",
+      "status": "individual whole-frame pilot awaiting registered review",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "individual/phase_01_calibrated.png",
+      "sha256": "effcfd296e84152e98e3605810dd7b47f4ef92c309cb11977e3bd147491b7a2f",
+      "generation_id": "exec-fc4c9fc2-fb33-4526-bd8b-eff4ae4bdd3f",
+      "prompt": "individual/phase_01_calibrated_prompt.txt",
+      "prompt_sha256": "edb44a2375ae1a0f22f49fdfd2ef92a64dd9aa00c640151075d0f2377764c7b5",
+      "status": "support-pose candidate; generated displacement overshoots nominal phase01, actual phase requires audit",
+      "canvas": [
+        1262,
+        1246
+      ]
+    },
+    {
+      "file": "individual/phase_02_candidate.png",
+      "sha256": "f07a25b6dea76bcbc611cfc179be5c73f17b282ba5b38655a412e5f3c9ff5695",
+      "generation_id": "exec-051dba22-8e42-4d15-8b2f-c0d22b291142",
+      "prompt": "individual/phase_02_candidate_prompt.txt",
+      "prompt_sha256": "9c96ef758f0ce28ee518f445ca761b1d3b6b0cc72d687b74571af9ffa12266c9",
+      "status": "visual in-between candidate; appears later than calibrated support, actual phase requires audit",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "individual/support_vertical_candidate.png",
+      "sha256": "d216f9e4bf7570c0e6b61dd91bd07cf7ca43f91438009fbbcd08215b72de0836",
+      "generation_id": "exec-3aa4ecb8-6b2d-43db-a64c-81e790e87c9b",
+      "prompt": "individual/support_vertical_candidate_prompt.txt",
+      "prompt_sha256": "3b665a41e927aaffe18e0eb32e2eb2174d00bb0cc1076f7e86834d1bb3d869c4",
+      "status": "whole-frame support in-between candidate; actual chronological position requires landmark audit",
+      "canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "individual/opposite_contact_candidate.png",
+      "sha256": "9dc53323249a4d199a0897d1890b298c802ff74fdfbe06bb11a79add586ee504",
+      "generation_id": "exec-44e6e5b2-71b9-499f-ba2e-a3cf0c94a0a3",
+      "prompt": "individual/opposite_contact_candidate_prompt.txt",
+      "prompt_sha256": "84415e17692346cbc61e4e72f0724741d0c607497350ac7e9a32ca0d8656152a",
+      "status": "opposite half-cycle contact; near leg trails in foreground and darker far leg leads, awaiting anatomical review",
+      "canvas": [
+        1262,
+        1246
+      ]
+    },
+    {
+      "file": "individual/far_recovery_candidate.png",
+      "sha256": "a7ba3d6e9dedbfd083affc654dc5f8440883ea8fe0884b5329d57743b937f928",
+      "generation_id": "exec-9ebc53b3-a5ef-42e0-8bda-57a58d1fe2ba",
+      "prompt": "individual/far_recovery_candidate_prompt.txt",
+      "prompt_sha256": "602e237a632a70277bc951003b72b2806f97d411f89e4f3bc187a797ee1aab44",
+      "status": "Successful scoped far-leg recovery redraw candidate; superseded by final24bank whole-frame sources."
+    }
+  ],
+  "derived_references": {
+    "individual/phase_00.png": "Top-left complete character cell from keys_generated.png; no anatomy edits.",
+    "contact_appearance_reference.png": "Same top-left complete character cell.",
+    "key_00_appearance_reference.png": "Top-left key cell.",
+    "key_09_appearance_reference.png": "Top-right key cell.",
+    "key_18_appearance_reference.png": "Bottom-left key cell.",
+    "key_27_appearance_reference.png": "Bottom-right key cell."
+  },
+  "registration_warning": "Generated masters have differing canvas sizes and body translations. Register by audited multiple body landmarks with uniform whole-image scaling; do not assume equal cell sizes, align by opaque boot bounds, or force nominal phase numbers onto actual poses.",
+  "pilot_review": "Independent NCC comparison rejected initial individual phase01 as a precise guide match: approximately10px near-foot travel after body registration and almost parked far foot. Candidate bank is undergoing actual-motion phase assignment before full-cycle expansion.",
+  "status": "superseded_prototype_history",
+  "current_source": "source_art_24.json",
+  "superseded_reason": "Final production direction uses24 complete authored poses over400ms at60Hz. The earlier36/600ms micro-pilot sources retain diagnostic history only."
+}

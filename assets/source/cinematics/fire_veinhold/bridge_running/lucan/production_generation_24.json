@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "status": "Current production bank, with complete-frame repairs selected after lower-body native action-shot review. Full-body/frontal reusable animation performance has not been approved.",
+  "current_source_profile": "source_art_24.json",
+  "frame_count": 24,
+  "cycle_ms": 400,
+  "fps": 60,
+  "contacts": [
+    0,
+    12
+  ],
+  "construction": "Twenty-four complete character drawings, authored as six 2x2 source atlases. Pose guides are authoring references only. No runtime detached limbs, procedural anatomy, idle warps or interpolated character pixels.",
+  "appearance": "Approved Lucan identity: swept dark brown hair, polished rounded silver plate with restrained gold, oxblood cloth, brown boots, right-hand sword and left-hand red chevron kite shield.",
+  "masters": [
+    {
+      "generation_id": "exec-d197eb37-6eb0-49b9-a1d5-db681492b408",
+      "source": "bank24/batch_00_03.png",
+      "prompt": "bank24/batch_00_03_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_00_03.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "4d8214161fa9f09acde4770c46a087e5fc48853091a6f53e2224cd7d17099b3b",
+      "prompt_sha256": "0acd0712b4fb449d81de96980525526130d61a31d683c0f4ede47407c35d1914",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_00_03.png": "35d2ca9cf2c3df9251e4871379d3bf31a6212ff4177b79095537536f206b1748",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    },
+    {
+      "generation_id": "exec-7ed92946-0901-450c-8fa0-6a659bc51e04",
+      "source": "bank24/batch_04_07.png",
+      "prompt": "bank24/batch_04_07_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_04_07.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "d016bf0e0d164b8e7048a2df000144fc85f7cd949a260e30a994450d613c27cd",
+      "prompt_sha256": "d0c348d1e31b5c9c7e1737ee9c29c22aa595cf7da19c1796dadcad217acdd73d",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_04_07.png": "631f3c77ac5ac11c4eab1085807b4a32d5a192791378cef3c2a34a88b9e1676e",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    },
+    {
+      "generation_id": "exec-2df2de56-53a0-40c6-81e4-8d1358a47b3f",
+      "source": "bank24/batch_08_11.png",
+      "prompt": "bank24/batch_08_11_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_08_11.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "d3a273428f3837da0a08303b0417596377d511bb2f5b3da842282169e0c9fb68",
+      "prompt_sha256": "ee00e31f9419a8bb57fce0ec93b4c038440739401799e4663ebc71e150abb663",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_08_11.png": "1e13b104301ca5673bb7da21fcb6fccc909944eedcf1b8cf1a036fd70cd8c5f0",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    },
+    {
+      "generation_id": "exec-2b19aa89-b75e-4121-9706-b8aa59206651",
+      "source": "bank24/batch_12_15.png",
+      "prompt": "bank24/batch_12_15_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_12_15.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "bd34a59ec0b8aeef503b14da4fd9c26e3f2db592a060e73a5d302f018283d8ff",
+      "prompt_sha256": "6933818e03367c1471164a0a7303b53556f1a8e7c1b4030a4329e7fcc8392128",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_12_15.png": "6e836b4d2ec5a4c9a2f3b9b6bb9680abf2e3aed6b840c0cd22879e8fe7b63f69",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    },
+    {
+      "generation_id": "exec-4042d785-abfb-4891-b28f-c9f678aef6d3",
+      "source": "bank24/batch_16_19.png",
+      "prompt": "bank24/batch_16_19_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_16_19.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "06569056370ae5e82618a2686e992ccbbbd93e9e5b93966822b34fce0f45cf1a",
+      "prompt_sha256": "43352aeed853b98ac8187a3ed296feb5691e91f0c35676ef94b5ef98faf1c445",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_16_19.png": "20892f9fa17c3d680b973078b102b6a5580e1d0c4fcdbf443f172ffbd754081c",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    },
+    {
+      "generation_id": "exec-5d0e3a96-e938-416a-9f73-fc53dd1879fc",
+      "source": "bank24/batch_20_23.png",
+      "prompt": "bank24/batch_20_23_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_20_23.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png"
+      ],
+      "sha256": "a504899712a9c3326b092ab500442b704c7d9f9d02dfcbd534c4b1767020f095",
+      "prompt_sha256": "c99784ed97c1a2829146429602006c5aa85d58691ea16b95b5823350f2a4a5df",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/bridge_running/phase_guides_24/phases_20_23.png": "17b570a9680174f6f378753351e9c204c97dbef8e8e6a26ddbb0f6bc7f94b369",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/upperbody_appearance_reference.png": "e7eb95fec3f842fb9a68b183c3aba4be0d851d65a0565b622cbe947f32d9f552",
+        "assets/source/cinematics/fire_veinhold/bridge_running/lucan/knee_greave_boot_material_reference.png": "957d119262ba19e2ee37b568b68cb3ad1b4e804648620408e4300004fbe347b3"
+      }
+    }
+  ],
+  "historical_studies": "keys_generated/keys_refined and earlier batch/individual sources document design and rejected 36-pose microtiming trials. They are not the active running cycle. The original 36-pose run_phase_guide.json and phase_guides directory are historical study references; run_phase_guide_24.json and phase_guides_24 describe the current 24-pose action. bank24/repair_18.png is an unused complete-frame candidate, not an active replacement.",
+  "registration": "source_art_24.json records actual cell crops, one uniform whole-master pixel density, body-landmark registration and annotated stance/flight weight transfer. No source is normalized by occupied height or airborne boot bounds.",
+  "targeted_complete_frame_repairs": [
+    {
+      "frame": 1,
+      "source": "repairs/frame_01_linked.png",
+      "generation_id": "exec-b7900810-4972-4ba7-a62f-b58c0af11485",
+      "prompt": "repairs/frame_01_linked_prompt.txt",
+      "guide": "repairs/guides/frame_01_linked.png",
+      "method": "Complete figure redrawn from a linked pose guide plus approved upper-body and round-knee/boot material references; no detached limb manipulation."
+    },
+    {
+      "frame": 2,
+      "source": "repairs/frame_02_linked.png",
+      "generation_id": "exec-71ef163d-9136-4364-b7c6-cb0e1e92aace",
+      "prompt": "repairs/frame_02_linked_prompt.txt",
+      "guide": "repairs/guides/frame_02_linked.png",
+      "method": "Complete figure redrawn from a linked pose guide plus approved upper-body and round-knee/boot material references; no detached limb manipulation."
+    },
+    {
+      "frame": 3,
+      "source": "repairs/frame_03_linked.png",
+      "generation_id": "exec-5855e0cc-3cdd-4aa4-b226-f2edf4bfcbfc",
+      "prompt": "repairs/frame_03_linked_prompt.txt",
+      "guide": "repairs/guides/frame_03_linked.png",
+      "method": "Complete figure redrawn from a linked pose guide plus approved upper-body and round-knee/boot material references; no detached limb manipulation."
+    },
+    {
+      "frame": 13,
+      "source": "repairs/far_crown13.png",
+      "generation_id": "exec-cf858047-0d7e-493f-8b64-002d5da4a934",
+      "prompt": "repairs/far_crown13_prompt.txt",
+      "pose_reference": "repairs/far_crown_pose13_reference.png",
+      "method": "Complete figure redrawn from the approved Crown joint pose into Lucan identity/outfit. No detached limb swaps, pose warping or body interpolation.",
+      "sha256": "6a901d73bdf9361fcdc0b61b8930232729a1ef8b3b1ddc0a1af79bf75bfbbc26"
+    },
+    {
+      "frame": 14,
+      "source": "repairs/far_crown14.png",
+      "generation_id": "exec-40968d3a-5ad8-496d-9b0a-8de4318f1115",
+      "prompt": "repairs/far_crown14_prompt.txt",
+      "pose_reference": "repairs/far_crown_pose14_reference.png",
+      "method": "Complete figure redrawn from the approved Crown joint pose into Lucan identity/outfit. No detached limb swaps, pose warping or body interpolation.",
+      "sha256": "8ffa0052dcb9ff733e26fb0aafa76f0293953b59ade983ec1c2c2e1827e25e8d"
+    },
+    {
+      "frame": 15,
+      "source": "repairs/far_crown15.png",
+      "generation_id": "exec-99cef338-b600-41a5-9cdf-fd042fca406e",
+      "prompt": "repairs/far_crown15_prompt.txt",
+      "pose_reference": "repairs/far_crown_pose15_reference.png",
+      "method": "Complete figure redrawn from the approved Crown joint pose into Lucan identity/outfit. No detached limb swaps, pose warping or body interpolation.",
+      "sha256": "2091964ca25cf43d840a3a5155bf2fe7f0c6bd8a2f0404a0dd23214b03e74bac"
+    }
+  ]
+}

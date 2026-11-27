@@ -1,0 +1,636 @@
+{
+  "version": 1,
+  "purpose": "AUTHORING motion guides only; no runtime anatomy construction. Full complete character frames are authored separately.",
+  "cycle_ms": 400,
+  "count": 24,
+  "contacts": [
+    0,
+    12
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        420.0,
+        420.0
+      ],
+      "near_ankle": [
+        475.0,
+        560.0
+      ],
+      "far_knee": [
+        280.0,
+        400.0
+      ],
+      "far_ankle": [
+        200.0,
+        420.0
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "contact"
+    },
+    {
+      "frame": 1,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        398.3333333333333,
+        421.6666666666667
+      ],
+      "near_ankle": [
+        433.3333333333333,
+        560.0
+      ],
+      "far_knee": [
+        310.0,
+        383.3333333333333
+      ],
+      "far_ankle": [
+        230.0,
+        430.0
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 2,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        376.6666666666667,
+        423.3333333333333
+      ],
+      "near_ankle": [
+        391.6666666666667,
+        560.0
+      ],
+      "far_knee": [
+        340.0,
+        366.6666666666667
+      ],
+      "far_ankle": [
+        260.0,
+        440.0
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 3,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        355.0,
+        425.0
+      ],
+      "near_ankle": [
+        350.0,
+        560.0
+      ],
+      "far_knee": [
+        370.0,
+        350.0
+      ],
+      "far_ankle": [
+        290.0,
+        450.0
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "compression"
+    },
+    {
+      "frame": 4,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        326.6666666666667,
+        426.6666666666667
+      ],
+      "near_ankle": [
+        283.33333333333337,
+        556.6666666666666
+      ],
+      "far_knee": [
+        406.6666666666667,
+        350.0
+      ],
+      "far_ankle": [
+        336.6666666666667,
+        456.6666666666667
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 5,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        298.3333333333333,
+        428.3333333333333
+      ],
+      "near_ankle": [
+        216.66666666666669,
+        553.3333333333334
+      ],
+      "far_knee": [
+        443.3333333333333,
+        350.0
+      ],
+      "far_ankle": [
+        383.3333333333333,
+        463.3333333333333
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 6,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        270.0,
+        430.0
+      ],
+      "near_ankle": [
+        150.0,
+        550.0
+      ],
+      "far_knee": [
+        480.0,
+        350.0
+      ],
+      "far_ankle": [
+        430.0,
+        470.0
+      ],
+      "near_stance": true,
+      "far_stance": false,
+      "phase": "toe_off"
+    },
+    {
+      "frame": 7,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        270.0,
+        416.6666666666667
+      ],
+      "near_ankle": [
+        163.33333333333334,
+        503.3333333333333
+      ],
+      "far_knee": [
+        470.0,
+        363.3333333333333
+      ],
+      "far_ankle": [
+        446.6666666666667,
+        483.3333333333333
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 8,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        270.0,
+        403.3333333333333
+      ],
+      "near_ankle": [
+        176.66666666666666,
+        456.6666666666667
+      ],
+      "far_knee": [
+        460.0,
+        376.6666666666667
+      ],
+      "far_ankle": [
+        463.3333333333333,
+        496.6666666666667
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 9,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        270.0,
+        390.0
+      ],
+      "near_ankle": [
+        190.0,
+        410.0
+      ],
+      "far_knee": [
+        450.0,
+        390.0
+      ],
+      "far_ankle": [
+        480.0,
+        510.0
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "flight"
+    },
+    {
+      "frame": 10,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        273.3333333333333,
+        393.3333333333333
+      ],
+      "near_ankle": [
+        193.33333333333334,
+        413.3333333333333
+      ],
+      "far_knee": [
+        440.0,
+        400.0
+      ],
+      "far_ankle": [
+        478.3333333333333,
+        526.6666666666666
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 11,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        276.6666666666667,
+        396.6666666666667
+      ],
+      "near_ankle": [
+        196.66666666666666,
+        416.6666666666667
+      ],
+      "far_knee": [
+        430.0,
+        410.0
+      ],
+      "far_ankle": [
+        476.6666666666667,
+        543.3333333333334
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 12,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        280.0,
+        400.0
+      ],
+      "near_ankle": [
+        200.0,
+        420.0
+      ],
+      "far_knee": [
+        420.0,
+        420.0
+      ],
+      "far_ankle": [
+        475.0,
+        560.0
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "contact"
+    },
+    {
+      "frame": 13,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        310.0,
+        383.3333333333333
+      ],
+      "near_ankle": [
+        230.0,
+        430.0
+      ],
+      "far_knee": [
+        398.3333333333333,
+        421.6666666666667
+      ],
+      "far_ankle": [
+        433.3333333333333,
+        560.0
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "in_between"
+    },
+    {
+      "frame": 14,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        340.0,
+        366.6666666666667
+      ],
+      "near_ankle": [
+        260.0,
+        440.0
+      ],
+      "far_knee": [
+        376.6666666666667,
+        423.3333333333333
+      ],
+      "far_ankle": [
+        391.6666666666667,
+        560.0
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "in_between"
+    },
+    {
+      "frame": 15,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        370.0,
+        350.0
+      ],
+      "near_ankle": [
+        290.0,
+        450.0
+      ],
+      "far_knee": [
+        355.0,
+        425.0
+      ],
+      "far_ankle": [
+        350.0,
+        560.0
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "compression"
+    },
+    {
+      "frame": 16,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        406.6666666666667,
+        350.0
+      ],
+      "near_ankle": [
+        336.6666666666667,
+        456.6666666666667
+      ],
+      "far_knee": [
+        326.6666666666667,
+        426.6666666666667
+      ],
+      "far_ankle": [
+        283.33333333333337,
+        556.6666666666666
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "in_between"
+    },
+    {
+      "frame": 17,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        443.3333333333333,
+        350.0
+      ],
+      "near_ankle": [
+        383.3333333333333,
+        463.3333333333333
+      ],
+      "far_knee": [
+        298.3333333333333,
+        428.3333333333333
+      ],
+      "far_ankle": [
+        216.66666666666669,
+        553.3333333333334
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "in_between"
+    },
+    {
+      "frame": 18,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        480.0,
+        350.0
+      ],
+      "near_ankle": [
+        430.0,
+        470.0
+      ],
+      "far_knee": [
+        270.0,
+        430.0
+      ],
+      "far_ankle": [
+        150.0,
+        550.0
+      ],
+      "near_stance": false,
+      "far_stance": true,
+      "phase": "toe_off"
+    },
+    {
+      "frame": 19,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        470.0,
+        363.3333333333333
+      ],
+      "near_ankle": [
+        446.6666666666667,
+        483.3333333333333
+      ],
+      "far_knee": [
+        270.0,
+        416.6666666666667
+      ],
+      "far_ankle": [
+        163.33333333333334,
+        503.3333333333333
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 20,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        460.0,
+        376.6666666666667
+      ],
+      "near_ankle": [
+        463.3333333333333,
+        496.6666666666667
+      ],
+      "far_knee": [
+        270.0,
+        403.3333333333333
+      ],
+      "far_ankle": [
+        176.66666666666666,
+        456.6666666666667
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 21,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        450.0,
+        390.0
+      ],
+      "near_ankle": [
+        480.0,
+        510.0
+      ],
+      "far_knee": [
+        270.0,
+        390.0
+      ],
+      "far_ankle": [
+        190.0,
+        410.0
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "flight"
+    },
+    {
+      "frame": 22,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        440.0,
+        400.0
+      ],
+      "near_ankle": [
+        478.3333333333333,
+        526.6666666666666
+      ],
+      "far_knee": [
+        273.3333333333333,
+        393.3333333333333
+      ],
+      "far_ankle": [
+        193.33333333333334,
+        413.3333333333333
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    },
+    {
+      "frame": 23,
+      "hip": [
+        350,
+        300
+      ],
+      "near_knee": [
+        430.0,
+        410.0
+      ],
+      "near_ankle": [
+        476.6666666666667,
+        543.3333333333334
+      ],
+      "far_knee": [
+        276.6666666666667,
+        396.6666666666667
+      ],
+      "far_ankle": [
+        196.66666666666666,
+        416.6666666666667
+      ],
+      "near_stance": false,
+      "far_stance": false,
+      "phase": "in_between"
+    }
+  ]
+}

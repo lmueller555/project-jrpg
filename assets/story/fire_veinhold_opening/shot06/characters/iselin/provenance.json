@@ -1,0 +1,1532 @@
+{
+  "version": 1,
+  "exporter": "tools/export_prologue_runners.py",
+  "exporter_sha256": "669fc0043770a22e5019fa0efa7aa34729d9e73691c5ea434af27d873e8cf2c7",
+  "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
+  "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
+  "source_sha256": {
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/source_art_24.json": "095e1d1c94cfcb71d9715ffe2464211fb1263595b5db8aebfd9c04ea99328d53",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_00_03.png": "3e28b71daa3b0f802a78b087460689ac735adff073a09a776c95c12baeed5f39",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/repairs_02_03/phase_02.png": "ccf33f8f08857cd1ccee317278581bbb833368f982e6caf71dabfbd9f2a80575",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/repairs_02_03/phase_03_neighbor_matched.png": "3c45f38d758abd1ebc52580676418c336691afecbb8d80acf6f434fc76e37cd2",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_04_07_alpha_clean.png": "95adbde689e8c02591e2b71b7899dc5a74159c07af432297a7ce342ef3b39d79",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_08_11.png": "e055ddeb15c0be248dac47128b4f5c53614ff48e063ea49fcc4d3ca171e29f9d",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_12_15.png": "9b1c11118ae8d32ac7159b90fd2fb1c76966fc4f0d216f94699331a82ee30b76",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_16_19.png": "4401706ab8e51c28bbaa2748e7a0888ab9cf04c460d181aae68fafa39758ba3b",
+    "assets/source/cinematics/fire_veinhold/bridge_running/iselin/bank24/batch_20_23.png": "e592d7427231538253daeb210ef10a5c11a9a1f42ba1cc71f395bf1c8fe25d8e"
+  },
+  "registrations": [
+    {
+      "frame": 0,
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -0.1276,
+        33.2153
+      ],
+      "applied_origin": [
+        0,
+        33
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          405,
+          118
+        ],
+        "brooch": [
+          366,
+          141
+        ],
+        "belt": [
+          365,
+          241
+        ],
+        "near_sole": [
+          460,
+          585
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          301.0048,
+          120.7002
+        ],
+        "brooch": [
+          272.0191,
+          137.7943
+        ],
+        "belt": [
+          271.2759,
+          212.1164
+        ],
+        "near_sole": [
+          341.882,
+          467.7847
+        ]
+      },
+      "opaque_bounds": [
+        57,
+        42,
+        412,
+        470
+      ],
+      "sha256": "a9857a35aa1709dec05574885855364d5a1dcb92bd65e3392ffbfeb6d27070fc"
+    },
+    {
+      "frame": 1,
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -5.7018,
+        30.9856
+      ],
+      "applied_origin": [
+        -6,
+        31
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          415.0,
+          123.0
+        ],
+        "brooch": [
+          380.0,
+          145.0
+        ],
+        "belt": [
+          370.0,
+          245.0
+        ],
+        "near_sole": [
+          395,
+          588
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          302.437,
+          122.4163
+        ],
+        "brooch": [
+          276.4242,
+          138.7671
+        ],
+        "belt": [
+          268.992,
+          213.0893
+        ],
+        "near_sole": [
+          287.5726,
+          468.0144
+        ]
+      },
+      "opaque_bounds": [
+        63,
+        42,
+        355,
+        469
+      ],
+      "sha256": "98ca3eaea843b50beb168fd24b00091e13c418085b833f05e0fbd2a2373b59d3"
+    },
+    {
+      "frame": 2,
+      "source": "repairs_02_03/phase_02.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "requested_origin": [
+        -19.0798,
+        33.9585
+      ],
+      "applied_origin": [
+        -19,
+        34
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          852,
+          246
+        ],
+        "brooch": [
+          792,
+          290
+        ],
+        "belt": [
+          790,
+          468
+        ],
+        "near_sole": [
+          730,
+          1168
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          297.6124,
+          125.4163
+        ],
+        "brooch": [
+          275.3158,
+          141.7671
+        ],
+        "belt": [
+          274.5726,
+          207.9139
+        ],
+        "near_sole": [
+          252.2759,
+          468.0415
+        ]
+      },
+      "opaque_bounds": [
+        60,
+        49,
+        348,
+        471
+      ],
+      "sha256": "d46f1290242c05dc1294a79b8f8e8e51374f94c1e58ad037b47621ec57e71632"
+    },
+    {
+      "frame": 3,
+      "source": "repairs_02_03/phase_03_neighbor_matched.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.36,
+      "requested_origin": [
+        -6.3072,
+        37.44
+      ],
+      "applied_origin": [
+        -6,
+        37
+      ],
+      "sample_size": [
+        451,
+        451
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          848,
+          246
+        ],
+        "brooch": [
+          782,
+          290
+        ],
+        "belt": [
+          776,
+          480
+        ],
+        "eye": [
+          890,
+          144
+        ],
+        "near_sole": [
+          550,
+          1196
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          299.28,
+          125.56
+        ],
+        "brooch": [
+          275.52,
+          141.4
+        ],
+        "belt": [
+          273.36,
+          209.8
+        ],
+        "eye": [
+          314.4,
+          88.84
+        ],
+        "near_sole": [
+          192.0,
+          467.56
+        ]
+      },
+      "opaque_bounds": [
+        51,
+        44,
+        358,
+        471
+      ],
+      "sha256": "5482ddd3e59d8b5bacf65647ea6dfe5ee57556b2efa8596481f3a967d56ba2ea"
+    },
+    {
+      "frame": 4,
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -14.6204,
+        29.4992
+      ],
+      "applied_origin": [
+        -15,
+        29
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          428.0,
+          122.0
+        ],
+        "brooch": [
+          391.0,
+          147.0
+        ],
+        "belt": [
+          381.0,
+          243.0
+        ],
+        "near_sole": [
+          290,
+          590
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          303.0989,
+          119.673
+        ],
+        "brooch": [
+          275.5997,
+          138.2536
+        ],
+        "belt": [
+          268.1675,
+          209.6029
+        ],
+        "near_sole": [
+          200.5343,
+          467.5008
+        ]
+      },
+      "opaque_bounds": [
+        44,
+        38,
+        368,
+        469
+      ],
+      "sha256": "ed404daad078dc7aba8cc76cc7c438d5bbb7683a8db9a1e4a63995f41698d4af"
+    },
+    {
+      "frame": 5,
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -13.8772,
+        29.4992
+      ],
+      "applied_origin": [
+        -14,
+        29
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          423.0,
+          121.0
+        ],
+        "brooch": [
+          386.0,
+          144.0
+        ],
+        "belt": [
+          384.0,
+          238.0
+        ],
+        "near_sole": [
+          180,
+          590
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          300.3828,
+          118.9298
+        ],
+        "brooch": [
+          272.8836,
+          136.0239
+        ],
+        "belt": [
+          271.3971,
+          205.8868
+        ],
+        "near_sole": [
+          119.7799,
+          467.5008
+        ]
+      },
+      "opaque_bounds": [
+        47,
+        38,
+        374,
+        469
+      ],
+      "sha256": "ead046d05295b19af04b964e4ed593bb7f22e6d189e6a3db51d380dcc2d49695"
+    },
+    {
+      "frame": 6,
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -18.7081,
+        30.2424
+      ],
+      "applied_origin": [
+        -19,
+        30
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          428.0,
+          120.0
+        ],
+        "brooch": [
+          391.0,
+          143.0
+        ],
+        "belt": [
+          392.0,
+          238.0
+        ],
+        "near_sole": [
+          105,
+          589
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          299.0989,
+          119.1866
+        ],
+        "brooch": [
+          271.5997,
+          136.2807
+        ],
+        "belt": [
+          272.3429,
+          206.8868
+        ],
+        "near_sole": [
+          59.0383,
+          467.7576
+        ]
+      },
+      "opaque_bounds": [
+        41,
+        38,
+        375,
+        469
+      ],
+      "sha256": "e69d3b83eb3903317b19d161fa5ddc88420a4f71b266a38aa19896e46f4acb1f"
+    },
+    {
+      "frame": 7,
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -22.4242,
+        27.1313
+      ],
+      "applied_origin": [
+        -22,
+        27
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          431.0,
+          120.0
+        ],
+        "brooch": [
+          398.0,
+          145.0
+        ],
+        "belt": [
+          399.0,
+          240.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          298.3285,
+          116.1866
+        ],
+        "brooch": [
+          273.8022,
+          134.7671
+        ],
+        "belt": [
+          274.5455,
+          205.3732
+        ]
+      },
+      "opaque_bounds": [
+        25,
+        35,
+        376,
+        456
+      ],
+      "sha256": "d562ce12c0cf7c343f074b1ed8d99824a85fb9b6fed55aba03f78acad1b673ab"
+    },
+    {
+      "frame": 8,
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -10.1611,
+        21.3535
+      ],
+      "applied_origin": [
+        -10,
+        21
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          418.0,
+          132.0
+        ],
+        "brooch": [
+          377.0,
+          156.0
+        ],
+        "belt": [
+          379.0,
+          264.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          300.6667,
+          119.1053
+        ],
+        "brooch": [
+          270.1946,
+          136.9426
+        ],
+        "belt": [
+          271.681,
+          217.2105
+        ]
+      },
+      "opaque_bounds": [
+        30,
+        31,
+        371,
+        437
+      ],
+      "sha256": "7433364f02bbc66b23e04ced45955d1d1eebece613d5b3b84e857211d5010e61"
+    },
+    {
+      "frame": 9,
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -15.7352,
+        18.2424
+      ],
+      "applied_origin": [
+        -16,
+        18
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          425.0,
+          133.0
+        ],
+        "brooch": [
+          385.0,
+          156.0
+        ],
+        "belt": [
+          387.0,
+          263.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          299.8692,
+          116.8485
+        ],
+        "brooch": [
+          270.1404,
+          133.9426
+        ],
+        "belt": [
+          271.6268,
+          213.4673
+        ]
+      },
+      "opaque_bounds": [
+        19,
+        28,
+        406,
+        443
+      ],
+      "sha256": "22e2a93a5f1b3ad081934c9b5c1330ecd05102043204d5527e83bb081e82c2e9"
+    },
+    {
+      "frame": 10,
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -14.6204,
+        24.0512
+      ],
+      "applied_origin": [
+        -15,
+        24
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          423.0,
+          129.0
+        ],
+        "brooch": [
+          382.0,
+          152.0
+        ],
+        "belt": [
+          386.0,
+          261.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          299.3828,
+          119.8756
+        ],
+        "brooch": [
+          268.9107,
+          136.9697
+        ],
+        "belt": [
+          271.8836,
+          217.9809
+        ]
+      },
+      "opaque_bounds": [
+        21,
+        30,
+        424,
+        455
+      ],
+      "sha256": "5943e34a1afad2947fea794fe07e4265e1546ef0376bc2669211216d0f311cc0"
+    },
+    {
+      "frame": 11,
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -23.5391,
+        34.8388
+      ],
+      "applied_origin": [
+        -24,
+        35
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          432.0,
+          136.0
+        ],
+        "brooch": [
+          395.0,
+          159.0
+        ],
+        "belt": [
+          401.0,
+          267.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          297.0718,
+          136.0781
+        ],
+        "brooch": [
+          269.5726,
+          153.1722
+        ],
+        "belt": [
+          274.0319,
+          233.4402
+        ]
+      },
+      "opaque_bounds": [
+        10,
+        46,
+        410,
+        478
+      ],
+      "sha256": "043e10ed40eb77a998979052fb82fbfb2e1aa43f59587fbe54f491c610912ae0"
+    },
+    {
+      "frame": 12,
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -3.8437,
+        40.6475
+      ],
+      "applied_origin": [
+        -4,
+        41
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          406.0,
+          123.0
+        ],
+        "brooch": [
+          367.0,
+          146.0
+        ],
+        "belt": [
+          374.0,
+          249.0
+        ],
+        "far_sole": [
+          465,
+          575
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          297.748,
+          132.4163
+        ],
+        "brooch": [
+          268.7624,
+          149.5104
+        ],
+        "belt": [
+          273.9649,
+          226.0622
+        ],
+        "far_sole": [
+          341.5981,
+          468.3525
+        ]
+      },
+      "opaque_bounds": [
+        43,
+        50,
+        415,
+        475
+      ],
+      "sha256": "7c60eac224491a600de15e9d40c0c374926e9242d7bb06ffa038b4fe76e32569"
+    },
+    {
+      "frame": 13,
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -3.8437,
+        37.6746
+      ],
+      "applied_origin": [
+        -4,
+        38
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          404.0,
+          124.0
+        ],
+        "brooch": [
+          369.0,
+          148.0
+        ],
+        "belt": [
+          376.0,
+          249.0
+        ],
+        "far_sole": [
+          390,
+          579
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          296.2616,
+          130.1595
+        ],
+        "brooch": [
+          270.2488,
+          147.9968
+        ],
+        "belt": [
+          275.4514,
+          223.0622
+        ],
+        "far_sole": [
+          285.8565,
+          468.3254
+        ]
+      },
+      "opaque_bounds": [
+        46,
+        47,
+        361,
+        471
+      ],
+      "sha256": "4cbfb7580b9c63a97ad9858cb75eeeb1fb373c3b68fd9898f84511343bdcbef9"
+    },
+    {
+      "frame": 14,
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -5.7018,
+        28.0128
+      ],
+      "applied_origin": [
+        -6,
+        28
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          406.0,
+          125.0
+        ],
+        "brooch": [
+          371.0,
+          153.0
+        ],
+        "belt": [
+          379.0,
+          253.0
+        ],
+        "far_sole": [
+          310,
+          592
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          295.748,
+          120.9027
+        ],
+        "brooch": [
+          269.7352,
+          141.7129
+        ],
+        "belt": [
+          275.681,
+          216.0351
+        ],
+        "far_sole": [
+          224.3987,
+          467.9872
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        39,
+        351,
+        471
+      ],
+      "sha256": "2469230ae343e9da836c4ea9d77675fd0c6b8858c1659230304e506252df61ef"
+    },
+    {
+      "frame": 15,
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -5.7018,
+        27.2695
+      ],
+      "applied_origin": [
+        -6,
+        27
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          408.0,
+          126.0
+        ],
+        "brooch": [
+          375.0,
+          201.0
+        ],
+        "belt": [
+          377.0,
+          257.0
+        ],
+        "far_sole": [
+          250,
+          593
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          297.2344,
+          120.6459
+        ],
+        "brooch": [
+          272.7081,
+          176.3876
+        ],
+        "belt": [
+          274.1946,
+          218.008
+        ],
+        "far_sole": [
+          179.8054,
+          467.7305
+        ]
+      },
+      "opaque_bounds": [
+        50,
+        38,
+        346,
+        470
+      ],
+      "sha256": "543d97219d89e3f83c44f57abcc8a4c1afd7f64ef282e03b0a63c97c46c3e4a6"
+    },
+    {
+      "frame": 16,
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -7.5598,
+        23.5534
+      ],
+      "applied_origin": [
+        -8,
+        24
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          410.0,
+          120.0
+        ],
+        "brooch": [
+          384.0,
+          145.0
+        ],
+        "belt": [
+          380.0,
+          239.0
+        ],
+        "far_sole": [
+          230,
+          598
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          296.7209,
+          113.1866
+        ],
+        "brooch": [
+          277.3971,
+          131.7671
+        ],
+        "belt": [
+          274.4242,
+          201.63
+        ],
+        "far_sole": [
+          162.941,
+          468.4466
+        ]
+      },
+      "opaque_bounds": [
+        37,
+        32,
+        366,
+        471
+      ],
+      "sha256": "c7d08a0df168d1ea258fad88ac492f8f69e1d0983b571653af26d23e6cf4ab81"
+    },
+    {
+      "frame": 17,
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -0.8708,
+        22.8102
+      ],
+      "applied_origin": [
+        -1,
+        23
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          402.0,
+          119.0
+        ],
+        "brooch": [
+          375.0,
+          145.0
+        ],
+        "belt": [
+          370.0,
+          241.0
+        ],
+        "far_sole": [
+          155,
+          599
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          297.7751,
+          111.4434
+        ],
+        "brooch": [
+          277.7081,
+          130.7671
+        ],
+        "belt": [
+          273.992,
+          202.1164
+        ],
+        "far_sole": [
+          114.1994,
+          468.1898
+        ]
+      },
+      "opaque_bounds": [
+        32,
+        31,
+        368,
+        470
+      ],
+      "sha256": "9fc99b12a17fc2659ead25643cea45a7c55b4473e5226bf26092d32f41a66ab0"
+    },
+    {
+      "frame": 18,
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -12.0191,
+        15.378
+      ],
+      "applied_origin": [
+        -12,
+        15
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          411.0,
+          118.0
+        ],
+        "brooch": [
+          385.0,
+          144.0
+        ],
+        "belt": [
+          391.0,
+          237.0
+        ],
+        "far_sole": [
+          135,
+          609
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          293.4641,
+          102.7002
+        ],
+        "brooch": [
+          274.1404,
+          122.0239
+        ],
+        "belt": [
+          278.5997,
+          191.1435
+        ],
+        "far_sole": [
+          88.3349,
+          467.622
+        ]
+      },
+      "opaque_bounds": [
+        16,
+        22,
+        368,
+        469
+      ],
+      "sha256": "13e377cb81d0467305d560ad2bb10484054636f05a539ee41442f38286e9623b"
+    },
+    {
+      "frame": 19,
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -11.2759,
+        12.2669
+      ],
+      "applied_origin": [
+        -11,
+        12
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          410.0,
+          114.0
+        ],
+        "brooch": [
+          384.0,
+          139.0
+        ],
+        "belt": [
+          390.0,
+          232.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          293.7209,
+          96.7273
+        ],
+        "brooch": [
+          274.3971,
+          115.3078
+        ],
+        "belt": [
+          278.8565,
+          184.4274
+        ]
+      },
+      "opaque_bounds": [
+        14,
+        17,
+        373,
+        415
+      ],
+      "sha256": "b484bd82ea00cc06faa0546b1e9767cfbed07089764e12b38535698eda49f147"
+    },
+    {
+      "frame": 20,
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -2.3573,
+        6.4891
+      ],
+      "applied_origin": [
+        -2,
+        6
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          411.0,
+          119.0
+        ],
+        "brooch": [
+          371.0,
+          142.0
+        ],
+        "belt": [
+          365.0,
+          242.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          303.4641,
+          94.4434
+        ],
+        "brooch": [
+          273.7352,
+          111.5375
+        ],
+        "belt": [
+          269.2759,
+          185.8596
+        ]
+      },
+      "opaque_bounds": [
+        45,
+        14,
+        368,
+        395
+      ],
+      "sha256": "2abe38f6af0d0d5e5f20591277985f647dc14713a633de8bb3fa9d704d4b58a3"
+    },
+    {
+      "frame": 21,
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -4.5869,
+        3.378
+      ],
+      "applied_origin": [
+        -5,
+        3
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          412.0,
+          120.0
+        ],
+        "brooch": [
+          375.0,
+          142.0
+        ],
+        "belt": [
+          370.0,
+          245.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          301.2073,
+          92.1866
+        ],
+        "brooch": [
+          273.7081,
+          108.5375
+        ],
+        "belt": [
+          269.992,
+          185.0893
+        ]
+      },
+      "opaque_bounds": [
+        43,
+        11,
+        416,
+        421
+      ],
+      "sha256": "e57aced084cb793f45cbbca2327b2073702dce61ef8a1b9d40321a64e4974fc3"
+    },
+    {
+      "frame": 22,
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -4.9585,
+        11.1136
+      ],
+      "applied_origin": [
+        -5,
+        11
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          412.0,
+          120.0
+        ],
+        "brooch": [
+          374.0,
+          142.0
+        ],
+        "belt": [
+          371.0,
+          244.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          301.2073,
+          100.1866
+        ],
+        "brooch": [
+          272.9649,
+          116.5375
+        ],
+        "belt": [
+          270.7352,
+          192.3461
+        ]
+      },
+      "opaque_bounds": [
+        42,
+        19,
+        410,
+        440
+      ],
+      "sha256": "b16126049e8023ed7d3e8a7f2678d53ab47205b564ab0e0f9a649889bce92064"
+    },
+    {
+      "frame": 23,
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "requested_origin": [
+        -5.3301,
+        25.4797
+      ],
+      "applied_origin": [
+        -5,
+        25
+      ],
+      "sample_size": [
+        466,
+        466
+      ],
+      "source_cell_landmarks": {
+        "neck": [
+          412.0,
+          121.0
+        ],
+        "brooch": [
+          378.0,
+          144.0
+        ],
+        "belt": [
+          372.0,
+          252.0
+        ]
+      },
+      "exported_landmarks": {
+        "neck": [
+          301.2073,
+          114.9298
+        ],
+        "brooch": [
+          275.9378,
+          132.0239
+        ],
+        "belt": [
+          271.4785,
+          212.2919
+        ]
+      },
+      "opaque_bounds": [
+        42,
+        33,
+        407,
+        461
+      ],
+      "sha256": "1229a1bc7ef182d604e7365043d70a463c731ddb4e426e04ca5c54e84ad39dc0"
+    }
+  ]
+}

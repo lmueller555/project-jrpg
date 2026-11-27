@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "layers": [
+    {
+      "id": "far",
+      "generator": "image_gen",
+      "generation_path": "/workspace/generated_images/exec-ab894625-d4ea-449b-bcb1-10a0f5518e38.png",
+      "source": "far_generated.png",
+      "source_sha256": "86088e19ca0b239aad53b0a5782a833cacd9054853d2e1791da944eaa067496b",
+      "prompt": "far_prompt.txt",
+      "source_size": [
+        2172,
+        724
+      ],
+      "export_size": [
+        1920,
+        640
+      ],
+      "mode": "RGB",
+      "output": "assets/story/fire_veinhold_opening/shot06/environment/far.png",
+      "output_sha256": "d676b48fe860def2e68415c652a242adffd07fad71240246c140d5417972f66e"
+    },
+    {
+      "id": "bridge",
+      "generator": "image_gen",
+      "generation_path": "/workspace/generated_images/exec-21db1215-b501-4b6f-85a1-ac5084553ca2.png",
+      "source": "bridge_generated.png",
+      "source_sha256": "0ef3a593fc3ddb812cc82841c5e7e0697c73edb3ac8faded54f144812a425e43",
+      "prompt": "bridge_prompt.txt",
+      "source_size": [
+        2172,
+        724
+      ],
+      "export_size": [
+        1920,
+        640
+      ],
+      "mode": "RGBA",
+      "output": "assets/story/fire_veinhold_opening/shot06/environment/bridge.png",
+      "output_sha256": "9e7434204333d996c71c49f758d90f01b795798e04c1b3825713fd8274d3a646"
+    }
+  ],
+  "reference": {
+    "source": "background_generated.png",
+    "source_sha256": "9791cb38fc36a481e9802f98468266e016d22094e169a7d0a1ccd4cd9650b52c",
+    "generation_path": "/workspace/generated_images/exec-610f83a4-3470-44c3-96c2-d2e59d944b2c.png",
+    "prompt": "prompt.txt",
+    "status": "Whole-scene design reference; not runtime artwork."
+  },
+  "operation": "Uniform whole-layer Lanczos resize; preserve authored bridge alpha above the alpha<=1 quantization-dust threshold.",
+  "staging": "Far sky/sea/mountains stay fixed over this short side-on camera translation. The complete rail/deck overlay moves at ground speed in both modes. Runtime alternates mirrored repeat tiles to share exact edge pixels."
+}

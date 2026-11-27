@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "exporter": "tools/export_prologue_faction.py",
+  "method": "Image-authored redraws inside explicit protected repair windows; no hue remapping.",
+  "records": {
+    "panorama": {
+      "original": "assets/source/cinematics/fire_veinhold/shot01/environment/veinhold_generated.png",
+      "original_sha256": "def3a80487871b5a54221560ac78a99dae11f8c2a503a97bc4270149e0ae24d8",
+      "generated": "assets/source/cinematics/fire_veinhold/shot01/environment/veinhold_faction_generated.png",
+      "generated_sha256": "d8144bfea07539c921590dea6431b0c23af2cd4f1dd25769a6f9fe1663cd98da",
+      "output": "assets/source/cinematics/fire_veinhold/shot01/environment/veinhold_faction_final.png",
+      "repair_rectangles": [
+        [
+          235,
+          317,
+          251,
+          365
+        ],
+        [
+          287,
+          317,
+          304,
+          365
+        ],
+        [
+          523,
+          349,
+          546,
+          401
+        ],
+        [
+          465,
+          412,
+          481,
+          449
+        ],
+        [
+          581,
+          411,
+          600,
+          449
+        ],
+        [
+          432,
+          477,
+          454,
+          527
+        ],
+        [
+          505,
+          477,
+          531,
+          537
+        ],
+        [
+          781,
+          475,
+          810,
+          526
+        ],
+        [
+          911,
+          474,
+          933,
+          526
+        ]
+      ],
+      "protected_pixels": "All pixels outside the authored banner repair windows."
+    },
+    "090": {
+      "original": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_090_pre_faction_reference.png",
+      "original_sha256": "ba9c6a031d0ffd786c501dd40abb32c88165c6ae7d788f2bc450cc57fe2a5a95",
+      "generated": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_090_faction_generated.png",
+      "generated_sha256": "9934961530db5d0fdb72a673604f383013c72c4b67d5059b4d7fd76de45c4194",
+      "output": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_090_final.png",
+      "repair_rectangles": [
+        [
+          478,
+          733,
+          501,
+          780
+        ],
+        [
+          651,
+          627,
+          679,
+          705
+        ],
+        [
+          805,
+          665,
+          829,
+          711
+        ],
+        [
+          746,
+          730,
+          770,
+          780
+        ],
+        [
+          580,
+          786,
+          603,
+          830
+        ],
+        [
+          705,
+          775,
+          731,
+          818
+        ],
+        [
+          542,
+          908,
+          566,
+          959
+        ],
+        [
+          566,
+          919,
+          589,
+          983
+        ],
+        [
+          926,
+          896,
+          956,
+          974
+        ],
+        [
+          769,
+          926,
+          797,
+          974
+        ],
+        [
+          1177,
+          917,
+          1209,
+          985
+        ]
+      ],
+      "protected_pixels": "All pixels outside the authored banner repair windows."
+    },
+    "180": {
+      "original": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_180_pre_faction_reference.png",
+      "original_sha256": "d1439e0aa9f8fa9543d42dd15fbb317fa6808c4d1a2cfa1c0a15d016adb13cb2",
+      "generated": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_180_faction_generated.png",
+      "generated_sha256": "572e00ad2c3f05d88e2f2a439f0d08c52fe3097b71eb34d4be595a158aec06b0",
+      "output": "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_180_final.png",
+      "repair_rectangles": [
+        [
+          309,
+          795,
+          346,
+          866
+        ],
+        [
+          384,
+          877,
+          424,
+          962
+        ],
+        [
+          1017,
+          732,
+          1056,
+          807
+        ],
+        [
+          976,
+          863,
+          1026,
+          941
+        ]
+      ],
+      "protected_pixels": "All pixels outside the authored banner repair windows."
+    },
+    "frozen_guards": {
+      "original": "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_pre_faction_reference.png",
+      "original_sha256": "f3ff625220914297992e03b59f585a13ea5d4ba69699b765805249c4dd8f15f6",
+      "generated": "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_faction_generated.png",
+      "generated_sha256": "c315118e9483e3b8571d3b67f598376e9e69b5ffd7bc506445eeba6a6518973a",
+      "output": "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png",
+      "repair_polygons_at_960x640": {
+        "left_back": [
+          [
+            172,
+            200
+          ],
+          [
+            205,
+            243
+          ],
+          [
+            220,
+            286
+          ],
+          [
+            215,
+            402
+          ],
+          [
+            174,
+            414
+          ],
+          [
+            97,
+            411
+          ],
+          [
+            98,
+            370
+          ],
+          [
+            108,
+            300
+          ],
+          [
+            114,
+            251
+          ],
+          [
+            134,
+            218
+          ]
+        ],
+        "left_front": [
+          [
+            296,
+            148
+          ],
+          [
+            357,
+            208
+          ],
+          [
+            388,
+            295
+          ],
+          [
+            414,
+            403
+          ],
+          [
+            429,
+            530
+          ],
+          [
+            386,
+            558
+          ],
+          [
+            155,
+            559
+          ],
+          [
+            144,
+            523
+          ],
+          [
+            155,
+            436
+          ],
+          [
+            174,
+            354
+          ],
+          [
+            195,
+            279
+          ],
+          [
+            221,
+            221
+          ],
+          [
+            259,
+            170
+          ]
+        ],
+        "right_mid": [
+          [
+            735,
+            196
+          ],
+          [
+            778,
+            224
+          ],
+          [
+            796,
+            282
+          ],
+          [
+            811,
+            353
+          ],
+          [
+            816,
+            435
+          ],
+          [
+            794,
+            461
+          ],
+          [
+            613,
+            461
+          ],
+          [
+            600,
+            432
+          ],
+          [
+            615,
+            369
+          ],
+          [
+            637,
+            306
+          ],
+          [
+            668,
+            248
+          ],
+          [
+            698,
+            219
+          ]
+        ],
+        "right_back": [
+          [
+            867,
+            204
+          ],
+          [
+            901,
+            225
+          ],
+          [
+            919,
+            281
+          ],
+          [
+            930,
+            369
+          ],
+          [
+            913,
+            401
+          ],
+          [
+            787,
+            399
+          ],
+          [
+            781,
+            357
+          ],
+          [
+            796,
+            290
+          ],
+          [
+            824,
+            239
+          ]
+        ]
+      },
+      "safety_dilation_source_pixels": 3,
+      "protected_pixels": "All bridge, mountains, sky, torches and deck outside the existing four ice/guard silhouettes."
+    },
+    "initial_projection": {
+      "source": "veinhold_faction_final.png",
+      "sampler": "pygame.transform.scale; production quiet red-lens pass; fixed source-crop rounding",
+      "source_scale": 0.9703124999999999,
+      "sample_size": [
+        994,
+        1490
+      ],
+      "blit_origin": [
+        -17,
+        -49
+      ],
+      "output_canvas": [
+        960,
+        640
+      ],
+      "global_time_seconds": 25,
+      "registration_note": "One vertical pixel of crop-rounding difference from the first-shot fractional layout; not a pixel-identical eagle-to-orbit join.",
+      "scope": "Terrain-only first handoff; vent-anchored plumes remain separate."
+    }
+  },
+  "output_sha256": {
+    "assets/source/cinematics/fire_veinhold/shot01/environment/veinhold_faction_final.png": "b79436d595ac1e2756b528972eea0183f603902664c1a43cd46b3939689f8b86",
+    "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_090_final.png": "7912b6d96e9b7f511e24a59f1151cdaa16a1db29f5135c685c8589c660b026c2",
+    "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_180_final.png": "13c88e641a288af599d5da3d8724b11bc25067f836c40599a660cc57b337e2b0",
+    "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+    "assets/source/cinematics/fire_veinhold/continuation/materials/approved_projection.png": "9e79586109c876ddd4eb0a729004b28cbffc2b0750eec38920825bcc6d834e29",
+    "assets/source/cinematics/fire_veinhold/continuation/materials/orbit_000_final.png": "9e79586109c876ddd4eb0a729004b28cbffc2b0750eec38920825bcc6d834e29"
+  }
+}

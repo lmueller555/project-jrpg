@@ -1,0 +1,1266 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "canvas": [
+    480,
+    480
+  ],
+  "anchor": [
+    240,
+    456
+  ],
+  "cycle_ms": 400,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "construction": "Twenty-four complete authored whole-character drawings selected from six 2x2 source atlases. No limb rigs, idle warps or pixel-interpolated anatomy.",
+  "registration": "Uniform density per whole master is466/sourcecellheight; per-drawing origin translates the whole drawing against stable actual neck/belt landmarks. No occupied-bounds fit, per-leg transforms or foot-based resizing. Approved body performance adds a periodic whole-body recoil/rise and paired fixed +8px canvas/anchor padding; fixed density is unchanged.",
+  "registration_reference": {
+    "source": "bank24/batch_00_03.png",
+    "cell": [
+      0,
+      0,
+      627,
+      627
+    ],
+    "neck": [
+      399,
+      135
+    ],
+    "belt": [
+      382,
+      253
+    ],
+    "logical_ground": [
+      330,
+      589
+    ],
+    "target_neck": [
+      291.28229665071774,
+      110.57735247208933
+    ],
+    "target_belt": [
+      278.64752791068577,
+      198.2775119617225
+    ]
+  },
+  "frames": [
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -5.26315789473685,
+        18.24242424242425
+      ],
+      "landmarks": {
+        "neck": [
+          399.0,
+          135.0
+        ],
+        "belt": [
+          382.0,
+          253.0
+        ],
+        "near_sole": [
+          520.5609318996416,
+          589.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase00; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Visible support sole measured in six lowest opaque rows; anatomical identity checked in whole source pose. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 1.0000000000000002,
+        "belt": 0.9999999999999998
+      },
+      "generation_id": "exec-5aff310c-1d88-4072-8b1c-52968843ee4d",
+      "raw_cell_phase": 0,
+      "registration_origin_before_body_curve": [
+        -5.26315789473685,
+        10.24242424242425
+      ],
+      "authored_body_y_offset": 0.0
+    },
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -4.148325358851707,
+        18.242424242424235
+      ],
+      "landmarks": {
+        "neck": [
+          397.0,
+          136.0
+        ],
+        "belt": [
+          381.0,
+          253.0
+        ],
+        "near_sole": [
+          459.96483516483516,
+          589.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase01; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9516094577605059,
+        "belt": 0.9231189118774765
+      },
+      "generation_id": "exec-5aff310c-1d88-4072-8b1c-52968843ee4d",
+      "raw_cell_phase": 1,
+      "registration_origin_before_body_curve": [
+        -4.148325358851707,
+        9.870813397129197
+      ],
+      "authored_body_y_offset": 0.37161084529503796
+    },
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -3.776714513556641,
+        10.066985645933002
+      ],
+      "landmarks": {
+        "neck": [
+          397.0,
+          136.0
+        ],
+        "belt": [
+          380.0,
+          256.0
+        ],
+        "near_sole": [
+          414.5,
+          600.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase02; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9360940334252654,
+        "belt": 0.9400542645271464
+      },
+      "generation_id": "exec-5aff310c-1d88-4072-8b1c-52968843ee4d",
+      "raw_cell_phase": 2,
+      "registration_origin_before_body_curve": [
+        -3.776714513556641,
+        8.755980861244026
+      ],
+      "authored_body_y_offset": -6.688995215311024
+    },
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -1.175438596491233,
+        8.580542264752737
+      ],
+      "landmarks": {
+        "neck": [
+          395.0,
+          136.0
+        ],
+        "belt": [
+          375.0,
+          256.0
+        ],
+        "near_sole": [
+          352.7478448275862,
+          602.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase03; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9589427743596364,
+        "belt": 0.8323112007014585
+      },
+      "generation_id": "exec-5aff310c-1d88-4072-8b1c-52968843ee4d",
+      "raw_cell_phase": 3,
+      "registration_origin_before_body_curve": [
+        -1.175438596491233,
+        8.755980861244026
+      ],
+      "authored_body_y_offset": -8.17543859649129
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        0,
+        0,
+        687,
+        572
+      ],
+      "scale": 0.8146853146853147,
+      "origin": [
+        -45.76874003189789,
+        7.1083916083916066
+      ],
+      "landmarks": {
+        "neck": [
+          415.99999999999994,
+          124.07017543859648
+        ],
+        "belt": [
+          395.92982456140345,
+          231.71929824561403
+        ],
+        "near_sole": [
+          302.8294243070362,
+          551.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase04; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8778973444649295,
+        "belt": 0.8432169858178591
+      },
+      "generation_id": "exec-34053a85-0e3a-4f34-9f37-36277cd2141b",
+      "raw_cell_phase": 4,
+      "registration_origin_before_body_curve": [
+        -45.76874003189789,
+        9.499202551834152
+      ],
+      "authored_body_y_offset": -10.390810943442546
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        687,
+        0,
+        1374,
+        572
+      ],
+      "scale": 0.8146853146853147,
+      "origin": [
+        -24.95853269537477,
+        7.108391608391621
+      ],
+      "landmarks": {
+        "neck": [
+          389.5438596491228,
+          123.1578947368421
+        ],
+        "belt": [
+          371.29824561403507,
+          228.98245614035085
+        ],
+        "near_toe": [
+          191.84304932735427,
+          551.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase05; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8854365672956683,
+        "belt": 0.8403285194196891
+      },
+      "generation_id": "exec-34053a85-0e3a-4f34-9f37-36277cd2141b",
+      "raw_cell_phase": 5,
+      "registration_origin_before_body_curve": [
+        -24.95853269537477,
+        10.985645933014375
+      ],
+      "authored_body_y_offset": -11.877254324622754
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        0,
+        572,
+        687,
+        1145
+      ],
+      "scale": 0.8132635253054101,
+      "origin": [
+        -40.56618819776713,
+        -1.8673647469459027
+      ],
+      "landmarks": {
+        "neck": [
+          409.4162679425837,
+          123.37320574162679
+        ],
+        "belt": [
+          391.1387559808613,
+          232.1244019138756
+        ],
+        "near_toe": [
+          132.79881656804733,
+          563.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase06; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9186567863387628,
+        "belt": 0.8828515153752925
+      },
+      "generation_id": "exec-34053a85-0e3a-4f34-9f37-36277cd2141b",
+      "raw_cell_phase": 6,
+      "registration_origin_before_body_curve": [
+        -40.56618819776713,
+        9.870813397129204
+      ],
+      "authored_body_y_offset": -19.738178144075107
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        5.513556618819763,
+        4.269451136654265
+      ],
+      "landmarks": {
+        "neck": [
+          384.0,
+          130.0
+        ],
+        "belt": [
+          368.0,
+          239.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase08; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8678655201046794,
+        "belt": 0.7846200574153469
+      },
+      "generation_id": "exec-a2df6000-8a1b-40bd-ae80-40a2292ce44c",
+      "raw_cell_phase": 8,
+      "registration_origin_before_body_curve": [
+        5.513556618819763,
+        17.303030303030305
+      ],
+      "authored_body_y_offset": -21.03357916637604
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "cell": [
+        687,
+        572,
+        1374,
+        1145
+      ],
+      "scale": 0.8132635253054101,
+      "origin": [
+        -31.275917065390786,
+        -1.6676246538357091
+      ],
+      "landmarks": {
+        "neck": [
+          397.53588516746413,
+          121.54545454545455
+        ],
+        "belt": [
+          380.17224880382776,
+          228.4688995215311
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase07; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9175559940525517,
+        "belt": 0.8071780394637644
+      },
+      "generation_id": "exec-34053a85-0e3a-4f34-9f37-36277cd2141b",
+      "raw_cell_phase": 7,
+      "registration_origin_before_body_curve": [
+        -31.275917065390786,
+        12.100478468899524
+      ],
+      "authored_body_y_offset": -21.768103122735234
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        6.628389154704905,
+        -3.3859649122806914
+      ],
+      "landmarks": {
+        "neck": [
+          384.0,
+          138.0
+        ],
+        "belt": [
+          365.0,
+          249.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase09; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.703755888370629,
+        "belt": 0.8527725597980311
+      },
+      "generation_id": "exec-a2df6000-8a1b-40bd-ae80-40a2292ce44c",
+      "raw_cell_phase": 9,
+      "registration_origin_before_body_curve": [
+        6.628389154704905,
+        10.614035087719309
+      ],
+      "authored_body_y_offset": -22.0
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        4.7703349282296585,
+        0.693661763837202
+      ],
+      "landmarks": {
+        "neck": [
+          385.0,
+          143.0
+        ],
+        "belt": [
+          369.0,
+          252.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase10; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.7809463755008758,
+        "belt": 0.7628914494640513
+      },
+      "generation_id": "exec-a2df6000-8a1b-40bd-ae80-40a2292ce44c",
+      "raw_cell_phase": 10,
+      "registration_origin_before_body_curve": [
+        4.7703349282296585,
+        7.641148325358856
+      ],
+      "authored_body_y_offset": -14.947486561521654
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        1.4258373205741464,
+        3.7576938980447707
+      ],
+      "landmarks": {
+        "neck": [
+          388.0,
+          154.0
+        ],
+        "belt": [
+          375.0,
+          268.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase11; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8328563521160499,
+        "belt": 0.8428068828046471
+      },
+      "generation_id": "exec-a2df6000-8a1b-40bd-ae80-40a2292ce44c",
+      "raw_cell_phase": 11,
+      "registration_origin_before_body_curve": [
+        1.4258373205741464,
+        -2.3923444976076453
+      ],
+      "authored_body_y_offset": -1.849961604347584
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -0.8038277511961951,
+        24.188197767145112
+      ],
+      "landmarks": {
+        "neck": [
+          392.0,
+          135.0
+        ],
+        "belt": [
+          377.0,
+          251.0
+        ],
+        "far_sole": [
+          503.61621621621623,
+          581.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase12; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Visible support sole measured in six lowest opaque rows; anatomical identity checked in whole source pose. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8996367295633627,
+        "belt": 0.8743934132744376
+      },
+      "generation_id": "exec-59855ab4-438d-4a92-a534-63d3bd399391",
+      "raw_cell_phase": 12,
+      "registration_origin_before_body_curve": [
+        -0.8038277511961951,
+        10.985645933014354
+      ],
+      "authored_body_y_offset": 5.202551834130759
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        8.486443381180209,
+        23.444976076555008
+      ],
+      "landmarks": {
+        "neck": [
+          381.0,
+          135.0
+        ],
+        "belt": [
+          363.0,
+          250.0
+        ],
+        "far_sole": [
+          453.70621468926555,
+          582.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase13; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9382493897601961,
+        "belt": 0.8104415471962517
+      },
+      "generation_id": "exec-59855ab4-438d-4a92-a534-63d3bd399391",
+      "raw_cell_phase": 13,
+      "registration_origin_before_body_curve": [
+        8.486443381180209,
+        11.35725677830942
+      ],
+      "authored_body_y_offset": 4.087719298245588
+    },
+    {
+      "source": "candidates/far_stance_corrections/frame_14_corrected.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        -5.26315789473685,
+        18.614035087719273
+      ],
+      "landmarks": {
+        "neck": [
+          792.0,
+          264.0
+        ],
+        "belt": [
+          770.0,
+          494.0
+        ],
+        "far_sole": [
+          779.3188940092166,
+          1177.0
+        ]
+      },
+      "notes": "CANDIDATE whole-character far support-knee compression redraw; upperbody/near leg preserved in intention; no detached-limb edits. Body registration uses actual neck/belt patches. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.7030456174011188,
+        "belt": 0.7107168985446279
+      },
+      "generation_id": "exec-4acc3a66-170e-4635-aa45-c99960f4a5d4",
+      "raw_cell_phase": 14,
+      "registration_origin_before_body_curve": [
+        -5.26315789473685,
+        13.586921850079747
+      ],
+      "authored_body_y_offset": -2.9728867623604742
+    },
+    {
+      "source": "candidates/far_stance_corrections/frame_15_corrected.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        -0.4322169059011287,
+        19.72886762360445
+      ],
+      "landmarks": {
+        "neck": [
+          780.0,
+          266.0
+        ],
+        "belt": [
+          756.0,
+          498.0
+        ],
+        "far_sole": [
+          587.4519535374868,
+          1174.0
+        ]
+      },
+      "notes": "CANDIDATE whole-character far support-knee compression redraw; upperbody/near leg preserved in intention; no detached-limb edits. Body registration uses actual neck/belt patches. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.7334076440896076,
+        "belt": 0.695164558779432
+      },
+      "generation_id": "exec-b0cb6cf8-db93-4506-9836-40d00495425c",
+      "raw_cell_phase": 15,
+      "registration_origin_before_body_curve": [
+        -0.4322169059011287,
+        12.472089314194584
+      ],
+      "authored_body_y_offset": -0.7432216905901328
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -12.323763955342912,
+        18.242424242424242
+      ],
+      "landmarks": {
+        "neck": [
+          411.0,
+          134.0
+        ],
+        "belt": [
+          389.0,
+          248.0
+        ],
+        "far_sole": [
+          173.46444444444444,
+          589.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase16; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.9404064588458478,
+        "belt": 0.8716783026542614
+      },
+      "generation_id": "exec-4b4ff2cc-dbe9-4459-97a9-27d5bbdcd186",
+      "raw_cell_phase": 16,
+      "registration_origin_before_body_curve": [
+        -12.323763955342912,
+        12.472089314194584
+      ],
+      "authored_body_y_offset": -2.2296650717703415
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -11.580542264752808,
+        17.49920255183413
+      ],
+      "landmarks": {
+        "neck": [
+          406.0,
+          128.0
+        ],
+        "belt": [
+          392.0,
+          240.0
+        ],
+        "far_toe": [
+          144.37563451776649,
+          590.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase17; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8824363093393724,
+        "belt": 0.7832771993258736
+      },
+      "generation_id": "exec-4b4ff2cc-dbe9-4459-97a9-27d5bbdcd186",
+      "raw_cell_phase": 17,
+      "registration_origin_before_body_curve": [
+        -11.580542264752808,
+        17.674641148325364
+      ],
+      "authored_body_y_offset": -8.175438596491233
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -14.181818181818187,
+        10.8102073365231
+      ],
+      "landmarks": {
+        "neck": [
+          409.0,
+          123.0
+        ],
+        "belt": [
+          396.0,
+          230.0
+        ],
+        "far_toe": [
+          111.79569892473118,
+          599.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase18; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8956665047302917,
+        "belt": 0.7138868556223832
+      },
+      "generation_id": "exec-4b4ff2cc-dbe9-4459-97a9-27d5bbdcd186",
+      "raw_cell_phase": 18,
+      "registration_origin_before_body_curve": [
+        -14.181818181818187,
+        23.24880382775121
+      ],
+      "authored_body_y_offset": -20.43859649122811
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        9.60127591706538,
+        3.5639858160816473
+      ],
+      "landmarks": {
+        "neck": [
+          379.0,
+          131.0
+        ],
+        "belt": [
+          362.0,
+          239.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase20; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.7977040721877733,
+        "belt": 0.8744798162371219
+      },
+      "generation_id": "exec-691c2170-5f42-4c40-bc8b-23d85be3a2f7",
+      "raw_cell_phase": 20,
+      "registration_origin_before_body_curve": [
+        9.60127591706538,
+        16.931419457735245
+      ],
+      "authored_body_y_offset": -21.367433641653598
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -18.269537480063804,
+        11.621262799942304
+      ],
+      "landmarks": {
+        "neck": [
+          412.0,
+          119.0
+        ],
+        "belt": [
+          404.0,
+          228.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase19; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.7888662135721892,
+        "belt": 0.7076084321254109
+      },
+      "generation_id": "exec-4b4ff2cc-dbe9-4459-97a9-27d5bbdcd186",
+      "raw_cell_phase": 19,
+      "registration_origin_before_body_curve": [
+        -18.269537480063804,
+        25.478468899521538
+      ],
+      "authored_body_y_offset": -21.857206099579233
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        11.83094098883572,
+        1.4449760765550295
+      ],
+      "landmarks": {
+        "neck": [
+          377.0,
+          133.0
+        ],
+        "belt": [
+          358.0,
+          241.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase21; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8652240663347864,
+        "belt": 0.8224322711556741
+      },
+      "generation_id": "exec-691c2170-5f42-4c40-bc8b-23d85be3a2f7",
+      "raw_cell_phase": 21,
+      "registration_origin_before_body_curve": [
+        11.83094098883572,
+        15.44497607655503
+      ],
+      "authored_body_y_offset": -22.0
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        11.83094098883572,
+        4.401572112098428
+      ],
+      "landmarks": {
+        "neck": [
+          376.0,
+          134.0
+        ],
+        "belt": [
+          359.0,
+          243.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase22; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8791697031059404,
+        "belt": 0.8062154140430691
+      },
+      "generation_id": "exec-691c2170-5f42-4c40-bc8b-23d85be3a2f7",
+      "raw_cell_phase": 22,
+      "registration_origin_before_body_curve": [
+        11.83094098883572,
+        14.330143540669859
+      ],
+      "authored_body_y_offset": -17.92857142857143
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        8.114832535885142,
+        9.357256778309413
+      ],
+      "landmarks": {
+        "neck": [
+          380.0,
+          137.0
+        ],
+        "belt": [
+          365.0,
+          248.0
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase23; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp.",
+      "detection_scores": {
+        "neck": 0.8761148854430523,
+        "belt": 0.8810744891382296
+      },
+      "generation_id": "exec-691c2170-5f42-4c40-bc8b-23d85be3a2f7",
+      "raw_cell_phase": 23,
+      "registration_origin_before_body_curve": [
+        8.114832535885142,
+        11.357256778309413
+      ],
+      "authored_body_y_offset": -10.0
+    }
+  ],
+  "source_sha256": {
+    "bank24/batch_00_03.png": "7b918576b5528c9be53f546893a38fca12bf8a801300eb973b065f9892f517a3",
+    "bank24/batch_00_03_prompt.txt": "5f655af7361d158518ccd18172363610051bb6e602f302e1faa0d53fbccb2b08",
+    "bank24/batch_04_07.png": "b7ae579cb32ca51969b579e49aa57edddf84fa5e8b4c1bad51cebbd9b3376d2d",
+    "bank24/batch_04_07_prompt.txt": "4d86f490cd5ae52285ede50af0201779f62c14e32d389e257e26f1178a4118f9",
+    "bank24/batch_08_11.png": "6676cae776eabfc98c18c5539efd98bd36e2b7af663d900c418e20f872c597c6",
+    "bank24/batch_08_11_prompt.txt": "d13ec3184dbacc25067fa12bd149ac6608b9b0120e5b122a2cebf2115f4d89ce",
+    "bank24/batch_12_15.png": "e46f324ab3d572eb8b995fa0132d17af9bfc60ac6e9a96fcb9d3f4423481cbb6",
+    "bank24/batch_12_15_prompt.txt": "f6f39054f983cf87bc0b34f19b6e8d01f5ced029e05efab1e8899498370f69e1",
+    "bank24/batch_16_19.png": "e1d3fc5e295ac2b0fbc2fd33e09609fcc5ce0265586f5b372c0e236585505b45",
+    "bank24/batch_16_19_prompt.txt": "1ee1f5a97aec7f38b02d082289c80e0954e8a85684dc8dd48fd006ea93d6190e",
+    "bank24/batch_20_23.png": "5fabefc299edd5771019e67679a2de8c9f0f069091873548e9cf1bd167ff2d67",
+    "bank24/batch_20_23_prompt.txt": "7da34cca7c9d332dc0093ff4d3230ce65e6cddf04661cbc9e5783f47aad043b4",
+    "candidates/far_stance_corrections/frame_15_before.png": "40fb97c4f50be65db46ac11400039d32c81c6d2efee439b94936ecfedbb610d4",
+    "candidates/far_stance_corrections/frame_14_before.png": "093c34ae65b97b3e2167c0d19f51837e2622fdcfd5289aaf2f73969d42af7820",
+    "candidates/far_stance_corrections/frame_14_corrected.png": "cb9a21280a9111e1cf21476e84ec233da88942e5620f75fb541e74f7a7bd8fa8",
+    "candidates/far_stance_corrections/frame_15_corrected_prompt.txt": "e188553b064887ed3049e9f5d380b74418e61974ae3595f320d4ff4ed61407f5",
+    "candidates/far_stance_corrections/frame_15_floor_guide.png": "d02d08f71abd094622cc01cbaf76c3d631766fe6d0e930b39b87602ea7379e00",
+    "candidates/far_stance_corrections/frame_15_corrected.png": "9920e782a0125ef43fc6ac33962d1ce0f5c73998e81a65c9e85fd9816a64286f",
+    "candidates/far_stance_corrections/frame_14_floor_guide.png": "a7519bc2734ced7f10dd337d8d92c0cc22d4146f3409965156dd813a5cae295f",
+    "candidates/far_stance_corrections/frame_14_corrected_prompt.txt": "e188553b064887ed3049e9f5d380b74418e61974ae3595f320d4ff4ed61407f5"
+  },
+  "canvas_registration_translation": [
+    0,
+    8
+  ],
+  "authored_body_y_curve": {
+    "type": "periodic_shape_preserving_cubic_Hermite",
+    "cycle_ms": 400,
+    "key_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      21,
+      23,
+      24
+    ],
+    "key_offsets": [
+      0.0,
+      0.37161084529503796,
+      -6.688995215311024,
+      -8.17543859649129,
+      -10.390810943442546,
+      -11.877254324622754,
+      -19.738178144075107,
+      -22.0,
+      5.202551834130759,
+      4.087719298245588,
+      -2.9728867623604742,
+      -0.7432216905901328,
+      -2.2296650717703415,
+      -8.175438596491233,
+      -20.43859649122811,
+      -22.0,
+      -10.0,
+      0.0
+    ],
+    "sampled_offsets": [
+      0.0,
+      0.37161084529503796,
+      -6.688995215311024,
+      -8.17543859649129,
+      -10.390810943442546,
+      -11.877254324622754,
+      -19.738178144075107,
+      -21.03357916637604,
+      -21.768103122735234,
+      -22.0,
+      -14.947486561521654,
+      -1.849961604347584,
+      5.202551834130759,
+      4.087719298245588,
+      -2.9728867623604742,
+      -0.7432216905901328,
+      -2.2296650717703415,
+      -8.175438596491233,
+      -20.43859649122811,
+      -21.367433641653598,
+      -21.857206099579233,
+      -22.0,
+      -17.92857142857143,
+      -10.0
+    ],
+    "scope": "Whole-character recoil/rise tied to measured visible support points and independently authored flight rises. No per-pose scale changes, foot bbox normalization or airborne ground snapping.",
+    "support_observations": {
+      "0": {
+        "foot": "near",
+        "label": "near_sole",
+        "source_point": [
+          520.5609318996416,
+          589.0
+        ],
+        "before_body_curve": [
+          381.6290179668788,
+          448.0
+        ],
+        "required_rise": 0.0
+      },
+      "1": {
+        "foot": "near",
+        "label": "near_sole",
+        "source_point": [
+          459.96483516483516,
+          589.0
+        ],
+        "before_body_curve": [
+          337.7075170443591,
+          447.62838915470496
+        ],
+        "required_rise": 0.37161084529503796
+      },
+      "2": {
+        "foot": "near",
+        "label": "near_sole",
+        "source_point": [
+          414.5,
+          600.0
+        ],
+        "before_body_curve": [
+          304.2886762360447,
+          454.688995215311
+        ],
+        "required_rise": -6.688995215311024
+      },
+      "3": {
+        "foot": "near",
+        "label": "near_sole",
+        "source_point": [
+          352.7478448275862,
+          602.0
+        ],
+        "before_body_curve": [
+          260.9944109882858,
+          456.1754385964913
+        ],
+        "required_rise": -8.17543859649129
+      },
+      "4": {
+        "foot": "near",
+        "label": "near_sole",
+        "source_point": [
+          302.8294243070362,
+          551.0
+        ],
+        "before_body_curve": [
+          200.94194480565258,
+          458.39081094344255
+        ],
+        "required_rise": -10.390810943442546
+      },
+      "5": {
+        "foot": "near",
+        "label": "near_toe",
+        "source_point": [
+          191.84304932735427,
+          551.0
+        ],
+        "before_body_curve": [
+          131.33318231607117,
+          459.87725432462275
+        ],
+        "required_rise": -11.877254324622754
+      },
+      "6": {
+        "foot": "near",
+        "label": "near_toe",
+        "source_point": [
+          132.79881656804733,
+          563.0
+        ],
+        "before_body_curve": [
+          67.43424552074954,
+          467.7381781440751
+        ],
+        "required_rise": -19.738178144075107
+      },
+      "12": {
+        "foot": "far",
+        "label": "far_sole",
+        "source_point": [
+          503.61621621621623,
+          581.0
+        ],
+        "before_body_curve": [
+          373.49466787361524,
+          442.79744816586924
+        ],
+        "required_rise": 5.202551834130759
+      },
+      "13": {
+        "foot": "far",
+        "label": "far_sole",
+        "source_point": [
+          453.70621468926555,
+          582.0
+        ],
+        "before_body_curve": [
+          345.69074329377634,
+          443.9122807017544
+        ],
+        "required_rise": 4.087719298245588
+      },
+      "14": {
+        "foot": "far",
+        "label": "far_sole",
+        "source_point": [
+          779.3188940092166,
+          1177.0
+        ],
+        "before_body_curve": [
+          284.3401950624361,
+          450.9728867623605
+        ],
+        "required_rise": -2.9728867623604742
+      },
+      "15": {
+        "foot": "far",
+        "label": "far_sole",
+        "source_point": [
+          587.4519535374868,
+          1174.0
+        ],
+        "before_body_curve": [
+          217.87130011839622,
+          448.74322169059013
+        ],
+        "required_rise": -0.7432216905901328
+      },
+      "16": {
+        "foot": "far",
+        "label": "far_sole",
+        "source_point": [
+          173.46444444444444,
+          589.0
+        ],
+        "before_body_curve": [
+          116.59877370193158,
+          450.22966507177034
+        ],
+        "required_rise": -2.2296650717703415
+      },
+      "17": {
+        "foot": "far",
+        "label": "far_toe",
+        "source_point": [
+          144.37563451776649,
+          590.0
+        ],
+        "before_body_curve": [
+          95.72256090156168,
+          456.17543859649123
+        ],
+        "required_rise": -8.175438596491233
+      },
+      "18": {
+        "foot": "far",
+        "label": "far_toe",
+        "source_point": [
+          111.79569892473118,
+          599.0
+        ],
+        "before_body_curve": [
+          68.90717017372366,
+          468.4385964912281
+        ],
+        "required_rise": -20.43859649122811
+      }
+    },
+    "flight_peak_keys": [
+      9,
+      21
+    ]
+  },
+  "status": "Active production; parent approved complete-source visual review of body curve and far-knee corrections.",
+  "candidate_history": "source_art_24_bodycurve_candidate.json",
+  "previous_registration_history": "source_art_24_before_bodycurve.json"
+}

@@ -12,7 +12,13 @@
     "alarm_lead_seconds": 4,
     "rush_start": 34,
     "bridge_arrival": 35,
-    "sequence_end": 39,
+    "running_start": 39,
+    "sequence_end": 42,
     "siren_period": 2
+  },
+  "running_foley": {
+    "duration": 0.22,
+    "contact_source": "assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts",
+    "scheduling": "One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
   }
 }
