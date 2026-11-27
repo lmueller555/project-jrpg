@@ -70,7 +70,7 @@
     }
   },
   "handoff": {
-    "shot_duration": 10.0,
+    "shot_duration": 25.0,
     "wind_loop_seconds": 6.0,
     "automatic_end_fade": false,
     "stop_owner": "cinematic controller"
@@ -85,12 +85,12 @@
       ],
       [
         5,
-        8
+        13.25
       ]
     ],
     "first_phase_offset_seconds": 0.391,
     "second_phase_offset_seconds": 0.141,
     "bank_hold_phase": 3.188,
-    "crest_hold_phase": 7.188
+    "crest_hold_phase": 14.188
   }
 }

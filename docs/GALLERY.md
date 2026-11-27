@@ -21,15 +21,15 @@ does not replace New Game's opening or create a main-story encounter.
 See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 [review clip](reviews/ice_reaper_opening/preview.mp4).
 
-**Fire Veinhold Prologue** includes **Shot 1 — Eagle Ascent (10s)** and
+**Fire Veinhold Prologue** includes **Shot 1 — Eagle Ascent and Cinder Isles (25s)** and
 **Fire Veinhold — Complete Cutscene**. The complete entry automatically plays
 all finished shots in the production scene list; currently both entries play
-the ten-second eagle ascent. Later shot PRs extend that list and add their own
+the 25-second ascent and Cinder Isles view. Later shot PRs extend that list and add their own
 individual entries. These use native 960×640 cinematic detail with wind and
 flight Foley. New Game keeps the bedroom opening until the full prologue and
 playable handoff are ready. See the
 [scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
-[review evidence](reviews/fire_veinhold_opening/README.md).
+[review evidence](reviews/cinder_crest/README.md).
 
 ## Controls
 
@@ -81,8 +81,8 @@ it does not duplicate dialogue, animation or camera scripts.
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 | `ice_reaper_opening` | Ice Reaper: Frozen Clearing (32s) | Independent late-game cinematic study; ends before playable combat |
 | `mira_arm_rig` | Mira: Aether Arm Rig | Independent art/technique preview; no journey changes |
-| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Ordered implemented clips; currently the ten-second eagle ascent |
-| `fire_veinhold_shot_01` | Shot 1 — Eagle Ascent (10s) | Individual production eagle shot through summit crest |
+| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Ordered implemented clips; currently the 25-second ascent and Cinder Isles view |
+| `fire_veinhold_shot_01` | Shot 1 — Eagle Ascent and Cinder Isles (25s) | 15-second ascent followed by ten seconds overlooking the Cinder Isles |
 
 There are 22 current entries. The old flashforward, relief-caravan arrival
 and MQ04 lantern-assembly fixtures are removed. Elira's private household

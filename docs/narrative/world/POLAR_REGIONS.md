@@ -157,6 +157,18 @@ cold seas, patches of hardy vegetation and local hot springs distinguish them
 from the deep ice plateau. Geothermal warmth is limited to particular sites;
 it does not heat the whole island chain or create a hidden tropical country.
 
+**Opening location approved, 2026-11-27:** The Cinder Isles also lie offshore
+from southeastern Merovar, across the water east-southeast of Eldenmere's
+southeastern coastal mountains. This proximity coexists with their location
+on Istrava's volcanic fringe. The opening Fire Veinhold occupies the main
+volcanic island beside its volcano. The cinematic approach faces east-southeast:
+the main island lies ahead, a smaller active island farther beyond, southern
+skerries to the right, and Othara's distant red headlands to the left. The
+islands remain separated from Merovar by open sea. Red ash slopes and lava
+illumination distinguish the volcanic terrain from Othara's Damar Drylands;
+this does not make the entire archipelago tropical. Exact distances, travel
+times, facility coordinates and Carcovian supply arrangements remain open.
+
 Some small fishing households have lived here for generations. Their homes
 are not all temporary expedition camps. Boat repair, net work, household
 crafts, care and teaching continue between the arrivals of seasonal crews.

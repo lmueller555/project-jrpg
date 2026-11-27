@@ -52,8 +52,11 @@ political names and their authorial associations.
 seeks to expand into Merovar through aether-powered military weapons. Exact
 Merovaran footholds, borders and routes remain open; the
 [Story Bible](../../game_01/STORY_BIBLE.md) owns that conflict's progression.
-The opening Fire Veinhold's exact position and the party's approach to it have
-not been assigned to a named atlas district. Its weapon is not yet identified
+The opening Fire Veinhold is on the main volcanic island of the
+[Cinder Isles](../POLAR_REGIONS.md#cinder-isles), offshore east-southeast of
+Eldenmere's southeastern coastal mountains. The opening eagle shot follows
+that viewing direction; exact distances and the infiltration party's travel
+route remain open. Its weapon is not yet identified
 as the later cannon, and the first expedition does not settle the longer
 northward itinerary.
 

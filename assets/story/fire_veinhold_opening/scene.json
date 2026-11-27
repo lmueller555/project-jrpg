@@ -1,18 +1,26 @@
 {
   "version": 1,
   "id": "fire_veinhold_opening",
-  "render_size": [960, 640],
-  "logical_size": [480, 320],
+  "render_size": [
+    960,
+    640
+  ],
+  "logical_size": [
+    480,
+    320
+  ],
   "shots": [
     {
       "id": "eagle_ascent",
       "gallery_id": "fire_veinhold_shot_01",
-      "name": "Eagle Ascent",
-      "description": "Follow an eagle racing through wind-carved mountains toward the summit.",
+      "name": "Eagle Ascent and Cinder Isles",
+      "description": "Race over Merovar\u2019s coastal summit, then take in the moonlit Cinder Isles and their glowing volcano.",
       "type": "eagle_ascent",
-      "duration": 10,
+      "duration": 25,
       "environment": "shot01/environment/art.json",
-      "eagle": "shot01/eagle/animation.json"
+      "eagle": "shot01/eagle/animation.json",
+      "ascent_duration": 15,
+      "vista_duration": 10
     }
   ]
 }

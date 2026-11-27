@@ -83,36 +83,30 @@
       "sha256": "345010af2365769099799ad1d65b75524988704a490ca823dcf0a02dbad89335",
       "prompt": "Edit master_generated.png into readable cool silver moonlit night, preserving terrain geography as one opaque continuous mountain landscape with sparse stars; remove sunrise and warm light. No eagle, buildings or volcano.",
       "generation_id": "exec-e1b0098d-fc3f-4d22-b0a8-8c3550bb59c3"
+    },
+    {
+      "file": "cinder_crest_generated.png",
+      "sha256": "a414b16642c908c572f20870b529ae10e8969881aee814e4cd14b5e54e3501c3",
+      "generation_id": "exec-56619541-8fa2-48b8-a240-39cfd3ff7419",
+      "prompt": "Portrait1024x1536 continuous moonlit pixel-art landscape. Lower55percent close southeastern Merovar summit approach; upper45percent complete east-southeast offshore Cinder Isles vista. Main jagged red/black volcanic island and plume, water channel, smaller active island farther beyond, southern skerries right, distant red Othara coast left; no fortress yet. Reference canonical Auratia map and approved nighttime art.",
+      "prompt_file": "cinder_crest_prompt.txt",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/shot01/environment/night_panorama_generated.png",
+        "assets/world/auratia/world_map.png"
+      ]
     }
   ],
   "layers": {
     "panorama": {
-      "source": "night_panorama_generated.png"
+      "source": "cinder_crest_generated.png"
     }
   },
   "framing": {
-    "native_master_canvas": [
-      1448,
-      1086
-    ],
-    "preserve_native_pixels": true,
-    "mid_flight_saddle": [
-      895,
-      253
-    ],
-    "mid_lower_ravine": [
-      820,
-      1086
-    ],
-    "distant_center_saddle": [
-      730,
-      538
-    ],
-    "crest_center_saddle": [
-      750,
-      640
-    ],
-    "notes": "Native image-generation output retained without enlargement or padding. Renderer frames a960x640 detailed viewport independently for each depth plane; fast foreground parallax supplies near travel. Start already high on the final approach. Crest passes down below camera before Shot2; no volcano or fortress is present in any Shot1 layer."
+    "ascent_start_y": 650,
+    "vista_y": 0,
+    "heading": "east-southeast",
+    "crest_seconds": 15,
+    "vista_seconds": 10
   },
   "composition": "single_panorama"
 }

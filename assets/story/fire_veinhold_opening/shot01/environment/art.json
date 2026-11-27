@@ -5,9 +5,16 @@
     "panorama": {
       "image": "assets/story/fire_veinhold_opening/shot01/environment/panorama.png",
       "canvas": [
-        1448,
-        1086
+        1024,
+        1536
       ]
     }
+  },
+  "framing": {
+    "ascent_start_y": 650,
+    "vista_y": 0,
+    "heading": "east-southeast",
+    "crest_seconds": 15,
+    "vista_seconds": 10
   }
 }
