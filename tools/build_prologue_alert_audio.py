@@ -22,6 +22,7 @@ SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/continuation/audio'
 RATE = 48000
 SEED = 824613
 STEP_DURATION = .22
+BREATH_PERIOD = 3.6
 
 
 def _band_noise(count, rng, low, high):
@@ -131,6 +132,26 @@ def sounds():
             mono *= np.minimum(1,(STEP_DURATION-t)/.028)
             stereo = np.column_stack((mono,.96*mono+.04*np.roll(mono,31)))
             result[f'{actor}_step_{side}.wav'] = _normalise(stereo,.68)
+    # A separate seed preserves all eleven previous exports. Unvoiced,
+    # band-limited mouth/nose air carries three deliberately varied breaths;
+    # it has neither a voiced tone nor a footstep-cadence envelope.
+    breath_rng = np.random.default_rng(SEED+80)
+    t = np.arange(round(BREATH_PERIOD*RATE))/RATE
+    mouth = _band_noise(len(t),breath_rng,260,3900)
+    soft = _band_noise(len(t),breath_rng,90,1050)
+    breath = np.zeros(len(t))
+    for at,inhale,exhale,gain in ((.08,.22,.66,.81),(1.23,.26,.70,1.),(2.49,.20,.65,.88)):
+        age = t-at
+        incoming = np.clip(age/inhale,0,1)
+        inhale_env = (age>=0)&(age<inhale)
+        inhale_env = inhale_env*np.sin(np.pi*incoming)**1.45
+        outgoing_age = age-inhale-.07
+        outgoing = np.clip(outgoing_age/exhale,0,1)
+        exhale_env = ((outgoing_age>=0)&(outgoing_age<exhale))*np.sin(np.pi*outgoing)**1.2
+        flutter = 1+.055*np.sin(2*np.pi*(6.7*t+.18*np.sin(2*np.pi*.6*t)))
+        breath += gain*(.48*inhale_env+.84*exhale_env)*(.73*mouth+.27*soft)*flutter
+    stereo = np.column_stack((breath,.96*breath+.04*np.roll(breath,43)))
+    result['running_breath.wav'] = _normalise(stereo,.55)
     return result
 
 
@@ -143,17 +164,21 @@ def products():
         records[name] = {'duration':len(value)/RATE,'sha256':sha256(raw).hexdigest(),
                          'peak':round(float(np.max(np.abs(value))),6),
                          'rms':round(float(np.sqrt(np.mean(value*value))),6),
-                         'loop':name.endswith('siren.wav') or name=='machinery_bed.wav',
+                         'loop':name.endswith('siren.wav') or name in ('machinery_bed.wav','running_breath.wav'),
                          'clipped_samples':0}
     recipe = {'version':1,'generator':'tools/build_prologue_alert_audio.py',
               'seed':SEED,'sample_rate':RATE,'channels':2,'sample_width':2,
               'source':'Original deterministic synthesis; no third-party samples.',
               'sounds':records,
               'timeline':{'machinery_start':25,'alarm_start':30,'alarm_lead_seconds':4,'rush_start':34,
-                          'bridge_arrival':35,'running_start':39,'sequence_end':42,'siren_period':2},
+                          'bridge_arrival':35,'running_start':39,'frontal_start':42,
+                          'sequence_end':47,'siren_period':2},
               'running_foley':{'duration':STEP_DURATION,
                   'contact_source':'assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts',
-                  'scheduling':'One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'}}
+                  'scheduling':'One continuous global contact table from 39 to 47 seconds; the frontal cut at 42 advances the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'},
+              'frontal_breath':{'start':42,'period':BREATH_PERIOD,'gain':.075,
+                  'source':'Unvoiced band-limited air, three varied inhale/exhale phrases approximately 1.2 seconds apart; independent synthesis seed.',
+                  'channel':'Reuses the silent industrial warning lease from the frontal cut; no additional mixer channel.'}}
     result[TARGET/'manifest.json'] = (json.dumps(recipe,indent=2)+'\n').encode()
     result[SOURCE/'recipe.json'] = (json.dumps({key:value for key,value in recipe.items()
         if key != 'sounds'},indent=2)+'\n').encode()

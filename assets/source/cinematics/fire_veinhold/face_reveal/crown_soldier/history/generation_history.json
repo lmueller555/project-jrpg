@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "source": "rejected_batch_00_03_wholekeys.png",
+      "generation_id": "exec-0b73a1ab-9fc2-4a12-8b2e-b8f09d4b03a0",
+      "sha256": "7164697192a0b9b6d8e237002dcb5965c62260e743b66d6d9b5e88460fee05fc",
+      "status": "rejected/unselected",
+      "reason": "Whole four-key reference layout overrode the requested consecutive microstep phases."
+    },
+    {
+      "source": "rejected_batch_12_15_wholekeys.png",
+      "generation_id": "exec-091acdb9-faa3-4093-b9c0-1efb5c33b24b",
+      "sha256": "607060cb182e96cfe2cdbaeeeb68367e9f371f03bcca2d5c7982d8b35a619ff7",
+      "status": "rejected/unselected",
+      "reason": "Whole four-key reference layout overrode the requested consecutive microstep phases."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "generation_id": "exec-2a1d42be-0b2c-4e31-b77f-930949539a7a",
+  "tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "source": "keys_generated.png",
+  "prompt": "keys_prompt.txt",
+  "sha256": "8a7f22539f9e9c41d9e15d5f2ce5e8a303ff16841ecb3c58a97fda6425469775",
+  "key_phases": [
+    0,
+    6,
+    12,
+    18
+  ],
+  "canvas": [
+    1024,
+    1536
+  ],
+  "references": {
+    "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_00.png": "a85fb70ba0def55050d9017896a2b29207520a28e973a777b46bb168fe3d046f"
+  }
+}

@@ -30,13 +30,14 @@ class VeinholdContinuationTests(unittest.TestCase):
         self.scene.reset()
         pygame.quit()
 
-    def test_reel_is_42_seconds_with_four_seconds_of_warning_before_the_rush(self):
-        self.assertEqual(sequence_duration(), 42.)
+    def test_reel_is_47_seconds_with_four_seconds_of_warning_before_the_rush(self):
+        self.assertEqual(sequence_duration(), 47.)
         expected = ((25., 'island_orbit', 'orbit', False),
                     (30., 'alarm_hold', 'alarm_hold', True),
                     (34., 'bridge_rush', 'rush', True),
                     (35., 'frozen_bridge', 'reveal', True),
-                    (39., 'bridge_running', 'bridge_running', True))
+                    (39., 'bridge_running', 'bridge_running', True),
+                    (42., 'face_reveal', 'face_reveal', True))
         for time, identifier, phase, alarm in expected:
             with self.subTest(time=time):
                 state = self.scene.state_at(time)
@@ -121,7 +122,7 @@ class VeinholdContinuationTests(unittest.TestCase):
         self.scene._load()
         before = self.scene.elapsed
         with patch('pygame.image.load', side_effect=AssertionError('Sampling performed image I/O')):
-            for time in (25., 25.17, 29.99, 30., 33.9, 34.5, 35., 38.9, 39.):
+            for time in (25., 25.17, 29.99, 30., 33.9, 34.5, 35., 38.9, 39., 42., 43.5, 46.9):
                 self.assertEqual(self.scene.state_at(time), self.scene.state_at(time))
         self.assertEqual(self.scene.elapsed, before)
 
@@ -176,7 +177,10 @@ class VeinholdContinuationTests(unittest.TestCase):
             self.assertEqual(self.scene.elapsed, 39.)
             self.assertTrue(self.scene.active)
             self.scene.update(3.)
-        self.assertEqual(self.scene.elapsed, 42.)
+            self.assertEqual(self.scene.elapsed, 42.)
+            self.assertTrue(self.scene.active)
+            self.scene.update(5.)
+        self.assertEqual(self.scene.elapsed, 47.)
         self.assertFalse(self.scene.active)
         self.scene.skip()
         self.scene.update(10.)
@@ -187,11 +191,11 @@ class VeinholdContinuationTests(unittest.TestCase):
         self.scene.start()
         boundaries = {1500:('island_orbit', 25.), 1800:('alarm_hold', 30.),
                       2040:('bridge_rush', 34.), 2100:('frozen_bridge', 35.),
-                      2340:('bridge_running', 39.)}
+                      2340:('bridge_running', 39.), 2520:('face_reveal', 42.)}
         # Frame selection and effects use production metadata. Skip image
         # warming here so this clock test does not benchmark the filesystem.
         with patch.object(self.scene, '_preload_at'):
-            for frame in range(1, 2521):
+            for frame in range(1, 2821):
                 self.scene.update(1/60)
                 if frame in boundaries:
                     identifier, time = boundaries[frame]
@@ -202,9 +206,10 @@ class VeinholdContinuationTests(unittest.TestCase):
                     if 'perspective' in state:
                         self.assertEqual(state['perspective']['frame_index'], 0)
                     else:
-                        self.assertEqual(state['runners'][0]['frame_index'], 0)
+                        self.assertEqual(state['runners'][0]['frame_index'],
+                                         12 if identifier == 'face_reveal' else 0)
         self.assertFalse(self.scene.active)
-        self.assertEqual(self.scene.elapsed, 42.)
+        self.assertEqual(self.scene.elapsed, 47.)
 
     def test_standalone_end_does_not_sound_the_following_shots_first_cue(self):
         self.game.audio.effects_volume = .5

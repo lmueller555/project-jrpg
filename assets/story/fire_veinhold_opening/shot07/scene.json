@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "render_size": [960, 640],
+  "duration_seconds": 5,
+  "camera": {
+    "focal_pixels": 900,
+    "height_metres": 1.55,
+    "ahead_metres": 3.0,
+    "art_pixels_per_metre": 500,
+    "speed_metres_per_second": 11.42,
+    "preceding_run_seconds": 3.0,
+    "tilt_seconds": 1.5,
+    "pitch_start_radians": 0.48,
+    "pitch_end_radians": -0.08,
+    "reduced_motion_pitch_start_radians": 0.48
+  },
+  "environment": "environment/manifest.json",
+  "environment_segments": {
+    "normal": "face_reveal",
+    "reduced_motion": "face_reveal_reduced"
+  },
+  "actors": [
+    {
+      "id": "lucan",
+      "animation": "characters/lucan/animation.json",
+      "phase_offset_seconds": 0.2,
+      "offset_metres": 0.0,
+      "lane_metres": 0.0
+    },
+    {
+      "id": "iselin",
+      "animation": "characters/iselin/animation.json",
+      "phase_offset_seconds": 0.2833333333333333,
+      "offset_metres": -0.5,
+      "lane_metres": 0.65
+    },
+    {
+      "id": "crown_soldier",
+      "animation": "characters/crown_soldier/animation.json",
+      "phase_offset_seconds": 0.35,
+      "offset_metres": -3.048,
+      "lane_metres": -0.75
+    }
+  ],
+  "coordinate_space": "Bridge-local metres: +Y toward the fortress, +X the runners' anatomical right, +Z upward. Camera retreats ahead of the party while looking back toward Merovar."
+}

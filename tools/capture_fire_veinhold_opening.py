@@ -36,7 +36,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 60
-OUT = ROOT/'docs/reviews/veinhold_bridge_run'
+OUT = ROOT/'docs/reviews/veinhold_face_reveal'
 
 
 def clip_spec(shot_id=None):
@@ -114,13 +114,14 @@ def audio_preview(path, seconds=25., start_seconds=0.):
     if start_seconds+seconds > 30:
         alert_details = {'alarm_start_global_seconds':30., 'rush_start_global_seconds':34.,
                          'bridge_settle_global_seconds':35.}
-    if start_seconds < 42. and start_seconds+seconds > 39.:
-        from prologue_alert_audio import running_contact_events
-        running_details = {'start_global_seconds':39., 'end_global_seconds':42.,
-                           'method':'Contact cues from the production runner manifest and alert mixer.',
-                           'events':[dict(cue) for cue in running_contact_events()
-                                     if cue['time'] < start_seconds+seconds
-                                     and cue['time']+cue['duration'] > start_seconds]}
+    if start_seconds+seconds > 39.:
+        from prologue_alert_audio import RUNNING_START, SEQUENCE_END, running_contact_events
+        if start_seconds < SEQUENCE_END:
+            running_details = {'start_global_seconds':RUNNING_START, 'end_global_seconds':SEQUENCE_END,
+                               'method':'Contact cues from shared production runner timing and the alert mixer.',
+                               'events':[dict(cue) for cue in running_contact_events()
+                                         if cue['time'] < start_seconds+seconds
+                                         and cue['time']+cue['duration'] > start_seconds]}
     peak = float(np.max(np.abs(mix))) if count else 0.
     if peak >= 1.:
         raise AssertionError('Preview audio clipped')
@@ -137,8 +138,10 @@ def audio_preview(path, seconds=25., start_seconds=0.):
 def _sample_frames(spec, fps, count):
     if spec['shot_id'] is None:
         cues = (0., 15., 25., 27.5, 30., 32., 34., 34.5, 35., 37.,
-                39., 39.5, 40.5, 41.5)
+                39., 39.5, 40.5, 41.5, 42., 42.5, 43.5, 45., 46.5)
         return {min(count-1, round(value*fps)) for value in cues if value < spec['duration']} | {count-1}
+    if spec['shot_id'] == 'face_reveal':
+        return {min(count-1, round(value*fps)) for value in (0., .5, 1.5, 2.5, 3.5)} | {count-1}
     return set(np.linspace(0, count-1, 6).round().astype(int))
 
 
@@ -219,6 +222,7 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         scene = session.game.cinematic
         states, stills, draw_times, update_times = [], [], [], []
         peak_cache_bytes = peak_decoded_bytes = peak_runner_cache_bytes = 0
+        peak_face_cache_bytes = peak_total_cache_bytes = 0
         count = round(fps*scene.duration)
         still_indices = _sample_frames(spec, fps, count)
         silent = folder/'silent.mp4'
@@ -247,6 +251,11 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                     runner_caches = [runner.cache_info for runner in getattr(scene, '_running', {}).values()]
                     peak_runner_cache_bytes = max(peak_runner_cache_bytes,
                                                   sum(info['bytes'] for info in runner_caches))
+                    face_caches = [owner.cache_info for owner in getattr(scene, '_face_reveals', {}).values()]
+                    peak_face_cache_bytes = max(peak_face_cache_bytes,
+                                                sum(info['bytes'] for info in face_caches))
+                    peak_total_cache_bytes = max(peak_total_cache_bytes,
+                        sum(info['bytes'] for info in (*caches, *runner_caches, *face_caches)))
                     encoder.stdin.write(pygame.image.tobytes(frame, 'RGB'))
                     if index in still_indices:
                         pygame.image.save(frame, str(out/f'{stem}_{index:04d}.png'))
@@ -277,6 +286,8 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                                for reel in getattr(scene, '_perspectives', {}).values()]
         runtime_runner_stats = [dict(runner.cache_info)
                                 for runner in getattr(scene, '_running', {}).values()]
+        runtime_face_stats = [dict(owner.cache_info)
+                              for owner in getattr(scene, '_face_reveals', {}).values()]
         if spec['shot_id'] == 'island_orbit':
             _orbit_camera_sheet(scene, out/f'{stem}_camera_contact_sheet.png')
         parent.draw()
@@ -298,7 +309,8 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         contact.save(out/f'{stem}_filmstrip.png')
         runtime_files = ('main.py','gallery_session.py','fire_veinhold_opening.py',
                          'cinematic_smoke.py','cinematic_facility.py',
-                         'cinematic_perspective.py','cinematic_bridge_run.py','prologue_flight_audio.py',
+                         'cinematic_perspective.py','cinematic_bridge_run.py','cinematic_face_reveal.py',
+                         'prologue_flight_audio.py',
                          'prologue_alert_audio.py','cutscene_gallery.py')
         timings = (np.asarray(draw_times)+np.asarray(update_times))*1000
         metadata = {'fps':fps, 'frames':count, 'duration':scene.duration, 'render_size':[960,640],
@@ -313,6 +325,9 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                         'perspective_cache_at_completion':runtime_cache_stats,
                         'peak_runner_image_cache_bytes':peak_runner_cache_bytes,
                         'runner_cache_at_completion':runtime_runner_stats,
+                        'peak_face_reveal_image_cache_bytes':peak_face_cache_bytes,
+                        'face_reveal_cache_at_completion':runtime_face_stats,
+                        'peak_combined_image_cache_bytes':peak_total_cache_bytes,
                         'mean_frame_ms':float(np.mean(timings)), 'p95_frame_ms':float(np.percentile(timings,95)),
                         'max_frame_ms':float(np.max(timings)),
                         'frames_above_60fps_budget':int(np.count_nonzero(timings > 1000/60)),

@@ -1,0 +1,685 @@
+{
+  "unchanged_unrelated_gallery_pngs": 20,
+  "unchanged_unrelated_gallery_records": 19,
+  "pixel_exact_beauty_handoffs": [
+    [
+      "orbit/frame_0300.png",
+      "alarm_hold/frame_0000.png"
+    ],
+    [
+      "alarm_hold/frame_0000.png",
+      "rush/frame_0000.png"
+    ],
+    [
+      "rush/frame_0060.png",
+      "reveal/frame_0000.png"
+    ]
+  ],
+  "running_shot_handoff": "Intentional hard cut at 39 seconds.",
+  "face_reveal_handoff": "Cut at 42 seconds; global gait/audio phase continues.",
+  "movies": {
+    "shot01": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "25.000000",
+        "nb_frames": "1500"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1005.8543470222503,
+        "peak_decoded_frame_cache_bytes": 0,
+        "peak_frame_cache_bytes_with_pending_reservations": 0,
+        "perspective_cache_at_completion": [],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 0,
+        "mean_frame_ms": 7.29097189498134,
+        "p95_frame_ms": 10.665658561629241,
+        "max_frame_ms": 46.839646995067596,
+        "frames_above_60fps_budget": 16,
+        "capture_wall_seconds": 20.023704261053354
+      },
+      "audio_peak": 0.16651687401546295,
+      "authored_offset": 0.0
+    },
+    "shot02": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "5.000000",
+        "nb_frames": "300"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1143.9809360308573,
+        "peak_decoded_frame_cache_bytes": 58368000,
+        "peak_frame_cache_bytes_with_pending_reservations": 58982400,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 316,
+            "decodes": 301,
+            "waits": 56,
+            "wait_seconds": 0.6771157628973015
+          }
+        ],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 58982400,
+        "mean_frame_ms": 7.197269438183866,
+        "p95_frame_ms": 24.963226373074587,
+        "max_frame_ms": 42.9786000167951,
+        "frames_above_60fps_budget": 25,
+        "capture_wall_seconds": 10.209369096031878
+      },
+      "audio_peak": 0.14275800436735153,
+      "authored_offset": 25.0
+    },
+    "shot03": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "4.000000",
+        "nb_frames": "240"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1044.1591709968634,
+        "peak_decoded_frame_cache_bytes": 56524800,
+        "peak_frame_cache_bytes_with_pending_reservations": 57139200,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 944,
+            "decodes": 46,
+            "waits": 2,
+            "wait_seconds": 0.028264219930861145
+          }
+        ],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 57139200,
+        "mean_frame_ms": 13.599922478412433,
+        "p95_frame_ms": 19.561640830943357,
+        "max_frame_ms": 33.99393800646067,
+        "frames_above_60fps_budget": 68,
+        "capture_wall_seconds": 7.457481799996458
+      },
+      "audio_peak": 0.33412435553372094,
+      "authored_offset": 30.0
+    },
+    "shot04": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "1.000000",
+        "nb_frames": "60"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1198.552194982767,
+        "peak_decoded_frame_cache_bytes": 58368000,
+        "peak_frame_cache_bytes_with_pending_reservations": 58368000,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 136,
+            "decodes": 122,
+            "waits": 7,
+            "wait_seconds": 0.11077773495344445
+          }
+        ],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 58368000,
+        "mean_frame_ms": 14.014613305334933,
+        "p95_frame_ms": 24.474317845306324,
+        "max_frame_ms": 37.50460100127384,
+        "frames_above_60fps_budget": 10,
+        "capture_wall_seconds": 5.013272438023705
+      },
+      "audio_peak": 0.4961230525743585,
+      "authored_offset": 34.0
+    },
+    "shot05": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "4.000000",
+        "nb_frames": "240"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1072.098280012142,
+        "peak_decoded_frame_cache_bytes": 56524800,
+        "peak_frame_cache_bytes_with_pending_reservations": 57139200,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 944,
+            "decodes": 46,
+            "waits": 9,
+            "wait_seconds": 0.06442231393884867
+          }
+        ],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 57139200,
+        "mean_frame_ms": 11.618514811319377,
+        "p95_frame_ms": 15.689073540852402,
+        "max_frame_ms": 27.075557969510555,
+        "frames_above_60fps_budget": 7,
+        "capture_wall_seconds": 7.08983499702299
+      },
+      "audio_peak": 0.14503202512860297,
+      "authored_offset": 35.0
+    },
+    "shot06": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "3.000000",
+        "nb_frames": "180"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 690.448404988274,
+        "peak_decoded_frame_cache_bytes": 0,
+        "peak_frame_cache_bytes_with_pending_reservations": 0,
+        "perspective_cache_at_completion": [],
+        "peak_runner_image_cache_bytes": 25804800,
+        "runner_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "frame_surfaces": 0,
+            "background_surfaces": 0,
+            "capacity": 16,
+            "frame_capacity": 12,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "decodes": 557,
+            "waits": 67,
+            "wait_seconds": 0.342022692784667
+          }
+        ],
+        "peak_face_reveal_image_cache_bytes": 0,
+        "face_reveal_cache_at_completion": [],
+        "peak_combined_image_cache_bytes": 25804800,
+        "mean_frame_ms": 12.942884771230942,
+        "p95_frame_ms": 30.2360317291459,
+        "max_frame_ms": 50.53887894609943,
+        "frames_above_60fps_budget": 32,
+        "capture_wall_seconds": 6.942858654016163
+      },
+      "audio_peak": 0.2542038845451395,
+      "authored_offset": 39.0
+    },
+    "shot07": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "5.000000",
+        "nb_frames": "300"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1400.890959019307,
+        "peak_decoded_frame_cache_bytes": 0,
+        "peak_frame_cache_bytes_with_pending_reservations": 0,
+        "perspective_cache_at_completion": [],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 246153216,
+        "face_reveal_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "capacity": 80,
+            "byte_capacity": 246153216,
+            "waits": 69,
+            "wait_seconds": 0.2940537041868083,
+            "prepared_frames": 0,
+            "expected_frames": 72,
+            "actor_cache": {
+              "surfaces": 0,
+              "frame_surfaces": 0,
+              "background_surfaces": 0,
+              "capacity": 72,
+              "frame_capacity": 72,
+              "bytes": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "decodes": 72,
+              "waits": 50,
+              "wait_seconds": 0.20202637504553422
+            },
+            "environment_cache": {
+              "surfaces": 0,
+              "capacity": 8,
+              "decoded_surfaces": 0,
+              "pending_surfaces": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "bytes": 0,
+              "hits": 316,
+              "decodes": 301,
+              "waits": 19,
+              "wait_seconds": 0.0920273291412741
+            }
+          }
+        ],
+        "peak_combined_image_cache_bytes": 246153216,
+        "mean_frame_ms": 12.69932453345973,
+        "p95_frame_ms": 27.023497005575337,
+        "max_frame_ms": 103.76418096711859,
+        "frames_above_60fps_budget": 52,
+        "capture_wall_seconds": 9.85471470997436
+      },
+      "audio_peak": 0.3411958932876587,
+      "authored_offset": 42.0
+    },
+    "complete": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "47.000000",
+        "nb_frames": "2820"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 2015.0874250102788,
+        "peak_decoded_frame_cache_bytes": 55910400,
+        "peak_frame_cache_bytes_with_pending_reservations": 58982400,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 2276,
+            "decodes": 515,
+            "waits": 40,
+            "wait_seconds": 0.5632805990171619
+          }
+        ],
+        "peak_runner_image_cache_bytes": 25804800,
+        "runner_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "frame_surfaces": 0,
+            "background_surfaces": 0,
+            "capacity": 16,
+            "frame_capacity": 12,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "decodes": 551,
+            "waits": 14,
+            "wait_seconds": 0.10999298200476915
+          }
+        ],
+        "peak_face_reveal_image_cache_bytes": 246153216,
+        "face_reveal_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "capacity": 80,
+            "byte_capacity": 246153216,
+            "waits": 68,
+            "wait_seconds": 0.4138205696363002,
+            "prepared_frames": 0,
+            "expected_frames": 72,
+            "actor_cache": {
+              "surfaces": 0,
+              "frame_surfaces": 0,
+              "background_surfaces": 0,
+              "capacity": 72,
+              "frame_capacity": 72,
+              "bytes": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "decodes": 72,
+              "waits": 35,
+              "wait_seconds": 0.09465959866065532
+            },
+            "environment_cache": {
+              "surfaces": 0,
+              "capacity": 8,
+              "decoded_surfaces": 0,
+              "pending_surfaces": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "bytes": 0,
+              "hits": 308,
+              "decodes": 301,
+              "waits": 33,
+              "wait_seconds": 0.3191609709756449
+            }
+          }
+        ],
+        "peak_combined_image_cache_bytes": 322953216,
+        "mean_frame_ms": 9.556424186370132,
+        "p95_frame_ms": 19.566433972795473,
+        "max_frame_ms": 85.75557009316981,
+        "frames_above_60fps_budget": 213,
+        "capture_wall_seconds": 50.715526112995576
+      },
+      "audio_peak": 0.4961230525743585,
+      "authored_offset": 0.0
+    },
+    "complete_reduced_motion": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "47.000000",
+        "nb_frames": "2820"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 2049.795716011431,
+        "peak_decoded_frame_cache_bytes": 27033600,
+        "peak_frame_cache_bytes_with_pending_reservations": 27033600,
+        "perspective_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "capacity": 24,
+            "decoded_surfaces": 0,
+            "pending_surfaces": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "bytes": 0,
+            "hits": 1797,
+            "decodes": 11,
+            "waits": 1,
+            "wait_seconds": 0.01972602598834783
+          }
+        ],
+        "peak_runner_image_cache_bytes": 25804800,
+        "runner_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "frame_surfaces": 0,
+            "background_surfaces": 0,
+            "capacity": 16,
+            "frame_capacity": 12,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "decodes": 553,
+            "waits": 10,
+            "wait_seconds": 0.04396457102848217
+          }
+        ],
+        "peak_face_reveal_image_cache_bytes": 246153216,
+        "face_reveal_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "capacity": 80,
+            "byte_capacity": 246153216,
+            "waits": 80,
+            "wait_seconds": 0.41176306031411514,
+            "prepared_frames": 0,
+            "expected_frames": 72,
+            "actor_cache": {
+              "surfaces": 0,
+              "frame_surfaces": 0,
+              "background_surfaces": 0,
+              "capacity": 72,
+              "frame_capacity": 72,
+              "bytes": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "decodes": 72,
+              "waits": 56,
+              "wait_seconds": 0.238941032148432
+            },
+            "environment_cache": {
+              "surfaces": 0,
+              "capacity": 8,
+              "decoded_surfaces": 0,
+              "pending_surfaces": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "bytes": 0,
+              "hits": 308,
+              "decodes": 301,
+              "waits": 24,
+              "wait_seconds": 0.17282202816568315
+            }
+          }
+        ],
+        "peak_combined_image_cache_bytes": 294076416,
+        "mean_frame_ms": 8.354273561081941,
+        "p95_frame_ms": 15.816917794290875,
+        "max_frame_ms": 92.05577097600326,
+        "frames_above_60fps_budget": 127,
+        "capture_wall_seconds": 46.434481303964276
+      },
+      "audio_peak": 0.4961230525743585,
+      "authored_offset": 0.0
+    },
+    "shot07_reduced_motion": {
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "5.000000",
+        "nb_frames": "300"
+      },
+      "performance": {
+        "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+        "gallery_launch_ms": 1481.6095649730414,
+        "peak_decoded_frame_cache_bytes": 0,
+        "peak_frame_cache_bytes_with_pending_reservations": 0,
+        "perspective_cache_at_completion": [],
+        "peak_runner_image_cache_bytes": 0,
+        "runner_cache_at_completion": [],
+        "peak_face_reveal_image_cache_bytes": 246153216,
+        "face_reveal_cache_at_completion": [
+          {
+            "surfaces": 0,
+            "bytes": 0,
+            "decoded_bytes": 0,
+            "pending_bytes": 0,
+            "capacity": 80,
+            "byte_capacity": 246153216,
+            "waits": 67,
+            "wait_seconds": 0.3896448962041177,
+            "prepared_frames": 0,
+            "expected_frames": 72,
+            "actor_cache": {
+              "surfaces": 0,
+              "frame_surfaces": 0,
+              "background_surfaces": 0,
+              "capacity": 72,
+              "frame_capacity": 72,
+              "bytes": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "decodes": 72,
+              "waits": 56,
+              "wait_seconds": 0.2525258762179874
+            },
+            "environment_cache": {
+              "surfaces": 0,
+              "capacity": 8,
+              "decoded_surfaces": 0,
+              "pending_surfaces": 0,
+              "decoded_bytes": 0,
+              "pending_bytes": 0,
+              "bytes": 0,
+              "hits": 316,
+              "decodes": 301,
+              "waits": 11,
+              "wait_seconds": 0.1371190199861303
+            }
+          }
+        ],
+        "peak_combined_image_cache_bytes": 246153216,
+        "mean_frame_ms": 11.457324424797358,
+        "p95_frame_ms": 28.091168071841828,
+        "max_frame_ms": 38.99969405028969,
+        "frames_above_60fps_budget": 44,
+        "capture_wall_seconds": 9.764450736984145
+      },
+      "audio_peak": 0.3411958932876587,
+      "authored_offset": 42.0
+    }
+  },
+  "derivatives": {
+    "small": {
+      "version": 1,
+      "type": "compressed_review_derivative",
+      "source": "complete.mp4",
+      "source_sha256": "785578aed7128d933aa3c3d27bbc6e6fa6adec6c60db9bd761c2ffbae4fe1025",
+      "output": "complete_small.mp4",
+      "output_sha256": "40e8a53753b6741ccf52d87e9ebcf04c5def5114077dcd1d9da6b76b454ce5b1",
+      "bytes": 2821450,
+      "stream": {
+        "width": 600,
+        "height": 400,
+        "r_frame_rate": "60/1",
+        "duration": "47.000000",
+        "nb_frames": "2820"
+      },
+      "transcode": {
+        "video_filter": "scale=600:400:flags=lanczos",
+        "fps": 60,
+        "video_codec": "libx264",
+        "preset": "medium",
+        "crf": 30,
+        "maxrate": "425k",
+        "bufsize": "850k",
+        "pixel_format": "yuv420p",
+        "audio_codec": "aac",
+        "audio_bitrate": "64k",
+        "movflags": "+faststart"
+      }
+    },
+    "short_small": {
+      "version": 1,
+      "type": "compressed_review_derivative",
+      "source": "shot07.mp4",
+      "source_sha256": "08692bb1ca54ccd4a4b3f183d66ba18c4aab6b17db8f69ca3b0adc89c49e042b",
+      "output": "shot07_small.mp4",
+      "output_sha256": "37cc349e20520ca420403901b60be03a6e2b072c0cf7795af76b390cec984217",
+      "bytes": 772823,
+      "stream": {
+        "width": 600,
+        "height": 400,
+        "r_frame_rate": "60/1",
+        "duration": "5.000000",
+        "nb_frames": "300"
+      },
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 600,
+          "height": 400,
+          "r_frame_rate": "60/1",
+          "duration": "5.000000",
+          "nb_frames": "300"
+        },
+        {
+          "codec_name": "aac",
+          "sample_rate": "48000",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "duration": "5.013000",
+          "nb_frames": "236"
+        }
+      ],
+      "transcode": {
+        "video_filter": "scale=600:400:flags=lanczos",
+        "fps": 60,
+        "video_codec": "libx264",
+        "preset": "medium",
+        "crf": 26,
+        "maxrate": "1000k",
+        "bufsize": "2000k",
+        "pixel_format": "yuv420p",
+        "audio_codec": "aac",
+        "audio_bitrate": "64k",
+        "movflags": "+faststart"
+      }
+    },
+    "slow": {
+      "file": "shot07_slow.mp4",
+      "source": "shot07.mp4",
+      "source_sha256": "08692bb1ca54ccd4a4b3f183d66ba18c4aab6b17db8f69ca3b0adc89c49e042b",
+      "output_sha256": "f55e07b840595c72e6b9469b7291bee0629745d406fdb2ce598ff884b1bfe391",
+      "method": "Silent quarter-speed inspection; holds each of the 300 native frames for four display ticks without inventing poses.",
+      "video_filter": "fps=240,setpts=4.0*PTS",
+      "output_fps": 60,
+      "output_frames": 1200,
+      "stream": {
+        "width": 960,
+        "height": 640,
+        "r_frame_rate": "60/1",
+        "duration": "20.000000",
+        "nb_frames": "1200"
+      }
+    }
+  },
+  "pixel_equivalence": {
+    "file": "pixel_equivalence.json",
+    "sha256": "9a2da19db0b63ba23924e8d58c5d59e2c2b87864aa5746bf0f6dd276c7178033",
+    "samples": 6,
+    "all_decoded_rgb_equal": true
+  }
+}

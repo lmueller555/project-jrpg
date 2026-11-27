@@ -1,10 +1,10 @@
 # Fire Veinhold prologue — cinematic production
 
-**Status:** The Gallery presentation contains six production shots totaling
-42 seconds: the existing 25-second summit approach/vista, a five-second island
+**Status:** The Gallery presentation contains seven production shots totaling
+47 seconds: the existing 25-second summit approach/vista, a five-second island
 orbit, four-second alarm lead-in, one-second bridge rush and four-second frozen
-guard reveal, followed by three seconds tracking the running party's legs.
-The frontal face reveal, overhead ascent and final playable handoff remain
+guard reveal, three seconds tracking the running party's legs and a five-second
+frontal running-party reveal. The overhead ascent and final playable handoff remain
 future implementation.
 
 [Chapter 1](../game_01/CHAPTER_01.md) owns the opening story. This document owns
@@ -22,14 +22,14 @@ owns the approved geography; the canonical world map remains unchanged.
 | 4 — Bridge Rush | 34–35s | Fly past the facility and along the Merovar bridge in one second, with directional motion cues and changing sound perspective. |
 | 5 — Frozen Bridge | 35–39s | Settle 20 feet onto the bridge from its Merovar mainland landing, facing mainland. Distinct Carcovian guards are frozen in stasis; ice coats parts of the deck and railings. The attackers remain unseen behind the camera. |
 | 6 — Running legs | 39–42s | Cut to boot-height side tracking of Iselin, Lucan and the Crown soldier running toward the Veinhold over the steel bridge. Their faces stay outside the frame. |
-| 7 — Faces | Exact duration open, future implementation | Track backward and pan down to faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the Crown soldier is on his anatomical left (screen right), about ten feet behind. |
+| 7 — Faces | 42–47s | Track backward in front of the runners, starting above their heads and tilting down over 1.5 seconds to reveal their faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the Crown soldier is on his anatomical left (screen right), about ten feet behind. |
 | 8 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into an ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. The final gameplay handoff remains open. |
 
 The fortress access bridge is distinct from Elden Vale's western bridge. The
 five-second orbit replaces the previously proposed separate 15-second closer
 fortress shot. Later party shots are storyboard direction, not runtime
 placeholders. There is no cast reveal or new dialogue in Shots 2–5. Shot 6
-reveals their lower-body movement before the later frontal reveal.
+reveals their lower-body movement before Shot 7's frontal face reveal.
 
 ## Shot 1 staging
 
@@ -244,7 +244,7 @@ At 39s the held frozen guards cut directly to a three-second, low side view of
 the attackers running toward the Veinhold. The party moves screen left to right;
 deck seams, rivets and rail supports pass behind them in the opposite direction.
 The composition stays below their faces. This is a first glimpse of the group
-in motion, preceding the separately planned frontal face reveal.
+in motion, preceding the frontal face reveal.
 
 Lucan leads. Iselin follows close on his anatomical right, nearest this camera;
 the Crown soldier remains on his anatomical left, 3.048 metres (ten feet)
@@ -289,6 +289,53 @@ freeze character, scenery and audio clocks
 together. No face close-up, overhead reveal, new dialogue or playable mission
 handoff is included in this shot.
 
+## Frontal face reveal
+
+Shot 7 begins at 42s with the camera in front of the advancing party, tracking
+backward toward the Veinhold. It starts above their heads and tilts down over
+the first 1.5 seconds. The remaining 3.5 seconds give their faces time to read
+while the run continues. The native shot lasts five seconds at 60 FPS: 300
+display intervals. The environment's inclusive terminal camera sample supplies
+the handoff pose rather than adding an extra displayed interval.
+
+Lucan leads in the center. Iselin stays close behind on his anatomical right,
+which appears on screen left in this frontal view. The ordinary Crown soldier
+remains on Lucan's anatomical left, screen right, 3.048 metres behind. The
+relative depth and apparent scale preserve that gap. This is local performance
+staging farther toward the fortress; it does not relocate the party to the
+frozen-guard camera or establish a geographic travel measurement.
+
+The complete frontal drawings use the detailed painterly treatment of the
+frozen guards, while retaining the companions' approved identities and costume
+colors. Lucan keeps dark swept hair, polished steel, oxblood cloth and gold
+trim. Iselin keeps white hair, blue eyes and blue/silver royal clothing. The
+Crown soldier's simpler equipment remains distinct from Carcovian gunmetal,
+charcoal and copper. Running effort belongs in coherent face, head, shoulder,
+arm and cloth movement rather than independently bobbing a static portrait.
+
+Each runner has 24 complete frontal poses over 400 ms. The side view's global
+clock continues through the cut: at 42s Lucan begins at phase 0.2 seconds,
+Iselin at 0.283333… and the Crown soldier at 0.35. Every displayed 60 Hz tick
+advances the authored pose. Near/far or anatomical limb identities, equipment
+occlusion and body proportions must remain coherent through the full cycle.
+The source drawings and the visible frontal performance receive their own
+review; the preceding boot-height review does not establish frontal quality.
+
+`cinematic_face_reveal.py` combines those drawings with camera-registered
+environment frames from `shot07/`. Its actor and environment image caches are
+bounded separately because their source dimensions differ. The actor owner
+retains one full 72-drawing cycle across the three characters (216 MiB at the
+production 768×1024 RGBA size); eight 960×640 environment slots add 18.75 MiB.
+The 234.75 MiB face-reveal budget includes pending image reservations and
+excludes temporary drawing/conversion buffers. Full-film and standalone frontal
+playback prepare the complete cycle before the presentation clock and audio
+start. Other individual clips do not load that owner. Capture metadata
+records each owner's decoded/pending bytes and the combined face-reveal cache,
+then verifies that scene completion releases both. Clean full-film and
+standalone views use the same production state, including the existing warning,
+wind and footstep phases. No dialogue, overhead ascent or playable handoff is
+introduced here.
+
 ## Alert and movement audio
 
 A shared reel clock activates both visible red signals and the siren at 30s.
@@ -308,6 +355,13 @@ The 39–42s tracking shot retains the existing siren and wind phases across the
 cut. Footfalls come from the runner contact cues, with heavier armored steps
 for Lucan and simpler overlapping steps for the other two. Armor/cloth movement
 sits near those contacts; the distant warning remains behind the close movement.
+Those same clocks continue through the 42–47s frontal shot. Contact phase is
+preserved when the viewpoint changes; the face reveal does not restart the
+siren, wind loop or runners' step cadence.
+A restrained, unvoiced breathing bed starts with the frontal shot to support
+the visible effort. It uses the warning channel whose near-siren gain has
+already receded to zero; active wind, distant warning and footfalls retain
+their owned channels and phase.
 
 Pause, focus loss, effects volume, mute, Skip, restart and Gallery close apply
 to all owned effects. Standalone clips initialize from their full-reel offset:
@@ -317,9 +371,9 @@ exports and timing functions; it is not hardware-loopback listening evidence.
 
 ## Gallery and handoff
 
-The complete entry and all six individual entries use the same production
-controller and ordered scene manifest. The complete film lasts **42 seconds**;
-individual durations are **25, 5, 4, 1, 4 and 3 seconds**. Each entry has its own
+The complete entry and all seven individual entries use the same production
+controller and ordered scene manifest. The complete film lasts **47 seconds**;
+individual durations are **25, 5, 4, 1, 4, 3 and 5 seconds**. Each entry has its own
 representative production thumbnail. The Gallery's disposable, save-disabled
 runtime preserves parent journey/settings/Continue state.
 
@@ -330,7 +384,9 @@ bedroom opening until the complete cinematic and playable infiltration handoff
 are ready. No quest, save-schema or mission progression changes belong to this
 presentation extension.
 
-See [current running-shot and faction review evidence](../../reviews/veinhold_bridge_run/README.md).
+See [current frontal-reveal review evidence](../../reviews/veinhold_face_reveal/README.md).
+The [42-second running-shot review](../../reviews/veinhold_bridge_run/README.md)
+records the earlier boot-height performance and faction revision.
 The [39-second orbit review](../../reviews/veinhold_orbit/README.md) records the
 earlier guard/banner palette and film length.
 The [eagle-exit review](../../reviews/eagle_exit/README.md) and earlier studies

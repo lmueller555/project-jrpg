@@ -94,6 +94,14 @@
       "rms": 0.0847,
       "loop": false,
       "clipped_samples": 0
+    },
+    "running_breath.wav": {
+      "duration": 3.6,
+      "sha256": "4a2bbd812fccff8264a6aad6790c51cd04a5f1ef8fedc16e5838b7b3179c4a1d",
+      "peak": 0.55,
+      "rms": 0.06793,
+      "loop": true,
+      "clipped_samples": 0
     }
   },
   "timeline": {
@@ -103,12 +111,20 @@
     "rush_start": 34,
     "bridge_arrival": 35,
     "running_start": 39,
-    "sequence_end": 42,
+    "frontal_start": 42,
+    "sequence_end": 47,
     "siren_period": 2
   },
   "running_foley": {
     "duration": 0.22,
     "contact_source": "assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts",
-    "scheduling": "One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
+    "scheduling": "One continuous global contact table from 39 to 47 seconds; the frontal cut at 42 advances the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
+  },
+  "frontal_breath": {
+    "start": 42,
+    "period": 3.6,
+    "gain": 0.075,
+    "source": "Unvoiced band-limited air, three varied inhale/exhale phrases approximately 1.2 seconds apart; independent synthesis seed.",
+    "channel": "Reuses the silent industrial warning lease from the frontal cut; no additional mixer channel."
   }
 }

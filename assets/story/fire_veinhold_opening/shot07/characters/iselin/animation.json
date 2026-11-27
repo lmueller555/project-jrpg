@@ -1,0 +1,484 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "canvas": [
+    768,
+    1024
+  ],
+  "anchor": [
+    384,
+    960
+  ],
+  "duration_ms": 400,
+  "fps": 60,
+  "loop": true,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "landmark_space": "Exported artwork pixels; null means occluded/unmeasured.",
+  "frames": [
+    {
+      "file": "frame_00.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.4664,
+          199.6765
+        ],
+        "belt": [
+          396.8695,
+          381.3131
+        ],
+        "face": [
+          384.8363,
+          132.1418
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_01.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.6878,
+          201.9965
+        ],
+        "belt": [
+          395.8334,
+          381.9965
+        ],
+        "face": [
+          382.7989,
+          139.6839
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.0988,
+          203.7432
+        ],
+        "belt": [
+          394.0157,
+          383.7432
+        ],
+        "face": [
+          382.7425,
+          137.2882
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.0193,
+          203.3719
+        ],
+        "belt": [
+          392.2819,
+          383.3719
+        ],
+        "face": [
+          380.8404,
+          135.4891
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9717,
+          201.1729
+        ],
+        "belt": [
+          394.8237,
+          379.9502
+        ],
+        "face": [
+          385.7167,
+          136.5643
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_05.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.7605,
+          198.1729
+        ],
+        "belt": [
+          396.6759,
+          378.5551
+        ],
+        "face": [
+          385.5055,
+          133.5643
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_06.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9717,
+          196.1729
+        ],
+        "belt": [
+          396.1993,
+          376.0201
+        ],
+        "face": [
+          385.7167,
+          131.5643
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_07.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.2825,
+          197.0071
+        ],
+        "belt": [
+          396.7393,
+          377.1599
+        ],
+        "face": [
+          383.5055,
+          130.5643
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_08.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9522,
+          198.2967
+        ],
+        "belt": [
+          401.0909,
+          377.3534
+        ],
+        "face": [
+          377.8396,
+          131.3519
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_09.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.0341,
+          198.9018
+        ],
+        "belt": [
+          401.1729,
+          377.9586
+        ],
+        "face": [
+          379.8128,
+          129.3659
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_10.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.1439,
+          199.5863
+        ],
+        "belt": [
+          400.5381,
+          380.5296
+        ],
+        "face": [
+          381.7308,
+          131.3659
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_11.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.5434,
+          201.164
+        ],
+        "belt": [
+          397.2253,
+          384.7399
+        ],
+        "face": [
+          378.4179,
+          135.5762
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_12.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.7624,
+          199.7949
+        ],
+        "belt": [
+          396.7391,
+          381.108
+        ],
+        "face": [
+          383.3633,
+          131.8668
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_13.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.8397,
+          202.0433
+        ],
+        "belt": [
+          393.458,
+          382.0433
+        ],
+        "face": [
+          382.8346,
+          135.6247
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_14.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.5528,
+          203.7582
+        ],
+        "belt": [
+          390.1716,
+          383.7582
+        ],
+        "face": [
+          380.6112,
+          137.2409
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_15.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.8206,
+          203.2737
+        ],
+        "belt": [
+          390.656,
+          383.2737
+        ],
+        "face": [
+          385.6146,
+          133.577
+        ]
+      },
+      "notes": "Complete individual figure redrawn by ImageGen to bridge the arm exchange gradually. Uniform whole-figure density from measured neck-to-belt span; no separate head, hand or limb manipulation."
+    },
+    {
+      "file": "frame_16.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9921,
+          200.5117
+        ],
+        "belt": [
+          392.9453,
+          382.4086
+        ],
+        "face": [
+          387.3938,
+          133.7863
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_17.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.148,
+          198.2977
+        ],
+        "belt": [
+          394.7704,
+          377.6149
+        ],
+        "face": [
+          385.4252,
+          132.7863
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_18.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9921,
+          195.5117
+        ],
+        "belt": [
+          398.4842,
+          372.0215
+        ],
+        "face": [
+          385.6487,
+          130.7211
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_19.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.6927,
+          196.7257
+        ],
+        "belt": [
+          398.5641,
+          377.4086
+        ],
+        "face": [
+          385.4252,
+          132.58
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_20.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.1408,
+          197.5556
+        ],
+        "belt": [
+          395.5524,
+          375.7367
+        ],
+        "face": [
+          382.4892,
+          132.5938
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_21.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9935,
+          199.4486
+        ],
+        "belt": [
+          394.9315,
+          377.3929
+        ],
+        "face": [
+          384.322,
+          132.5938
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_22.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          384.3128,
+          199.8778
+        ],
+        "belt": [
+          398.8076,
+          381.6967
+        ],
+        "face": [
+          381.9507,
+          135.6265
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    },
+    {
+      "file": "frame_23.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          383.9935,
+          200.783
+        ],
+        "belt": [
+          399.5151,
+          387.8944
+        ],
+        "face": [
+          383.3671,
+          137.7937
+        ]
+      },
+      "notes": "Complete image-authored drawing. Uniform density uses median neck-to-belt span of this four-pose source, not occupied bounds. Whole-body registration includes restrained authored stance/flight recoil; no independent head or limb transformation."
+    }
+  ]
+}

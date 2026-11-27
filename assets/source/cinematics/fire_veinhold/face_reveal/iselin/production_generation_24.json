@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "facing": "front",
+  "purpose": "Full-body painted cinematic frontal run; the selected source bank has 24 complete drawings in a 400ms cycle.",
+  "style": "Natural human proportions and detailed painted materials matching frozen guards, translated from Iselin identity references.",
+  "near": "anatomical_right",
+  "far": "anatomical_left",
+  "costume_sides": {
+    "mantle": "anatomical_right / viewer_left",
+    "braid": "anatomical_left / viewer_right"
+  },
+  "active_selection": "source_art_24.json",
+  "generated_masters": [
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-375aa0aa-ae81-4299-a39b-5ca22c452d37",
+      "generated_original": "/workspace/generated_images/exec-375aa0aa-ae81-4299-a39b-5ca22c452d37.png",
+      "source": "keys_00_06_12_18.png",
+      "source_sha256": "4ce1c6743f0c8469b092e004e4f60393b356b45d852435e282ef79cd2c0dd5ac",
+      "prompt": "keys_prompt.txt",
+      "prompt_sha256": "0940092478a385706c4f0ff8d48aef39df514b92cd44424cd1433d556032db8e",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png",
+        "assets/source/portraits/eldenmere/iselin_master.png",
+        "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_00.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-8d341d18-10d9-4c41-9947-4c672656244f",
+      "generated_original": "/workspace/generated_images/exec-8d341d18-10d9-4c41-9947-4c672656244f.png",
+      "source": "batch_00_03.png",
+      "source_sha256": "85974a868949480a1370098ba12a3b61793775937fcf2740791ed017e42156c4",
+      "prompt": "batch_00_03_prompt.txt",
+      "prompt_sha256": "ae3f3472f808a8e27a9e5a4c11e83a33f595b566cbc3c69f066a424a3658c15b",
+      "references": [
+        "key_00_reference.png",
+        "keys_00_06_12_18.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-0401f566-057c-4aba-bdfb-611491a650e7",
+      "generated_original": "/workspace/generated_images/exec-0401f566-057c-4aba-bdfb-611491a650e7.png",
+      "source": "batch_04_07.png",
+      "source_sha256": "23c0ba24fa26173ed8d3c58ab55821dfca69422d305aeba20b908bb8e02106d6",
+      "prompt": "batch_04_07_prompt.txt",
+      "prompt_sha256": "cb99f4439a39e265ac34ff9309e3130d3367274aa9cbf657a96b236345bbddce",
+      "references": [
+        "key_06_reference.png"
+      ],
+      "original_prompt_file_text": "Four COMPLETE full-body drawings of the exact SAME Regent Iselin in a 2x2 transparent RGBA animation sheet, read top-left/top-right/bottom-left/bottom-right. Four narrowly spaced consecutive poses from a fast 24-frame frontal sprint, same eye-level frontal camera, no sideways turning. Use the supplied exact single-character view as appearance AND movement reference. Natural lifelike adult woman's face with natural blue eyes, white-silver swept hair and ONE braid over anatomicalLEFT (VIEWER RIGHT). Navy mantle pinned anatomicalRIGHT (VIEWER LEFT), royal-blue split travelling coat, silver embroidered hems and cuffs, clasp bars, dark trousers, silver-banded dark riding boots. Keep same realistic painterly fantasy cinematic surface rendering, cool moonlight, facial proportions, eye spacing, hairline, head size, neck length, shoulderwidth, beltwidth, torso length and body scale in every drawing. Focused steady gaze, closed/resting mouth, no blink or headturn. No weapon, no magic, no text, no background, NO GROUND SHADOW. All figures fully within separate portrait-shaped cells with broad gutters. All figures have exactly 2arms and2legs. Draw each whole figure coherently; no spare disconnected limbs.\nThis group is a brief TOE-OFF\u2192FLIGHT transition; do NOT finish an entire half-cycle or put the next leading boot down yet. The four drawings must show small gradual changes, not alternating contact feet. The frontal projection foreshortens front/back limb travel; no sideways kicking. Fists are loosely clenched, elbows naturally bent; keep leading/trailing arm identities throughout this group, with small progressive swing. Modest natural weight rise and cloth/hair follow-through.\nFrames04,05,06,07: RIGHT leg finishes support behind body; LEFT knee/boot moves toward camera. RIGHT arm (viewerLEFT) leads forward and LEFT arm(viewerRIGHT) is behind throughout, slowly advancing to the apex by06. \n04: right boot toe supports behind, right knee extends; left knee bent forward with boot tucked below knee.\n05: right heel lifts farther, toe about to leave; left knee advances slightly and left shin starts to untuck.\n06: full flight, bothfeetoff floor, right leg trailing back with modest bend; left knee forward with shin partly extended, sole visible only modestly.\n07: same left-leading flight but left boot reaches a little farther forward/down; right knee begins flexing for recovery. Do not touch the left boot down. Supplied06 is the middle key; draw small coherent changes around it.\n",
+      "original_prompt_sha256": "f521ef20ca4cd3791f59cfb78ebef2ef60e18ea1709841ed7ff271d0facf3f38",
+      "prompt_file_note": "Plaintext trailing whitespace normalized; exact original saved prompt retained in original_prompt_file_text."
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-01e707fb-6f7c-4917-b2d3-3f8c1abb679d",
+      "generated_original": "/workspace/generated_images/exec-01e707fb-6f7c-4917-b2d3-3f8c1abb679d.png",
+      "source": "batch_08_11.png",
+      "source_sha256": "8ecc33b7fe59e85f3e3a21c0de07d57843e989a13fe21d18057531907bf7df6d",
+      "prompt": "batch_08_11_prompt.txt",
+      "prompt_sha256": "08a24beb2524846ff244b35d923c5f00bbfa41a7909531927e9425c8eadf01cc",
+      "references": [
+        "key_07_reference.png",
+        "key_12_reference.png"
+      ],
+      "original_prompt_file_text": "Create FOUR complete fullbody frames in a clean2x2 transparent RGBA grid, no words/labels/ground/shadows. This is the EXACT SAME Regent Iselin from the references, frontal eye-level running toward camera. Detailed painted fantasy cinematic style: natural adult face with natural-size blue eyes, silver-white hair, onebraid over anatomicalLEFT=viewerRIGHT, navy mantle on anatomicalRIGHT=viewerLEFT, blue/silver split royalcoat and dark trousers/boots. Keep exact facial identity and costume. Same sharp natural facialplanes, headwidth, necklength, shoulderwidth, torso length and body density across all four poses. Faint cool moonlight and balanced material shading, natural humanproportions. Focused gaze directly ahead with fixed expression; no blink/headturn. Botharmsandlegs correctly attached, no extralimbs, forward/back foreshortening ratherthan sidekicks. Completefigure fromhairtoridingboots retained ineach portraitcell withgenerousgutter. Keep reference outfitsides and embroideryconsistent. Allfour poses are tiny incremental LATE FLIGHT\u2192CONTACT APPROACH changes; do not redraw an entirehalfcycle or switchleading legs.\nDraw actual chronological frames08,09,10,11, between firstreference07(leftlegreachingforward) and secondreference12(leftfootcontact). ANATOMICAL LEFT boot(viewerRIGHT) stays infront throughout thisgroup and gradually lowers towardcontact; RIGHT leg(viewerLEFT) stays behind with knee flexed. RIGHT arm(viewerLEFT) stays forward and LEFT arm(viewerRIGHT) stays behind throughout, gradually easing fromtheir front/backextremes. \n08: left boot extendedforward, sole tilted slightlytowardlens, stillhighabovefloor; rightbootfoldedback.\n09: leftbootlowers a little, kneeopens a little, solesmalltiltless; rightkneebeginsrecoverybehindtorso.\n10: leftbootlowers closerfloor, straighterlowerleg, heelmovesdownfirst; rightbootliftedbehind.\n11: leftheel justabovefloor readytoacceptweight nextframe12; rightbootstill liftedbehind, no earlyrightleadswap. A smallsmoothbodydescent over08\u201311 followsflight; keephead/neck/shoulders coherent. Bothfeetremain airborneuntilleftcontact12 beyondthissheet.\n",
+      "original_prompt_sha256": "2b6a6948c479ee0416c076c0f24077666420620617b282a5d2e9bba6cfca9a42",
+      "prompt_file_note": "Plaintext trailing whitespace normalized; exact original saved prompt retained in original_prompt_file_text."
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-3835f26c-3999-4237-9367-e9a24f7739fc",
+      "generated_original": "/workspace/generated_images/exec-3835f26c-3999-4237-9367-e9a24f7739fc.png",
+      "source": "batch_12_15.png",
+      "source_sha256": "b3fd6b283c44d371e23602d4325fc6d566c27fb6ffff4a0b13715ceffdce70f1",
+      "prompt": "batch_12_15_prompt.txt",
+      "prompt_sha256": "702dc863fa8f5321559b05a8921577647b0ff903d957603322e91abc28d6640e",
+      "references": [
+        "key_12_reference.png",
+        "keys_00_06_12_18.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-940745be-d301-4217-884c-e478ff9b81b9",
+      "generated_original": "/workspace/generated_images/exec-940745be-d301-4217-884c-e478ff9b81b9.png",
+      "source": "batch_16_19.png",
+      "source_sha256": "683b9434b8bd5bd86c8bb469c451db575b221a557f412c81cf767baed6eb32c2",
+      "prompt": "batch_16_19_prompt.txt",
+      "prompt_sha256": "1aad9fb49681afb63eb923040d773ecf0fca98cbfef234b45b53f8b34173393e",
+      "references": [
+        "key_18_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-34bc19d8-30e6-436b-8a91-727f0f62afb2",
+      "generated_original": "/workspace/generated_images/exec-34bc19d8-30e6-436b-8a91-727f0f62afb2.png",
+      "source": "batch_20_23.png",
+      "source_sha256": "dbf7f3d44a239d818307972d0faf4ef97df968d71a05ecf8e89a0c8035ff6999",
+      "prompt": "batch_20_23_prompt.txt",
+      "prompt_sha256": "3db94f0f17c55499e29c29cfa315c936f67a4013b7f014400a9c554beacca92a",
+      "references": [
+        "key_19_reference.png",
+        "key_00_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-cc5068fb-d64b-48fa-8aec-1806706d6db7",
+      "generated_original": "/workspace/generated_images/exec-cc5068fb-d64b-48fa-8aec-1806706d6db7.png",
+      "source": "repairs/frame_01.png",
+      "source_sha256": "2d9bcf2548be5c77d52cdcd31f37495d568760f5610edebf16df1360e25f37d4",
+      "prompt": "repairs/frame_01_prompt.txt",
+      "prompt_sha256": "d571e6c7287fa6302050deffc25dec5f85cf0408729ebd08432dc7ee559cf4ae",
+      "references": [
+        "production_00_reference.png",
+        "production_03_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-26f19d9a-df15-423f-8bb6-eba18c2d571d",
+      "generated_original": "/workspace/generated_images/exec-26f19d9a-df15-423f-8bb6-eba18c2d571d.png",
+      "source": "repairs/frame_02.png",
+      "source_sha256": "8f555c1b0663742bc690959c56513183cc63ced35bdef4bc3e84b19d6c7eb65d",
+      "prompt": "repairs/frame_02_prompt.txt",
+      "prompt_sha256": "abf093861e76eae7e3b15f3423f532fb71afd1f5fcfaf3c6df757d6145d2f829",
+      "references": [
+        "production_00_reference.png",
+        "production_03_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-a51ba1f8-2f19-47d9-a2e1-355d333a9888",
+      "generated_original": "/workspace/generated_images/exec-a51ba1f8-2f19-47d9-a2e1-355d333a9888.png",
+      "source": "repairs/frame_03.png",
+      "source_sha256": "60443b890857638e53294534ec2882c8ef52856554e8c37ec65a8f650380836c",
+      "prompt": "repairs/frame_03_prompt.txt",
+      "prompt_sha256": "6b4fe011c780002eb38488802d93bf8f1ddf20a06b3aa3e5a84352dd25489086",
+      "references": [
+        "repairs/frame_02.png",
+        "production_04_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-2487786f-313c-45dc-8a9e-76291e564e74",
+      "generated_original": "/workspace/generated_images/exec-2487786f-313c-45dc-8a9e-76291e564e74.png",
+      "source": "repairs/frame_13.png",
+      "source_sha256": "0b4b37aa032080e0a6e6c561869d46f75af59e6528765f450198ddfb944e39f3",
+      "prompt": "repairs/frame_13_prompt.txt",
+      "prompt_sha256": "673430d292cca0c81b4c5334d9dd9b30800b6934032c72f8ec0f6458468939bf",
+      "references": [
+        "production_12_reference.png",
+        "production_15_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-9c1b3549-9633-4ee4-a760-1929fa1117fb",
+      "generated_original": "/workspace/generated_images/exec-9c1b3549-9633-4ee4-a760-1929fa1117fb.png",
+      "source": "repairs/frame_14.png",
+      "source_sha256": "47b8cd7651bdd60ff0b81d1b17adf9d1c8a263cb0fee929c01b9f0b287a70571",
+      "prompt": "repairs/frame_14_prompt.txt",
+      "prompt_sha256": "12334c4b85f4326dc8932341f8cd88d145faa0c12a67d091bdf2c05c2ae105d8",
+      "references": [
+        "production_12_reference.png",
+        "production_15_reference.png"
+      ]
+    },
+    {
+      "generator": "image_gen",
+      "generation_id": "exec-46014ca3-c915-4dab-94e2-63c35615e456",
+      "generated_original": "/workspace/generated_images/exec-46014ca3-c915-4dab-94e2-63c35615e456.png",
+      "source": "repairs/frame_15.png",
+      "source_sha256": "2a35aef9819653cab354730609db87689ff49002b1fdff3e8a242c54b4763699",
+      "prompt": "repairs/frame_15_prompt.txt",
+      "prompt_sha256": "484a3b5352e0803a4c0df3e7fb8f024a22ec10537c922384922dc2b6a8e2997b",
+      "references": [
+        "repairs/frame_14.png",
+        "production_16_reference.png"
+      ]
+    }
+  ],
+  "technical_alpha_export": {
+    "source": "repairs/frame_02.png",
+    "output": "repairs/frame_02_alpha_clean.png",
+    "method": "Set alpha<16 to zero; retain every RGB byte and alpha>=16 unchanged. Removes nearly transparent generator fringe; no shape, anatomy, color or face paint.",
+    "source_sha256": "8f555c1b0663742bc690959c56513183cc63ced35bdef4bc3e84b19d6c7eb65d",
+    "output_sha256": "850551f85688a0d99501bd5dad69e8b2897f3059f27fe9d0ca3360ddc98ee816"
+  },
+  "history": "Original atlas cells1/2/3/13/14/15 remain retained but active profiles select the individual complete-pose repairs."
+}

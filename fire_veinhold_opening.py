@@ -16,6 +16,7 @@ from cinematic_smoke import CinematicSmoke
 from cinematic_facility import CinematicFacility
 from cinematic_perspective import CinematicPerspective
 from cinematic_bridge_run import CinematicBridgeRun
+from cinematic_face_reveal import CinematicFaceReveal
 from prologue_flight_audio import PrologueFlightAudio, wing_phase_at
 from prologue_alert_audio import PrologueAlertAudio
 from ui_style import BRASS, MUTED
@@ -39,7 +40,7 @@ def _read_scene(path):
         if (not isinstance(shot, dict)
                 or any(not isinstance(shot.get(key), str) or not shot[key]
                        for key in ('id', 'gallery_id', 'name', 'description'))
-                or shot.get('type') not in ('eagle_ascent', 'perspective_sequence', 'bridge_running')
+                or shot.get('type') not in ('eagle_ascent', 'perspective_sequence', 'bridge_running', 'face_reveal')
                 or type(shot.get('duration')) not in (int, float)
                 or not math.isfinite(shot['duration']) or shot['duration'] <= 0
                 or shot['id'] in identifiers or shot['gallery_id'] in gallery_ids):
@@ -54,7 +55,7 @@ def _read_scene(path):
                 raise ValueError('Incomplete perspective shot metadata')
             identifiers.add(shot['id']); gallery_ids.add(shot['gallery_id'])
             continue
-        if shot['type'] == 'bridge_running':
+        if shot['type'] in ('bridge_running', 'face_reveal'):
             if not isinstance(shot.get('performance'), str) or not shot['performance']:
                 raise ValueError('Incomplete bridge-running shot metadata')
             identifiers.add(shot['id']); gallery_ids.add(shot['gallery_id'])
@@ -117,6 +118,7 @@ class FireVeinholdOpening:
         self._assets = {}
         self._perspectives = {}
         self._running = {}
+        self._face_reveals = {}
         self.flight_audio = PrologueFlightAudio(game)
         self.alert_audio = PrologueAlertAudio(game)
         self.skip_rect = pygame.Rect(426, 292, 44, 20)
@@ -146,12 +148,16 @@ class FireVeinholdOpening:
             self._perspectives.clear()
             self._close_running()
             self._running.clear()
+            self._close_face_reveals()
+            self._face_reveals.clear()
             raise ValueError('Incomplete prologue artwork metadata') from error
         except (OSError, ValueError, pygame.error):
             self._close_perspectives()
             self._perspectives.clear()
             self._close_running()
             self._running.clear()
+            self._close_face_reveals()
+            self._face_reveals.clear()
             raise
         # A failed later clip must not leave a partially playable cached reel.
         self._assets = assets
@@ -159,6 +165,15 @@ class FireVeinholdOpening:
     def _load_assets(self):
         assets = {}
         for shot in self.shots:
+            if shot['type'] == 'face_reveal':
+                performance_path = self._path(shot['performance'])
+                if performance_path not in self._face_reveals:
+                    self._face_reveals[performance_path] = CinematicFaceReveal(
+                        performance_path, allowed_root=self.scene_path.parent)
+                performance = self._face_reveals[performance_path]
+                performance.validate_duration(shot['duration'])
+                assets[shot['id']] = {'face_reveal':performance}
+                continue
             if shot['type'] == 'bridge_running':
                 performance_path = self._path(shot['performance'])
                 if performance_path not in self._running:
@@ -280,8 +295,9 @@ class FireVeinholdOpening:
         # cannot choose different camera offsets through float cancellation.
         local = max(0., min(float(shot['duration']),
                            global_time-(self.global_offset+selected_start)))
-        if shot['type'] == 'bridge_running':
-            running = self._assets[shot['id']]['running'].samples(local, self.reduced_motion)
+        if shot['type'] in ('bridge_running', 'face_reveal'):
+            key = 'running' if shot['type'] == 'bridge_running' else 'face_reveal'
+            running = self._assets[shot['id']][key].samples(local, self.reduced_motion)
             return {**running, 'shot_id':shot['id'], 'global_time':global_time,
                     'alarm':{'active':global_time >= 30., 'elapsed':max(0., global_time-30.)}}
         if shot['type'] == 'perspective_sequence':
@@ -370,6 +386,10 @@ class FireVeinholdOpening:
         for running in self._running.values():
             running.close()
 
+    def _close_face_reveals(self):
+        for performance in self._face_reveals.values():
+            performance.close()
+
     def reset(self):
         if getattr(self, 'flight_audio', None) is not None:
             self.flight_audio.reset()
@@ -377,6 +397,7 @@ class FireVeinholdOpening:
             self.alert_audio.reset()
         self._close_perspectives()
         self._close_running()
+        self._close_face_reveals()
         self.active = False
         self.paused = False
         self.focused = True
@@ -389,10 +410,16 @@ class FireVeinholdOpening:
         self._load()
         self.reset()
         try:
+            # Preparing these large complete drawings competes with the side
+            # shot's PNG decoders. Finish it before either the presentation
+            # clock or owned audio begins, for full-film and standalone replay.
+            for performance in self._face_reveals.values():
+                performance.preload(0., reduced_motion=self.reduced_motion, blocking=True)
             self._preload_at(0., blocking=True)
         except (ValueError, OSError, pygame.error):
             self._close_perspectives()
             self._close_running()
+            self._close_face_reveals()
             raise
         self.active = True
         self.focused = bool(getattr(self.game, '_music_focused', True))
@@ -416,6 +443,7 @@ class FireVeinholdOpening:
         self.alert_audio.stop()
         self._close_perspectives()
         self._close_running()
+        self._close_face_reveals()
         if callback is not None:
             callback()
 
@@ -445,6 +473,9 @@ class FireVeinholdOpening:
             # The side-on performance has its own small source-frame cache.
             # Release the completed orbit's reservations at this editorial cut.
             self._close_perspectives()
+        if before['phase'] != 'face_reveal' and after['phase'] == 'face_reveal':
+            self._close_perspectives()
+            self._close_running()
         if before['shot_id'] == after['shot_id'] and 'eagle' in after:
             self.flight_audio.update(before['global_time'], after['global_time'],
                 wing_phase=(before['eagle']['wing_phase'], after['eagle']['wing_phase']),
@@ -489,6 +520,9 @@ class FireVeinholdOpening:
         """Warm the active clip and the next clip before its first picture."""
         shot, local, start = self._locate(seconds)
         art = self._assets[shot['id']]
+        if 'face_reveal' in art:
+            art['face_reveal'].preload(local, reduced_motion=self.reduced_motion,
+                                      blocking=blocking)
         if 'running' in art:
             art['running'].preload(local, reduced_motion=self.reduced_motion,
                                    blocking=blocking)
@@ -497,13 +531,16 @@ class FireVeinholdOpening:
                                       reduced_motion=self.reduced_motion,
                                       blocking=blocking,
                                       alarm_active=self.global_offset+seconds >= 30.)
-        # Start looking ahead during the end of the current shot. The shared
-        # cache remains bounded even when two segments share the window.
-        if shot['duration']-local <= .5:
-            index = self.shots.index(shot)+1
-            if index < len(self.shots):
-                upcoming = self.shots[index]
-                next_art = self._assets[upcoming['id']]
+        # Retain a one-second frontal lookahead after its startup preparation.
+        # Other clips retain their half-second lookahead and bounded windows.
+        index = self.shots.index(shot)+1
+        if index < len(self.shots):
+            upcoming = self.shots[index]
+            next_art = self._assets[upcoming['id']]
+            lookahead = 1. if 'face_reveal' in next_art else .5
+            if shot['duration']-local <= lookahead:
+                if 'face_reveal' in next_art:
+                    next_art['face_reveal'].preload(0., reduced_motion=self.reduced_motion)
                 if 'running' in next_art:
                     next_art['running'].preload(0., reduced_motion=self.reduced_motion)
                 if 'perspective' in next_art:
@@ -570,6 +607,9 @@ class FireVeinholdOpening:
         state = self.state_at(self.elapsed if time is None else time)
         art = self._assets[state['shot_id']]
         target = pygame.Surface(RENDER_SIZE).convert()
+        if 'face_reveal' in art:
+            art['face_reveal'].draw(target, state)
+            return target
         if 'running' in art:
             art['running'].draw(target, state)
             return target

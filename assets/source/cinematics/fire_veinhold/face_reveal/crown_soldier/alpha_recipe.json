@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "derivatives": [
+    {
+      "source": "batch_00_03.png",
+      "output": "batch_00_03_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "23caf7fef8381bacd1e38b94a48e9c2986ccb1c38d4f4f861dea70f221fac48e",
+      "output_sha256": "47b9b7ea8487a6dbdd6a7d5b1d14edd1fe1e626d6749a59d962bad96d5a19368"
+    },
+    {
+      "source": "batch_04_07.png",
+      "output": "batch_04_07_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "2eae314789824f30262e261fae37d2aa7b50a993264dbb81e0352ba7e9df1e68",
+      "output_sha256": "783b591171ab980493ba89a3ece1bebc889670aec2a036e2b6566fb32a835d01"
+    },
+    {
+      "source": "batch_08_11.png",
+      "output": "batch_08_11_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "f9b6a520afe80d54500a57086668480c12586e682fb880ff19627e89d312a5d9",
+      "output_sha256": "5162e56752732f649545a1e3588ba0e115b50eee3b614d9e15e21849392786d7"
+    },
+    {
+      "source": "batch_12_15.png",
+      "output": "batch_12_15_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "7ae364e2d57aca6cb15fbf18c73b28af403195f974f18af418e55bf95e5d1bf5",
+      "output_sha256": "4808c07281384491cfc8fa724a977d35136cb8a8ce56815d09774d5cdec3ba7b"
+    },
+    {
+      "source": "batch_16_19.png",
+      "output": "batch_16_19_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "b8843a8ae3d214b22d0c102a5115c9b46e1efad696c7707b35e19e2dbdd6e6ee",
+      "output_sha256": "9060b4d6319dfd449431f8037f474341724ffcdbfe97b114723522b66cc83a9c"
+    },
+    {
+      "source": "batch_20_23.png",
+      "output": "batch_20_23_alpha_clean.png",
+      "method": "Retain original alpha within 2 source pixels of every alpha>=192 core; set other alpha to zero. RGB exact, no component/anatomy filtering.",
+      "alpha_threshold": 192,
+      "safety_dilation_pixels": 2,
+      "rgb_exact": true,
+      "source_sha256": "e8b84d13539718b8ecb46306269501ecb4b73eda89994ec40a301e9f7f871d9c",
+      "output_sha256": "af6c2544ab549af745c1c83027a28df81b3e7739c65de4e35be014d452aeb264"
+    }
+  ]
+}
