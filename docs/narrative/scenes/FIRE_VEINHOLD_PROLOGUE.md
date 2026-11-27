@@ -36,7 +36,7 @@ These are staging units, not canonical geographic distances.
 - **5–13.25s:** Powered climb with complete authored wing strokes.
 - **13.25–15s:** Glide across the crest; the camera clears the near ridge.
 - **15–25s:** A full ten-second view of the Cinder Isles. A restrained camera
-  push preserves the composition while the eagle flies onward and recedes.
+  push continues while the eagle descends below the camera and leaves the frame.
 
 A single tall opaque painting contains the summit approach, coastal descent,
 open sea and islands. The camera's source window pans upward from the rocky
@@ -44,8 +44,10 @@ approach into the upper vista. Every geographic landmark shares one transform;
 there are no independently scrolling foreground/background mountain groups,
 terrain-card seams, panorama cross-fades or hard cut at the crest. At 15s the
 upper vista is fully framed; the nearer mainland ridge has passed below the
-main view. The eagle occupies the lower sea corridor, leaving the main crater
-visible, then becomes smaller as it travels toward the islands.
+main view. The camera releases its eagle chase at the crest. The eagle descends smoothly
+through the lower edge at full sprite scale, clearing the frame by 17s. The
+camera keeps pushing toward the fortress through 25s; the remaining vista is
+unobstructed. The bird neither fades nor shrinks away.
 
 Nighttime remains readable: cool silver rock and eagle lighting, a dark starry
 sky, moonlight on the sea, rust-red main-island ash, and lava on the distant island. This is
@@ -97,8 +99,8 @@ The eagle retains its complete 256×256 drawings, density two, chest anchor
 [128,144], and 750ms powered-wing cycle. Animation follows real elapsed time:
 extending the shot does not slow its wing cadence. The bank spans three seconds.
 The second powered window ends at 13.25s on the shared neutral wing pose.
-Whole-body scale during the vista represents increasing distance; changing wing
-bounds never drive registration or body proportions. Reduced Motion lowers
+The eagle retains its whole-body scale as it descends out of frame; changing
+wing bounds never drive registration or body proportions. Reduced Motion lowers
 lateral sway while retaining the same phase durations, wings and geographic
 reveal. Focus/pause freeze the entire presentation.
 
@@ -167,5 +169,5 @@ end fade. The terminal camera, eagle and wind state is exposed for later clip
 integration. New Game retains its bedroom opening until the full cinematic and
 playable infiltration handoff are ready.
 
-See [current review evidence](../../reviews/veinhold_reveal/README.md).
+See [current review evidence](../../reviews/eagle_exit/README.md).
 Earlier ten-second studies remain historical evidence of their own revisions.

@@ -1,0 +1,1498 @@
+{
+  "fps": 30,
+  "frames": 750,
+  "duration": 25.0,
+  "render_size": [
+    960,
+    640
+  ],
+  "entry": "fire_veinhold_shot_01",
+  "reduced_motion": true,
+  "source": "Production Game.draw in the save-disabled Gallery session",
+  "natural_completion": true,
+  "no_persistent_files_written": true,
+  "audio": {
+    "method": "Offline reconstruction from production WAVs, phase and cue metadata; not live loopback.",
+    "events": [
+      {
+        "id": "wing",
+        "time": 0.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "foreground_pass",
+        "time": 0.85,
+        "file": "air_pass.wav",
+        "gain": 0.29,
+        "pan": -0.45
+      },
+      {
+        "id": "wing",
+        "time": 1.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "bank_gust",
+        "time": 2.7,
+        "file": "bank_gust.wav",
+        "gain": 0.36,
+        "pan": 0.38
+      },
+      {
+        "id": "wing",
+        "time": 5.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "climb_rush",
+        "time": 5.45,
+        "file": "climb_rush.wav",
+        "gain": 0.32,
+        "pan": -0.18
+      },
+      {
+        "id": "wing",
+        "time": 5.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 6.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 7.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 9.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 10.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 12.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "crest_gust",
+        "time": 14.65,
+        "file": "crest_gust.wav",
+        "gain": 0.3,
+        "pan": 0.12
+      }
+    ],
+    "peak": 0.16651687401546295
+  },
+  "states": [
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 0.0,
+      "camera": {
+        "position": [
+          0.0,
+          0.0,
+          145.0
+        ],
+        "velocity": [
+          0.26389378290154264,
+          28.0,
+          0.0
+        ],
+        "progress": 0.0
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          410.0
+        ],
+        "sequence": "flap",
+        "frame": 8,
+        "wing_phase": 0.5213333333333333,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": true
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 0,
+          "next_frame": 1,
+          "blend": 0.0,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 5,
+          "next_frame": 6,
+          "blend": 0.40000000000000036,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -0.0,
+            -203.84375
+          ],
+          "scale": 1.05
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 4.999999999999992,
+      "camera": {
+        "position": [
+          1.2343490298141917,
+          159.99999999999972,
+          183.8888888888888
+        ],
+        "velocity": [
+          0.21349455507724105,
+          35.999999999999986,
+          13.333333333333323
+        ],
+        "progress": 0.19999999999999968
+      },
+      "eagle": {
+        "position": [
+          485.19615242270663,
+          419.9806589386673
+        ],
+        "sequence": "bank",
+        "frame": 7,
+        "wing_phase": 3.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": true
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 13,
+          "next_frame": 14,
+          "blend": 0.9999999999999769,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 3,
+          "next_frame": 4,
+          "blend": 0.39999999999997726,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.2343490298141917,
+            -54.04320987654353
+          ],
+          "scale": 1.0370370370370372
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 9.999999999999975,
+      "camera": {
+        "position": [
+          1.9972186842198205,
+          359.9999999999989,
+          256.11111111111074
+        ],
+        "velocity": [
+          0.08154766362647038,
+          43.99999999999996,
+          13.33333333333337
+        ],
+        "progress": 0.399999999999999
+      },
+      "eagle": {
+        "position": [
+          485.19615242270663,
+          440.0193410613326
+        ],
+        "sequence": "flap",
+        "frame": 13,
+        "wing_phase": 9.854666666666635,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": true
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 11,
+          "next_frame": 12,
+          "blend": 0.999999999999929,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 1,
+          "next_frame": 2,
+          "blend": 0.3999999999999275,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.9972186842198205,
+            214.12692901234453
+          ],
+          "scale": 1.012962962962963
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 14.999999999999957,
+      "camera": {
+        "position": [
+          1.9972186842198258,
+          599.9999999999977,
+          295.0
+        ],
+        "velocity": [
+          -0.08154766362646823,
+          51.99999999999993,
+          1.7319479184152392e-13
+        ],
+        "progress": 0.5999999999999983
+      },
+      "eagle": {
+        "position": [
+          480.00000000000006,
+          449.99999999999983
+        ],
+        "sequence": "glide",
+        "frame": 0,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": true
+      },
+      "phase": "ascent",
+      "crest_time": 15,
+      "vista_elapsed": 0.0,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 9,
+          "next_frame": 10,
+          "blend": 0.9999999999998792,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 15,
+          "next_frame": 0,
+          "blend": 0.3999999999998778,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.9972186842198258,
+            353.125
+          ],
+          "scale": 1.0
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 20.000000000000153,
+      "camera": {
+        "position": [
+          1.2343490298141604,
+          880.0000000000093,
+          295.0
+        ],
+        "velocity": [
+          -0.21349455507724394,
+          60.00000000000025,
+          0.0
+        ],
+        "progress": 0.8000000000000062
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          2574.6102885684263
+        ],
+        "sequence": "glide",
+        "frame": 1,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": false
+      },
+      "phase": "cinder_vista",
+      "crest_time": 15,
+      "vista_elapsed": 5.000000000000153,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 8,
+          "next_frame": 9,
+          "blend": 4.263256414560601e-13,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 13,
+          "next_frame": 14,
+          "blend": 0.4000000000004249,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -1.2343490298141604,
+            364.90468750000036
+          ],
+          "scale": 1.0175000000000005
+        }
+      }
+    },
+    {
+      "shot_id": "eagle_ascent",
+      "local_time": 24.966666666667066,
+      "camera": {
+        "position": [
+          0.008796433706242479,
+          1197.7342222222494,
+          295.0
+        ],
+        "velocity": [
+          -0.26389146776960226,
+          67.94666666666731,
+          0.0
+        ],
+        "progress": 0.9986666666666827
+      },
+      "eagle": {
+        "position": [
+          480.0,
+          8893.86441085528
+        ],
+        "sequence": "glide",
+        "frame": 0,
+        "wing_phase": 14.188,
+        "anchor": [
+          128,
+          144
+        ],
+        "scale": 1.0,
+        "visible": false
+      },
+      "phase": "cinder_vista",
+      "crest_time": 15,
+      "vista_elapsed": 9.966666666667066,
+      "smoke": [
+        {
+          "id": "main_steam",
+          "frame": 5,
+          "next_frame": 6,
+          "blend": 0.9066666666677747,
+          "origin": [
+            538,
+            266
+          ],
+          "scale": 0.65
+        },
+        {
+          "id": "distant_ash",
+          "frame": 11,
+          "next_frame": 12,
+          "blend": 0.3066666666677804,
+          "origin": [
+            783,
+            262
+          ],
+          "scale": 0.7
+        }
+      ],
+      "facility": {
+        "beacons": [
+          {
+            "origin": [
+              248,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              302,
+              299
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              450,
+              450
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              528,
+              459
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              748,
+              431
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              768,
+              408
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              865,
+              453
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              928,
+              409
+            ],
+            "strength": 0.7
+          },
+          {
+            "origin": [
+              956,
+              433
+            ],
+            "strength": 0.7
+          }
+        ],
+        "conduits": [
+          {
+            "id": "west_line",
+            "from": [
+              738.6039539086893,
+              380.3294294047396
+            ],
+            "to": [
+              748.1103314062843,
+              385.51472622160964
+            ]
+          },
+          {
+            "id": "east_line",
+            "from": [
+              756.8150624627054,
+              371.81506246270544
+            ],
+            "to": [
+              766.725963852701,
+              379.24797717012694
+            ]
+          }
+        ],
+        "embers": [
+          [
+            865.7266317440019,
+            451.0
+          ],
+          [
+            841.3003740152707,
+            451.7890248520091
+          ],
+          [
+            857.096936796799,
+            444.4750822542176
+          ],
+          [
+            872.2675103966905,
+            455.15398583955897
+          ],
+          [
+            823.3120180583592,
+            451.4095646671681
+          ],
+          [
+            885.0175959518444,
+            449.15675436210773
+          ],
+          [
+            844.9597457566896,
+            458.9155409789816
+          ],
+          [
+            835.8519888090809,
+            442.42411149298886
+          ],
+          [
+            896.5434243773773,
+            452.00961033194585
+          ],
+          [
+            811.7810552682678,
+            453.6897529856363
+          ],
+          [
+            875.8343027278079,
+            443.3185650140552
+          ],
+          [
+            870.3962193896596,
+            462.668265397741
+          ],
+          [
+            808.5959157265953,
+            446.7762476840829
+          ],
+          [
+            909.4371503965716,
+            447.80232762162706
+          ]
+        ]
+      },
+      "layers": {
+        "panorama": {
+          "offset": [
+            -0.008796433706242479,
+            376.60584375000093
+          ],
+          "scale": 1.0348833333333347
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "assets/story/fire_veinhold_opening/scene.json": "f686ea6b6f4af4a815eb8c7ed845dc45023dd83dd80038b54349e75ea08d87d2",
+    "assets/story/fire_veinhold_opening/shot01/eagle/animation.json": "61683709996834ee068bcd1980e3e35d2110444b1a13576462d44c24331a1bd1",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_01.png": "0108185378c962ae64ae7f2d0c5642972f18275173a8ad9c072d648ed65499bd",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_02.png": "628056fb38f183d7d2aba33c9dc0b31adf9a74592a692f8a9917bfc0385b56d7",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_03.png": "a1893f5549111ae894e5fa2bbc1b3b175939d89239fe3ba57f1d9f647fe81bff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_04.png": "580d16517ed957b90ab9a77271f1226ae9f64574631b1da3befcf139d5a07910",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_05.png": "322468c11a9c4edb0365ec8af462cdd16b10ef50887ee92937ccd9659a8a9366",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_06.png": "4fd66ada572b7ae41e07684aec932cbb85e009e6e4397f59a44d6f88fe367fd9",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_07.png": "a0632f4944b73da9f78955eb5407f61f9d22942b56f0c1bb7f148058f82b076d",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_08.png": "7819fadf7881ae3837f8d05a1ec039e4b73af60657846adf8f6dda4301cbd135",
+    "assets/story/fire_veinhold_opening/shot01/eagle/export_provenance.json": "af3229c0ea4fc6aecffac2fa3da083e3ea1f62a5c0f24fd5b83e90db332d2b6f",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_01.png": "9874daadc257a970955b5e3ef914d95e43d48ba8bfa619bfdb9e2def3969e1a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_02.png": "33d261813cad9b329cb8dcf8ea532dbf1685d25f90ac547c8803976b296e0476",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_03.png": "ec3ca82c617edbf91b7746f82612d9672557eb922dd8923560ee492c9f411a20",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_04.png": "9484c200a4e5e2ebcc4280e145647b3568e273d9e048b6c8b8b6d5b758ecb3b8",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_05.png": "8c3f18595bc5e98c0840319c6110a1a2c55ecd43ffc480803ee542ebc6aef022",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_06.png": "d24abf4d183c394c6681213288718d6618eebe507b82ecf8702591206ddaf530",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_07.png": "2f718dfd5df9ee6b848d67f2d45e904c22ffe54f800e7db8e62099faf36cb5a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_08.png": "f519528b7540b87402825090f5a88699c4259af303809afec598016d3e4f52c4",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_09.png": "9bc1f2f017e7c2ee37ddf11a8d7638465e1fa9acceb87f856f8facf0279677ff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_10.png": "b4ad7a0467ccf682320277b315f977bff2eef2532bde50a0fb97ee4eadfeb1ee",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_11.png": "a8bb39250714bdec8527b00acf3ba6c5d538c3d0d48ea12115ff247cc16db502",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_12.png": "193c7dd5ffeb11af9aab313c1fd914da814ef2ff77793071fdc867ff29cb08ad",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_13.png": "1cfbea45945b6a173cb87ec4e0356e356e66cb4c2fbcf2a829d5010ed0a9c70e",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
+    "assets/story/fire_veinhold_opening/shot01/environment/art.json": "1f41ddaae1154be5929eddd58bd9c17056de3d015a21b43d743524a196fde883",
+    "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "bd17b4776f79f2472e789462b05cbf0a1b650a2a05db1bca8ceba758a8ae5d78",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_01.png": "26223a05da27ae27811381a9309144c2084cbc1520e051c8b9d5d8a8429dccb6",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_02.png": "3bc698519860377a3ac904e3fa4223b4a5aca6346fb68d3eeb4f853184459e70",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_03.png": "4dc884d17fd3810f2213fe6ebedda8181be9b416c562bbf1ecb9aeb433127392",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_04.png": "87d82e9898f0994c891b4d45bf9b189f041420160beea81a99df79c779d778fe",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_05.png": "414ea490a9f78ad9bfcd3d4f3ae4d12c42663feab868ff624aa33ea6b32f8d38",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_06.png": "68e2b62662d2cffb87a04f62e551ab0846ef6dc99df226cf61411bbe6e995c8b",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_07.png": "ed00b17fd0bceb8bb497c17b6bda0c3aca4afe79bb34ad04aebaf1b444ae7e45",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_08.png": "a62ca06a4c1f70f329c13a6a114c92bbfc1de386bfd6998a5bacfa91274ee5a0",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_09.png": "e929904ad9a60411b35f810eff0f349d2c77bfa4847c95bbe615d703e7dcaee9",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_10.png": "0585c7670b4bd0e16e78c4f8046c21c526e8b42727d0c100a2420bb0d5ba9ea9",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_11.png": "8146b6b4e51fabef657663d16ad2f1138ee85d74326c8e3f582c99f9fe5dac16",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_12.png": "c2bf2f2a6f81f77c662f649b50997f290115f88b378e9fd680218114bb7099ab",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_13.png": "8ca875de5206aa15e6c6502b17b8503d37c7b98f8f981503083a4378e9268d94",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_14.png": "0a8720b25681d5fcde7b486309f7bcbe641a6730e213a18deca08cfb87d1f533",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_15.png": "3d1f12a3293f53363c2ea1cf45ef53fc7feacea6e575aed58599111caa6eaf54",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_16.png": "4933c4b6713f165b6369cf2e83df374097d021d7a9903b0672f2cdcf02c89711"
+  },
+  "runtime_sha256": {
+    "fire_veinhold_opening.py": "017eb5ecb79282e1514fec6785a4f39c023d65ae452d96fb0792b2da3a8b6c55",
+    "cinematic_smoke.py": "24c460b520bf6277e797b08c47368947ebb5fcb41b539795811f0481853b908c",
+    "cinematic_facility.py": "0decc0fb6ef6a1cce27809f39f1016c05d459db41bc2b10f7a6f251d3a0e92c1",
+    "prologue_flight_audio.py": "1400e5c788333713ee4ff67a0598ead54d8958069f30fbfdcceb193637d252bf",
+    "cutscene_gallery.py": "0fa2fb1a45cb8510b971fcaf55bfe2934d0d798fc650f02b617517fb9ab3adb1"
+  },
+  "video_sha256": "492b09186fd7a7b48fbe48f1328201734a290657252766a74bd4ea732fd3785d"
+}

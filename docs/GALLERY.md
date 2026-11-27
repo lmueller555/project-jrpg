@@ -29,7 +29,7 @@ individual entries. These use native 960×640 cinematic detail with wind and
 flight Foley. New Game keeps the bedroom opening until the full prologue and
 playable handoff are ready. See the
 [scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
-[review evidence](reviews/veinhold_reveal/README.md).
+[review evidence](reviews/eagle_exit/README.md).
 
 ## Controls
 
