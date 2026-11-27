@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "scope": "Complete authored whole-character cinematic running poses, profile facing right.",
+  "near_limb": "anatomical_right",
+  "far_limb": "anatomical_left",
+  "target_canvas": [
+    480,
+    480
+  ],
+  "target_anchor": [
+    240,
+    448
+  ],
+  "cycle_ms": 600,
+  "intended_frames": 36,
+  "construction": "Image generation draws each complete figure; export only uniformly samples/registers whole images. No detached-limb transforms or runtime anatomy construction.",
+  "design": "Rounded polished steel armor/helmet, royal-blue cloth with silver edging, brown boots, plain round silver shield on left/far arm and low trailing sword in right/near hand.",
+  "sources": [
+    {
+      "frame": 0,
+      "file": "current_appearance_reference.png",
+      "canvas": [
+        627,
+        627
+      ],
+      "sha256": "ad55545c0bf4a18acf993cd5468fc932aefa67a902a2b3e9c89c6dfaa36be346",
+      "generation_id": null,
+      "prompt": null,
+      "references": {
+        "batch_00_03.png": "7b918576b5528c9be53f546893a38fca12bf8a801300eb973b065f9892f517a3"
+      },
+      "status": "internal_phase_QA",
+      "derivation": "Technical crop of top-left complete drawing of generation exec-5aff310c-1d88-4072-8b1c-52968843ee4d (batch_00_03.png); other three draft cells are not selected."
+    },
+    {
+      "frame": 1,
+      "file": "individual/phase_01.png",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "sha256": "5e1ba3666e3354ac0e1bbb672aafa0e24272aa50d6f9e9bd7c0b3bbe330a0d4f",
+      "generation_id": "exec-6a8ca49a-65fb-4fbc-89e8-73570a266bd4",
+      "prompt": "individual/phase_01_prompt.txt",
+      "references": {
+        "../phase_guides/single/phase_01.png": "48cff83e72259dfcf38d496734c3d0675d42a49a5084e4aefc2783fceb0a694c",
+        "current_appearance_reference.png": "ad55545c0bf4a18acf993cd5468fc932aefa67a902a2b3e9c89c6dfaa36be346"
+      },
+      "status": "internal_phase_QA"
+    }
+  ],
+  "rejected_drafts": [
+    "batch_00_03_rejected_quarterkeys.png",
+    "batch_04_07_rejected_microtiming.png"
+  ],
+  "pilot_measurement": {
+    "source_reference_canvas": [
+      627,
+      627
+    ],
+    "right_near_sole_phase0": [
+      520.5609318996416,
+      589
+    ],
+    "right_near_sole_phase1_uniformly_sampled_to_reference": [
+      495.8958707360862,
+      589
+    ],
+    "horizontal_change": -24.6650611635554,
+    "method": "Mean opaque pixels of bottom six sole rows in the forward boot, at common whole-canvas density. No artwork was modified by this measurement."
+  },
+  "status": "Historical 36-phase pilot studies; active production is the 24-pose 400ms source_art_24.json selection.",
+  "active_production": "source_art_24.json"
+}

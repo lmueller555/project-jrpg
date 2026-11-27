@@ -1,0 +1,1593 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "canvas": [
+    480,
+    480
+  ],
+  "anchor": [
+    260,
+    468
+  ],
+  "cycle_ms": 400,
+  "facing": "right",
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "frames": [
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -0.1276,
+        33.2153
+      ],
+      "landmarks": {
+        "neck": [
+          405,
+          118
+        ],
+        "brooch": [
+          366,
+          141
+        ],
+        "belt": [
+          365,
+          241
+        ],
+        "near_sole": [
+          460,
+          585
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 1.0,
+        "brooch": 1.0,
+        "belt": 1.0
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "near_contact",
+      "stance": {
+        "foot": "near",
+        "part": "heel",
+        "source_point": [
+          460,
+          585
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 13.2153,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_00_03.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -5.7018,
+        30.9856
+      ],
+      "landmarks": {
+        "neck": [
+          415.0,
+          123.0
+        ],
+        "brooch": [
+          380.0,
+          145.0
+        ],
+        "belt": [
+          370.0,
+          245.0
+        ],
+        "near_sole": [
+          395,
+          588
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.972,
+        "brooch": 0.7532,
+        "belt": 0.9092
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          395,
+          588
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 10.9856,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "repairs_02_03/phase_02.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.37161084529505584,
+      "origin": [
+        -19.0798,
+        33.9585
+      ],
+      "landmarks": {
+        "neck": [
+          852,
+          246
+        ],
+        "brooch": [
+          792,
+          290
+        ],
+        "belt": [
+          790,
+          468
+        ],
+        "near_sole": [
+          730,
+          1168
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8485,
+        "brooch": 0.6932,
+        "belt": "manual silver waist-clasp center; automatic template confused wrist motif"
+      },
+      "notes": "Targeted complete-frame mild-compression redraw; replaces over-deep crouch. Fixed whole-image density1/2 of627cell scale; X registers actual neck+belt and Y follows observed ball contact. No anatomical warp or bodyY snap to conceal source squat. Belt manually cross-checked because template can match wrist embroidery.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          730,
+          1168
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 13.9585,
+        "mode": "authored_stance_contact"
+      },
+      "replaces_deep_crouch": {
+        "source": "bank24/batch_00_03.png",
+        "cell": [
+          0,
+          627,
+          627,
+          1254
+        ],
+        "scale": 0.7432216905901117,
+        "origin": [
+          -0.8708,
+          35.445
+        ],
+        "landmarks": {
+          "neck": [
+            409.0,
+            137.0
+          ],
+          "brooch": [
+            378.0,
+            158.0
+          ],
+          "belt": [
+            363.0,
+            257.0
+          ],
+          "near_sole": [
+            365,
+            582
+          ]
+        }
+      }
+    },
+    {
+      "source": "repairs_02_03/phase_03_neighbor_matched.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.36,
+      "origin": [
+        -6.3072,
+        37.44
+      ],
+      "landmarks": {
+        "neck": [
+          848,
+          246
+        ],
+        "brooch": [
+          782,
+          290
+        ],
+        "belt": [
+          776,
+          480
+        ],
+        "eye": [
+          890,
+          144
+        ],
+        "near_sole": [
+          550,
+          1196
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8507,
+        "brooch": 0.7143,
+        "belt": 0.8298,
+        "eye": 0.9176
+      },
+      "notes": "Targeted whole-frame mild support redraw using actual neighbors1/4 to preserve boot shaft and calf proportions. Uniform source density calibrated from head/neck detail span; head-eye/neck distance within2percent of reference after sampling. X uses measured neck/belt; Y follows real ball contact. No pose warps or source-bodyY snap to hide a squat.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          550,
+          1196
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 17.44,
+        "mode": "authored_stance_contact"
+      },
+      "replaces_deep_crouch": {
+        "source": "bank24/batch_00_03.png",
+        "cell": [
+          627,
+          627,
+          1254,
+          1254
+        ],
+        "scale": 0.7432216905901117,
+        "origin": [
+          -5.7018,
+          35.445
+        ],
+        "landmarks": {
+          "neck": [
+            421.0,
+            146.0
+          ],
+          "brooch": [
+            391.0,
+            168.0
+          ],
+          "belt": [
+            364.0,
+            289.0
+          ],
+          "near_sole": [
+            345,
+            582
+          ]
+        }
+      },
+      "density_calibration": {
+        "method": "Artist-audited complete-drawing source density, using measured neck\u2192eye span and adjacent-frame costume detail at native scale; no opaque-height/foot bounding-box fit.",
+        "reference_frame": 1,
+        "reference_neck_eye_distance_export": 38.93942643829191,
+        "candidate_neck_eye_distance_export": 39.711116831436506,
+        "uniform_scale": 0.36
+      }
+    },
+    {
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -14.6204,
+        29.4992
+      ],
+      "landmarks": {
+        "neck": [
+          428.0,
+          122.0
+        ],
+        "brooch": [
+          391.0,
+          147.0
+        ],
+        "belt": [
+          381.0,
+          243.0
+        ],
+        "near_sole": [
+          290,
+          590
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8714,
+        "brooch": 0.8195,
+        "belt": 0.765
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          290,
+          590
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 9.4992,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -13.8772,
+        29.4992
+      ],
+      "landmarks": {
+        "neck": [
+          423.0,
+          121.0
+        ],
+        "brooch": [
+          386.0,
+          144.0
+        ],
+        "belt": [
+          384.0,
+          238.0
+        ],
+        "near_sole": [
+          180,
+          590
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8587,
+        "brooch": 0.8151,
+        "belt": 0.7442
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "near",
+        "part": "toe",
+        "source_point": [
+          180,
+          590
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 9.4992,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -18.7081,
+        30.2424
+      ],
+      "landmarks": {
+        "neck": [
+          428.0,
+          120.0
+        ],
+        "brooch": [
+          391.0,
+          143.0
+        ],
+        "belt": [
+          392.0,
+          238.0
+        ],
+        "near_sole": [
+          105,
+          589
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8892,
+        "brooch": 0.8757,
+        "belt": 0.755
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "near",
+        "part": "toe",
+        "source_point": [
+          105,
+          589
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 10.2424,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_04_07_alpha_clean.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -22.4242,
+        27.1313
+      ],
+      "landmarks": {
+        "neck": [
+          431.0,
+          120.0
+        ],
+        "brooch": [
+          398.0,
+          145.0
+        ],
+        "belt": [
+          399.0,
+          240.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8417,
+        "brooch": 0.8306,
+        "belt": 0.752
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": 7.1313,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -10.1611,
+        21.3535
+      ],
+      "landmarks": {
+        "neck": [
+          418.0,
+          132.0
+        ],
+        "brooch": [
+          377.0,
+          156.0
+        ],
+        "belt": [
+          379.0,
+          264.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8631,
+        "brooch": 0.6703,
+        "belt": 0.8375
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": 1.3535,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -15.7352,
+        18.2424
+      ],
+      "landmarks": {
+        "neck": [
+          425.0,
+          133.0
+        ],
+        "brooch": [
+          385.0,
+          156.0
+        ],
+        "belt": [
+          387.0,
+          263.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8769,
+        "brooch": 0.6944,
+        "belt": 0.8516
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": -1.7576,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -14.6204,
+        24.0512
+      ],
+      "landmarks": {
+        "neck": [
+          423.0,
+          129.0
+        ],
+        "brooch": [
+          382.0,
+          152.0
+        ],
+        "belt": [
+          386.0,
+          261.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8291,
+        "brooch": 0.6891,
+        "belt": 0.8904
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": 4.0512,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -23.5391,
+        34.8388
+      ],
+      "landmarks": {
+        "neck": [
+          432.0,
+          136.0
+        ],
+        "brooch": [
+          395.0,
+          159.0
+        ],
+        "belt": [
+          401.0,
+          267.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.847,
+        "brooch": 0.7321,
+        "belt": 0.818
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": 14.8388,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -3.8437,
+        40.6475
+      ],
+      "landmarks": {
+        "neck": [
+          406.0,
+          123.0
+        ],
+        "brooch": [
+          367.0,
+          146.0
+        ],
+        "belt": [
+          374.0,
+          249.0
+        ],
+        "far_sole": [
+          465,
+          575
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.894,
+        "brooch": 0.8335,
+        "belt": 0.8236
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "far_contact",
+      "stance": {
+        "foot": "far",
+        "part": "heel",
+        "source_point": [
+          465,
+          575
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 20.6475,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -3.8437,
+        37.6746
+      ],
+      "landmarks": {
+        "neck": [
+          404.0,
+          124.0
+        ],
+        "brooch": [
+          369.0,
+          148.0
+        ],
+        "belt": [
+          376.0,
+          249.0
+        ],
+        "far_sole": [
+          390,
+          579
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8715,
+        "brooch": 0.77,
+        "belt": 0.7972
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          390,
+          579
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 17.6746,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -5.7018,
+        28.0128
+      ],
+      "landmarks": {
+        "neck": [
+          406.0,
+          125.0
+        ],
+        "brooch": [
+          371.0,
+          153.0
+        ],
+        "belt": [
+          379.0,
+          253.0
+        ],
+        "far_sole": [
+          310,
+          592
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8819,
+        "brooch": 0.6018,
+        "belt": 0.744
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          310,
+          592
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 8.0128,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -5.7018,
+        27.2695
+      ],
+      "landmarks": {
+        "neck": [
+          408.0,
+          126.0
+        ],
+        "brooch": [
+          375.0,
+          201.0
+        ],
+        "belt": [
+          377.0,
+          257.0
+        ],
+        "far_sole": [
+          250,
+          593
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.7624,
+        "brooch": 0.4185,
+        "belt": 0.7458
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "compression",
+      "stance": {
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          250,
+          593
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 7.2695,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -7.5598,
+        23.5534
+      ],
+      "landmarks": {
+        "neck": [
+          410.0,
+          120.0
+        ],
+        "brooch": [
+          384.0,
+          145.0
+        ],
+        "belt": [
+          380.0,
+          239.0
+        ],
+        "far_sole": [
+          230,
+          598
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8952,
+        "brooch": 0.5041,
+        "belt": 0.6739
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          230,
+          598
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 3.5534,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -0.8708,
+        22.8102
+      ],
+      "landmarks": {
+        "neck": [
+          402.0,
+          119.0
+        ],
+        "brooch": [
+          375.0,
+          145.0
+        ],
+        "belt": [
+          370.0,
+          241.0
+        ],
+        "far_sole": [
+          155,
+          599
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8789,
+        "brooch": 0.5267,
+        "belt": 0.7277
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "far",
+        "part": "toe",
+        "source_point": [
+          155,
+          599
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": 2.8102,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -12.0191,
+        15.378
+      ],
+      "landmarks": {
+        "neck": [
+          411.0,
+          118.0
+        ],
+        "brooch": [
+          385.0,
+          144.0
+        ],
+        "belt": [
+          391.0,
+          237.0
+        ],
+        "far_sole": [
+          135,
+          609
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8814,
+        "brooch": 0.5549,
+        "belt": 0.7088
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "toe_off",
+      "stance": {
+        "foot": "far",
+        "part": "toe",
+        "source_point": [
+          135,
+          609
+        ]
+      },
+      "weight_transfer": {
+        "unpad_origin_y": -4.622,
+        "mode": "authored_stance_contact"
+      }
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -11.2759,
+        12.2669
+      ],
+      "landmarks": {
+        "neck": [
+          410.0,
+          114.0
+        ],
+        "brooch": [
+          384.0,
+          139.0
+        ],
+        "belt": [
+          390.0,
+          232.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8964,
+        "brooch": 0.5395,
+        "belt": 0.691
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": -7.7331,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -2.3573,
+        6.4891
+      ],
+      "landmarks": {
+        "neck": [
+          411.0,
+          119.0
+        ],
+        "brooch": [
+          371.0,
+          142.0
+        ],
+        "belt": [
+          365.0,
+          242.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.868,
+        "brooch": 0.8864,
+        "belt": 0.8726
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": -13.5109,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -4.5869,
+        3.378
+      ],
+      "landmarks": {
+        "neck": [
+          412.0,
+          120.0
+        ],
+        "brooch": [
+          375.0,
+          142.0
+        ],
+        "belt": [
+          370.0,
+          245.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8756,
+        "brooch": 0.886,
+        "belt": 0.8549
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": -16.622,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -4.9585,
+        11.1136
+      ],
+      "landmarks": {
+        "neck": [
+          412.0,
+          120.0
+        ],
+        "brooch": [
+          374.0,
+          142.0
+        ],
+        "belt": [
+          371.0,
+          244.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8861,
+        "brooch": 0.944,
+        "belt": 0.8841
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": -8.8864,
+        "mode": "authored_flight_curve"
+      }
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "cell": [
+        627,
+        627,
+        1254,
+        1254
+      ],
+      "scale": 0.7432216905901117,
+      "origin": [
+        -5.3301,
+        25.4797
+      ],
+      "landmarks": {
+        "neck": [
+          412.0,
+          121.0
+        ],
+        "brooch": [
+          378.0,
+          144.0
+        ],
+        "belt": [
+          372.0,
+          252.0
+        ]
+      },
+      "landmark_match_scores": {
+        "neck": 0.8804,
+        "brooch": 0.8683,
+        "belt": 0.8969
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization.",
+      "limb_phase": "flight_recovery",
+      "weight_transfer": {
+        "unpad_origin_y": 5.4797,
+        "mode": "authored_flight_curve"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "file": "bank24/batch_00_03.png",
+      "sha256": "3e28b71daa3b0f802a78b087460689ac735adff073a09a776c95c12baeed5f39",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-9d3a6c5c-2fb5-41de-a6f2-de697cdaf2a1",
+      "prompt": "bank24/batch_00_03_prompt.txt",
+      "prompt_sha256": "cae6640db18f4138ae57de3ed0f09223211e88d18791da8860da6a27494a72c9",
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_00_03.png",
+          "sha256": "35d2ca9cf2c3df9251e4871379d3bf31a6212ff4177b79095537536f206b1748"
+        },
+        {
+          "file": "contact_appearance_reference.png",
+          "sha256": "706208d2e7c28515178e874b04981e63d39ed3de12032e901efefef06c85c5f4"
+        }
+      ]
+    },
+    {
+      "file": "bank24/batch_04_07.png",
+      "sha256": "b0a9c2ac735b153247ddaede4ca600a4bc9c5f6f2f9a1daa3207c6d11f259f81",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-8e0d84aa-57d0-446e-8e0e-6deff2c4f0bd",
+      "prompt": "bank24/batch_04_07_prompt.txt",
+      "prompt_sha256": "49c56c784e5ea7c24137ea0087d5c5ce77fe4e208699b6730b0d27877832a827",
+      "alpha_clean_export": {
+        "file": "bank24/batch_04_07_alpha_clean.png",
+        "sha256": "95adbde689e8c02591e2b71b7899dc5a74159c07af432297a7ce342ef3b39d79",
+        "method": "Technical alpha-only extraction: clear per-cell rows591..626 containing an unrequested horizontal guide baseline below the soles. RGB stays exact everywhere; alpha stays exact above591. Raw generated master retained.",
+        "cell_size": [
+          627,
+          627
+        ],
+        "clear_alpha_rect": [
+          0,
+          591,
+          627,
+          627
+        ]
+      },
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_04_07.png",
+          "sha256": "631f3c77ac5ac11c4eab1085807b4a32d5a192791378cef3c2a34a88b9e1676e"
+        },
+        {
+          "file": "key_09_appearance_reference.png",
+          "sha256": "437e4a31959a94273d4ea2d1d171da6411563b3f366a9cb505e09ed78cfe4e0e"
+        }
+      ]
+    },
+    {
+      "file": "bank24/batch_08_11.png",
+      "sha256": "e055ddeb15c0be248dac47128b4f5c53614ff48e063ea49fcc4d3ca171e29f9d",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-767908b5-0a01-4e98-881f-9c0c59a4afb3",
+      "prompt": "bank24/batch_08_11_prompt.txt",
+      "prompt_sha256": "5a3137ec18312caf67e7b3f04cf623210542f48346a47bb0a1ee631911d4af26",
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_08_11.png",
+          "sha256": "1e13b104301ca5673bb7da21fcb6fccc909944eedcf1b8cf1a036fd70cd8c5f0"
+        },
+        {
+          "file": "individual/opposite_contact_candidate.png",
+          "sha256": "9dc53323249a4d199a0897d1890b298c802ff74fdfbe06bb11a79add586ee504"
+        }
+      ]
+    },
+    {
+      "file": "bank24/batch_12_15.png",
+      "sha256": "9b1c11118ae8d32ac7159b90fd2fb1c76966fc4f0d216f94699331a82ee30b76",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-cbb01e82-461e-4e0b-90e3-19565bbf5957",
+      "prompt": "bank24/batch_12_15_prompt.txt",
+      "prompt_sha256": "6cf445d6854d7c14adf466a2c4e7c25b78442c0fd7a5d84f4219048fec29e5a0",
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_12_15.png",
+          "sha256": "6e836b4d2ec5a4c9a2f3b9b6bb9680abf2e3aed6b840c0cd22879e8fe7b63f69"
+        },
+        {
+          "file": "individual/opposite_contact_candidate.png",
+          "sha256": "9dc53323249a4d199a0897d1890b298c802ff74fdfbe06bb11a79add586ee504"
+        }
+      ]
+    },
+    {
+      "file": "bank24/batch_16_19.png",
+      "sha256": "4401706ab8e51c28bbaa2748e7a0888ab9cf04c460d181aae68fafa39758ba3b",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-d8021336-074a-4008-8495-1e04a0680990",
+      "prompt": "bank24/batch_16_19_prompt.txt",
+      "prompt_sha256": "b45abf256a9636c4995414e7dfb6ebc71ebf012fd3de7233ddbb4e8bf3ebe1e2",
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_16_19.png",
+          "sha256": "20892f9fa17c3d680b973078b102b6a5580e1d0c4fcdbf443f172ffbd754081c"
+        },
+        {
+          "file": "key_27_appearance_reference.png",
+          "sha256": "53a7a94094f9a5772ce1bc59542402ca6424bbfa4f7deed5d52253b09af8c463"
+        }
+      ]
+    },
+    {
+      "file": "bank24/batch_20_23.png",
+      "sha256": "e592d7427231538253daeb210ef10a5c11a9a1f42ba1cc71f395bf1c8fe25d8e",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-215abfe5-e455-4d51-8dcb-da9057f8f1f7",
+      "prompt": "bank24/batch_20_23_prompt.txt",
+      "prompt_sha256": "fff9ad11c989162dcddd3ddafba416bd3fec13c07902a649a3c277e011b08030",
+      "references": [
+        {
+          "file": "../phase_guides_24/phases_20_23.png",
+          "sha256": "17b570a9680174f6f378753351e9c204c97dbef8e8e6a26ddbb0f6bc7f94b369"
+        },
+        {
+          "file": "contact_appearance_reference.png",
+          "sha256": "706208d2e7c28515178e874b04981e63d39ed3de12032e901efefef06c85c5f4"
+        }
+      ]
+    },
+    {
+      "file": "repairs_02_03/phase_02.png",
+      "sha256": "ccf33f8f08857cd1ccee317278581bbb833368f982e6caf71dabfbd9f2a80575",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-fb46c24f-2fb2-44c5-96eb-cdf3f30d557f",
+      "prompt": "repairs_02_03/phase_02_prompt.txt",
+      "prompt_sha256": "dc98e422a1b8fc8cf6f88fa9dd45cf51dd407d00a41d040252d680d7e50b0d19",
+      "references": [
+        {
+          "file": "repairs_02_03/guide_02.png",
+          "sha256": "b4a2ab67fe78535f7f63bf3d8c7de7d41ce0faafbcc6d701b5608831fcad0ff6"
+        },
+        {
+          "file": "repairs_02_03/upper_appearance.png",
+          "sha256": "cae335f7718fa8c056b7e886725b1c0e21b95aba9b57c531aaed8d330e980179"
+        },
+        {
+          "file": "repairs_02_03/boot_material.png",
+          "sha256": "d2cc051c76c017f5c25abfb580ad7e647de56d1fdf22d3be30569d5cc6388678"
+        }
+      ],
+      "repair_reason": "Mild support in-between between actual neighbors1and4; preserve upright waist/torso and continuous two-leg movement."
+    },
+    {
+      "file": "repairs_02_03/phase_03.png",
+      "sha256": "c43b60c73d70c6f69295c28f31c09fb2c2aed746330be85bac0ddc5902508c41",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-1e9edfbf-882f-4ee3-ab68-0a1eafc19a0f",
+      "prompt": "repairs_02_03/phase_03_prompt.txt",
+      "prompt_sha256": "e7e4145b29c9cdb96c70c9afe8b1735ef6bc310d903c6bfae828007ef1563b7a",
+      "references": [
+        {
+          "file": "repairs_02_03/guide_03.png",
+          "sha256": "351d467fc1f152730e2f15384de45fc33945f09431ec941708dfba9cd8c4c99f"
+        },
+        {
+          "file": "repairs_02_03/upper_appearance.png",
+          "sha256": "cae335f7718fa8c056b7e886725b1c0e21b95aba9b57c531aaed8d330e980179"
+        },
+        {
+          "file": "repairs_02_03/boot_material.png",
+          "sha256": "d2cc051c76c017f5c25abfb580ad7e647de56d1fdf22d3be30569d5cc6388678"
+        }
+      ],
+      "repair_reason": "Mild support in-between between actual neighbors1and4; preserve upright waist/torso and continuous two-leg movement."
+    },
+    {
+      "file": "repairs_02_03/phase_03_neighbor_matched.png",
+      "sha256": "3c45f38d758abd1ebc52580676418c336691afecbb8d80acf6f434fc76e37cd2",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-7523768e-e0e3-4a17-ba91-dbd4e5e234e9",
+      "prompt": "repairs_02_03/phase_03_neighbor_matched_prompt.txt",
+      "prompt_sha256": "6fcf6ad7e80777799ee4141f7ceeed89928577e6623d71915e06052a653d0483",
+      "references": [
+        {
+          "file": "repairs_02_03/neighbor_04.png",
+          "sha256": "67de4a3a9ba65aeb6fa7df73c4db1d07e07807645f769a2a0638ee0ac630d685"
+        },
+        {
+          "file": "repairs_02_03/neighbor_01.png",
+          "sha256": "3019bfa78f044bc5a0b261dc24a0ff9714709046152a9c3255ca7ba6f33913f8"
+        },
+        {
+          "file": "repairs_02_03/guide_03.png",
+          "sha256": "351d467fc1f152730e2f15384de45fc33945f09431ec941708dfba9cd8c4c99f"
+        }
+      ],
+      "repair_reason": "Preserve actual neighbor4 boot/calf proportions while drawing mild stance in-between; replaces deep crouch and interim short-boot candidate."
+    }
+  ],
+  "registration_method": "One uniform whole-drawing scale466/627; X translation from actual neck+belt image matches, brooch recorded for secondary review. Authored Y weight transfer from specific support landmarks and smooth periodic flight curves. Uniform technical padding20,20 applies equally to origin/anchor. No bbox height fitting, detached limb animation or image warping.",
+  "anatomy_notes": "Anatomical RIGHT leg is near. LEFT leg is far. First half near supports, second half far supports. Mantle stays anatomical right and braid anatomical left; diagrams are authoring guides only. Coat can occlude hip attachment, so limb identity follows knee/boot overlap and full-phase continuity.",
+  "qa_status": "All24sources viewed; technical floor alpha cleanup exact; weight-transfer native contact proof prepared. Full production-shot gait and loop QA remains parent-owned.",
+  "technical_padding": {
+    "translation": [
+      20,
+      20
+    ],
+    "anchor_before": [
+      240,
+      448
+    ],
+    "reason": "Keep complete trailing mantle and flight-rise head within480canvas. Equal origin+anchor translation preserves every displayed/world pixel."
+  },
+  "authored_weight_transfer": {
+    "stance_samples": [
+      {
+        "frame": 0,
+        "foot": "near",
+        "part": "heel",
+        "source_point": [
+          460,
+          585
+        ],
+        "unpad_origin_y": 13.215311004784667
+      },
+      {
+        "frame": 1,
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          395,
+          588
+        ],
+        "unpad_origin_y": 10.985645933014325
+      },
+      {
+        "frame": 2,
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          730,
+          1168
+        ],
+        "unpad_origin_y": 13.9585326953748
+      },
+      {
+        "frame": 3,
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          550,
+          1196
+        ],
+        "unpad_origin_y": 17.439999999999998
+      },
+      {
+        "frame": 4,
+        "foot": "near",
+        "part": "ball",
+        "source_point": [
+          290,
+          590
+        ],
+        "unpad_origin_y": 9.499202551834117
+      },
+      {
+        "frame": 5,
+        "foot": "near",
+        "part": "toe",
+        "source_point": [
+          180,
+          590
+        ],
+        "unpad_origin_y": 9.499202551834117
+      },
+      {
+        "frame": 6,
+        "foot": "near",
+        "part": "toe",
+        "source_point": [
+          105,
+          589
+        ],
+        "unpad_origin_y": 10.24242424242425
+      },
+      {
+        "frame": 12,
+        "foot": "far",
+        "part": "heel",
+        "source_point": [
+          465,
+          575
+        ],
+        "unpad_origin_y": 20.647527910685767
+      },
+      {
+        "frame": 13,
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          390,
+          579
+        ],
+        "unpad_origin_y": 17.67464114832535
+      },
+      {
+        "frame": 14,
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          310,
+          592
+        ],
+        "unpad_origin_y": 8.012759170653908
+      },
+      {
+        "frame": 15,
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          250,
+          593
+        ],
+        "unpad_origin_y": 7.269537480063775
+      },
+      {
+        "frame": 16,
+        "foot": "far",
+        "part": "ball",
+        "source_point": [
+          230,
+          598
+        ],
+        "unpad_origin_y": 3.553429027113225
+      },
+      {
+        "frame": 17,
+        "foot": "far",
+        "part": "toe",
+        "source_point": [
+          155,
+          599
+        ],
+        "unpad_origin_y": 2.810207336523092
+      },
+      {
+        "frame": 18,
+        "foot": "far",
+        "part": "toe",
+        "source_point": [
+          135,
+          609
+        ],
+        "unpad_origin_y": -4.622009569378008
+      }
+    ],
+    "flight_apices": [
+      9,
+      21
+    ],
+    "apex_rise_pixels": 12,
+    "curve": "Smoothstep over support-release\u2192flight-apex\u2192next-contact. Support samples follow specifically selected heel/ball/toe contour points, not a silhouette bounding box. Fixed whole-body scale; upper-body weight transfer may rise/recoil naturally."
+  },
+  "source_generation_tool": "image_gen.imagegen; complete whole-character drawings; generation IDs and exact prompts retained per master.",
+  "targeted_repair_status": "Poses2and3 are complete mild support redraws between actual neighbors1/4. Pose3 neighbor-matched variant restores knee-high boot/calf continuity. Fixed per-source uniform density documented from head/neck detail. Actual production camera review pending; all other poses unchanged."
+}

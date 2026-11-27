@@ -8,6 +8,7 @@ persisted. --shot-id accepts an authored ID or its Gallery entry ID.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 from hashlib import sha256
 import json
 import math
@@ -35,7 +36,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 60
-OUT = ROOT/'docs/reviews/veinhold_orbit'
+OUT = ROOT/'docs/reviews/veinhold_bridge_run'
 
 
 def clip_spec(shot_id=None):
@@ -105,6 +106,7 @@ def audio_preview(path, seconds=25., start_seconds=0.):
         audible.append(event)
     alert_details = None
     machinery_details = None
+    running_details = None
     if start_seconds+seconds > 25:
         from prologue_alert_audio import mix_alert_audio
         mix += mix_alert_audio(start_seconds, seconds, sample_rate=rate)
@@ -112,6 +114,13 @@ def audio_preview(path, seconds=25., start_seconds=0.):
     if start_seconds+seconds > 30:
         alert_details = {'alarm_start_global_seconds':30., 'rush_start_global_seconds':34.,
                          'bridge_settle_global_seconds':35.}
+    if start_seconds < 42. and start_seconds+seconds > 39.:
+        from prologue_alert_audio import running_contact_events
+        running_details = {'start_global_seconds':39., 'end_global_seconds':42.,
+                           'method':'Contact cues from the production runner manifest and alert mixer.',
+                           'events':[dict(cue) for cue in running_contact_events()
+                                     if cue['time'] < start_seconds+seconds
+                                     and cue['time']+cue['duration'] > start_seconds]}
     peak = float(np.max(np.abs(mix))) if count else 0.
     if peak >= 1.:
         raise AssertionError('Preview audio clipped')
@@ -121,12 +130,14 @@ def audio_preview(path, seconds=25., start_seconds=0.):
     return {'method':'Offline reconstruction from production WAVs, phase and cue metadata; not live loopback.',
             'effects_volume':1., 'live_capture_mixer':'Muted; this soundtrack is reconstructed separately.',
             'global_start_seconds':start_seconds, 'events':sorted(audible, key=lambda cue:cue['time']),
-            'machinery':machinery_details, 'alert':alert_details, 'peak':peak}
+            'machinery':machinery_details, 'alert':alert_details,
+            'running':running_details, 'peak':peak}
 
 
 def _sample_frames(spec, fps, count):
     if spec['shot_id'] is None:
-        cues = (0., 15., 25., 27.5, 30., 32., 34., 34.5, 35., 37.)
+        cues = (0., 15., 25., 27.5, 30., 32., 34., 34.5, 35., 37.,
+                39., 39.5, 40.5, 41.5)
         return {min(count-1, round(value*fps)) for value in cues if value < spec['duration']} | {count-1}
     return set(np.linspace(0, count-1, 6).round().astype(int))
 
@@ -155,6 +166,32 @@ def _orbit_camera_sheet(scene, path):
         reel.close()
 
 
+@contextmanager
+def _production_picture_tap(scene):
+    """Copy the production picture before draw() adds its pause/Skip controls.
+
+    Game.draw still drives the actual renderer and UI. This avoids rendering a
+    second picture for encoding or silently recording the decorated UI surface.
+    """
+    original = scene.render_frame
+    had_override = 'render_frame' in vars(scene)
+    previous_override = vars(scene).get('render_frame')
+    picture = {}
+    def tapped(*args, **kwargs):
+        frame = original(*args, **kwargs)
+        picture['frame'] = frame.copy()
+        picture['calls'] = picture.get('calls', 0)+1
+        return frame
+    scene.render_frame = tapped
+    try:
+        yield picture
+    finally:
+        if had_override:
+            scene.render_frame = previous_override
+        else:
+            del scene.render_frame
+
+
 def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
     if type(fps) is not int or not 1 <= fps <= 120:
         raise ValueError('Capture FPS must be an integer from 1 to 120')
@@ -181,7 +218,7 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         assert session.game.ui_surface.get_size() == (960, 640)
         scene = session.game.cinematic
         states, stills, draw_times, update_times = [], [], [], []
-        peak_cache_bytes = peak_decoded_bytes = 0
+        peak_cache_bytes = peak_decoded_bytes = peak_runner_cache_bytes = 0
         count = round(fps*scene.duration)
         still_indices = _sample_frames(spec, fps, count)
         silent = folder/'silent.mp4'
@@ -189,35 +226,44 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
             '-f','rawvideo','-pix_fmt','rgb24','-s','960x640','-r',str(fps),'-i','-',
             '-an','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p',
             str(silent)], stdin=subprocess.PIPE)
-        try:
-            for index in range(count):
-                if session.closed:
-                    raise AssertionError('Production replay completed before the requested final frame')
-                before = perf_counter()
-                parent.draw()
-                draw_times.append(perf_counter()-before)
-                caches = [reel.cache_info for reel in getattr(scene, '_perspectives', {}).values()]
-                peak_cache_bytes = max(peak_cache_bytes, sum(info['bytes'] for info in caches))
-                peak_decoded_bytes = max(peak_decoded_bytes,
-                                        sum(info.get('decoded_bytes', info['bytes']) for info in caches))
-                encoder.stdin.write(pygame.image.tobytes(session.game.ui_surface, 'RGB'))
-                if index in still_indices:
-                    frame = scene.render_frame()
-                    pygame.image.save(frame, str(out/f'{stem}_{index:04d}.png'))
-                    if len(stills) == 2:
-                        pygame.image.save(parent.window, str(out/f'{stem}_gallery_replay.png'))
-                    stills.append((index, frame.copy()))
-                    state = scene.state_at(scene.elapsed)
-                    states.append({'capture_frame':index, 'local_seconds':index/fps,
-                                   'global_seconds':spec['offset']+index/fps, 'state':state})
-                before = perf_counter()
-                parent.update(1/fps, (0, 0), False)
-                update_times.append(perf_counter()-before)
-            encoder.stdin.close()
-            assert encoder.wait() == 0
-        finally:
-            if encoder.poll() is None:
-                encoder.kill();encoder.wait()
+        with _production_picture_tap(scene) as picture:
+            try:
+                for index in range(count):
+                    if session.closed:
+                        raise AssertionError('Production replay completed before the requested final frame')
+                    before = perf_counter()
+                    picture.clear()
+                    parent.draw()
+                    draw_times.append(perf_counter()-before)
+                    if 'frame' not in picture:
+                        raise AssertionError('Production Game.draw did not render a cinematic picture')
+                    assert picture['calls'] == 1, 'Capture must use one production render per displayed frame'
+                    frame = picture['frame']
+                    assert frame.get_size() == (960, 640)
+                    caches = [reel.cache_info for reel in getattr(scene, '_perspectives', {}).values()]
+                    peak_cache_bytes = max(peak_cache_bytes, sum(info['bytes'] for info in caches))
+                    peak_decoded_bytes = max(peak_decoded_bytes,
+                                            sum(info.get('decoded_bytes', info['bytes']) for info in caches))
+                    runner_caches = [runner.cache_info for runner in getattr(scene, '_running', {}).values()]
+                    peak_runner_cache_bytes = max(peak_runner_cache_bytes,
+                                                  sum(info['bytes'] for info in runner_caches))
+                    encoder.stdin.write(pygame.image.tobytes(frame, 'RGB'))
+                    if index in still_indices:
+                        pygame.image.save(frame, str(out/f'{stem}_{index:04d}.png'))
+                        if len(stills) == 2:
+                            pygame.image.save(parent.window, str(out/f'{stem}_gallery_replay.png'))
+                        stills.append((index, frame.copy()))
+                        state = scene.state_at(scene.elapsed)
+                        states.append({'capture_frame':index, 'local_seconds':index/fps,
+                                       'global_seconds':spec['offset']+index/fps, 'state':state})
+                    before = perf_counter()
+                    parent.update(1/fps, (0, 0), False)
+                    update_times.append(perf_counter()-before)
+                encoder.stdin.close()
+                assert encoder.wait() == 0
+            finally:
+                if encoder.poll() is None:
+                    encoder.kill();encoder.wait()
         # Permit one floating-point endpoint update without recording an extra
         # duplicate display frame or extending the authored movie.
         if not session.closed:
@@ -229,6 +275,8 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         assert not list(folder.glob('*.json')), 'Capture wrote a journey/settings file'
         runtime_cache_stats = [dict(reel.cache_info)
                                for reel in getattr(scene, '_perspectives', {}).values()]
+        runtime_runner_stats = [dict(runner.cache_info)
+                                for runner in getattr(scene, '_running', {}).values()]
         if spec['shot_id'] == 'island_orbit':
             _orbit_camera_sheet(scene, out/f'{stem}_camera_contact_sheet.png')
         parent.draw()
@@ -250,19 +298,21 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         contact.save(out/f'{stem}_filmstrip.png')
         runtime_files = ('main.py','gallery_session.py','fire_veinhold_opening.py',
                          'cinematic_smoke.py','cinematic_facility.py',
-                         'cinematic_perspective.py','prologue_flight_audio.py',
+                         'cinematic_perspective.py','cinematic_bridge_run.py','prologue_flight_audio.py',
                          'prologue_alert_audio.py','cutscene_gallery.py')
         timings = (np.asarray(draw_times)+np.asarray(update_times))*1000
         metadata = {'fps':fps, 'frames':count, 'duration':scene.duration, 'render_size':[960,640],
                     'entry':spec['entry'], 'authored_offset_seconds':spec['offset'],
                     'reduced_motion':reduced_motion,
-                    'source':'Production Game.draw in the save-disabled Gallery session',
+                    'source':'Production Game.draw renderer tapped before pause/Skip controls in the save-disabled Gallery session',
                     'natural_completion':True, 'no_persistent_files_written':True,
-                    'performance':{'method':'SDL dummy, draw+update wall time; excludes encoder writes and review stills.',
+                    'performance':{'method':'SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.',
                         'gallery_launch_ms':launch_ms,
                         'peak_decoded_frame_cache_bytes':peak_decoded_bytes,
                         'peak_frame_cache_bytes_with_pending_reservations':peak_cache_bytes,
                         'perspective_cache_at_completion':runtime_cache_stats,
+                        'peak_runner_image_cache_bytes':peak_runner_cache_bytes,
+                        'runner_cache_at_completion':runtime_runner_stats,
                         'mean_frame_ms':float(np.mean(timings)), 'p95_frame_ms':float(np.percentile(timings,95)),
                         'max_frame_ms':float(np.max(timings)),
                         'frames_above_60fps_budget':int(np.count_nonzero(timings > 1000/60)),

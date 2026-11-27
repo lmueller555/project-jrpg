@@ -21,16 +21,17 @@ does not replace New Game's opening or create a main-story encounter.
 See the [scene document](narrative/scenes/ICE_REAPER_PRE_BOSS.md) and
 [review clip](reviews/ice_reaper_opening/preview.mp4).
 
-**Fire Veinhold Prologue** contains five individual shots and **Fire Veinhold —
-Complete Cutscene (39s)**. The production list combines the 25-second eagle
+**Fire Veinhold Prologue** contains six individual shots and **Fire Veinhold —
+Complete Cutscene (42s)**. The production list combines the 25-second eagle
 approach/vista, five-second 180° island orbit, four-second alarm lead-in,
-one-second bridge rush and four-second frozen-guard reveal. The orbit has 301
+one-second bridge rush, four-second frozen-guard reveal and three-second
+side-on running-party shot. The orbit has 301
 inclusive perspective samples at 60 FPS. Individual clips initialize their
 correct full-reel state, including an already sounding alarm for the bridge rush.
 All use native 960×640 cinematic detail, continuous wind and owned scene effects.
 New Game keeps the bedroom opening until the full prologue and playable handoff
 are ready. See the [scene guide](narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) and
-[60 FPS review evidence](reviews/veinhold_orbit/README.md).
+[60 FPS review evidence and small downloadable preview](reviews/veinhold_bridge_run/README.md).
 
 ## Controls
 
@@ -82,14 +83,15 @@ it does not duplicate dialogue, animation or camera scripts.
 | `checkpoint_borrowed_seat` | Keeping Your Seat | CheckpointCharm's bench ownership, supplies check, borrowed seat and familiar exchange through both original guards returning to duty posts |
 | `ice_reaper_opening` | Ice Reaper: Frozen Clearing (32s) | Independent late-game cinematic study; ends before playable combat |
 | `mira_arm_rig` | Mira: Aether Arm Rig | Independent art/technique preview; no journey changes |
-| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Five ordered production clips totaling 39 seconds |
+| `fire_veinhold_opening` | Fire Veinhold — Complete Cutscene | Six ordered production clips totaling 42 seconds |
 | `fire_veinhold_shot_01` | Shot 1 — Eagle Ascent and Cinder Isles (25s) | 15-second ascent followed by ten seconds overlooking the Cinder Isles |
 | `fire_veinhold_shot_02` | Shot 2 — Fire Veinhold — Island Orbit (5s) | 301 rendered camera samples turn 180° around the main isle toward Merovar |
 | `fire_veinhold_shot_03` | Shot 3 — Fire Veinhold — Emergency Alarms (4s) | Red beacons and siren activate; four seconds precede the rush |
 | `fire_veinhold_shot_04` | Shot 4 — Fire Veinhold — Bridge Rush (1s) | Fast movement from the fortress toward the Merovar bridge landing |
 | `fire_veinhold_shot_05` | Shot 5 — Fire Veinhold — Frozen Guards (4s) | Settle 20 feet onto the bridge, facing frozen guards and mainland |
+| `fire_veinhold_shot_06` | Shot 6 — Fire Veinhold — Running the Bridge (3s) | Track the trio's legs across the steel bridge toward the Veinhold; faces stay outside the frame |
 
-There are 26 current entries. The old flashforward, relief-caravan arrival
+There are 27 current entries. The old flashforward, relief-caravan arrival
 and MQ04 lantern-assembly fixtures are removed. Elira's private household
 lantern retrieval/placement remains ordinary remembrance, without a festival.
 Mill intake scenes use the retained encounter-complete facts. Regional scenes

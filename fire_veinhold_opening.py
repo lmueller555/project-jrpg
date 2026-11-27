@@ -15,6 +15,7 @@ import pygame
 from cinematic_smoke import CinematicSmoke
 from cinematic_facility import CinematicFacility
 from cinematic_perspective import CinematicPerspective
+from cinematic_bridge_run import CinematicBridgeRun
 from prologue_flight_audio import PrologueFlightAudio, wing_phase_at
 from prologue_alert_audio import PrologueAlertAudio
 from ui_style import BRASS, MUTED
@@ -38,7 +39,7 @@ def _read_scene(path):
         if (not isinstance(shot, dict)
                 or any(not isinstance(shot.get(key), str) or not shot[key]
                        for key in ('id', 'gallery_id', 'name', 'description'))
-                or shot.get('type') not in ('eagle_ascent', 'perspective_sequence')
+                or shot.get('type') not in ('eagle_ascent', 'perspective_sequence', 'bridge_running')
                 or type(shot.get('duration')) not in (int, float)
                 or not math.isfinite(shot['duration']) or shot['duration'] <= 0
                 or shot['id'] in identifiers or shot['gallery_id'] in gallery_ids):
@@ -51,6 +52,11 @@ def _read_scene(path):
             if any(not isinstance(shot.get(key), str) or not shot[key]
                    for key in ('sequence', 'segment')):
                 raise ValueError('Incomplete perspective shot metadata')
+            identifiers.add(shot['id']); gallery_ids.add(shot['gallery_id'])
+            continue
+        if shot['type'] == 'bridge_running':
+            if not isinstance(shot.get('performance'), str) or not shot['performance']:
+                raise ValueError('Incomplete bridge-running shot metadata')
             identifiers.add(shot['id']); gallery_ids.add(shot['gallery_id'])
             continue
         if any(not isinstance(shot.get(key), str) or not shot[key]
@@ -110,6 +116,7 @@ class FireVeinholdOpening:
             self._boundaries.append(boundary)
         self._assets = {}
         self._perspectives = {}
+        self._running = {}
         self.flight_audio = PrologueFlightAudio(game)
         self.alert_audio = PrologueAlertAudio(game)
         self.skip_rect = pygame.Rect(426, 292, 44, 20)
@@ -137,10 +144,14 @@ class FireVeinholdOpening:
         except (KeyError, TypeError, AttributeError, IndexError) as error:
             self._close_perspectives()
             self._perspectives.clear()
+            self._close_running()
+            self._running.clear()
             raise ValueError('Incomplete prologue artwork metadata') from error
         except (OSError, ValueError, pygame.error):
             self._close_perspectives()
             self._perspectives.clear()
+            self._close_running()
+            self._running.clear()
             raise
         # A failed later clip must not leave a partially playable cached reel.
         self._assets = assets
@@ -148,6 +159,15 @@ class FireVeinholdOpening:
     def _load_assets(self):
         assets = {}
         for shot in self.shots:
+            if shot['type'] == 'bridge_running':
+                performance_path = self._path(shot['performance'])
+                if performance_path not in self._running:
+                    self._running[performance_path] = CinematicBridgeRun(
+                        performance_path, allowed_root=self.scene_path.parent)
+                performance = self._running[performance_path]
+                performance.validate_duration(shot['duration'])
+                assets[shot['id']] = {'running':performance}
+                continue
             if shot['type'] == 'perspective_sequence':
                 sequence_path = self._path(shot['sequence'])
                 if sequence_path not in self._perspectives:
@@ -253,8 +273,17 @@ class FireVeinholdOpening:
         One continuous panorama supplies both the summit and offshore view.
         """
         self._load()
-        shot, local, _ = self._locate(float(seconds))
+        shot, local, selected_start = self._locate(float(seconds))
         global_time = self.global_offset+max(0., min(self.duration, float(seconds)))
+        # Both a standalone clip and the complete reel derive local staging
+        # from their shared global clock. Decimal seeks such as 39.4 therefore
+        # cannot choose different camera offsets through float cancellation.
+        local = max(0., min(float(shot['duration']),
+                           global_time-(self.global_offset+selected_start)))
+        if shot['type'] == 'bridge_running':
+            running = self._assets[shot['id']]['running'].samples(local, self.reduced_motion)
+            return {**running, 'shot_id':shot['id'], 'global_time':global_time,
+                    'alarm':{'active':global_time >= 30., 'elapsed':max(0., global_time-30.)}}
         if shot['type'] == 'perspective_sequence':
             art = self._assets[shot['id']]
             perspective = art['perspective'].samples(art['segment'], local, self.reduced_motion)
@@ -337,12 +366,17 @@ class FireVeinholdOpening:
         for perspective in self._perspectives.values():
             perspective.close()
 
+    def _close_running(self):
+        for running in self._running.values():
+            running.close()
+
     def reset(self):
         if getattr(self, 'flight_audio', None) is not None:
             self.flight_audio.reset()
         if getattr(self, 'alert_audio', None) is not None:
             self.alert_audio.reset()
         self._close_perspectives()
+        self._close_running()
         self.active = False
         self.paused = False
         self.focused = True
@@ -358,6 +392,7 @@ class FireVeinholdOpening:
             self._preload_at(0., blocking=True)
         except (ValueError, OSError, pygame.error):
             self._close_perspectives()
+            self._close_running()
             raise
         self.active = True
         self.focused = bool(getattr(self.game, '_music_focused', True))
@@ -380,6 +415,7 @@ class FireVeinholdOpening:
         self.flight_audio.stop()
         self.alert_audio.stop()
         self._close_perspectives()
+        self._close_running()
         if callback is not None:
             callback()
 
@@ -405,6 +441,10 @@ class FireVeinholdOpening:
                 break
         before = self.state_at(previous)
         after = self.state_at(self.elapsed)
+        if before['phase'] != 'bridge_running' and after['phase'] == 'bridge_running':
+            # The side-on performance has its own small source-frame cache.
+            # Release the completed orbit's reservations at this editorial cut.
+            self._close_perspectives()
         if before['shot_id'] == after['shot_id'] and 'eagle' in after:
             self.flight_audio.update(before['global_time'], after['global_time'],
                 wing_phase=(before['eagle']['wing_phase'], after['eagle']['wing_phase']),
@@ -449,6 +489,9 @@ class FireVeinholdOpening:
         """Warm the active clip and the next clip before its first picture."""
         shot, local, start = self._locate(seconds)
         art = self._assets[shot['id']]
+        if 'running' in art:
+            art['running'].preload(local, reduced_motion=self.reduced_motion,
+                                   blocking=blocking)
         if 'perspective' in art:
             art['perspective'].preload(art['segment'], local,
                                       reduced_motion=self.reduced_motion,
@@ -461,6 +504,8 @@ class FireVeinholdOpening:
             if index < len(self.shots):
                 upcoming = self.shots[index]
                 next_art = self._assets[upcoming['id']]
+                if 'running' in next_art:
+                    next_art['running'].preload(0., reduced_motion=self.reduced_motion)
                 if 'perspective' in next_art:
                     next_art['perspective'].preload(next_art['segment'], 0.,
                         reduced_motion=self.reduced_motion,
@@ -525,6 +570,9 @@ class FireVeinholdOpening:
         state = self.state_at(self.elapsed if time is None else time)
         art = self._assets[state['shot_id']]
         target = pygame.Surface(RENDER_SIZE).convert()
+        if 'running' in art:
+            art['running'].draw(target, state)
+            return target
         if 'perspective' in art:
             alarm = state['alarm']
             art['perspective'].draw(target, state['perspective'],

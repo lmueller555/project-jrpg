@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "active_source_selection": "source_art_24.json",
+  "cycle_ms": 400,
+  "authored_poses": 24,
+  "contact_frames": [
+    0,
+    12
+  ],
+  "pose_exposure_ms": 16.666666666666668,
+  "master_layout": "2x2 complete figure drawings; chronological selection is recorded in source_art_24.json rather than trusting cell labels.",
+  "construction": "All figures are complete authored drawings. Technical export uses only uniform whole-drawing sampling and landmark registration.",
+  "raw_chronology_swaps": [
+    [
+      7,
+      8
+    ],
+    [
+      19,
+      20
+    ]
+  ],
+  "masters": [
+    {
+      "source": "bank24/batch_00_03.png",
+      "prompt": "bank24/batch_00_03_prompt.txt",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-5aff310c-1d88-4072-8b1c-52968843ee4d",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "../phase_guides/phases_00_03.png": "82e14289a3be125119217a4e8d44958e57ba7693ae3040e283fe029b3ce71235",
+        "appearance_reference.png": "28362e214ec1d69d0cd082ed806a74351b2fe2bb082c5f62ca036dbb491c324d"
+      }
+    },
+    {
+      "source": "bank24/batch_04_07.png",
+      "prompt": "bank24/batch_04_07_prompt.txt",
+      "canvas": [
+        1374,
+        1145
+      ],
+      "generation_id": "exec-34053a85-0e3a-4f34-9f37-36277cd2141b",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "quad_start_03_reference.png": "3dfb7e24b3adc46773d78b5e26ce2f908fe437025153ef3e86b16c1092ac06ab",
+        "individual/phase_09.png": "b6c8ed826d8c71560d023c3a85d868955221ae223b7d1cd110a9ff4b3ba5ef65"
+      }
+    },
+    {
+      "source": "bank24/batch_08_11.png",
+      "prompt": "bank24/batch_08_11_prompt.txt",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-a2df6000-8a1b-40bd-ae80-40a2292ce44c",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "../phase_guides_24/phases_08_11.png": "1e13b104301ca5673bb7da21fcb6fccc909944eedcf1b8cf1a036fd70cd8c5f0",
+        "individual/phase_09.png": "b6c8ed826d8c71560d023c3a85d868955221ae223b7d1cd110a9ff4b3ba5ef65"
+      }
+    },
+    {
+      "source": "bank24/batch_12_15.png",
+      "prompt": "bank24/batch_12_15_prompt.txt",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-59855ab4-438d-4a92-a534-63d3bd399391",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "../phase_guides_24/phases_12_15.png": "6e836b4d2ec5a4c9a2f3b9b6bb9680abf2e3aed6b840c0cd22879e8fe7b63f69",
+        "individual/phase_18.png": "d7863c858028445d9b4bc53d5869ad51ca2dd2ed858a033c257b5ecb0edfdb13"
+      }
+    },
+    {
+      "source": "bank24/batch_16_19.png",
+      "prompt": "bank24/batch_16_19_prompt.txt",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-4b4ff2cc-dbe9-4459-97a9-27d5bbdcd186",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "../phase_guides_24/phases_16_19.png": "20892f9fa17c3d680b973078b102b6a5580e1d0c4fcdbf443f172ffbd754081c",
+        "individual/phase_27.png": "64c9bb17867e3936d8522ea1cd65f08cec26e11af8e5e9add38cdfacd42d040b"
+      }
+    },
+    {
+      "source": "bank24/batch_20_23.png",
+      "prompt": "bank24/batch_20_23_prompt.txt",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "generation_id": "exec-691c2170-5f42-4c40-bc8b-23d85be3a2f7",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "references": {
+        "../phase_guides_24/phases_20_23.png": "17b570a9680174f6f378753351e9c204c97dbef8e8e6a26ddbb0f6bc7f94b369",
+        "individual/phase_27.png": "64c9bb17867e3936d8522ea1cd65f08cec26e11af8e5e9add38cdfacd42d040b"
+      }
+    }
+  ],
+  "internal_visual_review": [
+    "All 24 whole-body drawings inspected for two leg chains, two boots, shield/sword consistency and near/far exchange.",
+    "Registered neck/belt crosshairs visually audited after NCC measurement; no boot-based per-pose resizing.",
+    "Opaque alpha bounds checked within480x480; native full-loop integration remains parent review.",
+    "Parent approved corrected full-source contact sheet; final actual runtime actor review remains root-owned."
+  ],
+  "historical_studies": "Loose keys, rejected quad microtiming tests and individual 36-phase pilot drawings are retained as source history, excluded from active source selection.",
+  "selected_corrections": [
+    {
+      "frame": 14,
+      "source": "candidates/far_stance_corrections/frame_14_corrected.png",
+      "prompt": "candidates/far_stance_corrections/frame_14_corrected_prompt.txt",
+      "generation_id": "exec-4acc3a66-170e-4635-aa45-c99960f4a5d4",
+      "references": {
+        "candidates/far_stance_corrections/frame_14_before.png": "093c34ae65b97b3e2167c0d19f51837e2622fdcfd5289aaf2f73969d42af7820",
+        "candidates/far_stance_corrections/frame_14_floor_guide.png": "a7519bc2734ced7f10dd337d8d92c0cc22d4146f3409965156dd813a5cae295f"
+      },
+      "correction": "Complete unified redraw with extra far-support knee compression; accepted upperbody/near-leg identity retained."
+    },
+    {
+      "frame": 15,
+      "source": "candidates/far_stance_corrections/frame_15_corrected.png",
+      "prompt": "candidates/far_stance_corrections/frame_15_corrected_prompt.txt",
+      "generation_id": "exec-b0cb6cf8-db93-4506-9836-40d00495425c",
+      "references": {
+        "candidates/far_stance_corrections/frame_15_before.png": "40fb97c4f50be65db46ac11400039d32c81c6d2efee439b94936ecfedbb610d4",
+        "candidates/far_stance_corrections/frame_15_floor_guide.png": "d02d08f71abd094622cc01cbaf76c3d631766fe6d0e930b39b87602ea7379e00"
+      },
+      "correction": "Complete unified redraw with extra far-support knee compression; accepted upperbody/near-leg identity retained."
+    }
+  ],
+  "body_performance": {
+    "curve": "Periodic shape-preserving cubic Hermite whole-body rise/recoil, recorded in source_art_24.json.",
+    "canvas_registration_translation": [
+      0,
+      8
+    ],
+    "anchor": [
+      240,
+      456
+    ],
+    "world_placement": "Fixed padding and anchor move together, preserving world placement.",
+    "constraints": "Uniform source density fixed; no detached limb transforms, boot-bbox normalization or airborne floor snapping."
+  }
+}

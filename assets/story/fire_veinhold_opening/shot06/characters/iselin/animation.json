@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "canvas": [
+    480,
+    480
+  ],
+  "anchor": [
+    260,
+    468
+  ],
+  "duration_ms": 400,
+  "fps": 60,
+  "loop": true,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "landmark_space": "Exported artwork pixels; null means occluded/unmeasured.",
+  "frames": [
+    {
+      "file": "frame_00.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          301.0048,
+          120.7002
+        ],
+        "brooch": [
+          272.0191,
+          137.7943
+        ],
+        "belt": [
+          271.2759,
+          212.1164
+        ],
+        "near_sole": [
+          341.882,
+          467.7847
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_01.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          302.437,
+          122.4163
+        ],
+        "brooch": [
+          276.4242,
+          138.7671
+        ],
+        "belt": [
+          268.992,
+          213.0893
+        ],
+        "near_sole": [
+          287.5726,
+          468.0144
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          297.6124,
+          125.4163
+        ],
+        "brooch": [
+          275.3158,
+          141.7671
+        ],
+        "belt": [
+          274.5726,
+          207.9139
+        ],
+        "near_sole": [
+          252.2759,
+          468.0415
+        ]
+      },
+      "notes": "Targeted complete-frame mild-compression redraw; replaces over-deep crouch. Fixed whole-image density1/2 of627cell scale; X registers actual neck+belt and Y follows observed ball contact. No anatomical warp or bodyY snap to conceal source squat. Belt manually cross-checked because template can match wrist embroidery."
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          299.28,
+          125.56
+        ],
+        "brooch": [
+          275.52,
+          141.4
+        ],
+        "belt": [
+          273.36,
+          209.8
+        ],
+        "eye": [
+          314.4,
+          88.84
+        ],
+        "near_sole": [
+          192.0,
+          467.56
+        ]
+      },
+      "notes": "Targeted whole-frame mild support redraw using actual neighbors1/4 to preserve boot shaft and calf proportions. Uniform source density calibrated from head/neck detail span; head-eye/neck distance within2percent of reference after sampling. X uses measured neck/belt; Y follows real ball contact. No pose warps or source-bodyY snap to hide a squat."
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          303.0989,
+          119.673
+        ],
+        "brooch": [
+          275.5997,
+          138.2536
+        ],
+        "belt": [
+          268.1675,
+          209.6029
+        ],
+        "near_sole": [
+          200.5343,
+          467.5008
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_05.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          300.3828,
+          118.9298
+        ],
+        "brooch": [
+          272.8836,
+          136.0239
+        ],
+        "belt": [
+          271.3971,
+          205.8868
+        ],
+        "near_sole": [
+          119.7799,
+          467.5008
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_06.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          299.0989,
+          119.1866
+        ],
+        "brooch": [
+          271.5997,
+          136.2807
+        ],
+        "belt": [
+          272.3429,
+          206.8868
+        ],
+        "near_sole": [
+          59.0383,
+          467.7576
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_07.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          298.3285,
+          116.1866
+        ],
+        "brooch": [
+          273.8022,
+          134.7671
+        ],
+        "belt": [
+          274.5455,
+          205.3732
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_08.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          300.6667,
+          119.1053
+        ],
+        "brooch": [
+          270.1946,
+          136.9426
+        ],
+        "belt": [
+          271.681,
+          217.2105
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_09.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          299.8692,
+          116.8485
+        ],
+        "brooch": [
+          270.1404,
+          133.9426
+        ],
+        "belt": [
+          271.6268,
+          213.4673
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_10.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          299.3828,
+          119.8756
+        ],
+        "brooch": [
+          268.9107,
+          136.9697
+        ],
+        "belt": [
+          271.8836,
+          217.9809
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_11.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          297.0718,
+          136.0781
+        ],
+        "brooch": [
+          269.5726,
+          153.1722
+        ],
+        "belt": [
+          274.0319,
+          233.4402
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_12.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          297.748,
+          132.4163
+        ],
+        "brooch": [
+          268.7624,
+          149.5104
+        ],
+        "belt": [
+          273.9649,
+          226.0622
+        ],
+        "far_sole": [
+          341.5981,
+          468.3525
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_13.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          296.2616,
+          130.1595
+        ],
+        "brooch": [
+          270.2488,
+          147.9968
+        ],
+        "belt": [
+          275.4514,
+          223.0622
+        ],
+        "far_sole": [
+          285.8565,
+          468.3254
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_14.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          295.748,
+          120.9027
+        ],
+        "brooch": [
+          269.7352,
+          141.7129
+        ],
+        "belt": [
+          275.681,
+          216.0351
+        ],
+        "far_sole": [
+          224.3987,
+          467.9872
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_15.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          297.2344,
+          120.6459
+        ],
+        "brooch": [
+          272.7081,
+          176.3876
+        ],
+        "belt": [
+          274.1946,
+          218.008
+        ],
+        "far_sole": [
+          179.8054,
+          467.7305
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_16.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          296.7209,
+          113.1866
+        ],
+        "brooch": [
+          277.3971,
+          131.7671
+        ],
+        "belt": [
+          274.4242,
+          201.63
+        ],
+        "far_sole": [
+          162.941,
+          468.4466
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_17.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          297.7751,
+          111.4434
+        ],
+        "brooch": [
+          277.7081,
+          130.7671
+        ],
+        "belt": [
+          273.992,
+          202.1164
+        ],
+        "far_sole": [
+          114.1994,
+          468.1898
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_18.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          293.4641,
+          102.7002
+        ],
+        "brooch": [
+          274.1404,
+          122.0239
+        ],
+        "belt": [
+          278.5997,
+          191.1435
+        ],
+        "far_sole": [
+          88.3349,
+          467.622
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_19.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          293.7209,
+          96.7273
+        ],
+        "brooch": [
+          274.3971,
+          115.3078
+        ],
+        "belt": [
+          278.8565,
+          184.4274
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_20.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          303.4641,
+          94.4434
+        ],
+        "brooch": [
+          273.7352,
+          111.5375
+        ],
+        "belt": [
+          269.2759,
+          185.8596
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_21.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          301.2073,
+          92.1866
+        ],
+        "brooch": [
+          273.7081,
+          108.5375
+        ],
+        "belt": [
+          269.992,
+          185.0893
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_22.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          301.2073,
+          100.1866
+        ],
+        "brooch": [
+          272.9649,
+          116.5375
+        ],
+        "belt": [
+          270.7352,
+          192.3461
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    },
+    {
+      "file": "frame_23.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          301.2073,
+          114.9298
+        ],
+        "brooch": [
+          275.9378,
+          132.0239
+        ],
+        "belt": [
+          271.4785,
+          212.2919
+        ]
+      },
+      "notes": "Fixed whole-drawing scale; X registers neck/belt. Y is authored weight transfer at observed heel/ball/toe contacts, with smooth periodic flight recovery. No body/limb deformation or per-pose opaque-height normalization."
+    }
+  ]
+}

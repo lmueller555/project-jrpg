@@ -1,0 +1,3343 @@
+{
+  "fps": 60,
+  "frames": 2520,
+  "duration": 42.0,
+  "render_size": [
+    960,
+    640
+  ],
+  "entry": "fire_veinhold_opening",
+  "authored_offset_seconds": 0.0,
+  "reduced_motion": false,
+  "source": "Production Game.draw renderer tapped before pause/Skip controls in the save-disabled Gallery session",
+  "natural_completion": true,
+  "no_persistent_files_written": true,
+  "performance": {
+    "method": "SDL dummy, draw+update wall time including the clean-picture copy; excludes encoder writes and review stills.",
+    "gallery_launch_ms": 1239.3599950009957,
+    "peak_decoded_frame_cache_bytes": 55910400,
+    "peak_frame_cache_bytes_with_pending_reservations": 58982400,
+    "perspective_cache_at_completion": [
+      {
+        "surfaces": 0,
+        "capacity": 24,
+        "decoded_surfaces": 0,
+        "pending_surfaces": 0,
+        "decoded_bytes": 0,
+        "pending_bytes": 0,
+        "bytes": 0,
+        "hits": 2276,
+        "decodes": 515,
+        "waits": 24,
+        "wait_seconds": 0.26634954899782315
+      }
+    ],
+    "peak_runner_image_cache_bytes": 25804800,
+    "runner_cache_at_completion": [
+      {
+        "surfaces": 0,
+        "frame_surfaces": 0,
+        "background_surfaces": 0,
+        "capacity": 16,
+        "frame_capacity": 12,
+        "bytes": 0,
+        "decoded_bytes": 0,
+        "pending_bytes": 0,
+        "decodes": 553,
+        "waits": 37,
+        "wait_seconds": 0.11663962184684351
+      }
+    ],
+    "mean_frame_ms": 7.498243789207966,
+    "p95_frame_ms": 12.657993676839396,
+    "max_frame_ms": 70.25489694206044,
+    "frames_above_60fps_budget": 48,
+    "capture_wall_seconds": 35.17900570097845
+  },
+  "audio": {
+    "method": "Offline reconstruction from production WAVs, phase and cue metadata; not live loopback.",
+    "effects_volume": 1.0,
+    "live_capture_mixer": "Muted; this soundtrack is reconstructed separately.",
+    "global_start_seconds": 0.0,
+    "events": [
+      {
+        "id": "wing",
+        "time": 0.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "foreground_pass",
+        "time": 0.85,
+        "file": "air_pass.wav",
+        "gain": 0.29,
+        "pan": -0.45
+      },
+      {
+        "id": "wing",
+        "time": 1.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "bank_gust",
+        "time": 2.7,
+        "file": "bank_gust.wav",
+        "gain": 0.36,
+        "pan": 0.38
+      },
+      {
+        "id": "wing",
+        "time": 5.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "climb_rush",
+        "time": 5.45,
+        "file": "climb_rush.wav",
+        "gain": 0.32,
+        "pan": -0.18
+      },
+      {
+        "id": "wing",
+        "time": 5.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 6.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 7.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 8.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 9.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 10.2965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.0465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 11.7965,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "wing",
+        "time": 12.5465,
+        "file": "wing_feather.wav",
+        "gain": 0.22,
+        "pan": -0.08
+      },
+      {
+        "id": "crest_gust",
+        "time": 14.65,
+        "file": "crest_gust.wav",
+        "gain": 0.3,
+        "pan": 0.12
+      }
+    ],
+    "machinery": {
+      "start_global_seconds": 25.0,
+      "retreat_start_global_seconds": 34.0
+    },
+    "alert": {
+      "alarm_start_global_seconds": 30.0,
+      "rush_start_global_seconds": 34.0,
+      "bridge_settle_global_seconds": 35.0
+    },
+    "running": {
+      "start_global_seconds": 39.0,
+      "end_global_seconds": 42.0,
+      "method": "Contact cues from the production runner manifest and alert mixer.",
+      "events": [
+        {
+          "id": "run:lucan:near:0",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 39.0,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:0",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 39.05,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:0",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 39.11666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:0",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 39.2,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:0",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 39.25,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:0",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 39.31666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:1",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 39.4,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:1",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 39.45,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:1",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 39.516666666666666,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:1",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 39.6,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:1",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 39.65,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:1",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 39.71666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:2",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 39.8,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:2",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 39.85,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:2",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 39.916666666666664,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:2",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 40.0,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:2",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 40.05,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:2",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 40.11666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:3",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 40.2,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:3",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 40.25,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:3",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 40.31666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:3",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 40.4,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:3",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 40.45,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:3",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 40.516666666666666,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:4",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 40.6,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:4",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 40.65,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:4",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 40.71666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:4",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 40.8,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:4",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 40.85,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:4",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 40.916666666666664,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:5",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 41.0,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:5",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 41.05,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:5",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 41.11666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:5",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 41.2,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:5",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 41.25,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:5",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 41.31666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:6",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 41.4,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:6",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 41.45,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:6",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 41.516666666666666,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:far:6",
+          "actor": "lucan",
+          "foot": "far",
+          "file": "lucan_step_far.wav",
+          "time": 41.6,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:near:6",
+          "actor": "crown_soldier",
+          "foot": "near",
+          "file": "crown_soldier_step_near.wav",
+          "time": 41.65,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:near:6",
+          "actor": "iselin",
+          "foot": "near",
+          "file": "iselin_step_near.wav",
+          "time": 41.71666666666667,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        },
+        {
+          "id": "run:lucan:near:7",
+          "actor": "lucan",
+          "foot": "near",
+          "file": "lucan_step_near.wav",
+          "time": 41.8,
+          "duration": 0.22,
+          "gain": 0.3,
+          "pan": 0.16
+        },
+        {
+          "id": "run:crown_soldier:far:7",
+          "actor": "crown_soldier",
+          "foot": "far",
+          "file": "crown_soldier_step_far.wav",
+          "time": 41.85,
+          "duration": 0.22,
+          "gain": 0.16,
+          "pan": -0.4
+        },
+        {
+          "id": "run:iselin:far:7",
+          "actor": "iselin",
+          "foot": "far",
+          "file": "iselin_step_far.wav",
+          "time": 41.916666666666664,
+          "duration": 0.22,
+          "gain": 0.21,
+          "pan": -0.03
+        }
+      ]
+    },
+    "peak": 0.4961230525743585
+  },
+  "states": [
+    {
+      "capture_frame": 0,
+      "local_seconds": 0.0,
+      "global_seconds": 0.0,
+      "state": {
+        "shot_id": "eagle_ascent",
+        "local_time": 0.0,
+        "global_time": 0.0,
+        "camera": {
+          "position": [
+            0.0,
+            0.0,
+            145.0
+          ],
+          "velocity": [
+            0.8796459430051421,
+            28.0,
+            0.0
+          ],
+          "progress": 0.0
+        },
+        "eagle": {
+          "position": [
+            480.0,
+            410.0
+          ],
+          "sequence": "flap",
+          "frame": 8,
+          "wing_phase": 0.5213333333333333,
+          "anchor": [
+            128,
+            144
+          ],
+          "scale": 1.0,
+          "visible": true
+        },
+        "phase": "ascent",
+        "crest_time": 15,
+        "vista_elapsed": 0.0,
+        "smoke": [
+          {
+            "id": "main_steam",
+            "frame": 0,
+            "next_frame": 1,
+            "blend": 0.0,
+            "origin": [
+              538,
+              266
+            ],
+            "scale": 0.65
+          },
+          {
+            "id": "distant_ash",
+            "frame": 5,
+            "next_frame": 6,
+            "blend": 0.40000000000000036,
+            "origin": [
+              783,
+              262
+            ],
+            "scale": 0.7
+          }
+        ],
+        "facility": {
+          "beacons": [],
+          "conduits": [
+            {
+              "id": "west_line",
+              "from": [
+                673.0,
+                330.0
+              ],
+              "to": [
+                678.1491824024222,
+                331.6734842807872
+              ]
+            },
+            {
+              "id": "east_line",
+              "from": [
+                742.2197892391594,
+                349.99452578810855
+              ],
+              "to": [
+                747.2799901060461,
+                361.37997773860366
+              ]
+            }
+          ],
+          "embers": [
+            [
+              865.7266317440019,
+              451.0
+            ],
+            [
+              841.3003740152707,
+              451.7890248520091
+            ],
+            [
+              857.096936796799,
+              444.4750822542176
+            ],
+            [
+              872.2675103966905,
+              455.15398583955897
+            ],
+            [
+              823.3120180583592,
+              451.4095646671681
+            ],
+            [
+              885.0175959518444,
+              449.15675436210773
+            ],
+            [
+              844.9597457566896,
+              458.9155409789816
+            ],
+            [
+              835.8519888090809,
+              442.42411149298886
+            ],
+            [
+              896.5434243773773,
+              452.00961033194585
+            ],
+            [
+              811.7810552682678,
+              453.6897529856363
+            ],
+            [
+              875.8343027278079,
+              443.3185650140552
+            ],
+            [
+              870.3962193896596,
+              462.668265397741
+            ],
+            [
+              808.5959157265953,
+              446.7762476840829
+            ],
+            [
+              909.4371503965716,
+              447.80232762162706
+            ]
+          ]
+        },
+        "layers": {
+          "panorama": {
+            "offset": [
+              -0.0,
+              -203.84375
+            ],
+            "scale": 1.05
+          }
+        }
+      }
+    },
+    {
+      "capture_frame": 900,
+      "local_seconds": 15.0,
+      "global_seconds": 15.0,
+      "state": {
+        "shot_id": "eagle_ascent",
+        "local_time": 15.000000000000325,
+        "global_time": 15.000000000000325,
+        "camera": {
+          "position": [
+            6.657395614065987,
+            600.0000000000169,
+            295.0
+          ],
+          "velocity": [
+            -0.27182554542159926,
+            52.000000000000526,
+            0.0
+          ],
+          "progress": 0.600000000000013
+        },
+        "eagle": {
+          "position": [
+            480.0,
+            450.00000000000404
+          ],
+          "sequence": "glide",
+          "frame": 1,
+          "wing_phase": 14.188,
+          "anchor": [
+            128,
+            144
+          ],
+          "scale": 1.0,
+          "visible": true
+        },
+        "phase": "cinder_vista",
+        "crest_time": 15,
+        "vista_elapsed": 3.2507330161024584e-13,
+        "smoke": [
+          {
+            "id": "main_steam",
+            "frame": 12,
+            "next_frame": 13,
+            "blend": 1.3002932064409833e-12,
+            "origin": [
+              538,
+              266
+            ],
+            "scale": 0.65
+          },
+          {
+            "id": "distant_ash",
+            "frame": 1,
+            "next_frame": 2,
+            "blend": 0.40000000000129887,
+            "origin": [
+              783,
+              262
+            ],
+            "scale": 0.7
+          }
+        ],
+        "facility": {
+          "beacons": [],
+          "conduits": [
+            {
+              "id": "west_line",
+              "from": [
+                721.1142572752209,
+                354.9009106703239
+              ],
+              "to": [
+                727.2144048082133,
+                363.8477937187129
+              ]
+            },
+            {
+              "id": "east_line",
+              "from": [
+                790.2167425682774,
+                400.4600910819329
+              ],
+              "to": [
+                798.1210361507309,
+                410.0906917156088
+              ]
+            }
+          ],
+          "embers": [
+            [
+              852.562886798761,
+              454.13071195487294
+            ],
+            [
+              845.8908101688561,
+              446.97018855284153
+            ],
+            [
+              877.7923355912416,
+              450.49030292181715
+            ],
+            [
+              829.1434215744171,
+              452.0037319852102
+            ],
+            [
+              867.658116298609,
+              445.7483066069086
+            ],
+            [
+              866.7753513071924,
+              459.5352528725048
+            ],
+            [
+              820.9084927352233,
+              448.90460834048935
+            ],
+            [
+              895.2544632757206,
+              448.67722568767505
+            ],
+            [
+              830.7865123504088,
+              456.46395160105413
+            ],
+            [
+              847.4457430516295,
+              440.23811087191433
+            ],
+            [
+              893.6240092236635,
+              457.00655033957264
+            ],
+            [
+              803.7005002290481,
+              453.4490654971794
+            ],
+            [
+              891.7317615548027,
+              445.1134625048769
+            ],
+            [
+              854.2867984264016,
+              462.24234675079117
+            ]
+          ]
+        },
+        "layers": {
+          "panorama": {
+            "offset": [
+              -6.657395614065987,
+              353.12500000000074
+            ],
+            "scale": 1.000000000000001
+          }
+        }
+      }
+    },
+    {
+      "capture_frame": 1500,
+      "local_seconds": 25.0,
+      "global_seconds": 25.0,
+      "state": {
+        "shot_id": "island_orbit",
+        "local_time": 0.0,
+        "global_time": 25.0,
+        "phase": "orbit",
+        "camera": {
+          "position": [
+            4.898587029175845e-14,
+            -800.0,
+            125.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            80.0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 28.841546110078532,
+          "orbit_degrees": 0
+        },
+        "perspective": {
+          "segment": "orbit",
+          "local_time": 0.0,
+          "frame_index": 0,
+          "reduced_motion": false,
+          "camera": {
+            "position": [
+              4.898587029175845e-14,
+              -800.0,
+              125.0
+            ],
+            "target": [
+              0.0,
+              0.0,
+              80.0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 28.841546110078532,
+            "orbit_degrees": 0
+          },
+          "landmarks": {
+            "dormant_crater": [
+              505.937,
+              215.0,
+              863.6348
+            ],
+            "active_crater": [
+              749.316,
+              203.761,
+              4990.4238
+            ],
+            "reservoir": [
+              750.32,
+              468.518,
+              759.593
+            ],
+            "merovar_landing": [
+              -535.382,
+              632.889,
+              505.5571
+            ],
+            "island_merovar_gate": [
+              371.829,
+              521.066,
+              690.2651
+            ],
+            "damar_landing": [
+              69.727,
+              299.426,
+              2502.4004
+            ],
+            "island_damar_gate": [
+              174.349,
+              462.094,
+              855.0046
+            ],
+            "carcovian_guard_1": [
+              -530.279,
+              631.864,
+              503.4368
+            ],
+            "carcovian_guard_2": [
+              -530.638,
+              627.742,
+              508.4643
+            ],
+            "carcovian_guard_3": [
+              -522.214,
+              629.403,
+              506.4263
+            ],
+            "carcovian_guard_4": [
+              -536.233,
+              626.908,
+              509.4941
+            ]
+          }
+        },
+        "alarm": {
+          "active": false,
+          "elapsed": 0.0
+        }
+      }
+    },
+    {
+      "capture_frame": 1650,
+      "local_seconds": 27.5,
+      "global_seconds": 27.5,
+      "state": {
+        "shot_id": "island_orbit",
+        "local_time": 2.499999999999858,
+        "global_time": 27.499999999999858,
+        "phase": "orbit",
+        "camera": {
+          "position": [
+            627.5,
+            0.0,
+            240.0
+          ],
+          "target": [
+            -20.0,
+            -40.0,
+            115.0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 41.508142171150936,
+          "orbit_degrees": 90.0
+        },
+        "perspective": {
+          "segment": "orbit",
+          "local_time": 2.499999999999858,
+          "frame_index": 150,
+          "reduced_motion": false,
+          "camera": {
+            "position": [
+              627.5,
+              0.0,
+              240.0
+            ],
+            "target": [
+              -20.0,
+              -40.0,
+              115.0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 41.508142171150936,
+            "orbit_degrees": 90.0
+          },
+          "landmarks": {
+            "dormant_crater": [
+              689.72,
+              314.796,
+              621.0558
+            ],
+            "active_crater": [
+              -15644.22,
+              -257.477,
+              -328.8626
+            ],
+            "reservoir": [
+              450.109,
+              586.158,
+              551.1567
+            ],
+            "merovar_landing": [
+              153.518,
+              386.897,
+              945.8146
+            ],
+            "island_merovar_gate": [
+              347.588,
+              493.532,
+              704.2974
+            ],
+            "damar_landing": [
+              2528.172,
+              344.716,
+              1094.244
+            ],
+            "island_damar_gate": [
+              635.437,
+              447.141,
+              792.3145
+            ],
+            "carcovian_guard_1": [
+              149.656,
+              386.694,
+              943.3196
+            ],
+            "carcovian_guard_2": [
+              157.478,
+              385.886,
+              945.7773
+            ],
+            "carcovian_guard_3": [
+              153.365,
+              386.938,
+              942.5797
+            ],
+            "carcovian_guard_4": [
+              159.7,
+              385.239,
+              947.7579
+            ]
+          }
+        },
+        "alarm": {
+          "active": false,
+          "elapsed": 0.0
+        }
+      }
+    },
+    {
+      "capture_frame": 1800,
+      "local_seconds": 30.0,
+      "global_seconds": 30.0,
+      "state": {
+        "shot_id": "alarm_hold",
+        "local_time": 0.0,
+        "global_time": 30.0,
+        "phase": "alarm_hold",
+        "camera": {
+          "position": [
+            2.78607144272398e-14,
+            455.0,
+            355.0
+          ],
+          "target": [
+            -40.0,
+            -80.0,
+            150.0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 71.50777759085639,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "alarm_hold",
+          "local_time": 0.0,
+          "frame_index": 0,
+          "reduced_motion": false,
+          "blend_frame_index": 1,
+          "blend": 0.0,
+          "camera": {
+            "position": [
+              2.78607144272398e-14,
+              455.0,
+              355.0
+            ],
+            "target": [
+              -40.0,
+              -80.0,
+              150.0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 71.50777759085639,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              418.449,
+              434.495,
+              444.5561
+            ],
+            "active_crater": [
+              564.364,
+              24.093,
+              -3467.3271
+            ],
+            "reservoir": [
+              310.176,
+              477.166,
+              576.9635
+            ],
+            "merovar_landing": [
+              651.97,
+              354.993,
+              844.8864
+            ],
+            "island_merovar_gate": [
+              477.349,
+              438.311,
+              656.1869
+            ],
+            "damar_landing": [
+              52.049,
+              -179.774,
+              -999.015
+            ],
+            "island_damar_gate": [
+              623.18,
+              545.762,
+              509.4496
+            ],
+            "carcovian_guard_1": [
+              649.558,
+              353.849,
+              846.3814
+            ],
+            "carcovian_guard_2": [
+              652.986,
+              355.389,
+              841.8871
+            ],
+            "carcovian_guard_3": [
+              649.853,
+              354.816,
+              843.5526
+            ],
+            "carcovian_guard_4": [
+              654.862,
+              355.67,
+              841.0715
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 0.0
+        }
+      }
+    },
+    {
+      "capture_frame": 1920,
+      "local_seconds": 32.0,
+      "global_seconds": 32.0,
+      "state": {
+        "shot_id": "alarm_hold",
+        "local_time": 1.9999999999998863,
+        "global_time": 31.999999999999886,
+        "phase": "alarm_hold",
+        "camera": {
+          "position": [
+            2.78607144272398e-14,
+            455.0,
+            355.0
+          ],
+          "target": [
+            -40.0,
+            -80.0,
+            150.0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 71.50777759085639,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "alarm_hold",
+          "local_time": 1.9999999999998863,
+          "frame_index": 8,
+          "reduced_motion": false,
+          "blend_frame_index": 9,
+          "blend": 0.0,
+          "camera": {
+            "position": [
+              2.78607144272398e-14,
+              455.0,
+              355.0
+            ],
+            "target": [
+              -40.0,
+              -80.0,
+              150.0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 71.50777759085639,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              418.449,
+              434.495,
+              444.5561
+            ],
+            "active_crater": [
+              564.364,
+              24.093,
+              -3467.3271
+            ],
+            "reservoir": [
+              310.176,
+              477.166,
+              576.9635
+            ],
+            "merovar_landing": [
+              651.97,
+              354.993,
+              844.8864
+            ],
+            "island_merovar_gate": [
+              477.349,
+              438.311,
+              656.1869
+            ],
+            "damar_landing": [
+              52.049,
+              -179.774,
+              -999.015
+            ],
+            "island_damar_gate": [
+              623.18,
+              545.762,
+              509.4496
+            ],
+            "carcovian_guard_1": [
+              649.558,
+              353.849,
+              846.3814
+            ],
+            "carcovian_guard_2": [
+              652.986,
+              355.389,
+              841.8871
+            ],
+            "carcovian_guard_3": [
+              649.853,
+              354.816,
+              843.5526
+            ],
+            "carcovian_guard_4": [
+              654.862,
+              355.67,
+              841.0715
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 1.9999999999998863
+        }
+      }
+    },
+    {
+      "capture_frame": 2040,
+      "local_seconds": 34.0,
+      "global_seconds": 34.0,
+      "state": {
+        "shot_id": "bridge_rush",
+        "local_time": 0.0,
+        "global_time": 34.0,
+        "phase": "rush",
+        "camera": {
+          "position": [
+            2.78607144272398e-14,
+            455.0,
+            355.0
+          ],
+          "target": [
+            -40.0,
+            -80.0,
+            150.0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 71.50777759085639,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "rush",
+          "local_time": 0.0,
+          "frame_index": 0,
+          "reduced_motion": false,
+          "camera": {
+            "position": [
+              2.78607144272398e-14,
+              455.0,
+              355.0
+            ],
+            "target": [
+              -40.0,
+              -80.0,
+              150.0
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 71.50777759085639,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              418.449,
+              434.495,
+              444.5561
+            ],
+            "active_crater": [
+              564.364,
+              24.093,
+              -3467.3271
+            ],
+            "reservoir": [
+              310.176,
+              477.166,
+              576.9635
+            ],
+            "merovar_landing": [
+              651.97,
+              354.993,
+              844.8864
+            ],
+            "island_merovar_gate": [
+              477.349,
+              438.311,
+              656.1869
+            ],
+            "damar_landing": [
+              52.049,
+              -179.774,
+              -999.015
+            ],
+            "island_damar_gate": [
+              623.18,
+              545.762,
+              509.4496
+            ],
+            "carcovian_guard_1": [
+              649.558,
+              353.849,
+              846.3814
+            ],
+            "carcovian_guard_2": [
+              652.986,
+              355.389,
+              841.8871
+            ],
+            "carcovian_guard_3": [
+              649.853,
+              354.816,
+              843.5526
+            ],
+            "carcovian_guard_4": [
+              654.862,
+              355.67,
+              841.0715
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 4.0
+        }
+      }
+    },
+    {
+      "capture_frame": 2070,
+      "local_seconds": 34.5,
+      "global_seconds": 34.5,
+      "state": {
+        "shot_id": "bridge_rush",
+        "local_time": 0.4999999999999716,
+        "global_time": 34.49999999999997,
+        "phase": "rush",
+        "camera": {
+          "position": [
+            -41.355072021484375,
+            6.2603759765625,
+            201.6999969482422
+          ],
+          "target": [
+            -162.1767120361328,
+            -193.68165588378906,
+            81.625
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 79.87276490888438,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "rush",
+          "local_time": 0.4999999999999716,
+          "frame_index": 30,
+          "reduced_motion": false,
+          "camera": {
+            "position": [
+              -41.355072021484375,
+              6.2603759765625,
+              201.6999969482422
+            ],
+            "target": [
+              -162.1767120361328,
+              -193.68165588378906,
+              81.625
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 79.87276490888438,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              736.304,
+              -1420.709,
+              -34.1927
+            ],
+            "active_crater": [
+              232.94,
+              16.761,
+              -3521.166
+            ],
+            "reservoir": [
+              -1255.687,
+              2272.589,
+              51.5471
+            ],
+            "merovar_landing": [
+              535.782,
+              311.483,
+              427.3203
+            ],
+            "island_merovar_gate": [
+              274.725,
+              710.774,
+              178.4007
+            ],
+            "damar_landing": [
+              -296.197,
+              -100.941,
+              -968.5975
+            ],
+            "island_damar_gate": [
+              1101.202,
+              1263.034,
+              98.8
+            ],
+            "carcovian_guard_1": [
+              531.423,
+              310.299,
+              427.3983
+            ],
+            "carcovian_guard_2": [
+              538.5,
+              312.001,
+              424.8618
+            ],
+            "carcovian_guard_3": [
+              533.162,
+              312.004,
+              424.8569
+            ],
+            "carcovian_guard_4": [
+              541.603,
+              311.884,
+              425.0356
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 4.499999999999972
+        }
+      }
+    },
+    {
+      "capture_frame": 2100,
+      "local_seconds": 35.0,
+      "global_seconds": 35.0,
+      "state": {
+        "shot_id": "frozen_bridge",
+        "local_time": 0.0,
+        "global_time": 35.0,
+        "phase": "reveal",
+        "camera": {
+          "position": [
+            -270.21014404296875,
+            -296.229248046875,
+            14.649999618530273
+          ],
+          "target": [
+            -284.3534240722656,
+            -307.3633117675781,
+            13.25
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 90.00000250447816,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "reveal",
+          "local_time": 0.0,
+          "frame_index": 0,
+          "reduced_motion": false,
+          "blend_frame_index": 1,
+          "blend": 0.0,
+          "camera": {
+            "position": [
+              -270.21014404296875,
+              -296.229248046875,
+              14.649999618530273
+            ],
+            "target": [
+              -284.3534240722656,
+              -307.3633117675781,
+              13.25
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 90.00000250447816,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              364.066,
+              400.102,
+              -452.4014
+            ],
+            "active_crater": [
+              86.178,
+              301.651,
+              -3559.3967
+            ],
+            "reservoir": [
+              520.003,
+              290.472,
+              -453.3482
+            ],
+            "merovar_landing": [
+              480.0,
+              485.724,
+              6.2831
+            ],
+            "island_merovar_gate": [
+              480.0,
+              278.296,
+              -291.8982
+            ],
+            "damar_landing": [
+              -346.304,
+              281.406,
+              -1011.6833
+            ],
+            "island_damar_gate": [
+              188.479,
+              278.62,
+              -315.316
+            ],
+            "carcovian_guard_1": [
+              202.095,
+              448.17,
+              5.5271
+            ],
+            "carcovian_guard_2": [
+              739.19,
+              480.246,
+              4.6298
+            ],
+            "carcovian_guard_3": [
+              301.899,
+              565.52,
+              3.234
+            ],
+            "carcovian_guard_4": [
+              872.406,
+              445.237,
+              5.6268
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 5.0
+        }
+      }
+    },
+    {
+      "capture_frame": 2220,
+      "local_seconds": 37.0,
+      "global_seconds": 37.0,
+      "state": {
+        "shot_id": "frozen_bridge",
+        "local_time": 1.9999999999998863,
+        "global_time": 36.999999999999886,
+        "phase": "reveal",
+        "camera": {
+          "position": [
+            -270.21014404296875,
+            -296.229248046875,
+            14.649999618530273
+          ],
+          "target": [
+            -284.3534240722656,
+            -307.3633117675781,
+            13.25
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "fov_degrees": 90.00000250447816,
+          "orbit_degrees": 180
+        },
+        "perspective": {
+          "segment": "reveal",
+          "local_time": 1.9999999999998863,
+          "frame_index": 8,
+          "reduced_motion": false,
+          "blend_frame_index": 9,
+          "blend": 0.0,
+          "camera": {
+            "position": [
+              -270.21014404296875,
+              -296.229248046875,
+              14.649999618530273
+            ],
+            "target": [
+              -284.3534240722656,
+              -307.3633117675781,
+              13.25
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "fov_degrees": 90.00000250447816,
+            "orbit_degrees": 180
+          },
+          "landmarks": {
+            "dormant_crater": [
+              364.066,
+              400.102,
+              -452.4014
+            ],
+            "active_crater": [
+              86.178,
+              301.651,
+              -3559.3967
+            ],
+            "reservoir": [
+              520.003,
+              290.472,
+              -453.3482
+            ],
+            "merovar_landing": [
+              480.0,
+              485.724,
+              6.2831
+            ],
+            "island_merovar_gate": [
+              480.0,
+              278.296,
+              -291.8982
+            ],
+            "damar_landing": [
+              -346.304,
+              281.406,
+              -1011.6833
+            ],
+            "island_damar_gate": [
+              188.479,
+              278.62,
+              -315.316
+            ],
+            "carcovian_guard_1": [
+              202.095,
+              448.17,
+              5.5271
+            ],
+            "carcovian_guard_2": [
+              739.19,
+              480.246,
+              4.6298
+            ],
+            "carcovian_guard_3": [
+              301.899,
+              565.52,
+              3.234
+            ],
+            "carcovian_guard_4": [
+              872.406,
+              445.237,
+              5.6268
+            ]
+          }
+        },
+        "alarm": {
+          "active": true,
+          "elapsed": 6.999999999999886
+        }
+      }
+    },
+    {
+      "capture_frame": 2340,
+      "local_seconds": 39.0,
+      "global_seconds": 39.0,
+      "state": {
+        "local_time": 0.0,
+        "phase": "bridge_running",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_tracking",
+          "position_metres": [
+            0.0,
+            0.0,
+            0.55
+          ],
+          "drift_metres": 0.0,
+          "direction": "toward_veinhold",
+          "screen_direction": "right"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "frame_index": 0,
+            "cycle_phase": 0.0,
+            "phase_offset_seconds": 0.0,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              0.0,
+              0.0
+            ],
+            "draw_position": [
+              -100.0,
+              -812.0
+            ],
+            "ground_anchor": [
+              620.0,
+              532
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.0
+          },
+          {
+            "id": "iselin",
+            "frame_index": 5,
+            "cycle_phase": 0.08333333333333333,
+            "phase_offset_seconds": 0.08333333333333333,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              -0.5,
+              0.65
+            ],
+            "draw_position": [
+              -490.0,
+              -846.0
+            ],
+            "ground_anchor": [
+              290.0,
+              558
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.65
+          },
+          {
+            "id": "crown_soldier",
+            "frame_index": 9,
+            "cycle_phase": 0.15,
+            "phase_offset_seconds": 0.15,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              -3.048,
+              -0.75
+            ],
+            "draw_position": [
+              -2111.6800000000003,
+              -862.0
+            ],
+            "ground_anchor": [
+              -1391.68,
+              506
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": -0.75
+          }
+        ],
+        "shot_id": "bridge_running",
+        "global_time": 39.0,
+        "alarm": {
+          "active": true,
+          "elapsed": 9.0
+        }
+      }
+    },
+    {
+      "capture_frame": 2370,
+      "local_seconds": 39.5,
+      "global_seconds": 39.5,
+      "state": {
+        "local_time": 0.4999999999999716,
+        "phase": "bridge_running",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_tracking",
+          "position_metres": [
+            5.709999999999676,
+            0.0,
+            0.55
+          ],
+          "drift_metres": 0.0,
+          "direction": "toward_veinhold",
+          "screen_direction": "right"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "frame_index": 6,
+            "cycle_phase": 0.09999999999997156,
+            "phase_offset_seconds": 0.0,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              5.709999999999676,
+              0.0
+            ],
+            "draw_position": [
+              -100.0,
+              -812.0
+            ],
+            "ground_anchor": [
+              620.0,
+              532
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.0
+          },
+          {
+            "id": "iselin",
+            "frame_index": 11,
+            "cycle_phase": 0.18333333333330493,
+            "phase_offset_seconds": 0.08333333333333333,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              5.209999999999676,
+              0.65
+            ],
+            "draw_position": [
+              -490.0,
+              -846.0
+            ],
+            "ground_anchor": [
+              290.0,
+              558
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.65
+          },
+          {
+            "id": "crown_soldier",
+            "frame_index": 15,
+            "cycle_phase": 0.24999999999997158,
+            "phase_offset_seconds": 0.15,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              2.6619999999996757,
+              -0.75
+            ],
+            "draw_position": [
+              -2111.6800000000003,
+              -862.0
+            ],
+            "ground_anchor": [
+              -1391.68,
+              506
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": -0.75
+          }
+        ],
+        "shot_id": "bridge_running",
+        "global_time": 39.49999999999997,
+        "alarm": {
+          "active": true,
+          "elapsed": 9.499999999999972
+        }
+      }
+    },
+    {
+      "capture_frame": 2430,
+      "local_seconds": 40.5,
+      "global_seconds": 40.5,
+      "state": {
+        "local_time": 1.4999999999999147,
+        "phase": "bridge_running",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_tracking",
+          "position_metres": [
+            16.87766944840134,
+            0.0,
+            0.55
+          ],
+          "drift_metres": 0.2523305515976886,
+          "direction": "toward_veinhold",
+          "screen_direction": "right"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "frame_index": 18,
+            "cycle_phase": 0.29999999999991467,
+            "phase_offset_seconds": 0.0,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              17.129999999999026,
+              0.0
+            ],
+            "draw_position": [
+              66.53816405447446,
+              -812.0
+            ],
+            "ground_anchor": [
+              786.5381640544745,
+              532
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.0
+          },
+          {
+            "id": "iselin",
+            "frame_index": 23,
+            "cycle_phase": 0.3833333333332479,
+            "phase_offset_seconds": 0.08333333333333333,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              16.629999999999026,
+              0.65
+            ],
+            "draw_position": [
+              -323.46183594552554,
+              -846.0
+            ],
+            "ground_anchor": [
+              456.53816405447446,
+              558
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.65
+          },
+          {
+            "id": "crown_soldier",
+            "frame_index": 3,
+            "cycle_phase": 0.04999999999991456,
+            "phase_offset_seconds": 0.15,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              14.081999999999026,
+              -0.75
+            ],
+            "draw_position": [
+              -1945.1418359455256,
+              -862.0
+            ],
+            "ground_anchor": [
+              -1225.1418359455256,
+              506
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": -0.75
+          }
+        ],
+        "shot_id": "bridge_running",
+        "global_time": 40.499999999999915,
+        "alarm": {
+          "active": true,
+          "elapsed": 10.499999999999915
+        }
+      }
+    },
+    {
+      "capture_frame": 2490,
+      "local_seconds": 41.5,
+      "global_seconds": 41.5,
+      "state": {
+        "local_time": 2.499999999999858,
+        "phase": "bridge_running",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_tracking",
+          "position_metres": [
+            26.50233055159637,
+            0.0,
+            0.55
+          ],
+          "drift_metres": 2.0476694484020093,
+          "direction": "toward_veinhold",
+          "screen_direction": "right"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "frame_index": 6,
+            "cycle_phase": 0.09999999999985776,
+            "phase_offset_seconds": 0.0,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              28.549999999998377,
+              0.0
+            ],
+            "draw_position": [
+              1251.4618359453261,
+              -812.0
+            ],
+            "ground_anchor": [
+              1971.4618359453261,
+              532
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": 0.0
+          },
+          {
+            "id": "iselin",
+            "frame_index": 11,
+            "cycle_phase": 0.18333333333319124,
+            "phase_offset_seconds": 0.08333333333333333,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              28.049999999998377,
+              0.65
+            ],
+            "draw_position": [
+              861.4618359453261,
+              -846.0
+            ],
+            "ground_anchor": [
+              1641.4618359453261,
+              558
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": 0.65
+          },
+          {
+            "id": "crown_soldier",
+            "frame_index": 15,
+            "cycle_phase": 0.24999999999985767,
+            "phase_offset_seconds": 0.15,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              25.501999999998375,
+              -0.75
+            ],
+            "draw_position": [
+              -760.2181640546739,
+              -862.0
+            ],
+            "ground_anchor": [
+              -40.218164054673935,
+              506
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": -0.75
+          }
+        ],
+        "shot_id": "bridge_running",
+        "global_time": 41.49999999999986,
+        "alarm": {
+          "active": true,
+          "elapsed": 11.499999999999858
+        }
+      }
+    },
+    {
+      "capture_frame": 2519,
+      "local_seconds": 41.983333333333334,
+      "global_seconds": 41.983333333333334,
+      "state": {
+        "local_time": 2.9833333333331638,
+        "phase": "bridge_running",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_tracking",
+          "position_metres": [
+            31.76966666666473,
+            0.0,
+            0.55
+          ],
+          "drift_metres": 2.3,
+          "direction": "toward_veinhold",
+          "screen_direction": "right"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "frame_index": 11,
+            "cycle_phase": 0.1833333333331636,
+            "phase_offset_seconds": 0.0,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              34.06966666666473,
+              0.0
+            ],
+            "draw_position": [
+              1418.0,
+              -812.0
+            ],
+            "ground_anchor": [
+              2138.0,
+              532
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": 0.0
+          },
+          {
+            "id": "iselin",
+            "frame_index": 16,
+            "cycle_phase": 0.2666666666664971,
+            "phase_offset_seconds": 0.08333333333333333,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              33.56966666666473,
+              0.65
+            ],
+            "draw_position": [
+              1027.9999999999998,
+              -846.0
+            ],
+            "ground_anchor": [
+              1807.9999999999998,
+              558
+            ],
+            "visible": false,
+            "depth_scale": 1.0,
+            "draw_order": 0.65
+          },
+          {
+            "id": "crown_soldier",
+            "frame_index": 20,
+            "cycle_phase": 0.3333333333331635,
+            "phase_offset_seconds": 0.15,
+            "scale": 3.0,
+            "space": "local_bridge_tracking",
+            "world_position_metres": [
+              31.02166666666473,
+              -0.75
+            ],
+            "draw_position": [
+              -593.6800000000001,
+              -862.0
+            ],
+            "ground_anchor": [
+              126.31999999999988,
+              506
+            ],
+            "visible": true,
+            "depth_scale": 1.0,
+            "draw_order": -0.75
+          }
+        ],
+        "shot_id": "bridge_running",
+        "global_time": 41.983333333333164,
+        "alarm": {
+          "active": true,
+          "elapsed": 11.983333333333164
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0000.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0001.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0002.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0003.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0004.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0005.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0006.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0007.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0008.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0009.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0010.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0011.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0012.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0013.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0014.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/alarm_0015.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/cameras.json": "783674912f892c650417cd25dae86ff692c3263dfce796864fd8b2536b64ede3",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0000.png": "f052730ce9079f886f24ded9317a5607143e36fd173a8214f43e51c8e4024ea2",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0001.png": "82255bf9f440cad3dee1cc5b3386e53fe21e30d7dbf9877331f000d84e946a56",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0002.png": "b64ced14412e996a6dbcca9175cbe25333d50d022822f2daaa593ffec2265a44",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0003.png": "783e803584acc04e24b5879ae725b9942828581dae73f9cb5a756d3648fe0d08",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0004.png": "faee2330285eddfab5095dd934325efcee4b81bfb404551f412f69d737c87257",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0005.png": "3d8b6a54975c8cdb2a0caa2bf3242431965ae587296e76a12c5e8df2fa6fe398",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0006.png": "c4bc56ed20af30d3b0408d652ac9301974d4583460691450f928485afefd257d",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0007.png": "72ad81265f66c80e45d82c9f06654eb49cdc74bae87aeb466402ea0f007e7998",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0008.png": "6d4f888afe9765b72518cfd67bd46f8c22b2699338ef80ad2149343e7652b48e",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0009.png": "f72a38cc4631831c734f6ee2aff7b60b55314e671157da311e374a25baf27514",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0010.png": "b39d3d6ee1ae09e37ff469b79b9372438176091d57546cf4737b45cbc58ae533",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0011.png": "93306ec0fdeb915d2a3c2d35dce8e99a1070e5142d5ad415947af77b358aab79",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0012.png": "96a29227d466f0452e0381ff656c76cdd7b4bf22d601338a5fc9b187419dbef9",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0013.png": "3e837a64293385ca9c6b9cca6595a4135d436b1db13029e883e9a9cd3b5c152a",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0014.png": "c5291cabf3f6f80ce6c06ff98edfa58550972aa5de8f18e361f81a34927b88f4",
+    "assets/story/fire_veinhold_opening/continuation/alarm_hold/frame_0015.png": "c75027ccf2061a0d32aa5891f8df7b94d66d056def1dc48141b3a7aa9a694385",
+    "assets/story/fire_veinhold_opening/continuation/audio/bridge_rush.wav": "4bf2ed7f31db28ba065fdf6bd9b98c1804e72da7339cacc556e90c643c3a9f1a",
+    "assets/story/fire_veinhold_opening/continuation/audio/crown_soldier_step_far.wav": "5a94826fe114922f7ca1fbc27771aff6f10176d54e905b01944071507209dccc",
+    "assets/story/fire_veinhold_opening/continuation/audio/crown_soldier_step_near.wav": "208f5e4f3b709493ce5411aaab3eda32fb244133266c9e71a81977d0b9d8249f",
+    "assets/story/fire_veinhold_opening/continuation/audio/distant_siren.wav": "6fe928ae6d818c82d05faff4034a6c3dc2deb75e02ec6b72eaaabe0d9968ae3a",
+    "assets/story/fire_veinhold_opening/continuation/audio/ice_settle.wav": "a4cbdbcc4000af503cb7051c2a3fcdd776c0d6661e067f2f0a4639a9fc27f409",
+    "assets/story/fire_veinhold_opening/continuation/audio/industrial_siren.wav": "1ae304c0c87d074542dbfc037ee64da5e17d2c6d3ed6458ede998ac450e48f73",
+    "assets/story/fire_veinhold_opening/continuation/audio/iselin_step_far.wav": "bcbefae02ac6260bf8cd55d93da83cef8f3c29934f71c55f50c6a9f8645c9a62",
+    "assets/story/fire_veinhold_opening/continuation/audio/iselin_step_near.wav": "21edb2de441d6a2276cf496f33c68467811bf9a5a0a14ae7cd436a44228161f7",
+    "assets/story/fire_veinhold_opening/continuation/audio/lucan_step_far.wav": "7bd2d2258b9ca89d0e9c04445ea38c3e8d0d6b2903e0ea7b490d389509a45fbe",
+    "assets/story/fire_veinhold_opening/continuation/audio/lucan_step_near.wav": "bdcf1ce840cad48e8dc224e66f975552536f2da4c7f2ec5ddcbfffe12ecfa609",
+    "assets/story/fire_veinhold_opening/continuation/audio/machinery_bed.wav": "2c10ea70dcd4c3008c02ad4645c716c4a39b68bc35aeebeced3f1b8cc23de1df",
+    "assets/story/fire_veinhold_opening/continuation/audio/manifest.json": "f4299c4009724f6a5b6a7258681a7fc0ff167223f2565b147f95bcce5c03bc45",
+    "assets/story/fire_veinhold_opening/continuation/manifest.json": "1b93e2be3a1f2550bd786bbd608ad618f5beb175c4fa14eddc0b1981ce182d46",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0000.png": "ab843bdc641503fb463b6334d988a50bf9b6649ae94f619ed1a2dd3a9d002085",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0001.png": "2d8c8fd4cb3cfe9f9833b9ca3db2890523d8bc9e66310f6a07bc54df41bd7ffb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0002.png": "d495a74d84bc2521774e3b75382e29f373e65e2e92d1dc8e1e86cf85202bd0ea",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0003.png": "5657513f04692fa3d57ded81cfe33c8ff69efa74624088faef4664a1e29ac89f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0004.png": "87ca672ceafd4eae4d3b76bdcdf0966aac8f7ba9b1a64c06c2754d7ccef68e66",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0005.png": "99134e7d9179dcab72c17dd7d8b66913d2a41ae2d05811ec0ec356f00417393f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0006.png": "c32a7d41ba031b33bfc39c5492fe4d654c781d3fa54fdad4532aa0bfd5d1ef77",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0007.png": "58daa1f8a300f74968223c50231a049949bd06541d88370db85a586cef34a4a5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0008.png": "078784d8afc0fa5c96cad0a233c3533f66df1a01f5580a3a957708d56446c50a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0009.png": "dd25a06e20fe5e002a221185c7133c5e308be095cd0834631bcbba4eadfd90bd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0010.png": "1ea29b227a4ffd0f7614bc2c9e2919c9c1b952c2203056ab8eb3628f5fc1d098",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0011.png": "51e4502edfd844816c08bcc03f2813c5de92f1c74b54bee10d186779a10d33cf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0012.png": "0ed4ee0b4d3edd7636443152960672a9fa060c24a46a2ef926a44358134bf2f9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0013.png": "5709989420fae98aa9a1dd614e232d7a87ef18e96bdab9297bf1f4f420bf1ab5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0014.png": "553e3c870c18bde9f1b438a8ccd30f44c133c08a0790f54908fb30135a2b0db2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0015.png": "a4864c93718d2eca24c09ce10528d3be089157bd3d3b36e14655497cad94d2db",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0016.png": "4dcb10d5b3cbcb10b80999cee0a69587615d4d27ac66743cc55e16da5e4eac97",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0017.png": "b78608a0aec9a4d7385f6ab7cf97842d5afd3c67b941c402188ccd34b15a0908",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0018.png": "4e1f670836b73c702e0275f49f503bd7b678bcff6a3839d67337f5fb35a40712",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0019.png": "c8efcb4f74557edb0b42e880ea84e99ee9f89a5bd843846ea266c5aa786998db",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0020.png": "252ddec0780082425a2731bd8d2d481cca728e0afb894a1e89e13a482095df37",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0021.png": "0de16ef6f6685135fc5e45c935d612271ec564efcada9b1b2e9e84bb49c1a8c3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0022.png": "f1316fae797d760abb96ba65cbf1de92f6f508035740134e3c542bf5bbdf515c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0023.png": "36d34f18d074b68909798bd1b651331fd64bd4a0b4763125e893a14046a352be",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0024.png": "9d23a50d3a3a0fc770072860a2e96ed1fed6e7a78b4d645f9c2f3f17d31b8867",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0025.png": "e4380259e6b839881b652898d489be37c0f259fa426f17a854d24f2cbb753d9e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0026.png": "470f58310117c3d8d17ba2e0b1f6d33faa5c382612619d2e9b7207faf1dbbde2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0027.png": "09787f8d28dde2e09775607ae4518ae97cccef643d7a5e4cf6a5e3e53e589dfc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0028.png": "1269fa6fd898dcdf8b1aed4abd9f33cc827ea28448cebe0a62d1ac497652a74f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0029.png": "ee43452573a166e37ca3ee9f43e9f5529f31b5628dbcb1403b550b2de8617249",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0030.png": "bcd3874942b89544c36a2115f2abec3a77f3d6a3c0b7ada8010cfee7784d3bcb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0031.png": "e6a1dc71e20f89e8fa821197663ddd71ad4d0a64f764ae265fad3dc0150fb7aa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0032.png": "36e261fd936505e6fc0b11da23017b2b25007c32e9b8d93af29ae4bf34f505b8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0033.png": "d402678fa1e8eb61f22cac4af262352f9d3f35cfbf40cbea4f0c1ac54cd6063d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0034.png": "761b30b87a99c6cf1eaed60eba2e2af3d0552587a1a3459829c3046c93b16b1b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0035.png": "9320ecc033ee9b205bfb0f86d8382e73b5a6f0577007d0d384f9d2bb5ddee6eb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0036.png": "0c3fcc410cc2605d00ed2d94c3bbe4d0385f7da690f0f3b06b0924ee17b280e3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0037.png": "7a0243e5a94676ef3b7c52ce7a1aa3b8f47ee69571042362e58c7a431a37d28c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0038.png": "82d9d39a34508fff1cbf4c3f205fa9f89629bc245264f16b3d1d9f23ae5fa198",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0039.png": "1f902db6795008c3488a2d19587fbecc7eb3236271082ba3a2fc88a82951c1eb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0040.png": "789ca4837757e78a09ff2143bd54d34b78c5c3ce0110b4a152bfb6da7ec8a0db",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0041.png": "ef6737651b3d411da3597c65edefcf5e3df443cd53b6dcff183a8974a6a35b20",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0042.png": "c6222032d57bb6a1f4e2dc49909fbcd5e0d7de18b4b8d5139ff8dd66527ebd5e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0043.png": "3086298d4060f49be0ec91bf8c44194970f44f19076d1f06ad8ab1507f945fc0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0044.png": "bb89e5ec74c46ea7c629c505e81619f10b5b18fd2621eced35715d783cd1d09b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0045.png": "4944b54459950250d8cb2d473c21b472cf444ab313b06e04ac172d71fee2296d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0046.png": "8267f28b5e3956cc0913b3e7cd7c79f87167d27a304f9c2ef697488426af1545",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0047.png": "a68ace397a1798e497770dbfabdddf054e89089772e525c259c65df110eff7b6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0048.png": "0042b62b461fcfb896dc7986bda21f565790026920d24d062f979c4d7fc9d3c1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0049.png": "7252fe0f24a781af20339bee0962fcbaee5f6c668c1a37c81451549542c42be1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0050.png": "899385b0854ec4e55efa78362c0799a645a8174139d30b16196d2e7ac94e2211",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0051.png": "e6621dfe63d7acce4ecccc8856f2724d521b2d20105e5e01b68e68aafa0f8302",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0052.png": "2a9a3bc53b34988ae38964a3ec919ae171d94c5bb57f68fb5f28487a70efa075",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0053.png": "19139ca08bbf313b1be8d4e3bbc0133c18b9ca11e135a708a54423951de1f68d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0054.png": "425dbe0d2700e699d58f1d0a438d91aa4c3720a011cf7e4a10a92eb41c289440",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0055.png": "46d8e504cd902ef05e0dba9364718339878067f768ff3249c61abe6b5caaddbd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0056.png": "838174cb40b7e7c53fe32f4994f8b8277722512655ea6b4bb643782235fa5ee8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0057.png": "cd74236d304ce48a3802de53080f256f5a56499297000b3cc44eb63606c1b901",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0058.png": "05e3adba147bebc63b63a88025233075f081387141bdc64cab8bb28a0766c732",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0059.png": "81170a12f8c343a06f6fa0917e0d547f8f76bcca6fa56a27d8f186d3dc71a21b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0060.png": "fccf4ab4250f85ece1cb74c3fa15802ac4bfb0f09557a866c7240e6106f3e9e8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0061.png": "6dc13a62cd7a89a32ddf940c8a058f8f6231d8b6d9d5a06a772f6f3db6bca25d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0062.png": "edf0c5a41b9095a53634ba1bc3856ab49c9f2c056a1c39d1f4359155551e4664",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0063.png": "bfba1ab0cd358cefd695b93926151371987e45dea7aeb50b2915a1f18b40f6ef",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0064.png": "2df4b40c01af80c37c0fbb07742476cc2bbe4f2342b758643e38f61de445bca9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0065.png": "9f63bfab61ed4f2e0e3834f47e60678e0eb313e149a023c3112a3f6e84efa81f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0066.png": "f238391cee265d003e7b4685618f9e1d43c4a9d32950a1ea85806aead54479b4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0067.png": "45b43444d043ca89509b1677e3ae659b730e48c02f8fc380f45f6411f78bed2e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0068.png": "82f4ef4fcf1fa04e5a5b007a457c8b390f5e53a22dcdf820111d1118e402771a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0069.png": "71b30cfd7b194bda9f2eadbed687b7ab0b34b2b28c4f4ec8a6021f258b4f509b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0070.png": "cf9eb4a3d534c3578c40885b9f0dbfd512f3af561a355c98b64f36a820b73df6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0071.png": "4e26243a9b0c9bbbc184caa1734367e1359b862d840c5b45ebd21ce6fa790214",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0072.png": "6794acbf97168a94169914e14f6dffc556e6c10bbf7445070d1efc66eff45e67",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0073.png": "86881e00ae073e859fe1fd257cab34423e61858aee0146ac8ab3408c18f58eec",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0074.png": "e39ec088427e48a4377753fd2968084d7de4087ebbe75773af12d4ab81d07376",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0075.png": "84cf7eb34b11d83025c793951538dbb3bf108a4551ec99a6b67baf887af297a2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0076.png": "f62d96ebfeff781485d0674abfa3a4d4cb7c662932941fd304539997378f77bb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0077.png": "56b3ad4b54f7a0cdaabc39fa4b07d592ef938a60e1058b2cd6a65fc364064ec4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0078.png": "d3638596bdc3fc605a787f7df0fee68a8031fa6d4cb5c02a70430c6c92b4903a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0079.png": "028228ad15179db3204b20746b1e2127f2900206031368c39684a21a7ba9723f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0080.png": "59d26bfe2a5186ef25ee436d6c2db05f4b15592ac970c0a699e5f3c2ed8223c9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0081.png": "3f42165d1eb34244bea31caef2a15e8108a932def311a7fcd441fd2d048fdce1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0082.png": "8da12074e716e054bdbb8ec53d6288f791af61cd314bc30e46aeeedea6ebd025",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0083.png": "8f7303cf6e9a328c557fbc25204abf50dffb9d0a943fe36a7f0803f01d91acfb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0084.png": "10af0aa301b143948ec85db328b8a147bccc72d673bc137684359154f2a5915e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0085.png": "e4a8702eea3a6121e6b75317a84e23b309429cd6212e602c6cac8354055bf34b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0086.png": "7bd181662ec214fc3e820b9794373bc8cc80811a7fd3a2332bdd2287767c5eb3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0087.png": "1c973854c7223988790a353d977f24c12ec0b78469465e046d0192655eb40d9c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0088.png": "5b234dcbdd90a51a39cd722a4ab8be808404953d5ef5ce9f4361fb6446ce8ae0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0089.png": "586ba761f58afecdad46fe53a03f9bd55016de2a92e348e5cc80f87860b44327",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0090.png": "644fb0cde8992be7746584c2dfbd322a986cf2bd683a403bdad8fcbc81e1fb0e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0091.png": "7a8bbf95ea0e8fc07908e4188038e27caba6c1dea37eee0efec96cd38ecbdc02",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0092.png": "47ceea10892710e7b1e3e057de65a5c886de21b65cd5a083b11845a5be2de45c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0093.png": "9c37edf73ed0958ab72ea0a6dae2e9e12e24a69ada4a71778316a2e0f75e0c3c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0094.png": "91c33ad3c75c4839856f91bf2586a400ffafbf0ae143a132da73d6c34107dff8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0095.png": "a8315260745776c6fd98ffabd00b8c20d1a59f0b928c0d7773d40c8b10467115",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0096.png": "c5bcae1811baac4f0b4d51580ced952bc926229bd73939ac0d5b235b06aedbc0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0097.png": "f3e2536eac8d2792a8cf101d2bad98b7d1a45dc1c9b2679086557ede29a73cc4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0098.png": "07c6c2bc1756154dd9da1bbceb4064b351e7cba4804c6f56412d84cb5f37e35d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0099.png": "d1ff0725962ffc06050e5c6ab4992fb4e56d5428e7ca9fab31c278d1a1f03512",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0100.png": "3084976738c4aa96202459f003e51f5e2fff8974379737665182d5ead1e551da",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0101.png": "1766ee1ff13b5b6ffeb8339e5b52721fad826c458ae97cdc55dcf541d8aec68f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0102.png": "b35eca732b8146605841170221995f832c43e8c47f50e862b023539646f11940",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0103.png": "bac5f5e4d3dd605d349a7ef015bc334ba579cfa1a207a7a717d0b3f830c50591",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0104.png": "6e411800b4e0f62dc8d4c6a552a810cec57cb1e5dd03fea0ec732f5db07baae4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0105.png": "b27133618b31d3fb3e0e10069243d66a18ebc12c793f7c7cbf72d06bf49d28a6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0106.png": "2624528efeb7f41acfa6c29c1452930b15e667593475536f934e30e8992c21d6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0107.png": "c45ef1aa98bfd6fd9611df24cf341d048db439860521d5100e9d09f2b154b8c8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0108.png": "526ba0756a6f535f1ab9aa4a9b7ae1cb2dbe393fe562ef2dacabae90c4094f46",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0109.png": "9c670854c14b8acddc73f2095418f732fcc1763eb3c25fb6cb7e118453fb3a0c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0110.png": "c96734e080e511338a609bad6a4655ac7f6e25d6a16c315a7c0bcf31e0a4af82",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0111.png": "3ac362eeac799e41c1f403732ed6a2f405d0d2a32b66a1e8d60197b17604ca7a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0112.png": "a5902981a307d5ddb7f735ceb7a434fe3a5893a1388ce58c74df1c1da957a8ac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0113.png": "6e37675e96f0c3c8c8edff5e25392c3821edf1d59d52622bda0531e7e83451c9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0114.png": "85c8742aaf36ab25fde65698fd7f41da80103c9ded5a31c19d31491ab9f63d40",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0115.png": "b21b6f1bef9bb95709bb8df4bff2a1b657069429ef5f2fd9b5e3dd80892595f0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0116.png": "a8c7ac919d83340d24e45619108b585f0ec5e983a68ede01efb8899f575cf4fc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0117.png": "6fbdd0289abf402fbd636614547d56ac04a989bb844e29f4b78f5c44794cbc91",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0118.png": "f66919cb61fd8733844d98b12b3d254443dbc1bdd5dc64156ce1ac7da2578922",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0119.png": "b361ef1171fc80bca019aa35dc3a688d94292dca3df2d940646c7f165a8a9823",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0120.png": "0db40ca8bd3cb3f9e92125b1589db09adde2982da9849638343cab8443829225",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0121.png": "943360497d81b82571d8cfe8fe9dab152b509b245f6f6462dd45cf9fcb66f78c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0122.png": "df4760766833139560f9b1d6476ccbfa248ace22ebc0ba02a02bc78cee53d711",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0123.png": "127376583e5ee6ca349124c6c66b8f1d58038fcf6c2c33da60b9c0c80bd87d9e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0124.png": "58f44d7bb1c97bc1c1538f25ac4d4defbf41bedea575602fb25d3da267c2acb0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0125.png": "e993a09c0c861f286a431f8e27c96e137646294b419bcc86346a26f0b524f63d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0126.png": "de41db9f6bee43360de5ef1aa58b7b0c0c80d61e3d404c843da25e6ed8f9999b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0127.png": "dc9c6be559e22cffb7ee39556c4d45df589934eadb3227a5fa478812022fb07c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0128.png": "a248068ebc9db53b05338f8276f26cc28189488e051b99ad96b8ded3b8ae9355",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0129.png": "3b34d7e3e8a3fdd79c25bca399cd259bc5cdf00f60492d9817e300863f23ec89",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0130.png": "61436595a3f99e7b0683538547311c4577a665aca39b9f3c748c5c610e66ea87",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0131.png": "0c3526f1e9079bfd552d8a86562744a2b85e5c16e599fa01b592e3359b87a279",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0132.png": "93a43dfdf1c1cb681784438022949d536c19b2df84de6a8c67668f310478de49",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0133.png": "ebaef54cf0a1cee6daa390a8056a533325a2166036aae9cb882efad5bb75d272",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0134.png": "1e502b033aa08e2b2ae94e7e85c3fb50cdff4d9ed18a8b55574114e6dcc75f5f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0135.png": "a99e2fa7fe54d8e479e615ae08e64a5fe9c30b718a540593c38ce837d782b6fa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0136.png": "1ff532402862602c9b9583a204486d99ab0a4c520a743abf4a5136a2ad1de115",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0137.png": "7c3fbd82454edc241e202dc6833537604e4e879ecf0e8522df408ec73cc6939c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0138.png": "b16ec2b832a80d9fd086caf80dd4cc57126825e00ae6726c771d23f2c9945fc5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0139.png": "89203923fb80b275dfb479a11cd0552d9d4c32c05960190c3c07b078ffa0317c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0140.png": "a21e646460f3b206cb50503e7d01ee5ba230cb71eb1a02a9881bebe239517bd7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0141.png": "f9283c5a8d8fb8174cf964deaccad035f9cc652b62935b9620bb7113ff5e8cb2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0142.png": "b4085c725db45ca4f8c0929c308d08778f218d9ad16bba7f1bf9f89e54436b2b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0143.png": "c703e31db0c203bd2f57654dd9b113a3a82db6c62d3e9c322030d4866ba6b64d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0144.png": "b693529e92607e0a61d6b84a08f1f7abe83c0802589973905cf7209f94984294",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0145.png": "95e50f5d542653a66c832ab6c9e45251d0de4c729fb73287a4d369e0b84cc68c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0146.png": "346cf9053d34e85f50d00c6b88df652ef6b6916b1553fa59fa321c0a18f275b3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0147.png": "3dcb78ab954ecc37ed0e32e1d3eea1472c4154251eb4a446e9a6a8b54d84f427",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0148.png": "fc879a7679f484bbcdf51348d78d96986c7c3929ba9ba79e3924ffc8b0cf0a11",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0149.png": "ac27a330765bc6a6b0c9361ceae65906e63d72f8cf0a7c0a16bd1da9c2430c7a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0150.png": "987ba47e7ba6cefcfad9e49d65ae5bf3e644ed0a0fe37307b2a40dfc52e4e0ad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0151.png": "4a8f0c622e566d8b133a6d330faea7853affb02045a158a68ceb092043b89c18",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0152.png": "81d536dc6fec7771915bb7d028ea0f1e0870cd101205a5c47e84b20b2d94cbba",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0153.png": "0c449eb834b9f778789a2ce6ca0c66cf3a253a60227abb7390f223c0144b8789",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0154.png": "50a32d4c5924b5932bc6e60f0fbabf6946b23d4c87d5e43b855fe7b3611dc660",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0155.png": "3c4ff6c4630cc6271c3d32c8eb4bd0eab783fe7f5b366000da88ec1a45003dc3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0156.png": "9d80e750798939daa56953d9626a63de671e65cdcf9123ac3bf6bcc9f280f75c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0157.png": "47ddadc42f7e626ba1acaf5b21e0e493ebe058be1656b4942205566326be8b61",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0158.png": "d1286980b45bfb1ecd981b603a14f24d3825a904172805f698e29302091369ec",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0159.png": "9c9b9cf50d79fa1bf402021821e8726ebc7fe957ee6eb41590290c62a19d6f1d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0160.png": "4b0e34969e20d1f23f6b4ee036d3aaf36b072bf368c2226526d8cb0200a49a2b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0161.png": "d0512c3a53edeba53ef0f50bade6b785573c0ac7877af1fa12d49048d0a419a2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0162.png": "86c3f2cdbaf4b0478d0f200006a4f19ea5db065524e1c7efb7b5278d0a45cc21",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0163.png": "bf775b05ab5a1c85ffc359bd6b91ffc0480d246b775b0544241870f63d3e74a7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0164.png": "7b2d265813dd245d48eee09e684f0e916e98072caf9a727b08ba46331d737537",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0165.png": "049cc55a85d3be3e088586bfd515c51d7eea312ff6cd2a370e790382bb516688",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0166.png": "354d224420c373bf022ebb0575534d6669a7081d8ab2bc2cc9526bf4f933dc2f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0167.png": "854d2d5c9f7c2ebef152c5aa21d99eceb0aba3a3cb4e1ecac88a03c4361f0c9f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0168.png": "ec33149a41a2ef2d021c218b04fbbfadb7953cc104f153900c0815395c71cb4f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0169.png": "45ecc11a66c86067089ffe7a92e1c6121ccc3a097d798d77dc0009889aee5a17",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0170.png": "06e3d343597ca58f52d3c4a038769150e1048334765ddd2c94af583f0e053e15",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0171.png": "2dcf9038c6c61ddb5ef64bc857df551096992ae4583a26a118be69e8d2d0ad38",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0172.png": "2aa3a866bfb7061255f870e0cab11eb8e9a1a871c73b2064f8a773fd99544c90",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0173.png": "990877192e74707d6a24a0d78aa5176a260a16e0908628303ce7f042a2b03b0b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0174.png": "4efb9544dba3d123ab4d437be99af9f47a9a97d2b775c5b4182922dd3eeb94f0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0175.png": "977801e7e225c9cc9f2197ff22281b2bf0f04b3f99988cdae23f1dc3317943d8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0176.png": "6b92da566f9774d692275e9fa921689c11ab3ee662fd354fdcf97d89dfbfc72f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0177.png": "05b7d505e48c5656a706438ff10cd9daa2c4ea4d5a27f12c14dc634c21b505e3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0178.png": "0e01da11b3d47e69be1b301b4974b4b34ee6f8ce81a7a21490bf6bac1b196990",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0179.png": "4c1be5b35cfbed5703ead5ee2bd3d1c4384cab07e4255754c90c56333a8c6c6d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0180.png": "c8e551f19886b3e5a04b2d6161520bfcfbd36034ae72c3ca2d4c63074ad5b88b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0181.png": "ed1495de0cbabcd3ff364009c96f3730353a418353c58141edb22040558dc285",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0182.png": "756fc29ff00bea939674bbd22e5c4c53ac0869ae01fbedaef73fb2b46257042d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0183.png": "7ef4fb72833075c803980fc356a41e8ff6e5e4b820dc7be9b9ca9a8f7bba19c9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0184.png": "8f96322eb774ca72782216a9ab55f8842de18e4eebf49900e42c734c857a145e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0185.png": "fbc9d4b7d97d74558000f75c433637b32a2780811d4a563951340996ca331fe9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0186.png": "6abc05a16015b0e057ef96d5de80705a6fc6880ee529c1076245c4ec40f1faca",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0187.png": "9ef323bb9402a3bc2ced7945f60d62fba38abf1854ecb0cfefa68363e0180b87",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0188.png": "834306fc2494b33a828ee97656ed1d3613ef4a8c97f9864aa664cc6be0fea585",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0189.png": "59c4c334aa37e11aef6f12f8e7cc96e35b123a99d37127b1ebec59c40ca72b5e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0190.png": "38a53c4c613e36489f12ec0e0cd7e986744d8b4d4608c4f34c743523b5af38af",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0191.png": "4afdf9c0f4b6e22ae92a9c097ce1efe46d6d16341ca2837736629487c2b82d5a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0192.png": "0a4ae3919a066e9e30a375fc4eeced5c598643468b4b48754f2a7e6e43b391dc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0193.png": "54ff3043fb4836d7ab9e38c81fce02c332cf6ddd7bbac6c85c76def687315bd2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0194.png": "9f448a90a6e9a1ca2ac7515cbd2c28082dbd00d9ef86af38248c6dd5475e52b1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0195.png": "f4491b32131ba69de0199455de690f9963c8573ba3d5a1deb5064765e2777022",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0196.png": "26645c3e0c7c9bf219ab14a7bc6921170583e7e9f38ef906332fa36546ae9d82",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0197.png": "8ff80cd08e575524f1cd501ed59c070516417b1bba3c67f5707a0e0ffad8e11a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0198.png": "c8e2d478ca5ebdc7eecc31642aa913d01f4c26ed92ab582e9e45c3bed927afe3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0199.png": "049deb772a97b4f77b18bc7b80729a6a9b62479e28302c574c80943967be3a30",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0200.png": "9a408fb9c5b5f90d2f95b6ff98ad0ae0966aee66d568dfde3ea9c95450c610cd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0201.png": "1ce50253b2649805e930799a23620c4a764f7ab9b3b970203c5cc082196387ce",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0202.png": "ba11819b9a8817a1ff1e5f90fe8f107a237f4ea753b074bb871690f6a2229e4f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0203.png": "7a1744944cceb2e4d229e4881612cacd83d81291d4a5034d36c093012dd707ac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0204.png": "12aad1b98c0de4a3acb7f882b2b177e2906cc98f5176694f2d929e4d19028628",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0205.png": "df27ddd29343834f3343eedec4fdf5e846a4f65a88270df5e2c22d074f2c1ab1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0206.png": "a90e28bdb344045eb242b78ca2e257ac41a356fc66bb22d0e36e897a3b86d0af",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0207.png": "2686ddea148a2da4129400697cf94e76aaa5ce650e7b4f4c5da147dd0899890e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0208.png": "648948939533f78dae84aa1481cec0513be98aa9bc5e714ddb307a683c5a5718",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0209.png": "1b4b653ce0881a7669d5e7aa94985d32cb32cae831d8952735a1ca3f6cfa7e7c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0210.png": "63f2144f4edd0cf983dc148e88a0fab0caaa1723411f07568518327e786b538a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0211.png": "3333d8acbc1eaf1b96b79f46ff1e4af0450aaa954f1bb66efd86357069158c9f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0212.png": "df37fc53be8308966052edc7c31931090b7f7e6cae9ae23bbd012986a19edce2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0213.png": "e831cb2d22f0515f28ac8b9e45eba94934ef75050220970cd7a2e2470fdc4fd4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0214.png": "a000483356412efc7c6d58123be68034c43a783fc22e1357e9a7fe733e6ee5bd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0215.png": "7e1216ce631b154a846aba4fa1cc5f912c57e79cd47ad858ba1c6cfd1e9a05bf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0216.png": "312e16350bd6982187130fb93b2309e86d205b1012cc7ac7c1078849bd24e763",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0217.png": "9493e28d5c2dac78b67d7a9a01afc84c59c3fcc1975994245a6407c4be1284da",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0218.png": "3efd2ddc3eee0414fbd7da52338f7fc6d5f31f437a7cf4601311eeb9a55196a7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0219.png": "7799114d6e7a9347b6aa6fcf80e4a0af7b61e1621f12a5933976ac816c7abf20",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0220.png": "6ce6cae84906404788b544c62dc96332613da29f1d9c492a2384135ffff4fa41",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0221.png": "338310f082859360ee2e5390df264fc7c08abbaef68fd1a941f000f9ba3eb492",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0222.png": "f4691625594def2d8b1fb7f79914f888401f151660b24ad982fe68cec3d2b1b9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0223.png": "ac2d7319fe187a597609225a071e313736366dae7d3fa1092859f9e0df82ccdc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0224.png": "0bd3cb8052c404833cd2b07f5dbebc18cfea58be416d550a1743c4ea64e187c0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0225.png": "0bcbc61362b7035fed66df46cd5e0422331574ebe1a60c85167d456fb77a2922",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0226.png": "673f44085bb5d476dee3ae6ddd3636e131ff1c0b44b4f13d84f4254e8485967f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0227.png": "a1da12bf8d1692d444cc24ebd645f1d4cb7261595d19393e84703367a91e148f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0228.png": "04b7aa70f9610fa79feefd309d1324a8fd83981d98cb3b36af19f8d560a6d7a6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0229.png": "54d155b37a502bd5c76dab7cdc580f786f1223a073e1e832f64254976466b061",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0230.png": "c594b1f4539adfe602116e455ab785d4887c63d9fb279e03f91a6e657e8687fb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0231.png": "783eececc4464437ed6df6ad0dab4f84166f7e50bb3e1613ee68a23c2c0e3e85",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0232.png": "0a3a5b45dd84f085051e5ab6d25f2604b0c552679cb85dd163e391b9c75bf9aa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0233.png": "9875962f5caa780ad16b72369eb608d1da15f62d4df893336c636ae983ff40db",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0234.png": "b5de4d05365f274dfe11f4ffbd4065c4933f7524c03854cb9c28b8631db5d163",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0235.png": "9874fcf8fa3b90468b296507116d01876e024715146957e7cf0c36ecb0d59ce4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0236.png": "d5fb58b996bb3a1c20e5b0ee09aeca10256fc02ebdff21e79710da61583de80e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0237.png": "1dd97f09c0b833fe1a752f821924d825d26e3f15dbad5d7e5e695bb0024bf13b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0238.png": "72b181bd1dd1a7e65a67459bff58c9170462c317d386232d592b46eb099aaebc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0239.png": "70e82c147ee061d6bde972ed763ccf81a562221e79ddcec0bc4297fc15cf6a97",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0240.png": "189c8dd6b919f8c25913560c97475e034a32c903a27e66d09de69cb0ae284928",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0241.png": "d57b1906e1e060a39517aed0c3244f5fba1be287fc4190db0009e6fb124370f4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0242.png": "7926d7776f32126ee8162a55aff053db279cd8ae456c36dbd4e18f5b82924c76",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0243.png": "02379e13d6edb94be923266032ee317fa540ba17b95489981e006308f826ea80",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0244.png": "e322158fac1463653740b33d8d7137fb72db1abb65eb8dbe17594314afc42f86",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0245.png": "bb6a349a44b9587beccaf85ea352adebf38501307935c4d62c383dad02fe2edf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0246.png": "2b8c7767ef52379fc152c42f84301b4f799ed20cc0a5756f3cf27011e101574f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0247.png": "b1dbcfadb5894ee69c1766b5ecf1ccf6ed34ebc84152077b79c0151a7ca54706",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0248.png": "ddde74839b9ebfd68346be2663379cf2712768237ab3fa1af7fb217d08757909",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0249.png": "ab439fa72bad3a755d907b043b5f09ae149988c2b96e29e4a4ec7f0b93d08f9f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0250.png": "0ff181b886ad09f64a826302b4156170b2afb715774317f44dc44b46f10ffa71",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0251.png": "67badfd6dc95c51aaf853ff8600b42ea9ba4547dcf7a0da631d3a0be21bf0baa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0252.png": "dbb6b1a318ff3499b7b89a64e9258479728e5d194a47071c4dbaa3a81f4858b6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0253.png": "c4a520eb4c6054077020d75c698ef1a9c6d20fdab67e9238e0641882118f7cbb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0254.png": "e1cb963c417911235d1371acdead24e500859d2f71f9f927fb03e249fa7d8209",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0255.png": "c35d3e05377cd2509756ba7fcdd64750aedb8d949b145704b96f5aa1b6c47e82",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0256.png": "cbca1ba83b55e869434c185875d9225b9730b32050ea13b735197507e5f32b9f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0257.png": "1150bc87ea2798d74410aa08785592658da8be11591da7ff4864015ec294238b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0258.png": "c936a19c3a1fce80a59114126bceb21ff5d6d7ebb89fdee310218f8b7178564e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0259.png": "d6df4be5e05a55df1810e149323542312da0902bf88c08b9d5df572e04d3e199",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0260.png": "1854df3a20600ae9ad68f2316b883be083e2190df256d1d3faa4b9a1b7a5a20e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0261.png": "820648a73b74cad2de5dccd135106557c78ae8d8f1c3d16038bab60b80d881ba",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0262.png": "6954d6fde6195089b5ca3171251245baf5a7795541b24d0bb73582c38e8b7589",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0263.png": "54eddf727b2f3b9f6b0747f528fd409f4cdf18bafc65cf9d8726ea36dcc07ca9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0264.png": "ae0ec4bb6a7fb6952ca18376444fc69550c5f0e8fe98140295ca6f06c9513fe1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0265.png": "d4f8174529629feaf00f2bdf7a9a7996bf07fb675c95dd2ff86d7c9b62e3ed96",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0266.png": "fbfe04453d1f8261fb9ab1527ca23209932e4f5e8a7c3665356946bc57d62396",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0267.png": "6cf2672dc13f4f757947c79454ff2bf18e46249f639009d6c221806939b616cd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0268.png": "618c73538b10e261188def9a9691b1c8a53a7d4d0d16623ff495589697f132bc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0269.png": "08a769073de230a7f7d83c7fff526b0120ace3553d4e2f2294295fd5c8471406",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0270.png": "aac079c924654ba9e927cd6b49be753be12e9a2df01d2594760f097a6b968213",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0271.png": "e7d618e62c8d61b75d266cf0b3a140ed36475217aa0ad532c915b3dc011f3e25",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0272.png": "7f7e3625336e10e3284fae3ecb0c807778783cb414bf6157816cd4d4676e5de3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0273.png": "60f6ab0740333354531ed6d501dc1f439f314a39e91c1fc2b8575e7957fb1820",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0274.png": "1a3b5bf778e0402e6b42fd02e09c0c0e74af02089cf240162c7ef0467121323a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0275.png": "c160f27d97fdd3386ed8701236d2a74002d911b8291b042c94563878a48ba9a7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0276.png": "215c6739287ecedf4d41534ef3dd8fb9a61082a52cbcaef439ea010b61c2f21a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0277.png": "e3f1b41b2a929a915ee04dc90b938332cca1840ff0a7120023003a7747e8e0e4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0278.png": "02d994ce7b986cbc3cc43869f4a05b456b7872fa3fd05091759ac852a4bef568",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0279.png": "dc870e6e6f1bd92d32494515ce3692dc2df9a25162e966310da6daad77aa5f99",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0280.png": "77b8202012ea10b8fc5ec5572e08ac309a7fc70cd1f7f615bb93e6dfbd659734",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0281.png": "036a1d69a9b3ccb27930051e5a1f3389507451d5d120b2e605beafc43294fe8e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0282.png": "56a0378372be06af36c83d6c537c5210f9bf35c50f5de5c389bafe9034e66fa8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0283.png": "cbb9e77029b32d9899189c8fff4decb8ef4b939e8c875eb02487fc8537f9b68c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0284.png": "ca85f22ec7e66fa3659c9b4722209b3dc7ed105a630442e33d1ffebfbe650bad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0285.png": "6f0213cb815caa00a24469b9858312412a96e5af35ad5bdb32011a719e3ff702",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0286.png": "4bfee3d339f56066e2219774dd1b0c31cc404d32bfa93adf4b842e97e28c1329",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0287.png": "e2dd3553a50a2dcc83afa8cbb2965028431803227fcf21adef78aa45ac12bf89",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0288.png": "cd0e07dd27b4ac8806df007fae228e961ff1285b9c6a5c2d658a61dcc4000b4d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0289.png": "2f666e1054e56137dced070f4f4ef050ff54f98424c5d24f511f8099bcdbd782",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0290.png": "3ad9e66bb566c5be9ec346175a3272e5ad26b8a02c632f5d02a930ab4948f689",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0291.png": "15f71673a937a367d4424611ed331d239b05490f30d75b4570eef155daee4fe3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0292.png": "27d80bd34ab1d85172a7306815f02824c26092d34fda98a7c0165b0c06704cbe",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0293.png": "3821176f6b29bbef86a90ef7393df12853dc9e7a659fb3b302fcc599e02c4419",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0294.png": "85f66bc24ecb1a7bdeb43658368033d9e2cfee2896c4bdb952a89d0b998f4a64",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0295.png": "09ccb0b2269a648fe4ddb5a1e0d2013de7c6a85e13ddd2ae294c9de54e67736c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0296.png": "34b680003ee28168b9709620a8a632ab94a16b67f4dd40660955fc099d330a80",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0297.png": "00af5d4abaccbdba7dbd40a7b99f735ffe5426517ba8fb7a83c35e15d95da1d5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0298.png": "79bb175bc4d7963893b7d3dac0e8f01c79df7c0eb96730b3a997272822177843",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0299.png": "7205afb810e5584cbcdbc70462c05747fd7d96cea78d809c1753b717f07037bf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/alarm_0300.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/orbit/cameras.json": "140616a3523b26f659f68ee5c4d5de3b0156ca464836cda8a5b6c0b9705b02ef",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0000.png": "3a428d1b6b8e819bb7ea792f3b5a419e679e144e401768edc4dfab79b2554284",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0001.png": "63cc4ca5e5f9773ec9623337eb860c3494ba3daea5d6f98ebcca59f09cacb20c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0002.png": "910ab85688b3139dfeabc9c76951e52d89e544e30552794d51380d94185b07c1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0003.png": "49a53ecb2ae7589ec1a4283d53b04380e880601467d5b82126949f4325b46e67",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0004.png": "3e3aa5ea2d29a7521dc7ef49eae1025e7446e8b2326d95563bfc54bbb2657124",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0005.png": "1f5517e66f3731c82037d3d2e7619f4232c13fd9dec1dc1bbe74b29c7ad00ea9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0006.png": "1a30672ae1e159717f26b262779cd065dcef2ce371e3b71f6f9d80deda03d6c5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0007.png": "a5a49ebc241705e522e321bb62e621fae91e78a2a0be9e8fabb1c599f463e8ce",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0008.png": "3b05dbe13b06ca2c285c4f9691866c3ed79a55b2bf014fc807ac4a4ad4992259",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0009.png": "2a0ab280fa1d16ae2120e33e0caf23dc00ea1bbbfc0d171be052680ba32773bf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0010.png": "20025e5535b418b58c354a5ca066cb12783380a6b713e31902f579bef7d68e2b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0011.png": "0401d612342335dbf5617a4f4f1a048860a3eff601937aefca356281568d9ddf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0012.png": "8621234a33c0be0bedd5d7e8995659e653d2ebe30a16ce34a0bf4e35f13c42fb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0013.png": "d6465c0c49ecc87d0fcfb87afd7d31fddc624b71d9f5f2873571dbae2586862f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0014.png": "dab10fe4570e10e6c74539326f5f35584fc50875422387f9d16eba9e814941bf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0015.png": "06875d7bc22c89025b36c82bd8b2e8335a21ee1006386d01277e3c7887285014",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0016.png": "05dcd994208fad702579d21b83eb6a7b6f002a84b91b6ba953e4bf5d939a248b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0017.png": "7607f0bed175d824966981e54c44e6892004d0d0deb738438fa4a1d9e77dbee5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0018.png": "8044ea689ed675df0423169a86e353bdd123cae67e84257ab8f7936b83516fca",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0019.png": "3d03a8dafa9e3a6efd6622d214f2d6f8fb9d2786e84a5e2cbd0bce52c5e4ee0a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0020.png": "22484f892665f9741708924eb4fa9185e344635317d829c0bd34663b44e2e492",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0021.png": "29bb6229bff08131d5a7a8ccf127eb67b3161bee66335a721b7ee81af78034be",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0022.png": "40211934688c34a6b51b17da96f1b16728c051606681bf9d877b1a2e0a92c9f9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0023.png": "56f88070568c73d77c59b8e46bb3143cd41f2915c49582755a7efe8d62395f4c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0024.png": "378a8f142734795c5d2454c5593bb58cac754fcdffd92ea68867298df5fbdffb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0025.png": "9dce809f003a5ddc31b474fc5cd1f83e53b13d06c7477affddb1632dde55b27c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0026.png": "97eb5e64851576d49670a88a17c383eba6c3fcd1faaa903ad2ffd28f489d9538",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0027.png": "071bb484df3718ab278b8da05b4cc27b272f274c567a06401d4c9ff348f084e2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0028.png": "58d7087d909e555bf3deef20d4f742bb9df0ac3a72fdccdfb025249bee4c63b6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0029.png": "32e26ad05b65748357a25bb1b405d33627575540ef25466a77b5b411c5124fc0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0030.png": "c1ed7736c133bf36c9d5e46c3efc356e5126165d5b27c2a36a7bd02c707935c0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0031.png": "c1148c0c2c8c9cbdb0adf78086a6d6e61e1cf53cc22cea907c47a3acd65225bb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0032.png": "2026c4afd8023720ab96a241330fe3a81d5f61a83da24f6c3dd85db030ae2ec8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0033.png": "448d90af7bdf943db35e098fbfd5ecd1388482471f5b9cf0351b2a8f9f922bd0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0034.png": "68809f35b4a52a17def9c739f4acb35dd8158fadd240ec95488570218fd8fc15",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0035.png": "fa09b99d08caac481366f0447d92b6867eb71ec7341d0b9e6f2152af62d10500",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0036.png": "baba23aa42d5efd9e001e5703df57cf86ebbf56a505b1a27476374e26587c3c3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0037.png": "237a60e6d67c1e85b34986db216751cf11938807b9a1d4c418765f07e02cdb8c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0038.png": "9f8d7dfbc4b259948a388f5d713384dbebf2d364fc895e5f69a865f1b44f0d20",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0039.png": "c301953a3a95f18531da160cccd021dea5364634c4ef5ba10b14472426cb6f3e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0040.png": "d7d852ecd5f9ab65d49e75e69e61488bcb719c5197680fe3b7bf3af85a197c1f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0041.png": "fb2225ed470a119b14ff165d46f43439037e9bcc5142cc8d70ad6a90519363ac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0042.png": "68e3a9a03159ec889cd09f30498c5cd0d1a52eeb837026145d8cbbaa585e5ad1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0043.png": "e3024d375846adca9929ebe27c1f8e128d8957bca65e07d746173fccf4d5a610",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0044.png": "48dd0e84efb1ff9dced0f3ed65f622abc7ff466436fd4302be7ec26c23068352",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0045.png": "32a4039f9207cb10eb84431f81ef429ca24fcbbf54c15fc72ec83b5854df3d6b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0046.png": "0d3ee492676d2eebe2225b1fa9f7382c95a8bba96520ce1bc0bd7b9d72c7a83b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0047.png": "2ef3f3fc09b6fdab4d30862e82e6b10eeb6bc2bae1ba43f2f45eed08b85afb99",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0048.png": "2eab9c3c414c8b0c8822c0b3555d2c4de1a062fe17c7ac2715bebb6e3057ae80",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0049.png": "f365b66d9a460067236f6f7a1ab8eb8195f0831e465be96ee9bd7b4bbefc6dfd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0050.png": "c183a5c766dfc0869b587604ec9a1e62e9b5c12f6c00279f124855c99566515c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0051.png": "fe38f917129e6355873323a6f87c01a4821d6636ce97442fc7e0e5f8f6e73ae5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0052.png": "73b11119ae2c21c5c40d0e10fbf37cbbba282934cb691dd32835d48adc40877e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0053.png": "1196adaa2d3f97ae59c1a0f747b2250f4aa769999f88b2de0b8c5cd73795df03",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0054.png": "f01090a4a4ab7a5e305418ed84e9d0018da6f933b1ebaabceb9ffd622349c366",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0055.png": "e22991431318ac9030e67d22796886c7be28ce8691632ea4e46f77102cdf134a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0056.png": "53a6e6316a8faa217e91ca067451caf9a0b3322f21108b563086d512c0dbaffe",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0057.png": "e00b6c8522dca296c02839c2aadb1c32acda4fa6cc0c3c49a926fa14333fbba9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0058.png": "61c3ecb7aa5adc69bdeb6f95e487d0a31dfe0e7e34f495b0871edb9a9e1ba210",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0059.png": "c93ddd44cee0403174ae90e892a3ff7183c8d0b9a0ce49e52d2a0f182311fffa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0060.png": "29d42cf4daf4aaf57dff95eaed744fae3bfa494ad1685b30d5037b0b96d57ca0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0061.png": "5a4b7a83de188a40dc2990d3bdf043d7e0221057c121c518c85b2b659730049e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0062.png": "bcf341ccb6ae170da18066e56e2fe6363e9b4a128b077e5c030796df100fc72d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0063.png": "673d90acde2cf996a6e8ea481c23d991ec842ec56babbf63e1523e7babbc7264",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0064.png": "7105bc7c8b918b1ba71367768c87b4b52b4d9557c790ff4007b9a12ea3a7ac05",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0065.png": "999b65b9185191fa76768272ffa118bf764665dffb42faf09f993af736ff7080",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0066.png": "15805dda14377ed71976e3911cafa1f6947cd33f964e73c1fe8de4205e664366",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0067.png": "2a340cc63eb6abfeb73f1f85cca1c59ac7b741822b548cdc5deed3529a8a4c45",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0068.png": "763f7ff9dfcb65e1a8c11a8bfaad15642653945d93b4354b1c09835dd9eb28d3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0069.png": "0d0789d5e671a47f19a50235a885e403c96b8aa9f2197f010148a908f23486ab",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0070.png": "87d2f3b2bb1a28b450acb25a77acdef34feff954eaf4b9a55b8ceec10bde0dbc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0071.png": "de2607418fe366657f85067f83e62b354ee1ad823043c701baed76c8b21524cb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0072.png": "f9d5d3193ce5b1fb936978f0cdcf6601c781cc9a47d25feb3a7a123fd1c67313",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0073.png": "510f1b61afef71ee2473fe11766373e74026ad45c14a6cd4702b4fe43523256a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0074.png": "264b5dedb77be58e086289b4b24060279213ebb84c3af8298fdad8cc37d270d9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0075.png": "f18793552a33fce5dac5e402e6eae7cc58e6fa84a39527210c4b8ad9a0e0d6f8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0076.png": "969ea4b44d0e56bf2851754245ccb7858565c2cbe5f2707ae5dc7534dd79990d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0077.png": "80f7c28d06edc679020ecf94501fe94ec5bb002075964b8448b4240dac94a454",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0078.png": "d15a291aba60951ab0c562129ea16cdf7d89054be6360bfd948e78f019353f1c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0079.png": "dccd51c8812c6ce65c9a766d56b348bc3534d7daf302c336fc16dcf8fd9b791a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0080.png": "2c4c78dacbf10d7ec4c3e417ac295f4bef069f103cbd078514fe0ba63bd748ad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0081.png": "e5b73a5021cd98bccd40b156f9c73a9eb825832d9bec3e7c0511eb2d485dd887",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0082.png": "c2c2df539215367a9b92fdf4e405917f071fd801b43e3b007b92a7400101f369",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0083.png": "b8aebbd26497bd1d707969311d09b38b4df99193f77b5bb6d27984d8bd67092e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0084.png": "fb27e72ace7a208c570906c26c1f9f1cffe58d98f4bfa39f3581a2e6a62cc037",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0085.png": "8dd6d7f476ab3a2b0cf82f844a97bde3b08769d6fbb2cf2593aac010a3e580b2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0086.png": "82dda54ec27587696a6df62d73781dc52b19443e8684604fe736572782c03c32",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0087.png": "99e23402f44f2c9cb26622696c9687cc187e8119906aa1dcdb7d9e8a35fe9f0a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0088.png": "1302b7daa298cea650fde15614b81ebddefe4628287a33e5461436249c525a91",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0089.png": "ba39486fbb377b0323efc9923b7c9963be6693fc41c4737737fec2097abf7503",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0090.png": "6bb7f975c1ec47c5fd31f6cd69a85430bc7ed2dd999f3bbfe1f90b065908640e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0091.png": "040dd300b5fdf5b51781bb8ddc2dcbbe535c2c6bf6346d5b3de649ba166da4f9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0092.png": "ed226deb9a0af0f948f01b58e67c198535f14ec22c5aef451306eaa12c772542",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0093.png": "4bac94f3c4bb5227f45b40596338f8ec53ea7897381b525cb9891dfc3af000cd",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0094.png": "f6dcb5730188dcdddd4a86fdc4fa897249af1c8c14d417c6d70a7b14bbedcced",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0095.png": "af07b8cd577e85ef4c77f2527d31e277b42b2ac7666a6dbd6e7b1fbcf0f36dc3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0096.png": "9ed62feceb2c044d4c3ee004fad7b62e58ca2b911b5ba9433912b8e4a06c52b2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0097.png": "7ad9ef34304d4f43b2fc64b29d6ef29489dbac9b89045ee1f17e41c0098ae020",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0098.png": "c28edbc27e920874cea8634d2e263d08fc09cc4b4a5d053a8cde22bf848c7a9b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0099.png": "c90c713188c5d17c67d5bf023c858544db944cb8a16bf0f9af72320ac6fe6541",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0100.png": "d7a000a8692f8cf37f55ef1493e87a58cd541c9077227454db2007bb49de356a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0101.png": "63ccc9b7e5910d1325babc918a7804e4cbf213c8085671539f9cf56f7e881928",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0102.png": "d9788407fd702596be16ecf466994e0a841f5bb318f7e350804e0c57baf8d8d8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0103.png": "e882a781cb8d0f42c903fb015972e9adefbf207e3e6df9927daf5971c23d19a9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0104.png": "95191160fb5776775bf5ea03545c08342fa2b87aebd714d9d1bf26bedb17458c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0105.png": "12db931e3c623c49bbf8f3758dd2585205140082ede72bab0d6a7d52973a28e2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0106.png": "e22c41abe99dcd54d39798321c79353021542051ca42e4b6a8ea44a8547c706f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0107.png": "5cfcd55aaa4782f42f3eb86c6193b643957420143b40156e0b91e30ab362532b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0108.png": "78cca4185f62714cc5c5a64e297c4e3e0ebf3eff7dceadcbef30a21e764ad133",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0109.png": "a5da655dde6f70b699f1128b3b715218b9786a874a178c42203cb06190fa6d69",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0110.png": "37e56b13cef20bc8d7d2a61f0806d4425c0bc873639ba88cbe8d9978e0ab53d8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0111.png": "a67481f291f7343677e70c66417ab92f5be54f5047ba9e14fa7943954c30fc17",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0112.png": "52509e16b6f4cbee574640eda3c669ab1bff428b8c5529e6c45936b14af4c91f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0113.png": "92c3897d40bcde3a53f6b1819bb90ff8a39bc5782df4845c026b882cc7f08fe3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0114.png": "fb5f171886892f8b92294324c81b1d5ef7ab764fdecdd4fe350be96e7c761228",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0115.png": "9b0f71a1429d1660c5898bf235531e910856081e17a62a795f9cf1da4a3f63d7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0116.png": "9eb7e8a2bbedfcffb718c251abd64a322fdfa2dd00e8ef8070e2af53cf554a36",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0117.png": "97d540202b2e9fe19fbd230668703c6a27bfe9e7c5796985f301c3df348d3dd4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0118.png": "88f2bd37bdc7067c21afa6a793c17b52e4f2c83a3363c9f203b9484983a10e37",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0119.png": "33c8c0b1906f66697f2aa5ad254d88903a167b12eb44cb3615546c5defc23952",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0120.png": "98a2ca7f85a459a3cd52321aab8b5bbf03283ade31cbf2477538866a5c57f907",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0121.png": "c866d3b085ba478b858d42b363819538a31bfe00c55cda828f4ce1d5bf7b42e6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0122.png": "9aadaf686e8a4ba7b8615b8b1b5161cd56fa008125cd7f149384bc4833c9924b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0123.png": "6f05130c62e3ec6dd7256d17f173e00f59a5c4027c0e83739f608265060140e7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0124.png": "5d9d20f80baf7d3ed41b3575484248f7d269140750eba2a741db0b89a8deba51",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0125.png": "e3fb3bcf349d0c2642b837a4903bcce9011380a088be43d8e449910b8095dd95",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0126.png": "754e7a00ca335fdbdbe7f00f31c02d8e609b7fa64d97638af3dc878f12f8d7ef",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0127.png": "4bbfce677ad5d66d4ef99e8a3ef5ef27f0a9dffc83217f94c808bba553811924",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0128.png": "76fa3ba662fed1c589f1ccf007f26e7d2426a968ed235f4de7e1017d3788b1c0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0129.png": "a9ae35ed0d96c8c562842db3bdbe0cedf2ebf8bb54e632750998fe87191e6f6c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0130.png": "e38bd0b5c69e6cfc52b965f2e84eb6cdcbe3d7b2671d024d3abd53ec4b6af178",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0131.png": "0d7c859733ade89b8250596ed79728c41282b16eb00918e1deea7ba27a114190",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0132.png": "5592e58015a9fafd4a71cc6c3aeb1e8c6f52c9632deefa2d00e749ed7e781fa8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0133.png": "09ceb52012a3ae50076ddf78cbcf2788c1b3ee3f1f2933280dacad28fa7623ac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0134.png": "246c46be36e7ffb83e81f20d7b65c881d8de45bd63a1295707cb64c2bcf8159a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0135.png": "f55f0f5dee0eecc0358f2920bfe04daf8265e9956aef6e33dab6852301a04223",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0136.png": "0c9c23bcd0193ad370bc2a4253c95ae69a8a4f266ad1d0bd25886bab4e4445f8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0137.png": "0ea42d9e3fc1b4a56970a02900d778d31cbef0eb53f1f7f0c185b08d921a0fbb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0138.png": "14210ddc20beeefe883349bb6302fdcf6ccb9520fb06b1a3114e2c02c6631a90",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0139.png": "2571af5dddba76acc27d9838bf5b2846d74f56d9c0421d40cad6a404d78fd2ee",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0140.png": "2d95bb151c3a7de8c569a94e9491927ec92e8bb63c206fe86633ae4c8378238c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0141.png": "2deda23f1b58a2fa52721f1d6d4b42fc87959818b0f140cddc90e3e90c3a016a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0142.png": "734aeab4de55429dca88ff27b0ef7be9f7acd24d33cb72e14e4a791161b03aa0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0143.png": "5d6321ad22279696b0d109d8c2826f0120cd553b0c8a6e9efc9f113a447fe4ce",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0144.png": "09076f8cd2e157257d3d03eed7d2e344827a6e2855b5e816897f25dda7c47f10",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0145.png": "02af01c017ad980ff05849cfc738520c6f7e437d305db334dcdc36d37ac83886",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0146.png": "c2d6e8035ba0b645672d434378db748c1d1b3c2c8cfeb3cb18980a5d26f87fb0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0147.png": "02e7e8f6e9ffe934d357f42505d12f2b21f2440ebc5e05cfffb0a56d9ccb510a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0148.png": "6e75719fe5a927d39faec9aa0e554ff70e3092558b847c044f7816e19dbae07d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0149.png": "33801bc5ada6743cacfee360a5a919293d6319aa83f3dcffbc72e1fe7c79259e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0150.png": "576254b9eb311d3cd509154691d0563b21170c374d60a5f9a29e3921cf5fd621",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0151.png": "12bd56de1bece2cdac09469885677f5425e5b852aa115bb4566f0d4581a8c1e3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0152.png": "028da643fa5c898388b33b75603b0f072b58e5ad55404088d8712df317de46be",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0153.png": "bf8feb6901795aff0acf445527c582c41f6f47f5fdce3269214c0afb593a9968",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0154.png": "8c0826feb6cdf8662fa5678fc4f092309d47c1d5755fdac96eff08b6848f663d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0155.png": "54ca7f2f295c0e68df087fdd91bc6e17b1beec292b17a4fab882e7419ffa4fa4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0156.png": "23b57d2933602a42a663c4d9e6a1e68147be3b40069248d422be0fdcc50633f5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0157.png": "78144d25910d1e04551701a2f4aa65abe27f813208e28d94f677eae3fbd816b1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0158.png": "3536a7913e1ed6885988148480dcedeba13c1e4085db2f6a88c7199803e2be4c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0159.png": "295485426c4c570babfb24db432dd46873d10af95c68d8599b208d604aa09a4f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0160.png": "be6e926390adbd96b86d415475fdec104383a0e0b1b824419531ef4170f6da3c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0161.png": "a14c754551edf63fe403e7b310fe72825f7d3b1bf1f8b14ad9df1e22267478b0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0162.png": "b78e053695fd00b77267a2e7cbd0f1354fbf82a1d026afb27665cea2e7713ae8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0163.png": "ad69ee3a37f0096eacecc94251f8c034d7d57d6ab1e006f3d0db5d9a7dca156a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0164.png": "f0a2ce291405b0d3f4994d0722a0bb97f2ce4e202ed2e2697a92f8fbb1fe76bf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0165.png": "1cb2841f9d2768928294669dc0a5e926a082147a53e473ab0a5a80a2eb4ad3ae",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0166.png": "cacf39164fca067a76aca4a5531ceb2095b35bb9a1d4fbc056d3bd1be0a687ce",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0167.png": "2292e73e0adacb1280c8df277e5e4c9d42150910b15542d08751e3904131326b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0168.png": "9699d24620e4aafa8d9fd117f800325ada49c8c3f1ba4a7b36dc3e45d9f862b5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0169.png": "cce1a838bfdf4c8225fa6d18dab3cd588ac14936f58affba57c0e774f2bf78eb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0170.png": "6170e02d65e6bce4710a6e24304b332f93ec50a1ba6c61c987d77aa643c5bcaa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0171.png": "deb55b0fd17fa714d79b59b9c01fb964c48a1e01513b6f44da044e1a4b406a02",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0172.png": "aff5c67abff701f3cdf7f0acbbb3c63d6aba38a730e2fccbc6a1dff528765abf",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0173.png": "50f3353758fc6c4f1e22978c238ce70d0b4ec1962fe78b8ba6fc5ee36c4532d5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0174.png": "7658e86f086ab48a1a49ffe83e697544f0fd28c0d2876a8600da3c9a6885b317",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0175.png": "364e6b1c791610d642c4acb7fc83a4905ea9fd0391a1ec0f9ddbc33c968c2b0e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0176.png": "1310c3ea0ab3cd7ce80dfabadd047532f8fdaa56464e31c7667f3905cdb5799e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0177.png": "d653f39f781fb751095d7ff1186d1ecd48b521849bbc2da3fd9928c156351be0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0178.png": "25d95326754efb24d964f7d939b48ab6c4aa1c432c8895da6ad42fed9461697c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0179.png": "21d346478af81ccaf118d696319c62f2be9f25e844377661194fa6c134b37cb0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0180.png": "14c449e69e831c650ade96f6e84a72f6651444c255878b690c98c472e9891d36",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0181.png": "0b3c8466d4486b1f13c678e4bc754f99a16bd2281fd00c1b094f113d187e329c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0182.png": "352456f7aeff286f5616ed42c3894b0c06c48b3a63014a3133885dc3b16a3bb9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0183.png": "cbd876ce5671c8a2c65cd78984e8f8be3ec741654ec5f3d12ac67b6fd4c9aaac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0184.png": "bf15ac6f30a2f62cc3e7ae798313aaf49e649992df822b8b86a2739cb5a11471",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0185.png": "5934e24472128b1cf0b0aae79cd89e41728bded3f1cf40fdf184488f0cc8614e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0186.png": "61a9d8aa6c47ac2e5118616c25bdbc6e3a957218ff72ad8b1f766e2beaf68036",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0187.png": "77df22b28733efd8840645de498254863d36194263660ba3a1209e50ab8e8d57",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0188.png": "9fccaabdc1f08f44e2db702f2df280a6e0b3e3ab597be89b6f7019866a75a129",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0189.png": "59fd70347594d548e46f986f5b53fa594537bd5f9eb270ccdf11912e33289622",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0190.png": "4c00b59791bc76053b0388340f42ba67be439dea5ed294a3f3d6ce2811fd23ac",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0191.png": "7848d7fa690e68c01e868d28a78de0668f58708b84f38aab0eea4c83ee3793d7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0192.png": "b06a3bb8a677fa77ae2a15ca96d0b77930f506288d12c3303a6798bdddd99772",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0193.png": "21ac5581fcb3b88861bd1fa741bcad1e23fb8a7e3c19b0da866d24ab97eb4a03",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0194.png": "e0582c403cb2152e927186dace45e075ced8a4d807b6f335aa62ac0f317868ec",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0195.png": "9145258efbfc10c4091d7b2a4d865d7f1d581da50551175426bd1e272ce93515",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0196.png": "0e11fe5e2a9737c5f3b52cf74db40ad0d983d970c4f9df90e0ca6ef216370521",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0197.png": "ed324b8599f5ddff3ebd44fb736dd94b2a155b1f845cc692c525d980983fe907",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0198.png": "06a60eee2ceb58ea4208759aa9184f7f9e0f41f54aebc5d323ace0e05e997b87",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0199.png": "3f30a25c18d45fb2734190d41e497945665a8a4447c77039bd543dea6dc7a38d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0200.png": "253fe078470f311af88fffef7d9194e570719932115ff6dab62d6fe2b7f06aed",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0201.png": "62cdbfae641e848d40e1a009c153170f2fd1f66058a995f4ad0d656771ecda59",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0202.png": "b4eac722aaa847a1bd3c3911f72d1ae8f93be25965d3533b2117f55874470a37",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0203.png": "3a2fc9297aea0ef0843a01d428d4b60c46b03802a573af6da52bd0e2b504a18e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0204.png": "8430c2d0a1d9395dd06d52be55ab870b13e3d41307ecbff792aa33ffe77a126a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0205.png": "b16eddb630261525b4dd1608bfd0ff87ce96baabda5bd796013023b06510a599",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0206.png": "87e6bbad25b1b382fde792df849aa435dba8371cdae44cd850c1530d1eddb25a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0207.png": "9ba0bae068208d9b3334fa04c1d58654d5bc3812c3bf2e86733917cc23ca7329",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0208.png": "b6a6a43ffc12401cb3d1ddd970ae33ceb25ae3e4ab70b5fe7641be5cb184dbad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0209.png": "af59e00dba9dc4dfd2f4501a4ef4366db97784a99215d00ca8ba279acf916a70",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0210.png": "6c2704ef877b09f7de43fbf955db399dfc2f9b01fbdb73f779f71084d0403af1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0211.png": "2840c949c394569dd8092232b7d101365c57bca9c9011588b36f3df8b5c5e0d0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0212.png": "4f1928a772f0001602a66851a24c4b6f096b6e8fda1796f8e17c9ba2653f373e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0213.png": "7db459a7707fc7e79dcd3fddf21772a1b92e581167f1dbbee39b05142450a2d3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0214.png": "c075f5c0072f51ada4d2bcc88b610ec896858e93e62efacf58536a27d8ce11b7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0215.png": "08708f96b5d5d14f87eebe4371a8a3541c79e456a36f752aa817e71e7ece6db5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0216.png": "80e497018a506b84fdf6b0f7a8ba1f091775ad518e69ecb5edea2237c5a653e4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0217.png": "ec3268356566cf1465570d6db3d35269dfd39346676f93322830386786e13b00",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0218.png": "e39e3c4f09d9b793c98fa23c1e5ccee31fc7f1e6009c2bcb173bd376db848382",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0219.png": "4f0863d5a33cd213da6e3a59480bdc9731fe80aab0fa523bfaaf5d2a88483241",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0220.png": "9becb8ce9080135c55fd52247da6c82eed7c987030178f04693d246f13c5015a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0221.png": "65942c2fe83032ea8ea9ab2ad00d8788eda6146d7b87637adbb7660218ba127a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0222.png": "5d234f535c624b9720e27e51e02d5e5ca7d7f49429534d18dda5e42852bc6dcb",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0223.png": "5944cde0843b24e02c9a51b60748b03a5362b26c0b636b5df7f7ed3d170eecb9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0224.png": "1e2fd0a7d6c7c422d65f6db16806cba6ceda671b270b2b5a705bfe6f716636f1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0225.png": "62976260a98f163725bf472d744d40995f8dbc1f6f1f71541186fc01bf2688c2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0226.png": "41902ffbedb06b37e911f7394814df23ad44f75d6a2ab779a37b8b68b9bee690",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0227.png": "411eb5b8b447c0064798d1e41f76103f5b2f043d60d74bc7885ddaff6d6b4cb2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0228.png": "ac12182e14d2752f9adb070bde4bd485f6695ff2703525baa99f7ccf283cbb73",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0229.png": "0db6dce703e3e57d853678a44f98f6c1c009032ab7051c067230134ca56ce4fa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0230.png": "e0e2acad81af8bf242c13dc84ed5e06ce37517165e20396717e63bbc8373a7b6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0231.png": "5c644a3a9571bb56c040dd25525bbb25242e0dfbfd7db295de190e5160119429",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0232.png": "9d715b2ab1e7e9e1562f84d5a0184eb2b049d3e7281713ec27869f1daba13fee",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0233.png": "ac3b34e460384356f89ab8e8648df3876163162d8193ba29370216b9fe108c4f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0234.png": "81fdb270c51f4e56f3dbb9b044140eb95c5444f628c975648da581c561b0d8c1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0235.png": "02a190c2aa9d37789d9004bbaba404468e0b06a9c4ddfa904b4f33215116d136",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0236.png": "757fc87912092d1be184f1dd4010f8c7562cb5a4e9cdc1d8cf8757d7310c0596",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0237.png": "af314ba85f6ebc8aee032d5964fc52a4ba60211498bb7e1f4bec6d292ef546bc",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0238.png": "8cd7a9f4f8d1ee0325652744ee7dab39a832b31cf5f7220e3aeaea505faeae8f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0239.png": "821cbe15155beb097c486bedb60a796ecedc9e4f5dd51ca059c7edaeeaf095a6",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0240.png": "dac163b1fe64c01caf4e84df189d8f48c38a6b77b13ac71105b69b0a3c08ee8f",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0241.png": "9bcb5a13811d3893f81c3a37ccbc0863b84c06b1ec24c351a12ac800aebe14ea",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0242.png": "08223883be1cbe07b1d9edfed624d561d8858a82c76e10a8e72af2e021b5bb1b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0243.png": "116f3d9344fb52bc65218460841d30c37011c6c3b8d782c481d16aa58837d8d1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0244.png": "6687217e1396bf657c57528c16cb036a81828a9fb191f33da0cb2bb8406b5c3c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0245.png": "d53ee53ea267ee00498959f6b9c34431b49ac5e4372c2ee59d2228da1cb17298",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0246.png": "a33a980f0a95967d0a5b417835a23488572e8a464635ace9c447acfa1ce360ff",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0247.png": "bf720887bfdbdbda551c60ea5f456b1ebf0cd86f3d518d4fdc89e6e936981263",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0248.png": "ef2e5525ad3b0405592a7f3723ee8be76dcbc5996114c47c29d70bbc96fd35ad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0249.png": "133f64170951a4274e50651d913bb4ba80b6d4f332344debcc5d576f1a9e9e68",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0250.png": "f8f5eb66931d20f0e7b960d71faba0d5b6649b68728d3f5be9d847ad5f307a43",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0251.png": "36d545711535b43c10e541869f5f6b8e2ab3198e569940c2b3ceb686d6ef1534",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0252.png": "356e06202b0096cb142c124fd34639e984dfc538e3f1f2e0fce6b8f97dc5f9a4",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0253.png": "805414d4f70715b662b25f7ee3db1cb462bc96b2608a55b824f4eb67bf719343",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0254.png": "89a305f4132ccb17774c2f4ef8da4db10a457444e21a61ae11dfab8260397207",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0255.png": "8f70d6731f230749a25080b28e3d71d1ce0d5a654ae54369cf78170da92065b3",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0256.png": "88febfb684d16fb20cc4d9a1b046060afe71bc8f8641415e82708a10cc511efa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0257.png": "06ede1c5ed951795192da4461aa1718db5106add84d556aba447373bee8ee5e1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0258.png": "9903d1ab6604bfe85dca1d11e90290f88011ec22bb3b55464817db4d473807ff",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0259.png": "7e2fa7510ce513be278768d79511566618a14d069c77f25cfd02b705289c93d1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0260.png": "45e077b0e1446da843f5b81f8ec2fc834d8c9b46ffd1022226e908f0ce0be41d",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0261.png": "c5ff6e85f5d9f644daa6f9a5bd1bab4c24c8b31acf4d6aa57da09cfbece80d9b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0262.png": "023d83babcf652ad014f0155406331a49331174bbd03d0d797b1860217f28c39",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0263.png": "b60d783e9bcc916203ec317176402ee92152594a062544f14b033e5798dea925",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0264.png": "2ece14a7ca9b828d32056861512dd426b7a1d483bfd9374e5c8cf54e91e3a6e2",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0265.png": "d76ed27c3ac555c280c1ec9ed14864fda8081c7c014301136d5135f57e029b26",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0266.png": "820ca07f8d0a352c436e3dc84a89e13b667103f43387a8abaddc060ee6b59165",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0267.png": "9a0574dc14cc7582f40ed604ebf2bc7eb0ae90611be6ba260e9de07ae8d0e8fa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0268.png": "7ab5248b26f30d73b3c6590ca2379474de7de6e4748e7fd3ba0b16e1410e5ff8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0269.png": "8b3536ea4e48c69f07b83bec9fff0caf8052c6ca02612a5aaaa57da6685a6548",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0270.png": "06c4e179eb09dda504acac76328ebc7e32bd14ea979effed0df22f132565d7ba",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0271.png": "898dc93d2404083fe6c7c3d48f133c94a7c23690719a89e33434fcf901ef22f1",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0272.png": "1c008c1799abbf547e33b0ad7d90252a0b10d4a0215c871e6bb29bd137607335",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0273.png": "93ec9c66029ff8ef4ba5a91c39a8218c7b6870c74fcc0285e363f34a4b8a76c7",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0274.png": "7b19e84c718f43dfc0970cea1b7b678fb4e482221ebb1b1fa740dae7b69965e0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0275.png": "2e87372cb356ecaa7cce1e7d0283336753bb23e31690d2f96cfc10af5e5f3f89",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0276.png": "3644aa45332d2fe573883879093cc4816edd5605dd24405bf3add00891248515",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0277.png": "1f6fa243c6aee5b5c306d236a18e96d96a51c2b836612deee3f880807146b34e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0278.png": "b6a45cba694533e2f13d63958a0f4b3ff76ff8800e6a4cd324ec0b0561e99fad",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0279.png": "9fa5cd45704887771c79f2c4ea0eff5149af430daba1b045aa9cd7f87df1c9fa",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0280.png": "5ec36b630a55c6cde80ba3168b94ca164aadeabf281560746d08d37daed96ac5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0281.png": "61ff30af753e3973e8061fe069b5838eec3d1165d2d52b04724b1ea032be72ec",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0282.png": "a6c5c6e8ff0f9c5b4ae424ca6c25017fa19e834531e57f5ac601a11c91916c19",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0283.png": "298bd400953d54acdfee370ed26ddcf751e754cf9123c1e33566235e26cebbb8",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0284.png": "377e2cc0684e471f6c470909548cd3b8bdc954a43ff4aa4d50604683dafd7d9a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0285.png": "fa7006da8cef5a9dc08c2234508838e30e67df235d8b542b1a5f42a8479cf95c",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0286.png": "cb113241dc0296ae3d6db25631121165d8b871db8b9a5d73c73e40641d9595c0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0287.png": "b9a485e1766809dcc05acce31f1e7bfe9826b9e4ed6cc1c702292b860dd99366",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0288.png": "15f3b2bde074c9278e0cd70bdbc4bfd5fba9ffe37622ca33bf3cf4a740b8e999",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0289.png": "8a2242a3eadd157493070090910c3ac097a8cb89ae420819ea9106460444fe7e",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0290.png": "ee48e73f106d84cbd3aa5457962dc2f629c512c253dce2fe6493798702b2d2b9",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0291.png": "86de095f2caf7e99e5f381267341a18a7dc1de00b35a96b0f9e93caea6643a36",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0292.png": "be6fbf9fbf449c129cdcbcb940bad537f27952064a47bca5bca5312f5c13e1ae",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0293.png": "b65a129eda6bf55802699ce4f871a7bee00d245c2e0088f78a5db6e66d1da66b",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0294.png": "d646f1ef424e969690037e8bb7e8668aae0dca6964b12ede840ceeb7723e69e5",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0295.png": "81f18fa38131135faaff2cc81a424a1b022e51eb287866cfc6de34f325063582",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0296.png": "04a55981dc6bee4ce86977b589c0476e5ad16656c6d82dcd53b3a95bb8ea22e0",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0297.png": "0767cbf802e47306244d8100f32fc7229d27ad0f282c860583ec36f69294608a",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0298.png": "5c115945a7d40937ab4f5801f95738daebead4439cccc34eb0dfd030d96e7b29",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0299.png": "3feab150a0073fc236bb64860a8f8cd1109dc066b5d34ea67e083d86265a5229",
+    "assets/story/fire_veinhold_opening/continuation/orbit/frame_0300.png": "52ccdc59392df78eb0a63276ca8c62b7c850ab818961b0c5b3e885b7523f597c",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0000.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0001.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0002.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0003.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0004.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0005.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0006.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0007.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0008.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0009.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0010.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0011.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0012.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0013.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0014.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/alarm_0015.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/reveal/cameras.json": "8213144608ed0c8da48d33c4c10e187dfc59f01e6a65c22792e882eb5069e94d",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0000.png": "197fb30f1ed8d82dcc51a23dc12eca386cb7b625110d3171504bc11e6c98a5f2",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0001.png": "16243d493b3ecae4590aa3f6be7dd3c760ca379460aeba907e5f6b671ef6a3e4",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0002.png": "02ec35fb3a1b460363be313fe2215ae5486eea3db6f131eb4c08d7ae7850b360",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0003.png": "fa002f8b2370f14f44b9d914785dd4f2f6a6f46a97f3d15dec36e306170cce5f",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0004.png": "a2004c8262ade0178ef64803602ebd8c1a62dbe880ad152b17f052dc45e054a7",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0005.png": "001b385d9d7fdd811fdedaaed7e906ce978633c92bdd604f7e6011da6229dfd5",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0006.png": "07b239c5f8fbadad9f3ea9bd26d91eb0266691a0663212bbfa997cdc18b915fe",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0007.png": "580b53436e15fdc9acf00af9e9694a1b749fc3a01c426f033920eb2d88f638dc",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0008.png": "1b65040d661b7ce507348270838fadd09f8833349b270f294583cd20b9c932d3",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0009.png": "8b282e204d5d4f023227bdbe7b1e01f392e3642ff35d3abb2184676d6cf11f3c",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0010.png": "687e8e7fefdddbc86f0c9f398792a5e05945310225bef6c851c25666c437b336",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0011.png": "6714c0cabca0fca22f59f19b41306c291b759123fadac5876537fbcd5feb0712",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0012.png": "b8d43833b24c0cf568fdf67bb62eb80851765ac4b3efd927cbbb5d2a9fc2141e",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0013.png": "6cef960e7b5e31426beff445d5681c41d8caec6856769a5d6abb66ea0db49b53",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0014.png": "fc3a7fc4b955fbb8cd6d97e878b7156729afacce9917eeaffa107d9bc1512d2d",
+    "assets/story/fire_veinhold_opening/continuation/reveal/frame_0015.png": "4fbb0d69cb70ad216019e001a8690c54ff12acd26db51421e7b381bdccc4a246",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0000.png": "eb2676e6bb38217d60be78d1bd60a4b47b7df317f6eed3a6c2b72dd583688688",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0001.png": "0826e0683ab9df44345ce538e3539bb70594626a3ff499de665a85ab088d84f2",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0002.png": "875e5e08750415fe52c5f8a9bec6d6d36c4d22279e43259b9e91d36912c43b4f",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0003.png": "2b940cd3fcb5b2f420998d62e00482b6451df9e751bea9effcb1b1a61bcb8982",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0004.png": "d814af96e2dd3c71c6ebb35a5933c8e8a084226b1f7de18566ebcfcb4e58ad80",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0005.png": "5215038add96754533b40d32bc9efb862af09ecd0a19be54d5213b5d8a66ce88",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0006.png": "e23b52180cf0e3e38caf0f17456ce9a438eb7ddaca4ccbf67517c1347664206a",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0007.png": "424cc449d0b67b768b1c718f6db48cc7f2514ef138f598e3e6fa5fae4b50eb13",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0008.png": "0d480032bac9a16d6a4944c2aad88220ce5d6669246b5ec54b61cc70525193fc",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0009.png": "d712be179fabde76567f706586dfd671d3dc7d17a819552395121ef2dd91d19a",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0010.png": "83dee647dbbd6ef2c53fb163ddbe0322d4aa5aa5f25fdf446f189264252266e5",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0011.png": "6f4ee32df34b481bd63b788917139e25ab4f77bf695d1de386610b40a32f0006",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0012.png": "98546be0de73c57974ffcc3726bb448d6043dc12b09b9ecd93a8981e6ea2ff66",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0013.png": "69e6c37b3ef967ddd5e0728374e15519326e1db32557753e1f70b318ac02f655",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0014.png": "e1cc9de1ed607e7eac66ac77324e2a489965899018884c3c4bd543d43cecf0c1",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0015.png": "52f0a0a9999d59f9095f7a0092277b78b5beafdf32cf0028bc08f5019f2104d5",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0016.png": "21a1bf3ce11cfb358430719cb1a5ea2a1c3b792e3d3a8872a52d1fffc1e8d269",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0017.png": "fe426ce4c68a388c9713531501011a761100651fba3e46ae3723bc25c4872f00",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0018.png": "ff24498b6b2587b1ac77e7e6e9d683aa7c03602506e701a17b2c94fc604866dc",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0019.png": "e48198d91e2f731e65b23354fb6c4fe2585a91523c43ba6002b9919ae3cc5af0",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0020.png": "8db4b5f5eb173a8cf776791e50c6511e8b60e6a68f8ab56012cd751d01d4f238",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0021.png": "3684cff870619ae1094579cb9786ad2cf6b7e67160448956d6ada72e24d41f8c",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0022.png": "14869275c7047772d6718628458a51b8e63d8feb702c3ab43b478b6cd5842997",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0023.png": "a48fd22fedcf9ddeee9bc4c8fd1f5203abbe361d81218701850b100ecaa7485c",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0024.png": "e44cad1b5956110ec84e6d604108e77a18a575b77e66a23c7ee3918c9d37adc6",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0025.png": "dea653646b2cefebbdfcd5d784ed335a66c04112f0759c5e8eed15ac828f920d",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0026.png": "ac856f2755de79532e8375191a018c904766e449e94716d2730881cf9b598476",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0027.png": "0a8474527fb35d20a250383c2b4da98a02fa99b15c33ec154759db04d7046fe2",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0028.png": "b738ec9dcfa16c3fe122c8d557b96868a2bec2beb642888e20eb5d6112544ca9",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0029.png": "e0a6a3197512fa9a02a942d4c513376a7087bc4cd22dbfe252564e51e3af3641",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0030.png": "2aeaec23cdbbcf11e0742dad5a880101c285555f248a0c53f02ec719278da961",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0031.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0032.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0033.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0034.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0035.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0036.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0037.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0038.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0039.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0040.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0041.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0042.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0043.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0044.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0045.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0046.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0047.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0048.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0049.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0050.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0051.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0052.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0053.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0054.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0055.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0056.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0057.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0058.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0059.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/alarm_0060.png": "065549a1d2f1b703bfd28cfacaed8015eb6edcc87aded9e1ebf9a087437a43cd",
+    "assets/story/fire_veinhold_opening/continuation/rush/cameras.json": "9022a737253539748e451654091313b0cb1f6a8ea6029f8767cda6df6d808417",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0000.png": "c1d82e1bed9299cb2b9be393482d548f04a0e0ef46bd53334c5ded3f58cdba5a",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0001.png": "6b560bb8616e17a8f3e3d69d22064bce51a16c774085e68c3c6b9db981997ca3",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0002.png": "06ace85b940f0bb26edc265bcc1ac6f01d16dce0c9e0b21c3149f016a13e1c4f",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0003.png": "199a15f9c3d7043fb3554c9a2e16becff3822403cc9589827f4dd5aa6b361311",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0004.png": "d19796b2d3bcc342e5963ff61e72293abf84557b993c4220420ed2f6650e4ee0",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0005.png": "4ba19ef42a475d72dbf10f7d87836876a2b4e3b18cabc05283f0e36cfcdeddf2",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0006.png": "3eafd5dba66b24fd3feffded0c1f7d7a90ae486a0a46b6544a05f25b39cbaba0",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0007.png": "367b8003a884f9ecb4a60d71e266e297bc9d41daaa9e3a94ae035bdb17bfd37c",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0008.png": "086977b2e9ca7dcbfdc1cf535d18f7e6e2e2454921945695badc42dcb477a538",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0009.png": "6d811af59fb35e7ffebe31217e79fb5405154e0efe9e4f1648a1f0b2d3d8422b",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0010.png": "e698b1feefca6706dd597f65f9d47a363d85d9b1bdebfd500400353b611a650e",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0011.png": "95c0c3315d0be41dcee8fc2d15f3582a6ee52433ae016fa84ab6f781d05819e8",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0012.png": "e5477b94c462653dc8816535a0b9e89d91c0c7fd27dd3858a993b891f10c7fbd",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0013.png": "55795e083cfe5612065fb678764f88040b7bc4a3e7542618ab513719d7b382ce",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0014.png": "0977cfd6a2f2af926f76ea34a42160bbfc9d02e3ec2caf2b9b902c5c18e6cd87",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0015.png": "dca8451d50f41dca778fb6c4de07e150be0bc9ef84eca41b48892b9f70310586",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0016.png": "7904446221c556ef4a53b5d6e5ff6e02e6308b137667f6c203a91b6a3bc4e0e5",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0017.png": "b4ff53d3c7179c4b3cc55fbdf8019dd46086125e876cabf1b49e70b06c3599ab",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0018.png": "50ddff91b1f96d8de39dbc71c5223d5357ce59c6caf6858aeff45b12779b05ce",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0019.png": "b4deddeceb7b7101f11e2fcbf5ba45a91cbfa7ffe5a5963f48d4b46ee5e3ba3e",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0020.png": "2f3864435ddefe7c84b4655745e01abf1b9377f26c58821479aa918f81d7cc9f",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0021.png": "ff41b4104e8c2c49aace50381a3e5c98e2f54364d4233f1cf83ea8a264042039",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0022.png": "0022e1897ca256b31da169cdab0bbf746eab7fad11673f67aa316c1e557e92e8",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0023.png": "06700dd17622dd13275ba0005193cb7d06e67a9979dc37e433ea5c5095299702",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0024.png": "1a41194583e4cbb13fee595a74ed89acc916425ceff34c883b3044d6f070c2fb",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0025.png": "9f6b171b0e4dc450da2387a1cff0e8e36ca0c3204ea842dc7a5395e0bc820622",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0026.png": "9f18c541acb7627503dd86e5ed29d90748e733f894f12b0db975f1d5092ece41",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0027.png": "8dfa9911695cee613d4019e20ff2a8f8fd40015eba558f63ca13e687dedce2bb",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0028.png": "6e44f9b2b1074b5ff6e7689443aa6dd473b854bdeb488b02cb7c2db98f86be56",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0029.png": "277374c458ee4959feb7036da419ec967f0e426ded72e3ca1a14e574599505e2",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0030.png": "4b24e0581ab0d1c78bb542c84491e572648bf990242cea82c7062e128e643b46",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0031.png": "78ebbbd41ccfdf639859919f997fa60831a1e6eb9606046839f685035b3c114c",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0032.png": "65c8be68d335f34babb51be1050f60ac77eb3e89cd106f9f22677ef69429d216",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0033.png": "b5166edffcacf002b5451d67a1356a347d05eb8928a9af6f00001eddc6ea3a03",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0034.png": "7827e20dcd05b378b4080f0cc2329b920a052f1454f1a375cd350783429fc9e2",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0035.png": "ae66269738c484634f788131e558b4c8adb218a37593ac2b73194045f983b9ef",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0036.png": "877d26e0fccd9f8ae75a8bfe63703b36241f2c4ff7bb98199ab49ff6e2e33d02",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0037.png": "345b5092e7c6e07c0ced0476e82976d1e7e3da774bf6b1c32a60103d06e5251e",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0038.png": "2226585bd4e81c52376c471cb194d1d7be89cacc62c1abe5cd105a24a7c44eb4",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0039.png": "afb7a3a8e2fcfbe4da319a75e1bc5c8a274f64d8953a08ed858674374ab88cdb",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0040.png": "fcfab48c49bbc7e70bae10f02092a8fb79145248529d11e876a088a07027b574",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0041.png": "053387502520da6614b8c0ae821af88584c8bb8898eb410115f869431072e1f0",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0042.png": "73577111b8e0c6d226185511c855afa319bb5b3ca247be5ba14f2648b1f72e01",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0043.png": "290cbdf67960a55d7c37279f1ddf9dbca93ed17389245d694de2f9bee7b18720",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0044.png": "822e8d23ba3f740f3d92ba1a25c3585851589fed7dc7732ccb453d72c77471c8",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0045.png": "5e228c3d75ed332831e83038144abef133bf7476490bd1e11d7c2347c236e4b2",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0046.png": "937010f3a7fb5d080b7a4e32bc431ca399dd76a5574929424454db9428c37edb",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0047.png": "bdd543cfb8408b8d5e252816642513a3fa4cfcfd784b46e5f3b33d45e1d34ecf",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0048.png": "6476d1866d9a61d1e438200ab1d8fc7f264523233db59f5c67cce6ed710c6186",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0049.png": "0f37d900d3338cd8fe88824d481a050dd25b7e94f36729518f5378c4b5987fe6",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0050.png": "4b9825d0e60348e98f30ade2ba5c59b76b3ecc536237eca1624838eeef6b861f",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0051.png": "d64479862c5cc2cb7582dbd1e04d2ccbddeae8b87ad616b151c2a17a1137b3f4",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0052.png": "137d258a8642846a9fc17d12d937ab5af9f00703e9bac8b8f12647052b2a7961",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0053.png": "f278b01f8fddb4e946d3234fc379b870063f52f0f3258787f0b5e92e33943d93",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0054.png": "95afc350da33369f49f96fd00737f0093d34216a315c736631ab049c516f9809",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0055.png": "8c91840330fce52027e05b0857ba4b0897b7d377c016cdc19d57836a11b59331",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0056.png": "2ea8b09408713ecc078c108b884f4c45de31f5148ee6f3a4adf0d2e4b8c18275",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0057.png": "08eb5244305c1c87fff3d2f02bb177904329161f530e5c6ed0580203f54e0629",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0058.png": "53410249a2190233a4b9f2ef652a6d9f9db545b1168424d6f0e48ee50e6b70e8",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0059.png": "cb21f3261d5d7750b39661bc8c3f8402f594c567ebb92de1d6b72b37dcf50ab7",
+    "assets/story/fire_veinhold_opening/continuation/rush/frame_0060.png": "240ff1cf36c7fed3badf5b820970f375923417eb7015171cf0c074526670249d",
+    "assets/story/fire_veinhold_opening/scene.json": "e08bc140f918c22872cc7cc3543afa5e3d19e9d01e27571a61820272cbbcce5b",
+    "assets/story/fire_veinhold_opening/shot01/eagle/animation.json": "61683709996834ee068bcd1980e3e35d2110444b1a13576462d44c24331a1bd1",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_01.png": "0108185378c962ae64ae7f2d0c5642972f18275173a8ad9c072d648ed65499bd",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_02.png": "628056fb38f183d7d2aba33c9dc0b31adf9a74592a692f8a9917bfc0385b56d7",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_03.png": "a1893f5549111ae894e5fa2bbc1b3b175939d89239fe3ba57f1d9f647fe81bff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_04.png": "580d16517ed957b90ab9a77271f1226ae9f64574631b1da3befcf139d5a07910",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_05.png": "322468c11a9c4edb0365ec8af462cdd16b10ef50887ee92937ccd9659a8a9366",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_06.png": "4fd66ada572b7ae41e07684aec932cbb85e009e6e4397f59a44d6f88fe367fd9",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_07.png": "a0632f4944b73da9f78955eb5407f61f9d22942b56f0c1bb7f148058f82b076d",
+    "assets/story/fire_veinhold_opening/shot01/eagle/bank_08.png": "7819fadf7881ae3837f8d05a1ec039e4b73af60657846adf8f6dda4301cbd135",
+    "assets/story/fire_veinhold_opening/shot01/eagle/export_provenance.json": "af3229c0ea4fc6aecffac2fa3da083e3ea1f62a5c0f24fd5b83e90db332d2b6f",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_01.png": "9874daadc257a970955b5e3ef914d95e43d48ba8bfa619bfdb9e2def3969e1a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_02.png": "33d261813cad9b329cb8dcf8ea532dbf1685d25f90ac547c8803976b296e0476",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_03.png": "ec3ca82c617edbf91b7746f82612d9672557eb922dd8923560ee492c9f411a20",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_04.png": "9484c200a4e5e2ebcc4280e145647b3568e273d9e048b6c8b8b6d5b758ecb3b8",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_05.png": "8c3f18595bc5e98c0840319c6110a1a2c55ecd43ffc480803ee542ebc6aef022",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_06.png": "d24abf4d183c394c6681213288718d6618eebe507b82ecf8702591206ddaf530",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_07.png": "2f718dfd5df9ee6b848d67f2d45e904c22ffe54f800e7db8e62099faf36cb5a5",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_08.png": "f519528b7540b87402825090f5a88699c4259af303809afec598016d3e4f52c4",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_09.png": "9bc1f2f017e7c2ee37ddf11a8d7638465e1fa9acceb87f856f8facf0279677ff",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_10.png": "b4ad7a0467ccf682320277b315f977bff2eef2532bde50a0fb97ee4eadfeb1ee",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_11.png": "a8bb39250714bdec8527b00acf3ba6c5d538c3d0d48ea12115ff247cc16db502",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_12.png": "193c7dd5ffeb11af9aab313c1fd914da814ef2ff77793071fdc867ff29cb08ad",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_13.png": "1cfbea45945b6a173cb87ec4e0356e356e66cb4c2fbcf2a829d5010ed0a9c70e",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
+    "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
+    "assets/story/fire_veinhold_opening/shot01/environment/art.json": "1f41ddaae1154be5929eddd58bd9c17056de3d015a21b43d743524a196fde883",
+    "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "cbe739ffca8153dbaaa9232ec4ef9fbdbe9cf01751ef8240b671e0320d1c0b26",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_01.png": "26223a05da27ae27811381a9309144c2084cbc1520e051c8b9d5d8a8429dccb6",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_02.png": "3bc698519860377a3ac904e3fa4223b4a5aca6346fb68d3eeb4f853184459e70",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_03.png": "4dc884d17fd3810f2213fe6ebedda8181be9b416c562bbf1ecb9aeb433127392",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_04.png": "87d82e9898f0994c891b4d45bf9b189f041420160beea81a99df79c779d778fe",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_05.png": "414ea490a9f78ad9bfcd3d4f3ae4d12c42663feab868ff624aa33ea6b32f8d38",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_06.png": "68e2b62662d2cffb87a04f62e551ab0846ef6dc99df226cf61411bbe6e995c8b",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_07.png": "ed00b17fd0bceb8bb497c17b6bda0c3aca4afe79bb34ad04aebaf1b444ae7e45",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_08.png": "a62ca06a4c1f70f329c13a6a114c92bbfc1de386bfd6998a5bacfa91274ee5a0",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_09.png": "e929904ad9a60411b35f810eff0f349d2c77bfa4847c95bbe615d703e7dcaee9",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_10.png": "0585c7670b4bd0e16e78c4f8046c21c526e8b42727d0c100a2420bb0d5ba9ea9",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_11.png": "8146b6b4e51fabef657663d16ad2f1138ee85d74326c8e3f582c99f9fe5dac16",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_12.png": "c2bf2f2a6f81f77c662f649b50997f290115f88b378e9fd680218114bb7099ab",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_13.png": "8ca875de5206aa15e6c6502b17b8503d37c7b98f8f981503083a4378e9268d94",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_14.png": "0a8720b25681d5fcde7b486309f7bcbe641a6730e213a18deca08cfb87d1f533",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_15.png": "3d1f12a3293f53363c2ea1cf45ef53fc7feacea6e575aed58599111caa6eaf54",
+    "assets/story/fire_veinhold_opening/shot01/environment/plume_16.png": "4933c4b6713f165b6369cf2e83df374097d021d7a9903b0672f2cdcf02c89711",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/animation.json": "23e9c0eddce5ab2848954f8bca38466f821ca804028c750d837af95cb0e0e8df",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_00.png": "a85fb70ba0def55050d9017896a2b29207520a28e973a777b46bb168fe3d046f",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_01.png": "2b381571d42a4581983a5a187a02cd523ada668ea9ad3036a3d9fee30f6ebd40",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_02.png": "f9b1a32d761c39a0c63d545580eda90e708f37a84d7a94fb49882ba3545b8baf",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_03.png": "808b8d21b35dd1ce55ea85e8725202dba69128a33ebbdb6dbc0dd72a54e8b8a1",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_04.png": "44c850350eff5fe908634396f1a84c9af97fa46f8eca674cba962d01acd6b412",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_05.png": "2dec1994131f07a04194b711aa32e0f485ee7026e2193961d9b3f2f86bb22a79",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_06.png": "dfaaa1054756207dc2ff4a8d4e3c4c41084752ea179349e2ddf1b9d10f7db967",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_07.png": "653d684c6e098cc797eb8029fac4c2ce407f63e9e6bf7ded8a7d3adb55b6ae79",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_08.png": "b1874600e61b57ef5b478c55295dcf5476d502076f8da800bfea87c6b13f8d48",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_09.png": "bda544dff05031a3006e84d32653a0ab3d8937d09ae39c735944eedffcea4b42",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_10.png": "a114a34f47077a0e3fe4aae00ce4b2336d91b06a7ab8eb581d2a81c3680935e7",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_11.png": "babf93bcd2bbd29b2c274b96ca068395795815afe0424afbdb7ed17538ce5760",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_12.png": "b5cca594e37b9866675f95f5305b81e64c4aae56f73e9035d5f5729974fc0ca7",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_13.png": "a08b6338d6145212a59dc05d9c642525f72ae77623173182d69de6225eee085d",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_14.png": "dbe7bf47fe5f50548511ad99efcbdf8c053576989704ac15d0fff7a1faaf990b",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_15.png": "1a12774e7d5baaabd16bf37969bc48c4936d776f3bfdccafd63f4eca7766d09b",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_16.png": "53d5b9d37c4aee6acf9c9f2c46910abc9d3b202683a6b229deddf3a63d8c36c1",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_17.png": "aff93956e90ebb63d858cc5c2b79a3f427b1183843afe3c8846944034319cbe1",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_18.png": "725921e0756b2119b93608853843b908e0fc1214c04934e35905b370e86995a3",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_19.png": "d93a10433c93e80e2e01a1a9dc092e74bc45ce46e545b5567bb30128f69fb87a",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_20.png": "2533540e20f83573ba7a97df93c3c30ef9d5de5a4e7727daa666cf0a3779c14d",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_21.png": "53554fb5aa4bf485e4f6d7f87afa87684d22aba72cd9b532610394d9d0a537b0",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_22.png": "87c29578e7f21a59ab8727a40557bb997041327526776d95e58740954aaac633",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/frame_23.png": "2e61a5b2006f875a59908d0b9c0e10df4dbcc1a56cc8660ec4ffade6899fe868",
+    "assets/story/fire_veinhold_opening/shot06/characters/crown_soldier/provenance.json": "96412ef2308d4b9b456f708b9399e09aa7bcec20877676d15ec68b21033ba588",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/animation.json": "b663c6dc9fa623e2398a21edb4ca57f925443079ced922c8a2079c78aa0ee592",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_00.png": "a9857a35aa1709dec05574885855364d5a1dcb92bd65e3392ffbfeb6d27070fc",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_01.png": "98ca3eaea843b50beb168fd24b00091e13c418085b833f05e0fbd2a2373b59d3",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_02.png": "d46f1290242c05dc1294a79b8f8e8e51374f94c1e58ad037b47621ec57e71632",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_03.png": "5482ddd3e59d8b5bacf65647ea6dfe5ee57556b2efa8596481f3a967d56ba2ea",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_04.png": "ed404daad078dc7aba8cc76cc7c438d5bbb7683a8db9a1e4a63995f41698d4af",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_05.png": "ead046d05295b19af04b964e4ed593bb7f22e6d189e6a3db51d380dcc2d49695",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_06.png": "e69d3b83eb3903317b19d161fa5ddc88420a4f71b266a38aa19896e46f4acb1f",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_07.png": "d562ce12c0cf7c343f074b1ed8d99824a85fb9b6fed55aba03f78acad1b673ab",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_08.png": "7433364f02bbc66b23e04ced45955d1d1eebece613d5b3b84e857211d5010e61",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_09.png": "22e2a93a5f1b3ad081934c9b5c1330ecd05102043204d5527e83bb081e82c2e9",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_10.png": "5943e34a1afad2947fea794fe07e4265e1546ef0376bc2669211216d0f311cc0",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_11.png": "043e10ed40eb77a998979052fb82fbfb2e1aa43f59587fbe54f491c610912ae0",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_12.png": "7c60eac224491a600de15e9d40c0c374926e9242d7bb06ffa038b4fe76e32569",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_13.png": "4cbfb7580b9c63a97ad9858cb75eeeb1fb373c3b68fd9898f84511343bdcbef9",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_14.png": "2469230ae343e9da836c4ea9d77675fd0c6b8858c1659230304e506252df61ef",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_15.png": "543d97219d89e3f83c44f57abcc8a4c1afd7f64ef282e03b0a63c97c46c3e4a6",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_16.png": "c7d08a0df168d1ea258fad88ac492f8f69e1d0983b571653af26d23e6cf4ab81",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_17.png": "9fc99b12a17fc2659ead25643cea45a7c55b4473e5226bf26092d32f41a66ab0",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_18.png": "13e377cb81d0467305d560ad2bb10484054636f05a539ee41442f38286e9623b",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_19.png": "b484bd82ea00cc06faa0546b1e9767cfbed07089764e12b38535698eda49f147",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_20.png": "2abe38f6af0d0d5e5f20591277985f647dc14713a633de8bb3fa9d704d4b58a3",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_21.png": "e57aced084cb793f45cbbca2327b2073702dce61ef8a1b9d40321a64e4974fc3",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_22.png": "b16126049e8023ed7d3e8a7f2678d53ab47205b564ab0e0f9a649889bce92064",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/frame_23.png": "1229a1bc7ef182d604e7365043d70a463c731ddb4e426e04ca5c54e84ad39dc0",
+    "assets/story/fire_veinhold_opening/shot06/characters/iselin/provenance.json": "cd3dee7566685fc9a53724bf2df9758da4f13f417d7b514c2b24650a0acddfd2",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/animation.json": "ac5c07db2287288844342834f8a8c8f4254a611abfb747cfc67970281fe4751d",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_00.png": "64798157c97e38e2a21f2fe8545eba7cb71023b3b134e5ea8631a3ddb4670f88",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_01.png": "e76bb3e9a9be4e958fd0e8d4d8b1283ca480aa29a58cf256be446afa62d6882b",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_02.png": "02ece27f483dd5518351392f84687a964b9aad87a5341f615942a4a088e11197",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_03.png": "b7e4905ab6dbdb2ecb42594a2df241500e976d569de5eeb542a921312c62a860",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_04.png": "1420869b3d01d4e4db3b92bd5dbbac4320c7cfd05f2095027ba69983f6ebc688",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_05.png": "0e43b88b08e5dde83b0aa019bdafbd096d128ac6c5f7f8ad84edb315816b0b24",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_06.png": "0a07f236f8f16da1c589f12d9d8be76e56ea01c4b356a3af47a9ecd4ad91e63b",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_07.png": "a21c06f8134a5bdad122284e028f6d5e4177ef109044ee8232f039965ae35015",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_08.png": "5870a62f34054d667d3c5ea6047e380faba257a9852815706f5cd19ade2e75b7",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_09.png": "9f3013bac7ab7114fd779a14a8827d19b9843be84b1535da0ccb6a71e3647a09",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_10.png": "5f8e5420c4c38af33dee843b3f50a3e5367265d6a83a8a5c296fafad10fde521",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_11.png": "f2c5ec57f25a24aff26983841a239977821ec3d1756eaa561577455b2d06e6c8",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_12.png": "8eba493281daae6507a77ef4dfad61528ef755cad1865f30f9dc219a03775beb",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_13.png": "c2760c06f28db26cd04a36b78d3a141c9010d677c6dd938c28b5894886ee50db",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_14.png": "192a3ba3d62d9ce820c9e5fddbc99ee2e8172f453ca7d8b1d9fb6c792a7d134b",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_15.png": "2dff748c65e331792bac76ec763768bef0219ccbb20c531bf2ecd798f844d526",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_16.png": "e245da6375b5792944e9711776f866107fcb5456991d5e8b4e2d471cc8045b83",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_17.png": "f09cf65ca47b35ce3fba476f1c84ceb3ecd7d1ab15bb12b5a408378dc2111ea9",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_18.png": "23b78c99f361d9afb417a30018f4db0ff6ce309b596268e29f6559da9d4f0b4a",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_19.png": "89ac1d5da2af7f6094a8953187645b18ec700c7d82e1fee8d60dff6af43c6023",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_20.png": "e137d93a15102b1bc36b7be6f266906f1b5a6d40916288e0ecfdcd95d1b24ffe",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_21.png": "f8448f4ccac70c295606c3370f18d2d1594f7006489b3872c867645e3cdf055e",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_22.png": "aa18b67197ff6555c9520ba861cb1d00ce3296f0c8e5ec62db34e97bf0d2da42",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/frame_23.png": "45ae829426b93acf4bfe564fbc4d4da4ca97e1da4de5be312d1d13694c468598",
+    "assets/story/fire_veinhold_opening/shot06/characters/lucan/provenance.json": "8f6a77d4f7fb2f4d3244841bdf88ebcc90fd65dc9208d75d2964af083757e85a",
+    "assets/story/fire_veinhold_opening/shot06/environment/bridge.png": "9e7434204333d996c71c49f758d90f01b795798e04c1b3825713fd8274d3a646",
+    "assets/story/fire_veinhold_opening/shot06/environment/far.png": "d676b48fe860def2e68415c652a242adffd07fad71240246c140d5417972f66e",
+    "assets/story/fire_veinhold_opening/shot06/scene.json": "046df2ebfbfd67ca2f5f13641b00f982be177a70944421214788a4c719b22acd"
+  },
+  "runtime_sha256": {
+    "main.py": "b7c252be95f011b3d0eb00374212ea7473a0c530e4da3117463817896d7f9c7c",
+    "gallery_session.py": "f278b8cccaf91a22ca484dd1da702192efc1b89ca8cb7391bbb7f413595ff35f",
+    "fire_veinhold_opening.py": "2f2958a9ff312b2516c81b1b23da463d46d1b00c96a682dcfebf560dba7e9235",
+    "cinematic_smoke.py": "24c460b520bf6277e797b08c47368947ebb5fcb41b539795811f0481853b908c",
+    "cinematic_facility.py": "ea7ada6044b5c8828e0e12de6207221ed9ab5a5b1ecceac5c2e443a0664cd6c1",
+    "cinematic_perspective.py": "d7bae8a41c7f2b0967d8faf9d52b0c3c68427c9ebac5f79e1fdd1032ae2b55f2",
+    "cinematic_bridge_run.py": "58d5585546265bddc3be1efe7c905b2ff5c631a4facb30646cd0840c4e0bade7",
+    "prologue_flight_audio.py": "5c65f2de7df1290528b1143ba51d1851ffbbc1e782e71296d41e0d690033f12a",
+    "prologue_alert_audio.py": "39d5d626c6d94859901a883aa7ad1254b8e02d090014ea62bc66ba98e73e04c6",
+    "cutscene_gallery.py": "0fa2fb1a45cb8510b971fcaf55bfe2934d0d798fc650f02b617517fb9ab3adb1"
+  },
+  "video_sha256": "35b44caf987a85f5715862a8f3ee6bf568d5dd9ac31062fd9367da0dca451cbf"
+}

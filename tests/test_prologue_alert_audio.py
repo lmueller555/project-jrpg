@@ -13,7 +13,14 @@ os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 
 from prologue_alert_audio import (ALARM_START,ASSETS,BRIDGE_ARRIVAL,MACHINERY_START,
                                   PrologueAlertAudio,RUSH_START,SEQUENCE_END,
-                                  SIREN_PERIOD,alert_mix_at,mix_alert_audio)
+                                  SIREN_PERIOD,alert_mix_at,mix_alert_audio,
+                                  running_contact_events)
+
+
+RUN_TIMING = tuple({'id':name,'cycle_seconds':.4,'phase_offset_seconds':offset,
+                   'contacts':({'frame':0,'foot':'near','time_seconds':0.},
+                               {'frame':12,'foot':'far','time_seconds':.2})}
+                  for name,offset in (('lucan',0.),('iselin',5/60),('crown_soldier',9/60)))
 
 
 class Sound:
@@ -44,7 +51,7 @@ class Mixer:
 class AlertAudioTests(unittest.TestCase):
     def setUp(self):
         self.game = SimpleNamespace(audio=SimpleNamespace(effects_volume=.5))
-        self.mixer = Mixer();self.audio = PrologueAlertAudio(self.game,mixer=self.mixer)
+        self.mixer = Mixer();self.audio = PrologueAlertAudio(self.game,mixer=self.mixer,run_timing=())
 
     def advance(self,before,until,fps=60):
         while before < until-1e-8:
@@ -78,6 +85,9 @@ class AlertAudioTests(unittest.TestCase):
                 self.assertGreater(max(far.channel.volume),0.)
                 self.assertNotIn('bridge_rush.wav',self.audio.voices)
                 self.advance(35.,39.,fps)
+                self.assertIs(self.audio.voices['industrial_siren.wav'],near)
+                self.assertIs(self.audio.voices['distant_siren.wav'],far)
+                self.advance(39.,42.,fps)
                 self.assertFalse(self.audio.voices)
 
     def test_standalone_clip_seeds_global_alarm_phase_and_current_transient(self):
@@ -153,7 +163,7 @@ class AlertAudioTests(unittest.TestCase):
             self.assertFalse(self.audio.voices)
         self.mixer.ready = False;self.audio.start(30.)
         self.assertFalse(self.audio.voices)
-        quiet = PrologueAlertAudio(SimpleNamespace(),mixer=Mixer())
+        quiet = PrologueAlertAudio(SimpleNamespace(),mixer=Mixer(),run_timing=())
         quiet.start(30.);self.assertFalse(quiet.voices)
 
     def test_assets_reproduce_are_unclipped_and_warning_loops_share_timing(self):
@@ -197,11 +207,14 @@ class AlertAudioTests(unittest.TestCase):
         import pygame
         pygame.mixer.init(frequency=48000,size=-16,channels=2)
         try:
-            audio = PrologueAlertAudio(self.game)
+            audio = PrologueAlertAudio(self.game,run_timing=())
             original = audio._sound('industrial_siren.wav')
             shifted = audio._sound('industrial_siren.wav',.5,loop=True)
             raw = original.get_raw();cut = round(.5*48000)*4
             self.assertEqual(shifted.get_raw(),raw[cut:]+raw[:cut])
+            step = audio._sound('lucan_step_near.wav')
+            tail = audio._sound('lucan_step_near.wav',.04)
+            self.assertEqual(tail.get_raw(),step.get_raw()[round(.04*48000)*4:])
             audio.start(35.)
             self.assertEqual(set(audio.voices),{'machinery_bed.wav','industrial_siren.wav',
                                                'distant_siren.wav','ice_settle.wav'})
@@ -224,6 +237,91 @@ class AlertAudioTests(unittest.TestCase):
         self.assertLess(float(np.sqrt(np.mean(quiet*quiet))),.04)
         # Offline machinery loop phase also matches an isolated orbit preview.
         np.testing.assert_array_equal(quiet,mix_alert_audio(25.,3.)[120000:132000])
+
+    def test_running_contact_times_come_from_pose_contacts_and_positive_phase_offsets(self):
+        cues = running_contact_events(RUN_TIMING)
+        self.assertEqual(len(cues),45)
+        self.assertTrue(all(39. <= cue['time'] < 42. for cue in cues))
+        first = {name:next(cue for cue in cues if cue['actor']==name) for name in
+                 ('lucan','iselin','crown_soldier')}
+        self.assertEqual((first['lucan']['time'],first['lucan']['foot']),(39.,'near'))
+        self.assertAlmostEqual(first['iselin']['time'],39.+7/60)
+        self.assertEqual(first['iselin']['foot'],'far')
+        self.assertAlmostEqual(first['crown_soldier']['time'],39.+3/60)
+        for actor in RUN_TIMING:
+            for cue in (cue for cue in cues if cue['actor']==actor['id']):
+                phase = ((cue['time']-39.)+actor['phase_offset_seconds'])%.4
+                expected = 0. if cue['foot']=='near' else .2
+                self.assertLess(min(abs(phase-expected),abs(phase-expected-.4)),1e-8)
+
+    def test_running_cues_sound_once_with_continuous_sirens_and_no_end_cue(self):
+        self.audio = PrologueAlertAudio(self.game,mixer=self.mixer,run_timing=RUN_TIMING)
+        # The continuous flight owner retains one of the default eight slots.
+        wind = object();self.mixer.channels[-1].sound = wind
+        self.audio.start(38.9)
+        near = self.audio.voices['industrial_siren.wav']
+        far = self.audio.voices['distant_siren.wav']
+        self.advance(38.9,41.98)
+        self.assertIs(self.audio.voices['industrial_siren.wav'],near)
+        self.assertIs(self.audio.voices['distant_siren.wav'],far)
+        steps = [event for event in self.audio.events if event['id'].startswith('run:')]
+        self.assertEqual(len(steps),45)
+        self.assertEqual(len({event['id'] for event in steps}),len(steps))
+        self.audio.update(41.98,42.)
+        self.assertFalse(self.audio.voices)
+        self.assertEqual(len([event for event in self.audio.events if event['id'].startswith('run:')]),45)
+        self.audio.start(42.)
+        self.assertFalse(self.audio.voices)
+        self.assertFalse(self.audio.events)
+        self.assertIs(self.mixer.channels[-1].sound,wind)
+
+    def test_standalone_running_starts_only_current_contact_tails_at_their_pcm_offsets(self):
+        self.audio = PrologueAlertAudio(self.game,mixer=self.mixer,run_timing=RUN_TIMING)
+        self.audio.start(39.37)
+        steps = [event for event in self.audio.events if event['id'].startswith('run:')]
+        self.assertEqual(len(steps),3)
+        offsets = {event['id'].split(':')[1]:event['offset'] for event in steps}
+        self.assertAlmostEqual(offsets['lucan'],.17)
+        self.assertAlmostEqual(offsets['crown_soldier'],.12)
+        self.assertAlmostEqual(offsets['iselin'],.37-19/60)
+        events = list(self.audio.events)
+        self.audio.pause();self.audio.update(39.37,39.37,playing=False)
+        self.audio.resume();self.audio.update(39.37,39.38)
+        self.assertEqual(self.audio.events,events)
+        self.game.audio.effects_volume = 0.;self.audio.refresh_volume()
+        self.assertFalse(self.audio.voices)
+        self.audio.update(39.38,39.41)
+        self.game.audio.effects_volume = .5;self.audio.refresh_volume()
+        self.assertFalse(any(key.startswith('run:') for key in self.audio.voices))
+
+    def test_running_offline_clip_is_sample_identical_to_full_film_and_silent_outside_shot(self):
+        import numpy as np
+        full = mix_alert_audio(38.,4.,run_timing=RUN_TIMING)
+        clip = mix_alert_audio(39.27,1.14,run_timing=RUN_TIMING)
+        np.testing.assert_array_equal(clip,full[60960:115680])
+        baseline = mix_alert_audio(38.,4.,run_timing=())
+        np.testing.assert_array_equal(full[:48000],baseline[:48000])
+        self.assertGreater(float(np.max(np.abs(full[48000:]-baseline[48000:]))),.03)
+        np.testing.assert_array_equal(mix_alert_audio(42.,.25,run_timing=RUN_TIMING),0.)
+        self.assertLess(float(np.max(np.abs(full))),1.)
+
+    def test_production_contact_cues_match_rendered_pose_indices_on_exact_display_ticks(self):
+        from cinematic_bridge_run import CinematicBridgeRun, read_run_timing
+        timing = read_run_timing()
+        cues = running_contact_events()
+        self.assertEqual({actor['id'] for actor in timing},
+                         {'lucan','iselin','crown_soldier'})
+        self.assertTrue(all(abs(actor['cycle_seconds']-.4)<1e-9 for actor in timing))
+        self.assertEqual(len(cues),45)
+        scene = CinematicBridgeRun()
+        try:
+            for cue in cues:
+                local = cue['time']-39.
+                self.assertAlmostEqual(local*60,round(local*60),places=8)
+                actor = next(actor for actor in scene.samples(local)['runners']
+                             if actor['id']==cue['actor'])
+                self.assertEqual(actor['frame_index'],0 if cue['foot']=='near' else 12)
+        finally:scene.close()
 
 
 if __name__ == '__main__':unittest.main()

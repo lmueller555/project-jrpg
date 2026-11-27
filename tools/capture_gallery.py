@@ -114,10 +114,14 @@ def thumbnail_ready(identifier, g, seconds):
     if identifier == 'fire_veinhold_opening':
         from fire_veinhold_opening import available_shots
         shots = available_shots()
-        # Prefer the newly revealed reverse geography when the continuation
-        # exists. The original one-shot reel retains its earlier cue.
-        cue = (shots[0]['duration']+min(2., shots[1]['duration']*.5)
-               if len(shots) > 1 else min(6., shots[0]['duration']*.3))
+        # Show the latest completed shot without exposing future storyboard
+        # entries. Keep its representative cue inside that short clip.
+        if len(shots) > 1:
+            latest = shots[-1]
+            local = latest.get('thumbnail_time', latest['duration']*.5)
+            cue = sum(shot['duration'] for shot in shots[:-1])+min(local, latest['duration']-1/FPS)
+        else:
+            cue = min(6., shots[0]['duration']*.3)
         return g.cinematic.elapsed >= cue
     if identifier.startswith('fire_veinhold_shot_'):
         from fire_veinhold_opening import available_shots

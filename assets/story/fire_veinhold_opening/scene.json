@@ -66,6 +66,16 @@
       "sequence": "continuation/manifest.json",
       "segment": "reveal",
       "thumbnail_time": 1.0
+    },
+    {
+      "id": "bridge_running",
+      "gallery_id": "fire_veinhold_shot_06",
+      "name": "Fire Veinhold \u2014 Running the Bridge",
+      "description": "Track the Crown party\u2019s running boots as they advance toward the fortress.",
+      "type": "bridge_running",
+      "duration": 3,
+      "performance": "shot06/scene.json",
+      "thumbnail_time": 0.8
     }
   ]
 }

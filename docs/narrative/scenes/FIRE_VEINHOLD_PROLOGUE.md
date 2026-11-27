@@ -1,9 +1,10 @@
 # Fire Veinhold prologue — cinematic production
 
-**Status:** The Gallery presentation contains five production shots totaling
-39 seconds: the existing 25-second summit approach/vista, a five-second island
+**Status:** The Gallery presentation contains six production shots totaling
+42 seconds: the existing 25-second summit approach/vista, a five-second island
 orbit, four-second alarm lead-in, one-second bridge rush and four-second frozen
-guard reveal. The later running-party shots and final playable handoff remain
+guard reveal, followed by three seconds tracking the running party's legs.
+The frontal face reveal, overhead ascent and final playable handoff remain
 future implementation.
 
 [Chapter 1](../game_01/CHAPTER_01.md) owns the opening story. This document owns
@@ -20,14 +21,15 @@ owns the approved geography; the canonical world map remains unchanged.
 | 3 — Fortress Alarm | 30–34s | Hold the reverse angle for four seconds while red warning lights blink and the industrial siren sounds. The audience has two full warning cycles before the rush. |
 | 4 — Bridge Rush | 34–35s | Fly past the facility and along the Merovar bridge in one second, with directional motion cues and changing sound perspective. |
 | 5 — Frozen Bridge | 35–39s | Settle 20 feet onto the bridge from its Merovar mainland landing, facing mainland. Distinct Carcovian guards are frozen in stasis; ice coats parts of the deck and railings. The attackers remain unseen behind the camera. |
-| 6 — Running legs | 3 seconds, future implementation | Side tracking of Iselin, Lucan and the Crown soldier running over the steel bridge. |
+| 6 — Running legs | 39–42s | Cut to boot-height side tracking of Iselin, Lucan and the Crown soldier running toward the Veinhold over the steel bridge. Their faces stay outside the frame. |
 | 7 — Faces | Exact duration open, future implementation | Track backward and pan down to faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the Crown soldier is on his anatomical left (screen right), about ten feet behind. |
 | 8 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into an ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. The final gameplay handoff remains open. |
 
 The fortress access bridge is distinct from Elden Vale's western bridge. The
 five-second orbit replaces the previously proposed separate 15-second closer
 fortress shot. Later party shots are storyboard direction, not runtime
-placeholders. There is no cast reveal or new dialogue in Shots 2–5.
+placeholders. There is no cast reveal or new dialogue in Shots 2–5. Shot 6
+reveals their lower-body movement before the later frontal reveal.
 
 ## Shot 1 staging
 
@@ -129,8 +131,8 @@ lower-flank extraction structure into the basin. Captured aether glows amber
 inside the channels and reservoir; it does not turn the dormant crater into
 an erupting volcano. Walls, barracks and loading/service yards support the
 main silhouettes. Both bridge gatehouses lead into visible compound roads.
-Materials are charcoal basalt, blackened steel and weathered bronze with
-restrained crimson insignia.
+Materials are charcoal basalt, blackened steel and weathered bronze. Banners
+use charcoal cloth and a restrained copper split-ring/vertical-bar mark.
 
 `cinematic_facility.py` draws restrained power packets down the authored
 conduit paths toward the reservoir, floating ember accents within its interior,
@@ -141,6 +143,21 @@ red alarms remain distinct from steady windows and amber power. Reduced Motion
 uses steady red warning illumination and static amber accents.
 Effects follow the scene clock, including pause/focus/restart; they introduce
 no new dialogue, weapon identity or quest state.
+
+### Faction identity and costume continuity
+
+Carcovian soldiers use matte gunmetal segmented armor, charcoal cloth,
+restrained copper accents and enclosed helmets. The Veinhold's charcoal banners
+carry the same copper split-ring/vertical-bar visual mark. These shapes and
+materials must remain distinguishable under moonlight and the blue cast of ice.
+Red remains the warning-light color; it is separate from faction cloth.
+
+Lucan retains his approved polished steel armor, oxblood cloth and gold edging.
+His existing shield chevron is retained without assigning it a new heraldic
+meaning. The accompanying Crown soldier has simpler companion-side equipment;
+the new running artwork must preserve that distinction at boot and greave level.
+Iselin retains her blue/silver royal clothing and directional costume identity.
+The new cinematic appearances do not replace their ordinary world sprites.
 
 ## Complete drawn volcanic plume cycles
 
@@ -221,6 +238,57 @@ is released when a replay ends or restarts. Normal playback uses every authored
 perspective when rendering keeps pace; Reduced Motion lowers camera intensity,
 removes heavy rush effects and retains the same timing and disclosures.
 
+## Running-party tracking shot
+
+At 39s the held frozen guards cut directly to a three-second, low side view of
+the attackers running toward the Veinhold. The party moves screen left to right;
+deck seams, rivets and rail supports pass behind them in the opposite direction.
+The composition stays below their faces. This is a first glimpse of the group
+in motion, preceding the separately planned frontal face reveal.
+
+Lucan leads. Iselin follows close on his anatomical right, nearest this camera;
+the Crown soldier remains on his anatomical left, 3.048 metres (ten feet)
+behind. The framing can admit the trailing soldier near its edge rather than
+compressing that gap. Depth ordering follows those lanes and foreground bridge
+members, with no duplicate body or equipment overlays.
+
+Each runner uses complete authored drawings with both near and far legs resolved
+in the source pose. Contact, compression, push-off, flight and recovery must
+progress through the cycle with a coherent loop seam. Foot contact metadata
+drives the corresponding metal footfalls. Each production cycle has 24 complete
+poses over 400 ms, advancing one pose at every 60 Hz display tick. Lucan starts
+at pose 0; Iselin is offset five ticks and the Crown soldier nine ticks. These
+phase differences keep their steps from becoming a synchronized march.
+World travel and scenery motion use an approximate source-floor fit;
+this calibration is staging evidence, not a claim of perfect pixel-level foot
+locking throughout every authored pose. Simply accelerating a walk,
+sliding a whole idle or rotating detached limbs cannot supply this performance.
+Cloth and armor movement follow the same authored phase.
+
+`shot06/scene.json` supplies the runner sources, registration, cycle phases,
+formation and bridge framing to `cinematic_bridge_run.py`. The shot has its own
+native 960×640 renderer and bounded character-image cache, separate from the
+perspective sequence's 24 image slots. State queries sample elapsed time without
+loading images. All temporary runner and background surfaces are released on
+completion, restart and scene close. Review metadata reports the two caches
+separately so the perspective budget is not mistaken for the whole presentation.
+
+The lateral environment separates fixed far sky/sea/mountains from a complete
+rail-and-deck painting with authored transparent gaps. Both retain the same
+3:1 source registration and are uniformly exported to 1920×640 by
+`tools/export_prologue_bridge_background.py`. The original combined painting
+remains a design reference. Sources, prompts and exact export recipes stay under
+the Shot 6 source directory. Alternating mirrored scenery tiles share their edge
+pixels during tracking; character drawings and costume sides are never mirrored.
+
+Normal and Reduced Motion versions preserve the same three seconds, character
+cadence, party spacing and disclosure. The far scenery stays fixed in both
+versions. Reduced Motion removes optional camera back-drift while retaining
+the ground speed needed by the foot-contact cadence. Pause and focus loss
+freeze character, scenery and audio clocks
+together. No face close-up, overhead reveal, new dialogue or playable mission
+handoff is included in this shot.
+
 ## Alert and movement audio
 
 A shared reel clock activates both visible red signals and the siren at 30s.
@@ -236,6 +304,11 @@ occupies 34–35s; bridge wind and a restrained ice creak accompany the settled
 view. Existing wind remains continuous. Eagle feather cues are restricted to
 the original powered-flight windows and never replay in the new shots.
 
+The 39–42s tracking shot retains the existing siren and wind phases across the
+cut. Footfalls come from the runner contact cues, with heavier armored steps
+for Lucan and simpler overlapping steps for the other two. Armor/cloth movement
+sits near those contacts; the distant warning remains behind the close movement.
+
 Pause, focus loss, effects volume, mute, Skip, restart and Gallery close apply
 to all owned effects. Standalone clips initialize from their full-reel offset:
 the bridge rush starts with the alarm already sounding, rather than replaying
@@ -244,9 +317,9 @@ exports and timing functions; it is not hardware-loopback listening evidence.
 
 ## Gallery and handoff
 
-The complete entry and all five individual entries use the same production
-controller and ordered scene manifest. The complete film lasts **39 seconds**;
-individual durations are **25, 5, 4, 1 and 4 seconds**. Each entry has its own
+The complete entry and all six individual entries use the same production
+controller and ordered scene manifest. The complete film lasts **42 seconds**;
+individual durations are **25, 5, 4, 1, 4 and 3 seconds**. Each entry has its own
 representative production thumbnail. The Gallery's disposable, save-disabled
 runtime preserves parent journey/settings/Continue state.
 
@@ -257,6 +330,8 @@ bedroom opening until the complete cinematic and playable infiltration handoff
 are ready. No quest, save-schema or mission progression changes belong to this
 presentation extension.
 
-See [current orbit review evidence](../../reviews/veinhold_orbit/README.md).
+See [current running-shot and faction review evidence](../../reviews/veinhold_bridge_run/README.md).
+The [39-second orbit review](../../reviews/veinhold_orbit/README.md) records the
+earlier guard/banner palette and film length.
 The [eagle-exit review](../../reviews/eagle_exit/README.md) and earlier studies
 remain historical evidence of their recorded revisions.

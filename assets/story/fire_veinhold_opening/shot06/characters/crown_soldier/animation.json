@@ -1,0 +1,444 @@
+{
+  "version": 1,
+  "actor": "crown_soldier",
+  "canvas": [
+    480,
+    480
+  ],
+  "anchor": [
+    240,
+    456
+  ],
+  "duration_ms": 400,
+  "fps": 60,
+  "loop": true,
+  "contacts": [
+    {
+      "frame": 0,
+      "foot": "near"
+    },
+    {
+      "frame": 12,
+      "foot": "far"
+    }
+  ],
+  "landmark_space": "Exported artwork pixels; null means occluded/unmeasured.",
+  "frames": [
+    {
+      "file": "frame_00.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.5455,
+          118.3349
+        ],
+        "belt": [
+          278.9107,
+          206.0351
+        ],
+        "near_sole": [
+          381.8922,
+          455.7576
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase00; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Visible support sole measured in six lowest opaque rows; anatomical identity checked in whole source pose. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_01.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.059,
+          119.0781
+        ],
+        "belt": [
+          279.1675,
+          206.0351
+        ],
+        "near_sole": [
+          337.8558,
+          455.7576
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase01; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_02.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.059,
+          111.0781
+        ],
+        "belt": [
+          278.4242,
+          200.2648
+        ],
+        "near_sole": [
+          304.0654,
+          455.933
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase02; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_03.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.5726,
+          110.0781
+        ],
+        "belt": [
+          277.7081,
+          199.2648
+        ],
+        "near_sole": [
+          261.1698,
+          456.4195
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase03; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_04.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.9091,
+          108.0781
+        ],
+        "belt": [
+          276.5582,
+          195.7783
+        ],
+        "near_sole": [
+          200.7107,
+          455.8916
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase04; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_05.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.3557,
+          107.3349
+        ],
+        "belt": [
+          277.4912,
+          193.5486
+        ],
+        "near_toe": [
+          131.2917,
+          455.8916
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase05; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_06.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.9633,
+          98.3349
+        ],
+        "belt": [
+          277.0989,
+          186.7783
+        ],
+        "near_toe": [
+          67.0004,
+          455.8674
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase06; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_07.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.3971,
+          100.6188
+        ],
+        "belt": [
+          279.5056,
+          181.63
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase08; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_08.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.3014,
+          96.8485
+        ],
+        "belt": [
+          278.1802,
+          183.8054
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase07; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_09.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.3971,
+          99.5646
+        ],
+        "belt": [
+          278.2759,
+          182.0622
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase09; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_10.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.1404,
+          107.2807
+        ],
+        "belt": [
+          279.2488,
+          188.2919
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase10; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_11.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          289.37,
+          118.4561
+        ],
+        "belt": [
+          279.7081,
+          203.1834
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase11; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_12.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          290.3429,
+          124.3349
+        ],
+        "belt": [
+          279.1946,
+          210.5486
+        ],
+        "far_sole": [
+          373.2985,
+          455.8118
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase12; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Visible support sole measured in six lowest opaque rows; anatomical identity checked in whole source pose. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_13.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.1675,
+          123.3349
+        ],
+        "belt": [
+          277.7895,
+          208.8054
+        ],
+        "far_sole": [
+          345.2043,
+          455.555
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase13; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_14.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          289.3158,
+          117.1053
+        ],
+        "belt": [
+          281.1404,
+          202.5758
+        ],
+        "far_sole": [
+          284.6034,
+          456.386
+        ]
+      },
+      "notes": "CANDIDATE whole-character far support-knee compression redraw; upperbody/near leg preserved in intention; no detached-limb edits. Body registration uses actual neck/belt patches. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_15.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          289.8565,
+          118.8485
+        ],
+        "belt": [
+          280.9378,
+          205.0622
+        ],
+        "far_sole": [
+          218.3035,
+          456.2711
+        ]
+      },
+      "notes": "CANDIDATE whole-character far support-knee compression redraw; upperbody/near leg preserved in intention; no detached-limb edits. Body registration uses actual neck/belt patches. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_16.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          293.4641,
+          117.5917
+        ],
+        "belt": [
+          277.1132,
+          202.319
+        ],
+        "far_sole": [
+          116.9225,
+          455.7576
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase16; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_17.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          289.748,
+          112.1324
+        ],
+        "belt": [
+          279.3429,
+          195.3732
+        ],
+        "far_toe": [
+          95.3031,
+          455.5008
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase17; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_18.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          289.9777,
+          102.4163
+        ],
+        "belt": [
+          280.3158,
+          181.941
+        ],
+        "far_toe": [
+          69.089,
+          456.1898
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase18; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_19.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.681,
+          101.362
+        ],
+        "belt": [
+          279.0463,
+          181.63
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase20; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_20.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          288.2073,
+          100.4434
+        ],
+        "belt": [
+          282.2616,
+          181.4545
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase19; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_21.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          292.1946,
+          99.8485
+        ],
+        "belt": [
+          278.0734,
+          180.1164
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase21; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_22.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          291.4514,
+          103.5917
+        ],
+        "belt": [
+          278.8166,
+          184.6029
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase22; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    },
+    {
+      "file": "frame_23.png",
+      "duration_ms": 16.666666666666668,
+      "landmarks": {
+        "neck": [
+          290.4242,
+          110.8214
+        ],
+        "belt": [
+          279.2759,
+          193.319
+        ]
+      },
+      "notes": "Whole authored drawing from raw cell phase23; actual chronological ordering reviewed. Neck/belt patch detections visually audited on preview, source-drawing coordinates; no limb edits. Whole-body vertical motion follows one periodic authored curve, with no independent limb edits or airborne floor clamp."
+    }
+  ]
+}

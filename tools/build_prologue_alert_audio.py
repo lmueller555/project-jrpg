@@ -1,4 +1,4 @@
-"""Reproduce the Veinhold's machinery, warning, bridge rush and settling ice.
+"""Reproduce Veinhold machinery, warning, rush, ice and running Foley.
 
 Original deterministic synthesis: no downloaded samples or external plugins.
 The two warning loops share their exact two-second phase so perspective changes
@@ -21,6 +21,7 @@ TARGET = ROOT/'assets/story/fire_veinhold_opening/continuation/audio'
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/continuation/audio'
 RATE = 48000
 SEED = 824613
+STEP_DURATION = .22
 
 
 def _band_noise(count, rng, low, high):
@@ -101,8 +102,36 @@ def sounds():
     turbine *= .94+.06*np.cos(np.pi*t)
     machinery = _normalise(np.column_stack((turbine,
         .92*turbine+.08*np.roll(turbine,109))),.64)
-    return {'industrial_siren.wav':near,'distant_siren.wav':distant,
-            'bridge_rush.wav':rush,'ice_settle.wav':ice,'machinery_bed.wav':machinery}
+    result = {'industrial_siren.wav':near,'distant_siren.wav':distant,
+              'bridge_rush.wav':rush,'ice_settle.wav':ice,'machinery_bed.wav':machinery}
+    # Independent seeds preserve all five existing exports. Each contact has
+    # one compact boot/deck impulse plus the softer equipment response after
+    # impact; there is no running rhythm baked into these single-step sources.
+    t = np.arange(round(STEP_DURATION*RATE))/RATE
+    for actor_index,(actor,mass,metal,cloth) in enumerate((
+            ('lucan',1.0,1.0,.12),('iselin',.60,.30,.45),
+            ('crown_soldier',.78,.62,.20))):
+        for side,variation in (('near',0),('far',1)):
+            step_rng = np.random.default_rng(SEED+20+actor_index*2+variation)
+            noise = _band_noise(len(t),step_rng,110,4200)
+            soft = _band_noise(len(t),step_rng,180,1500)
+            attack = np.minimum(1,t/.0017)
+            pitch = (67+actor_index*12)*(1+.035*variation)
+            boot = mass*(.54*np.exp(-t*40)*np.sin(2*np.pi*pitch*t)
+                         +.24*np.exp(-t*94)*noise)*attack
+            # Short, inharmonic deck resonances avoid a tuned electronic beep.
+            deck = sum(weight*np.sin(2*np.pi*frequency*t)*np.exp(-t*decay)
+                       for frequency,weight,decay in ((174,.18,35),(389,.10,49),(913,.045,62)))
+            age = np.maximum(0,t-.032)
+            gear = (t>=.032)*metal*.065*np.exp(-age*39)*(
+                np.sin(2*np.pi*(1380+variation*73)*age)+.5*noise)
+            cloth_age = np.maximum(0,t-.018)
+            rustle = (t>=.018)*cloth*.065*soft*np.exp(-cloth_age*22)
+            mono = boot+mass*deck*attack+gear+rustle
+            mono *= np.minimum(1,(STEP_DURATION-t)/.028)
+            stereo = np.column_stack((mono,.96*mono+.04*np.roll(mono,31)))
+            result[f'{actor}_step_{side}.wav'] = _normalise(stereo,.68)
+    return result
 
 
 def products():
@@ -121,7 +150,10 @@ def products():
               'source':'Original deterministic synthesis; no third-party samples.',
               'sounds':records,
               'timeline':{'machinery_start':25,'alarm_start':30,'alarm_lead_seconds':4,'rush_start':34,
-                          'bridge_arrival':35,'sequence_end':39,'siren_period':2}}
+                          'bridge_arrival':35,'running_start':39,'sequence_end':42,'siren_period':2},
+              'running_foley':{'duration':STEP_DURATION,
+                  'contact_source':'assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts',
+                  'scheduling':'One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'}}
     result[TARGET/'manifest.json'] = (json.dumps(recipe,indent=2)+'\n').encode()
     result[SOURCE/'recipe.json'] = (json.dumps({key:value for key,value in recipe.items()
         if key != 'sounds'},indent=2)+'\n').encode()
