@@ -30,14 +30,18 @@ def _banner(m, x, y, z, width=3.0, height=10, rotation=0):
     c, s = math.cos(rotation), math.sin(rotation)
     def p(u, v, zz):
         return (x+u*c-v*s, y+u*s+v*c, zz)
-    m.cube(p(0, 0, z), (width, .10, height), "crimson", rotation_z=rotation)
-    # Long inset golden lance/chevron is the same insignia on every facade.
-    m.beam(p(-width*.36, -.075, z+height*.31),
-           p(0, -.075, z-height*.32), .12, "bronze_light")
-    m.beam(p(width*.36, -.075, z+height*.31),
-           p(0, -.075, z-height*.32), .12, "bronze_light")
-    m.beam(p(0, -.08, z+height*.42), p(0, -.08, z-height*.16),
-           .1, "bronze_light")
+    m.cube(p(0, 0, z), (width, .10, height), "banner_charcoal", rotation_z=rotation)
+    # Carcovian industrial heraldry: split ring and one vertical bar. It is
+    # deliberately separate from Lucan's red/gold upward-chevron shield.
+    radius=width*.29
+    for i in range(14):
+        a=math.radians(35)+math.radians(290)*i/14
+        b=math.radians(35)+math.radians(290)*(i+1)/14
+        m.beam(p(math.cos(a)*radius,-.075,z+math.sin(a)*radius),
+               p(math.cos(b)*radius,-.075,z+math.sin(b)*radius),
+               .10,"faction_copper")
+    m.beam(p(0,-.08,z+height*.22),p(0,-.08,z-height*.22),
+           .10,"faction_copper")
     m.beam(p(-width*.62, 0, z+height*.52),
            p(width*.62, 0, z+height*.52), .18, "bronze")
 

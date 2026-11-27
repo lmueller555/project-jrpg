@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "generator": "image_gen",
+  "generation_path": "/workspace/generated_images/exec-9646222c-043c-446f-9436-cd83115dcc72.png",
+  "reference": "frozen_bridge_pre_faction_reference.png",
+  "reference_sha256": "f3ff625220914297992e03b59f585a13ea5d4ba69699b765805249c4dd8f15f6",
+  "output": "frozen_bridge_faction_generated.png",
+  "output_sha256": "c315118e9483e3b8571d3b67f598376e9e69b5ffd7bc506445eeba6a6518973a",
+  "prompt": "frozen_bridge_faction_prompt.txt",
+  "scope": "Carcovian uniforms and faction insignia only; charcoal cloth, matte angular gunmetal, restrained copper. Preserve ice, environment and interrupted-action poses. Exporter can preserve original pixels outside authored character repair windows.",
+  "registered_output": "frozen_bridge_final.png",
+  "registered_output_sha256": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+  "protected_exporter": "tools/export_prologue_faction.py"
+}

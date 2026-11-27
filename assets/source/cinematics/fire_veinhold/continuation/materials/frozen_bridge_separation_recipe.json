@@ -8,7 +8,7 @@
   ],
   "prompt_file": "frozen_bridge_empty_prompt.txt",
   "references": [
-    "frozen_bridge_final.png"
+    "frozen_bridge_pre_faction_reference.png"
   ],
   "export_tool": "tools/export_frozen_guard_layers.py",
   "purpose": "Separate complete frozen figure silhouettes from their registered empty bridge backdrop; rigid props avoid connected-depth warping during approach.",
@@ -16,9 +16,14 @@
     "frozen_bridge_empty_generated.png": "4638f61ae12f8ae4c3fdc48615407f55250b76d48811345d2eca1ab5b712bef4",
     "frozen_bridge_background.png": "188f095863a3c959f86ddffe21d6504bc3e77825a4215965e0dd1694d891a3f8",
     "frozen_guard_layers.json": "20c5e96819e9340bb111b65426074d60b0018eb131af814dc58bf2ca94465cdd",
-    "frozen_guard_left_back.png": "90dc4371a7b3ada548ff57f9641fb2552b7e38751945501de3afa1a38b8e5a81",
-    "frozen_guard_left_front.png": "2f2cfaab5eb3542063ef05bf6bd77488a59e4df5f06ddac22b77be0d9d97b776",
-    "frozen_guard_right_back.png": "0288b3e7ad4c2819bb508104b0c98f9ba659b38cbb760652a7f1f923bcb90735",
-    "frozen_guard_right_mid.png": "fcd1b602e5155069be81f4267099f8a56c86f3c6cbff5ff386424c002541c315"
+    "frozen_guard_left_back.png": "8116cf9d851aae1e4803aebd85bd90881d8bde71324e01717e76818c76d73bf8",
+    "frozen_guard_left_front.png": "d80b9f01f27d3f1ac43f38d6027b20efac7f9b08f901c749cae4545acd48c822",
+    "frozen_guard_right_back.png": "91d08f289f0073ca51c9f8eff29c7e843dcf8832b702179ce70ea51b3b111385",
+    "frozen_guard_right_mid.png": "a58de4b7376f08578d4fa752826930b06b2a482d11c33b4111f6837d0e5a7f7f"
+  },
+  "faction_revision": {
+    "source": "frozen_bridge_final.png",
+    "recipe": "frozen_bridge_faction_recipe.json",
+    "note": "Empty background unchanged; current four character layers inherit the registered faction redraw."
   }
 }

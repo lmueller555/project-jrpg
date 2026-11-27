@@ -12,15 +12,22 @@
     "eagle_endpoint_reference.png"
   ],
   "refinement": {
-    "file": "frozen_bridge_final.png",
+    "file": "frozen_bridge_pre_faction_reference.png",
     "generation_id": "exec-fc5b060c-9be3-48d4-87c6-ccfabcb003ed",
     "prompt_file": "frozen_bridge_refinement_prompt.txt",
     "purpose": "Remove moon disc from reverse view; preserve four guards, ice, bridge, mountains and lighting."
   },
   "runtime_presentation": "Offline projection onto registered shared scene geometry; native 960x640 camera rendering.",
   "sha256": {
-    "frozen_bridge_final.png": "f3ff625220914297992e03b59f585a13ea5d4ba69699b765805249c4dd8f15f6",
     "frozen_bridge_generated.png": "57b7ca386248747ed7c8aacc8001fbca34de25b518c2c27b4abc4fbe8c2b5d74",
-    "frozen_bridge_layout_reference.png": "7a8bac151ce8fe9f3cb3ede1ca5bdf0c0dae17918c17d7c1db81f1ae7e7fb85d"
+    "frozen_bridge_layout_reference.png": "7a8bac151ce8fe9f3cb3ede1ca5bdf0c0dae17918c17d7c1db81f1ae7e7fb85d",
+    "frozen_bridge_pre_faction_reference.png": "f3ff625220914297992e03b59f585a13ea5d4ba69699b765805249c4dd8f15f6"
+  },
+  "faction_revision": {
+    "recipe": "frozen_bridge_faction_recipe.json",
+    "registered_output": "frozen_bridge_final.png",
+    "registered_output_sha256": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+    "exporter": "tools/export_prologue_faction.py",
+    "notes": "Palette and angular uniform/helmet redraw inside the same original ice/guard silhouettes; all external scenery preserved exactly."
   }
 }

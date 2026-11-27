@@ -124,11 +124,32 @@
       "sha256": "4c2c0af49a4a028e72df8388bf1296e65a7d4147946aa7dc77abe3a2805559db",
       "generation_id": "exec-ecc84a2a-e685-4b7f-b01c-1b343cfaf1e9",
       "prompt_file": "plume_cycle_prompt.txt"
+    },
+    {
+      "file": "veinhold_pre_faction_reference.png",
+      "sha256": "bd17b4776f79f2472e789462b05cbf0a1b650a2a05db1bca8ceba758a8ae5d78",
+      "purpose": "Exact prior runtime input to the narrow Carcovian banner image edit; historical reference."
+    },
+    {
+      "file": "veinhold_faction_generated.png",
+      "sha256": "d8144bfea07539c921590dea6431b0c23af2cd4f1dd25769a6f9fe1663cd98da",
+      "generation_id": "exec-5776255e-298d-47c7-9c00-d59ae7e2e472",
+      "prompt_file": "veinhold_faction_prompt.txt",
+      "export_tool": "tools/export_prologue_faction.py",
+      "purpose": "Charcoal cloth and copper split-ring/bar heraldry; preserve all non-banner pixels."
+    },
+    {
+      "file": "veinhold_faction_final.png",
+      "sha256": "b79436d595ac1e2756b528972eea0183f603902664c1a43cd46b3939689f8b86",
+      "generation_id": "exec-5776255e-298d-47c7-9c00-d59ae7e2e472",
+      "prompt_file": "veinhold_faction_prompt.txt",
+      "export_tool": "tools/export_prologue_faction.py",
+      "purpose": "Charcoal cloth and copper split-ring/bar heraldry; preserve all non-banner pixels."
     }
   ],
   "layers": {
     "panorama": {
-      "source": "veinhold_generated.png"
+      "source": "veinhold_faction_final.png"
     }
   },
   "framing": {

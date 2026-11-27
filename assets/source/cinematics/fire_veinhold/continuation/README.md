@@ -71,3 +71,37 @@ the images under `materials/`. The original approved whole-plume drawings are
 reused from `assets/story/fire_veinhold_opening/shot01/environment/` and packed
 in the source scene. Asset-camera JSON files next to the exported frame banks
 record every actual perspective pose and projected landmark.
+
+## Carcovian faction revision
+
+Current Carcovian cloth and banners are charcoal gray, with restrained aged
+copper trim and a split circular ring crossed by one vertical bar. Guards wear
+matte angular gunmetal and enclosed visors. This separates their industrial
+uniform from Lucan's approved polished steel, oxblood cloth and gold detailing.
+Red warning fixtures retain their existing timing and color; amber aether,
+steady windows and rust-red volcanic geology retain their original pixels.
+
+Image-generated faction masters and the previous approved references remain
+under `materials/`. `tools/export_prologue_faction.py` restores all scenery
+outside explicit banner repair windows and the four existing guard/ice
+silhouettes. It does not recolor the scene or construct anatomy. Its `--check`
+option verifies that protected export; the ordinary frozen-layer exporter then
+extracts the same complete silhouettes. The first handoff plate uses Pygame
+nearest sampling and the production quiet-lens pass. Its fixed source-crop
+rounding differs vertically by one pixel from the first shot's fractional
+layout; the eagle-to-orbit handoff is not claimed to be pixel-identical. No camera, island,
+bridge, volcano or ice silhouette changes are part of this revision.
+Earlier generation/layout references retain their superseded crimson artwork
+as historical provenance. Use the current `*_final.png` masters and registered
+runtime exports as appearance references for subsequent production work.
+
+Rebuild the protected faction artwork and its dependent exports in this order:
+
+```sh
+python tools/export_prologue_faction.py
+python tools/export_frozen_guard_layers.py
+python tools/build_prologue_mountains.py
+python tools/build_prologue_orbit.py --render --samples 16
+python tools/build_prologue_orbit.py --check
+python tools/build_prologue_orbit.py --write-recipe
+```
