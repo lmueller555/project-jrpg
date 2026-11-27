@@ -1,5 +1,9 @@
 # Lucan frontal run revision
 
+> Historical revision. The active selection is `../source_art_48.json`;
+> [revision 3](../run_v3/README.md) records the current continuity corrections.
+> The implementation status and source descriptions below refer to revision 2.
+
 Status: implemented for in-game review, internally inspected; no claim of user
 approval of these replacement drawings. The previous 24-pose source remains
 unchanged as historical material.

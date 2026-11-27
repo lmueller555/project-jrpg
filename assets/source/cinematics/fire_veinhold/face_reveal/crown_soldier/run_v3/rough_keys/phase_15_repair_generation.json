@@ -1,0 +1,14 @@
+{
+  "frame": 15,
+  "prompt": "Correct ONE complete frontal running Crown soldier drawing. The existing phase15 in reference1 unfolds his left leg TOO FAR and TOO EARLY. Preserve his approved face, head size, torso, armor, navy tabard, exact arm/sword/shield carry and figure density. Redraw the whole figure coherently with ONLY this leg-phase correction. Reference2 is the AUTHORING GUIDE: anatomical LEFT on viewer RIGHT should have its knee still HIGH around guide y525 (just below the hips), and its boot still PARTLY FOLDED around guide y702, NOT extended nearly to the later contact at y950. The left thigh is advancing toward camera, knee naturally flexed about a right angle IN DEPTH; heel remains tucked partway behind the calf. Reference3 shows this same soldier's ACTUAL accepted folded recovery legs at phase12; stay close to that shape and unfold only slightly for phase15. Do not copy a generic straight leading leg from any boot detail. Anatomical RIGHT leg on viewer LEFT remains folded behind with its boot around guide y810. Same real leg lengths, natural projection/foreshortening, no sideways kick, no extra boots. Armor knee plates follow the two real joints. Keep current upper-body action exactly; right sword hand stays naturally bent with blade DOWN/OUTSIDE, left forearm owns the shield. Exactly two arms, two legs, one sword, one shield. Entire detailed painted fantasy character with every helmet, sword tip and boot inside generous transparent margins; stable character proportions, no occupied-height normalization. TRUE CLEAN TRANSPARENT RGBA, no colored guides, text, background, haze, floor or shadows. Whole complete authored redraw, no detached parts.",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_15.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_15.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/folded_leg_reference_12.png"
+  ],
+  "source_path": "/workspace/generated_images/exec-b5fe243e-500c-4cec-8197-c2d2f666d671.png",
+  "generation_id": "exec-b5fe243e-500c-4cec-8197-c2d2f666d671",
+  "transparent_background": true,
+  "construction": "Complete ImageGen-authored recovery-key correction; guides used only as references.",
+  "status": "Rough key actual-motion review pending."
+}

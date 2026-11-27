@@ -1,5 +1,10 @@
 # Crown soldier frontal run revision
 
+> **Historical performance.** The current 48-pose, 800 ms selection uses
+> [run_v3](../run_v3/README.md). This bank and its generation records preserve
+> the previous performance and the evidence used to diagnose its leg joins.
+> The commands and review claims below describe that earlier implementation.
+
 The 48 complete source drawings selected by `../source_art_48.json` replace the
 former 24-pose, 400 ms performance for the cinematic face reveal. This is an
 internally reviewed implementation for the player's in-game Gallery review,

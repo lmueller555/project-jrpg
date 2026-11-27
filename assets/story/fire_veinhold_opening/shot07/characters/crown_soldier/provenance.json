@@ -1,185 +1,186 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_faces.py",
-  "exporter_sha256": "dab0232f50dde7ad30b779c9f71f79fe3de678acdf61eebc09b4c30d0f43336f",
+  "exporter_sha256": "86d5b1a909c73c23c345490d1068cb3cadccf40aff0ad3f34c6e1af99e5ab596",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
   "alpha_floor": 16,
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/source_art_48.json": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/arm_forward_authoring_guide.png": "5825d9e862f4a85134509b4c4ac0126e0993185f2c8abde64e07771dd9e818e8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00.png": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00_generation.json": "e51f51e6a12ae8513098192d9d3dcd2c17e0885d2628497335c944654b619ad8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_00_prompt.txt": "f0294696cfcb5bb99bda1903f4106fa8d1a7f73c86fc8fbf9b666add196d3697",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_01.png": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_01_generation.json": "e233f1a204157f33af66048a5491bd984f0594cb8616e8b6aa33de19d759f1cf",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_01_prompt.txt": "be3f4ace40af92bd7c2c5ecec8dc01f8f001580936a2c397fcabfe0aa987b6e4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_02.png": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_02_generation.json": "935bb02c7a26c0e5b155080cffb0f434671401c4df56e62da7dc8364ac859206",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_02_prompt.txt": "171783c9ce39abd68142ef61fc9ebffd98ac059de671142d35f8a75d0f0d868b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_03.png": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_03_generation.json": "4a4c1198bf466344edc105dedfe3ad5e76549586018ee0c48504c8d2c38bdaaa",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_03_prompt.txt": "1ad23abbbb37360f571498cd158626330fbba03b23293bf28b93d18309cbba64",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_04.png": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_04_generation.json": "e30645258ed59efdd88431a22d8f460999a17dcc66e6fd34591bf404c604af69",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_04_prompt.txt": "facfea3cfc51c30668360ca32ad13575801bc63c79d71c051ee5dc50f0bbe2ac",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_05.png": "8ba3d3864b4dfeb683a06dd72a289bb853484ef18a46b4fecf6429b6bc6c168b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_05_generation.json": "43869d6ef5fb84888e252353f4f56e2c8375a0fb90b6b2a20ec3caceca4eb7ba",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_05_prompt.txt": "3690f115611a9c580de00aabfb0ba0c6639d89781a0a50536ca043c1082e0e39",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06.png": "c0a634c8b14150392cd682dbfb74212aa2297756a4ce204241e254620398b7f0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06_generation.json": "27cfc10154340fa683c9ed22ebc798b7c18d1d15a860213c5a67784565e31c8a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_06_prompt.txt": "c7145661cc6c4af44bbd35b45ed19f349896da98321bcb8e51af3d8871b2808d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_07.png": "a5a3339f872fae623df3b0b34fe24b3336f86f02d6d9cb7c33234aefef54fde7",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_07_generation.json": "6cafd0fcfd0aafec28a0310e4c0cffc9609c518b3292c24720e95c7e52609382",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_07_prompt.txt": "50f775f252195be0eff13b7d3c751f5d7e6eadf78601806a2c1115984f54ba76",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_08.png": "557cfaf22fffdd9f8d2a7d0a49007dbdd4c6a1b07603ba4a86f2786583e0501f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_08_generation.json": "271122a24392067efea9012bdffd020d5abb6ef8049266de8c805a1a92f5d158",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_08_prompt.txt": "a3b54d563628ea0cff410e19d2bcaa1d5e5b170a9a37b8c6d16d9c5ffe9b3f57",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_09.png": "6fad637c03b83eb7d9387352f84718b12e1da3014c9c3bbb5e50bdca8eac1e50",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_09_generation.json": "c4ec42cc64abc80e36f79b90e97370e41ca3bff4fac2ef890941d30b49c73f2b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_09_prompt.txt": "e4308f5e59ae9ee15cff0b862dac98b851e7eb5c117180a0b0cc2c7a8f7ed79f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_10.png": "71416f2b796d40550187e64af4b4f2f33ce727d1641e9d74f75df980e9d3b9ed",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_10_generation.json": "e459418f89437cb5cd992a3585ce550a0a5776c5e4cc28dd4ef28741eee40751",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_10_prompt.txt": "780d5e28bed488e2d12b9b9b995bfb8cd5f31a6ce44d9c6b11237fda00028992",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_11.png": "2bfc02a5e86c24657df995eb7a39fc36f9a5873b2935124cbf28a14e10c84670",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_11_generation.json": "2c8b4da9f27baaacd41f052688fdadfe9bd93339c8e28145956e5ff808a26611",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_11_prompt.txt": "8dde5fa0ee21f8a2f3a43048927052c811cc9216309459738b01aed7622d341a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12.png": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12_generation.json": "aeda45408f720ac739248ec67677565d70b9b066657ec8a0cc57c762ee3fe4b2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_12_prompt.txt": "c2ca1b31861832f2ceedc1df2ae341968871182b7cfd8d2d908c98276a957b40",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_13.png": "6c03f5450e4bd029859550e7df2e4ac35fd2ad1bf86468607b2427f4d03479e3",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_13_generation.json": "f6d56dce7f646ef2ed670353da54a931a341d20ef20c171ce5d34bdee9b51dee",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_13_prompt.txt": "0686a858849688f4b533dc48639e97e081f04c4ef479f39bc36a73a52bf70f45",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_13_repair_generation.json": "b7f6d03a2fa57132371c8e5bd7ed2811f3235c44f4f5c34267edc9c94b5916ab",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_14.png": "faacf486ca7584e0b7ec2496fff1837d6c8160bf826e4be989a3a25e1c474175",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_14_generation.json": "6e072d5707800ce4e85803f5c3d46ef06d62d654c503da5b772ed026ade7891e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_14_prompt.txt": "4e318022b66d138c10b089f0f3a894d01d380fad38686d72e31cd5d034b17a20",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_14_repair_generation.json": "218448e3a913efb27ee16858610062869c75206e90a32044ece454f81a0d2d55",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15.png": "a9dedda00da5c2de0366abe1f8e867e5f9b013953f10bc8dea44df292ae2294d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15_generation.json": "0e1d7ff47018d3907e4904dcea0e0b4f1c09141665535d432f0cdd0e126cf7ca",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_15_prompt.txt": "74620fd78d220e09755a1d9ab724f3d2d6d47a09e931c9d301afad1e5fedb8ab",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_16.png": "afc0b1f22e84d0b50d8b7bd6e75b7bc443e1028ce59279a714da851a41b51d49",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_16_generation.json": "f963e0fd78d32d533da642e53484ba293ee96845940317dab5901fde2c528e8f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_16_prompt.txt": "042b354f977ba4a56bd12fbea2cef2434b3327dc7ecda80a08b4a07e9570f13f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_17.png": "d65d488ae5d1d5f82e8fcd7b414ae18c6de905386ec9adfc4796dfa994478bc6",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_17_generation.json": "9c3a42b8f97d3bbedeeec27205e2334c36ec466993526497fe5911cf930d6caa",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_17_prompt.txt": "d125e237f88e24e47d943ec370fae6eb4c52e2ea0268f9799cdb9e8e5e856d9b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18.png": "c192121a2b982e72d00b45cfe32d8bd7119ef548e332c96fbfc8c3fb8b3f2de0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18_generation.json": "2764d8a27a0b3208be2bb970f51c5b08bd2263c1ddc238de2af12c323f052cdc",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_18_prompt.txt": "88692397b6829d3e84269f4cc49d10bb5442ef59a7f24e1d7587312a1d6fff27",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_19.png": "33dffe107dcd8220c83fc38ca4cd52cfd322ac83e35ea06c007ed1620a6c4fce",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_19_generation.json": "d1ee798c4b43fe7d23ac87d158fbea6203359917ca34831950e02157d35ef95b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_19_prompt.txt": "c760044299653e6c50fe5b2912893a8354a9ecb79b52f686d4179bfc6ec8139e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_20.png": "4524dc80403436e4d00d974e29d92b4712502746e36754ad270485cec25947a8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_20_generation.json": "443928bbeab70302ec44a22d35c78f587cf2126ac307f9b2d876038afac465c7",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_20_prompt.txt": "1cba58d22a621d3a2fbb879284031f064ae7921a5f1283b05e184c5c4c3a02a0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_21.png": "08b1bb1e7acfbd83521623cbc0accf6f966aa4fd7a399d9966e6fb6b2c9b045c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_21_generation.json": "27f3cbe45ef8209def77dfed86770a891f186f43a762c531a5b087b0ab18de20",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_21_prompt.txt": "b3292f71b7c215c169697cfc3c7cacc4c63b1f77782f1bddfd358901f699eeb0",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_22.png": "c78ef3d65556b56d85628dfe69a9f1659a3ceb2b639acdea434ee6f0bef81046",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_22_generation.json": "e85698495168ac8b8acbcb27a4e7d62c85652137b9e6e3f453fd354c03dff848",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_22_prompt.txt": "a03ff29990ce1489e131d57e0d4246b53d5dea81c2f202147bef41be03ff3c9d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_23.png": "3f0a9f00ca3fe21e62cc5088537f0c1dd1bad8aa84667b214e15bfe8af38661a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_23_generation.json": "91829e4b5ab7ec09450ea205016f54f64f0a4f817e34ccb7c8e1b58c7055ad5b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_23_prompt.txt": "ed0b43d2f5af4a2fabb61ab00e7f0c5b056f802147219d7b740e6ee9673e74e8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24_generation.json": "75416e685432a8d740b4d2b7d30d3ed105d2aa0e790e9cfae9b8c1e7dcddd4f8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_24_prompt.txt": "73e8671d949d44379246c6f7af38fcce753ff7558f7114dfdbec2054f2c17665",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25.png": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_29_wrist_guide_recipe.json": "50c63151c70641f7eac8bf02ac045ef8bcb39c06d9e67999f4cdeb091011ac6b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_generation.json": "37c4408e5377daf35f2ec60caee9d2e4786af3c6e022422ae42953d6b5afbf20",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_prompt.txt": "c3bc301994a0cc82a6126411e9b11fe3f7beb79ed7f300e002e48a1c2a9ec07c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_25_wrist_authoring_guide.png": "96aa6ab132c4570f5555fad7444cd6000225296dc628cc7429495f6a51d1aed9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_26.png": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_26_generation.json": "206108cc69386f0cf1f4b2e0199d45b1ec5f7b6831f2518b34812a3a188a8f7e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_26_prompt.txt": "e4db1869a9c8182ed8bb31c1f0cccdff32a30b75a13104d2036397fbaeaec8be",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_27.png": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_27_generation.json": "8df718bc0f3ab567606377f655f1a3bd07e835e4f6500f2a9da410af236a7ab9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_27_prompt.txt": "157b621c41decb7281b5084bee2e11eac3b5b89114c901f12ccaaff98ebb0b02",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28.png": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28_generation.json": "cb9df94f8ff8e50eb4c67c329085f593ddcab0be24616cd65c5e08c5dce34b70",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28_prompt.txt": "3df7769ed42e6d53d84d60b96e47c125c5724a5cf4181a6b267b5902372a1878",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_28_wrist_authoring_guide.png": "ecf991be1411ee914b465f739c30efc364dd97e812f70780cf7fb1f8137f243b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29.png": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_generation.json": "1a2162d7e4ff782d228681ebd85dfa0ccad3dbc3fa3b076de30b0afe3144f815",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_prompt.txt": "4d12fb82139e25e892ebfb81ef08e691cbb6ee769ffbcc81694007b95181ef6e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_29_wrist_authoring_guide.png": "3c52c0ff59a6b7b3e8a9edfb3357ff337d362b43e7444ec179fba3ee16bdd266",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30.png": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30_generation.json": "0597ce043fb5e2d8b75aa11e2ec5930f870b07de04819b9fff649147557995a9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_30_prompt.txt": "5c49017847f2fd1c659d9fde81b5e49bb6631d162094c1cc254b6e7f2dfc3e49",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_31.png": "09e9c5f1c1d76eb21993a7d415eb6ffc60bd8592f3819324784b1bdb7dd1bc2e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_31_generation.json": "0e615a0feba5bf81fd6e3f63e83bc53cb4cd0b5ea9d9267583daf09cd52dc04e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_31_prompt.txt": "febe3413e59a827e74fb1468f92615f7ace4355700aeea16abcc9334a6b59419",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_32.png": "7682b5f72a278ab294d9702da0044de94422213d0c301e3f141ccfc3fcbf3890",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_32_generation.json": "a94251bf8f62903129b9bdfe5df90fdd01bdf5ba3b0d0bf9cfbd00070a1eabbd",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_32_prompt.txt": "3287e7825898b06286c416147d0197657d0eb945edd5943b288d772e85080c60",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_33.png": "a2e4bccd3a3d3b6d260820772a8d4ffa5842d14d105a14869d69beb158ef7874",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_33_generation.json": "2ee78cb06284c92e7581a8ab9ce1c6d44042a54ffcfc4e9c60d3d4a6eb4f038a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_33_prompt.txt": "f2b820f70caf1168b32d1ecdd8044a7c156234e6758f566bea8997a1ba3e0750",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_34.png": "d844e04c2064ab4aaaa5d5faa235c67bf2884ad271a4b4b4a7d6a508ee2fdb26",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_34_generation.json": "f1ef9699668ab41406b57b12ee7290935785bdb9e2b707013b82dff1dd57f4a7",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_34_prompt.txt": "b736b5999b8e590a86a19f7550ecbb3a1289b32b7622f46364baff188f1c950f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_35.png": "f33d6dec0c9af2ca80035e59530a9773476dd334dac82df219f54c8fc49b1b89",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_35_generation.json": "8c22c29d96cf27186a889ba588826e8ea4949dbd67cfad876bec693996d939ea",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_35_prompt.txt": "7f46da801e50d0778ab3c92f4227f80fbfe7069c3948a7dfa1762be0f3ca6383",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36.png": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36_generation.json": "d10805bb456281b9ce3a2ad918500bb04b5046ec0ee76dff273d48f58a48c8b3",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_36_prompt.txt": "5fa726c74c5bca7dba6deacd07c47291b97216ac667c6df447196cb26c21e8ef",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37.png": "59d760dd4d1e7f026bbb0d4f0e79c92ed8dcbb91bd542ab0a7e01914fed952b8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37_generation.json": "c0eec1d4acd3708ab120a73932885ec80d1d4db3000dfa6a6d5d0ef4ad9a722d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_37_prompt.txt": "3aee07f2892ea3e4b7cf4c2f1a02448296a5dce7325976dcba9220f31f68d4a4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_38.png": "218f0f1b58b20ff2bd54bd66b7d0a936c38e45af0a4d8cd870408b72ad09ce9b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_38_generation.json": "1a07b2b7163a6906403031bb1f0618b733980bae105ddde99fda577acaaf81f4",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_38_prompt.txt": "f4c3bd28f532837af50c415834e77bcb3a1b71c4cd9df4da833f9f20f5b2ce7e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_39.png": "00e05fcb9b52b291dded7429aee1150b0bd7d8044a7eb83a27c75036edd9f99d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_39_generation.json": "e3aeacb9ae803bf33fdfdf6323720d6412fb71f105198cc32d1c29ced18e3b81",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_39_prompt.txt": "759f781d8197e52bb94b2937de0229d28783a678119acc62d591ef8f2c858943",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_40.png": "1438f499e5f54260e4a10580a0ae46d378c110b1f96e416e4ad75d8f8bc82a06",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_40_generation.json": "b06ddeda89a7c267728fa5acd19ff7e113f830037b02f13a0509cbb62cfc7673",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_40_prompt.txt": "592d4334bfee4b7ddc23efdc66aa83f88fc71c58f80202316529daecc0f6e819",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_41.png": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_41_generation.json": "f53f95aac70bb494206f27173eae5a388b5f32c4e5a55e9c06154abc67f20e89",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_41_prompt.txt": "e9f41bd538875476e801fd136d541205863dc1fe12ebf450d5e6596137c190f8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42.png": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42_generation.json": "199e83f78161f10ccada05b27effd9206233b66cd6312437e5d7530c18375e73",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_42_prompt.txt": "a130d81b7a8938b7e17fda42af4de8901916b8a0ab0c4ef38ef3622e4130d880",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_43.png": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_43_generation.json": "48bbb20c66ea6bfa918bbb010d0073bfb6fc46749f6320e30097bc159a645f4f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_43_prompt.txt": "edf120a2b60f8ace2cc90947c6a0b37f219f4ef01df820344cfa2398feabaf02",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_44.png": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_44_generation.json": "faab01860757f8c66998958933286dcc05d2746310e764a9c87f60b3a2fcf021",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_44_prompt.txt": "9f545b4cbe05ae1c13952c4b1789177092f7ce0f1358e3f237422fdabb2b1b0e",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_45.png": "c483a37b0e103feabbef96281397c430c43baead275487b0209e2200016db748",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_45_generation.json": "0522861e2f2319fc4210ff5b3545ddfb841077cab7872d8623e8a35f6c94aa5b",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_45_prompt.txt": "b9072c43c93808fdaf2fc1332e515b95c43687164667422810ac80efe6eb1fe2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_46.png": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_46_generation.json": "15473d8ebc1e1507955c5be85875d53c26cd18a1b47746e478ee20ef86c312d2",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_46_prompt.txt": "5a44f7e23826346ffb765476139eedb82b0fb661d505ada32a1b9cc5f5709341",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_47.png": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_47_generation.json": "d8afd20a7ec198f40673914ed0399df4dfeccc069831464eea3a4cc812b3a897",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/frame_47_prompt.txt": "0b3f447767a8758f5af6c935d18f4e9de62902cad14ee57f640b9ae0c3d17cd9",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_00.png": "7fa8b0ef3c033385fc8755065d29c376eda694034fb240ce0593cfac0cc2213f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_06.png": "994e0ea3b5d5c99745563a85529dc89d785e33b353b8f4bd55349ecb924e7efd",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_12.png": "3c64aec593fba76940cb60bf89a537edd9d141218e3deadb6cd34cbab3687f14",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_18.png": "0f2da024f1e73187e7c5208dd1b36af041f9dbfdbb47839330a64f28d7c752d8",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_24.png": "16c2083c954ae7e732657d2a8c2372828b57496a9c7deaa418d2780d6f50fb8f",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_30.png": "e2f629503f14bf3242a638dc8812c07710be782c639594dc63b9193d1f02bbce",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_36.png": "5ea5c66fb6f4983cc1aea05f8da5f3199cdac460c57ce88c527f605befdc6f3a",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/key_42.png": "6d7711816811d0040cbb13d79ef6c7585604a30feb4a50a8523f4cb0ec88d04d",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/keys.png": "47825aa873afd290eb84c176148f9502713fcb1d1eab3e02f6533862635cf148",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/keys_prompt.txt": "e8cd9db587e8b5aba49067d6ab6250c044e1e231f3673f93588024d681573939",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_13_authoring_guide.png": "bc61654e6c4ab6401b546ed68ebd7f4dd0ec2138ff63092b9faf60a02c65a725",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_14_authoring_guide.png": "95b490b39b0df84a0aacb8483d2e4e016f06ff4210eea0f312a92fa33a682900",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_38_authoring_guide.png": "abd3440d638243f3e53454f5d905502c1d1aa40ea2483bc6108dae225cca7127",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_39_authoring_guide.png": "c0d4112b47f3787f70460a04cf093c3a667a4cabfb9f2fb4a59b3407f96013fb",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_40_authoring_guide.png": "be02dbe31565280c4cff2b873cd5b2992a9cb57a521b46dd3c58cbad74429f13",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/leg_41_authoring_guide.png": "2aaabb6181ea956b17902ec404b6835f9f61470995162171aa518a78fdba2327",
-    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v2/register_source.py": "68948c5483d44ab6ff0be2b7bd5a8f540bd7ff7c3eb8f1551a0414a4a8d2db05"
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/source_art_48.json": "b4314ad973a206abfbe9e0c92a9f3e735719ea2a0ada2c7380b84afebd06f48c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/retained/phase_00.png": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_01.png": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_02.png": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_03.png": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_04.png": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_05.png": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/phase_06_partial_repaired.png": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_07.png": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_08.png": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_09.png": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10.png": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_11.png": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/retained/phase_12.png": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_13_b.png": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_14.png": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_15_repaired.png": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_16.png": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_17.png": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/phase_18_partial_repaired.png": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_19.png": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_20.png": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_21.png": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_22.png": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/phase_23.png": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/retained/phase_24.png": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_25.png": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_26.png": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_27.png": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_28.png": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_29.png": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/hand30.png": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_31.png": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_32.png": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_33.png": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/phase_34.png": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_35.png": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/retained/phase_36.png": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_37.png": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_38.png": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/phase39.png": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/middle40_A.png": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/direct_41.png": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/phase_42.png": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_43.png": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_44.png": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_45.png": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_46.png": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediate_47.png": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/selected_sources.json": "db35b2cee9e17cf7670e91b34eca1342180b6f57b99b6d03e34d85bbf5380c65",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/history/baseline_profile_48.json": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/register_sources.py": "0a7d464065472f9472fec6d4045e26cff8d4d1a591aa6376d75b296369085915",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_03.png": "2491ac7c3b834e2502c85445d3c5d523da6a5fcf428f9da70c4b3bc92630d89f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_03.png": "9c25e6d0910417162c3542f80c090bdacb446b79acacba4fb5d5a9c8b86f7c31",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/boot_reference.png": "1b71f72dd9e35ed0db4738c74ed9368335476684dcb633bd2103f02ffa0c2257",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/sword_reference.png": "fdd5482978ffb6a51c728e37abd9c5aea23b882e1cd7cf163278612abc967f3a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/shield_reference.png": "bf2f955ca868dde8cad261b8270feef3d94fb9bc4f9f7881130963e4e0fb5e30",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_09.png": "01a3104ce3b2ee39e4c88db8e1cbdc0bf18535d0557ca20ca664e1f233127b24",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_09.png": "6915867f504d91c08731a267d898fb33dd09c6a859feca897bf83dc9a46e4525",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/phase_15.png": "9aa11f236d7cd2805cc4d0c7fc3fc3919cc5f86c217f639f936a8a8e5a72ee85",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_15.png": "b1c701d5c3e6a34a1ff6d3b50d995d949ccf044bc4c7b7455f6691c9b7a8300f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/folded_leg_reference_12.png": "d0e29591948ddb5ca0972719e27db244bb21845ff55d6f69fd6f25c915ec6cee",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_21.png": "e98749933a218b56faac16a41fc4f1446aefd5c50b0376bef133b32f6d62ce7f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_21.png": "9f65011ea3f64d5fddef93bdcf106ce2d400a4edbf71b6a0f4b70923d6ffbcae",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_27.png": "864e06bcc9db4a0105123d8aaeed0f2d2ec63de69636faf4add153a106ca7f7f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_27.png": "d15921dd7b34a650fdafc8c5a034ebcbe055b99a052dda117f36d18a9befcdae",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/boot_materials.png": "55ac9f2e5ce3849c883962152f1d2323b09caf9544843df2b47f0d2b0078b9d8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_33.png": "69ed6fdbe6717bbefc0f6f5e75635f268543054c468dbfe756ca0840b2aa12d0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_33.png": "98f44aa337dd76223de1b1e10b34f2c06f37b773da90360be3afc5725ea7ac1f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_38_68e291bb91b4.png": "c3cfa21b90446363afd5048e960249ec354c4f3cdc0faafac5c63e16350dfd98",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/phase39_guide.png": "58b51d9856dc3f0ab282c6e22bd32faa186609aa643610339da536ed0b52f1c7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_39.png": "1e4ff87bcb46cfc43f86c6e901ff722393477ac2f0a2b1fe1e326c61d9e25f41",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/guide_45.png": "5410d7369d01fa6608afb891fe097d189b437d22949eec1005e7ec4a3921293b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/rough_keys/upper_45.png": "0b1935297a9e504a45668e2085b0f46369a8fb5601898490bce6fc62c54270cb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_03_452b552f3ac5.png": "dab43a8dde463873aaee8cd54ae4b7781ae76f1c89ec13d77bb93d755807fb77",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/upper_06.png": "b9216cb6568fc95b2472298935c2351a9d15b9d0f9890e57a24e65f17255f708",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/guide_06.png": "f31b6022d86e59a3901b68c4b1185f6756a73f639fa0f5b4614160b430b26dba",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_15_823a1438796f.png": "d21929f2bcbda091e4b83a67bfe896621bdbd3698f51f8d18b9876f618029dc0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/upper_18.png": "c5280c33360ecddb417927961620cded09c15dc9ccc0117a858dcd627c15c866",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/guide_18.png": "dad54649a951d3f7dc581e8b9370e54155bef67c12b21d91542f83feda5668f0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_30_66caf118ef23.png": "1bacdfdbfa328fc467dde146f23b4a5d41312ac57dcc1646f1223a8d2d333e3a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/upper_actual31.png": "0c487a8a825472d28fa50f49b2f3674d3c511de9203be7e96146259c3fa9b2b6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/hand30_guide.png": "482690eba5967e749641d125fa7cf922910a248722218fe9de77e18ccea33ea2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_41_d415183e6479.png": "ad2989982a0372b52c691e6309645bb3818803ae5f7e655a693aee0dd39e1fc0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/upper_42.png": "5e2fd4907aa86212e59a61470d1b54639219eeff1a2c4f3b9cf82404577d4837",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/guide_42.png": "af1a4f79a4f84f16226577a3602b0b2b3942d1c00e7ab6cfbbc22bba02d0fe40",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png": "4cd1eeb2ced6d1096a5c0fe29b0c611198aa53ce4345a7a93133216395263200",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_10.png": "120da7a8936d4ecfa2e3a1d3f6816505bd4cf50920344847efac0bd2329aa0a7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_10.png": "e652350671d252441f8dce4adf84022f3cd8d89d65192f4a6202368333486090",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_11_b_guide.png": "007eb4177714ab07f143710f7ea2ba6537cf675fb1c26e131682ac899a6e77ba",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_11_a_reference_registered.png": "19970526e6a674ec743015c7723d821c555fff0d22b6479463ad753997311b3f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_11.png": "0373eb7bcecd13ba2f2253245cd4c15207aedbfc89621f61629687446ab78864",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_12_8fd4a2deb081.png": "fb4b20fad921f863b6920d0a5328b3ea431e9cef247084b44ec4c409ae332f0b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_24_9f08262536df.png": "c9fe3e23d5bea0d2958472627fc48490d87dc225fca503fabb215dcb2b56a912",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_25.png": "c9e0c6c7d7def0bc8cc3d4e10cd38463c673b5ce85fb3e890d87220556f14495",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_25.png": "c35c42fe588903c4a93f49a8638a9417ac9c9398ecef0c281d6802c196863849",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_27_caae34273bed.png": "687da43d7627461e5ef2421794969537dfa99d4ff4f2227d645545e5a208412c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_26.png": "1ba01ced1062089127ab22c70c42ea897f73047dfc5d3058c82a79258c8fa5ae",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_26.png": "10466ff4e3326b2a6f2c4091b44d12ab5eee956606742db3e8d49582ee9caeff",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_28.png": "7877c3cf99c22f2b5d78d307ab61d447bcb875a30c5242226159542c8d09002a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_28.png": "3251a2ae31232da0cfb71af644c65fe74e639993eca20e9e758fdc3c9d261903",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_29.png": "0688f3db9ba49ac67f6c0cc38fa2c5e117ae02efd3cd6fba3012eac5217db768",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_29.png": "4b40afc80607607a5ee9791b37e1c78ef25f0fc6b1bf8e149135bd948df67c97",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_31.png": "38893053514f733d1ec8c62eb4eb782cdf81ea0f087396e11743de38e4263efd",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_31.png": "453e4ee255f125d516198ae3f721a90299f96ad815bb069da39a9182b9f1360f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_33_8d8b4648c732.png": "de30c73e104ada2a923e70dcb96b4332e98808136239da43ad2ed71e36f8f611",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_32.png": "d9e22b1d71887cd6b7c51dc2f657c683aedcc20074f3fd7aa4600c90ec7596f7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_32.png": "1e7f6590bda8138bda6ff9aae47010e0108b5f62dc0326085bc85541ccc53ca5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_35_8f24801a5d35.png": "78bbdf6ea7b76ddf165e81d901aa498f0785ff6a078bd6d1a24e8cf85c016625",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_34.png": "3cd7aafb570edbb668a09f96cf15ccaa54dc8609b0ae1a6b244acc6446bd02a0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/guide_34.png": "efad845bf5aecfdbaeb78586908e8a3dfaea90814adaccd673d77fb02ef64806",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_36_33495aed4fc3.png": "bf20ec82a36e41fb06a4199a3c670d7372068552a37441000c2af8bfc9c3077d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_35.png": "2aaa999356fd47797eb1ed8317148f319adfdc8b8997c0d3c92d53c320521c2f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_35.png": "50c46363c7f0967299395034ec8c95a697395b63915581c0942d7a8e65850476",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_37.png": "c78f388a903fac6db724f72fce7fb1c8ac5229c7fd8720f54b11feb7d12b1b71",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_37.png": "61d066c1c8462ad2404ddd92ce9d174379fa2a1a5e4b4da715e6bb800a9ec922",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_39_474ceae89f01.png": "c5181b775390df824081767c2d75dd914512a85478aed250f0cd10dd87d871cd",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_38.png": "9352d66e147bd925265a818089bb3f8a331a9c23f0f201aed00fe89f214e65b4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_38.png": "2fc1d84d983b9cc19207bc33eaa1908744e6d25ca199685178dda592f76df58b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_40_f5ed3a99d445.png": "f6b69ae431d0fa6fed6829ce7a3354572a54d8c353af5719f6003bd7d2e0b92d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/middle40_A_guide.png": "7a2d955ef67e1fba01eaa8545a9d77d990825dfe69df345c75d93da5c1aa480b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_40_f8987bd5dff2.png": "dfca53497f766bc0941418c76643ae08b39b18530b5a04d3b97a7f18f93dfa9f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/join_repairs/direct_guide_41.png": "04679094a9042193c3dd754bfd96c2c0a63d258f19a68e254a53f90ee2899f0b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_41.png": "98ab468edc8db9d3bee9e5879ad671f0c7b175427dd33aa18965616c224086a9",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_42_be01e1b11216.png": "0e8d43b0c7e2a3dd8116571550ff1cf6303d2c6bf8cf5a6705c7b4f03918c58d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_43.png": "1ad8dda71e51dd172c71454ea437b08826380cb545d374c077aa60b38462c873",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_43.png": "4d2b7efa4ed106a912a9aaf1b4a84176cfbb30807f39225ea11fb587023129cf",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_45_b6e24f6bbe7c.png": "a2cb3475aedfdc8cbf4badef3d8a089a951d5650cc4ef9be5a394638bc1d6988",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_44.png": "0c8dd466a05dfc89edf0df0f6afb0e3e9ca24bf3b8fc2da7e8d758e66b88e91f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_44.png": "67c89055651bf4f06f37aa74deb7f6aac0c745ec7f0a447f4d15940cbc34b351",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_46.png": "eeaf89aa061be15bd5ab0c23c4983561c19665c2da2f849e8212b18984d522f1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_46.png": "9e82fda166d547fbe44952e5ca840fa2877b14d5cc9ff5b1836b598b10837bd2",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_00_d2068e0759a7.png": "ee7d965b3f0f6d28afec83efee1f6af2b19dcf597439e5506e556be0c2421c89",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_47.png": "c6039b30624d10a5f0ef209fd75d21535143da42720c7e3379eef219ecf2870f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_47.png": "c7b4647a84aa3e99ca00529931ccba7a15ee2900e843e7654bd6c74e47f45903",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_01.png": "3d1edcca146c2511015371f2720d137788c5e98920e9db49688079b2be761684",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_01.png": "90019884e910607bcc1f1c976c8aa5e583d365cd13bca01e6041ed9c2b1bc74f",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_02.png": "7c349bb03d8e7a4932bbd4bd5d864a624d0bd09d107dda820bb9694e7cace3a4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_02.png": "71a261853bfc7b7f424084cfbbbc8763b8e0e979b0917604b010774f858d86dc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_04.png": "8665b5492f51e4a276fd6d0ea39ce45bf6d555a49cc3b116eb57220b0d698fa5",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_04.png": "171af219c700e3133b7949505f9dd12e4bbfa87d504a06dac8222f1bd49ee7fb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_06_5a9fe4631c3a.png": "f99b95b3c6b6b08a9aba2d8de3e26f232ac9429170c7452df45ac4d147976a10",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_05.png": "a9195b834d7965b41a5360340894f9f534fd54b54c9f8cf0b25fb795c2a128d7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_05.png": "c55a822aee2dd69b5d103f268ff04fae99d2973a663ae10bdd33bc552da1b56c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_07.png": "a54edcbc817d240bdc238fa93e345046ca23cf8ba90dee8de502b92450822a6d",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_07.png": "1195b7d67b28e3d3661a190ddbb48449261271e632ee8d18ed9103b44deb0d39",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_08.png": "2065de26b765dda795258707baff7f2506361c4121c3b91b41055f91ef01cd4c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_08.png": "6c6c9cbfb310cf1b0bc02f0db300ce57f379482f75cf48ada3be4037e14b369a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_14.png": "80a921a2fc32426ab98a8e2f77b21a8bcf3ef87f5c9a05b05b3d4f56af19af4b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_14.png": "f15d7eb32e1d169ec2a3fdf92cf83458af6a3842e8820872d21b3db19b9fd230",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_21_5b3999bb5b0b.png": "c056d58194ada37d71e83f8ae2eac501776b41446b8aa8995fb8ca860735eabc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_20_guide.png": "d47a762d3026ce84ec43e1d8b98641226bca6db73ebbce8052601941771ce0ad",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_20.png": "3547b3f25e6af8f041a21a4c5f19df43b21473081b2372310a9865389cf4d747",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_22.png": "15d066f0ef3bac15c79f1920ba93a864987ce7454ac12495f4308f4d247d7234",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_22.png": "4d45b041d1c5eaf1ae4895cebd0697160f11d510ccc8e76b3766b48a7d16df36",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_lower_reference_12.png": "f170b8a12ad12190f0feefc550f01abf9834c7d4a8d97b6f338264f89c3562cb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_13.png": "0938e575c3b5fa26429074363a2e0db37876f4c6c40349205fca67af94165ca6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_13.png": "c6da424e13e6ba34a83c83a96ebaf3479582492872262a495c5e56696609990b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_18_8415f2e15c85.png": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_19_guide.png": "67c212d348015b3051dd1ba4bdaab73f517127e1de66d5ddbb70a0d5ef864519",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_19.png": "26fb6f1aebd53dbd5595694e419337bf4ea15b44687e9b2822d899ef9c18dbeb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_16_f825fde52237.png": "dafc94f6d80f169b042a3280c40e3b49c05c329a9180a18c3380e40c0acc8a79",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_16_guide.png": "cbc26393e85dbeb41b3687970739810fc5ae388a44290c344e0c3fbb911d0bde",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_16.png": "23ad38935962ac694aa5b1a939cb098ca6da3eb5cb18c72c7f274562daf579f1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_17_7cd194009fa6.png": "639e9dffea8b3b10eb01917cfa7e3ab2cd4ec5626937ef2396c06cab96b2b640",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/bounded_17_guide.png": "26c09189a63996fc813ecc721b2813b9af6d6ba3509decf987c3e80d1ce6c1a1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_17.png": "ff6163860dc00921cda6e2d9cc038d3c9fdbecb99c913ead0f15965ac56848f0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/root_helper_23_eb5fc0ea5255.png": "76110fb85528ab07663aeb77298a6302617d4bf59d86fc031892352a5cd45118",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/first_half_final/guide_23.png": "d0444b1ad42b0ad4cfdb5bf3b71224d3fc1be82423302abeeb5f359c74ab91dc",
+    "assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_23.png": "753b7a2a73cb2351661c8e11e91613013e78abd27db18e54476c055aa52ba62f"
   },
   "registrations": [
     {
       "frame": 0,
-      "source": "run_v2/frame_00.png",
+      "source": "run_v3/retained/phase_00.png",
       "cell": [
         0,
         0,
@@ -237,38 +238,38 @@
     },
     {
       "frame": 1,
-      "source": "run_v2/frame_01.png",
+      "source": "run_v3/root_helper_01.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        43.19999999999999,
-        68.9349364905389
+        2.0,
+        1.0
       ],
       "applied_origin": [
-        43,
-        69
+        2,
+        1
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          568.0,
-          199.0
+          545.42857,
+          267.71429
         ],
         "neck": [
-          572.0,
-          312.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          570.0,
-          593.0
+          551.42857,
+          601.42857
         ]
       },
       "exported_landmarks": {
@@ -277,56 +278,56 @@
           188.4
         ],
         "neck": [
-          386.2,
-          256.2
+          386.0,
+          255.0
         ],
         "belt": [
-          385.0,
-          424.8
+          388.0,
+          422.0
         ]
       },
       "opaque_bounds": [
-        67,
-        95,
-        613,
-        934
+        60,
+        94,
+        619,
+        950
       ],
-      "sha256": "d6b964e1fd1d47f75804e5879aec31f79562f9b8d39715fc010e6df003d10d35"
+      "sha256": "dd22e0b02ddd854f712822e73e16abcca10aae46e29a956a1774cec3dbcfb3f0"
     },
     {
       "frame": 2,
-      "source": "run_v2/frame_02.png",
+      "source": "run_v3/root_helper_02.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        47.400000000000034,
-        75.85000000000001
+        3.0,
+        1.0
       ],
       "applied_origin": [
-        47,
-        76
+        3,
+        1
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          561.0,
-          189.0
+          543.71429,
+          269.14286
         ],
         "neck": [
-          564.0,
-          306.0
+          544.28571,
+          367.14286
         ],
         "belt": [
-          572.0,
-          585.0
+          551.42857,
+          602.85714
         ]
       },
       "exported_landmarks": {
@@ -335,56 +336,56 @@
           189.4
         ],
         "neck": [
-          385.4,
-          259.6
+          384.0,
+          258.0
         ],
         "belt": [
-          390.2,
-          427.0
+          389.0,
+          423.0
         ]
       },
       "opaque_bounds": [
-        83,
-        97,
-        630,
-        944
+        49,
+        91,
+        633,
+        942
       ],
-      "sha256": "2eb5c1365ddfd050aa418f961d621028d8a31385bde439b2604a939329e9a427"
+      "sha256": "58b606ca70013e2cf4759caaad7e3f10afebef8e2ee9c06c2b5239ddad6b5aa4"
     },
     {
       "frame": 3,
-      "source": "run_v2/frame_03.png",
+      "source": "run_v3/rough_keys/phase_03.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        46.80000000000001,
-        71.7
+        0.0,
+        19.0
       ],
       "applied_origin": [
-        47,
-        72
+        0,
+        19
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          562.0,
-          198.0
+          548.85714,
+          245.42857
         ],
         "neck": [
-          562.0,
-          315.0
+          548.57143,
+          342.85714
         ],
         "belt": [
-          566.0,
-          592.0
+          552.85714,
+          582.85714
         ]
       },
       "exported_landmarks": {
@@ -393,56 +394,56 @@
           190.8
         ],
         "neck": [
-          384.2,
-          261.0
+          384.0,
+          259.0
         ],
         "belt": [
-          386.6,
-          427.2
+          387.0,
+          427.0
         ]
       },
       "opaque_bounds": [
-        78,
-        95,
+        54,
+        91,
         632,
-        937
+        933
       ],
-      "sha256": "37d58da35d2f014287a1938ec5a81c2f01935e6be1c987c3f37c11124a431cb8"
+      "sha256": "dab43a8dde463873aaee8cd54ae4b7781ae76f1c89ec13d77bb93d755807fb77"
     },
     {
       "frame": 4,
-      "source": "run_v2/frame_04.png",
+      "source": "run_v3/root_helper_04.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        48.60000000000002,
-        72.95
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        49,
-        73
+        4,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          559.0,
-          198.0
+          543.42857,
+          271.14286
         ],
         "neck": [
-          562.0,
-          313.0
+          545.71429,
+          367.14286
         ],
         "belt": [
-          571.0,
-          591.0
+          555.71429,
+          604.28571
         ]
       },
       "exported_landmarks": {
@@ -451,56 +452,56 @@
           191.8
         ],
         "neck": [
-          386.2,
-          260.8
+          386.0,
+          259.0
         ],
         "belt": [
-          391.6,
-          427.6
+          393.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        76,
-        97,
-        619,
-        938
+        58,
+        96,
+        623,
+        929
       ],
-      "sha256": "84ff69cc57c10d15875bf6f6b8f69e56f6eb171743b40d8a3e56c956bfc54a49"
+      "sha256": "bed62a9a479f951a8a8cd42ab0b43b30f22986279aff8c9f5861941531ce551e"
     },
     {
       "frame": 5,
-      "source": "run_v2/frame_05.png",
+      "source": "run_v3/root_helper_05.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        47.400000000000034,
-        72.6650635094611
+        1.0,
+        2.0
       ],
       "applied_origin": [
-        47,
-        73
+        1,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          561.0,
-          200.0
+          546.57143,
+          272.85714
         ],
         "neck": [
-          564.0,
-          313.0
+          548.57143,
+          370.0
         ],
         "belt": [
-          574.0,
-          591.0
+          552.85714,
+          604.28571
         ]
       },
       "exported_landmarks": {
@@ -509,56 +510,56 @@
           193.0
         ],
         "neck": [
-          385.4,
-          260.8
+          385.0,
+          261.0
         ],
         "belt": [
-          391.4,
-          427.6
+          388.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        81,
+        61,
         100,
         618,
-        939
+        909
       ],
-      "sha256": "4a75b57a2887fcea984a1c323b200d86e883efa77bdc35101829678277f961ce"
+      "sha256": "8bd97572632637c0b1b3da883157cea7f601b957125c66c543dda286506238de"
     },
     {
       "frame": 6,
-      "source": "run_v2/frame_06.png",
+      "source": "run_v3/midpoints/phase_06_partial_repaired.png",
       "cell": [
         0,
         0,
         1086,
         1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        31.19999999999999,
-        59.20000000000002
+        1.0,
+        5.0
       ],
       "applied_origin": [
-        31,
-        59
+        1,
+        5
       ],
       "sample_size": [
-        652,
-        869
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          588.0,
-          223.0
+          546.85714,
+          268.28571
         ],
         "neck": [
-          588.0,
-          336.0
+          548.57143,
+          365.71429
         ],
         "belt": [
-          586.0,
-          621.0
+          551.42857,
+          600.0
         ]
       },
       "exported_landmarks": {
@@ -567,56 +568,56 @@
           192.8
         ],
         "neck": [
-          383.8,
-          260.6
+          385.0,
+          261.0
         ],
         "belt": [
-          382.6,
-          431.6
+          387.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        65,
-        100,
-        619,
-        900
+        55,
+        97,
+        632,
+        928
       ],
-      "sha256": "ac79cf012638e0eb7d531ac4b0d0d906ec75057f5b59bd1068f79c3defe947e2"
+      "sha256": "f99b95b3c6b6b08a9aba2d8de3e26f232ac9429170c7452df45ac4d147976a10"
     },
     {
       "frame": 7,
-      "source": "run_v2/frame_07.png",
+      "source": "run_v3/root_helper_07.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        74.66313972081443
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        60,
-        75
+        4,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          196.0
+          542.85714,
+          272.28571
         ],
         "neck": [
-          542.0,
-          308.0
+          545.71429,
+          367.14286
         ],
         "belt": [
-          545.0,
-          596.0
+          548.57143,
+          611.42857
         ]
       },
       "exported_landmarks": {
@@ -625,56 +626,56 @@
           192.6
         ],
         "neck": [
-          385.2,
-          259.8
+          386.0,
+          259.0
         ],
         "belt": [
-          387.0,
-          432.6
+          388.0,
+          430.0
         ]
       },
       "opaque_bounds": [
-        95,
-        96,
-        628,
-        891
+        75,
+        97,
+        630,
+        921
       ],
-      "sha256": "cfe797db1f8498ae349539147dac1788a3edebb38558d9935eca2dbe68f5fe01"
+      "sha256": "9278d83aa8bcbe919b75ad4553603e721558d2bd11bd7b3588c82831e4670d17"
     },
     {
       "frame": 8,
-      "source": "run_v2/frame_08.png",
+      "source": "run_v3/root_helper_08.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        58.19999999999999,
-        72.05000000000001
+        1.0,
+        3.0
       ],
       "applied_origin": [
-        58,
-        72
+        1,
+        3
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          543.0,
-          197.0
+          546.85714,
+          267.42857
         ],
         "neck": [
-          550.0,
-          309.0
+          552.85714,
+          362.85714
         ],
         "belt": [
-          540.0,
-          592.0
+          542.85714,
+          602.85714
         ]
       },
       "exported_landmarks": {
@@ -684,55 +685,55 @@
         ],
         "neck": [
           388.0,
-          257.4
+          257.0
         ],
         "belt": [
-          382.0,
-          427.2
+          381.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        107,
-        94,
-        623,
-        881
+        69,
+        92,
+        628,
+        931
       ],
-      "sha256": "15bd273f4d20dc19e274299caa93f584bf038617963f1289ff53f45f1765eaf4"
+      "sha256": "b0798cfabdda6c85eb739876c2513595272cbbd7fc670b7a347baa2425a91d8a"
     },
     {
       "frame": 9,
-      "source": "run_v2/frame_09.png",
+      "source": "run_v3/rough_keys/phase_09.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        68.10000000000001
+        4.0,
+        7.0
       ],
       "applied_origin": [
-        60,
-        68
+        4,
+        7
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          199.0
+          542.85714,
+          257.71429
         ],
         "neck": [
-          545.0,
-          312.0
+          547.14286,
+          352.85714
         ],
         "belt": [
-          536.0,
-          603.0
+          540.0,
+          598.57143
         ]
       },
       "exported_landmarks": {
@@ -742,55 +743,55 @@
         ],
         "neck": [
           387.0,
-          255.2
+          254.0
         ],
         "belt": [
-          381.6,
-          429.8
+          382.0,
+          426.0
         ]
       },
       "opaque_bounds": [
-        101,
-        90,
-        619,
-        898
+        79,
+        87,
+        623,
+        916
       ],
-      "sha256": "09441fe0c8ecaa3d93dc896b78e005dd3af7c70399555cd396e152c08635ca30"
+      "sha256": "4cd1eeb2ced6d1096a5c0fe29b0c611198aa53ce4345a7a93133216395263200"
     },
     {
       "frame": 10,
-      "source": "run_v2/frame_10.png",
+      "source": "run_v3/helper_10.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.60000000000002,
-        66.55000000000001
+        -1.0,
+        1.0
       ],
       "applied_origin": [
-        61,
-        67
+        -1,
+        1
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          539.0,
-          197.0
+          550.57143,
+          263.14286
         ],
         "neck": [
-          544.0,
-          313.0
+          554.28571,
+          360.0
         ],
         "belt": [
-          525.0,
-          596.0
+          541.42857,
+          594.28571
         ]
       },
       "exported_landmarks": {
@@ -799,56 +800,56 @@
           185.2
         ],
         "neck": [
-          387.4,
-          254.8
+          387.0,
+          253.0
         ],
         "belt": [
-          376.0,
-          424.6
+          378.0,
+          417.0
         ]
       },
       "opaque_bounds": [
-        111,
-        90,
-        618,
-        858
+        72,
+        87,
+        621,
+        884
       ],
-      "sha256": "b2660525fd1f216661d724541cdb170fb418380f8125b196d7e8e1ea7b3805d6"
+      "sha256": "db40a8db297fc6541f3aa2dab60fcca21a865d7022f9a30ee6e234dac4492aa4"
     },
     {
       "frame": 11,
-      "source": "run_v2/frame_11.png",
+      "source": "run_v3/helper_11.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        43.80000000000001,
-        51.936860279185595
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        44,
-        52
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          567.0,
-          218.0
+          544.57143,
+          258.28571
         ],
         "neck": [
-          575.0,
-          328.0
+          554.28571,
+          352.85714
         ],
         "belt": [
-          549.0,
-          606.0
+          540.0,
+          602.85714
         ]
       },
       "exported_landmarks": {
@@ -857,25 +858,25 @@
           182.8
         ],
         "neck": [
-          389.0,
-          248.8
+          391.0,
+          249.0
         ],
         "belt": [
-          373.4,
-          415.6
+          381.0,
+          424.0
         ]
       },
       "opaque_bounds": [
-        87,
-        89,
-        617,
-        766
+        103,
+        85,
+        623,
+        866
       ],
-      "sha256": "0662a5309e5f5d2e2fd5b06f47121eb37f0af3968af3a1e457e49d761af3ab7f"
+      "sha256": "c253592e8ea0e0668b01023d0d52c6f178ec36a6c6713bb70d020a15807d0161"
     },
     {
       "frame": 12,
-      "source": "run_v2/frame_12.png",
+      "source": "run_v3/retained/phase_12.png",
       "cell": [
         0,
         0,
@@ -933,38 +934,38 @@
     },
     {
       "frame": 13,
-      "source": "run_v2/frame_13.png",
+      "source": "run_v3/root_helper_13_b.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        63.60000000000002,
-        63.400961894323345
+        5.0,
+        2.0
       ],
       "applied_origin": [
-        64,
-        63
+        5,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          534.0,
-          198.0
+          542.0,
+          256.85714
         ],
         "neck": [
-          545.0,
-          314.0
+          552.85714,
+          352.85714
         ],
         "belt": [
-          534.0,
-          610.0
+          542.85714,
+          604.28571
         ]
       },
       "exported_landmarks": {
@@ -973,56 +974,56 @@
           181.8
         ],
         "neck": [
-          391.0,
-          251.4
+          392.0,
+          249.0
         ],
         "belt": [
-          384.4,
-          429.0
+          385.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        106,
-        82,
-        630,
-        854
+        103,
+        86,
+        626,
+        821
       ],
-      "sha256": "d21dfabb238739a70c83c512264d6959736960eb3310ab44feb8528cbabb126f"
+      "sha256": "6739d5ebfb1f859057bf3fde4e092cc9c48517cf8fffbe4f570b3a51607f6c6a"
     },
     {
       "frame": 14,
-      "source": "run_v2/frame_14.png",
+      "source": "run_v3/root_helper_14.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.60000000000002,
-        63.35000000000001
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        61,
-        63
+        4,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          539.0,
-          199.0
+          543.42857,
+          257.71429
         ],
         "neck": [
-          550.0,
-          315.0
+          552.85714,
+          355.71429
         ],
         "belt": [
-          530.0,
-          608.0
+          540.0,
+          604.28571
         ]
       },
       "exported_landmarks": {
@@ -1032,55 +1033,55 @@
         ],
         "neck": [
           391.0,
-          252.0
+          251.0
         ],
         "belt": [
-          379.0,
-          427.8
+          382.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        104,
-        83,
-        632,
-        841
+        87,
+        82,
+        635,
+        854
       ],
-      "sha256": "bc3daf8acfb4620dff60d7222b9b9717615e20392fc460a0938f3f4ba7462b84"
+      "sha256": "c59f4dfecebcf67c48d35a4e2b74c0482f3b2aa31effd64d553b96c8eac6d54e"
     },
     {
       "frame": 15,
-      "source": "run_v2/frame_15.png",
+      "source": "run_v3/rough_keys/phase_15_repaired.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        61.80000000000001,
-        67.7
+        3.0,
+        6.0
       ],
       "applied_origin": [
-        62,
-        68
+        3,
+        6
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          537.0,
-          193.0
+          544.57143,
+          254.0
         ],
         "neck": [
-          547.0,
-          308.0
+          551.42857,
+          352.85714
         ],
         "belt": [
-          536.0,
-          603.0
+          542.85714,
+          607.14286
         ]
       },
       "exported_landmarks": {
@@ -1089,56 +1090,56 @@
           183.8
         ],
         "neck": [
-          390.2,
-          252.8
+          389.0,
+          253.0
         ],
         "belt": [
-          383.6,
-          429.8
+          383.0,
+          431.0
         ]
       },
       "opaque_bounds": [
-        115,
-        84,
-        632,
-        817
+        87,
+        81,
+        638,
+        830
       ],
-      "sha256": "b243aef4bc16260612cff6602492a06ccb18b8809613d586b8a75d8242403af9"
+      "sha256": "d21929f2bcbda091e4b83a67bfe896621bdbd3698f51f8d18b9876f618029dc0"
     },
     {
       "frame": 16,
-      "source": "run_v2/frame_16.png",
+      "source": "run_v3/first_half_final/bounded_16.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        66.60000000000002,
-        70.85000000000001
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        67,
-        71
+        4,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          529.0,
-          189.0
+          543.42857,
+          260.57143
         ],
         "neck": [
-          538.0,
-          302.0
+          551.42857,
+          354.28571
         ],
         "belt": [
-          533.0,
-          593.0
+          545.71429,
+          598.57143
         ]
       },
       "exported_landmarks": {
@@ -1147,56 +1148,56 @@
           184.4
         ],
         "neck": [
-          389.8,
-          252.2
+          390.0,
+          250.0
         ],
         "belt": [
-          386.8,
-          426.8
+          386.0,
+          421.0
         ]
       },
       "opaque_bounds": [
-        93,
+        81,
         85,
-        636,
-        819
+        635,
+        768
       ],
-      "sha256": "9ec51f8ad5b215c5da59df2e35daf2b5e03501701d57350c44832fd1e9a4d7eb"
+      "sha256": "46ec23a3470d1c72350bb255144fdd6c43bd444ff3b9ec5ad9cbaf7c781440cb"
     },
     {
       "frame": 17,
-      "source": "run_v2/frame_17.png",
+      "source": "run_v3/first_half_final/bounded_17.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        66.60000000000002,
-        71.39903810567667
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        67,
-        71
+        3,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          529.0,
-          189.0
+          544.85714,
+          260.57143
         ],
         "neck": [
-          540.0,
-          303.0
+          554.28571,
+          355.71429
         ],
         "belt": [
-          529.0,
-          597.0
+          545.71429,
+          597.14286
         ]
       },
       "exported_landmarks": {
@@ -1206,55 +1207,55 @@
         ],
         "neck": [
           391.0,
-          252.8
+          251.0
         ],
         "belt": [
-          384.4,
-          429.2
+          385.0,
+          420.0
         ]
       },
       "opaque_bounds": [
-        97,
+        77,
         84,
         639,
-        911
+        791
       ],
-      "sha256": "6d1cb77b91a11992cbf9459a2e2c68ec1ab16dc12197810f24d4250752fffc76"
+      "sha256": "a1c88d18429169996edc483be60b70e8da97c4e820d74b8c51002b52ffc84c45"
     },
     {
       "frame": 18,
-      "source": "run_v2/frame_18.png",
+      "source": "run_v3/midpoints/phase_18_partial_repaired.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        74.60000000000001
+        3.0,
+        4.0
       ],
       "applied_origin": [
-        60,
-        75
+        3,
+        4
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          184.0
+          544.28571,
+          259.14286
         ],
         "neck": [
-          548.0,
-          307.0
+          550.0,
+          360.0
         ],
         "belt": [
-          540.0,
-          596.0
+          541.42857,
+          608.57143
         ]
       },
       "exported_landmarks": {
@@ -1263,56 +1264,56 @@
           185.4
         ],
         "neck": [
-          388.8,
-          259.2
+          388.0,
+          256.0
         ],
         "belt": [
-          384.0,
-          432.6
+          382.0,
+          430.0
         ]
       },
       "opaque_bounds": [
-        73,
-        89,
-        652,
-        944
+        78,
+        88,
+        637,
+        843
       ],
-      "sha256": "2e98c11c4f281fb66abdec98e3440ffae1568c63b6cd0ad15afc46646ae015c9"
+      "sha256": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7"
     },
     {
       "frame": 19,
-      "source": "run_v2/frame_19.png",
+      "source": "run_v3/first_half_final/bounded_19.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        54.60000000000002,
-        73.60096189432335
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        55,
-        74
+        4,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          549.0,
-          186.0
+          543.42857,
+          262.28571
         ],
         "neck": [
-          557.0,
-          309.0
+          547.14286,
+          362.85714
         ],
         "belt": [
-          552.0,
-          592.0
+          541.42857,
+          608.57143
         ]
       },
       "exported_landmarks": {
@@ -1321,56 +1322,56 @@
           185.6
         ],
         "neck": [
-          389.2,
-          259.4
+          387.0,
+          256.0
         ],
         "belt": [
-          386.2,
-          429.2
+          383.0,
+          428.0
         ]
       },
       "opaque_bounds": [
-        67,
-        87,
-        629,
-        945
+        76,
+        88,
+        635,
+        897
       ],
-      "sha256": "c1e90488573dea3518bbf5154d65e464aed34d5672bda5b6be41bf1d85610952"
+      "sha256": "70692e3d61d261da65702ea9f7789efbd1fff9caaf7f95327a2a727d65f96e09"
     },
     {
       "frame": 20,
-      "source": "run_v2/frame_20.png",
+      "source": "run_v3/first_half_final/bounded_20.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        54.0,
-        73.55
+        2.0,
+        2.0
       ],
       "applied_origin": [
-        54,
-        74
+        2,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          550.0,
-          187.0
+          545.71429,
+          263.14286
         ],
         "neck": [
-          560.0,
-          311.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          553.0,
-          595.0
+          542.85714,
+          595.71429
         ]
       },
       "exported_landmarks": {
@@ -1379,56 +1380,56 @@
           186.2
         ],
         "neck": [
-          390.0,
-          260.6
+          386.0,
+          256.0
         ],
         "belt": [
-          385.8,
-          431.0
+          382.0,
+          419.0
         ]
       },
       "opaque_bounds": [
-        67,
+        120,
         88,
-        618,
-        949
+        608,
+        872
       ],
-      "sha256": "1e96ad79d067499ce14f2c077948f91cd5d7823432106c53cb910780b22eaf53"
+      "sha256": "ac38ed4739c8d38f5f8f0750ed075d6d056bb1dd3260c628999d14e6a2205cb3"
     },
     {
       "frame": 21,
-      "source": "run_v2/frame_21.png",
+      "source": "run_v3/rough_keys/phase_21.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        78.5
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        60,
-        78
+        4,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          180.0
+          542.85714,
+          262.85714
         ],
         "neck": [
-          547.0,
-          297.0
+          548.57143,
+          362.85714
         ],
         "belt": [
-          538.0,
-          576.0
+          541.42857,
+          598.57143
         ]
       },
       "exported_landmarks": {
@@ -1437,56 +1438,56 @@
           186.0
         ],
         "neck": [
-          388.2,
-          256.2
+          388.0,
+          256.0
         ],
         "belt": [
-          382.8,
-          423.6
+          383.0,
+          421.0
         ]
       },
       "opaque_bounds": [
-        83,
-        91,
-        605,
-        923
+        121,
+        88,
+        607,
+        908
       ],
-      "sha256": "a40385ba63acd59de703fcc916b8e2caa37048502a66f8566c70c0a57dbac004"
+      "sha256": "c056d58194ada37d71e83f8ae2eac501776b41446b8aa8995fb8ca860735eabc"
     },
     {
       "frame": 22,
-      "source": "run_v2/frame_22.png",
+      "source": "run_v3/root_helper_22.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        54.60000000000002,
-        75.05
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        55,
-        75
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          549.0,
-          187.0
+          544.85714,
+          264.57143
         ],
         "neck": [
-          558.0,
-          309.0
+          552.85714,
+          367.14286
         ],
         "belt": [
-          554.0,
-          592.0
+          548.57143,
+          607.14286
         ]
       },
       "exported_landmarks": {
@@ -1495,56 +1496,56 @@
           187.2
         ],
         "neck": [
-          389.8,
-          260.4
+          390.0,
+          259.0
         ],
         "belt": [
-          387.4,
-          430.2
+          387.0,
+          427.0
         ]
       },
       "opaque_bounds": [
-        67,
-        89,
-        608,
-        950
+        105,
+        92,
+        607,
+        915
       ],
-      "sha256": "d66a5a9493aaa83b03bd31fb2ea5ec3a35f11e9b07da6b722ac3063b11fd7d9d"
+      "sha256": "5f94c603baf15881ce0b39acd2b8572bdcb9b7216f9200f14a0332004f571ef5"
     },
     {
       "frame": 23,
-      "source": "run_v2/frame_23.png",
+      "source": "run_v3/first_half_final/phase_23.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        54.0,
-        75.59903810567666
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        54,
-        76
+        4,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          550.0,
-          187.0
+          542.85714,
+          266.0
         ],
         "neck": [
-          559.0,
-          308.0
+          551.42857,
+          367.14286
         ],
         "belt": [
-          547.0,
-          592.0
+          542.85714,
+          607.14286
         ]
       },
       "exported_landmarks": {
@@ -1553,25 +1554,25 @@
           188.2
         ],
         "neck": [
-          389.4,
-          260.8
+          390.0,
+          259.0
         ],
         "belt": [
-          382.2,
-          431.2
+          384.0,
+          427.0
         ]
       },
       "opaque_bounds": [
-        69,
-        91,
-        623,
-        951
+        52,
+        92,
+        625,
+        950
       ],
-      "sha256": "bbf8f456ac340256b27395bfcfd8b3e2e417b97903fefe6652eeaffa39865c65"
+      "sha256": "f77c91e4a6f4ac9d811680741d9ff59f287dce7bfecc118c7502f9a179582dac"
     },
     {
       "frame": 24,
-      "source": "run_v2/frame_24.png",
+      "source": "run_v3/retained/phase_24.png",
       "cell": [
         0,
         0,
@@ -1629,38 +1630,38 @@
     },
     {
       "frame": 25,
-      "source": "run_v2/frame_25.png",
+      "source": "run_v3/intermediate_25.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        51.60000000000002,
-        68.9349364905389
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        52,
-        69
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          199.0
+          544.85714,
+          266.28571
         ],
         "neck": [
-          564.0,
-          314.0
+          552.85714,
+          362.85714
         ],
         "belt": [
-          558.0,
-          596.0
+          545.71429,
+          602.85714
         ]
       },
       "exported_landmarks": {
@@ -1669,56 +1670,56 @@
           188.4
         ],
         "neck": [
-          390.4,
-          257.4
+          390.0,
+          256.0
         ],
         "belt": [
-          386.8,
-          426.6
+          385.0,
+          424.0
         ]
       },
       "opaque_bounds": [
-        74,
-        89,
-        627,
-        942
+        66,
+        90,
+        623,
+        951
       ],
-      "sha256": "cc0a1a9632de144368517559512c75a06019002c73d1df02a86aaa4f985c1e41"
+      "sha256": "1241ac96a5a1952b100a1ccdc922cba02868ae300d944946b5c01a9ff70fa6c0"
     },
     {
       "frame": 26,
-      "source": "run_v2/frame_26.png",
+      "source": "run_v3/intermediate_26.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        52.80000000000001,
-        62.05000000000001
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        53,
-        62
+        4,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          552.0,
-          212.0
+          543.14286,
+          267.42857
         ],
         "neck": [
-          560.0,
-          329.0
+          551.42857,
+          365.71429
         ],
         "belt": [
-          549.0,
-          610.0
+          541.42857,
+          602.85714
         ]
       },
       "exported_landmarks": {
@@ -1727,56 +1728,56 @@
           189.2
         ],
         "neck": [
-          389.0,
-          259.4
+          390.0,
+          258.0
         ],
         "belt": [
-          382.4,
-          428.0
+          383.0,
+          424.0
         ]
       },
       "opaque_bounds": [
-        67,
-        91,
-        621,
-        935
+        114,
+        89,
+        614,
+        926
       ],
-      "sha256": "00b6d40140c610faa0866dfc1092b46811fb1b25f642276ef488821913e11b1f"
+      "sha256": "7ee4500f3da11508c61513ce4795e63e4444db7e15417e12065c34871a9233ef"
     },
     {
       "frame": 27,
-      "source": "run_v2/frame_27.png",
+      "source": "run_v3/rough_keys/phase_27.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        52.80000000000001,
-        54.900000000000006
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        53,
-        55
+        3,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          552.0,
-          226.0
+          544.57143,
+          269.42857
         ],
         "neck": [
-          557.0,
-          341.0
+          548.57143,
+          367.14286
         ],
         "belt": [
-          546.0,
-          623.0
+          540.0,
+          604.28571
         ]
       },
       "exported_landmarks": {
@@ -1785,56 +1786,56 @@
           190.6
         ],
         "neck": [
-          387.2,
-          259.6
+          387.0,
+          259.0
         ],
         "belt": [
-          380.6,
-          428.8
+          381.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        71,
-        92,
-        602,
-        923
+        116,
+        91,
+        601,
+        928
       ],
-      "sha256": "c9693f52e1b86893866ae52c57686dcb3da8583a15eb338c6aff4c89e93eb371"
+      "sha256": "687da43d7627461e5ef2421794969537dfa99d4ff4f2227d645545e5a208412c"
     },
     {
       "frame": 28,
-      "source": "run_v2/frame_28.png",
+      "source": "run_v3/intermediate_28.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        48.60000000000002,
-        63.95
+        3.0,
+        3.0
       ],
       "applied_origin": [
-        49,
-        64
+        3,
+        3
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          559.0,
-          213.0
+          544.85714,
+          269.71429
         ],
         "neck": [
-          565.0,
-          329.0
+          550.0,
+          368.57143
         ],
         "belt": [
-          554.0,
-          611.0
+          540.0,
+          608.57143
         ]
       },
       "exported_landmarks": {
@@ -1844,55 +1845,55 @@
         ],
         "neck": [
           388.0,
-          261.4
+          261.0
         ],
         "belt": [
-          381.4,
-          430.6
+          381.0,
+          429.0
         ]
       },
       "opaque_bounds": [
-        65,
+        107,
         92,
-        624,
-        933
+        627,
+        936
       ],
-      "sha256": "aa795227361437628d1dad3b0f41e98ab9230e0993090bdac763edd6809ba853"
+      "sha256": "d94c5488081cd7961c8fc1d8ce4e17212c6d06e53cb11232b3b759db6c78d25d"
     },
     {
       "frame": 29,
-      "source": "run_v2/frame_29.png",
+      "source": "run_v3/intermediate_29.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        52.19999999999999,
-        70.26506350946111
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        52,
-        70
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          553.0,
-          204.0
+          544.0,
+          272.0
         ],
         "neck": [
-          562.0,
-          319.0
+          550.0,
+          368.57143
         ],
         "belt": [
-          549.0,
-          590.0
+          542.85714,
+          601.42857
         ]
       },
       "exported_landmarks": {
@@ -1901,56 +1902,56 @@
           192.4
         ],
         "neck": [
-          389.2,
-          261.4
+          388.0,
+          260.0
         ],
         "belt": [
-          381.4,
-          424.0
+          383.0,
+          423.0
         ]
       },
       "opaque_bounds": [
-        66,
-        95,
-        621,
-        939
+        82,
+        94,
+        624,
+        909
       ],
-      "sha256": "c7ca0f5172f882998fad620ec8744491d16581be31791cad6065985d7ee9e2e3"
+      "sha256": "c34daa95288a92cfc846b94b686ee35fa49f9a3b5619becbe3cbc27750074d26"
     },
     {
       "frame": 30,
-      "source": "run_v2/frame_30.png",
+      "source": "run_v3/join_repairs/hand30.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        51.60000000000002,
-        54.400000000000006
+        -7.0,
+        2.0
       ],
       "applied_origin": [
-        52,
-        54
+        -7,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          231.0
+          559.14286,
+          272.28571
         ],
         "neck": [
-          555.0,
-          348.0
+          560.0,
+          371.42857
         ],
         "belt": [
-          562.0,
-          632.0
+          560.0,
+          605.71429
         ]
       },
       "exported_landmarks": {
@@ -1960,55 +1961,55 @@
         ],
         "neck": [
           385.0,
-          262.8
+          262.0
         ],
         "belt": [
-          389.2,
-          433.2
+          385.0,
+          426.0
         ]
       },
       "opaque_bounds": [
-        71,
-        92,
-        633,
-        919
+        56,
+        89,
+        627,
+        898
       ],
-      "sha256": "2cc98569bda872eedce26dea5a0edf8c1e0d4f8a739d5cbb64e877d40d167c77"
+      "sha256": "5883eacf9ee4698498fad0e69c25b4062639f7fead64567638aecf6fe0c365d6"
     },
     {
       "frame": 31,
-      "source": "run_v2/frame_31.png",
+      "source": "run_v3/intermediate_31.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        47.400000000000034,
-        52.46313972081444
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        47,
-        52
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          561.0,
-          233.0
+          543.71429,
+          271.14286
         ],
         "neck": [
-          562.0,
-          355.0
+          544.28571,
+          372.85714
         ],
         "belt": [
-          564.0,
-          634.0
+          547.14286,
+          607.14286
         ]
       },
       "exported_landmarks": {
@@ -2017,56 +2018,56 @@
           191.8
         ],
         "neck": [
-          384.2,
-          265.0
+          384.0,
+          263.0
         ],
         "belt": [
-          385.4,
-          432.4
+          386.0,
+          427.0
         ]
       },
       "opaque_bounds": [
-        70,
+        71,
         87,
         630,
-        882
+        910
       ],
-      "sha256": "0abdc14d6aa2307218f546b01192b624016604e72f6087c849f38cf1ff8aa8b4"
+      "sha256": "091e2896ed3e632207de07282cabb385e246eb9eaa306fc3c10ffc211c3fb29a"
     },
     {
       "frame": 32,
-      "source": "run_v2/frame_32.png",
+      "source": "run_v3/intermediate_32.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        51.60000000000002,
-        52.849999999999994
+        3.0,
+        3.0
       ],
       "applied_origin": [
-        52,
-        53
+        3,
+        3
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          554.0,
-          229.0
+          544.85714,
+          267.71429
         ],
         "neck": [
-          555.0,
-          343.0
+          545.71429,
+          364.28571
         ],
         "belt": [
-          557.0,
-          621.0
+          547.14286,
+          601.42857
         ]
       },
       "exported_landmarks": {
@@ -2076,55 +2077,55 @@
         ],
         "neck": [
           385.0,
-          258.8
+          258.0
         ],
         "belt": [
-          386.2,
-          425.6
+          386.0,
+          424.0
         ]
       },
       "opaque_bounds": [
-        78,
+        80,
         88,
         632,
-        886
+        858
       ],
-      "sha256": "1060ad21f95b5994be34183cc016e03f274afe71e16091adad94138f1ee35e3d"
+      "sha256": "e91e88a8d8044d4fe4d11212d8d320cebe79379e710b6d3b78b1bd3604ea22ee"
     },
     {
       "frame": 33,
-      "source": "run_v2/frame_33.png",
+      "source": "run_v3/rough_keys/phase_33.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        57.60000000000002,
-        67.5
+        2.0,
+        2.0
       ],
       "applied_origin": [
-        58,
-        68
+        2,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          544.0,
-          200.0
+          546.28571,
+          265.71429
         ],
         "neck": [
-          544.0,
-          313.0
+          545.71429,
+          361.42857
         ],
         "belt": [
-          552.0,
-          601.0
+          554.28571,
+          608.57143
         ]
       },
       "exported_landmarks": {
@@ -2133,56 +2134,56 @@
           188.0
         ],
         "neck": [
-          384.4,
-          255.8
+          384.0,
+          255.0
         ],
         "belt": [
-          389.2,
-          428.6
+          390.0,
+          428.0
         ]
       },
       "opaque_bounds": [
-        112,
-        90,
-        614,
-        855
+        105,
+        89,
+        617,
+        851
       ],
-      "sha256": "41d4a69ff053b493c553dc93dc4721cca6763c247337bc4b69ee9f2431ca24e1"
+      "sha256": "de30c73e104ada2a923e70dcb96b4332e98808136239da43ad2ed71e36f8f611"
     },
     {
       "frame": 34,
-      "source": "run_v2/frame_34.png",
+      "source": "run_v3/join_repairs/phase_34.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        58.19999999999999,
-        64.15
+        3.0,
+        3.0
       ],
       "applied_origin": [
-        58,
-        64
+        3,
+        3
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          543.0,
-          201.0
+          544.0,
+          259.42857
         ],
         "neck": [
-          541.0,
-          316.0
+          542.85714,
+          355.71429
         ],
         "belt": [
-          544.0,
-          592.0
+          548.57143,
+          595.71429
         ]
       },
       "exported_landmarks": {
@@ -2191,56 +2192,56 @@
           184.6
         ],
         "neck": [
-          382.6,
-          253.6
+          383.0,
+          252.0
         ],
         "belt": [
-          384.4,
-          419.2
+          387.0,
+          420.0
         ]
       },
       "opaque_bounds": [
-        96,
+        98,
         87,
-        617,
-        805
+        616,
+        838
       ],
-      "sha256": "6e2b6576b31324eeb013b38d842df0101286c96569eeb6e215b79b029d7f9b8d"
+      "sha256": "f3e34cd44c9fb89865897dc02f592fb27ef2f914e33f6d140f193d20fc8d5767"
     },
     {
       "frame": 35,
-      "source": "run_v2/frame_35.png",
+      "source": "run_v3/intermediate_35.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        55.80000000000001,
-        45.936860279185595
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        56,
-        46
+        3,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          547.0,
-          228.0
+          544.57143,
+          258.28571
         ],
         "neck": [
-          547.0,
-          342.0
+          544.28571,
+          355.71429
         ],
         "belt": [
-          561.0,
-          628.0
+          552.85714,
+          597.14286
         ]
       },
       "exported_landmarks": {
@@ -2249,25 +2250,25 @@
           182.8
         ],
         "neck": [
-          384.2,
-          251.2
+          384.0,
+          251.0
         ],
         "belt": [
-          392.6,
-          422.8
+          390.0,
+          420.0
         ]
       },
       "opaque_bounds": [
-        78,
-        81,
-        616,
-        792
+        95,
+        85,
+        617,
+        808
       ],
-      "sha256": "d4a1d331a11f7838dd9e25c7d89c06242c3371c26314c395f90595503c03d06a"
+      "sha256": "78bbdf6ea7b76ddf165e81d901aa498f0785ff6a078bd6d1a24e8cf85c016625"
     },
     {
       "frame": 36,
-      "source": "run_v2/frame_36.png",
+      "source": "run_v3/retained/phase_36.png",
       "cell": [
         0,
         0,
@@ -2325,38 +2326,38 @@
     },
     {
       "frame": 37,
-      "source": "run_v2/frame_37.png",
+      "source": "run_v3/intermediate_37.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        64.60096189432335
+        4.0,
+        3.0
       ],
       "applied_origin": [
-        60,
-        65
+        4,
+        3
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          196.0
+          542.85714,
+          256.57143
         ],
         "neck": [
-          542.0,
-          310.0
+          544.28571,
+          354.28571
         ],
         "belt": [
-          551.0,
-          597.0
+          552.85714,
+          600.0
         ]
       },
       "exported_landmarks": {
@@ -2365,56 +2366,56 @@
           182.6
         ],
         "neck": [
-          385.2,
+          385.0,
           251.0
         ],
         "belt": [
-          390.6,
-          423.2
+          391.0,
+          423.0
         ]
       },
       "opaque_bounds": [
-        80,
+        73,
         87,
         625,
-        775
+        822
       ],
-      "sha256": "65e8c59053e86e9022c1ad285713d717783bc32d6c8ef97f6c0893e01fddd758"
+      "sha256": "9aa4f0df41eafa7af007ae7bea1015e813e1557610d4303cfb62fb6aaced3be8"
     },
     {
       "frame": 38,
-      "source": "run_v2/frame_38.png",
+      "source": "run_v3/intermediate_38.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        63.60000000000002,
-        63.95
+        4.0,
+        2.0
       ],
       "applied_origin": [
-        64,
-        64
+        4,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          534.0,
-          198.0
+          543.42857,
+          258.28571
         ],
         "neck": [
-          534.0,
-          313.0
+          544.28571,
+          355.71429
         ],
         "belt": [
-          544.0,
-          601.0
+          555.71429,
+          600.0
         ]
       },
       "exported_landmarks": {
@@ -2423,56 +2424,56 @@
           182.8
         ],
         "neck": [
-          384.4,
-          251.8
+          385.0,
+          251.0
         ],
         "belt": [
-          390.4,
-          424.6
+          393.0,
+          422.0
         ]
       },
       "opaque_bounds": [
-        84,
-        85,
-        634,
-        849
+        51,
+        82,
+        637,
+        854
       ],
-      "sha256": "402317490156677a89ba23b2f7d95720f4108bfd4f335ffe33e6fefd0836a1bd"
+      "sha256": "c3cfa21b90446363afd5048e960249ec354c4f3cdc0faafac5c63e16350dfd98"
     },
     {
       "frame": 39,
-      "source": "run_v2/frame_39.png",
+      "source": "run_v3/join_repairs/phase39.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        66.0,
-        64.7
+        3.0,
+        -0.0
       ],
       "applied_origin": [
-        66,
-        65
+        3,
+        0
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          530.0,
-          198.0
+          544.28571,
+          262.57143
         ],
         "neck": [
-          530.0,
-          315.0
+          544.28571,
+          358.57143
         ],
         "belt": [
-          543.0,
-          604.0
+          555.71429,
+          601.42857
         ]
       },
       "exported_landmarks": {
@@ -2482,55 +2483,55 @@
         ],
         "neck": [
           384.0,
-          254.0
+          251.0
         ],
         "belt": [
-          391.8,
-          427.4
+          392.0,
+          421.0
         ]
       },
       "opaque_bounds": [
-        89,
-        84,
-        635,
-        874
+        51,
+        83,
+        638,
+        815
       ],
-      "sha256": "8944df22b690f4b09515c27b1abb0aec313881fa6161f84660da3b9c2e698350"
+      "sha256": "3505fe6bac955ccd52837f8f0042b515003cfe8bb3f8082bae76925ec49e1b31"
     },
     {
       "frame": 40,
-      "source": "run_v2/frame_40.png",
+      "source": "run_v3/join_repairs/middle40_A.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        63.0,
-        64.85000000000001
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        63,
-        65
+        3,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          535.0,
-          199.0
+          544.28571,
+          260.57143
         ],
         "neck": [
-          537.0,
-          316.0
+          544.28571,
+          355.71429
         ],
         "belt": [
-          546.0,
-          612.0
+          551.42857,
+          592.85714
         ]
       },
       "exported_landmarks": {
@@ -2539,56 +2540,56 @@
           184.4
         ],
         "neck": [
-          385.2,
-          254.6
+          384.0,
+          251.0
         ],
         "belt": [
-          390.6,
-          432.2
+          389.0,
+          417.0
         ]
       },
       "opaque_bounds": [
-        73,
-        85,
-        633,
-        886
+        59,
+        86,
+        635,
+        781
       ],
-      "sha256": "7b7f33b87606e04baaf7ee250d5277339e154ebe4ba46ae02e34aa866f6d28fc"
+      "sha256": "84c01abbd32442c7bbb30116d00a76eb340df30f784032ea04b5c2dcc63358c2"
     },
     {
       "frame": 41,
-      "source": "run_v2/frame_41.png",
+      "source": "run_v3/join_repairs/direct_41.png",
       "cell": [
         0,
         0,
-        1039,
-        1513
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        55.19999999999999,
-        64.19903810567666
+        3.0,
+        2.0
       ],
       "applied_origin": [
-        55,
-        64
+        3,
+        2
       ],
       "sample_size": [
-        623,
-        908
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          548.0,
-          201.0
+          544.0,
+          260.85714
         ],
         "neck": [
-          549.0,
-          318.0
+          544.28571,
+          358.57143
         ],
         "belt": [
-          556.0,
-          607.0
+          554.28571,
+          597.14286
         ]
       },
       "exported_landmarks": {
@@ -2597,56 +2598,56 @@
           184.6
         ],
         "neck": [
-          384.4,
-          254.8
+          384.0,
+          253.0
         ],
         "belt": [
-          388.6,
-          428.2
+          391.0,
+          420.0
         ]
       },
       "opaque_bounds": [
-        80,
+        56,
         86,
-        633,
-        910
+        632,
+        825
       ],
-      "sha256": "3c5bc2e5635104d15d822f00789ba957ffa2dcbee454d5658b973df8ad930c07"
+      "sha256": "e2f50515b52440f2f5d22072ebc05a0fe5a3fc71430c9b3359398941715438a2"
     },
     {
       "frame": 42,
-      "source": "run_v2/frame_42.png",
+      "source": "run_v3/join_repairs/phase_42.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        62.400000000000034,
-        77.60000000000001
+        0.0,
+        9.0
       ],
       "applied_origin": [
-        62,
-        78
+        0,
+        9
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          536.0,
-          179.0
+          548.0,
+          252.0
         ],
         "neck": [
-          534.0,
-          297.0
+          548.57143,
+          348.57143
         ],
         "belt": [
-          548.0,
-          582.0
+          555.71429,
+          587.14286
         ]
       },
       "exported_landmarks": {
@@ -2655,56 +2656,56 @@
           185.4
         ],
         "neck": [
-          382.4,
-          256.2
+          384.0,
+          253.0
         ],
         "belt": [
-          390.8,
-          427.2
+          389.0,
+          420.0
         ]
       },
       "opaque_bounds": [
-        84,
-        93,
-        633,
-        947
+        41,
+        90,
+        629,
+        867
       ],
-      "sha256": "55ebba8994cb6488925b030175e91a28f0a6e8fb31ea64fb3f221613e94b8437"
+      "sha256": "afbc19ccdc49b60669252d6d90685bbbc18759749c2077e7c8f35ed836f5923f"
     },
     {
       "frame": 43,
-      "source": "run_v2/frame_43.png",
+      "source": "run_v3/intermediate_43.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        60.0,
-        76.00096189432334
+        -1.0,
+        1.0
       ],
       "applied_origin": [
-        60,
-        76
+        -1,
+        1
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          540.0,
-          182.0
+          550.0,
+          263.14286
         ],
         "neck": [
-          539.0,
-          298.0
+          548.57143,
+          361.42857
         ],
         "belt": [
-          552.0,
-          581.0
+          561.42857,
+          601.42857
         ]
       },
       "exported_landmarks": {
@@ -2713,56 +2714,56 @@
           185.2
         ],
         "neck": [
-          383.4,
-          254.8
+          383.0,
+          254.0
         ],
         "belt": [
-          391.2,
-          424.6
+          392.0,
+          422.0
         ]
       },
       "opaque_bounds": [
-        90,
-        93,
-        626,
-        944
+        52,
+        92,
+        614,
+        913
       ],
-      "sha256": "74e4e143044385e0b68e0d58dc8310fd863f643c6deaf6d3dcf5950e5f96e54b"
+      "sha256": "fc9764e161eff2d0bd81bfc31ac7555b5e060eaee447d000313a3a3bb62c09e7"
     },
     {
       "frame": 44,
-      "source": "run_v2/frame_44.png",
+      "source": "run_v3/intermediate_44.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        59.400000000000034,
-        78.35000000000001
+        -2.0,
+        2.0
       ],
       "applied_origin": [
-        59,
-        78
+        -2,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          541.0,
-          179.0
+          550.85714,
+          262.0
         ],
         "neck": [
-          542.0,
-          295.0
+          550.0,
+          361.42857
         ],
         "belt": [
-          550.0,
-          578.0
+          564.28571,
+          600.0
         ]
       },
       "exported_landmarks": {
@@ -2771,56 +2772,56 @@
           185.4
         ],
         "neck": [
-          384.2,
+          383.0,
           255.0
         ],
         "belt": [
-          389.0,
-          424.8
+          393.0,
+          422.0
         ]
       },
       "opaque_bounds": [
-        84,
-        91,
-        635,
-        943
+        51,
+        92,
+        639,
+        922
       ],
-      "sha256": "bffeb199473365136b230165847e7400446ef800a8d9e02b6fb444bb84dcb65e"
+      "sha256": "1fd73430a64908689706a0c043a9c923208d7b7945a3df852c9538574b76f521"
     },
     {
       "frame": 45,
-      "source": "run_v2/frame_45.png",
+      "source": "run_v3/rough_keys/phase_45.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        62.400000000000034,
-        78.5
+        -3.0,
+        4.0
       ],
       "applied_origin": [
-        62,
-        78
+        -3,
+        4
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          536.0,
-          180.0
+          552.28571,
+          260.0
         ],
         "neck": [
-          533.0,
-          296.0
+          551.42857,
+          358.57143
         ],
         "belt": [
-          547.0,
-          576.0
+          564.28571,
+          595.71429
         ]
       },
       "exported_landmarks": {
@@ -2829,56 +2830,56 @@
           186.0
         ],
         "neck": [
-          381.8,
-          255.6
+          383.0,
+          255.0
         ],
         "belt": [
-          390.2,
-          423.6
+          392.0,
+          421.0
         ]
       },
       "opaque_bounds": [
-        84,
-        95,
-        626,
-        947
+        61,
+        91,
+        635,
+        929
       ],
-      "sha256": "d845ee0cd6b25f586cda55168e8d93a01f10a4d551c861fbdc47bbf651cf48e7"
+      "sha256": "a2cb3475aedfdc8cbf4badef3d8a089a951d5650cc4ef9be5a394638bc1d6988"
     },
     {
       "frame": 46,
-      "source": "run_v2/frame_46.png",
+      "source": "run_v3/intermediate_46.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        57.0,
-        78.05
+        -0.0,
+        2.0
       ],
       "applied_origin": [
-        57,
-        78
+        0,
+        2
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          545.0,
-          182.0
+          548.57143,
+          264.57143
         ],
         "neck": [
-          542.0,
-          299.0
+          545.71429,
+          362.85714
         ],
         "belt": [
-          546.0,
-          585.0
+          558.57143,
+          600.0
         ]
       },
       "exported_landmarks": {
@@ -2887,56 +2888,56 @@
           187.2
         ],
         "neck": [
-          382.2,
-          257.4
+          382.0,
+          256.0
         ],
         "belt": [
-          384.6,
-          429.0
+          391.0,
+          422.0
         ]
       },
       "opaque_bounds": [
-        78,
-        94,
-        622,
-        942
+        53,
+        93,
+        631,
+        918
       ],
-      "sha256": "3d7e618e10db0be0f7ab98309c94278c8f365013a782e0d6d0205b55e3f5529d"
+      "sha256": "bbcc2e1856774fa72bd19566df2427fb22813c55cd58b3896a38266bbec254b8"
     },
     {
       "frame": 47,
-      "source": "run_v2/frame_47.png",
+      "source": "run_v3/intermediate_47.png",
       "cell": [
         0,
         0,
-        1055,
-        1491
+        1086,
+        1448
       ],
-      "scale": 0.6,
+      "scale": 0.7,
       "requested_origin": [
-        63.0,
-        80.39903810567667
+        1.0,
+        1.0
       ],
       "applied_origin": [
-        63,
-        80
+        1,
+        1
       ],
       "sample_size": [
-        633,
-        895
+        760,
+        1014
       ],
       "source_cell_landmarks": {
         "eyes": [
-          535.0,
-          179.0
+          547.14286,
+          266.28571
         ],
         "neck": [
-          535.0,
-          297.0
+          548.57143,
+          364.28571
         ],
         "belt": [
-          552.0,
-          581.0
+          558.57143,
+          605.71429
         ]
       },
       "exported_landmarks": {
@@ -2945,21 +2946,21 @@
           187.4
         ],
         "neck": [
-          384.0,
-          258.2
+          385.0,
+          256.0
         ],
         "belt": [
-          394.2,
-          428.6
+          392.0,
+          425.0
         ]
       },
       "opaque_bounds": [
-        92,
-        96,
-        633,
-        950
+        71,
+        95,
+        630,
+        954
       ],
-      "sha256": "2f460aa650898c75b26a0417c5b38ec668791f74cf8db7593f1996d8214c300f"
+      "sha256": "2be36d4f8f62f7880ff66e9019c5d68957aa346ce707a509fd4cdcfe38a2586d"
     }
   ]
 }

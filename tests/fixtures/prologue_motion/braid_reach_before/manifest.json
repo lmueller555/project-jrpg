@@ -1,0 +1,66 @@
+{
+  "iselin": {
+    "frames": [
+      {
+        "index": 14,
+        "source": "iselin/frame_14.png",
+        "original_source": "run_v3/key_14_b.png (reviewed registered export)",
+        "sha256": "e247093e2c7db7e7cfcc9078d25402775a884cc79a0e92c6239f07cca282d935",
+        "original_complete_source_sha256": "1454d3426b73828c3669c5fed91f506bc1789478b968262b27f325aab8115d84",
+        "cell": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "scale": 1,
+        "origin": [
+          0,
+          0
+        ],
+        "landmarks": {
+          "neck": [
+            511.8858330407231,
+            198.05893304807245
+          ],
+          "belt": [
+            507.63060076269187,
+            379.40156457974376
+          ]
+        },
+        "artifact_space": "Actual registered RGBA character PNG, captured before later braid edits.",
+        "context": "Rejected original helper15 outward reach jump, not the later rejected bulky15 edit."
+      },
+      {
+        "index": 15,
+        "source": "iselin/frame_15.png",
+        "original_source": "run_v3/helper_frame_15.png (reviewed registered export)",
+        "sha256": "b5a4ad6a6a4fff5bebf617caa88b78534d0b7b696fbbeb29aff7f29fdf7f00b8",
+        "original_complete_source_sha256": "d90bc69770f7a693bd480051b6764f85f7f84d9979173a3eb22cd4e08cce8aec",
+        "cell": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "scale": 1,
+        "origin": [
+          0,
+          0
+        ],
+        "landmarks": {
+          "neck": [
+            511.65391081578736,
+            197.25506364582498
+          ],
+          "belt": [
+            505.8785525578416,
+            381.4660955888239
+          ]
+        },
+        "artifact_space": "Actual registered RGBA character PNG, captured before later braid edits.",
+        "context": "Rejected original helper15 outward reach jump, not the later rejected bulky15 edit."
+      }
+    ]
+  }
+}

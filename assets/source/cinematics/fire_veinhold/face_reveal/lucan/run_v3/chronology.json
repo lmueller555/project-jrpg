@@ -1,0 +1,18 @@
+{
+  "purpose": "Chronological selection of complete real drawings, reviewed by actual limb positions rather than source labels. No duplicated runtime drawing or regional transforms.",
+  "selected": {
+    "39": {
+      "source": "run_v3/frames/frame_39.png",
+      "requested_generation_frame": 40,
+      "generation_id": "exec-8f72d880-5860-4c99-8888-7e08d0b5a744",
+      "reason": "Balanced two-boot exchange belongs between37 and existing later40, earlier than original requested label40."
+    },
+    "41": {
+      "source": "run_v3/frames/frame_41.png",
+      "original_source": "run_v2/frames/frame_40.png",
+      "original_frame": 40,
+      "generation_id": "exec-0aa58514-21aa-4a7b-abb8-c7dedf0acf91",
+      "reason": "Existing whole later extension follows the new exchange and precedes42; pixels unchanged."
+    }
+  }
+}

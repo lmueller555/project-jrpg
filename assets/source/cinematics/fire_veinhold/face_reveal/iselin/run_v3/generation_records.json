@@ -1,0 +1,578 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "approval_state": "implemented_for_ingame_review",
+  "records": [
+    {
+      "effective_frame": 0,
+      "source_master": "run_v3/key_00.png",
+      "source_sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+      "generation_id": "exec-2ac1a239-90c1-49b8-8e31-7249d6ddfe56",
+      "prompt_file": "run_v3/key_00_prompt.txt",
+      "prompt_sha256": "6cdfd9ae30a0511a8be964ced7352b72506c83ff3ef0e15ffd3915915776609a",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/reference_snapshots/frame_47.png",
+          "sha256": "f6d369db73a020a61ace27522e73a83843f5532a2be0de66e6670b3d99112900"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_00.png",
+          "sha256": "881b365d7f970a0bbf547d7f1d71beaa315632bcd1af8006f31f9cf5a73f05e4"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 1,
+      "source_master": "run_v3/key_01_d.png",
+      "source_sha256": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+      "generation_id": "exec-f427c235-aae5-4f38-b015-8c4ff0c24fd7",
+      "prompt_file": "run_v3/key_01_d_prompt.txt",
+      "prompt_sha256": "fcb31312ceb6becdc285f67b1e9ef8d1e6f844eae8915759e81c48d0f15113b4",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/key_00.png",
+          "sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b"
+        },
+        {
+          "path": "run_v3/key_01_c.png",
+          "sha256": "a02e5d71a2d8d1de893d6bb26fe069430dc4bfb08833f7113c2863061d758336"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 2,
+      "source_master": "run_v3/key_02_c.png",
+      "source_sha256": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+      "generation_id": "exec-7041157f-e3b6-41ec-94a9-197bd035ab39",
+      "prompt_file": "run_v3/key_02_c_prompt.txt",
+      "prompt_sha256": "75aa5f83faf1d7e28bf9ea8f057b2cb3cd2d65f17832f2a5e3a3b714fddb3224",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/authoring_hand_02.png",
+          "sha256": "223a7aaa51636783c88f9ab15ae24fe8bd8001d0c1e72b03716b11f8bd1a74b0"
+        },
+        {
+          "path": "run_v3/key_03.png",
+          "sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 3,
+      "source_master": "run_v3/key_03.png",
+      "source_sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+      "generation_id": "exec-f3a4f331-d99b-4090-adfd-555e71014261",
+      "prompt_file": "run_v3/key_03_prompt.txt",
+      "prompt_sha256": "3ea24d32373ce07b94d7fea30477145cc0716b7721969e57d7fc545e7239fd91",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/reference_snapshots/frame_03.png",
+          "sha256": "05336d3ad5e1a6c12615f3aa7c11a201bec0097f29ca565661e4267be5018105"
+        },
+        {
+          "path": "run_v3/material_00_left_reference.png",
+          "sha256": "b080a87d2a7b02d6e64de3049b9fe72e8c33623ecb98fc797bf2e2c9ed5228ca"
+        },
+        {
+          "path": "run_v3/material_06_left_reference.png",
+          "sha256": "c6ea1782091bbb80841b92d9ee083dbf4c8773aae2eb9d1aa10bab54a03f0f70"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 9,
+      "source_master": "run_v3/helper_braid_frame_09_b.png",
+      "source_sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+      "generation_id": "exec-3c79026f-3088-4e43-a684-78c1a60110bf",
+      "prompt_file": "run_v3/helper_braid_frame_09_b_prompt.txt",
+      "prompt_sha256": "4125e3d2520f869c06a187cb3f02c599edfa16deae19aace5d494212be2a8fb1",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "helper_generation_record": "run_v3/helper_braid_generation_records.json",
+      "input_images": [
+        {
+          "path": "run_v3/helper_braid_09_b_guide.png",
+          "sha256": "87ff38171095915468aa88582fa5d4073c9327aa3e54257974c1e0849f99d007",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_09_b_guide.png"
+        },
+        {
+          "path": "run_v3/helper_braid_reference_frame_09.png",
+          "sha256": "5092269eaae05fbdeb8a969a77d92e926f743e0ebe810d738c4b9ac1de0428cd",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_reference_frame_09.png"
+        },
+        {
+          "path": "run_v3/helper_braid_outward_08_detail.png",
+          "sha256": "10513acc845583e68dec8dfb25bcedda2ffef4390a1e43eb7568a5b767c36943",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_outward_08_detail.png"
+        },
+        {
+          "path": "run_v3/helper_braid_midpoint_10_d_detail.png",
+          "sha256": "0c9f8cc8d53f971269c04dfa632ba44133df60e08756b2a394fa52747ddbbc21",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 10,
+      "source_master": "run_v3/helper_braid_frame_10_d.png",
+      "source_sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+      "generation_id": "exec-c2b2223a-e3d0-4269-8cd0-3a2aebcf2aa3",
+      "prompt_file": "run_v3/helper_braid_frame_10_d_prompt.txt",
+      "prompt_sha256": "86632ca13264155a62dc1dab014ed3b2a73f4114ae7ce7b392f7936d866b7123",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "helper_generation_record": "run_v3/helper_braid_generation_records.json",
+      "input_images": [
+        {
+          "path": "run_v3/helper_braid_10_d_guide.png",
+          "sha256": "17ad0bc2c27f7b363abbfa856599d66f8c64ad68f7d81f24359b12010a7e5029",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_d_guide.png"
+        },
+        {
+          "path": "run_v3/helper_braid_10_c_reference_registered.png",
+          "sha256": "eb90e501fa0b90fc48224598bb9450ff01f47bcaa7811b5b818642be6ba91aa1",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_c_reference_registered.png"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 11,
+      "source_master": "run_v3/helper_braid_frame_11_d.png",
+      "source_sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+      "generation_id": "exec-b08203f8-1e53-42a3-a459-7f615e2681ed",
+      "prompt_file": "run_v3/helper_braid_frame_11_d_prompt.txt",
+      "prompt_sha256": "cda2a719182a69af5e85d9c6b3e81e7d38d4be62620390c2062218560b0eddf5",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "helper_generation_record": "run_v3/helper_braid_generation_records.json",
+      "input_images": [
+        {
+          "path": "run_v3/helper_braid_11_d_guide.png",
+          "sha256": "8ff28e85cd11596bd9239c675e15c7f391a5e06146eabc0a5f922f08772f8a71",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_d_guide.png"
+        },
+        {
+          "path": "run_v3/helper_braid_midpoint_10_d_detail.png",
+          "sha256": "0c9f8cc8d53f971269c04dfa632ba44133df60e08756b2a394fa52747ddbbc21",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png"
+        },
+        {
+          "path": "run_v3/helper_braid_11_hand_clearance_detail.png",
+          "sha256": "71b33bc0b0f0a964b7e1c5e8857088ac715cb5a03722926de6b837bca79f0ec5",
+          "original_recorded_path": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_hand_clearance_detail.png"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 13,
+      "source_master": "run_v3/key_13_recolor.png",
+      "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+      "generation_id": "exec-5633616a-69fe-4948-a530-d19570dd612b",
+      "prompt_file": "run_v3/key_13_recolor_prompt.txt",
+      "prompt_sha256": "64ac9d1f44c8a679e1701dbdcca700cda36fb25cbd859b408e6f3eb141dd3d82",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/key_13_subdivision.png",
+          "sha256": "5ed727ad0d8df9e7870ff50bd7a0c50e2ee95a5692f3a240bd06b9e358fcff23"
+        },
+        {
+          "path": "run_v3/palette_12_blue_fabric.png",
+          "sha256": "1a502769e19019d8ac1314808a27da2d474d39ee1181a357efbee9bccee9b3b9"
+        },
+        {
+          "path": "run_v3/palette_15_actual_blue_fabric.png",
+          "sha256": "7cdaaa7fd8956139505eec3320a95b1a391cbc8f65ee5ee918ac4d0f23148fc7"
+        },
+        {
+          "path": "run_v3/palette_12_skin.png",
+          "sha256": "fc2b0bcc1fa1c916e09e4ac044bf4788424f1f62b9402e3c9db2a8c9adfea2e6"
+        },
+        {
+          "path": "run_v3/palette_15_white_hair.png",
+          "sha256": "2aedc745b9df19264d55a38fa3dcc594daf2219b8e7815f8854fbdaffcb8d80d"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 14,
+      "source_master": "run_v3/key_14_recolor.png",
+      "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+      "generation_id": "exec-1c304d6d-0993-42f8-9943-debceff79ac2",
+      "prompt_file": "run_v3/key_14_recolor_prompt.txt",
+      "prompt_sha256": "64ac9d1f44c8a679e1701dbdcca700cda36fb25cbd859b408e6f3eb141dd3d82",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/key_14_braid_mid.png",
+          "sha256": "f52fc68b11606a95392c24d53e3ffc05f1b96cffa31d56e728672c4b780d5c4f"
+        },
+        {
+          "path": "run_v3/palette_12_blue_fabric.png",
+          "sha256": "1a502769e19019d8ac1314808a27da2d474d39ee1181a357efbee9bccee9b3b9"
+        },
+        {
+          "path": "run_v3/palette_15_actual_blue_fabric.png",
+          "sha256": "7cdaaa7fd8956139505eec3320a95b1a391cbc8f65ee5ee918ac4d0f23148fc7"
+        },
+        {
+          "path": "run_v3/palette_12_skin.png",
+          "sha256": "fc2b0bcc1fa1c916e09e4ac044bf4788424f1f62b9402e3c9db2a8c9adfea2e6"
+        },
+        {
+          "path": "run_v3/palette_15_white_hair.png",
+          "sha256": "2aedc745b9df19264d55a38fa3dcc594daf2219b8e7815f8854fbdaffcb8d80d"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 15,
+      "source_master": "run_v3/key_15_hair.png",
+      "source_sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+      "generation_id": "exec-a24a243f-a3d8-4b49-8808-ad3308ab8627",
+      "prompt_file": "run_v3/key_15_hair_prompt.txt",
+      "prompt_sha256": "5d9346d97d807197247471fe741fdb956553297fa7bc9d07199da7df38c42562",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/helper_frame_15.png",
+          "sha256": "d90bc69770f7a693bd480051b6764f85f7f84d9979173a3eb22cd4e08cce8aec"
+        },
+        {
+          "path": "run_v3/hair_14_material_reference.png",
+          "sha256": "a3bb562015bb9ca2f7579677790465627cf7c6e579502bae5a9858b8267d1567"
+        },
+        {
+          "path": "run_v3/hair_16_material_reference.png",
+          "sha256": "b96d4284229d7a262ecba7fb83d6c4e77410ce4512cd7b54341b49d6909aaf7e"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 16,
+      "source_master": "run_v3/key_16_c.png",
+      "source_sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+      "generation_id": "exec-f417d7d9-c625-4239-a027-bf30f26ec9b0",
+      "prompt_file": "run_v3/key_16_c_prompt.txt",
+      "prompt_sha256": "ed9d3e07dc835c024f176862a673c6b712d0753cf9ec8a4c3d61238a45b9e100",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/key_16_b.png",
+          "sha256": "4cee1ced0969c2f7b57ca930fd405fa34f7691000fd0000bc30172c93295c8ad"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 17,
+      "source_master": "run_v3/helper_frame_17.png",
+      "source_sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "generation_id": "exec-bd5e8faf-9ffc-40af-83f0-50626201124c",
+      "prompt_file": "run_v3/helper_frame_17_prompt.txt",
+      "prompt_sha256": "abd1fc729d744814145b65cbc44763ebf417723c2165195867185c1ea0d8bd5c",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "helper_generation_record": "run_v3/helper_generation_records.json",
+      "input_images": [
+        {
+          "path": "run_v3/helper_frame_17_guide.png",
+          "sha256": "71e655d1d761aaf8777b864a8e1b3e0487e598b5e43ded1227a9679a61cf7d72",
+          "original_recorded_path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_17_guide.png"
+        },
+        {
+          "path": "run_v3/helper_baseline_frame_17_reference.png",
+          "sha256": "e14260dc0606167ae2c5f82f8bc8e95e29703fa4eb18cd751f75f88663bc8422",
+          "original_recorded_path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_17_reference.png"
+        },
+        {
+          "path": "run_v3/helper_frame_16_reference_registered.png",
+          "sha256": "0f7b0f99b985263bfd337a6eb546dda88fb1b4ef47eef6b1ec695a545333837b",
+          "original_recorded_path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_16_reference_registered.png"
+        },
+        {
+          "path": "run_v3/helper_baseline_frame_18_reference.png",
+          "sha256": "0b61631f38ac05de1dbe9593de87fcc3ffa618fe6c3b17532a6b5fe958646461",
+          "original_recorded_path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_18_reference.png"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 23,
+      "source_master": "run_v3/key_23.png",
+      "source_sha256": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+      "generation_id": "exec-faa92756-5bc2-4159-8811-ea46e52db644",
+      "prompt_file": "run_v3/key_23_prompt.txt",
+      "prompt_sha256": "688aef92345673f82a263d4c812ae88a83162823dc44df9798b3d3fdb5e948bf",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/reference_snapshots/frame_23.png",
+          "sha256": "ba21c4078bb745affb6e74c3124c8aeec5475e820968c68b0c0e43ea2904ab40"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_24.png",
+          "sha256": "3479f2e7362ad30de655b84582f9610c7a8517d9d3ab048a6cd65d794d66cc82"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 25,
+      "source_master": "run_v3/key_25_b.png",
+      "source_sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+      "generation_id": "exec-9f2a2320-1e3c-42f0-8276-11a4673fce0d",
+      "prompt_file": "run_v3/key_25_b_prompt.txt",
+      "prompt_sha256": "f521310bfd2a22741b267a208f188ba117841169fd1e6abfe934064f77fc65c8",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/reference_snapshots/frame_24.png",
+          "sha256": "3479f2e7362ad30de655b84582f9610c7a8517d9d3ab048a6cd65d794d66cc82"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_26.png",
+          "sha256": "a0248b27021867d919577b8c64c5a1ffe6683cfae2fd9fa091f8e9b4568ab14b"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 31,
+      "source_master": "run_v3/key_31_braid_path.png",
+      "source_sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+      "generation_id": "exec-9be8a0ed-a7cc-46ae-aba7-580693cef593",
+      "prompt_file": "run_v3/key_31_braid_path_prompt.txt",
+      "prompt_sha256": "37bca4f21be021a67b638941025a6cfee06e864631c942068395516c246b048a",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/authoring_braid_31_path.png",
+          "sha256": "b90393dd6a0281a1b90e8b2c6cbe1fc306b9702bab39bc68e25aa554054338a7"
+        },
+        {
+          "path": "run_v3/braid_body_31_reference.png",
+          "sha256": "fcd7aaea059000f1db2ecbf0cb5e441ef61f69914ee8a09f40f5238d015e58c4"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 32,
+      "source_master": "run_v3/key_32_braid_path.png",
+      "source_sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+      "generation_id": "exec-35402ce7-c288-4efe-a0ff-710d8d56ee3e",
+      "prompt_file": "run_v3/key_32_braid_path_prompt.txt",
+      "prompt_sha256": "14ab2541781b4555eb8678b04af1be1724dfb04f5545a35c07f77d0280adfb34",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/authoring_braid_32_path.png",
+          "sha256": "9bb0bd6997678773323edd99829ecee2ba0dad658247c208b9fe1620eaa4e895"
+        },
+        {
+          "path": "run_v3/braid_body_32_reference.png",
+          "sha256": "5d9e65e1529dcc50a6a1891b8bed87cf318021e55ae5a8eeda0d295e95eb2c30"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 33,
+      "source_master": "run_v3/key_33_braid_path.png",
+      "source_sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+      "generation_id": "exec-146a758c-9ee3-43c0-adc0-b0be621a8c99",
+      "prompt_file": "run_v3/key_33_braid_path_prompt.txt",
+      "prompt_sha256": "6c3d6bf0d73e637b308b0179c1f0cf15bd5dd83f7e511bae52b49d88525be942",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/authoring_braid_33_path.png",
+          "sha256": "8025994e28668e850ea53ea11170f78ef6954b64de79d31fc61f686fd5529076"
+        },
+        {
+          "path": "run_v3/braid_body_33_reference.png",
+          "sha256": "4f2cd9875cef5d827b914b5929eaf067951da184e2a7a5a495624a50ddc8a858"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 38,
+      "source_master": "run_v3/key_38_braid_clean.png",
+      "source_sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+      "generation_id": "exec-03b6b1f4-156a-4049-9e6e-58f5d92e3751",
+      "prompt_file": "run_v3/key_38_braid_clean_prompt.txt",
+      "prompt_sha256": "d3245eec507d41ad4b57a85fc56853407e200e256f2374ddf06d795c0bb52d07",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/braid_mid_curve_reference.png",
+          "sha256": "957680cc7abb9b9c22f8de71f43fe7bc2720f2468f0803a31d290eb7e585760f"
+        },
+        {
+          "path": "run_v3/braid_body_38_approved_reference.png",
+          "sha256": "6deab3ae9006bec566d24556a75c37ae94bf2a2e593ce87c2278f83a702668d6"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 39,
+      "source_master": "run_v3/key_39_braid_mid.png",
+      "source_sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+      "generation_id": "exec-8c939887-a222-45f7-ae09-9a183317c6fd",
+      "prompt_file": "run_v3/key_39_braid_mid_prompt.txt",
+      "prompt_sha256": "3a41eb35f03efbcd02bd537cddea76e78062792dcea5b913c605c4bf7bacadbc",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/braid_mid_curve_reference.png",
+          "sha256": "957680cc7abb9b9c22f8de71f43fe7bc2720f2468f0803a31d290eb7e585760f"
+        },
+        {
+          "path": "run_v3/braid_final_body_39_reference.png",
+          "sha256": "4e8959f90f71d2e0aa781aa0bf3b20c9bfa9d7de6d525ed22350bdc1cdf6aa13"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 40,
+      "source_master": "run_v3/key_40_b.png",
+      "source_sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+      "generation_id": "exec-046d36ff-27f2-4256-8101-ca15ca8473b2",
+      "prompt_file": "run_v3/key_40_b_prompt.txt",
+      "prompt_sha256": "36cec635fb595e999b0225077de6e367b801f91d33344a7be7a94eb0c19d995a",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/reference_snapshots/frame_40.png",
+          "sha256": "4d3c8b7e76df141e85e13264799fdd3f668e2b71c51b565c852c5b35edc10d1d"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_39.png",
+          "sha256": "cd63cfac367f81ae1e477579eb246d6a2ffa2727245920865869bbb708ebe8c6"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_41.png",
+          "sha256": "f4e8bb18cf6231c4b4cf8c9c5ca2c81f8b76405d9b3f01a1dae80bbd3ef55909"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    },
+    {
+      "effective_frame": 42,
+      "source_master": "run_v3/key_43_c.png",
+      "source_sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+      "generation_id": "exec-abfe88d4-74e4-454c-8676-12a526b39bc6",
+      "prompt_file": "run_v3/key_43_c_prompt.txt",
+      "prompt_sha256": "14c95b42ecc60ccf185b3e7b253fc3f4f8967df421099f6aae573019a71152c2",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/authoring_boot_43.png",
+          "sha256": "18d92b73a0fb4cf78714fac05fdbeee539e153457bce63cd09bd48e24814071b"
+        },
+        {
+          "path": "run_v3/reference_snapshots/frame_43.png",
+          "sha256": "d6956861597b89210d48839650b683a840e39a2634e3d0dc3019d98076e9b933"
+        }
+      ],
+      "selection_notes": "This complete unique drawing is selected at effective phase42 after visible right-knee/left-release path review; source filename is authoring history, not timeline order."
+    },
+    {
+      "effective_frame": 43,
+      "source_master": "run_v3/key_43_d.png",
+      "source_sha256": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+      "generation_id": "exec-83691d57-1ad1-42b6-b2a9-1121879c99dd",
+      "prompt_file": "run_v3/key_43_d_prompt.txt",
+      "prompt_sha256": "005226582771cdd9f8ac02aee22e1f07f5f79a249bd9f188cf3a1ec5aff0bdfa",
+      "tool": "image_gen.imagegen",
+      "transparent_background": true,
+      "input_path_space": "Relative to the actor source folder.",
+      "construction": "Complete ImageGen figure. No regional restoration, detached limbs, warps, blends, duplicated endpoint or guide pixels enter the exported artwork.",
+      "input_images": [
+        {
+          "path": "run_v3/key_43_c.png",
+          "sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a"
+        }
+      ],
+      "selection_notes": "Selected in observed chronological order. Source filename is authoring history, not effective phase."
+    }
+  ]
+}

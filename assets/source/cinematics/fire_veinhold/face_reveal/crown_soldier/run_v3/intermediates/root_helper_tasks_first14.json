@@ -1,0 +1,688 @@
+[
+  {
+    "frame": 1,
+    "source_bounds": [
+      0,
+      3
+    ],
+    "primary_frame": 0,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_01_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_00_d2068e0759a7.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_01.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_01.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        348,
+        946
+      ],
+      "right_knee": [
+        337,
+        683
+      ],
+      "left_toe": [
+        416,
+        747
+      ],
+      "left_knee": [
+        440,
+        650
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        348,
+        896
+      ],
+      "left_ankle": [
+        416,
+        697
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_01.png"
+  },
+  {
+    "frame": 2,
+    "source_bounds": [
+      0,
+      3
+    ],
+    "primary_frame": 3,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_02_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_03_452b552f3ac5.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_02.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_02.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        340,
+        939
+      ],
+      "right_knee": [
+        333,
+        677
+      ],
+      "left_toe": [
+        414,
+        733
+      ],
+      "left_knee": [
+        440,
+        650
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        340,
+        889
+      ],
+      "left_ankle": [
+        414,
+        683
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_02.png"
+  },
+  {
+    "frame": 4,
+    "source_bounds": [
+      3,
+      6
+    ],
+    "primary_frame": 3,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_04_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_03_452b552f3ac5.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_04.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_04.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        330,
+        929
+      ],
+      "right_knee": [
+        330,
+        667
+      ],
+      "left_toe": [
+        410,
+        728
+      ],
+      "left_knee": [
+        441,
+        644
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        330,
+        879
+      ],
+      "left_ankle": [
+        410,
+        678
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_04.png"
+  },
+  {
+    "frame": 5,
+    "source_bounds": [
+      3,
+      6
+    ],
+    "primary_frame": 6,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_05_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_06_5a9fe4631c3a.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_05.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_05.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        330,
+        928
+      ],
+      "right_knee": [
+        330,
+        663
+      ],
+      "left_toe": [
+        408,
+        736
+      ],
+      "left_knee": [
+        441,
+        638
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        330,
+        878
+      ],
+      "left_ankle": [
+        408,
+        686
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_05.png"
+  },
+  {
+    "frame": 7,
+    "source_bounds": [
+      6,
+      9
+    ],
+    "primary_frame": 6,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_07_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_06_5a9fe4631c3a.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_07.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_07.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        326,
+        922
+      ],
+      "right_knee": [
+        330,
+        672
+      ],
+      "left_toe": [
+        406,
+        739
+      ],
+      "left_knee": [
+        441,
+        617
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        326,
+        872
+      ],
+      "left_ankle": [
+        406,
+        689
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_07.png"
+  },
+  {
+    "frame": 8,
+    "source_bounds": [
+      6,
+      9
+    ],
+    "primary_frame": 9,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_08_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_08.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_08.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        323,
+        918
+      ],
+      "right_knee": [
+        330,
+        684
+      ],
+      "left_toe": [
+        407,
+        734
+      ],
+      "left_knee": [
+        441,
+        603
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        323,
+        868
+      ],
+      "left_ankle": [
+        407,
+        684
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_08.png"
+  },
+  {
+    "frame": 13,
+    "source_bounds": [
+      12,
+      15
+    ],
+    "primary_frame": 12,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_13_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_12_8fd4a2deb081.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_13.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_13.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        309,
+        834
+      ],
+      "right_knee": [
+        327,
+        647
+      ],
+      "left_toe": [
+        399,
+        676
+      ],
+      "left_knee": [
+        444,
+        530
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        309,
+        784
+      ],
+      "left_ankle": [
+        399,
+        626
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_13.png"
+  },
+  {
+    "frame": 14,
+    "source_bounds": [
+      12,
+      15
+    ],
+    "primary_frame": 15,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_14_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_15_823a1438796f.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_14.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_14.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        314,
+        830
+      ],
+      "right_knee": [
+        330,
+        645
+      ],
+      "left_toe": [
+        399,
+        686
+      ],
+      "left_knee": [
+        446,
+        543
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        314,
+        780
+      ],
+      "left_ankle": [
+        399,
+        636
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_14.png"
+  },
+  {
+    "frame": 16,
+    "source_bounds": [
+      15,
+      18
+    ],
+    "primary_frame": 15,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_16_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_15_823a1438796f.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_16.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_16.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        323,
+        800
+      ],
+      "right_knee": [
+        329,
+        645
+      ],
+      "left_toe": [
+        409,
+        745
+      ],
+      "left_knee": [
+        447,
+        571
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        323,
+        750
+      ],
+      "left_ankle": [
+        409,
+        695
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_16.png"
+  },
+  {
+    "frame": 17,
+    "source_bounds": [
+      15,
+      18
+    ],
+    "primary_frame": 18,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_17_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_18_8415f2e15c85.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_17.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_17.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        326,
+        772
+      ],
+      "right_knee": [
+        325,
+        649
+      ],
+      "left_toe": [
+        418,
+        793
+      ],
+      "left_knee": [
+        447,
+        587
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        326,
+        722
+      ],
+      "left_ankle": [
+        418,
+        743
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_17.png"
+  },
+  {
+    "frame": 19,
+    "source_bounds": [
+      18,
+      21
+    ],
+    "primary_frame": 18,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_19_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_18_8415f2e15c85.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_19.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_19.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        331,
+        736
+      ],
+      "right_knee": [
+        321,
+        637
+      ],
+      "left_toe": [
+        427,
+        863
+      ],
+      "left_knee": [
+        444,
+        620
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        331,
+        686
+      ],
+      "left_ankle": [
+        427,
+        813
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_19.png"
+  },
+  {
+    "frame": 20,
+    "source_bounds": [
+      18,
+      21
+    ],
+    "primary_frame": 21,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_20_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_21_5b3999bb5b0b.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_20.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_20.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        334,
+        728
+      ],
+      "right_knee": [
+        321,
+        621
+      ],
+      "left_toe": [
+        426,
+        884
+      ],
+      "left_knee": [
+        440,
+        637
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        334,
+        678
+      ],
+      "left_ankle": [
+        426,
+        834
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_20.png"
+  },
+  {
+    "frame": 22,
+    "source_bounds": [
+      21,
+      24
+    ],
+    "primary_frame": 21,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_22_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_21_5b3999bb5b0b.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_22.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_22.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        325,
+        734
+      ],
+      "right_knee": [
+        318,
+        621
+      ],
+      "left_toe": [
+        415,
+        920
+      ],
+      "left_knee": [
+        437,
+        665
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        325,
+        684
+      ],
+      "left_ankle": [
+        415,
+        870
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_22.png"
+  },
+  {
+    "frame": 23,
+    "source_bounds": [
+      21,
+      24
+    ],
+    "primary_frame": 24,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/phase_23_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_24_9f08262536df.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_23.png",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_23.png"
+    ],
+    "guide_only_planned_points": {
+      "right_toe": [
+        314,
+        748
+      ],
+      "right_knee": [
+        314,
+        635
+      ],
+      "left_toe": [
+        404,
+        935
+      ],
+      "left_knee": [
+        438,
+        676
+      ],
+      "right_hip": [
+        340,
+        480
+      ],
+      "left_hip": [
+        440,
+        480
+      ],
+      "right_ankle": [
+        314,
+        698
+      ],
+      "left_ankle": [
+        404,
+        885
+      ]
+    },
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/root_helper_23.png"
+  }
+]

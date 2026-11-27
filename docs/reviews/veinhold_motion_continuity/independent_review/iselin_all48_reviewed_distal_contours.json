@@ -1,0 +1,3273 @@
+{
+  "profile_sha256": "99b5d07cf0960acb9e88a2f1e0ca42cf301590ed0f6f112513dc63adbfe19a17",
+  "status": "Final production artwork and all96 visible sole identities independently reviewed; explicit correction of formerly contaminated L25/L37/L38 and source-specific31\u201333 boxes.",
+  "coordinates": "Actual exported artwork pixels from source-cell alpha quantiles and rounded exporter transform. These are observed contours, not planned gait coordinates; hidden heels/joints unmeasured.",
+  "alpha_threshold": 128,
+  "quantile": 0.995,
+  "frames": [
+    {
+      "frame": 0,
+      "source": "run_v3/key_00.png",
+      "source_sha256": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.243615403090189,
+        4.627331678808758
+      ],
+      "applied_origin": [
+        9,
+        5
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        200.37266832119124
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            465.3285565607237,
+            940.873829156993
+          ],
+          "measurement_window_exported": [
+            371.7563845969098,
+            525.1793291169641,
+            491.7563845969098,
+            1200.3726683211912
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.7563845969098,
+            525.1793291169641,
+            491.7563845969098,
+            1024
+          ],
+          "source_pixel_support": 50427,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            526.1723641021536,
+            743.131454647346
+          ],
+          "measurement_window_exported": [
+            519.7563845969098,
+            525.1793291169641,
+            651.7563845969098,
+            1200.3726683211912
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.7563845969098,
+            525.1793291169641,
+            651.7563845969098,
+            1024
+          ],
+          "source_pixel_support": 32814,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 1,
+      "source": "run_v3/key_01_d.png",
+      "source_sha256": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.7851820444570073,
+      "requested_origin": [
+        11.046788998029172,
+        7.8425283254422595
+      ],
+      "applied_origin": [
+        11,
+        8
+      ],
+      "neck_exported": [
+        511.9532110019708,
+        201.19247167455774
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            463.26485760723625,
+            929.0185381480696
+          ],
+          "measurement_window_exported": [
+            371.9532110019708,
+            524.4774377939525,
+            491.9532110019708,
+            1201.1924716745577
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.9532110019708,
+            524.4774377939525,
+            491.9532110019708,
+            1024
+          ],
+          "source_pixel_support": 52101,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            526.8646032082538,
+            740.5748474783878
+          ],
+          "measurement_window_exported": [
+            519.9532110019709,
+            524.4774377939525,
+            651.9532110019709,
+            1201.1924716745577
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9532110019709,
+            524.4774377939525,
+            651.9532110019709,
+            1024
+          ],
+          "source_pixel_support": 33868,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 2,
+      "source": "run_v3/key_02_c.png",
+      "source_sha256": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+      "cell": [
+        0,
+        0,
+        1048,
+        1501
+      ],
+      "scale": 0.6559742858079963,
+      "requested_origin": [
+        128.0516907737217,
+        5.006330151858037
+      ],
+      "applied_origin": [
+        128,
+        5
+      ],
+      "neck_exported": [
+        511.9483092262783,
+        201.99366984814196
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            471.0745514775821,
+            967.3142772803307
+          ],
+          "measurement_window_exported": [
+            371.9483092262783,
+            531.9871101052838,
+            491.9483092262783,
+            1201.993669848142
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.9483092262783,
+            531.9871101052838,
+            491.9483092262783,
+            1024
+          ],
+          "source_pixel_support": 74409,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            552.4153629177737,
+            781.6735543966677
+          ],
+          "measurement_window_exported": [
+            519.9483092262783,
+            531.9871101052838,
+            651.9483092262783,
+            1201.993669848142
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9483092262783,
+            531.9871101052838,
+            651.9483092262783,
+            1024
+          ],
+          "source_pixel_support": 50946,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 3,
+      "source": "run_v3/key_03.png",
+      "source_sha256": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.141141621967847,
+        3.1226121207269273
+      ],
+      "applied_origin": [
+        9,
+        3
+      ],
+      "neck_exported": [
+        511.85885837803215,
+        202.70538787927308
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            470.9325914658554,
+            970.8968857577455
+          ],
+          "measurement_window_exported": [
+            371.85885837803215,
+            534.6684012488993,
+            491.85885837803215,
+            1202.705387879273
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.85885837803215,
+            534.6684012488993,
+            491.85885837803215,
+            1024
+          ],
+          "source_pixel_support": 49560,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            554.192538627812,
+            787.5648867184373
+          ],
+          "measurement_window_exported": [
+            519.8588583780322,
+            534.6684012488993,
+            651.8588583780322,
+            1202.705387879273
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8588583780322,
+            534.6684012488993,
+            651.8588583780322,
+            1024
+          ],
+          "source_pixel_support": 33681,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 4,
+      "source": "run_v2/repairs/frame_04.png",
+      "source_sha256": "a9365d58d58609a030e0983588748b32279565e58054579b0b444492ec6dc057",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6799853123172539,
+      "requested_origin": [
+        122.78388706803935,
+        21.897041846296105
+      ],
+      "applied_origin": [
+        123,
+        22
+      ],
+      "neck_exported": [
+        512.2161129319607,
+        203.5669581537039
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            471.8324652187513,
+            986.2191728658661
+          ],
+          "measurement_window_exported": [
+            372.21611293196065,
+            539.6265792658878,
+            492.21611293196065,
+            1203.5669581537038
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.21611293196065,
+            539.6265792658878,
+            492.21611293196065,
+            1024
+          ],
+          "source_pixel_support": 70613,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            558.8705851953598,
+            800.5831826032558
+          ],
+          "measurement_window_exported": [
+            520.2161129319607,
+            539.6265792658878,
+            652.2161129319607,
+            1203.5669581537038
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.2161129319607,
+            539.6265792658878,
+            652.2161129319607,
+            1024
+          ],
+          "source_pixel_support": 48588,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 5,
+      "source": "run_v2/repairs/frame_05.png",
+      "source_sha256": "d68eb11e7041744a50e8a37af2f3235f5816111d94f320bd22a34d60a0729931",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        130.1298410178063,
+        25.723884849657424
+      ],
+      "applied_origin": [
+        130,
+        26
+      ],
+      "neck_exported": [
+        511.8701589821937,
+        204.14011515034258
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            471.5815492591282,
+            971.3536236331734
+          ],
+          "measurement_window_exported": [
+            371.8701589821937,
+            537.1611104068957,
+            491.8701589821937,
+            1204.1401151503426
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.8701589821937,
+            537.1611104068957,
+            491.8701589821937,
+            1024
+          ],
+          "source_pixel_support": 70587,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            555.6426336471169,
+            785.885516808881
+          ],
+          "measurement_window_exported": [
+            519.8701589821937,
+            537.1611104068957,
+            651.8701589821937,
+            1204.1401151503426
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8701589821937,
+            537.1611104068957,
+            651.8701589821937,
+            1024
+          ],
+          "source_pixel_support": 47352,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 6,
+      "source": "run_v2/repairs/frame_06.png",
+      "source_sha256": "93215b0a57c2e720676b681e3bb8ccb5cacb49a2a841ebc387e586324754adeb",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.64949196416063,
+        24.616314521885926
+      ],
+      "applied_origin": [
+        130,
+        25
+      ],
+      "neck_exported": [
+        512.3505080358393,
+        204.38368547811407
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            468.9129434055413,
+            967.0178663161896
+          ],
+          "measurement_window_exported": [
+            372.3505080358393,
+            537.0270730063846,
+            492.3505080358393,
+            1204.383685478114
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.3505080358393,
+            537.0270730063846,
+            492.3505080358393,
+            1024
+          ],
+          "source_pixel_support": 74570,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            549.6382704765462,
+            760.200912663202
+          ],
+          "measurement_window_exported": [
+            520.3505080358393,
+            537.0270730063846,
+            652.3505080358393,
+            1204.383685478114
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.3505080358393,
+            537.0270730063846,
+            652.3505080358393,
+            1024
+          ],
+          "source_pixel_support": 42763,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 7,
+      "source": "run_v2/repairs/frame_07.png",
+      "source_sha256": "54dce178a288860d01bf417ea3e51968d8907d9853de01f3d9718d9f73b4ddb8",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        130.1298410178063,
+        24.384911862620157
+      ],
+      "applied_origin": [
+        130,
+        24
+      ],
+      "neck_exported": [
+        511.8701589821937,
+        203.47908813737985
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            468.91294340554134,
+            966.0178663161896
+          ],
+          "measurement_window_exported": [
+            371.8701589821937,
+            536.932397542214,
+            491.8701589821937,
+            1203.47908813738
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.8701589821937,
+            536.932397542214,
+            491.8701589821937,
+            1024
+          ],
+          "source_pixel_support": 74204,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            546.9696646229593,
+            741.18782315149
+          ],
+          "measurement_window_exported": [
+            519.8701589821937,
+            536.932397542214,
+            651.8701589821937,
+            1203.47908813738
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8701589821937,
+            536.932397542214,
+            651.8701589821937,
+            1024
+          ],
+          "source_pixel_support": 41647,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 8,
+      "source": "run_v2/repairs/frame_08.png",
+      "source_sha256": "3f69547d4dd4ed006a06653c9eacc42a1628681a6c897b8e6c1f3a4a9b13dfbb",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.10242776417533,
+        23.72138703457847
+      ],
+      "applied_origin": [
+        129,
+        24
+      ],
+      "neck_exported": [
+        511.89757223582467,
+        203.74261296542153
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            465.2443375519544,
+            967.3521692429831
+          ],
+          "measurement_window_exported": [
+            371.89757223582467,
+            536.0270730063846,
+            491.89757223582467,
+            1203.7426129654216
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.89757223582467,
+            536.0270730063846,
+            491.89757223582467,
+            1024
+          ],
+          "source_pixel_support": 74881,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            551.9740277935299,
+            744.5235804684737
+          ],
+          "measurement_window_exported": [
+            519.8975722358247,
+            536.0270730063846,
+            651.8975722358247,
+            1203.7426129654216
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8975722358247,
+            536.0270730063846,
+            651.8975722358247,
+            1024
+          ],
+          "source_pixel_support": 42469,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 9,
+      "source": "run_v3/helper_braid_frame_09_b.png",
+      "source_sha256": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.710351453046258,
+        3.495680730125713
+      ],
+      "applied_origin": [
+        10,
+        3
+      ],
+      "neck_exported": [
+        512.2896485469537,
+        202.3323192698743
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            460.3242334480825,
+            950.8824753822753
+          ],
+          "measurement_window_exported": [
+            372.2896485469537,
+            531.936834520855,
+            492.2896485469537,
+            1202.3323192698742
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.2896485469537,
+            531.936834520855,
+            492.2896485469537,
+            1024
+          ],
+          "source_pixel_support": 50458,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            551.1896565527179,
+            726.7210791770074
+          ],
+          "measurement_window_exported": [
+            520.2896485469537,
+            531.936834520855,
+            652.2896485469537,
+            1202.3323192698742
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.2896485469537,
+            531.936834520855,
+            652.2896485469537,
+            1024
+          ],
+          "source_pixel_support": 27558,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 10,
+      "source": "run_v3/helper_braid_frame_10_d.png",
+      "source_sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        -0.33453915940583556,
+        0.32109814553203364
+      ],
+      "applied_origin": [
+        0,
+        0
+      ],
+      "neck_exported": [
+        512.3345391594058,
+        201.67890185446797
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            455.65526984101064,
+            979.0872196046088
+          ],
+          "measurement_window_exported": [
+            372.33453915940584,
+            536.0347375899266,
+            492.33453915940584,
+            1201.678901854468
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.33453915940584,
+            536.0347375899266,
+            492.33453915940584,
+            1024
+          ],
+          "source_pixel_support": 52841,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            548.7461314214321,
+            727.5785760364524
+          ],
+          "measurement_window_exported": [
+            520.3345391594058,
+            536.0347375899266,
+            652.3345391594058,
+            1201.678901854468
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.3345391594058,
+            536.0347375899266,
+            652.3345391594058,
+            1024
+          ],
+          "source_pixel_support": 27777,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 11,
+      "source": "run_v3/helper_braid_frame_11_d.png",
+      "source_sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        -0.8106090918741984,
+        0.11552359526706368
+      ],
+      "applied_origin": [
+        -1,
+        0
+      ],
+      "neck_exported": [
+        511.8106090918742,
+        200.91947640473293
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            453.02209683082776,
+            955.4062109569577
+          ],
+          "measurement_window_exported": [
+            371.8106090918742,
+            531.1352185593781,
+            491.8106090918742,
+            1200.919476404733
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.8106090918742,
+            531.1352185593781,
+            491.8106090918742,
+            1024
+          ],
+          "source_pixel_support": 47513,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            539.580266370518,
+            697.36487534807
+          ],
+          "measurement_window_exported": [
+            519.8106090918742,
+            531.1352185593781,
+            651.8106090918742,
+            1200.919476404733
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8106090918742,
+            531.1352185593781,
+            651.8106090918742,
+            1024
+          ],
+          "source_pixel_support": 25442,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 12,
+      "source": "run_v2/repairs/frame_12.png",
+      "source_sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        136.49466012742357,
+        23.32715641144847
+      ],
+      "applied_origin": [
+        136,
+        23
+      ],
+      "neck_exported": [
+        511.5053398725764,
+        199.67284358855153
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            444.40956266083464,
+            940.3711195070684
+          ],
+          "measurement_window_exported": [
+            371.5053398725764,
+            530.9502223037082,
+            491.5053398725764,
+            1199.6728435885516
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.5053398725764,
+            530.9502223037082,
+            491.5053398725764,
+            1024
+          ],
+          "source_pixel_support": 70355,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            543.2839659767285,
+            688.9289282931397
+          ],
+          "measurement_window_exported": [
+            519.5053398725764,
+            530.9502223037082,
+            651.5053398725764,
+            1199.6728435885516
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.5053398725764,
+            530.9502223037082,
+            651.5053398725764,
+            1024
+          ],
+          "source_pixel_support": 37535,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 13,
+      "source": "run_v3/key_13_recolor.png",
+      "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+      "cell": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "scale": 0.7964192988324493,
+      "requested_origin": [
+        8.424873767541158,
+        1.308065577165081
+      ],
+      "applied_origin": [
+        8,
+        1
+      ],
+      "neck_exported": [
+        511.57512623245884,
+        198.65693442283492
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            448.41987225434445,
+            995.7277042417293
+          ],
+          "measurement_window_exported": [
+            371.57512623245884,
+            534.1597139261878,
+            491.57512623245884,
+            1198.6569344228349
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.57512623245884,
+            534.1597139261878,
+            491.57512623245884,
+            1024
+          ],
+          "source_pixel_support": 57007,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            541.600930217741,
+            730.5200777305236
+          ],
+          "measurement_window_exported": [
+            519.5751262324588,
+            534.1597139261878,
+            651.5751262324588,
+            1198.6569344228349
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.5751262324588,
+            534.1597139261878,
+            651.5751262324588,
+            1024
+          ],
+          "source_pixel_support": 30325,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 14,
+      "source": "run_v3/key_14_recolor.png",
+      "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8332500083325001,
+      "requested_origin": [
+        -10.683564976835669,
+        -4.958037529580395
+      ],
+      "applied_origin": [
+        -11,
+        -5
+      ],
+      "neck_exported": [
+        511.68356497683567,
+        197.9580375295804
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            450.62050461620504,
+            960.7367596573677
+          ],
+          "measurement_window_exported": [
+            371.68356497683567,
+            528.9132753391327,
+            491.68356497683567,
+            1197.9580375295805
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.68356497683567,
+            528.9132753391327,
+            491.68356497683567,
+            1024
+          ],
+          "source_pixel_support": 48359,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            528.9460053994601,
+            739.0922574409226
+          ],
+          "measurement_window_exported": [
+            519.6835649768357,
+            528.9132753391327,
+            651.6835649768357,
+            1197.9580375295805
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.6835649768357,
+            528.9132753391327,
+            651.6835649768357,
+            1024
+          ],
+          "source_pixel_support": 28292,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "source": "run_v3/key_15_hair.png",
+      "source_sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        8.31094387959331,
+        1.6824475222159947
+      ],
+      "applied_origin": [
+        8,
+        2
+      ],
+      "neck_exported": [
+        511.6890561204067,
+        197.489552477784
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            400.28244335921863,
+            900.2467376511088
+          ],
+          "measurement_window_exported": [
+            371.6890561204067,
+            530.4660955888239,
+            491.6890561204067,
+            1197.489552477784
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.6890561204067,
+            530.4660955888239,
+            491.6890561204067,
+            1024
+          ],
+          "source_pixel_support": 44707,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            536.380433912417,
+            776.9579697382114
+          ],
+          "measurement_window_exported": [
+            519.6890561204067,
+            530.4660955888239,
+            651.6890561204067,
+            1197.489552477784
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.6890561204067,
+            530.4660955888239,
+            651.6890561204067,
+            1024
+          ],
+          "source_pixel_support": 34750,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 16,
+      "source": "run_v3/key_16_c.png",
+      "source_sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.7851820444570073,
+      "requested_origin": [
+        20.584395292048498,
+        7.592933550043597
+      ],
+      "applied_origin": [
+        21,
+        8
+      ],
+      "neck_exported": [
+        512.4156047079515,
+        196.9430664499564
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            423.01320676198776,
+            864.633610502595
+          ],
+          "measurement_window_exported": [
+            372.4156047079515,
+            522.6314748074341,
+            492.4156047079515,
+            1196.9430664499564
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.4156047079515,
+            522.6314748074341,
+            492.4156047079515,
+            1024
+          ],
+          "source_pixel_support": 42794,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            560.420064541964,
+            817.5226878351746
+          ],
+          "measurement_window_exported": [
+            520.4156047079515,
+            522.6314748074341,
+            652.4156047079515,
+            1196.9430664499564
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.4156047079515,
+            522.6314748074341,
+            652.4156047079515,
+            1024
+          ],
+          "source_pixel_support": 40249,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "source": "run_v3/helper_frame_17.png",
+      "source_sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        7.741734048514957,
+        1.8809363541750201
+      ],
+      "applied_origin": [
+        8,
+        2
+      ],
+      "neck_exported": [
+        512.2582659514851,
+        196.25506364582498
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            412.29108958450087,
+            828.9954367144343
+          ],
+          "measurement_window_exported": [
+            372.2582659514851,
+            522.6492674725803,
+            492.2582659514851,
+            1196.255063645825
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.2582659514851,
+            522.6492674725803,
+            492.2582659514851,
+            1024
+          ],
+          "source_pixel_support": 37190,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            539.5827395724922,
+            841.8046593547353
+          ],
+          "measurement_window_exported": [
+            520.2582659514851,
+            522.6492674725803,
+            652.2582659514851,
+            1196.255063645825
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.2582659514851,
+            522.6492674725803,
+            652.2582659514851,
+            1024
+          ],
+          "source_pixel_support": 45202,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 18,
+      "source": "run_v2/repairs/frame_18.png",
+      "source_sha256": "09a5545e88ed3e7959617a247d18149111e18935498042931c242907375fbfea",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.2562811438001,
+        12.756919571238683
+      ],
+      "applied_origin": [
+        131,
+        13
+      ],
+      "neck_exported": [
+        511.7437188561999,
+        196.24308042876132
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            413.217667742717,
+            805.3048212730571
+          ],
+          "measurement_window_exported": [
+            371.7437188561999,
+            527.0745421329369,
+            491.7437188561999,
+            1196.2430804287612
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.7437188561999,
+            527.0745421329369,
+            491.7437188561999,
+            1024
+          ],
+          "source_pixel_support": 51938,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            544.1771423333049,
+            820.3651608509747
+          ],
+          "measurement_window_exported": [
+            519.7437188561998,
+            527.0745421329369,
+            651.7437188561998,
+            1196.2430804287612
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.7437188561998,
+            527.0745421329369,
+            651.7437188561998,
+            1024
+          ],
+          "source_pixel_support": 62497,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 19,
+      "source": "run_v2/repairs/frame_19.png",
+      "source_sha256": "7d3fdb318c6be069c87642fcb4a2034e9f3de81273926667dd6954280b45e57a",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.2562811438001,
+        8.950384588689019
+      ],
+      "applied_origin": [
+        131,
+        9
+      ],
+      "neck_exported": [
+        511.7437188561999,
+        196.18561541131098
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            414.5272624886229,
+            765.9457631335983
+          ],
+          "measurement_window_exported": [
+            371.7437188561999,
+            523.0745421329369,
+            491.7437188561999,
+            1196.185615411311
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.7437188561999,
+            523.0745421329369,
+            491.7437188561999,
+            1024
+          ],
+          "source_pixel_support": 48110,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            537.6291686037755,
+            867.439355941304
+          ],
+          "measurement_window_exported": [
+            519.7437188561998,
+            523.0745421329369,
+            651.7437188561998,
+            1196.185615411311
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.7437188561998,
+            523.0745421329369,
+            651.7437188561998,
+            1024
+          ],
+          "source_pixel_support": 69346,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 20,
+      "source": "run_v2/repairs/frame_20.png",
+      "source_sha256": "c1ce05a443d886950de88a29e7615f848d5f12eab500782a0377ae13056f6dad",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        123.83259835480453,
+        7.8749062718909215
+      ],
+      "applied_origin": [
+        124,
+        8
+      ],
+      "neck_exported": [
+        512.1674016451955,
+        196.66109372810908
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            414.2108865775797,
+            778.5599402232289
+          ],
+          "measurement_window_exported": [
+            372.16740164519547,
+            528.0575751712911,
+            492.16740164519547,
+            1196.661093728109
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.16740164519547,
+            528.0575751712911,
+            492.16740164519547,
+            1024
+          ],
+          "source_pixel_support": 47376,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            534.9653014523888,
+            896.6457492444509
+          ],
+          "measurement_window_exported": [
+            520.1674016451955,
+            528.0575751712911,
+            652.1674016451955,
+            1196.661093728109
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.1674016451955,
+            528.0575751712911,
+            652.1674016451955,
+            1024
+          ],
+          "source_pixel_support": 69545,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 21,
+      "source": "run_v2/repairs/frame_21.png",
+      "source_sha256": "b89d1fafee92c1245401f01fe6bf13d8b499b1c1c2bd6382854ed65355c9ab4a",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        124.07277288162737,
+        7.79371844873944
+      ],
+      "applied_origin": [
+        124,
+        8
+      ],
+      "neck_exported": [
+        511.9272271183726,
+        197.37828155126056
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            418.8809468213568,
+            778.5599402232289
+          ],
+          "measurement_window_exported": [
+            371.9272271183726,
+            527.6052464791081,
+            491.9272271183726,
+            1197.3782815512604
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.9272271183726,
+            527.6052464791081,
+            491.9272271183726,
+            1024
+          ],
+          "source_pixel_support": 46850,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            537.6339073059756,
+            909.321627048989
+          ],
+          "measurement_window_exported": [
+            519.9272271183727,
+            527.6052464791081,
+            651.9272271183727,
+            1197.3782815512604
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9272271183727,
+            527.6052464791081,
+            651.9272271183727,
+            1024
+          ],
+          "source_pixel_support": 67836,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 22,
+      "source": "run_v2/repairs/frame_22.png",
+      "source_sha256": "4639a5169c2c6083aa96fbbdd8c8e6d7224382d726e3fda303c6920a92ce6fa4",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        124.07277288162737,
+        8.621718448739443
+      ],
+      "applied_origin": [
+        124,
+        9
+      ],
+      "neck_exported": [
+        511.9272271183726,
+        198.37828155126056
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            416.2123409677699,
+            769.5526682722779
+          ],
+          "measurement_window_exported": [
+            371.9272271183726,
+            528.6052464791081,
+            491.9272271183726,
+            1198.3782815512604
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.9272271183726,
+            528.6052464791081,
+            491.9272271183726,
+            1024
+          ],
+          "source_pixel_support": 45295,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            534.298149988992,
+            911.6559299757824
+          ],
+          "measurement_window_exported": [
+            519.9272271183727,
+            528.6052464791081,
+            651.9272271183727,
+            1198.3782815512604
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9272271183727,
+            528.6052464791081,
+            651.9272271183727,
+            1024
+          ],
+          "source_pixel_support": 66976,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 23,
+      "source": "run_v3/key_23.png",
+      "source_sha256": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        8.87935313425669,
+        3.8477155551997555
+      ],
+      "applied_origin": [
+        9,
+        4
+      ],
+      "neck_exported": [
+        512.1206468657433,
+        199.11728444480025
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            421.29685373468897,
+            751.7383716275718
+          ],
+          "measurement_window_exported": [
+            372.1206468657433,
+            521.4469618125049,
+            492.1206468657433,
+            1199.1172844448001
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.1206468657433,
+            521.4469618125049,
+            492.1206468657433,
+            1024
+          ],
+          "source_pixel_support": 30728,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            542.9844688175486,
+            962.2899687775198
+          ],
+          "measurement_window_exported": [
+            520.1206468657433,
+            521.4469618125049,
+            652.1206468657433,
+            1199.1172844448001
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.1206468657433,
+            521.4469618125049,
+            652.1206468657433,
+            1024
+          ],
+          "source_pixel_support": 58875,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 24,
+      "source": "run_v2/repairs/frame_24.png",
+      "source_sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.7071835707112852,
+      "requested_origin": [
+        101.70057847616084,
+        -0.6414154986351264
+      ],
+      "applied_origin": [
+        102,
+        -1
+      ],
+      "neck_exported": [
+        512.2994215238391,
+        199.64141549863513
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            429.425993239325,
+            778.3162949238363
+          ],
+          "measurement_window_exported": [
+            350.0000215238391,
+            720.0000154986351,
+            490.0000215238391,
+            820.0000154986351
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0000215238391,
+            720.0000154986351,
+            490.0000215238391,
+            820.0000154986351
+          ],
+          "source_pixel_support": 4745,
+          "observation_y_error": 0.3162949238362671,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            537.271487772796,
+            1002.4934868393136
+          ],
+          "measurement_window_exported": [
+            475.0000215238391,
+            940.0000154986351,
+            565.0000215238391,
+            1024.000015498635
+          ],
+          "overlay_box_clipped_to_canvas": [
+            475.0000215238391,
+            940.0000154986351,
+            565.0000215238391,
+            1024
+          ],
+          "source_pixel_support": 7203,
+          "observation_y_error": 1.4934868393136185,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 25,
+      "source": "run_v3/key_25_b.png",
+      "source_sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        8.31094387959331,
+        3.9378900808582387
+      ],
+      "applied_origin": [
+        8,
+        4
+      ],
+      "neck_exported": [
+        511.6890561204067,
+        201.09710991914176
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            430.7043471299335,
+            754.1401008726283
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 16411,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            536.380433912417,
+            979.1020734929149
+          ],
+          "measurement_window_exported": [
+            519.6890561204067,
+            532.6550316227683,
+            651.6890561204067,
+            1201.0971099191418
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.6890561204067,
+            532.6550316227683,
+            651.6890561204067,
+            1024
+          ],
+          "source_pixel_support": 48183,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 26,
+      "source": "run_v2/repairs/frame_26.png",
+      "source_sha256": "d11f74b35cbdf24e04f8e69af2aaf3235e054823cabe7ca3e3e44552db09a9ba",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        121.0145954334431,
+        21.995547377863915
+      ],
+      "applied_origin": [
+        121,
+        22
+      ],
+      "neck_exported": [
+        511.9854045665569,
+        202.00445262213609
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            436.2849350768405,
+            730.4907575350808
+          ],
+          "measurement_window_exported": [
+            371.9854045665569,
+            537.8326730793157,
+            491.9854045665569,
+            1202.0044526221361
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.9854045665569,
+            537.8326730793157,
+            491.9854045665569,
+            1024
+          ],
+          "source_pixel_support": 37932,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            536.7963318251167,
+            960.3246354415626
+          ],
+          "measurement_window_exported": [
+            519.9854045665569,
+            537.8326730793157,
+            651.9854045665569,
+            1202.0044526221361
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9854045665569,
+            537.8326730793157,
+            651.9854045665569,
+            1024
+          ],
+          "source_pixel_support": 68046,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 27,
+      "source": "run_v2/repairs/frame_27.png",
+      "source_sha256": "fd20f50ac8de2f4d74656ad5d24489719c6f9ae9214ddf720ac58a805e8c8663",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        132.5082708120375,
+        14.829517226304574
+      ],
+      "applied_origin": [
+        133,
+        15
+      ],
+      "neck_exported": [
+        512.4917291879625,
+        202.99848277369543
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            430.6592284004192,
+            715.1099346178327
+          ],
+          "measurement_window_exported": [
+            372.4917291879625,
+            530.1944428372132,
+            492.4917291879625,
+            1202.9984827736955
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.4917291879625,
+            530.1944428372132,
+            492.4917291879625,
+            1024
+          ],
+          "source_pixel_support": 38491,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            543.1654162407505,
+            934.3362777809923
+          ],
+          "measurement_window_exported": [
+            520.4917291879625,
+            530.1944428372132,
+            652.4917291879625,
+            1202.9984827736955
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.4917291879625,
+            530.1944428372132,
+            652.4917291879625,
+            1024
+          ],
+          "source_pixel_support": 76110,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 28,
+      "source": "run_v2/repairs/frame_28.png",
+      "source_sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        114.49247786725022,
+        14.802906271890919
+      ],
+      "applied_origin": [
+        114,
+        15
+      ],
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            424.8925819428785,
+            716.8433394933651
+          ],
+          "measurement_window_exported": [
+            350.0000221327498,
+            599.9999937281091,
+            465.0000221327498,
+            824.9999937281091
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0000221327498,
+            599.9999937281091,
+            465.0000221327498,
+            824.9999937281091
+          ],
+          "source_pixel_support": 17821,
+          "observation_y_error": -1.1566605066349211,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            537.6411792569266,
+            963.6893809501571
+          ],
+          "measurement_window_exported": [
+            519.5075221327497,
+            538.1678352936467,
+            651.5075221327497,
+            1203.661093728109
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.5075221327497,
+            538.1678352936467,
+            651.5075221327497,
+            1024
+          ],
+          "source_pixel_support": 66765,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 29,
+      "source": "run_v2/repairs/frame_30.png",
+      "source_sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        121.85339086819585,
+        17.382291764613427
+      ],
+      "applied_origin": [
+        122,
+        17
+      ],
+      "neck_exported": [
+        512.1466091318041,
+        203.48170823538658
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            422.5519941853993,
+            707.1564310923984
+          ],
+          "measurement_window_exported": [
+            350.00000913180406,
+            600.0000082353865,
+            465.0000091318041,
+            825.0000082353865
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.00000913180406,
+            600.0000082353865,
+            465.0000091318041,
+            825.0000082353865
+          ],
+          "source_pixel_support": 15589,
+          "observation_y_error": -0.8435689076015933,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            535.8319397062578,
+            952.7054459497508
+          ],
+          "measurement_window_exported": [
+            520.1466091318041,
+            537.642814581028,
+            652.1466091318041,
+            1203.4817082353866
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.1466091318041,
+            537.642814581028,
+            652.1466091318041,
+            1024
+          ],
+          "source_pixel_support": 62665,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 30,
+      "source": "run_v2/repairs/frame_29.png",
+      "source_sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        114.49247786725022,
+        15.33890627189092
+      ],
+      "applied_origin": [
+        114,
+        15
+      ],
+      "neck_exported": [
+        511.5075221327498,
+        203.66109372810908
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            426.8940363330687,
+            724.1820055907292
+          ],
+          "measurement_window_exported": [
+            350.0000221327498,
+            599.9999937281091,
+            465.0000221327498,
+            824.9999937281091
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0000221327498,
+            599.9999937281091,
+            465.0000221327498,
+            824.9999937281091
+          ],
+          "source_pixel_support": 15926,
+          "observation_y_error": -0.8179944092707956,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            535.6397248667365,
+            965.6908353403472
+          ],
+          "measurement_window_exported": [
+            519.5075221327497,
+            539.5061411292205,
+            651.5075221327497,
+            1203.661093728109
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.5075221327497,
+            539.5061411292205,
+            651.5075221327497,
+            1024
+          ],
+          "source_pixel_support": 64564,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 31,
+      "source": "run_v3/key_31_braid_path.png",
+      "source_sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.914498438876024,
+        3.5517751981426784
+      ],
+      "applied_origin": [
+        10,
+        4
+      ],
+      "neck_exported": [
+        512.0855015611239,
+        204.31222480185733
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            428.70146505483945,
+            690.8945640861419
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 8863,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            536.3789928748698,
+            939.0732527419741
+          ],
+          "measurement_window_exported": [
+            520.0855015611239,
+            534.4459210631654,
+            652.0855015611239,
+            1204.3122248018574
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.0855015611239,
+            534.4459210631654,
+            652.0855015611239,
+            1024
+          ],
+          "source_pixel_support": 41977,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 32,
+      "source": "run_v3/key_32_braid_path.png",
+      "source_sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        -0.6023795330759185,
+        -0.09468398918838261
+      ],
+      "applied_origin": [
+        -1,
+        0
+      ],
+      "neck_exported": [
+        511.6023795330759,
+        203.55868398918838
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            421.991809637354,
+            717.7795379753554
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 10830,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            535.9056270976066,
+            954.5896244518663
+          ],
+          "measurement_window_exported": [
+            519.6023795330759,
+            537.878589918423,
+            651.6023795330759,
+            1203.5586839891885
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.6023795330759,
+            537.878589918423,
+            651.6023795330759,
+            1024
+          ],
+          "source_pixel_support": 41141,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 33,
+      "source": "run_v3/key_33_braid_path.png",
+      "source_sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        -0.1263096006075557,
+        0.14959626330016818
+      ],
+      "applied_origin": [
+        0,
+        0
+      ],
+      "neck_exported": [
+        512.1263096006076,
+        202.67840373669983
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            427.8913286679025,
+            703.8975673888013
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 10029,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            531.5978148145124,
+            922.742750753301
+          ],
+          "measurement_window_exported": [
+            520.1263096006076,
+            534.9813409983586,
+            652.1263096006076,
+            1202.6784037367
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.1263096006076,
+            534.9813409983586,
+            652.1263096006076,
+            1024
+          ],
+          "source_pixel_support": 37204,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 34,
+      "source": "run_v2/repairs/frame_33.png",
+      "source_sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+      "cell": [
+        0,
+        0,
+        1054,
+        1492
+      ],
+      "scale": 0.6354895493743605,
+      "requested_origin": [
+        134.80390698974952,
+        19.22939266263768
+      ],
+      "applied_origin": [
+        135,
+        19
+      ],
+      "neck_exported": [
+        512.1960930102505,
+        201.77060733736232
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            433.99783298063664,
+            718.0385043117966
+          ],
+          "measurement_window_exported": [
+            349.9999930102505,
+            600.0000073373624,
+            464.9999930102505,
+            825.0000073373624
+          ],
+          "overlay_box_clipped_to_canvas": [
+            349.9999930102505,
+            600.0000073373624,
+            464.9999930102505,
+            825.0000073373624
+          ],
+          "source_pixel_support": 17566,
+          "observation_y_error": -0.9614956882033994,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            532.1809683589754,
+            937.282398845951
+          ],
+          "measurement_window_exported": [
+            520.1960930102505,
+            533.9419480296647,
+            652.1960930102505,
+            1201.7706073373624
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.1960930102505,
+            533.9419480296647,
+            652.1960930102505,
+            1024
+          ],
+          "source_pixel_support": 59075,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 35,
+      "source": "run_v2/repairs/frame_35.png",
+      "source_sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+      "cell": [
+        0,
+        0,
+        1070,
+        1470
+      ],
+      "scale": 0.6219640380393205,
+      "requested_origin": [
+        144.02928206691092,
+        20.946556713790812
+      ],
+      "applied_origin": [
+        144,
+        21
+      ],
+      "neck_exported": [
+        511.9707179330891,
+        201.08844328620918
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            436.32309787848067,
+            721.331506832275
+          ],
+          "measurement_window_exported": [
+            350.0000179330891,
+            600.0000432862092,
+            465.00001793308905,
+            825.0000432862092
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0000179330891,
+            600.0000432862092,
+            465.00001793308905,
+            825.0000432862092
+          ],
+          "source_pixel_support": 18074,
+          "observation_y_error": -0.6684931677250461,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            532.7275237745754,
+            919.1160709287789
+          ],
+          "measurement_window_exported": [
+            519.9707179330891,
+            528.1460558150527,
+            651.9707179330891,
+            1201.0884432862092
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9707179330891,
+            528.1460558150527,
+            651.9707179330891,
+            1024
+          ],
+          "source_pixel_support": 66425,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 36,
+      "source": "run_v2/repairs/frame_36.png",
+      "source_sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        138.03932713021953,
+        22.62390403289703
+      ],
+      "applied_origin": [
+        138,
+        23
+      ],
+      "neck_exported": [
+        511.96067286978047,
+        200.37609596710297
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            438.55199418539934,
+            724.9427838055514
+          ],
+          "measurement_window_exported": [
+            349.99997286978044,
+            599.9999959671029,
+            464.99997286978044,
+            824.999995967103
+          ],
+          "overlay_box_clipped_to_canvas": [
+            349.99997286978044,
+            599.9999959671029,
+            464.99997286978044,
+            824.999995967103
+          ],
+          "source_pixel_support": 22392,
+          "observation_y_error": -1.0572161944486425,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            540.045586993105,
+            954.7766617120333
+          ],
+          "measurement_window_exported": [
+            519.9606728697804,
+            530.5259136060346,
+            651.9606728697804,
+            1200.376095967103
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.9606728697804,
+            530.5259136060346,
+            651.9606728697804,
+            1024
+          ],
+          "source_pixel_support": 66430,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 37,
+      "source": "run_v2/repairs/frame_37.png",
+      "source_sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6671514633967349,
+      "requested_origin": [
+        129.40998458880125,
+        17.620556370962902
+      ],
+      "applied_origin": [
+        129,
+        18
+      ],
+      "neck_exported": [
+        511.59001541119875,
+        199.3444436290371
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            435.88967316249807,
+            745.8622465658378
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 24902,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            538.6309985255953,
+            969.357986803744
+          ],
+          "measurement_window_exported": [
+            519.5900154111987,
+            532.7036846775324,
+            651.5900154111987,
+            1199.3444436290372
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.5900154111987,
+            532.7036846775324,
+            651.5900154111987,
+            1024
+          ],
+          "source_pixel_support": 67006,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 38,
+      "source": "run_v3/key_38_braid_clean.png",
+      "source_sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        0.8250136778239607,
+        0.3599349997141985
+      ],
+      "applied_origin": [
+        1,
+        0
+      ],
+      "neck_exported": [
+        512.174986322176,
+        197.6400650002858
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            433.7908476984509,
+            752.0761711891948
+          ],
+          "measurement_window_exported": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0,
+            600.0,
+            465.0,
+            825.0
+          ],
+          "source_pixel_support": 16898,
+          "observation_y_error": 0.0,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            539.5388001077894,
+            953.7730379467748
+          ],
+          "measurement_window_exported": [
+            520.174986322176,
+            526.2356995288296,
+            652.174986322176,
+            1197.6400650002859
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.174986322176,
+            526.2356995288296,
+            652.174986322176,
+            1024
+          ],
+          "source_pixel_support": 45068,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 39,
+      "source": "run_v3/key_39_braid_mid.png",
+      "source_sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+      "cell": [
+        0,
+        0,
+        1247,
+        1261
+      ],
+      "scale": 0.8120508343822324,
+      "requested_origin": [
+        5.116245076941823,
+        3.253448698688544
+      ],
+      "applied_origin": [
+        5,
+        3
+      ],
+      "neck_exported": [
+        511.8837549230582,
+        196.91855130131145
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            437.8230947257298,
+            769.5759876568275
+          ],
+          "measurement_window_exported": [
+            371.8837549230582,
+            528.6636485443989,
+            491.8837549230582,
+            1196.9185513013115
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.8837549230582,
+            528.6636485443989,
+            491.8837549230582,
+            1024
+          ],
+          "source_pixel_support": 29970,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            542.5776523610378,
+            964.4681879085632
+          ],
+          "measurement_window_exported": [
+            519.8837549230582,
+            528.6636485443989,
+            651.8837549230582,
+            1196.9185513013115
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8837549230582,
+            528.6636485443989,
+            651.8837549230582,
+            1024
+          ],
+          "source_pixel_support": 46747,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 40,
+      "source": "run_v3/key_40_b.png",
+      "source_sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.243615403090189,
+        4.378446561524299
+      ],
+      "applied_origin": [
+        9,
+        4
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            422.0974301497078,
+            795.7700744536065
+          ],
+          "measurement_window_exported": [
+            349.9999845969098,
+            599.9999534384757,
+            464.9999845969098,
+            849.9999534384757
+          ],
+          "overlay_box_clipped_to_canvas": [
+            349.9999845969098,
+            599.9999534384757,
+            464.9999845969098,
+            849.9999534384757
+          ],
+          "source_pixel_support": 19696,
+          "observation_y_error": -2.229925546393474,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            528.57409334721,
+            932.6686414218236
+          ],
+          "measurement_window_exported": [
+            519.7563845969098,
+            527.8515731326555,
+            651.7563845969098,
+            1196.1575534384756
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.7563845969098,
+            527.8515731326555,
+            651.7563845969098,
+            1024
+          ],
+          "source_pixel_support": 36418,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 41,
+      "source": "run_v2/repairs/frame_40.png",
+      "source_sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.49135340069012,
+        12.18901239531425
+      ],
+      "applied_origin": [
+        131,
+        12
+      ],
+      "neck_exported": [
+        511.5086465993099,
+        195.94698760468575
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            418.45604672634056,
+            810.8527950025865
+          ],
+          "measurement_window_exported": [
+            350.0000465993099,
+            739.9999876046858,
+            465.0000465993099,
+            849.9999876046858
+          ],
+          "overlay_box_clipped_to_canvas": [
+            350.0000465993099,
+            739.9999876046858,
+            465.0000465993099,
+            849.9999876046858
+          ],
+          "source_pixel_support": 7839,
+          "observation_y_error": -0.14720499741349613,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            515.3660579233756,
+            952.2890275604215
+          ],
+          "measurement_window_exported": [
+            490.0000465993099,
+            879.9999876046858,
+            585.0000465993098,
+            989.9999876046858
+          ],
+          "overlay_box_clipped_to_canvas": [
+            490.0000465993099,
+            879.9999876046858,
+            585.0000465993098,
+            989.9999876046858
+          ],
+          "source_pixel_support": 7375,
+          "observation_y_error": 1.2890275604214594,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 42,
+      "source": "run_v3/key_43_c.png",
+      "source_sha256": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.243615403090189,
+        3.842446561524298
+      ],
+      "applied_origin": [
+        9,
+        4
+      ],
+      "neck_exported": [
+        511.7563845969098,
+        196.1575534384757
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            428.5020414698583,
+            861.4173404851492
+          ],
+          "measurement_window_exported": [
+            371.7563845969098,
+            529.2637899287487,
+            491.7563845969098,
+            1196.1575534384756
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.7563845969098,
+            529.2637899287487,
+            491.7563845969098,
+            1024
+          ],
+          "source_pixel_support": 37351,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            526.1723641021536,
+            904.6484668961652
+          ],
+          "measurement_window_exported": [
+            519.7563845969098,
+            529.2637899287487,
+            651.7563845969098,
+            1196.1575534384756
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.7563845969098,
+            529.2637899287487,
+            651.7563845969098,
+            1024
+          ],
+          "source_pixel_support": 40306,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 43,
+      "source": "run_v3/key_43_d.png",
+      "source_sha256": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        9.710351453046258,
+        3.233910495556813
+      ],
+      "applied_origin": [
+        10,
+        3
+      ],
+      "neck_exported": [
+        512.2896485469537,
+        195.90208950444318
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            428.7014650548394,
+            862.0184933151869
+          ],
+          "measurement_window_exported": [
+            372.2896485469537,
+            528.2637899287487,
+            492.2896485469537,
+            1195.9020895044432
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.2896485469537,
+            528.2637899287487,
+            492.2896485469537,
+            1024
+          ],
+          "source_pixel_support": 38283,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            528.7735169321911,
+            852.4115763349612
+          ],
+          "measurement_window_exported": [
+            520.2896485469537,
+            528.2637899287487,
+            652.2896485469537,
+            1195.9020895044432
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.2896485469537,
+            528.2637899287487,
+            652.2896485469537,
+            1024
+          ],
+          "source_pixel_support": 37984,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 44,
+      "source": "run_v2/repairs/frame_43.png",
+      "source_sha256": "d83d4045ef64526990809683a6b5f3d21f97c894948a5457883a705155bb2291",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6428925019447499,
+      "requested_origin": [
+        137.58647868489902,
+        14.5517765819977
+      ],
+      "applied_origin": [
+        138,
+        15
+      ],
+      "neck_exported": [
+        512.413521315101,
+        196.9842234180023
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            432.44476589069546,
+            888.6909101429152
+          ],
+          "measurement_window_exported": [
+            372.413521315101,
+            528.5068500196082,
+            492.413521315101,
+            1196.9842234180023
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.413521315101,
+            528.5068500196082,
+            492.413521315101,
+            1024
+          ],
+          "source_pixel_support": 62272,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            523.0926086649052,
+            796.7572823648159
+          ],
+          "measurement_window_exported": [
+            520.413521315101,
+            528.5068500196082,
+            652.413521315101,
+            1196.9842234180023
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.413521315101,
+            528.5068500196082,
+            652.413521315101,
+            1024
+          ],
+          "source_pixel_support": 50304,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 45,
+      "source": "run_v2/repairs/frame_46.png",
+      "source_sha256": "82fca3350bd3de9df1167dd7aea0f3f5d19756fa754e6c9f7fddeb330c9514e2",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.18175865478423,
+        11.910834067797737
+      ],
+      "applied_origin": [
+        130,
+        12
+      ],
+      "neck_exported": [
+        511.81824134521577,
+        197.26116593220226
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            440.37395477969346,
+            904.4888193348568
+          ],
+          "measurement_window_exported": [
+            371.81824134521577,
+            525.2049712216555,
+            491.81824134521577,
+            1197.2611659322022
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.81824134521577,
+            525.2049712216555,
+            491.81824134521577,
+            1024
+          ],
+          "source_pixel_support": 66641,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            524.8428158906227,
+            772.219749998363
+          ],
+          "measurement_window_exported": [
+            519.8182413452157,
+            525.2049712216555,
+            651.8182413452157,
+            1197.2611659322022
+          ],
+          "overlay_box_clipped_to_canvas": [
+            519.8182413452157,
+            525.2049712216555,
+            651.8182413452157,
+            1024
+          ],
+          "source_pixel_support": 47963,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 46,
+      "source": "run_v2/repairs/frame_47.png",
+      "source_sha256": "0627675e35db0993b84c0745f783fcec572f1387c17edf8385e1ca2b81a3f8dc",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        130.65321276331036,
+        15.274209495871503
+      ],
+      "applied_origin": [
+        131,
+        15
+      ],
+      "neck_exported": [
+        512.3467872366896,
+        197.7257905041285
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            459.0534838494228,
+            910.7628061996215
+          ],
+          "measurement_window_exported": [
+            372.3467872366896,
+            524.2644006312246,
+            492.3467872366896,
+            1197.7257905041286
+          ],
+          "overlay_box_clipped_to_canvas": [
+            372.3467872366896,
+            524.2644006312246,
+            492.3467872366896,
+            1024
+          ],
+          "source_pixel_support": 69713,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            533.7003843660578,
+            755.5758288097747
+          ],
+          "measurement_window_exported": [
+            520.3467872366896,
+            524.2644006312246,
+            652.3467872366896,
+            1197.7257905041286
+          ],
+          "overlay_box_clipped_to_canvas": [
+            520.3467872366896,
+            524.2644006312246,
+            652.3467872366896,
+            1024
+          ],
+          "source_pixel_support": 49709,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    },
+    {
+      "frame": 47,
+      "source": "run_v2/repairs/frame_45.png",
+      "source_sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+      "cell": [
+        0,
+        0,
+        1086,
+        1448
+      ],
+      "scale": 0.6547973729529397,
+      "requested_origin": [
+        131.19014660913183,
+        15.276657357630683
+      ],
+      "applied_origin": [
+        131,
+        15
+      ],
+      "neck_exported": [
+        511.80985339086817,
+        198.68834264236932
+      ],
+      "feet": {
+        "viewer_left_boot": {
+          "distal_contour_point_exported": [
+            456.43429435761107,
+            921.8943615398215
+          ],
+          "measurement_window_exported": [
+            371.80985339086817,
+            527.7610186027933,
+            491.80985339086817,
+            1198.6883426423692
+          ],
+          "overlay_box_clipped_to_canvas": [
+            371.80985339086817,
+            527.7610186027933,
+            491.80985339086817,
+            1024
+          ],
+          "source_pixel_support": 71055,
+          "observation_y_error": null,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        },
+        "viewer_right_boot": {
+          "distal_contour_point_exported": [
+            514.0564631774697,
+            760.1594104204454
+          ],
+          "measurement_window_exported": [
+            499.99995339086814,
+            690.0000426423693,
+            569.9999533908682,
+            810.0000426423693
+          ],
+          "overlay_box_clipped_to_canvas": [
+            499.99995339086814,
+            690.0000426423693,
+            569.9999533908682,
+            810.0000426423693
+          ],
+          "source_pixel_support": 5969,
+          "observation_y_error": 0.159410420445397,
+          "notes": "Reviewed intended visible boot/sole region; hidden heel and joints unmeasured."
+        }
+      }
+    }
+  ]
+}

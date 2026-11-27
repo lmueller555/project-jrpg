@@ -1,0 +1,74 @@
+[
+  {
+    "file": "right_leg_15_reference_only.png",
+    "actual_source": "run_v3/frames/frame_15.png",
+    "source_frame": 15,
+    "source_cell": [
+      356,
+      625,
+      523,
+      1213
+    ],
+    "review_export_roi": [
+      265,
+      430,
+      370,
+      800
+    ],
+    "purpose": "Actual image motion reference only; final complete character is ImageGen-authored. Opposite-leg guides never replace final pixels."
+  },
+  {
+    "file": "right_calf_15_reference_only.png",
+    "actual_source": "run_v3/frames/frame_15.png",
+    "source_frame": 15,
+    "source_cell": [
+      356,
+      887,
+      523,
+      1221
+    ],
+    "review_export_roi": [
+      265,
+      595,
+      370,
+      805
+    ],
+    "purpose": "Actual image motion reference only; final complete character is ImageGen-authored. Opposite-leg guides never replace final pixels."
+  },
+  {
+    "file": "left_calf_09_reference_only.png",
+    "actual_source": "run_v3/frames/frame_09.png",
+    "source_frame": 9,
+    "source_cell": [
+      538,
+      799,
+      698,
+      1284
+    ],
+    "review_export_roi": [
+      375,
+      545,
+      475,
+      850
+    ],
+    "purpose": "Actual image motion reference only; final complete character is ImageGen-authored. Opposite-leg guides never replace final pixels."
+  },
+  {
+    "file": "right_leg_baseline13_reference_only.png",
+    "actual_source": "run_v2/frames/frame_13.png",
+    "source_frame": 13,
+    "source_cell": [
+      349,
+      621,
+      533,
+      1432
+    ],
+    "review_export_roi": [
+      265,
+      430,
+      380,
+      940
+    ],
+    "purpose": "Actual image motion reference only; final complete character is ImageGen-authored. Opposite-leg guides never replace final pixels."
+  }
+]

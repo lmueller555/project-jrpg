@@ -1,0 +1,129 @@
+{
+  "frame": 10,
+  "prompt_file": "helper_10_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_10.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_10.png"
+  ],
+  "source_bounds": [
+    9,
+    12
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10.png",
+  "metadata": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10_generation.json",
+  "guide_only_planned_points": {
+    "right_hip": [
+      340,
+      480
+    ],
+    "left_hip": [
+      440,
+      480
+    ],
+    "right_knee": [
+      320,
+      704
+    ],
+    "right_toe": [
+      314,
+      890
+    ],
+    "left_knee": [
+      445,
+      561
+    ],
+    "left_toe": [
+      411,
+      703
+    ],
+    "right_ankle": [
+      314,
+      835
+    ],
+    "left_ankle": [
+      411,
+      648
+    ]
+  },
+  "status": "Candidate complete; main Crown artist owns selection, production registration and export.",
+  "prompt": "Draw ONE complete coherent painted Crown soldier at frontal running phase10/48. Make a SMALL whole-character pose adjustment to reference1, the actual accepted neighboring pose 9; do not invent a generic new contact. Reference2 is this phase's exact approved upper-body action and reference3 is an AUTHORING-ONLY guide (redRIGHT/viewerLEFT, blueLEFT/viewerRIGHT). Remove all guide marks/text.\nAt reference9 the RIGHT/viewerLEFT trailing boot ends around y916. Lift it ONLY about26 pixels to y890, keeping it naturally folded behind. The LEFT/viewerRIGHT recovering boot rises only about27 pixels from y730 to y703; its knee rises gradually toward its later peak. Do not jump straight to the high12 recovery.\nKeep both actual hip-knee-ankle chains naturally connected in depth, same real leg lengths, no sideways kicks or extra boots. The leg changes must be small continuous steps, not a held extreme followed by a rushed reset. Preserve the focused young male face, steel helmet/armor, navy split tabard, charcoal trousers, brown boots and full-body density. Preserve THIS phase's shoulder/elbow/hand and weapon carry from reference2; sword remains RIGHT/viewerLEFT with blade DOWN/OUTSIDE, plain boss shield remains LEFT/viewerRIGHT. Exactly2arms2legs1sword1shield; no stale old limbs. Tabard follows the new thighs without changing its waist attachment.\nONE complete detailed painted fantasy cinematic drawing on the same768x1024 composition at high source detail, every helmet/swordtip/boot inside generous transparent margins. TRUE CLEAN TRANSPARENT RGBA: no gray haze, background square, glow, floor, shadows, colored guide marks, text or sheet. Whole ImageGen redraw, no procedural deformation. Coordinate examples describe reference-image motion only; natural anatomy takes priority.\n",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/authoring_bounds/frame_09_3d6ae5cf9919.png": "4cd1eeb2ced6d1096a5c0fe29b0c611198aa53ce4345a7a93133216395263200",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/upper_10.png": "120da7a8936d4ecfa2e3a1d3f6816505bd4cf50920344847efac0bd2329aa0a7",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/intermediates/guide_10.png": "e652350671d252441f8dce4adf84022f3cd8d89d65192f4a6202368333486090"
+  },
+  "generation_id": "exec-d3ee0f49-d4f1-4389-bda3-00337376d6ec",
+  "source_path": "/workspace/generated_images/exec-d3ee0f49-d4f1-4389-bda3-00337376d6ec.png",
+  "source_master": "helper_10.png",
+  "source_sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+  "transparent_background": true,
+  "construction": "Complete unified ImageGen-authored figure. Raw output bytes copied unchanged. No region restoration, limb transforms, warps or endpoint blends. Whole-image diagnostic registration only.",
+  "observed_review": "Viewed actual canonical figure at fixed0.70 density and measured eyes registration. Both legs connected, correct sword/shield ownership, stable helmet and male body model. Actual visible toe-tip estimates right(viewer-left)882 and left(viewer-right)712 bridge accepted9 toward12. Guide numbers are planning examples, not actual measurements.",
+  "diagnostic_json": "/tmp/crown_helper_10_canonical.json",
+  "prompt_sha256": "979302e5731ef015c920be86f4c2b0517a0787427d813da0b958dc73a0c0ce78",
+  "helper_observed_registration": {
+    "frame": 10,
+    "source": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/helper_10.png",
+    "source_sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -1.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          550.57143,
+          263.14286
+        ],
+        "neck": [
+          554.28571,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          594.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.880643,
+        "neck": 0.87684,
+        "belt": 0.724971
+      }
+    },
+    "opaque_bounds": [
+      72,
+      87,
+      621,
+      884
+    ],
+    "canonical_png": "/tmp/crown_helper_10_canonical.png",
+    "canonical_png_sha256": "db40a8db297fc6541f3aa2dab60fcca21a865d7022f9a30ee6e234dac4492aa4",
+    "observed_tip_estimates": {
+      "right": {
+        "bottom_opaque_y": 882,
+        "median_x_at_y": 322.5,
+        "roi": [
+          250,
+          775,
+          365,
+          960
+        ],
+        "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; extreme-tip estimate."
+      },
+      "left": {
+        "bottom_opaque_y": 712,
+        "median_x_at_y": 404.5,
+        "roi": [
+          365,
+          620,
+          470,
+          770
+        ],
+        "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; extreme-tip estimate."
+      }
+    }
+  },
+  "raw_source_byte_preservation_verified": true
+}

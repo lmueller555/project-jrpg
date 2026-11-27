@@ -1,0 +1,2402 @@
+[
+  {
+    "frame": 0,
+    "source": "run_v3/retained/phase_00.png",
+    "source_sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+    "scale": 0.6,
+    "origin": [
+      48.0,
+      75.8
+    ],
+    "source_landmarks": {
+      "eyes": [
+        560.0,
+        187.0
+      ],
+      "neck": [
+        562.0,
+        303.0
+      ],
+      "belt": [
+        573.0,
+        585.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        188.2
+      ],
+      "neck": [
+        385.2,
+        257.8
+      ],
+      "belt": [
+        391.8,
+        427.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.9999999999999998,
+      "neck": 0.9999999999999999,
+      "belt": 1.0000000000000002
+    },
+    "opaque_bounds": [
+      75,
+      96,
+      629,
+      956
+    ],
+    "authoring_bound": "authoring_bounds/frame_00_d2068e0759a7.png"
+  },
+  {
+    "frame": 1,
+    "source": "run_v3/root_helper_01.png",
+    "source_sha256": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+    "scale": 0.7,
+    "origin": [
+      2.0,
+      1.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        545.42857,
+        267.71429
+      ],
+      "neck": [
+        548.57143,
+        362.85714
+      ],
+      "belt": [
+        551.42857,
+        601.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        188.4
+      ],
+      "neck": [
+        386.0,
+        255.0
+      ],
+      "belt": [
+        388.0,
+        422.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.926721,
+      "neck": 0.932749,
+      "belt": 0.860969
+    },
+    "opaque_bounds": [
+      60,
+      94,
+      619,
+      950
+    ],
+    "authoring_bound": "authoring_bounds/frame_01_57801a757705.png"
+  },
+  {
+    "frame": 2,
+    "source": "run_v3/root_helper_02.png",
+    "source_sha256": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      1.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.71429,
+        269.14286
+      ],
+      "neck": [
+        544.28571,
+        367.14286
+      ],
+      "belt": [
+        551.42857,
+        602.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        189.4
+      ],
+      "neck": [
+        384.0,
+        258.0
+      ],
+      "belt": [
+        389.0,
+        423.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.918235,
+      "neck": 0.849513,
+      "belt": 0.776144
+    },
+    "opaque_bounds": [
+      49,
+      91,
+      633,
+      942
+    ],
+    "authoring_bound": "authoring_bounds/frame_02_4ef1c80d9ec8.png"
+  },
+  {
+    "frame": 3,
+    "source": "run_v3/rough_keys/phase_03.png",
+    "source_sha256": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+    "scale": 0.7,
+    "origin": [
+      0.0,
+      19.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        548.85714,
+        245.42857
+      ],
+      "neck": [
+        548.57143,
+        342.85714
+      ],
+      "belt": [
+        552.85714,
+        582.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        190.8
+      ],
+      "neck": [
+        384.0,
+        259.0
+      ],
+      "belt": [
+        387.0,
+        427.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.926043,
+      "neck": 0.776179,
+      "belt": 0.83779
+    },
+    "opaque_bounds": [
+      54,
+      91,
+      632,
+      933
+    ],
+    "authoring_bound": "authoring_bounds/frame_03_452b552f3ac5.png"
+  },
+  {
+    "frame": 4,
+    "source": "run_v3/root_helper_04.png",
+    "source_sha256": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.42857,
+        271.14286
+      ],
+      "neck": [
+        545.71429,
+        367.14286
+      ],
+      "belt": [
+        555.71429,
+        604.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        191.8
+      ],
+      "neck": [
+        386.0,
+        259.0
+      ],
+      "belt": [
+        393.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.913281,
+      "neck": 0.862284,
+      "belt": 0.870156
+    },
+    "opaque_bounds": [
+      58,
+      96,
+      623,
+      929
+    ],
+    "authoring_bound": "authoring_bounds/frame_04_04e40891d330.png"
+  },
+  {
+    "frame": 5,
+    "source": "run_v3/root_helper_05.png",
+    "source_sha256": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+    "scale": 0.7,
+    "origin": [
+      1.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        546.57143,
+        272.85714
+      ],
+      "neck": [
+        548.57143,
+        370.0
+      ],
+      "belt": [
+        552.85714,
+        604.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        193.0
+      ],
+      "neck": [
+        385.0,
+        261.0
+      ],
+      "belt": [
+        388.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.934024,
+      "neck": 0.929773,
+      "belt": 0.789902
+    },
+    "opaque_bounds": [
+      61,
+      100,
+      618,
+      909
+    ],
+    "authoring_bound": "authoring_bounds/frame_05_a957b9f15892.png"
+  },
+  {
+    "frame": 6,
+    "source": "run_v3/midpoints/phase_06_partial_repaired.png",
+    "source_sha256": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+    "scale": 0.7,
+    "origin": [
+      1.0,
+      5.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        546.85714,
+        268.28571
+      ],
+      "neck": [
+        548.57143,
+        365.71429
+      ],
+      "belt": [
+        551.42857,
+        600.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        192.8
+      ],
+      "neck": [
+        385.0,
+        261.0
+      ],
+      "belt": [
+        387.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.915987,
+      "neck": 0.907514,
+      "belt": 0.741252
+    },
+    "opaque_bounds": [
+      55,
+      97,
+      632,
+      928
+    ],
+    "authoring_bound": "authoring_bounds/frame_06_5a9fe4631c3a.png"
+  },
+  {
+    "frame": 7,
+    "source": "run_v3/root_helper_07.png",
+    "source_sha256": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.85714,
+        272.28571
+      ],
+      "neck": [
+        545.71429,
+        367.14286
+      ],
+      "belt": [
+        548.57143,
+        611.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        192.6
+      ],
+      "neck": [
+        386.0,
+        259.0
+      ],
+      "belt": [
+        388.0,
+        430.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.91157,
+      "neck": 0.896486,
+      "belt": 0.846299
+    },
+    "opaque_bounds": [
+      75,
+      97,
+      630,
+      921
+    ],
+    "authoring_bound": "authoring_bounds/frame_07_1ee7b0a333be.png"
+  },
+  {
+    "frame": 8,
+    "source": "run_v3/root_helper_08.png",
+    "source_sha256": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+    "scale": 0.7,
+    "origin": [
+      1.0,
+      3.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        546.85714,
+        267.42857
+      ],
+      "neck": [
+        552.85714,
+        362.85714
+      ],
+      "belt": [
+        542.85714,
+        602.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        190.2
+      ],
+      "neck": [
+        388.0,
+        257.0
+      ],
+      "belt": [
+        381.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.895404,
+      "neck": 0.860577,
+      "belt": 0.882968
+    },
+    "opaque_bounds": [
+      69,
+      92,
+      628,
+      931
+    ],
+    "authoring_bound": "authoring_bounds/frame_08_e2499bf1738c.png"
+  },
+  {
+    "frame": 9,
+    "source": "run_v3/rough_keys/phase_09.png",
+    "source_sha256": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      7.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.85714,
+        257.71429
+      ],
+      "neck": [
+        547.14286,
+        352.85714
+      ],
+      "belt": [
+        540.0,
+        598.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        187.4
+      ],
+      "neck": [
+        387.0,
+        254.0
+      ],
+      "belt": [
+        382.0,
+        426.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.948036,
+      "neck": 0.890265,
+      "belt": 0.880184
+    },
+    "opaque_bounds": [
+      79,
+      87,
+      623,
+      916
+    ],
+    "authoring_bound": "authoring_bounds/frame_09_3d6ae5cf9919.png"
+  },
+  {
+    "frame": 10,
+    "source": "run_v3/helper_10.png",
+    "source_sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+    "scale": 0.7,
+    "origin": [
+      -1.0,
+      1.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        550.57143,
+        263.14286
+      ],
+      "neck": [
+        554.28571,
+        360.0
+      ],
+      "belt": [
+        541.42857,
+        594.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        185.2
+      ],
+      "neck": [
+        387.0,
+        253.0
+      ],
+      "belt": [
+        378.0,
+        417.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.880643,
+      "neck": 0.87684,
+      "belt": 0.724971
+    },
+    "opaque_bounds": [
+      72,
+      87,
+      621,
+      884
+    ],
+    "authoring_bound": "authoring_bounds/frame_10_5d95a5a8697a.png"
+  },
+  {
+    "frame": 11,
+    "source": "run_v3/helper_11.png",
+    "source_sha256": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.57143,
+        258.28571
+      ],
+      "neck": [
+        554.28571,
+        352.85714
+      ],
+      "belt": [
+        540.0,
+        602.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        182.8
+      ],
+      "neck": [
+        391.0,
+        249.0
+      ],
+      "belt": [
+        381.0,
+        424.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.845044,
+      "neck": 0.87892,
+      "belt": 0.665739
+    },
+    "opaque_bounds": [
+      103,
+      85,
+      623,
+      866
+    ],
+    "authoring_bound": "authoring_bounds/frame_11_de957265ae79.png"
+  },
+  {
+    "frame": 12,
+    "source": "run_v3/retained/phase_12.png",
+    "source_sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+    "scale": 0.6,
+    "origin": [
+      61.19999999999999,
+      65.60000000000001
+    ],
+    "source_landmarks": {
+      "eyes": [
+        538.0,
+        194.0
+      ],
+      "neck": [
+        548.0,
+        308.0
+      ],
+      "belt": [
+        537.0,
+        602.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        182.4
+      ],
+      "neck": [
+        389.8,
+        250.8
+      ],
+      "belt": [
+        383.2,
+        427.2
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.9052539786872668,
+      "neck": 0.7695329187617286,
+      "belt": 0.6650065580473585
+    },
+    "opaque_bounds": [
+      117,
+      88,
+      623,
+      839
+    ],
+    "authoring_bound": "authoring_bounds/frame_12_8fd4a2deb081.png"
+  },
+  {
+    "frame": 13,
+    "source": "run_v3/root_helper_13_b.png",
+    "source_sha256": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+    "scale": 0.7,
+    "origin": [
+      5.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.0,
+        256.85714
+      ],
+      "neck": [
+        552.85714,
+        352.85714
+      ],
+      "belt": [
+        542.85714,
+        604.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        181.8
+      ],
+      "neck": [
+        392.0,
+        249.0
+      ],
+      "belt": [
+        385.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.789239,
+      "neck": 0.893654,
+      "belt": 0.840832
+    },
+    "opaque_bounds": [
+      103,
+      86,
+      626,
+      821
+    ],
+    "authoring_bound": "authoring_bounds/frame_13_ed49f980078c.png"
+  },
+  {
+    "frame": 14,
+    "source": "run_v3/root_helper_14.png",
+    "source_sha256": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.42857,
+        257.71429
+      ],
+      "neck": [
+        552.85714,
+        355.71429
+      ],
+      "belt": [
+        540.0,
+        604.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        182.4
+      ],
+      "neck": [
+        391.0,
+        251.0
+      ],
+      "belt": [
+        382.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.912204,
+      "neck": 0.8979,
+      "belt": 0.843255
+    },
+    "opaque_bounds": [
+      87,
+      82,
+      635,
+      854
+    ],
+    "authoring_bound": "authoring_bounds/frame_14_db9079fec430.png"
+  },
+  {
+    "frame": 15,
+    "source": "run_v3/rough_keys/phase_15_repaired.png",
+    "source_sha256": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      6.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.57143,
+        254.0
+      ],
+      "neck": [
+        551.42857,
+        352.85714
+      ],
+      "belt": [
+        542.85714,
+        607.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        183.8
+      ],
+      "neck": [
+        389.0,
+        253.0
+      ],
+      "belt": [
+        383.0,
+        431.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.919943,
+      "neck": 0.883539,
+      "belt": 0.824359
+    },
+    "opaque_bounds": [
+      87,
+      81,
+      638,
+      830
+    ],
+    "authoring_bound": "authoring_bounds/frame_15_823a1438796f.png"
+  },
+  {
+    "frame": 16,
+    "source": "run_v3/first_half_final/bounded_16.png",
+    "source_sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.42857,
+        260.57143
+      ],
+      "neck": [
+        551.42857,
+        354.28571
+      ],
+      "belt": [
+        545.71429,
+        598.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        184.4
+      ],
+      "neck": [
+        390.0,
+        250.0
+      ],
+      "belt": [
+        386.0,
+        421.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.815249,
+      "neck": 0.814843,
+      "belt": 0.743796
+    },
+    "opaque_bounds": [
+      81,
+      85,
+      635,
+      768
+    ],
+    "authoring_bound": "authoring_bounds/frame_16_34fbabff6d97.png"
+  },
+  {
+    "frame": 17,
+    "source": "run_v3/first_half_final/bounded_17.png",
+    "source_sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.85714,
+        260.57143
+      ],
+      "neck": [
+        554.28571,
+        355.71429
+      ],
+      "belt": [
+        545.71429,
+        597.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        184.4
+      ],
+      "neck": [
+        391.0,
+        251.0
+      ],
+      "belt": [
+        385.0,
+        420.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.865614,
+      "neck": 0.786268,
+      "belt": 0.659602
+    },
+    "opaque_bounds": [
+      77,
+      84,
+      639,
+      791
+    ],
+    "authoring_bound": "authoring_bounds/frame_17_9325c83e3649.png"
+  },
+  {
+    "frame": 18,
+    "source": "run_v3/midpoints/phase_18_partial_repaired.png",
+    "source_sha256": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      4.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.28571,
+        259.14286
+      ],
+      "neck": [
+        550.0,
+        360.0
+      ],
+      "belt": [
+        541.42857,
+        608.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        185.4
+      ],
+      "neck": [
+        388.0,
+        256.0
+      ],
+      "belt": [
+        382.0,
+        430.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.866823,
+      "neck": 0.880139,
+      "belt": 0.714359
+    },
+    "opaque_bounds": [
+      78,
+      88,
+      637,
+      843
+    ],
+    "authoring_bound": "authoring_bounds/frame_18_8415f2e15c85.png"
+  },
+  {
+    "frame": 19,
+    "source": "run_v3/first_half_final/bounded_19.png",
+    "source_sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.42857,
+        262.28571
+      ],
+      "neck": [
+        547.14286,
+        362.85714
+      ],
+      "belt": [
+        541.42857,
+        608.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        185.6
+      ],
+      "neck": [
+        387.0,
+        256.0
+      ],
+      "belt": [
+        383.0,
+        428.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.787572,
+      "neck": 0.890584,
+      "belt": 0.759642
+    },
+    "opaque_bounds": [
+      76,
+      88,
+      635,
+      897
+    ],
+    "authoring_bound": "authoring_bounds/frame_19_9a268de4c463.png"
+  },
+  {
+    "frame": 20,
+    "source": "run_v3/first_half_final/bounded_20.png",
+    "source_sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+    "scale": 0.7,
+    "origin": [
+      2.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        545.71429,
+        263.14286
+      ],
+      "neck": [
+        548.57143,
+        362.85714
+      ],
+      "belt": [
+        542.85714,
+        595.71429
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        186.2
+      ],
+      "neck": [
+        386.0,
+        256.0
+      ],
+      "belt": [
+        382.0,
+        419.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.71656,
+      "neck": 0.776679,
+      "belt": 0.430746
+    },
+    "opaque_bounds": [
+      120,
+      88,
+      608,
+      872
+    ],
+    "authoring_bound": "authoring_bounds/frame_20_16c811fe09f8.png"
+  },
+  {
+    "frame": 21,
+    "source": "run_v3/rough_keys/phase_21.png",
+    "source_sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.85714,
+        262.85714
+      ],
+      "neck": [
+        548.57143,
+        362.85714
+      ],
+      "belt": [
+        541.42857,
+        598.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        186.0
+      ],
+      "neck": [
+        388.0,
+        256.0
+      ],
+      "belt": [
+        383.0,
+        421.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.956562,
+      "neck": 0.876252,
+      "belt": 0.679082
+    },
+    "opaque_bounds": [
+      121,
+      88,
+      607,
+      908
+    ],
+    "authoring_bound": "authoring_bounds/frame_21_5b3999bb5b0b.png"
+  },
+  {
+    "frame": 22,
+    "source": "run_v3/root_helper_22.png",
+    "source_sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.85714,
+        264.57143
+      ],
+      "neck": [
+        552.85714,
+        367.14286
+      ],
+      "belt": [
+        548.57143,
+        607.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        187.2
+      ],
+      "neck": [
+        390.0,
+        259.0
+      ],
+      "belt": [
+        387.0,
+        427.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.90063,
+      "neck": 0.900719,
+      "belt": 0.855283
+    },
+    "opaque_bounds": [
+      105,
+      92,
+      607,
+      915
+    ],
+    "authoring_bound": "authoring_bounds/frame_22_fb3541012b90.png"
+  },
+  {
+    "frame": 23,
+    "source": "run_v3/first_half_final/phase_23.png",
+    "source_sha256": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.85714,
+        266.0
+      ],
+      "neck": [
+        551.42857,
+        367.14286
+      ],
+      "belt": [
+        542.85714,
+        607.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        188.2
+      ],
+      "neck": [
+        390.0,
+        259.0
+      ],
+      "belt": [
+        384.0,
+        427.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.921221,
+      "neck": 0.838935,
+      "belt": 0.782031
+    },
+    "opaque_bounds": [
+      52,
+      92,
+      625,
+      950
+    ],
+    "authoring_bound": "authoring_bounds/frame_23_33c3eb85c4e3.png"
+  },
+  {
+    "frame": 24,
+    "source": "run_v3/retained/phase_24.png",
+    "source_sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+    "scale": 0.6,
+    "origin": [
+      54.60000000000002,
+      77.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        549.0,
+        185.0
+      ],
+      "neck": [
+        559.0,
+        303.0
+      ],
+      "belt": [
+        546.0,
+        586.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        188.0
+      ],
+      "neck": [
+        390.4,
+        258.8
+      ],
+      "belt": [
+        382.6,
+        428.6
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.9191297729890233,
+      "neck": 0.7712904330610835,
+      "belt": 0.725222812747507
+    },
+    "opaque_bounds": [
+      64,
+      93,
+      614,
+      951
+    ],
+    "authoring_bound": "authoring_bounds/frame_24_9f08262536df.png"
+  },
+  {
+    "frame": 25,
+    "source": "run_v3/intermediate_25.png",
+    "source_sha256": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.85714,
+        266.28571
+      ],
+      "neck": [
+        552.85714,
+        362.85714
+      ],
+      "belt": [
+        545.71429,
+        602.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        188.4
+      ],
+      "neck": [
+        390.0,
+        256.0
+      ],
+      "belt": [
+        385.0,
+        424.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.941953,
+      "neck": 0.848577,
+      "belt": 0.886247
+    },
+    "opaque_bounds": [
+      66,
+      90,
+      623,
+      951
+    ],
+    "authoring_bound": "authoring_bounds/frame_25_f1502f58a8b2.png"
+  },
+  {
+    "frame": 26,
+    "source": "run_v3/intermediate_26.png",
+    "source_sha256": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.14286,
+        267.42857
+      ],
+      "neck": [
+        551.42857,
+        365.71429
+      ],
+      "belt": [
+        541.42857,
+        602.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        189.2
+      ],
+      "neck": [
+        390.0,
+        258.0
+      ],
+      "belt": [
+        383.0,
+        424.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.904538,
+      "neck": 0.885871,
+      "belt": 0.821956
+    },
+    "opaque_bounds": [
+      114,
+      89,
+      614,
+      926
+    ],
+    "authoring_bound": "authoring_bounds/frame_26_72afc98c5199.png"
+  },
+  {
+    "frame": 27,
+    "source": "run_v3/rough_keys/phase_27.png",
+    "source_sha256": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.57143,
+        269.42857
+      ],
+      "neck": [
+        548.57143,
+        367.14286
+      ],
+      "belt": [
+        540.0,
+        604.28571
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        190.6
+      ],
+      "neck": [
+        387.0,
+        259.0
+      ],
+      "belt": [
+        381.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.93725,
+      "neck": 0.927064,
+      "belt": 0.856453
+    },
+    "opaque_bounds": [
+      116,
+      91,
+      601,
+      928
+    ],
+    "authoring_bound": "authoring_bounds/frame_27_caae34273bed.png"
+  },
+  {
+    "frame": 28,
+    "source": "run_v3/intermediate_28.png",
+    "source_sha256": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      3.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.85714,
+        269.71429
+      ],
+      "neck": [
+        550.0,
+        368.57143
+      ],
+      "belt": [
+        540.0,
+        608.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        191.8
+      ],
+      "neck": [
+        388.0,
+        261.0
+      ],
+      "belt": [
+        381.0,
+        429.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.919681,
+      "neck": 0.917974,
+      "belt": 0.899024
+    },
+    "opaque_bounds": [
+      107,
+      92,
+      627,
+      936
+    ],
+    "authoring_bound": "authoring_bounds/frame_28_3527ae77d121.png"
+  },
+  {
+    "frame": 29,
+    "source": "run_v3/intermediate_29.png",
+    "source_sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.0,
+        272.0
+      ],
+      "neck": [
+        550.0,
+        368.57143
+      ],
+      "belt": [
+        542.85714,
+        601.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        192.4
+      ],
+      "neck": [
+        388.0,
+        260.0
+      ],
+      "belt": [
+        383.0,
+        423.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.907244,
+      "neck": 0.871906,
+      "belt": 0.84596
+    },
+    "opaque_bounds": [
+      82,
+      94,
+      624,
+      909
+    ],
+    "authoring_bound": "authoring_bounds/frame_29_522d23a1ffd6.png"
+  },
+  {
+    "frame": 30,
+    "source": "run_v3/join_repairs/hand30.png",
+    "source_sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+    "scale": 0.7,
+    "origin": [
+      -7.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        559.14286,
+        272.28571
+      ],
+      "neck": [
+        560.0,
+        371.42857
+      ],
+      "belt": [
+        560.0,
+        605.71429
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        192.6
+      ],
+      "neck": [
+        385.0,
+        262.0
+      ],
+      "belt": [
+        385.0,
+        426.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.856358,
+      "neck": 0.83375,
+      "belt": 0.706355
+    },
+    "opaque_bounds": [
+      56,
+      89,
+      627,
+      898
+    ],
+    "authoring_bound": "authoring_bounds/frame_30_c27a10e2ed9a.png"
+  },
+  {
+    "frame": 31,
+    "source": "run_v3/intermediate_31.png",
+    "source_sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.71429,
+        271.14286
+      ],
+      "neck": [
+        544.28571,
+        372.85714
+      ],
+      "belt": [
+        547.14286,
+        607.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        191.8
+      ],
+      "neck": [
+        384.0,
+        263.0
+      ],
+      "belt": [
+        386.0,
+        427.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.853639,
+      "neck": 0.900994,
+      "belt": 0.76374
+    },
+    "opaque_bounds": [
+      71,
+      87,
+      630,
+      910
+    ],
+    "authoring_bound": "authoring_bounds/frame_31_51c76c42e954.png"
+  },
+  {
+    "frame": 32,
+    "source": "run_v3/intermediate_32.png",
+    "source_sha256": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      3.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.85714,
+        267.71429
+      ],
+      "neck": [
+        545.71429,
+        364.28571
+      ],
+      "belt": [
+        547.14286,
+        601.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        190.4
+      ],
+      "neck": [
+        385.0,
+        258.0
+      ],
+      "belt": [
+        386.0,
+        424.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.852344,
+      "neck": 0.901228,
+      "belt": 0.713018
+    },
+    "opaque_bounds": [
+      80,
+      88,
+      632,
+      858
+    ],
+    "authoring_bound": "authoring_bounds/frame_32_c4084d797e86.png"
+  },
+  {
+    "frame": 33,
+    "source": "run_v3/rough_keys/phase_33.png",
+    "source_sha256": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+    "scale": 0.7,
+    "origin": [
+      2.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        546.28571,
+        265.71429
+      ],
+      "neck": [
+        545.71429,
+        361.42857
+      ],
+      "belt": [
+        554.28571,
+        608.57143
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        188.0
+      ],
+      "neck": [
+        384.0,
+        255.0
+      ],
+      "belt": [
+        390.0,
+        428.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.891771,
+      "neck": 0.927606,
+      "belt": 0.850911
+    },
+    "opaque_bounds": [
+      105,
+      89,
+      617,
+      851
+    ],
+    "authoring_bound": "authoring_bounds/frame_33_8d8b4648c732.png"
+  },
+  {
+    "frame": 34,
+    "source": "run_v3/join_repairs/phase_34.png",
+    "source_sha256": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      3.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.0,
+        259.42857
+      ],
+      "neck": [
+        542.85714,
+        355.71429
+      ],
+      "belt": [
+        548.57143,
+        595.71429
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        184.6
+      ],
+      "neck": [
+        383.0,
+        252.0
+      ],
+      "belt": [
+        387.0,
+        420.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.877674,
+      "neck": 0.827237,
+      "belt": 0.8099
+    },
+    "opaque_bounds": [
+      98,
+      87,
+      616,
+      838
+    ],
+    "authoring_bound": "authoring_bounds/frame_34_aed75c570091.png"
+  },
+  {
+    "frame": 35,
+    "source": "run_v3/intermediate_35.png",
+    "source_sha256": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.57143,
+        258.28571
+      ],
+      "neck": [
+        544.28571,
+        355.71429
+      ],
+      "belt": [
+        552.85714,
+        597.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.2,
+        182.8
+      ],
+      "neck": [
+        384.0,
+        251.0
+      ],
+      "belt": [
+        390.0,
+        420.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.919235,
+      "neck": 0.872432,
+      "belt": 0.774592
+    },
+    "opaque_bounds": [
+      95,
+      85,
+      617,
+      808
+    ],
+    "authoring_bound": "authoring_bounds/frame_35_8f24801a5d35.png"
+  },
+  {
+    "frame": 36,
+    "source": "run_v3/retained/phase_36.png",
+    "source_sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+    "scale": 0.6,
+    "origin": [
+      60.0,
+      64.4
+    ],
+    "source_landmarks": {
+      "eyes": [
+        540.0,
+        196.0
+      ],
+      "neck": [
+        542.0,
+        310.0
+      ],
+      "belt": [
+        550.0,
+        607.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        181.6
+      ],
+      "neck": [
+        385.2,
+        250.0
+      ],
+      "belt": [
+        390.0,
+        428.2
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.8968564200778871,
+      "neck": 0.741433573076032,
+      "belt": 0.8054403026366377
+    },
+    "opaque_bounds": [
+      100,
+      86,
+      625,
+      795
+    ],
+    "authoring_bound": "authoring_bounds/frame_36_33495aed4fc3.png"
+  },
+  {
+    "frame": 37,
+    "source": "run_v3/intermediate_37.png",
+    "source_sha256": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      3.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        542.85714,
+        256.57143
+      ],
+      "neck": [
+        544.28571,
+        354.28571
+      ],
+      "belt": [
+        552.85714,
+        600.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        182.6
+      ],
+      "neck": [
+        385.0,
+        251.0
+      ],
+      "belt": [
+        391.0,
+        423.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.9248,
+      "neck": 0.874989,
+      "belt": 0.818177
+    },
+    "opaque_bounds": [
+      73,
+      87,
+      625,
+      822
+    ],
+    "authoring_bound": "authoring_bounds/frame_37_2c893f2c0746.png"
+  },
+  {
+    "frame": 38,
+    "source": "run_v3/intermediate_38.png",
+    "source_sha256": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+    "scale": 0.7,
+    "origin": [
+      4.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        543.42857,
+        258.28571
+      ],
+      "neck": [
+        544.28571,
+        355.71429
+      ],
+      "belt": [
+        555.71429,
+        600.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.4,
+        182.8
+      ],
+      "neck": [
+        385.0,
+        251.0
+      ],
+      "belt": [
+        393.0,
+        422.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.917625,
+      "neck": 0.7799,
+      "belt": 0.783521
+    },
+    "opaque_bounds": [
+      51,
+      82,
+      637,
+      854
+    ],
+    "authoring_bound": "authoring_bounds/frame_38_68e291bb91b4.png"
+  },
+  {
+    "frame": 39,
+    "source": "run_v3/join_repairs/phase39.png",
+    "source_sha256": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      -0.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.28571,
+        262.57143
+      ],
+      "neck": [
+        544.28571,
+        358.57143
+      ],
+      "belt": [
+        555.71429,
+        601.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        183.8
+      ],
+      "neck": [
+        384.0,
+        251.0
+      ],
+      "belt": [
+        392.0,
+        421.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.887018,
+      "neck": 0.813544,
+      "belt": 0.841074
+    },
+    "opaque_bounds": [
+      51,
+      83,
+      638,
+      815
+    ],
+    "authoring_bound": "authoring_bounds/frame_39_0d26e93b4313.png"
+  },
+  {
+    "frame": 40,
+    "source": "run_v3/join_repairs/middle40_A.png",
+    "source_sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.28571,
+        260.57143
+      ],
+      "neck": [
+        544.28571,
+        355.71429
+      ],
+      "belt": [
+        551.42857,
+        592.85714
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        184.4
+      ],
+      "neck": [
+        384.0,
+        251.0
+      ],
+      "belt": [
+        389.0,
+        417.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.787335,
+      "neck": 0.630338,
+      "belt": 0.703534
+    },
+    "opaque_bounds": [
+      59,
+      86,
+      635,
+      781
+    ],
+    "authoring_bound": "authoring_bounds/frame_40_b909bfcc7bc3.png"
+  },
+  {
+    "frame": 41,
+    "source": "run_v3/join_repairs/direct_41.png",
+    "source_sha256": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+    "scale": 0.7,
+    "origin": [
+      3.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        544.0,
+        260.85714
+      ],
+      "neck": [
+        544.28571,
+        358.57143
+      ],
+      "belt": [
+        554.28571,
+        597.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.8,
+        184.6
+      ],
+      "neck": [
+        384.0,
+        253.0
+      ],
+      "belt": [
+        391.0,
+        420.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.785733,
+      "neck": 0.848836,
+      "belt": 0.804876
+    },
+    "opaque_bounds": [
+      56,
+      86,
+      632,
+      825
+    ],
+    "authoring_bound": "authoring_bounds/frame_41_0c4b8e1571b0.png"
+  },
+  {
+    "frame": 42,
+    "source": "run_v3/join_repairs/phase_42.png",
+    "source_sha256": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+    "scale": 0.7,
+    "origin": [
+      0.0,
+      9.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        548.0,
+        252.0
+      ],
+      "neck": [
+        548.57143,
+        348.57143
+      ],
+      "belt": [
+        555.71429,
+        587.14286
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        185.4
+      ],
+      "neck": [
+        384.0,
+        253.0
+      ],
+      "belt": [
+        389.0,
+        420.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.883598,
+      "neck": 0.711319,
+      "belt": 0.745104
+    },
+    "opaque_bounds": [
+      41,
+      90,
+      629,
+      867
+    ],
+    "authoring_bound": "authoring_bounds/frame_42_865032bad465.png"
+  },
+  {
+    "frame": 43,
+    "source": "run_v3/intermediate_43.png",
+    "source_sha256": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+    "scale": 0.7,
+    "origin": [
+      -1.0,
+      1.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        550.0,
+        263.14286
+      ],
+      "neck": [
+        548.57143,
+        361.42857
+      ],
+      "belt": [
+        561.42857,
+        601.42857
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        185.2
+      ],
+      "neck": [
+        383.0,
+        254.0
+      ],
+      "belt": [
+        392.0,
+        422.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.946015,
+      "neck": 0.835041,
+      "belt": 0.809344
+    },
+    "opaque_bounds": [
+      52,
+      92,
+      614,
+      913
+    ],
+    "authoring_bound": "authoring_bounds/frame_43_91e517d481ac.png"
+  },
+  {
+    "frame": 44,
+    "source": "run_v3/intermediate_44.png",
+    "source_sha256": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+    "scale": 0.7,
+    "origin": [
+      -2.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        550.85714,
+        262.0
+      ],
+      "neck": [
+        550.0,
+        361.42857
+      ],
+      "belt": [
+        564.28571,
+        600.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        185.4
+      ],
+      "neck": [
+        383.0,
+        255.0
+      ],
+      "belt": [
+        393.0,
+        422.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.921614,
+      "neck": 0.895413,
+      "belt": 0.872788
+    },
+    "opaque_bounds": [
+      51,
+      92,
+      639,
+      922
+    ],
+    "authoring_bound": "authoring_bounds/frame_44_ac2ee3102bd7.png"
+  },
+  {
+    "frame": 45,
+    "source": "run_v3/rough_keys/phase_45.png",
+    "source_sha256": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+    "scale": 0.7,
+    "origin": [
+      -3.0,
+      4.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        552.28571,
+        260.0
+      ],
+      "neck": [
+        551.42857,
+        358.57143
+      ],
+      "belt": [
+        564.28571,
+        595.71429
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        383.6,
+        186.0
+      ],
+      "neck": [
+        383.0,
+        255.0
+      ],
+      "belt": [
+        392.0,
+        421.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.939989,
+      "neck": 0.917036,
+      "belt": 0.792989
+    },
+    "opaque_bounds": [
+      61,
+      91,
+      635,
+      929
+    ],
+    "authoring_bound": "authoring_bounds/frame_45_b6e24f6bbe7c.png"
+  },
+  {
+    "frame": 46,
+    "source": "run_v3/intermediate_46.png",
+    "source_sha256": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+    "scale": 0.7,
+    "origin": [
+      -0.0,
+      2.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        548.57143,
+        264.57143
+      ],
+      "neck": [
+        545.71429,
+        362.85714
+      ],
+      "belt": [
+        558.57143,
+        600.0
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        187.2
+      ],
+      "neck": [
+        382.0,
+        256.0
+      ],
+      "belt": [
+        391.0,
+        422.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.905977,
+      "neck": 0.915436,
+      "belt": 0.618647
+    },
+    "opaque_bounds": [
+      53,
+      93,
+      631,
+      918
+    ],
+    "authoring_bound": "authoring_bounds/frame_46_602cc816f59c.png"
+  },
+  {
+    "frame": 47,
+    "source": "run_v3/intermediate_47.png",
+    "source_sha256": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+    "scale": 0.7,
+    "origin": [
+      1.0,
+      1.0
+    ],
+    "source_landmarks": {
+      "eyes": [
+        547.14286,
+        266.28571
+      ],
+      "neck": [
+        548.57143,
+        364.28571
+      ],
+      "belt": [
+        558.57143,
+        605.71429
+      ]
+    },
+    "canonical_landmarks": {
+      "eyes": [
+        384.0,
+        187.4
+      ],
+      "neck": [
+        385.0,
+        256.0
+      ],
+      "belt": [
+        392.0,
+        425.0
+      ]
+    },
+    "match_scores": {
+      "eyes": 0.898579,
+      "neck": 0.93299,
+      "belt": 0.838135
+    },
+    "opaque_bounds": [
+      71,
+      95,
+      630,
+      954
+    ],
+    "authoring_bound": "authoring_bounds/frame_47_3899947cf732.png"
+  }
+]

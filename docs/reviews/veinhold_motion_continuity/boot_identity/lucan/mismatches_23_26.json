@@ -1,0 +1,96 @@
+[
+  {
+    "frame": 23,
+    "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+    "source": "run_v2/frames/frame_23.png",
+    "default": {
+      "x": -21.671999999999986,
+      "y": 511.3332,
+      "opaque_pixels": 27968,
+      "window_x": [
+        -140,
+        -20
+      ],
+      "window_y": [
+        343.61159999999995,
+        1000
+      ]
+    },
+    "narrow_diagnostic": {
+      "x": -103.25699999999999,
+      "y": 506.9232,
+      "opaque_pixels": 25561,
+      "window_x": [
+        -140,
+        -40
+      ],
+      "window_y": [
+        343.61159999999995,
+        1000
+      ]
+    },
+    "default wrong_source_xy": [
+      537.0,
+      1071.0
+    ],
+    "default wrong_exported_xy": [
+      372.31,
+      717.73
+    ],
+    "reviewed narrow_source_xy": [
+      407.5,
+      1064.0
+    ],
+    "reviewed narrow_exported_xy": [
+      290.725,
+      713.32
+    ]
+  },
+  {
+    "frame": 26,
+    "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+    "source": "run_v2/frames/frame_26.png",
+    "default": {
+      "x": -21.325500000000016,
+      "y": 560.9898000000001,
+      "opaque_pixels": 37401,
+      "window_x": [
+        -140,
+        -20
+      ],
+      "window_y": [
+        340.6758,
+        1000
+      ]
+    },
+    "narrow_diagnostic": {
+      "x": -87.47550000000001,
+      "y": 531.3798,
+      "opaque_pixels": 32725,
+      "window_x": [
+        -140,
+        -40
+      ],
+      "window_y": [
+        340.6758,
+        1000
+      ]
+    },
+    "default wrong_source_xy": [
+      524.0,
+      1165.0
+    ],
+    "default wrong_exported_xy": [
+      373.12,
+      771.95
+    ],
+    "reviewed narrow_source_xy": [
+      419.0,
+      1118.0
+    ],
+    "reviewed narrow_exported_xy": [
+      306.97,
+      742.34
+    ]
+  }
+]

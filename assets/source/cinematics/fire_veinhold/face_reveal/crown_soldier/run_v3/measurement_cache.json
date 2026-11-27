@@ -1,0 +1,1498 @@
+{
+  "3": {
+    "stamp": {
+      "source_sha256": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        0.0,
+        19.0
+      ],
+      "landmarks": {
+        "eyes": [
+          548.85714,
+          245.42857
+        ],
+        "neck": [
+          548.57143,
+          342.85714
+        ],
+        "belt": [
+          552.85714,
+          582.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.926043,
+        "neck": 0.776179,
+        "belt": 0.83779
+      }
+    }
+  },
+  "6": {
+    "stamp": {
+      "source_sha256": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        5.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.85714,
+          268.28571
+        ],
+        "neck": [
+          548.57143,
+          365.71429
+        ],
+        "belt": [
+          551.42857,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.915987,
+        "neck": 0.907514,
+        "belt": 0.741252
+      }
+    }
+  },
+  "9": {
+    "stamp": {
+      "source_sha256": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        7.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          257.71429
+        ],
+        "neck": [
+          547.14286,
+          352.85714
+        ],
+        "belt": [
+          540.0,
+          598.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.948036,
+        "neck": 0.890265,
+        "belt": 0.880184
+      }
+    }
+  },
+  "15": {
+    "stamp": {
+      "source_sha256": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        6.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          254.0
+        ],
+        "neck": [
+          551.42857,
+          352.85714
+        ],
+        "belt": [
+          542.85714,
+          607.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.919943,
+        "neck": 0.883539,
+        "belt": 0.824359
+      }
+    }
+  },
+  "18": {
+    "stamp": {
+      "source_sha256": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        4.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          259.14286
+        ],
+        "neck": [
+          550.0,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          608.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.866823,
+        "neck": 0.880139,
+        "belt": 0.714359
+      }
+    }
+  },
+  "21": {
+    "stamp": {
+      "source_sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          262.85714
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          541.42857,
+          598.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.956562,
+        "neck": 0.876252,
+        "belt": 0.679082
+      }
+    }
+  },
+  "27": {
+    "stamp": {
+      "source_sha256": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          269.42857
+        ],
+        "neck": [
+          548.57143,
+          367.14286
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.93725,
+        "neck": 0.927064,
+        "belt": 0.856453
+      }
+    }
+  },
+  "30": {
+    "stamp": {
+      "source_sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -7.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          559.14286,
+          272.28571
+        ],
+        "neck": [
+          560.0,
+          371.42857
+        ],
+        "belt": [
+          560.0,
+          605.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.856358,
+        "neck": 0.83375,
+        "belt": 0.706355
+      }
+    }
+  },
+  "33": {
+    "stamp": {
+      "source_sha256": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        2.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.28571,
+          265.71429
+        ],
+        "neck": [
+          545.71429,
+          361.42857
+        ],
+        "belt": [
+          554.28571,
+          608.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.891771,
+        "neck": 0.927606,
+        "belt": 0.850911
+      }
+    }
+  },
+  "39": {
+    "stamp": {
+      "source_sha256": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        -0.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          262.57143
+        ],
+        "neck": [
+          544.28571,
+          358.57143
+        ],
+        "belt": [
+          555.71429,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.887018,
+        "neck": 0.813544,
+        "belt": 0.841074
+      }
+    }
+  },
+  "42": {
+    "stamp": {
+      "source_sha256": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        0.0,
+        9.0
+      ],
+      "landmarks": {
+        "eyes": [
+          548.0,
+          252.0
+        ],
+        "neck": [
+          548.57143,
+          348.57143
+        ],
+        "belt": [
+          555.71429,
+          587.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.883598,
+        "neck": 0.711319,
+        "belt": 0.745104
+      }
+    }
+  },
+  "45": {
+    "stamp": {
+      "source_sha256": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -3.0,
+        4.0
+      ],
+      "landmarks": {
+        "eyes": [
+          552.28571,
+          260.0
+        ],
+        "neck": [
+          551.42857,
+          358.57143
+        ],
+        "belt": [
+          564.28571,
+          595.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.939989,
+        "neck": 0.917036,
+        "belt": 0.792989
+      }
+    }
+  },
+  "10": {
+    "stamp": {
+      "source_sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -1.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          550.57143,
+          263.14286
+        ],
+        "neck": [
+          554.28571,
+          360.0
+        ],
+        "belt": [
+          541.42857,
+          594.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.880643,
+        "neck": 0.87684,
+        "belt": 0.724971
+      }
+    }
+  },
+  "11": {
+    "stamp": {
+      "source_sha256": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          258.28571
+        ],
+        "neck": [
+          554.28571,
+          352.85714
+        ],
+        "belt": [
+          540.0,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.845044,
+        "neck": 0.87892,
+        "belt": 0.665739
+      }
+    }
+  },
+  "25": {
+    "stamp": {
+      "source_sha256": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          266.28571
+        ],
+        "neck": [
+          552.85714,
+          362.85714
+        ],
+        "belt": [
+          545.71429,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.941953,
+        "neck": 0.848577,
+        "belt": 0.886247
+      }
+    }
+  },
+  "26": {
+    "stamp": {
+      "source_sha256": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.14286,
+          267.42857
+        ],
+        "neck": [
+          551.42857,
+          365.71429
+        ],
+        "belt": [
+          541.42857,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.904538,
+        "neck": 0.885871,
+        "belt": 0.821956
+      }
+    }
+  },
+  "28": {
+    "stamp": {
+      "source_sha256": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          269.71429
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          540.0,
+          608.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.919681,
+        "neck": 0.917974,
+        "belt": 0.899024
+      }
+    }
+  },
+  "29": {
+    "stamp": {
+      "source_sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.0,
+          272.0
+        ],
+        "neck": [
+          550.0,
+          368.57143
+        ],
+        "belt": [
+          542.85714,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.907244,
+        "neck": 0.871906,
+        "belt": 0.84596
+      }
+    }
+  },
+  "31": {
+    "stamp": {
+      "source_sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.71429,
+          271.14286
+        ],
+        "neck": [
+          544.28571,
+          372.85714
+        ],
+        "belt": [
+          547.14286,
+          607.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.853639,
+        "neck": 0.900994,
+        "belt": 0.76374
+      }
+    }
+  },
+  "32": {
+    "stamp": {
+      "source_sha256": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          267.71429
+        ],
+        "neck": [
+          545.71429,
+          364.28571
+        ],
+        "belt": [
+          547.14286,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.852344,
+        "neck": 0.901228,
+        "belt": 0.713018
+      }
+    }
+  },
+  "34": {
+    "stamp": {
+      "source_sha256": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.0,
+          259.42857
+        ],
+        "neck": [
+          542.85714,
+          355.71429
+        ],
+        "belt": [
+          548.57143,
+          595.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.877674,
+        "neck": 0.827237,
+        "belt": 0.8099
+      }
+    }
+  },
+  "35": {
+    "stamp": {
+      "source_sha256": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.57143,
+          258.28571
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          552.85714,
+          597.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.919235,
+        "neck": 0.872432,
+        "belt": 0.774592
+      }
+    }
+  },
+  "37": {
+    "stamp": {
+      "source_sha256": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          256.57143
+        ],
+        "neck": [
+          544.28571,
+          354.28571
+        ],
+        "belt": [
+          552.85714,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.9248,
+        "neck": 0.874989,
+        "belt": 0.818177
+      }
+    }
+  },
+  "38": {
+    "stamp": {
+      "source_sha256": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          258.28571
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          555.71429,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.917625,
+        "neck": 0.7799,
+        "belt": 0.783521
+      }
+    }
+  },
+  "40": {
+    "stamp": {
+      "source_sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.28571,
+          260.57143
+        ],
+        "neck": [
+          544.28571,
+          355.71429
+        ],
+        "belt": [
+          551.42857,
+          592.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.787335,
+        "neck": 0.630338,
+        "belt": 0.703534
+      }
+    }
+  },
+  "41": {
+    "stamp": {
+      "source_sha256": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.0,
+          260.85714
+        ],
+        "neck": [
+          544.28571,
+          358.57143
+        ],
+        "belt": [
+          554.28571,
+          597.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.785733,
+        "neck": 0.848836,
+        "belt": 0.804876
+      }
+    }
+  },
+  "43": {
+    "stamp": {
+      "source_sha256": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -1.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          550.0,
+          263.14286
+        ],
+        "neck": [
+          548.57143,
+          361.42857
+        ],
+        "belt": [
+          561.42857,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.946015,
+        "neck": 0.835041,
+        "belt": 0.809344
+      }
+    }
+  },
+  "44": {
+    "stamp": {
+      "source_sha256": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -2.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          550.85714,
+          262.0
+        ],
+        "neck": [
+          550.0,
+          361.42857
+        ],
+        "belt": [
+          564.28571,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.921614,
+        "neck": 0.895413,
+        "belt": 0.872788
+      }
+    }
+  },
+  "46": {
+    "stamp": {
+      "source_sha256": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        -0.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          548.57143,
+          264.57143
+        ],
+        "neck": [
+          545.71429,
+          362.85714
+        ],
+        "belt": [
+          558.57143,
+          600.0
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.905977,
+        "neck": 0.915436,
+        "belt": 0.618647
+      }
+    }
+  },
+  "47": {
+    "stamp": {
+      "source_sha256": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          547.14286,
+          266.28571
+        ],
+        "neck": [
+          548.57143,
+          364.28571
+        ],
+        "belt": [
+          558.57143,
+          605.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.898579,
+        "neck": 0.93299,
+        "belt": 0.838135
+      }
+    }
+  },
+  "1": {
+    "stamp": {
+      "source_sha256": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        2.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          545.42857,
+          267.71429
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          551.42857,
+          601.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.926721,
+        "neck": 0.932749,
+        "belt": 0.860969
+      }
+    }
+  },
+  "2": {
+    "stamp": {
+      "source_sha256": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        1.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.71429,
+          269.14286
+        ],
+        "neck": [
+          544.28571,
+          367.14286
+        ],
+        "belt": [
+          551.42857,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.918235,
+        "neck": 0.849513,
+        "belt": 0.776144
+      }
+    }
+  },
+  "4": {
+    "stamp": {
+      "source_sha256": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          271.14286
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          555.71429,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.913281,
+        "neck": 0.862284,
+        "belt": 0.870156
+      }
+    }
+  },
+  "5": {
+    "stamp": {
+      "source_sha256": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.57143,
+          272.85714
+        ],
+        "neck": [
+          548.57143,
+          370.0
+        ],
+        "belt": [
+          552.85714,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.934024,
+        "neck": 0.929773,
+        "belt": 0.789902
+      }
+    }
+  },
+  "7": {
+    "stamp": {
+      "source_sha256": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          272.28571
+        ],
+        "neck": [
+          545.71429,
+          367.14286
+        ],
+        "belt": [
+          548.57143,
+          611.42857
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.91157,
+        "neck": 0.896486,
+        "belt": 0.846299
+      }
+    }
+  },
+  "8": {
+    "stamp": {
+      "source_sha256": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        1.0,
+        3.0
+      ],
+      "landmarks": {
+        "eyes": [
+          546.85714,
+          267.42857
+        ],
+        "neck": [
+          552.85714,
+          362.85714
+        ],
+        "belt": [
+          542.85714,
+          602.85714
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.895404,
+        "neck": 0.860577,
+        "belt": 0.882968
+      }
+    }
+  },
+  "13": {
+    "stamp": {
+      "source_sha256": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        5.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.0,
+          256.85714
+        ],
+        "neck": [
+          552.85714,
+          352.85714
+        ],
+        "belt": [
+          542.85714,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.789239,
+        "neck": 0.893654,
+        "belt": 0.840832
+      }
+    }
+  },
+  "14": {
+    "stamp": {
+      "source_sha256": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          257.71429
+        ],
+        "neck": [
+          552.85714,
+          355.71429
+        ],
+        "belt": [
+          540.0,
+          604.28571
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.912204,
+        "neck": 0.8979,
+        "belt": 0.843255
+      }
+    }
+  },
+  "16": {
+    "stamp": {
+      "source_sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          260.57143
+        ],
+        "neck": [
+          551.42857,
+          354.28571
+        ],
+        "belt": [
+          545.71429,
+          598.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.815249,
+        "neck": 0.814843,
+        "belt": 0.743796
+      }
+    }
+  },
+  "17": {
+    "stamp": {
+      "source_sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          260.57143
+        ],
+        "neck": [
+          554.28571,
+          355.71429
+        ],
+        "belt": [
+          545.71429,
+          597.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.865614,
+        "neck": 0.786268,
+        "belt": 0.659602
+      }
+    }
+  },
+  "19": {
+    "stamp": {
+      "source_sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          543.42857,
+          262.28571
+        ],
+        "neck": [
+          547.14286,
+          362.85714
+        ],
+        "belt": [
+          541.42857,
+          608.57143
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.787572,
+        "neck": 0.890584,
+        "belt": 0.759642
+      }
+    }
+  },
+  "20": {
+    "stamp": {
+      "source_sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        2.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          545.71429,
+          263.14286
+        ],
+        "neck": [
+          548.57143,
+          362.85714
+        ],
+        "belt": [
+          542.85714,
+          595.71429
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.71656,
+        "neck": 0.776679,
+        "belt": 0.430746
+      }
+    }
+  },
+  "22": {
+    "stamp": {
+      "source_sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        3.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          544.85714,
+          264.57143
+        ],
+        "neck": [
+          552.85714,
+          367.14286
+        ],
+        "belt": [
+          548.57143,
+          607.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.90063,
+        "neck": 0.900719,
+        "belt": 0.855283
+      }
+    }
+  },
+  "23": {
+    "stamp": {
+      "source_sha256": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+      "baseline_profile_sha256": "1d35b582fdd4773bf6e169197cd1cfbca6d5d258474264480b85beaa55071d70",
+      "version": 1,
+      "density": 0.7
+    },
+    "registration": {
+      "scale": 0.7,
+      "origin": [
+        4.0,
+        2.0
+      ],
+      "landmarks": {
+        "eyes": [
+          542.85714,
+          266.0
+        ],
+        "neck": [
+          551.42857,
+          367.14286
+        ],
+        "belt": [
+          542.85714,
+          607.14286
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.921221,
+        "neck": 0.838935,
+        "belt": 0.782031
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 {
   "version": 1,
   "exporter": "tools/export_prologue_faces.py",
-  "exporter_sha256": "dab0232f50dde7ad30b779c9f71f79fe3de678acdf61eebc09b4c30d0f43336f",
+  "exporter_sha256": "86d5b1a909c73c23c345490d1068cb3cadccf40aff0ad3f34c6e1af99e5ab596",
   "construction": "Complete image-authored drawings; recorded cell crops and uniform whole-figure sampling/registration only.",
   "alpha_floor": 16,
   "source_landmark_space": "Source-cell pixels, before uniform scaling and whole-figure translation.",
   "source_sha256": {
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_48.json": "fc65735f10c5902e920160c08985e11d12acafe08e11db5fb1635490f1865717",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/source_art_48.json": "99b5d07cf0960acb9e88a2f1e0ca42cf301590ed0f6f112513dc63adbfe19a17",
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/frame_00.png": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50",
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_01.png": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_02.png": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
@@ -105,240 +105,262 @@
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_43.txt": "29233c620cb9ede444f3ed444628124fc1615ca8b4ee554f456692a7e78d6137",
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_46.txt": "285aacaf939ad6c7b0d7ab3079fff39bd5af32f47eaf82ce0338d24f3c9edb62",
     "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_47.txt": "7e71f2d692b960c7ceec476b9aba8c4a3d2eca5e86affdb32aae1c5f5680c9f1",
-    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_45.txt": "4d1001130497114c9e40bcfea51886bac0afe18b8e2913b0f5d97df0c04a00ba"
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v2/repairs/frame_45.txt": "4d1001130497114c9e40bcfea51886bac0afe18b8e2913b0f5d97df0c04a00ba",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_00.png": "38af9143e2285fa5aa976a8840f978e457f51306879fde236c560a863380f99b",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_03.png": "ced30dec134405615701c30ca4d46f3318c8fdc1ef156b59294b2711110905fb",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_14_recolor.png": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_16_c.png": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_23.png": "1264b5f3a2524d6324aefb94107c4ae56d3b6e2b7b459c326924e30738e8bf4c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_43_c.png": "3ab5ac8ec96ea8767354bc03157b7faa2301f715ca8ee6d4fa93fff1149c670a",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_25_b.png": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_40_b.png": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_43_d.png": "31ab9382213b4d2ff458c02af2f337402448bcb43168cedaede6c4da1da6abc1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_01_d.png": "653f24bcc01d33d4031be56096c94a9caf85201357bed3b4da2b9e8ecf6b0cea",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_02_c.png": "0433cb153b5c5302f9ac126418d67ed1c2a107747381ec4f274e515270e224c8",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_13_recolor.png": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_15_hair.png": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_17.png": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_31_braid_path.png": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_32_braid_path.png": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_33_braid_path.png": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_38_braid_clean.png": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/key_39_braid_mid.png": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_09_b.png": "88455e913f219ca0e9609468fe9b52e8538d0a5cc5eb11abfb4c4ed9428f7713",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_10_d.png": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+    "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_11_d.png": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab"
   },
   "registrations": [
     {
       "frame": 0,
-      "source": "run_v2/frame_00.png",
+      "source": "run_v3/key_00.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6671514633967349,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        130.43673069096883,
-        22.935333008652975
+        9.243615403090189,
+        4.627331678808758
       ],
       "applied_origin": [
-        130,
-        23
+        9,
+        5
       ],
       "sample_size": [
-        725,
-        966
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          629.047,
+          168.032
+        ],
         "neck": [
-          571.929,
-          265.404
+          627.993,
+          244.04
         ],
         "belt": [
-          570.87,
-          539.961
-        ],
-        "face": [
-          576.457,
-          175.691
+          619.52,
+          462.391
         ]
       },
       "exported_landmarks": {
+        "face": [
+          512.6002,
+          139.5225
+        ],
         "neck": [
-          511.5633,
-          200.0647
+          511.7564,
+          200.3727
         ],
         "belt": [
-          510.8568,
-          383.2358
-        ],
-        "face": [
-          514.5841,
-          140.2125
+          504.9731,
+          375.1793
         ]
       },
       "opaque_bounds": [
-        148,
-        40,
-        748,
-        962
+        151,
+        30,
+        792,
+        946
       ],
-      "sha256": "881b365d7f970a0bbf547d7f1d71beaa315632bcd1af8006f31f9cf5a73f05e4"
+      "sha256": "b6093bad03f91b4333ee5c0c5dbf1f5b149d1a3fcab42cbc336fdf12407790cb"
     },
     {
       "frame": 1,
-      "source": "run_v2/repairs/frame_01.png",
+      "source": "run_v3/key_01_d.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6799853123172539,
+      "scale": 0.7851820444570073,
       "requested_origin": [
-        122.78388706803935,
-        19.468041846296103
+        11.046788998029172,
+        7.8425283254422595
       ],
       "applied_origin": [
-        123,
-        19
+        11,
+        8
       ],
       "sample_size": [
-        738,
+        985,
         985
       ],
       "source_cell_landmarks": {
+        "face": [
+          640.019,
+          169.086
+        ],
         "neck": [
-          572.389,
-          267.016
+          638.009,
+          246.048
         ],
         "belt": [
-          570.87,
-          539.961
-        ],
-        "face": [
-          577.354,
-          176.483
+          630.668,
+          466.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          513.5314,
+          140.7633
+        ],
         "neck": [
-          512.2161,
-          200.567
+          511.9532,
+          201.1925
         ],
         "belt": [
-          511.1832,
-          386.1655
-        ],
-        "face": [
-          515.5922,
-          139.0058
+          506.1892,
+          374.4774
         ]
       },
       "opaque_bounds": [
-        144,
-        35,
-        773,
-        980
+        145,
+        32,
+        795,
+        934
       ],
-      "sha256": "a10141aff69971ad94b05554223d8785316a34904e9c1ba098fe48d9392982a1"
+      "sha256": "7e20a5996feb2879ed78265dd5f8cc02058b8f401bffe8c3383f4310e207ad71"
     },
     {
       "frame": 2,
-      "source": "run_v2/repairs/frame_02.png",
+      "source": "run_v3/key_02_c.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1048,
+        1501
       ],
-      "scale": 0.6799853123172539,
+      "scale": 0.6559742858079963,
       "requested_origin": [
-        121.98150439950501,
-        20.79887394432282
+        128.0516907737217,
+        5.006330151858037
       ],
       "applied_origin": [
-        122,
-        21
+        128,
+        5
       ],
       "sample_size": [
-        738,
+        687,
         985
       ],
       "source_cell_landmarks": {
+        "face": [
+          587.454,
+          206.551
+        ],
         "neck": [
-          573.569,
-          266.478
+          585.31,
+          300.307
         ],
         "belt": [
-          571.775,
-          538.633
-        ],
-        "face": [
-          577.354,
-          176.483
+          579.597,
+          574.698
         ]
       },
       "exported_landmarks": {
+        "face": [
+          513.3547,
+          140.4921
+        ],
         "neck": [
-          512.0185,
-          202.2011
+          511.9483,
+          201.9937
         ],
         "belt": [
-          510.7986,
-          387.2625
-        ],
-        "face": [
-          514.5922,
-          141.0058
+          508.2007,
+          381.9871
         ]
       },
       "opaque_bounds": [
-        141,
-        37,
-        779,
-        994
+        156,
+        29,
+        769,
+        973
       ],
-      "sha256": "5db59d7d169c75bb5cc9a228f1a635936f2ffb556022634fe315c8fb1d2d166f"
+      "sha256": "ac4fd1eeb7159abdb7b72503b34935c62e5f95d99b68c73c0fe7e14c4a86bd3b"
     },
     {
       "frame": 3,
-      "source": "run_v2/repairs/frame_03.png",
+      "source": "run_v3/key_03.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6799853123172539,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        122.78388706803935,
-        21.26104184629611
+        9.141141621967847,
+        3.1226121207269273
       ],
       "applied_origin": [
-        123,
-        21
+        9,
+        3
       ],
       "sample_size": [
-        738,
-        985
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          631.05,
+          172.051
+        ],
         "neck": [
-          572.389,
-          267.016
+          628.121,
+          249.452
         ],
         "belt": [
-          566.87,
-          539.961
-        ],
-        "face": [
-          575.354,
-          176.483
+          622.655,
+          476.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          514.2037,
+          140.74
+        ],
         "neck": [
-          512.2161,
-          202.567
+          511.8589,
+          202.7054
         ],
         "belt": [
-          508.4633,
-          388.1655
-        ],
-        "face": [
-          514.2323,
-          141.0058
+          507.4829,
+          384.6684
         ]
       },
       "opaque_bounds": [
-        152,
-        39,
-        774,
-        989
+        149,
+        38,
+        768,
+        976
       ],
-      "sha256": "05336d3ad5e1a6c12615f3aa7c11a201bec0097f29ca565661e4267be5018105"
+      "sha256": "43eebfee00a155a33b51fb9efc5f974ce3b508addca09980dcf0282dcfbe72ef"
     },
     {
       "frame": 4,
@@ -632,177 +654,177 @@
     },
     {
       "frame": 9,
-      "source": "run_v2/repairs/frame_09.png",
+      "source": "run_v3/helper_braid_frame_09_b.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6671514633967349,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        129.10242776417533,
-        23.085387034578474
+        9.710351453046258,
+        3.495680730125713
       ],
       "applied_origin": [
-        129,
-        23
+        10,
+        3
       ],
       "sample_size": [
-        725,
-        966
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          629.047,
+          174.06
+        ],
         "neck": [
-          573.929,
-          269.418
+          627.41,
+          248.986
         ],
         "belt": [
-          565.775,
-          544.652
-        ],
-        "face": [
-          576.457,
-          177.699
+          619.432,
+          473.33
         ]
       },
       "exported_landmarks": {
+        "face": [
+          513.6002,
+          142.3483
+        ],
         "neck": [
-          511.8976,
-          202.7426
+          512.2896,
+          202.3323
         ],
         "belt": [
-          506.4576,
-          386.3654
-        ],
-        "face": [
-          513.5841,
-          141.5521
+          505.9026,
+          381.9368
         ]
       },
       "opaque_bounds": [
-        149,
+        157,
         34,
-        775,
-        971
+        771,
+        956
       ],
-      "sha256": "5092269eaae05fbdeb8a969a77d92e926f743e0ebe810d738c4b9ac1de0428cd"
+      "sha256": "746fe6ccdb64d74dc62e245a7854723ee0f20372ac321fbf5e396f7b75f63919"
     },
     {
       "frame": 10,
-      "source": "run_v2/repairs/frame_10.png",
+      "source": "run_v3/helper_braid_frame_10_d.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6671514633967349,
+      "scale": 0.8165865050914168,
       "requested_origin": [
-        129.10242776417533,
-        22.25738703457847
+        -0.33453915940583556,
+        0.32109814553203364
       ],
       "applied_origin": [
-        129,
-        22
+        0,
+        0
       ],
       "sample_size": [
-        725,
-        966
+        1024,
+        1024
       ],
       "source_cell_landmarks": {
+        "face": [
+          630.095,
+          173.007
+        ],
         "neck": [
-          573.929,
-          269.418
+          627.41,
+          246.978
         ],
         "belt": [
-          567.585,
-          544.003
-        ],
-        "face": [
-          576.457,
-          177.699
+          620.651,
+          472.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          514.5271,
+          141.2752
+        ],
         "neck": [
-          511.8976,
-          201.7426
+          512.3345,
+          201.6789
         ],
         "belt": [
-          507.6652,
-          384.9324
-        ],
-        "face": [
-          513.5841,
-          140.5521
+          506.8152,
+          386.0347
         ]
       },
       "opaque_bounds": [
-        148,
-        31,
-        776,
-        978
+        147,
+        23,
+        780,
+        985
       ],
-      "sha256": "2827ce6808742c75e7c65552392f121cf599526ae6f044ae9fbb7249ff9b3cf1"
+      "sha256": "b267ba33cd54923153c50698f691213652306f9ad35e1c45159b8746a52e3dab"
     },
     {
       "frame": 11,
-      "source": "run_v2/repairs/frame_11.png",
+      "source": "run_v3/helper_braid_frame_11_d.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8165865050914168,
       "requested_origin": [
-        136.72973238431365,
-        23.658904032897027
+        -0.8106090918741984,
+        0.11552359526706368
       ],
       "applied_origin": [
-        137,
-        24
+        -1,
+        0
       ],
       "sample_size": [
-        711,
-        948
+        1024,
+        1024
       ],
       "source_cell_landmarks": {
+        "face": [
+          628.092,
+          173.007
+        ],
         "neck": [
-          573.109,
-          270.887
+          627.993,
+          246.048
         ],
         "belt": [
-          565.585,
-          544.003
-        ],
-        "face": [
-          573.56,
-          178.915
+          620.651,
+          466.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          511.8915,
+          141.2752
+        ],
         "neck": [
-          512.2703,
-          201.3761
+          511.8106,
+          200.9195
         ],
         "belt": [
-          507.3436,
-          380.2117
-        ],
-        "face": [
-          512.5656,
-          141.1531
+          505.8152,
+          381.1352
         ]
       },
       "opaque_bounds": [
-        158,
-        31,
-        782,
-        962
+        156,
+        29,
+        781,
+        964
       ],
-      "sha256": "7b59435f7e020ea2724d1d5371772ea6a9587a31492189d4adedcfec11ad87e8"
+      "sha256": "798097c93208b1bf5686cd4cff08a0cbdfe88c502c0465d439e57031d5567ac0"
     },
     {
       "frame": 12,
@@ -864,293 +886,293 @@
     },
     {
       "frame": 13,
-      "source": "run_v2/repairs/frame_13.png",
+      "source": "run_v3/key_13_recolor.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1199,
+        1312
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.7964192988324493,
       "requested_origin": [
-        136.72973238431365,
-        21.588904032897034
+        8.424873767541158,
+        1.308065577165081
       ],
       "applied_origin": [
-        137,
-        22
+        8,
+        1
       ],
       "sample_size": [
-        711,
-        948
+        955,
+        1045
       ],
       "source_cell_landmarks": {
+        "face": [
+          625.338,
+          171.992
+        ],
         "neck": [
-          573.109,
-          270.887
+          632.299,
+          248.182
         ],
         "belt": [
-          563.585,
-          548.016
-        ],
-        "face": [
-          569.56,
-          180.923
+          623.472,
+          481.103
         ]
       },
       "exported_landmarks": {
+        "face": [
+          506.0313,
+          137.9777
+        ],
         "neck": [
-          512.2703,
-          199.3761
+          511.5751,
+          198.6569
         ],
         "belt": [
-          506.034,
-          380.8394
-        ],
-        "face": [
-          509.9464,
-          140.4679
+          504.5451,
+          384.1597
         ]
       },
       "opaque_bounds": [
-        155,
-        34,
-        779,
-        950
+        139,
+        20,
+        801,
+        1005
       ],
-      "sha256": "008915953312a07e1e5927876179b6886e83c03c35e65aa9f126f8e5df1a9296"
+      "sha256": "534eca6cf482ce46bae5e756269af8ab8e785c879cf593388de805561b383eab"
     },
     {
       "frame": 14,
-      "source": "run_v2/repairs/frame_14.png",
+      "source": "run_v3/key_14_recolor.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8332500083325001,
       "requested_origin": [
-        136.72973238431365,
-        20.62390403289703
+        -10.683564976835669,
+        -4.958037529580395
       ],
       "applied_origin": [
-        137,
-        21
+        -11,
+        -5
       ],
       "sample_size": [
-        711,
-        948
+        1045,
+        1045
       ],
       "source_cell_landmarks": {
+        "face": [
+          621.127,
+          171.954
+        ],
         "neck": [
-          573.109,
-          270.887
+          627.283,
+          243.574
         ],
         "belt": [
-          561.775,
-          546.658
-        ],
-        "face": [
-          569.56,
-          180.923
+          620.651,
+          460.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          506.5541,
+          138.2807
+        ],
         "neck": [
-          512.2703,
-          198.3761
+          511.6836,
+          197.958
         ],
         "belt": [
-          504.8488,
-          378.9502
-        ],
-        "face": [
-          509.9464,
-          139.4679
+          506.1575,
+          378.9133
         ]
       },
       "opaque_bounds": [
-        153,
-        32,
-        778,
-        950
+        124,
+        25,
+        788,
+        970
       ],
-      "sha256": "019b829d3c0355eff5108126d5e1b5146cefe5237edefe71ce49e9c2521bfa0f"
+      "sha256": "c14fb86db3726b4fb475226dda152460596e17a5e9d2ddddef15b95adf5a6c8e"
     },
     {
       "frame": 15,
-      "source": "run_v2/repairs/frame_15.png",
+      "source": "run_v3/key_15_hair.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6428925019447499,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        135.07984081981647,
-        18.204871093624433
+        8.31094387959331,
+        1.6824475222159947
       ],
       "applied_origin": [
-        135,
-        18
+        8,
+        2
       ],
       "sample_size": [
-        698,
-        931
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          625.041,
+          170.042
+        ],
         "neck": [
-          586.288,
-          278.378
+          629.158,
+          244.186
         ],
         "belt": [
-          579.775,
-          558.696
-        ],
-        "face": [
-          582.663,
-          186.155
+          620.651,
+          472.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          508.3931,
+          138.1316
+        ],
         "neck": [
-          511.9202,
-          196.9671
+          511.6891,
+          197.4896
         ],
         "belt": [
-          507.733,
-          377.1815
-        ],
+          504.8786,
+          380.4661
+        ]
+      },
+      "opaque_bounds": [
+        152,
+        32,
+        793,
+        907
+      ],
+      "sha256": "7ccc784735edafe7f4f89313c4c3cf8275df74205029f5954fe8191819e80c87"
+    },
+    {
+      "frame": 16,
+      "source": "run_v3/key_16_c.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.7851820444570073,
+      "requested_origin": [
+        20.584395292048498,
+        7.592933550043597
+      ],
+      "applied_origin": [
+        21,
+        8
+      ],
+      "sample_size": [
+        985,
+        985
+      ],
+      "source_cell_landmarks": {
         "face": [
-          509.5897,
-          137.6777
+          623.993,
+          167.076
+        ],
+        "neck": [
+          625.862,
+          240.636
+        ],
+        "belt": [
+          619.52,
+          464.391
+        ]
+      },
+      "exported_landmarks": {
+        "face": [
+          510.9481,
+          139.1851
+        ],
+        "neck": [
+          512.4156,
+          196.9431
+        ],
+        "belt": [
+          507.436,
+          372.6315
+        ]
+      },
+      "opaque_bounds": [
+        162,
+        35,
+        793,
+        872
+      ],
+      "sha256": "7482b96d56018e8d02cfa843766ed7a9479aad4a18ebac4cd4f617ec6420fe68"
+    },
+    {
+      "frame": 17,
+      "source": "run_v3/helper_frame_17.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8005764150188135,
+      "requested_origin": [
+        7.741734048514957,
+        1.8809363541750201
+      ],
+      "applied_origin": [
+        8,
+        2
+      ],
+      "sample_size": [
+        1004,
+        1004
+      ],
+      "source_cell_landmarks": {
+        "face": [
+          627.044,
+          168.032
+        ],
+        "neck": [
+          629.869,
+          242.644
+        ],
+        "belt": [
+          622.307,
+          462.978
+        ]
+      },
+      "exported_landmarks": {
+        "face": [
+          509.9966,
+          136.5225
+        ],
+        "neck": [
+          512.2583,
+          196.2551
+        ],
+        "belt": [
+          506.2043,
+          372.6493
         ]
       },
       "opaque_bounds": [
         157,
         33,
-        791,
-        903
+        789,
+        848
       ],
-      "sha256": "bc9dc9533400d397cb0ad3b46485efe1a3f4529548b5c99b358e0b44d641d48a"
-    },
-    {
-      "frame": 16,
-      "source": "run_v2/repairs/frame_16.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.6547973729529397,
-      "requested_origin": [
-        127.32749690608244,
-        13.292919571238684
-      ],
-      "applied_origin": [
-        127,
-        13
-      ],
-      "sample_size": [
-        711,
-        948
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          587.468,
-          279.847
-        ],
-        "belt": [
-          579.775,
-          558.696
-        ],
-        "face": [
-          583.56,
-          188.955
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          511.6725,
-          196.2431
-        ],
-        "belt": [
-          506.6351,
-          378.8327
-        ],
-        "face": [
-          509.1136,
-          136.7272
-        ]
-      },
-      "opaque_bounds": [
-        149,
-        29,
-        796,
-        849
-      ],
-      "sha256": "85991be3d0b97e43fb49712018f595f7c4c3d14fd6f7918b586561a61e4f271b"
-    },
-    {
-      "frame": 17,
-      "source": "run_v2/repairs/frame_17.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.6547973729529397,
-      "requested_origin": [
-        128.63709165198833,
-        12.892919571238679
-      ],
-      "applied_origin": [
-        129,
-        13
-      ],
-      "sample_size": [
-        711,
-        948
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          585.468,
-          279.847
-        ],
-        "belt": [
-          575.775,
-          556.69
-        ],
-        "face": [
-          581.56,
-          188.955
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          512.3629,
-          196.2431
-        ],
-        "belt": [
-          506.016,
-          377.5191
-        ],
-        "face": [
-          509.804,
-          136.7272
-        ]
-      },
-      "opaque_bounds": [
-        152,
-        30,
-        797,
-        839
-      ],
-      "sha256": "e14260dc0606167ae2c5f82f8bc8e95e29703fa4eb18cd751f75f88663bc8422"
+      "sha256": "99a838fbd361ac5bea77f009db6ddacf930be9adfbe707e035e70fa2b34300b0"
     },
     {
       "frame": 18,
@@ -1444,61 +1466,61 @@
     },
     {
       "frame": 23,
-      "source": "run_v2/repairs/frame_23.png",
+      "source": "run_v3/key_23.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6799853123172539,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        117.72547632971134,
-        3.945212427411576
+        8.87935313425669,
+        3.8477155551997555
       ],
       "applied_origin": [
-        118,
+        9,
         4
       ],
       "sample_size": [
-        738,
-        985
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          627.044,
+          170.042
+        ],
         "neck": [
-          579.828,
-          286.8
+          628.448,
+          243.721
         ],
         "belt": [
-          572.87,
-          545.98
-        ],
-        "face": [
-          577.354,
-          198.57
+          620.303,
+          458.978
         ]
       },
       "exported_landmarks": {
+        "face": [
+          510.9966,
+          140.1316
+        ],
         "neck": [
-          512.2745,
-          199.0198
+          512.1206,
+          199.1173
         ],
         "belt": [
-          507.5432,
-          375.2584
-        ],
-        "face": [
-          510.5922,
-          139.0247
+          505.6,
+          371.447
         ]
       },
       "opaque_bounds": [
-        140,
-        36,
-        801,
-        930
+        145,
+        38,
+        796,
+        969
       ],
-      "sha256": "ba21c4078bb745affb6e74c3124c8aeec5475e820968c68b0c0e43ea2904ab40"
+      "sha256": "d6740598e230f88387092a537bd758804b6909f180225a864c3d1307eabeb68b"
     },
     {
       "frame": 24,
@@ -1560,61 +1582,61 @@
     },
     {
       "frame": 25,
-      "source": "run_v2/repairs/frame_25.png",
+      "source": "run_v3/key_25_b.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        130.71934729797863,
-        9.555223416863669
+        8.31094387959331,
+        3.9378900808582387
       ],
       "applied_origin": [
-        131,
-        10
+        8,
+        4
       ],
       "sample_size": [
-        711,
-        948
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          627.044,
+          170.042
+        ],
         "neck": [
-          582.288,
-          292.426
+          629.158,
+          246.194
         ],
         "belt": [
-          573.965,
-          565.364
-        ],
-        "face": [
-          583.56,
-          201.002
+          620.303,
+          472.978
         ]
       },
       "exported_landmarks": {
+        "face": [
+          509.9966,
+          140.1316
+        ],
         "neck": [
-          512.2807,
-          201.4798
+          511.6891,
+          201.0971
         ],
         "belt": [
-          506.8308,
-          380.1989
-        ],
-        "face": [
-          513.1136,
-          141.6156
+          504.6,
+          382.655
         ]
       },
       "opaque_bounds": [
-        154,
-        32,
-        783,
-        952
+        124,
+        34,
+        793,
+        985
       ],
-      "sha256": "9e4b3ea634f1871f646b10392d60b3696469fcb3075f682ffa0388f333988082"
+      "sha256": "ba0d25a132fe63198fec96d6a3a708418146cb511c2522535980034aef2f8207"
     },
     {
       "frame": 26,
@@ -1908,177 +1930,177 @@
     },
     {
       "frame": 31,
-      "source": "run_v2/repairs/frame_32.png",
+      "source": "run_v3/key_31_braid_path.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        122.3903247140172,
-        17.733917953889204
+        9.914498438876024,
+        3.5517751981426784
       ],
       "applied_origin": [
-        122,
-        18
+        10,
+        4
       ],
       "sample_size": [
-        711,
-        948
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          623.037,
+          178.078
+        ],
         "neck": [
-          595.008,
-          284.256
+          627.155,
+          250.21
         ],
         "belt": [
-          580.155,
-          564.006
-        ],
-        "face": [
-          591.56,
-          194.979
+          613.946,
+          475.215
         ]
       },
       "exported_landmarks": {
+        "face": [
+          508.7887,
+          146.565
+        ],
         "neck": [
-          511.6097,
-          204.1301
+          512.0855,
+          204.3122
         ],
         "belt": [
-          501.884,
-          387.3096
-        ],
+          501.5107,
+          384.4459
+        ]
+      },
+      "opaque_bounds": [
+        142,
+        37,
+        773,
+        945
+      ],
+      "sha256": "b9b76a42c256404eea7d56df2ea38bf1af673b6cf3dacc2c108ce51ced854cb6"
+    },
+    {
+      "frame": 32,
+      "source": "run_v3/key_32_braid_path.png",
+      "cell": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scale": 0.8165865050914168,
+      "requested_origin": [
+        -0.6023795330759185,
+        -0.09468398918838261
+      ],
+      "applied_origin": [
+        -1,
+        0
+      ],
+      "sample_size": [
+        1024,
+        1024
+      ],
+      "source_cell_landmarks": {
         "face": [
-          509.3519,
-          145.6717
+          624.085,
+          177.025
+        ],
+        "neck": [
+          627.738,
+          249.28
+        ],
+        "belt": [
+          633,
+          475
+        ]
+      },
+      "exported_landmarks": {
+        "face": [
+          508.6194,
+          144.5562
+        ],
+        "neck": [
+          511.6024,
+          203.5587
+        ],
+        "belt": [
+          515.8993,
+          387.8786
         ]
       },
       "opaque_bounds": [
         136,
-        35,
-        782,
-        957
-      ],
-      "sha256": "fcd7aaea059000f1db2ecbf0cb5e441ef61f69914ee8a09f40f5238d015e58c4"
-    },
-    {
-      "frame": 32,
-      "source": "run_v2/repairs/frame_31.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.6547973729529397,
-      "requested_origin": [
-        121.85339086819585,
-        16.98229176461342
-      ],
-      "applied_origin": [
-        122,
-        17
-      ],
-      "sample_size": [
-        711,
-        948
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          595.828,
-          284.793
-        ],
-        "belt": [
-          602,
-          563
-        ],
-        "face": [
-          591.56,
-          194.979
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          512.1466,
-          203.4817
-        ],
-        "belt": [
-          516.188,
-          385.6509
-        ],
-        "face": [
-          509.3519,
-          144.6717
-        ]
-      },
-      "opaque_bounds": [
-        137,
-        33,
+        32,
         783,
-        958
+        960
       ],
-      "sha256": "5d9e65e1529dcc50a6a1891b8bed87cf318021e55ae5a8eeda0d295e95eb2c30"
+      "sha256": "a5319f2fab4a1d30447b2d8796f0247d251a70489622980b95b4f66f47c1df9a"
     },
     {
       "frame": 33,
-      "source": "run_v2/repairs/frame_34.png",
+      "source": "run_v3/key_33_braid_path.png",
       "cell": [
         0,
         0,
-        1053,
-        1494
+        1254,
+        1254
       ],
-      "scale": 0.6119726325838708,
+      "scale": 0.8165865050914168,
       "requested_origin": [
-        151.8284028738235,
-        21.756313525819138
+        -0.1263096006075557,
+        0.14959626330016818
       ],
       "applied_origin": [
-        152,
-        22
+        0,
+        0
       ],
       "sample_size": [
-        644,
-        914
+        1024,
+        1024
       ],
       "source_cell_landmarks": {
+        "face": [
+          624.085,
+          177.025
+        ],
         "neck": [
-          588.542,
-          295.882
+          627.155,
+          248.202
         ],
         "belt": [
-          576.555,
-          592.837
-        ],
-        "face": [
-          583.728,
-          200.265
+          617.604,
+          471.452
         ]
       },
       "exported_landmarks": {
+        "face": [
+          509.6194,
+          144.5562
+        ],
         "neck": [
-          512.1716,
-          203.0717
+          512.1263,
+          202.6784
         ],
         "belt": [
-          504.8359,
-          384.8
-        ],
-        "face": [
-          509.2256,
-          144.5567
+          504.3271,
+          384.9813
         ]
       },
       "opaque_bounds": [
-        162,
-        38,
-        776,
-        927
+        161,
+        36,
+        778,
+        929
       ],
-      "sha256": "4f2cd9875cef5d827b914b5929eaf067951da184e2a7a5a495624a50ddc8a858"
+      "sha256": "96607296631983212d1a57a5fbb00926e727cb62ab63c6b48aa6e6d36469e387"
     },
     {
       "frame": 34,
@@ -2314,177 +2336,177 @@
     },
     {
       "frame": 38,
-      "source": "run_v2/repairs/frame_38.png",
+      "source": "run_v3/key_38_braid_clean.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6671514633967349,
+      "scale": 0.8165865050914168,
       "requested_origin": [
-        129.64949196416063,
-        15.938368547811422
+        0.8250136778239607,
+        0.3599349997141985
       ],
       "applied_origin": [
-        130,
-        16
+        1,
+        0
       ],
       "sample_size": [
-        725,
-        966
+        1024,
+        1024
       ],
       "source_cell_landmarks": {
+        "face": [
+          622.082,
+          168.988
+        ],
         "neck": [
-          573.109,
-          272.894
+          625.99,
+          242.032
         ],
         "belt": [
-          561.585,
-          546.01
-        ],
-        "face": [
-          570.457,
-          181.715
+          616.645,
+          460.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          508.9838,
+          137.9933
+        ],
         "neck": [
-          512.3505,
-          198.0616
+          512.175,
+          197.6401
         ],
         "belt": [
-          504.6623,
-          380.2714
-        ],
+          504.544,
+          376.2357
+        ]
+      },
+      "opaque_bounds": [
+        146,
+        26,
+        775,
+        959
+      ],
+      "sha256": "80a1b14d3b989d848909548688783066819fd925e7c0150ec4dcc47399104acb"
+    },
+    {
+      "frame": 39,
+      "source": "run_v3/key_39_braid_mid.png",
+      "cell": [
+        0,
+        0,
+        1247,
+        1261
+      ],
+      "scale": 0.8120508343822324,
+      "requested_origin": [
+        5.116245076941823,
+        3.253448698688544
+      ],
+      "applied_origin": [
+        5,
+        3
+      ],
+      "sample_size": [
+        1013,
+        1024
+      ],
+      "source_cell_landmarks": {
         "face": [
-          510.5812,
-          137.2314
+          622.354,
+          163.252
+        ],
+        "neck": [
+          624.202,
+          238.801
+        ],
+        "belt": [
+          616.098,
+          462.611
+        ]
+      },
+      "exported_landmarks": {
+        "face": [
+          510.3831,
+          135.5689
+        ],
+        "neck": [
+          511.8838,
+          196.9186
+        ],
+        "belt": [
+          505.3029,
+          378.6636
         ]
       },
       "opaque_bounds": [
         145,
-        28,
-        771,
-        972
+        27,
+        769,
+        969
       ],
-      "sha256": "5766b15daa799e7425a25387a920a97e4bf4f226c28d1108c1be1560a2aa11f3"
-    },
-    {
-      "frame": 39,
-      "source": "run_v2/repairs/frame_39.png",
-      "cell": [
-        0,
-        0,
-        1086,
-        1448
-      ],
-      "scale": 0.6547973729529397,
-      "requested_origin": [
-        137.26732102750805,
-        18.833351894656175
-      ],
-      "applied_origin": [
-        137,
-        19
-      ],
-      "sample_size": [
-        711,
-        948
-      ],
-      "source_cell_landmarks": {
-        "neck": [
-          572.288,
-          272.357
-        ],
-        "belt": [
-          559.585,
-          546.01
-        ],
-        "face": [
-          569.56,
-          180.923
-        ]
-      },
-      "exported_landmarks": {
-        "neck": [
-          511.7327,
-          197.3386
-        ],
-        "belt": [
-          503.4148,
-          376.5259
-        ],
-        "face": [
-          509.9464,
-          137.4679
-        ]
-      },
-      "opaque_bounds": [
-        150,
-        30,
-        762,
-        957
-      ],
-      "sha256": "cd63cfac367f81ae1e477579eb246d6a2ffa2727245920865869bbb708ebe8c6"
+      "sha256": "26b532a1d387edde4a0cac37abc923dde4f2e7a300c17a3e85dacc82bd61f1e3"
     },
     {
       "frame": 40,
-      "source": "run_v2/repairs/frame_41.png",
+      "source": "run_v3/key_40_b.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        131.96280750921625,
-        12.496031168354932
+        9.243615403090189,
+        4.378446561524299
       ],
       "applied_origin": [
-        132,
-        12
+        9,
+        4
       ],
       "sample_size": [
-        711,
-        948
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          627.044,
+          164.014
+        ],
         "neck": [
-          580.389,
-          281.064
+          627.993,
+          240.024
         ],
         "belt": [
-          571.585,
-          564.066
-        ],
-        "face": [
-          577.56,
-          186.947
+          620.303,
+          466.978
         ]
       },
       "exported_landmarks": {
+        "face": [
+          510.9966,
+          135.3057
+        ],
         "neck": [
-          512.0372,
-          196.04
+          511.7564,
+          196.1576
         ],
         "belt": [
-          506.2724,
-          381.3489
-        ],
-        "face": [
-          510.1848,
-          134.4124
+          505.6,
+          377.8516
         ]
       },
       "opaque_bounds": [
-        143,
-        25,
-        806,
-        952
+        147,
+        26,
+        788,
+        941
       ],
-      "sha256": "4d3c8b7e76df141e85e13264799fdd3f668e2b71c51b565c852c5b35edc10d1d"
+      "sha256": "df654e18746def5634288a78f24a74f9bd88fbf6778b28eaa6cd06821c684693"
     },
     {
       "frame": 41,
@@ -2546,119 +2568,119 @@
     },
     {
       "frame": 42,
-      "source": "run_v2/repairs/frame_42.png",
+      "source": "run_v3/key_43_c.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6428925019447499,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        138.87226368878856,
-        15.306061833400804
+        9.243615403090189,
+        3.842446561524298
       ],
       "applied_origin": [
-        139,
-        15
+        9,
+        4
       ],
       "sample_size": [
-        698,
-        931
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          625.041,
+          164.014
+        ],
         "neck": [
-          580.389,
-          281.064
+          627.993,
+          240.024
         ],
         "belt": [
-          569.775,
-          564.715
-        ],
-        "face": [
-          578.663,
-          186.155
+          618.648,
+          468.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          509.3931,
+          135.3057
+        ],
         "neck": [
-          512.1277,
-          195.6939
+          511.7564,
+          196.1576
         ],
         "belt": [
-          505.3041,
-          378.051
-        ],
-        "face": [
-          511.0181,
-          134.6777
+          504.275,
+          379.2638
         ]
       },
       "opaque_bounds": [
-        149,
-        29,
+        145,
+        27,
         798,
-        869
+        917
       ],
-      "sha256": "93b57f13b2693685bec021a52e988059c5e3b242874f29553e470dc5b9c85aad"
+      "sha256": "451f7b76affbaa5e20342c7e92a893e31f99e8271cce77fc3636ae1e74cd4e3f"
     },
     {
       "frame": 43,
-      "source": "run_v2/repairs/frame_44.png",
+      "source": "run_v3/key_43_d.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1254,
+        1254
       ],
-      "scale": 0.6547973729529397,
+      "scale": 0.8005764150188135,
       "requested_origin": [
-        130.95441955486876,
-        11.83738620603853
+        9.710351453046258,
+        3.233910495556813
       ],
       "applied_origin": [
-        131,
-        12
+        10,
+        3
       ],
       "sample_size": [
-        711,
-        948
+        1004,
+        1004
       ],
       "source_cell_landmarks": {
+        "face": [
+          625.041,
+          164.014
+        ],
         "neck": [
-          581.929,
-          281.459
+          627.41,
+          240.954
         ],
         "belt": [
-          569.775,
-          564.715
-        ],
-        "face": [
-          579.56,
-          186.947
+          618.648,
+          468.742
         ]
       },
       "exported_landmarks": {
+        "face": [
+          510.3931,
+          134.3057
+        ],
         "neck": [
-          512.0456,
-          196.2986
+          512.2896,
+          195.9021
         ],
         "belt": [
-          504.0872,
-          381.7739
-        ],
-        "face": [
-          510.4944,
-          134.4124
+          505.275,
+          378.2638
         ]
       },
       "opaque_bounds": [
-        141,
-        25,
+        145,
+        26,
         802,
-        878
+        867
       ],
-      "sha256": "d6956861597b89210d48839650b683a840e39a2634e3d0dc3019d98076e9b933"
+      "sha256": "a2ea4499056e485ccade4f2c85f99e2685ef0169208b51dc20101d5f1a3ad345"
     },
     {
       "frame": 44,

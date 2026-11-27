@@ -1,0 +1,4238 @@
+{
+  "version": 1,
+  "review": "Thresholds independently reviewed before candidate adoption by independent_run_visual_review. Scoped gross discontinuity guards, not universal gait constraints. Source neck/belt are measured artwork registration landmarks. Distal contour is not a joint.",
+  "actors": {
+    "lucan": {
+      "distal_regions": {
+        "viewer_left_boot": {
+          "x": [
+            -140,
+            -20
+          ],
+          "below_belt": 150,
+          "reviewed_window_overrides": [
+            {
+              "sha256": "6dd33cc4327fed2ac2d693b8d7b9e543a6aaf6e7c01e2527a3f52e86e28171b6",
+              "x": [
+                -140,
+                -40
+              ],
+              "visibility": "visible boot toe; opposite boot crosses original window",
+              "uncertainty_pixels": 3,
+              "review": "Independent visual QA confirmed alternate ROI selects actual backboot endpoint (approximately exported315.1,787). Original wide ROI selected opposite extended boot at its right edge. Both adjacent transitions remain checked.",
+              "evidence": "lucan27_identity_window.png",
+              "observed_distal_exported": [
+                315.1,
+                787
+              ]
+            },
+            {
+              "sha256": "53e77ca3001d3b8b9bb7452be3eb4befb03ff73c54c04260935bfcad133f9057",
+              "original_sequence_index": 23,
+              "x": [
+                -140,
+                -40
+              ],
+              "visibility": "visible intended rear boot toe; opposite greave excluded",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                290.725,
+                713.32
+              ],
+              "review": "Artist visually reviewed all96 Lucan sole markers and this full-density source crop. The original wide region selects the opposite foreground greave. Narrow actual-pixel region selects the intended painted rear toe; both adjacent transitions remain checked.",
+              "evidence": "lucan_final23_sole_identity.png"
+            },
+            {
+              "sha256": "836d45cb82b9f93714919ccaa365de55d45e34eb085b7ac4d4db53b4ee053c5a",
+              "original_sequence_index": 26,
+              "x": [
+                -140,
+                -40
+              ],
+              "visibility": "visible intended rear boot toe; opposite greave excluded",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                306.97,
+                742.34
+              ],
+              "review": "Artist visually reviewed all96 Lucan sole markers and this full-density source crop. The original wide region selects the opposite foreground greave. Narrow actual-pixel region selects the intended painted rear toe; both adjacent transitions remain checked.",
+              "evidence": "lucan_final26_sole_identity.png"
+            }
+          ]
+        },
+        "viewer_right_boot": {
+          "x": [
+            8,
+            140
+          ],
+          "below_belt": 150
+        }
+      },
+      "max_distal_delta": 65,
+      "minimum_cycle_distal_range": 120,
+      "required_transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          36,
+          37
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          39,
+          40
+        ],
+        [
+          40,
+          41
+        ],
+        [
+          41,
+          42
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          43,
+          44
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          46,
+          47
+        ],
+        [
+          47,
+          0
+        ]
+      ],
+      "progress_windows": [
+        {
+          "region": "viewer_left_boot",
+          "frames": [
+            7,
+            11,
+            18
+          ],
+          "direction": -1,
+          "minimum_early_progress": 20,
+          "maximum_three_tick_fraction": 0.7
+        },
+        {
+          "region": "viewer_right_boot",
+          "frames": [
+            7,
+            11,
+            18
+          ],
+          "direction": 1,
+          "minimum_early_progress": 20,
+          "maximum_three_tick_fraction": 0.7
+        }
+      ],
+      "reference_projected_torso_span": 188.0865,
+      "maximum_torso_relative_error": 0.1,
+      "max_exported_registration_delta": {
+        "neck": 20,
+        "belt": 30
+      }
+    },
+    "iselin": {
+      "distal_regions": {
+        "viewer_left_boot": {
+          "x": [
+            -140,
+            -20
+          ],
+          "below_belt": 150,
+          "reviewed_window_overrides": [
+            {
+              "sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+              "x": [
+                -162.2703,
+                -22.2703
+              ],
+              "y": [
+                701.6239,
+                781.6239
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                446.5,
+                947.0
+              ],
+              "original_sequence_index": 14,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+              "x": [
+                -161.9202,
+                -21.9202
+              ],
+              "y": [
+                653.0329,
+                733.0329
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                398.5,
+                901.0
+              ],
+              "original_sequence_index": 15,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+              "x": [
+                -161.6725,
+                -21.6725
+              ],
+              "y": [
+                543.7569,
+                643.7569
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                403.0,
+                803.0
+              ],
+              "original_sequence_index": 16,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+              "x": [
+                -162.2745,
+                -22.2745
+              ],
+              "y": [
+                510.9802,
+                610.9802
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                422.0,
+                764.0
+              ],
+              "original_sequence_index": 23,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+              "x": [
+                -162.2994,
+                -22.2994
+              ],
+              "y": [
+                520.3586,
+                620.3586
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                429.5,
+                778.0
+              ],
+              "original_sequence_index": 24,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+              "x": [
+                -161.5086,
+                -46.5086
+              ],
+              "y": [
+                544.053,
+                654.053
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                418.0,
+                811.0
+              ],
+              "original_sequence_index": 41,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1",
+              "x": [
+                -162.1277,
+                -57.1277
+              ],
+              "y": [
+                594.3061,
+                694.3061
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                420.0,
+                862.0
+              ],
+              "original_sequence_index": 42,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "2fdd56b044148eec3f82a431ccdc1a5a2fc9af6b53845d09338f5bafacb54885",
+              "x": [
+                -161.5075,
+                -46.5075
+              ],
+              "y": [
+                396.3389,
+                621.3389
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                425.0,
+                718.0
+              ],
+              "original_sequence_index": 28,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "9d35015a0c0bb7f1334d3468fd233782cfdc7c41f92df1a636f0053833382be9",
+              "x": [
+                -162.1466,
+                -47.1466
+              ],
+              "y": [
+                396.5183,
+                621.5183
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                422.0,
+                708.0
+              ],
+              "original_sequence_index": 29,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "8741b10de9962d20a5705bc60e2b4dd496c611eb8432d1057dd32e5f57d5bfc4",
+              "x": [
+                -161.9707,
+                -46.9707
+              ],
+              "y": [
+                398.9116,
+                623.9116
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                436.0,
+                722.0
+              ],
+              "original_sequence_index": 35,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "8f841c996f8beecaf90bccae33ff2480c79ac24c52494076d8926675d3e4adbe",
+              "x": [
+                -161.9607,
+                -46.9607
+              ],
+              "y": [
+                399.6239,
+                624.6239
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                438.5,
+                726.0
+              ],
+              "original_sequence_index": 36,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+              "x": [
+                -161.7327,
+                -46.7327
+              ],
+              "y": [
+                402.6614,
+                627.6614
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                437.0,
+                762.0
+              ],
+              "original_sequence_index": 39,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "c239587fca8f8dbdb5065b8bd2e1abeb7f94a3e654d0b48e2af6e779e38ef224",
+              "x": [
+                -162.0372,
+                -47.0372
+              ],
+              "y": [
+                403.96,
+                628.96
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                421.0,
+                805.0
+              ],
+              "original_sequence_index": 40,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "eccabcca39e42b29f68bdf6afc352dd477ee5f509259bc258cb16c12bc1ba33c",
+              "x": [
+                -161.5075,
+                -46.5075
+              ],
+              "y": [
+                396.3389,
+                621.3389
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review: generic wide strip selected the opposite front leg. Explicit observed sole ROI preserves adjacent checks.",
+              "observed_distal_exported": [
+                427.0,
+                725.0
+              ],
+              "original_sequence_index": 30,
+              "evidence": "iselin30_34_toes.png"
+            },
+            {
+              "sha256": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+              "x": [
+                -161.6097,
+                -46.6097
+              ],
+              "y": [
+                395.8699,
+                620.8699
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review: generic wide strip selected the opposite front leg. Explicit observed sole ROI preserves adjacent checks.",
+              "observed_distal_exported": [
+                426.0,
+                699.0
+              ],
+              "original_sequence_index": 31,
+              "evidence": "iselin30_34_toes.png"
+            },
+            {
+              "sha256": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+              "x": [
+                -162.1466,
+                -47.1466
+              ],
+              "y": [
+                396.5183,
+                621.5183
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review: generic wide strip selected the opposite front leg. Explicit observed sole ROI preserves adjacent checks.",
+              "observed_distal_exported": [
+                422.5,
+                717.5
+              ],
+              "original_sequence_index": 32,
+              "evidence": "iselin30_34_toes.png"
+            },
+            {
+              "sha256": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+              "x": [
+                -162.1716,
+                -47.1716
+              ],
+              "y": [
+                396.9283,
+                621.9283
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review: generic wide strip selected the opposite front leg. Explicit observed sole ROI preserves adjacent checks.",
+              "observed_distal_exported": [
+                429.0,
+                702.0
+              ],
+              "original_sequence_index": 33,
+              "evidence": "iselin30_34_toes.png"
+            },
+            {
+              "sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+              "x": [
+                -162.1961,
+                -47.1961
+              ],
+              "y": [
+                398.2294,
+                623.2294
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review: generic wide strip selected the opposite front leg. Explicit observed sole ROI preserves adjacent checks.",
+              "observed_distal_exported": [
+                434.0,
+                719.0
+              ],
+              "original_sequence_index": 34,
+              "evidence": "iselin30_34_toes.png"
+            },
+            {
+              "sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+              "x": [
+                -161.7564,
+                -46.7564
+              ],
+              "y": [
+                403.8424,
+                653.8424
+              ],
+              "visibility": "visible lowest toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent QA reviewed the actual new40_b painting and confirmed this ROI selects the recovered boot; generic strip selected the opposite foreground foot. Every adjacent delta remains checked.",
+              "observed_distal_exported": [
+                423,
+                798
+              ],
+              "original_sequence_index": 40,
+              "reviewed_export_sha256": "df654e18746def5634288a78f24a74f9bd88fbf6778b28eaa6cd06821c684693",
+              "evidence": "iselin_new40_toe.png"
+            },
+            {
+              "sha256": "82af00a9ecbc0e0e89d280341c4a66f30cb69d385c1cbd2a38564e2710a5bc9e",
+              "x": [
+                -162.08550156112392,
+                -47.08550156112392
+              ],
+              "y": [
+                395.6877751981427,
+                620.6877751981426
+              ],
+              "visibility": "visible lowest toe/sole; heel not measured",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 31,
+              "review": "Independent QA verified final-source recovered viewer-left boot identity; measured actual alpha quantile excludes the opposite shin. No transition is waived.",
+              "evidence": "iselin_final31_33_sole_windows.png",
+              "observed_distal_exported": [
+                428.70146505483945,
+                690.8945640861419
+              ]
+            },
+            {
+              "sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+              "x": [
+                -161.60237953307592,
+                -46.60237953307592
+              ],
+              "y": [
+                396.44131601081165,
+                621.4413160108116
+              ],
+              "visibility": "visible lowest toe/sole; heel not measured",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 32,
+              "review": "Independent QA verified final-source recovered viewer-left boot identity; measured actual alpha quantile excludes the opposite shin. No transition is waived.",
+              "evidence": "iselin_final31_33_sole_windows.png",
+              "observed_distal_exported": [
+                421.991809637354,
+                717.7795379753554
+              ]
+            },
+            {
+              "sha256": "9027fb0b27b3a186db2657908731dbe4c5f0b6fa11abafd38777cf8fdf061a6c",
+              "x": [
+                -162.12630960060756,
+                -47.126309600607556
+              ],
+              "y": [
+                397.3215962633002,
+                622.3215962633002
+              ],
+              "visibility": "visible lowest toe/sole; heel not measured",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 33,
+              "review": "Independent QA verified final-source recovered viewer-left boot identity; measured actual alpha quantile excludes the opposite shin. No transition is waived.",
+              "evidence": "iselin_final31_33_sole_windows.png",
+              "observed_distal_exported": [
+                427.8913286679025,
+                703.8975673888013
+              ]
+            },
+            {
+              "sha256": "e44808d2bd4268a77928b0685f7d09a11570082bdc78173a1145962ae2791fac",
+              "x": [
+                -161.6890561204067,
+                -46.68905612040669
+              ],
+              "y": [
+                398.90289008085824,
+                623.9028900808582
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 25,
+              "review": "Independent final all48 runtime identity review identified and corrected opposite-calf intrusion. This boot-only region preserves every adjacent check.",
+              "evidence": "iselin_final25_37_38_sole_windows.png",
+              "observed_distal_exported": [
+                430.7043471299335,
+                754.1401008726283
+              ]
+            },
+            {
+              "sha256": "4d2f00c027b656d73192b13dfaa8ce584ae61f35419f74eb30eb12fc6cdb1637",
+              "x": [
+                -161.59001541119875,
+                -46.59001541119875
+              ],
+              "y": [
+                400.6555563709629,
+                625.6555563709629
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 37,
+              "review": "Independent final all48 runtime identity review identified and corrected opposite-calf intrusion. This boot-only region preserves every adjacent check.",
+              "evidence": "iselin_final25_37_38_sole_windows.png",
+              "observed_distal_exported": [
+                435.88967316249807,
+                745.8622465658378
+              ]
+            },
+            {
+              "sha256": "e197c5239bc446654847ed9d4b502e13e06d49e893cd3c491a7cc7f66ef5315e",
+              "x": [
+                -162.17498632217598,
+                -47.17498632217598
+              ],
+              "y": [
+                402.3599349997142,
+                627.3599349997141
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "original_sequence_index": 38,
+              "review": "Independent final all48 runtime identity review identified and corrected opposite-calf intrusion. This boot-only region preserves every adjacent check.",
+              "evidence": "iselin_final25_37_38_sole_windows.png",
+              "observed_distal_exported": [
+                433.7908476984509,
+                752.0761711891948
+              ]
+            }
+          ]
+        },
+        "viewer_right_boot": {
+          "x": [
+            8,
+            140
+          ],
+          "below_belt": 150,
+          "reviewed_window_overrides": [
+            {
+              "sha256": "ccdc35d3e74e795f6a6fea9e05c2e45711984e138883cdaba3899ac1769dc31c",
+              "x": [
+                -12.2703,
+                62.7297
+              ],
+              "y": [
+                421.6239,
+                521.6239
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                542.0,
+                692.0
+              ],
+              "original_sequence_index": 14,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "eb42d37045ca49d68fb80b98e2cbcc8ac7360ba5715a7c82060d4490859ecc9d",
+              "x": [
+                -11.9202,
+                68.0798
+              ],
+              "y": [
+                563.0329,
+                643.0329
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                535.0,
+                814.0
+              ],
+              "original_sequence_index": 15,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "6d8e54b54bfbb76300f2938551c891e2e7f719009abf014417906d42d0ef7055",
+              "x": [
+                -11.6725,
+                68.3275
+              ],
+              "y": [
+                593.7569,
+                673.7569
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                543.0,
+                846.0
+              ],
+              "original_sequence_index": 16,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "f42fac8e304d12963d2f0bf1e0b6b7671cce1946b64903532a574e8bfea6f519",
+              "x": [
+                -22.2745,
+                77.7255
+              ],
+              "y": [
+                670.9802,
+                760.9802
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                536.0,
+                928.0
+              ],
+              "original_sequence_index": 23,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "4d904a52a8e976ab7c9237646bbbfc565be473cc4fce6c2cdb91616fa4d17967",
+              "x": [
+                -37.2994,
+                52.7006
+              ],
+              "y": [
+                740.3586,
+                824.3586
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                536.0,
+                1001.0
+              ],
+              "original_sequence_index": 24,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+              "x": [
+                -21.5086,
+                73.4914
+              ],
+              "y": [
+                684.053,
+                794.053
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                515.0,
+                951.0
+              ],
+              "original_sequence_index": 41,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "8269799ec02830020acf4a786a9dff8c8fd3dbfd76587862fba325f759267af1",
+              "x": [
+                -47.1277,
+                37.8723
+              ],
+              "y": [
+                604.3061,
+                714.3061
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG visual identity review and alpha-supported distal sole measurement. ROI is an observation, not a target.",
+              "observed_distal_exported": [
+                490.0,
+                866.0
+              ],
+              "original_sequence_index": 42,
+              "evidence": "iselin_reviewed_toes.png"
+            },
+            {
+              "sha256": "217f7071fb917f09dd1a7d4ec4562445a404a66849cf5f17485060dd0fed7a50",
+              "x": [
+                23.4367,
+                83.4367
+              ],
+              "y": [
+                489.9353,
+                624.9353
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                553.0,
+                778.0
+              ],
+              "original_sequence_index": 0,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "1a6d35704c93f6daa54ad517b90a2ea9fb91541fa19ef22ebbcac71a6e6b4738",
+              "x": [
+                22.7839,
+                82.7839
+              ],
+              "y": [
+                489.433,
+                624.433
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                555.0,
+                786.0
+              ],
+              "original_sequence_index": 1,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+              "x": [
+                22.9815,
+                82.9815
+              ],
+              "y": [
+                487.7989,
+                622.7989
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                553.5,
+                799.0
+              ],
+              "original_sequence_index": 2,
+              "evidence": "iselin_false_outlier_toes.png"
+            },
+            {
+              "sha256": "36025da7f87a97e68c59dfa6196a723cb15dea36e0256bbc565caf8fd49b6cec",
+              "x": [
+                -11.8099,
+                58.1901
+              ],
+              "y": [
+                491.3117,
+                611.3117
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Independent actual-PNG identity review confirmed generic strip selected the opposite leg. Explicit sole ROI preserves every adjacent motion check.",
+              "observed_distal_exported": [
+                514.0,
+                760.0
+              ],
+              "original_sequence_index": 47,
+              "evidence": "iselin_false_outlier_toes.png"
+            }
+          ]
+        }
+      },
+      "max_distal_delta": 65,
+      "minimum_cycle_distal_range": 120,
+      "required_transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          36,
+          37
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          39,
+          40
+        ],
+        [
+          40,
+          41
+        ],
+        [
+          41,
+          42
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          43,
+          44
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          46,
+          47
+        ],
+        [
+          47,
+          0
+        ]
+      ],
+      "progress_windows": [],
+      "material_regions": {
+        "loose_hair": {
+          "window": [
+            -422,
+            -32,
+            -190,
+            10
+          ],
+          "crop_margin": 3,
+          "max_q90_distance": 28,
+          "minimum_feature_excursion": 5
+        },
+        "shawl": {
+          "window": [
+            -472,
+            -62,
+            30,
+            500
+          ],
+          "crop_margin": 3,
+          "max_q90_distance": 30,
+          "minimum_feature_excursion": 5
+        },
+        "free_coat": {
+          "window": [
+            58,
+            388,
+            250,
+            610
+          ],
+          "crop_margin": 3,
+          "max_q90_distance": 35,
+          "minimum_feature_excursion": 5
+        }
+      },
+      "reference_projected_torso_span": 182.19054,
+      "maximum_torso_relative_error": 0.1,
+      "max_exported_registration_delta": {
+        "neck": 20,
+        "belt": 30
+      },
+      "reviewed_metric_exceptions": [
+        {
+          "id": "iselin_final_shawl_13_14",
+          "review_state": "accepted",
+          "context": {
+            "metric": "material_contour",
+            "region": "shawl",
+            "frames": [
+              {
+                "frame": 13,
+                "source": "run_v3/key_13_recolor.png",
+                "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+                "cell": [
+                  0,
+                  0,
+                  1199,
+                  1312
+                ],
+                "scale": 0.7964192988324493,
+                "origin": [
+                  8.424873767541158,
+                  1.308065577165081
+                ],
+                "neck": [
+                  632.299,
+                  248.182
+                ],
+                "belt": [
+                  623.472,
+                  481.103
+                ],
+                "rendered_size": [
+                  1024,
+                  1200
+                ],
+                "rendered_rgba_sha256": "16d7da08c72a3944a9cc23e9f14d31f931624d200239ede03434d48f8695e795"
+              },
+              {
+                "frame": 14,
+                "source": "run_v3/key_14_recolor.png",
+                "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+                "cell": [
+                  0,
+                  0,
+                  1254,
+                  1254
+                ],
+                "scale": 0.8332500083325001,
+                "origin": [
+                  -10.683564976835669,
+                  -4.958037529580395
+                ],
+                "neck": [
+                  627.283,
+                  243.574
+                ],
+                "belt": [
+                  620.651,
+                  460.742
+                ],
+                "rendered_size": [
+                  1024,
+                  1200
+                ],
+                "rendered_rgba_sha256": "af8a192931b54a0b5ce11debc3a245649fd3de2577aff1497741d17e251fc271"
+              }
+            ],
+            "configuration": {
+              "window": [
+                -472,
+                -62,
+                30,
+                500
+              ],
+              "crop_margin": 3,
+              "max_q90_distance": 30,
+              "minimum_feature_excursion": 5
+            }
+          },
+          "default_limit": 30,
+          "reviewed_value": 45.13401412963867,
+          "sampling_tolerance": 1.0,
+          "maximum_reviewed_value": 46.13401412963867,
+          "reason": "Root and independent native-image review accept continuous cloth action. Palette-only source13/14 edits move same-frame contours by at most4.47/1px, while boundary-population changes make the cross-frame q90 unstable. This exact reviewed input remains a visible diagnostic; the default30px cap is unchanged.",
+          "evidence": "Native palette/outline review and retained pre-recolor geometry references; source/render/registration and metric region are bound here."
+        },
+        {
+          "id": "iselin_final_shawl_14_15",
+          "review_state": "accepted",
+          "context": {
+            "metric": "material_contour",
+            "region": "shawl",
+            "frames": [
+              {
+                "frame": 14,
+                "source": "run_v3/key_14_recolor.png",
+                "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+                "cell": [
+                  0,
+                  0,
+                  1254,
+                  1254
+                ],
+                "scale": 0.8332500083325001,
+                "origin": [
+                  -10.683564976835669,
+                  -4.958037529580395
+                ],
+                "neck": [
+                  627.283,
+                  243.574
+                ],
+                "belt": [
+                  620.651,
+                  460.742
+                ],
+                "rendered_size": [
+                  1024,
+                  1200
+                ],
+                "rendered_rgba_sha256": "af8a192931b54a0b5ce11debc3a245649fd3de2577aff1497741d17e251fc271"
+              },
+              {
+                "frame": 15,
+                "source": "run_v3/key_15_hair.png",
+                "source_sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+                "cell": [
+                  0,
+                  0,
+                  1254,
+                  1254
+                ],
+                "scale": 0.8005764150188135,
+                "origin": [
+                  8.31094387959331,
+                  1.6824475222159947
+                ],
+                "neck": [
+                  629.158,
+                  244.186
+                ],
+                "belt": [
+                  620.651,
+                  472.742
+                ],
+                "rendered_size": [
+                  1024,
+                  1200
+                ],
+                "rendered_rgba_sha256": "88148e8b2d6a9ac6b193983b921847d2552fe497a871110b146a360571e3406e"
+              }
+            ],
+            "configuration": {
+              "window": [
+                -472,
+                -62,
+                30,
+                500
+              ],
+              "crop_margin": 3,
+              "max_q90_distance": 30,
+              "minimum_feature_excursion": 5
+            }
+          },
+          "default_limit": 30,
+          "reviewed_value": 33.187232971191406,
+          "sampling_tolerance": 1.0,
+          "maximum_reviewed_value": 34.187232971191406,
+          "reason": "Root and independent native-image review accept continuous cloth action. Palette-only source13/14 edits move same-frame contours by at most4.47/1px, while boundary-population changes make the cross-frame q90 unstable. This exact reviewed input remains a visible diagnostic; the default30px cap is unchanged.",
+          "evidence": "Native palette/outline review and retained pre-recolor geometry references; source/render/registration and metric region are bound here."
+        }
+      ]
+    },
+    "crown_soldier": {
+      "distal_regions": {
+        "viewer_left_boot": {
+          "x": [
+            -140,
+            -20
+          ],
+          "below_belt": 150,
+          "reviewed_window_overrides": [
+            {
+              "sha256": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
+              "x": [
+                -106.2,
+                38.8
+              ],
+              "y": [
+                543.8,
+                743.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                344.0,
+                932
+              ],
+              "original_sequence_index": 1,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
+              "x": [
+                -105.4,
+                39.6
+              ],
+              "y": [
+                540.4,
+                740.4
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                338.5,
+                942
+              ],
+              "original_sequence_index": 2,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
+              "x": [
+                -104.2,
+                40.8
+              ],
+              "y": [
+                539.0,
+                739.0
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                355.5,
+                935
+              ],
+              "original_sequence_index": 3,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
+              "x": [
+                -106.2,
+                38.8
+              ],
+              "y": [
+                539.2,
+                739.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                333.5,
+                937
+              ],
+              "original_sequence_index": 4,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
+              "x": [
+                -150.4,
+                -30.4
+              ],
+              "y": [
+                392.6,
+                572.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                289.5,
+                784
+              ],
+              "original_sequence_index": 25,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
+              "x": [
+                -149.0,
+                -49.0
+              ],
+              "y": [
+                390.6,
+                550.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                300.0,
+                739
+              ],
+              "original_sequence_index": 26,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+              "x": [
+                -157.2,
+                -47.2
+              ],
+              "y": [
+                390.4,
+                570.4
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                309.0,
+                773
+              ],
+              "original_sequence_index": 27,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
+              "x": [
+                -158.0,
+                -48.0
+              ],
+              "y": [
+                388.6,
+                568.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                301.5,
+                760
+              ],
+              "original_sequence_index": 28,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
+              "x": [
+                -159.2,
+                -49.2
+              ],
+              "y": [
+                388.6,
+                568.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                303.5,
+                782
+              ],
+              "original_sequence_index": 29,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
+              "x": [
+                -155.0,
+                -45.0
+              ],
+              "y": [
+                387.2,
+                567.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                306.5,
+                763
+              ],
+              "original_sequence_index": 30,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
+              "x": [
+                -104.4,
+                40.6
+              ],
+              "y": [
+                545.2,
+                745.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                295.0,
+                908
+              ],
+              "original_sequence_index": 41,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
+              "x": [
+                -102.4,
+                42.6
+              ],
+              "y": [
+                543.8,
+                743.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                361.0,
+                945
+              ],
+              "original_sequence_index": 42,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
+              "x": [
+                -103.4,
+                41.6
+              ],
+              "y": [
+                545.2,
+                745.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                349.0,
+                942
+              ],
+              "original_sequence_index": 43,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
+              "x": [
+                -104.2,
+                40.8
+              ],
+              "y": [
+                545.0,
+                745.0
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                345.0,
+                941
+              ],
+              "original_sequence_index": 44,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
+              "x": [
+                -102.2,
+                42.8
+              ],
+              "y": [
+                542.6,
+                742.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                340.0,
+                940
+              ],
+              "original_sequence_index": 46,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
+              "x": [
+                -104.0,
+                41.0
+              ],
+              "y": [
+                541.8,
+                741.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                354.0,
+                948
+              ],
+              "original_sequence_index": 47,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+              "x": [
+                -105.19999999999999,
+                39.80000000000001
+              ],
+              "y": [
+                542.2,
+                742.2
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                356.5,
+                954
+              ],
+              "original_sequence_index": 0,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+              "x": [
+                -106.00000099999994,
+                38.99999900000006
+              ],
+              "y": [
+                545.000002,
+                745.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                347.0,
+                948
+              ],
+              "original_sequence_index": 1,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+              "x": [
+                -113.99999699999995,
+                21.00000300000005
+              ],
+              "y": [
+                541.999998,
+                731.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                314.0,
+                940
+              ],
+              "original_sequence_index": 2,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+              "x": [
+                -104.00000099999994,
+                40.99999900000006
+              ],
+              "y": [
+                541.000002,
+                741.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                331.0,
+                931
+              ],
+              "original_sequence_index": 3,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+              "x": [
+                -106.00000299999999,
+                18.999997000000008
+              ],
+              "y": [
+                540.999998,
+                730.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                333.5,
+                927
+              ],
+              "original_sequence_index": 4,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+              "x": [
+                -125.00000099999994,
+                9.99999900000006
+              ],
+              "y": [
+                539.0,
+                719.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                318.5,
+                907
+              ],
+              "original_sequence_index": 5,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+              "x": [
+                -115.00000099999994,
+                4.999999000000059
+              ],
+              "y": [
+                568.999997,
+                738.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                329.0,
+                926
+              ],
+              "original_sequence_index": 6,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+              "x": [
+                -126.00000299999999,
+                8.999997000000008
+              ],
+              "y": [
+                540.999998,
+                720.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                324.5,
+                919
+              ],
+              "original_sequence_index": 7,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+              "x": [
+                -137.99999799999995,
+                -7.999997999999948
+              ],
+              "y": [
+                543.000002,
+                723.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                320.0,
+                929
+              ],
+              "original_sequence_index": 8,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+              "x": [
+                -137.000002,
+                -7.000001999999995
+              ],
+              "y": [
+                446.000002,
+                696.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                320.5,
+                914
+              ],
+              "original_sequence_index": 9,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+              "x": [
+                -136.99999699999995,
+                -21.99999699999995
+              ],
+              "y": [
+                522.0,
+                707.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                322.5,
+                882
+              ],
+              "original_sequence_index": 10,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+              "x": [
+                -140.99999699999995,
+                -25.99999699999995
+              ],
+              "y": [
+                501.000002,
+                681.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                301.0,
+                864
+              ],
+              "original_sequence_index": 11,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+              "x": [
+                -129.8,
+                -34.80000000000001
+              ],
+              "y": [
+                469.20000000000005,
+                649.2
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                303.0,
+                837
+              ],
+              "original_sequence_index": 12,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+              "x": [
+                -131.99999799999995,
+                -26.999997999999948
+              ],
+              "y": [
+                471.000002,
+                651.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                305.5,
+                819
+              ],
+              "original_sequence_index": 13,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+              "x": [
+                -130.99999799999995,
+                -25.999997999999948
+              ],
+              "y": [
+                468.999997,
+                658.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                326.0,
+                852
+              ],
+              "original_sequence_index": 14,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+              "x": [
+                -138.999999,
+                -8.999999000000003
+              ],
+              "y": [
+                397.000002,
+                697.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                320.0,
+                827
+              ],
+              "original_sequence_index": 15,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+              "x": [
+                -119.999999,
+                -24.999999000000003
+              ],
+              "y": [
+                400.000003,
+                575.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                329.0,
+                766
+              ],
+              "original_sequence_index": 16,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+              "x": [
+                -120.99999699999995,
+                -25.99999699999995
+              ],
+              "y": [
+                398.999997,
+                573.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                330.5,
+                757
+              ],
+              "original_sequence_index": 17,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+              "x": [
+                -118.0,
+                -18.0
+              ],
+              "y": [
+                394.0,
+                534.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                329.0,
+                745
+              ],
+              "original_sequence_index": 18,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+              "x": [
+                -117.000002,
+                -17.000001999999995
+              ],
+              "y": [
+                394.000002,
+                544.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                330.5,
+                746
+              ],
+              "original_sequence_index": 19,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+              "x": [
+                -126.00000099999994,
+                -16.00000099999994
+              ],
+              "y": [
+                364.000002,
+                524.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                333.5,
+                715
+              ],
+              "original_sequence_index": 20,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+              "x": [
+                -138.00000099999994,
+                -8.00000099999994
+              ],
+              "y": [
+                344.000002,
+                594.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                336.0,
+                719
+              ],
+              "original_sequence_index": 21,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+              "x": [
+                -139.99999799999995,
+                -14.999997999999948
+              ],
+              "y": [
+                360.999998,
+                550.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                327.0,
+                738
+              ],
+              "original_sequence_index": 22,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+              "x": [
+                -139.999999,
+                -39.999999
+              ],
+              "y": [
+                390.999998,
+                560.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                298.0,
+                714
+              ],
+              "original_sequence_index": 23,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+              "x": [
+                -130.39999999999998,
+                -40.39999999999998
+              ],
+              "y": [
+                391.20000000000005,
+                541.2
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                302.5,
+                763
+              ],
+              "original_sequence_index": 24,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+              "x": [
+                -119.99999799999995,
+                -39.99999799999995
+              ],
+              "y": [
+                394.000002,
+                544.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                298.0,
+                763
+              ],
+              "original_sequence_index": 25,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+              "x": [
+                -99.999999,
+                -39.999999
+              ],
+              "y": [
+                391.999997,
+                541.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                314.5,
+                760
+              ],
+              "original_sequence_index": 26,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+              "x": [
+                -97.00000099999994,
+                -17.00000099999994
+              ],
+              "y": [
+                390.999998,
+                540.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                329.0,
+                746
+              ],
+              "original_sequence_index": 27,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+              "x": [
+                -103.0,
+                -33.0
+              ],
+              "y": [
+                388.999999,
+                538.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                318.5,
+                762
+              ],
+              "original_sequence_index": 28,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+              "x": [
+                -103.0,
+                -33.0
+              ],
+              "y": [
+                389.999999,
+                539.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                319.0,
+                760
+              ],
+              "original_sequence_index": 29,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+              "x": [
+                -95.0,
+                -15.0
+              ],
+              "y": [
+                358.00000100000005,
+                518.0000010000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                327.0,
+                729
+              ],
+              "original_sequence_index": 30,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+              "x": [
+                -98.99999699999995,
+                -23.99999699999995
+              ],
+              "y": [
+                367.000002,
+                527.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                320.5,
+                739
+              ],
+              "original_sequence_index": 31,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+              "x": [
+                -85.00000299999999,
+                -5.000002999999992
+              ],
+              "y": [
+                372.000003,
+                522.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                338.0,
+                731
+              ],
+              "original_sequence_index": 32,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+              "x": [
+                -84.00000299999999,
+                0.9999970000000076
+              ],
+              "y": [
+                375.000001,
+                535.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                343.0,
+                741
+              ],
+              "original_sequence_index": 33,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+              "x": [
+                -102.99999799999995,
+                -27.999997999999948
+              ],
+              "y": [
+                347.999997,
+                512.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                312.5,
+                716
+              ],
+              "original_sequence_index": 34,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+              "x": [
+                -113.99999699999995,
+                -28.99999699999995
+              ],
+              "y": [
+                318.999997,
+                468.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                312.0,
+                670
+              ],
+              "original_sequence_index": 35,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+              "x": [
+                -125.19999999999999,
+                -35.19999999999999
+              ],
+              "y": [
+                320.0,
+                465.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                305.0,
+                674
+              ],
+              "original_sequence_index": 36,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+              "x": [
+                -129.99999699999995,
+                -39.99999699999995
+              ],
+              "y": [
+                359.000003,
+                519.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                296.0,
+                722
+              ],
+              "original_sequence_index": 37,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+              "x": [
+                -109.99999699999995,
+                -24.99999699999995
+              ],
+              "y": [
+                358.999997,
+                518.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                315.5,
+                722
+              ],
+              "original_sequence_index": 38,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+              "x": [
+                -113.99999699999995,
+                -23.99999699999995
+              ],
+              "y": [
+                408.999999,
+                578.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                310.5,
+                787
+              ],
+              "original_sequence_index": 39,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+              "x": [
+                -113.99999699999995,
+                -28.99999699999995
+              ],
+              "y": [
+                418.999997,
+                578.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                304.5,
+                779
+              ],
+              "original_sequence_index": 40,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+              "x": [
+                -113.99999699999995,
+                -23.99999699999995
+              ],
+              "y": [
+                446.999999,
+                616.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                304.5,
+                823
+              ],
+              "original_sequence_index": 41,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+              "x": [
+                -144.00000099999994,
+                -34.00000099999994
+              ],
+              "y": [
+                506.999999,
+                676.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                282.0,
+                865
+              ],
+              "original_sequence_index": 42,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+              "x": [
+                -138.00000099999994,
+                -33.00000099999994
+              ],
+              "y": [
+                546.000001,
+                706.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                284.5,
+                911
+              ],
+              "original_sequence_index": 43,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+              "x": [
+                -118.0,
+                -13.0
+              ],
+              "y": [
+                565.000001,
+                715.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                307.0,
+                920
+              ],
+              "original_sequence_index": 44,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+              "x": [
+                -102.999999,
+                -7.9999990000000025
+              ],
+              "y": [
+                574.999999,
+                714.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                325.0,
+                927
+              ],
+              "original_sequence_index": 45,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+              "x": [
+                -102.00000299999999,
+                -7.000002999999992
+              ],
+              "y": [
+                554.000002,
+                704.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                320.5,
+                916
+              ],
+              "original_sequence_index": 46,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+              "x": [
+                -85.00000099999994,
+                9.99999900000006
+              ],
+              "y": [
+                584.000003,
+                734.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                344.0,
+                952
+              ],
+              "original_sequence_index": 47,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            }
+          ]
+        },
+        "viewer_right_boot": {
+          "x": [
+            8,
+            140
+          ],
+          "below_belt": 150,
+          "reviewed_window_overrides": [
+            {
+              "sha256": "8ba59391a43c3f60b10e436b3a12e8bee681bb3636d9bac33b875b1610b4c5c9",
+              "x": [
+                18.8,
+                103.8
+              ],
+              "y": [
+                393.8,
+                563.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                411.0,
+                766
+              ],
+              "original_sequence_index": 1,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "c1ecb664c00fd445e1ad77663a49a7339928916a9556936e1a598e8af427a6e9",
+              "x": [
+                19.6,
+                104.6
+              ],
+              "y": [
+                390.4,
+                560.4
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                425.0,
+                759
+              ],
+              "original_sequence_index": 2,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "3ad91e5b2354aeea35a28d4f192ad585725a6f885a8170b2c0154f9d4a484a7c",
+              "x": [
+                20.8,
+                105.8
+              ],
+              "y": [
+                389.0,
+                559.0
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                421.0,
+                780
+              ],
+              "original_sequence_index": 3,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "d4f2b3da430292c7bdeca3e3ee82b17a8cbc23dc0edc05abb226ccfa73c73463",
+              "x": [
+                18.8,
+                103.8
+              ],
+              "y": [
+                389.2,
+                559.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                418.0,
+                772
+              ],
+              "original_sequence_index": 4,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "242ced17870d7f6a9e3828ecced573782d7aad2845e772c9912f413dcc503030",
+              "x": [
+                -35.4,
+                119.6
+              ],
+              "y": [
+                542.6,
+                742.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                402.5,
+                940
+              ],
+              "original_sequence_index": 25,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "e7854cba810ba51d43d5aacd2e8a7cbe8674df931aaf89eb0010f5b60c3d1034",
+              "x": [
+                -34.0,
+                121.0
+              ],
+              "y": [
+                540.6,
+                740.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                403.0,
+                933
+              ],
+              "original_sequence_index": 26,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "292c91e9afef9e84627581f23fb582cb5342c52c25aa109a0dc501658499b067",
+              "x": [
+                -32.2,
+                122.8
+              ],
+              "y": [
+                540.4,
+                740.4
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                400.0,
+                921
+              ],
+              "original_sequence_index": 27,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "6f271a05c4e3c8a528fc1ae5c50e0165e44406efd992f7063c12245b25784f76",
+              "x": [
+                -33.0,
+                122.0
+              ],
+              "y": [
+                538.6,
+                738.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                388.0,
+                931
+              ],
+              "original_sequence_index": 28,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "f8bf967a7a8427a7ab2e2fa3bec7464a8d8729bdaa29545a3398f4f556ca0c16",
+              "x": [
+                -34.2,
+                120.8
+              ],
+              "y": [
+                538.6,
+                738.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                385.0,
+                937
+              ],
+              "original_sequence_index": 29,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "22b8b611d3b7b9d67d21e7ef8ffb3e2de13a6cf247193d490def748117ef04d6",
+              "x": [
+                -30.0,
+                125.0
+              ],
+              "y": [
+                537.2,
+                737.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                410.0,
+                917
+              ],
+              "original_sequence_index": 30,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "2aca7c84daca6f98589688f2b6b583e0b661d6742b770355fab6ccb0ab32eeab",
+              "x": [
+                -4.4,
+                105.6
+              ],
+              "y": [
+                395.2,
+                545.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                398.0,
+                734
+              ],
+              "original_sequence_index": 41,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "4fe6a11fd7ffc7de9965666a6615457c18203f03102cfaf345d4530bdecdb848",
+              "x": [
+                22.6,
+                107.6
+              ],
+              "y": [
+                393.8,
+                563.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                431.0,
+                724
+              ],
+              "original_sequence_index": 42,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "fb3c290f6ab2baf0b1eb2e15c99147265420f5a0c96a60a8028c48fa9856ec8f",
+              "x": [
+                21.6,
+                106.6
+              ],
+              "y": [
+                395.2,
+                565.2
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                426.5,
+                727
+              ],
+              "original_sequence_index": 43,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "0ba4aa3b13f320829a043ce55e26d0a539cd53698cb06a5319d5ad40f6fb168c",
+              "x": [
+                20.8,
+                105.8
+              ],
+              "y": [
+                395.0,
+                565.0
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                428.5,
+                751
+              ],
+              "original_sequence_index": 44,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "8505be5f6aec5a99f08611f9baeefb6b403daf84f00e275b51c066d246dd5b1a",
+              "x": [
+                22.8,
+                107.8
+              ],
+              "y": [
+                392.6,
+                562.6
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                417.5,
+                718
+              ],
+              "original_sequence_index": 46,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "2319fb8282bd542c0d92d3fa757f7fc37148c077a8f4b68e30e859d684dd1e53",
+              "x": [
+                21.0,
+                106.0
+              ],
+              "y": [
+                391.8,
+                561.8
+              ],
+              "visibility": "visible toe/sole; heel occluded or unmeasured",
+              "uncertainty_pixels": 3,
+              "review": "Artist and independent QA reviewed actual painted sole identities, including corrected26/41 and added27\u201330. The explicit observed box excludes opposite foot/equipment; every adjacent delta check remains required.",
+              "observed_distal_exported": [
+                429.0,
+                725
+              ],
+              "original_sequence_index": 47,
+              "evidence": "crown_reviewed_false_boot_windows.jpg"
+            },
+            {
+              "sha256": "0d61c4c16718c491e86c07b0b807b5286a29607bf1aef76bb9412f5102a888c4",
+              "x": [
+                19.80000000000001,
+                104.80000000000001
+              ],
+              "y": [
+                392.20000000000005,
+                562.2
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                418.0,
+                760
+              ],
+              "original_sequence_index": 0,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "287f730e9df89fb01ef63d80cff286ae728140a327c1e3860ca5d33533374a25",
+              "x": [
+                18.99999900000006,
+                103.99999900000006
+              ],
+              "y": [
+                375.000002,
+                555.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                421.0,
+                732
+              ],
+              "original_sequence_index": 1,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "8bf00707b641ea0249e95f9edcb948730800889a812a34ef775e9f754e76bda7",
+              "x": [
+                16.00000300000005,
+                101.00000300000005
+              ],
+              "y": [
+                361.999998,
+                541.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                416.5,
+                744
+              ],
+              "original_sequence_index": 2,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "a6ae3db946cc0441fdae375c70a9427632855b756c9828e654dbec9af3aed45d",
+              "x": [
+                20.99999900000006,
+                105.99999900000006
+              ],
+              "y": [
+                391.000002,
+                561.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                412.5,
+                720
+              ],
+              "original_sequence_index": 3,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "ae4ab4ef3dad89573d17d72d01b3389ba0b28a53b13a3bdf4369e6052a9f7751",
+              "x": [
+                13.999997000000008,
+                98.99999700000001
+              ],
+              "y": [
+                370.999998,
+                540.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                418.5,
+                729
+              ],
+              "original_sequence_index": 4,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "38139276c886e7379df9619ba83f3e91f12dd01e3fb76726fc53f81778806ec3",
+              "x": [
+                9.99999900000006,
+                99.99999900000006
+              ],
+              "y": [
+                369.0,
+                539.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                412.5,
+                742
+              ],
+              "original_sequence_index": 5,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "5153ff80a2073d9391e7195e1f48ca376ed7ff6c89c4a78c114f4e955b94aa29",
+              "x": [
+                9.99999900000006,
+                99.99999900000006
+              ],
+              "y": [
+                358.999997,
+                538.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                406.0,
+                744
+              ],
+              "original_sequence_index": 6,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "4db55d15c1cad859cb7715715dc5a1f5a1f926203390e9a81f06cb7e98ded9b4",
+              "x": [
+                3.9999970000000076,
+                98.99999700000001
+              ],
+              "y": [
+                360.999998,
+                540.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                416.0,
+                738
+              ],
+              "original_sequence_index": 7,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "93ca0ba5eab5542bf1e009c4543e509c2d4cd0b9da2715a99f5d27c24189a103",
+              "x": [
+                -2.999997999999948,
+                97.00000200000005
+              ],
+              "y": [
+                343.000002,
+                563.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                404.5,
+                737
+              ],
+              "original_sequence_index": 8,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "c3d33f5beeaa52882a2d5430557ce6246778906501a5bce909c85175bb4b5c11",
+              "x": [
+                -7.000001999999995,
+                107.999998
+              ],
+              "y": [
+                296.000002,
+                546.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                407.0,
+                729
+              ],
+              "original_sequence_index": 9,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "a80a98d009c4d1132654ae38f6a1c0cbc9b2ea1db7a18734977c2a82a5cbc38b",
+              "x": [
+                -21.99999699999995,
+                83.00000300000005
+              ],
+              "y": [
+                367.0,
+                517.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                404.5,
+                712
+              ],
+              "original_sequence_index": 10,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "833ac6647d9f58a476398763d34657fad7c9dc248f7eda6453b5fd8459d5d7dc",
+              "x": [
+                -20.99999699999995,
+                79.00000300000005
+              ],
+              "y": [
+                351.000002,
+                531.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                393.5,
+                713
+              ],
+              "original_sequence_index": 11,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "50406bb4b1608fd8d5aaa6f32c5e4547d06b3ca594502c7363ac6c8dd41528c2",
+              "x": [
+                -19.80000000000001,
+                65.19999999999999
+              ],
+              "y": [
+                299.20000000000005,
+                489.20000000000005
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                399.5,
+                665
+              ],
+              "original_sequence_index": 12,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "e5a1ebe73249ebb424110a2074a27145a915f251026b749f38820b881f7198ed",
+              "x": [
+                -16.999997999999948,
+                73.00000200000005
+              ],
+              "y": [
+                301.000002,
+                501.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                401.0,
+                671
+              ],
+              "original_sequence_index": 13,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "031e97bb76c7f3ee39926df73bf2f277aeb6f9541b11ab9ebf95168e989182d3",
+              "x": [
+                -15.999997999999948,
+                79.00000200000005
+              ],
+              "y": [
+                298.999997,
+                518.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                410.0,
+                707
+              ],
+              "original_sequence_index": 14,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "2a27858a73064599ea5b1d443dab4d3861ae5cea8874b18cbfa1a48d2a480b15",
+              "x": [
+                -8.999999000000003,
+                106.000001
+              ],
+              "y": [
+                297.000002,
+                567.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                399.0,
+                697
+              ],
+              "original_sequence_index": 15,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+              "x": [
+                -9.999999000000003,
+                95.000001
+              ],
+              "y": [
+                370.000003,
+                540.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                437.5,
+                732
+              ],
+              "original_sequence_index": 16,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+              "x": [
+                -5.999996999999951,
+                94.00000300000005
+              ],
+              "y": [
+                448.999997,
+                598.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                442.5,
+                789
+              ],
+              "original_sequence_index": 17,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "135bf1557e45078f03ba0cb9b571692278aca6b653d3680dce205c0c4b5a47b1",
+              "x": [
+                -13.0,
+                97.0
+              ],
+              "y": [
+                444.0,
+                644.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                427.5,
+                841
+              ],
+              "original_sequence_index": 18,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "2cd39a6e3aa335b2197049e517d79040a8aaf1293fd0fd8da96c3f4fd5a9cbaa",
+              "x": [
+                -12.000001999999995,
+                97.999998
+              ],
+              "y": [
+                504.000002,
+                684.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                435.5,
+                895
+              ],
+              "original_sequence_index": 19,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "4d02e83cacb66cb2f93e81ebe0c1a9b2045c85c49c0aee75fcbfde93b3e0964d",
+              "x": [
+                -36.00000099999994,
+                83.99999900000006
+              ],
+              "y": [
+                524.000002,
+                664.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                426.5,
+                870
+              ],
+              "original_sequence_index": 20,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "26d7cf13774832b052484275be755ec71b498bbda0a587c52c69596a252629c0",
+              "x": [
+                -33.00000099999994,
+                121.99999900000006
+              ],
+              "y": [
+                524.000002,
+                744.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                425.0,
+                906
+              ],
+              "original_sequence_index": 21,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "efcd718a24d46627bb050ea554d494f6c357a73641cfb8ee48de225b890106f5",
+              "x": [
+                -34.99999799999995,
+                110.00000200000005
+              ],
+              "y": [
+                540.999998,
+                710.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                425.0,
+                913
+              ],
+              "original_sequence_index": 22,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "c73e32cd64024787aeea0b7411654abeecce215a49607c366e01a2a1fb2ffc63",
+              "x": [
+                -39.999999,
+                80.000001
+              ],
+              "y": [
+                570.999998,
+                730.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                390.5,
+                948
+              ],
+              "original_sequence_index": 23,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_firsthalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "cd72f619b03860a37fbb4ea917dc2c48944862dc7dde5f0cc02c613c752da976",
+              "x": [
+                -40.39999999999998,
+                79.60000000000002
+              ],
+              "y": [
+                561.2,
+                731.2
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                394.0,
+                949
+              ],
+              "original_sequence_index": 24,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "9ea823356b6832a1fafcf3e72a7a16e67050645d7ae810d0cdaf2f81b7569e9d",
+              "x": [
+                -19.999997999999948,
+                70.00000200000005
+              ],
+              "y": [
+                564.000002,
+                734.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                406.5,
+                949
+              ],
+              "original_sequence_index": 25,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "78e3f570ba150a7d63e0fed3a370059cc03adc61a7d4cf5c731aea6db18a4b2e",
+              "x": [
+                -14.999999000000003,
+                70.000001
+              ],
+              "y": [
+                541.999997,
+                701.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                413.0,
+                924
+              ],
+              "original_sequence_index": 26,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "f1f4c54d94d31f22efdb403e093ada4d9dafcacfa44682507cc61bb6dd9c37d9",
+              "x": [
+                -12.00000099999994,
+                72.99999900000006
+              ],
+              "y": [
+                560.999998,
+                700.999998
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                411.0,
+                926
+              ],
+              "original_sequence_index": 27,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "05d23e34df2dc366eff2a0a50233d1f19b7976cd60eac69b6064b824afb5c86f",
+              "x": [
+                -13.0,
+                72.0
+              ],
+              "y": [
+                558.999999,
+                708.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                410.5,
+                934
+              ],
+              "original_sequence_index": 28,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "0e18061376b0790d8a7749b65d34af9070a0fe63874effca62f171f4e7e38b09",
+              "x": [
+                -8.0,
+                77.0
+              ],
+              "y": [
+                539.999999,
+                684.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                415.5,
+                907
+              ],
+              "original_sequence_index": 29,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "de09a47fa09aa7a8aef98150b2f35850a12081e6bfacb4c39351b0e1160bb86f",
+              "x": [
+                -20.0,
+                65.0
+              ],
+              "y": [
+                538.0000010000001,
+                683.0000010000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                402.5,
+                896
+              ],
+              "original_sequence_index": 30,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "770d28b229c15c5747762ba19492e426c70b3aaec8449286f6bc38b70e692685",
+              "x": [
+                -18.99999699999995,
+                66.00000300000005
+              ],
+              "y": [
+                547.000002,
+                687.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                403.5,
+                908
+              ],
+              "original_sequence_index": 31,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "dcdc2b4f31bc2e3ec552a1e733acefc01851aaa700c0878f93a79c3731321c40",
+              "x": [
+                -10.000002999999992,
+                79.99999700000001
+              ],
+              "y": [
+                492.000003,
+                642.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                416.0,
+                856
+              ],
+              "original_sequence_index": 32,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "f443ded52595f81dd053c5199b20580dcb465cfb811d83cd45b828f38f428272",
+              "x": [
+                -4.000002999999992,
+                85.99999700000001
+              ],
+              "y": [
+                495.000001,
+                645.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                416.5,
+                849
+              ],
+              "original_sequence_index": 33,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "eb8f65d136e79c771cf83c2185af8ad1bc4d47ad0bf4b2f8c51e123230b17da8",
+              "x": [
+                -17.999997999999948,
+                67.00000200000005
+              ],
+              "y": [
+                487.999997,
+                627.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                401.5,
+                836
+              ],
+              "original_sequence_index": 34,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "5b76546ef0d2d7b4fa7a4bf762b26834680acaf291ec7da86eef015da046cc38",
+              "x": [
+                -28.99999699999995,
+                61.00000300000005
+              ],
+              "y": [
+                458.999997,
+                598.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                395.0,
+                806
+              ],
+              "original_sequence_index": 35,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "53ea69d3ae9f2d6b538a1e5ee1c9a1b86ffaa3590c1e6cae5c8d232b0baceee3",
+              "x": [
+                -40.19999999999999,
+                44.80000000000001
+              ],
+              "y": [
+                430.0,
+                600.0
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                371.5,
+                793
+              ],
+              "original_sequence_index": 36,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "41f0fcafa9fa53583a6d44d24e767bdd5da76cf9926f326e615b73484c9feda5",
+              "x": [
+                -34.99999699999995,
+                50.00000300000005
+              ],
+              "y": [
+                479.000003,
+                609.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                384.0,
+                820
+              ],
+              "original_sequence_index": 37,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "dbf824de36bc79deaaeee6ea8351a5b2c8885762a37dba786a9a3b85ebae45ee",
+              "x": [
+                -29.99999699999995,
+                55.00000300000005
+              ],
+              "y": [
+                508.999997,
+                648.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                392.5,
+                852
+              ],
+              "original_sequence_index": 38,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "cf89d1484a4a157d1803b3ae028be46f0753e2786f034311becae892f788ad96",
+              "x": [
+                -23.99999699999995,
+                66.00000300000005
+              ],
+              "y": [
+                498.999999,
+                648.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                399.0,
+                813
+              ],
+              "original_sequence_index": 39,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+              "x": [
+                -13.99999699999995,
+                61.00000300000005
+              ],
+              "y": [
+                438.999997,
+                578.999997
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                400.0,
+                773
+              ],
+              "original_sequence_index": 40,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "aee5eeca98310589e5ad7a2e0b5043109de05bb6a7cc952587b86d7bd2bac321",
+              "x": [
+                -18.99999699999995,
+                61.00000300000005
+              ],
+              "y": [
+                406.999999,
+                556.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                398.5,
+                774
+              ],
+              "original_sequence_index": 41,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "0bd5756d696cb00e2b9ecf1b4bb83fc911f1d63f7f64f3b38219b35fbf701544",
+              "x": [
+                -9.00000099999994,
+                70.99999900000006
+              ],
+              "y": [
+                396.999999,
+                546.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                398.5,
+                740
+              ],
+              "original_sequence_index": 42,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "beb582f0cabfc21e75275a90cece2df89d153675bce59b2098136bf4d6a804bc",
+              "x": [
+                -8.00000099999994,
+                71.99999900000006
+              ],
+              "y": [
+                396.000001,
+                536.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                406.0,
+                730
+              ],
+              "original_sequence_index": 43,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "eef53b61cfeea292d6fbc27859a1ddfda9df3d1811e6cba9d1b0d4e2b79deb47",
+              "x": [
+                2.0,
+                77.0
+              ],
+              "y": [
+                395.000001,
+                535.000001
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                411.0,
+                735
+              ],
+              "original_sequence_index": 44,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "12f93146b543ffce25a8353366dddab4fbd372316267310c1edb6a7aa9ef6256",
+              "x": [
+                2.0000009999999975,
+                87.000001
+              ],
+              "y": [
+                384.999999,
+                534.999999
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                412.0,
+                727
+              ],
+              "original_sequence_index": 45,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "6efbf757146e00dc4beb56b8c7515544ba2b5c9cae8e2b8651982e5e8ceab1ea",
+              "x": [
+                12.999997000000008,
+                87.99999700000001
+              ],
+              "y": [
+                394.000002,
+                544.000002
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                418.0,
+                751
+              ],
+              "original_sequence_index": 46,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            },
+            {
+              "sha256": "70b34fce12ce439ea0644570c35549ec6c0e9f70e8b9d90bbcfd6f27408f5c3b",
+              "x": [
+                14.99999900000006,
+                99.99999900000006
+              ],
+              "y": [
+                394.000003,
+                544.000003
+              ],
+              "visibility": "visible lowest sole contour; heel/hidden joints not inferred",
+              "uncertainty_pixels": 3,
+              "observed_distal_exported": [
+                422.0,
+                762
+              ],
+              "original_sequence_index": 47,
+              "review": "Artist and independent QA verified actual boot-only identity in all48 final sources, including final30 and narrow47 rear sole. No transition is waived.",
+              "evidence": "crown_final_secondhalf_sole_windows.jpg"
+            }
+          ]
+        }
+      },
+      "max_distal_delta": 65,
+      "minimum_cycle_distal_range": 120,
+      "required_transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          36,
+          37
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          39,
+          40
+        ],
+        [
+          40,
+          41
+        ],
+        [
+          41,
+          42
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          43,
+          44
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          46,
+          47
+        ],
+        [
+          47,
+          0
+        ]
+      ],
+      "progress_windows": [],
+      "reference_projected_torso_span": 170.1,
+      "maximum_torso_relative_error": 0.1,
+      "max_exported_registration_delta": {
+        "neck": 20,
+        "belt": 30
+      }
+    }
+  },
+  "concentration_review_decision": "The 0.70 trigger remains unchanged but is diagnostic only. Independent QA found continuous calf folding at 72.2%, differing by 4.56 artwork pixels from the proposed threshold; projected toe rotation and contour variation do not justify a hard anatomy boundary. Original bad paintings still fail hard early-hold and per-tick snap checks. Final full-sequence visual review is required."
+}

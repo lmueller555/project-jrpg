@@ -1,0 +1,36 @@
+[
+  {
+    "frame": 16,
+    "source": "run_v3/first_half_final/bounded_16.png",
+    "sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+    "side": "anatomical_right",
+    "rejected_component_point_source": [
+      332.1988122902143,
+      651.8538600568036
+    ],
+    "reviewed_glove_box_source": [
+      363,
+      547,
+      433,
+      607
+    ],
+    "reason": "Independent actual-pixel review identified the old broad detector component on sword fittings below the visible gripping glove. The actual hand measurement must stay inside this separately reviewed leather-glove box."
+  },
+  {
+    "frame": 17,
+    "source": "run_v3/first_half_final/bounded_17.png",
+    "sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+    "side": "anatomical_right",
+    "rejected_component_point_source": [
+      328.36981934112646,
+      658.5715196599363
+    ],
+    "reviewed_glove_box_source": [
+      354,
+      547,
+      426,
+      609
+    ],
+    "reason": "Independent actual-pixel review identified the old broad detector component on sword fittings below the visible gripping glove. The actual hand measurement must stay inside this separately reviewed leather-glove box."
+  }
+]

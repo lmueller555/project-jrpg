@@ -1,0 +1,93 @@
+{
+  "iselin": {
+    "profile_sha256": "657be1943bfdf3a24ea12ca47fe86bb068a1a0f6b01583b3cce9d222489e416e",
+    "frames": [
+      {
+        "source": "iselin/frame_38.png",
+        "cell": [
+          0,
+          0,
+          1199,
+          1312
+        ],
+        "scale": 0.7504690431519699,
+        "origin": [
+          49.33808630394003,
+          0.1043151969981011
+        ],
+        "landmarks": {
+          "face": [
+            610.305,
+            183.298
+          ],
+          "neck": [
+            616.497,
+            263.696
+          ],
+          "belt": [
+            605.441,
+            501.172
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.874,
+          "neck": 0.8244,
+          "belt": 0.7911
+        },
+        "generation_id": "exec-745334cb-4c7a-4829-9ce4-2eedad3b54e9",
+        "prompt_file": "run_v3/key_38_braid_final_prompt.txt",
+        "prompt_sha256": "9018eeec5fd5e95da905c4b33db05e038e0648fd1e256cacd91a0ee59a54a2a1",
+        "authored_weight_offset_y": -2.0,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 38,
+        "original_source": "run_v3/key_38_braid_final.png",
+        "sha256": "8388422ff621d9d753fc354038ab79d818598281e501c608d38152995d841544",
+        "context": "Rejected post-repair candidate84.48px lower/distal braid release; independently confirmed real, not original production baseline."
+      },
+      {
+        "source": "iselin/frame_39.png",
+        "cell": [
+          0,
+          0,
+          1247,
+          1261
+        ],
+        "scale": 0.8120508343822324,
+        "origin": [
+          5.116245076941823,
+          3.253448698688544
+        ],
+        "landmarks": {
+          "face": [
+            622.354,
+            163.252
+          ],
+          "neck": [
+            624.202,
+            238.801
+          ],
+          "belt": [
+            616.098,
+            462.611
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8776,
+          "neck": 0.8473,
+          "belt": 0.8069
+        },
+        "generation_id": "exec-8c939887-a222-45f7-ae09-9a183317c6fd",
+        "prompt_file": "run_v3/key_39_braid_mid_prompt.txt",
+        "prompt_sha256": "3a41eb35f03efbcd02bd537cddea76e78062792dcea5b913c605c4bf7bacadbc",
+        "authored_weight_offset_y": -2.828,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 39,
+        "original_source": "run_v3/key_39_braid_mid.png",
+        "sha256": "49e3391b2b9a18c047f438bd64dd931b43cceec6240ec99043a4f31aa7b20c76",
+        "context": "Rejected post-repair candidate84.48px lower/distal braid release; independently confirmed real, not original production baseline."
+      }
+    ]
+  }
+}

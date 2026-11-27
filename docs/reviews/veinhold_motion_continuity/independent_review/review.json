@@ -1,0 +1,697 @@
+{
+  "reviewer": "independent_run_visual_review",
+  "state": "Accepted: final source drawings, composed native production frames and Gallery still evidence satisfy the scoped motion correction. All288 boot endpoints,192 visible hand markers and48 braid-region masks independently reviewed with exact current source/render bindings. No remaining visual or extraction-identity blocker.",
+  "method": "Read-only direct inspection of actual RGBA exports, chronological contact sheets, selected-pixel masks,301-frame production bank samples and Gallery capture filmstrips/screenshots. Evidence-only archive writes by reviewer; no artwork, source profile, code or test modifications.",
+  "accepted": {
+    "lucan": {
+      "intervals": [
+        [
+          7,
+          18
+        ],
+        [
+          34,
+          42
+        ]
+      ],
+      "observations": [
+        "Continuous connected hip/knee/boot recovery and approach replace old rushed exchanges.",
+        "Visible sword-hand pump and connected shoulder/elbow/grip retained; shield stays attached to opposite arm.",
+        "Final production35/38/40 palette correction resolves the isolated gold/warm flashes."
+      ],
+      "hashes": "accepted_drawing_hashes.json"
+    },
+    "crown_soldier": {
+      "intervals": [
+        [
+          9,
+          12
+        ],
+        [
+          14,
+          24
+        ],
+        [
+          24,
+          47
+        ],
+        [
+          17,
+          24
+        ],
+        [
+          27,
+          32
+        ]
+      ],
+      "observations": [
+        "Recovered and advancing boots now progress through connected knee/calf chains.",
+        "Small19\u219220 and39\u219240 distal sole reversals accompany visible boot tilt/foreshortening and are not forced monotonic.",
+        "Final30 corrects a real one-frame down/back sword-hand dip while retaining successful legs.",
+        "All48 reviewed sole windows select their intended boots, including corrected30 and narrow47 rear boot."
+      ],
+      "hashes": "accepted_drawing_hashes.json"
+    },
+    "iselin_sole_identity": {
+      "frames": [
+        31,
+        32,
+        33
+      ],
+      "observed_points_approx": [
+        [
+          429,
+          691
+        ],
+        [
+          422,
+          718
+        ],
+        [
+          428,
+          704
+        ]
+      ],
+      "evidence": "iselin31_33_sole_identity.png",
+      "finding": "Actual recovered viewer-left boot selected; opposite shin excluded."
+    },
+    "iselin_belt32": {
+      "evidence": "iselin32_actual_buckle.png",
+      "finding": "Observed waist-buckle point is correct; former NCC selected a higher chest clasp."
+    },
+    "iselin": {
+      "frames": "Full48-pose chronology; detailed seam44\u201347\u21920\u20136, gait12\u201318, contacts23/24, cases31\u201333 and37\u201343.",
+      "observations": [
+        "Connected hip/knee/boot chains replace the former gait jumps; actual sole tilt/foreshortening is allowed rather than forced monotonic.",
+        "The visible hands pump through intermediate positions, with stable arm ownership and clasp/braid attachment.",
+        "Loose hair, shawl crest/free edge, coat panels and heavy braid now continue through the cycle; roots remain attached as free portions bend and trail.",
+        "Published13/14 palette edits remove the violet/bright trim and warm face/hair flashes at native scene scale.",
+        "Final38 provides an actual outward braid intermediate through36\u201340, with ordinary plait volume and clearance above the fist."
+      ],
+      "landmarks": "iselin_visible_landmarks.json",
+      "landmark_overlays": [
+        "iselin_visible_landmarks_00.jpg",
+        "iselin_visible_landmarks_12.jpg",
+        "iselin_visible_landmarks_24.jpg",
+        "iselin38_visible_landmarks.png"
+      ],
+      "hashes": "accepted_drawing_hashes.json"
+    },
+    "composed_production": {
+      "production_frames": [
+        [
+          120,
+          167
+        ]
+      ],
+      "additional_frames": [
+        0,
+        30,
+        60,
+        75,
+        90,
+        105,
+        110,
+        111,
+        112,
+        113,
+        114,
+        134,
+        135,
+        136,
+        137,
+        138,
+        299,
+        300
+      ],
+      "observations": [
+        "All48 poses inspected chronologically in the actual Gallery-driving production bank, with connected limbs, visible arm pumps and coherent material continuation.",
+        "Entry/tilt, corrected palette/braid intervals and ending examined; no new concrete visual blocker.",
+        "Crown40 warmth is not conspicuous at its actual background scale."
+      ],
+      "frame_hashes": "production_reviewed_frame_hashes.json",
+      "sheets": [
+        "production_120_143.jpg",
+        "production_144_167.jpg",
+        "entry_palette_braid_endpoint.jpg"
+      ]
+    },
+    "gallery_still_evidence": {
+      "scope": "Independently inspected normal/reduced/complete capture filmstrips and shot07 replay/return UI screenshots. No video playback claim. Parent separately performed pixel-equality reproduction checks.",
+      "files": [
+        {
+          "path": "../production_gallery/shot07_filmstrip.png",
+          "sha256": "78ad04639e96cbf5ce06b22a44fe3763f431fa7ede6cc872e1bf146b77d66ab7"
+        },
+        {
+          "path": "../production_gallery/shot07_reduced_motion_filmstrip.png",
+          "sha256": "78ad04639e96cbf5ce06b22a44fe3763f431fa7ede6cc872e1bf146b77d66ab7"
+        },
+        {
+          "path": "../production_gallery/complete_filmstrip.png",
+          "sha256": "7233680d6b1bb5f652200421c191a892f394c48367c7459bd5ebdef7fd05ccf8"
+        },
+        {
+          "path": "../production_gallery/shot07_gallery_replay.png",
+          "sha256": "c6ac258f9e057d9b7a8d7e917ca5152f30aac281d371218f76c8c7a3a9e5eefd"
+        },
+        {
+          "path": "../production_gallery/shot07_gallery_return.png",
+          "sha256": "af197a6d48ca6574f81d588d6ebe41aae8d21325c113397d2c250612afd5f449"
+        }
+      ]
+    },
+    "distal_pixel_identity": {
+      "total_endpoints": 288,
+      "lucan": {
+        "reviewed": 96,
+        "method": "All12 four-frame source marker sheets00\u201347 inspected;94 correct and two corrected actual23/26 overlays independently ratified.",
+        "corrections": [
+          {
+            "frame": 23,
+            "point_exported": [
+              290.725,
+              713.32
+            ],
+            "evidence": "lucan23_corrected_distal_identity.jpg"
+          },
+          {
+            "frame": 26,
+            "point_exported": [
+              306.97,
+              742.34
+            ],
+            "evidence": "lucan26_corrected_distal_identity.jpg"
+          }
+        ]
+      },
+      "iselin": {
+        "reviewed": 96,
+        "method": "All48 current runtime PNGs with main actual endpoint overlays inspected;93 correct and three source-bound25/37/38 corrections independently ratified. All adjacent main hard checks clean after correction.",
+        "all48_data": "iselin_all48_reviewed_distal_contours.json",
+        "three_corrections": [
+          "iselin_corrected25_37_38_sole_identity.png",
+          "iselin_corrected25_37_38_sole_observations.json"
+        ]
+      },
+      "crown_soldier": {
+        "reviewed": 96,
+        "method": "Both final24-frame sole overlay sheets inspected, including corrected30 and narrow47 rear boot.",
+        "evidence": [
+          "crown_firsthalf_sole_identity.jpg",
+          "crown_secondhalf_sole_identity.jpg"
+        ]
+      }
+    },
+    "braid_pixel_identity": {
+      "reviewed": 48,
+      "visible": 48,
+      "ambiguous_unmeasured": 0,
+      "finding": "Current selected pixels identify actual distal plait/tassel, with the final25\u201330 y2=360 correction excluding cuff embroidery. Current source/PNG/RGBA bindings independently compared to authoritative runtime hashes.",
+      "selected_pixel_evidence": [
+        "braid_final_exact_regions.jpg",
+        "braid25_30_clean_contributors.png"
+      ],
+      "all48_data": "iselin_all48_reviewed_braid_regions.json",
+      "limits": {
+        "gross_regional_centroid_step": 65,
+        "minimum_fullcycle_excursion": 5,
+        "minimum_selected_pixels": 50
+      },
+      "diagnostics_retained": [
+        {
+          "transition": [
+            13,
+            14
+          ],
+          "regional_centroid_step_px": 73.563,
+          "default_limit_px": 65,
+          "reviewed_maximum_px": 74.563,
+          "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+        },
+        {
+          "transition": [
+            32,
+            33
+          ],
+          "regional_centroid_step_px": 68.977,
+          "default_limit_px": 65,
+          "reviewed_maximum_px": 69.977,
+          "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+        },
+        {
+          "transition": [
+            37,
+            38
+          ],
+          "regional_centroid_step_px": 71.362,
+          "default_limit_px": 65,
+          "reviewed_maximum_px": 72.362,
+          "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+        }
+      ]
+    },
+    "hand_pixel_identity": {
+      "visible_markers": 192,
+      "by_actor": {
+        "lucan": 48,
+        "iselin": 96,
+        "crown_soldier": 48
+      },
+      "method": "All final contact-sheet markers inspected. Corrected Crown16/17/40 inspected again in exact actual-component cyan detail and regenerated final yellow-marker overlays. Every source SHA in current hands_after.json independently compared to the authoritative final144-drawing hash manifest: no mismatch.",
+      "finding": "Visible markers identify actual fists/gloves. Crown16/17 old broad components extended into blade/guard and were corrected to actual knuckle/finger regions. Crown40 old174-pixel edge component was actual glove leather, confirmed by an independent code reviewer; the final34-pixel inner-finger-crease region is clean and better localized. Sparse local components are not persistent wrist joints. Opaque shield-side wrists remain explicitly unmeasured.",
+      "current_crown_components": [
+        {
+          "frame": 16,
+          "source_sha256": "76fab3474f69cc13f67d16c3cc92016362aba04657ec48940c417ebb054a0b6a",
+          "point_source": [
+            380.4748858447489,
+            589.8767123287671
+          ],
+          "point_neck_relative": [
+            -119.6675789086758,
+            164.91370163013696
+          ],
+          "bounds_source": [
+            368,
+            578,
+            394,
+            607
+          ],
+          "area": 219,
+          "candidate_count": 8
+        },
+        {
+          "frame": 17,
+          "source_sha256": "ffe079082ae1dd8bb76a994eacdafc028cbf74d040ef56a90fa168fa9a7f55a9",
+          "point_source": [
+            403.4811594202898,
+            586.2869565217392
+          ],
+          "point_neck_relative": [
+            -105.56318540579711,
+            161.4008665652174
+          ],
+          "bounds_source": [
+            382,
+            567,
+            424,
+            609
+          ],
+          "area": 345,
+          "candidate_count": 5
+        },
+        {
+          "frame": 40,
+          "source_sha256": "232253f4238e0760304340912e0c04c8ca7e9c011b51502725f91f7e51b7a85d",
+          "point_source": [
+            266.1470588235294,
+            652.3823529411765
+          ],
+          "point_neck_relative": [
+            -194.6970558235294,
+            207.6676440588235
+          ],
+          "bounds_source": [
+            262,
+            648,
+            272,
+            659
+          ],
+          "area": 34,
+          "candidate_count": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "../hands_after.json",
+          "sha256": "41919e3ee78714bd0f28c92ba79c94e11e74a0c403d423465e2e299039e2e22e"
+        },
+        {
+          "path": "../hand_overlays/lucan_hands.jpg",
+          "sha256": "e5d8a6d8cb0ef77680ca7c211349be5ee04ad0856077957b2d3e23ba257662b1"
+        },
+        {
+          "path": "../hand_overlays/iselin_hands.jpg",
+          "sha256": "1ed023aaef0384900c2b84196b00aecf07fa02c1a0530222e9e59fd6f03a05dd"
+        },
+        {
+          "path": "../hand_overlays/crown_soldier_hands.jpg",
+          "sha256": "af8d91c510d9277077a428608f36851bf7b342a842245e7d1d4522b757464736"
+        },
+        {
+          "path": "../hand_overlays/crown_glove_detail.png",
+          "sha256": "03c85fe738a1f87edfd5842026c8fc740c9aa899198f059588607e0aa4b9ace9"
+        }
+      ]
+    }
+  },
+  "measurement_limits": [
+    "No native video playback tool was available. Review statements refer to chronological frame inspection, not watching normal-speed video.",
+    "Distal sole contours are actual alpha measurements within identity-reviewed windows, not exact ankle/heel joints or world contact annotations.",
+    "Opaque boots/trousers hide heels/patellae; those exact joints are unmeasured. Any knee-region overlay is an explicit uncertain estimate from visible cloth/plate shape.",
+    "The settled frontal scene crops Lucan planted soles, so source-frame review does not establish world-ground foot locking.",
+    "Cloth contour extrema and braid regional centroids do not establish persistent material particles or physical material simulation.",
+    "Passing numeric checks alone is not used as visual acceptance. Source-specific window fixes correct observed contamination without raising movement caps or waiving adjacent coverage."
+  ],
+  "artifacts": [
+    {
+      "file": "accepted_drawing_hashes.json",
+      "sha256": "5ff427c5d5b7afeb531ced1dbd60f56379e16e6105ed68a69664b1ec8858e517"
+    },
+    {
+      "file": "braid25_30_clean_contributors.png",
+      "sha256": "a14877ef582dc225501ca443fbb64cd5183635753ee34d35e0fcccce32f4c1cc"
+    },
+    {
+      "file": "braid_final_exact_regions.jpg",
+      "sha256": "fbbdc08d0fe7e93c86d3a770cb27d60711f3fada2291e0b83c8e20417e5d7337"
+    },
+    {
+      "file": "crown_final_hand30.jpg",
+      "sha256": "fefe81f33eba8d0f9f530794debae3f68126c94fe0cd9511d4f16a70aa722e84"
+    },
+    {
+      "file": "crown_firsthalf_sole_identity.jpg",
+      "sha256": "4f7ac4665a3511170672393f194d39ae1c82a68c5adc0cdb400449b4ef715c26"
+    },
+    {
+      "file": "crown_secondhalf_sole_identity.jpg",
+      "sha256": "f5e882934ea106723152bd7f534713a6285264255ca38ad5a20d095acd9b0d07"
+    },
+    {
+      "file": "entry_palette_braid_endpoint.jpg",
+      "sha256": "05b66f0fd3510d88a22b95460485a361a1d327e03a7cb630875351ad132ef714"
+    },
+    {
+      "file": "iselin31_33_sole_identity.png",
+      "sha256": "77c3d17a8a7ce590ecbc8d7ed514247ff03590157a4ea3ffea9f045aecdcf9c2"
+    },
+    {
+      "file": "iselin32_actual_buckle.png",
+      "sha256": "332f130bd34729a5704c69990a3d51707e93c649928251f73ddcb29281572fc8"
+    },
+    {
+      "file": "iselin38_visible_landmarks.png",
+      "sha256": "db0870505b80f418ff6c04fa4a96d7916009c8c71b0e28bfffb2029f2f907438"
+    },
+    {
+      "file": "iselin_all48_reviewed_braid_regions.json",
+      "sha256": "777f30c31d575808d28e88bac6f265d921ab163842c1a130fdb68fda7acdd3ce"
+    },
+    {
+      "file": "iselin_all48_reviewed_distal_contours.json",
+      "sha256": "37990bdec559bbba8f52f5ff8d91778494bf20b3e8f7cebdedd57dff927e4934"
+    },
+    {
+      "file": "iselin_corrected25_37_38_sole_identity.png",
+      "sha256": "da90c1584fd6d24b2b3f888ac723a38e05ea4d3f227becdb553fdda5505ad344"
+    },
+    {
+      "file": "iselin_corrected25_37_38_sole_observations.json",
+      "sha256": "2205b61264deeda91b1bf6ef0d585ee4ea110495fc3b0b7a7283bf9de5fbfbbd"
+    },
+    {
+      "file": "iselin_visible_landmarks.json",
+      "sha256": "80efb2686e81dc43053b99570564981a9ff3b58ddbfb1a1bc32466afa5f95ee4"
+    },
+    {
+      "file": "iselin_visible_landmarks_00.jpg",
+      "sha256": "07aa56ab41d0c2620733c3fc52a9ecac300c9fc70ee4563a657c004a96a1126d"
+    },
+    {
+      "file": "iselin_visible_landmarks_12.jpg",
+      "sha256": "7b1d3059f80d13db750b10455f1f15d71d432a28eb48362ec33957082733d106"
+    },
+    {
+      "file": "iselin_visible_landmarks_24.jpg",
+      "sha256": "46045b9300872b4b12f9821f362039c8751ea748cb33ac3048580af835b92081"
+    },
+    {
+      "file": "lucan23_corrected_distal_identity.jpg",
+      "sha256": "05b15a5d5dd6e8f9ddd9a59f92616ea1a91e9b06574be37dfb5122d285b0ae10"
+    },
+    {
+      "file": "lucan26_corrected_distal_identity.jpg",
+      "sha256": "997481debb2f45d0fa871c83638f00284dc0cf7c5a6921f51cf0e3605a0f38a5"
+    },
+    {
+      "file": "lucan_final_palette.png",
+      "sha256": "f614d337d711e6feacd5903bda2129ecd5249ac96e3834cd382df2f6b17b0c7b"
+    },
+    {
+      "file": "lucan_final_palette_measurements.json",
+      "sha256": "0509a3a784afa377bfbf2fcf615f3dbecf5823da8cb15b060c028903af049691"
+    },
+    {
+      "file": "palette_pilot_before_correction.jpg",
+      "sha256": "7bd35bb43b983d87d1cb4b4969ee7b3f153aed634798816f8aaf682b930d5afe"
+    },
+    {
+      "file": "production_120_143.jpg",
+      "sha256": "b6f7f44490909b9a9ec34a9e16653bd57368a2167ba56db7a03f67690001c51a"
+    },
+    {
+      "file": "production_144_167.jpg",
+      "sha256": "1614de8d4cdb87281a65327e760df95791cf81569bc93a0bf7d8f9aea55a4e66"
+    },
+    {
+      "file": "production_reviewed_frame_hashes.json",
+      "sha256": "8ccc02bdeeef88c3fdb8b50722d7a24f266980874a28359be3ce3b1153e9f1bd"
+    }
+  ],
+  "schema_version": 2,
+  "reviewed_material_diagnostics": [
+    {
+      "transition": [
+        13,
+        14
+      ],
+      "regional_centroid_step_px": 73.563,
+      "default_limit_px": 65,
+      "reviewed_maximum_px": 74.563,
+      "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+    },
+    {
+      "transition": [
+        32,
+        33
+      ],
+      "regional_centroid_step_px": 68.977,
+      "default_limit_px": 65,
+      "reviewed_maximum_px": 69.977,
+      "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+    },
+    {
+      "transition": [
+        37,
+        38
+      ],
+      "regional_centroid_step_px": 71.362,
+      "default_limit_px": 65,
+      "reviewed_maximum_px": 72.362,
+      "classification": "Clean visible distal plait/tassel contributors. Actual complete sequence shows continuous bending/unrolling. Regional centroid combines heavy plait and diffuse loose curl; it is not a persistent material particle. Keep the measured breach as a diagnostic bound to exact source, rendered pixels, crop/registration/configuration and+1px ceiling. Default65 remains; old rejected source hashes must still fail."
+    }
+  ],
+  "final_extraction_evidence": "braid_final_exact_regions.jpg",
+  "metric_scope": {
+    "distal_gross_step_px": 65,
+    "braid_region_centroid_gross_step_px": 65,
+    "braid_minimum_excursion_px": 5,
+    "braid_minimum_selected_pixels": 50,
+    "hand_minimum_pump_px": 40,
+    "hand_gross_step_px": 60,
+    "absolute_registration_neck_px": 20,
+    "absolute_registration_belt_px": 30,
+    "meaning": "Scoped gross discontinuity/freeze guards at the authored density, not universal joint-speed or material-physics laws. All adjacent joins remain covered; no art changes solely to satisfy contaminated extraction.",
+    "material_contour_q90_limits_px": {
+      "loose_hair": 28,
+      "shawl": 30,
+      "free_coat": 35
+    },
+    "minimum_material_feature_excursion_px": 5
+  },
+  "reviewed_shawl_metric_diagnostics": [
+    {
+      "id": "iselin_final_shawl_13_14",
+      "context": {
+        "metric": "material_contour",
+        "region": "shawl",
+        "frames": [
+          {
+            "frame": 13,
+            "source": "run_v3/key_13_recolor.png",
+            "source_sha256": "0957e569c79f427066da286c8355d59f8dc4bef2aba9f56859bea444a9522885",
+            "cell": [
+              0,
+              0,
+              1199,
+              1312
+            ],
+            "scale": 0.7964192988324493,
+            "origin": [
+              8.424873767541158,
+              1.308065577165081
+            ],
+            "neck": [
+              632.299,
+              248.182
+            ],
+            "belt": [
+              623.472,
+              481.103
+            ],
+            "rendered_size": [
+              1024,
+              1200
+            ],
+            "rendered_rgba_sha256": "16d7da08c72a3944a9cc23e9f14d31f931624d200239ede03434d48f8695e795"
+          },
+          {
+            "frame": 14,
+            "source": "run_v3/key_14_recolor.png",
+            "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8332500083325001,
+            "origin": [
+              -10.683564976835669,
+              -4.958037529580395
+            ],
+            "neck": [
+              627.283,
+              243.574
+            ],
+            "belt": [
+              620.651,
+              460.742
+            ],
+            "rendered_size": [
+              1024,
+              1200
+            ],
+            "rendered_rgba_sha256": "af8a192931b54a0b5ce11debc3a245649fd3de2577aff1497741d17e251fc271"
+          }
+        ],
+        "configuration": {
+          "window": [
+            -472,
+            -62,
+            30,
+            500
+          ],
+          "crop_margin": 3,
+          "max_q90_distance": 30,
+          "minimum_feature_excursion": 5
+        }
+      },
+      "default_limit": 30,
+      "reviewed_value": 45.13401412963867,
+      "maximum_reviewed_value": 46.13401412963867,
+      "sampling_tolerance": 1.0,
+      "reason": "Root and independent native-image review accept continuous cloth action. Palette-only source13/14 edits move same-frame contours by at most4.47/1px, while boundary-population changes make the cross-frame q90 unstable. This exact reviewed input remains a visible diagnostic; the default30px cap is unchanged."
+    },
+    {
+      "id": "iselin_final_shawl_14_15",
+      "context": {
+        "metric": "material_contour",
+        "region": "shawl",
+        "frames": [
+          {
+            "frame": 14,
+            "source": "run_v3/key_14_recolor.png",
+            "source_sha256": "0d20cbf3ef649cb9ebb68c53a7f55f0a0965df626c2c99facb28296596d4dad4",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8332500083325001,
+            "origin": [
+              -10.683564976835669,
+              -4.958037529580395
+            ],
+            "neck": [
+              627.283,
+              243.574
+            ],
+            "belt": [
+              620.651,
+              460.742
+            ],
+            "rendered_size": [
+              1024,
+              1200
+            ],
+            "rendered_rgba_sha256": "af8a192931b54a0b5ce11debc3a245649fd3de2577aff1497741d17e251fc271"
+          },
+          {
+            "frame": 15,
+            "source": "run_v3/key_15_hair.png",
+            "source_sha256": "6a257c00acb1abdac6d66db64e4f1fb36f969f28ea4f2280e461969a42753af6",
+            "cell": [
+              0,
+              0,
+              1254,
+              1254
+            ],
+            "scale": 0.8005764150188135,
+            "origin": [
+              8.31094387959331,
+              1.6824475222159947
+            ],
+            "neck": [
+              629.158,
+              244.186
+            ],
+            "belt": [
+              620.651,
+              472.742
+            ],
+            "rendered_size": [
+              1024,
+              1200
+            ],
+            "rendered_rgba_sha256": "88148e8b2d6a9ac6b193983b921847d2552fe497a871110b146a360571e3406e"
+          }
+        ],
+        "configuration": {
+          "window": [
+            -472,
+            -62,
+            30,
+            500
+          ],
+          "crop_margin": 3,
+          "max_q90_distance": 30,
+          "minimum_feature_excursion": 5
+        }
+      },
+      "default_limit": 30,
+      "reviewed_value": 33.187232971191406,
+      "maximum_reviewed_value": 34.187232971191406,
+      "sampling_tolerance": 1.0,
+      "reason": "Root and independent native-image review accept continuous cloth action. Palette-only source13/14 edits move same-frame contours by at most4.47/1px, while boundary-population changes make the cross-frame q90 unstable. This exact reviewed input remains a visible diagnostic; the default30px cap is unchanged."
+    }
+  ],
+  "verification_reported_by_motion_owner": "Final all3 actor main audits cover every adjacent join with zero hard violations. Braid48 visible/0 ambiguous, zero hard violations and three exact reviewed diagnostics. Ten braid tests passed. These are owner-run results, separate from this direct visual acceptance.",
+  "verification_reported_by_parent": {
+    "painted_regression_tests": 35,
+    "breakdown": {
+      "motion": 18,
+      "hands": 7,
+      "braid": 10
+    },
+    "painted_regression_seconds": 66.28,
+    "core_tests": 144,
+    "gallery_tests": 71,
+    "unique_tests_total": 250,
+    "result": "All passed. Final main/hand/braid CLI audits report zero hard violations; exact reviewed material diagnostics remain visible. These are parent/owner-run results, separate from direct visual acceptance."
+  },
+  "final_verdict": "Accepted for the requested correction: visible sword-arm pumping, continuous leg recovery/exchange, stable actor/gear ownership and coherent hair/braid/shawl/coat continuation are present in the actual final pictures and composed scene. Cadence is authored as48 poses across800ms at60FPS. Real-time playback and exact world-ground foot locking are not certified by this still-frame review."
+}

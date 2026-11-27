@@ -2,7 +2,7 @@
 
 > **Superseded performance.** The current selection is
 > [source_art_48.json](source_art_48.json): 48 complete drawings over 800 ms.
-> See [run_v2/README.md](run_v2/README.md) for its sources, registration and
+> See [run_v3/README.md](run_v3/README.md) for its sources, registration and
 > reproduction command. Everything below describes the historical 24-pose,
 > 400 ms implementation; its images, scripts and review evidence are retained.
 

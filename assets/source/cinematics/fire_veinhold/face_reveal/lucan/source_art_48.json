@@ -24,9 +24,9 @@
       "foot": "far"
     }
   ],
-  "approval_state": "implemented_for_ingame_review",
-  "construction": "48 individually ImageGen-authored complete painted drawings. Low-resolution key sheet and joint charts are authoring guides only. Final keys and inbetweens retain full source detail; no rig, detached anatomy, pasted face or image interpolation.",
-  "registration": "Fixed0.63 source-art density for every master, regardless of canvas or occupied bounds. Eyes/neck/belt template matches register each complete drawing; one authored weight chart controls support/flight recoil. Production exporter only uniformly samples and translates whole figures.",
+  "approval_state": "implemented_for_in_game_review",
+  "construction": "48 complete painted drawings over800ms. Scoped v3 whole-image ImageGen repairs restore leg exchanges and the35 sword-arm transition; explicit complete-pose chronology places the former midpoint at39 and the existing later pose at41. No duplicated runtime pose, isolated-limb rig, pasted protected pixels or frame interpolation.",
+  "registration": "Existing768x1024 canvas and384,960 anchor. Fixed0.63 uniform source density; measured eyes/neck/belt register whole drawings with the existing authored weight chart. Body/model redraws remove incompatible source proportion changes; no occupied-height or boot-based scaling.",
   "registration_reference": {
     "source": "appearance_contact.png",
     "target_landmarks": {
@@ -101,6 +101,7 @@
     ]
   },
   "source_sha256": {
+    "appearance_contact.png": "73f604b77139a1023df8b2281e6f62d8b751bbdeab6dd92540d82011647c63af",
     "run_v2/frames/frame_00.png": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4",
     "run_v2/frames/frame_01.png": "8bab1307d7af335f0503d3ed2c9924a2da1c6d7b8501b9b49e5fdacc3b1ad7bd",
     "run_v2/frames/frame_02.png": "bdddff4b956bbdef6ecdfa177fcbc49e8db935cf42f2194e1d5ade17adaa44cc",
@@ -109,16 +110,6 @@
     "run_v2/frames/frame_05.png": "54fb9379db33ba72d8d7fefe36235ff40a21e5359aa1ef5f3241eba3789ff901",
     "run_v2/frames/frame_06.png": "1189eb2a389f2ffb93b2f777ba983f5184fa6aeea483ff9ea754e11138df4d4d",
     "run_v2/frames/frame_07.png": "5ff0559f75bf6e560096380a47fc30896df512de61b2bd433a52d0cfed1a38f8",
-    "run_v2/frames/frame_08.png": "c9526df52c6289b16d999fa96c88cbbe4375be1219b07e52cfc5207db27e8287",
-    "run_v2/frames/frame_09.png": "e9af2e8c36fd1b1b87a1c10c320d03b505bde99eb587a68172db7078df0bae83",
-    "run_v2/frames/frame_10.png": "99739333014db6936e333fff112c81b449611397a8f5b4d79b0ed9299bc70872",
-    "run_v2/frames/frame_11.png": "0e3a8f5b9ace16fb3a7f602692d5944650d7894578c7c1b7a4dc28efdc3aed5b",
-    "run_v2/frames/frame_12.png": "8d0255e92011898bbf816eb4bd30f5d358b87ede148df5efa5b597403f3c39c3",
-    "run_v2/frames/frame_13.png": "fdff66b940e5ee304b3683f5e995a572f043d9e5be0e019bffd133b09851d861",
-    "run_v2/frames/frame_14.png": "aede861d64fd5a569b63623e110e26ce521cc93c2a3e65752b32fda5ab10bd41",
-    "run_v2/frames/frame_15.png": "a1eee9c8fdcc0af1a8b3d061a098988cd50a5c89a7d1bf2f74e7c4bac3a5c68f",
-    "run_v2/frames/frame_16.png": "a3f2b47f63b85a627865aeda96bca4f59ae925b8971e0a11756986de7c88bd7a",
-    "run_v2/frames/frame_17.png": "883db64b31f97294e5a5f5be85a4d29640bf8cb0b829861264fb942d9999955c",
     "run_v2/frames/frame_18.png": "b8e2222c81e2bfa30d66035e4f1006d60a5f51bfe9634ccc626913b7804ecca6",
     "run_v2/frames/frame_19.png": "86e06a8aff04b92e16341d790cf30bfb5aba70e506d22bc8692ab28fc70f3f3c",
     "run_v2/frames/frame_20.png": "1cffca63c64ec5fe01f947f61ab920368d71c5e5394602c7cc0854fc6c17a6ec",
@@ -136,128 +127,81 @@
     "run_v2/frames/frame_32.png": "b8bb18b560abd8ca103446e0b66bbc2738d555f04c03b0e04575d2846e0f79f0",
     "run_v2/frames/frame_33.png": "144f9c5da8d386c543fa9864cb811ee2857de4b0f1457764c331bfd117a105ef",
     "run_v2/frames/frame_34.png": "c5f38f9c06a3f23bcd11d692bbd459e3b60d42242a7890ff2edf10fa89096169",
-    "run_v2/frames/frame_35.png": "f0bdc4d4b3470b4f6d54a7ecf1e6d5091761c774e5f4c5006c93da8904c6d150",
     "run_v2/frames/frame_36.png": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
     "run_v2/frames/frame_37.png": "809051717ae94477d556aa3d9327fed44711e7353c328b3b2e9a0ab68d605041",
-    "run_v2/frames/frame_38.png": "234c2f46a82755f4e04f25a6a4b5e9ecc84c4bed6a0bd8be8629c738e8ef6c0d",
-    "run_v2/frames/frame_39.png": "777af5732cfb4f60bbf50546bb43a98fa6d91cefe1442749f62b9b17685e3056",
     "run_v2/frames/frame_40.png": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
-    "run_v2/frames/frame_41.png": "ae55dede516dbad81f60866b6a87d09bee021580155fff378c4162ba2f3bb163",
     "run_v2/frames/frame_42.png": "e4be85df8ad05d1fe4843c22941b238511699d011d4f42328ed3204ca1a69c1f",
     "run_v2/frames/frame_43.png": "76790f15200c60b3bf04e59743613300b45d41111eebe67cb5305b9cbd427655",
     "run_v2/frames/frame_44.png": "b8101de9a315421d67d6b6c6a604f2b84a257d1e0dc556ce5d4d602426dad019",
     "run_v2/frames/frame_45.png": "2a6501a3ff3f51896162b24dd060e8037aae5cc484036605ab985b9d3683fe83",
     "run_v2/frames/frame_46.png": "71f6e87a7591620a11fe92ba0c87f4b2a2dd8dd17e8b01e20f87ad9fd48671a6",
     "run_v2/frames/frame_47.png": "63fcb58372e29c02308d6d2d9ce187e85f1ab1ea4584a497427d2d0447dd195e",
-    "run_v2/frames/frame_00_prompt.txt": "a1f8d2d595b70af9a3407b42d038226b11baba2c38546ab51cdb16fb97fd4d9e",
-    "run_v2/frames/frame_01_prompt.txt": "6d33289af3093c46a96484002df3e37e10d3853644963312aa806901d3e34e9d",
-    "run_v2/frames/frame_02_prompt.txt": "e1ff118db35b03fae1b90bfd476dd1bf58943ea5e5c59745a305439fe8446c2d",
-    "run_v2/frames/frame_03_prompt.txt": "ca7fe9af91a9fb391f5388fbc0ec62b1fd29f79272cbed1de59f7738bea92bca",
-    "run_v2/frames/frame_04_prompt.txt": "250d191502688c4572ed98c1c9d3838af312959dab91ba71bf979f7deda022c9",
-    "run_v2/frames/frame_05_prompt.txt": "51d5b957edfa013521a1f4e26e20e26cdeee3a3ece72d702de161c4da745d51d",
-    "run_v2/frames/frame_06_prompt.txt": "f2f0cbb0c2be7d4f58cc29fb102cd66baa242ab31632bbb269f174fc46c29ba1",
-    "run_v2/frames/frame_07_prompt.txt": "c474f4e197980a7229c476ca08be5c9307740e784dff19d318dc58558efc65b9",
-    "run_v2/frames/frame_08_prompt.txt": "3af8889595c1936c84721d3b9bd0c56b91f965907f4a1a2228fb48dcbca72b38",
-    "run_v2/frames/frame_09_prompt.txt": "c5cdcfdc677287dc9d3ffbda7fd9af3052d9cc1748c332d39dbb6fd50c6245a9",
-    "run_v2/frames/frame_10_prompt.txt": "b18e928c4ffdb159dbb3da16e8b3443ea0711b36dce95ac77a90d319cb557479",
-    "run_v2/frames/frame_11_prompt.txt": "a5c90589bd44160651a0584957c70fe9db8f4283400e75df195f76bb43a8b346",
-    "run_v2/frames/frame_12_prompt.txt": "ecd1b5d29d416f29e87249a9b81f51bff5350588aaa0450da9bafc47466a4a6b",
-    "run_v2/frames/frame_13_prompt.txt": "a42b0519bbc29bcdbd49c0851917ab4e0dff43ac6d2ecb4c4e0bc9f3702c498e",
-    "run_v2/frames/frame_14_prompt.txt": "62d03d452c6185568c01351e91bdf58b33d1fd26db9597b6a9549e1441f1a34e",
-    "run_v2/frames/frame_15_prompt.txt": "e02e25809ae90b5fd8e9fe24790b1a688e8872ccc806349bdf046002b23d22b3",
-    "run_v2/frames/frame_16_prompt.txt": "b83b4b68e9af5b085d00c50a2eb7d64367dcdb9e7c7ad61dfae967b3679fbf8b",
-    "run_v2/frames/frame_17_prompt.txt": "069ec82d93c16e0e094244b635723f6481ea09b8d6d7379b7925c8869be95994",
-    "run_v2/frames/frame_18_prompt.txt": "7c31af6d3984a92a5a8fc4ec8d197d1ed0279b24d8859f9158f4894ccac10b25",
-    "run_v2/frames/frame_19_prompt.txt": "9c3446818c04ab840d8e0415fad10c22b63f5a7134c327eab87aa8e6e7f30fb0",
-    "run_v2/frames/frame_20_prompt.txt": "fa407a13b6adba1cabb853399aca834ba8a368acfeb51b32ce320ef625816f11",
-    "run_v2/frames/frame_21_prompt.txt": "24ba735d3dc25b2efe13a3fd132500508d4a6dd3d2cc597ae7e89c51e51f1094",
-    "run_v2/frames/frame_22_prompt.txt": "a9fff58eb10ec70bd324328110c615575248ee04fc0d07594070dd4ec59491f2",
-    "run_v2/frames/frame_23_prompt.txt": "297b12e6cbd34b23a2f4efb4d18a8c884256f7924058159946ae91d80982a7d5",
-    "run_v2/frames/frame_24_prompt.txt": "eeca0ac928ce1bd28284383973879b34f96e518e20d494f87f146ab2fc416361",
-    "run_v2/frames/frame_25_prompt.txt": "40c9da7a655d913f670db18cc3d6b22fee039899704a1cbe22257715da4e7b87",
-    "run_v2/frames/frame_26_prompt.txt": "fd575091046c859078ffb0152c45ab30055c30a610e8b5a00333c6321647db35",
-    "run_v2/frames/frame_27_prompt.txt": "e9b4de52a4402350fa55f9f0169eb71fa220bcb161e6694f72c276b695109612",
-    "run_v2/frames/frame_28_prompt.txt": "230701a549fa1917da407507a0f377d077b674f238367245ff0a035ad2a0c5a0",
-    "run_v2/frames/frame_29_prompt.txt": "36d98b39bdaa0bb2025a5250cf217ccf7c666319756ef80909f41c1c6ae3841b",
-    "run_v2/frames/frame_30_prompt.txt": "14296de4e10dbb2c2a96aaa83a02a76eaa228fef894094a4a4752013f66b2580",
-    "run_v2/frames/frame_31_prompt.txt": "f5a872ef4d79c7096c00175792209c6d920bd2367b27953701f904c5e9d9dbf4",
-    "run_v2/frames/frame_32_prompt.txt": "6889221bc23e1f96c4dfff13ff792908bb693a4ef4040188966fd4c77d900dd5",
-    "run_v2/frames/frame_33_prompt.txt": "c3ffda8f0db21412c095fd053027dbb6548bfffd61bae9b25f04a6e58d810e09",
-    "run_v2/frames/frame_34_prompt.txt": "5b8f2e067eb428c2b71c63e67ff24d1e67915bcf4ef3e7e9981b6472ac157d36",
-    "run_v2/frames/frame_35_prompt.txt": "bd82ddb2f5fc327af6122c330c45bdc832e60a20192a6b7af535ecb105554667",
-    "run_v2/frames/frame_36_prompt.txt": "1793735bec9203ead209cfa55e446cc5aefe26a1425ea349aa9cf105944d0577",
-    "run_v2/frames/frame_37_prompt.txt": "fad5d4d8fda81c45a5be975443f81984b436b528e3d1cce8ab5a0e3188242374",
-    "run_v2/frames/frame_38_prompt.txt": "d115fb042900d0f0d944b616fe85235fc9a6747b47d776b45be2e32c06252b21",
-    "run_v2/frames/frame_39_prompt.txt": "9fe367d461a75ddb35e084ad504f755080a178f18d9327360d386d8723da5b59",
-    "run_v2/frames/frame_40_prompt.txt": "e1c666e47055caf13d17b220b9201520f0e82ba4f3cd81e18a89f918f65fe991",
-    "run_v2/frames/frame_41_prompt.txt": "ff65feccec04b1303e5e9b639a7afa82fa1563ec05df1cd146311b199fe4233b",
-    "run_v2/frames/frame_42_prompt.txt": "9bbc777876cf1fafd389999c640c6ef5f9ce5e074d250a500899125038221225",
-    "run_v2/frames/frame_43_prompt.txt": "02a1059035c6d4929d51796b5fffe06b55080673152f23e42060023f61090b64",
-    "run_v2/frames/frame_44_prompt.txt": "200679bd6b98bd2926e7372b1e91ee01f3992d182179b2b3e75a70c95e37cf11",
-    "run_v2/frames/frame_45_prompt.txt": "f8fef2820af9ebd37119cdd752fa724303c463fefeb1b64dcacb1feac43fa6d0",
-    "run_v2/frames/frame_46_prompt.txt": "fe3e42dbb920efa89650eeaf9980b373c900331fc5f1824f4b6df0be7c91ac0b",
-    "run_v2/frames/frame_47_prompt.txt": "deb8c7518c9659aa6d8d2131cf0f919390ccf5982b3dcaa50276664963472211",
-    "run_v2/guides/phase_00.png": "3ed326f4fb43daa89cf81107276eae895fc60bb83d8fd0d833f0861b6663fe3a",
-    "run_v2/guides/phase_01.png": "c0615cf2d70d832802a82fd8e3786740eafc3848e8a89f2ad38dfa25a13fa567",
-    "run_v2/guides/phase_02.png": "57416562bfd9120131834a9e8d7fd0868335086f296132ca35c79def03f5eaf6",
-    "run_v2/guides/phase_03.png": "b27bf75a5cc92796cbc425ccf86b3f186599027c43e4eb59b8c79719d453ed99",
-    "run_v2/guides/phase_04.png": "89b9d6a4699038360cc90de5fa1d702f7e957f86265d8f8a002801a362cbf751",
-    "run_v2/guides/phase_05.png": "ccb7bf92fa6205cdc733e52a354070bad23d7293d9d126a62d728843a2c88ca1",
-    "run_v2/guides/phase_06.png": "2800dfbca1d8ff283739f8bc0fd39cfb88bcf72e21b1a9336ad52e982ca09bef",
-    "run_v2/guides/phase_07.png": "82aad527fa4f85085789abcd2a3b3f363148304b23b573582a7cd52c60e7f36f",
-    "run_v2/guides/phase_08.png": "020ff4d0864243045f614bba8b6ea5de96583f1c176fe5c74eb6e24bb7d757c8",
-    "run_v2/guides/phase_09.png": "773ec3e794f0badee78bdf187ebdd16702a83d4235141f2a8f050f5391c40365",
-    "run_v2/guides/phase_10.png": "e6b5ff2281f2dcc376326a764bb44545086fa2852c6dc22388d4524b4450ce32",
-    "run_v2/guides/phase_11.png": "1c8003caf5230d3624fab7bdd42e1e1a5941a4c42db50ad2164548333ad04f89",
-    "run_v2/guides/phase_12.png": "8e7a8a1629eb85d0d2bd4e385e819649e3008cba11054c2f0606e46ab3c86919",
-    "run_v2/guides/phase_13.png": "86279e06a84004da99076db8fa6e1367a850b1d5c5d4b0cd263ac35adae2cb42",
-    "run_v2/guides/phase_14.png": "4dfb8c41d81fbfd7757215533764b7d92068f30a8cb1dcb00d158635a993db88",
-    "run_v2/guides/phase_15.png": "81ae7885496c9ba4a9de4ea86c653a53ba7e8fcebabd38a076164fa0cf80f740",
-    "run_v2/guides/phase_16.png": "7a1199665ae5df2380a3e141e242b9125313697810a36db20ea8c6359266755e",
-    "run_v2/guides/phase_17.png": "00800facb7d63c9d734e1d2a634524e4e26933a5fd09edce35523fcc78b5ee39",
-    "run_v2/guides/phase_18.png": "8f94b1746473a730a7f5419b4c54c390fb78615679318c4fe3280e3235de5d50",
-    "run_v2/guides/phase_19.png": "f8004a7513052ee313f34a47849a5124de8911a88aac15387a9bbca3eeb7fa15",
-    "run_v2/guides/phase_20.png": "25ad1f80c199a83b74cde23d8421240827f6dccfd1a34b1b26dad024f0e37145",
-    "run_v2/guides/phase_21.png": "e4b51938cce3c707c44e127a6ac6aff042032a9769a351c2c34556d847d15e53",
-    "run_v2/guides/phase_22.png": "ecd41b433d053999a8c0072eeb1d34ecb8316dc2bef9015dd290306ebfe49c91",
-    "run_v2/guides/phase_23.png": "cd969de13690b65479bb69675067be7880f356835f204505232ab58e05351daa",
-    "run_v2/guides/phase_24.png": "e45ad10164c1aabef38841b50effaa056d42091d82e1d1747f054df64591d871",
-    "run_v2/guides/phase_25.png": "f16cd11467cae688d96fa58da216b657356317814255d927d95c1fc9d9131227",
-    "run_v2/guides/phase_26.png": "9cb77cad0d80286a46361bcb33c463794bc8d666f41a7b140d9d14c921a42cdd",
-    "run_v2/guides/phase_27.png": "f728a4d98b65d674f5c8ece594bad31a5270945681dfd2fa1d348274bd1a227a",
-    "run_v2/guides/phase_28.png": "297484fd6ce704915c35f8d25f7e6f36dbf159401b5c7f2b439822807f1761dc",
-    "run_v2/guides/phase_29.png": "e7034d61d8b661de2d6e688f0ab567bd57535b5e3a5f268a29163c8558c000d0",
-    "run_v2/guides/phase_30.png": "e710efc7c5bdcde52490c2b69da54c2974520614770479789904c4f43cc663a9",
-    "run_v2/guides/phase_31.png": "0144240b0338a87e219159bd3a330992433a11517f78445c85287267db24e259",
-    "run_v2/guides/phase_32.png": "387498d3807de899ef35cee54ae4e84b3d3b843e04fef378d56675c97be1f7b5",
-    "run_v2/guides/phase_33.png": "fb0eef8329bfb962b8e31e48cbdec35362338fc0756e646448d9f73fbe9bb144",
-    "run_v2/guides/phase_34.png": "36a04d3edd7552b0339dafd077d65c23b841b255601327390cb6063e0ce37c7b",
-    "run_v2/guides/phase_35.png": "ae06912dfa78e0941541f628d75bf1cd871fbde75fa52958eec49fa0160a0c25",
-    "run_v2/guides/phase_36.png": "fd189ea391b5a023b6e858881f0188e598409321ff4e68568874810526e7afe9",
-    "run_v2/guides/phase_37.png": "394a66e40055bfc10dad28a00beb807696240404416243f679d65c1f4f8cd9e8",
-    "run_v2/guides/phase_38.png": "69a0fc475cfc3b69d4355acdbe0bcb010193f24ae2c2140ad3865a54bd5ce67b",
-    "run_v2/guides/phase_39.png": "7572d37cf4483db76b0751f41b3c1c02dd5bac9c6b7cb8e23630bfc24efd5574",
-    "run_v2/guides/phase_40.png": "0e6da5588544158dae6f484ee0e114904d58020eef55d38ebbfcfdb9c82ff256",
-    "run_v2/guides/phase_41.png": "d4933fddb35a7a6b755b9692822594b886affa14e69942bbdfe4d17e440cdd5b",
-    "run_v2/guides/phase_42.png": "51f7e18d8c2cd425b0d902481e9e4e8a5514187d56d9f707d4c2df878cbddb96",
-    "run_v2/guides/phase_43.png": "3eec118c5aff2492e926eac4a4d1e911bd30231405a66c3b5494b177e976e42c",
-    "run_v2/guides/phase_44.png": "70243305de33f12034a2cbd9f4bedd1a87af0d6f0e9e2b53dd2e7c75cfc59c29",
-    "run_v2/guides/phase_45.png": "3bf15c4b8ab271ffea3b2c22813637199428da36454c6ae0b61b6e815aa83b9c",
-    "run_v2/guides/phase_46.png": "0923cf2cdc4482cb1bb789e3dca50f1bda66db6a942a4fd95b216b09c5aa1dc5",
-    "run_v2/guides/phase_47.png": "92e0ff7f3835997eea9b8f422657fe4db3c1dd6ca02e6e40c490a72829fe08c2",
-    "run_v2/guide_recipe.py": "973009447a9099a3f474513dba89b8b1097a2f759d4765013eac2194814140bc",
     "run_v2/measure_landmarks.py": "548d803049567f9ab16882f014f4b184d96842f84d016922075bdefe5c9e024a",
-    "run_v2/measured_landmarks.json": "a78f276a32ccf1bd090f4768e836d6748f6827a1d509f63a1f5fa99b3d8d5d4d",
-    "run_v2/build_profile.py": "64fd0701bc573bfe9af504d53b40d7f71f698c3a5497e627c60ac4b2fd3f441a",
-    "run_v2/keys.png": "4d6e11b091500af54280384b6f46217210d2516be73810ac53989a7e0ef3f2d4",
-    "run_v2/final_fix_results.json": "a3c20277c1b8398e9d486b68d254eeb805e838dcead35b911cf9b4fdf0f3a895",
-    "run_v2/first_results.json": "c30398a752dd78ba2fad4ca31d9bff6c71c0c54910354ed7602f20bffea96ce1",
-    "run_v2/generated_helper_results.json": "e995e2e23ae63fcd01e3c15b0a2a2ed3425d45e5380147e59a402e8f19d3ccc0",
-    "run_v2/repair_results.json": "be22d02a4648b6cb245f930bbcf957784b96b28c6471b0f2ff61b1d65660ebe7",
-    "run_v2/second_results.json": "46dfe2a97f9d47ca3bd4e0497374ea1fe1194375b0fad7595ef6eb1f9d0492c2",
-    "run_v2/generated_keys.json": "08c164d4b5806a060d6a162c420650e6ab72abe4a97d2d17cb450175faa068fb",
-    "run_v2/final4_result.json": "a19c993b1756b87f061bdf9d3af5d79b3a8f7078367f8511478319c88ad3a2f0",
-    "run_v2/helper_leg_repairs.json": "fcc7fe32c1e4335686844b2569ecc132992f77c821fcbfe9b1431ceffaaae321"
+    "run_v3/README.md": "3052f2846fbac852f4cf0514f3d92c2c5ecbf617f75bd199f8e91245332ebd1f",
+    "run_v3/baseline_source_art_48.json": "c8095e4ce218623327442aae9d0a2e3f35c49f050f0f050b4d6c0d0ec2595614",
+    "run_v3/build_profile.py": "c293812f33ccc9776b7986062304603bc71704b012b674a443ea3365bcf67bbf",
+    "run_v3/candidate_registration.json": "8ba4ff67251b6e77f4ad7420e759a1bc9efeec301c5830d589ae6c2a36b50ee6",
+    "run_v3/chronology.json": "335619a63c4efd665148695bb9fa2215824e868a999bd9547c04785ef246b02c",
+    "run_v3/frames/frame_08.png": "17332d6e4ed6ab1362919f9e2547362ffa94274df32b5a74cd6f84e3a9c538aa",
+    "run_v3/frames/frame_08_prompt.txt": "5c8794f75e55d6134e0e22891ba94f72156ffd66f7dad385e310bc811054457a",
+    "run_v3/frames/frame_09.png": "359bcde4c49eb7c65aa4446f4ca843149109734bcfcaa50aca15acfca809df17",
+    "run_v3/frames/frame_09_prompt.txt": "95056bde5dd597621234022c97d36529c675fc61e838a438cadfcf6dfab3b047",
+    "run_v3/frames/frame_10.png": "9d97cd3e4d6b1aaccca7de82afd054754b3b079409345a334c3e6a1188e57a42",
+    "run_v3/frames/frame_10_prompt.txt": "3b1daeee6e8cf85b3574faf82ce3ba425a88496dda6210383c93cf417bcb9a65",
+    "run_v3/frames/frame_11.png": "918139d733420bbfee9eea3be31df67492116dec49290372fd465a595279a647",
+    "run_v3/frames/frame_11_prompt.txt": "5ea02c3e8e877816f5d8b11703bbd1be68e0c911736df46baa115b8a730e82a2",
+    "run_v3/frames/frame_12.png": "7eaf74ffc4ab4e3cb4c2610d0a17035cb06b8d5ef55616ed263203b772881a61",
+    "run_v3/frames/frame_12_prompt.txt": "cb05bda8f711ff8a76cd4e5e37997c95d51f41a8668ff93c5f1de72e1c1c349d",
+    "run_v3/frames/frame_13.png": "7b94bafd472700ced674217f0bfbeb7d7d5b30ec78183112a30c7534b4eecaa7",
+    "run_v3/frames/frame_13_prompt.txt": "6f503a5cad9ef86a9cca0e04fb9b9ce50e454b17cd139a84085b09b6a24bac53",
+    "run_v3/frames/frame_14.png": "7c865246af0a861e2b178e28f9d3a5544daedfc01410f6ebcbf56278052dc342",
+    "run_v3/frames/frame_14_prompt.txt": "35734f515dfaf4a31ceb1731f2eed6ea54500e700755f0d34426e61b810758c1",
+    "run_v3/frames/frame_15.png": "5602a9732720da197a1ca4d1ddbffc436ebde0fce038c8760998d1ae6e57d000",
+    "run_v3/frames/frame_15_prompt.txt": "8b66f46c406368e7247a5f7746c427c0bd5ebe1018578b4a9219b01e09acf262",
+    "run_v3/frames/frame_16.png": "f0d3126ac4a11d5edd4761912871e1f98f756e681123c953c32644891fd5734e",
+    "run_v3/frames/frame_16_prompt.txt": "aebd6db33184835e2eff0758929cd70b23f64073138f9a26fb9b023bc35e8fb9",
+    "run_v3/frames/frame_17.png": "7b414ec433ef495e58db645667b9af569c887943effc969d5a769e4f9668860c",
+    "run_v3/frames/frame_17_prompt.txt": "e98cbb55628a72518ed16e0b3845868b8467c67511966dd064d02c7251235cc7",
+    "run_v3/frames/frame_35.png": "7bf1a2947064cf2175eb7fa65710df06c28931236bc952c505f7be904758231b",
+    "run_v3/frames/frame_35_prompt.txt": "7f87a51cb02c6e4b4a96293f2a010faa8c27b606f23e66827764fcbe2a9c6b6b",
+    "run_v3/frames/frame_38.png": "1baed51ec7c4e65e6908730c9f6356da6af826b26bebc68a7c0253fade745790",
+    "run_v3/frames/frame_38_prompt.txt": "ff05d1aaae82c1765faa8712558f128bfda0533959a28574dbeb018e14ab0ee3",
+    "run_v3/frames/frame_39.png": "c1b11fc5a642d91ecbc3869eea317b378b97b40a429a0e49f050a8d3a144e46b",
+    "run_v3/frames/frame_39_prompt.txt": "ac8315b5bbc3a3113f3c07e9f5450bedb63cada2657eb2ec5291b3adca07fdff",
+    "run_v3/frames/frame_40.png": "88edf8cc6a0f730a497fbe6491ac1b465ea75e7075bab662b7b00a986465061c",
+    "run_v3/frames/frame_40_prompt.txt": "c77bf86b0f934640ab7993d4102ef64361d7aa974d6bf710e56d87ee51b8b824",
+    "run_v3/frames/frame_41.png": "7bcb44cf16a51c79e43ee084ad89312ed0e528edb864ff8fc71ce5b5247b415a",
+    "run_v3/frames/frame_41_prompt.txt": "27c9354b3d72d02011cb7d22933436d31e06352f6c8b8bb1c98274e8f641448b",
+    "run_v3/guides/phase_10.png": "0384b8a1b49d1718687451b2b672fd06dc890e4f45e8fae4455fb5056d455f93",
+    "run_v3/guides/phase_11.png": "42186502e2d6c05622dbda170cf18d55b180c09827f77ccd825795f27b4894c9",
+    "run_v3/history/frame_13_rejected_outlier_91ac9dce0af3.png": "91ac9dce0af3542af9ae2afdf2e8b3b567851441f2e4a75ee3ef34996fe94221",
+    "run_v3/history/frame_14_before_final_join_54578bcc4c5d.png": "54578bcc4c5dbc45aa638d629e9e6eebef2656474f46b71ff1ceb13cd66edcbf",
+    "run_v3/history/frame_15_before_subdivision_or_palette_c6fd682fc392.png": "c6fd682fc392ee5f1c07ea2745aaa3aae74f6ce44d510ee13cb78fd59b3294a3",
+    "run_v3/history/frame_35_before_midpoint_or_palette_7866832031f6.png": "7866832031f6e31108ecaaa71f829a805934b62e472e903d731184402aed7854",
+    "run_v3/history/frame_38_before_final_palette_a95809886522.png": "a95809886522ea24aaf8f6a7f8caf740facfd515bfbf4393a61c2818836c8706",
+    "run_v3/history/frame_40_before_final_palette_d76cfe72c6e5.png": "d76cfe72c6e529cc694e25ced2cc5feea0516d5aabf6830bfc18059bc70c9bc0",
+    "run_v3/measure_reviewed_landmarks.py": "c42eac5e4300812504444ae3376cca19ab8630a0c7eb2533bfbcdd13c77cdf01",
+    "run_v3/measured_landmarks.json": "30f782267c02324852ee069827fb92976497c0d415d86822596b6712c28d244a",
+    "run_v3/motion_review.json": "40149f0d5a7ee4d4d78696828844babe26c935f0a7c9a0fdd728cc730e59e8e1",
+    "run_v3/refs/head_canvas_08_reference_only.png": "7fb43250454a38078c25fa28f3d5267f774be6eebd9176a34b90719cc13bec96",
+    "run_v3/refs/head_canvas_16_reference_only.png": "f6ddcbe2f368e8b553c158fb8be35e2103bd45378371f3255ddc4c6a01aee924",
+    "run_v3/refs/head_canvas_17_reference_only.png": "2f41fff6194cccf61e59abb5b714796c2bfa1c4a3b4e9c6202bf615a71d01ada",
+    "run_v3/refs/head_canvas_40_reference_only.png": "55eecfa8a8caf552001c8d8f6dfd07907fa83f8f830df53033ff0cc3ddebf88e",
+    "run_v3/refs/left_leg_09.png": "7869cee9fa30d7ebd0d104d64012e8e2ff9660767c313e40cb6224854b20d390",
+    "run_v3/refs/lower_canvas_09_reference_only.png": "7c930ba090816f102dfcc8cabc8ba1fab3a97308942d92036368fd2558feeac8",
+    "run_v3/refs/lower_canvas_12_reference_only.png": "f843fd6768f7e4d7b82a8809543facbb6d3ffe99283be017c244a8754493bdb6",
+    "run_v3/refs/original_34.png": "5f806f8711af19bc4bef664aaddbc2a06370de8785fac2818274ac6fea499666",
+    "run_v3/refs/original_36.png": "fabfd76454756eb6cb2ea1aff8bc3c5fd5e2935eea13c1550f974149d4a41b49",
+    "run_v3/refs/partial_fold_original_13.png": "24530cafd628ea207120d3145c8b45010ba7b6d3ca633992ea8628539a3608a6",
+    "run_v3/refs/right_leg_13_current_reference_only.png": "84cb1619f0a736b0e93a0455702e4d3473093086ecb949b69222a7c86ab0e189",
+    "run_v3/refs/right_leg_15_reference_only.png": "1c853b5fb5d0b66accdc314456d7e4af76156f7f1f695d603e66daebaa603957",
+    "run_v3/refs/upper_10.png": "e7f8f6d7f7379d67a910e042a8d090913b3b0b8000eff41978da59682b5a60db",
+    "run_v3/refs/upper_11.png": "835a109a050ab1cfb5cb72fa18a80ec7eba542aafaf85b959187fac17d4f0008",
+    "run_v3/refs/upper_canvas_09_reference_only.png": "e3c139c0b7732c48e8b951e1a84186a741bbf80e21400bd57deaf3d349c02190",
+    "run_v3/refs/upper_canvas_12_reference_only.png": "71a10df8c5c198ba5d2a9fc62c67c4f87538456d364e16a4c675d03fbd2485dc",
+    "run_v3/register_candidates.py": "7aab8d5dd635d2c40716d6200370bd771c1cde3d90b0ce0d7500146960abc90e",
+    "run_v3/reviewed_landmarks.json": "8899d57ffa31b9a9a6d7e1c5946785f984123b4a2c59001687f6e61cb83f31fa",
+    "run_v3/selected_generation_records.json": "74347d4559079094b1978679ab9fe0472363a9ac3b5918fb2122c60a7324453e"
   },
   "frames": [
     {
@@ -568,45 +512,43 @@
       "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
-      "source": "run_v2/frames/frame_08.png",
+      "source": "run_v3/frames/frame_08.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1076,
+        1462
       ],
       "scale": 0.63,
       "origin": [
-        27.2908,
-        46.9935
+        35.24709000000001,
+        41.489859999999986
       ],
       "landmarks": {
         "eyes": [
-          563.68,
-          145.88
+          548.81,
+          153.96
         ],
         "neck": [
-          574.2,
-          258.88
+          566.2,
+          266.88
         ],
         "belt": [
-          571.02,
-          555.32
-        ],
-        "right_sole": null,
-        "left_sole": null
+          559.04,
+          565.64
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.95653,
-        "neck": 0.67945,
-        "belt": 0.84345
+        "eyes": 0.92832,
+        "neck": 0.66475,
+        "belt": 0.81817
       },
-      "generation_id": "exec-514d3c36-dcbe-49e2-aa53-f3c9d6a89fd6",
+      "generation_id": "exec-d7539c1b-b242-4cbf-8e31-d975ee00a8ac",
       "authored_weight_offset_y": 1.0741,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_09.png",
+      "source": "run_v3/frames/frame_09.png",
       "cell": [
         0,
         0,
@@ -615,12 +557,12 @@
       ],
       "scale": 0.63,
       "origin": [
-        36.0762,
-        41.7574
+        35.69691,
+        41.48522
       ],
       "landmarks": {
         "eyes": [
-          548.23,
+          549.23,
           150.68
         ],
         "neck": [
@@ -628,23 +570,21 @@
           267.44
         ],
         "belt": [
-          559.02,
-          561.32
-        ],
-        "right_sole": null,
-        "left_sole": null
+          559.36,
+          562.76
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9377,
-        "neck": 0.76464,
-        "belt": 0.8026
+        "eyes": 0.92287,
+        "neck": 0.73123,
+        "belt": 0.77571
       },
-      "generation_id": "exec-05c75b11-751c-4753-97c1-05f8624686b8",
+      "generation_id": "exec-613abcbd-22df-4e1c-9e2e-7ca9eaef9505",
       "authored_weight_offset_y": -0.4375,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_10.png",
+      "source": "run_v3/frames/frame_10.png",
       "cell": [
         0,
         0,
@@ -653,36 +593,34 @@
       ],
       "scale": 0.63,
       "origin": [
-        35.6623,
-        46.0959
+        44.232149999999976,
+        40.85431999999997
       ],
       "landmarks": {
         "eyes": [
-          551.26,
-          147.16
+          533.39,
+          151.24
         ],
         "neck": [
-          560.35,
-          256.34
+          544.45,
+          265.78
         ],
         "belt": [
-          556.66,
-          543.56
-        ],
-        "right_sole": null,
-        "left_sole": null
+          551.7,
+          558.2
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.95697,
-        "neck": 0.72569,
-        "belt": 0.84502
+        "eyes": 0.94462,
+        "neck": 0.66911,
+        "belt": 0.78778
       },
-      "generation_id": "exec-9efc3a80-a6b2-4444-a5c6-fcd57a4d1bac",
+      "generation_id": "exec-ca63d736-c46c-47cc-8856-8ba31860a5f3",
       "authored_weight_offset_y": -1.963,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_11.png",
+      "source": "run_v3/frames/frame_11.png",
       "cell": [
         0,
         0,
@@ -691,36 +629,34 @@
       ],
       "scale": 0.63,
       "origin": [
-        37.3652,
-        41.6252
+        44.01606,
+        39.145480000000006
       ],
       "landmarks": {
         "eyes": [
-          552.55,
-          147.8
+          533.68,
+          151.88
         ],
         "neck": [
-          561.1,
-          261.44
+          544.45,
+          266.78
         ],
         "belt": [
-          545.0,
-          556.0
-        ],
-        "right_sole": null,
-        "left_sole": null
+          552.36,
+          558.76
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.95731,
-        "neck": 0.82309,
-        "belt": 0.79274
+        "eyes": 0.94041,
+        "neck": 0.68711,
+        "belt": 0.81319
       },
-      "generation_id": "exec-b308ee18-e40c-4266-ad78-52b884a2556d",
+      "generation_id": "exec-55c22193-5cc1-4352-ba45-a2e8a37000a7",
       "authored_weight_offset_y": -3.2384,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_12.png",
+      "source": "run_v3/frames/frame_12.png",
       "cell": [
         0,
         0,
@@ -729,223 +665,211 @@
       ],
       "scale": 0.63,
       "origin": [
-        47.4363,
-        40.7854
+        47.27693999999999,
+        41.07019999999999
       ],
       "landmarks": {
         "eyes": [
-          530.97,
-          146.52
+          531.68,
+          145.88
         ],
         "neck": [
           540.1,
           259.44
         ],
         "belt": [
-          541.68,
-          559.88
-        ],
-        "right_sole": null,
-        "left_sole": null
+          541.34,
+          559.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.96432,
-        "neck": 0.73467,
-        "belt": 0.83163
+        "eyes": 0.95623,
+        "neck": 0.71309,
+        "belt": 0.82705
       },
-      "generation_id": "exec-9450e724-7ea8-44d1-b07b-85f2b13c91f4",
+      "generation_id": "exec-a77978a1-db88-4ff8-ac51-5dc26e7a9925",
       "authored_weight_offset_y": -4.0,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_13.png",
+      "source": "run_v3/frames/frame_13.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1054,
+        1492
       ],
       "scale": 0.63,
       "origin": [
-        44.6259,
-        38.2821
+        43.731930000000006,
+        37.3673
       ],
       "landmarks": {
         "eyes": [
-          532.68,
-          151.88
+          536.39,
+          153.24
         ],
         "neck": [
-          543.1,
-          265.44
+          548.45,
+          266.78
         ],
         "belt": [
-          551.7,
-          559.2
-        ],
-        "right_sole": null,
-        "left_sole": null
+          546.68,
+          560.88
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.95799,
-        "neck": 0.70949,
-        "belt": 0.84542
+        "eyes": 0.93583,
+        "neck": 0.66371,
+        "belt": 0.78662
       },
-      "generation_id": "exec-78fa3137-3e06-4901-a3c6-30e925574c79",
+      "generation_id": "exec-a2eaef06-b6db-4d25-8a50-e3142665e4e7",
       "authored_weight_offset_y": -4.1875,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_14.png",
+      "source": "run_v3/frames/frame_14.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
       "scale": 0.63,
       "origin": [
-        37.1446,
-        42.1992
+        41.262960000000014,
+        30.682760000000002
       ],
       "landmarks": {
         "eyes": [
-          549.55,
-          146.8
+          543.52,
+          161.32
         ],
         "neck": [
-          558.35,
-          256.34
+          554.75,
+          276.1
         ],
         "belt": [
-          553.0,
-          554.0
-        ],
-        "right_sole": null,
-        "left_sole": null
+          543.66,
+          577.56
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.94417,
-        "neck": 0.80842,
-        "belt": 0.82336
+        "eyes": 0.91957,
+        "neck": 0.74289,
+        "belt": 0.79076
       },
-      "generation_id": "exec-79f54513-2d35-42df-89ee-5b71e3eed0f4",
+      "generation_id": "exec-e553a0c1-a5bc-451b-a07e-f023c6bedb70",
       "authored_weight_offset_y": -4.0,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_15.png",
+      "source": "run_v3/frames/frame_15.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
       "scale": 0.63,
       "origin": [
-        35.1425,
-        41.8202
+        40.62413999999999,
+        36.13506
       ],
       "landmarks": {
         "eyes": [
-          550.97,
-          145.52
+          541.94,
+          152.04
         ],
         "neck": [
-          563.7,
-          257.68
+          554.2,
+          266.88
         ],
         "belt": [
-          557.66,
-          559.56
-        ],
-        "right_sole": null,
-        "left_sole": null
+          550.04,
+          572.64
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.94482,
-        "neck": 0.74024,
-        "belt": 0.77408
+        "eyes": 0.91836,
+        "neck": 0.73817,
+        "belt": 0.74745
       },
-      "generation_id": "exec-bf1953bb-b136-4f30-ab21-ab3003b90148",
+      "generation_id": "exec-513e79dc-e9d6-44aa-a990-9f3718ada965",
       "authored_weight_offset_y": -3.5625,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_16.png",
+      "source": "run_v3/frames/frame_16.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
       "scale": 0.63,
       "origin": [
-        34.6461,
-        42.3146
+        40.33434,
+        37.26959999999999
       ],
       "landmarks": {
         "eyes": [
-          552.55,
-          146.8
+          542.52,
+          151.32
         ],
         "neck": [
-          565.7,
-          258.68
+          556.1,
+          267.44
         ],
         "belt": [
-          556.32,
-          557.12
-        ],
-        "right_sole": null,
-        "left_sole": null
+          549.34,
+          570.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.93727,
-        "neck": 0.80016,
-        "belt": 0.80466
+        "eyes": 0.93334,
+        "neck": 0.71848,
+        "belt": 0.77603
       },
-      "generation_id": "exec-a8054121-c0c1-4eb9-82c6-bb1496470183",
+      "generation_id": "exec-975ea0aa-b743-41dd-9224-5c4536c58e9e",
       "authored_weight_offset_y": -3.0,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_17.png",
+      "source": "run_v3/frames/frame_17.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1055,
+        1491
       ],
       "scale": 0.63,
       "origin": [
-        36.2803,
-        45.3997
+        40.13589000000002,
+        39.03665999999998
       ],
       "landmarks": {
         "eyes": [
-          552.55,
-          142.8
+          542.81,
+          151.96
         ],
         "neck": [
-          564.7,
-          252.68
+          558.45,
+          266.78
         ],
         "belt": [
           548.34,
-          554.44
-        ],
-        "right_sole": null,
-        "left_sole": null
+          563.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.9492,
-        "neck": 0.77706,
-        "belt": 0.76289
+        "eyes": 0.92244,
+        "neck": 0.71863,
+        "belt": 0.77158
       },
-      "generation_id": "exec-83721915-eb21-4602-8223-fb591cef26ad",
+      "generation_id": "exec-dfe625cb-c3b9-4451-88f1-4676f03373b1",
       "authored_weight_offset_y": -2.4375,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
       "source": "run_v2/frames/frame_18.png",
@@ -1597,7 +1521,7 @@
       "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
-      "source": "run_v2/frames/frame_35.png",
+      "source": "run_v3/frames/frame_35.png",
       "cell": [
         0,
         0,
@@ -1606,33 +1530,31 @@
       ],
       "scale": 0.63,
       "origin": [
-        28.176,
-        38.891
+        35.20298999999998,
+        41.725959999999986
       ],
       "landmarks": {
         "eyes": [
-          561.39,
-          154.24
+          550.97,
+          146.52
         ],
         "neck": [
-          575.9,
-          266.56
+          563.7,
+          258.68
         ],
         "belt": [
-          569.02,
-          556.32
-        ],
-        "right_sole": null,
-        "left_sole": null
+          557.34,
+          559.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.94638,
-        "neck": 0.70695,
-        "belt": 0.80512
+        "eyes": 0.91828,
+        "neck": 0.71381,
+        "belt": 0.74886
       },
-      "generation_id": "exec-355388fe-5675-40c3-98d3-cc60c597a1f7",
+      "generation_id": "exec-c786f0fd-c9b7-44af-9deb-5ac6a72d8930",
       "authored_weight_offset_y": -3.2384,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
       "source": "run_v2/frames/frame_36.png",
@@ -1711,45 +1633,43 @@
       "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     },
     {
-      "source": "run_v2/frames/frame_38.png",
+      "source": "run_v3/frames/frame_38.png",
       "cell": [
         0,
         0,
-        1086,
-        1448
+        1067,
+        1474
       ],
       "scale": 0.63,
       "origin": [
-        31.9887,
-        40.541
+        40.01619000000003,
+        39.32887999999998
       ],
       "landmarks": {
         "eyes": [
-          552.97,
-          150.52
+          540.81,
+          152.96
         ],
         "neck": [
-          573.2,
-          264.88
+          559.9,
+          267.56
         ],
         "belt": [
-          564.68,
-          550.88
-        ],
-        "right_sole": null,
-        "left_sole": null
+          551.34,
+          551.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.94455,
-        "neck": 0.66027,
-        "belt": 0.8296
+        "eyes": 0.91612,
+        "neck": 0.69123,
+        "belt": 0.76439
       },
-      "generation_id": "exec-7937c1eb-ee41-4a5b-886c-2543ab8da7d8",
+      "generation_id": "exec-877af6e8-2091-4c43-a857-6a7b0b70a8d4",
       "authored_weight_offset_y": -4.0,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_39.png",
+      "source": "run_v3/frames/frame_39.png",
       "cell": [
         0,
         0,
@@ -1758,36 +1678,34 @@
       ],
       "scale": 0.63,
       "origin": [
-        31.9824,
-        40.4367
+        36.38423999999999,
+        38.69033999999999
       ],
       "landmarks": {
         "eyes": [
-          552.39,
-          151.24
+          547.1,
+          152.6
         ],
         "neck": [
-          573.2,
-          265.88
+          567.0,
+          268.0
         ],
         "belt": [
-          565.68,
-          551.88
-        ],
-        "right_sole": null,
-        "left_sole": null
+          555.34,
+          557.44
+        ]
       },
       "landmark_match_scores": {
-        "eyes": 0.93226,
-        "neck": 0.65649,
-        "belt": 0.80627
+        "eyes": 0.9329,
+        "neck": 0.71041,
+        "belt": 0.82534
       },
-      "generation_id": "exec-840956f6-8885-49e6-a522-c8f889eed47b",
+      "generation_id": "exec-8f72d880-5860-4c99-8888-7e08d0b5a744",
       "authored_weight_offset_y": -3.5625,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
-      "source": "run_v2/frames/frame_40.png",
+      "source": "run_v3/frames/frame_40.png",
       "cell": [
         0,
         0,
@@ -1796,8 +1714,44 @@
       ],
       "scale": 0.63,
       "origin": [
-        31.4242,
-        40.2382
+        35.010210000000015,
+        39.149519999999995
+      ],
+      "landmarks": {
+        "eyes": [
+          548.81,
+          151.96
+        ],
+        "neck": [
+          569.1,
+          268.44
+        ],
+        "belt": [
+          558.36,
+          558.76
+        ]
+      },
+      "landmark_match_scores": {
+        "eyes": 0.91869,
+        "neck": 0.68616,
+        "belt": 0.79714
+      },
+      "generation_id": "exec-59b3173e-014d-4b32-ba17-f05608b98496",
+      "authored_weight_offset_y": -3.0,
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
+    },
+    {
+      "source": "run_v3/frames/frame_41.png",
+      "cell": [
+        0,
+        0,
+        1055,
+        1491
+      ],
+      "scale": 0.63,
+      "origin": [
+        31.424249999999994,
+        40.80065999999997
       ],
       "landmarks": {
         "eyes": [
@@ -1811,9 +1765,7 @@
         "belt": [
           565.7,
           557.2
-        ],
-        "right_sole": null,
-        "left_sole": null
+        ]
       },
       "landmark_match_scores": {
         "eyes": 0.93518,
@@ -1821,46 +1773,8 @@
         "belt": 0.82544
       },
       "generation_id": "exec-0aa58514-21aa-4a7b-abb8-c7dedf0acf91",
-      "authored_weight_offset_y": -3.0,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
-    },
-    {
-      "source": "run_v2/frames/frame_41.png",
-      "cell": [
-        0,
-        0,
-        1055,
-        1491
-      ],
-      "scale": 0.63,
-      "origin": [
-        31.4772,
-        40.4075
-      ],
-      "landmarks": {
-        "eyes": [
-          553.39,
-          151.24
-        ],
-        "neck": [
-          574.2,
-          266.88
-        ],
-        "belt": [
-          566.02,
-          557.32
-        ],
-        "right_sole": null,
-        "left_sole": null
-      },
-      "landmark_match_scores": {
-        "eyes": 0.92858,
-        "neck": 0.67503,
-        "belt": 0.82245
-      },
-      "generation_id": "exec-15461d42-1eb5-42a6-8854-34842cb04587",
       "authored_weight_offset_y": -2.4375,
-      "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
+      "notes": "Complete image-authored continuity repair or explicitly recorded whole-pose chronology selection. Actual body landmarks register the entire drawing at fixed density; no per-limb transform, source-bound fitting, pasted upper region or temporal pixel interpolation."
     },
     {
       "source": "run_v2/frames/frame_42.png",
@@ -2090,5 +2004,11 @@
       "authored_weight_offset_y": -0.3912,
       "notes": "One complete image-authored painted pose. Right sword elbow pumps hip/waist/sternum; left shield smaller counterbalance. Constant whole-source density and measured multi-landmark registration. Guide diagrams never render; no isolated limb transform, warped idle or crossfade."
     }
-  ]
+  ],
+  "continuity_review": {
+    "selected_source_records": "run_v3/selected_generation_records.json",
+    "whole_pose_chronology": "run_v3/chronology.json",
+    "actual_landmark_review": "run_v3/reviewed_landmarks.json",
+    "foot_lock_limit": "Frontal detailed drawings are upright billboards with mostly cropped soles. Actual3D support-point ground locking at4m/s is not established by this source/shot review."
+  }
 }

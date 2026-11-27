@@ -1,5 +1,9 @@
 # Iselin — frontal cinematic run revision 2
 
+> Historical revision. The active selection is `../source_art_48.json`;
+> [revision 3](../run_v3/README.md) records the current continuity corrections.
+> The implementation status and source descriptions below refer to revision 2.
+
 Status: implemented for the owner's in-game Gallery review. Internal pose and
 continuity checks do not represent user approval of the new drawings.
 

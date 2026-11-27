@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "observations": {
+    "run_v3/key_32_braid_path.png": {
+      "source_sha256": "643fce753259ea30f7daa9dff8bd5b3cc106b02d1157cfbddcff3e6d9ae8fac1",
+      "belt": {
+        "point": [
+          633,
+          475
+        ],
+        "uncertainty_source_pixels": 3,
+        "description": "Observed center of the circular waist buckle. The automatic NCC match selected the chest clasp above it, not the waist."
+      }
+    }
+  }
+}

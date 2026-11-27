@@ -1,0 +1,73 @@
+{
+  "frame": 10,
+  "attempt": "d",
+  "generation_id": "exec-c2b2223a-e3d0-4269-8cd0-3a2aebcf2aa3",
+  "source_master": "helper_braid_frame_10_d.png",
+  "source_path": "/workspace/generated_images/exec-c2b2223a-e3d0-4269-8cd0-3a2aebcf2aa3.png",
+  "prompt_file": "helper_braid_frame_10_d_prompt.txt",
+  "prompt": "Draw this same COMPLETE Iselin running figure on transparent background, correcting ONLY the loose terminal tuft of the viewer-right braid. Reference1 has an orange target circle ABOVE the pumping fist; reference2 is the identical unmarked current painting. Preserve the exact full figure, face, costume, white loose hair, mantle/coat folds, arm/fist positions, connected leg chains, boots, body proportions and density from reference2. Keep the braid root, upper plaits and its ordinary narrow taper exactly as they are. The current loose end hangs down and brushes the top of the fist/gauntlet. REDRAW THIS LOOSE TERMINAL TUFT flicking UPWARD AND SLIGHTLY OUTWARD, so its actual pointed end finishes inside the orange circle near[625,320] in the common 1024 composition, leaving a CLEAR TRANSPARENT GAP of at least fifteen pixels above the fist. Do not leave any hair touching or fused to the hand, and do not draw a hand gripping the braid. Keep the full plait length and ordinary volume; redirect only the unbraided last wisp and its neighboring bend. No broad loop, no hanging return curl toward the fist, no expanded braid. The pointed free wisp must be visibly ABOVE the hand, not merely pass through the orange circle and return down onto the gauntlet. Remove the orange annotation completely. One unified coherent painted female figure, all hair/cloth/boots inside transparent margins; exactly two arms and two legs, one braid on viewer right and mantle on viewer left. No pasted regions, restoration, piece transforms, ghosts, background, floor, shadow, text or guide marks.",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_d_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_c_reference_registered.png"
+  ],
+  "transparent_background": true,
+  "status": "candidate: observed midpoint approved by main artist for subdivision and full-bank QA",
+  "diagnostic_json": "/tmp/helper_braid_frame_10_d_canonical.json",
+  "source_sha256": "c2d527255eca168fd4e400a5c150982f6397d3624cf05f0af98324dc5aec55b4",
+  "prompt_file_sha256": "86632ca13264155a62dc1dab014ed3b2a73f4114ae7ce7b392f7936d866b7123",
+  "exact_prompt_sha256": "922cd6f8eaa209be3d91d153649c75f578fe0e59e6377292f93c92d1af533e63",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_d_guide.png": "17ad0bc2c27f7b363abbfa856599d66f8c64ad68f7d81f24359b12010a7e5029",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_10_c_reference_registered.png": "eb90e501fa0b90fc48224598bb9450ff01f47bcaa7811b5b818642be6ba91aa1"
+  },
+  "raw_source_byte_preservation_verified": true,
+  "helper_observed_registration": {
+    "frame": 10,
+    "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_10_d.png",
+    "features": {
+      "face": {
+        "point": [
+          630.095,
+          173.007
+        ],
+        "score": 0.8388,
+        "template_scale": 1.22461
+      },
+      "neck": {
+        "point": [
+          627.41,
+          246.978
+        ],
+        "score": 0.8296,
+        "template_scale": 1.34707
+      },
+      "belt": {
+        "point": [
+          620.651,
+          472.742
+        ],
+        "score": 0.6506,
+        "template_scale": 1.32258
+      }
+    },
+    "scale": 0.8165865050914168,
+    "origin": [
+      -0.33453915940583556,
+      0.32109814553203364
+    ],
+    "canonical_landmarks": {
+      "face": [
+        514.193,
+        141.596
+      ],
+      "neck": [
+        512.0,
+        202.0
+      ],
+      "belt": [
+        506.481,
+        386.356
+      ]
+    }
+  }
+}

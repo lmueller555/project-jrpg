@@ -1,0 +1,75 @@
+{
+  "frame": 11,
+  "attempt": "d",
+  "generation_id": "exec-b08203f8-1e53-42a3-a459-7f615e2681ed",
+  "source_master": "helper_braid_frame_11_d.png",
+  "source_path": "/workspace/generated_images/exec-b08203f8-1e53-42a3-a459-7f615e2681ed.png",
+  "prompt_file": "helper_braid_frame_11_d_prompt.txt",
+  "prompt": "Draw ONE COMPLETE Iselin running figure from this authoring guide. Keep its exact accepted full-body pose, head/neck/shoulder/torso proportions, face, white loose hair, blue/silver costume, mantle/coat folds, both arms and fists, both connected legs and boot positions. Reference 1 is the full figure; ONLY the obsolete lower braid is hidden by a dark rectangular GUIDE OVERLAY, with its replacement centerline in orange. The dark rectangle, orange marks and text are not artwork and must disappear completely. Fill that area with normal blue costume behind a new naturally painted white braid. Reference 2 is the actual preceding braid for ordinary narrow plaits, taper, length and root construction. Reference 3 is this frame's accepted fist/gauntlet detail: keep that hand unchanged and separate from the braid. Keep reference 1's visible head attachment and upper braid intact, then paint the LOWER THIRD along the orange centerline, from (618,276) down/inward through (613,291), (604,305), (597,313), and end with a narrow loose wisp at (605,319) in the 1024 composition. This is a modest inward bend from reference 2. The free tip must stay above and slightly outside the fist; it must NOT cross the chest to x565 or touch the hand. Preserve ordinary plait width and approximate overall length/volume; no giant loop, fat braid, stub, extra tail or hand gripping hair. This actual intermediate lower-braid shape is the only requested motion change. The rest of the complete figure stays faithful to reference 1, with braid on viewer right and mantle viewer left. Exactly two arms/two legs/one braid. Full painted female figure, transparent background, all hair and boots inside margins. No rectangle, guides, marks, text, floor, shadow, background, pasted regions, regional restoration, warped pieces or blended ghosts.",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_d_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_hand_clearance_detail.png"
+  ],
+  "transparent_background": true,
+  "status": "candidate: complete actual intermediate braid bend, pending full-bank QA",
+  "diagnostic_json": "/tmp/helper_braid_frame_11_d_canonical.json",
+  "source_sha256": "a3c26211bfce80b177c536b40059cfb15aeb833ee86ed8d1b72a96b3f3a40cab",
+  "prompt_file_sha256": "cda2a719182a69af5e85d9c6b3e81e7d38d4be62620390c2062218560b0eddf5",
+  "exact_prompt_sha256": "5d544ac21009ebc5c3d63accb39baa5aa377abf7303bc29123d15c516a420f72",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_d_guide.png": "8ff28e85cd11596bd9239c675e15c7f391a5e06146eabc0a5f922f08772f8a71",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_midpoint_10_d_detail.png": "0c9f8cc8d53f971269c04dfa632ba44133df60e08756b2a394fa52747ddbbc21",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_11_hand_clearance_detail.png": "71b33bc0b0f0a964b7e1c5e8857088ac715cb5a03722926de6b837bca79f0ec5"
+  },
+  "raw_source_byte_preservation_verified": true,
+  "helper_observed_registration": {
+    "frame": 11,
+    "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_braid_frame_11_d.png",
+    "features": {
+      "face": {
+        "point": [
+          628.092,
+          173.007
+        ],
+        "score": 0.8851,
+        "template_scale": 1.22461
+      },
+      "neck": {
+        "point": [
+          627.993,
+          246.048
+        ],
+        "score": 0.8502,
+        "template_scale": 1.29809
+      },
+      "belt": {
+        "point": [
+          620.651,
+          466.742
+        ],
+        "score": 0.7133,
+        "template_scale": 1.32258
+      }
+    },
+    "scale": 0.8165865050914168,
+    "origin": [
+      -0.8106090918741984,
+      0.11552359526706368
+    ],
+    "canonical_landmarks": {
+      "face": [
+        512.081,
+        141.391
+      ],
+      "neck": [
+        512.0,
+        201.035
+      ],
+      "belt": [
+        506.005,
+        381.251
+      ]
+    }
+  }
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "actor": "lucan",
+    "measurements": [
+      {
+        "frame": 35,
+        "source": "run_v2/frames/frame_35.png",
+        "sha256": "f0bdc4d4b3470b4f6d54a7ecf1e6d5091761c774e5f4c5006c93da8904c6d150",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              427.5323693723299,
+              483.0450213604995
+            ],
+            "point_neck_relative": [
+              -93.47160729543214,
+              136.3855634571147
+            ],
+            "bounds_source": [
+              388,
+              440,
+              469,
+              526
+            ],
+            "area": 3043,
+            "candidate_count": 36
+          }
+        }
+      },
+      {
+        "frame": 36,
+        "source": "run_v2/frames/frame_36.png",
+        "sha256": "a973b6b54f186517ea3d89ac3c15e68afb499883f8dbd4e60920ff98bbddb4d9",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              358.90859193582435,
+              594.8252058264725
+            ],
+            "point_neck_relative": [
+              -114.21358708043068,
+              205.34547967067766
+            ],
+            "bounds_source": [
+              310,
+              550,
+              413,
+              642
+            ],
+            "area": 4737,
+            "candidate_count": 41
+          }
+        }
+      }
+    ],
+    "violations": [
+      {
+        "check": "hand_gross_step",
+        "side": "anatomical_right",
+        "frames": [
+          35,
+          36
+        ],
+        "pixels": 72.012,
+        "maximum": 60.0
+      }
+    ],
+    "diagnostics": [
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          35,
+          36
+        ],
+        "pixels": 72.012,
+        "review_above": 40.0
+      }
+    ],
+    "occluded": [
+      "anatomical_left_wrist_behind_shield"
+    ]
+  },
+  {
+    "actor": "iselin",
+    "measurements": [
+      {
+        "frame": 2,
+        "source": "run_v2/repairs/frame_02.png",
+        "sha256": "e0d9eeedab21ba5fa0cfe2d79b0719015ed40f5ae6e21b732794bfd988f6c787",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              308.72786677908937,
+              684.3988195615514
+            ],
+            "point_neck_relative": [
+              -180.08808068767632,
+              284.1800190134442
+            ],
+            "bounds_source": [
+              276,
+              639,
+              351,
+              727
+            ],
+            "area": 4744,
+            "candidate_count": 4
+          },
+          "anatomical_left": {
+            "point_source": [
+              678.2623103850642,
+              422.0028004667445
+            ],
+            "point_neck_relative": [
+              71.18991335971512,
+              105.75458001845783
+            ],
+            "bounds_source": [
+              634,
+              383,
+              724,
+              462
+            ],
+            "area": 4285,
+            "candidate_count": 4
+          }
+        }
+      },
+      {
+        "frame": 3,
+        "source": "run_v2/repairs/frame_03.png",
+        "sha256": "1dd96ae3a51fe18cfba5008365ab0e60a3955dd5c79ba47403e97bcd4a85d2f4",
+        "hands": {
+          "anatomical_right": {
+            "point_source": [
+              411.1877658497063,
+              631.341097832692
+            ],
+            "point_neck_relative": [
+              -109.61447154961425,
+              247.73571543477712
+            ],
+            "bounds_source": [
+              368,
+              590,
+              456,
+              674
+            ],
+            "area": 4937,
+            "candidate_count": 1
+          },
+          "anatomical_left": {
+            "point_source": [
+              677.369020501139,
+              467.5298405466971
+            ],
+            "point_neck_relative": [
+              71.38487202753868,
+              136.34646648807785
+            ],
+            "bounds_source": [
+              632,
+              429,
+              725,
+              506
+            ],
+            "area": 4390,
+            "candidate_count": 1
+          }
+        }
+      }
+    ],
+    "violations": [
+      {
+        "check": "hand_gross_step",
+        "side": "anatomical_right",
+        "frames": [
+          2,
+          3
+        ],
+        "pixels": 79.339,
+        "maximum": 60.0
+      }
+    ],
+    "diagnostics": [
+      {
+        "check": "hand_step_review",
+        "side": "anatomical_right",
+        "frames": [
+          2,
+          3
+        ],
+        "pixels": 79.339,
+        "review_above": 40.0
+      }
+    ],
+    "occluded": []
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "frame": 8,
+    "source": "run_v3/frames/frame_08.png",
+    "landmarks": {
+      "eyes": [
+        548.81,
+        153.96
+      ],
+      "neck": [
+        566.2,
+        266.88
+      ],
+      "belt": [
+        559.04,
+        565.64
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.92832,
+      "neck": 0.66475,
+      "belt": 0.81817
+    },
+    "template_match_scales": {
+      "eyes": 1.1099999999999999,
+      "neck": 1.04,
+      "belt": 1.06
+    },
+    "scale": 0.63,
+    "origin": [
+      35.24709000000001,
+      41.489859999999986
+    ]
+  },
+  {
+    "frame": 9,
+    "source": "run_v3/frames/frame_09.png",
+    "landmarks": {
+      "eyes": [
+        549.23,
+        150.68
+      ],
+      "neck": [
+        561.1,
+        267.44
+      ],
+      "belt": [
+        559.36,
+        562.76
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.92287,
+      "neck": 0.73123,
+      "belt": 0.77571
+    },
+    "template_match_scales": {
+      "eyes": 1.13,
+      "neck": 1.02,
+      "belt": 1.04
+    },
+    "scale": 0.63,
+    "origin": [
+      35.69691,
+      41.48522
+    ]
+  },
+  {
+    "frame": 10,
+    "source": "run_v3/frames/frame_10.png",
+    "landmarks": {
+      "eyes": [
+        533.39,
+        151.24
+      ],
+      "neck": [
+        544.45,
+        265.78
+      ],
+      "belt": [
+        551.7,
+        558.2
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.94462,
+      "neck": 0.66911,
+      "belt": 0.78778
+    },
+    "template_match_scales": {
+      "eyes": 1.0899999999999999,
+      "neck": 0.99,
+      "belt": 1.05
+    },
+    "scale": 0.63,
+    "origin": [
+      44.232149999999976,
+      40.85431999999997
+    ]
+  },
+  {
+    "frame": 11,
+    "source": "run_v3/frames/frame_11.png",
+    "landmarks": {
+      "eyes": [
+        533.68,
+        151.88
+      ],
+      "neck": [
+        544.45,
+        266.78
+      ],
+      "belt": [
+        552.36,
+        558.76
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.94041,
+      "neck": 0.68711,
+      "belt": 0.81319
+    },
+    "template_match_scales": {
+      "eyes": 1.08,
+      "neck": 0.99,
+      "belt": 1.04
+    },
+    "scale": 0.63,
+    "origin": [
+      44.01606,
+      39.145480000000006
+    ]
+  },
+  {
+    "frame": 12,
+    "source": "run_v3/frames/frame_12.png",
+    "landmarks": {
+      "eyes": [
+        531.68,
+        145.88
+      ],
+      "neck": [
+        540.1,
+        259.44
+      ],
+      "belt": [
+        541.34,
+        559.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.95623,
+      "neck": 0.71309,
+      "belt": 0.82705
+    },
+    "template_match_scales": {
+      "eyes": 1.08,
+      "neck": 1.02,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      47.27693999999999,
+      41.07019999999999
+    ]
+  },
+  {
+    "frame": 13,
+    "source": "run_v3/frames/frame_13.png",
+    "landmarks": {
+      "eyes": [
+        536.39,
+        153.24
+      ],
+      "neck": [
+        548.45,
+        266.78
+      ],
+      "belt": [
+        546.68,
+        560.88
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.93583,
+      "neck": 0.66371,
+      "belt": 0.78662
+    },
+    "template_match_scales": {
+      "eyes": 1.0899999999999999,
+      "neck": 0.99,
+      "belt": 1.02
+    },
+    "scale": 0.63,
+    "origin": [
+      43.731930000000006,
+      37.3673
+    ]
+  },
+  {
+    "frame": 14,
+    "source": "run_v3/frames/frame_14.png",
+    "landmarks": {
+      "eyes": [
+        543.52,
+        161.32
+      ],
+      "neck": [
+        554.75,
+        276.1
+      ],
+      "belt": [
+        543.66,
+        577.56
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.91957,
+      "neck": 0.74289,
+      "belt": 0.79076
+    },
+    "template_match_scales": {
+      "eyes": 1.12,
+      "neck": 1.05,
+      "belt": 0.99
+    },
+    "scale": 0.63,
+    "origin": [
+      41.262960000000014,
+      30.682760000000002
+    ]
+  },
+  {
+    "frame": 15,
+    "source": "run_v3/frames/frame_15.png",
+    "landmarks": {
+      "eyes": [
+        541.94,
+        152.04
+      ],
+      "neck": [
+        554.2,
+        266.88
+      ],
+      "belt": [
+        550.04,
+        572.64
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.91836,
+      "neck": 0.73817,
+      "belt": 0.74745
+    },
+    "template_match_scales": {
+      "eyes": 1.14,
+      "neck": 1.04,
+      "belt": 1.06
+    },
+    "scale": 0.63,
+    "origin": [
+      40.62413999999999,
+      36.13506
+    ]
+  },
+  {
+    "frame": 16,
+    "source": "run_v3/frames/frame_16.png",
+    "landmarks": {
+      "eyes": [
+        542.52,
+        151.32
+      ],
+      "neck": [
+        556.1,
+        267.44
+      ],
+      "belt": [
+        549.34,
+        570.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.93334,
+      "neck": 0.71848,
+      "belt": 0.77603
+    },
+    "template_match_scales": {
+      "eyes": 1.12,
+      "neck": 1.02,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      40.33434,
+      37.26959999999999
+    ]
+  },
+  {
+    "frame": 17,
+    "source": "run_v3/frames/frame_17.png",
+    "landmarks": {
+      "eyes": [
+        542.81,
+        151.96
+      ],
+      "neck": [
+        558.45,
+        266.78
+      ],
+      "belt": [
+        548.34,
+        563.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.92244,
+      "neck": 0.71863,
+      "belt": 0.77158
+    },
+    "template_match_scales": {
+      "eyes": 1.1099999999999999,
+      "neck": 0.99,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      40.13589000000002,
+      39.03665999999998
+    ]
+  },
+  {
+    "frame": 35,
+    "source": "run_v3/frames/frame_35.png",
+    "landmarks": {
+      "eyes": [
+        550.97,
+        146.52
+      ],
+      "neck": [
+        563.7,
+        258.68
+      ],
+      "belt": [
+        557.34,
+        559.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.91828,
+      "neck": 0.71381,
+      "belt": 0.74886
+    },
+    "template_match_scales": {
+      "eyes": 1.07,
+      "neck": 0.94,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      35.20298999999998,
+      41.725959999999986
+    ]
+  },
+  {
+    "frame": 38,
+    "source": "run_v3/frames/frame_38.png",
+    "landmarks": {
+      "eyes": [
+        540.81,
+        152.96
+      ],
+      "neck": [
+        559.9,
+        267.56
+      ],
+      "belt": [
+        551.34,
+        551.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.91612,
+      "neck": 0.69123,
+      "belt": 0.76439
+    },
+    "template_match_scales": {
+      "eyes": 1.1099999999999999,
+      "neck": 0.98,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      40.01619000000003,
+      39.32887999999998
+    ]
+  },
+  {
+    "frame": 39,
+    "source": "run_v3/frames/frame_39.png",
+    "landmarks": {
+      "eyes": [
+        547.1,
+        152.6
+      ],
+      "neck": [
+        567.0,
+        268.0
+      ],
+      "belt": [
+        555.34,
+        557.44
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.9329,
+      "neck": 0.71041,
+      "belt": 0.82534
+    },
+    "template_match_scales": {
+      "eyes": 1.1,
+      "neck": 1.0,
+      "belt": 1.01
+    },
+    "scale": 0.63,
+    "origin": [
+      36.38423999999999,
+      38.69033999999999
+    ]
+  },
+  {
+    "frame": 40,
+    "source": "run_v3/frames/frame_40.png",
+    "landmarks": {
+      "eyes": [
+        548.81,
+        151.96
+      ],
+      "neck": [
+        569.1,
+        268.44
+      ],
+      "belt": [
+        558.36,
+        558.76
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.91869,
+      "neck": 0.68616,
+      "belt": 0.79714
+    },
+    "template_match_scales": {
+      "eyes": 1.1099999999999999,
+      "neck": 1.02,
+      "belt": 1.04
+    },
+    "scale": 0.63,
+    "origin": [
+      35.010210000000015,
+      39.149519999999995
+    ]
+  },
+  {
+    "frame": 41,
+    "source": "run_v3/frames/frame_41.png",
+    "landmarks": {
+      "eyes": [
+        553.39,
+        150.24
+      ],
+      "neck": [
+        575.1,
+        266.44
+      ],
+      "belt": [
+        565.7,
+        557.2
+      ]
+    },
+    "landmark_match_scores": {
+      "eyes": 0.93518,
+      "neck": 0.62923,
+      "belt": 0.82544
+    },
+    "template_match_scales": {
+      "eyes": 1.0899999999999999,
+      "neck": 1.02,
+      "belt": 1.05
+    },
+    "scale": 0.63,
+    "origin": [
+      31.424249999999994,
+      40.80065999999997
+    ]
+  }
+]

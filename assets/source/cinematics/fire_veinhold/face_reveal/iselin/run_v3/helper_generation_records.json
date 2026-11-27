@@ -1,0 +1,461 @@
+{
+  "owner": "iselin_inbetween_helper",
+  "scope": "Helper candidate masters, exact prompts and source provenance only. Main artist owns final selection, registration, export and approval.",
+  "records": [
+    {
+      "frame": 13,
+      "source": "helper_frame_13_a.png",
+      "source_sha256": "6dc05257c92b920c419ae15d84750d2c5ffb41ddc0360a0e91637d48d36754fc",
+      "prompt_file": "helper_frame_13_a_prompt.txt",
+      "prompt_sha256": "270a35df3cb9c13f001f31026457badfc8a64ff946ccd48da34c6958059cafb6",
+      "generation_id": "exec-65226000-80cf-4f4b-8911-3b81364dfa4a",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_13.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+        "/tmp/helper_frame_14_reference_registered.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_13.png",
+          "sha256": "008915953312a07e1e5927876179b6886e83c03c35e65aa9f126f8e5df1a9296",
+          "preserved_copy": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_13_reference.png"
+        },
+        {
+          "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+          "sha256": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2",
+          "preserved_copy": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_12_reference.png"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_14_reference_registered.png",
+          "sha256": "59bc44368aaaf631a061164f40bea1bb007e7d70b4f8051a0a743cc1ff6698ac"
+        }
+      ],
+      "status": "rejected_lifted_boot_beyond_following14",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    },
+    {
+      "frame": 13,
+      "source": "helper_frame_13_b.png",
+      "source_sha256": "f23f063ca33c8671d0cbbcf0e3e55bf694e1d5f54f4d741817610f4391387e47",
+      "prompt_file": "helper_frame_13_b_prompt.txt",
+      "prompt_sha256": "7bfdf76b9fb722428980576895718050d2d02c0392c81a43c370a3a0d6203f51",
+      "generation_id": "exec-942b51fd-3d90-435c-962b-09184c7c1230",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/tmp/helper_frame_13_a_canonical.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+        "/tmp/helper_frame_14_reference_registered.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_13_a_reference_registered.png",
+          "sha256": "224d0bd9e683c19dfbd7beba6c4ad5a29e02bbae6e095bcd1d5968f57e707a88"
+        },
+        {
+          "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+          "sha256": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2",
+          "preserved_copy": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_12_reference.png"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_14_reference_registered.png",
+          "sha256": "59bc44368aaaf631a061164f40bea1bb007e7d70b4f8051a0a743cc1ff6698ac"
+        }
+      ],
+      "status": "superseded_lifted_boot_high_and_support_low",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    },
+    {
+      "frame": 13,
+      "source": "helper_frame_13.png",
+      "source_sha256": "ed3c2bcf63402c4abb2ffd0a2b783d12323aa975c1fd64cfb6aac9fc52c6da6c",
+      "prompt_file": "helper_frame_13_prompt.txt",
+      "prompt_sha256": "c5befa0c5c5d3ba94c307d955972ae3fb1393573d81f6f2e238b05b8b32842f3",
+      "generation_id": "exec-5c1fa9fd-5209-4730-8cbb-695eb7936d1c",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/tmp/helper_frame_13_c_guide.png",
+        "/tmp/helper_frame_13_a_canonical.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+        "/tmp/helper_frame_14_reference_registered.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_13_c_guide.png",
+          "sha256": "d0b0613ccd7d24ac7a30df7ecc53b3c9f032b078b7a968b4dd10f19103b52838"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_13_a_reference_registered.png",
+          "sha256": "224d0bd9e683c19dfbd7beba6c4ad5a29e02bbae6e095bcd1d5968f57e707a88"
+        },
+        {
+          "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_12.png",
+          "sha256": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2",
+          "preserved_copy": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_12_reference.png"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_14_reference_registered.png",
+          "sha256": "59bc44368aaaf631a061164f40bea1bb007e7d70b4f8051a0a743cc1ff6698ac"
+        }
+      ],
+      "status": "candidate_submitted_to_main_artist_for_final_density_and_motion_QA",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    },
+    {
+      "frame": 15,
+      "source": "helper_frame_15_a.png",
+      "source_sha256": "92fe6c0aab86a3dbee8f29d1b3c1460ac9c73a85565a0785c2d6036329b01950",
+      "prompt_file": "helper_frame_15_a_prompt.txt",
+      "prompt_sha256": "e3667d433bf4292bb8ddad0bc2b256c0f0edebc63a3d32ccf0ac2d291b2167dc",
+      "generation_id": "exec-fe16edc2-221a-4360-b21e-24725efb648d",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/tmp/helper_frame_15_guide.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_15.png",
+        "/tmp/helper_frame_14_reference_registered.png",
+        "/tmp/helper_frame_16_reference_registered.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_15_guide.png",
+          "sha256": "7fcc47ea59b79804cb530f30549443e5e9c0d098d101db57d92c4d497a4e064b"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_15_reference.png",
+          "sha256": "bc9dc9533400d397cb0ad3b46485efe1a3f4529548b5c99b358e0b44d641d48a"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_14_reference_registered.png",
+          "sha256": "59bc44368aaaf631a061164f40bea1bb007e7d70b4f8051a0a743cc1ff6698ac"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_16_reference_registered.png",
+          "sha256": "0f7b0f99b985263bfd337a6eb546dda88fb1b4ef47eef6b1ec695a545333837b"
+        }
+      ],
+      "status": "superseded_incomplete_midpoint_support_long_swing_low",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    },
+    {
+      "frame": 15,
+      "source": "helper_frame_15.png",
+      "source_sha256": "d90bc69770f7a693bd480051b6764f85f7f84d9979173a3eb22cd4e08cce8aec",
+      "prompt_file": "helper_frame_15_prompt.txt",
+      "prompt_sha256": "ba637eb061c50b55493955142890841ed375e3695825445f7e4bdca277b2c77d",
+      "generation_id": "exec-fcf12617-ee0c-47b4-82de-38e8a4f70503",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/tmp/helper_frame_15_b_guide.png",
+        "/tmp/helper_frame_15_canonical.png",
+        "/tmp/helper_frame_14_reference_registered.png",
+        "/tmp/helper_frame_16_reference_registered.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_15_b_guide.png",
+          "sha256": "f1a32b57bf9809f0aa45919bc62360a551a43bd7c07869c8739990021d7aa827"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_15_a_reference_registered.png",
+          "sha256": "7e81912e77efa6538d2bf5334fa0120a03ed3223692d8a95c8743ebed1e42a12"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_14_reference_registered.png",
+          "sha256": "59bc44368aaaf631a061164f40bea1bb007e7d70b4f8051a0a743cc1ff6698ac"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_16_reference_registered.png",
+          "sha256": "0f7b0f99b985263bfd337a6eb546dda88fb1b4ef47eef6b1ec695a545333837b"
+        }
+      ],
+      "status": "candidate_submitted_to_main_artist_for_final_QA",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    },
+    {
+      "frame": 17,
+      "source": "helper_frame_17.png",
+      "source_sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "prompt_file": "helper_frame_17_prompt.txt",
+      "prompt_sha256": "abd1fc729d744814145b65cbc44763ebf417723c2165195867185c1ea0d8bd5c",
+      "generation_id": "exec-bd5e8faf-9ffc-40af-83f0-50626201124c",
+      "transparent_background": true,
+      "tool": "image_gen.imagegen",
+      "referenced_image_paths_original": [
+        "/tmp/helper_frame_17_guide.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_17.png",
+        "/tmp/helper_frame_16_reference_registered.png",
+        "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_18.png"
+      ],
+      "archived_references": [
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_17_guide.png",
+          "sha256": "71e655d1d761aaf8777b864a8e1b3e0487e598b5e43ded1227a9679a61cf7d72"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_17_reference.png",
+          "sha256": "e14260dc0606167ae2c5f82f8bc8e95e29703fa4eb18cd751f75f88663bc8422"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_16_reference_registered.png",
+          "sha256": "0f7b0f99b985263bfd337a6eb546dda88fb1b4ef47eef6b1ec695a545333837b"
+        },
+        {
+          "path": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_baseline_frame_18_reference.png",
+          "sha256": "0b61631f38ac05de1dbe9593de87fcc3ffa618fe6c3b17532a6b5fe958646461"
+        }
+      ],
+      "status": "candidate_submitted_to_main_artist_for_final_QA",
+      "construction": "Complete ImageGen-authored unified figure; no regional restoration, limb transform, warp or endpoint blend."
+    }
+  ],
+  "diagnostic_reference_notes": {
+    "helper_frame_13_a_reference_registered.png": "Uniform whole-image face-density/neck registration from raw helper_frame_13_a.png. Scale0.8165865050914168, origin[-0.7060860192224254,-0.8145216436252838]. Premultiplied alpha LANCZOS sampling. No anatomy changed.",
+    "helper_frame_13_c_guide.png": "Authoring-only overlay on whole registered13a, orange sole target[542,720], blue support target[447,953]. Not final art.",
+    "helper_frame_14_reference_registered.png": "Uniform complete-image diagnostic reference from key_14_b.png at scale0.8165865050914168 origin[-8.885833040723128,-5.058933048072447], nearest-neighbor sample. No anatomy changed.",
+    "helper_frame_16_reference_registered.png": "Uniform complete-image diagnostic reference from key_16_c.png at scale0.7851820444570073 origin[20.584395292048498,7.592933550043597], premultiplied alpha LANCZOS sample. No anatomy changed.",
+    "helper_frame_15_guide.png": "Authoring-only overlay on accepted baseline15 runtime reference, blue support target[394,920], orange advancing target[535,784]. No final art pixels.",
+    "helper_frame_15_a_reference_registered.png": "Uniform whole-image diagnostic registration from helper_frame_15_a.png. Scale0.8332500083325001, origin[-11.168516481685174,-3.337949005099489]. Premultiplied alpha LANCZOS. No anatomy changed.",
+    "helper_frame_15_b_guide.png": "Authoring-only overlay on whole registered15a, blue sole target[394,920], orange sole target[535,784], upward arrows. No final art pixels.",
+    "helper_frame_17_guide.png": "Authoring-only overlay on accepted baseline17 runtime reference, blue recovering sole target[407,840], orange advancing sole target[536,822]. No final art pixels."
+  },
+  "visual_review_13": "Viewed raw12/13/14, registered diagnostic13c and full figure. Exactly two coherent legs; accepted13 fist stage remains. Lifted boot progresses below12 and above14. Automatic face-density calibration yields a slightly longer support silhouette; main artist will judge calibrated body, neck/belt and adjacent foot path. Target coordinates were authoring guidance, not claims about final pixels.",
+  "visual_review_15_17": "Viewed raw whole candidates and complete registered14\u201318 strip. Both anatomical chains remain connected, fists and body model retain the accepted phase. Candidate15 right toe rises from14 toward16, left toe descends between14 and16. Candidate17 right recovering toe bridges16 and18; left advancing sole dips about25pixels below neighboring soles then returns. Main artist judged the modest dip acceptable for full actual-pixel QA. No retakes for numeric target precision. No normal-speed playback or runtime integration was conducted by helper.",
+  "helper_diagnostics": [
+    {
+      "frame": 13,
+      "master_sha256": "ed3c2bcf63402c4abb2ffd0a2b783d12323aa975c1fd64cfb6aac9fc52c6da6c",
+      "registration": {
+        "frame": 13,
+        "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_13.png",
+        "features": {
+          "face": {
+            "point": [
+              623.13,
+              169.944
+            ],
+            "score": 0.8672,
+            "template_scale": 1.20012
+          },
+          "neck": {
+            "point": [
+              625.862,
+              242.644
+            ],
+            "score": 0.815,
+            "template_scale": 1.22461
+          },
+          "belt": {
+            "point": [
+              618.3,
+              462.978
+            ],
+            "score": 0.7753,
+            "template_scale": 1.2491
+          }
+        },
+        "scale": 0.8332500083325001,
+        "origin": [
+          -9.499516714995138,
+          -3.218115021831153
+        ],
+        "canonical_landmarks": {
+          "face": [
+            509.724,
+            138.388
+          ],
+          "neck": [
+            512.0,
+            198.965
+          ],
+          "belt": [
+            505.699,
+            382.558
+          ]
+        }
+      },
+      "observed_boot_tip_estimates": {
+        "right": {
+          "bottom_opaque_y": 979,
+          "median_x_at_y": 450.0,
+          "roi": [
+            405,
+            900,
+            480,
+            1000
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        },
+        "left": {
+          "bottom_opaque_y": 729,
+          "median_x_at_y": 540.0,
+          "roi": [
+            510,
+            670,
+            600,
+            760
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        }
+      }
+    },
+    {
+      "frame": 15,
+      "master_sha256": "d90bc69770f7a693bd480051b6764f85f7f84d9979173a3eb22cd4e08cce8aec",
+      "registration": {
+        "frame": 15,
+        "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_15.png",
+        "features": {
+          "face": {
+            "point": [
+              625.041,
+              170.042
+            ],
+            "score": 0.8204,
+            "template_scale": 1.2491
+          },
+          "neck": {
+            "point": [
+              627.865,
+              242.644
+            ],
+            "score": 0.7681,
+            "template_scale": 1.22461
+          },
+          "belt": {
+            "point": [
+              620.651,
+              472.742
+            ],
+            "score": 0.7094,
+            "template_scale": 1.32258
+          }
+        },
+        "scale": 0.8005764150188135,
+        "origin": [
+          9.346089184212644,
+          2.9169363541750215
+        ],
+        "canonical_landmarks": {
+          "face": [
+            509.739,
+            139.049
+          ],
+          "neck": [
+            512.0,
+            197.172
+          ],
+          "belt": [
+            506.225,
+            381.383
+          ]
+        }
+      },
+      "observed_boot_tip_estimates": {
+        "right": {
+          "bottom_opaque_y": 905,
+          "median_x_at_y": 401.5,
+          "roi": [
+            345,
+            840,
+            440,
+            980
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        },
+        "left": {
+          "bottom_opaque_y": 779,
+          "median_x_at_y": 535.0,
+          "roi": [
+            495,
+            720,
+            585,
+            840
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        }
+      }
+    },
+    {
+      "frame": 17,
+      "master_sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+      "registration": {
+        "frame": 17,
+        "source": "assets/source/cinematics/fire_veinhold/face_reveal/iselin/run_v3/helper_frame_17.png",
+        "features": {
+          "face": {
+            "point": [
+              627.044,
+              168.032
+            ],
+            "score": 0.8377,
+            "template_scale": 1.2491
+          },
+          "neck": {
+            "point": [
+              629.869,
+              242.644
+            ],
+            "score": 0.7811,
+            "template_scale": 1.22461
+          },
+          "belt": {
+            "point": [
+              622.307,
+              462.978
+            ],
+            "score": 0.7435,
+            "template_scale": 1.2491
+          }
+        },
+        "scale": 0.8005764150188135,
+        "origin": [
+          7.741734048514957,
+          1.8809363541750201
+        ],
+        "canonical_landmarks": {
+          "face": [
+            509.738,
+            136.403
+          ],
+          "neck": [
+            512.0,
+            196.136
+          ],
+          "belt": [
+            505.946,
+            372.53
+          ]
+        }
+      },
+      "observed_boot_tip_estimates": {
+        "right": {
+          "bottom_opaque_y": 834,
+          "median_x_at_y": 412.5,
+          "roi": [
+            370,
+            780,
+            450,
+            900
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        },
+        "left": {
+          "bottom_opaque_y": 846,
+          "median_x_at_y": 537.5,
+          "roi": [
+            500,
+            780,
+            590,
+            900
+          ],
+          "method": "Alpha>200 bottom silhouette inside visually reviewed boot-only ROI; this is an extreme-tip estimate, not validated production extraction."
+        }
+      }
+    }
+  ]
+}

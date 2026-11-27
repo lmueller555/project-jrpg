@@ -1,0 +1,330 @@
+[
+  {
+    "frame": 3,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        336.59999999999997,
+        482.2
+      ],
+      "left_hip": [
+        436.59999999999997,
+        482.2
+      ],
+      "right_knee": [
+        345.03749999999997,
+        643.4357954545454
+      ],
+      "right_toe": [
+        349.25624999999997,
+        936.8754807692308
+      ],
+      "left_knee": [
+        436.59999999999997,
+        609.1318181818182
+      ],
+      "left_toe": [
+        424.88124999999997,
+        728.98125
+      ],
+      "right_ankle": [
+        349.25624999999997,
+        881.8754807692308
+      ],
+      "left_ankle": [
+        424.88124999999997,
+        673.98125
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_03.png",
+    "upper_body_sha256": "37d58da35d2f014287a1938ec5a81c2f01935e6be1c987c3f37c11124a431cb8",
+    "note": "Planning landmarks only. Actual painted limbs must be measured and visually reviewed independently."
+  },
+  {
+    "frame": 9,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        331.59999999999997,
+        484.8
+      ],
+      "left_hip": [
+        431.59999999999997,
+        484.8
+      ],
+      "right_knee": [
+        333.16249999999997,
+        670.8369318181818
+      ],
+      "right_toe": [
+        333.94374999999997,
+        861.9514423076923
+      ],
+      "left_knee": [
+        431.59999999999997,
+        527.5272727272727
+      ],
+      "left_toe": [
+        417.06874999999997,
+        667.26875
+      ],
+      "right_ankle": [
+        333.94374999999997,
+        806.9514423076923
+      ],
+      "left_ankle": [
+        417.06874999999997,
+        612.26875
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_09.png",
+    "upper_body_sha256": "09441fe0c8ecaa3d93dc896b78e005dd3af7c70399555cd396e152c08635ca30",
+    "note": "Planning landmarks only. Actual painted limbs must be measured and visually reviewed independently."
+  },
+  {
+    "frame": 15,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        333.59999999999997,
+        484.8
+      ],
+      "left_hip": [
+        433.59999999999997,
+        484.8
+      ],
+      "right_knee": [
+        333.59999999999997,
+        671.9164772727273
+      ],
+      "right_toe": [
+        334.84999999999997,
+        810.1798076923077
+      ],
+      "left_knee": [
+        432.03749999999997,
+        525.4818181818182
+      ],
+      "left_toe": [
+        418.59999999999997,
+        701.675
+      ],
+      "right_ankle": [
+        334.84999999999997,
+        755.1798076923077
+      ],
+      "left_ankle": [
+        418.59999999999997,
+        646.675
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_15.png",
+    "upper_body_sha256": "b243aef4bc16260612cff6602492a06ccb18b8809613d586b8a75d8242403af9",
+    "note": "Planning landmarks only. Actual painted limbs must be measured and visually reviewed independently."
+  },
+  {
+    "frame": 21,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        332.8,
+        478.59999999999997
+      ],
+      "left_hip": [
+        432.8,
+        478.59999999999997
+      ],
+      "right_knee": [
+        332.8,
+        646.8244318181818
+      ],
+      "right_toe": [
+        340.3,
+        772.1432692307692
+      ],
+      "left_knee": [
+        424.3625,
+        595.6454545454545
+      ],
+      "left_toe": [
+        417.8,
+        901.7249999999999
+      ],
+      "right_ankle": [
+        340.3,
+        717.1432692307692
+      ],
+      "left_ankle": [
+        417.8,
+        846.7249999999999
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_21.png",
+    "upper_body_sha256": "a40385ba63acd59de703fcc916b8e2caa37048502a66f8566c70c0a57dbac004",
+    "note": "Planning landmarks only. Actual painted limbs must be measured and visually reviewed independently."
+  },
+  {
+    "frame": 27,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        330.59999999999997,
+        483.8
+      ],
+      "left_hip": [
+        430.59999999999997,
+        483.8
+      ],
+      "right_knee": [
+        330.59999999999997,
+        610.7318181818182
+      ],
+      "right_toe": [
+        342.31874999999997,
+        730.58125
+      ],
+      "left_knee": [
+        422.16249999999997,
+        645.0357954545455
+      ],
+      "left_toe": [
+        417.94374999999997,
+        938.4754807692308
+      ],
+      "right_ankle": [
+        342.31874999999997,
+        675.58125
+      ],
+      "left_ankle": [
+        417.94374999999997,
+        883.4754807692308
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_27.png",
+    "upper_body_sha256": "c9693f52e1b86893866ae52c57686dcb3da8583a15eb338c6aff4c89e93eb371",
+    "note": "Planning coordinates only; actual generated limbs require independent image review."
+  },
+  {
+    "frame": 33,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        339.2,
+        483.59999999999997
+      ],
+      "left_hip": [
+        439.2,
+        483.59999999999997
+      ],
+      "right_knee": [
+        339.2,
+        526.3272727272727
+      ],
+      "right_toe": [
+        353.73125,
+        666.0687499999999
+      ],
+      "left_knee": [
+        437.6375,
+        669.6369318181818
+      ],
+      "left_toe": [
+        436.85625,
+        860.7514423076923
+      ],
+      "right_ankle": [
+        353.73125,
+        611.0687499999999
+      ],
+      "left_ankle": [
+        436.85625,
+        805.7514423076923
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_33.png",
+    "upper_body_sha256": "41d4a69ff053b493c553dc93dc4721cca6763c247337bc4b69ee9f2431ca24e1",
+    "note": "Planning coordinates only; actual generated limbs require independent image review."
+  },
+  {
+    "frame": 39,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        341.8,
+        482.4
+      ],
+      "left_hip": [
+        441.8,
+        482.4
+      ],
+      "right_knee": [
+        343.3625,
+        523.0818181818181
+      ],
+      "right_toe": [
+        356.8,
+        699.275
+      ],
+      "left_knee": [
+        441.8,
+        669.5164772727272
+      ],
+      "left_toe": [
+        440.55,
+        807.7798076923077
+      ],
+      "right_ankle": [
+        356.8,
+        644.275
+      ],
+      "left_ankle": [
+        440.55,
+        752.7798076923077
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_39.png",
+    "upper_body_sha256": "8944df22b690f4b09515c27b1abb0aec313881fa6161f84660da3b9c2e698350",
+    "note": "Planning coordinates only; actual generated limbs require independent image review."
+  },
+  {
+    "frame": 45,
+    "planned_joint_coordinates": {
+      "right_hip": [
+        340.2,
+        478.59999999999997
+      ],
+      "left_hip": [
+        440.2,
+        478.59999999999997
+      ],
+      "right_knee": [
+        348.6375,
+        595.6454545454545
+      ],
+      "right_toe": [
+        355.2,
+        901.7249999999999
+      ],
+      "left_knee": [
+        440.2,
+        646.8244318181818
+      ],
+      "left_toe": [
+        432.7,
+        772.1432692307692
+      ],
+      "right_ankle": [
+        355.2,
+        846.7249999999999
+      ],
+      "left_ankle": [
+        432.7,
+        717.1432692307692
+      ]
+    },
+    "guide_only": true,
+    "upper_body_reference": "assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_45.png",
+    "upper_body_sha256": "d845ee0cd6b25f586cda55168e8d93a01f10a4d551c861fbdc47bbf651cf48e7",
+    "note": "Planning coordinates only; actual generated limbs require independent image review."
+  }
+]

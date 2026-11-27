@@ -1,0 +1,674 @@
+{
+  "iselin": {
+    "profile_sha256": "e0f38dc1d0439eafefdb002a2589656e01dfe593ed5a025a1c04d1e239b10eb3",
+    "context": "Rejected candidate braid jumps before targeted repairs; body/legs can be accepted independently. Not original production artwork.",
+    "frames": [
+      {
+        "source": "iselin/frame_09.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6671514633967349,
+        "origin": [
+          129.10242776417533,
+          23.085387034578474
+        ],
+        "landmarks": {
+          "neck": [
+            573.929,
+            269.418
+          ],
+          "belt": [
+            565.775,
+            544.652
+          ],
+          "face": [
+            576.457,
+            177.699
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8728,
+          "belt": 0.6843,
+          "face": 0.8645
+        },
+        "authored_weight_offset_y": 2.828,
+        "generation_id": "exec-a72d9458-a98c-4105-9280-05c0efbe9546",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 9,
+        "original_source": "run_v2/repairs/frame_09.png",
+        "sha256": "e1de871b65d331446acba7b0be717de3bd58774f11da03b0af158bd64150ec12",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_10.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6671514633967349,
+        "origin": [
+          129.10242776417533,
+          22.25738703457847
+        ],
+        "landmarks": {
+          "neck": [
+            573.929,
+            269.418
+          ],
+          "belt": [
+            567.585,
+            544.003
+          ],
+          "face": [
+            576.457,
+            177.699
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8495,
+          "belt": 0.6601,
+          "face": 0.8645
+        },
+        "authored_weight_offset_y": 2.0,
+        "generation_id": "exec-b42bf5ec-20e1-44f4-9778-6b368b793a14",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 10,
+        "original_source": "run_v2/repairs/frame_10.png",
+        "sha256": "e98a1ad2724c584d61eef1473a178d9404a6f3eacd3257bd5e5123c220565a41",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_11.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          136.72973238431365,
+          23.658904032897027
+        ],
+        "landmarks": {
+          "neck": [
+            573.109,
+            270.887
+          ],
+          "belt": [
+            565.585,
+            544.003
+          ],
+          "face": [
+            573.56,
+            178.915
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8456,
+          "belt": 0.6919,
+          "face": 0.8886
+        },
+        "authored_weight_offset_y": 1.035,
+        "generation_id": "exec-90e8b9aa-cedd-456c-8938-4da6cc54ad37",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 11,
+        "original_source": "run_v2/repairs/frame_11.png",
+        "sha256": "f8259e493636064d47d8b7a516c11e092ccd528165482e17464f32220bfd26d0",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_12.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          136.49466012742357,
+          23.32715641144847
+        ],
+        "landmarks": {
+          "neck": [
+            573.468,
+            269.813
+          ],
+          "belt": [
+            561.775,
+            546.658
+          ],
+          "face": [
+            569.56,
+            180.923
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8309,
+          "belt": 0.8006,
+          "face": 0.9069
+        },
+        "authored_weight_offset_y": 0.0,
+        "generation_id": "exec-e7f7baad-86d9-4b59-a031-d022c147e622",
+        "phase": "passing_flight",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 12,
+        "original_source": "run_v2/repairs/frame_12.png",
+        "sha256": "1ddfcaebf505fc15b142f4faff1ccbb06b79ea6458bc9b024fd7ae8a9a566db2",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_14.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.8165865050914168,
+        "origin": [
+          -8.885833040723128,
+          -5.058933048072447
+        ],
+        "landmarks": {
+          "face": [
+            632.099,
+            175.016
+          ],
+          "neck": [
+            637.882,
+            248.668
+          ],
+          "belt": [
+            632.671,
+            470.742
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8652,
+          "neck": 0.7984,
+          "belt": 0.7856
+        },
+        "generation_id": "exec-1e1929c3-16bd-485a-96c0-d4639313bb7e",
+        "prompt_file": "run_v3/key_14_b_prompt.txt",
+        "prompt_sha256": "482591e849f1d73f130792cc2736a1f2c851bff36de692cdd39229c988f1978a",
+        "authored_weight_offset_y": -2.0,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 14,
+        "original_source": "run_v3/key_14_b.png",
+        "sha256": "1454d3426b73828c3669c5fed91f506bc1789478b968262b27f325aab8115d84",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_15.png",
+        "cell": [
+          0,
+          0,
+          1199,
+          1312
+        ],
+        "scale": 0.7504690431519699,
+        "origin": [
+          51.01088180112572,
+          1.8789418386491548
+        ],
+        "landmarks": {
+          "face": [
+            610.305,
+            181.298
+          ],
+          "neck": [
+            614.268,
+            260.228
+          ],
+          "belt": [
+            607.445,
+            505.186
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8029,
+          "neck": 0.7372,
+          "belt": 0.6632
+        },
+        "generation_id": "exec-6f0e20a2-acef-4501-85f2-dab899e97092",
+        "prompt_file": "run_v3/key_15_braid_c_prompt.txt",
+        "prompt_sha256": "dee60b6282f8301617ac722f412166d1d7bd12528e0fe853ccfc5439e12f567b",
+        "authored_weight_offset_y": -2.828,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 15,
+        "original_source": "run_v3/key_15_braid_c.png",
+        "sha256": "f393a7bcfbbae61eb4abfc074a50b8d6b6e1121e85a36d013b31f0936d08b690",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_16.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.7851820444570073,
+        "origin": [
+          20.584395292048498,
+          7.592933550043597
+        ],
+        "landmarks": {
+          "face": [
+            623.993,
+            167.076
+          ],
+          "neck": [
+            625.862,
+            240.636
+          ],
+          "belt": [
+            619.52,
+            464.391
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8285,
+          "neck": 0.7781,
+          "belt": 0.6977
+        },
+        "generation_id": "exec-f417d7d9-c625-4239-a027-bf30f26ec9b0",
+        "prompt_file": "run_v3/key_16_c_prompt.txt",
+        "prompt_sha256": "ed9d3e07dc835c024f176862a673c6b712d0753cf9ec8a4c3d61238a45b9e100",
+        "authored_weight_offset_y": -3.464,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 16,
+        "original_source": "run_v3/key_16_c.png",
+        "sha256": "59e4650c620a38e17b52c2a13a4ed0b7633e43e7b00711eeff59261ca11a0f73",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_17.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.8005764150188135,
+        "origin": [
+          7.741734048514957,
+          1.8809363541750201
+        ],
+        "landmarks": {
+          "face": [
+            627.044,
+            168.032
+          ],
+          "neck": [
+            629.869,
+            242.644
+          ],
+          "belt": [
+            622.307,
+            462.978
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8377,
+          "neck": 0.7811,
+          "belt": 0.7435
+        },
+        "generation_id": "exec-bd5e8faf-9ffc-40af-83f0-50626201124c",
+        "prompt_file": "run_v3/helper_frame_17_prompt.txt",
+        "prompt_sha256": "abd1fc729d744814145b65cbc44763ebf417723c2165195867185c1ea0d8bd5c",
+        "authored_weight_offset_y": -3.864,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 17,
+        "original_source": "run_v3/helper_frame_17.png",
+        "sha256": "6b3678f34644a0269dbd35d00994a5ab3a831bd71691f61881438dd87ce2f424",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_31.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          122.3903247140172,
+          17.733917953889204
+        ],
+        "landmarks": {
+          "neck": [
+            595.008,
+            284.256
+          ],
+          "belt": [
+            580.155,
+            564.006
+          ],
+          "face": [
+            591.56,
+            194.979
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7666,
+          "belt": 0.6948,
+          "face": 0.9133
+        },
+        "authored_weight_offset_y": 3.864,
+        "generation_id": "exec-cb4012c1-404c-4120-aa3e-c26031f3d5d4",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 31,
+        "original_source": "run_v2/repairs/frame_32.png",
+        "sha256": "106d5ebb4f137df6bb2bd428c5b0d85f46f6689f5f6ee4be6c3e6b127c275a4d",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_32.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          121.85339086819585,
+          16.98229176461342
+        ],
+        "landmarks": {
+          "neck": [
+            595.828,
+            284.793
+          ],
+          "belt": [
+            602,
+            563
+          ],
+          "face": [
+            591.56,
+            194.979
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7649,
+          "belt": 0.5987,
+          "face": 0.9077
+        },
+        "authored_weight_offset_y": 3.464,
+        "generation_id": "exec-7cd96f5c-2394-448b-aafd-39f6ff57a1b1",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 32,
+        "original_source": "run_v2/repairs/frame_31.png",
+        "sha256": "ab3a8700caa77f16c8ea09578dcdc34b9de73dd1a9f893dff59100ad0067cbc2",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_33.png",
+        "cell": [
+          0,
+          0,
+          1053,
+          1494
+        ],
+        "scale": 0.6119726325838708,
+        "origin": [
+          151.8284028738235,
+          21.756313525819138
+        ],
+        "landmarks": {
+          "neck": [
+            588.542,
+            295.882
+          ],
+          "belt": [
+            576.555,
+            592.837
+          ],
+          "face": [
+            583.728,
+            200.265
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8118,
+          "belt": 0.6667,
+          "face": 0.9188
+        },
+        "authored_weight_offset_y": 2.828,
+        "generation_id": "exec-9a6a0df8-9a06-470e-bea5-b28861eb61d5",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 33,
+        "original_source": "run_v2/repairs/frame_34.png",
+        "sha256": "a32a02586710a60082de2a63f0147897e0449ae42878db0c619df82bdf75d5d1",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_34.png",
+        "cell": [
+          0,
+          0,
+          1054,
+          1492
+        ],
+        "scale": 0.6354895493743605,
+        "origin": [
+          134.80390698974952,
+          19.22939266263768
+        ],
+        "landmarks": {
+          "neck": [
+            593.552,
+            287.606
+          ],
+          "belt": [
+            582.119,
+            574.269
+          ],
+          "face": [
+            587.777,
+            195.957
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.7786,
+          "belt": 0.6594,
+          "face": 0.9001
+        },
+        "authored_weight_offset_y": 2.0,
+        "generation_id": "exec-5436f9d2-a501-44c4-95c4-27bf48afbd45",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 34,
+        "original_source": "run_v2/repairs/frame_33.png",
+        "sha256": "c899422dcbc0282e304adda565c2a45585de8f1dfaa3f1564b2eafad045e9d24",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_38.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6671514633967349,
+        "origin": [
+          129.64949196416063,
+          15.938368547811422
+        ],
+        "landmarks": {
+          "neck": [
+            573.109,
+            272.894
+          ],
+          "belt": [
+            561.585,
+            546.01
+          ],
+          "face": [
+            570.457,
+            181.715
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8655,
+          "belt": 0.8348,
+          "face": 0.9022
+        },
+        "authored_weight_offset_y": -2.0,
+        "generation_id": "exec-f608c397-f08d-4377-ae77-18ea232d8372",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 38,
+        "original_source": "run_v2/repairs/frame_38.png",
+        "sha256": "a33562ce62df893f481e70770738548938010900b259a9ca04835334f7e975e8",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_39.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          137.26732102750805,
+          18.833351894656175
+        ],
+        "landmarks": {
+          "neck": [
+            572.288,
+            272.357
+          ],
+          "belt": [
+            559.585,
+            546.01
+          ],
+          "face": [
+            569.56,
+            180.923
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8593,
+          "belt": 0.8487,
+          "face": 0.9148
+        },
+        "authored_weight_offset_y": -2.828,
+        "generation_id": "exec-4ddda236-60e8-48dd-a91a-9c774bdc33dd",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 39,
+        "original_source": "run_v2/repairs/frame_39.png",
+        "sha256": "1e249ca1862e761029f58e8083c7f5b2e6d2f9e0dbe233daebacd3ca6c5aa24c",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_40.png",
+        "cell": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "scale": 0.8005764150188135,
+        "origin": [
+          9.243615403090189,
+          4.378446561524299
+        ],
+        "landmarks": {
+          "face": [
+            627.044,
+            164.014
+          ],
+          "neck": [
+            627.993,
+            240.024
+          ],
+          "belt": [
+            620.303,
+            466.978
+          ]
+        },
+        "landmark_match_scores": {
+          "face": 0.8804,
+          "neck": 0.8106,
+          "belt": 0.7784
+        },
+        "generation_id": "exec-046d36ff-27f2-4256-8101-ca15ca8473b2",
+        "prompt_file": "run_v3/key_40_b_prompt.txt",
+        "prompt_sha256": "36cec635fb595e999b0225077de6e367b801f91d33344a7be7a94eb0c19d995a",
+        "authored_weight_offset_y": -3.464,
+        "phase": "transition",
+        "notes": "Complete image-authored continuity repair. Whole-frame uniform model density and measured neck registration only; no detached parts, warps, blends or duplicated endpoint.",
+        "index": 40,
+        "original_source": "run_v3/key_40_b.png",
+        "sha256": "994ad894aaff58d945f0bfb6d17526db4112cda706beaea82fd34f6d861bf5c0",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      },
+      {
+        "source": "iselin/frame_41.png",
+        "cell": [
+          0,
+          0,
+          1086,
+          1448
+        ],
+        "scale": 0.6547973729529397,
+        "origin": [
+          131.49135340069012,
+          12.18901239531425
+        ],
+        "landmarks": {
+          "neck": [
+            581.109,
+            280.922
+          ],
+          "belt": [
+            569.775,
+            564.715
+          ],
+          "face": [
+            577.56,
+            186.947
+          ]
+        },
+        "landmark_match_scores": {
+          "neck": 0.8112,
+          "belt": 0.7912,
+          "face": 0.8978
+        },
+        "authored_weight_offset_y": -3.864,
+        "generation_id": "exec-88b5863c-03d2-4df4-874c-305c36d8a841",
+        "phase": "transition",
+        "notes": "Complete ImageGen-authored unified drawing. Measured whole-master face/model density and neck translation retain deliberate phase-specific complete-body weight offset. Face/neck/belt agreement is inspected; source anatomy is not changed. No detached limbs, warps, head paste, interpolation or per-pose silhouette fitting.",
+        "index": 41,
+        "original_source": "run_v2/repairs/frame_40.png",
+        "sha256": "e665de69e0230281c7473895e8f7292706febc8970f449501b766335ba743036",
+        "context": "Rejected intermediate candidate snapshot for visible braid continuity, distinct from original production before fixtures."
+      }
+    ]
+  }
+}
