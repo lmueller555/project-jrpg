@@ -19,7 +19,6 @@ ROOT = Path(__file__).resolve().parent
 SCENE = ROOT/'assets/story/fire_veinhold_opening/scene.json'
 RENDER_SIZE = (960, 640)
 LOGICAL_SIZE = (480, 320)
-LAYER_NAMES = ('sky', 'distant', 'mid', 'foreground_a', 'foreground_b', 'crest')
 
 
 def _read_scene(path):
@@ -107,8 +106,10 @@ class FireVeinholdOpening:
             environment = json.loads(environment_path.read_text(encoding='utf-8'))
             if environment.get('version') != 1 or environment.get('density') != 2:
                 raise ValueError('Prologue scenery requires native density two')
+            if set(environment['layers']) != {'panorama'}:
+                raise ValueError('Flight requires one continuous mountain panorama')
             layers = {}
-            for name in LAYER_NAMES:
+            for name in environment['layers']:
                 record = environment['layers'][name]
                 image = pygame.image.load(str(self._path(record['image'], environment_path.parent)))
                 image = image.convert_alpha()
@@ -215,16 +216,11 @@ class FireVeinholdOpening:
             frame_clock -= duration
         bird_x = 480.+28.*math.sin(math.pi*u)*sway
         bird_y = 378.-25.*u+1.5*math.sin(t*math.tau/period)*sway
-        # The horizon falls through frame as we gain height. Near rock faces
-        # peel away much faster than the hazy range on the other side.
-        layers = {
-            'sky':{'offset':[-x*.15, -20.+10.*u], 'scale':1.08},
-            'distant':{'offset':[-x*.8, 5.+45.*u], 'scale':1.02+.025*u},
-            'mid':{'offset':[-x*2., -35.+420.*u], 'scale':1.20+.18*u},
-            'foreground_a':{'offset':[-100.-580.*u, 10.+470.*u], 'scale':1.25+.55*u},
-            'foreground_b':{'offset':[140.+720.*u, 130.+640.*u], 'scale':1.40+.75*u},
-            'crest':{'offset':[-x*1.5, -200.+900.*u*u], 'scale':1.05+.15*u},
-        }
+        # One opaque painting, one camera transform: every mountain landmark
+        # retains its relationship to every other landmark through the ascent.
+        layers = {'panorama':{'offset':[-25.-x, -145.+230.*u],
+                              'scale':1.08+.24*u}}
+        bird_y = 378.-230.*u+1.5*math.sin(t*math.tau/period)*sway
         return {'shot_id':shot['id'], 'local_time':local,
                 'camera':{'position':position, 'velocity':velocity, 'progress':u},
                 'eagle':{'position':[bird_x, bird_y], 'sequence':sequence,
@@ -326,7 +322,7 @@ class FireVeinholdOpening:
         else:
             self.flight_audio.resume()
 
-    def _terrain(self, target, image, record, *, align='center'):
+    def _terrain(self, target, image, record):
         scale = max(RENDER_SIZE[0]/image.get_width(), RENDER_SIZE[1]/image.get_height())*record['scale']
         size = (round(image.get_width()*scale), round(image.get_height()*scale))
         art = pygame.transform.scale(image, size)
@@ -335,9 +331,8 @@ class FireVeinholdOpening:
         y = (640-size[1])/2.+oy
         # Ground cards continue below frame. Their opaque source bottom must
         # never slide into view as a horizontal cut across another mountain.
-        y = max(640-size[1], y)
-        if align == 'left': x = -size[0]*.52+ox
-        elif align == 'right': x = 960-size[0]*.85+ox
+        y = min(0, max(640-size[1], y))
+        x = min(0, max(960-size[0], x))
         target.blit(art, (round(x), round(y)))
 
     def render_frame(self, time=None):
@@ -345,18 +340,15 @@ class FireVeinholdOpening:
         state = self.state_at(self.elapsed if time is None else time)
         art = self._assets[state['shot_id']]
         target = pygame.Surface(RENDER_SIZE).convert()
-        target.fill('#b6c8db')
-        for name in ('sky', 'distant', 'mid', 'crest'):
-            self._terrain(target, art['layers'][name], state['layers'][name])
+        self._terrain(target, art['layers']['panorama'], state['layers']['panorama'])
         # Complete eagle frames stay at one chase distance. Wing extent never
         # drives body scale or registration, including during its bank.
         eagle = state['eagle']
         image = art['eagle'][eagle['sequence']]['frames'][eagle['frame']][0]
+        image = image.copy()
+        image.fill((145, 175, 220, 255), special_flags=pygame.BLEND_RGBA_MULT)
         target.blit(image, (round(eagle['position'][0]-eagle['anchor'][0]),
                             round(eagle['position'][1]-eagle['anchor'][1])))
-        for name, align in (('foreground_a', 'left'), ('foreground_b', 'right')):
-            if not self.reduced_motion:
-                self._terrain(target, art['layers'][name], state['layers'][name], align=align)
         return target
 
     def draw(self, canvas, ui_surface):

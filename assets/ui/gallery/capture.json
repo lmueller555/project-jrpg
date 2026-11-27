@@ -9,7 +9,7 @@
       "name": "Fire Veinhold \u2014 Complete Cutscene",
       "source": "production FireVeinholdOpening.render_frame",
       "file": "assets/ui/gallery/fire_veinhold_opening.png",
-      "sha256": "64b8e155f0409061c709a1d98e3d1c1b2c8ff9755e3cac34750768db1980c1df",
+      "sha256": "3341afa61e1b58129b22805a7637bf8a49cff08ecfe69e06ff19ef680a2cc78d",
       "frame": 90,
       "seconds": 3.0333,
       "crop": [
@@ -74,16 +74,11 @@
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
-        "assets/story/fire_veinhold_opening/shot01/environment/art.json": "5947633f72e4879f26a57e5db947ec80921fd901f4a81d968751f1d863eae5a9",
-        "assets/story/fire_veinhold_opening/shot01/environment/crest.png": "a3484bd063be449df37bde9607ab7caae0a907556839374093603bf844c43c6e",
-        "assets/story/fire_veinhold_opening/shot01/environment/distant.png": "b335e347043c4afd2cae68bacf7d991cc87458240f8fa2cd8cc1aae256755969",
-        "assets/story/fire_veinhold_opening/shot01/environment/foreground_a.png": "f9b1d6064a2c8810d4e5e5a31cb1be3eefb83d6318d54f1b9660803fc81cd5c4",
-        "assets/story/fire_veinhold_opening/shot01/environment/foreground_b.png": "9cf7bfaea16e0ee1f9f40bba237f47110d0aa32b387ef96f8be6b0ca4b3d9887",
-        "assets/story/fire_veinhold_opening/shot01/environment/mid.png": "1eb499f091b218bbda0ba13991fa1680440ab281db0eab9bc1763c1df0f47294",
-        "assets/story/fire_veinhold_opening/shot01/environment/sky.png": "cddccd6c6e17c18ba8f6232b53bfcea9e37218e6756cf2dbed146668c2d51b98"
+        "assets/story/fire_veinhold_opening/shot01/environment/art.json": "10107bbfb3c21a6d11f793c6e95c415dd6a379dd8447f13fe53da16f5aae1697",
+        "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "154c4eb9c26b3530529b910b480ad8ff0e9552876e60caf239864e58b4774f9a"
       },
-      "source_commit": "8db517d4d645edb0b6d745fa6dfe29a8ee1d1925",
-      "runtime_python_sha256": "08c7861a8e70e194e8415ed9070abc9b443f9797b126c8c30d0b7bdb5a3a24fa",
+      "source_commit": "226b936f69e02e8da47db74b91956c9b0eb708a5",
+      "runtime_python_sha256": "519ae8d8fe146ea36250884b8265d433a1416c2f8634190afd6444a7b203c162",
       "review_frame": "docs/reviews/fire_veinhold_opening/gallery/regional_fire_veinhold_opening.png"
     },
     {
@@ -91,7 +86,7 @@
       "name": "Shot 1 \u2014 Eagle Ascent (10s)",
       "source": "production FireVeinholdOpening.render_frame",
       "file": "assets/ui/gallery/fire_veinhold_shot_01.png",
-      "sha256": "6bacad1b4fcf5e74f0b6be7c3319a95db8d268483346500207f20438c0565bfd",
+      "sha256": "307a05f11c46556727468385dc5d1ece97ac3aeaedab146ac233bb6324295f6d",
       "frame": 210,
       "seconds": 7.0333,
       "crop": [
@@ -156,16 +151,11 @@
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
         "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
-        "assets/story/fire_veinhold_opening/shot01/environment/art.json": "5947633f72e4879f26a57e5db947ec80921fd901f4a81d968751f1d863eae5a9",
-        "assets/story/fire_veinhold_opening/shot01/environment/crest.png": "a3484bd063be449df37bde9607ab7caae0a907556839374093603bf844c43c6e",
-        "assets/story/fire_veinhold_opening/shot01/environment/distant.png": "b335e347043c4afd2cae68bacf7d991cc87458240f8fa2cd8cc1aae256755969",
-        "assets/story/fire_veinhold_opening/shot01/environment/foreground_a.png": "f9b1d6064a2c8810d4e5e5a31cb1be3eefb83d6318d54f1b9660803fc81cd5c4",
-        "assets/story/fire_veinhold_opening/shot01/environment/foreground_b.png": "9cf7bfaea16e0ee1f9f40bba237f47110d0aa32b387ef96f8be6b0ca4b3d9887",
-        "assets/story/fire_veinhold_opening/shot01/environment/mid.png": "1eb499f091b218bbda0ba13991fa1680440ab281db0eab9bc1763c1df0f47294",
-        "assets/story/fire_veinhold_opening/shot01/environment/sky.png": "cddccd6c6e17c18ba8f6232b53bfcea9e37218e6756cf2dbed146668c2d51b98"
+        "assets/story/fire_veinhold_opening/shot01/environment/art.json": "10107bbfb3c21a6d11f793c6e95c415dd6a379dd8447f13fe53da16f5aae1697",
+        "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "154c4eb9c26b3530529b910b480ad8ff0e9552876e60caf239864e58b4774f9a"
       },
-      "source_commit": "8db517d4d645edb0b6d745fa6dfe29a8ee1d1925",
-      "runtime_python_sha256": "08c7861a8e70e194e8415ed9070abc9b443f9797b126c8c30d0b7bdb5a3a24fa",
+      "source_commit": "226b936f69e02e8da47db74b91956c9b0eb708a5",
+      "runtime_python_sha256": "519ae8d8fe146ea36250884b8265d433a1416c2f8634190afd6444a7b203c162",
       "review_frame": "docs/reviews/fire_veinhold_opening/gallery/regional_fire_veinhold_shot_01.png"
     },
     {

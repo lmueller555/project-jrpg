@@ -42,6 +42,15 @@ class FireVeinholdOpeningTests(unittest.TestCase):
         self.scene.reset()
         pygame.quit()
 
+    def test_terrain_is_one_opaque_panorama_with_one_shared_transform(self):
+        self.scene.start()
+        self.assertEqual(set(self.scene._assets['eagle_ascent']['layers']), {'panorama'})
+        panorama = self.scene._assets['eagle_ascent']['layers']['panorama']
+        self.assertEqual(pygame.mask.from_surface(panorama).count(),
+                         panorama.get_width()*panorama.get_height())
+        for time in (0., 2., 5., 8., 10.):
+            self.assertEqual(set(self.scene.state_at(time)['layers']), {'panorama'})
+
     def test_single_shot_finishes_at_ten_seconds_for_both_frame_rates(self):
         self.assertEqual(self.scene.duration, 10.)
         for fps in (30, 60):

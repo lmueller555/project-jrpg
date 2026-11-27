@@ -40,23 +40,22 @@ The final exporter preserves one source sampling canvas rather than changing
 sampling phase with wing bounds, and retains dark feather interiors during
 alpha cleanup. The bank/glide joins share the level-wing pose.
 
-Inspected runtime compositions at 0/2/4/6/8/10s and the captured native Gallery
-frames. Near spurs clear the bird; the ridge descends as distant ranges open.
-An initial terrain-card bottom seam and an abrupt crest introduction were
-corrected before these captures: the crest now remains staged continuously,
-and ground cards keep their lower source edges outside the picture. The
-rendered composites have no visible colored matte fringes or exposed card
-edges. Forward motion is most pronounced during the near passes in the first
-half; the second half emphasizes gaining height and clearing the summit.
+The updated nighttime preview uses one opaque mountain-and-sky panorama and
+one shared camera transform. This replaces the earlier six independently moving
+mountain layers, whose relative movement gave inconsistent depth cues. Cool
+moonlight and stars replace the sunrise, with corresponding cool eagle lighting.
+Inspected the updated runtime filmstrip for terrain continuity and edge coverage.
 
 The final frame retains camera velocity and an exposed handoff state rather
 than easing to rest or fading to black. Shot2 must continue/cut from that state
-to its future volcano/Veinhold reveal. The lower mid ridge remains visible at
-the end; the dedicated nearest crest has passed beneath the camera.
+to its future volcano/Veinhold reveal. The eagle reaches the central saddle at the end; Shot 2 will supply the view
+beyond it.
 
 ## Validation
 
-**149 targeted tests passed**, covering:
+**Night revision: 24 focused tests passed** (controller, Gallery isolation and
+environment exporter), including a regression check for one opaque panorama.
+The earlier implementation passed **149 targeted tests**, covering:
 
 ```sh
 PYTHONPATH=.:tests SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy \
@@ -68,7 +67,7 @@ PYTHONPATH=.:tests SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy \
   tests.test_opening_retirement -v
 ```
 
-See [test output](tests.log). The new controller tests exercise exact 30/60 Hz
+See [night revision output](night_tests.log) and [initial test output](tests.log). The new controller tests exercise exact 30/60 Hz
 duration, genuine pre-boundary samples, pause/focus/skip/restart, native detail
 through the live drawing branch, reduced-motion flight, camera continuity,
 data-driven aggregate order, malformed asset recovery and atomic cache loading.

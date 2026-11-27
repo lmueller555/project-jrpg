@@ -118,47 +118,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -0.0,
-            -20.0
+            -25.0,
+            -145.0
           ],
           "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -0.0,
-            5.0
-          ],
-          "scale": 1.02
-        },
-        "mid": {
-          "offset": [
-            -0.0,
-            -35.0
-          ],
-          "scale": 1.2
-        },
-        "foreground_a": {
-          "offset": [
-            -100.0,
-            10.0
-          ],
-          "scale": 1.25
-        },
-        "foreground_b": {
-          "offset": [
-            140.0,
-            130.0
-          ],
-          "scale": 1.4
-        },
-        "crest": {
-          "offset": [
-            -0.0,
-            -200.0
-          ],
-          "scale": 1.05
         }
       }
     },
@@ -181,7 +146,7 @@
       "eagle": {
         "position": [
           496.45798706418924,
-          371.7009618943233
+          330.70096189432326
         ],
         "sequence": "bank",
         "frame": 0,
@@ -192,47 +157,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -0.8816778784387106,
-            -17.999999999999996
+            -30.877852522924737,
+            -98.99999999999994
           ],
-          "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -4.7022820183397895,
-            14.000000000000012
-          ],
-          "scale": 1.0250000000000001
-        },
-        "mid": {
-          "offset": [
-            -11.755705045849474,
-            49.000000000000114
-          ],
-          "scale": 1.236
-        },
-        "foreground_a": {
-          "offset": [
-            -216.00000000000017,
-            104.00000000000013
-          ],
-          "scale": 1.36
-        },
-        "foreground_b": {
-          "offset": [
-            284.0000000000002,
-            258.00000000000017
-          ],
-          "scale": 1.55
-        },
-        "crest": {
-          "offset": [
-            -8.816778784387106,
-            -163.99999999999991
-          ],
-          "scale": 1.08
+          "scale": 1.1280000000000001
         }
       }
     },
@@ -255,7 +185,7 @@
       "eagle": {
         "position": [
           506.6295824562643,
-          369.2990381056767
+          287.2990381056768
         ],
         "sequence": "bank",
         "frame": 5,
@@ -266,47 +196,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -1.4265847744427298,
-            -16.000000000000004
+            -34.510565162951536,
+            -53.0000000000001
           ],
-          "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -7.6084521303612265,
-            22.999999999999982
-          ],
-          "scale": 1.03
-        },
-        "mid": {
-          "offset": [
-            -19.021130325903066,
-            132.99999999999983
-          ],
-          "scale": 1.2719999999999998
-        },
-        "foreground_a": {
-          "offset": [
-            -331.9999999999998,
-            197.9999999999998
-          ],
-          "scale": 1.4699999999999998
-        },
-        "foreground_b": {
-          "offset": [
-            427.9999999999997,
-            385.9999999999997
-          ],
-          "scale": 1.6999999999999997
-        },
-        "crest": {
-          "offset": [
-            -14.2658477444273,
-            -56.00000000000031
-          ],
-          "scale": 1.1099999999999999
+          "scale": 1.176
         }
       }
     },
@@ -329,7 +224,7 @@
       "eagle": {
         "position": [
           506.6295824562643,
-          362.9999999999999
+          240.0000000000001
         ],
         "sequence": "flap",
         "frame": 8,
@@ -340,47 +235,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -1.426584774442732,
-            -14.00000000000001
+            -34.51056516295155,
+            -7.000000000000256
           ],
-          "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -7.608452130361238,
-            31.99999999999995
-          ],
-          "scale": 1.035
-        },
-        "mid": {
-          "offset": [
-            -19.021130325903094,
-            216.99999999999952
-          ],
-          "scale": 1.3079999999999998
-        },
-        "foreground_a": {
-          "offset": [
-            -447.9999999999993,
-            291.9999999999995
-          ],
-          "scale": 1.5799999999999994
-        },
-        "foreground_b": {
-          "offset": [
-            571.9999999999992,
-            513.9999999999993
-          ],
-          "scale": 1.8499999999999992
-        },
-        "crest": {
-          "offset": [
-            -14.26584774442732,
-            123.99999999999875
-          ],
-          "scale": 1.14
+          "scale": 1.2239999999999998
         }
       }
     },
@@ -403,7 +263,7 @@
       "eagle": {
         "position": [
           496.4579870641894,
-          356.7009618943235
+          192.70096189432388
         ],
         "sequence": "flap",
         "frame": 2,
@@ -414,47 +274,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -0.8816778784387168,
-            -12.000000000000018
+            -30.87785252292478,
+            38.999999999999574
           ],
-          "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -4.702282018339823,
-            40.999999999999915
-          ],
-          "scale": 1.04
-        },
-        "mid": {
-          "offset": [
-            -11.755705045849558,
-            300.9999999999992
-          ],
-          "scale": 1.3439999999999996
-        },
-        "foreground_a": {
-          "offset": [
-            -563.9999999999989,
-            385.99999999999915
-          ],
-          "scale": 1.689999999999999
-        },
-        "foreground_b": {
-          "offset": [
-            715.9999999999986,
-            641.9999999999989
-          ],
-          "scale": 1.9999999999999987
-        },
-        "crest": {
-          "offset": [
-            -8.816778784387168,
-            375.99999999999727
-          ],
-          "scale": 1.1699999999999997
+          "scale": 1.2719999999999996
         }
       }
     },
@@ -477,7 +302,7 @@
       "eagle": {
         "position": [
           480.2932099552551,
-          354.53877692274745
+          150.22211025608132
         ],
         "sequence": "glide",
         "frame": 1,
@@ -488,47 +313,12 @@
         ]
       },
       "layers": {
-        "sky": {
+        "panorama": {
           "offset": [
-            -0.01570767617438055,
-            -10.033333333333358
+            -25.104717841162536,
+            84.23333333333275
           ],
-          "scale": 1.08
-        },
-        "distant": {
-          "offset": [
-            -0.0837742729300296,
-            49.84999999999989
-          ],
-          "scale": 1.0449166666666667
-        },
-        "mid": {
-          "offset": [
-            -0.209435682325074,
-            383.59999999999894
-          ],
-          "scale": 1.3793999999999995
-        },
-        "foreground_a": {
-          "offset": [
-            -678.0666666666652,
-            478.43333333333214
-          ],
-          "scale": 1.7981666666666654
-        },
-        "foreground_b": {
-          "offset": [
-            857.5999999999982,
-            767.8666666666651
-          ],
-          "scale": 2.147499999999998
-        },
-        "crest": {
-          "offset": [
-            -0.1570767617438055,
-            694.0099999999954
-          ],
-          "scale": 1.1994999999999996
+          "scale": 1.3191999999999995
         }
       }
     }
@@ -561,18 +351,13 @@
     "assets/story/fire_veinhold_opening/shot01/eagle/flap_14.png": "314a6af02f6a8aa0a3b047ed016e0f50d93b3a0209b8d39971cd437cb73c5654",
     "assets/story/fire_veinhold_opening/shot01/eagle/flap_15.png": "1118747d2d0a8536912eb8aea11afa72dbcfdffb8363585abfa065296744dc04",
     "assets/story/fire_veinhold_opening/shot01/eagle/flap_16.png": "98b6c875627ddd22434d58b20fa49c2d9e52a4cb9a84381debd993f733aff117",
-    "assets/story/fire_veinhold_opening/shot01/environment/art.json": "5947633f72e4879f26a57e5db947ec80921fd901f4a81d968751f1d863eae5a9",
-    "assets/story/fire_veinhold_opening/shot01/environment/crest.png": "a3484bd063be449df37bde9607ab7caae0a907556839374093603bf844c43c6e",
-    "assets/story/fire_veinhold_opening/shot01/environment/distant.png": "b335e347043c4afd2cae68bacf7d991cc87458240f8fa2cd8cc1aae256755969",
-    "assets/story/fire_veinhold_opening/shot01/environment/foreground_a.png": "f9b1d6064a2c8810d4e5e5a31cb1be3eefb83d6318d54f1b9660803fc81cd5c4",
-    "assets/story/fire_veinhold_opening/shot01/environment/foreground_b.png": "9cf7bfaea16e0ee1f9f40bba237f47110d0aa32b387ef96f8be6b0ca4b3d9887",
-    "assets/story/fire_veinhold_opening/shot01/environment/mid.png": "1eb499f091b218bbda0ba13991fa1680440ab281db0eab9bc1763c1df0f47294",
-    "assets/story/fire_veinhold_opening/shot01/environment/sky.png": "cddccd6c6e17c18ba8f6232b53bfcea9e37218e6756cf2dbed146668c2d51b98"
+    "assets/story/fire_veinhold_opening/shot01/environment/art.json": "10107bbfb3c21a6d11f793c6e95c415dd6a379dd8447f13fe53da16f5aae1697",
+    "assets/story/fire_veinhold_opening/shot01/environment/panorama.png": "154c4eb9c26b3530529b910b480ad8ff0e9552876e60caf239864e58b4774f9a"
   },
   "runtime_sha256": {
-    "fire_veinhold_opening.py": "6a728898996f6853f70b816b5baa37f002a8580ee547b43a1b880ab87e42b296",
+    "fire_veinhold_opening.py": "e5620dcf41098a03337a4f2510df5b45133e89bce01ca0f7813540134111ab41",
     "prologue_flight_audio.py": "44d0409ef336d124bea8dd7d86b7b57a908059ec6b6b4e503de52dca70193e30",
     "cutscene_gallery.py": "0fa2fb1a45cb8510b971fcaf55bfe2934d0d798fc650f02b617517fb9ab3adb1"
   },
-  "video_sha256": "206965163945ad0a12b519d9ebe7362d594ee7bc44fdb4ba8685a2556d1f2fec"
+  "video_sha256": "d80ab973edfa62bb391ec55d4f886495f6b6214405a98f1142b60f5611629c55"
 }

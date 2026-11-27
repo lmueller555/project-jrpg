@@ -43,7 +43,7 @@ def products(source=SOURCE, target=TARGET):
     recipe = json.loads((source/'recipe.json').read_text(encoding='utf-8'))
     if recipe.get('version') != 1 or recipe.get('density') != 2:
         raise ValueError('Mountain environment requires version one and artwork density two')
-    if set(recipe['layers']) != set(LAYERS):
+    if set(recipe['layers']) not in (set(LAYERS), {'panorama'}):
         raise ValueError('Mountain environment requires all six named depth layers')
     records = {}
     for record in recipe['source_records']:
@@ -55,7 +55,7 @@ def products(source=SOURCE, target=TARGET):
         records[filename] = record
     output = {}
     manifest = {'version':1, 'density':2, 'layers':{}}
-    for name in LAYERS:
+    for name in recipe['layers']:
         spec = recipe['layers'][name]
         filename = spec['source']
         if filename not in records:raise ValueError('Unrecorded mountain layer source: '+filename)

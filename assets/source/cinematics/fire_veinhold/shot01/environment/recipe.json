@@ -77,56 +77,17 @@
         1086
       ],
       "referenced_source": "master_generated.png"
+    },
+    {
+      "file": "night_panorama_generated.png",
+      "sha256": "345010af2365769099799ad1d65b75524988704a490ca823dcf0a02dbad89335",
+      "prompt": "Edit master_generated.png into readable cool silver moonlit night, preserving terrain geography as one opaque continuous mountain landscape with sparse stars; remove sunrise and warm light. No eagle, buildings or volcano.",
+      "generation_id": "exec-e1b0098d-fc3f-4d22-b0a8-8c3550bb59c3"
     }
   ],
   "layers": {
-    "sky": {
-      "source": "sky_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
-    },
-    "distant": {
-      "source": "distant_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
-    },
-    "mid": {
-      "source": "mid_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
-    },
-    "foreground_a": {
-      "source": "foreground_a_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
-    },
-    "foreground_b": {
-      "source": "foreground_b_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
-    },
-    "crest": {
-      "source": "crest_generated.png",
-      "alpha_threshold": 128,
-      "anchor": [
-        724,
-        543
-      ]
+    "panorama": {
+      "source": "night_panorama_generated.png"
     }
   },
   "framing": {
@@ -152,5 +113,6 @@
       640
     ],
     "notes": "Native image-generation output retained without enlargement or padding. Renderer frames a960x640 detailed viewport independently for each depth plane; fast foreground parallax supplies near travel. Start already high on the final approach. Crest passes down below camera before Shot2; no volcano or fortress is present in any Shot1 layer."
-  }
+  },
+  "composition": "single_panorama"
 }

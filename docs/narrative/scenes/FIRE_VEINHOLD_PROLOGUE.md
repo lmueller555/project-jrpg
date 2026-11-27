@@ -13,7 +13,7 @@ No former flashforward, relief-caravan scene or festival is restored.
 
 | Shot | Duration | Picture and movement | Sound and disclosure |
 | --- | --- | --- | --- |
-| 1 — Eagle Ascent | 10 seconds | Follow an eagle flying quickly uphill through alpine rock spurs to the summit. The camera follows from above and behind; near rock faces pass rapidly while distant ranges hold their scale. | High-altitude wind and close feather/downstroke sounds. No dialogue or facility alarm yet. |
+| 1 — Eagle Ascent | 10 seconds | Follow an eagle flying quickly uphill through alpine rock spurs to the summit. The camera follows from above and behind; one continuous moonlit mountain landscape preserves consistent terrain placement. | High-altitude wind and close feather/downstroke sounds. No dialogue or facility alarm yet. |
 | 2 — Volcano and Veinhold | 15 seconds | Crest into a huge establishing view of the volcano, military fortress and reservoir drawing Fire-aspected aether. | Red alert lights are already active during the reveal, establishing an emergency before the infiltrators appear. Detailed audio staging belongs to that shot's PR. |
 | 3 — Running legs | 3 seconds | Side tracking shot of Iselin, Lucan and the Crown soldier's legs running over a metal fortress access bridge. | Metal footfalls and equipment movement; exact mix is future work. |
 | 4 — Faces | Exact duration open | Track backward in front of the runners and pan down to reveal their faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left in this view); the soldier is on his anatomical left (screen right), about ten feet behind. | Exact performance and transition timing remain to be authored. |
@@ -27,8 +27,8 @@ are not established by this scenery.
 ## Shot 1 performance
 
 The shot starts already in the final high-altitude approach rather than
-attempting a ground-to-summit climb in ten seconds. Dawn light catches slate
-rock, sparse alpine vegetation and small snow remnants; this is not a depiction
+attempting a ground-to-summit climb in ten seconds. Silver moonlight catches slate
+rock, sparse alpine vegetation and small snow remnants beneath a starry sky; this is not a depiction
 of Adamanthra's later Ice Dome.
 
 - **0–2s:** Powered flight between nearby rock spurs.
@@ -51,8 +51,9 @@ list. Only completed shots go here; future storyboard rows above are not blank
 runtime clips.
 
 The picture is composed at **960×640** in the game's full **3:2** frame. Its
-six independently authored mountain layers are native **1448×1086** RGBA/sky
-images, with separate depth/framing. The eagle uses complete **256×256** frames,
+mountains and sky form one opaque **1448×1086** nighttime panorama. One bounded
+camera transform moves the entire landscape; there are no independently
+scrolling foreground or background mountain groups. The eagle uses complete **256×256** frames,
 density two, registered at the chest **[128,144]**. Wing extent never changes
 body scale. No detached-wing rig or warped idle constructs the flight poses.
 
@@ -69,11 +70,11 @@ reduced 480×320 world image. A downsampled logical copy exists for legacy debug
 consumers; Gallery thumbnails and dedicated captures use the detailed renderer.
 Full frame aspect is preserved at all output sizes.
 
-Foreground cards remain in their authored depth order with their lower source
-edges below the picture. The camera never reveals a rectangular terrain-card
-bottom or introduces a new ridge abruptly halfway through the shot. Reduced
-Motion lowers lateral camera sweep and removes the fast closest foreground
-passes; ascent, complete wing animation and the ten-second duration remain.
+The opaque panorama always covers the viewport. All mountain landmarks share
+one scale and offset during the uphill approach, preserving their relative
+placement. The eagle rises toward the saddle and receives a cool nighttime
+lighting tint. Reduced Motion lowers lateral camera and eagle sway while
+retaining the ascent, wing animation and ten-second duration.
 
 Preserved generation sources, exact prompts, hashes, registration and recipes:
 
