@@ -31,7 +31,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 30
-OUT = ROOT/'docs/reviews/cinder_crest'
+OUT = ROOT/'docs/reviews/cinder_bridges_smoke'
 
 
 def _samples(name):
@@ -149,7 +149,7 @@ def capture(out=OUT, reduced_motion=False):
                     'source_sha256':{path.relative_to(ROOT).as_posix():sha256(path.read_bytes()).hexdigest()
                         for path in sorted(scene.scene_path.parent.rglob('*')) if path.is_file()},
                     'runtime_sha256':{name:sha256((ROOT/name).read_bytes()).hexdigest() for name in
-                        ('fire_veinhold_opening.py','prologue_flight_audio.py','cutscene_gallery.py')},
+                        ('fire_veinhold_opening.py','cinematic_smoke.py','prologue_flight_audio.py','cutscene_gallery.py')},
                     'video_sha256':sha256(target.read_bytes()).hexdigest()}
         (out/f'capture{suffix}.json').write_text(json.dumps(metadata, indent=2)+'\n')
     pygame.quit()

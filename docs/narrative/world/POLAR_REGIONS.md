@@ -164,10 +164,28 @@ on Istrava's volcanic fringe. The opening Fire Veinhold occupies the main
 volcanic island beside its volcano. The cinematic approach faces east-southeast:
 the main island lies ahead, a smaller active island farther beyond, southern
 skerries to the right, and Othara's distant red headlands to the left. The
-islands remain separated from Merovar by open sea. Red ash slopes and lava
-illumination distinguish the volcanic terrain from Othara's Damar Drylands;
+islands remain separated from Merovar by sea channels. Rust-red ash on the
+main isle and lava on the distant active isle distinguish their volcanic
+terrain from Othara's Damar Drylands;
 this does not make the entire archipelago tropical. Exact distances, travel
 times, facility coordinates and Carcovian supply arrangements remain open.
+
+**Opening industrial state and crossings approved, 2026-11-27:** The main
+island has broad coastal plateaus around its volcano, providing substantial
+space for the Fire Veinhold, reservoir and associated military infrastructure.
+The Veinhold siphons Fire-aspected aether and suppresses that volcano's
+activity: its crater is dark, with no erupting lava. Residual steam and gas
+still billow from it. The farther island retains its active volcano and a
+denser ash plume. The visible contrast is an environmental clue to extraction,
+not a separate explanation of every island's geology.
+
+Two major metal bridges connect the main isle to Merovar's coast and to
+Othara's Damar Drylands respectively. Both have mainland/island abutments;
+open water remains beneath the spans. These establish physical access routes,
+while exact lengths, ownership, access restrictions, guard dispositions and
+logistical arrangements remain open. The stylized world map retains its
+approved coastline/island placement; its volcano symbols are not a survey of
+present eruptive activity, and it does not yet illustrate these bridge details.
 
 Some small fishing households have lived here for generations. Their homes
 are not all temporary expedition camps. Boat repair, net work, household

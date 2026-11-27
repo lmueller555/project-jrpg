@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pygame
 
+from cinematic_smoke import CinematicSmoke
 from prologue_flight_audio import PrologueFlightAudio, wing_phase_at
 from ui_style import BRASS, MUTED
 
@@ -173,7 +174,12 @@ class FireVeinholdOpening:
                 if (type(value) not in (int, float) or not math.isfinite(value)
                         or not 0 <= value <= layers['panorama'].get_height()):
                     raise ValueError('Invalid panorama source window')
-            assets[shot['id']] = {'layers':layers, 'eagle':sequences,
+            smoke_record = environment['smoke']
+            texture = pygame.image.load(str(self._path(smoke_record['texture'], environment_path.parent))).convert_alpha()
+            if not texture.get_bounding_rect().width:
+                raise ValueError('Empty smoke texture')
+            smoke = CinematicSmoke(texture, smoke_record['emitters'], layers['panorama'].get_size())
+            assets[shot['id']] = {'layers':layers, 'eagle':sequences, 'smoke':smoke,
                                  'anchor':anchor, 'timing':timing,
                                  'framing':framing}
         return assets
@@ -254,6 +260,7 @@ class FireVeinholdOpening:
                          'scale':1.-.65*_smooth(vista)},
                 'phase':'ascent' if local < ascent else 'cinder_vista',
                 'crest_time':ascent, 'vista_elapsed':max(0., local-ascent),
+                'smoke':self._assets[shot['id']]['smoke'].samples(local, self.reduced_motion),
                 'layers':layers}
 
     @property
@@ -350,10 +357,9 @@ class FireVeinholdOpening:
         else:
             self.flight_audio.resume()
 
-    def _terrain(self, target, image, record):
+    def _panorama_projection(self, image, record):
         scale = max(RENDER_SIZE[0]/image.get_width(), RENDER_SIZE[1]/image.get_height())*record['scale']
         size = (round(image.get_width()*scale), round(image.get_height()*scale))
-        art = pygame.transform.scale(image, size)
         ox, oy = record['offset']
         x = (960-size[0])/2.+ox
         y = (640-size[1])/2.+oy
@@ -361,7 +367,11 @@ class FireVeinholdOpening:
         # never slide into view as a horizontal cut across another mountain.
         y = min(0, max(640-size[1], y))
         x = min(0, max(960-size[0], x))
-        target.blit(art, (round(x), round(y)))
+        return scale, (round(x), round(y)), size
+
+    def _terrain(self, target, image, record):
+        _, origin, size = self._panorama_projection(image, record)
+        target.blit(pygame.transform.scale(image, size), origin)
 
     def render_frame(self, time=None):
         """Render from source detail, never through the 480×320 world canvas."""
@@ -369,6 +379,8 @@ class FireVeinholdOpening:
         art = self._assets[state['shot_id']]
         target = pygame.Surface(RENDER_SIZE).convert()
         self._terrain(target, art['layers']['panorama'], state['layers']['panorama'])
+        scale, origin, _ = self._panorama_projection(art['layers']['panorama'], state['layers']['panorama'])
+        art['smoke'].draw(target, state['smoke'], scale, origin)
         # Complete eagle frames stay at one chase distance. Wing extent never
         # drives body scale or registration, including during its bank.
         eagle = state['eagle']
