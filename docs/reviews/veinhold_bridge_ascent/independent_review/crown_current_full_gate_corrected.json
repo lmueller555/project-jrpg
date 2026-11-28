@@ -1,0 +1,5251 @@
+{
+  "status": "PROVISIONAL corrected source/native gates accepted:52\u201356/68\u201372/84\u201388 gradual gaze bridges and56\u219258/72\u219274/88\u219290 coherent;104\u2192106/120\u2192122 actual helmet registration coherent. Final full composed chronological bank pending.",
+  "profile": {
+    "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/actorperformance.json",
+    "sha256": "cd31e7c758a3fcc72870311a66c3b956147d20e7a185529fdd6491ff0dee4daa"
+  },
+  "method": "Actual profile PNGs at actual camera, uniform whole-image sampling at declaredphysicaldensity; fixed220\u00d7280 native root crops. No real-time GIF playback used.",
+  "accepted_early": [
+    {
+      "index": 26,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_026.png",
+        "sha256": "e9841073adafbbe604592ca2e41db811e0eb6970a19f8ebb96575e173b78efc5",
+        "rgba_sha256": "637743dcf11d50216c720d614ee3e69fd7cbe8c538e6d8e79ac9d267a871a75f",
+        "size": [
+          768,
+          1024
+        ]
+      },
+      "selection": {
+        "index": 26,
+        "file": "transition/frame_026.png",
+        "canvas": [
+          768,
+          1024
+        ],
+        "anchor": [
+          384,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "logical_phase": 44,
+        "authored_phase": 44,
+        "authored_time_seconds": 0.43333333333333335,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_026",
+        "kind": "transition",
+        "index": 26,
+        "time": 0.43333333333333335,
+        "phase": 44,
+        "elevation": 11.768012354952857,
+        "azimuth": 7.267487912205664,
+        "native_pixels_per_metre": 141.94120844584333,
+        "file": "registered_atlases/transition/frame_026.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "source_cell_rgba_sha256": "3506143f309daee9e35371b07f0a3c7e9e2b37c3219a2f265b1ecebdef003f21",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.864583432674408,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            190.47391382215687,
+            85.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            190.0,
+            32.0
+          ],
+          "search_window": [
+            155,
+            0,
+            255,
+            124
+          ],
+          "physical_projection_plan": [
+            192.00000000102955,
+            33.750000001167514
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          58.75746189738015,
+          11.309151478447617
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "72cda428022d952a337f8c3bf1336423c9108c38870aae102b08853b20307afb",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          58.826475848345254,
+          2.1351309693889853
+        ],
+        "target": [
+          0.0,
+          57.85323721529284,
+          1.9053341827833377
+        ],
+        "forward": [
+          0.0,
+          -0.9732386330524073,
+          -0.22979678660564762
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.22979678660564762,
+          0.9732386330524073
+        ],
+        "focal_pixels": 852.7237654320988,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 41.139019205070696,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.23186887651398436,
+        "party_travel_metres": 55.99333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          52.94533333333333,
+          0.0
+        ],
+        "frame_index": 44,
+        "cycle_phase": 0.7333333333333334,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 11.768012354952857,
+        "view_azimuth_degrees": 7.267487912205664,
+        "ground_anchor": [
+          582.9130223983755,
+          419.691747992707
+        ],
+        "pixels_per_metre": 141.94120844584333,
+        "scale": 0.28388241689168664,
+        "depth_metres": 6.007584229899308
+      }
+    },
+    {
+      "index": 28,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_028.png",
+        "sha256": "bc814c2bf65e5a1523a364ca652a1a12f7be30ca8a159a8dd917788248127c4e",
+        "rgba_sha256": "b61364770114929e0db715acbba252c9189390ecf7790ef72ef44159573850d2",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 28,
+        "file": "transition/frame_028.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 46,
+        "authored_phase": 46,
+        "authored_time_seconds": 0.4666666666666667,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_028",
+        "kind": "transition",
+        "index": 28,
+        "time": 0.4666666666666667,
+        "phase": 46,
+        "elevation": 12.97281782176391,
+        "azimuth": 7.31188984950038,
+        "native_pixels_per_metre": 140.52359503517633,
+        "file": "registered_atlases/transition/frame_028.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          384,
+          0,
+          768,
+          512
+        ],
+        "source_cell_rgba_sha256": "d0a20d763ad2cf803d437ffc9b33f093a01c27fbfaa85d9a337d0f5f10373d81",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.864512026309967,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            191.47391382215687,
+            85.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            190.0,
+            32.0
+          ],
+          "search_window": [
+            155,
+            0,
+            255,
+            127
+          ],
+          "physical_projection_plan": [
+            193.0101486438769,
+            37.82758146646668
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          59.76761054022751,
+          15.386732943746786
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "bc814c2bf65e5a1523a364ca652a1a12f7be30ca8a159a8dd917788248127c4e",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          58.92370841350692,
+          2.2575532889660495
+        ],
+        "target": [
+          0.0,
+          57.95811800506537,
+          1.9974856763617779
+        ],
+        "forward": [
+          0.0,
+          -0.9655904084415475,
+          -0.2600676126042716
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.2600676126042716,
+          0.9655904084415475
+        ],
+        "focal_pixels": 842.7160493827159,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 41.58600127647366,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.2630922242821082,
+        "party_travel_metres": 56.126666666666665,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.07866666666666,
+          0.0
+        ],
+        "frame_index": 46,
+        "cycle_phase": 0.7666666666666666,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 12.97281782176391,
+        "view_azimuth_degrees": 7.31188984950038,
+        "ground_anchor": [
+          581.433753154469,
+          409.2300215928858
+        ],
+        "pixels_per_metre": 140.52359503517633,
+        "scale": 0.28104719007035267,
+        "depth_metres": 5.99697189053386
+      }
+    },
+    {
+      "index": 30,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_030.png",
+        "sha256": "4910f0f192855b646924049f8268c6f6b761903a4114046eb2a8f9bea5261182",
+        "rgba_sha256": "118d5c8744280c6c1379593605b1b35c647d1b403e8578670a820b64bee9adcf",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 30,
+        "file": "transition/frame_030.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 0,
+        "authored_phase": 0,
+        "authored_time_seconds": 0.5,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_030",
+        "kind": "transition",
+        "index": 30,
+        "time": 0.5,
+        "phase": 0,
+        "elevation": 14.299424720358324,
+        "azimuth": 7.3618151678973724,
+        "native_pixels_per_metre": 138.5654172096848,
+        "file": "registered_atlases/transition/frame_030.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          768,
+          0,
+          1152,
+          512
+        ],
+        "source_cell_rgba_sha256": "a477235a820d15bc5ac4c666b436a966ac5e615f35a84d251e573d1c597fcc30",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.8670608401298523,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            191.47391382215687,
+            85.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            190.0,
+            32.0
+          ],
+          "search_window": [
+            156,
+            0,
+            256,
+            131
+          ],
+          "physical_projection_plan": [
+            194.622998041632,
+            41.52237773048095
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          61.38045993798261,
+          19.08152920776105
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "4910f0f192855b646924049f8268c6f6b761903a4114046eb2a8f9bea5261182",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.016967513396374,
+          2.391903686523438
+        ],
+        "target": [
+          0.0,
+          58.06275981084748,
+          2.092758804574294
+        ],
+        "forward": [
+          0.0,
+          -0.954207702548891,
+          -0.29914488194914396
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.29914488194914396,
+          0.954207702548891
+        ],
+        "focal_pixels": 829.375,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 42.19649102455699,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.303796372925263,
+        "party_travel_metres": 56.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.211999999999996,
+          0.0
+        ],
+        "frame_index": 0,
+        "cycle_phase": 0.0,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 14.299424720358324,
+        "view_azimuth_degrees": 7.3618151678973724,
+        "ground_anchor": [
+          579.4506831257388,
+          392.37975632549654
+        ],
+        "pixels_per_metre": 138.5654172096848,
+        "scale": 0.2771308344193696,
+        "depth_metres": 5.985440066513452
+      }
+    },
+    {
+      "index": 32,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_032.png",
+        "sha256": "6cbb6c515e85cb9f0df70aeab9e7c350e2c440b46f414f02062120b9c9026648",
+        "rgba_sha256": "814ebca23c6807b84d9e74f059816b947d66b6d7fe5cc4fdba70feac870e9351",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 32,
+        "file": "transition/frame_032.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 2,
+        "authored_phase": 2,
+        "authored_time_seconds": 0.5333333333333333,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_032",
+        "kind": "transition",
+        "index": 32,
+        "time": 0.5333333333333333,
+        "phase": 2,
+        "elevation": 15.7426093994059,
+        "azimuth": 7.417456246897982,
+        "native_pixels_per_metre": 136.199738411568,
+        "file": "registered_atlases/transition/frame_032.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          1152,
+          0,
+          1536,
+          512
+        ],
+        "source_cell_rgba_sha256": "414c1977cf34891cc3d701cb5b4239392cb2e8856d3ada8286ad79694b9de38b",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.8587762713432312,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            191.47391382215687,
+            86.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            191.0,
+            33.0
+          ],
+          "search_window": [
+            157,
+            0,
+            257,
+            133
+          ],
+          "physical_projection_plan": [
+            196.7314767684794,
+            44.64774215975339
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          62.78766214849503,
+          21.5056171206985
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "6cbb6c515e85cb9f0df70aeab9e7c350e2c440b46f414f02062120b9c9026648",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.10627082702351,
+          2.537654320987655
+        ],
+        "target": [
+          0.0,
+          58.16672568552981,
+          2.195229253132515
+        ],
+        "forward": [
+          0.0,
+          -0.9395451414936925,
+          -0.34242506785514026
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.34242506785514026,
+          0.9395451414936925
+        ],
+        "focal_pixels": 813.5802469135803,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 42.94173271627134,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.34949679589318555,
+        "party_travel_metres": 56.39333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.34533333333333,
+          0.0
+        ],
+        "frame_index": 2,
+        "cycle_phase": 0.033333333333333215,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 15.7426093994059,
+        "view_azimuth_degrees": 7.417456246897982,
+        "ground_anchor": [
+          577.1382300819273,
+          373.3031629887677
+        ],
+        "pixels_per_metre": 136.199738411568,
+        "scale": 0.27239947682313603,
+        "depth_metres": 5.973434724632918
+      }
+    },
+    {
+      "index": 34,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_034.png",
+        "sha256": "53a50e7c1957d7109c3c9daaef35354367ed950c510cfafd74ff91ab7559aec4",
+        "rgba_sha256": "b25cdd17223da1142b1094f12ed4b0533a76c70ff2f3b6df1a3aaecc59e1e006",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 34,
+        "file": "transition/frame_034.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 4,
+        "authored_phase": 4,
+        "authored_time_seconds": 0.5666666666666667,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_034",
+        "kind": "transition",
+        "index": 34,
+        "time": 0.5666666666666667,
+        "phase": 4,
+        "elevation": 17.294995834018234,
+        "azimuth": 7.478993502356449,
+        "native_pixels_per_metre": 133.60280829670836,
+        "file": "registered_atlases/transition/frame_034.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          0,
+          512,
+          384,
+          1024
+        ],
+        "source_cell_rgba_sha256": "0dd4f7207b03de7f808fa9a9e1add7f720c073e4f62312c44345197425a5fc94",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.7552841305732727,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            191.47391382215687,
+            90.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            191.0,
+            34.0
+          ],
+          "search_window": [
+            158,
+            0,
+            258,
+            135
+          ],
+          "physical_projection_plan": [
+            199.2174314938313,
+            47.34569573234963
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          65.27361687384692,
+          23.502294176959744
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "53a50e7c1957d7109c3c9daaef35354367ed950c510cfafd74ff91ab7559aec4",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.19166707946436,
+          2.694117303542149
+        ],
+        "target": [
+          0.0,
+          58.268508106254615,
+          2.3096988984386337
+        ],
+        "forward": [
+          0.0,
+          -0.9231589732097444,
+          -0.3844184051035154
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.3844184051035154,
+          0.9231589732097444
+        ],
+        "focal_pixels": 796.7669753086418,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 43.76306565457992,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.39457773471302393,
+        "party_travel_metres": 56.526666666666664,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.47866666666666,
+          0.0
+        ],
+        "frame_index": 4,
+        "cycle_phase": 0.06666666666666665,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 17.294995834018234,
+        "view_azimuth_degrees": 7.478993502356449,
+        "ground_anchor": [
+          574.7077541862195,
+          356.73600850320923
+        ],
+        "pixels_per_metre": 133.60280829670836,
+        "scale": 0.26720561659341674,
+        "depth_metres": 5.963699307421461
+      }
+    },
+    {
+      "index": 36,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_036.png",
+        "sha256": "15698af59e078246b516a3aa55a0557c121f63fccc8caec87dcc42122b7aabac",
+        "rgba_sha256": "78208be48e9a8c2a0768311a5366400d035a2b21dcad237ce5499abddafb4d2a",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 36,
+        "file": "transition/frame_036.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 6,
+        "authored_phase": 6,
+        "authored_time_seconds": 0.6,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_036",
+        "kind": "transition",
+        "index": 36,
+        "time": 0.6,
+        "phase": 6,
+        "elevation": 18.947045746194604,
+        "azimuth": 7.546596420285945,
+        "native_pixels_per_metre": 130.8869249934149,
+        "file": "registered_atlases/transition/frame_036.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          384,
+          512,
+          768,
+          1024
+        ],
+        "source_cell_rgba_sha256": "b02a289a93751e4c01ed8b7acf6c57a24c675618bb1301cd1db79a58f996112b",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.7314333319664001,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            191.47391382215687,
+            91.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            191.0,
+            34.0
+          ],
+          "search_window": [
+            159,
+            0,
+            259,
+            136
+          ],
+          "physical_projection_plan": [
+            201.94777846575815,
+            50.03003900560879
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          68.00396384577377,
+          26.186637450218903
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "15698af59e078246b516a3aa55a0557c121f63fccc8caec87dcc42122b7aabac",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.27323431707968,
+          2.8604492187500012
+        ],
+        "target": [
+          0.0,
+          58.366926530043024,
+          2.4378309570093015
+        ],
+        "forward": [
+          0.0,
+          -0.9063077870366498,
+          -0.4226182617406998
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4226182617406998,
+          0.9063077870366498
+        ],
+        "focal_pixels": 780.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.612410109815286,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.43633231299858277,
+        "party_travel_metres": 56.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.611999999999995,
+          0.0
+        ],
+        "frame_index": 6,
+        "cycle_phase": 0.09999999999999987,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 18.947045746194604,
+        "view_azimuth_degrees": 7.546596420285945,
+        "ground_anchor": [
+          572.2756768712543,
+          344.59533054417943
+        ],
+        "pixels_per_metre": 130.8869249934149,
+        "scale": 0.26177384998682984,
+        "depth_metres": 5.959342386867465
+      }
+    },
+    {
+      "index": 38,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_038.png",
+        "sha256": "3c9abc94c4133711b3dc348d3f81e3c45800dc3b9d0f76628ca49dd7e1133dec",
+        "rgba_sha256": "032aacd0f5243ca8333472082090585324fd80519ea9367f5aed67964a90d52e",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 38,
+        "file": "transition/frame_038.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 8,
+        "authored_phase": 8,
+        "authored_time_seconds": 0.6333333333333333,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_038",
+        "kind": "transition",
+        "index": 38,
+        "time": 0.6333333333333333,
+        "phase": 8,
+        "elevation": 20.687117786350324,
+        "azimuth": 7.620424140262229,
+        "native_pixels_per_metre": 127.70446479842306,
+        "file": "registered_atlases/transition/frame_038.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          768,
+          512,
+          1152,
+          1024
+        ],
+        "source_cell_rgba_sha256": "f61126a66596c9cadc4f728842df837305561c229a31ff74834a334b4e84c669",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.7106198072433472,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            190.47391382215687,
+            91.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            191.0,
+            34.0
+          ],
+          "search_window": [
+            160,
+            0,
+            260,
+            139
+          ],
+          "physical_projection_plan": [
+            204.77441592836664,
+            53.25238476204236
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          70.83060130838226,
+          29.408983206652472
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "3c9abc94c4133711b3dc348d3f81e3c45800dc3b9d0f76628ca49dd7e1133dec",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.35107818273346,
+          3.0356556456766026
+        ],
+        "target": [
+          0.0,
+          58.46268774183955,
+          2.5765669565016998
+        ],
+        "forward": [
+          0.0,
+          -0.8883904408939063,
+          -0.4590886891749031
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4590886891749031,
+          0.8883904408939063
+        ],
+        "focal_pixels": 761.1882716049383,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 45.6033152810767,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.47696912640824973,
+        "party_travel_metres": 56.79333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.74533333333333,
+          0.0
+        ],
+        "frame_index": 8,
+        "cycle_phase": 0.1333333333333333,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 20.687117786350324,
+        "view_azimuth_degrees": 7.620424140262229,
+        "ground_anchor": [
+          569.5694709115578,
+          334.7268216487448
+        ],
+        "pixels_per_metre": 127.70446479842306,
+        "scale": 0.25540892959684613,
+        "depth_metres": 5.960545489199981
+      }
+    },
+    {
+      "index": 40,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_040.png",
+        "sha256": "94fe05d38a31e3cec9f3e2e62b8aa7ea78359bd2f45f2c5b1ec3fe4593c9b8f7",
+        "rgba_sha256": "80714313d00d53d1e50416fc92e5e9a32677d4624788a1ff6dce6352e5bb30e5",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 40,
+        "file": "transition/frame_040.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 10,
+        "authored_phase": 10,
+        "authored_time_seconds": 0.6666666666666666,
+        "held_reviewed_exposure": false
+      },
+      "source_registration": {
+        "id": "transition_040",
+        "kind": "transition",
+        "index": 40,
+        "time": 0.6666666666666666,
+        "phase": 10,
+        "elevation": 22.501610982322287,
+        "azimuth": 7.700625583837829,
+        "native_pixels_per_metre": 123.07697777733449,
+        "file": "registered_atlases/transition/frame_040.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "source_atlas": "atlases/transition_00_modelv2.png",
+        "source_sha256": "d93f03b7c7dbfab94adad8e66cae031727c472caed30f9c0f1335e71694562e3",
+        "source_cell": [
+          1152,
+          512,
+          1536,
+          1024
+        ],
+        "source_cell_rgba_sha256": "c74da105831bb927883b5b3d214ac951fd6541cd8be00ecd350e5e0f318b670d",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                313,
+                145
+              ],
+              [
+                442,
+                142
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                150,
+                60
+              ],
+              [
+                219,
+                60
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                129,
+                128
+              ],
+              [
+                250,
+                134
+              ]
+            ],
+            "review": "Actual matching-phase steel dome and pauldron centres inspected in /tmp/crown_atlas_v2_features.jpg; one whole-sheet physical-density calibration."
+          },
+          "feature_scale_estimates": [
+            0.7012765163349968,
+            0.7709025957636104
+          ],
+          "uniform_scale": 0.7012765163349968,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.6891472935676575,
+          "template_to_source_scale": 0.5347391382215687,
+          "observed_brim_center_source": [
+            192.47391382215687,
+            87.82130520437255
+          ],
+          "template_key_index": 0
+        },
+        "observed_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            191.5,
+            34.0
+          ],
+          "search_window": [
+            161,
+            0,
+            261,
+            142
+          ],
+          "physical_projection_plan": [
+            207.53892374736373,
+            57.528821063332465
+          ]
+        },
+        "uniform_whole_cell_scale": 0.7012765163349968,
+        "whole_cell_origin": [
+          73.24447086921185,
+          33.685419507942576
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "94fe05d38a31e3cec9f3e2e62b8aa7ea78359bd2f45f2c5b1ec3fe4593c9b8f7",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.42533019101149,
+          3.2185956790123473
+        ],
+        "target": [
+          0.0,
+          58.55630394865948,
+          2.723829683714015
+        ],
+        "forward": [
+          0.0,
+          -0.8690262423520079,
+          -0.4947659952983322
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4947659952983322,
+          0.8690262423520079
+        ],
+        "focal_pixels": 734.4444444444443,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 47.085849015225115,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5175655386778246,
+        "party_travel_metres": 56.92666666666666,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.87866666666666,
+          0.0
+        ],
+        "frame_index": 10,
+        "cycle_phase": 0.16666666666666652,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 22.501610982322287,
+        "view_azimuth_degrees": 7.700625583837829,
+        "ground_anchor": [
+          565.8979544504418,
+          326.0407575408706
+        ],
+        "pixels_per_metre": 123.07697777733449,
+        "scale": 0.24615395555466899,
+        "depth_metres": 5.967358458973288
+      }
+    }
+  ],
+  "later_pairs": [
+    {
+      "index": 40,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_040.png",
+        "sha256": "94fe05d38a31e3cec9f3e2e62b8aa7ea78359bd2f45f2c5b1ec3fe4593c9b8f7",
+        "rgba_sha256": "80714313d00d53d1e50416fc92e5e9a32677d4624788a1ff6dce6352e5bb30e5",
+        "size": [
+          384,
+          576
+        ]
+      },
+      "selection": {
+        "index": 40,
+        "file": "transition/frame_040.png",
+        "canvas": [
+          384,
+          576
+        ],
+        "anchor": [
+          192.0,
+          360.0
+        ],
+        "art_pixels_per_metre": 187.5,
+        "logical_phase": 10,
+        "authored_phase": 10,
+        "authored_time_seconds": 0.6666666666666666,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.42533019101149,
+          3.2185956790123473
+        ],
+        "target": [
+          0.0,
+          58.55630394865948,
+          2.723829683714015
+        ],
+        "forward": [
+          0.0,
+          -0.8690262423520079,
+          -0.4947659952983322
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4947659952983322,
+          0.8690262423520079
+        ],
+        "focal_pixels": 734.4444444444443,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 47.085849015225115,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5175655386778246,
+        "party_travel_metres": 56.92666666666666,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          53.87866666666666,
+          0.0
+        ],
+        "frame_index": 10,
+        "cycle_phase": 0.16666666666666652,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 22.501610982322287,
+        "view_azimuth_degrees": 7.700625583837829,
+        "ground_anchor": [
+          565.8979544504418,
+          326.0407575408706
+        ],
+        "pixels_per_metre": 123.07697777733449,
+        "scale": 0.24615395555466899,
+        "depth_metres": 5.967358458973288
+      },
+      "crop_box": [
+        456,
+        76,
+        676,
+        356
+      ]
+    },
+    {
+      "index": 42,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_042.png",
+        "sha256": "f78112c0f215ae4a5ab3ebd68f934961fea0fafc08ccd0cebec60e1c0bd9506c",
+        "rgba_sha256": "669a4d0cd115c7b5c5408ac2d05b4638a39c5b68c8088267f33ac586997c7689",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 42,
+        "file": "transition/frame_042.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 12,
+        "authored_phase": 12,
+        "authored_time_seconds": 0.7,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.4961460034399,
+          3.407986450195315
+        ],
+        "target": [
+          0.0,
+          58.648387059529774,
+          2.877604726320526
+        ],
+        "forward": [
+          0.0,
+          -0.8477589439101231,
+          -0.5303817238747889
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.5303817238747889,
+          0.8477589439101231
+        ],
+        "focal_pixels": 702.5,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 48.980049631321165,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5590507760294336,
+        "party_travel_metres": 57.059999999999995,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          54.01199999999999,
+          0.0
+        ],
+        "frame_index": 12,
+        "cycle_phase": 0.19999999999999996,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 24.37520010621788,
+        "view_azimuth_degrees": 7.787339120641825,
+        "ground_anchor": [
+          561.6004286532249,
+          317.87405669827945
+        ],
+        "pixels_per_metre": 117.48623276731662,
+        "scale": 0.23497246553463325,
+        "depth_metres": 5.979424001034339
+      },
+      "crop_box": [
+        452,
+        68,
+        672,
+        348
+      ]
+    },
+    {
+      "index": 56,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_056.png",
+        "sha256": "4f2476dd946660887f7642c83fd451b47c7b1b9c592c085fb475d445c4a62d36",
+        "rgba_sha256": "3f1046daba27ea474b04ef6420151b724117b1e6aad2ec792ceb0bdf3a3cdcce",
+        "size": [
+          512,
+          768
+        ]
+      },
+      "selection": {
+        "index": 56,
+        "file": "transition/frame_056.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "logical_phase": 26,
+        "authored_phase": 26,
+        "authored_time_seconds": 0.9333333333333333,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.91299278328443,
+          4.806506401286354
+        ],
+        "target": [
+          0.0,
+          59.326602972495,
+          3.9964773957548587
+        ],
+        "forward": [
+          0.0,
+          -0.5863898107894241,
+          -0.8100290055314954
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.8100290055314954,
+          0.5863898107894241
+        ],
+        "focal_pixels": 636.5432098765432,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.37875072807745,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.9442015780542162,
+        "party_travel_metres": 57.99333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          54.94533333333333,
+          0.0
+        ],
+        "frame_index": 26,
+        "cycle_phase": 0.43333333333333335,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 37.867767363184086,
+        "view_azimuth_degrees": 8.585477764556007,
+        "ground_anchor": [
+          550.1410134900112,
+          207.26357743405595
+        ],
+        "pixels_per_metre": 104.73994170637398,
+        "scale": 0.20947988341274798,
+        "depth_metres": 6.077368380259526
+      },
+      "crop_box": [
+        440,
+        -43,
+        660,
+        237
+      ]
+    },
+    {
+      "index": 58,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_058.png",
+        "sha256": "dcd6703c001e2b2c7dfe188e0bdc4e465229bc10c7124462d3c512e0601bf75b",
+        "rgba_sha256": "903943dbfb30206769b65f58c671e35369b1dd7f914a6f41f0a9be3234711a23",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 58,
+        "file": "transition/frame_058.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 28,
+        "authored_phase": 28,
+        "authored_time_seconds": 0.9666666666666667,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.96425129881793,
+          5.013139366533785
+        ],
+        "target": [
+          0.0,
+          59.424738737258906,
+          4.171161815811662
+        ],
+        "forward": [
+          0.0,
+          -0.5395125615590195,
+          -0.841977550722123
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.841977550722123,
+          0.5395125615590195
+        ],
+        "focal_pixels": 633.3182629243828,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.61267421592693,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.0009382457907297,
+        "party_travel_metres": 58.126666666666665,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          55.07866666666666,
+          0.0
+        ],
+        "frame_index": 28,
+        "cycle_phase": 0.46666666666666656,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 39.76535953161592,
+        "view_azimuth_degrees": 8.727505733620845,
+        "ground_anchor": [
+          549.2727993242077,
+          189.86865227837677
+        ],
+        "pixels_per_metre": 103.83959890049017,
+        "scale": 0.20767919780098035,
+        "depth_metres": 6.099005289218169
+      },
+      "crop_box": [
+        439,
+        -60,
+        659,
+        220
+      ]
+    },
+    {
+      "index": 72,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_072.png",
+        "sha256": "4904666645dffbc7d765ec408e004e538d680d73e2920997d087f45b4efc7b98",
+        "rgba_sha256": "4e7d4bbcb4c6029b1020f00f23ea5d0c671d0512760515083a40eb51bf142c1b",
+        "size": [
+          512,
+          768
+        ]
+      },
+      "selection": {
+        "index": 72,
+        "file": "transition/frame_072.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "logical_phase": 42,
+        "authored_phase": 42,
+        "authored_time_seconds": 1.2,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.30572340438743,
+          6.616290831201283
+        ],
+        "target": [
+          0.0,
+          59.96370326106176,
+          5.676598210415374
+        ],
+        "forward": [
+          0.0,
+          -0.3420201433256682,
+          -0.9396926207859085
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9396926207859085,
+          0.3420201433256682
+        ],
+        "focal_pixels": 620.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 54.59914442266561,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.2217304763960313,
+        "party_travel_metres": 59.059999999999995,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          56.01199999999999,
+          0.0
+        ],
+        "frame_index": 42,
+        "cycle_phase": 0.7,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 52.674086047406696,
+        "view_azimuth_degrees": 9.908097257599374,
+        "ground_anchor": [
+          540.501029988274,
+          177.06627951097082
+        ],
+        "pixels_per_metre": 90.64199994869001,
+        "scale": 0.18128399989738003,
+        "depth_metres": 6.840096206515359
+      },
+      "crop_box": [
+        431,
+        -73,
+        651,
+        207
+      ]
+    },
+    {
+      "index": 74,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_074.png",
+        "sha256": "efd5ea219aaee4fe8b72e3a58a20447315c23db19c69ff57fdd360a502a3973c",
+        "rgba_sha256": "1715a28f1a274db9698503be667c28ec7110f2ce179a56a6bb6fb633b6641465",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 74,
+        "file": "transition/frame_074.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 44,
+        "authored_phase": 44,
+        "authored_time_seconds": 1.2333333333333334,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.355748701182065,
+          6.879997605348152
+        ],
+        "target": [
+          0.0,
+          60.03558715436215,
+          5.932634642203677
+        ],
+        "forward": [
+          0.0,
+          -0.32016154681991466,
+          -0.9473629631444749
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9473629631444749,
+          0.32016154681991466
+        ],
+        "focal_pixels": 619.1670308641974,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 54.66195631620516,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.2448963217869644,
+        "party_travel_metres": 59.19333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          56.145333333333326,
+          0.0
+        ],
+        "frame_index": 44,
+        "cycle_phase": 0.7333333333333334,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 54.42893001753776,
+        "view_azimuth_degrees": 10.100142364649257,
+        "ground_anchor": [
+          539.0367486814044,
+          179.40745409987264
+        ],
+        "pixels_per_metre": 88.28543039481353,
+        "scale": 0.17657086078962705,
+        "depth_metres": 7.013241347924282
+      },
+      "crop_box": [
+        429,
+        -71,
+        649,
+        209
+      ]
+    },
+    {
+      "index": 88,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_088.png",
+        "sha256": "dd63f04b9660b3b98dead66d42607bb6326322e2d97aad434b6521aac1b346cf",
+        "rgba_sha256": "c25cc87971d4402efff743425cd84deab475f5d9223d54585ab3eac5480c10ca",
+        "size": [
+          512,
+          768
+        ]
+      },
+      "selection": {
+        "index": 88,
+        "file": "transition/frame_088.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "logical_phase": 10,
+        "authored_phase": 10,
+        "authored_time_seconds": 1.4666666666666666,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.7562962962963,
+          9.114174208718145
+        ],
+        "target": [
+          0.0,
+          60.56426066959281,
+          8.132786253790737
+        ],
+        "forward": [
+          0.0,
+          -0.19203562670348387,
+          -0.981387954927408
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.981387954927408,
+          0.19203562670348387
+        ],
+        "focal_pixels": 613.4976790123457,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.093033409300766,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.3775603671419938,
+        "party_travel_metres": 60.126666666666665,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          57.07866666666666,
+          0.0
+        ],
+        "frame_index": 10,
+        "cycle_phase": 0.16666666666666652,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 65.44277948820557,
+        "view_azimuth_degrees": 11.526593824307518,
+        "ground_anchor": [
+          527.6773293638059,
+          201.82790813013935
+        ],
+        "pixels_per_metre": 69.97385252523239,
+        "scale": 0.13994770505046478,
+        "depth_metres": 8.76752753882059
+      },
+      "crop_box": [
+        418,
+        -48,
+        638,
+        232
+      ]
+    },
+    {
+      "index": 90,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_090.png",
+        "sha256": "ca1583dca43e8655a374eda70300eda2a5f4d0ef3c33c90d9660f3219f8e214d",
+        "rgba_sha256": "1b623ca39afcfd7b6d790a764470625d9efdf45e1e8bd27e3b868c84ed27f0dc",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 90,
+        "file": "transition/frame_090.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 12,
+        "authored_phase": 12,
+        "authored_time_seconds": 1.5,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.823853996560096,
+          9.499999999999996
+        ],
+        "target": [
+          0.0,
+          60.64578969246448,
+          8.515981146721796
+        ],
+        "forward": [
+          0.0,
+          -0.17806430409561483,
+          -0.9840188532782004
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9840188532782004,
+          0.17806430409561483
+        ],
+        "focal_pixels": 612.7295,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.15192553716909,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.3917773600024468,
+        "party_travel_metres": 60.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          57.211999999999996,
+          0.0
+        ],
+        "frame_index": 12,
+        "cycle_phase": 0.19999999999999996,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 66.78347647625232,
+        "view_azimuth_degrees": 11.730737781371708,
+        "ground_anchor": [
+          525.9946295162957,
+          205.7786824637377
+        ],
+        "pixels_per_metre": 67.29073036424215,
+        "scale": 0.13458146072848431,
+        "depth_metres": 9.105704406584959
+      },
+      "crop_box": [
+        416,
+        -44,
+        636,
+        236
+      ]
+    },
+    {
+      "index": 104,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_104.png",
+        "sha256": "5880388a0ef5054ef25226ee6a9e0293b1600011a9ae64fbc526c77dbf5589fc",
+        "rgba_sha256": "30eb15aaf1dd9760353891d31391c2f2d623d4cac0d1482069b96ea8a72a4885",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 104,
+        "file": "transition/frame_104.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 26,
+        "authored_phase": 26,
+        "authored_time_seconds": 1.7333333333333334,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          61.39629158649307,
+          12.760493827160486
+        ],
+        "target": [
+          0.0,
+          61.30759804475951,
+          11.764434865223615
+        ],
+        "forward": [
+          0.0,
+          -0.08869354173355924,
+          -0.9960589619368712
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9960589619368712,
+          0.08869354173355924
+        ],
+        "focal_pixels": 607.7791604938271,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.53424059956866,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.4819860862000973,
+        "party_travel_metres": 61.19333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          58.145333333333326,
+          0.0
+        ],
+        "frame_index": 26,
+        "cycle_phase": 0.4333333333333331,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 74.28873954378763,
+        "view_azimuth_degrees": 12.99091644385508,
+        "ground_anchor": [
+          515.06811202354,
+          221.51131440311138
+        ],
+        "pixels_per_metre": 50.22100743788756,
+        "scale": 0.10044201487577512,
+        "depth_metres": 12.102090171040825
+      },
+      "crop_box": [
+        405,
+        -28,
+        625,
+        252
+      ]
+    },
+    {
+      "index": 106,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_106.png",
+        "sha256": "e12585d0778be6201afc32e5ad7d24f415c9f36d50a5f852b0c2e5ed5b92a5f2",
+        "rgba_sha256": "6307d60ee3bb55cef8fe2c6f863a35a02f3402908a8e7384be80837e552b5a3c",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 106,
+        "file": "transition/frame_106.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 28,
+        "authored_phase": 28,
+        "authored_time_seconds": 1.7666666666666666,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          61.493524151654746,
+          13.309564357002914
+        ],
+        "target": [
+          0.0,
+          61.417013453668154,
+          12.31249559653872
+        ],
+        "forward": [
+          0.0,
+          -0.07651069798659443,
+          -0.9970687604641939
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9970687604641939,
+          0.07651069798659443
+        ],
+        "focal_pixels": 607.137401234568,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.58416123604606,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.4942107839847545,
+        "party_travel_metres": 61.32666666666667,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          58.278666666666666,
+          0.0
+        ],
+        "frame_index": 28,
+        "cycle_phase": 0.46666666666666634,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 75.10322032775308,
+        "view_azimuth_degrees": 13.131767341032138,
+        "ground_anchor": [
+          513.6886261711771,
+          221.75902918403338
+        ],
+        "pixels_per_metre": 48.112346943216465,
+        "scale": 0.09622469388643293,
+        "depth_metres": 12.619159941441403
+      },
+      "crop_box": [
+        404,
+        -28,
+        624,
+        252
+      ]
+    },
+    {
+      "index": 120,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_120.png",
+        "sha256": "68577ff23ac8ba820eb69b6dc1818c3fd26226879f125c761615d6879d1fbc01",
+        "rgba_sha256": "e6bfee06519aff20ad5581275553820d5d7a40f0a793babe143f54fafc8fedea",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 120,
+        "file": "transition/frame_120.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 42,
+        "authored_phase": 42,
+        "authored_time_seconds": 2.0,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          62.27957764931605,
+          17.697863985244226
+        ],
+        "target": [
+          0.0,
+          62.26733910281701,
+          16.697938879058974
+        ],
+        "forward": [
+          0.0,
+          -0.012238546499044994,
+          -0.9999251061852537
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9999251061852537,
+          0.012238546499044994
+        ],
+        "focal_pixels": 603.072,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.90232536803424,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5585574747562203,
+        "party_travel_metres": 62.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          59.211999999999996,
+          0.0
+        ],
+        "frame_index": 42,
+        "cycle_phase": 0.6999999999999997,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 79.35289211974113,
+        "view_azimuth_degrees": 13.738871197134143,
+        "ground_anchor": [
+          505.504789026328,
+          223.05623653576333
+        ],
+        "pixels_per_metre": 35.824324329282106,
+        "scale": 0.07164864865856421,
+        "depth_metres": 16.834148620831368
+      },
+      "crop_box": [
+        396,
+        -27,
+        616,
+        253
+      ]
+    },
+    {
+      "index": 122,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_122.png",
+        "sha256": "a305ade46ddf51df7c8c09a96e69aebb9516586a26268995ba43e3cf6c038b8a",
+        "rgba_sha256": "6385fb117f61cba3e7b73b4e775e7395ab3a2c797650a0873049aac35d566315",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 122,
+        "file": "transition/frame_122.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 44,
+        "authored_phase": 44,
+        "authored_time_seconds": 2.033333333333333,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          62.40493967519375,
+          18.391280602512015
+        ],
+        "target": [
+          0.0,
+          62.397390164867126,
+          17.39130910047117
+        ],
+        "forward": [
+          0.0,
+          -0.007549510326625242,
+          -0.9999715020408473
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9999715020408473,
+          0.007549510326625242
+        ],
+        "focal_pixels": 602.5424382716049,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.944016302534656,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5632467447522416,
+        "party_travel_metres": 62.39333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          59.34533333333333,
+          0.0
+        ],
+        "frame_index": 44,
+        "cycle_phase": 0.733333333333333,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 79.79044678481088,
+        "view_azimuth_degrees": 13.773304139323601,
+        "ground_anchor": [
+          504.541674095756,
+          224.42902784463843
+        ],
+        "pixels_per_metre": 34.4037081072546,
+        "scale": 0.0688074162145092,
+        "depth_metres": 17.513880666385162
+      },
+      "crop_box": [
+        395,
+        -26,
+        615,
+        254
+      ]
+    },
+    {
+      "index": 130,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_130.png",
+        "sha256": "b092be2e0d7bc3c5fa46d14cb13c05b98a58297b880b2f89ea9508a90d36b32f",
+        "rgba_sha256": "9bc315e1ae225066a03f844d5e74effd45aa320c57b71a322c9a1db5942a5917",
+        "size": [
+          362,
+          543
+        ]
+      },
+      "selection": {
+        "index": 130,
+        "file": "transition/frame_130.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "logical_phase": 4,
+        "authored_phase": 4,
+        "authored_time_seconds": 2.1666666666666665,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          62.92676865874325,
+          21.26717373052231
+        ],
+        "target": [
+          0.0,
+          62.92669176911127,
+          20.267173733478316
+        ],
+        "forward": [
+          0.0,
+          -7.688963197384736e-05,
+          -0.9999999970439922
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9999999970439922,
+          7.688963197384736e-05
+        ],
+        "focal_pixels": 600.5003641975309,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.10531967910869,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.570719437162847,
+        "party_travel_metres": 62.92666666666666,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          59.87866666666666,
+          0.0
+        ],
+        "frame_index": 4,
+        "cycle_phase": 0.06666666666666621,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 81.2384343349944,
+        "view_azimuth_degrees": 13.823297897901925,
+        "ground_anchor": [
+          501.1767824459338,
+          233.98084831876565
+        ],
+        "pixels_per_metre": 29.483396369548892,
+        "scale": 0.05896679273909779,
+        "depth_metres": 20.367408037757176
+      },
+      "crop_box": [
+        391,
+        -16,
+        611,
+        264
+      ]
+    },
+    {
+      "index": 132,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_06.png",
+        "sha256": "6492162414cafbe54af8a7bcf77116145e5f2d9119eb48acfb34d1b397dc17e0",
+        "rgba_sha256": "07fa27f8adbbd3a7f777429af9ecf8f27ae8d4f305aee3aef536a068d77da80d",
+        "size": [
+          313,
+          313
+        ]
+      },
+      "selection": {
+        "index": 132,
+        "file": "overhead/phase_06.png",
+        "canvas": [
+          313,
+          313
+        ],
+        "anchor": [
+          156.5,
+          156.5
+        ],
+        "art_pixels_per_metre": 203.77604166666666,
+        "logical_phase": 6,
+        "authored_phase": 6,
+        "authored_time_seconds": 2.2,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          63.06,
+          21.99999999999998
+        ],
+        "target": [
+          0.0,
+          63.06,
+          20.99999999999998
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 600.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.144973871705915,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 63.06,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          60.012,
+          0.0
+        ],
+        "frame_index": 6,
+        "cycle_phase": 0.09999999999999987,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 81.53851347851253,
+        "view_azimuth_degrees": 13.823742710197942,
+        "ground_anchor": [
+          500.4545454545455,
+          236.8727272727272
+        ],
+        "pixels_per_metre": 28.436018957345997,
+        "scale": 0.056872037914691996,
+        "depth_metres": 21.09999999999998
+      },
+      "crop_box": [
+        390,
+        -13,
+        610,
+        267
+      ]
+    },
+    {
+      "index": 132,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_06.png",
+        "sha256": "6492162414cafbe54af8a7bcf77116145e5f2d9119eb48acfb34d1b397dc17e0",
+        "rgba_sha256": "07fa27f8adbbd3a7f777429af9ecf8f27ae8d4f305aee3aef536a068d77da80d",
+        "size": [
+          313,
+          313
+        ]
+      },
+      "selection": {
+        "index": 132,
+        "file": "overhead/phase_06.png",
+        "canvas": [
+          313,
+          313
+        ],
+        "anchor": [
+          156.5,
+          156.5
+        ],
+        "art_pixels_per_metre": 203.77604166666666,
+        "logical_phase": 6,
+        "authored_phase": 6,
+        "authored_time_seconds": 2.2,
+        "held_reviewed_exposure": false
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          63.06,
+          21.99999999999998
+        ],
+        "target": [
+          0.0,
+          63.06,
+          20.99999999999998
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 600.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.144973871705915,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 63.06,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          60.012,
+          0.0
+        ],
+        "frame_index": 6,
+        "cycle_phase": 0.09999999999999987,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 81.53851347851253,
+        "view_azimuth_degrees": 13.823742710197942,
+        "ground_anchor": [
+          500.4545454545455,
+          236.8727272727272
+        ],
+        "pixels_per_metre": 28.436018957345997,
+        "scale": 0.056872037914691996,
+        "depth_metres": 21.09999999999998
+      },
+      "crop_box": [
+        390,
+        -13,
+        610,
+        267
+      ]
+    },
+    {
+      "index": 133,
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_07.png",
+        "sha256": "0663293198a5afc747802a057519988131c2aa6e30e0b3c52ea1102458648ea7",
+        "rgba_sha256": "2eabf3b77f1e2ccdd5dc2fa9f4b3d2c4edc96b24323618d9de01807bafdf4663",
+        "size": [
+          314,
+          314
+        ]
+      },
+      "selection": {
+        "file": "overhead/phase_07.png",
+        "canvas": [
+          314,
+          314
+        ],
+        "anchor": [
+          157.0,
+          157.0
+        ],
+        "art_pixels_per_metre": 204.42708333333334,
+        "phase": 7
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          63.126736056092334,
+          22.366875943470536
+        ],
+        "target": [
+          0.0,
+          63.126736056092334,
+          21.366875943470536
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 599.7499826814843,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.1648072084165,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 63.126666666666665,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          60.07866666666666,
+          0.0
+        ],
+        "frame_index": 7,
+        "cycle_phase": 0.11666666666666647,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 81.68090600842122,
+        "view_azimuth_degrees": 13.823440082953978,
+        "ground_anchor": [
+          500.11065327799724,
+          238.26844445597817
+        ],
+        "pixels_per_metre": 27.938391420383038,
+        "scale": 0.055876782840766075,
+        "depth_metres": 21.466875943470537
+      },
+      "crop_box": [
+        390,
+        -12,
+        610,
+        268
+      ]
+    }
+  ],
+  "evidence": {
+    "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_later_native_pairs_corrected.jpg",
+    "sha256": "298a589a8f50a2d0c1339a844950620b757a2cdac4bbb8255cad430467180434",
+    "rgba_sha256": "8e3129278f5786251f663cf6002ae75a4d8858350640e5c94208b017b5a26903",
+    "size": [
+      880,
+      1120
+    ]
+  },
+  "early26_40_hash_changes": [],
+  "far48_hash_changes": [],
+  "source_native_review_scope": "Direct native corrected contact sequences50\u201358,66\u201374,82\u201390,100\u2013110,118\u2013132 and exact-pair controls; matching-phase chains/equipment stay coherent. No real-time GIF playback claim.",
+  "actual_corrected_sources": [
+    {
+      "index": 52,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_minimal.png",
+        "sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "rgba_sha256": "9f97cee3a72fffd0bbb21000446fb45842965868051bdcd9764664cf374b5b1b",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_052",
+        "kind": "transition",
+        "index": 52,
+        "time": 0.8666666666666667,
+        "phase": 22,
+        "elevation": 34.04395317100672,
+        "azimuth": 8.322549572089377,
+        "native_pixels_per_metre": 105.9813976582767,
+        "file": "registered_atlases/transition/frame_052.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late01_minimal.png",
+        "source_sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "source_cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_cell_rgba_sha256": "632f17809e0c7395b06021bea8ddf0c93c4894a7575ea7ccb50c78cd14a14f01",
+        "uniform_whole_cell_scale": 0.7350856659198188,
+        "whole_cell_origin": [
+          89.95195333012677,
+          70.59716124045421
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_01.png",
+        "matching_original_atlas_sha256": "5e36053a9d94e7867eea950bec6bb13cbfa6fb0b6d3b38f3dca8272ac8e54e7c",
+        "matching_original_cell": [
+          362,
+          543,
+          724,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            113,
+            100,
+            165,
+            151
+          ],
+          "new_source_match_top_left": [
+            154,
+            140
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.8825478553771973,
+          "whole_pose_translation_correction": [
+            4.2805540987817,
+            1.0559241609897803
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.7350856659198188
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            195.0,
+            66.0
+          ],
+          "physical_projection_plan": [
+            203.91406134215163,
+            97.68348172954813
+          ]
+        },
+        "sha256": "92de63a0af8804689145cedeb89029380c22759d419ae6224d6ddfd74ad6640f",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_052.png",
+        "sha256": "92de63a0af8804689145cedeb89029380c22759d419ae6224d6ddfd74ad6640f",
+        "rgba_sha256": "71347eabe6876ef35c14f430ae0afe4444c9349063bd5adabfbbebb9e7ed248a",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 54,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_minimal.png",
+        "sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "rgba_sha256": "9f97cee3a72fffd0bbb21000446fb45842965868051bdcd9764664cf374b5b1b",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_054",
+        "kind": "transition",
+        "index": 54,
+        "time": 0.9,
+        "phase": 24,
+        "elevation": 35.96070437625361,
+        "azimuth": 8.450486466345977,
+        "native_pixels_per_metre": 105.36479997807614,
+        "file": "registered_atlases/transition/frame_054.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late01_minimal.png",
+        "source_sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "source_cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_cell_rgba_sha256": "50d8c6d2a1a56e3750e9104e9082c94b51ff0219ea2c083f7c5413b591300256",
+        "uniform_whole_cell_scale": 0.7350856659198188,
+        "whole_cell_origin": [
+          91.85986871941503,
+          79.08678006183293
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_01.png",
+        "matching_original_atlas_sha256": "5e36053a9d94e7867eea950bec6bb13cbfa6fb0b6d3b38f3dca8272ac8e54e7c",
+        "matching_original_cell": [
+          724,
+          543,
+          1086,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            113,
+            100,
+            165,
+            151
+          ],
+          "new_source_match_top_left": [
+            154,
+            142
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.8440059423446655,
+          "whole_pose_translation_correction": [
+            4.2805540987817,
+            -0.4142471708498574
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.7350856659198188
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            194.0,
+            66.0
+          ],
+          "physical_projection_plan": [
+            204.5279314788145,
+            104.7253646113158
+          ]
+        },
+        "sha256": "9bb30a5954e9144d880dedb75f816f7087e8cf4f474f3cbf5fe8a69546b280fe",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_054.png",
+        "sha256": "9bb30a5954e9144d880dedb75f816f7087e8cf4f474f3cbf5fe8a69546b280fe",
+        "rgba_sha256": "543ee8204912f6e887ab266cd96fa5622a285e655527774d6917c5bfd122a6f0",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 56,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_minimal.png",
+        "sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "rgba_sha256": "9f97cee3a72fffd0bbb21000446fb45842965868051bdcd9764664cf374b5b1b",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_056",
+        "kind": "transition",
+        "index": 56,
+        "time": 0.9333333333333333,
+        "phase": 26,
+        "elevation": 37.867767363184086,
+        "azimuth": 8.585477764556007,
+        "native_pixels_per_metre": 104.73994170637398,
+        "file": "registered_atlases/transition/frame_056.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late01_minimal.png",
+        "source_sha256": "3255152bbc34d12611fbd7141b9afe0cda322c4544e9022552b7481dda400b8c",
+        "source_cell": [
+          1024,
+          0,
+          1536,
+          768
+        ],
+        "source_cell_rgba_sha256": "109a31ef91029c045225f66cba50878a1e722be60597f8079ff99778152e168b",
+        "uniform_whole_cell_scale": 0.7350856659198188,
+        "whole_cell_origin": [
+          92.87899272797068,
+          81.00601520864866
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_01.png",
+        "matching_original_atlas_sha256": "5e36053a9d94e7867eea950bec6bb13cbfa6fb0b6d3b38f3dca8272ac8e54e7c",
+        "matching_original_cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            113,
+            100,
+            165,
+            151
+          ],
+          "new_source_match_top_left": [
+            151,
+            143
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.844129741191864,
+          "whole_pose_translation_correction": [
+            6.485811096541156,
+            -1.1493328367696762
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                160,
+                90
+              ],
+              [
+                241,
+                90
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.7350856659198188
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            196.0,
+            72.0
+          ],
+          "physical_projection_plan": [
+            205.15946972063117,
+            111.01256636896414
+          ]
+        },
+        "sha256": "4f2476dd946660887f7642c83fd451b47c7b1b9c592c085fb475d445c4a62d36",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_056.png",
+        "sha256": "4f2476dd946660887f7642c83fd451b47c7b1b9c592c085fb475d445c4a62d36",
+        "rgba_sha256": "3f1046daba27ea474b04ef6420151b724117b1e6aad2ec792ceb0bdf3a3cdcce",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 68,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late02_minimal.png",
+        "sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "rgba_sha256": "defdfe23aade3c8e35f1baf59fc89add777fb3384b4a62291c99566914d04903",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_068",
+        "kind": "transition",
+        "index": 68,
+        "time": 1.1333333333333333,
+        "phase": 38,
+        "elevation": 49.07774204257034,
+        "azimuth": 9.539700043356598,
+        "native_pixels_per_metre": 95.2020232628664,
+        "file": "registered_atlases/transition/frame_068.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late02_minimal.png",
+        "source_sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "source_cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_cell_rgba_sha256": "469fe972792b4064d437e5d7bf345c75e44bbff062e49e4e42093583d79d2725",
+        "uniform_whole_cell_scale": 0.647194988472884,
+        "whole_cell_origin": [
+          117.76522330188737,
+          129.64301956532685
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_02.png",
+        "matching_original_atlas_sha256": "21700d3dc0b04240d2a0727b4a51f62bceefd1b33225ccb87f8b7e400e880473",
+        "matching_original_cell": [
+          362,
+          543,
+          724,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            107,
+            130,
+            159,
+            180
+          ],
+          "new_source_match_top_left": [
+            149,
+            180
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.877106785774231,
+          "whole_pose_translation_correction": [
+            1.5125054150498782,
+            2.502964043817774
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.647194988472884
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            194.0,
+            93.0
+          ],
+          "physical_projection_plan": [
+            207.75013220716758,
+            150.08112630842018
+          ]
+        },
+        "sha256": "2b8badc036e6ea8c6fdc1108975bc478c2e96a761d9bb12d2b08749180992a81",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_068.png",
+        "sha256": "2b8badc036e6ea8c6fdc1108975bc478c2e96a761d9bb12d2b08749180992a81",
+        "rgba_sha256": "460ce92a0426b233874546dbe1da74249e3a7d26529481040ff408502ffbcb7d",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 70,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late02_minimal.png",
+        "sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "rgba_sha256": "defdfe23aade3c8e35f1baf59fc89add777fb3384b4a62291c99566914d04903",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_070",
+        "kind": "transition",
+        "index": 70,
+        "time": 1.1666666666666667,
+        "phase": 40,
+        "elevation": 50.888774852290396,
+        "azimuth": 9.72112192457217,
+        "native_pixels_per_metre": 92.9338084787548,
+        "file": "registered_atlases/transition/frame_070.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late02_minimal.png",
+        "source_sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "source_cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_cell_rgba_sha256": "dd7666a1d19f95a3d4837939594dab0bb9555cfdc677f805b0f6e78f4cee7a95",
+        "uniform_whole_cell_scale": 0.647194988472884,
+        "whole_cell_origin": [
+          120.59826141599076,
+          134.56679775658216
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_02.png",
+        "matching_original_atlas_sha256": "21700d3dc0b04240d2a0727b4a51f62bceefd1b33225ccb87f8b7e400e880473",
+        "matching_original_cell": [
+          724,
+          543,
+          1086,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            107,
+            130,
+            159,
+            180
+          ],
+          "new_source_match_top_left": [
+            143,
+            182
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.8626465201377869,
+          "whole_pose_translation_correction": [
+            5.395675345887183,
+            1.208574066872006
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.647194988472884
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            195.0,
+            100.0
+          ],
+          "physical_projection_plan": [
+            207.6548511845903,
+            159.00793044040378
+          ]
+        },
+        "sha256": "d25a4790ab6c80ce9da4fe4abeaa2541e74e723a06e493a2e43b3e99442d44c4",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_070.png",
+        "sha256": "d25a4790ab6c80ce9da4fe4abeaa2541e74e723a06e493a2e43b3e99442d44c4",
+        "rgba_sha256": "c3399f637709b037826ca8a73e93b4ee39e154186929b010d01ed235281b0ff5",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 72,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late02_minimal.png",
+        "sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "rgba_sha256": "defdfe23aade3c8e35f1baf59fc89add777fb3384b4a62291c99566914d04903",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_072",
+        "kind": "transition",
+        "index": 72,
+        "time": 1.2,
+        "phase": 42,
+        "elevation": 52.674086047406696,
+        "azimuth": 9.908097257599374,
+        "native_pixels_per_metre": 90.64199994869001,
+        "file": "registered_atlases/transition/frame_072.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late02_minimal.png",
+        "source_sha256": "a02993e81f6efafb5e0e09ff88d5dca9331fb4c572156014a2b984b0afcd92b4",
+        "source_cell": [
+          1024,
+          0,
+          1536,
+          768
+        ],
+        "source_cell_rgba_sha256": "f7dbb16af9fd68e491cbb173086ecc44aa13dfa7e9a82bb7f054cb210c9fe7db",
+        "uniform_whole_cell_scale": 0.647194988472884,
+        "whole_cell_origin": [
+          122.66446769208734,
+          141.6069538221138
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_02.png",
+        "matching_original_atlas_sha256": "21700d3dc0b04240d2a0727b4a51f62bceefd1b33225ccb87f8b7e400e880473",
+        "matching_original_cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            107,
+            130,
+            159,
+            180
+          ],
+          "new_source_match_top_left": [
+            140,
+            180
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.872725248336792,
+          "whole_pose_translation_correction": [
+            7.337260311305835,
+            2.502964043817774
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                148,
+                110
+              ],
+              [
+                240,
+                110
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.647194988472884
+        },
+        "observed_original_landmark": {
+          "type": "actual opaque helmet-crown upper silhouette",
+          "source": [
+            194.5,
+            108.0
+          ],
+          "physical_projection_plan": [
+            207.41936485141912,
+            168.24792652800735
+          ]
+        },
+        "sha256": "4904666645dffbc7d765ec408e004e538d680d73e2920997d087f45b4efc7b98",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_072.png",
+        "sha256": "4904666645dffbc7d765ec408e004e538d680d73e2920997d087f45b4efc7b98",
+        "rgba_sha256": "4e7d4bbcb4c6029b1020f00f23ea5d0c671d0512760515083a40eb51bf142c1b",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 84,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_minimal.png",
+        "sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "rgba_sha256": "2230ab8b5718dc0c911294769f4c4fcbbb8b26fffb5b779ed2298c8e71549ae5",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_084",
+        "kind": "transition",
+        "index": 84,
+        "time": 1.4,
+        "phase": 6,
+        "elevation": 62.56911820411262,
+        "azimuth": 11.113155999230617,
+        "native_pixels_per_metre": 75.38472672538235,
+        "file": "registered_atlases/transition/frame_084.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late03_minimal.png",
+        "source_sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "source_cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_cell_rgba_sha256": "fce5f1611f88fa3d44ccd37ff0bb475e8dca93698aff01edb8418df5114a00bb",
+        "uniform_whole_cell_scale": 0.8885866875348143,
+        "whole_cell_origin": [
+          39.92486091119363,
+          35.13839690756422
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_03.png",
+        "matching_original_atlas_sha256": "6bcfadb95fb1b58b2b62f4ef76a53ff73fa734e566691c454ac1e61bedba5245",
+        "matching_original_cell": [
+          362,
+          543,
+          724,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            120,
+            225,
+            171,
+            270
+          ],
+          "new_source_match_top_left": [
+            165,
+            314
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.7994619607925415,
+          "whole_pose_translation_correction": [
+            4.1974675018909675,
+            3.7605381361970696
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.8885866875348143
+        },
+        "observed_original_landmark": {
+          "type": "actual geometric steel crown center",
+          "source": [
+            203,
+            247
+          ],
+          "physical_projection_plan": [
+            205.64348119098833,
+            241.66603853054232
+          ]
+        },
+        "sha256": "07e18a4d5cb7163c28ec52513ddce99b9ba059fa4cec21f42a7218d195ea74d0",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_084.png",
+        "sha256": "07e18a4d5cb7163c28ec52513ddce99b9ba059fa4cec21f42a7218d195ea74d0",
+        "rgba_sha256": "317cd577fe9a35b050547086e4d5a584d5bd57bb59025fa62c3a0c22bc085e53",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 86,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_minimal.png",
+        "sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "rgba_sha256": "2230ab8b5718dc0c911294769f4c4fcbbb8b26fffb5b779ed2298c8e71549ae5",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_086",
+        "kind": "transition",
+        "index": 86,
+        "time": 1.4333333333333333,
+        "phase": 8,
+        "elevation": 64.03713423399738,
+        "azimuth": 11.320329789173416,
+        "native_pixels_per_metre": 72.67815335354915,
+        "file": "registered_atlases/transition/frame_086.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late03_minimal.png",
+        "source_sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "source_cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_cell_rgba_sha256": "5b31c2ec12406ed3e84bfc3db906049dd2a50580a73abe041fc25fb9837c8c61",
+        "uniform_whole_cell_scale": 0.8885866875348143,
+        "whole_cell_origin": [
+          46.510439260218604,
+          33.250516090313596
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_03.png",
+        "matching_original_atlas_sha256": "6bcfadb95fb1b58b2b62f4ef76a53ff73fa734e566691c454ac1e61bedba5245",
+        "matching_original_cell": [
+          724,
+          543,
+          1086,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            120,
+            225,
+            171,
+            270
+          ],
+          "new_source_match_top_left": [
+            164,
+            309
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.7800245881080627,
+          "whole_pose_translation_correction": [
+            5.086054189425782,
+            8.203471573871141
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.8885866875348143
+        },
+        "observed_original_landmark": {
+          "type": "actual geometric steel crown center",
+          "source": [
+            198,
+            259
+          ],
+          "physical_projection_plan": [
+            205.2284988889772,
+            247.85299526478286
+          ]
+        },
+        "sha256": "fec786753564021d1e76d35e1e57412ababdc852d5954707aaf23ced4fb339a0",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_086.png",
+        "sha256": "fec786753564021d1e76d35e1e57412ababdc852d5954707aaf23ced4fb339a0",
+        "rgba_sha256": "08a8d476eaeb62d366551c803ab7d0fd4005c860416af423d0f684614c2b1b56",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 88,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_minimal.png",
+        "sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "rgba_sha256": "2230ab8b5718dc0c911294769f4c4fcbbb8b26fffb5b779ed2298c8e71549ae5",
+        "size": [
+          2048,
+          768
+        ]
+      },
+      "registration": {
+        "id": "transition_088",
+        "kind": "transition",
+        "index": 88,
+        "time": 1.4666666666666666,
+        "phase": 10,
+        "elevation": 65.44277948820557,
+        "azimuth": 11.526593824307518,
+        "native_pixels_per_metre": 69.97385252523239,
+        "file": "registered_atlases/transition/frame_088.png",
+        "canvas": [
+          512,
+          768
+        ],
+        "anchor": [
+          256.0,
+          480.0
+        ],
+        "art_pixels_per_metre": 250.0,
+        "source_atlas": "repairs/late03_minimal.png",
+        "source_sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+        "source_cell": [
+          1024,
+          0,
+          1536,
+          768
+        ],
+        "source_cell_rgba_sha256": "3f761c96a3326a411a1855292be34dc4f8aa6af4e358d367e02c7a5febfde570",
+        "uniform_whole_cell_scale": 0.8885866875348143,
+        "whole_cell_origin": [
+          46.82612306337569,
+          28.29754488114131
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "matching_original_atlas": "atlases/transition_03.png",
+        "matching_original_atlas_sha256": "6bcfadb95fb1b58b2b62f4ef76a53ff73fa734e566691c454ac1e61bedba5245",
+        "matching_original_cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "source_cell_resolution_ratio": 1.4143646408839778,
+        "rigid_pauldron_registration": {
+          "article": "matching rigid anatomical-right pauldron patch",
+          "original_source_window": [
+            120,
+            225,
+            171,
+            270
+          ],
+          "new_source_match_top_left": [
+            160,
+            309
+          ],
+          "declared_cell_resolution_ratio": 1.4143646408839778,
+          "correlation_score": 0.879622757434845,
+          "whole_pose_translation_correction": [
+            8.640400939565039,
+            8.203471573871141
+          ]
+        },
+        "rigid_sheet_calibration": {
+          "method": "Inherited matching-phase actual rigid steel-brim density; reviewed new complete-source body/armor composition preserves original reference at declared full-cell resolution ratio. No body/foot bounds fit.",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                170,
+                205
+              ],
+              [
+                237,
+                204
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "uniform_scale": 0.8885866875348143
+        },
+        "observed_original_landmark": {
+          "type": "actual geometric steel crown center",
+          "source": [
+            200,
+            270
+          ],
+          "physical_projection_plan": [
+            204.71583635231335,
+            254.1255434024307
+          ]
+        },
+        "sha256": "dd63f04b9660b3b98dead66d42607bb6326322e2d97aad434b6521aac1b346cf",
+        "construction": "Complete minimal ImageGen continuity drawing; uniform whole-cell sampling and original matching-phase composition carried across declared full-cell resolution only. No limbs/parts restored, warped or interpolated."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_088.png",
+        "sha256": "dd63f04b9660b3b98dead66d42607bb6326322e2d97aad434b6521aac1b346cf",
+        "rgba_sha256": "c25cc87971d4402efff743425cd84deab475f5d9223d54585ab3eac5480c10ca",
+        "size": [
+          512,
+          768
+        ]
+      }
+    },
+    {
+      "index": 104,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_04.png",
+        "sha256": "983f5b28743cfb04550b727900b7dd96b5455803a53e54ea8cbe52c4a0dac60b",
+        "rgba_sha256": "aaf076f10f5f66075adb38753347a6cd1e445d4e7e75913bbb4c033765d3dd3f",
+        "size": [
+          1448,
+          1086
+        ]
+      },
+      "registration": {
+        "id": "transition_104",
+        "kind": "transition",
+        "index": 104,
+        "time": 1.7333333333333334,
+        "phase": 26,
+        "elevation": 74.28873954378763,
+        "azimuth": 12.99091644385508,
+        "native_pixels_per_metre": 50.22100743788756,
+        "file": "registered_atlases/transition/frame_104.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "source_atlas": "atlases/transition_04.png",
+        "source_sha256": "983f5b28743cfb04550b727900b7dd96b5455803a53e54ea8cbe52c4a0dac60b",
+        "source_cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "source_cell_rgba_sha256": "2f4565f764aaa61f425810e0ca02e53d28802f09c81aefc47499d3e1d291817e",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                171,
+                246
+              ],
+              [
+                236,
+                243
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                171,
+                246
+              ],
+              [
+                236,
+                243
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "feature_scale_estimates": [
+            0.915055732739183,
+            1.3530694061758626
+          ],
+          "uniform_scale": 0.915055732739183,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.6051004528999329,
+          "template_to_source_scale": 0.3863323427762865,
+          "observed_brim_center_source": [
+            194.60466402679086,
+            309.6569994405411
+          ],
+          "template_key_index": 96
+        },
+        "observed_landmark": {
+          "type": "actual geometric helmet crown center",
+          "source": [
+            197,
+            300
+          ],
+          "physical_projection_plan": [
+            198.52305053184872,
+            300.7924990807867
+          ]
+        },
+        "uniform_whole_cell_scale": 0.915055732739183,
+        "whole_cell_origin": [
+          18.25707118222968,
+          26.27577925903182
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "5880388a0ef5054ef25226ee6a9e0293b1600011a9ae64fbc526c77dbf5589fc",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_104.png",
+        "sha256": "5880388a0ef5054ef25226ee6a9e0293b1600011a9ae64fbc526c77dbf5589fc",
+        "rgba_sha256": "30eb15aaf1dd9760353891d31391c2f2d623d4cac0d1482069b96ea8a72a4885",
+        "size": [
+          362,
+          543
+        ]
+      }
+    },
+    {
+      "index": 106,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_05.png",
+        "sha256": "95979d0c58f81e8f86c4769b9547dc7e3ffe55a3aa231031149cbed5eab3ce34",
+        "rgba_sha256": "6fe9e0efc613aab8e4eab73ddae4f11ff1c7b0c8cc5d0a6dac45992dda8ebfdd",
+        "size": [
+          1448,
+          1086
+        ]
+      },
+      "registration": {
+        "id": "transition_106",
+        "kind": "transition",
+        "index": 106,
+        "time": 1.7666666666666666,
+        "phase": 28,
+        "elevation": 75.10322032775308,
+        "azimuth": 13.131767341032138,
+        "native_pixels_per_metre": 48.112346943216465,
+        "file": "registered_atlases/transition/frame_106.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "source_atlas": "atlases/transition_05.png",
+        "source_sha256": "95979d0c58f81e8f86c4769b9547dc7e3ffe55a3aa231031149cbed5eab3ce34",
+        "source_cell": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "source_cell_rgba_sha256": "4a7e42f1ca51d38d9272bc798b4abd411990df0d24ffd639d9822bd7838e0b9c",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                163,
+                292
+              ],
+              [
+                229,
+                291
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                163,
+                292
+              ],
+              [
+                229,
+                291
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "feature_scale_estimates": [
+            0.9020470551795179,
+            1.3338338088335024
+          ],
+          "uniform_scale": 0.9020470551795179,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.5974175333976746,
+          "template_to_source_scale": 0.3919037515505732,
+          "observed_brim_center_source": [
+            206.16139288449304,
+            408.1856404723905
+          ],
+          "template_key_index": 96
+        },
+        "observed_landmark": {
+          "type": "actual geometric helmet crown center",
+          "source": [
+            193,
+            285
+          ],
+          "physical_projection_plan": [
+            197.93443383943855,
+            304.4318601540738
+          ]
+        },
+        "uniform_whole_cell_scale": 0.9020470551795179,
+        "whole_cell_origin": [
+          23.83935218979161,
+          47.34844942791119
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "e12585d0778be6201afc32e5ad7d24f415c9f36d50a5f852b0c2e5ed5b92a5f2",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_106.png",
+        "sha256": "e12585d0778be6201afc32e5ad7d24f415c9f36d50a5f852b0c2e5ed5b92a5f2",
+        "rgba_sha256": "6307d60ee3bb55cef8fe2c6f863a35a02f3402908a8e7384be80837e552b5a3c",
+        "size": [
+          362,
+          543
+        ]
+      }
+    },
+    {
+      "index": 120,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_05.png",
+        "sha256": "95979d0c58f81e8f86c4769b9547dc7e3ffe55a3aa231031149cbed5eab3ce34",
+        "rgba_sha256": "6fe9e0efc613aab8e4eab73ddae4f11ff1c7b0c8cc5d0a6dac45992dda8ebfdd",
+        "size": [
+          1448,
+          1086
+        ]
+      },
+      "registration": {
+        "id": "transition_120",
+        "kind": "transition",
+        "index": 120,
+        "time": 2.0,
+        "phase": 42,
+        "elevation": 79.35289211974113,
+        "azimuth": 13.738871197134143,
+        "native_pixels_per_metre": 35.824324329282106,
+        "file": "registered_atlases/transition/frame_120.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "source_atlas": "atlases/transition_05.png",
+        "source_sha256": "95979d0c58f81e8f86c4769b9547dc7e3ffe55a3aa231031149cbed5eab3ce34",
+        "source_cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "source_cell_rgba_sha256": "c83a54bb64e5f4b62433a51e6cafbc0c289879aa04133fa325e16ab380a1be63",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                163,
+                292
+              ],
+              [
+                229,
+                291
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                163,
+                292
+              ],
+              [
+                229,
+                291
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "feature_scale_estimates": [
+            0.9020470551795179,
+            1.3338338088335024
+          ],
+          "uniform_scale": 0.9020470551795179,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.6409662961959839,
+          "template_to_source_scale": 0.3919037515505732,
+          "observed_brim_center_source": [
+            177.18278875350285,
+            411.32058274833884
+          ],
+          "template_key_index": 132
+        },
+        "observed_landmark": {
+          "type": "actual geometric helmet crown center",
+          "source": [
+            184,
+            311
+          ],
+          "physical_projection_plan": [
+            193.89591479365617,
+            325.2352030730569
+          ]
+        },
+        "uniform_whole_cell_scale": 0.9020470551795179,
+        "whole_cell_origin": [
+          27.919256640624894,
+          44.69856891222679
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "68577ff23ac8ba820eb69b6dc1818c3fd26226879f125c761615d6879d1fbc01",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_120.png",
+        "sha256": "68577ff23ac8ba820eb69b6dc1818c3fd26226879f125c761615d6879d1fbc01",
+        "rgba_sha256": "e6bfee06519aff20ad5581275553820d5d7a40f0a793babe143f54fafc8fedea",
+        "size": [
+          362,
+          543
+        ]
+      }
+    },
+    {
+      "index": 122,
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_06.png",
+        "sha256": "fdab852872f303956ceb73a2a1f772780ab483fe3983043c58318214721695cb",
+        "rgba_sha256": "f294bd3ca9b00962d48e033ab17782976086ed5963f6254e0699033400fd6859",
+        "size": [
+          1448,
+          1086
+        ]
+      },
+      "registration": {
+        "id": "transition_122",
+        "kind": "transition",
+        "index": 122,
+        "time": 2.033333333333333,
+        "phase": 44,
+        "elevation": 79.79044678481088,
+        "azimuth": 13.773304139323601,
+        "native_pixels_per_metre": 34.4037081072546,
+        "file": "registered_atlases/transition/frame_122.png",
+        "canvas": [
+          362,
+          543
+        ],
+        "anchor": [
+          181.0,
+          339.375
+        ],
+        "art_pixels_per_metre": 176.7578125,
+        "source_atlas": "atlases/transition_06.png",
+        "source_sha256": "fdab852872f303956ceb73a2a1f772780ab483fe3983043c58318214721695cb",
+        "source_cell": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "source_cell_rgba_sha256": "8a2b65236edcf5b993679ef5a7e21875ebdf24fcea02cefb5a059e00515122d5",
+        "rigid_sheet_calibration": {
+          "method": "Fixed whole-sheet density from actual approved rigid steel helmet chord; independent model diagnostics retained",
+          "observations": {
+            "reference_dome_chord": [
+              [
+                298,
+                192
+              ],
+              [
+                466,
+                180
+              ]
+            ],
+            "reference_pauldron_centres": [
+              [
+                245,
+                270
+              ],
+              [
+                494,
+                275
+              ]
+            ],
+            "cell0_dome_chord": [
+              [
+                145,
+                294
+              ],
+              [
+                234,
+                298
+              ]
+            ],
+            "cell0_pauldron_centres": [
+              [
+                145,
+                294
+              ],
+              [
+                234,
+                298
+              ]
+            ],
+            "measurement_kind": "rigid_steel_brim_chord",
+            "measurement_uncertainty_source_pixels": 2,
+            "review": "Actual first-cell steel-brim extrema inspected in /tmp/crown_all_atlas_helmet_measurements.jpg; a single rigid size applies to entire sheet, no body/foot fit."
+          },
+          "feature_scale_estimates": [
+            0.6683358888760995,
+            0.9882511107608722
+          ],
+          "uniform_scale": 0.6683358888760995,
+          "review_state": "rigid_features_measured"
+        },
+        "helmet_fit": {
+          "score": 0.5459957122802734,
+          "template_to_source_scale": 0.5289490372789737,
+          "observed_brim_center_source": [
+            179.88466442862355,
+            417.37126140619927
+          ],
+          "template_key_index": 132
+        },
+        "observed_landmark": {
+          "type": "actual geometric helmet crown center",
+          "source": [
+            187,
+            289
+          ],
+          "physical_projection_plan": [
+            193.31435437461533,
+            327.8078222865161
+          ]
+        },
+        "uniform_whole_cell_scale": 0.6683358888760995,
+        "whole_cell_origin": [
+          68.33554315478473,
+          134.65875040132335
+        ],
+        "padding_for_containment_only": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sha256": "a305ade46ddf51df7c8c09a96e69aebb9516586a26268995ba43e3cf6c038b8a",
+        "construction": "Complete whole-figure cell, one uniform rigid density for whole sheet, entire-pose translation only; no occupied-height fit or body/limb transforms."
+      },
+      "runtime_drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/transition/frame_122.png",
+        "sha256": "a305ade46ddf51df7c8c09a96e69aebb9516586a26268995ba43e3cf6c038b8a",
+        "rgba_sha256": "6385fb117f61cba3e7b73b4e775e7395ab3a2c797650a0873049aac35d566315",
+        "size": [
+          362,
+          543
+        ]
+      }
+    }
+  ],
+  "corrected_native_sequences": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_corrected_sequence_a.jpg",
+      "sha256": "f70593533ebaf7657473033d4a6b947e7aced0ad7a851a8a3142bb4900d29874",
+      "rgba_sha256": "8af775dfbe393c4f99bed94d2eb18eab2f697897881959239ac5b7ebb37d3dd7",
+      "size": [
+        960,
+        1600
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_corrected_sequence_b.jpg",
+      "sha256": "64e606f9726e5ba5cd2aae3960a5c590e1dce1d87fabc64853cc91c290b45533",
+      "rgba_sha256": "389c3dad60f41cd55bb490f10a5db3eac13d268bf67b0dac69b358736ad8a315",
+      "size": [
+        960,
+        1600
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_corrected_sequence_c.jpg",
+      "sha256": "686ef787ea5e285c42dab919de5c857e28524713a102a16d6cc8f50c0386a54b",
+      "rgba_sha256": "ab11b4b7f46f59ec98c7a757a72bbd81aa469b90aaf022aacdc824dc42c4d126",
+      "size": [
+        960,
+        1200
+      ]
+    }
+  ],
+  "final_profile_header": {
+    "approval_state": "prepared_for_ingame_review",
+    "review_pointer": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_current_full_gate_corrected.json"
+  },
+  "final_profile_header_note": "Header finalized by author after this narrow source/native acceptance; no PNG/registration changes. Final composed scene review still pending."
+}

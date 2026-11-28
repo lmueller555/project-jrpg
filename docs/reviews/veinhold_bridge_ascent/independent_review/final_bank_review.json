@@ -1,0 +1,521 @@
+{
+  "status": "PASS: final baked production-picture composition and critical chronological still joins",
+  "reviewed_at_utc": "2026-11-28T04:37:36.781434+00:00",
+  "scope": "Independent read-only visual gate of actual final shot08 composed pictures. This supersedes pending production-context conditions in earlier accepted source/native gates; retained historical rejected snapshots remain rejected.",
+  "bank": {
+    "path": "assets/story/fire_veinhold_opening/shot08/environment",
+    "normal_picture_count": 481,
+    "dimensions": [
+      960,
+      640
+    ],
+    "fps": 60,
+    "inclusive_local_seconds": [
+      0,
+      8
+    ],
+    "manifest": {
+      "path": "assets/story/fire_veinhold_opening/shot08/environment/manifest.json",
+      "sha256": "9878a4b50dbdc8c906f3f72143de82a90f20a479dec582bf223f2d1d9edcadee"
+    },
+    "all481_sha256_ledger": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/bank_binding.json",
+      "sha256": "d9bbdcd110f65c990d8396bf80e12193b9fca96bcbc9b53dde22e72ac4beed0f"
+    },
+    "camera_signature": "09ead62a2647aed8ca7b26e16994958631dc33b832d5abe994b6a14c23bff195",
+    "performance_signature": "3726e87d5c4e1c39f65765c673b9b2c029e4e189e9d100b5c5a4d98b092b6d1d"
+  },
+  "frozen_actor_profiles": {
+    "lucan": {
+      "path": "assets/story/fire_veinhold_opening/shot08/characters/lucan/actorperformance.json",
+      "sha256": "802a5591d6d8daf288cb33e9fb5a85326f00cbd8a3f1d212f1f9f9bd0b1c4c94"
+    },
+    "iselin": {
+      "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/actorperformance.json",
+      "sha256": "ab6f806aa2e5b7d75f3bb4dec00e076ab9dd580167385e2754944a7f91a5f406"
+    },
+    "crown_soldier": {
+      "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/actorperformance.json",
+      "sha256": "cd31e7c758a3fcc72870311a66c3b956147d20e7a185529fdd6491ff0dee4daa"
+    }
+  },
+  "camera_and_guard_bindings": {
+    "scene": {
+      "path": "assets/story/fire_veinhold_opening/shot08/scene.json",
+      "sha256": "6443c4f22555dda2cc9069cec6fd6253ce38e719bfc1740d688b2b9987dc9a04"
+    },
+    "camera_module": {
+      "path": "cinematic_bridge_ascent.py",
+      "sha256": "45c5491f8da49ee242b30803ab8d6b85befcb1563755fcd20dd96d3bb084bd25"
+    },
+    "guard_profile": {
+      "path": "assets/story/fire_veinhold_opening/shot08/guards/guardperformance.json",
+      "sha256": "5f5194b8a4e5c1823aef7e0cfe02b1c2ba2525fca150709dc0e8807c7a8e1095"
+    },
+    "previous_source_only_egress_proof": {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved_stage_current_sources.json",
+      "sha256": "05d205e0cccf04219b5c06e6dec151709f437e61f09d612e3325f45a03449a55"
+    },
+    "all_environment_sources_still_exact_to_probe": true,
+    "all_probe_live_pngs_still_exact": true,
+    "guard_profile_still_exact_to_probe": true
+  },
+  "exact_image_controls": {
+    "bank_entry_rgb_exact_to_shot07_terminal": true,
+    "old_terminal": {
+      "path": "assets/story/fire_veinhold_opening/shot07/environment/frame_0300.png",
+      "sha256": "b35e157f86e846962410677401779646c65bdce738439365e7f211b72fd16c28"
+    },
+    "new_entry": {
+      "path": "assets/story/fire_veinhold_opening/shot08/environment/frame_0000.png",
+      "sha256": "b35e157f86e846962410677401779646c65bdce738439365e7f211b72fd16c28"
+    },
+    "all12_prebake_fullcast_proof_pictures_rgb_exact_to_bank": true,
+    "checkpoint_indices": [
+      0,
+      24,
+      36,
+      48,
+      60,
+      72,
+      96,
+      132,
+      180,
+      240,
+      348,
+      480
+    ],
+    "checkpoint_review": "production12_checkpoints_pass.json"
+  },
+  "actual_picture_inspection": {
+    "overview": {
+      "indices": [
+        0,
+        12,
+        24,
+        36,
+        48,
+        60,
+        72,
+        84,
+        96,
+        108,
+        120,
+        132,
+        144,
+        156,
+        168,
+        180,
+        192,
+        204,
+        216,
+        228,
+        240,
+        252,
+        264,
+        276,
+        288,
+        300,
+        312,
+        324,
+        336,
+        348,
+        360,
+        372,
+        384,
+        396,
+        408,
+        420,
+        432,
+        444,
+        456,
+        468,
+        480
+      ],
+      "evidence": "overview.jpg",
+      "display": "320x213 overview tiles; actual full 960x640 checkpoint pictures were also inspected separately"
+    },
+    "lucan_close": {
+      "indices": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "evidence": [
+        "lucan34_45.jpg",
+        "lucan46_62.jpg"
+      ],
+      "display": "native actor/root-following crops"
+    },
+    "iselin_late": {
+      "indices": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        117,
+        118,
+        119,
+        120
+      ],
+      "evidence": [
+        "iselin70_87.jpg",
+        "iselin88_105.jpg",
+        "iselin117_120.jpg"
+      ],
+      "display": "native crops;117-120 displayed2x NEAREST"
+    },
+    "crown_affected_joins": {
+      "indices": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        40,
+        41,
+        42,
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        57,
+        58,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        74,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        104,
+        105,
+        106,
+        107,
+        120,
+        121,
+        122,
+        123,
+        130,
+        131,
+        132,
+        133
+      ],
+      "evidence": [
+        "crown24_58.jpg",
+        "crown66_90.jpg",
+        "crown104_133.jpg"
+      ],
+      "display": "native crops;104+ displayed2x NEAREST"
+    },
+    "far_handoffs": {
+      "indices": [
+        107,
+        108,
+        109,
+        110,
+        131,
+        132,
+        133,
+        134
+      ],
+      "evidence": "combined107_110_131_134.jpg",
+      "display": "native crop2x NEAREST"
+    },
+    "complete_overhead_cycle_in_world": {
+      "indices": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ],
+      "evidence": "actual_overhead132_180.png",
+      "display": "all49 consecutive production pictures, root-following native110x110 crops2x NEAREST; Crown enters crop fully after earliest cells, full checkpoint132 was inspected separately"
+    },
+    "fixed_frozen_reentry": {
+      "indices": [
+        252,
+        254,
+        256,
+        258,
+        260,
+        262,
+        264,
+        266,
+        268,
+        270,
+        276,
+        282,
+        288,
+        294,
+        300
+      ],
+      "evidence": "frozen_reentry.png",
+      "display": "fixed native screen crop4x NEAREST"
+    },
+    "six_reinforcements": {
+      "indices": [
+        252,
+        270,
+        300,
+        330,
+        348,
+        375,
+        420,
+        450,
+        480
+      ],
+      "evidence": "reinforcement_group.png",
+      "display": "fixed native screen crop4x NEAREST"
+    },
+    "both_late_gate_guards": {
+      "indices": [
+        330,
+        345,
+        360,
+        375,
+        390,
+        405,
+        420,
+        435,
+        450,
+        465,
+        480
+      ],
+      "evidence": "late_pair.png",
+      "display": "fixed native screen crop4x NEAREST"
+    }
+  },
+  "findings": [
+    {
+      "case": "Close camera ascent and cast",
+      "result": "PASS",
+      "observation": "All three heads remain framed at the inspected close/full-cast samples. The accepted individual body, palette, leg, hand and equipment transitions remain coherent in the world composition; no new source matte, checker box, actor clipping or incorrect foreground occlusion was found."
+    },
+    {
+      "case": "Lucan34-62",
+      "result": "PASS",
+      "observation": "Selected whole-pose exposures and corrected bowed-head/shield bridge do not introduce a new world-context view reset. Recovery/contact legs and shield ownership remain readable through35/36,39/40,43/44,47/48,48-52 and55/56/59/60."
+    },
+    {
+      "case": "Iselin70-105 and117-120",
+      "result": "PASS",
+      "observation": "Both ends of the bounded material/view continuations remain coherent in context:71/72,79/80,87/88,95/96 and103/104. Hair/mantle narrows as the view and scale change, without the rejected broad-to-tuft silhouette reset.117/118/119/120 is acceptable at the actual small native scale;118/119 is the declared two-tick whole-pose exposure."
+    },
+    {
+      "case": "Crown affected joins",
+      "result": "PASS",
+      "observation": "Corrected early model, later gaze bridges and high-view helmet registration remain stable enough in composition. The final source poses retain sword/shield ownership and two visible connected leg chains where resolvable; no new body-size or matte regime switch was observed."
+    },
+    {
+      "case": "Overhead handoff and cycle",
+      "result": "PASS",
+      "observation": "Actual107/108 and132/133 context handoffs and all consecutive132-180 pictures retain the three-runner formation and heading. Corrected compact passing poses remain readable while large enough; no new whole-figure pop or missing actor appears at the loop boundaries."
+    },
+    {
+      "case": "Camera, world and entry",
+      "result": "PASS",
+      "observation": "The exact old terminal entry is preserved. Screen right remains -X, mainland up and fortress down. The rise exposes a coherent complete bridge/shore/gate view. Water/land continue behind open rail brace gaps; no old solid rail-plane backdrop rectangle is visible."
+    },
+    {
+      "case": "Frozen reentry",
+      "result": "PASS",
+      "observation": "The four fixed icy figures and bounded landing coating enter with the frustum around4.3s and remain fixed on the landing. The actual chronological crop does not show a one-frame body insertion, changing world placement or unbounded frost sheet."
+    },
+    {
+      "case": "Six live reinforcements",
+      "result": "PASS at group scale",
+      "observation": "The two-file, three-rank group stays on the deck and moves toward the party/up-screen. At the final distance the source bodies and shadows are tiny low-contrast marks; the group can be followed, but individual joint action cannot be judged."
+    },
+    {
+      "case": "Both later gate reinforcements",
+      "result": "PASS at group scale",
+      "observation": "Both actual small bodies emerge from the gate onto the bridge and remain visible by8s. The chosen316/320 staging puts them beyond the near roof edge by the end. Previously reviewed source-only body masks disambiguate true body contributors from contact shadows and still bind the same environment/guard inputs."
+    }
+  ],
+  "material_blockers": [],
+  "limits": [
+    "Chronological still and contact-sheet inspection only. Normal-speed video watching and audio listening were unavailable and are not claimed.",
+    "All481 normal pictures are hash-bound and enumerated, but not every full picture was visually inspected at full size. Exact inspected indices and display scales are listed above.",
+    "Far guards are about1-3 native pixels/body. Acceptance there covers group placement, heading, depth, frustum entry and actual egress; it cannot establish individual limb anatomy or cadence.",
+    "Crops outside the960x640 viewport have diagnostic black padding. That padding is not present in the production picture.",
+    "Gallery playback/replay, reduced-motion runtime behavior and audio verification are owned by the parent and are outside this independent picture-only acceptance."
+  ],
+  "evidence": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/actual_overhead132_180.png",
+      "sha256": "012221bc7a3771e31fb187708094d809bd46c8ced803f6288115bef4063e475d"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/bank_binding.json",
+      "sha256": "d9bbdcd110f65c990d8396bf80e12193b9fca96bcbc9b53dde22e72ac4beed0f"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/combined107_110_131_134.jpg",
+      "sha256": "51a5871f2106e606b9039802c1fa83f9047866f6d7d5a2195b1b96f0409a2278"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/crown104_133.jpg",
+      "sha256": "c7566938c0619cc1e4a2d4ed8f73e5a0ae5d3ddf07a60b6e3246852c1d0c8940"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/crown24_58.jpg",
+      "sha256": "0f7fe939e9de2216ff296998d39a56330a5253e93d6a8e70b77353192438fd6f"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/crown66_90.jpg",
+      "sha256": "6f2732d0b52e7659e70d90de88d1343b9ffacf2f4c1c59f81303b25f7818f0c5"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/frozen_reentry.png",
+      "sha256": "8f4ee2261796907a1b0bf8c941c74a216a9603376afad77274cd28bcba828e08"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/iselin117_120.jpg",
+      "sha256": "a0a68bbf4ffd86cbe389b35664614afdc9268a5b63caa938f214fa3d8a7ef87c"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/iselin70_87.jpg",
+      "sha256": "9a8ac27f40a903419261beb05c377227ba79707dde68129ff30d70e9def7af86"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/iselin88_105.jpg",
+      "sha256": "8fb9522bcd5ccfd75117d88bdfd6de2100199661d099ad8c7256c777ace39076"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/late_pair.png",
+      "sha256": "a16e44f600ad81ca99abd72e7c110a82ed4fecfa825af369fb9e3d63939eb91b"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/lucan34_45.jpg",
+      "sha256": "227c9985743ae7f4deeda4dbc268d3174dc7a734eb2c454a127cfd7a167ea722"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/lucan46_62.jpg",
+      "sha256": "9fbecff73407bfb83480918babbc6afd7c25bdb7f9d2ad8d2982d4a7c7d0ea17"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/overview.jpg",
+      "sha256": "80ef1edf0b5971c0038a9c8edab4c67d411bd3420d150f8188e9dbbd60fd9b9d"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/final_bank/reinforcement_group.png",
+      "sha256": "db91d049a321a3a2c664b1c7f444aed89f5cff44d01d9dd4b31f2d054fd40ebb"
+    }
+  ],
+  "mutation_scope": "Only this independent-review evidence folder and /tmp were written by this review. Art, source, runtime, tests and helpers were not edited."
+}

@@ -1,0 +1,17 @@
+{
+  "prompt": "Redraw these FOUR existing SAME-PHASE complete knight figures in the PRIMARY first reference, preserving their EXACT two-leg gait, body/torso/head pose and consecutive four motions. Produce four complete whole drawn figures in a transparent2x2 atlas1024x1536. Row-major samples56,57,58,59. The first reference is the EXISTING APPROVED SAME-PHASE whole-figure motion and adult model, so do NOT exchange left/right legs. Preserve each hip-knee-ankle-boot chain, exactly two legs. Long exposed calf+boot is on imageRIGHT; imageLEFT is a compact advancing silver knee with its calf/boot tucked behind. In these particular four frames the exposed right-image boot remains on that same leg, not swapped. Preserve the existing short darkhair crown and mostly hidden face bowed forward under this steep camera. Same cranium/rigid shoulder proportions, polished cool steel, oxblood tabard, gold trim, brown leather. Full anatomy must remain exactly connected. No third foot or arm.\n\nThe REQUIRED bounded correction is the LEFT-ARM KITE-SHIELD PHYSICAL PLANE: first reference mistakenly stands shield as a tall narrow sliver. In the SECOND3D guide, actual left forearm carries the same upright shield but the elevated63\u201367degree camera projects it as a BROAD LOW FORESHORTENED WEDGE, as the guide correctly shows. Redraw entire figure naturally with this physical carry and connected forearm. Do not copy the 3D mannequin's oversizedhead or gray geometry; the FIRST same-phase painted figure owns body, legs, face/hair and equipment design. Maintain the same pose while correcting shield view. One sword in anatomicalRIGHT hand on imageLEFT; one oxblood/gold kite shield on anatomicalLEFT forearm on imageRIGHT. Painted detailed cinematic illustration with controlled dark outline and realistic adult proportions, exact same identity/style as first reference. No labels/grid/background/floor/shadows. Transparent alpha. Four complete figures, no part cutout overlays or added limbs. Match the four supplied corresponding poses instead of inventing generic running contact legs.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/actual_same_phase_056_059.png",
+      "sha256": "2f60e339ffe5644bac66c78d2d05d159664c680b2baa566120af6ae466cdd38f"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_056_059.png",
+      "sha256": "9b1df61022a0bafb3cf8e4fa101d240ad28260aa18122b4bc8782b4c85cfebe3"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+      "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+    }
+  ]
+}

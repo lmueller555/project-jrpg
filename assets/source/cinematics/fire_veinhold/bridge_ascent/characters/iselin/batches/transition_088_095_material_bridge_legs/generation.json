@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-df4abef8-da4f-4db3-9f3d-8a579655e2b7",
+  "original_generation_path": "/workspace/generated_images/exec-df4abef8-da4f-4db3-9f3d-8a579655e2b7.png",
+  "master": "master.png",
+  "sha256": "e66b313c8821078ef6980763b1c355e45b2c852d4e94a6e822cbfc1eb1adb057",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "7810f00341aa54f0c1663825faacffa895d80d3b9236bde162d5e2cfd28bc47c",
+  "references": [
+    {
+      "path": "batches/transition_088_095_material_bridge_legs/edit_reference.png",
+      "sha256": "c6869f7328a604a820b0f784567bdb3701aeac12b5f94982ee303e8073fac45d"
+    },
+    {
+      "path": "batches/transition_088_095_material_bridge_legs/camera_pose_guide.png",
+      "sha256": "3d103ce10e7d80d31e455ff33dc0cea528bea96529b7cffb61badd171121ee92"
+    },
+    {
+      "path": "batches/transition_088_095_material_bridge_legs/entry_reference.png",
+      "sha256": "e43034db72f1569054b2a92180a77198e1dbbf3442ef7d311aaf1be079954837"
+    }
+  ],
+  "status": "ImageGen complete-figure correction; native review pending",
+  "samples": [
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95
+  ],
+  "guide_pixels_used_in_export": false
+}

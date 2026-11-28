@@ -1,0 +1,150 @@
+[
+  {
+    "index": 20,
+    "file": "/tmp/iselin_ascent_first_batch/frame_020.png",
+    "source": "batches/transition_020_023/master.png",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.38,
+    "origin": [
+      88.74710000000005,
+      -25.292696601117513
+    ],
+    "anchor": [
+      512,
+      960
+    ],
+    "canvas": [
+      1024,
+      1536
+    ],
+    "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+    "source_neck": [
+      306.705,
+      179.847
+    ],
+    "neck_target": [
+      512.0,
+      222.8961633988825
+    ],
+    "native_scale": 0.49491025270614913,
+    "actual_camera_elevation": 15.153078665651753,
+    "gait_frame": 30,
+    "registration_method": "One uniform whole-master density from measured adult head/neck/belt proportions; actual measured neck translation, angle-projected torso height. No occupied-height fit or limb edits."
+  },
+  {
+    "index": 21,
+    "file": "/tmp/iselin_ascent_first_batch/frame_021.png",
+    "source": "batches/transition_020_023/master.png",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.38,
+    "origin": [
+      115.14650000000006,
+      -23.142404326495466
+    ],
+    "anchor": [
+      512,
+      960
+    ],
+    "canvas": [
+      1024,
+      1536
+    ],
+    "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+    "source_neck": [
+      287.575,
+      180.417
+    ],
+    "neck_target": [
+      512.0,
+      225.8330556735045
+    ],
+    "native_scale": 0.49326626043309757,
+    "actual_camera_elevation": 15.830262067419108,
+    "gait_frame": 31,
+    "registration_method": "One uniform whole-master density from measured adult head/neck/belt proportions; actual measured neck translation, angle-projected torso height. No occupied-height fit or limb edits."
+  },
+  {
+    "index": 22,
+    "file": "/tmp/iselin_ascent_first_batch/frame_022.png",
+    "source": "batches/transition_020_023/master.png",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.38,
+    "origin": [
+      85.98710000000005,
+      -13.774493254592613
+    ],
+    "anchor": [
+      512,
+      960
+    ],
+    "canvas": [
+      1024,
+      1536
+    ],
+    "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+    "source_neck": [
+      308.705,
+      175.821
+    ],
+    "neck_target": [
+      512.0,
+      228.85848674540736
+    ],
+    "native_scale": 0.491537425251781,
+    "actual_camera_elevation": 16.55905690969682,
+    "gait_frame": 32,
+    "registration_method": "One uniform whole-master density from measured adult head/neck/belt proportions; actual measured neck translation, angle-projected torso height. No occupied-height fit or limb edits."
+  },
+  {
+    "index": 23,
+    "file": "/tmp/iselin_ascent_first_batch/frame_023.png",
+    "source": "batches/transition_020_023/master.png",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.38,
+    "origin": [
+      106.86650000000003,
+      -11.39262462375251
+    ],
+    "anchor": [
+      512,
+      960
+    ],
+    "canvas": [
+      1024,
+      1536
+    ],
+    "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+    "source_neck": [
+      293.575,
+      176.391
+    ],
+    "neck_target": [
+      512.0,
+      232.02695537624746
+    ],
+    "native_scale": 0.4897304186715931,
+    "actual_camera_elevation": 17.339498887114203,
+    "gait_frame": 33,
+    "registration_method": "One uniform whole-master density from measured adult head/neck/belt proportions; actual measured neck translation, angle-projected torso height. No occupied-height fit or limb edits."
+  }
+]

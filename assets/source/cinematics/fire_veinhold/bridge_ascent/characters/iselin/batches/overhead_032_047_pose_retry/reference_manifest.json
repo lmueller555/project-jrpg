@@ -1,0 +1,1234 @@
+[
+  {
+    "sample_index": 32,
+    "gait_frame": 32,
+    "cell": [
+      0,
+      0,
+      256,
+      384
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_032.png",
+    "guide_sha256": "2528c5fdc42145ec25c8349cf2ff8f97d34e9b6580495d85106d790d587069ca",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.9721374511719
+      ],
+      "Rfoot": [
+        226.0,
+        496.59814453125
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        495.0000686645508
+      ],
+      "Rhand": [
+        181.0,
+        516.2500762939453
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        510.14488220214844
+      ],
+      "Lfoot": [
+        286.0,
+        446.666748046875
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        465.0000915527344
+      ],
+      "Lhand": [
+        331.0,
+        443.75008392333984
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 33,
+    "gait_frame": 33,
+    "cell": [
+      256,
+      0,
+      512,
+      384
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_033.png",
+    "guide_sha256": "cfba0d0ae4c78feaea013e976c0c5ba56e41590dd70a62733084ee86e159307c",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.9023513793945
+      ],
+      "Rfoot": [
+        226.0,
+        504.7685852050781
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        491.48057556152344
+      ],
+      "Rhand": [
+        181.0,
+        507.74462127685547
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        495.90039825439453
+      ],
+      "Lfoot": [
+        286.0,
+        430.0000762939453
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        468.5195846557617
+      ],
+      "Lhand": [
+        331.0,
+        452.2555389404297
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 34,
+    "gait_frame": 34,
+    "cell": [
+      512,
+      0,
+      768,
+      384
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_034.png",
+    "guide_sha256": "c9c50634a86ac755fb96c1875e0f5df447597e4c6b5040f103114fff8003d59f",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.682430267334
+      ],
+      "Rfoot": [
+        226.0,
+        512.7847137451172
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        487.76463317871094
+      ],
+      "Rhand": [
+        181.0,
+        498.76444244384766
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        479.44786834716797
+      ],
+      "Lfoot": [
+        286.0,
+        413.3334045410156
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        472.2355041503906
+      ],
+      "Lhand": [
+        331.0,
+        461.2356948852539
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 35,
+    "gait_frame": 35,
+    "cell": [
+      768,
+      0,
+      1024,
+      384
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_035.png",
+    "guide_sha256": "679a0cbbdf58c185772665638648e8910c092417fbddc5ca2acf9b1fbff90f6a",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.6051940917969
+      ],
+      "Rfoot": [
+        226.0,
+        520.5950546264648
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        483.9158477783203
+      ],
+      "Rhand": [
+        181.0,
+        489.4632110595703
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        459.1495056152344
+      ],
+      "Lfoot": [
+        286.0,
+        396.66673278808594
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        476.08428955078125
+      ],
+      "Lhand": [
+        331.0,
+        470.53692626953125
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 36,
+    "gait_frame": 36,
+    "cell": [
+      0,
+      384,
+      256,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_036.png",
+    "guide_sha256": "b79e6569df1577fb8128f94259ec5f6a95effa8dc92148769923277f49100f00",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.7000885009766
+      ],
+      "Rfoot": [
+        226.0,
+        528.1482238769531
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        480.0000686645508
+      ],
+      "Rhand": [
+        181.0,
+        480.0000686645508
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        430.0000762939453
+      ],
+      "Lfoot": [
+        286.0,
+        380.00006103515625
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        480.0000915527344
+      ],
+      "Lhand": [
+        331.0,
+        480.0000915527344
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 37,
+    "gait_frame": 37,
+    "cell": [
+      256,
+      384,
+      512,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_037.png",
+    "guide_sha256": "53ef2a48a3665ac35304c38c6cee62d74d16f4fd7f094df3a33365091f90e453",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.8746681213379
+      ],
+      "Rfoot": [
+        226.0,
+        535.3927230834961
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        476.08428955078125
+      ],
+      "Rhand": [
+        181.0,
+        470.53692626953125
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        449.76365661621094
+      ],
+      "Lfoot": [
+        286.0,
+        380.45448303222656
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        483.9158706665039
+      ],
+      "Lhand": [
+        331.0,
+        489.4632339477539
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 38,
+    "gait_frame": 38,
+    "cell": [
+      512,
+      384,
+      768,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_038.png",
+    "guide_sha256": "b0c63b99edc876cd70447b35e4ad1b5292fcb1bfd398c51142eb6dbfa82c2836",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.994945526123
+      ],
+      "Rfoot": [
+        226.0,
+        542.2771682739258
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        472.2355041503906
+      ],
+      "Rhand": [
+        181.0,
+        461.2356948852539
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        464.8230514526367
+      ],
+      "Lfoot": [
+        286.0,
+        381.7833251953125
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        487.76465606689453
+      ],
+      "Lhand": [
+        331.0,
+        498.76446533203125
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 39,
+    "gait_frame": 39,
+    "cell": [
+      768,
+      384,
+      1024,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_039.png",
+    "guide_sha256": "7144af608ba59a714264a0519af4a33663272540dc66d91740a85fe2a1617e73",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.9199295043945
+      ],
+      "Rfoot": [
+        226.0,
+        548.7500839233398
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        468.5195617675781
+      ],
+      "Rhand": [
+        181.0,
+        452.2555160522461
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        476.24400329589844
+      ],
+      "Lfoot": [
+        286.0,
+        383.9352722167969
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        491.48057556152344
+      ],
+      "Lhand": [
+        331.0,
+        507.74462127685547
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 40,
+    "gait_frame": 40,
+    "cell": [
+      0,
+      768,
+      256,
+      1152
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_040.png",
+    "guide_sha256": "92ca2e0ffd38ea904111354dead3f48111cba0d0718dd35ae39af53732ff7a85",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        589.5118560791016
+      ],
+      "Rfoot": [
+        226.0,
+        554.7600173950195
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        465.0000686645508
+      ],
+      "Rhand": [
+        181.0,
+        443.75006103515625
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        485.91188049316406
+      ],
+      "Lfoot": [
+        286.0,
+        386.85877990722656
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        495.0000915527344
+      ],
+      "Lhand": [
+        331.0,
+        516.2500762939453
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 41,
+    "gait_frame": 41,
+    "cell": [
+      256,
+      768,
+      512,
+      1152
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_041.png",
+    "guide_sha256": "1345467763ccc008597509e5339700e64f4aadf4cec02afbaa2c87fadbf8ca14",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        588.6354560852051
+      ],
+      "Rfoot": [
+        226.0,
+        560.2555618286133
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        461.73722076416016
+      ],
+      "Rhand": [
+        181.00001525878906,
+        435.86485290527344
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        494.3932113647461
+      ],
+      "Lfoot": [
+        286.0,
+        390.5024871826172
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        498.2629165649414
+      ],
+      "Lhand": [
+        331.0,
+        524.1352844238281
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 42,
+    "gait_frame": 42,
+    "cell": [
+      512,
+      768,
+      768,
+      1152
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_042.png",
+    "guide_sha256": "ed9c8beedb13758c284ced4286fba8d9c99e73ec47d6eca4adece44f7a38b87a",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        587.1528053283691
+      ],
+      "Rfoot": [
+        226.0,
+        565.1852645874023
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        458.786865234375
+      ],
+      "Rhand": [
+        181.00001525878906,
+        428.7348175048828
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        501.9676208496094
+      ],
+      "Lfoot": [
+        286.0,
+        394.8148956298828
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        501.21329498291016
+      ],
+      "Lhand": [
+        331.0,
+        531.2653198242188
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 43,
+    "gait_frame": 43,
+    "cell": [
+      768,
+      768,
+      1024,
+      1152
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_043.png",
+    "guide_sha256": "e9ec5e3c9eabb9a5691086890a090658b6fd1651deed43848035ac99185b0d7f",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        584.9165382385254
+      ],
+      "Rfoot": [
+        226.0,
+        569.497673034668
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        456.19947052001953
+      ],
+      "Rhand": [
+        181.00001525878906,
+        422.48194885253906
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        508.8295440673828
+      ],
+      "Lfoot": [
+        286.0,
+        399.7445983886719
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        503.8006896972656
+      ],
+      "Lhand": [
+        331.0,
+        537.5181884765625
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 44,
+    "gait_frame": 44,
+    "cell": [
+      0,
+      1152,
+      256,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_044.png",
+    "guide_sha256": "c6321636932fe7cf8df0845ebe4de97b1a047023bff2238caf128e8f1640e72b",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        581.761962890625
+      ],
+      "Rfoot": [
+        226.0,
+        573.141357421875
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        454.01930236816406
+      ],
+      "Rhand": [
+        181.00001525878906,
+        417.2132263183594
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        515.158447265625
+      ],
+      "Lfoot": [
+        286.0,
+        405.24011993408203
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        505.9808349609375
+      ],
+      "Lhand": [
+        331.0,
+        542.7869110107422
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 45,
+    "gait_frame": 45,
+    "cell": [
+      256,
+      1152,
+      512,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_045.png",
+    "guide_sha256": "cd6b420502f60d463d1435a2de74406aa17980a29a0c01ce5fc19ae20a3b4545",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        577.4984893798828
+      ],
+      "Rfoot": [
+        226.0,
+        576.0648880004883
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        452.28369140625
+      ],
+      "Rhand": [
+        181.00001525878906,
+        413.01880645751953
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        521.1518325805664
+      ],
+      "Lfoot": [
+        286.0,
+        411.2500762939453
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        507.71646881103516
+      ],
+      "Lhand": [
+        331.0,
+        546.9813537597656
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 46,
+    "gait_frame": 46,
+    "cell": [
+      512,
+      1152,
+      768,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_046.png",
+    "guide_sha256": "fbefa879731ee024f9baf9cbc266140d18436c742f322a1d73773dca2e83250f",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        571.9040679931641
+      ],
+      "Rfoot": [
+        226.0,
+        578.2168121337891
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        451.02230072021484
+      ],
+      "Rhand": [
+        181.00001525878906,
+        409.97044372558594
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        527.0432968139648
+      ],
+      "Lfoot": [
+        286.0,
+        417.7229919433594
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        508.9778594970703
+      ],
+      "Lhand": [
+        331.0,
+        550.0297164916992
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  },
+  {
+    "sample_index": 47,
+    "gait_frame": 47,
+    "cell": [
+      768,
+      1152,
+      1024,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0,
+    "guide": "guides/overhead/guide_047.png",
+    "guide_sha256": "2adc009f0be5775608a61a1de55d233b0d1edbfbcd35f256629888a4b5828d3d",
+    "guide_construction": "Fixed crop[60,270,450,660], uniform1.25 guide scale, colored linked-chain knee/boot diagnostic, then uniform0.5 whole-cell sampling. Guide pixels never exported.",
+    "physical_guide_landmarks": {
+      "Rhip": [
+        229.75,
+        480.0000686645508
+      ],
+      "Rknee": [
+        229.75,
+        564.7670059204102
+      ],
+      "Rfoot": [
+        226.0,
+        579.5456886291504
+      ],
+      "Rshoulder": [
+        201.0,
+        505.0000762939453
+      ],
+      "Relbow": [
+        171.0,
+        450.2567138671875
+      ],
+      "Rhand": [
+        181.00001525878906,
+        408.12032318115234
+      ],
+      "Lhip": [
+        282.25,
+        480.0000686645508
+      ],
+      "Lknee": [
+        282.25,
+        533.1088714599609
+      ],
+      "Lfoot": [
+        286.0,
+        424.60741424560547
+      ],
+      "Lshoulder": [
+        311.0,
+        505.0000762939453
+      ],
+      "Lelbow": [
+        341.0,
+        509.74342346191406
+      ],
+      "Lhand": [
+        331.0,
+        551.8798370361328
+      ],
+      "hips": [
+        256.0,
+        480.0000686645508
+      ],
+      "torso": [
+        256.0,
+        495.0000686645508
+      ],
+      "head": [
+        256.0,
+        535.0000762939453
+      ]
+    }
+  }
+]

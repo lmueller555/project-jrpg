@@ -1,0 +1,182 @@
+[
+  {
+    "id": "overhead_000_007",
+    "output": "overhead_000_007.png",
+    "kind": "overhead",
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [0, 1, 2, 3, 4, 5, 6, 7], gait phases [0, 1, 2, 3, 4, 5, 6, 7], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame0, phase0: planted leg moves continuously back while opposite leg recovers\n2: frame1, phase1: planted leg moves continuously back while opposite leg recovers\n3: frame2, phase2: planted leg moves continuously back while opposite leg recovers\n4: frame3, phase3: planted leg moves continuously back while opposite leg recovers\n5: frame4, phase4: planted leg moves continuously back while opposite leg recovers\n6: frame5, phase5: planted leg moves continuously back while opposite leg recovers\n7: frame6, phase6: planted leg moves continuously back while opposite leg recovers\n8: frame7, phase7: planted leg moves continuously back while opposite leg recovers\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_000_007_camera.png",
+        "sha256": "d016fa8142a13ca349dc2a14f682101c02e11bfda0047a232897295aa86074ba"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  },
+  {
+    "id": "overhead_008_015",
+    "output": "overhead_008_015.png",
+    "kind": "overhead",
+    "indices": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [8, 9, 10, 11, 12, 13, 14, 15], gait phases [8, 9, 10, 11, 12, 13, 14, 15], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame8, phase8: planted leg moves continuously back while opposite leg recovers\n2: frame9, phase9: planted leg moves continuously back while opposite leg recovers\n3: frame10, phase10: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n4: frame11, phase11: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n5: frame12, phase12: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n6: frame13, phase13: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n7: frame14, phase14: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n8: frame15, phase15: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_008_015_camera.png",
+        "sha256": "58170844420549f0ef26ead94d39e5955991de45098d477c919f14c537343b8d"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  },
+  {
+    "id": "overhead_016_023",
+    "output": "overhead_016_023.png",
+    "kind": "overhead",
+    "indices": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [16, 17, 18, 19, 20, 21, 22, 23], gait phases [16, 17, 18, 19, 20, 21, 22, 23], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame16, phase16: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n2: frame17, phase17: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n3: frame18, phase18: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n4: frame19, phase19: next boot extends progressively toward landing\n5: frame20, phase20: next boot extends progressively toward landing\n6: frame21, phase21: next boot extends progressively toward landing\n7: frame22, phase22: next boot extends progressively toward landing\n8: frame23, phase23: next boot extends progressively toward landing\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_016_023_camera.png",
+        "sha256": "99d34ca5f814acb626a2664886e536c0fd663e0c7e5255dae6ed2e90be0e6b1b"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  },
+  {
+    "id": "overhead_024_031",
+    "output": "overhead_024_031.png",
+    "kind": "overhead",
+    "indices": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [24, 25, 26, 27, 28, 29, 30, 31], gait phases [24, 25, 26, 27, 28, 29, 30, 31], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame24, phase24: planted leg moves continuously back while opposite leg recovers\n2: frame25, phase25: planted leg moves continuously back while opposite leg recovers\n3: frame26, phase26: planted leg moves continuously back while opposite leg recovers\n4: frame27, phase27: planted leg moves continuously back while opposite leg recovers\n5: frame28, phase28: planted leg moves continuously back while opposite leg recovers\n6: frame29, phase29: planted leg moves continuously back while opposite leg recovers\n7: frame30, phase30: planted leg moves continuously back while opposite leg recovers\n8: frame31, phase31: planted leg moves continuously back while opposite leg recovers\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_024_031_camera.png",
+        "sha256": "4c3598c489f451031f0e0b33ed4ef749ae3e140fb5acf9be51d8dc3c8b9ed0ea"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  },
+  {
+    "id": "overhead_032_039",
+    "output": "overhead_032_039.png",
+    "kind": "overhead",
+    "indices": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [32, 33, 34, 35, 36, 37, 38, 39], gait phases [32, 33, 34, 35, 36, 37, 38, 39], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame32, phase32: planted leg moves continuously back while opposite leg recovers\n2: frame33, phase33: planted leg moves continuously back while opposite leg recovers\n3: frame34, phase34: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n4: frame35, phase35: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n5: frame36, phase36: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n6: frame37, phase37: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n7: frame38, phase38: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n8: frame39, phase39: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_032_039_camera.png",
+        "sha256": "da382b7502995421993f6bd2a604c8a948110c3883cb56c83b859fca8ad6757e"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  },
+  {
+    "id": "overhead_040_047",
+    "output": "overhead_040_047.png",
+    "kind": "overhead",
+    "indices": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "grid": [
+      4,
+      2
+    ],
+    "prompt": "Paint 8 COMPLETE indivisible Lucan running figures as a4column2row atlas. Read strictly LEFT TO RIGHT then TOP TO BOTTOM, camera samples [40, 41, 42, 43, 44, 45, 46, 47], gait phases [40, 41, 42, 43, 44, 45, 46, 47], camera elevations [90, 90, 90, 90, 90, 90, 90, 90] degrees. The FIRST attached image is the EXACT actual3D camera-and-pose guide for each cell; preserve its projected wholebody, each foot and knee ownership, changing arm positions and projected overlaps. Same natural adult body in every cell, not a toy or guide cylinders. SECOND image contains cropped identity/material samples ONLY.\n\nEach image is only ONE60Hz step after the last. Never jump a limb to a later gait pose. Critical per-cell action:\n1: frame40, phase40: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n2: frame41, phase41: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n3: frame42, phase42: compact folded passing knee; calf/boot folded back under body, NO long shin below knee\n4: frame43, phase43: next boot extends progressively toward landing\n5: frame44, phase44: next boot extends progressively toward landing\n6: frame45, phase45: next boot extends progressively toward landing\n7: frame46, phase46: next boot extends progressively toward landing\n8: frame47, phase47: next boot extends progressively toward landing\n\nWhen the guide shows a compact silver forward knee with its calf folded behind, do NOT invent a long shin and brown boot below that knee. The folded boot may be hidden by torso/hair. Do not make every frame a split-stride contact. Maintain exactly TWO complete shoulder-elbow-wrist chains, TWO hip-knee-ankle chains and at mostTWO boots; occlusion can hide a boot but cannot invent a third toe. AnatomicalRIGHT is imageLEFT, sword in RIGHT glove; LEFT arm imageRIGHT carries same oxblood/gold chevron kite shield. Shield hangs upright at all angles, its visible face narrows continuously with camera elevation into a thin curved gold rim/red back sliver at90; do not lay it flat. The head is bare swept darkbrown hair; no helmet. At steepview show crown and pauldron TOPS; head projects ahead/DOWN of hips, obscuring frontal chest/face. No face looking upward, no frontal face on an overhead model. The torso stands/runs upright, not lying prone.\n\nPolished articulated SILVERSTEEL with restrained GOLD trim, oxblood split tabard, pale chest motif where camera permits, brown gloves/boots, youthful mature adult proportions. Match actual hair/head and rigid shoulder/plate size consistently across all cells; NEVER resize body to equal silhouette height. Natural foreshortening and compact recovery poses shorten the occupied box. Cool moonlit silver with restrained warm rim, no lighting/palette flash. Paint each completefigure freshly, not pasted bodyparts. Transparent background, no floor/shadow/borders/grid/text/guide colors. Entire hair, both boots, swordtip and shield inside generous clear cell margins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/overhead_040_047_camera.png",
+        "sha256": "ff0e18f68743a517ae1d0c40ee953795b1b2456ab7c2920dc832c6db43cc8d8b"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+        "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+      }
+    ]
+  }
+]

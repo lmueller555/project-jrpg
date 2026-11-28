@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit and redraw the FIRST FOUR-FIGURE ATLAS as four COMPLETE finished whole illustrations. SAME1024x1536 canvas,2x2cells512x768,row-major exact consecutive running samples36\u201339. Transparentbackground, no text or tiles or floor. Preserve existing approved adult Lucan identity and all the successful recovery LEG MOTION, anatomy, boot ownership, arms and equipment ownership, rigid source density, figure layout and subtle cloth follow-through of that first atlas. This is a bounded camera-view/head-attitude correction, not a new gait or redesign. ImageGen must redraw COMPLETE whole figures, never create detached head patches or separate limbs.\n\nFAULT TO CORRECT: the first figure of each row/batch looks up directly into camera and subsequent figures bow down, causing an artificial repeated nod everyfourframes. Every SINGLE figure must keep the same physically forward/downward focused head attitude as APPROVED samples35 and48 in the SECOND appearance-reference crop. They are the SAME darkhaired bareheaded adult knight. The camera is rising continuously: the view moves smoothly from the left35 crop toward the right48 crop. Show short dark hair CROWN, the face bowed away, eyes naturally under the brow and increasingly obscured. NEVER lift the first pose's gaze to camera. No repeated face-up reset. Do not copy a frontal smiling/portrait face. Do not turn the torso front-facing at start of anybatch. Maintain continuous rigid pauldron width, long adult upperbody, and actual elevated camera foreshortening, with polished steel/oxblood/gold and white breastmark exactly as current character.\n\nThe PRIMARY atlas remains exact motion reference for these same four phases. Both hip-knee-ankle-boot chains remain unchanged: no leg exchange, no thirdfoot, no extra brown boot appended to an exposed silverknee. Retain RIGHT sword on imageLEFT and LEFT kite-shield on imageRIGHT with connected hands/elbows. Physical rigid equipment and body size stay constant. Match head attitude and appearance only to the SECOND view-crops, never borrow its unrelated leg pose. LAST guide is a 3D camera/ownership check only; do not render gray mannequin, enlarge its head or substitute generic rig legs for the successful painted gait.\n\nALL FOUR FIGURES must have consistently bowed heads, not only the finalfigure. Do not invent breathing/headbob that facesup forframe36. Preserve shape and limb phase within each supplied complete figure, chronological small60Hz motions. Crisp controlleddarkcontours, detailed cinematicsurface shading, no background, allfourcompletebodieswithinrespectivecells.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039.png",
+      "sha256": "39c8f92dfeae5a64513dcaa482e7fb566883d01c99911afef8aaeb3880705398"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/bowed_head_armor_view_bounds.png",
+      "sha256": "078e0d98ebdf802530caf250b2449d18ea96f99048141af10046e7ae50517b8c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_036_039.png",
+      "sha256": "e46ee4c682aadcf0330cddb26f452c43f1246fac2d628f3ffd32bf43d2645f70"
+    }
+  ]
+}

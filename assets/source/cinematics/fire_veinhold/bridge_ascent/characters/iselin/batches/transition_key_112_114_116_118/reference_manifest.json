@@ -1,0 +1,54 @@
+[
+  {
+    "sample_index": 112,
+    "gait_frame": 26,
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "view_elevation": 86.47869538077346,
+    "guide": "guides/transition/guide_112.png",
+    "guide_sha256": "e14ea21235ae9693229654cd1b4b75cb9d3fb99b110b010e7118f799347a8541"
+  },
+  {
+    "sample_index": 114,
+    "gait_frame": 28,
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "view_elevation": 86.6806064288645,
+    "guide": "guides/transition/guide_114.png",
+    "guide_sha256": "67877b9d589528bfda67bd7ed72ac2717b12c07c62361446456f44daf3b44ce4"
+  },
+  {
+    "sample_index": 116,
+    "gait_frame": 30,
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "view_elevation": 86.86036321465086,
+    "guide": "guides/transition/guide_116.png",
+    "guide_sha256": "ab7f648dc374cfd4ad2745df9f762c851023d5568486ee09043cae33379d1f05"
+  },
+  {
+    "sample_index": 118,
+    "gait_frame": 32,
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "view_elevation": 87.02067399808712,
+    "guide": "guides/transition/guide_118.png",
+    "guide_sha256": "db6229b64d227d2e6c44e3e6a73343c1dab04f6486a65613ee2f69090974d0eb"
+  }
+]

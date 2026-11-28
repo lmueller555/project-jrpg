@@ -1,0 +1,1213 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "source_state": "whole_figure_image_authored",
+  "transition_frames": [
+    {
+      "index": 0,
+      "file": "../../../shot07/characters/lucan/frame_00.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 0
+    },
+    {
+      "index": 1,
+      "file": "../../../shot07/characters/lucan/frame_01.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 1
+    },
+    {
+      "index": 2,
+      "file": "../../../shot07/characters/lucan/frame_02.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 2
+    },
+    {
+      "index": 3,
+      "file": "../../../shot07/characters/lucan/frame_03.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 3
+    },
+    {
+      "index": 4,
+      "file": "../../../shot07/characters/lucan/frame_04.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 4
+    },
+    {
+      "index": 5,
+      "file": "../../../shot07/characters/lucan/frame_05.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 5
+    },
+    {
+      "index": 6,
+      "file": "../../../shot07/characters/lucan/frame_06.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 6
+    },
+    {
+      "index": 7,
+      "file": "../../../shot07/characters/lucan/frame_07.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 7
+    },
+    {
+      "index": 8,
+      "file": "../../../shot07/characters/lucan/frame_08.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 8
+    },
+    {
+      "index": 9,
+      "file": "../../../shot07/characters/lucan/frame_09.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 9
+    },
+    {
+      "index": 10,
+      "file": "../../../shot07/characters/lucan/frame_10.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 10
+    },
+    {
+      "index": 11,
+      "file": "../../../shot07/characters/lucan/frame_11.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 11
+    },
+    {
+      "index": 12,
+      "file": "../../../shot07/characters/lucan/frame_12.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 12
+    },
+    {
+      "index": 13,
+      "file": "../../../shot07/characters/lucan/frame_13.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 13
+    },
+    {
+      "index": 14,
+      "file": "../../../shot07/characters/lucan/frame_14.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 14
+    },
+    {
+      "index": 15,
+      "file": "../../../shot07/characters/lucan/frame_15.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "gait_frame": 15
+    },
+    {
+      "index": 16,
+      "file": "transition_016.png",
+      "gait_frame": 16
+    },
+    {
+      "index": 17,
+      "file": "transition_017.png",
+      "gait_frame": 17
+    },
+    {
+      "index": 18,
+      "file": "transition_018.png",
+      "gait_frame": 18
+    },
+    {
+      "index": 19,
+      "file": "transition_019.png",
+      "gait_frame": 19
+    },
+    {
+      "index": 20,
+      "file": "transition_020.png",
+      "gait_frame": 20
+    },
+    {
+      "index": 21,
+      "file": "transition_021.png",
+      "gait_frame": 21
+    },
+    {
+      "index": 22,
+      "file": "transition_022.png",
+      "gait_frame": 22
+    },
+    {
+      "index": 23,
+      "file": "transition_023.png",
+      "gait_frame": 23
+    },
+    {
+      "index": 24,
+      "file": "transition_024.png",
+      "gait_frame": 24
+    },
+    {
+      "index": 25,
+      "file": "transition_025.png",
+      "gait_frame": 25
+    },
+    {
+      "index": 26,
+      "file": "transition_026.png",
+      "gait_frame": 26
+    },
+    {
+      "index": 27,
+      "file": "transition_027.png",
+      "gait_frame": 27
+    },
+    {
+      "index": 28,
+      "file": "transition_028.png",
+      "gait_frame": 28
+    },
+    {
+      "index": 29,
+      "file": "transition_029.png",
+      "gait_frame": 29
+    },
+    {
+      "index": 30,
+      "file": "transition_030.png",
+      "gait_frame": 30
+    },
+    {
+      "index": 31,
+      "file": "transition_031.png",
+      "gait_frame": 31
+    },
+    {
+      "index": 32,
+      "file": "transition_032.png",
+      "gait_frame": 32
+    },
+    {
+      "index": 33,
+      "file": "transition_033.png",
+      "gait_frame": 33
+    },
+    {
+      "index": 34,
+      "file": "transition_034.png",
+      "gait_frame": 34
+    },
+    {
+      "index": 35,
+      "file": "transition_035.png",
+      "gait_frame": 35
+    },
+    {
+      "index": 36,
+      "file": "transition_036.png",
+      "gait_frame": 36
+    },
+    {
+      "index": 37,
+      "file": "transition_037.png",
+      "gait_frame": 37
+    },
+    {
+      "index": 38,
+      "file": "transition_038.png",
+      "gait_frame": 38
+    },
+    {
+      "index": 39,
+      "file": "transition_039.png",
+      "gait_frame": 39
+    },
+    {
+      "index": 40,
+      "file": "transition_040.png",
+      "gait_frame": 40
+    },
+    {
+      "index": 41,
+      "file": "transition_041.png",
+      "gait_frame": 41
+    },
+    {
+      "index": 42,
+      "file": "transition_042.png",
+      "gait_frame": 42
+    },
+    {
+      "index": 43,
+      "file": "transition_043.png",
+      "gait_frame": 43
+    },
+    {
+      "index": 44,
+      "file": "transition_044.png",
+      "gait_frame": 44
+    },
+    {
+      "index": 45,
+      "file": "transition_045.png",
+      "gait_frame": 45
+    },
+    {
+      "index": 46,
+      "file": "transition_046.png",
+      "gait_frame": 46
+    },
+    {
+      "index": 47,
+      "file": "transition_047.png",
+      "gait_frame": 47
+    },
+    {
+      "index": 48,
+      "file": "transition_048.png",
+      "gait_frame": 0
+    },
+    {
+      "index": 49,
+      "file": "transition_049.png",
+      "gait_frame": 1
+    },
+    {
+      "index": 50,
+      "file": "transition_050.png",
+      "gait_frame": 2
+    },
+    {
+      "index": 51,
+      "file": "transition_051.png",
+      "gait_frame": 3
+    },
+    {
+      "index": 52,
+      "file": "transition_052.png",
+      "gait_frame": 4
+    },
+    {
+      "index": 53,
+      "file": "transition_053.png",
+      "gait_frame": 5
+    },
+    {
+      "index": 54,
+      "file": "transition_054.png",
+      "gait_frame": 6
+    },
+    {
+      "index": 55,
+      "file": "transition_055.png",
+      "gait_frame": 7
+    },
+    {
+      "index": 56,
+      "file": "transition_056.png",
+      "gait_frame": 8
+    },
+    {
+      "index": 57,
+      "file": "transition_057.png",
+      "gait_frame": 9
+    },
+    {
+      "index": 58,
+      "file": "transition_058.png",
+      "gait_frame": 10
+    },
+    {
+      "index": 59,
+      "file": "transition_059.png",
+      "gait_frame": 11
+    },
+    {
+      "index": 60,
+      "file": "transition_060.png",
+      "gait_frame": 12
+    },
+    {
+      "index": 61,
+      "file": "transition_061.png",
+      "gait_frame": 13
+    },
+    {
+      "index": 62,
+      "file": "transition_062.png",
+      "gait_frame": 14
+    },
+    {
+      "index": 63,
+      "file": "transition_063.png",
+      "gait_frame": 15
+    },
+    {
+      "index": 64,
+      "file": "transition_064.png",
+      "gait_frame": 16
+    },
+    {
+      "index": 65,
+      "file": "transition_065.png",
+      "gait_frame": 17
+    },
+    {
+      "index": 66,
+      "file": "transition_066.png",
+      "gait_frame": 18
+    },
+    {
+      "index": 67,
+      "file": "transition_067.png",
+      "gait_frame": 19
+    },
+    {
+      "index": 68,
+      "file": "transition_068.png",
+      "gait_frame": 20
+    },
+    {
+      "index": 69,
+      "file": "transition_069.png",
+      "gait_frame": 21
+    },
+    {
+      "index": 70,
+      "file": "transition_070.png",
+      "gait_frame": 22
+    },
+    {
+      "index": 71,
+      "file": "transition_071.png",
+      "gait_frame": 23
+    },
+    {
+      "index": 72,
+      "file": "transition_072.png",
+      "gait_frame": 24
+    },
+    {
+      "index": 73,
+      "file": "transition_073.png",
+      "gait_frame": 25
+    },
+    {
+      "index": 74,
+      "file": "transition_074.png",
+      "gait_frame": 26
+    },
+    {
+      "index": 75,
+      "file": "transition_075.png",
+      "gait_frame": 27
+    },
+    {
+      "index": 76,
+      "file": "transition_076.png",
+      "gait_frame": 28
+    },
+    {
+      "index": 77,
+      "file": "transition_077.png",
+      "gait_frame": 29
+    },
+    {
+      "index": 78,
+      "file": "transition_078.png",
+      "gait_frame": 30
+    },
+    {
+      "index": 79,
+      "file": "transition_079.png",
+      "gait_frame": 31
+    },
+    {
+      "index": 80,
+      "file": "transition_080.png",
+      "gait_frame": 32
+    },
+    {
+      "index": 81,
+      "file": "transition_081.png",
+      "gait_frame": 33
+    },
+    {
+      "index": 82,
+      "file": "transition_082.png",
+      "gait_frame": 34
+    },
+    {
+      "index": 83,
+      "file": "transition_083.png",
+      "gait_frame": 35
+    },
+    {
+      "index": 84,
+      "file": "transition_084.png",
+      "gait_frame": 36
+    },
+    {
+      "index": 85,
+      "file": "transition_085.png",
+      "gait_frame": 37
+    },
+    {
+      "index": 86,
+      "file": "transition_086.png",
+      "gait_frame": 38
+    },
+    {
+      "index": 87,
+      "file": "transition_087.png",
+      "gait_frame": 39
+    },
+    {
+      "index": 88,
+      "file": "transition_088.png",
+      "gait_frame": 40
+    },
+    {
+      "index": 89,
+      "file": "transition_089.png",
+      "gait_frame": 41
+    },
+    {
+      "index": 90,
+      "file": "transition_090.png",
+      "gait_frame": 42
+    },
+    {
+      "index": 91,
+      "file": "transition_091.png",
+      "gait_frame": 43
+    },
+    {
+      "index": 92,
+      "file": "transition_092.png",
+      "gait_frame": 44
+    },
+    {
+      "index": 93,
+      "file": "transition_093.png",
+      "gait_frame": 45
+    },
+    {
+      "index": 94,
+      "file": "transition_094.png",
+      "gait_frame": 46
+    },
+    {
+      "index": 95,
+      "file": "transition_095.png",
+      "gait_frame": 47
+    },
+    {
+      "index": 96,
+      "file": "transition_096.png",
+      "gait_frame": 0
+    },
+    {
+      "index": 97,
+      "file": "transition_097.png",
+      "gait_frame": 1
+    },
+    {
+      "index": 98,
+      "file": "transition_098.png",
+      "gait_frame": 2
+    },
+    {
+      "index": 99,
+      "file": "transition_099.png",
+      "gait_frame": 3
+    },
+    {
+      "index": 100,
+      "file": "transition_100.png",
+      "gait_frame": 4
+    },
+    {
+      "index": 101,
+      "file": "transition_101.png",
+      "gait_frame": 5
+    },
+    {
+      "index": 102,
+      "file": "transition_102.png",
+      "gait_frame": 6
+    },
+    {
+      "index": 103,
+      "file": "transition_103.png",
+      "gait_frame": 7
+    },
+    {
+      "index": 104,
+      "file": "transition_104.png",
+      "gait_frame": 8
+    },
+    {
+      "index": 105,
+      "file": "transition_105.png",
+      "gait_frame": 9
+    },
+    {
+      "index": 106,
+      "file": "transition_106.png",
+      "gait_frame": 10
+    },
+    {
+      "index": 107,
+      "file": "transition_107.png",
+      "gait_frame": 11
+    },
+    {
+      "index": 108,
+      "file": "overhead_012.png",
+      "gait_frame": 12,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 109,
+      "file": "overhead_013.png",
+      "gait_frame": 13,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 110,
+      "file": "overhead_014.png",
+      "gait_frame": 14,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 111,
+      "file": "overhead_015.png",
+      "gait_frame": 15,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 112,
+      "file": "overhead_016.png",
+      "gait_frame": 16,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 113,
+      "file": "overhead_017.png",
+      "gait_frame": 17,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 114,
+      "file": "overhead_018.png",
+      "gait_frame": 18,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 115,
+      "file": "overhead_019.png",
+      "gait_frame": 19,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 116,
+      "file": "overhead_020.png",
+      "gait_frame": 20,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 117,
+      "file": "overhead_021.png",
+      "gait_frame": 21,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 118,
+      "file": "overhead_022.png",
+      "gait_frame": 22,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 119,
+      "file": "overhead_023.png",
+      "gait_frame": 23,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 120,
+      "file": "overhead_024.png",
+      "gait_frame": 24,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 121,
+      "file": "overhead_025.png",
+      "gait_frame": 25,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 122,
+      "file": "overhead_026.png",
+      "gait_frame": 26,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 123,
+      "file": "overhead_027.png",
+      "gait_frame": 27,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 124,
+      "file": "overhead_028.png",
+      "gait_frame": 28,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 125,
+      "file": "overhead_029.png",
+      "gait_frame": 29,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 126,
+      "file": "overhead_030.png",
+      "gait_frame": 30,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 127,
+      "file": "overhead_031.png",
+      "gait_frame": 31,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 128,
+      "file": "overhead_032.png",
+      "gait_frame": 32,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 129,
+      "file": "overhead_033.png",
+      "gait_frame": 33,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 130,
+      "file": "overhead_034.png",
+      "gait_frame": 34,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 131,
+      "file": "overhead_035.png",
+      "gait_frame": 35,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    },
+    {
+      "index": 132,
+      "file": "overhead_036.png",
+      "gait_frame": 36,
+      "source_view_degrees": 90,
+      "reuse": "matching phase from view-equivalent overhead interval; actual native overlap reviewed separately"
+    }
+  ],
+  "overhead_cycle": {
+    "frames": [
+      {
+        "file": "overhead_000.png",
+        "gait_frame": 0
+      },
+      {
+        "file": "overhead_001.png",
+        "gait_frame": 1
+      },
+      {
+        "file": "overhead_002.png",
+        "gait_frame": 2
+      },
+      {
+        "file": "overhead_003.png",
+        "gait_frame": 3
+      },
+      {
+        "file": "overhead_004.png",
+        "gait_frame": 4
+      },
+      {
+        "file": "overhead_005.png",
+        "gait_frame": 5
+      },
+      {
+        "file": "overhead_006.png",
+        "gait_frame": 6
+      },
+      {
+        "file": "overhead_007.png",
+        "gait_frame": 7
+      },
+      {
+        "file": "overhead_008.png",
+        "gait_frame": 8
+      },
+      {
+        "file": "overhead_009.png",
+        "gait_frame": 9
+      },
+      {
+        "file": "overhead_010.png",
+        "gait_frame": 10
+      },
+      {
+        "file": "overhead_011.png",
+        "gait_frame": 11
+      },
+      {
+        "file": "overhead_012.png",
+        "gait_frame": 12
+      },
+      {
+        "file": "overhead_013.png",
+        "gait_frame": 13
+      },
+      {
+        "file": "overhead_014.png",
+        "gait_frame": 14
+      },
+      {
+        "file": "overhead_015.png",
+        "gait_frame": 15
+      },
+      {
+        "file": "overhead_016.png",
+        "gait_frame": 16
+      },
+      {
+        "file": "overhead_017.png",
+        "gait_frame": 17
+      },
+      {
+        "file": "overhead_018.png",
+        "gait_frame": 18
+      },
+      {
+        "file": "overhead_019.png",
+        "gait_frame": 19
+      },
+      {
+        "file": "overhead_020.png",
+        "gait_frame": 20
+      },
+      {
+        "file": "overhead_021.png",
+        "gait_frame": 21
+      },
+      {
+        "file": "overhead_022.png",
+        "gait_frame": 22
+      },
+      {
+        "file": "overhead_023.png",
+        "gait_frame": 23
+      },
+      {
+        "file": "overhead_024.png",
+        "gait_frame": 24
+      },
+      {
+        "file": "overhead_025.png",
+        "gait_frame": 25
+      },
+      {
+        "file": "overhead_026.png",
+        "gait_frame": 26
+      },
+      {
+        "file": "overhead_027.png",
+        "gait_frame": 27
+      },
+      {
+        "file": "overhead_028.png",
+        "gait_frame": 28
+      },
+      {
+        "file": "overhead_029.png",
+        "gait_frame": 29
+      },
+      {
+        "file": "overhead_030.png",
+        "gait_frame": 30
+      },
+      {
+        "file": "overhead_031.png",
+        "gait_frame": 31
+      },
+      {
+        "file": "overhead_032.png",
+        "gait_frame": 32
+      },
+      {
+        "file": "overhead_033.png",
+        "gait_frame": 33
+      },
+      {
+        "file": "overhead_034.png",
+        "gait_frame": 34
+      },
+      {
+        "file": "overhead_035.png",
+        "gait_frame": 35
+      },
+      {
+        "file": "overhead_036.png",
+        "gait_frame": 36
+      },
+      {
+        "file": "overhead_037.png",
+        "gait_frame": 37
+      },
+      {
+        "file": "overhead_038.png",
+        "gait_frame": 38
+      },
+      {
+        "file": "overhead_039.png",
+        "gait_frame": 39
+      },
+      {
+        "file": "overhead_040.png",
+        "gait_frame": 40
+      },
+      {
+        "file": "overhead_041.png",
+        "gait_frame": 41
+      },
+      {
+        "file": "overhead_042.png",
+        "gait_frame": 42
+      },
+      {
+        "file": "overhead_043.png",
+        "gait_frame": 43
+      },
+      {
+        "file": "overhead_044.png",
+        "gait_frame": 44
+      },
+      {
+        "file": "overhead_045.png",
+        "gait_frame": 45
+      },
+      {
+        "file": "overhead_046.png",
+        "gait_frame": 46
+      },
+      {
+        "file": "overhead_047.png",
+        "gait_frame": 47
+      }
+    ]
+  },
+  "source_sha256": {
+    "../../../shot07/characters/lucan/frame_00.png": "06f641fca4d085af6888112ddff033aaf2c121ec07d04d65f67849cfc49c06d7",
+    "../../../shot07/characters/lucan/frame_01.png": "5b88112358482ec79bf5c7cec909c4868dc82a70c46ee23acc718e8f7d5ede70",
+    "../../../shot07/characters/lucan/frame_02.png": "71ab9d648ce3280c83a64a535eb41cd29dd7d7ff78f10c1c3960ae8a8e0c9fd2",
+    "../../../shot07/characters/lucan/frame_03.png": "bda9311a2a96d27b58e08596a9c7efb8425ccdf17b98e031c75d24c3aa3e89db",
+    "../../../shot07/characters/lucan/frame_04.png": "10a481518219f9953ecca4506e0b80fdc93bfd7a14f63c523255eec6699849ed",
+    "../../../shot07/characters/lucan/frame_05.png": "379c5eaf87616bf4bdbf56122c88ab986cb9ba742cbd18bc07fdba5e2c5e0b9e",
+    "../../../shot07/characters/lucan/frame_06.png": "f493d5a139027b1979e68c3eca184fa73ed49ccbfb6e23859384596e3657b093",
+    "../../../shot07/characters/lucan/frame_07.png": "5c24c53aa2f55f81011956d3370a8c8f1a7ad79ff9d9c1f7b7071b510f6a7b91",
+    "../../../shot07/characters/lucan/frame_08.png": "46353c765e1b523e37b340f4d3ef20ab0d6f741c9e6db4f267cbc26edbbd9f41",
+    "../../../shot07/characters/lucan/frame_09.png": "693cb4cb627fd540ecd46628f4ba90d393abf4cdb3bd790ad6b209fbf08f9c47",
+    "../../../shot07/characters/lucan/frame_10.png": "d061d2b8e7ab5edd2efe2b9808cefe11b3322957aa6d50eaee1431d469c9fddd",
+    "../../../shot07/characters/lucan/frame_11.png": "28fa4814cc12e0f11fbabd43142e782f81d3a2242fe24f65b14acf6f1dc0c8a9",
+    "../../../shot07/characters/lucan/frame_12.png": "7a769cb108ca404b3c6b85759cf11124430cddabb0ee724806c17bfbf854d62d",
+    "../../../shot07/characters/lucan/frame_13.png": "b50eedeb69c5e79253b794e013f34b7736d67c2a775f8b7581393c007a911b12",
+    "../../../shot07/characters/lucan/frame_14.png": "8f3e35510aa173174b17f9ef4be94e773ce391759653062377c1f62f9019e2e3",
+    "../../../shot07/characters/lucan/frame_15.png": "c2d8b37ca6f97db6479cd9874a68eda1aded4bac272214ac6c1617795986d66b",
+    "overhead_000.png": "03a8f89a971fdd16cd8d22d9ba0d357f90df4a172573cae8ec386379e77ea319",
+    "overhead_001.png": "a571aaad8318212479a407aea34e66e0f84dd998254cfee33a6d366eee38fd5e",
+    "overhead_002.png": "4835d9df0bd8ec9cfe0c9ec1933809c7e89b96e6eef2e51283a0b518347c40a1",
+    "overhead_003.png": "589ce20077ba0a7d2aae63d67e22b8fa882344df1145be9b50475dc9af8f7519",
+    "overhead_004.png": "3069b604e292d700a07a57f95e4715706a2084b44a648ca4c6c29d4b1508597a",
+    "overhead_005.png": "1d4282559188e499744536aa954e0052df22029b1e3c5699b27f1f002687e159",
+    "overhead_006.png": "f53db439ecf5d3ada9072930521d39364d2596b3953fb4b042a2a4f04925610e",
+    "overhead_007.png": "3cdf4c18e1b7064a6f7474cf6c72e11d25791334cb85d5d587c26530b8b062b8",
+    "overhead_008.png": "19758a9af8fded4600fbadbdd9c9a2d5fec35d5485c9f09e3cf8767e590919b6",
+    "overhead_009.png": "20e47d4a80af235beab4f33826fc3bc539dd8473210cb233dad00c69b4a5ed9f",
+    "overhead_010.png": "4740f031ce7db131b07571751ac8cc40354bf967c510f3301f91079e4cd5aa2b",
+    "overhead_011.png": "8013859e32f1177f11e97b34b77e6777bc793cad943459f7186ccbffd15ae409",
+    "overhead_012.png": "caaab1f19041e16ee7a69019a8e5a2485819b5049e09f3465e5c72f32464b1f1",
+    "overhead_013.png": "4bf134b1016ea0d701e7adc8d05d2a33f20e674c06653c80146cad1e1dc22eff",
+    "overhead_014.png": "348efdc3724320bb4acf231cd19a7bbe4054eb5a0d006d7371bcf58704e3f1a1",
+    "overhead_015.png": "af9ac6ae2f3867dd57fdaf5671b1de7ecc79967415c8b6088d11c18eb5827b0c",
+    "overhead_016.png": "672ff64eb2d182fb37d7d7e3542c9dbc9b95e60ee483479d4c8369d37daae3f7",
+    "overhead_017.png": "238d5bbea8d4ad583cc39cf68a89772d47587616e5bde2f6acf2c4e19f7542b1",
+    "overhead_018.png": "30d4068b79fa7a00c5cc9d23b9b51174aca860f637ecf267a7dd49f6c7bc0c85",
+    "overhead_019.png": "3b2315a316d1baa6a0e73f97a3ef676e37de9d330a771551a9dbba0f5f9c6b72",
+    "overhead_020.png": "42f01430c41ca784b2c3daa123039c433464e28e8f115e6566c620aa9e68760e",
+    "overhead_021.png": "9eba3896dd5556d654fafc55827f22eb958d46aabaad7dc35028405d25ea38a9",
+    "overhead_022.png": "252678ccec61388b8e38d13af92393a07e3120031a306d331dea6d67c9f1624b",
+    "overhead_023.png": "42670bdc44974b03439d207eac6df6314b15f56b89cdbbbbf06bcb08cceaffad",
+    "overhead_024.png": "e0eead049415c301b3162db32d0e52614d434d589b7d926d2cdd8e9cefd9274f",
+    "overhead_025.png": "a9caedf0cce20bb5416c7600c2d5cb0b075dea53e75de072c0ea868cb94dc8f4",
+    "overhead_026.png": "5ec61eae10dbc0140467077bed5c19490b84ac33dc479c8d8616d5adc72cb118",
+    "overhead_027.png": "788eeca7cc3a5822336550a6945a5bbba29cbf9b9c5be7b32a8bf68b700b4ab9",
+    "overhead_028.png": "426fafb7cec76fad6042aa560edc5d283b24a3a281cf952c4e31ffa8a5d5427b",
+    "overhead_029.png": "a9d6a9f9bd1ba154838486bbb73075414492f2eb5fbd574030e29faf9d9a484c",
+    "overhead_030.png": "b0f7f4e5aa87c88fb51fa565218af877dd0625db6ed80653d4b751815dc6ca3c",
+    "overhead_031.png": "22171f4edf0edc4b759639729edec38bf3868e62ec6b7e236fa381df1e4c3017",
+    "overhead_032.png": "59f4c9325288980960148e78fb089b8125de2f0450ac1aea10a6370a505886fb",
+    "overhead_033.png": "a82930614dbcb5388f2e3ed9029e8961df273a58b9862424102d99c73de3f5da",
+    "overhead_034.png": "6ec533c66c1fadb62deacbfb55541fa665edd2e868061207dc7b691f792ad54b",
+    "overhead_035.png": "6b106fcbfdaf67e9c9110b37fe78a975400525fc5883a85c24a398e219799681",
+    "overhead_036.png": "f7a4b2610ff416a1653ea2a1117555639c679796f3a7ea9ff0f7c4454e5d87e0",
+    "overhead_037.png": "44f6bf26ccee726832942061f1fdcf59ccc33055f0d0aaa28797ba4f6214aa78",
+    "overhead_038.png": "c040ba29f9de00b6ae6fadfd132c4f90404b8f86b917a61c769a653d54078a9d",
+    "overhead_039.png": "6ab0b1fba706e09a43c3442d4381611fb2792cc6695da54083967d1ed3da7c20",
+    "overhead_040.png": "bb6ae243d25b8be2ee8b166a04164313f9cce760765e1e5b02ba8cab457346e0",
+    "overhead_041.png": "05215bc11b0e287aefb85d846f6dcc9836fe7ab7a10781c16b0a7179fb54140c",
+    "overhead_042.png": "8fda2a15dbf291d8477110b6cdf54891d539b0e45c823d4d15b18f44867793b5",
+    "overhead_043.png": "e3261ad4f402b87b4d0a4b27393b802fca9a3d8b393b2c65e16f3b498d4f6f43",
+    "overhead_044.png": "5fcb7065ee095e1217bdc1af6696335b001164c0a3c7af691da675204ae675ab",
+    "overhead_045.png": "49f6b8c670098f99038104f838bc8e2865971f95ae5772f5d3c6eb014ebc2e1c",
+    "overhead_046.png": "e6b75cbe12c7ccec0bdff96b6cf1cba6415f70874b1f860ac5f3005c46c6c4c7",
+    "overhead_047.png": "05a12bcde81534f011f8fc850194cae165d7f302c6a391b109f17c895e640bf7",
+    "transition_016.png": "4c1faa0b3287ca9e426c950111c9ad8272460d0327545b5c1515f8c55f0aba71",
+    "transition_017.png": "edbe936eab7dd3f5c6b2360af0cc68e01f8c6aaf3dd9be7996942a7512c89b03",
+    "transition_018.png": "5e6771579f65c3b978c90de2af73ff50d6b34fb9eee6b256d81fedb0d757f77b",
+    "transition_019.png": "bb624baebd0a0e1092972a8719aef78dee67c34820d38aa242f1b3794bd5cfcc",
+    "transition_020.png": "03e4e19e87ab5feac356319268636ee01ced55ff2dc597dfa6ea168a6de6a809",
+    "transition_021.png": "ceacc171e0d57e3c36052ebb3a189f9c28320c8131020017938c52cf63326481",
+    "transition_022.png": "b628a64ccaf8d3b86fcc638463640864c1c935113388f6a4771a70f3e8967227",
+    "transition_023.png": "1f6d31225a0e23be893925735079002b587c192d9079f45fa6eaa0e4f334db11",
+    "transition_024.png": "f0d9f308f47fd80903541b3e5ec03732afa8352f137e7d180c6f56b54016c811",
+    "transition_025.png": "f554f23c4d09968675bee067d516b4f798c4855494f5930e60e276ec3ce764fa",
+    "transition_026.png": "df227a716ae164987446017f7d3f55b20279666dee54dab562ae11c832672830",
+    "transition_027.png": "8de97fa166eab575e6315f1d36f51ef9028fc7cd03baf2e42ff1ca71b3eb31b4",
+    "transition_028.png": "e80e6b65a8033fefe1e2cf8e9d76f057316c70e242ec887cde05cf3f94d85f69",
+    "transition_029.png": "9d63795544e9b15449ee90a50e9430983e3f829f7cf06b0bf4a32536cf749879",
+    "transition_030.png": "498ef1289211d5ccd5c145954bf108e701950dfb0f22269913b317a375104e69",
+    "transition_031.png": "f7c58540c1402e8e4f808683824810fd8e565d1cc729a4cb7653f8a4c907ca2c",
+    "transition_032.png": "f8d294abed3db1e95c955c78425057cb4ee9ca8621e1ae14151577b0466eb001",
+    "transition_033.png": "afe98d75ebd1f0ce52f21dfd608384e3aeeda6a4786f85ea2410f17d18a8fb84",
+    "transition_034.png": "8e2ac9158de04a2567d7201e2d92224dc35ec0346c0f0c848fcce0b2aafcf1bb",
+    "transition_035.png": "bc45a5d75ca365b921f7ab310048f99a8229541dd2ba8c48ecd9da7a6fb537d5",
+    "transition_036.png": "4a99fcd040c0e4d0b64d9fc30271b0e1d7c5fb28374ec3875b0f428bec4b209e",
+    "transition_037.png": "ca8f94451d425723f417b85e6181c725d596315459a6a5506d2b61f81e700038",
+    "transition_038.png": "612e38e949efed7b516a80f48285e63ee50019332aad4a36369108b7038befbe",
+    "transition_039.png": "fcb762f3b97d2f662a91d0caba0122a8ff9ab805d1a1e0468d59f2b3e912c2b3",
+    "transition_040.png": "cb33c38006c972961baf7a1fa491dabaa0bbcd6e1075a43f8111cfad5840af12",
+    "transition_041.png": "06d9fed9485fdea9138421a442f51f9a85db58dc4a2a3f32dc307d0ef950b867",
+    "transition_042.png": "177254354937c3acf3ef53fde4cac5bb6adb3e65b1714b12f0b383d621be7c7c",
+    "transition_043.png": "46ef3aa388638d7a0f44d8d12d4e0c83e2e914aeb27dc0ed138a589015ea98df",
+    "transition_044.png": "08f8282e8193450dae88035dac52bb3262121818fa50e01032cdb709be0c349b",
+    "transition_045.png": "63fa73598d7c13f2b8daf50c50a082d581ddac5019492339c1180be882454e51",
+    "transition_046.png": "89dc8a891fce1fde00a06b7de7ec2ccdb0c34ef325fe6a226ab6ac21ac3bd538",
+    "transition_047.png": "36c21e097ff8e3ca3ea99519301dfc9ad8c7843731eee673babcac2cd0e15953",
+    "transition_048.png": "af54884a43d838c21f4f45eed9c66c36789a829b55c70892486b39326925f1ac",
+    "transition_049.png": "36219ee6b51823264d44d28f15392e39ac0cacbe07027e1ef4cf1b0950a61ea2",
+    "transition_050.png": "340f540d93ad691f7eca84962b86c8bdb57b9e760dcd36560a5006de7295090f",
+    "transition_051.png": "c763c01cc1cd45fb66d164c597601a8fac8c4ac5515fa7f9ff0a4385edca1d37",
+    "transition_052.png": "aefec1b5f8a2e731eb8da0128f36a758ab391c5421d4171bbd86a9cfb3b28e1b",
+    "transition_053.png": "2a69c7b4c282e86622e0a155e0e94abc7b77c5cb7c8092f2f347c064934383d4",
+    "transition_054.png": "454d119c0e3c85b69c9e35fc0021a6c0fcfcb32292eda8da9678694145ca1345",
+    "transition_055.png": "557de1b720458f7ea6c773719420d23ff1296dd6b9a04bb3f9621875a07ea010",
+    "transition_056.png": "4580e1f66a549100dd47e975aa79f65e07bb4a8714e735277d3379119205978b",
+    "transition_057.png": "911cf58e076c542b7627aaf3906311a8e3d1a23afa388ab06272fbd904184b1c",
+    "transition_058.png": "aa53c1075e8f1b35f1dd2b1524eb928b395fb40f4df42db71c6aadca114bb65f",
+    "transition_059.png": "79a59b227a394d88e05372017e0a58fd0d9d9a36abc3f398531ae14b5784e0af",
+    "transition_060.png": "323f2c8cd2bc36c217a67aca8a770f064fc25a3463afe278fa1f269e368a22cc",
+    "transition_061.png": "cea3c00a14c1ca62bff74eb0157dfadb0c1a9a201523d734da51f2e84e1d4994",
+    "transition_062.png": "44e047f287e5d8eaf8725d843cf5dc337bc0c738c3e62fc71918727982378b6c",
+    "transition_063.png": "d6e498cd43433c9883bec8be0963ef5d77b82b8dfe58dc4e886dc71f0e638508",
+    "transition_064.png": "025e7df5f23112dbbe21d7f998236fabf64a963205efe4bda2f4f7597a3157bd",
+    "transition_065.png": "3fde7189083f49515c8bb896771341d1bced5f31e111033f8bd27eca51f4ee5d",
+    "transition_066.png": "473e245fe98c1d7a0d98ccc7c8fdcc266c89bcb6f241bc436f93b447b3da30a0",
+    "transition_067.png": "3751c163681e3309edd7868c279e89a91f396115d81d9a2ff36968e96a7cbe4c",
+    "transition_068.png": "cf03962e640278aab9b26c9788e6e9f6d4eb755a315abea2403c49fe38072b53",
+    "transition_069.png": "b7665016bb918b77d393fa643ee76fdc70cd67ef2d275763e978776d97cc3680",
+    "transition_070.png": "da341fb46f107a579fbf557f8ebd8316ecb3799434bc504b10c5b054851deb70",
+    "transition_071.png": "1340a2821ceb82de0a935de55456600ec00518e095bf1b34737eb02a852fc510",
+    "transition_072.png": "38f36e51ae9d5c366ee3fd30949b03441232c3443864af753a982eacc9a6dcce",
+    "transition_073.png": "8516ae44a9f359168b56329fa224c44e105912ec9b32759b6cabd48c35a4c8ea",
+    "transition_074.png": "06389296aba50017fcdc3be3670f28c9e6303155d8d02043910a95d8b832d209",
+    "transition_075.png": "a88076933924e84dd5eab8b934af99e9d46ccde455afdb4f17c2fef09efd46c5",
+    "transition_076.png": "e9f34992ab6ae14395446528e81919b1a0aecf3641c05b51f09ad808f167cbd1",
+    "transition_077.png": "6f659ff735a8a3a193a1f9a2ff5610477d469e9d846f98aa34e26f6dea11c31f",
+    "transition_078.png": "81340d6cbae3621aa6d9e1c12f957ce483e0fcb2032fa46e38ae8c3bb27b378f",
+    "transition_079.png": "d473b9ce9213b823b68f1f76029ec66fa761932e1335e74b9575d350ee36094f",
+    "transition_080.png": "c5e4a55d134d0a6b0cb04bd1c94df33af72d1e35e24f786a9c2096d5a2e7bf4f",
+    "transition_081.png": "2b11e408745bd9365f9a0b09b3942636f1d96c13140dc41bda4372dbb50673d8",
+    "transition_082.png": "90f7f14fc5058505a7d338b0c6ce1f3345edc2c86e8d2e2de5893728d654278b",
+    "transition_083.png": "ef0df14b48db2463809416c944908b5e8e33d8484f57f39e5c549bd6bdc108dc",
+    "transition_084.png": "3184ca5be01d1062dabcf7ae9dc798c1ad21df1ccf3d1547458d18300cc556f9",
+    "transition_085.png": "8794e3c99868d4fbd25ea24667abbdd02f7bd854138f5e0e13a8aadb5bb9292c",
+    "transition_086.png": "bbc2e4bbe524ca153a79a47115307b86f8632d2305706546eca44c27bb9d92c8",
+    "transition_087.png": "8c64dc106351646d71a6473d69fcc221655c1d3c3f52c8485242a140199a0b15",
+    "transition_088.png": "9c7fc81af8e808491f030fc5602620824942271d9b76ca667d86d464881c4eaa",
+    "transition_089.png": "d70c1124e2d54d36be165f42836991cd7857a2f963c71019dbd188dbaa3411d3",
+    "transition_090.png": "4c1329769e39693efd9d925ea6eb717fcad25d201bc05d9382430964cec26527",
+    "transition_091.png": "02c6d740bdd6a8f64592f0a2f9ac2c794f92b195aada9cb62b93db0efe88de76",
+    "transition_092.png": "96acfc5603f47447d5c3faab949c571b6793481dbc82f3f8d7ac5f5cc76231a4",
+    "transition_093.png": "d2dffd24b9c990d4f09550f0f61d522944a89ce8f53cc8f10bb1bbce27969cd1",
+    "transition_094.png": "427ec4a21733f3f8768f2c833bc26ccc6bc4c85b83193fcce89b4c98d4cbbe41",
+    "transition_095.png": "c77c5e9c1ac3f01df97826741bebb4929cde0596d0116af0128c46d50ff07e69",
+    "transition_096.png": "ae028538930c15eabca6d61f746236e4369cab07d9a056ac472333a2bd5e640f",
+    "transition_097.png": "287f107a1c1cf86077c6766669bbd5ce16db58966e53e771311d9ddcf0a01786",
+    "transition_098.png": "88207aa0eb7590714ff4bbb05ccddd934bb63f1db424854bc55cb7c434c0e8be",
+    "transition_099.png": "bff7f54634feea91c33113198aa77c542420ef771f7195fee70aef473226161b",
+    "transition_100.png": "5a46cb6f4985fa73e0fa36b95ce1ee86196f095daf00ad762cd510f13e47eac5",
+    "transition_101.png": "228dabecba7fb5d6db1925dbbe7c62c94a057c6dd967e47e55591ae5226bcef5",
+    "transition_102.png": "eb18bb1336a0009bf567c381fbd360ee82be37f8ac1131fe60959ecf09230022",
+    "transition_103.png": "6d339c90cd94fb72e57059339f734db50e8f6955f1106247bccdfdab6983b511",
+    "transition_104.png": "fe711cd85d31fff5919bfb0b426432f92819d393c33e2aa5dc4d33827d263ab6",
+    "transition_105.png": "26d7c74cfa2a5ff64693385f53ebb24598f53e517c6b93dd19ed4f72051837c1",
+    "transition_106.png": "4dcf2f6426eef30dc54104ace8ae9116bdcdda398a3c1fe39b59b5460f4a2cf9",
+    "transition_107.png": "a9d46c6e820108844e86135205a17efcea79c0c17cdc58fea29a7ffd5f5cd540"
+  }
+}

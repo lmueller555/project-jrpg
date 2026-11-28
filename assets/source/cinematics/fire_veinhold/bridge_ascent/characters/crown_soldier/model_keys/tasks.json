@@ -1,0 +1,29 @@
+[
+  {
+    "elevation_degrees": 30,
+    "phase": 18,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_30_phase18_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png"
+    ],
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_30_phase18.png"
+  },
+  {
+    "elevation_degrees": 60,
+    "phase": 18,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_60_phase18_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png"
+    ],
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_60_phase18.png"
+  },
+  {
+    "elevation_degrees": 90,
+    "phase": 18,
+    "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_90_phase18_prompt.txt",
+    "referenced_image_paths": [
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png"
+    ],
+    "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_90_phase18.png"
+  }
+]

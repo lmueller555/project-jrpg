@@ -1,0 +1,21 @@
+{
+  "name": "entry_026_close_model",
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/entry_026_close_model.png",
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/entry_026_close_model_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_44.png"
+  ],
+  "prompt": "Repaint this EXACT complete approved running soldier with the same pose, same model, same viewpoint and same composition. Preserve the helmet's low rounded dome and low brim, head height, face dimensions, warm steel and fine blue diamond armor/shield detail, shoulder widths, torso length, each individual leg and boot length, split navy tabard border, and the broad oblique shield. This is a camera continuity drawing only HALF A DEGREE later in the shot; therefore the result should look almost identical at normal scale. The face remains fully visible and upright, with no hunch. No redesign, no tall helmet, no longer shins, no narrower shield, no grey/black replacement. Two connected arms and legs only; sword anatomical RIGHT/imageLEFT, round shield anatomical LEFT/imageRIGHT. One complete detailed painted image, no rig/warp/crossfade/detached parts. Same warm subtle fantasy steel highlights, navy/silver trims, brown leather, charcoal quilting. Output transparent background, full figure inside canvas. Exactly match reference placement and proportions. This is running phase44, approaching right-foot contact, left knee folds back. All pose anatomy remains this reference.",
+  "source_path": "/workspace/generated_images/exec-9b475336-9dc1-4cdf-b28f-df224a4307fc.png",
+  "generation_id": "exec-9b475336-9dc1-4cdf-b28f-df224a4307fc",
+  "transparent_background": true,
+  "construction": "Complete ImageGen redraw from matching approved phase44; near-identical entry continuity drawing",
+  "status": "candidate_internal_review",
+  "source_sha256": "7b8f63947a4c5679fa467ab201748da27cd7267af63160b1c4c01a2646ea1d79",
+  "output_sha256": "7b8f63947a4c5679fa467ab201748da27cd7267af63160b1c4c01a2646ea1d79",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_44.png": "1fd73430a64908689706a0c043a9c923208d7b7945a3df852c9538574b76f521"
+  },
+  "prompt_text_sha256": "a7a283a6b2e686f8859e788b6659960a8fdf1ec30edd19f5d2d2852e8851ea3d",
+  "prompt_file_sha256": "e3cef7de00bfd5f6ede2a0dfa338a6f9c4e90c46ac7435e1ef69f8df1b50c043"
+}

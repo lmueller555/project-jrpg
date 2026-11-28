@@ -1,0 +1,1902 @@
+{
+  "status": "PASS exact bounded far17 temporary source/native candidate for production adoption. Final close and full-scene chronological banks remain pending.",
+  "binding_path": "/tmp/lucan_cycle_candidate_163_far17/binding.json",
+  "binding_sha256": "cc2b357cf9036a28acc18f4d702978868bb2f23ffbd8eef528ac88e12234c179",
+  "binding": {
+    "version": 1,
+    "status": "temporary candidate native proof; no production adoption",
+    "base_profile": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/actorperformance.json",
+    "base_profile_sha256": "163eb23fa810a5d26170ceda9a8c970dc81d493e8d7b706bf6bbde72b288acd3",
+    "candidate_registration": "/tmp/lucan_cycle_candidate_163_far17/candidate_registration.json",
+    "candidate_registration_sha256": "156ff018d63749fc65db956808f01905a5820dd155d18c2fc888565c1a42c275",
+    "projection": "All48 whole-figure phase PNGs sampled by production FigureCompositor through the fixed actual2.2s camera and Lucan worldposition. Only frozen17 candidate PNG paths are overridden; camera,anchor,density and other31 phase files use163 profile values. This is a fixed-camera cycle review, not chronological camera playback or full-scene acceptance.",
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        63.06,
+        21.99999999999998
+      ],
+      "target": [
+        0.0,
+        63.06,
+        20.99999999999998
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 600.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 56.144973871705915,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 63.06,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actor": {
+      "id": "lucan",
+      "lane_metres": 0.0,
+      "offset_metres": 0.0,
+      "phase_offset_seconds": 0.0,
+      "height_metres": 1.85,
+      "world_position_metres": [
+        0.0,
+        63.06,
+        0.0
+      ],
+      "frame_index": 36,
+      "cycle_phase": 0.6000000000000001,
+      "cycle_seconds": 0.8,
+      "view_elevation_degrees": 90.0,
+      "view_azimuth_degrees": 0.0,
+      "ground_anchor": [
+        480.0,
+        320.00000000000006
+      ],
+      "pixels_per_metre": 28.436018957345997,
+      "scale": 0.056872037914691996,
+      "depth_metres": 21.09999999999998
+    },
+    "native_canvas": [
+      960,
+      640
+    ],
+    "crop": [
+      410,
+      240,
+      550,
+      400
+    ],
+    "background": "#203040",
+    "occlusion": "Unoccluded isolated actor; infinite depth; shadows=False.",
+    "candidate_override_phases": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      47
+    ],
+    "unchanged_production_inputs": 157,
+    "inputs_sha256": {
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/loop_key_47_final.png": "b00396f5c406deed2bc5e5b8560b5eeafbc5575aa81a65647f3dd7fbf21237e2",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/selection.json": "3bb3c753f44fe4cc4aee8b91f5015a15882deb33b1e5f5f9e23db546f927babb",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_banks.py": "1204d4cb711a6b812cd6b1ea613f2be461d526b1996cf4051dd05fb3f871d962",
+      "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_cycle_repairs.py": "44bb072c7a1799e5003a39edec2afb9d7b6b34d8b1320e94f387f5b5e4e9ff51",
+      "/workspace/project-jrpg/cinematic_bridge_ascent.py": "45c5491f8da49ee242b30803ab8d6b85befcb1563755fcd20dd96d3bb084bd25",
+      "/workspace/project-jrpg/cinematic_bridge_run.py": "98b67ad0135b2f69f25ce65d9a4896f61cd3e2673f21152c6512cc62303a192a",
+      "/workspace/project-jrpg/tools/build_prologue_bridge_ascent.py": "d0084853b78bac0429a1447727af39a9c10dc25a31fc4bbae3e120961fce3b9d"
+    },
+    "contact_file": "/tmp/lucan_cycle_candidate_163_far17/contact_native.png",
+    "contact_sha256": "9e0a842ab012df7041443ac51cbe6f296c8a3d426ba7671dbb5133cbffc5479b",
+    "boundaries": {
+      "boundary_07_08": {
+        "phases": [
+          7,
+          8
+        ],
+        "native_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_07_08_native.png",
+        "native_sha256": "ab504947efa23e16e70e626a1338caafd3455970d5c5fba7b6cacfaa271ca431",
+        "identity_x4_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_07_08_identity_x4.png",
+        "identity_x4_sha256": "9420aef77d824aa95dcaa932a20b6594f33c0d12d4f8540a269f38080dd87367",
+        "identity_zoom": "4x nearest-neighbor for pixel identity inspection; native file remains authoritative scale."
+      },
+      "boundary_15_16": {
+        "phases": [
+          15,
+          16
+        ],
+        "native_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_15_16_native.png",
+        "native_sha256": "c0fa836b2e4acbf0dfa5f963e809d3fbbc19faf4c8fe1833c3c47ead63dd6962",
+        "identity_x4_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_15_16_identity_x4.png",
+        "identity_x4_sha256": "32b863760e7d1d1b39e62d2e8f0292d2622cd268d244a30c3bc38d6fa0dded81",
+        "identity_zoom": "4x nearest-neighbor for pixel identity inspection; native file remains authoritative scale."
+      },
+      "boundary_31_32": {
+        "phases": [
+          31,
+          32
+        ],
+        "native_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_31_32_native.png",
+        "native_sha256": "3b56c63cabf585c96aff14fc70bf9423df61f72eaea25cc95d54dfdfe1186182",
+        "identity_x4_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_31_32_identity_x4.png",
+        "identity_x4_sha256": "2b86685f296da1cd39b5019aefb229f4bfd8e5b0a7e4f744187e2e2e3c4da716",
+        "identity_zoom": "4x nearest-neighbor for pixel identity inspection; native file remains authoritative scale."
+      },
+      "boundary_39_40": {
+        "phases": [
+          39,
+          40
+        ],
+        "native_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_39_40_native.png",
+        "native_sha256": "ded797657fd9becd09effe654fa7c65976bf3d9a1e5096cd9a0084b2ae603699",
+        "identity_x4_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_39_40_identity_x4.png",
+        "identity_x4_sha256": "e56d2d56dafce58371d0a2975dff62f01de616d4b6ba29797adfa068809da3f5",
+        "identity_zoom": "4x nearest-neighbor for pixel identity inspection; native file remains authoritative scale."
+      },
+      "boundary_46_47_00": {
+        "phases": [
+          46,
+          47,
+          0
+        ],
+        "native_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_46_47_00_native.png",
+        "native_sha256": "ed6d8a5bfda53b5f981b547d3f34160e5699f55052a8845df5f72a59ca9a0c25",
+        "identity_x4_file": "/tmp/lucan_cycle_candidate_163_far17/boundary_46_47_00_identity_x4.png",
+        "identity_x4_sha256": "bf535a8adeee7fe4b2e4862a309b88e02e0243d0c9d625debfded52f1936c0f4",
+        "identity_zoom": "4x nearest-neighbor for pixel identity inspection; native file remains authoritative scale."
+      }
+    },
+    "phases": [
+      {
+        "phase": 0,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_000.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "03a8f89a971fdd16cd8d22d9ba0d357f90df4a172573cae8ec386379e77ea319",
+        "native_png_sha256": "fe11e920ed87df1fe9f1251e1c6a55d84771dfeb0f580ff3dd3b29477b45461a",
+        "native_rgb_sha256": "cb1e4c5ab8aa10c7aba979768a78bf589ff5a08a7ac44ed8597263b1b969c905",
+        "native_crop_png_sha256": "c93b8bb3a3e6fd802194be553adbcf3b377344ff6b83c5c0b1d1ae2f779ae33c",
+        "native_crop_rgb_sha256": "3b1b0c52256286bdcee99ed80e07bd08a3a812c33f8d13c62b6fc75f69767397",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 1,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_001.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "a571aaad8318212479a407aea34e66e0f84dd998254cfee33a6d366eee38fd5e",
+        "native_png_sha256": "7ae6fa2369aa17a2b5829b7a763807cf474199322021668056434ad297a7a876",
+        "native_rgb_sha256": "311270d4b33123317fd7711f0b8ecc8a43eab1e5dd97e728dee012c891819ccd",
+        "native_crop_png_sha256": "b65dedf349a93972ac273c35909689737bdae6faba9167b0e60643c145238bc2",
+        "native_crop_rgb_sha256": "2650d67bf889f3aaf152b86738d62ca2d04f73ea2072faa2c2b163f4ccbd88b2",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 2,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_002.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "4835d9df0bd8ec9cfe0c9ec1933809c7e89b96e6eef2e51283a0b518347c40a1",
+        "native_png_sha256": "fa5a974eef67f500983826c7790da339933d628f5970dfe14d9702fa08fd1406",
+        "native_rgb_sha256": "992d2d522bf6517955b1253432118b26dfbda1abc72ab53d737abb2e51273ba5",
+        "native_crop_png_sha256": "e2e3d84ed2fc4ec3538073b73f6790a362ff4a729c2b165344c074df1a0adb79",
+        "native_crop_rgb_sha256": "f8bd524974f1d497b4467862b54be3cbdaa6a9b8cb296e0a0d67e56ba06163a2",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 3,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_003.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "589ce20077ba0a7d2aae63d67e22b8fa882344df1145be9b50475dc9af8f7519",
+        "native_png_sha256": "677bb1d1b46cc047ec5eaa1f1510f6d0ce32991fe4095613e8c8ae2cf36692c8",
+        "native_rgb_sha256": "9943ce576c32aab93b9cf82e04cafdbbec94940373f72f845b7fedafa4f85c04",
+        "native_crop_png_sha256": "689dfc9a56de9b03bbbfb07f62e1b780a9af2b58239d18b10b8bf740a469c5c0",
+        "native_crop_rgb_sha256": "059de89caeff8f3b69cee396196f540db4d0a7ae81bff2502e16422b4a861549",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 4,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_004.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "3069b604e292d700a07a57f95e4715706a2084b44a648ca4c6c29d4b1508597a",
+        "native_png_sha256": "738cd60eaa9f878eaa2af7741803d4e46db146453064cfc7e1b8f7efb1ef9699",
+        "native_rgb_sha256": "c70216c721d282fc2c4cef2c150675655a858da068bf413cbc9fc332cafa19c1",
+        "native_crop_png_sha256": "85db7e53613465656e544f13f933831cc884c4c54b62bd1a077cebafa48fbaae",
+        "native_crop_rgb_sha256": "f7790ddfe389d9220b87cdec6f42119cee72c72ba4f01a9020f729bfe782de76",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 5,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_005.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "1d4282559188e499744536aa954e0052df22029b1e3c5699b27f1f002687e159",
+        "native_png_sha256": "647f7a05d8025baf47fd793065fd75ac5539b4eb9baa7c35fa43d295919b1ad6",
+        "native_rgb_sha256": "fd8f5d3ed02e5091fd51857765d8bc1f2bcce449fffd003c6b8300a29dfbfef4",
+        "native_crop_png_sha256": "512a9143b63c5147e1e5d240a184c6ae5df07542531c064883ffb39d3e5b273f",
+        "native_crop_rgb_sha256": "77e8326d888709d527732bde1d468257f4dded0d87adc9f7160b3053a566e8f1",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 6,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_006.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "f53db439ecf5d3ada9072930521d39364d2596b3953fb4b042a2a4f04925610e",
+        "native_png_sha256": "e8d9ccc6ce2a80f2b88e5421fb18918bb6badef2eace142707568fd21abe6375",
+        "native_rgb_sha256": "cb96d8663aabef50b5501261a7da526dd5296a7ba3950b0101087ed52a3166e4",
+        "native_crop_png_sha256": "1c6892209e15c3a89d8bdcf7ddf3bbc7ce9aaec3411ba51abeb738273e6b0cc9",
+        "native_crop_rgb_sha256": "2faedfa5cddbdf33c803117e4e46235ff0ea6d0cb0261fd9a55ee384a9072ece",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 7,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_007.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "3cdf4c18e1b7064a6f7474cf6c72e11d25791334cb85d5d587c26530b8b062b8",
+        "native_png_sha256": "e39cfcd3ce9f93063177a5014e3d3341bf546c86a4bb1655c16c71438951d413",
+        "native_rgb_sha256": "4e589a9c42c715ec5ced46e168f82af1c8a0caf67775a78747877f1af6f699d5",
+        "native_crop_png_sha256": "2418caae935c3537948c5f009c17b65b859f41a6838b13c7e8c9ea80e412a82f",
+        "native_crop_rgb_sha256": "ede15ad8c86bbb2acb6b1e3c63d9416a9254a21e42cef54909033e4a8aa1a959",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 8,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_008.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "576665d2388a4acea1a29435f3f307aa7f2785f21d230279091b0c2c3ae01dce",
+        "native_png_sha256": "8622610d44232c9c8c1b4708d0b1860e3eeb9a84e1380b248f05e19a2d0999b6",
+        "native_rgb_sha256": "b7f06589066e712e9d6fd7b2fc8ddd5cee623850cef9610dc609f71acd19423d",
+        "native_crop_png_sha256": "255a3a305063c6602f530e5fcb9eadb0af475c562148d365c3f4513f2d4d28c1",
+        "native_crop_rgb_sha256": "d100f89fbf24dabae179ae84cfdb16e1ac34abc078058b603c855c0fcd14f4c2",
+        "candidate_registration_index": 0
+      },
+      {
+        "phase": 9,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_009.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "499c9b5952c19c91ce004325411bf011446d49e0fef99009d72f27461268c0f0",
+        "native_png_sha256": "b9039dbad6827bc7e04281547b982eda05203293026ada8489314960f259937e",
+        "native_rgb_sha256": "190fef885e73881d6e726237222d6536a1991424feb202b6cf726fe697bf1c2b",
+        "native_crop_png_sha256": "be143f685c9ec3aec8c04e432021f8c0b43316d8b3b980c3fc499cb52729aa9c",
+        "native_crop_rgb_sha256": "dc73d197f65e40dccf19fae51fc7c89451e776a7133e4d2e762e0733e14f3052",
+        "candidate_registration_index": 1
+      },
+      {
+        "phase": 10,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_010.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "ee04fc31de213eebee8c22b3325de2a40449060281f6d7a033a2e8171bcd9adb",
+        "native_png_sha256": "7f98c5f21a6a469bda5728fe500a3524a06c77dafd9cf639d27ab8410037a201",
+        "native_rgb_sha256": "6adbfd04fa84836c25ac9dde2d5d88f4bf67860473b10e5c96694d9179e2eff7",
+        "native_crop_png_sha256": "193891551ffb24478f7c68927bedd6b71967ee7675da2827827ea6da5a29bba6",
+        "native_crop_rgb_sha256": "4aa1475ae214c4cbdfcc68b425157cac3a6bd657e41dd956c839535d814ab20a",
+        "candidate_registration_index": 2
+      },
+      {
+        "phase": 11,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_011.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "42a16edfcb83f3ef039a761118d611a61de2b0e8425886d90d3ab2135856e0db",
+        "native_png_sha256": "83c344c51c8133489200b1d21aa150dd903487cbb6ba52e6c8e56941125a1af4",
+        "native_rgb_sha256": "d59adab4cfb059cebcfafc1b9cfc6dc12641a93f17b1302e97aa4862d6eb8015",
+        "native_crop_png_sha256": "00c065d5016ab1f9b22e4628b37ef13545151868751856820a3295f8953192dd",
+        "native_crop_rgb_sha256": "ccd6bddd2e8c2857fe050618ebf74db9c4fdd756abd3c797dd35da712bb86d56",
+        "candidate_registration_index": 3
+      },
+      {
+        "phase": 12,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_012.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "e8c3cef455c61a8732571d52692eca68da678c418c17e2ee8723e509c3a63164",
+        "native_png_sha256": "423c5da0cb273642567419d81afccdbc2d334b1a56f607ff07b9298923cc8560",
+        "native_rgb_sha256": "cf7d8da1eeac1fc1c986cdd38a8a66e9bf9a779854a3dfc744eeffc7bf85ee32",
+        "native_crop_png_sha256": "c3d2ca950ecda0762e0f81dbdba2b39df259a27b16fd02433613eca05bc71adc",
+        "native_crop_rgb_sha256": "8b2417e16cd2938413d9aa03318a87d5176ad61ff339ded034bd8d0186405a53",
+        "candidate_registration_index": 4
+      },
+      {
+        "phase": 13,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_013.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "00648472f9efab5371ce1b1089199296957b661becd29693022ef631319f7f63",
+        "native_png_sha256": "7638621cb3813e15ffb283a08c2a48712be21b731e49a1a8cc08e59549c0b0c7",
+        "native_rgb_sha256": "635a29207747f75ad08b379c7b7e9003ed5df7b7c4449384c7faa1a549148804",
+        "native_crop_png_sha256": "2e99131cc85857c7cc365bc0077c39a463fc04a5f45e1ef12e38d3106d6c9611",
+        "native_crop_rgb_sha256": "5621be8a07402d3ac1679868420bd8e3dc0b18a820028e5e470bf4a2e00d0f7f",
+        "candidate_registration_index": 5
+      },
+      {
+        "phase": 14,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_014.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "4c4c4ce8e4cd3ffeb18094926218177b208c4802f4d1d2257068105f6bf28699",
+        "native_png_sha256": "a23cda50465953152736c13ffd714b34c049caf21dbe229288d2e78bf9ef68d3",
+        "native_rgb_sha256": "e4faeca216d98f2709a7f1e808c657940be927d1b55db4793096b1079ea8fd88",
+        "native_crop_png_sha256": "44f94c2fde924c569ee48267092087f49b67de26f27534fdeabc1dddd873d320",
+        "native_crop_rgb_sha256": "317a13847375f0fc8bc76410c370e74f7c41bd3d287f052ede46de5da0a645ad",
+        "candidate_registration_index": 6
+      },
+      {
+        "phase": 15,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_015.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "7c4f53279a2907e4c8069ff54452c58e32ec5ada9a4922e6c4a1bc4b4931fafe",
+        "native_png_sha256": "cfa05a045520af223ab41e705a6893dccb2688a163788cc65d1baddaf361c532",
+        "native_rgb_sha256": "ae579323dca9cfdd9c7c98723fdb19d886e9fdffd259660f340b161284bdfa7b",
+        "native_crop_png_sha256": "356fb96e1ba13b2546f9fca5691f518b2b115c98e92404344d8d2ab22a3d2ea6",
+        "native_crop_rgb_sha256": "0fd7da7957ef1305f40ead62ac97867bc72a5fda3101e879785cdd1830962558",
+        "candidate_registration_index": 7
+      },
+      {
+        "phase": 16,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_016.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "672ff64eb2d182fb37d7d7e3542c9dbc9b95e60ee483479d4c8369d37daae3f7",
+        "native_png_sha256": "97d4126ceeb1c03869ab9f317cc1d76f9ad25e5faeb85deaf6d904c329a4cc82",
+        "native_rgb_sha256": "07fc346e1074221122773290715fc6c678e99369a08b07525fe1be414a0daa83",
+        "native_crop_png_sha256": "797ef66469007a9dc4107ee990705e951ef451b037c6ebd686fa4c76667785ba",
+        "native_crop_rgb_sha256": "e5a6cedf13cd26435c6eee3dfcef8471c0ec3eb68cfd5825fe4e1f25c31c28d7",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 17,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_017.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "238d5bbea8d4ad583cc39cf68a89772d47587616e5bde2f6acf2c4e19f7542b1",
+        "native_png_sha256": "de7f5f0da94232599eb758e5b484acf3bbd29e4628184eca6b1ed48fdf4f8236",
+        "native_rgb_sha256": "b197473a43352196a309930b0b7aa9622623be378f9be19bbd977fdeb9dbb0bd",
+        "native_crop_png_sha256": "a4d6c0742366e5dc5d40a04fdf7acff41c0b5e0eaf8bd00fb43ac4e52da1f3c2",
+        "native_crop_rgb_sha256": "b3719bb4b3649c37875ce2b9aaf262b3aaf57dc0d0b185a30f5f7484b0d05b33",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 18,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_018.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "30d4068b79fa7a00c5cc9d23b9b51174aca860f637ecf267a7dd49f6c7bc0c85",
+        "native_png_sha256": "a203abcfda47f800f525c242d673edd63da9b292d399e445f14a2e678b8905a6",
+        "native_rgb_sha256": "12c50c35e179c52389e3e29402f356e004c6d9c9457e9c13fb7e1134e6cf83e1",
+        "native_crop_png_sha256": "653e346e69dc1d5e1c73ab387aa4a491362dca6a153a7313c58d8617fea4246a",
+        "native_crop_rgb_sha256": "30f4cf3883c309116d5d2bc3a16ff57b139b0098be797a48518a07f860985d56",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 19,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_019.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "3b2315a316d1baa6a0e73f97a3ef676e37de9d330a771551a9dbba0f5f9c6b72",
+        "native_png_sha256": "5d956021340079b8d0218b539abe252cc8b0c3104f5c03e1b82a1f5517225a6f",
+        "native_rgb_sha256": "baf57aa1522f5be1c911cd4081e487a7d6e12ecd50595b8e8bebba3bf3d39cdd",
+        "native_crop_png_sha256": "87c628f494cf634e9d539b41614551f562ab8fc68d24c7bc2384439a79a31852",
+        "native_crop_rgb_sha256": "8984895334ece3e9284f99bc384e27a6604d9cc2e9f50df5bbf163515d3bf9e3",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 20,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_020.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "42f01430c41ca784b2c3daa123039c433464e28e8f115e6566c620aa9e68760e",
+        "native_png_sha256": "f29e438f829a94e1ab35188625141610b9d21c3340f41bee2bd7e0ce268032b3",
+        "native_rgb_sha256": "b831669ddb5df0dbe6aa03204651c2b0eca028be9f097defec7f9a3ccff4a58b",
+        "native_crop_png_sha256": "b9a35db190042198509060d93dd04196b02480bd498eb1b24def04c439f86164",
+        "native_crop_rgb_sha256": "ccd3e8c1339e1ec5971fd5650378fe7e64fab9407cc3f5a222d507704e01e0b0",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 21,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_021.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "9eba3896dd5556d654fafc55827f22eb958d46aabaad7dc35028405d25ea38a9",
+        "native_png_sha256": "f59a5f111f8b190b1a94f2ee4a060f3b237b6bb2c9e5096d436de7a2b6ee5a1e",
+        "native_rgb_sha256": "ac04210cd77cfa419daa5b7603e36d97962fa21d8c4ef878d623ffd851e47ebf",
+        "native_crop_png_sha256": "27e13def2b1ab421ebf8c4614b1d8e80b77c1107df194b14e32e3f995318e261",
+        "native_crop_rgb_sha256": "81d1efd0f770e83a13f0d6efd00329a3bb1f45b3fcb7dfdd814ae5d6b973f357",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 22,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_022.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "252678ccec61388b8e38d13af92393a07e3120031a306d331dea6d67c9f1624b",
+        "native_png_sha256": "4e66963bfba54002f04a84384b53aef1ea78fdcde491eb275c8845306edc6f75",
+        "native_rgb_sha256": "95251ee6e055cc3a2adcf8e5f135c4a2926e6e51592536cea3e286f12ce77ad9",
+        "native_crop_png_sha256": "439d7c8d99a6a9b115ed2359c45a0f80f5a24187461d4997e73d416cc4c60039",
+        "native_crop_rgb_sha256": "757ac2b9c9b35c88e0f474eb560c171e906dbf02b30937910d49e8d07d09c2a3",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 23,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_023.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "42670bdc44974b03439d207eac6df6314b15f56b89cdbbbbf06bcb08cceaffad",
+        "native_png_sha256": "3efe317c24c2725f463f308477fc4d74fadb2a180393b913fe99ae3c444d2d8c",
+        "native_rgb_sha256": "7e3bf5086fc74e2bbd35aa542881525789f7e041e7ca36bc5fbc542569b34942",
+        "native_crop_png_sha256": "8848c2e3e165cc3036034a2c698baf2d7b4e7b90231c3bc780ed05c7114a5cd5",
+        "native_crop_rgb_sha256": "0a0b73884421898c46f9299a9fd07331dd0d506fcebd1d5b690fd3dadbacf161",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 24,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_024.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "e0eead049415c301b3162db32d0e52614d434d589b7d926d2cdd8e9cefd9274f",
+        "native_png_sha256": "79331a3ef16a15daa184100526555b458494157086905578e11826a8cd8357e4",
+        "native_rgb_sha256": "5aaeff4f7e8794d7d7294ed1f65c52cc9cc31af3b2e0b0eac32fed652c9ef554",
+        "native_crop_png_sha256": "ae5cd605dd45202f97b4a1aa581bcdf02ba8fcc9057ae9aa05c98bfaafde0088",
+        "native_crop_rgb_sha256": "0b814e704beeecc1219cdd37b77b7c0ce55a980628ecd74cac4ab286f52c2e70",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 25,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_025.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "a9caedf0cce20bb5416c7600c2d5cb0b075dea53e75de072c0ea868cb94dc8f4",
+        "native_png_sha256": "b60ba61eaa02f221a5409621c4e82b1f277aa93de4de14e276830cef84e9aa17",
+        "native_rgb_sha256": "210893e219f104ff1f0115c1d84d7dc75aba019ee54d1817876378c6d8230d3e",
+        "native_crop_png_sha256": "7983c20a8e0cfa9864b3532ebd1356b0a5a0c8adb510a29d802b7b3e71ee8019",
+        "native_crop_rgb_sha256": "0b040a74036d35ff1103ce4e46dd4660006f66b6090a97b1736f397358b67537",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 26,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_026.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "5ec61eae10dbc0140467077bed5c19490b84ac33dc479c8d8616d5adc72cb118",
+        "native_png_sha256": "a704d4a1ed0c7172bb072cdcaf3e50ab321ab21a7a758598cb622384e958e93f",
+        "native_rgb_sha256": "6819841b10ef83731add6e9811f7e8afbf8e14873d2a8cccc301c5e6e4f88678",
+        "native_crop_png_sha256": "74520ec6e0557652e8a86f8454dd399f19f38ad2678eac073ebf78bb7041a076",
+        "native_crop_rgb_sha256": "96748fcc69ff6e5ddf271f524af57eec383ebab352cdd0d9c43eea325541b88d",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 27,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_027.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "788eeca7cc3a5822336550a6945a5bbba29cbf9b9c5be7b32a8bf68b700b4ab9",
+        "native_png_sha256": "ad99f307e70b30f75b9f58c82975118992fd3636e87c9924403973cfa11179f7",
+        "native_rgb_sha256": "6e29157e89f58ddea12ca591b3be15fbec6479691ff9c7264d2bb17c0b5b1a3e",
+        "native_crop_png_sha256": "881e8bd92be64420b006b8fee228146bb6ae07815d44dfbafbf3fc94332c69ba",
+        "native_crop_rgb_sha256": "3af2ef7f9bd7fb4eb98d3accb1cdc2fa07e9c96e19fe8ed718b23f73b9a25792",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 28,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_028.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "426fafb7cec76fad6042aa560edc5d283b24a3a281cf952c4e31ffa8a5d5427b",
+        "native_png_sha256": "8cc044731fb957b2724787dcc00062dfa89881124051e744557df17cfbca78ab",
+        "native_rgb_sha256": "9fd17421e9614e18e15b412fd9697de8477837e084478b593eb1a774bfc876e1",
+        "native_crop_png_sha256": "8667cc077fa7a11a4af0c68dcd983799df69fa609e3004e8d0a3bc78c7a40c39",
+        "native_crop_rgb_sha256": "a02eec34a4aed21c7b974df6ddb453f46dba0130416b262ce5e775dfcb52c65a",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 29,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_029.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "a9d6a9f9bd1ba154838486bbb73075414492f2eb5fbd574030e29faf9d9a484c",
+        "native_png_sha256": "77ea65e59abd8688063171e428b0fb18826dbd395c0fa4972a3d3119095b2b62",
+        "native_rgb_sha256": "96c133c008ecd4bfe1dae86ab74c473315576205323a1cbd79de93df35d9e9f4",
+        "native_crop_png_sha256": "76e9f9655de736d0331b8dcc52a6011845a7f98a1ec68b479cdc3afbbcde8543",
+        "native_crop_rgb_sha256": "f91d56ebf275381cb24e2301e23a160c8c761511b2ab939c18980c68bccea81d",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 30,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_030.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "b0f7f4e5aa87c88fb51fa565218af877dd0625db6ed80653d4b751815dc6ca3c",
+        "native_png_sha256": "a2a91d361392e8de076c6a296a1eedfd32a32d90043a3c911266847359ac204f",
+        "native_rgb_sha256": "bb6aeb5c4a300d8807852a7bb40e3c7902f51b7357102519e0a63840411fdaf1",
+        "native_crop_png_sha256": "92135d1f0eb5eab3b40515c6e90bcad15f085f8d7d873ad83e2773d5dfbc3cd0",
+        "native_crop_rgb_sha256": "8967f922456820cc1b8f15cd1d093e19a6bf8602e2606bf5294aa3ef604acc8e",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 31,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_031.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "22171f4edf0edc4b759639729edec38bf3868e62ec6b7e236fa381df1e4c3017",
+        "native_png_sha256": "f189396072c20f01d0d01b9beabdce51a23f1be70cfb15d0c1a034025db516fc",
+        "native_rgb_sha256": "d11ec78cda5a04764388e78913b2e44cbb7c899fc3d09336f8de0d32bd3b3cc4",
+        "native_crop_png_sha256": "6c24c3a414c2671e2197f9eeca623a8a16e02a0d23d4efae89dde010a9b5e12f",
+        "native_crop_rgb_sha256": "d332036208d6a6cc0ce171f25b403b996ddd4925e77318f68562d1caaf3ba54d",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 32,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_032.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "47fe6d85a263d46386e4f4557f493c4494991704d933fa400ac94e080570d01b",
+        "native_png_sha256": "ea5f2a73d3abedda37bf326f911dacd0f8e441ad58154bc77cb1f402ab090790",
+        "native_rgb_sha256": "21bf04dcf3ac2f8eda91963f08743366d1285f3c95e4692bd9f12ff0148dee3e",
+        "native_crop_png_sha256": "ec353420716389b6ad1568bfe091f7437a48e518592d305646a0f2433273c0b7",
+        "native_crop_rgb_sha256": "0ff8a0f6e283a0dab9aa400ee06e587467f0696e15a83c24f60ee671619ac6c9",
+        "candidate_registration_index": 8
+      },
+      {
+        "phase": 33,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_033.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "b8296f64af8d2177787bf2a9e69bd470cdf8bddd4a9616559402379b6f9ca919",
+        "native_png_sha256": "b099e1b24fa2190991115c794d3551e2fcae73b337716d377ea56a5a5a7b1cb0",
+        "native_rgb_sha256": "7e659338b448ff7bed496d77d092cf12b28b1bbbfb3ec05292dc73054ca9a778",
+        "native_crop_png_sha256": "be4c8cb68c6bf56ba02d8000020bbf276ee3783bbfb26e9e5768b1042d120d0b",
+        "native_crop_rgb_sha256": "c0d9ee744e905609308dabf3c3ce019ccd57ba94b25a1b6f7d68525d87cf9ab0",
+        "candidate_registration_index": 9
+      },
+      {
+        "phase": 34,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_034.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "5921240e34f4dc8a1c4a7e9eb64d6acd39f2c1dc6536cc0887b181d436868612",
+        "native_png_sha256": "6f7ddef9e0c569075d4deee106ad0719d179321d5d53666cb35214d6923370a8",
+        "native_rgb_sha256": "05376859e0b7f50c3b1fe9c98fb45480dcba22dc0577d4fb2965174c97753a33",
+        "native_crop_png_sha256": "ece1198aa616c8c0bc7838cd984b26970427a9ac544073cbe148ec456a143082",
+        "native_crop_rgb_sha256": "fb6d97b12920d5d9638a4d2fbd893e05a191f6531ac10baa4407eb653bc36053",
+        "candidate_registration_index": 10
+      },
+      {
+        "phase": 35,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_035.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "cbadbe1cf1a4563cffbd38dbcb252113c0bb8b75edf7bec8b29e65fff42b20d7",
+        "native_png_sha256": "eec8e58bdffea8691c8c8cedc3effa9c698fbc38205bfd4b8d7052f4d93f4244",
+        "native_rgb_sha256": "7e055485aeda0f2b4394e09af93766050eee8a1775690c88cd03df748eb68747",
+        "native_crop_png_sha256": "cb1716ff815d106e17a664484909ced3692a91409a7c06e0b9a82990f5253aaa",
+        "native_crop_rgb_sha256": "0c6a3e46d7165247f884784fac67a59ac6a56eabac032c6ce0818b45d041e2d5",
+        "candidate_registration_index": 11
+      },
+      {
+        "phase": 36,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_036.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "e4eefeb98b3040a7e223d71cf79c7582318e6840f0a394f6dfcdde8c8821baf9",
+        "native_png_sha256": "a47699649e0b2df585595c7ecac3caaebda61a07efc6fe7c8174713993a05aeb",
+        "native_rgb_sha256": "ee859eb6853bdcbb02a8f7278e20ed2eea3c97db1959eb6abde6b54093e7cbe7",
+        "native_crop_png_sha256": "8a6a9c19f25e8cd4f1d68775dd90b27171817709c63f88d93c1c7f3fd0b7658c",
+        "native_crop_rgb_sha256": "18fa3c012f2fa0ef4ad7d5bf7d6b9d45f6383e555e693a1be42c6629ac16ed8a",
+        "candidate_registration_index": 12
+      },
+      {
+        "phase": 37,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_037.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "7fd46b467a91b106e7c3dd2f1b5b57d7347a5c3b80a4289cf9d5b990d112a525",
+        "native_png_sha256": "cf06d86a5ed140620ea6ed7a6a68c8fe486289853ae754bd4800f2eab3558cc5",
+        "native_rgb_sha256": "f9271920edee179a9b3c22d57a4dd237f387209ec7da5cf892ce2e8e6450de0f",
+        "native_crop_png_sha256": "5fbd798e92b31d4e2eeedcac219e7833149e8a647809b4212ed4354062ebaf02",
+        "native_crop_rgb_sha256": "3f42359d1983f5fefac3d5611cf94f85ede42d613578611667636f29bbd940b4",
+        "candidate_registration_index": 13
+      },
+      {
+        "phase": 38,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_038.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "72277a60fe31d1d518dd1530826024f6ef02be47f73ef28bb207f131ec6414bf",
+        "native_png_sha256": "7648dd3295a39aab79404fb4d892b177dd521b081fcb50c3d3ebc39d6ee62623",
+        "native_rgb_sha256": "2fe255a5822ec7ff0afcf94de4d69ad8a8273c36c1d355c5800850b60f17f72b",
+        "native_crop_png_sha256": "3c7ded7b35afa352a71b96341697e55c117e18219dde86f407b0ab7c46cdc32b",
+        "native_crop_rgb_sha256": "d2f51eee5ffa9c0bdfa37449c4ce2bcd5e30b6c48b6c9f889361448152745ec9",
+        "candidate_registration_index": 14
+      },
+      {
+        "phase": 39,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_039.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "fdf82a7eb9f34a30c6d13b8855e39f68d9800bad0d053b1d7079d0844a7f9879",
+        "native_png_sha256": "df745aecf970efa1c2b68e81ba1016d6842420449726defae0cd4358656d37d5",
+        "native_rgb_sha256": "926e600f5f74340cff2f32b9fca50ff03faa79b01a08ff133132d33263e33fdf",
+        "native_crop_png_sha256": "2438d711cd1e9849f129b71754949044e8705a0cd3f48f7c1446d9aaa0ce2840",
+        "native_crop_rgb_sha256": "6c653fb165023ec342e52db96f8fcbf70687cb44f7926676ec0322b5d4d94ed6",
+        "candidate_registration_index": 15
+      },
+      {
+        "phase": 40,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_040.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "bb6ae243d25b8be2ee8b166a04164313f9cce760765e1e5b02ba8cab457346e0",
+        "native_png_sha256": "71945b7f8bfb13f50462eeb716f8eede96d0b7191e7babd34f3e25d859aee60e",
+        "native_rgb_sha256": "92dc9e49c48637907c51090879ad67099aad4f0698a0f0f95738aa921622fb85",
+        "native_crop_png_sha256": "ba48a3880f08192fc5e2fed1b946d8835689d3379e1674b63683f2c91ff662c1",
+        "native_crop_rgb_sha256": "d9a707bc72f3272293db550dfe946f81c8dea835a9f2f2c9e6b51c5b5efd4101",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 41,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_041.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "05215bc11b0e287aefb85d846f6dcc9836fe7ab7a10781c16b0a7179fb54140c",
+        "native_png_sha256": "981967a6d4844ea6a4e69a2bf5d25bf5b820d1a83866f8a69a4fe80bb9573724",
+        "native_rgb_sha256": "bb88d559b9cb882312351eb667ea52bfb2271b6d1dbae9c0c25f207fad013c7b",
+        "native_crop_png_sha256": "a80497a3373008eb4ac657826447eb8f21571ca2cc8e10f0b43490b1db872306",
+        "native_crop_rgb_sha256": "379171022543ebee4866db5d7ba13fb232aeb2f6a354365b1db2a3821c9bd48c",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 42,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_042.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "8fda2a15dbf291d8477110b6cdf54891d539b0e45c823d4d15b18f44867793b5",
+        "native_png_sha256": "5947a92aed9e19e1a74171be63fd75e85c32b7f24ec177229adb6d1e1f09e3b2",
+        "native_rgb_sha256": "c5921b18450289f7d1a512adc53de1a75d48d6d7a2d7ab16c013a38f279ebfc7",
+        "native_crop_png_sha256": "9de12f0d367e3ea4ea05aaa7f572fa6996944f38b7222e7b15b8ea4b3419311b",
+        "native_crop_rgb_sha256": "56c69a2dc7eace18db2187e574fce5defb162f265129dcc65cd45607a9b8fb12",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 43,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_043.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "e3261ad4f402b87b4d0a4b27393b802fca9a3d8b393b2c65e16f3b498d4f6f43",
+        "native_png_sha256": "b7b03a8e27eb23966bbb33a2f8f61f7744757f5a7e80054e9a8a2306544c99c1",
+        "native_rgb_sha256": "04b5c843abc3f00ed6f2dcf60f9d60adee9ffdc6baf4702aad13d41fbcd6fa00",
+        "native_crop_png_sha256": "49c01630190e4a8cafd28d06cd1a3fd174bd139fb7af9e7c6e4283c20b0375b5",
+        "native_crop_rgb_sha256": "b1a812a8bdbcf83953ef686cf8523e5fa1032fc43b62d8bf7d9fc2755e75e296",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 44,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_044.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "5fcb7065ee095e1217bdc1af6696335b001164c0a3c7af691da675204ae675ab",
+        "native_png_sha256": "01a92cb6651535a5b97ab43c64dfdd39bd249180c55e4d46ecf5b8283e1037e8",
+        "native_rgb_sha256": "693a538544e23007b8c8410196398ea1d670dca75979dd94749f3078248f0efa",
+        "native_crop_png_sha256": "ce94dd5eda75f582f9b8d0712d9e71b91a496ed073f162b4b352449bc7f18259",
+        "native_crop_rgb_sha256": "19fef1a92ae91f22df5b24d5ca242881f430c90865bc7a339f23758950c16edd",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 45,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_045.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "49f6b8c670098f99038104f838bc8e2865971f95ae5772f5d3c6eb014ebc2e1c",
+        "native_png_sha256": "460c6847f22f93092b3d97e6e68364ebb6effc05b3c9634437545dc006aaddb1",
+        "native_rgb_sha256": "2af5aa30041826342551d9d6b67f7e18571c837671fc79e61510cc863ff63615",
+        "native_crop_png_sha256": "91b2383510efd95cb00cbe66a913fa81c1a7c1e75aadf9c352d8808ca8ec3716",
+        "native_crop_rgb_sha256": "83988ac3ab7b240afc21a26ad926e3c09da38e5d12cfd7b99310bbf9178f1a04",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 46,
+        "candidate_override": false,
+        "record": {
+          "path": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_046.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "e6b75cbe12c7ccec0bdff96b6cf1cba6415f70874b1f860ac5f3005c46c6c4c7",
+        "native_png_sha256": "f9f87a5cbe526487008857269795611f39ca89fbe1e42d4f03bf84ad208e8168",
+        "native_rgb_sha256": "1f54a436b87cb76226f64ada8964780efef9eba5ce296c43b0e5985de732eb6d",
+        "native_crop_png_sha256": "06955ed15b340d4befd2021655824e81d518e3aaa39f39027813f034a2b13af4",
+        "native_crop_rgb_sha256": "17b07724466384bf85cbd91b4d2bbe983f820d86bc2fc4c40a37ec0a28bdeea6",
+        "candidate_registration_index": null
+      },
+      {
+        "phase": 47,
+        "candidate_override": true,
+        "record": {
+          "path": "/tmp/lucan_cycle_candidate_163_far17/candidate_exports/overhead_047.png",
+          "cell": null,
+          "anchor": [
+            512,
+            960
+          ],
+          "art_pixels_per_metre": 500
+        },
+        "source_png_sha256": "a9273ae44eb889ccd3ac042dfc8491e1ed3ac0095254205e4249d29916a68f73",
+        "native_png_sha256": "e19bec85a2799cac4b6d153b98339ecd0373096adf8f29351072977b5791bce7",
+        "native_rgb_sha256": "d39c3aac126c4332adab18af14a69b7996e35f269f8a84a42b4f356ddd75be23",
+        "native_crop_png_sha256": "3c43ea12e57ff072da988dfe6995ff3f5cb7254f92cf6152f74b434d99ad4752",
+        "native_crop_rgb_sha256": "ec6cb129dabd13cbbbf3004c449517a0e4c4920d3974b2ffa5e0457cdae0d08b",
+        "candidate_registration_index": 16
+      }
+    ]
+  },
+  "actual_source_input_hash_changes": [],
+  "candidate_registration": [
+    {
+      "kind": "overhead",
+      "index": 8,
+      "gait_frame": 8,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        0,
+        0,
+        656,
+        599
+      ],
+      "scale": 0.84,
+      "origin": [
+        210.44,
+        796.82
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        283,
+        197,
+        435,
+        382
+      ],
+      "observed_crown_center": [
+        359.0,
+        289.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          190,
+          505
+        ],
+        "observed_main_pauldron_pair_span": 315,
+        "projected_crown_width": 127.67999999999999,
+        "projected_main_cap_pair_span": 264.59999999999997,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "576665d2388a4acea1a29435f3f307aa7f2785f21d230279091b0c2c3ae01dce"
+    },
+    {
+      "kind": "overhead",
+      "index": 9,
+      "gait_frame": 9,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        656,
+        0,
+        1312,
+        599
+      ],
+      "scale": 0.84,
+      "origin": [
+        210.86,
+        794.72
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        280,
+        201,
+        437,
+        383
+      ],
+      "observed_crown_center": [
+        358.5,
+        292.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          185,
+          503
+        ],
+        "observed_main_pauldron_pair_span": 318,
+        "projected_crown_width": 131.88,
+        "projected_main_cap_pair_span": 267.12,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "499c9b5952c19c91ce004325411bf011446d49e0fef99009d72f27461268c0f0"
+    },
+    {
+      "kind": "overhead",
+      "index": 10,
+      "gait_frame": 10,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        0,
+        599,
+        656,
+        1198
+      ],
+      "scale": 0.84,
+      "origin": [
+        210.86,
+        796.82
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        282,
+        201,
+        435,
+        378
+      ],
+      "observed_crown_center": [
+        358.5,
+        289.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          188,
+          501
+        ],
+        "observed_main_pauldron_pair_span": 313,
+        "projected_crown_width": 128.51999999999998,
+        "projected_main_cap_pair_span": 262.92,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "ee04fc31de213eebee8c22b3325de2a40449060281f6d7a033a2e8171bcd9adb"
+    },
+    {
+      "kind": "overhead",
+      "index": 11,
+      "gait_frame": 11,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        656,
+        599,
+        1312,
+        1198
+      ],
+      "scale": 0.84,
+      "origin": [
+        213.38,
+        793.88
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        276,
+        206,
+        435,
+        380
+      ],
+      "observed_crown_center": [
+        355.5,
+        293.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          185,
+          500
+        ],
+        "observed_main_pauldron_pair_span": 315,
+        "projected_crown_width": 133.56,
+        "projected_main_cap_pair_span": 264.59999999999997,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "42a16edfcb83f3ef039a761118d611a61de2b0e8425886d90d3ab2135856e0db"
+    },
+    {
+      "kind": "overhead",
+      "index": 12,
+      "gait_frame": 12,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.08,
+      "origin": [
+        224.71999999999997,
+        563.18
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        206,
+        368,
+        326,
+        515
+      ],
+      "observed_crown_center": [
+        266.0,
+        441.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          143,
+          394
+        ],
+        "observed_main_pauldron_pair_span": 251,
+        "projected_crown_width": 129.60000000000002,
+        "projected_main_cap_pair_span": 271.08000000000004,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "e8c3cef455c61a8732571d52692eca68da678c418c17e2ee8723e509c3a63164"
+    },
+    {
+      "kind": "overhead",
+      "index": 13,
+      "gait_frame": 13,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.08,
+      "origin": [
+        233.35999999999996,
+        561.56
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        196,
+        370,
+        320,
+        516
+      ],
+      "observed_crown_center": [
+        258.0,
+        443.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          143,
+          391
+        ],
+        "observed_main_pauldron_pair_span": 248,
+        "projected_crown_width": 133.92000000000002,
+        "projected_main_cap_pair_span": 267.84000000000003,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "00648472f9efab5371ce1b1089199296957b661becd29693022ef631319f7f63"
+    },
+    {
+      "kind": "overhead",
+      "index": 14,
+      "gait_frame": 14,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.08,
+      "origin": [
+        224.18,
+        564.8
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        207,
+        366,
+        326,
+        514
+      ],
+      "observed_crown_center": [
+        266.5,
+        440.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          145,
+          392
+        ],
+        "observed_main_pauldron_pair_span": 247,
+        "projected_crown_width": 128.52,
+        "projected_main_cap_pair_span": 266.76,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "4c4c4ce8e4cd3ffeb18094926218177b208c4802f4d1d2257068105f6bf28699"
+    },
+    {
+      "kind": "overhead",
+      "index": 15,
+      "gait_frame": 15,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.08,
+      "origin": [
+        227.41999999999996,
+        561.02
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        201,
+        371,
+        326,
+        516
+      ],
+      "observed_crown_center": [
+        263.5,
+        443.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          148,
+          393
+        ],
+        "observed_main_pauldron_pair_span": 245,
+        "projected_crown_width": 135.0,
+        "projected_main_cap_pair_span": 264.6,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "7c4f53279a2907e4c8069ff54452c58e32ec5ada9a4922e6c4a1bc4b4931fafe"
+    },
+    {
+      "kind": "overhead",
+      "index": 32,
+      "gait_frame": 32,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 1.08,
+      "origin": [
+        222.01999999999998,
+        646.88
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        207,
+        290,
+        330,
+        438
+      ],
+      "observed_crown_center": [
+        268.5,
+        364.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          142,
+          390
+        ],
+        "observed_main_pauldron_pair_span": 248,
+        "projected_crown_width": 132.84,
+        "projected_main_cap_pair_span": 267.84000000000003,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "47fe6d85a263d46386e4f4557f493c4494991704d933fa400ac94e080570d01b"
+    },
+    {
+      "kind": "overhead",
+      "index": 33,
+      "gait_frame": 33,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 1.08,
+      "origin": [
+        220.39999999999998,
+        645.8
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        209,
+        292,
+        331,
+        438
+      ],
+      "observed_crown_center": [
+        270.0,
+        365.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          140,
+          389
+        ],
+        "observed_main_pauldron_pair_span": 249,
+        "projected_crown_width": 131.76000000000002,
+        "projected_main_cap_pair_span": 268.92,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "b8296f64af8d2177787bf2a9e69bd470cdf8bddd4a9616559402379b6f9ca919"
+    },
+    {
+      "kind": "overhead",
+      "index": 34,
+      "gait_frame": 34,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 1.08,
+      "origin": [
+        222.56,
+        646.88
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        207,
+        290,
+        329,
+        438
+      ],
+      "observed_crown_center": [
+        268.0,
+        364.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          141,
+          390
+        ],
+        "observed_main_pauldron_pair_span": 249,
+        "projected_crown_width": 131.76000000000002,
+        "projected_main_cap_pair_span": 268.92,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "5921240e34f4dc8a1c4a7e9eb64d6acd39f2c1dc6536cc0887b181d436868612"
+    },
+    {
+      "kind": "overhead",
+      "index": 35,
+      "gait_frame": 35,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 1.08,
+      "origin": [
+        223.09999999999997,
+        647.96
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        207,
+        289,
+        328,
+        437
+      ],
+      "observed_crown_center": [
+        267.5,
+        363.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          141,
+          393
+        ],
+        "observed_main_pauldron_pair_span": 252,
+        "projected_crown_width": 130.68,
+        "projected_main_cap_pair_span": 272.16,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "cbadbe1cf1a4563cffbd38dbcb252113c0bb8b75edf7bec8b29e65fff42b20d7"
+    },
+    {
+      "kind": "overhead",
+      "index": 36,
+      "gait_frame": 36,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "scale": 0.98,
+      "origin": [
+        247.39999999999998,
+        637.22
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        200,
+        334,
+        340,
+        488
+      ],
+      "observed_crown_center": [
+        270.0,
+        411.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          140,
+          408
+        ],
+        "observed_main_pauldron_pair_span": 268,
+        "projected_crown_width": 137.2,
+        "projected_main_cap_pair_span": 262.64,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "e4eefeb98b3040a7e223d71cf79c7582318e6840f0a394f6dfcdde8c8821baf9"
+    },
+    {
+      "kind": "overhead",
+      "index": 37,
+      "gait_frame": 37,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "scale": 0.98,
+      "origin": [
+        244.45999999999998,
+        639.1800000000001
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        204,
+        331,
+        342,
+        487
+      ],
+      "observed_crown_center": [
+        273.0,
+        409.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          130,
+          410
+        ],
+        "observed_main_pauldron_pair_span": 280,
+        "projected_crown_width": 135.24,
+        "projected_main_cap_pair_span": 274.4,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "7fd46b467a91b106e7c3dd2f1b5b57d7347a5c3b80a4289cf9d5b990d112a525"
+    },
+    {
+      "kind": "overhead",
+      "index": 38,
+      "gait_frame": 38,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "scale": 0.98,
+      "origin": [
+        244.95,
+        637.22
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        205,
+        334,
+        340,
+        488
+      ],
+      "observed_crown_center": [
+        272.5,
+        411.0
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          135,
+          410
+        ],
+        "observed_main_pauldron_pair_span": 275,
+        "projected_crown_width": 132.3,
+        "projected_main_cap_pair_span": 269.5,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "72277a60fe31d1d518dd1530826024f6ef02be47f73ef28bb207f131ec6414bf"
+    },
+    {
+      "kind": "overhead",
+      "index": 39,
+      "gait_frame": 39,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "scale": 0.98,
+      "origin": [
+        244.45999999999998,
+        636.73
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        205,
+        335,
+        341,
+        488
+      ],
+      "observed_crown_center": [
+        273.0,
+        411.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          140,
+          405
+        ],
+        "observed_main_pauldron_pair_span": 265,
+        "projected_crown_width": 133.28,
+        "projected_main_cap_pair_span": 259.7,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "fdf82a7eb9f34a30c6d13b8855e39f68d9800bad0d053b1d7079d0844a7f9879"
+    },
+    {
+      "kind": "overhead",
+      "index": 47,
+      "gait_frame": 47,
+      "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/loop_key_47_final.png",
+      "source_sha256": "b00396f5c406deed2bc5e5b8560b5eeafbc5575aa81a65647f3dd7fbf21237e2",
+      "cell": [
+        0,
+        0,
+        1312,
+        1199
+      ],
+      "scale": 0.5,
+      "origin": [
+        173.75,
+        715.75
+      ],
+      "alpha_floor": 16,
+      "observed_crown_bbox": [
+        554,
+        522,
+        799,
+        775
+      ],
+      "observed_crown_center": [
+        676.5,
+        648.5
+      ],
+      "rigid_registration": {
+        "observed_main_pauldron_pair_x_bounds": [
+          401,
+          947
+        ],
+        "observed_main_pauldron_pair_span": 546,
+        "projected_crown_width": 122.5,
+        "projected_main_cap_pair_span": 273,
+        "uncertainty_source_pixels": {
+          "crown_edges": 5,
+          "crown_center": 5,
+          "cap_bounds": 8
+        }
+      },
+      "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+      "output_sha256": "a9273ae44eb889ccd3ac042dfc8491e1ed3ac0095254205e4249d29916a68f73"
+    }
+  ],
+  "observations": [
+    "Actual exposed forward parts at8/32 are now compact silver knees, with folded-back/occluded calves/boots; previous explicit long foreground shin+brown boot is gone.",
+    "At fixed actual2.2s projection all48poses retain consistent heading/size and two owned leg chains; right sword and left shield stay attached to correct arms.",
+    "Native7\u21928/15\u219216/31\u219232/39\u219240 and46\u219247\u21920 show plausible pose/carry/loop progression without the previous gross part-class reset.",
+    "Source47 is slightly warmer at armor highlights, but no concrete gross native color/volume flash was found at the tiny scene scale.",
+    "Hidden calf/heel/joint centers are unmeasured; native far anatomy cannot be claimed at subpixel detail. No realtime playback used."
+  ],
+  "adoption_condition": "Import these exact source PNG pixels and the bound anchor/density/registration; changed pixels or placement require renewed relevant native check. Base163 production is not declared accepted for its separate close failures.",
+  "evidence": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_far17_accepted_native_contact.png",
+      "sha256": "9e0a842ab012df7041443ac51cbe6f296c8a3d426ba7671dbb5133cbffc5479b",
+      "rgba_sha256": "b90d531211d24a8e967fffe8a4363ec00aeae7f5de8562122cb6526089385543",
+      "size": [
+        1120,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_far17_accepted_source_identity.png",
+      "sha256": "b135c15d43115ed636d227f09be0ca277c7e34eb61dda6061c4d42eae0d0cd05",
+      "rgba_sha256": "4df4f63c5e5dc5f781825168a54f6143ec82dded8b0e868a1419a1e2c59e7df7",
+      "size": [
+        1280,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_far17_accepted_loop_native_x4.png",
+      "sha256": "bf535a8adeee7fe4b2e4862a309b88e02e0243d0c9d625debfded52f1936c0f4",
+      "rgba_sha256": "d0a786dc2f4e72981a20e37c77c9b0ae2024d743af4b7651744f176fb588ddcc",
+      "size": [
+        1680,
+        720
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "overhead_032_039_alpha",
+  "output": "overhead_032_039_alpha.png",
+  "kind": "overhead",
+  "indices": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39
+  ],
+  "grid": [
+    4,
+    2
+  ],
+  "prompt": "Keep the EXACT eight complete Lucan running poses, viewpoint, limb ownership, armor, hair, shield and sword arrangements from this4column2row atlas. Remove ALL of its white/grey background completely and export a genuinely transparent alpha-zero background. Preserve each whole completefigure and its own camera/phase with generous clear margins. No white rectangle, no grey haze, no glowing background, no cast shadow, no fringe. Preserve natural polished silver/gold, oxblood cloth, brown leather and dark hair; no anatomy revisions, no separated parts. Every pixel outside the complete figures must be fully transparent.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039.png",
+      "sha256": "f3aff1b2dba442dabd3c699e440ee243872cdf7c32b71739b1c2b6420dd443d3"
+    }
+  ]
+}

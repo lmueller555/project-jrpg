@@ -1,0 +1,218 @@
+[
+  {
+    "prompt": "Create a production-quality transparent 2x2 atlas of FOUR COMPLETE individually painted whole-figure frames of the SAME adult knight Lucan, chronological samples 36, 37, 38, 39. Exact canvas 1024x1536, four cells512x768. Preserve correct draw order row-major. FINAL ART ONLY, no text, no grid, no floor/background, no gray mannequin, clean transparent alpha.\n\nREFERENCE HIERARCHY: first image is the PRIMARY MOTION AND CAMERA guide. Match its actual four separate 3D human silhouettes, knees, boot endpoints, body lean, arm angles and camera foreshortening faithfully, using the SAME physical adult body and rigid armor across all four frames. Each is a consecutive 1/60-second pose in a running recovery, not four different cycle keys. The other images are APPEARANCE-ONLY crops: approved Lucan has short dark-brown hair, bare head, serious adult face, polished cool steel plate shoulders/upper arms/gauntlets and legs, oxblood-red padded tabard, gold edging and belt, brown leather boots/gloves. Replace all guide materials with finished approved cinematic illustration matching those crops: crisp dark contour, detailed but controlled painterly pixel-art shading. Do not copy their unrelated pose. Do not enlarge head or shorten torso.\n\nGuide GOLD SPHERES are KNEES, never boots or hands: repaint them as silver steel kneecaps. Gray cylinders are connected thigh/calf chains. Brown endpoint shapes are the ONLY TWO BOOTS; retain which is exposed and which is folded behind/occluded. Exactly two hip-knee-ankle-foot chains. The forward knee can hide the folded calf and boot behind it; DO NOT append a long shin or extra brown toe where the guide has only a knee. Preserve natural adult leg lengths and continuous movement through these four actual guide poses. No third boot. No automatic split-stride/contact pose substituted for recovery. Head and shoulder size constant in physical scale; foreshorten torso progressively with actual camera, do not fit all occupied heights to same box.\n\nAnatomical RIGHT hand holds one long steel sword with gold guard on image LEFT; anatomical LEFT forearm carries one oxblood/gold kite shield on image RIGHT. Match guide shield plane and foreshortening, do not turn it face-on merely to display emblem. Connected shoulder-elbow-glove chains, no detached forearms or duplicated hands. Equipment remains same rigid size. Short dark hair crown and head viewed increasingly from above; face naturally occludes under brow rather than looking up. Render source figures fully within respective cells, preserving guide position and measured head/shoulder proportions, not giant cropped figures. Four complete drawn frames, not layered cutout limbs. Subtle coherent red cloth follow-through only, no cape substitution.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_036_039.png",
+        "sha256": "e46ee4c682aadcf0330cddb26f452c43f1246fac2d628f3ffd32bf43d2645f70"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+        "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+        "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+      }
+    ],
+    "generation_id": "exec-c7d6b728-c1ac-476d-809e-9a74c2a5bb09",
+    "raw_original": "/workspace/generated_images/exec-c7d6b728-c1ac-476d-809e-9a74c2a5bb09.png",
+    "raw_output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039.png",
+    "output_sha256": "39c8f92dfeae5a64513dcaa482e7fb566883d01c99911afef8aaeb3880705398",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "whole_figure_candidate",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039.png"
+  },
+  {
+    "prompt": "Create a production-quality transparent 2x2 atlas of FOUR COMPLETE individually painted whole-figure frames of the SAME adult knight Lucan, chronological samples 40, 41, 42, 43. Exact canvas 1024x1536, four cells512x768. Preserve correct draw order row-major. FINAL ART ONLY, no text, no grid, no floor/background, no gray mannequin, clean transparent alpha.\n\nREFERENCE HIERARCHY: first image is the PRIMARY MOTION AND CAMERA guide. Match its actual four separate 3D human silhouettes, knees, boot endpoints, body lean, arm angles and camera foreshortening faithfully, using the SAME physical adult body and rigid armor across all four frames. Each is a consecutive 1/60-second pose in a running recovery, not four different cycle keys. The other images are APPEARANCE-ONLY crops: approved Lucan has short dark-brown hair, bare head, serious adult face, polished cool steel plate shoulders/upper arms/gauntlets and legs, oxblood-red padded tabard, gold edging and belt, brown leather boots/gloves. Replace all guide materials with finished approved cinematic illustration matching those crops: crisp dark contour, detailed but controlled painterly pixel-art shading. Do not copy their unrelated pose. Do not enlarge head or shorten torso.\n\nGuide GOLD SPHERES are KNEES, never boots or hands: repaint them as silver steel kneecaps. Gray cylinders are connected thigh/calf chains. Brown endpoint shapes are the ONLY TWO BOOTS; retain which is exposed and which is folded behind/occluded. Exactly two hip-knee-ankle-foot chains. The forward knee can hide the folded calf and boot behind it; DO NOT append a long shin or extra brown toe where the guide has only a knee. Preserve natural adult leg lengths and continuous movement through these four actual guide poses. No third boot. No automatic split-stride/contact pose substituted for recovery. Head and shoulder size constant in physical scale; foreshorten torso progressively with actual camera, do not fit all occupied heights to same box.\n\nAnatomical RIGHT hand holds one long steel sword with gold guard on image LEFT; anatomical LEFT forearm carries one oxblood/gold kite shield on image RIGHT. Match guide shield plane and foreshortening, do not turn it face-on merely to display emblem. Connected shoulder-elbow-glove chains, no detached forearms or duplicated hands. Equipment remains same rigid size. Short dark hair crown and head viewed increasingly from above; face naturally occludes under brow rather than looking up. Render source figures fully within respective cells, preserving guide position and measured head/shoulder proportions, not giant cropped figures. Four complete drawn frames, not layered cutout limbs. Subtle coherent red cloth follow-through only, no cape substitution.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_040_043.png",
+        "sha256": "e115be8dede9b6ea4b6f08dfb056e725219186180d0e5f646d5d3ddc38acf334"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+        "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+        "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+      }
+    ],
+    "generation_id": "exec-38f7a9d2-00a5-4b9a-8e9a-3fd16c9b26cb",
+    "raw_original": "/workspace/generated_images/exec-38f7a9d2-00a5-4b9a-8e9a-3fd16c9b26cb.png",
+    "raw_output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043.png",
+    "output_sha256": "a83302b87f42be17297f47999460742a4585195168560006a68a1c6b8ebdb30f",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "whole_figure_candidate",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043.png"
+  },
+  {
+    "prompt": "Create a production-quality transparent 2x2 atlas of FOUR COMPLETE individually painted whole-figure frames of the SAME adult knight Lucan, chronological samples 44, 45, 46, 47. Exact canvas 1024x1536, four cells512x768. Preserve correct draw order row-major. FINAL ART ONLY, no text, no grid, no floor/background, no gray mannequin, clean transparent alpha.\n\nREFERENCE HIERARCHY: first image is the PRIMARY MOTION AND CAMERA guide. Match its actual four separate 3D human silhouettes, knees, boot endpoints, body lean, arm angles and camera foreshortening faithfully, using the SAME physical adult body and rigid armor across all four frames. Each is a consecutive 1/60-second pose in a running recovery, not four different cycle keys. The other images are APPEARANCE-ONLY crops: approved Lucan has short dark-brown hair, bare head, serious adult face, polished cool steel plate shoulders/upper arms/gauntlets and legs, oxblood-red padded tabard, gold edging and belt, brown leather boots/gloves. Replace all guide materials with finished approved cinematic illustration matching those crops: crisp dark contour, detailed but controlled painterly pixel-art shading. Do not copy their unrelated pose. Do not enlarge head or shorten torso.\n\nGuide GOLD SPHERES are KNEES, never boots or hands: repaint them as silver steel kneecaps. Gray cylinders are connected thigh/calf chains. Brown endpoint shapes are the ONLY TWO BOOTS; retain which is exposed and which is folded behind/occluded. Exactly two hip-knee-ankle-foot chains. The forward knee can hide the folded calf and boot behind it; DO NOT append a long shin or extra brown toe where the guide has only a knee. Preserve natural adult leg lengths and continuous movement through these four actual guide poses. No third boot. No automatic split-stride/contact pose substituted for recovery. Head and shoulder size constant in physical scale; foreshorten torso progressively with actual camera, do not fit all occupied heights to same box.\n\nAnatomical RIGHT hand holds one long steel sword with gold guard on image LEFT; anatomical LEFT forearm carries one oxblood/gold kite shield on image RIGHT. Match guide shield plane and foreshortening, do not turn it face-on merely to display emblem. Connected shoulder-elbow-glove chains, no detached forearms or duplicated hands. Equipment remains same rigid size. Short dark hair crown and head viewed increasingly from above; face naturally occludes under brow rather than looking up. Render source figures fully within respective cells, preserving guide position and measured head/shoulder proportions, not giant cropped figures. Four complete drawn frames, not layered cutout limbs. Subtle coherent red cloth follow-through only, no cape substitution.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_044_047.png",
+        "sha256": "7a9309c30ed55cd984691925e38a122411979ae75080b6d3d51a6615facfd846"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+        "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+        "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+      }
+    ],
+    "generation_id": "exec-0c560ed4-d788-4d73-9890-3d338a632a81",
+    "raw_original": "/workspace/generated_images/exec-0c560ed4-d788-4d73-9890-3d338a632a81.png",
+    "raw_output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047.png",
+    "output_sha256": "289da2dcd6ae7f3b0a9224dfa5aa5fc5a54eae7bd3d10936219a089c708003a4",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "whole_figure_candidate",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047.png"
+  },
+  {
+    "prompt": "Create a production-quality transparent 2x2 atlas of FOUR COMPLETE individually painted whole-figure frames of the SAME adult knight Lucan, chronological samples 56, 57, 58, 59. Exact canvas 1024x1536, four cells512x768. Preserve correct draw order row-major. FINAL ART ONLY, no text, no grid, no floor/background, no gray mannequin, clean transparent alpha.\n\nREFERENCE HIERARCHY: first image is the PRIMARY MOTION AND CAMERA guide. Match its actual four separate 3D human silhouettes, knees, boot endpoints, body lean, arm angles and camera foreshortening faithfully, using the SAME physical adult body and rigid armor across all four frames. Each is a consecutive 1/60-second pose in a running recovery, not four different cycle keys. The other images are APPEARANCE-ONLY crops: approved Lucan has short dark-brown hair, bare head, serious adult face, polished cool steel plate shoulders/upper arms/gauntlets and legs, oxblood-red padded tabard, gold edging and belt, brown leather boots/gloves. Replace all guide materials with finished approved cinematic illustration matching those crops: crisp dark contour, detailed but controlled painterly pixel-art shading. Do not copy their unrelated pose. Do not enlarge head or shorten torso.\n\nGuide GOLD SPHERES are KNEES, never boots or hands: repaint them as silver steel kneecaps. Gray cylinders are connected thigh/calf chains. Brown endpoint shapes are the ONLY TWO BOOTS; retain which is exposed and which is folded behind/occluded. Exactly two hip-knee-ankle-foot chains. The forward knee can hide the folded calf and boot behind it; DO NOT append a long shin or extra brown toe where the guide has only a knee. Preserve natural adult leg lengths and continuous movement through these four actual guide poses. No third boot. No automatic split-stride/contact pose substituted for recovery. Head and shoulder size constant in physical scale; foreshorten torso progressively with actual camera, do not fit all occupied heights to same box.\n\nAnatomical RIGHT hand holds one long steel sword with gold guard on image LEFT; anatomical LEFT forearm carries one oxblood/gold kite shield on image RIGHT. Match guide shield plane and foreshortening, do not turn it face-on merely to display emblem. Connected shoulder-elbow-glove chains, no detached forearms or duplicated hands. Equipment remains same rigid size. Short dark hair crown and head viewed increasingly from above; face naturally occludes under brow rather than looking up. Render source figures fully within respective cells, preserving guide position and measured head/shoulder proportions, not giant cropped figures. Four complete drawn frames, not layered cutout limbs. Subtle coherent red cloth follow-through only, no cape substitution.\nCRITICAL EQUIPMENT JOIN: camera elevation now approximately63 to67degrees. Follow the primary guide's actual left-forearm and kite-shield PLANE: shield is upright in physical space, but viewed from this elevated camera it projects as a foreshortened broad low wedge, not a tall thin edge or frontal long kite face. These four consecutive poses lead into existing sample60, where shield remains the same foreshortened broad wedge. Keep that physical carry continuous. Do not swing it abruptly perpendicular just to show gold insignia. All three torso/head/leg views are genuinely elevated; show hair crown above foreshortened torso and mostly hidden face. The reference mannequin head is only approximate: maintain approved adult proportions with main cranium about half the paired rigid pauldron width, not its oversized rounded mannequin ball. Correct actual phase: one compact passing knee with its calf folded behind, opposite exposed calf/boot owned by same hip chain. Both boots remain anatomically owned; don't put a third toe under the belt.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_056_059.png",
+        "sha256": "9b1df61022a0bafb3cf8e4fa101d240ad28260aa18122b4bc8782b4c85cfebe3"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+        "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+        "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+      }
+    ],
+    "generation_id": "exec-ff29ed07-46ec-4c44-922d-8cb561a03b1f",
+    "raw_original": "/workspace/generated_images/exec-ff29ed07-46ec-4c44-922d-8cb561a03b1f.png",
+    "raw_output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059.png",
+    "output_sha256": "65ced715ea52f89ea3a67425b647840d6be9a3ac889779220c897375e382d808",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "whole_figure_candidate",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059.png"
+  },
+  {
+    "prompt": "Redraw these FOUR existing SAME-PHASE complete knight figures in the PRIMARY first reference, preserving their EXACT two-leg gait, body/torso/head pose and consecutive four motions. Produce four complete whole drawn figures in a transparent2x2 atlas1024x1536. Row-major samples56,57,58,59. The first reference is the EXISTING APPROVED SAME-PHASE whole-figure motion and adult model, so do NOT exchange left/right legs. Preserve each hip-knee-ankle-boot chain, exactly two legs. Long exposed calf+boot is on imageRIGHT; imageLEFT is a compact advancing silver knee with its calf/boot tucked behind. In these particular four frames the exposed right-image boot remains on that same leg, not swapped. Preserve the existing short darkhair crown and mostly hidden face bowed forward under this steep camera. Same cranium/rigid shoulder proportions, polished cool steel, oxblood tabard, gold trim, brown leather. Full anatomy must remain exactly connected. No third foot or arm.\n\nThe REQUIRED bounded correction is the LEFT-ARM KITE-SHIELD PHYSICAL PLANE: first reference mistakenly stands shield as a tall narrow sliver. In the SECOND3D guide, actual left forearm carries the same upright shield but the elevated63\u201367degree camera projects it as a BROAD LOW FORESHORTENED WEDGE, as the guide correctly shows. Redraw entire figure naturally with this physical carry and connected forearm. Do not copy the 3D mannequin's oversizedhead or gray geometry; the FIRST same-phase painted figure owns body, legs, face/hair and equipment design. Maintain the same pose while correcting shield view. One sword in anatomicalRIGHT hand on imageLEFT; one oxblood/gold kite shield on anatomicalLEFT forearm on imageRIGHT. Painted detailed cinematic illustration with controlled dark outline and realistic adult proportions, exact same identity/style as first reference. No labels/grid/background/floor/shadows. Transparent alpha. Four complete figures, no part cutout overlays or added limbs. Match the four supplied corresponding poses instead of inventing generic running contact legs.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/actual_same_phase_056_059.png",
+        "sha256": "2f60e339ffe5644bac66c78d2d05d159664c680b2baa566120af6ae466cdd38f"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_056_059.png",
+        "sha256": "9b1df61022a0bafb3cf8e4fa101d240ad28260aa18122b4bc8782b4c85cfebe3"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+        "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+      }
+    ],
+    "generation_id": "exec-a4d3c0e3-dae2-4594-9204-7672d89c5269",
+    "raw_original": "/workspace/generated_images/exec-a4d3c0e3-dae2-4594-9204-7672d89c5269.png",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059b.png",
+    "output_sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "whole_figure_candidate"
+  },
+  {
+    "prompt": "Edit and redraw the FIRST FOUR-FIGURE ATLAS as four COMPLETE finished whole illustrations. SAME1024x1536 canvas,2x2cells512x768,row-major exact consecutive running samples36\u201339. Transparentbackground, no text or tiles or floor. Preserve existing approved adult Lucan identity and all the successful recovery LEG MOTION, anatomy, boot ownership, arms and equipment ownership, rigid source density, figure layout and subtle cloth follow-through of that first atlas. This is a bounded camera-view/head-attitude correction, not a new gait or redesign. ImageGen must redraw COMPLETE whole figures, never create detached head patches or separate limbs.\n\nFAULT TO CORRECT: the first figure of each row/batch looks up directly into camera and subsequent figures bow down, causing an artificial repeated nod everyfourframes. Every SINGLE figure must keep the same physically forward/downward focused head attitude as APPROVED samples35 and48 in the SECOND appearance-reference crop. They are the SAME darkhaired bareheaded adult knight. The camera is rising continuously: the view moves smoothly from the left35 crop toward the right48 crop. Show short dark hair CROWN, the face bowed away, eyes naturally under the brow and increasingly obscured. NEVER lift the first pose's gaze to camera. No repeated face-up reset. Do not copy a frontal smiling/portrait face. Do not turn the torso front-facing at start of anybatch. Maintain continuous rigid pauldron width, long adult upperbody, and actual elevated camera foreshortening, with polished steel/oxblood/gold and white breastmark exactly as current character.\n\nThe PRIMARY atlas remains exact motion reference for these same four phases. Both hip-knee-ankle-boot chains remain unchanged: no leg exchange, no thirdfoot, no extra brown boot appended to an exposed silverknee. Retain RIGHT sword on imageLEFT and LEFT kite-shield on imageRIGHT with connected hands/elbows. Physical rigid equipment and body size stay constant. Match head attitude and appearance only to the SECOND view-crops, never borrow its unrelated leg pose. LAST guide is a 3D camera/ownership check only; do not render gray mannequin, enlarge its head or substitute generic rig legs for the successful painted gait.\n\nALL FOUR FIGURES must have consistently bowed heads, not only the finalfigure. Do not invent breathing/headbob that facesup forframe36. Preserve shape and limb phase within each supplied complete figure, chronological small60Hz motions. Crisp controlleddarkcontours, detailed cinematicsurface shading, no background, allfourcompletebodieswithinrespectivecells.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039.png",
+        "sha256": "39c8f92dfeae5a64513dcaa482e7fb566883d01c99911afef8aaeb3880705398"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/bowed_head_armor_view_bounds.png",
+        "sha256": "078e0d98ebdf802530caf250b2449d18ea96f99048141af10046e7ae50517b8c"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_036_039.png",
+        "sha256": "e46ee4c682aadcf0330cddb26f452c43f1246fac2d628f3ffd32bf43d2645f70"
+      }
+    ],
+    "generation_id": "exec-552e9a58-ed93-45a7-aef2-76063976df0e",
+    "raw_original": "/workspace/generated_images/exec-552e9a58-ed93-45a7-aef2-76063976df0e.png",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039_view_corrected.png",
+    "output_sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "bounded_whole_figure_view_correction_candidate"
+  },
+  {
+    "prompt": "Edit and redraw the FIRST FOUR-FIGURE ATLAS as four COMPLETE finished whole illustrations. SAME1024x1536 canvas,2x2cells512x768,row-major exact consecutive running samples40\u201343. Transparentbackground, no text or tiles or floor. Preserve existing approved adult Lucan identity and all the successful recovery LEG MOTION, anatomy, boot ownership, arms and equipment ownership, rigid source density, figure layout and subtle cloth follow-through of that first atlas. This is a bounded camera-view/head-attitude correction, not a new gait or redesign. ImageGen must redraw COMPLETE whole figures, never create detached head patches or separate limbs.\n\nFAULT TO CORRECT: the first figure of each row/batch looks up directly into camera and subsequent figures bow down, causing an artificial repeated nod everyfourframes. Every SINGLE figure must keep the same physically forward/downward focused head attitude as APPROVED samples35 and48 in the SECOND appearance-reference crop. They are the SAME darkhaired bareheaded adult knight. The camera is rising continuously: the view moves smoothly from the left35 crop toward the right48 crop. Show short dark hair CROWN, the face bowed away, eyes naturally under the brow and increasingly obscured. NEVER lift the first pose's gaze to camera. No repeated face-up reset. Do not copy a frontal smiling/portrait face. Do not turn the torso front-facing at start of anybatch. Maintain continuous rigid pauldron width, long adult upperbody, and actual elevated camera foreshortening, with polished steel/oxblood/gold and white breastmark exactly as current character.\n\nThe PRIMARY atlas remains exact motion reference for these same four phases. Both hip-knee-ankle-boot chains remain unchanged: no leg exchange, no thirdfoot, no extra brown boot appended to an exposed silverknee. Retain RIGHT sword on imageLEFT and LEFT kite-shield on imageRIGHT with connected hands/elbows. Physical rigid equipment and body size stay constant. Match head attitude and appearance only to the SECOND view-crops, never borrow its unrelated leg pose. LAST guide is a 3D camera/ownership check only; do not render gray mannequin, enlarge its head or substitute generic rig legs for the successful painted gait.\n\nALL FOUR FIGURES must have consistently bowed heads, not only the finalfigure. Do not invent breathing/headbob that facesup forframe40. Preserve shape and limb phase within each supplied complete figure, chronological small60Hz motions. Crisp controlleddarkcontours, detailed cinematicsurface shading, no background, allfourcompletebodieswithinrespectivecells.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043.png",
+        "sha256": "a83302b87f42be17297f47999460742a4585195168560006a68a1c6b8ebdb30f"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/bowed_head_armor_view_bounds.png",
+        "sha256": "078e0d98ebdf802530caf250b2449d18ea96f99048141af10046e7ae50517b8c"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_040_043.png",
+        "sha256": "e115be8dede9b6ea4b6f08dfb056e725219186180d0e5f646d5d3ddc38acf334"
+      }
+    ],
+    "generation_id": "exec-e0e4e466-8cc0-47a8-8b66-c3515996731a",
+    "raw_original": "/workspace/generated_images/exec-e0e4e466-8cc0-47a8-8b66-c3515996731a.png",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043_view_corrected.png",
+    "output_sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "bounded_whole_figure_view_correction_candidate"
+  },
+  {
+    "prompt": "Edit and redraw the FIRST FOUR-FIGURE ATLAS as four COMPLETE finished whole illustrations. SAME1024x1536 canvas,2x2cells512x768,row-major exact consecutive running samples44\u201347. Transparentbackground, no text or tiles or floor. Preserve existing approved adult Lucan identity and all the successful recovery LEG MOTION, anatomy, boot ownership, arms and equipment ownership, rigid source density, figure layout and subtle cloth follow-through of that first atlas. This is a bounded camera-view/head-attitude correction, not a new gait or redesign. ImageGen must redraw COMPLETE whole figures, never create detached head patches or separate limbs.\n\nFAULT TO CORRECT: the first figure of each row/batch looks up directly into camera and subsequent figures bow down, causing an artificial repeated nod everyfourframes. Every SINGLE figure must keep the same physically forward/downward focused head attitude as APPROVED samples35 and48 in the SECOND appearance-reference crop. They are the SAME darkhaired bareheaded adult knight. The camera is rising continuously: the view moves smoothly from the left35 crop toward the right48 crop. Show short dark hair CROWN, the face bowed away, eyes naturally under the brow and increasingly obscured. NEVER lift the first pose's gaze to camera. No repeated face-up reset. Do not copy a frontal smiling/portrait face. Do not turn the torso front-facing at start of anybatch. Maintain continuous rigid pauldron width, long adult upperbody, and actual elevated camera foreshortening, with polished steel/oxblood/gold and white breastmark exactly as current character.\n\nThe PRIMARY atlas remains exact motion reference for these same four phases. Both hip-knee-ankle-boot chains remain unchanged: no leg exchange, no thirdfoot, no extra brown boot appended to an exposed silverknee. Retain RIGHT sword on imageLEFT and LEFT kite-shield on imageRIGHT with connected hands/elbows. Physical rigid equipment and body size stay constant. Match head attitude and appearance only to the SECOND view-crops, never borrow its unrelated leg pose. LAST guide is a 3D camera/ownership check only; do not render gray mannequin, enlarge its head or substitute generic rig legs for the successful painted gait.\n\nALL FOUR FIGURES must have consistently bowed heads, not only the finalfigure. Do not invent breathing/headbob that facesup forframe44. Preserve shape and limb phase within each supplied complete figure, chronological small60Hz motions. Crisp controlleddarkcontours, detailed cinematicsurface shading, no background, allfourcompletebodieswithinrespectivecells.\nADDITIONAL EXACT47\u219248 VIEW BRIDGE: the THIRD cropped upperbody reference is the actual next sample48. Across44\u219247, gradually move the entire upperbody perspective toward that known48 view: more hair-crown visible, face occluded, naturally foreshortened collar-to-belt distance, rigid shoulder plates viewed fromabove. The kite shield must also gradually turn into the SAME modestly edge-on carried plane seen at48, with left forearm rotating it naturally overthese4poses. Do not leave a frontal broad full kite face at47 followed by an abrupt edge-on shield48. Do not shorten the limbs/torso merely to force occupiedheight; use actual elevated body projection while preserving head/pauldron physicalscale. By47 the view, foreshortening and equipment carry must be an immediate plausible neighbour of the cropped48 bound. Legs still follow the primary44\u201347 atlas recovery, never the crop's implied contact.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047.png",
+        "sha256": "289da2dcd6ae7f3b0a9224dfa5aa5fc5a54eae7bd3d10936219a089c708003a4"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/bowed_head_armor_view_bounds.png",
+        "sha256": "078e0d98ebdf802530caf250b2449d18ea96f99048141af10046e7ae50517b8c"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/view48_torso_shield_bound.png",
+        "sha256": "0690fa7b06085cb83b9302d1fc9fc38ae4c854f4ba3e3d9dc983e636b27991b7"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_044_047.png",
+        "sha256": "7a9309c30ed55cd984691925e38a122411979ae75080b6d3d51a6615facfd846"
+      }
+    ],
+    "generation_id": "exec-27ecadad-3b82-4753-ba43-b450cc8f444e",
+    "raw_original": "/workspace/generated_images/exec-27ecadad-3b82-4753-ba43-b450cc8f444e.png",
+    "output": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047_view_corrected.png",
+    "output_sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+    "canvas": [
+      1024,
+      1536
+    ],
+    "status": "bounded_whole_figure_view_correction_candidate"
+  }
+]

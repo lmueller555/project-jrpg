@@ -1,0 +1,3220 @@
+{
+  "status": "PENDING FINAL; narrow follow-up native gates only. Actual full composed481frames/Gallery not reviewed.",
+  "method": "Actual native production-compositor pictures and static chronological/source controls. No real-time playback claim.",
+  "accepted": [
+    {
+      "actor": "iselin",
+      "index": 48,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_048.png",
+        "sha256": "7c7c9ab4c251937b1cfb51f9917d9acecfca3b9323e0268ad710b8a413985d4e",
+        "rgba_sha256": "aaa1a0ba90eed1e8d4e50b6be703c4605e4e7216042223c3385649ed9b3ea593",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_048_051_view_bridge/master.png",
+        "sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "rgba_sha256": "b833861453cebc25cd664b9aeb9a0cdc25923525ccc37e7ec7bf4c37853277df",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 48,
+        "gait_frame": 10,
+        "cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_neck": [
+          321.0,
+          216.9247311827957
+        ],
+        "neck_match": {
+          "point": [
+            321.0,
+            216.9247311827957
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          287,
+          132,
+          355,
+          214
+        ],
+        "face_skin_width": 68,
+        "face_skin_area": 2706,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_048_051_view_bridge/master.png",
+        "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+        "scale": 1.308970588235294,
+        "origin": [
+          91.82044117647064,
+          188.73486569705193
+        ],
+        "neck_target": [
+          512.0,
+          472.68295867617906
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 47.848026653756314,
+        "native_scale": 0.31832825333899784
+      },
+      "selection": {
+        "index": 48,
+        "file": "transition/frame_048.png",
+        "gait_frame": 10,
+        "actual_elevation_degrees": 47.848026653756314,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_048.png",
+        "sha256": "943f4ab3f692b495f4f9f56ede41de0063f41fb84e232684fd596f82baae0de0",
+        "rgba_sha256": "b9a3d350aecf0fb964baeefa94ec9abedf218a7460be4ad5fc9d8322fbe36fa9",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.68985886458327,
+          4.000000000000004
+        ],
+        "target": [
+          0.0,
+          58.92381442146429,
+          3.3572123903134647
+        ],
+        "forward": [
+          0.0,
+          -0.7660444431189779,
+          -0.6427876096865395
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6427876096865395,
+          0.7660444431189779
+        ],
+        "focal_pixels": 650.0000000000001,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.42275603566305,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.698131700797732,
+        "party_travel_metres": 57.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.96,
+          0.0
+        ],
+        "frame_index": 10,
+        "cycle_phase": 0.16666666666666663,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 47.848026653756314,
+        "view_azimuth_degrees": -13.393165206653315,
+        "ground_anchor": [
+          389.38033926839717,
+          502.55795158616814
+        ],
+        "pixels_per_metre": 159.16412666949893,
+        "scale": 0.31832825333899784,
+        "depth_metres": 4.0838348037413725
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 49,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_049.png",
+        "sha256": "a13cbe0006501cf00ab7489163780cbff9cd173bd622a1efcb5b8f554a7de34a",
+        "rgba_sha256": "6450039d0f8e86479d1b03581adb0af762a1de39298f28cd2c48fadf04adaeb4",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_048_051_view_bridge/master.png",
+        "sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "rgba_sha256": "b833861453cebc25cd664b9aeb9a0cdc25923525ccc37e7ec7bf4c37853277df",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 49,
+        "gait_frame": 11,
+        "cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_neck": [
+          300.0,
+          204.9247311827957
+        ],
+        "neck_match": {
+          "point": [
+            300.0,
+            204.9247311827957
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          266,
+          139,
+          334,
+          202
+        ],
+        "face_skin_width": 68,
+        "face_skin_area": 2615,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_048_051_view_bridge/master.png",
+        "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+        "scale": 1.308970588235294,
+        "origin": [
+          119.30882352941182,
+          217.23646133064233
+        ],
+        "neck_target": [
+          512.0,
+          485.47690725094594
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 49.11612282497073,
+        "native_scale": 0.3134565799344273
+      },
+      "selection": {
+        "index": 49,
+        "file": "transition/frame_049.png",
+        "gait_frame": 11,
+        "actual_elevation_degrees": 49.11612282497073,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_049.png",
+        "sha256": "c4eaa6f1fc031e96f5acec04e549c3f3edc0e447ad232b95c6f4e131155a33b0",
+        "rgba_sha256": "8d1f5f94a650740f936bd59ed56eec54c5dce31560c8e7dd3c4d134a15b8113c",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.71969448028037,
+          4.100011052769018
+        ],
+        "target": [
+          0.0,
+          58.96999801708589,
+          3.4382292057274917
+        ],
+        "forward": [
+          0.0,
+          -0.749696463194476,
+          -0.661781847041526
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.661781847041526,
+          0.749696463194476
+        ],
+        "focal_pixels": 648.3320636513793,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.539518513038416,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.7231930330113367,
+        "party_travel_metres": 57.526666666666664,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.026666666666664,
+          0.0
+        ],
+        "frame_index": 11,
+        "cycle_phase": 0.18333333333333324,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 49.11612282497073,
+        "view_azimuth_degrees": -13.569606159935965,
+        "ground_anchor": [
+          390.94840962810014,
+          496.9478205729931
+        ],
+        "pixels_per_metre": 156.72828996721367,
+        "scale": 0.3134565799344273,
+        "depth_metres": 4.136662652205325
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 50,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_050.png",
+        "sha256": "e2471e3c15d0a684ce987beb9970f167c6e5fecb619c2b1f6c2d1c77dbd96451",
+        "rgba_sha256": "9d7c634acc11cab651a471f6833199a0f7ccadf7af9c686d939d4519e7bcd97e",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_048_051_view_bridge/master.png",
+        "sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "rgba_sha256": "b833861453cebc25cd664b9aeb9a0cdc25923525ccc37e7ec7bf4c37853277df",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 50,
+        "gait_frame": 12,
+        "cell": [
+          0,
+          768,
+          512,
+          1536
+        ],
+        "source_neck": [
+          312.0,
+          203.9247311827957
+        ],
+        "neck_match": {
+          "point": [
+            312.0,
+            203.9247311827957
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          278,
+          132,
+          346,
+          201
+        ],
+        "face_skin_width": 68,
+        "face_skin_area": 2731,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_048_051_view_bridge/master.png",
+        "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+        "scale": 1.308970588235294,
+        "origin": [
+          103.60117647058826,
+          231.28192582676087
+        ],
+        "neck_target": [
+          512.0,
+          498.2134011588292
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 50.359864386676534,
+        "native_scale": 0.3084852512745631
+      },
+      "selection": {
+        "index": 50,
+        "file": "transition/frame_050.png",
+        "gait_frame": 12,
+        "actual_elevation_degrees": 50.359864386676534,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_050.png",
+        "sha256": "e14ff7704618fc2a9b2ecebeb2c146ccb5f036b4507f17591b2322e7f44336e8",
+        "rgba_sha256": "3671b70c21056d9888e3b022e784fbf295f052b1c20954f0dd325f7f166cb20a",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.748909080330435,
+          4.200090423816649
+        ],
+        "target": [
+          0.0,
+          59.01716056769657,
+          3.518515692581603
+        ],
+        "forward": [
+          0.0,
+          -0.7317485126338661,
+          -0.6815747312350456
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6815747312350456,
+          0.7317485126338661
+        ],
+        "focal_pixels": 646.6578655478395,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.65720616455226,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.7499124953495698,
+        "party_travel_metres": 57.593333333333334,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.093333333333334,
+          0.0
+        ],
+        "frame_index": 12,
+        "cycle_phase": 0.19999999999999996,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 50.359864386676534,
+        "view_azimuth_degrees": -13.75376082447199,
+        "ground_anchor": [
+          392.53905293322623,
+          490.00209402413736
+        ],
+        "pixels_per_metre": 154.24262563728155,
+        "scale": 0.3084852512745631,
+        "depth_metres": 4.192471846715877
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 51,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_051.png",
+        "sha256": "e607d148bf452a895347cafd84c01366e512d8af25da8fa5c7d8eaf1dde0bf6b",
+        "rgba_sha256": "ba56a1d6bb1a8dbd55f0ca32e929f26ac0c17bbc326fdd103ed635183aad0780",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_048_051_view_bridge/master.png",
+        "sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "rgba_sha256": "b833861453cebc25cd664b9aeb9a0cdc25923525ccc37e7ec7bf4c37853277df",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 51,
+        "gait_frame": 13,
+        "cell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "source_neck": [
+          293.5,
+          211.88172043010752
+        ],
+        "neck_match": {
+          "point": [
+            293.5,
+            211.88172043010752
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          260,
+          142,
+          327,
+          209
+        ],
+        "face_skin_width": 67,
+        "face_skin_area": 2544,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_048_051_view_bridge/master.png",
+        "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+        "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+        "scale": 1.308970588235294,
+        "origin": [
+          127.8171323529412,
+          233.57793822460928
+        ],
+        "neck_target": [
+          512.0,
+          510.92487845231324
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 51.57952529252411,
+        "native_scale": 0.3033986378751662
+      },
+      "selection": {
+        "index": 51,
+        "file": "transition/frame_051.png",
+        "gait_frame": 13,
+        "actual_elevation_degrees": 51.57952529252411,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_051.png",
+        "sha256": "41ccc0828e8307ead0a9bae50c981f9d72c4be43ab59b2a5f6ea6499c6144daf",
+        "rgba_sha256": "8e47f69ffb9edaea34d3d4761b67a6bc06e672670c8d60beea1ab15105fa535b",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.77753445191662,
+          4.300311812042601
+        ],
+        "target": [
+          0.0,
+          59.06595853608281,
+          3.5977025920594943
+        ],
+        "forward": [
+          0.0,
+          -0.7115759158338134,
+          -0.7026092199831067
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7026092199831067,
+          0.7115759158338134
+        ],
+        "focal_pixels": 644.9746704101562,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.77602076336534,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.7790577094741875,
+        "party_travel_metres": 57.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.16,
+          0.0
+        ],
+        "frame_index": 13,
+        "cycle_phase": 0.21666666666666656,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 51.57952529252411,
+        "view_azimuth_degrees": -13.945898431234069,
+        "ground_anchor": [
+          394.1620797570946,
+          481.22929645774514
+        ],
+        "pixels_per_metre": 151.6993189375831,
+        "scale": 0.3033986378751662,
+        "depth_metres": 4.251664904807727
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 52,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_052.png",
+        "sha256": "3022059266bec8e39076bd333201f2fcc7b77703253284026756d83414361cad",
+        "rgba_sha256": "cc06954a0ea0854344f942d07ae7945081297da9b221fa2e861d5ede39913cde",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_052_055_view_bridge/master.png",
+        "sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "rgba_sha256": "a5f933c3de3290d559cbb92b6052bc87b72e57ce6c39ad02b426edfc3d5a9bf5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 52,
+        "gait_frame": 14,
+        "cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_neck": [
+          308.5,
+          211.96774193548387
+        ],
+        "neck_match": {
+          "point": [
+            308.5,
+            211.96774193548387
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          274,
+          146,
+          343,
+          209
+        ],
+        "face_skin_width": 69,
+        "face_skin_area": 2349,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_052_055_view_bridge/master.png",
+        "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+        "scale": 1.2994160583941605,
+        "origin": [
+          111.1301459854015,
+          248.20582206095878
+        ],
+        "neck_target": [
+          512.0,
+          523.6401097934759
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 52.775380038638275,
+        "native_scale": 0.2982266456123389
+      },
+      "selection": {
+        "index": 52,
+        "file": "transition/frame_052.png",
+        "gait_frame": 14,
+        "actual_elevation_degrees": 52.775380038638275,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_052.png",
+        "sha256": "0bd35e7e842498bed2b2c8e6c149c10671e14396e8a35fd2a93944a2d28f61f8",
+        "rgba_sha256": "6e8cab1e81ebe8c7e113f85c0c3656ed9dfe197cbaed3e24475f014b0a7a3530",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.805603244612875,
+          4.400754535698308
+        ],
+        "target": [
+          0.0,
+          59.11654564977897,
+          3.6760479530031387
+        ],
+        "forward": [
+          0.0,
+          -0.6890575948339078,
+          -0.7247065826951692
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7247065826951692,
+          0.6890575948339078
+        ],
+        "focal_pixels": 643.2831790123457,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.89592336991024,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.8106084748151443,
+        "party_travel_metres": 57.72666666666667,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.22666666666667,
+          0.0
+        ],
+        "frame_index": 14,
+        "cycle_phase": 0.2333333333333334,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 52.775380038638275,
+        "view_azimuth_degrees": -14.146299242263076,
+        "ground_anchor": [
+          395.80557513559563,
+          470.69519982477516
+        ],
+        "pixels_per_metre": 149.11332280616946,
+        "scale": 0.2982266456123389,
+        "depth_metres": 4.314055692049338
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 53,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_053.png",
+        "sha256": "61776b5617e896e07187092cabfe88c7896325f80cfe839dc3314b35d608b8e9",
+        "rgba_sha256": "b525756d8ba37e550ca50967483a2ca289dc696668e94166d736679cf970b2a5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_052_055_view_bridge/master.png",
+        "sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "rgba_sha256": "a5f933c3de3290d559cbb92b6052bc87b72e57ce6c39ad02b426edfc3d5a9bf5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 53,
+        "gait_frame": 15,
+        "cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_neck": [
+          293.5,
+          219.88172043010752
+        ],
+        "neck_match": {
+          "point": [
+            293.5,
+            219.88172043010752
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          260,
+          150,
+          327,
+          217
+        ],
+        "face_skin_width": 67,
+        "face_skin_area": 2325,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_052_055_view_bridge/master.png",
+        "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+        "scale": 1.2994160583941605,
+        "origin": [
+          130.6213868613139,
+          250.66446125071025
+        ],
+        "neck_target": [
+          512.0,
+          536.3822997249273
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 53.94769587043857,
+        "native_scale": 0.29302487965530394
+      },
+      "selection": {
+        "index": 53,
+        "file": "transition/frame_053.png",
+        "gait_frame": 15,
+        "actual_elevation_degrees": 53.94769587043857,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_053.png",
+        "sha256": "9d2d4a62861f21c865a87d1671c7e4c18afbf01d2bca11362f7b604d03aa16b8",
+        "rgba_sha256": "578ba578885247412836ab9bd7955bb84ac6e922277ee7f85d3c94c4c49e1fb9",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.83314891648438,
+          4.501503256928514
+        ],
+        "target": [
+          0.0,
+          59.16863918716415,
+          3.7542236441738566
+        ],
+        "forward": [
+          0.0,
+          -0.6645097293202332,
+          -0.7472796127546572
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7472796127546572,
+          0.6645097293202332
+        ],
+        "focal_pixels": 641.5870760693963,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.01666148971081,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.8439587742710524,
+        "party_travel_metres": 57.79333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.29333333333333,
+          0.0
+        ],
+        "frame_index": 15,
+        "cycle_phase": 0.25,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 53.94769587043857,
+        "view_azimuth_degrees": -14.355254824919832,
+        "ground_anchor": [
+          397.4458662301536,
+          458.86117203670403
+        ],
+        "pixels_per_metre": 146.51243982765197,
+        "scale": 0.29302487965530394,
+        "depth_metres": 4.379062124855193
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 54,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_054.png",
+        "sha256": "0ac9aa433ee158d111fcff367bd9b93bc8f0edfdf2ca667e64068e327ddabe9e",
+        "rgba_sha256": "7bcff65c651389ee79ebff650fa7bb49b33ebbbfdce27ea9903f68483b3f55d4",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_052_055_view_bridge/master.png",
+        "sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "rgba_sha256": "a5f933c3de3290d559cbb92b6052bc87b72e57ce6c39ad02b426edfc3d5a9bf5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 54,
+        "gait_frame": 16,
+        "cell": [
+          0,
+          768,
+          512,
+          1536
+        ],
+        "source_neck": [
+          305.5,
+          204.05376344086022
+        ],
+        "neck_match": {
+          "point": [
+            305.5,
+            204.05376344086022
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          270,
+          134,
+          341,
+          201
+        ],
+        "face_skin_width": 71,
+        "face_skin_area": 2280,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_052_055_view_bridge/master.png",
+        "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+        "scale": 1.2994160583941605,
+        "origin": [
+          115.02839416058396,
+          284.01324967999034
+        ],
+        "neck_target": [
+          512.0,
+          549.1639866708074
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 55.096726412859795,
+        "native_scale": 0.2878533316698453
+      },
+      "selection": {
+        "index": 54,
+        "file": "transition/frame_054.png",
+        "gait_frame": 16,
+        "actual_elevation_degrees": 55.096726412859795,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_054.png",
+        "sha256": "4e40cf4df055a21518210acceeefcbd070c757b831f30af8d2801621129cd89c",
+        "rgba_sha256": "471c872256d0eb3729bd4df95dc30379f29f9d57fdbe16ce7ddaf45908cd3da2",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.860205680188265,
+          4.602647706312846
+        ],
+        "target": [
+          0.0,
+          59.22160573481662,
+          3.833108812057765
+        ],
+        "forward": [
+          0.0,
+          -0.6385999453716453,
+          -0.7695388942550803
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7695388942550803,
+          0.6385999453716453
+        ],
+        "focal_pixels": 639.892578125,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.137796912430375,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.8781187799096469,
+        "party_travel_metres": 57.86,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.36,
+          0.0
+        ],
+        "frame_index": 16,
+        "cycle_phase": 0.2666666666666666,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 55.096726412859795,
+        "view_azimuth_degrees": -14.573068291839984,
+        "ground_anchor": [
+          399.05686097795336,
+          446.42634149885896
+        ],
+        "pixels_per_metre": 143.92666583492263,
+        "scale": 0.2878533316698453,
+        "depth_metres": 4.445962632518201
+      }
+    },
+    {
+      "actor": "iselin",
+      "index": 55,
+      "scope": "47\u219248,51\u219252 and internal48\u201355 view/body/material/limb progression provisionally accepted;55\u219256 held.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/iselin/transition/frame_055.png",
+        "sha256": "f65f63615f5dbf9e881e646e2b2a6703bc0e5e85f96ae8fde6069d925d74b5ea",
+        "rgba_sha256": "cc0aa99428c97b0ff930889e8ac98279c40b340801096257e808c26774549f15",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_052_055_view_bridge/master.png",
+        "sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "rgba_sha256": "a5f933c3de3290d559cbb92b6052bc87b72e57ce6c39ad02b426edfc3d5a9bf5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 55,
+        "gait_frame": 17,
+        "cell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "source_neck": [
+          296.0,
+          203.9247311827957
+        ],
+        "neck_match": {
+          "point": [
+            296.0,
+            203.9247311827957
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          262,
+          137,
+          330,
+          201
+        ],
+        "face_skin_width": 68,
+        "face_skin_area": 2261,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_052_055_view_bridge/master.png",
+        "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+        "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+        "scale": 1.2994160583941605,
+        "origin": [
+          127.37284671532848,
+          297.0055012259013
+        ],
+        "neck_target": [
+          512.0,
+          561.9885716285385
+        ],
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 56.22270664581673,
+        "native_scale": 0.2827594384134544
+      },
+      "selection": {
+        "index": 55,
+        "file": "transition/frame_055.png",
+        "gait_frame": 17,
+        "actual_elevation_degrees": 56.22270664581673,
+        "drawing": "complete camera-specific ImageGen figure"
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_055.png",
+        "sha256": "01e17e456029ee5d2ca87624940adbc8febb6e422c838694263886c00d53a561",
+        "rgba_sha256": "3bb00d603d089570304ae580d2d2f36bcf62514d1568f6a32c8eb424148cb950",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.88680844907407,
+          4.7042824074074066
+        ],
+        "target": [
+          0.0,
+          59.27457719330265,
+          3.9136036550328703
+        ],
+        "forward": [
+          0.0,
+          -0.6122312557714177,
+          -0.7906787523745361
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7906787523745361,
+          0.6122312557714177
+        ],
+        "focal_pixels": 638.2079814392844,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.258734314246446,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.9119168586682465,
+        "party_travel_metres": 57.92666666666666,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          57.42666666666666,
+          0.0
+        ],
+        "frame_index": 17,
+        "cycle_phase": 0.2833333333333332,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 56.22270664581673,
+        "view_azimuth_degrees": -14.800054499038854,
+        "ground_anchor": [
+          400.61712824618616,
+          434.1802791640768
+        ],
+        "pixels_per_metre": 141.3797192067272,
+        "scale": 0.2827594384134544,
+        "depth_metres": 4.514140960388304
+      }
+    },
+    {
+      "actor": "lucan",
+      "index": 31,
+      "scope": "31\u219232c rigid density correction removes old whole-body shrink; shield carry variation plausible, provisional final-chronological gate.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/lucan/transition_031.png",
+        "sha256": "f7c58540c1402e8e4f808683824810fd8e565d1cc729a4cb7653f8a4c907ca2c",
+        "rgba_sha256": "06c458c63e865e9be8289d4c3fa56c4128f2be09f11f8cb5dcab3d86df5d6ff0",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_028_031b.png",
+        "sha256": "6d03090dde4f4bd1036b2088da02674178efd99cb2ba357154de27b81d6dd868",
+        "rgba_sha256": "fc48abbbce5ffeef410c8482fdb39e3b0c732c1cbcecc429b57e0afd621cf180",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 31,
+        "gait_frame": 31,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_028_031b.png",
+        "source_sha256": "6d03090dde4f4bd1036b2088da02674178efd99cb2ba357154de27b81d6dd868",
+        "cell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "scale": 1.25,
+        "origin": [
+          168.179505,
+          45.30195478441807
+        ],
+        "alpha_floor": 16,
+        "view_elevation_degrees": 29.749334569958414,
+        "source_landmark_matches": {
+          "eyes": {
+            "score": 0.7434030175209045,
+            "scale": 0.74,
+            "point": [
+              274.5,
+              167.5
+            ]
+          },
+          "neck": {
+            "score": 0.6992738246917725,
+            "scale": 0.7252,
+            "point": [
+              279.5,
+              203.5
+            ]
+          },
+          "belt": {
+            "score": 0.7288239002227783,
+            "scale": 0.7141,
+            "point": [
+              278.0,
+              319.0
+            ]
+          }
+        },
+        "projected_reference_landmarks": {
+          "eyes": [
+            511.0784,
+            248.58815845939648
+          ],
+          "neck": [
+            519.0605,
+            310.40819770957876
+          ],
+          "belt": [
+            513.3842,
+            456.80102358415667
+          ]
+        },
+        "registered_landmarks": {
+          "eyes": [
+            511.304505,
+            254.67695478441806
+          ],
+          "neck": [
+            517.5545050000001,
+            299.67695478441806
+          ],
+          "belt": [
+            515.6795050000001,
+            444.05195478441806
+          ]
+        },
+        "method": "Uniform whole-figure scale from inspected cranium and rigid pauldron widths; eye/neck/belt matching locates image only.",
+        "rigid_width_observation": {
+          "main_cranium_source_band": [
+            120,
+            135
+          ],
+          "paired_pauldrons_source_band": [
+            260,
+            285
+          ],
+          "source_measurement_reference": "independent_review and actual source pixel grids; no occupied-height fit"
+        },
+        "output_sha256": "f7c58540c1402e8e4f808683824810fd8e565d1cc729a4cb7653f8a4c907ca2c"
+      },
+      "selection": {
+        "index": 31,
+        "file": "transition_031.png",
+        "gait_frame": 31
+      },
+      "native_proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_accepted31_rigid_native.png",
+        "sha256": "d99a774bc252bc3a5b30bc1d0d922cd65ba9bd80f38714cb707181c547342b8b",
+        "rgba_sha256": "4d2eba71ab54ba00e45e451c38e6342a1c60d3ca5c4f4570466777683aafa30a",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.06211130560538,
+          2.463393269056156
+        ],
+        "target": [
+          0.0,
+          58.11490657355997,
+          2.1427638948703387
+        ],
+        "forward": [
+          0.0,
+          -0.9472047320454069,
+          -0.3206293741858173
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.3206293741858173,
+          0.9472047320454069
+        ],
+        "focal_pixels": 821.6968074845678,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 42.55566296695023,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.3263938668610418,
+        "party_travel_metres": 56.32666666666667,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "lucan",
+        "lane_metres": 0.0,
+        "offset_metres": 0.0,
+        "phase_offset_seconds": 0.0,
+        "height_metres": 1.85,
+        "world_position_metres": [
+          0.0,
+          56.32666666666667,
+          0.0
+        ],
+        "frame_index": 31,
+        "cycle_phase": 0.5166666666666667,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 29.749334569958414,
+        "view_azimuth_degrees": 0.0,
+        "ground_anchor": [
+          480.0,
+          673.9379770967746
+        ],
+        "pixels_per_metre": 265.7238605049638,
+        "scale": 0.5314477210099275,
+        "depth_metres": 3.0922959117147792
+      }
+    },
+    {
+      "actor": "lucan",
+      "index": 32,
+      "scope": "31\u219232c rigid density correction removes old whole-body shrink; shield carry variation plausible, provisional final-chronological gate.",
+      "drawing": {
+        "path": "assets/story/fire_veinhold_opening/shot08/characters/lucan/transition_032.png",
+        "sha256": "f8d294abed3db1e95c955c78425057cb4ee9ca8621e1ae14151577b0466eb001",
+        "rgba_sha256": "4814b8231c289fd0e4b3320bbbb24fa81b8aa5b1864c97f9d36518bb2114d7b7",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_032_035c.png",
+        "sha256": "2e8ec073b0fd5aae6ff6b94cd2cbf2daf4d47d5a3460fa366ce8066e1f8b03f2",
+        "rgba_sha256": "f7913ab2808f1a2f44b4795309e7ca2f24b908ab4c42bd6ad047e30e74580694",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 32,
+        "gait_frame": 32,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_032_035c.png",
+        "source_sha256": "2e8ec073b0fd5aae6ff6b94cd2cbf2daf4d47d5a3460fa366ce8066e1f8b03f2",
+        "cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "scale": 1.15,
+        "origin": [
+          195.58297500000006,
+          88.52025516235446
+        ],
+        "alpha_floor": 16,
+        "view_elevation_degrees": 31.117119769395828,
+        "source_landmark_matches": {
+          "eyes": {
+            "score": 0.7677913308143616,
+            "scale": 0.77,
+            "point": [
+              273.5,
+              152.5
+            ]
+          },
+          "neck": {
+            "score": 0.537396252155304,
+            "scale": 0.7392,
+            "point": [
+              279.0,
+              189.5
+            ]
+          },
+          "belt": {
+            "score": 0.5686331987380981,
+            "scale": 0.7392,
+            "point": [
+              274.5,
+              322.5
+            ]
+          }
+        },
+        "projected_reference_landmarks": {
+          "eyes": [
+            509.4811,
+            258.11307699050224
+          ],
+          "neck": [
+            515.989,
+            319.2597554088944
+          ],
+          "belt": [
+            516.4426,
+            464.94316266304384
+          ]
+        },
+        "registered_landmarks": {
+          "eyes": [
+            510.107975,
+            263.8952551623545
+          ],
+          "neck": [
+            516.432975,
+            306.44525516235444
+          ],
+          "belt": [
+            511.257975,
+            459.3952551623544
+          ]
+        },
+        "method": "Uniform whole-figure scale from inspected cranium and rigid pauldron widths; eye/neck/belt matching locates image only.",
+        "rigid_width_observation": {
+          "main_cranium_source_band": [
+            120,
+            135
+          ],
+          "paired_pauldrons_source_band": [
+            260,
+            285
+          ],
+          "source_measurement_reference": "independent_review and actual source pixel grids; no occupied-height fit"
+        },
+        "output_sha256": "f8d294abed3db1e95c955c78425057cb4ee9ca8621e1ae14151577b0466eb001"
+      },
+      "selection": {
+        "index": 32,
+        "file": "transition_032.png",
+        "gait_frame": 32
+      },
+      "native_proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_accepted32_rigid_native.png",
+        "sha256": "1fabf3b3235b5de248aebf013e545b3a02e60b3a6e5d700a692bcd791473991e",
+        "rgba_sha256": "60f26916868b7824f08de426ff99a1c7e2ecaae4def9e8a98b55d15bfcacc331",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.10627082702351,
+          2.537654320987655
+        ],
+        "target": [
+          0.0,
+          58.16672568552981,
+          2.195229253132515
+        ],
+        "forward": [
+          0.0,
+          -0.9395451414936925,
+          -0.34242506785514026
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.34242506785514026,
+          0.9395451414936925
+        ],
+        "focal_pixels": 813.5802469135803,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 42.94173271627134,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.34949679589318555,
+        "party_travel_metres": 56.39333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actor_projection": {
+        "id": "lucan",
+        "lane_metres": 0.0,
+        "offset_metres": 0.0,
+        "phase_offset_seconds": 0.0,
+        "height_metres": 1.85,
+        "world_position_metres": [
+          0.0,
+          56.39333333333333,
+          0.0
+        ],
+        "frame_index": 32,
+        "cycle_phase": 0.5333333333333333,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 31.117119769395828,
+        "view_azimuth_degrees": 0.0,
+        "ground_anchor": [
+          480.0,
+          666.4053556671969
+        ],
+        "pixels_per_metre": 261.6265075076453,
+        "scale": 0.5232530150152905,
+        "depth_metres": 3.1097011333601423
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "actor": "lucan",
+      "index": 35,
+      "scope": "35\u219236 premature extension/view switch and51\u219252 same contact-leg compact/reextension reset, owner confirmed; bounded complete drawings being repaired.",
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected35_before_followup.png",
+        "sha256": "387d9933141e68a213c338fe25748ccee4bb19493907351e886b22303f8d56b9",
+        "rgba_sha256": "ebdd873f60c2cb9926dc05232f5330a8f3798d77dc9f3efee076e36c605da8a9",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.232923349026976,
+          2.7761083096633734
+        ],
+        "target": [
+          0.0,
+          58.318136295196894,
+          2.3721718714148734
+        ],
+        "forward": [
+          0.0,
+          -0.9147870538300789,
+          -0.4039364382485002
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4039364382485002,
+          0.9147870538300789
+        ],
+        "focal_pixels": 788.3509355709876,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.18550968522493,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.4158158986227752,
+        "party_travel_metres": 56.593333333333334,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "actor": "lucan",
+      "index": 36,
+      "scope": "35\u219236 premature extension/view switch and51\u219252 same contact-leg compact/reextension reset, owner confirmed; bounded complete drawings being repaired.",
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected36_before_followup.png",
+        "sha256": "03de6828a4623890f636d3011a3243a2f2dce6ab5a7af59d929f35f4fbe76a6b",
+        "rgba_sha256": "37be949b1dde3cb8980e7083d201c2d528786f161159df3935dfc382dee3f105",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.27323431707968,
+          2.8604492187500012
+        ],
+        "target": [
+          0.0,
+          58.366926530043024,
+          2.4378309570093015
+        ],
+        "forward": [
+          0.0,
+          -0.9063077870366498,
+          -0.4226182617406998
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4226182617406998,
+          0.9063077870366498
+        ],
+        "focal_pixels": 780.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.612410109815286,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.43633231299858277,
+        "party_travel_metres": 56.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "actor": "lucan",
+      "index": 51,
+      "scope": "35\u219236 premature extension/view switch and51\u219252 same contact-leg compact/reextension reset, owner confirmed; bounded complete drawings being repaired.",
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected51_before_followup.png",
+        "sha256": "a06b8357c71f99e64ea6d728b6d7b87a544b1af3d2cff9b6b89a962bc4526517",
+        "rgba_sha256": "b646b92e75f84acda93aa6dcb5f3792eb5df2c6f070babe1936d127bba205cfc",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.77753445191662,
+          4.300311812042601
+        ],
+        "target": [
+          0.0,
+          59.06595853608281,
+          3.5977025920594943
+        ],
+        "forward": [
+          0.0,
+          -0.7115759158338134,
+          -0.7026092199831067
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7026092199831067,
+          0.7115759158338134
+        ],
+        "focal_pixels": 644.9746704101562,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.77602076336534,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.7790577094741875,
+        "party_travel_metres": 57.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "actor": "lucan",
+      "index": 52,
+      "scope": "35\u219236 premature extension/view switch and51\u219252 same contact-leg compact/reextension reset, owner confirmed; bounded complete drawings being repaired.",
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected52_before_followup.png",
+        "sha256": "984a2e8a7b5ee1e06015a59190e2a986278e7138cd015390deb413f69b7eed45",
+        "rgba_sha256": "d35f98d317373a6d233575b01a92a9edbf2d403cf88c46e8d6cf6d0803147aee",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.805603244612875,
+          4.400754535698308
+        ],
+        "target": [
+          0.0,
+          59.11654564977897,
+          3.6760479530031387
+        ],
+        "forward": [
+          0.0,
+          -0.6890575948339078,
+          -0.7247065826951692
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.7247065826951692,
+          0.6890575948339078
+        ],
+        "focal_pixels": 643.2831790123457,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.89592336991024,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.8106084748151443,
+        "party_travel_metres": 57.72666666666667,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "actor": "lucan",
+      "indices": [
+        67,
+        68
+      ],
+      "classification": "WITHDRAWN translation flag",
+      "reason": "Exact dark-hair/crown identity stays aroundy393; apparent top-bound change belongs to red trailing back-cloth. No redraw requested. Carry/shoulder variation is plausible at native scale.",
+      "evidence": "lucan67_68_identity_x4.png"
+    },
+    {
+      "actor": "lucan",
+      "indices": [
+        107,
+        108,
+        132,
+        133,
+        144,
+        168,
+        180
+      ],
+      "classification": "provisional tiny-size handoff/readability accepted",
+      "reason": "No concrete body/camera/equipment pop seen in native checkpoints. Full overhead cycle and final chronological bank pending; hidden joints cannot be measured from these tiny silhouettes."
+    },
+    {
+      "actor": "crown_soldier",
+      "indices": [
+        15,
+        16,
+        31,
+        32,
+        47,
+        0,
+        132,
+        133
+      ],
+      "classification": "provisional tiny cycle seams/heading accepted",
+      "reason": "All48 native fixed2.2s poses transparent around bodies, downward party heading and alternate limbs readable. Source boundary checks at fixed200artppm show owned two-chain/occluded calf anatomy. Small model breadth variation visible; no concrete native seam pop. Later transition face resets remain blocked.",
+      "evidence": "crown_cycle_source_boundaries.png"
+    }
+  ],
+  "proofs": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/iselin_repaired47_55_production.jpg",
+      "sha256": "a4df90696558fe2ed61989938fe504a3b7f159fdbbf0c263926ac177c8bff4c0",
+      "rgba_sha256": "da69af0fe950a63138ac619082a1845a21107f101be7d96378ef5d6a1ad88284",
+      "size": [
+        1400,
+        720
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_current43_76_native_boundaries.jpg",
+      "sha256": "3f8491f6635851c1b696fba22eb4b8494db7db254caa1963eebd9995fa27a3c4",
+      "rgba_sha256": "7cdbb88d7d53b15b32297a4647048cf0671bd5eee6165837889cc0f370e8392c",
+      "size": [
+        960,
+        840
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_current83_180_native_boundaries.png",
+      "sha256": "1215a3373447a78d388124e28030c053f71554a8a2bdc207214db07a83a98aec",
+      "rgba_sha256": "7b51360c3584a9b7aeb75c0e4c729cd30528b3a4d481308a059e9114fc901cb9",
+      "size": [
+        1400,
+        800
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan67_68_identity_x4.png",
+      "sha256": "8dc18de929511aeed30c5f22fbb4e0c1bc991f445da71bce7641809e7c5d2244",
+      "rgba_sha256": "ac0d88f37aff0c9d3635a00febe5feadaafbebceb906a46c5d60c2a69078bbf6",
+      "size": [
+        640,
+        400
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_cycle_source_boundaries.png",
+      "sha256": "fc89c25a265c10bd4ac9822aecda3cff1fe70ed43898b9f63dae67df4146460b",
+      "rgba_sha256": "8a43eef0ee71a42a26bf0caf10b25a4c7c1369b2f489e644834e21e3f95c184d",
+      "size": [
+        1200,
+        900
+      ]
+    }
+  ],
+  "crown_far_cycle": {
+    "profile_path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/actorperformance.json",
+    "profile_sha256": "be0d267d546d179ec861b8f757b85248d633e63653911451ab977c0c9908129b",
+    "fixed_camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        63.06,
+        21.99999999999998
+      ],
+      "target": [
+        0.0,
+        63.06,
+        20.99999999999998
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 600.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 56.144973871705915,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 63.06,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "fixed_projection": {
+      "id": "crown_soldier",
+      "lane_metres": -0.75,
+      "offset_metres": -3.048,
+      "phase_offset_seconds": 0.3,
+      "height_metres": 1.8,
+      "world_position_metres": [
+        -0.75,
+        60.012,
+        0.0
+      ],
+      "frame_index": 6,
+      "cycle_phase": 0.09999999999999987,
+      "cycle_seconds": 0.8,
+      "view_elevation_degrees": 81.53851347851253,
+      "view_azimuth_degrees": 13.823742710197942,
+      "ground_anchor": [
+        500.4545454545455,
+        236.8727272727272
+      ],
+      "pixels_per_metre": 28.436018957345997,
+      "scale": 0.056872037914691996,
+      "depth_metres": 21.09999999999998
+    },
+    "frames": [
+      {
+        "phase": 0,
+        "selection": {
+          "file": "overhead/phase_00.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 0
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_00.png",
+          "sha256": "eb18c02c4a3d57ff08be243e29636f0003399f86f1fea9a4451b393f1ccb3e37",
+          "rgba_sha256": "56ce138fb51055de9064ef7dbf3be3fc21a6915e0fdca462085c83bf2dfad342",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 1,
+        "selection": {
+          "file": "overhead/phase_01.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 1
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_01.png",
+          "sha256": "4ba57cd23838e63c05bc1ecedf36dd532fdac283bc5b05fdb3f3defdf511dd29",
+          "rgba_sha256": "65fb3d746b4fb8216a2574260fc7369c58b16214b0e5de5c6bcc9f9edda1d8c8",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 2,
+        "selection": {
+          "file": "overhead/phase_02.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 2
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_02.png",
+          "sha256": "28d35812eafd97f13832a3b7c93945c7ff9109f072cd6ca1670de7eb03d80c53",
+          "rgba_sha256": "232151f0a78d1fd91e4dca3aed3d73ddf5f6367ccb285854f1d6792ab0c114ea",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 3,
+        "selection": {
+          "file": "overhead/phase_03.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 3
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_03.png",
+          "sha256": "f3a06a202e3292878e9015078caf3a15846dfdf816d45bce27682cb1fedf8978",
+          "rgba_sha256": "8bf7486f9fddeba160cbda1ed320aa4eee751ba08c327f76943420a2affc5cb6",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 4,
+        "selection": {
+          "file": "overhead/phase_04.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 4
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_04.png",
+          "sha256": "c118559735fb7a2b36a82244037acfe986ef0959a033ce73fc4290511629b810",
+          "rgba_sha256": "f0d7d9031310109e303bdca15e1bb557aa1bf0710d9b5b41d8f25f512477d3ba",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 5,
+        "selection": {
+          "file": "overhead/phase_05.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 5
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_05.png",
+          "sha256": "0562c42e7d7acfeb76b7e5a81ed4e05b602da38042754a8a03314d7eb27448da",
+          "rgba_sha256": "f863c087a22f5aafeb1aa5e61f6f0edc844ccec5b76a31de23553a98c15a91b7",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 6,
+        "selection": {
+          "file": "overhead/phase_06.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 6
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_06.png",
+          "sha256": "6492162414cafbe54af8a7bcf77116145e5f2d9119eb48acfb34d1b397dc17e0",
+          "rgba_sha256": "07fa27f8adbbd3a7f777429af9ecf8f27ae8d4f305aee3aef536a068d77da80d",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 7,
+        "selection": {
+          "file": "overhead/phase_07.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 7
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_07.png",
+          "sha256": "0663293198a5afc747802a057519988131c2aa6e30e0b3c52ea1102458648ea7",
+          "rgba_sha256": "2eabf3b77f1e2ccdd5dc2fa9f4b3d2c4edc96b24323618d9de01807bafdf4663",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 8,
+        "selection": {
+          "file": "overhead/phase_08.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 8
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_08.png",
+          "sha256": "4967db8c860e9c5c246d40cfb0d8817dfbf5dcfc04292a8be9fb2558532104e3",
+          "rgba_sha256": "e6e258a8392681e3e525af7fd3804f6b3cba614d889d12ef491cedaeb98c0c05",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 9,
+        "selection": {
+          "file": "overhead/phase_09.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 9
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_09.png",
+          "sha256": "940b2da94d44c44abed10b10cfdde1901ad33ae04efe4fef4a5ec48c2074aaa3",
+          "rgba_sha256": "2436337fff5ab5e53204acd8453e5e06f54cb65e9fa1558d6d846ae3f658ed68",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 10,
+        "selection": {
+          "file": "overhead/phase_10.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 10
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_10.png",
+          "sha256": "292a2e2354225fc8a86b9981e5c5ae62c6ecb84e9d43efc7c1d454d373feb186",
+          "rgba_sha256": "861777bdc306bae98c662d31a52ae83eeb4fdb1828de329a065322bfd31d883a",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 11,
+        "selection": {
+          "file": "overhead/phase_11.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 11
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_11.png",
+          "sha256": "2fe4d788c1d53f76249fa4304c2c0dc810c41c4bb24e2a000b9f02df87ab9617",
+          "rgba_sha256": "2fd57893b1bd734a8daee5351626c1523558547da88494e7c4591dc62f528e51",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 12,
+        "selection": {
+          "file": "overhead/phase_12.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 12
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_12.png",
+          "sha256": "7c6293ddb01b9573f6e37ab792021551c00995153f5c0df2626a10bfbb9bbd50",
+          "rgba_sha256": "bbde41e940568d4fee1b6d48c425148f61858b837ed95434e7d441fe9ad9c77f",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 13,
+        "selection": {
+          "file": "overhead/phase_13.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 13
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_13.png",
+          "sha256": "055c457e4e61e2827b40bb2b3ef487b78e41ef4003500af6e5a8a8c89753ea67",
+          "rgba_sha256": "cb8400beef310bce3f49fac1e75770077045b6da42f7d38488333ddc54aba5fa",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 14,
+        "selection": {
+          "file": "overhead/phase_14.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 14
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_14.png",
+          "sha256": "b084dc8f296ba50fcd35ade235b4b40a3f48494581474103740c6dea92eec0f4",
+          "rgba_sha256": "2f8ccb1c20ba83242a40248d91744b81d300b941cbc4d45bd2d36d17064165b0",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 15,
+        "selection": {
+          "file": "overhead/phase_15.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 15
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_15.png",
+          "sha256": "94ea342aa13d92c29046457b623d699aa4352e51fd56d468e510c46eec3e6f98",
+          "rgba_sha256": "555553f32beecaef2195ef14d0f456b072b847a0583c251fe783e81fea11f291",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 16,
+        "selection": {
+          "file": "overhead/phase_16.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 16
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_16.png",
+          "sha256": "2d32c9a98e0c8977d2cb0cee7e8dd9dab3d9603dd26350151cec3370edea85f5",
+          "rgba_sha256": "cb176051da306f3de3791d9fa3436849e99f1680c3426deeb5b64f4c68726c2c",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 17,
+        "selection": {
+          "file": "overhead/phase_17.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 17
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_17.png",
+          "sha256": "55c80b8036a4563e9270786833a86a80442c98b13f1a83f0b2ae7e6021717ac7",
+          "rgba_sha256": "e4eec85ef7731285de05b5afb838647f766615034078b474f3048aeae9adfff3",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 18,
+        "selection": {
+          "file": "overhead/phase_18.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 18
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_18.png",
+          "sha256": "4132175abefe4899a599053b96854a7b88ec94def5937bc67e41b5196425eea4",
+          "rgba_sha256": "69629bed45c215577e84cd23e02e421b617e2e19a22bbc8d64ddc524cbde4d1d",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 19,
+        "selection": {
+          "file": "overhead/phase_19.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 19
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_19.png",
+          "sha256": "9a6fc44e8d2cbf28682e9a19499a7e9d4dfc9953ca8b5b2d64b2c99eb22495b3",
+          "rgba_sha256": "9d2fd1a321ed3e0900138c0fc0dc13a2a2d7a210f17bc4438686017633d0988f",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 20,
+        "selection": {
+          "file": "overhead/phase_20.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 20
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_20.png",
+          "sha256": "b8e2ee4e666a1d10c53fc7fc5ab0ed43a5c55223cd5f9ee95a26c3df5f188bfc",
+          "rgba_sha256": "003462db5591ad5e27a9ccb0ad2033caea5d0e7e1d5a2a79694b02d440d1a936",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 21,
+        "selection": {
+          "file": "overhead/phase_21.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 21
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_21.png",
+          "sha256": "ab6f3479b1402e25877d4389cba9d85d2194bb485b6a365b19fe546b513642a4",
+          "rgba_sha256": "c2c835ffcdc06c6328d26f615046ace3505762dc867684c101daee430e6c93f0",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 22,
+        "selection": {
+          "file": "overhead/phase_22.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 22
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_22.png",
+          "sha256": "86de988b52ef21e1700883944e5beed8b319c27f11545d3d946bafb1cb373402",
+          "rgba_sha256": "94ef4e8239241da1722170a8b2bde396403f3b9e542d5e4e6ee42156496ce673",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 23,
+        "selection": {
+          "file": "overhead/phase_23.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 23
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_23.png",
+          "sha256": "8c4d3134fb2a1f0ac62f996bd12168f75bb9464d23a02317e0a0f2a9145134b5",
+          "rgba_sha256": "b4fcc39fce56b7e03c316de644cc6612dd2ad52c81bd409d6fa2ecf786183af0",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 24,
+        "selection": {
+          "file": "overhead/phase_24.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 24
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_24.png",
+          "sha256": "6f3091849c5becce1c70bba53384fc2fb5752c438e6e901299b74d536f89359b",
+          "rgba_sha256": "7f4e870a03f5f63d2d4782b0c907aebf10adc0ee8076986f54b524859280d777",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 25,
+        "selection": {
+          "file": "overhead/phase_25.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 25
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_25.png",
+          "sha256": "bb7dcbce25b4e4deb9f596907691b3b6fa3647be73f12a2ef3cdaed41df7a2b1",
+          "rgba_sha256": "dadf18cd6fd981b8203a737d12311ad2bb8dd49905ef59d2128f213c34cff135",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 26,
+        "selection": {
+          "file": "overhead/phase_26.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 26
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_26.png",
+          "sha256": "9b5c3f78478677c891d89caed44fff50a98109eeb36436a61312b6467b911909",
+          "rgba_sha256": "74d2d8625d2c2b3ed62c61b8fddc32e631c4dfa223f3cc6f8aebffba9d9242bd",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 27,
+        "selection": {
+          "file": "overhead/phase_27.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 27
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_27.png",
+          "sha256": "68ec4438c368baca323a8e142a125299a84a08ebcc00d45d02b842383b9802dd",
+          "rgba_sha256": "b29f14a806250b888e1504e36bb483e835c4f64775945c01b8d32dd0f2a4123c",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 28,
+        "selection": {
+          "file": "overhead/phase_28.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 28
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_28.png",
+          "sha256": "f32c74dad4924c63fce7747b502249dfe93acc5ef9d32929aa59f9e5b55ecc4b",
+          "rgba_sha256": "af724d1bc21ce3593d91d6c0d37934fe48690c0a6c6c2b5b04ca69d9e0508694",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 29,
+        "selection": {
+          "file": "overhead/phase_29.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 29
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_29.png",
+          "sha256": "84395020842aa4772f9a9c1032c3bb9c96f5632a06b96ee3898cf688e8655044",
+          "rgba_sha256": "c3fd19e098ca9437c1c613988e6ba5577b2375d6cad13f0997150646b104f30d",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 30,
+        "selection": {
+          "file": "overhead/phase_30.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 30
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_30.png",
+          "sha256": "72a2259c35e1589cca2a4766df845a6e314732374cc7de1578fec5f3c9ed183e",
+          "rgba_sha256": "0388a0b7ef10dea6a78906a7030aeab9f51bb5fad85d027426fa856671c9eefe",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 31,
+        "selection": {
+          "file": "overhead/phase_31.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 31
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_31.png",
+          "sha256": "088a22f2d33d2cc4aca3570dc2a35242f97ee5f9c307f0ae67dd2934fd21bad2",
+          "rgba_sha256": "9a628df4a377731c41dc0454cafcd0e107afe3787f9d7179584140bc1c72cd90",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 32,
+        "selection": {
+          "file": "overhead/phase_32.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 32
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_32.png",
+          "sha256": "2c7e6b0bbfe890fa27b5ab6182c314b7e56f2f6c736db29d3c42fb8d90489dbb",
+          "rgba_sha256": "2ab1817d1a418d9149fc5d463f2c915285d8d2b0946ad95c4d72eb8d6eb6076d",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 33,
+        "selection": {
+          "file": "overhead/phase_33.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 33
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_33.png",
+          "sha256": "7c3c469f34b853f9343034b9ed7639bca349cf56a1b6239bbd592416e4d5d553",
+          "rgba_sha256": "befc1d71d9b89ebd25318e96137be26be9f6d9cea1a169686b2630a56d154a9d",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 34,
+        "selection": {
+          "file": "overhead/phase_34.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 34
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_34.png",
+          "sha256": "d229c5e07bf4bbaf9f2466b290ec767d3adf73617e3ab5c555df073b72b7b2b6",
+          "rgba_sha256": "81f0e198f0d69da3ee626faebac6537e9245e654db94022c810473c0cd57447f",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 35,
+        "selection": {
+          "file": "overhead/phase_35.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 35
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_35.png",
+          "sha256": "557e6ffbe8160883ca57a05beb95e3a76c2a8ce76c42a32e8b600ebaa36a9160",
+          "rgba_sha256": "083b5c4105e5585b02cd63c31e5230660f821ab143b9e5231f031ecf3e0109cc",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 36,
+        "selection": {
+          "file": "overhead/phase_36.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 36
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_36.png",
+          "sha256": "5b15c20c1a07b79c6c0b02e992319b31d2e5548be8288dd0979ef8f5b82f081c",
+          "rgba_sha256": "55046a410edd76b38d26608cdd77c9514ef02bf4e87a4aeea0c7ff8e943c163f",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 37,
+        "selection": {
+          "file": "overhead/phase_37.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 37
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_37.png",
+          "sha256": "54359fcc212399e9c62e9739581941d22aa930e0e11cb9f27c2cdae69c1799af",
+          "rgba_sha256": "a6dee76e36ef763722938be202e7921418d3ce04ab7f03df4cbfe724ee962a7f",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 38,
+        "selection": {
+          "file": "overhead/phase_38.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 38
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_38.png",
+          "sha256": "562127b27b0ec009c9dca4248c11dccb218aebd5ce16a4082ae8c7e5e131137a",
+          "rgba_sha256": "80aff9f6d80e5041b3e3e982dc0f7d7a7c1d2da8d991f87b87def657b74e785e",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 39,
+        "selection": {
+          "file": "overhead/phase_39.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 39
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_39.png",
+          "sha256": "87b3bea95466e8ace01791a488d1282c71183b5818e64c0a48a4d86b304a5257",
+          "rgba_sha256": "34ca5f9737864c949968b260a69e62e02db4ecaa3a7a440e4652987f45fb4ea2",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 40,
+        "selection": {
+          "file": "overhead/phase_40.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 40
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_40.png",
+          "sha256": "f390307dbb498e906d1dcd1c054e86c7b69a40115e50b6c7ee34c11c4d608bd4",
+          "rgba_sha256": "a46080dcd3c6f29064ed12639381c6d71b40abf2facd58b76611a72ba040ea47",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 41,
+        "selection": {
+          "file": "overhead/phase_41.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 41
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_41.png",
+          "sha256": "994a7e4328948e2a094ba3f541f74df7327561199afcb0fad2ae5a156f0d5741",
+          "rgba_sha256": "b213f8d2cddcf200998f644e92abc2b1ca2bd2eb90dd6937267923e92f4d278d",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 42,
+        "selection": {
+          "file": "overhead/phase_42.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 42
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_42.png",
+          "sha256": "1f2b77b95fdc15075ef31aada50fb0ef9d5e693935d968aeace8ead285239469",
+          "rgba_sha256": "fe07e5c1816e882ba9d880b72ea0d28f05fdeca73e503bc04853d40316fd7efe",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 43,
+        "selection": {
+          "file": "overhead/phase_43.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 43
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_43.png",
+          "sha256": "8cd395d2d6c8065124448c5f9b23b2c2004d08e47241593df52636c7ff5623f0",
+          "rgba_sha256": "238e965d475d088340152e9240e84a885b533f418d661385b17f2a3721d7eafe",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 44,
+        "selection": {
+          "file": "overhead/phase_44.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 44
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_44.png",
+          "sha256": "6db97a5656a877fb9fda043e1bc2ea978f7d8611298faad73373c9d5b2e8297c",
+          "rgba_sha256": "e3fbce7c5cd30af412db4ccdc3a453d962a84199161c2e968d6f6a4e5ee27b7b",
+          "size": [
+            314,
+            314
+          ]
+        }
+      },
+      {
+        "phase": 45,
+        "selection": {
+          "file": "overhead/phase_45.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 45
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_45.png",
+          "sha256": "c0d89213f93c012a3967a2137f0c0b276e850d482f09225e26000f0ecbae88bc",
+          "rgba_sha256": "7050d3b417d806183b20914df566a17460c6e27e018ebabcee2f79ec27780c00",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 46,
+        "selection": {
+          "file": "overhead/phase_46.png",
+          "canvas": [
+            313,
+            313
+          ],
+          "anchor": [
+            156.5,
+            156.5
+          ],
+          "art_pixels_per_metre": 203.77604166666666,
+          "phase": 46
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_46.png",
+          "sha256": "eaf3854a2dc38183740349506bb3754b4e464613e6a6d7f3b20aeeeb69077f40",
+          "rgba_sha256": "598768b925a7072922644e47a609307fb46b61993f8268eedcd20e35ae793437",
+          "size": [
+            313,
+            313
+          ]
+        }
+      },
+      {
+        "phase": 47,
+        "selection": {
+          "file": "overhead/phase_47.png",
+          "canvas": [
+            314,
+            314
+          ],
+          "anchor": [
+            157.0,
+            157.0
+          ],
+          "art_pixels_per_metre": 204.42708333333334,
+          "phase": 47
+        },
+        "drawing": {
+          "path": "assets/story/fire_veinhold_opening/shot08/characters/crown_soldier/overhead/phase_47.png",
+          "sha256": "5eda920188d03962840939782b9793c7256d682f89f84ec696777047a5ff02b8",
+          "rgba_sha256": "523b4caf53d7a93fb9575d5be494eda36aec1f4c25b9698da6143d8330ab14b2",
+          "size": [
+            314,
+            314
+          ]
+        }
+      }
+    ]
+  },
+  "old_62_hash_changes": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "transition_037_039c",
+  "output": "transition_037_039c.png",
+  "indices": [
+    37,
+    38,
+    39
+  ],
+  "grid": [
+    3,
+    1
+  ],
+  "prompt": "Draw THREE COMPLETE naturally proportioned adult Lucan figures in3columns1row. FIRST attached image gives EXACT actual movement phases37LEFT,38MIDDLE,39RIGHT. Preserve each own wholebody pose and both exact knee/boot placements; only re-draw viewpoint at38.4,40.0,41.6degrees elevated front as SECOND rough camera guide. Third is previous35 head/neck appearance at35.4degrees: show smoothly more crown and less face, same cranium/pauldrons adult physical size, no abrupt face disappear/upward gaze. Fourth is materials only.\n\nABSOLUTE PHASE RULE: In phase37 the anatomicalLEFTleg/imageRIGHT stays LONG and more extended down, while the rightleg/imageLEFT remains bent recovering with boot higher. Phase38 keeps this SAME ownership with rightboot only gradually lowering toward leftboot. Phase39 has BOTH boot tips almost at same image height, as rightleg catches up and leftleg draws back. Do not put a long extended rightleg/imageLEFT in the first or middle cells. Do NOT swap the leading leg early. The first exact matching phase reference overrides guide cylinders whenever they disagree about leg pose. Each pose is one60Hz step later, not a quartercycle.\n\nSame youthful bare dark-haired Lucan, detailed polished silversteel/gold articulated plate, oxblood split tabard with pale chest motif, brown leather glove/boots. Right sword/imageLEFT, left oxblood/goldchevron kite shield/imageRIGHT, two connected arms/two legs, no third foot. Shield staysupright attached forearm; progressive natural narrowing as camera rises. Same slender mature head/neck, adult torso/limb lengths, no chibi/shrunken recovery model. Thin black readable details, cool moonlit silver/restained warm rim. Complete figure newly painted each cell, true alpha0 transparent background, no floor/shadow/grid/labels, generousclear margins around swordtip/hair/bothboots.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/approved_037_039_exact.png",
+      "sha256": "1e809a168ad34fc27a2d60cd28c9eb30f33744203ccde8ff87135454e395a5bc"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_037_039_exact.png",
+      "sha256": "aa35c1bc7e2a94e761c21a4ee293f3b5fa5ffdff1d2ab29fc746ff99eabb7aaa"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/previous035_head_crop.png",
+      "sha256": "a85584e9ecacdf931f517164e8a1b8ace05828219fb590ad760673c6f9cc6a7c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+      "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+    }
+  ]
+}

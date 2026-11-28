@@ -1,0 +1,338 @@
+[
+  {
+    "phase": 8,
+    "source": "phase_08_11.png",
+    "cell": [
+      0,
+      0,
+      656,
+      599
+    ],
+    "location_probe": {
+      "point": [
+        358.5,
+        299.5
+      ],
+      "score": 0.8387450575828552,
+      "matched_core_size": [
+        115,
+        119
+      ]
+    }
+  },
+  {
+    "phase": 9,
+    "source": "phase_08_11.png",
+    "cell": [
+      656,
+      0,
+      1312,
+      599
+    ],
+    "location_probe": {
+      "point": [
+        358.5,
+        299.5
+      ],
+      "score": 0.8275929689407349,
+      "matched_core_size": [
+        115,
+        119
+      ]
+    }
+  },
+  {
+    "phase": 10,
+    "source": "phase_08_11.png",
+    "cell": [
+      0,
+      599,
+      656,
+      1198
+    ],
+    "location_probe": {
+      "point": [
+        358.5,
+        300.5
+      ],
+      "score": 0.8357771635055542,
+      "matched_core_size": [
+        115,
+        119
+      ]
+    }
+  },
+  {
+    "phase": 11,
+    "source": "phase_08_11.png",
+    "cell": [
+      656,
+      599,
+      1312,
+      1198
+    ],
+    "location_probe": {
+      "point": [
+        358.5,
+        300.5
+      ],
+      "score": 0.8182820081710815,
+      "matched_core_size": [
+        115,
+        119
+      ]
+    }
+  },
+  {
+    "phase": 12,
+    "source": "phase_12_15.png",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        275.5,
+        445.5
+      ],
+      "score": 0.8596701622009277,
+      "matched_core_size": [
+        103,
+        105
+      ]
+    }
+  },
+  {
+    "phase": 13,
+    "source": "phase_12_15.png",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        266.5,
+        447.0
+      ],
+      "score": 0.8626099228858948,
+      "matched_core_size": [
+        101,
+        104
+      ]
+    }
+  },
+  {
+    "phase": 14,
+    "source": "phase_12_15.png",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        275.5,
+        445.0
+      ],
+      "score": 0.8537179827690125,
+      "matched_core_size": [
+        101,
+        104
+      ]
+    }
+  },
+  {
+    "phase": 15,
+    "source": "phase_12_15.png",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        268.5,
+        445.0
+      ],
+      "score": 0.8758130669593811,
+      "matched_core_size": [
+        101,
+        104
+      ]
+    }
+  },
+  {
+    "phase": 32,
+    "source": "phase_32_35.png",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        277.0,
+        364.5
+      ],
+      "score": 0.7542586326599121,
+      "matched_core_size": [
+        108,
+        111
+      ]
+    }
+  },
+  {
+    "phase": 33,
+    "source": "phase_32_35.png",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        277.0,
+        364.5
+      ],
+      "score": 0.7128952145576477,
+      "matched_core_size": [
+        108,
+        111
+      ]
+    }
+  },
+  {
+    "phase": 34,
+    "source": "phase_32_35.png",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        277.0,
+        364.5
+      ],
+      "score": 0.7525456547737122,
+      "matched_core_size": [
+        108,
+        111
+      ]
+    }
+  },
+  {
+    "phase": 35,
+    "source": "phase_32_35.png",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        277.0,
+        365.5
+      ],
+      "score": 0.7557682991027832,
+      "matched_core_size": [
+        106,
+        109
+      ]
+    }
+  },
+  {
+    "phase": 36,
+    "source": "phase_36_39.png",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        280.5,
+        412.5
+      ],
+      "score": 0.8700088858604431,
+      "matched_core_size": [
+        103,
+        105
+      ]
+    }
+  },
+  {
+    "phase": 37,
+    "source": "phase_36_39.png",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "location_probe": {
+      "point": [
+        279.5,
+        409.5
+      ],
+      "score": 0.8264734148979187,
+      "matched_core_size": [
+        103,
+        105
+      ]
+    }
+  },
+  {
+    "phase": 38,
+    "source": "phase_36_39.png",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        280.5,
+        407.5
+      ],
+      "score": 0.8553820252418518,
+      "matched_core_size": [
+        103,
+        105
+      ]
+    }
+  },
+  {
+    "phase": 39,
+    "source": "phase_36_39.png",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "location_probe": {
+      "point": [
+        279.5,
+        409.5
+      ],
+      "score": 0.8449590802192688,
+      "matched_core_size": [
+        105,
+        107
+      ]
+    }
+  }
+]

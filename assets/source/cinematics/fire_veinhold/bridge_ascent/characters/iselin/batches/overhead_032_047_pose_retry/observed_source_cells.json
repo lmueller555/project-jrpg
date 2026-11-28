@@ -1,0 +1,167 @@
+{
+  "source_sha256": "958d948eaad4f62623cfd79084cf3a2b10f4056ac82d9af2a7b11aa1fd05c332",
+  "status": "candidate whole-figure crop boundaries in actual generated master, pending registration review",
+  "reason": "Generator output1247\u00d71261 has unequal visual row gutters. Nominal quarter cuts315/630/946 include neighboring hair tips; observed empty horizontal gutters290/620/940 preserve complete figures. Every observed cell edge has0alpha>16pixels. No art pixels changed.",
+  "frames": [
+    {
+      "phase": 32,
+      "actual_cell": [
+        0,
+        0,
+        312,
+        290
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 33,
+      "actual_cell": [
+        312,
+        0,
+        624,
+        290
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 34,
+      "actual_cell": [
+        624,
+        0,
+        935,
+        290
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 35,
+      "actual_cell": [
+        935,
+        0,
+        1247,
+        290
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 36,
+      "actual_cell": [
+        0,
+        290,
+        312,
+        620
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 37,
+      "actual_cell": [
+        312,
+        290,
+        624,
+        620
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 38,
+      "actual_cell": [
+        624,
+        290,
+        935,
+        620
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 39,
+      "actual_cell": [
+        935,
+        290,
+        1247,
+        620
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 40,
+      "actual_cell": [
+        0,
+        620,
+        312,
+        940
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 41,
+      "actual_cell": [
+        312,
+        620,
+        624,
+        940
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 42,
+      "actual_cell": [
+        624,
+        620,
+        935,
+        940
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 43,
+      "actual_cell": [
+        935,
+        620,
+        1247,
+        940
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 44,
+      "actual_cell": [
+        0,
+        940,
+        312,
+        1261
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 45,
+      "actual_cell": [
+        312,
+        940,
+        624,
+        1261
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 46,
+      "actual_cell": [
+        624,
+        940,
+        935,
+        1261
+      ],
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 47,
+      "actual_cell": [
+        935,
+        940,
+        1247,
+        1261
+      ],
+      "edge_pixels_over16": 0
+    }
+  ]
+}

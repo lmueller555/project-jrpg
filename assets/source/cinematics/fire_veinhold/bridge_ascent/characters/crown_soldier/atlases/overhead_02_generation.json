@@ -1,0 +1,179 @@
+{
+  "name": "overhead_02",
+  "kind": "overhead",
+  "columns": 4,
+  "rows": 4,
+  "reference_cell_size": [
+    768,
+    768
+  ],
+  "reference_canvas": [
+    3072,
+    3072
+  ],
+  "samples": [
+    {
+      "id": "overhead_32",
+      "kind": "overhead",
+      "phase": 32,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_33",
+      "kind": "overhead",
+      "phase": 33,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_34",
+      "kind": "overhead",
+      "phase": 34,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_35",
+      "kind": "overhead",
+      "phase": 35,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_36",
+      "kind": "overhead",
+      "phase": 36,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_37",
+      "kind": "overhead",
+      "phase": 37,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_38",
+      "kind": "overhead",
+      "phase": 38,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_39",
+      "kind": "overhead",
+      "phase": 39,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_40",
+      "kind": "overhead",
+      "phase": 40,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_41",
+      "kind": "overhead",
+      "phase": 41,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_42",
+      "kind": "overhead",
+      "phase": 42,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_43",
+      "kind": "overhead",
+      "phase": 43,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_44",
+      "kind": "overhead",
+      "phase": 44,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_45",
+      "kind": "overhead",
+      "phase": 45,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_46",
+      "kind": "overhead",
+      "phase": 46,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    },
+    {
+      "id": "overhead_47",
+      "kind": "overhead",
+      "phase": 47,
+      "elevation": 81.53851347851253,
+      "azimuth": 13.823742710197942,
+      "native_pixels_per_metre": 28.436018957345997
+    }
+  ],
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_02_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_02_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_plate_only_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_02.png",
+  "prompt": "Create ONE TRANSPARENT ATLAS in the EXACT4columns x4rows grid of reference1. There are16 complete WHOLE-FIGURE drawings, one in each occupiedcell; anymarkedemptycellsstayempty. Reference1 consists of TRUE BLENDER3D camera/pose guides and OWNS each cell's exact anatomy, angle, phase, relative physicalscale and placement. Otherreferences are small approved face/helmet/navy/leather/kneeplate material identity crops ONLY, not anoldfullbodypose.\nExact row-major plan: cell0=phase32@81.54deg, cell1=phase33@81.54deg, cell2=phase34@81.54deg, cell3=phase35@81.54deg, cell4=phase36@81.54deg, cell5=phase37@81.54deg, cell6=phase38@81.54deg, cell7=phase39@81.54deg, cell8=phase40@81.54deg, cell9=phase41@81.54deg, cell10=phase42@81.54deg, cell11=phase43@81.54deg, cell12=phase44@81.54deg, cell13=phase45@81.54deg, cell14=phase46@81.54deg, cell15=phase47@81.54deg. These are16 CONSECUTIVE1/60second running phases from ONLY PART of the48posecycle, NOT16 evenly spaced poses of a fullcycle. Do not reinterpret them as fullcyclekeys. RIGHT leg recovers high36 then unfolds toward its NEXT contact0 after thissheet. RIGHT arm passes neutral36 toward rear48. Do not duplicate0 as47.\nIndividually redraw EVERY cell as one coherent naturallyproportioned painted allied Crown soldier, maintaining the guide's connected hip-knee-calf-ankle and shoulder-elbow-glove chains. Do not build a detached rig,interpolate,warp,crossfade or duplicate aheldpose. The nearANDfar limbs must progress as their own actualguide in eachcell, including support/compression/pushoff/flight/recovery and both opposing contacts. If a guideankle is folded BEHIND a forward knee, the painted boot stays back/up there; never turn it into a long frontal shin or an earlycontact. Exactlytwo anatomical legs/two feet andtwoarms, whethervisibleorcorrectlyoccluded; no extra3rdboot,hand or old fragments.\nThe runner travels toward imageBOTTOM. AnatomicalRIGHT/imageLEFT securely holds ONE sword in its LEATHER glove, blade world-DOWN/OUTSIDE with true-cameraforeshortening. LEFT/imageRIGHT forearm carries ONE plain upright boss shield; follow its real plane/thickness, becoming a thin edge/rim near overhead. Do not showa fullroundshieldface at82degrees. Natural right sword-arm pump and leftshieldcounterbalance, hands attached to real wrists.\nEvery cell is the exact current ordinary allied Crown model: youngman/brownhair/focusedface only whenphysicallyvisible,plain polished open steelhelmet,simple silver/steelplate onchest/shoulders/arms,smallarticulatedkneecaps/shortupper-shinlames onactualknees,charcoalquiltedtrousers,NAVYsplittabardwithtailsshortandbehind,brownleathergloves/boots. No red/goldroyalcommander,enemy purpleblack,newcape or modelchanges. Matchapproved detailed painted fantasy cinematic materials andthindarkouteroutline. Replace theguidesimple3Dvolumes withrealhumananatomy,notliteralcylinders.\nTruevolume/camera inEVERY cell: preservephysicalhelmet/rigidshoulder size, not occupiedfigureheight. Highcamera bodies genuinelyforeshorten; do NOTstretchtofillcell. Nearoverhead theheadleansFORWARD/downscreen ahead ofpelvis,withwaist/tailsbehind/up; no uprightfrontaltorso hangingbelow a topviewhelmet. Head/shoulders mayoccludewaist/legs. Atnear82degrees thehelmet/brimhidesfaceandeyes; no facepaintedthroughcrown. Keep eachcorrectlyfoldedbootbehinditsknee rather than extendinga genericlongleg.\nUse theexact guidegrid/aspect, equalcellboundaries and generouspercellmargins; no figurecrosses intoaneighbor. Keep helmet,swordtip,shieldandbothactualboots whollyinsideitscell. Preserve relative physicalwidth/density and the internalgroundroot fromeachguide; blankspaceisintentional. Wholecompletefiguresonly. TRUE CLEAN TRANSPARENT RGBA outsideeveryfigure, no grayfloor/shadow/haze/glow/backgroundrectangle,sheetlines,labels,cellnumbers,text,arrows orguidemarks. Remove all guidecaptionsandborders. Do notaddanythingtotheemptycells.\n\nAPPROVED MATERIAL LOCK: warm softly burnished polished steel, with faint blue diamond motifs, warm silver edging and small warm rivets, matching the actual material references. The navy split tabard has a pale warm silver hem. Brown leather gloves and boots and charcoal quilted trousers. Do not redesign this into generic cold gray/black armor. In every true-overhead drawing, the top/back of the helmet is closest to image BOTTOM, and waist/tails remain behind/up from it. Both legs progress through their exact own guide forms. Only one sword, grasped by the RIGHT leather glove/imageLEFT; exactly one upright shield held by the LEFT hand/imageRIGHT, showing its thin rim at this angle. Keep all sixteen complete characters at a single shared physical scale and a shared head model in their cells. The 16 cells comprise a partial span of the 48-pose cycle, never a complete cycle.\n",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_02_guide.png": "0b6bfdc2fba9135892c7074557aa75bae9e180f27b7d08fb089601dc5229274b",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png": "94452b2cbb68949fccfe3bb00a76b61ecdc5e61ba5d7b24a8c638e2bd46ebfac",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png": "fd6c7b6105ae4538337ed099a8a03ba33db5075d7c573d56b7f5095a96fca339",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png": "3e1d8c9a79c75966f0a88897683623620ef0929482046b7acd005615114d1732",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_plate_only_material_reference.png": "fc8eeece26ae606177bf0ad35e600d533f9093f6ca7934382344deba45b7f457"
+  },
+  "prompt_sha256": "d8d44234902da35712354818e44903ac44ed94e33f3612ff1849ba5df615bb96",
+  "generation_id": "exec-61d4c0d9-1a35-4214-97a2-8edc2e3251d3",
+  "source_path": "/workspace/generated_images/exec-61d4c0d9-1a35-4214-97a2-8edc2e3251d3.png",
+  "transparent_background": true,
+  "construction": "Sixteen complete ImageGen-authored overhead soldier drawings in one 4x4 atlas, guided by camera-specific 3D authoring poses. No procedural final anatomy or limb composites.",
+  "status": "source_candidate_ready_for_registration_and_native_review",
+  "output_sha256": "297d40230d9cf1ab3f25743a39b95afce894743a012e8a44b2edf391d4de8837",
+  "source_sha256": "297d40230d9cf1ab3f25743a39b95afce894743a012e8a44b2edf391d4de8837",
+  "raw_bytes_preserved": true,
+  "actual_canvas": [
+    1254,
+    1254
+  ],
+  "phase_range": [
+    32,
+    47
+  ],
+  "review_scope": "Read-only internal chronological source-sheet anatomy, equipment ownership, top-down volume and alpha check; final registered native playback/joins remain parent review."
+}

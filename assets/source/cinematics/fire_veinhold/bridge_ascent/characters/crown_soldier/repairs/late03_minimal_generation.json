@@ -1,0 +1,58 @@
+{
+  "name": "late03_minimal",
+  "kind": "transition",
+  "columns": 4,
+  "rows": 1,
+  "samples": [
+    {
+      "id": "transition_084",
+      "kind": "transition",
+      "index": 84,
+      "time": 1.4,
+      "phase": 6,
+      "elevation": 62.56911820411262,
+      "azimuth": 11.113155999230617,
+      "native_pixels_per_metre": 75.38472672538235
+    },
+    {
+      "id": "transition_086",
+      "kind": "transition",
+      "index": 86,
+      "time": 1.4333333333333333,
+      "phase": 8,
+      "elevation": 64.03713423399738,
+      "azimuth": 11.320329789173416,
+      "native_pixels_per_metre": 72.67815335354915
+    },
+    {
+      "id": "transition_088",
+      "kind": "transition",
+      "index": 88,
+      "time": 1.4666666666666666,
+      "phase": 10,
+      "elevation": 65.44277948820557,
+      "azimuth": 11.526593824307518,
+      "native_pixels_per_metre": 69.97385252523239
+    }
+  ],
+  "prompt": "Make a VERY SMALL continuity polish to the THREE complete running soldier paintings in reference1, keeping its exact FOUR-column ONE-row layout (cells0/1/2 occupied, cell3 EMPTY). Preserve each entire figure's exact existing lower-body pose, forward/rear knee positions, shin/boot positions and lengths, planted/flight state, torso proportion, shoulder/arm pump, glove grips, sword/shield plane, armor shape, relative scale and placement. Do not reinterpret running phase and do not unfold, extend, shorten, swap or reposition ANY leg or boot. These leg poses are already approved and must stay visually the same. The ONLY artistic correction is that his head/gaze currently tilts too steeply DOWN: lift his gaze slightly toward the approaching camera, so his eyes/face are a little more visible beneath the same helmet. Reference2 is ONLY an adjacent upper-model example of the appropriate face visibility in a camera just2degrees higher. Match its shallow helmet/face/chest appearance while leaving all three unique matching-phase bodily actions from reference1 unchanged. Head remains attached to natural neck; no stretch/hunch or enlarged helmet. Across all3 complete drawings the face should remain similarly visible under brim as that adjacent example, rather than vanishing into a suddenly steep overhead helmet-only view. This is a restrained head/gaze/body-presentation continuity polish, NOT a new camera redesign or new running key bank. Preserve exact approved warm softly burnished steel with fine blue diamond texture and warm silvertrim, faded navy split tabard withsilver border, charcoal quilting, brown leather. Exactlytwoarmchains/twolegchains; sword anatomicalRIGHT/imageLEFT, shieldLEFT/imageRIGHT. Entire coherent figures redrawn by the image model, no pasted body parts, rigging, warping, interpolation or crossfade. Detailed cinematic fantasy paint and thin dark outline. All sword/helmet/shield/boots included inside their own equal cells. Transparent RGBA everywhere outside character silhouettes; no smoke/cloud/haze/floor/shadow/glow/labels/grid/text. Lastcell remains COMPLETELY EMPTY transparent. Keep successful legs and equipment as in reference1; the small upward gaze correction must not disrupt the motion.",
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_minimal_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_existing_targets.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_next_upper_model.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_minimal.png",
+  "source_path": "/workspace/generated_images/exec-2c8d4ea9-9c1e-4ea1-b330-91ba8bd46d22.png",
+  "generation_id": "exec-2c8d4ea9-9c1e-4ea1-b330-91ba8bd46d22",
+  "transparent_background": true,
+  "construction": "Restrained complete whole-figure ImageGen continuity redraw preserving matching-phase pose/equipment; no body-part composites",
+  "status": "candidate_internal_review",
+  "source_sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+  "output_sha256": "a64112c64714e34ea5e20eb0193a88c2bb974c40c265d011d614629f8348647c",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_existing_targets.png": "16d4370594b5e9b1a6b6d68b8afdbd78ac6b0e904814cd9a11b127ffc29ebd2b",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late03_next_upper_model.png": "37e2a9c25d07ab1eb213c4d44e370204b40deb25b7cc63e63aa48b40f8473df8"
+  },
+  "prompt_text_sha256": "3edcda2d0ad54f84c1cf70d0de1d5ea2a3adba9cd69d7de195178c339cb906dd",
+  "prompt_file_sha256": "3edcda2d0ad54f84c1cf70d0de1d5ea2a3adba9cd69d7de195178c339cb906dd"
+}

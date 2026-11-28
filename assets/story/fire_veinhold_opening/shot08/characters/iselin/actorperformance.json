@@ -1,0 +1,1611 @@
+{
+  "version": 1,
+  "actor": "iselin",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "cycle_seconds": 0.8,
+  "approval_state": "source_revision_prepared",
+  "registration": "Whole drawings only: crop, one uniform master density, translation, alpha floor16. No occupied-height fit, limb transforms, RGB repaint or pose blends.",
+  "source_sha256": {
+    "../../../shot07/characters/iselin/frame_10.png": "b267ba33cd54923153c50698f691213652306f9ad35e1c45159b8746a52e3dab",
+    "../../../shot07/characters/iselin/frame_11.png": "798097c93208b1bf5686cd4cff08a0cbdfe88c502c0465d439e57031d5567ac0",
+    "../../../shot07/characters/iselin/frame_12.png": "75190884f88de544c151f549727fe0a04c7bc3ef5dcf9adef721c072837088d2",
+    "../../../shot07/characters/iselin/frame_13.png": "534eca6cf482ce46bae5e756269af8ab8e785c879cf593388de805561b383eab",
+    "../../../shot07/characters/iselin/frame_14.png": "c14fb86db3726b4fb475226dda152460596e17a5e9d2ddddef15b95adf5a6c8e",
+    "../../../shot07/characters/iselin/frame_15.png": "7ccc784735edafe7f4f89313c4c3cf8275df74205029f5954fe8191819e80c87",
+    "../../../shot07/characters/iselin/frame_16.png": "7482b96d56018e8d02cfa843766ed7a9479aad4a18ebac4cd4f617ec6420fe68",
+    "../../../shot07/characters/iselin/frame_17.png": "99a838fbd361ac5bea77f009db6ddacf930be9adfbe707e035e70fa2b34300b0",
+    "../../../shot07/characters/iselin/frame_18.png": "0b61631f38ac05de1dbe9593de87fcc3ffa618fe6c3b17532a6b5fe958646461",
+    "../../../shot07/characters/iselin/frame_19.png": "a1044390b68cba8264662259578134ca27ed67a0e948116e56148fefeff8dd94",
+    "../../../shot07/characters/iselin/frame_20.png": "3d0b6af0f58526f20bc7d9d4208847c88342423e64fba419561bb8eb650be55d",
+    "../../../shot07/characters/iselin/frame_21.png": "8b20a853da99ae8da400469fc3818b0a45fe6f2e6d12f11da7b52626b83f9852",
+    "../../../shot07/characters/iselin/frame_22.png": "31698f0fc2492e7477bbf4b23029d36fb6a18868dc98460af2638a36ce2ed91a",
+    "../../../shot07/characters/iselin/frame_23.png": "d6740598e230f88387092a537bd758804b6909f180225a864c3d1307eabeb68b",
+    "../../../shot07/characters/iselin/frame_24.png": "3479f2e7362ad30de655b84582f9610c7a8517d9d3ab048a6cd65d794d66cc82",
+    "../../../shot07/characters/iselin/frame_25.png": "ba0d25a132fe63198fec96d6a3a708418146cb511c2522535980034aef2f8207",
+    "../../../shot07/characters/iselin/frame_26.png": "a0248b27021867d919577b8c64c5a1ffe6683cfae2fd9fa091f8e9b4568ab14b",
+    "../../../shot07/characters/iselin/frame_27.png": "5a9aa640d8d813cf2d7d6bb1b62a4cc5eb31d0213ed57ced280dc2bbc32a1ce4",
+    "../../../shot07/characters/iselin/frame_28.png": "e9b843ccaae489c9b722630b0366433660bdca11a72a5ddcbd7a0cb3d21a6303",
+    "../../../shot07/characters/iselin/frame_29.png": "959fa57e798231fd32c8753edd461bb51b9c27a672429b8313ba96d0916b48c8",
+    "transition/frame_020.png": "cd9c20f0bb838f241108f39519d460524f04b6556fe8855eb46125a269a4eb7c",
+    "transition/frame_021.png": "8c76901ce5fd28fc9db785b8cdb66774bbda9dec1bddcc66b288d80561779026",
+    "transition/frame_022.png": "2397cbd28d03fbc614d794a6590fc5b18ae69c38cf0eba51b1da6cf35fa01f31",
+    "transition/frame_023.png": "1889699a4fa4313975e3eba80a8f6a0de54eba04624c032621837eafa456d151",
+    "transition/frame_024.png": "aff97add26b7b986a232436acd2301684db1dd53b6d8cd214065af8d9f6a4202",
+    "transition/frame_025.png": "bff72af68c91616fccd0225d611bab9f19b437600e6c35348c00442b21f71571",
+    "transition/frame_026.png": "ac18f14458a7cf53442177b5dcabb1e12cfdc1399f36c456bb9081ef19547353",
+    "transition/frame_027.png": "10e632fbc720259673f04bf1278f3fa3657d7b404bb1885aae956557f89d166d",
+    "transition/frame_028.png": "95ad47cd3ec6e86a18bc2fadc29caf93d3b049bb5298088b9ed12e686c97e26b",
+    "transition/frame_029.png": "67991d55f95a4216e1a356bee60a5d7a327c1a947de0c1a779e0726e8f952367",
+    "transition/frame_030.png": "2187f5615d0acbf7bed258f6302c83244bc39fcaa8bd39fc553ea7dfe1383796",
+    "transition/frame_031.png": "60f77ca4e1b65ca2d26edbb1589cff341e0e6d7a7d7fea2a62ee2fd4e937f9f2",
+    "transition/frame_032.png": "64d8752eb464dc1d0bd081d6f17279bee9bb82218be0c917724231ed91a1a0f5",
+    "transition/frame_033.png": "cfe43f8f57c3889085c62f8ef98956297ef7f6d10a65b61eeed216e4716d0777",
+    "transition/frame_034.png": "603aa2665f37d793c90a5798c41c75c0b4264001ca4c178a664d6b2d88dacf1f",
+    "transition/frame_035.png": "1f5d0f55769fab0b2277d180e12280982307d3beecfac77bbfb19003e5b5b7de",
+    "transition/frame_036.png": "c2fbc9d916e892d7a2520a71bf6567b5976438f61c75ff9a5dfbb909a14de92a",
+    "transition/frame_037.png": "b864331507dedafb977f261dddc873fd12dec21079d0136f9df7f27811284ae8",
+    "transition/frame_038.png": "1ea771677775608c769112b3307c6f385c854c1faa9f7f8be81234cbd018c847",
+    "transition/frame_039.png": "8d94868e24188899fa23b0ff4ac154915268710833486f0648b92e3cbdc62d70",
+    "transition/frame_040.png": "f546eeac2758787f027b10061de0d8a8c6e66a2b6a7368c459f4abb8823c0c8b",
+    "transition/frame_041.png": "a8dc9f6db67b8d19f1d810a86cd500a7e5a234107a790be7fe4fe4b6592a46f3",
+    "transition/frame_042.png": "d79a0aff3e39335af3df6b8b4015de51c43433f944c90054ec2f1141c59f4294",
+    "transition/frame_043.png": "5bd578b31cf1684608dc35273ebee22f820dd73ce0eb77595fe8b0dcea8cd305",
+    "transition/frame_044.png": "687252a8b627d4d8f783cec151618d1fd5cb1aaf607ddfbd8c12d561605682ba",
+    "transition/frame_045.png": "6f5dfee22fe35da41122fc390859df1390e668c8e7759c20ddbf0088bbe2a303",
+    "transition/frame_046.png": "6c64f208ee423e45223682797c38d5d7dd2888b3511ca36247a4a33fe7b351aa",
+    "transition/frame_047.png": "e2cf82e694565ccc54fb63f9dadfd6879d17b9f7d2b1c7517a75f6a3d1919796",
+    "transition/frame_048.png": "7c7c9ab4c251937b1cfb51f9917d9acecfca3b9323e0268ad710b8a413985d4e",
+    "transition/frame_049.png": "a13cbe0006501cf00ab7489163780cbff9cd173bd622a1efcb5b8f554a7de34a",
+    "transition/frame_050.png": "e2471e3c15d0a684ce987beb9970f167c6e5fecb619c2b1f6c2d1c77dbd96451",
+    "transition/frame_051.png": "e607d148bf452a895347cafd84c01366e512d8af25da8fa5c7d8eaf1dde0bf6b",
+    "transition/frame_052.png": "3022059266bec8e39076bd333201f2fcc7b77703253284026756d83414361cad",
+    "transition/frame_053.png": "61776b5617e896e07187092cabfe88c7896325f80cfe839dc3314b35d608b8e9",
+    "transition/frame_054.png": "0ac9aa433ee158d111fcff367bd9b93bc8f0edfdf2ca667e64068e327ddabe9e",
+    "transition/frame_055.png": "f65f63615f5dbf9e881e646e2b2a6703bc0e5e85f96ae8fde6069d925d74b5ea",
+    "transition/frame_056.png": "5816d1daf4f5b6695a38983c7f29a179a97fba7269e69945882f67cdc6546a55",
+    "transition/frame_057.png": "a1293f38065639dcdeccedf66cf4ab023139767f2c52c5e2807326ca75b7000d",
+    "transition/frame_058.png": "a0b52f4164bed14cd7dc89beee505713c67156bc733f33e292fdbfac0796116e",
+    "transition/frame_059.png": "f406b4e741ed3a1b3c80b60449750de7237e57f4dac8ce392d02f037bb45b66b",
+    "transition/frame_060.png": "d3afd541e0fbecdc6eff2b88c4b6b93e57cdbba929cf5dfb2396dc3245194c99",
+    "transition/frame_061.png": "7bc266594dfbffdc2dabcc4cd31c29f111f71c23be0d2c3a6e967e8d8a1e21c8",
+    "transition/frame_062.png": "3f4aabd3a9516b6667d6b116a10b02b8f5b672f0e4589b07dd43cb048ca1f5a0",
+    "transition/frame_063.png": "335ee7aec384eae80c23acd8ecbeb2c0e6a342c4882b029fbc270d60efe4573d",
+    "transition/frame_064.png": "1e9ec974fdda851128808765938ec8bb0867e114cf86db14a3191110eb1587f6",
+    "transition/frame_065.png": "f187b96ca1e1d24c60c1181385d8a4b3dab71afdfb60d96b3593061a5cb76a94",
+    "transition/frame_066.png": "3cd3f311145ad25f7556f71a4f26de0004a78e1f5a2ecc407b4346713a3f9a8d",
+    "transition/frame_067.png": "fe7af7a7610e9f4aad72971381139d85b55e30651f7c8bf4bd89dc9246882c4b",
+    "transition/frame_068.png": "89552f8cfa9aabde1a3dd4bd5f9cf5aeddb6eb3121257401250465c9e8e98394",
+    "transition/frame_069.png": "e99d8e4019ea062f1166fab8d53ed230acdeb8b28837cb7a7967b0cd027419b6",
+    "transition/frame_070.png": "19845aa3c3360db980571844b43365e4dc88ad6da4665f354ac7da976854619e",
+    "transition/frame_071.png": "7d3353ec69674354916134aad4ba5ced0f1d928f87b81286da18d695e1e73692",
+    "transition/frame_072.png": "808663ba980bbd28d80697efc3fec627ce9aa57f8aeb31eeba7fcf603b226453",
+    "transition/frame_073.png": "c8361d94b89d0f3d489d18a344b0660b77b8a33a170a53ecdc133a50e3a7cea8",
+    "transition/frame_074.png": "3cfb905e0bd5c6d55e1a8f6b30ebabec57734a462a7f43d17e17ecf7fd14c372",
+    "transition/frame_075.png": "f963d07aa4fe6712b2869ef9de3f786d7302ef3c1b29645307d9bb683102dddc",
+    "transition/frame_076.png": "bb9b8c163d9863b193384101cd084840fc55e5682c774f173bf8ef19fb05788b",
+    "transition/frame_077.png": "b0ebf66ca0edb5d2f91a37675b1b1167a1968ecc25faa1c25b6ffc7040e23256",
+    "transition/frame_078.png": "5dde507fd946e8a84f66887fab93e5d47c1ce9d691522a1804773c32d26ea2c0",
+    "transition/frame_079.png": "dfd4619c00b5d75168b72961e8093594097ec262316b10e83fd5ea95154642cc",
+    "transition/frame_080.png": "47d889494abcc29207a570ae9d65526712684d4e41ec514b17e3c68d7c43ed19",
+    "transition/frame_081.png": "dff7bb9a3aa26ba1abe199e778fd226198caed7bfeb5ff879ddfd5ce7a2c310e",
+    "transition/frame_082.png": "33cf2abd1c236570aed66eb2c3ea2e4d2e5a9151a72b068dc28267851a5cf407",
+    "transition/frame_083.png": "517a97c4b0889e5257871d2f7f169558a754395fd5dab9cabc29682664bb6308",
+    "transition/frame_084.png": "c8b5833af6fbf00e3570c0ffcb0c19f8ec7614ba2b0f86e9e9544b53381df6c7",
+    "transition/frame_085.png": "80f1cbda2b3297e626ee00f0adc3d1437e049e5f8f1e9f155eb14cb0f12a8eff",
+    "transition/frame_086.png": "2a728782d4c7bad2ec11c89ad3889a9411e7e69d8ba259cd52516822497aa7a5",
+    "transition/frame_087.png": "02ce6fc7678815ddb6b2e60c4b5fb1e3de8bb072d14b0c699367473532bcf6e6",
+    "transition/frame_088.png": "0bbc9ee662d5cec2573ceeb3efc6eb213cc2ac4673c7fd5ed16e8a1e9dc10afa",
+    "transition/frame_089.png": "1923dd7df8a14c1621026bb185b7c85dc14bb89cfe711cfff122f745e06e7e7b",
+    "transition/frame_090.png": "bfb4ba77b4049d53ecbc3f92d00e4b33f42cf2463ed94ca10f4fb78c7ae0b749",
+    "transition/frame_091.png": "1f20f1e5224627dbfc5b66bed8c4259c5da186df9017db85e1e741cada36d0f3",
+    "transition/frame_092.png": "a20af9fcd7388fa166d25704b77b7d36739faf639bfc458df187b3bdaa8c9983",
+    "transition/frame_093.png": "bd2834fb27f74887da0d95a496b80d3c222a1053cad959572081278a5ef0ea03",
+    "transition/frame_094.png": "436c3bc692cc2173f40e28cb6de92d22fe90e74029b9d0251d8bacc127600108",
+    "transition/frame_095.png": "1b967ac122a1925f5be152058f531e31e69b4fb23b54847ee19d6454967e20f2",
+    "transition/frame_096.png": "48d8d3e08d4f311439708b19651a8f4701762e9c796793c1bd1e02dfa20a9fa4",
+    "transition/frame_097.png": "2d30bf7d9980682028e1566650d1229cde676288f57c468c0e9d842586f6434c",
+    "transition/frame_098.png": "4d5cf8ecd5212daf33e817eac15c5e7a414257944abee5b5f0ba00ab4592e594",
+    "transition/frame_099.png": "066ddda14e0769bd5546bc984afa3a461caa2b8ac23e0e31e8526c94957c131d",
+    "transition/frame_100.png": "b917f29a56d8a6142a7addc566157a7cd8b116d3af1b19f33cbd9d276a725714",
+    "transition/frame_101.png": "3b0c7c36ecf394d234d271935d0dd594553a2f6704aa7e4e231ac2ef0e7b249a",
+    "transition/frame_102.png": "b76a9beebff8ef353fcb03c3f4d5b19ec39baac9455ca92a82fe91e86c1c35b7",
+    "transition/frame_103.png": "6a2fba625620b607f4d0823215feaf53cefdb193fcdd28c36a02ac761eb81387",
+    "transition/frame_104.png": "c538ae8696dd334b1e6210fb47ddce6ece0cddff1ed2e1c159d78e9b4c2dfe4c",
+    "transition/frame_105.png": "32e409c81784f10bc512ed87b2621969fa94f32399e5d6a0493c2468f32769d5",
+    "transition/frame_106.png": "e54dddabc3fce4748e2eab5a163ea39424dd72b09ac147c35d88635ed88c0cd6",
+    "transition/frame_107.png": "46b4f08503325bcfd721c87a01ef218e0ccdf7d89254ae67277cd1ea964e9667",
+    "transition/frame_108.png": "f1f11047da2c77cb2e4ea5b59b03007659c670f0402d19a59a069a164f7e4f7f",
+    "transition/frame_109.png": "bf3a54d704c74fb09c36b3fd996f045646248be2db0e9cb466810ce3ab6777fc",
+    "transition/frame_110.png": "76802c4f9542f9c7bbf79419db59019b18ce3748d2794e618f884ae7b523616a",
+    "transition/frame_111.png": "7642c86f443119115ad11ef7188c726e3a000643c16566c3a0d73020118da4c3",
+    "transition/frame_112.png": "e113cd44e9dcbaa4891f0155cf1a4d0f0979a8d177529f874b0974061ebb6385",
+    "transition/frame_113.png": "149129603830cc7e3a83ab4e38ad9e5978fb70fc24976560530b9b8d62449fa4",
+    "transition/frame_114.png": "1ae07c8af2ec03e86e1815f80095e3e17d03e64d3e896990b9ceccf08c70597d",
+    "transition/frame_115.png": "b280eb3efc3af7d28f165aa757a151a10de74796bca57f90a36edfe5a705f48c",
+    "transition/frame_116.png": "1e6c669931634b3710d8977bf9db24343bca8984e31561c86a9cd46e0b45a191",
+    "transition/frame_117.png": "bb7e712b4cbfee121f3db44d4c9f3177f6aa43f4ce9d7aef1d7d6d12860add2d",
+    "transition/frame_118.png": "9370a7880d88a6260fa047043c2a3356b763fc4966eedfc69cb21b910a03fe2a",
+    "transition/frame_119.png": "6f5c3cf97a88b9cec38a47595d82f75c07a15ec6b883b94ba006a599dfb1e0c6",
+    "overhead/frame_00.png": "a6556a0288af49064e03a08209dddb2bef16e40a735f0a29d2585750978040aa",
+    "overhead/frame_01.png": "fbeb54928cab8a2332ef059185c6ab4ee70f100219c5da13e0ecb206e2367fd6",
+    "overhead/frame_02.png": "8c90730121e0c8f448c735b5330c0632541fd82409e8eeb8a3aabf363de1743d",
+    "overhead/frame_03.png": "37382cc5c9d05fea5b09d86a0b826ede4889d8a506dbcdfa06614e3b528320c4",
+    "overhead/frame_04.png": "c8aef95b61167e9d4465c02f22b19930c93f2e36e36944a7c15ba9ec02a443bb",
+    "overhead/frame_05.png": "09c3d6d77fd458f9d8b2d4162b8538db17172b895fac72fc89f6ca3b9e645c72",
+    "overhead/frame_06.png": "06a01211be4182bb75fa00e90a78279ccbb2968f4404ef38c94fb5c0eeb738ad",
+    "overhead/frame_07.png": "9002a9db31d03e385096b6551efecf8542a8ce0c93951a778b28ad25fd287798",
+    "overhead/frame_08.png": "1eec105d5b0a1df1d5aa758b1d8075c08801431a1affd4173b59cdcf4bf4b349",
+    "overhead/frame_09.png": "343bd2a2f240b122229804cc20e63ae9f471087f4917c4e59994619b0bca3a9d",
+    "overhead/frame_10.png": "317e69aa201529def020431b628869bef21497c5d0e40d9f24fff6b4d1d25895",
+    "overhead/frame_11.png": "ba1a0ee0be7e68b0e4fd718b7d53843c3927ece3c2431966b5c9b6d5ddab409b",
+    "overhead/frame_12.png": "56e03bbc27bc91aa9888c0f856b0c62632192be80d15354a4bfaeab076109d88",
+    "overhead/frame_13.png": "89554e4a27f475a358fbc9796decf2eaf352f51c90af7302648dcfc53a2b3aa0",
+    "overhead/frame_14.png": "cb1f598c398e4ffd9383b159911c87d8207ea92a463ad6ca6e0448aaffe28927",
+    "overhead/frame_15.png": "25dba41a5d9d53c61f5a8752f6762108437ae346ff5120d231723c5c52b69692",
+    "overhead/frame_16.png": "fbc82170e4a9fdcfa1815bea60ee5c5de5c31cc031f496bbcc3eb2a84f1b4211",
+    "overhead/frame_17.png": "2893946b9a4885747786dafd6361eb6d7ae68202d933d46f495d6a70831eb6ef",
+    "overhead/frame_18.png": "c7f94f8a888b3a6342d496067a30ed1ea5714ef360c9a906a2b9427e2501541a",
+    "overhead/frame_19.png": "e2903121ee2e8971272458440dac08e2a733b0910f0c70d2d338fc480849ed5a",
+    "overhead/frame_20.png": "1c14061f9e97e3cec726a147cbaa5ea5559b97eb6b4e2a27be2405c0517930f4",
+    "overhead/frame_21.png": "e21f456989b71c1a067857533ec87335e98695bc59c11979acfda2b0a9f49fe4",
+    "overhead/frame_22.png": "694d3814ea4b7eccd67846a9f6205db307491a273192748b4e6d7ffe4a22832e",
+    "overhead/frame_23.png": "8dcf8cb6e6ed62cb73f8cd42e68eab24e440baca3c0bbd3fd03200ce74653640",
+    "overhead/frame_24.png": "91bddf59f3e2cc682cb97b2966d82192627e9b67c189ac449509a81f3037876b",
+    "overhead/frame_25.png": "9c0e1e6e0dad8c07582faf81f5c0b25074ac69affa40b7d42e9f9cdd6bd55f56",
+    "overhead/frame_26.png": "d43f1162793359d78c937009b83360e1f02f395bbeea051c51d3c1a250bdf6ef",
+    "overhead/frame_27.png": "7f731e3d8fb9ecf79356998364b3064ae3a1bb8c90d146dc141a915f46a22708",
+    "overhead/frame_28.png": "3e673a944086df03845f3f3098d31f82cdeef7d7b4f16a3056769acf2c2810e1",
+    "overhead/frame_29.png": "d09df02b854ddf9a7972a5735d00dfe3cded5ed1dec453b047d0c3f30c391acd",
+    "overhead/frame_30.png": "4aec3160dc692c834fa840f00855403317a3c0f47a7a9436130c40af12893625",
+    "overhead/frame_31.png": "410a1b35b79dbaf6d1857975299d80439feb63e6fd67f647699ac80ba29f841c",
+    "overhead/frame_32.png": "431f03f0896050738da7eff5bb4a10c87f38890ac28b0bf17d8a50704ccdbacb",
+    "overhead/frame_33.png": "8287959fc18a18015cd51b6d8c75450dfd528bdfd8a1a9b3b2056463b468448f",
+    "overhead/frame_34.png": "13f7e39e39b236ad2d65bbba3936e1bd743b63bac1439c0349a38aae3babcdd4",
+    "overhead/frame_35.png": "6f754b0b3c012d75c9bacc03fed6adcf0982a041e0e67b5300c577ed05d4144b",
+    "overhead/frame_36.png": "888bbbf964e71cdc13a1f8db0fac59c13ea690ff19a997aa6e4d289c120c7173",
+    "overhead/frame_37.png": "a1f7ec8d5f3ebde7f7510f81cd78afb9ec0f23d2b92acd484b416ba778e9ab5c",
+    "overhead/frame_38.png": "a6ecd33cbf23a8edcc3040d59a2efa468e25451d4fc97dd0bad30114edc2d96b",
+    "overhead/frame_39.png": "a0bca9b30c8612172711255f155dff2e2f41e7852f567811718234981bda5a3b",
+    "overhead/frame_40.png": "ca8a056245a5984e7cc917c16d8611c361c80b877fb624e79c15582e2751f7de",
+    "overhead/frame_41.png": "0c4db761b59551d0d0ed83fc35be192d2c46e80d40ea1f2ffdb93f3463be56ee",
+    "overhead/frame_42.png": "8e4716e8dce9687ca1e47c3fd14f5779b85cb79fbb6e6e2a0a5d32876d3141e8",
+    "overhead/frame_43.png": "16cae384aa3dbcf5d8af124ce30d88960f7eb99076e8b864092c04bf058caff3",
+    "overhead/frame_44.png": "6a6a56bec00a2a2cd70cf3b957ffbc734017e1c2ff9eb09b1d091eed907ce383",
+    "overhead/frame_45.png": "fd8231ee61579c4883d1232f0fd719425e3a4de31d618039ae0609b4e8f2b4d9",
+    "overhead/frame_46.png": "9fd0f53a6b426524b9292a5f57de5f5e5ff4836f1587a115288e2c37df3418d1",
+    "overhead/frame_47.png": "716ef80ff62e6a07865a1a833d3883a6f2ed618eb851337b2327bc5f382ae16b"
+  },
+  "transition_frames": [
+    {
+      "index": 0,
+      "file": "../../../shot07/characters/iselin/frame_10.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 10,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.347769111938366
+    },
+    {
+      "index": 1,
+      "file": "../../../shot07/characters/iselin/frame_11.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 11,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.348542397443001
+    },
+    {
+      "index": 2,
+      "file": "../../../shot07/characters/iselin/frame_12.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 12,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.353878656011887
+    },
+    {
+      "index": 3,
+      "file": "../../../shot07/characters/iselin/frame_13.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 13,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.368131139103143
+    },
+    {
+      "index": 4,
+      "file": "../../../shot07/characters/iselin/frame_14.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 14,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.395427223466967
+    },
+    {
+      "index": 5,
+      "file": "../../../shot07/characters/iselin/frame_15.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 15,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.439671995438774
+    },
+    {
+      "index": 6,
+      "file": "../../../shot07/characters/iselin/frame_16.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 16,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.504552141932379
+    },
+    {
+      "index": 7,
+      "file": "../../../shot07/characters/iselin/frame_17.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 17,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.593540009319728
+    },
+    {
+      "index": 8,
+      "file": "../../../shot07/characters/iselin/frame_18.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 18,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.709897669558377
+    },
+    {
+      "index": 9,
+      "file": "../../../shot07/characters/iselin/frame_19.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 19,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 10.856680812635775
+    },
+    {
+      "index": 10,
+      "file": "../../../shot07/characters/iselin/frame_20.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 20,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 11.036742267830524
+    },
+    {
+      "index": 11,
+      "file": "../../../shot07/characters/iselin/frame_21.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 21,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 11.252734945095893
+    },
+    {
+      "index": 12,
+      "file": "../../../shot07/characters/iselin/frame_22.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 22,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 11.507113983287871
+    },
+    {
+      "index": 13,
+      "file": "../../../shot07/characters/iselin/frame_23.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 23,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 11.802137894937768
+    },
+    {
+      "index": 14,
+      "file": "../../../shot07/characters/iselin/frame_24.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 24,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 12.139868508576619
+    },
+    {
+      "index": 15,
+      "file": "../../../shot07/characters/iselin/frame_25.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 25,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 12.52216952992804
+    },
+    {
+      "index": 16,
+      "file": "../../../shot07/characters/iselin/frame_26.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 26,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 12.95070357322521
+    },
+    {
+      "index": 17,
+      "file": "../../../shot07/characters/iselin/frame_27.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 27,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 13.42692755407232
+    },
+    {
+      "index": 18,
+      "file": "../../../shot07/characters/iselin/frame_28.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 28,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 13.952086386188233
+    },
+    {
+      "index": 19,
+      "file": "../../../shot07/characters/iselin/frame_29.png",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "gait_frame": 29,
+      "drawing": "unchanged approved front phase; small-angle entry reuse",
+      "actual_elevation_degrees": 14.527204986416736
+    },
+    {
+      "index": 20,
+      "file": "transition/frame_020.png",
+      "gait_frame": 30,
+      "actual_elevation_degrees": 15.153078665651753,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 21,
+      "file": "transition/frame_021.png",
+      "gait_frame": 31,
+      "actual_elevation_degrees": 15.830262067419108,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 22,
+      "file": "transition/frame_022.png",
+      "gait_frame": 32,
+      "actual_elevation_degrees": 16.55905690969682,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 23,
+      "file": "transition/frame_023.png",
+      "gait_frame": 33,
+      "actual_elevation_degrees": 17.339498887114203,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 24,
+      "file": "transition/frame_024.png",
+      "gait_frame": 34,
+      "actual_elevation_degrees": 18.171344196737714,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 25,
+      "file": "transition/frame_025.png",
+      "gait_frame": 35,
+      "actual_elevation_degrees": 19.054056256644934,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 26,
+      "file": "transition/frame_026.png",
+      "gait_frame": 36,
+      "actual_elevation_degrees": 19.986793286345137,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 27,
+      "file": "transition/frame_027.png",
+      "gait_frame": 37,
+      "actual_elevation_degrees": 20.968397504353213,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 28,
+      "file": "transition/frame_028.png",
+      "gait_frame": 38,
+      "actual_elevation_degrees": 21.997386762215754,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 29,
+      "file": "transition/frame_029.png",
+      "gait_frame": 39,
+      "actual_elevation_degrees": 23.07194946674446,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 30,
+      "file": "transition/frame_030.png",
+      "gait_frame": 40,
+      "actual_elevation_degrees": 24.189943633971993,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 31,
+      "file": "transition/frame_031.png",
+      "gait_frame": 41,
+      "actual_elevation_degrees": 25.348900861434043,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 32,
+      "file": "transition/frame_032.png",
+      "gait_frame": 42,
+      "actual_elevation_degrees": 26.54603589418984,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 33,
+      "file": "transition/frame_033.png",
+      "gait_frame": 43,
+      "actual_elevation_degrees": 27.77826229254719,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 34,
+      "file": "transition/frame_034.png",
+      "gait_frame": 44,
+      "actual_elevation_degrees": 29.042214488509302,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 35,
+      "file": "transition/frame_035.png",
+      "gait_frame": 45,
+      "actual_elevation_degrees": 30.334276251702896,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 36,
+      "file": "transition/frame_036.png",
+      "gait_frame": 46,
+      "actual_elevation_degrees": 31.650615287769863,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 37,
+      "file": "transition/frame_037.png",
+      "gait_frame": 47,
+      "actual_elevation_degrees": 32.98722338166668,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 38,
+      "file": "transition/frame_038.png",
+      "gait_frame": 0,
+      "actual_elevation_degrees": 34.339961197329295,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 39,
+      "file": "transition/frame_039.png",
+      "gait_frame": 1,
+      "actual_elevation_degrees": 35.70460657747243,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 40,
+      "file": "transition/frame_040.png",
+      "gait_frame": 2,
+      "actual_elevation_degrees": 37.076904975469404,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 41,
+      "file": "transition/frame_041.png",
+      "gait_frame": 3,
+      "actual_elevation_degrees": 38.45262051398388,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 42,
+      "file": "transition/frame_042.png",
+      "gait_frame": 4,
+      "actual_elevation_degrees": 39.82758611474113,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 43,
+      "file": "transition/frame_043.png",
+      "gait_frame": 5,
+      "actual_elevation_degrees": 41.197751185062096,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 44,
+      "file": "transition/frame_044.png",
+      "gait_frame": 6,
+      "actual_elevation_degrees": 42.55922547559272,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 45,
+      "file": "transition/frame_045.png",
+      "gait_frame": 7,
+      "actual_elevation_degrees": 43.90831792810476,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 46,
+      "file": "transition/frame_046.png",
+      "gait_frame": 8,
+      "actual_elevation_degrees": 45.241569594026736,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 47,
+      "file": "transition/frame_047.png",
+      "gait_frame": 9,
+      "actual_elevation_degrees": 46.555780001121605,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 48,
+      "file": "transition/frame_048.png",
+      "gait_frame": 10,
+      "actual_elevation_degrees": 47.848026653756314,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 49,
+      "file": "transition/frame_049.png",
+      "gait_frame": 11,
+      "actual_elevation_degrees": 49.11612282497073,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 50,
+      "file": "transition/frame_050.png",
+      "gait_frame": 12,
+      "actual_elevation_degrees": 50.359864386676534,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 51,
+      "file": "transition/frame_051.png",
+      "gait_frame": 13,
+      "actual_elevation_degrees": 51.57952529252411,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 52,
+      "file": "transition/frame_052.png",
+      "gait_frame": 14,
+      "actual_elevation_degrees": 52.775380038638275,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 53,
+      "file": "transition/frame_053.png",
+      "gait_frame": 15,
+      "actual_elevation_degrees": 53.94769587043857,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 54,
+      "file": "transition/frame_054.png",
+      "gait_frame": 16,
+      "actual_elevation_degrees": 55.096726412859795,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "index": 55,
+      "file": "transition/frame_055.png",
+      "gait_frame": 17,
+      "actual_elevation_degrees": 56.22270664581673,
+      "drawing": "complete camera-specific ImageGen figure"
+    },
+    {
+      "file": "transition/frame_056.png",
+      "gait_frame": 18,
+      "authored_elevation_degrees": 57.32584913868877,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 56
+    },
+    {
+      "file": "transition/frame_057.png",
+      "gait_frame": 19,
+      "authored_elevation_degrees": 58.40634145197344,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 57
+    },
+    {
+      "file": "transition/frame_058.png",
+      "gait_frame": 20,
+      "authored_elevation_degrees": 59.46434461048487,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 58
+    },
+    {
+      "file": "transition/frame_059.png",
+      "gait_frame": 21,
+      "authored_elevation_degrees": 60.49999255011712,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 59
+    },
+    {
+      "file": "transition/frame_060.png",
+      "gait_frame": 22,
+      "authored_elevation_degrees": 61.51339243890672,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 60
+    },
+    {
+      "file": "transition/frame_061.png",
+      "gait_frame": 23,
+      "authored_elevation_degrees": 62.50462577270373,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 61
+    },
+    {
+      "file": "transition/frame_062.png",
+      "gait_frame": 24,
+      "authored_elevation_degrees": 63.47375014603899,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 62
+    },
+    {
+      "file": "transition/frame_063.png",
+      "gait_frame": 25,
+      "authored_elevation_degrees": 64.42080159970494,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 63
+    },
+    {
+      "file": "transition/frame_064.png",
+      "gait_frame": 26,
+      "authored_elevation_degrees": 65.3457974481164,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 64
+    },
+    {
+      "file": "transition/frame_065.png",
+      "gait_frame": 27,
+      "authored_elevation_degrees": 66.24873949170478,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 65
+    },
+    {
+      "file": "transition/frame_066.png",
+      "gait_frame": 28,
+      "authored_elevation_degrees": 67.12961752245953,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 66
+    },
+    {
+      "file": "transition/frame_067.png",
+      "gait_frame": 29,
+      "authored_elevation_degrees": 67.98841303428449,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 67
+    },
+    {
+      "file": "transition/frame_068.png",
+      "gait_frame": 30,
+      "authored_elevation_degrees": 68.82510305411812,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 68
+    },
+    {
+      "file": "transition/frame_069.png",
+      "gait_frame": 31,
+      "authored_elevation_degrees": 69.63966401476826,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 69
+    },
+    {
+      "file": "transition/frame_070.png",
+      "gait_frame": 32,
+      "authored_elevation_degrees": 70.43207559611824,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 70
+    },
+    {
+      "file": "transition/frame_071.png",
+      "gait_frame": 33,
+      "authored_elevation_degrees": 71.2023244677154,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 71
+    },
+    {
+      "index": 72,
+      "file": "transition/frame_072.png",
+      "gait_frame": 34,
+      "authored_elevation_degrees": 71.95040787267735,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 73,
+      "file": "transition/frame_073.png",
+      "gait_frame": 35,
+      "authored_elevation_degrees": 72.67633700024163,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 74,
+      "file": "transition/frame_074.png",
+      "gait_frame": 36,
+      "authored_elevation_degrees": 73.38014010200183,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 75,
+      "file": "transition/frame_075.png",
+      "gait_frame": 37,
+      "authored_elevation_degrees": 74.06186531478473,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 76,
+      "file": "transition/frame_076.png",
+      "gait_frame": 38,
+      "authored_elevation_degrees": 74.72158316105696,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 77,
+      "file": "transition/frame_077.png",
+      "gait_frame": 39,
+      "authored_elevation_degrees": 75.35938870555519,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 78,
+      "file": "transition/frame_078.png",
+      "gait_frame": 40,
+      "authored_elevation_degrees": 75.97540335435166,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 79,
+      "file": "transition/frame_079.png",
+      "gait_frame": 41,
+      "authored_elevation_degrees": 76.56977628964644,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 80,
+      "file": "transition/frame_080.png",
+      "gait_frame": 42,
+      "authored_elevation_degrees": 77.142685540098,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 81,
+      "file": "transition/frame_081.png",
+      "gait_frame": 43,
+      "authored_elevation_degrees": 77.69433869234493,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 82,
+      "file": "transition/frame_082.png",
+      "gait_frame": 44,
+      "authored_elevation_degrees": 78.2249732544627,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 83,
+      "file": "transition/frame_083.png",
+      "gait_frame": 45,
+      "authored_elevation_degrees": 78.73485668637382,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 84,
+      "file": "transition/frame_084.png",
+      "gait_frame": 46,
+      "authored_elevation_degrees": 79.22428611566924,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 85,
+      "file": "transition/frame_085.png",
+      "gait_frame": 47,
+      "authored_elevation_degrees": 79.6935877599006,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 86,
+      "file": "transition/frame_086.png",
+      "gait_frame": 0,
+      "authored_elevation_degrees": 80.14311607820112,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 87,
+      "file": "transition/frame_087.png",
+      "gait_frame": 1,
+      "authored_elevation_degrees": 80.57325267614407,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 88,
+      "file": "transition/frame_088.png",
+      "gait_frame": 2,
+      "authored_elevation_degrees": 80.98440498813389,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 89,
+      "file": "transition/frame_089.png",
+      "gait_frame": 3,
+      "authored_elevation_degrees": 81.3770047614482,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 90,
+      "file": "transition/frame_090.png",
+      "gait_frame": 4,
+      "authored_elevation_degrees": 81.75150636542963,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 91,
+      "file": "transition/frame_091.png",
+      "gait_frame": 5,
+      "authored_elevation_degrees": 82.10838494839476,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 92,
+      "file": "transition/frame_092.png",
+      "gait_frame": 6,
+      "authored_elevation_degrees": 82.44813446371879,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 93,
+      "file": "transition/frame_093.png",
+      "gait_frame": 7,
+      "authored_elevation_degrees": 82.7712655854092,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 94,
+      "file": "transition/frame_094.png",
+      "gait_frame": 8,
+      "authored_elevation_degrees": 83.07830353242153,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 95,
+      "file": "transition/frame_095.png",
+      "gait_frame": 9,
+      "authored_elevation_degrees": 83.36978582011609,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 96,
+      "file": "transition/frame_096.png",
+      "gait_frame": 10,
+      "authored_elevation_degrees": 83.64625995668587,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 97,
+      "file": "transition/frame_097.png",
+      "gait_frame": 11,
+      "authored_elevation_degrees": 83.90828110216886,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 98,
+      "file": "transition/frame_098.png",
+      "gait_frame": 12,
+      "authored_elevation_degrees": 84.1564097078075,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 99,
+      "file": "transition/frame_099.png",
+      "gait_frame": 13,
+      "authored_elevation_degrees": 84.3912091540146,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 100,
+      "file": "transition/frame_100.png",
+      "gait_frame": 14,
+      "authored_elevation_degrees": 84.61324340598452,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 101,
+      "file": "transition/frame_101.png",
+      "gait_frame": 15,
+      "authored_elevation_degrees": 84.82307470694354,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 102,
+      "file": "transition/frame_102.png",
+      "gait_frame": 16,
+      "authored_elevation_degrees": 85.02126133002767,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "index": 103,
+      "file": "transition/frame_103.png",
+      "gait_frame": 17,
+      "authored_elevation_degrees": 85.20835541064007,
+      "drawing": "complete ImageGen material/view bridge with linked folded-leg correction"
+    },
+    {
+      "file": "transition/frame_104.png",
+      "gait_frame": 18,
+      "authored_elevation_degrees": 85.38490088170758,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 104
+    },
+    {
+      "file": "transition/frame_105.png",
+      "gait_frame": 19,
+      "authored_elevation_degrees": 85.55143153435031,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 105
+    },
+    {
+      "file": "transition/frame_106.png",
+      "gait_frame": 20,
+      "authored_elevation_degrees": 85.70846922596168,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 106
+    },
+    {
+      "file": "transition/frame_107.png",
+      "gait_frame": 21,
+      "authored_elevation_degrees": 85.85652225645987,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 107
+    },
+    {
+      "file": "transition/frame_108.png",
+      "gait_frame": 22,
+      "authored_elevation_degrees": 85.99608393145955,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 108
+    },
+    {
+      "file": "transition/frame_109.png",
+      "gait_frame": 23,
+      "authored_elevation_degrees": 86.12763132833305,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 109
+    },
+    {
+      "file": "transition/frame_110.png",
+      "gait_frame": 24,
+      "authored_elevation_degrees": 86.25162427764332,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 110
+    },
+    {
+      "file": "transition/frame_111.png",
+      "gait_frame": 25,
+      "authored_elevation_degrees": 86.36850456835904,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 111
+    },
+    {
+      "file": "transition/frame_112.png",
+      "gait_frame": 26,
+      "authored_elevation_degrees": 86.47869538077346,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 112
+    },
+    {
+      "file": "transition/frame_113.png",
+      "gait_frame": 27,
+      "authored_elevation_degrees": 86.58260094633353,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 113
+    },
+    {
+      "file": "transition/frame_114.png",
+      "gait_frame": 28,
+      "authored_elevation_degrees": 86.6806064288645,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 114
+    },
+    {
+      "file": "transition/frame_115.png",
+      "gait_frame": 29,
+      "authored_elevation_degrees": 86.77307801714558,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 115
+    },
+    {
+      "file": "transition/frame_116.png",
+      "gait_frame": 30,
+      "authored_elevation_degrees": 86.86036321465086,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 116
+    },
+    {
+      "file": "transition/frame_117.png",
+      "gait_frame": 31,
+      "authored_elevation_degrees": 86.94279130867062,
+      "drawing": "complete camera-specific ImageGen figure",
+      "index": 117
+    },
+    {
+      "index": 118,
+      "file": "transition/frame_118.png",
+      "gait_frame": 32,
+      "target_gait_frame": 32,
+      "authored_elevation_degrees": 87.35,
+      "actual_elevation_degrees": 87.02067399808712,
+      "source_exposure": "one complete phase32 drawing exposed118\u2013119; exact target gait/contact clock continues",
+      "drawing": "complete ImageGen high-view folded passing figure"
+    },
+    {
+      "index": 119,
+      "file": "transition/frame_119.png",
+      "gait_frame": 32,
+      "target_gait_frame": 33,
+      "authored_elevation_degrees": 87.35,
+      "actual_elevation_degrees": 87.09430615687484,
+      "source_exposure": "one complete phase32 drawing exposed118\u2013119; exact target gait/contact clock continues",
+      "drawing": "complete ImageGen high-view folded passing figure"
+    },
+    {
+      "file": "overhead/frame_34.png",
+      "gait_frame": 34,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 120,
+      "actual_elevation_degrees": 87.16396670895283
+    },
+    {
+      "file": "overhead/frame_35.png",
+      "gait_frame": 35,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 121,
+      "actual_elevation_degrees": 87.22991958932955
+    },
+    {
+      "file": "overhead/frame_36.png",
+      "gait_frame": 36,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 122,
+      "actual_elevation_degrees": 87.2924147665006
+    },
+    {
+      "file": "overhead/frame_37.png",
+      "gait_frame": 37,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 123,
+      "actual_elevation_degrees": 87.35168930172063
+    },
+    {
+      "file": "overhead/frame_38.png",
+      "gait_frame": 38,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 124,
+      "actual_elevation_degrees": 87.40796842197196
+    },
+    {
+      "file": "overhead/frame_39.png",
+      "gait_frame": 39,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 125,
+      "actual_elevation_degrees": 87.4614665850989
+    },
+    {
+      "file": "overhead/frame_40.png",
+      "gait_frame": 40,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 126,
+      "actual_elevation_degrees": 87.51238851754833
+    },
+    {
+      "file": "overhead/frame_41.png",
+      "gait_frame": 41,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 127,
+      "actual_elevation_degrees": 87.56093020734565
+    },
+    {
+      "file": "overhead/frame_42.png",
+      "gait_frame": 42,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 128,
+      "actual_elevation_degrees": 87.60727983722296
+    },
+    {
+      "file": "overhead/frame_43.png",
+      "gait_frame": 43,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 129,
+      "actual_elevation_degrees": 87.65161864509861
+    },
+    {
+      "file": "overhead/frame_44.png",
+      "gait_frame": 44,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 130,
+      "actual_elevation_degrees": 87.69412170127245
+    },
+    {
+      "file": "overhead/frame_45.png",
+      "gait_frame": 45,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 131,
+      "actual_elevation_degrees": 87.73495859365643
+    },
+    {
+      "file": "overhead/frame_46.png",
+      "gait_frame": 46,
+      "authored_elevation_degrees": 90.0,
+      "drawing": "phase-matched new overhead cycle at tiny native size",
+      "index": 132,
+      "actual_elevation_degrees": 87.77429401399965
+    }
+  ],
+  "overhead_cycle": {
+    "frames": [
+      {
+        "file": "overhead/frame_00.png",
+        "gait_frame": 0,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_01.png",
+        "gait_frame": 1,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_02.png",
+        "gait_frame": 2,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_03.png",
+        "gait_frame": 3,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_04.png",
+        "gait_frame": 4,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_05.png",
+        "gait_frame": 5,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_06.png",
+        "gait_frame": 6,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_07.png",
+        "gait_frame": 7,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_08.png",
+        "gait_frame": 8,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_09.png",
+        "gait_frame": 9,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_10.png",
+        "gait_frame": 10,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_11.png",
+        "gait_frame": 11,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_12.png",
+        "gait_frame": 12,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_13.png",
+        "gait_frame": 13,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_14.png",
+        "gait_frame": 14,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_15.png",
+        "gait_frame": 15,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_16.png",
+        "gait_frame": 16,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_17.png",
+        "gait_frame": 17,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_18.png",
+        "gait_frame": 18,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_19.png",
+        "gait_frame": 19,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_20.png",
+        "gait_frame": 20,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_21.png",
+        "gait_frame": 21,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_22.png",
+        "gait_frame": 22,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_23.png",
+        "gait_frame": 23,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_24.png",
+        "gait_frame": 24,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_25.png",
+        "gait_frame": 25,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_26.png",
+        "gait_frame": 26,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_27.png",
+        "gait_frame": 27,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_28.png",
+        "gait_frame": 28,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_29.png",
+        "gait_frame": 29,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_30.png",
+        "gait_frame": 30,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_31.png",
+        "gait_frame": 31,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_32.png",
+        "gait_frame": 32,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_33.png",
+        "gait_frame": 33,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_34.png",
+        "gait_frame": 34,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_35.png",
+        "gait_frame": 35,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_36.png",
+        "gait_frame": 36,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_37.png",
+        "gait_frame": 37,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_38.png",
+        "gait_frame": 38,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_39.png",
+        "gait_frame": 39,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_40.png",
+        "gait_frame": 40,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_41.png",
+        "gait_frame": 41,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_42.png",
+        "gait_frame": 42,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_43.png",
+        "gait_frame": 43,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_44.png",
+        "gait_frame": 44,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_45.png",
+        "gait_frame": 45,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_46.png",
+        "gait_frame": 46,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      },
+      {
+        "file": "overhead/frame_47.png",
+        "gait_frame": 47,
+        "authored_elevation_degrees": 90.0,
+        "drawing": "complete ImageGen overhead figure, validated knee/boot-chain construction"
+      }
+    ]
+  },
+  "source_review_record": "docs/reviews/veinhold_bridge_ascent/README.md"
+}

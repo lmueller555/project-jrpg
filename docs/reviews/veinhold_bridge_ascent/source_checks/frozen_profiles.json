@@ -1,0 +1,47 @@
+{
+  "crown_soldier": {
+    "profile_sha256": "cd31e7c758a3fcc72870311a66c3b956147d20e7a185529fdd6491ff0dee4daa",
+    "command": "/workspace/.venvs/project-jrpg/bin/python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/build_selected.py --check",
+    "unique_pngs": 127,
+    "transitions": 133,
+    "cycle": 48,
+    "status": "source_export_frozen; native production bank accepted; full fresh bank reproduction passed",
+    "no_pending_jobs": true,
+    "production_review_sha256": "887d0ea38bb48650445c31b03204cebb9ec5235021c13222c0a534af29fc5ad2"
+  },
+  "iselin": {
+    "profile_sha256": "ab6f806aa2e5b7d75f3bb4dec00e076ab9dd580167385e2754944a7f91a5f406",
+    "command": "/workspace/.venvs/project-jrpg/bin/python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/export_performance.py --check",
+    "unique_pngs": 168,
+    "transitions": 133,
+    "cycle": 48,
+    "status": "source_export_frozen; native production bank accepted; full fresh bank reproduction passed",
+    "no_pending_jobs": true,
+    "receipt_sha256": "0a17f1ca720381cda79b3168a2e6a57a7ebf8bff166519987ad21dcf803c71cc",
+    "source_tree_manifest": "/tmp/iselin_source_freeze/owned_source_manifest.json",
+    "generation_records": 60,
+    "production_review_sha256": "887d0ea38bb48650445c31b03204cebb9ec5235021c13222c0a534af29fc5ad2"
+  },
+  "lucan": {
+    "profile_sha256": "802a5591d6d8daf288cb33e9fb5a85326f00cbd8a3f1d212f1f9f9bd0b1c4c94",
+    "command": "python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/check_source_provenance.py --check",
+    "rebuild_command": "python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/rebuild_selected.py",
+    "unique_pngs": 156,
+    "transitions": 133,
+    "cycle": 48,
+    "generation_records": 82,
+    "status": "source_export_frozen; native production bank accepted; full fresh bank reproduction passed",
+    "no_pending_jobs": true,
+    "accepted_native_binding_sha256": "4a0fadfff6978ee06221e6d32a94c672b56cd189547b7d187b223dd5fce10359",
+    "receipts": {
+      "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/selected_performance.json": "cacbe96146d0f1900d87bc7bbdf6d8bf367d5889eb50de882e15b2ebc6754a16",
+      "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/source_provenance.json": "df6eea8b91731600b2143da4ca1c78702fcc7611b6b0711d72299622b79a56f1"
+    },
+    "export_check_commands": [
+      "python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/rebuild_selected.py",
+      "python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/check_source_provenance.py",
+      "python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/check_source_provenance.py --check"
+    ],
+    "production_review_sha256": "887d0ea38bb48650445c31b03204cebb9ec5235021c13222c0a534af29fc5ad2"
+  }
+}

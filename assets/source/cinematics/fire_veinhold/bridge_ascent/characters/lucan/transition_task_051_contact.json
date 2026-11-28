@@ -1,0 +1,22 @@
+{
+  "id": "transition_051_contact",
+  "output": "transition_051_contact.png",
+  "indices": [
+    51
+  ],
+  "grid": [
+    1,
+    1
+  ],
+  "prompt": "Paint ONE COMPLETE Lucan running figure from the EXACT elevated58.09degree camera and stance pose in FIRST attached3Dguide. SECOND supplies cropped material identity ONLY. This is actual gaitphase3 just after rightfoot contact, NOT a compact passing pose. AnatomicalRIGHTleg/imageLEFT is still the long extended contact leg with boot low/forward as in the first guide. AnatomicalLEFTleg/imageRIGHT bends recovering behind with its boot higher. Do NOT swap the legs or bend the contact rightleg into a tucked passing knee. The boots are exactly the two brown forms in guide, not extra toes. Correct wholefigure perspective: actual58degree elevated view, crown and TOPS of pauldrons dominate, torso/legs foreshorten naturally; no long frontal runner, no upwardface. Follow guide own shoulder/hip/knee/calf/boot projections, preserving mature adult actual body proportions. Head crown foreshortening and shield/sword perspective follow the camera; don't shrink the contact figure by occupied height.\n\nLucan is bare-headed young adult human knight with swept darkbrown hair, articulated polishedsilversteel edged gold, oxblood split tabard with pale chestmotif mostlyoccluded, dark trousers, brown leather boots/gloves. Right sword hand imageLEFT and left upright oxblood/goldchevron shield imageRIGHT, own connected arms/grips, correct narrow shieldprojection at58degrees without layingflat. Steady silvermoonlight with restrained warmrim. Complete freshlypainted indivisible figure, trulytransparent alpha0background, no floor/shadow/glow/labels/guidecolors, generousmargin around entirehair/swordtip/shield/bothboots.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/guide_frames/transition_051_guide.png",
+      "sha256": "6ec9474590a765089a1f2ee29c50ad0c39547416b40498265c4b98289fe11c50"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v4.png",
+      "sha256": "e2f78f20136017fc71bc76328d393571f303cff9584b0b1459260a58870a996e"
+    }
+  ]
+}

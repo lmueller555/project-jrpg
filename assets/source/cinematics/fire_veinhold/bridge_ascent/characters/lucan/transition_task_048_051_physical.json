@@ -1,0 +1,29 @@
+{
+  "id": "transition_048_051_physical",
+  "output": "transition_048_051_physical.png",
+  "indices": [
+    48,
+    49,
+    50,
+    51
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Draw FOUR COMPLETE Lucan runners as2columns2rows, actual gaitphases0,1,2,3 and actualcameraelevations54.3,55.7,56.9,58.1degrees. FIRST is exact3Dcamera AND physicalstance/recovery poseguide, notjustanangle label. Match EACH CELL OWN boot/knee/hip/hand projection literally, paint actual naturaladult artinstead ofguidecylinders. SECOND is cropped torso/head appearanceONLY at this view, THIRD cropped steellegarmor/shieldidentity only. No fullfrontal poses are supplied: actual3Dprojectioncontrols wholefigure and foot motion.\n\nCyan guidecircle is anatomicalRIGHT/imageLEFT stanceBOOT CENTER; yellowcircle is anatomicalLEFT/imageRIGHT recoveryBOOT CENTER. The cyan boot moves BACK/TOWARD THE BODY progressively in image between all4phases because plantedfoot passesbehind the runningbody. Do NOT freeze it at one long downwardcontactextension, and do NOT advance to an unrelated passingpose. Follow each actual3Dguide bootlocation, same normalboot size, connectednaturalknee/calf/hip. All4share RIGHTstance/LEFTrecovery ownership. The actual projected rightleg becomes modestlyshorter continuously across4frames as foot passesback, not a heldlongleg then instantcompactjump. Exactlytwolegs/twoboots, no thirdtoe. Guidecoloredcircles/textmustnotappearinthefinalart.\n\nWholecamera/body has sameactual54\u201358degree elevatedfrontview as guide: crown/pauldron TOPS, eyesnaturallyhidden perhapschin edge, torso/thigh/knee/steelgreave visiblyforeshortened, not a longfrontal runner with bowedhead. Keep naturaladult body/limb actual lengths and same rigid cranium/pauldron physicalsize, never silhouetteheightnormalize. Two complete arms with right sword/imageLEFT, left uprightchevronshield/imageRIGHT, each own attachedglove/grip/forearm, plate rigid. Normaluprightshieldface shortens underactualcamera, notlaidflat. Barehead darkbrown swept hair, polishedarticulatedSILVERSTEEL thigh/knee/greave/shoulderarmor goldtrimmed, oxbloodsplittabard/paleverticalchestmotif, normalbrownboots/gloves. Coolmoonlight/restainedwarmrim. Each cellcomplete newlypaintedindivisiblefigure, truealpha0background, generousmargins aroundhair/boots/swordtip/shield, nofloor/glow/shadow/grid/text.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/physical_contact_048_051.png",
+      "sha256": "3edf62d248bffc773e937d39d733046ad9259566afdbe6cf84efa43004d6fd12"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/contact_051_cropped_appearance.png",
+      "sha256": "309f6ce9d6a06502f9f6d29b47de8d8a9c161516f7ece1787d1030d04ff9f5dc"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+      "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+    }
+  ]
+}

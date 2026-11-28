@@ -1,0 +1,157 @@
+{
+  "source": "master.png",
+  "template": "../../keys/true_overhead_model_v2.png [505,700,758,931]",
+  "method": "Actual crown-region observations from source NCC, with explicit visually observed overrides where NCC matched face/loose hair. Density uses one median scale per whole master; no occupied-height fit.",
+  "observations": [
+    {
+      "sample_index": 52,
+      "gait_frame": 14,
+      "view_elevation": 52.775380038638275,
+      "view_azimuth": -14.146299242263076,
+      "native_pixels_per_metre": 149.11332280616946,
+      "guide": "guides/transition/guide_052.png",
+      "guide_sha256": "d2291ab050377a0e777ac48531eb783c0c0e7e38aa5bba93e640321a020af967",
+      "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_14.png",
+      "appearance_sha256": "c14fb86db3726b4fb475226dda152460596e17a5e9d2ddddef15b95adf5a6c8e",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "point": [
+        323.0,
+        417.0
+      ],
+      "template_scale": 0.26,
+      "template_box": [
+        290,
+        387,
+        356,
+        447
+      ],
+      "score": 0.556647539138794,
+      "actual_cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "use_for_density": false,
+      "manual_review": "Rejected source observation; visible overlay does not mark crown in first three cells."
+    },
+    {
+      "sample_index": 53,
+      "gait_frame": 15,
+      "view_elevation": 53.94769587043857,
+      "view_azimuth": -14.355254824919832,
+      "native_pixels_per_metre": 146.51243982765197,
+      "guide": "guides/transition/guide_053.png",
+      "guide_sha256": "bcabdc446a8a545287aa2bb1d3a39912f81f4de073b97f033d30c18868406a3e",
+      "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_15.png",
+      "appearance_sha256": "7ccc784735edafe7f4f89313c4c3cf8275df74205029f5954fe8191819e80c87",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "point": [
+        311.0,
+        416.0
+      ],
+      "template_scale": 0.26,
+      "template_box": [
+        278,
+        386,
+        344,
+        446
+      ],
+      "score": 0.6048707365989685,
+      "actual_cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "use_for_density": false,
+      "manual_review": "Rejected source observation; visible overlay does not mark crown in first three cells."
+    },
+    {
+      "sample_index": 54,
+      "gait_frame": 16,
+      "view_elevation": 55.096726412859795,
+      "view_azimuth": -14.573068291839984,
+      "native_pixels_per_metre": 143.92666583492263,
+      "guide": "guides/transition/guide_054.png",
+      "guide_sha256": "45c313f6d3ac9b3708e4d008543a679555ede85eaaf39f994acaf87001c38f76",
+      "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_16.png",
+      "appearance_sha256": "7482b96d56018e8d02cfa843766ed7a9479aad4a18ebac4cd4f617ec6420fe68",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "point": [
+        329.0,
+        451.0
+      ],
+      "template_scale": 0.26,
+      "template_box": [
+        296,
+        421,
+        362,
+        481
+      ],
+      "score": 0.5320130586624146,
+      "actual_cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "use_for_density": false,
+      "manual_review": "Rejected source observation; visible overlay does not mark crown in first three cells."
+    },
+    {
+      "sample_index": 55,
+      "gait_frame": 17,
+      "view_elevation": 56.22270664581673,
+      "view_azimuth": -14.800054499038854,
+      "native_pixels_per_metre": 141.3797192067272,
+      "guide": "guides/transition/guide_055.png",
+      "guide_sha256": "0cd9fa7cc6f8775ff0a313b4e291e2e338b9a1299b8eac87c6ac9c96f1bb5a1a",
+      "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_17.png",
+      "appearance_sha256": "99a838fbd361ac5bea77f009db6ddacf930be9adfbe707e035e70fa2b34300b0",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "point": [
+        285.0,
+        162.5
+      ],
+      "template_scale": 0.3400000000000001,
+      "template_box": [
+        242,
+        123,
+        328,
+        202
+      ],
+      "score": 0.5313445925712585,
+      "actual_cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "use_for_density": false,
+      "manual_review": "Rejected source observation; visible overlay does not mark crown in first three cells."
+    }
+  ],
+  "source_sha256": "05abec497b75a755a981b6375e1e2fd9ac27baa9d0057b4e2dc32df835bf5a1b",
+  "status": "rejected: true-overhead template incorrectly matches trousers at this moderately elevated view; not used in export"
+}

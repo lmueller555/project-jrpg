@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-40ea6c57-fd91-4d51-8330-1283d900dcbc",
+  "original_generation_path": "/workspace/generated_images/exec-40ea6c57-fd91-4d51-8330-1283d900dcbc.png",
+  "master": "master.png",
+  "sha256": "a4d1db3000ba5372cb3c39bfba53a69b5ba8d2eb88654cf4869b935a123eb118",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "35126d9c119267f043cdab7e0c813cfe8df37037e8e92b7bf93e695bcd9277df",
+  "references": [
+    {
+      "path": "batches/overhead_000_015_validated_chain/tail_012_015_correction/camera_pose_guide.png",
+      "sha256": "a737b3a92a29a85f2cc95f278fe9d8f52b75cfe0c6715ecbf1b9d27805fa36d7"
+    },
+    {
+      "path": "batches/overhead_000_015_validated_chain/tail_012_015_correction/approved_phase_reference.png",
+      "sha256": "e9ebee1020cc697bd990819abe93d2fd56db9056f4f9b073622f184ba0739d3e"
+    },
+    {
+      "path": "batches/overhead_000_015_validated_chain/tail_012_015_correction/angle_model_reference.png",
+      "sha256": "d0ca7ce7d167f80cf1d4a92ac193fdab8b51b54508023111ffbf793fbd7dbe44"
+    },
+    {
+      "path": "batches/overhead_000_015_validated_chain/tail_012_015_correction/adjacent_passing_model.png",
+      "sha256": "899b95bd5a6130c17368b963046a413d01f402ffb3548c9725c74d39b3935b98"
+    }
+  ],
+  "status": "candidate compactfolded12\u201315 complete drawings; source review pending",
+  "samples": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "guide_pixels_used_in_export": false
+}

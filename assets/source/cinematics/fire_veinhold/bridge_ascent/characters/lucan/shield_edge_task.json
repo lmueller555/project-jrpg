@@ -1,0 +1,9 @@
+{
+  "id": "model_key_90_shield_edge",
+  "output": "model_key_90_shield_edge.png",
+  "prompt": "Edit the FIRST complete painted Lucan to correct only the physical viewing direction of his LEFT-ARM SHIELD (on image RIGHT). Preserve the successful exact overhead body, dark hair crown, proportions, right-foot-contact legs, sword grip and night palette. The SECOND image is a camera/overlap guide, not final style. Return ONE COMPLETE unified figure on a true TRANSPARENT background, generous clear margins, all anatomy and both weapons inside the canvas.\n\nThe camera is exactly vertically above Lucan. His kite shield is worn UPRIGHT in world space on his anatomical LEFT forearm; its point hangs downward toward the ground. Therefore its broad front face must NOT be presented flat toward this overhead camera. Redraw the shield and attached left forearm as a physically correct top-down carry: principally a narrow curved upper silver rim and a small sliver of dark oxblood inside/back beside the glove. The vertical shield height disappears in depth. Its projected depth should be only around one-fifth of its projected width, like the THIN RIM/ARC in the guide, not the large pointed red kite currently painted on image right. Almost all of the gold chevron is naturally hidden by this foreshortening. Keep the same shield's real-world size and attachment; do not shrink the actual object. Do not lay it flat on the ground to show its emblem. Resolve glove/forearm/rim occlusion naturally. This is one connected left arm, one shield, one right sword arm, two legs; no ghost equipment or extra hands. Avoid changing the accepted body, head, legs, sword, cloth palette or pose. No labels, grid, shadow, ground or background.",
+  "references": [
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/model_key_90_vertical.png",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/true_overhead_phase00_guide.png"
+  ]
+}

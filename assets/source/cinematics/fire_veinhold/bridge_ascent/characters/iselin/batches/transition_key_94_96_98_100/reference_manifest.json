@@ -1,0 +1,54 @@
+[
+  {
+    "sample_index": 94,
+    "gait_frame": 8,
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "view_elevation": 83.07830353242153,
+    "guide": "guides/transition/guide_094.png",
+    "guide_sha256": "94746d749ec19b1f969f65e7a20d5e93f6eb970c5d150a1dd6a603ef24c0a5d8"
+  },
+  {
+    "sample_index": 96,
+    "gait_frame": 10,
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "view_elevation": 83.64625995668587,
+    "guide": "guides/transition/guide_096.png",
+    "guide_sha256": "ecaa554cbe72a5b7a641af04511c6e6412297c4e773740e8b53730eda2c7048d"
+  },
+  {
+    "sample_index": 98,
+    "gait_frame": 12,
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "view_elevation": 84.1564097078075,
+    "guide": "guides/transition/guide_098.png",
+    "guide_sha256": "9b89176b80a7550decb154616019e9350e9e3d24691d4a2f7df555f30cb0489e"
+  },
+  {
+    "sample_index": 100,
+    "gait_frame": 14,
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "view_elevation": 84.61324340598452,
+    "guide": "guides/transition/guide_100.png",
+    "guide_sha256": "1368a7009f7f9ced2f6e28392075d279100589f379fcba0627ad2bc9347a068c"
+  }
+]

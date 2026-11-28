@@ -1,0 +1,35 @@
+{
+  "elevation_degrees": 60,
+  "phase": 18,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "ground_anchor": [
+    512,
+    960
+  ],
+  "pixels_per_meter": 500,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_60_phase18_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/locked_volume_60_phase18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/upper_18.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_60_phase18.png",
+  "prompt": "Paint ONE coherent complete allied Crown soldier following reference1's CAMERA-VOLUME planning diagram. This is a whole newly drawn3D-view figure, NOT a front sprite tilted or stretched. Reference2 provides ONLY the approved young male face/costume/material identity, not camera geometry.\nGenuine60-degree high-front perspective: helmet crown and shoulder top planes dominate, most face is hidden under the physical brim. Torso vertical height projects much shorter, with pelvis partly behind head/shoulders. Upright round shield becomes a narrow foreshortened plane with real rim thickness. Do not keep a full frontal breastplate/belt and front-view leg length.\nRespect the source diagram's PHYSICAL SCALE AND PLACEMENT:1024x1536 composition, internal ground-root at[512,960],500reference pixels perworldmeter. Helmet physical diameter remains roughly170reference pixels, armor shoulder width about360. Do NOT enlarge the compact high-angle body to fill canvas or fit occupied height. The big empty canvas region above the overhead figure is intentional. The rigid helmet/shoulder widths, not figure bounding height, establish scale. Preserve real human proportions and use foreshortening and occlusion for the camera change.\nThe source diagram's red chain is anatomicalRIGHT/imageLEFT (sword), blue chain is LEFT/imageRIGHT (shield), yellow nodes joints, green cross groundroot. Paint natural anatomy over the diagram, removing every colored mark, line, circle and label. Same phase18 of48 over800ms: LEFT leg advances toward contact with bent knee/unfolding boot, RIGHT leg folds behind; RIGHT sword arm pumps forward, left shield counterbalances. Running heading is imageBOTTOM. Both connected hip-knee-ankle-boot and shoulder-elbow-glove chains stay natural; exactlytwoarms,twolegs,twoboots,onesword,oneshield. Hidden parts stay occluded, never painted through the body.\nExact PR664 allied model: plain open steelhelmet over short brown hair, polished silver/steel plate with restrained rivets, NAVY BLUE split tabard,charcoal trousers,brown leather gloves/boots. Simpler than the named commander; no red/oxblood royal outfit, ornate gold plate, purpleblack enemy colors or new cape. Sword securely RIGHT/imageLEFT with blade DOWN/OUTSIDE; plain steel boss shield LEFT/imageRIGHT. Correct contact/carry and actual LEATHER glove identity, not a metal cuff as the hand. Detailed painted cinematic materials, coherent thin dark silhouette, natural flesh and anatomy.\nWhole complete figure fully inside generous transparent margins. TRUE CLEAN TRANSPARENT RGBA, no ground/shadows/haze/squarebackground/glow/text/sheet/guide pixels. All anatomy and equipment painted into ONE complete figure; no detached rigs, body warps, pasted limbs or blended endpoints. Diagram is an authoring plan, natural anatomy takes priority; final art must genuinely match the camera.\n",
+  "source_path": "/workspace/generated_images/exec-662aefdc-e999-46dd-a559-7bb6cc594865.png",
+  "generation_id": "exec-662aefdc-e999-46dd-a559-7bb6cc594865",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen camera-elevation drawing. Raw output bytes copied unchanged; source-only volume guide, no anatomy transforms.",
+  "status": "locked_camera_direction_candidate_pending_internal_review",
+  "source_sha256": "02158bb3997e316cfbfd776893e119f0c90da75232f5b147aa60fd595c7df462",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/locked_volume_60_phase18.png": "6be5406719fdad421924b03a449d7d2860fb5e126268672bcc70f29a5bbc65b4",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/face_reveal/crown_soldier/run_v3/midpoints/upper_18.png": "c5280c33360ecddb417927961620cded09c15dc9ccc0117a858dcd627c15c866"
+  },
+  "prompt_sha256": "123b61ee55161931c8bbf6b113eb900194393620860cfff1fd31755a4bfdab77",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "02158bb3997e316cfbfd776893e119f0c90da75232f5b147aa60fd595c7df462",
+  "prompt_text_sha256": "123b61ee55161931c8bbf6b113eb900194393620860cfff1fd31755a4bfdab77",
+  "prompt_file_sha256": "123b61ee55161931c8bbf6b113eb900194393620860cfff1fd31755a4bfdab77"
+}

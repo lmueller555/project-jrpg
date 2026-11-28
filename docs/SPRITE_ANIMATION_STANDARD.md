@@ -462,6 +462,12 @@ it. Remove background fringe without destroying slim fingers, braid strands,
 boot gaps or the outline. Inspect component extraction; the largest connected
 component is not automatically the whole valid drawing.
 
+Check the actual alpha channel and composite the exported figure over a flat
+colored background. A generated checkerboard or lit rectangular matte can be
+part of the pixels even when transparency was requested. Correct that generated
+source through image generation; a padding border or a successful PNG/hash
+check does not establish a clean cutout.
+
 Rebuilds must preserve approval state and leave approved references unchanged.
 Do not silently regenerate the idle, other directions, portrait or costume while
 exporting one walk. Keep asset approval, merge state and runtime activation
@@ -609,6 +615,69 @@ repeating the later stop anticipation. Its 16-pixel stride keeps the same
 two-pixel spacing per pose as the sixteen-pose ground approach.
 The [live gate integration review](reviews/iselin_detailed_gate_live/README.md)
 records the approved pixels and production selection.
+
+### Changing camera elevation
+
+Plan each actor's view from the actual ray between that actor and the camera,
+including elevation and azimuth. The camera's optical-axis pitch describes its
+framing; it is not every actor's viewing angle. Off-axis figures can remain
+oblique while the camera points straight down. Establish the required elevated
+model before drawing the transition, and check it through the actual projection.
+
+Use a simple 3D pose guide when depth is ambiguous. If a frontal full-body
+reference keeps imposing a frontal torso, hips or limb arrangement, make the
+requested 3D pose/view the primary construction reference and use cropped
+face, palette, armor and costume details for appearance. The guide constrains
+the complete authored drawing; it is not a procedural limb exporter. A passing
+rough model establishes its view and anatomy only, not a finished performance.
+Calibrate the guide's head and body dimensions against the approved character
+before using its projected centers as registration targets. A geometrically
+correct projection of an oversized guide head can still sink the smaller
+painted head and the entire figure.
+
+Supply the matching approved gait phase alongside each new view guide. A
+full-body contact-pose reference can impose an extended shin on a passing or
+recovery drawing even when its camera angle is correct. Check which knee leads
+and where the folded calf and boot should be occluded before expanding those
+keys into a larger bank.
+
+Make knees, calves and boots distinguishable in elevated pose guides. A knee
+can project ahead of the crown while its calf folds back to a boot behind the
+head; a long gray shape alone can be misread as an extended shin. Inspect the
+actual guide render and transformed mesh endpoints as well as its joint labels.
+
+Project one consistent physical pose. A forward-running head sits forward of
+the hips in world space, and their screen relationship changes with the camera.
+Keep that relationship consistent across head, shoulders, torso and pelvis.
+Foreshorten the whole figure, resolving visible crown, shoulder tops, torso,
+hips, bent knees, boots and equipment in depth. Do not tilt or squash a frontal
+PNG to imitate elevation, reveal a shield face that should be hidden, or retain
+an obsolete boot when its leg is occluded.
+
+Register source density using rigid head/shoulder landmarks and the intended
+camera scale. Occupied height changes with pose and foreshortening; fitting each
+silhouette to the same height can make the body grow during an otherwise smooth
+camera rise. Redraw inconsistent anatomy rather than stretching individual
+regions. Carry the source gait phase and world speed through the camera change,
+including reused entry drawings, new view batches and the later cycle seam.
+Facial-template correlation can help locate a feature, but its best-fit scale
+is not an independent density measurement as the face foreshortens. Cross-check
+the actual cranium width and rigid costume landmarks before adopting that scale.
+Verify the matched feature's identity too: a braid ornament, knee or armor plate
+can resemble the template while putting the whole drawing in the wrong place.
+
+Inspect small chronological batches at native projected size before authoring
+the full bank. Review adjacent source batches under the same camera as well as
+their actual changing-camera sequence, so perspective cannot conceal a body
+scale jump or a foot reset. Gate each batch on the drawn anatomy, phase,
+registration and occlusion. A required number of unique frames, correct guide
+labels or a complete bake proves neither those qualities nor finished motion.
+Specify each sheet's narrow actual view range and use adjacent accepted
+drawings to bound it. Check whether the earlier sheet overshoots its final view
+before attributing a boundary reset to the next sheet's first pose.
+Carry the head's gaze and pitch across sheets too. A contact sheet can restart
+each group with a face turned toward the viewer even when its limb phases are
+correct, producing repeated head lifts in the continuous scene.
 
 ### Entry, hold, recovery and rest
 

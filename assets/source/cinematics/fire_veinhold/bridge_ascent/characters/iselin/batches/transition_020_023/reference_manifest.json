@@ -1,0 +1,70 @@
+[
+  {
+    "sample_index": 20,
+    "gait_frame": 30,
+    "view_elevation": 15.153078665651753,
+    "view_azimuth": -10.767568536347545,
+    "native_pixels_per_metre": 247.45512635307458,
+    "guide": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/guides/transition/guide_020.png",
+    "guide_sha256": "8b36780ca629df6674b9b500e15c521f2ff566faa36ab2376a71808461e37ff6",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_30.png",
+    "appearance_sha256": "29151aed879e289fe7d512a6e09d282c8ebe125b0b9117892b2445e310208dd3",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ]
+  },
+  {
+    "sample_index": 21,
+    "gait_frame": 31,
+    "view_elevation": 15.830262067419108,
+    "view_azimuth": -10.803790987069812,
+    "native_pixels_per_metre": 246.63313021654878,
+    "guide": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/guides/transition/guide_021.png",
+    "guide_sha256": "667bde9b4271196fbac88e7e2050cee60706baf7510318cf339d259019a9db4c",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_31.png",
+    "appearance_sha256": "b9b76a42c256404eea7d56df2ea38bf1af673b6cf3dacc2c108ce51ced854cb6",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ]
+  },
+  {
+    "sample_index": 22,
+    "gait_frame": 32,
+    "view_elevation": 16.55905690969682,
+    "view_azimuth": -10.843193136203979,
+    "native_pixels_per_metre": 245.76871262589052,
+    "guide": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/guides/transition/guide_022.png",
+    "guide_sha256": "89c456c00b1c34acd2d33c6e8b8cdab1c602dbd91bec21a4cf44dadcc4101463",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_32.png",
+    "appearance_sha256": "a5319f2fab4a1d30447b2d8796f0247d251a70489622980b95b4f66f47c1df9a",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ]
+  },
+  {
+    "sample_index": 23,
+    "gait_frame": 33,
+    "view_elevation": 17.339498887114203,
+    "view_azimuth": -10.88588601056146,
+    "native_pixels_per_metre": 244.86520933579655,
+    "guide": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/guides/transition/guide_023.png",
+    "guide_sha256": "f134695c06dfdf600b931fb812f774843375b2ca656821f6d31b5488e49f32d0",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_33.png",
+    "appearance_sha256": "96607296631983212d1a57a5fbb00926e727cb62ab63c6b48aa6e6d36469e387",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ]
+  }
+]

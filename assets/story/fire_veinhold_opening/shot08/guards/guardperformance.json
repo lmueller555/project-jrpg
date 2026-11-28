@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "frozen": [
+    {
+      "id": "carcovian_guard_1",
+      "source": "frozen_left_back.png",
+      "cell": [
+        0,
+        0,
+        600,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        3.2,
+        0.7,
+        0.1
+      ],
+      "view_elevation_degrees": 60
+    },
+    {
+      "id": "carcovian_guard_2",
+      "source": "frozen_right_mid.png",
+      "cell": [
+        0,
+        0,
+        600,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        -2.5,
+        1.6,
+        0.1
+      ],
+      "view_elevation_degrees": 60
+    },
+    {
+      "id": "carcovian_guard_3",
+      "source": "frozen_left_front.png",
+      "cell": [
+        0,
+        0,
+        599,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        1.2,
+        3,
+        0.1
+      ],
+      "view_elevation_degrees": 60
+    },
+    {
+      "id": "carcovian_guard_4",
+      "source": "frozen_right_back.png",
+      "cell": [
+        0,
+        0,
+        599,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        -4.6,
+        0.6,
+        0.1
+      ],
+      "view_elevation_degrees": 60
+    }
+  ],
+  "live": {
+    "canvas": [
+      320,
+      320
+    ],
+    "anchor": [
+      160,
+      125
+    ],
+    "art_pixels_per_metre": 200,
+    "view_elevation_degrees": 70,
+    "heading_world": [
+      0,
+      -1,
+      0
+    ],
+    "cycle_ms": 800,
+    "frame_ms": 50,
+    "frames": [
+      {
+        "file": "live_00.png"
+      },
+      {
+        "file": "live_01.png"
+      },
+      {
+        "file": "live_02.png"
+      },
+      {
+        "file": "live_03.png"
+      },
+      {
+        "file": "live_04.png"
+      },
+      {
+        "file": "live_05.png"
+      },
+      {
+        "file": "live_06.png"
+      },
+      {
+        "file": "live_07.png"
+      },
+      {
+        "file": "live_08.png"
+      },
+      {
+        "file": "live_09.png"
+      },
+      {
+        "file": "live_10.png"
+      },
+      {
+        "file": "live_11.png"
+      },
+      {
+        "file": "live_12.png"
+      },
+      {
+        "file": "live_13.png"
+      },
+      {
+        "file": "live_14.png"
+      },
+      {
+        "file": "live_15.png"
+      }
+    ]
+  },
+  "source_sha256": {
+    "frozen_left_back.png": "bbcf48322fde71856b006a363ad2508c005e5ff79c4e5d507513b2eb4173485c",
+    "frozen_right_mid.png": "a1d0374b457307e9dd03968451cca03e13b3386a2b761ae8a4f4e3feec7887e5",
+    "frozen_left_front.png": "eda20de9c7e83cb66ed9137957615314524da233528ff18e4bb85a827515c94a",
+    "frozen_right_back.png": "889adae9a9ea9793df492a911c313929ac40c46135a479ad37dc49bf3a51333d",
+    "live_00.png": "c56a58fe33a02185663f58272f8274f492849a8495d602d27b1942f76cff6517",
+    "live_01.png": "c5b889548a1939bc1d131cdb08ee3f410b6dee8a6e8d0e8ccd13872203b7fed0",
+    "live_02.png": "72ba58f4fe737b5f2ab5ae6f8aeddc92a37889580507447156fbfcef4518b5c5",
+    "live_03.png": "973b8b5c117fda1d7a837b8e7cfa4035e79829f0d4eea1886256496a45f32488",
+    "live_04.png": "48a70656eae95a3f1d227281c79fc13517e23b90cead607b40520c8511030c7c",
+    "live_05.png": "995a1ae57de02b7c18a03e4f8d88e02fbd8254e23d774d08e82c930864fc32ed",
+    "live_06.png": "8a30b174a6f4b2273e891b7be7d8acec5a61d9616e8cccb116949e31b11941f1",
+    "live_07.png": "ac11f58e292c8e3c52885e326fd6550b747b9c868b925bd268a899d1d5c11d2f",
+    "live_08.png": "d9ea5f103fbeda272ca2e040d33d4fe29b61d021f18dd2137849e4e0a4de26d6",
+    "live_09.png": "e8ca81a0a2e50935a5ff9610a50836922e4aaa31cabe26fd5e5cad8e58a9438d",
+    "live_10.png": "1753b502a338cb2895327b2a5d85bd7a394b88366c9802024565527aecaf4320",
+    "live_11.png": "295a5ed0c8de525f8d8f133db10dcfcf070d11bd0c40084e197554c03f4347f1",
+    "live_12.png": "2bc20bfc3a46140fdc842c477b0eb769e702b241fa3b1f3912b1cf2b2c18c374",
+    "live_13.png": "83656aaab93439b1d45ae4904be36d9a050cd7cd745d75ffdba78ba695ca53a5",
+    "live_14.png": "71fae60571f61e2949b531d9eb0cf39d057503556b522eaf2dcd200d1b3af90e",
+    "live_15.png": "cc07d9609a0c16ba1c2bf513e50355d0502bc449584157964c32a6514e0e3139"
+  }
+}

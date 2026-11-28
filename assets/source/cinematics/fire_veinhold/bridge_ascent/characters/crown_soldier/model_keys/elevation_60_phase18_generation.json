@@ -1,0 +1,24 @@
+{
+  "elevation_degrees": 60,
+  "phase": 18,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_60_phase18_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/elevation_60_phase18.png",
+  "prompt": "Create ONE new complete whole-character painted fantasy cinematic drawing of the EXACT allied Crown soldier in reference1, viewed from a different TRUE camera elevation. This is a camera-direction model key, not a costume redesign, not a flat PNG tilt and not a sprite sheet.\nA real 60-degree HIGH-FRONT camera, two-thirds of the way from level frontal to overhead. The helmet TOP dome dominates and obscures most of the face; shoulders and upper armor are seen from above. Torso length is strongly foreshortened in projection. The leading knee/boot project in front of the pelvis while the trailing folded boot recedes behind, with correct occlusion. The upright shield is seen mostly as a shallow edge/elliptical plane with real thickness, not the unchanged round front view.\nKeep the SAME physical human body dimensions and SAME running phase18 of a48-pose800ms cycle as the reference: anatomicalLEFT leg is advancing toward contact, knee still naturally bent and boot gradually unfolding; anatomicalRIGHT leg is finishing support and folds behind. RIGHT sword arm is pumping forward toward its contact24 apex, LEFT shield arm counterbalances. Two connected shoulder-elbow-glove chains and two connected hip-knee-ankle-boot chains, real constant limb lengths with perspective foreshortening. A real continuous run, no extra arms/feet or detached parts.\nFor these direction studies the soldier runs toward the image BOTTOM; anatomicalRIGHT remains imageLEFT and anatomicalLEFT imageRIGHT. Sword stays firmly in RIGHT/imageLEFT hand, its blade carried DOWN toward the ground and safely OUTSIDE the body; its projected visible shape changes correctly with camera elevation. Plain steel boss shield remains on LEFT/imageRIGHT forearm, with correct true-angle thickness and occlusion. Never exchange hands or paint through the body to reveal a hidden part.\nExact approved young man's short brown hair/open steelhelmet, focused face when visible, polished silver/steel armor with restrained rivets/trim, NAVY BLUE split tabard, charcoal trousers, brown leather gloves and boots. Keep him visibly simpler than the named commander: no oxblood clothing, ornate gold royal armor, purple/black Carcovian uniform, cloak or new decoration. Preserve the reference's detailed painted material style, coherent thin dark silhouette and cinematic natural proportions.\nOne complete figure at generous detail in a768x1024 reference composition. Preserve the same physical width/density across elevations; do NOT stretch a foreshortened body vertically to fill the canvas or fit occupied bounds. Empty space around the more compact high-angle figure is correct. Keep the whole helmet, shield, sword tip and BOTH boots inside generous transparent margins. TRUE CLEAN TRANSPARENT RGBA, no ground plane, cast shadow, haze, square background, glow, text, arrows or guides. All anatomy and held equipment must be painted into this ONE coherent newly drawn figure.\n",
+  "source_path": "/workspace/generated_images/exec-31a76223-04a0-42bc-a28a-f1585bfe7649.png",
+  "generation_id": "exec-31a76223-04a0-42bc-a28a-f1585bfe7649",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen camera-elevation drawing. Raw output bytes copied unchanged; no anatomy transforms or compositing.",
+  "status": "directional_model_candidate_pending_internal_camera_review",
+  "source_sha256": "e7dbcc4460ce21f24c4955971e63559224783525cf5dd039d1efbe9854c532d4",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7"
+  },
+  "prompt_sha256": "86912b6234f4db82f8560c75a38d9f8c2ac7d286f651368e31bdf73ca6eaea1a",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "e7dbcc4460ce21f24c4955971e63559224783525cf5dd039d1efbe9854c532d4",
+  "prompt_text_sha256": "86912b6234f4db82f8560c75a38d9f8c2ac7d286f651368e31bdf73ca6eaea1a",
+  "prompt_file_sha256": "86912b6234f4db82f8560c75a38d9f8c2ac7d286f651368e31bdf73ca6eaea1a"
+}

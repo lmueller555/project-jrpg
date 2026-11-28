@@ -1,0 +1,34 @@
+{
+  "name": "overhead_00_transparency",
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_00.png",
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_00_transparency_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_00_initial.png"
+  ],
+  "prompt": "Remove ONLY the translucent smoke/cloudy haze and background from this 4x4 atlas, making every pixel outside the sixteen painted soldiers completely transparent. Preserve all sixteen complete overhead Crown soldier paintings, their exact poses, location within each of the same sixteen equal cells, anatomy, handedness, armor design, warm steel/blue trim, navy cloth, swords, shields and motion sequence. These are consecutive phases0 through15 from a48-pose cycle; do not reinterpret or animate or redraw a new cycle. Keep the same 4columns x4rows square atlas and all original generous cell margins. Preserve the exact camera at81.54degrees, head in front/downscreen of hips, sword in anatomicalRIGHT/imageLEFT and thin shield rim on anatomicalLEFT/imageRIGHT. Do not add cast shadows, floor, outer glow, labels, borders, grids or backing rectangles. Clean genuine transparent RGBA outside the existing coherent whole figures; no haze or smoke remaining anywhere. Whole-figure images stay intact; do not add or delete a limb, boot, equipment part or alter a joint. The only intended change is removal of the erroneous semitransparent background haze.",
+  "source_path": "/workspace/generated_images/exec-c2e02670-78eb-4cae-85e0-6ccd25fb55c3.png",
+  "generation_id": "exec-c2e02670-78eb-4cae-85e0-6ccd25fb55c3",
+  "transparent_background": true,
+  "construction": "ImageGen whole-atlas transparency correction retaining sixteen complete original figures. Original raw first attempt and metadata preserved as overhead_00_initial.",
+  "status": "source_candidate_ready_for_registration_and_native_review",
+  "output_sha256": "81c1b5d7f867693c41d8ede175afa5b32c7e2579d9494198eb5f01123594410a",
+  "source_sha256": "81c1b5d7f867693c41d8ede175afa5b32c7e2579d9494198eb5f01123594410a",
+  "raw_bytes_preserved": true,
+  "actual_canvas": [
+    1254,
+    1254
+  ],
+  "prompt_sha256": "9d5ec633d31607fa7b1e5cd996275f80273740be2cf26083d13bde945db06377",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/overhead_00_initial.png": "f036071383ed70b3cc0c3c8db9b20ce6a7a238c9aa68448031edc7168b7d411f"
+  },
+  "phase_range": [
+    0,
+    15
+  ],
+  "columns": 4,
+  "rows": 4,
+  "review_scope": "Read-only internal chronological source-sheet anatomy, equipment ownership, top-down volume and alpha check; final registered native playback/joins remain parent review.",
+  "prior_generation_metadata": "overhead_00_initial_generation.json",
+  "prior_generation_metadata_sha256": "7e6438a89658b92f33ed253f43dd8223f70951149f42d41fa220c170217fc3f5"
+}

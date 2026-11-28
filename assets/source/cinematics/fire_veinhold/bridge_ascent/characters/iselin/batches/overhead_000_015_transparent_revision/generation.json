@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-c3876e08-e064-4593-94a1-f71ff7237956",
+  "original_generation_path": "/workspace/generated_images/exec-c3876e08-e064-4593-94a1-f71ff7237956.png",
+  "master": "master.png",
+  "sha256": "ca493c0dcd2f271dc657b0734949ba5cb7a8d11035bee92af0b9a6d5f7096013",
+  "size": [
+    1086,
+    1448
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "6bb6a598d24e898e280ddd40769dfbdb1fcaafbb489c8c3a7bfd3d757ba7e85c",
+  "references": [
+    {
+      "path": "batches/overhead_000_015_transparent_revision/edit_reference.png",
+      "sha256": "22b056db48a11b9198550e41a045daebebdc4bf4c993082406f83cf88bb9aab9"
+    }
+  ],
+  "status": "whole-sheet ImageGen transparency cleanup, pending source/native re-registration review",
+  "samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "guide_pixels_used_in_export": false
+}

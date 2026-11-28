@@ -1,0 +1,7 @@
+{
+  "poses_checked": 48,
+  "segments_checked": 384,
+  "max_endpoint_error_metres": 1.0733756308242531e-06,
+  "tolerance_metres": 1e-05,
+  "note": "Evaluated cylinder end-cap centroids transformed by evaluated matrix_world checked against both intended joint endpoints. Before/after local-scale rendering was visually identical: no proven stretched-mesh root cause. Passing silhouettes contain low advancing knees with calves folded up to boots; labels clarified the distinction."
+}

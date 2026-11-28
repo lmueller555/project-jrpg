@@ -1,0 +1,60 @@
+[
+  {
+    "id": "transition_040_043_closed",
+    "output": "transition_040_043_closed.png",
+    "indices": [
+      40,
+      41,
+      42,
+      43
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Redraw the FOUR COMPLETE Lucan figures from SECOND image as a2column2row atlas, retaining each own EXACT phase-specific leg/arm motion, full adult body, silver/gold articulated leg/shoulderarmor, oxbloodtabard, brown boots/gloves, swordright and shieldleft. FIRST is the actual camera3Dguide. THIRD is a crop of immediatelypreceding39 headview. These are actual43\u201353degree elevatedfront views: show SLIGHTLY MORE TOP OF HAIR/HEAD than preceding39, never lift/resetface to a straightfrontalportrait. Chin/gaze pointdownalongrunningpath; eyes are naturallyunderbrows and increasinglyhidden, not aimingupatcamera. Never put a frontalface above a topview body. Use same physicalcranium/neck and adult model. The secondimage headiscurrentlytooFRONTAL/upturned; fix that wholemodelview smoothly while keeping the correct own limb motion.\n\nShield remainsupright and attachedleftforearm; its projected verticalheight naturallySHORTENS with risingcamera while preserving normalreal size, noflatshieldbroadface. Show top edges ofpauldrons and foreshorten chest/torso naturally per FIRST camera, notnearvertical90 and notlongfrontal. Head-view/body/limbproportions staycoherent. This is a whole indivisible newfigure drawing eachcell, not isolatedhead/bodypixelpatching. Correctexactlytwo connectedlegs/two boots/twoarms, matchedgait one60Hz tickbetween cells. Maintainpolishedsilvermoonlight/restainedwarmrim. Truealpha0background, nofloor/glow/shadow/grid/text, entirehair/swordtip/shield/boots visiblein generousmargins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_040_043_exact.png",
+        "sha256": "9deb3d8eab9a0c3a0cd1a4b729f082b070d0e93644a37f989a562fda23e220dc"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_close.png",
+        "sha256": "597fcc2f6afed09b1d018d36dda2404e6e743a9eba03ce0b8f7092920b9a1602"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/previous039_head_crop.png",
+        "sha256": "2e57769969ee31c42970d260bc9ca7d9577e01ffa205f6bd057dff1078cd1405"
+      }
+    ]
+  },
+  {
+    "id": "transition_044_047_closed",
+    "output": "transition_044_047_closed.png",
+    "indices": [
+      44,
+      45,
+      46,
+      47
+    ],
+    "grid": [
+      2,
+      2
+    ],
+    "prompt": "Redraw the FOUR COMPLETE Lucan figures from SECOND image as a2column2row atlas, retaining each own EXACT phase-specific leg/arm motion, full adult body, silver/gold articulated leg/shoulderarmor, oxbloodtabard, brown boots/gloves, swordright and shieldleft. FIRST is the actual camera3Dguide. THIRD is a crop of immediatelypreceding39 headview. These are actual43\u201353degree elevatedfront views: show SLIGHTLY MORE TOP OF HAIR/HEAD than preceding39, never lift/resetface to a straightfrontalportrait. Chin/gaze pointdownalongrunningpath; eyes are naturallyunderbrows and increasinglyhidden, not aimingupatcamera. Never put a frontalface above a topview body. Use same physicalcranium/neck and adult model. The secondimage headiscurrentlytooFRONTAL/upturned; fix that wholemodelview smoothly while keeping the correct own limb motion.\n\nShield remainsupright and attachedleftforearm; its projected verticalheight naturallySHORTENS with risingcamera while preserving normalreal size, noflatshieldbroadface. Show top edges ofpauldrons and foreshorten chest/torso naturally per FIRST camera, notnearvertical90 and notlongfrontal. Head-view/body/limbproportions staycoherent. This is a whole indivisible newfigure drawing eachcell, not isolatedhead/bodypixelpatching. Correctexactlytwo connectedlegs/two boots/twoarms, matchedgait one60Hz tickbetween cells. Maintainpolishedsilvermoonlight/restainedwarmrim. Truealpha0background, nofloor/glow/shadow/grid/text, entirehair/swordtip/shield/boots visiblein generousmargins.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_044_047_exact.png",
+        "sha256": "9748f41bceb2553e8be05a7980864bf199a2e490898d925626d4899a2e64e4c5"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_close.png",
+        "sha256": "dcdb2bb0b5cda31957fa73d04077ff246fe8dbb12c26811f9dd4ab13bef50a47"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/previous039_head_crop.png",
+        "sha256": "2e57769969ee31c42970d260bc9ca7d9577e01ffa205f6bd057dff1078cd1405"
+      }
+    ]
+  }
+]

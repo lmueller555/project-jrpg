@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "status": "candidate source poses, NOT native/runtime approval",
+  "drawing_count": 16,
+  "selection": "Main16sheet cells0\u201311; corrected4sheet phases12\u201315. Original14/15 prematurely extended a shin and are rejected.",
+  "review_contact_sheet": "source_contact_sheet.png uses uniform wholecell sampling only; finaltailmaster is2xsourcecellresolution and mustbephysicalcrownregistered byparent, neveroccupiedheightfit.",
+  "frames": [
+    {
+      "phase": 0,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 1,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 2,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 3,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 4,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 2,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 5,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 5,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 6,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 127,
+      "edge_alpha_above16_count": 6
+    },
+    {
+      "phase": 7,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 200,
+      "edge_alpha_above16_count": 3
+    },
+    {
+      "phase": 8,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 4,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 9,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 10,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 10,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 54,
+      "edge_alpha_above16_count": 4
+    },
+    {
+      "phase": 11,
+      "source": "master.png",
+      "source_sha256": "9928df0ebaa03d2a2deb658af423ac8de024308ec03ef3a9c8a59eb53f339dc5",
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 139,
+      "edge_alpha_above16_count": 2
+    },
+    {
+      "phase": 12,
+      "source": "tail_012_015_correction/master.png",
+      "source_sha256": "a4d1db3000ba5372cb3c39bfba53a69b5ba8d2eb88654cf4869b935a123eb118",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 13,
+      "source": "tail_012_015_correction/master.png",
+      "source_sha256": "a4d1db3000ba5372cb3c39bfba53a69b5ba8d2eb88654cf4869b935a123eb118",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 14,
+      "source": "tail_012_015_correction/master.png",
+      "source_sha256": "a4d1db3000ba5372cb3c39bfba53a69b5ba8d2eb88654cf4869b935a123eb118",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "corner_alpha_max": 1,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    },
+    {
+      "phase": 15,
+      "source": "tail_012_015_correction/master.png",
+      "source_sha256": "a4d1db3000ba5372cb3c39bfba53a69b5ba8d2eb88654cf4869b935a123eb118",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "corner_alpha_above16": 0,
+      "review_state": "candidate complete drawing; parent native registration/adjacency review pending",
+      "edge_alpha_max": 1,
+      "edge_alpha_above16_count": 0
+    }
+  ],
+  "source_edge_observation": "Phases6,7,10,11 have2\u20136 semitransparent edge samples (maxalpha54\u2013200) near lateral mantle/hair silhouette; noalpha255edge. Parent native/source review must assess tiny fringe/crop boundary rather than treating corner transparency as complete unclipped-bounds proof."
+}

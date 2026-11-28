@@ -1,0 +1,26 @@
+{
+  "generation_id": "exec-05b23cd5-8d12-4b3d-ae83-6488cbba253b",
+  "original_generation_path": "/workspace/generated_images/exec-05b23cd5-8d12-4b3d-ae83-6488cbba253b.png",
+  "master": "master.png",
+  "sha256": "454e5df963024022cfa39f74f8572e02536f35effa5208c7d88627da896c85f3",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "6bb6a598d24e898e280ddd40769dfbdb1fcaafbb489c8c3a7bfd3d757ba7e85c",
+  "references": [
+    {
+      "path": "batches/transition_052_055_transparent_revision/edit_reference.png",
+      "sha256": "8b02d9ec4b40e22f0f742edc756b530d6a8ae8cd2fa41b8d4d89f5279d67a7d7"
+    }
+  ],
+  "status": "whole-sheet ImageGen transparency cleanup, pending source/native re-registration review",
+  "samples": [
+    52,
+    53,
+    54,
+    55
+  ],
+  "guide_pixels_used_in_export": false
+}

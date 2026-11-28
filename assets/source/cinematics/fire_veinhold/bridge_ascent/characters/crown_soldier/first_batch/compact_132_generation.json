@@ -1,0 +1,42 @@
+{
+  "index": 132,
+  "local_time": 2.2,
+  "phase": 6,
+  "elevation_degrees": 81.53851347851253,
+  "azimuth_degrees": 13.823742710197942,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/compact_132_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/compact_phase06_camera_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/compact_132.png",
+  "prompt": "Paint ONE complete naturally proportioned allied Crown soldier from reference1's TRUE3D CAMERA/POSE image. Strict actual81.54-degree near-overhead atphase6/48. Other references are ONLY helmet/navy/leather materials. There is NO frontal leg picture: do not invent a front-view long shin or foot.\nESSENTIAL COMPACT LEG POSE: BOTH KNEES project FORWARD toward imageBOTTOM, BUT BOTH ANKLES/BOOTS fold BACK/BEHIND those knees toward imageTOP. AnatomicalRIGHT/imageLEFT knee is near[462,1080], ankle near[455,921], so the support foot is under/behind the leaning upper body. LEFT/imageRIGHT knee recovers high near[583,1096], its folded ankle is BEHIND near[582,844]. Trace each exact connected hip-knee-calf-ankle chain in the3D guide. The lower legs do NOT hang vertically downscreen from the kneecaps. There is NO long boot sticking out atbottomy1300. Below roughlyy1180 there is EMPTY TRANSPARENT CANVAS, not a newly lengthened leg. Correct occlusion may hide a boot partly/fully behind the torso; never reveal it by adding another leg. TWO anatomical legs/feet only.\nThe projected pelvis is[528,894] and helmetcrown[541,951], onlyabout57reference pixels farther FORWARD/downscreen, not a stretched frontal torso or exaggerated200px head/waist separation. Helmet/shoulders occlude the chest and most waist. Runningheadleansforward, so waist/navy tails stay behind/up from head. No visible face/eyes at this angle. Real topview shoulder/back/helmet volume and strongly foreshortened body; not a frontal picture with helmettilt.\nThe RIGHT/imageLEFT leather glove near[385,829] securely carries ONE sword world-DOWN/OUTSIDE; projected tip near[223,971], true-angle blade foreshortening. LEFT/imageRIGHT glove near[733,980] supports ONE upright plain steel boss shield. Its actual plane from above is a THIN RIM/EDGE, about15percent of its full round face width; preserve full physical diameter and rotate the visible plane correctly, never show the broad round front face. Exactlytwoarms with bent elbows and correct hand/equipment contact.\nMatch exact Crown material/model: plain polished open steelhelmet, simple silver/steel plate on shoulder/chest/arms and small articulated knee plates at the actual knees, charcoal quilted trousers,NAVY split tabard tails behind,brown leather gloves/boots. Young ordinary allied soldier, notroyalredgold orenemy purpleblack. Detailed painted cinematic finish and dark readable silhouette. Paint a natural human rather than literal guide cylinders; limb lengths are real and constant, projection/occlusion makes the imagecompact.\n1024x1536 canvas,500referencepx/m,groundroot[512,960]. Helmet diameter~170referencepx/shoulderwidth~360 establish physicaldensity. NEVER fit occupied height or stretch the body. Entireonecoherent complete drawing, no detachedrigs,warps,pastedlimbs or blended endpoints. TRUE CLEAN TRANSPARENT RGBA, alloutsidepixelstransparent, no floor/shadow/haze/glow/backgroundsquare/text/labels/guide marks. Fully contain thecompact figure with generous empty margins.",
+  "source_path": "/workspace/generated_images/exec-19a00d85-27a4-4558-962b-5e07e9978a4a.png",
+  "generation_id": "exec-19a00d85-27a4-4558-962b-5e07e9978a4a",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen actual-camera phase6 redraw from Blender guide and material-only references; raw bytes copied unchanged.",
+  "status": "compact_pose_candidate_pending_internal_source_native_review",
+  "source_sha256": "6bd6f40f67fec71a36c1329c494e9124868b046eef38ed81598e9c7c9291d7e5",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/compact_phase06_camera_guide.png": "3490952a9e7be7d58097b95bdabc9283ff8d8e621bd817ed2e888b7e038cb3ff",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png": "94452b2cbb68949fccfe3bb00a76b61ecdc5e61ba5d7b24a8c638e2bd46ebfac",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png": "fd6c7b6105ae4538337ed099a8a03ba33db5075d7c573d56b7f5095a96fca339",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png": "3e1d8c9a79c75966f0a88897683623620ef0929482046b7acd005615114d1732"
+  },
+  "prompt_sha256": "f624c7fcdbda56bb9bf83b235cb028ec200288c12003ae23dbea0ea237dded2d",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "6bd6f40f67fec71a36c1329c494e9124868b046eef38ed81598e9c7c9291d7e5",
+  "prompt_text_sha256": "f624c7fcdbda56bb9bf83b235cb028ec200288c12003ae23dbea0ea237dded2d",
+  "prompt_file_sha256": "f624c7fcdbda56bb9bf83b235cb028ec200288c12003ae23dbea0ea237dded2d"
+}

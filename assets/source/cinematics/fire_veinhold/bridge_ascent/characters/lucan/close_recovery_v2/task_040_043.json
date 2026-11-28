@@ -1,0 +1,17 @@
+{
+  "prompt": "Create a production-quality transparent 2x2 atlas of FOUR COMPLETE individually painted whole-figure frames of the SAME adult knight Lucan, chronological samples 40, 41, 42, 43. Exact canvas 1024x1536, four cells512x768. Preserve correct draw order row-major. FINAL ART ONLY, no text, no grid, no floor/background, no gray mannequin, clean transparent alpha.\n\nREFERENCE HIERARCHY: first image is the PRIMARY MOTION AND CAMERA guide. Match its actual four separate 3D human silhouettes, knees, boot endpoints, body lean, arm angles and camera foreshortening faithfully, using the SAME physical adult body and rigid armor across all four frames. Each is a consecutive 1/60-second pose in a running recovery, not four different cycle keys. The other images are APPEARANCE-ONLY crops: approved Lucan has short dark-brown hair, bare head, serious adult face, polished cool steel plate shoulders/upper arms/gauntlets and legs, oxblood-red padded tabard, gold edging and belt, brown leather boots/gloves. Replace all guide materials with finished approved cinematic illustration matching those crops: crisp dark contour, detailed but controlled painterly pixel-art shading. Do not copy their unrelated pose. Do not enlarge head or shorten torso.\n\nGuide GOLD SPHERES are KNEES, never boots or hands: repaint them as silver steel kneecaps. Gray cylinders are connected thigh/calf chains. Brown endpoint shapes are the ONLY TWO BOOTS; retain which is exposed and which is folded behind/occluded. Exactly two hip-knee-ankle-foot chains. The forward knee can hide the folded calf and boot behind it; DO NOT append a long shin or extra brown toe where the guide has only a knee. Preserve natural adult leg lengths and continuous movement through these four actual guide poses. No third boot. No automatic split-stride/contact pose substituted for recovery. Head and shoulder size constant in physical scale; foreshorten torso progressively with actual camera, do not fit all occupied heights to same box.\n\nAnatomical RIGHT hand holds one long steel sword with gold guard on image LEFT; anatomical LEFT forearm carries one oxblood/gold kite shield on image RIGHT. Match guide shield plane and foreshortening, do not turn it face-on merely to display emblem. Connected shoulder-elbow-glove chains, no detached forearms or duplicated hands. Equipment remains same rigid size. Short dark hair crown and head viewed increasingly from above; face naturally occludes under brow rather than looking up. Render source figures fully within respective cells, preserving guide position and measured head/shoulder proportions, not giant cropped figures. Four complete drawn frames, not layered cutout limbs. Subtle coherent red cloth follow-through only, no cape substitution.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/guide_040_043.png",
+      "sha256": "e115be8dede9b6ea4b6f08dfb056e725219186180d0e5f646d5d3ddc38acf334"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+      "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+      "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+    }
+  ]
+}

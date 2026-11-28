@@ -1,0 +1,407 @@
+{
+  "status": "Early source/native gates and revised world/guard picture gates provisionally accepted; unresolved character joins remain. See gates.json for current revision-aware accepted/rejected/pending scope.",
+  "reviewer": "independent_run_visual_review",
+  "scope": "Read-only independent QA; writes restricted to this evidence folder. No art, camera proxy, code or tests changed.",
+  "method": "Direct actual-image and chronological geometric proxy-frame inspection. No real-time video playback capability used.",
+  "bindings": {
+    "iselin90_model": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/true_overhead_model_v2.png",
+      "sha256": "dde55697603234fd2e0521f78b54fb9f57369d49871969b52ffea820108137f5"
+    },
+    "lucan90_rejected": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/model_key_90_shield_edge.png",
+      "sha256": "5b4591014d5a285347ee4f763ab3b6fc68e3ed45511cdab57243d81dc31262b3"
+    },
+    "crown90_rejected": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/final_overhead_phase18.png",
+      "sha256": "4ab691757f360b9331fd99ebc911694eed6681ff3bc57cd81505198aca5064e9"
+    },
+    "crown90_corrected_model": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/true_topdown_order_phase18.png",
+      "sha256": "b245644c888bb2313b3be488b101d3465c545e19d248a724870f9c0bd3256bdc"
+    },
+    "camera_geometric_proxy": {
+      "path": "docs/reviews/veinhold_bridge_ascent/previs/camera_contact.jpg",
+      "sha256": "c5916be841a660a5a12edc8f98ae4d377ce5aaad60a6a3a4861cb2f71da5be7f"
+    },
+    "camera_authoring_table": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/camera_authoring_samples.json",
+      "sha256": "e5cbb992c60a43c79d5399fda30ade04961e639122c860fc6b50829b278c44f1"
+    },
+    "lucan90_corrected_model": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/model_key_90_geometry.png",
+      "sha256": "ef8834ae5956c21e2af2381e3d09cb15f21791bb96342e06fc65d91dfbd49018"
+    },
+    "frozen_guard60_source": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/guards/frozen_60_master.png",
+      "sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55"
+    },
+    "frozen_guard_mapping": {
+      "path": "assets/story/fire_veinhold_opening/shot08/guards/guardperformance.json",
+      "sha256": "225cdbb4966c215355e585b4dca052cf0503743fcd76fa28a2173e8042d42d8a"
+    },
+    "iselin20_23_registration": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_020_023/trial_registration.json",
+      "sha256": "108901caabf1e2ec4f88eeb002451c401af147a05ac7da3ce7b0bd07c8b2b0f3"
+    },
+    "live_guard_master": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/guards/live_cycle_master.png",
+      "sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa"
+    },
+    "live_guard_native_proof": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/guards/native_cycle_proof.png",
+      "sha256": "001c9abd83e4c13885508823e991d369ac63f696442927bc47526c170c90d35c"
+    },
+    "lucan_current_early_registration": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_registration.json",
+      "sha256": "b42ca00a53961f343ecb3653599a087de1556809cacd7c4f6b7042a3494ded82"
+    },
+    "lucan_overhead_quarters": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_quarter_keys.png",
+      "sha256": "307b1fd45f9440283121f2852ad9582e70bcd47fbbab67209ac7df028adf4e79"
+    },
+    "crown_registration": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/registered_samples/calibration_report.json",
+      "sha256": "8b8e2736e0fbf809027699f70a7db20a72dd93a69e04c211d4a46ffa980cea56"
+    },
+    "crown_compact132": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/compact_132.png",
+      "sha256": "6bd6f40f67fec71a36c1329c494e9124868b046eef38ed81598e9c7c9291d7e5"
+    },
+    "crown_physical48": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/physical_048.png",
+      "sha256": "ca70effdc2eb891c6ccd1fb93b65283385c8981e9dbbd68895709cc3f3043201"
+    },
+    "live_source_contributor_proof": {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/live_difference_0480.png",
+      "sha256": "957dbd95c5e49380b870d63f0d216d46c64eb4971585bb5e0632d7022abdfeda"
+    },
+    "lucan_corrected_passing_keys": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_passing_keys.png",
+      "sha256": "130a632de9f640a03d20f970e88899f24150e4e1c3b874c2e1c2e35aa586d59c"
+    }
+  },
+  "findings": [
+    {
+      "subject": "camera geometric blockout",
+      "status": "provisional framing accepted",
+      "observed": "All three heads remain visible through close samples, including Crown near1s. Formation/depth order and mainland-up/fortress-down final span read coherently. Stable cameraR=-X is consistent with the shown world orientation.",
+      "limits": "Cuboids are explicitly geometric proxy guides, not final actor silhouette bounds, motion quality or exact shot7 terminal pixel-join proof."
+    },
+    {
+      "subject": "Iselin90 model",
+      "status": "rough direction/volume accepted",
+      "observed": "Head projects ahead/down from the back/garment mass; loose hair and mantle trail upper-left, consistent with the prior world wind. Braid remains on anatomical left, mantle right.",
+      "limits": "Single model key does not establish adjacent-angle interpolation, actual running cycles, scale/registration or material motion."
+    },
+    {
+      "subject": "Lucan90 shield-edge candidate",
+      "status": "rejected; owner acknowledged",
+      "observed": "Three boot-like ends: upper-right trailing boot, long lower leading boot and separate small brown toe under belt around665,750. Head center remains above belt as frontal order, despite intended true-overhead forward lean.",
+      "evidence": "lucan_rejected90_three_boots.jpg",
+      "resolution": "Owner is redrawing the complete90 model using a top-down guide plus cropped identity/material references before banking."
+    },
+    {
+      "subject": "Crown90 initial final_overhead candidate",
+      "status": "rejected",
+      "observed": "Boot count corrected to two, but helmet still above waist/tabard as frontal torso ordering."
+    },
+    {
+      "subject": "Crown90 true_topdown_order candidate",
+      "status": "rough direction/anatomy accepted",
+      "observed": "Belt/tails now behind/up from helmet; back/shoulders visible, head ahead/down. Exactly two connected leg/boot chains. Right sword and left edge-on shield maintain ownership.",
+      "limits": "Raw haze/alpha treatment, native registration, actual adjacent angles and gait batch still pending."
+    },
+    {
+      "subject": "Lucan90 model_key_90_geometry candidate",
+      "status": "rough direction/anatomy accepted",
+      "observed": "Head now projects ahead/down of the hip/back cloth mass, face properly hidden. Exactly two connected boot/leg chains; the prior small third boot toe is gone. Right sword grip/arm and left shield/forearm ownership are coherent; shield is appropriately edge-on.",
+      "limits": "This is a directional/anatomy key approval only. Actual native body density, registration, neighboring camera angles and gait continuity remain unreviewed."
+    },
+    {
+      "subject": "Frozen guard60 raw atlas",
+      "status": "rough source model accepted",
+      "observed": "Four distinct complete ice/armored figures; readable upper ice/helmet/shoulder surfaces, two leg chains each, no obvious clipped ice apex/base. World positions are explicit in guardperformance.",
+      "limits": "Actual native registration, frontal\u219260 source-switch continuity, fixed-ground placement and tiny-scale readability require composed environment proof."
+    }
+  ],
+  "pending": [
+    "Actual native environment proof and exact shot7 terminal\u2192shot8 entry.",
+    "First registered native-scale character batches; all anatomical chains and perspective-specific volume.",
+    "Every close angle/source-batch join and full far-cycle seam.",
+    "Frozen guard and reinforcement actual native artwork/mapping and fixed world anchors.",
+    "Final481-picture bank, previous0\u201347 picture/WAV preservation and integrated Gallery/audio validation."
+  ],
+  "measurement_limits": [
+    "Do not apply the previous frontal static pixel-displacement caps to the overhead views. Camera-dependent projection and occlusion must be accounted for.",
+    "Hidden joints and diffuse hair endpoints are not exact measured landmarks.",
+    "Guide poses/captions and passing scaffold tests do not establish final painted anatomy or motion."
+  ],
+  "handoff": "Review active for corrected painted keys/batches and revised actual world/guard composition as owners deliver. Root owns code/tests/preservation/docs; reviewer modifies evidence only.",
+  "first_native_batches": {
+    "lucan": {
+      "state": "Original12\u201323 and12b entry rejected; current exact0\u201315+registered16\u201323b provisionally accepted.",
+      "frames_observed": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "same_camera_controls": [
+        11,
+        12,
+        15,
+        16
+      ],
+      "finding": "Actual approved phase12 rendered with the exact current13.6degree camera retains a much lower rear boot than new12. New11\u219212 folds the rear boot by about60native pixels and visibly contracts shoulders/torso despite only0.3degree camera change.15\u219216 upper body widens/lengthens across source batches. This is not rejected merely by a static frontal motion limit.",
+      "evidence": [
+        "lucan_old_new_same_camera_11_12_15_16.jpg",
+        "lucan_old_new_same_camera.json",
+        "lucan_first_batch_registration_snapshot.json"
+      ],
+      "source_snapshots": [
+        "lucan_rejected_first_transition_012.png",
+        "lucan_rejected_first_transition_015.png",
+        "lucan_rejected_first_transition_016.png"
+      ],
+      "response": "Owner rejected original12\u201323 and is authoring complete repairs from actual adjacent-phase motion references plus cropped identity/material references.",
+      "current_interval": [
+        0,
+        23
+      ],
+      "current_finding": "Exact original0\u201315 removes the early pose/model reset. Old15\u2192new16b has connected rear recovery and advancing leg, adult chest/shoulders consistent and correct gear.16\u201323 internal native path inspected including independently rendered22/23; no concrete source reset. Later angle/gait banks remain unapproved.",
+      "current_evidence": [
+        "lucan_old15_new16b_control.jpg",
+        "lucan_current_20_23_old_new_same_camera.jpg"
+      ],
+      "rejected12b_actual_boot_points": {
+        "old11": [
+          432.5,
+          611
+        ],
+        "approved12_same_camera": [
+          431,
+          593
+        ],
+        "candidate12b": [
+          439,
+          563
+        ],
+        "meaning": "Actual rendered native rear-boot contours in a visually verified boot-only region. New48px step versus approved18px at same camera exposed phase mismatch; not a universal frontal/overhead velocity limit.",
+        "evidence": "lucan12b_actual_rearboot_region.jpg"
+      }
+    },
+    "iselin": {
+      "state": "Current exact0\u201319+new20\u201331 provisionally accepted for continuation/composition.",
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "actual_elevations_degrees": [
+        15.15,
+        15.83,
+        16.56,
+        17.34
+      ],
+      "finding": "Adult head/shoulder/body scale and cool blue/silver palette coherent. Four anatomical limb chains owned. Attached braid bends inward through four poses; loose hair and mantle maintain world-left/back lag. No internal-batch blocker.",
+      "limits": "Entry8\u201319\u219220,23\u219224, longer contact/material path and environment composition remain pending.",
+      "rejected_joins": {
+        "old_trials": [
+          [
+            7,
+            8
+          ],
+          [
+            19,
+            20
+          ],
+          [
+            23,
+            24
+          ]
+        ],
+        "finding": "New8\u201319 trial switched to darker/tucked body;20\u201323 returned to brighter/more frontal model, then24 darkened/tucked again despite tiny camera differences. These are whole-model/palette source boundaries.",
+        "evidence": "iselin_native_batch_joins.jpg",
+        "resolution": "Root permits exact original0\u201319; new18/19\u219220/21 native proof now coherent.24 color retry rejected for right-fist reset and whole-pose24\u201327 repair pending."
+      },
+      "latest_repair": "24\u201327 final whole-figure retry and28\u201331 continuity retry retain blue/silver model and belt-relative hand progression.23\u219224 no longer resets right fist to prior apex;27\u219228 keeps connected limbs/material attachment as view steepens.",
+      "latest_evidence": "iselin_native_repaired23_31.jpg"
+    },
+    "crown_soldier": {
+      "state": "Rigid-calibrated0/24/48/72/96/132 rough native key set accepted; consecutive batch not yet reviewed.",
+      "source_geometry_frames": [
+        0,
+        24,
+        48,
+        96
+      ],
+      "rejected_wrong_phase_frames": [
+        72,
+        132
+      ],
+      "finding": "Two-leg/equipment chains and expected leading limb are coherent in the four listed sources. Same-camera comparison against approved poses exposes larger/broader/lower raw-native0/24. Owner confirms those proofs had not yet received measured helmet/shoulder density registration.",
+      "evidence": "crown_0_24_48_96_old_new_same_camera.jpg",
+      "response": "Owner will use uniform whole-figure scale from rigid helmet/shoulder landmarks and logical root; exact approved phase18 bytes retained as initial slot.72/132 whole-pose phase/support repairs pending.",
+      "resolution": "0 exact original phase18 and24 exact original phase42 bytes. Physical048 corrects earlier long approach; corrected072 restores right lead. Compact132 has forward knees with calves/boots folded behind/occluded, face hidden and shield rim. Uniform whole-source helmet/shoulder density calibration fixes raw native size drift. Every intervening angle/phase join remains pending.",
+      "latest_key48": "physical_048.png has correct left-leading phase18, bent knee/shorter approach, opposite folded recovery and coherent right sword/left shield ownership; rough registered key accepted."
+    },
+    "guards": {
+      "state": "provisional source/native-scale acceptance",
+      "source_poses": 16,
+      "native_proof": "assets/source/cinematics/fire_veinhold/bridge_ascent/guards/native_cycle_proof.png",
+      "finding": "UP heading, right sword on viewer-right and left shield viewer-left are coherent. Extended leg/recovery roles exchange. At actual2\u20138pixel body sizes only cluster/silhouette/heading/alternation are readable; fine joints/hand detail are unmeasurable.",
+      "limits": "Moving group/world composite, frozen frontal\u219260 registration and actual loop exposure remain pending."
+    }
+  },
+  "artifacts": [
+    {
+      "file": "accepted_gate_bindings.json",
+      "sha256": "43f97a6796d343683074efca3a1ec6875d93a9b0b05557e8ccb1e2b5963873fd"
+    },
+    {
+      "file": "crown_0_24_48_96_old_new_same_camera.jpg",
+      "sha256": "eb333c0f02fc0afd9f99c7966ef5b7feb5f3c757e20072d7daea36df14e624d6"
+    },
+    {
+      "file": "crown_accepted_native_keys.jpg",
+      "sha256": "8b7f70bfd5d3b84e324f45d9450fd3ee3d28fbcadd2e4ceb16c3141483dcac7b"
+    },
+    {
+      "file": "entry_pixel_comparison.json",
+      "sha256": "e77e9014587493eac03bed971f89a52bc1130baf22e0c15c2baa71795ad2238c"
+    },
+    {
+      "file": "gates.json",
+      "sha256": "b52d357d687cd05884501aed1c6e07611d01ef4fa240f5dc6971e17375ed2568"
+    },
+    {
+      "file": "iselin_accepted_entry_contact.jpg",
+      "sha256": "a093af201ad806a657aea1a5270187514967781f2d8af568f3f9f50f5f3fde4d"
+    },
+    {
+      "file": "iselin_native_batch_joins.jpg",
+      "sha256": "1fec63bed1d032c2949dd4ea298b63181742a816fc82428ba405d8ddd72d748b"
+    },
+    {
+      "file": "iselin_native_repaired23_31.jpg",
+      "sha256": "7d151a3964d02aaa3f8710cf7b0ac20de31d9ac3466d6f05c55488d25e5edd6b"
+    },
+    {
+      "file": "lucan12b_actual_rearboot_region.jpg",
+      "sha256": "7ef410148615aef4efc2cb60fd62e595a18d10ef68684665616396caf5ec9e17"
+    },
+    {
+      "file": "lucan12b_actual_rearboot_region.json",
+      "sha256": "fd115f7fc77b20ab1891f4f4b1f2b1ac964b79a60da1187b6482b9259bdf2fb3"
+    },
+    {
+      "file": "lucan_accepted_early_contact.jpg",
+      "sha256": "92b0af9b62fbab8dce9bb0a4a857f7ca831a35f901b7a15f3e31f50410de8b0b"
+    },
+    {
+      "file": "lucan_current_20_23_old_new_same_camera.jpg",
+      "sha256": "365e964f3fcd4abef0314d79c267fc05721ee6f67d53a0828bfaf8d2856f3b24"
+    },
+    {
+      "file": "lucan_first_batch_registration_snapshot.json",
+      "sha256": "dffa9b34823771aefe23de2d99671c853a310c4108a45647c7e70aa455530057"
+    },
+    {
+      "file": "lucan_old15_new16b_control.jpg",
+      "sha256": "11f2ea91a5c8be1a02652315c2ac040932441491384551d86adbfa3393687d8c"
+    },
+    {
+      "file": "lucan_old_new_same_camera.json",
+      "sha256": "e106c9774cf91eab85294d1cfa35b9370e434d15453fdb8cc34a7a7b0f18b1fa"
+    },
+    {
+      "file": "lucan_old_new_same_camera_11_12_15_16.jpg",
+      "sha256": "2c16891919e046c1fff4386cd63fb9d0103f489163b07c4b16ce3df5dba36840"
+    },
+    {
+      "file": "lucan_rejected90_three_boots.jpg",
+      "sha256": "12d10de1cbffc7f7fd8331391323f11e6628b94cfe3b41779eb1b66284261e9f"
+    },
+    {
+      "file": "lucan_rejected_first_transition_012.png",
+      "sha256": "ee2932ae5ac9c12bb4bc8f71ea74c1c6e6300bc8f51cf212db1209cd61ffe087"
+    },
+    {
+      "file": "lucan_rejected_first_transition_015.png",
+      "sha256": "06b2396c5462080cb5bdb608926dcda739bb9c58f860b2352c834a934d8691d2"
+    },
+    {
+      "file": "lucan_rejected_first_transition_016.png",
+      "sha256": "4c1faa0b3287ca9e426c950111c9ad8272460d0327545b5c1515f8c55f0aba71"
+    },
+    {
+      "file": "reinforcement_actual_pixels_x4.png",
+      "sha256": "a3024d313782898484471c26bcdb3a0f871b1c9fa8993819013cc09e02e4ae22"
+    },
+    {
+      "file": "reinforcement_revised_native_x4.png",
+      "sha256": "85dd84df5dd5ab74d3eef03cddb1759bdc974fecb13283faee13907cdc5640f7"
+    }
+  ],
+  "new_overhead_quarter_gate": {
+    "actor": "lucan",
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_quarter_keys.png",
+    "status": "Original quarter0/24 contacts plus new overhead_passing_keys12/36 provisionally accepted as rough action keys; original quarter12/36 remain rejected history.",
+    "finding": "Painted12/36 show a full long shin+boot below the head; their guide shows the forward knee with calf/boot folded behind/occluded. Thus the passing/recovery construction is missing even though head direction, sides and boot count are correct.",
+    "limit": "The guide is only an authoring reference; actual painted pose/anatomy, not captions or copied coordinates, is the acceptance basis.",
+    "history_status": "0/24 rough contact anatomy accepted;12/36 rejected before densification",
+    "repair_finding": "Actual passing-key pixels now expose compact silver forward knees while calves/boots fold behind/occlude. Head/hips and right-sword/left-shield ownership stay coherent. Raw density differs across masters, requiring whole-image head/pauldron registration before native motion acceptance."
+  },
+  "world_proof_gate": {
+    "status": "Provisional; no final environment/guard visibility acceptance.",
+    "sources": [
+      "docs/reviews/veinhold_bridge_ascent/entry_proofs/entry_contact.jpg",
+      "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0480.png"
+    ],
+    "accepted": "Early hero/rail/camera continuity is coherent. StableR=-X, mainland-up/fortress-down and full299m span are clear.",
+    "entry_mismatch": {
+      "changed_pixels": 3194,
+      "bounds": [
+        419,
+        223,
+        565,
+        272
+      ],
+      "finding": "Previously omitted frozen statues become visible through hero gaps in first realworld proof, so that candidate is not exact old terminal.",
+      "root_decision": "Explicitly retain the inherited Shot7 frozen-guard omission through initial frustum; restore high-view source while offscreen before later physical reentry. World positions remain fixed, no fade or copied endpoint. Revised actual proof still pending."
+    },
+    "visual_blockers": [
+      "Actual mid-rise0.6\u20133s final-world perspectives not yet reviewed.",
+      "Fixed-world frozen source restore/reentry not yet reviewed after explicit inherited omission.",
+      "Both late guards must show actual body emergence through roof before8s; floorline299 crossing is insufficient."
+    ],
+    "reinforcement_evidence": "reinforcement_actual_pixels_x4.png",
+    "viewing_limit": "At final1\u20133pixel bodies only actual visibility and group movement can be judged; anatomy and exact joints cannot be resolved.",
+    "live_diagnostic_resolution": "Inspected actual live_difference_0480.png: actual source body contributors survive at expected bridge positions, so deck-depth loss is resolved as a concern. Sparse low-contrast pixels blend into deck grain; group visibility remains unaccepted until new native treatment. Owner reports27/32/37/39 changed source pixels at5/5.8/7/8s, maxRGB delta22/39/38/25, consistent with about1.4nativepixel alpha area per guard. These counts do not by themselves establish perceptibility.",
+    "proposed_visibility_correction": "Root considering two files/three ranks with unchanged centroid, physical size and speed; filtered deck and physically registered contact shadows. No artificial body enlargement. Actual updated proof pending.",
+    "historical_visual_blockers": [
+      "Mainland reads as a perfectly straight blue band across upper edge.",
+      "Water has high-frequency regular diagonal highlight striping/moire at actual native960.",
+      "Fortress/gate reads as block geometry; root agrees final mainland/ash/fortress surface treatment needed.",
+      "Live reinforcements remain hard to identify in native bridge pixels; source contributor survival is now verified, so remaining issue is contrast/group presentation rather than depth loss."
+    ],
+    "latest_accepted": "New actual frame0 independently matches old shot7inclusive300 by PNG SHA and fullRGBA bytes (entry_pixel_comparison.json). New5.8/8 native far art has organic coast/boulders, ash/wall footprint and softer water; prior obvious stand-ins resolved provisionally. Revised first6 group is readable as two-file/three-rank cluster progressing up bridge in native+nearest crop. No anatomy inference at1\u20133pixel bodies.",
+    "latest_group_evidence": "reinforcement_revised_native_x4.png"
+  },
+  "current_gate_audit": "gates.json",
+  "latest_source_and_camera_bindings": [
+    "accepted_gate_bindings.json",
+    "native_gate_update.json",
+    "world_gate_bindings.json"
+  ]
+}

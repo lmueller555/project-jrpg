@@ -1,0 +1,45 @@
+{
+  "index": 72,
+  "local_time": 1.2,
+  "phase": 42,
+  "elevation_degrees": 52.674086047406696,
+  "azimuth_degrees": 9.908097257599374,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "native_pixels_per_metre": 90.64199994869001,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/corrected_072_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_072.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/corrected_072.png",
+  "prompt": "Draw ONE complete coherent painted Crown soldier at actual camera local1.2s, elevation52.6741deg/azimuth9.9081deg, phase42/48 of800msrun. Reference1 is a TRUE BLENDER3D camera/pose guide and OWNS ALL geometry, anatomical phase and occlusion. Other references are only tiny identity/material crops; no old full-body pose should be copied. Replace the guide's simple mannequin volumes with a naturally proportioned painted human while keeping its real shoulder/elbow/glove/hip/knee/ankle placements and physical projection.\nThe RIGHT/imageLEFT leg is the advancing leg, its knee/boot projected ahead. LEFT/imageRIGHT leg folds behind. RIGHT sword glove swings backward/down from its neutral pass, LEFT shield arm counterbalances forward. Do NOT copy the phase18 LEFT-leading contact from any old model; this is the OPPOSITE half-cycle, phase42.\nRunning toward imageBOTTOM. WorldRIGHT is imageLEFT with ONE sword, LEFT is imageRIGHT with ONE plain upright boss shield. Follow the guide's true shield plane and foreshortened down/outside blade, secure LEATHER gripping gloves at actual wrists. Two connected legs and two connected arms, constant real limb lengths, exactlyonehelmet,onesword,oneshield. Natural knee/elbow articulation, no stale limbs or extra boots.\nAt this high camera angle the helmet CROWN and shoulder/back TOP planes dominate. At near82degrees NO face/eyes should show: brim/helmet occlude the forward face. No full frontal breastplate, no vertical torso hanging below the head. Head leans FORWARD in worldY; as camera nears overhead it projects BELOW/AHEAD of the pelvis, with waist/navy tails behind/ABOVE the head. Real3D volume, not a front sprite with its helmet tilted down.\nSame young ordinary allied Crown model as the approved materials: polished open steelhelmet, simple silver/steel plate and shoulder/arm/knee armor, charcoal quilted trousers, NAVY split tabard/tails,brown leather boots/gloves. Retain articulated knee caps/shortshin lames only at the actual visible knees. No ornate royal gold/red cloak or purpleblack enemy colors. Detailed painted cinematic finish with thin dark outline.\n1024x1536 reference canvas,500referencepixels/m,internal root[512,960]. Match the rigid helmet diameter/shoulder width from the guide, no occupied-height fitting or stretched body. Empty space is correct; fully contain allfigureparts with generous margins. ONE whole freshly drawn coherent figure, no rigs,warps,pastedlimbs,crossfades. TRUE CLEAN TRANSPARENT RGBA, alloutsidepixels transparent, no floor/shadow/haze/backgroundsquare/glow/text/sheet/guide marks. Anatomy/actual camera phase are essential.\n",
+  "source_path": "/workspace/generated_images/exec-2f594605-52d1-41a7-b9fb-a4d490fef83f.png",
+  "generation_id": "exec-2f594605-52d1-41a7-b9fb-a4d490fef83f",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen drawing from actual-camera Blender geometry and cropped identity materials only; raw bytes copied unchanged.",
+  "status": "corrected_camera_batch_pending_internal_review",
+  "source_sha256": "97e67fdaabfacc2fe5f550e9f7dab708c418f3e2514e96385796b326064d1275",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_072.png": "55ddc6f8d700a86da449c3fdbddea9d8448c57fd452a73cd7b94fe512b3c7781",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png": "94452b2cbb68949fccfe3bb00a76b61ecdc5e61ba5d7b24a8c638e2bd46ebfac",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png": "fd6c7b6105ae4538337ed099a8a03ba33db5075d7c573d56b7f5095a96fca339",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png": "3e1d8c9a79c75966f0a88897683623620ef0929482046b7acd005615114d1732",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png": "700d3d53e3d1b17f97aeb21f1c67711a9e4b9e6f4c7c5a16e5cb00b0ca246c97"
+  },
+  "prompt_sha256": "fc564877f29fa71e970288798806858dd20657f4ce291a496b0e72c98a349427",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "97e67fdaabfacc2fe5f550e9f7dab708c418f3e2514e96385796b326064d1275",
+  "prompt_text_sha256": "fc564877f29fa71e970288798806858dd20657f4ce291a496b0e72c98a349427",
+  "prompt_file_sha256": "fc564877f29fa71e970288798806858dd20657f4ce291a496b0e72c98a349427"
+}

@@ -11,18 +11,22 @@ from hashlib import sha256
 from io import BytesIO
 import json
 from pathlib import Path
+import sys
 import wave
 
 import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0,str(ROOT))
 TARGET = ROOT/'assets/story/fire_veinhold_opening/continuation/audio'
 SOURCE = ROOT/'assets/source/cinematics/fire_veinhold/continuation/audio'
 RATE = 48000
 SEED = 824613
 STEP_DURATION = .22
 BREATH_PERIOD = 3.6
+GROUP_PERIOD = 2.4
 
 
 def _band_noise(count, rng, low, high):
@@ -152,10 +156,34 @@ def sounds():
         breath += gain*(.48*inhale_env+.84*exhale_env)*(.73*mouth+.27*soft)*flutter
     stereo = np.column_stack((breath,.96*breath+.04*np.roll(breath,43)))
     result['running_breath.wav'] = _normalise(stereo,.55)
+    # One distant cohort texture follows the eight guards' actual .8-second
+    # phase offsets. Reuse the existing Crown boot/gear sources; the independent
+    # mix seed cannot alter any of the twelve earlier exported waveforms.
+    from cinematic_bridge_ascent import reinforcement_states_at
+    group_rng = np.random.default_rng(SEED+120)
+    count = round(GROUP_PERIOD*RATE)
+    group = np.zeros((count,2))
+    for guard in reinforcement_states_at(0.):
+        strength = .65+.15*group_rng.uniform(-1,1)
+        for foot,contact in (('near',0.),('far',.4)):
+            sound = result[f'crown_soldier_step_{foot}.wav']
+            first = (contact-guard['cycle_phase'])%.8
+            for repeat in range(3):
+                offset = round((first+.8*repeat)*RATE)
+                indices = (offset+np.arange(len(sound)))%count
+                contact_strength = strength*(.92+.16*group_rng.random())
+                for channel in range(2):
+                    np.add.at(group[:,channel],indices,sound[:,channel]*contact_strength)
+    frequencies = np.fft.rfftfreq(count,1/RATE)
+    spectrum = np.fft.rfft(group,axis=0)
+    distant_filter = (1-np.exp(-(frequencies/50)**4))*np.exp(-(frequencies/1800)**4)
+    group = np.fft.irfft(spectrum*distant_filter[:,None],n=count,axis=0)
+    result['reinforcement_group.wav'] = _normalise(group,.38)
     return result
 
 
 def products():
+    from cinematic_bridge_ascent import acoustic_sources_at,reinforcement_states_at
     result = {}
     records = {}
     for name,value in sounds().items():
@@ -164,20 +192,36 @@ def products():
         records[name] = {'duration':len(value)/RATE,'sha256':sha256(raw).hexdigest(),
                          'peak':round(float(np.max(np.abs(value))),6),
                          'rms':round(float(np.sqrt(np.mean(value*value))),6),
-                         'loop':name.endswith('siren.wav') or name in ('machinery_bed.wav','running_breath.wav'),
+                         'loop':name.endswith('siren.wav') or name in ('machinery_bed.wav','running_breath.wav','reinforcement_group.wav'),
                          'clipped_samples':0}
+    sources = acoustic_sources_at(0.)
     recipe = {'version':1,'generator':'tools/build_prologue_alert_audio.py',
               'seed':SEED,'sample_rate':RATE,'channels':2,'sample_width':2,
               'source':'Original deterministic synthesis; no third-party samples.',
               'sounds':records,
               'timeline':{'machinery_start':25,'alarm_start':30,'alarm_lead_seconds':4,'rush_start':34,
                           'bridge_arrival':35,'running_start':39,'frontal_start':42,
-                          'sequence_end':47,'siren_period':2},
+                          'ascent_start':47,'sequence_end':55,'siren_period':2},
               'running_foley':{'duration':STEP_DURATION,
                   'contact_source':'assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts',
-                  'timing_authority':'The referenced animation durations and contact cues determine cadence independently of display FPS; the frontal shot continues those same phases.',
+                  'timing_authority':'The referenced animation durations and contact cues determine cadence independently of display FPS; frontal and ascent shots continue those same phases.',
                   'retiming_boundary_seconds':39,
-                  'scheduling':'One continuous global contact table from 39 to 47 seconds; the frontal cut at 42 advances the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'},
+                  'scheduling':'One continuous global contact table from 39 to 55 seconds; the frontal cut at 42 and ascent at 47 advance the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources.'},
+              'ascent_perspective':{'start':47,'end':55,
+                  'camera_source':'cinematic_bridge_ascent.actor_states_at, acoustic_sources_at and project_world; no image loading',
+                  'sampling':'481 inclusive camera-derived acoustic samples at 60 Hz, linearly interpolated for live and absolute-frame offline PCM.',
+                  'falloff':'Additional actual camera-source distance beyond the entry reference; footsteps (4/(4+extra_distance_m))**1.45 and breathing (2/(2+extra_distance_m))**1.7. Existing entry levels are preserved.',
+                  'pan':'Actual projected source position, blending from the existing frontal pan over 1.2 seconds; no camera-side discontinuity.',
+                  'factory_sources':{'warning':sources['warning'],'machinery':sources['machinery'],
+                      'falloff':'Entry-calibrated (entry_distance/current_distance)**1.2, capped at 1.25; source azimuth remains audible behind the camera.'},
+                  'channels':'One reinforcement group lease plus the existing three ambience leases and at most three party contacts: seven owned effects plus the separately owned wind fit eight channels.'},
+              'reinforcement_group':{'start':47,'period':GROUP_PERIOD,'nominal_gain':.035,
+                  'synthesis':'Original Crown near/far boot and gear sources combined at all eight guard contact phases; circular tails and a distant low-pass filter preserve the loop seam.',
+                  'contact_strengths':'Small deterministic variation across three cycles; contact times retain the exact shared 800 ms guard cadence.',
+                  'seed':SEED+120,'phase_source':'cinematic_bridge_ascent.reinforcement_states_at(0)',
+                  'phase_offsets':[guard['cycle_phase'] for guard in reinforcement_states_at(0.)],
+                  'falloff':'(45/(45+camera_to_group_centroid_distance_m))**1.15 with a smooth 0.8 second entrance. One source remains attached to the actual moving group centroid.',
+                  'channel':'One owned effects lease; no per-soldier channels.'},
               'frontal_breath':{'start':42,'period':BREATH_PERIOD,'gain':.075,
                   'source':'Unvoiced band-limited air, three varied inhale/exhale phrases approximately 1.2 seconds apart; independent synthesis seed.',
                   'channel':'Reuses the silent industrial warning lease from the frontal cut; no additional mixer channel.'}}

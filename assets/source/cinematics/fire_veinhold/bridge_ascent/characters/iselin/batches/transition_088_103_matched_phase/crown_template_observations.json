@@ -1,0 +1,568 @@
+{
+  "source": "master.png",
+  "template": "../../keys/true_overhead_model_v2.png [505,700,758,931]",
+  "method": "Actual source NCC crown template observations; pending visible overlay review. No art transforms.",
+  "observations": [
+    {
+      "sample_index": 88,
+      "gait_frame": 2,
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "view_elevation": 80.98440498813389,
+      "view_azimuth": -29.91654596687548,
+      "native_pixels_per_metre": 74.10984759309558,
+      "guide": "guides/transition/guide_088.png",
+      "guide_sha256": "56985d88d62633838a375b8f39f29fda3b30bd9e9fee2d08fc024086e476cdbd",
+      "point": [
+        132.5,
+        213.5
+      ],
+      "template_scale": 0.3500000000000002,
+      "template_box": [
+        88,
+        173,
+        177,
+        254
+      ],
+      "score": 0.7614715099334717,
+      "actual_cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 89,
+      "gait_frame": 3,
+      "cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "view_elevation": 81.3770047614482,
+      "view_azimuth": -30.662779690625506,
+      "native_pixels_per_metre": 72.45030085240327,
+      "guide": "guides/transition/guide_089.png",
+      "guide_sha256": "00af8de3cb490afb1d0cd633e84a46565133c48aaea89d3d30fd28435d18c957",
+      "point": [
+        134.0,
+        213.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        174,
+        177,
+        253
+      ],
+      "score": 0.76236891746521,
+      "actual_cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 90,
+      "gait_frame": 4,
+      "cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "view_elevation": 81.75150636542963,
+      "view_azimuth": -31.42435013181907,
+      "native_pixels_per_metre": 70.81943407727756,
+      "guide": "guides/transition/guide_090.png",
+      "guide_sha256": "27af5d160eb3540102e908f0a9d9f72a2e3f1a06899ed2581f48b3bce3b6fb27",
+      "point": [
+        134.0,
+        212.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        173,
+        177,
+        252
+      ],
+      "score": 0.7440650463104248,
+      "actual_cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 91,
+      "gait_frame": 5,
+      "cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "view_elevation": 82.10838494839476,
+      "view_azimuth": -32.20015385689831,
+      "native_pixels_per_metre": 69.2177300238163,
+      "guide": "guides/transition/guide_091.png",
+      "guide_sha256": "5d10ebea18d4bfc6d48086ff92daabf7043dfcb7503394ab83899bd0815ab157",
+      "point": [
+        134.0,
+        212.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        173,
+        177,
+        252
+      ],
+      "score": 0.7482223510742188,
+      "actual_cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 92,
+      "gait_frame": 6,
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "view_elevation": 82.44813446371879,
+      "view_azimuth": -32.98891033698939,
+      "native_pixels_per_metre": 67.64560900811105,
+      "guide": "guides/transition/guide_092.png",
+      "guide_sha256": "3e1270d1c971e43ff342af387a56825883bc75a236e627cb4b048df0489c231b",
+      "point": [
+        132.5,
+        208.5
+      ],
+      "template_scale": 0.3500000000000002,
+      "template_box": [
+        88,
+        168,
+        177,
+        249
+      ],
+      "score": 0.7616338133811951,
+      "actual_cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 93,
+      "gait_frame": 7,
+      "cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "view_elevation": 82.7712655854092,
+      "view_azimuth": -33.78915695889241,
+      "native_pixels_per_metre": 66.10343358969841,
+      "guide": "guides/transition/guide_093.png",
+      "guide_sha256": "c027f22c2e724ae47a82330ac2cffc6d5c3a3febb1cf1db2dfe4b7840e2e80d0",
+      "point": [
+        134.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        169,
+        177,
+        248
+      ],
+      "score": 0.7403504848480225,
+      "actual_cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 94,
+      "gait_frame": 8,
+      "cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "view_elevation": 83.07830353242153,
+      "view_azimuth": -34.59924650436725,
+      "native_pixels_per_metre": 64.59151331889575,
+      "guide": "guides/transition/guide_094.png",
+      "guide_sha256": "94746d749ec19b1f969f65e7a20d5e93f6eb970c5d150a1dd6a603ef24c0a5d8",
+      "point": [
+        134.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        169,
+        177,
+        248
+      ],
+      "score": 0.7572162747383118,
+      "actual_cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 95,
+      "gait_frame": 9,
+      "cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "view_elevation": 83.36978582011609,
+      "view_azimuth": -35.417347507397494,
+      "native_pixels_per_metre": 63.11010935123471,
+      "guide": "guides/transition/guide_095.png",
+      "guide_sha256": "74261301dc0a6881ae5b16173aca429b00026c09c6f589ff878d33bfc2f91989",
+      "point": [
+        134.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        169,
+        177,
+        248
+      ],
+      "score": 0.7888877987861633,
+      "actual_cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 96,
+      "gait_frame": 10,
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "view_elevation": 83.64625995668587,
+      "view_azimuth": -36.241447865875436,
+      "native_pixels_per_metre": 61.659438718729604,
+      "guide": "guides/transition/guide_096.png",
+      "guide_sha256": "ecaa554cbe72a5b7a641af04511c6e6412297c4e773740e8b53730eda2c7048d",
+      "point": [
+        134.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        169,
+        177,
+        248
+      ],
+      "score": 0.779375433921814,
+      "actual_cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 97,
+      "gait_frame": 11,
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "view_elevation": 83.90828110216886,
+      "view_azimuth": -37.06936202901737,
+      "native_pixels_per_metre": 60.23968897883908,
+      "guide": "guides/transition/guide_097.png",
+      "guide_sha256": "c5163f21beb48ad7ecdeb83d33e13b7460c72218027bbc1053a14c8e98c92e09",
+      "point": [
+        134.0,
+        209.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        170,
+        177,
+        249
+      ],
+      "score": 0.775039553642273,
+      "actual_cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 98,
+      "gait_frame": 12,
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "view_elevation": 84.1564097078075,
+      "view_azimuth": -37.898742004215755,
+      "native_pixels_per_metre": 58.8510483334485,
+      "guide": "guides/transition/guide_098.png",
+      "guide_sha256": "9b89176b80a7550decb154616019e9350e9e3d24691d4a2f7df555f30cb0489e",
+      "point": [
+        135.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        92,
+        169,
+        178,
+        248
+      ],
+      "score": 0.7797045111656189,
+      "actual_cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 99,
+      "gait_frame": 13,
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "view_elevation": 84.3912091540146,
+      "view_azimuth": -38.72709232804372,
+      "native_pixels_per_metre": 57.493663121202495,
+      "guide": "guides/transition/guide_099.png",
+      "guide_sha256": "128a634b3c16c4d9bf50a9417fec047244ced11e3d0743a7c80d50cbcf253876",
+      "point": [
+        134.0,
+        208.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        169,
+        177,
+        248
+      ],
+      "score": 0.7848116755485535,
+      "actual_cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 100,
+      "gait_frame": 14,
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "view_elevation": 84.61324340598452,
+      "view_azimuth": -39.55178902849742,
+      "native_pixels_per_metre": 56.16762335356773,
+      "guide": "guides/transition/guide_100.png",
+      "guide_sha256": "1368a7009f7f9ced2f6e28392075d279100589f379fcba0627ad2bc9347a068c",
+      "point": [
+        134.0,
+        211.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        172,
+        177,
+        251
+      ],
+      "score": 0.7859741449356079,
+      "actual_cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 101,
+      "gait_frame": 15,
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "view_elevation": 84.82307470694354,
+      "view_azimuth": -40.37010247390988,
+      "native_pixels_per_metre": 54.872960915162764,
+      "guide": "guides/transition/guide_101.png",
+      "guide_sha256": "00e1a8191d63eeb4338d9115fce16396f65fac1891b03dc76f61a0ab5cb67029",
+      "point": [
+        134.0,
+        211.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        172,
+        177,
+        251
+      ],
+      "score": 0.7756876349449158,
+      "actual_cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 102,
+      "gait_frame": 16,
+      "cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "view_elevation": 85.02126133002767,
+      "view_azimuth": -41.179223864535544,
+      "native_pixels_per_metre": 53.609648453048884,
+      "guide": "guides/transition/guide_102.png",
+      "guide_sha256": "c8b2598ec38d625b0e395a23208d2f995cdba72e40e5f14f3dfab0880f95893b",
+      "point": [
+        133.5,
+        212.0
+      ],
+      "template_scale": 0.3450000000000002,
+      "template_box": [
+        90,
+        172,
+        177,
+        252
+      ],
+      "score": 0.7532042860984802,
+      "actual_cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    },
+    {
+      "sample_index": 103,
+      "gait_frame": 17,
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "view_elevation": 85.20835541064007,
+      "view_azimuth": -41.97629498310651,
+      "native_pixels_per_metre": 52.37759903317156,
+      "guide": "guides/transition/guide_103.png",
+      "guide_sha256": "4ba2fe50d976e46d15a2c853c65ebe28360e93117622ce39e544865ffa72127a",
+      "point": [
+        134.0,
+        212.5
+      ],
+      "template_scale": 0.3400000000000002,
+      "template_box": [
+        91,
+        173,
+        177,
+        252
+      ],
+      "score": 0.7550691962242126,
+      "actual_cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Actual overlay inspected: observed white cranium region, excluding loosehair/clasp/face; sourcecoordinate uncertainty\u00b13px."
+    }
+  ],
+  "source_sha256": "eb66bea5ebdf547a2bd3f7b77c2c112f868f409f867ac26af77de75d69579b1e"
+}

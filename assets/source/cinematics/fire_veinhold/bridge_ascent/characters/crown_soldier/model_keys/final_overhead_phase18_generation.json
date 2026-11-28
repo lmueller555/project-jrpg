@@ -1,0 +1,35 @@
+{
+  "elevation_degrees": 90,
+  "phase": 18,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "ground_anchor": [
+    512,
+    960
+  ],
+  "pixels_per_meter": 500,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/final_overhead_phase18_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_90_phase18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/final_overhead_phase18.png",
+  "prompt": "Make ONE complete whole-figure redraw of the exact Crown soldier in reference1, preserving its successful STRICT90-degree vertical OVERHEAD volume, scale, placement and phase18 running pose. This is a very small costume-continuity correction to the existing TWO-LEG figure. Reference2 is only a material crop showing the approved polished steel knee plate.\nAdd ONE visible articulated silver/steel kneecap plate and short overlapping upper-shin lames to the advancing anatomicalLEFT/imageRIGHT knee on the large forward leg near imagebottom. Its real knee joint stays exactly in the existing leg, with the armor foreshortened from directly above. Preserve charcoal trousers and the same brown boot below it. Do NOT add another knee/leg/boot beneath the tabard. The anatomicalRIGHT trailing leg is ALREADY represented by the boot visible ABOVE/BEHIND the shoulders near imageTOP; that rear knee is OCCLUDED behind the body and stays hidden. The figure has EXACTLY TWO BOOTS TOTAL: the one behind at TOP and the one advancing at BOTTOM. No third boot under the left hem, no new dangling limb, no stale fragments.\nKeep ALL other actual anatomy and camera projection from reference1. Crown of helmet/upper back/shoulders seen directly from above, no frontal face or full upright torso. Torso vertical height foreshortens away. Preserve helmet/shoulder physical width, constant real human dimensions, LEFT shield edge-on at imageRIGHT, RIGHT glove/sword at imageLEFT, blade angled DOWN/OUTSIDE in worldspace with foreshortening. Secure real leather gripping glove, exactlytwoarms,twoboots,twoconnectedlegs,onesword,oneshield.\nSame1024x1536 composition,500reference px/m, internal groundroot[512,960]. Do not fit occupied height or enlarge the compact figure to fill canvas. Keep exact open steelhelmet, shortbrown hair, navy split tabard, simple polished steel allied armor, charcoal trousers, brown gloves/boots. Entire coherent detailed painted figure, not a collage or detached rig. TRUE CLEAN TRANSPARENT RGBA, no floor/shadow/haze/backgroundsquare/glow/text/arrows/guides. Every pixel outside the figure transparent, and allfigureparts inside generous margins.",
+  "source_path": "/workspace/generated_images/exec-d15e6be9-c8f6-42f4-b670-cd57c1c64bc8.png",
+  "generation_id": "exec-d15e6be9-c8f6-42f4-b670-cd57c1c64bc8",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen overhead redraw; raw output bytes copied unchanged.",
+  "status": "directional_model_candidate_pending_internal_review",
+  "source_sha256": "4ab691757f360b9331fd99ebc911694eed6681ff3bc57cd81505198aca5064e9",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_90_phase18.png": "7e73c53a3a9d79e886ed2caa5dac423d2d0a4a6cd55bc945ed4933c8aa90a8df",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png": "700d3d53e3d1b17f97aeb21f1c67711a9e4b9e6f4c7c5a16e5cb00b0ca246c97"
+  },
+  "prompt_sha256": "852b5488c938a050b1afa5398df0faff1efe6eda68d9ff53658057087147743d",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "4ab691757f360b9331fd99ebc911694eed6681ff3bc57cd81505198aca5064e9",
+  "prompt_text_sha256": "852b5488c938a050b1afa5398df0faff1efe6eda68d9ff53658057087147743d",
+  "prompt_file_sha256": "852b5488c938a050b1afa5398df0faff1efe6eda68d9ff53658057087147743d"
+}

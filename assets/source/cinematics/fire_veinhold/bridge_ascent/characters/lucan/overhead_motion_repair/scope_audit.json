@@ -1,0 +1,149 @@
+{
+  "scope": "Observed source passing/recovery anatomy plus bounded47 calf/boot projection; other cycle sources unchanged.",
+  "actual_guide_endpoint_geometry": [
+    {
+      "phase": 40,
+      "right_knee3d": [
+        0.11,
+        0.48143515774190837,
+        0.8210178201019712
+      ],
+      "right_foot3d": [
+        0.13,
+        0.502962962962963,
+        0.32148148148148165
+      ],
+      "signed_calf_Y_projection_at500ppm": 10.763902610527287,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 85.7639026105273
+    },
+    {
+      "phase": 41,
+      "right_knee3d": [
+        0.11,
+        0.4691986568058466,
+        0.7803267197011003
+      ],
+      "right_foot3d": [
+        0.13,
+        0.5111082175925926,
+        0.2820862268518518
+      ],
+      "signed_calf_Y_projection_at500ppm": 20.954780393373007,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 95.95478039337301
+    },
+    {
+      "phase": 42,
+      "right_knee3d": [
+        0.11,
+        0.453632956842469,
+        0.7397212790928225
+      ],
+      "right_foot3d": [
+        0.13,
+        0.511875,
+        0.24312500000000004
+      ],
+      "signed_calf_Y_projection_at500ppm": 29.121021578765475,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 104.1210215787655
+    },
+    {
+      "phase": 43,
+      "right_knee3d": [
+        0.11,
+        0.4360636246522439,
+        0.7022546095413502
+      ],
+      "right_foot3d": [
+        0.13,
+        0.5030931712962963,
+        0.20676793981481478
+      ],
+      "signed_calf_Y_projection_at500ppm": 33.51477332202618,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 108.51477332202619
+    },
+    {
+      "phase": 44,
+      "right_knee3d": [
+        0.11,
+        0.4162305387473142,
+        0.6669582366968464
+      ],
+      "right_foot3d": [
+        0.13,
+        0.48333333333333334,
+        0.17148148148148154
+      ],
+      "signed_calf_Y_projection_at500ppm": 33.55139729300957,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 108.55139729300956
+    },
+    {
+      "phase": 45,
+      "right_knee3d": [
+        0.11,
+        0.3910864024699855,
+        0.6299839403660772
+      ],
+      "right_foot3d": [
+        0.13,
+        0.453125,
+        0.13384765624999997
+      ],
+      "signed_calf_Y_projection_at500ppm": 31.019298765007253,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 106.01929876500726
+    },
+    {
+      "phase": 46,
+      "right_knee3d": [
+        0.11,
+        0.36441465131526185,
+        0.5972599743986626
+      ],
+      "right_foot3d": [
+        0.13,
+        0.4124999999999999,
+        0.09957754629629623
+      ],
+      "signed_calf_Y_projection_at500ppm": 24.042674342369036,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 99.04267434236903
+    },
+    {
+      "phase": 47,
+      "right_knee3d": [
+        0.11,
+        0.3426574221073658,
+        0.5742854342694264
+      ],
+      "right_foot3d": [
+        0.13,
+        0.3614583333333335,
+        0.07463903356481483
+      ],
+      "signed_calf_Y_projection_at500ppm": 9.400455612983832,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 84.40045561298382
+    },
+    {
+      "phase": 0,
+      "right_knee3d": [
+        0.11,
+        0.33183315746329634,
+        0.5639856211214076
+      ],
+      "right_foot3d": [
+        0.13,
+        0.3,
+        0.065
+      ],
+      "signed_calf_Y_projection_at500ppm": -15.916578731648173,
+      "normal_toe_forward_extent_beyond_knee_at500ppm": 59.08342126835181
+    }
+  ],
+  "source_observations": [
+    "Dense early8\u201310/32\u201333 used an extended steel shin/brown boot where the realguide exposes the forward bent knee with folded-back calf and occluded boot. Selected repairs resolve that in complete new figures.",
+    "Later12\u201315/36\u201339 naturally allow a normal toe to emerge while the calf remains folded; the selected figures preserve that progression.",
+    "Original47 had a long forward calf/bootshaft despite nearlyoverlapping realguide knee/ankle centers. Selected47 retains the original same-phase arm/gear/body carry and redraws a rounded knee with normal top-view boot toe.",
+    "Source46 normal toe extent was distinguished from gray calf length using actual knee/foot ownership. No separate unambiguous 100+artpx gray-calf error justified reopening40\u201346.",
+    "Bounded47 is checked against BOTH46 and0 through a fixed2.2s authoring diagnostic. Final production-compositor/native acceptance is recorded separately in root review documents."
+  ],
+  "guide_source_sha256": "e2b12f1dc3f5f105a4b81a95c7889be733321a28605eb56974cbd5b4d2ae79e6",
+  "selected_source_state": "immutable wholefigure ImageGen masters, completepixel source observations; no parttransforms or silhouetteheightfit"
+}

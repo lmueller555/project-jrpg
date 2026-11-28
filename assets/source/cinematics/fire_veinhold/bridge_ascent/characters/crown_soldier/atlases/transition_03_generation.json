@@ -1,0 +1,122 @@
+{
+  "name": "transition_03",
+  "kind": "transition",
+  "columns": 4,
+  "rows": 2,
+  "reference_cell_size": [
+    1024,
+    1536
+  ],
+  "reference_canvas": [
+    4096,
+    3072
+  ],
+  "samples": [
+    {
+      "id": "transition_074",
+      "kind": "transition",
+      "index": 74,
+      "time": 1.2333333333333334,
+      "phase": 44,
+      "elevation": 54.42893001753776,
+      "azimuth": 10.100142364649257,
+      "native_pixels_per_metre": 88.28543039481353
+    },
+    {
+      "id": "transition_076",
+      "kind": "transition",
+      "index": 76,
+      "time": 1.2666666666666666,
+      "phase": 46,
+      "elevation": 56.14826506300812,
+      "azimuth": 10.29668649034382,
+      "native_pixels_per_metre": 85.84361707008786
+    },
+    {
+      "id": "transition_078",
+      "kind": "transition",
+      "index": 78,
+      "time": 1.3,
+      "phase": 0,
+      "elevation": 57.82692605043862,
+      "azimuth": 10.4970668772474,
+      "native_pixels_per_metre": 83.31996281684954
+    },
+    {
+      "id": "transition_080",
+      "kind": "transition",
+      "index": 80,
+      "time": 1.3333333333333333,
+      "phase": 2,
+      "elevation": 59.45980498852083,
+      "azimuth": 10.700525192091744,
+      "native_pixels_per_metre": 80.7248391955562
+    },
+    {
+      "id": "transition_082",
+      "kind": "transition",
+      "index": 82,
+      "time": 1.3666666666666667,
+      "phase": 4,
+      "elevation": 61.04202805200443,
+      "azimuth": 10.90620574818265,
+      "native_pixels_per_metre": 78.07360025659078
+    },
+    {
+      "id": "transition_084",
+      "kind": "transition",
+      "index": 84,
+      "time": 1.4,
+      "phase": 6,
+      "elevation": 62.56911820411262,
+      "azimuth": 11.113155999230617,
+      "native_pixels_per_metre": 75.38472672538235
+    },
+    {
+      "id": "transition_086",
+      "kind": "transition",
+      "index": 86,
+      "time": 1.4333333333333333,
+      "phase": 8,
+      "elevation": 64.03713423399738,
+      "azimuth": 11.320329789173416,
+      "native_pixels_per_metre": 72.67815335354915
+    },
+    {
+      "id": "transition_088",
+      "kind": "transition",
+      "index": 88,
+      "time": 1.4666666666666666,
+      "phase": 10,
+      "elevation": 65.44277948820557,
+      "azimuth": 11.526593824307518,
+      "native_pixels_per_metre": 69.97385252523239
+    }
+  ],
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_03_continuity_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_03_guide.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_plate_only_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_03.png",
+  "prompt": "IMPORTANT MATERIAL CONTINUITY: This is the same approved young ordinary Crown soldier, with softly WARM burnished-steel highlights, fine small BLUE diamond pattern engraved across armor/shield, warm SILVER borders, faded BLUE/NAVY split tabard and warm SILVER trim, CHARCOAL quilting, BROWN leather. Do not redesign into cold grey/black armor or replace the knee/shin plate shapes. The face disappears naturally under the helmet as elevation rises. A fixed upright oblique shield has a forward-facing normal component: it gradually narrows with angle, never snaps arbitrarily.\nCreate ONE TRANSPARENT ATLAS in the EXACT4columns x2rows grid of reference1. There are8 complete WHOLE-FIGURE drawings, one in each occupiedcell; anymarkedemptycellsstayempty. Reference1 consists of TRUE BLENDER3D camera/pose guides and OWNS each cell's exact anatomy, angle, phase, relative physicalscale and placement. Otherreferences are small approved face/helmet/navy/leather/kneeplate material identity crops ONLY, not anoldfullbodypose.\nExact row-major plan: cell0=tick74/phase44@54.43deg, cell1=tick76/phase46@56.15deg, cell2=tick78/phase00@57.83deg, cell3=tick80/phase02@59.46deg, cell4=tick82/phase04@61.04deg, cell5=tick84/phase06@62.57deg, cell6=tick86/phase08@64.04deg, cell7=tick88/phase10@65.44deg. These are8 successive CAMERA/TIME poses, two60Hz ticks apart. Every cell has its own exact elevated camera; do not replace them with a generic contact strip.\nIndividually redraw EVERY cell as one coherent naturallyproportioned painted allied Crown soldier, maintaining the guide's connected hip-knee-calf-ankle and shoulder-elbow-glove chains. Do not build a detached rig,interpolate,warp,crossfade or duplicate aheldpose. The nearANDfar limbs must progress as their own actualguide in eachcell, including support/compression/pushoff/flight/recovery and both opposing contacts. If a guideankle is folded BEHIND a forward knee, the painted boot stays back/up there; never turn it into a long frontal shin or an earlycontact. Exactlytwo anatomical legs/two feet andtwoarms, whethervisibleorcorrectlyoccluded; no extra3rdboot,hand or old fragments.\nThe runner travels toward imageBOTTOM. AnatomicalRIGHT/imageLEFT securely holds ONE sword in its LEATHER glove, blade world-DOWN/OUTSIDE with true-cameraforeshortening. LEFT/imageRIGHT forearm carries ONE plain upright boss shield; follow its real plane/thickness, becoming a thin edge/rim near overhead. Do not showa fullroundshieldface at82degrees. Natural right sword-arm pump and leftshieldcounterbalance, hands attached to real wrists.\nEvery cell is the exact current ordinary allied Crown model: youngman/brownhair/focusedface only whenphysicallyvisible,plain polished open steelhelmet,simple silver/steelplate onchest/shoulders/arms,smallarticulatedkneecaps/shortupper-shinlames onactualknees,charcoalquiltedtrousers,NAVYsplittabardwithtailsshortandbehind,brownleathergloves/boots. No red/goldroyalcommander,enemy purpleblack,newcape or modelchanges. Matchapproved detailed painted fantasy cinematic materials andthindarkouteroutline. Replace theguidesimple3Dvolumes withrealhumananatomy,notliteralcylinders.\nTruevolume/camera inEVERY cell: preservephysicalhelmet/rigidshoulder size, not occupiedfigureheight. Highcamera bodies genuinelyforeshorten; do NOTstretchtofillcell. Nearoverhead theheadleansFORWARD/downscreen ahead ofpelvis,withwaist/tailsbehind/up; no uprightfrontaltorso hangingbelow a topviewhelmet. Head/shoulders mayoccludewaist/legs. Atnear82degrees thehelmet/brimhidesfaceandeyes; no facepaintedthroughcrown. Keep eachcorrectlyfoldedbootbehinditsknee rather than extendinga genericlongleg.\nUse theexact guidegrid/aspect, equalcellboundaries and generouspercellmargins; no figurecrosses intoaneighbor. Keep helmet,swordtip,shieldandbothactualboots whollyinsideitscell. Preserve relative physicalwidth/density and the internalgroundroot fromeachguide; blankspaceisintentional. Wholecompletefiguresonly. TRUE CLEAN TRANSPARENT RGBA outsideeveryfigure, no grayfloor/shadow/haze/glow/backgroundrectangle,sheetlines,labels,cellnumbers,text,arrows orguidemarks. Remove all guidecaptionsandborders. Do notaddanythingtotheemptycells.\n",
+  "source_path": "/workspace/generated_images/exec-ae0d1f6a-4efb-4842-8fc4-d2a2707fb806.png",
+  "generation_id": "exec-ae0d1f6a-4efb-4842-8fc4-d2a2707fb806",
+  "transparent_background": true,
+  "construction": "Complete whole-figure painted atlas from explicit true-camera/time poses, no rig/warp/interpolated anatomy",
+  "status": "candidate_internal_review",
+  "source_sha256": "6bcfadb95fb1b58b2b62f4ef76a53ff73fa734e566691c454ac1e61bedba5245",
+  "output_sha256": "6bcfadb95fb1b58b2b62f4ef76a53ff73fa734e566691c454ac1e61bedba5245",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/atlases/transition_03_guide.png": "97b8d1ac04be904936aad6552a8c09c9eeeec79502f5fc33d6060da3ae691f93",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png": "94452b2cbb68949fccfe3bb00a76b61ecdc5e61ba5d7b24a8c638e2bd46ebfac",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png": "fd6c7b6105ae4538337ed099a8a03ba33db5075d7c573d56b7f5095a96fca339",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png": "3e1d8c9a79c75966f0a88897683623620ef0929482046b7acd005615114d1732",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_plate_only_material_reference.png": "fc8eeece26ae606177bf0ad35e600d533f9093f6ca7934382344deba45b7f457"
+  },
+  "prompt_text_sha256": "277b8bbf2d6f3b159c651309037215d81a846c239fcb253c4d3c14817b49b693",
+  "prompt_file_sha256": "277b8bbf2d6f3b159c651309037215d81a846c239fcb253c4d3c14817b49b693"
+}

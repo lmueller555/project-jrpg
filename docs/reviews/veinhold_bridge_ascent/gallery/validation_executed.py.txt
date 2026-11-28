@@ -1,0 +1,36 @@
+from pathlib import Path
+from hashlib import sha256
+from fractions import Fraction
+from PIL import Image
+import json,subprocess
+ROOT=Path('/workspace/project-jrpg');OUT=ROOT/'docs/reviews/veinhold_bridge_ascent/gallery'
+rows=[];sources=None;runtime=None
+for stem,duration,frames,offset,reduced in [('shot08',8,480,47,False),('shot08_reduced_motion',8,480,47,True),('complete',55,3300,0,False),('complete_reduced_motion',55,3300,0,True)]:
+ path=OUT/f'{stem}_capture.json';data=json.loads(path.read_text());perf=data['performance']
+ assert data['fps']==60 and data['frames']==frames and data['duration']==duration and data['render_size']==[960,640]
+ assert data['authored_offset_seconds']==offset and data['reduced_motion']==reduced
+ assert data['natural_completion'] and data['no_persistent_files_written']
+ assert perf['peak_bridge_ascent_image_cache_bytes']<=8*960*640*4
+ assert perf['peak_face_ascent_handoff_bytes']<=12*960*640*4
+ assert all(r['bytes']==0 for r in perf['bridge_ascent_cache_at_completion'])
+ assert data['audio']['peak']<1
+ for key,previous in [('source_sha256',sources),('runtime_sha256',runtime)]:
+  if previous is not None:assert data[key]==previous,(stem,key)
+ sources=data['source_sha256'];runtime=data['runtime_sha256']
+ movie=OUT/f'{stem}.mp4';assert sha256(movie.read_bytes()).hexdigest()==data['video_sha256']
+ probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','stream=codec_type,width,height,r_frame_rate,nb_frames,duration,sample_rate,channels','-of','json',str(movie)]))
+ video=next(s for s in probe['streams'] if s['codec_type']=='video');audio=next(s for s in probe['streams'] if s['codec_type']=='audio')
+ assert video['width']==960 and video['height']==640 and Fraction(video['r_frame_rate'])==60
+ assert int(video['nb_frames'])==frames and abs(float(video['duration'])-duration)<1e-4
+ assert audio['sample_rate']=='48000' and audio['channels']==2
+ rows.append({'stem':stem,'capture_metadata_sha256':sha256(path.read_bytes()).hexdigest(),'video_sha256':data['video_sha256'],'encoded_streams':probe['streams'],'natural_completion':True,'persistent_writes':False,'performance':perf,'audio_peak':data['audio']['peak']})
+for name,expected in {**sources,**runtime}.items():assert sha256((ROOT/name).read_bytes()).hexdigest()==expected,name
+joins=[]
+for suffix in ('','_reduced_motion'):
+ for index in (0,30,90,180,450,479):
+  a=OUT/f'shot08{suffix}_{index:04d}.png';b=OUT/f'complete{suffix}_{2820+index:04d}.png'
+  with Image.open(a) as one,Image.open(b) as two:assert one.convert('RGB').tobytes()==two.convert('RGB').tobytes(),(a,b)
+  joins.append({'standalone':a.name,'complete':b.name,'rgb_exact':True})
+script=Path(__file__).read_bytes();(OUT/'validation_executed.py.txt').write_bytes(script)
+record={'status':'PASS','method':'Actual save-disabled production Gallery captures at60 displayed ticks/s, ffprobe encoded-stream checks, current source/runtime SHA checks and exact normal/reduced still comparisons. Audio is offline reconstruction, not hardware listening. Native pictures were inspected as still sequences; normal-speed movie watching is not claimed.','executed_validator_sha256':sha256(script).hexdigest(),'source_files_checked':len(sources),'runtime_files_checked':len(runtime),'captures':rows,'actual_standalone_full_still_controls':joins}
+(OUT/'validation.json').write_text(json.dumps(record,indent=2)+'\n');print('PASS:4 real Gallery captures,12 exact still controls, all encoded-frame/clock/cache/isolation/source bindings.')

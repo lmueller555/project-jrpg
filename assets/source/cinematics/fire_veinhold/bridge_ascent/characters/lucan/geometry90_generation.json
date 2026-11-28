@@ -1,0 +1,18 @@
+{
+  "id": "model_key_90_geometry",
+  "output": "model_key_90_geometry.png",
+  "prompt": "Paint ONE COMPLETE Lucan cutscene sprite from the EXACT STRAIGHT-DOWN CAMERA AND BODY OVERLAPS in the FIRST attached image. That first image is a real3D posed camera guide, not the finished style. Keep its actual projection, anatomical ownership and two leg chains. The SECOND image contains cropped appearance/material samples ONLY: use its detailed painterly polished steel/gold, oxblood cloth, brown leather and swept dark hair style to finish the knight. Do not infer a frontal pose from the material crops.\n\nCRITICAL CAMERA: exactly vertical, perpendicular to ground. Lucan runs toward the BOTTOM edge. His head crown is AHEAD of and BELOW the pelvis/belt in image space as in the3D guide; it overlaps/hides the chest. Do not put a frontal head above a long visible breastplate. See the CROWN of his unhelmeted dark hair, TOP surfaces of shoulders and shortened top-down torso. No visible eyes, no face looking up, no frontal chest pointing at the camera. Upper body remains upright with a slight natural forward running lean, not a man lying flat.\n\nCRITICAL TWO LEGS: there are exactly TWO legs and TWO boots. AnatomicalRIGHT contact leg is imageLEFT and reaches forward to the lower-left boot. AnatomicalLEFT recovering leg is imageRIGHT and trails behind to the upper-right boot. The boots at those two guide locations are the ONLY boots. Do not leave an obsolete extra boot under the belt. Resolve hip-to-knee-to-calf attachment and natural occlusion completely in this one unified drawing.\n\nCRITICAL WEAPONS: anatomicalRIGHT sword hand is imageLEFT behind the shoulder; long steel blade aims low/forward as in the guide. AnatomicalLEFT shield forearm is imageRIGHT forward. The kite shield hangs UPRIGHT, so from this vertical camera only its narrow curved top rim/back sliver is visible; its front red/gold chevron face is naturally hidden. Match the thin projected shield in the guide, do not lay a broad frontal kite flat toward the camera. It is the same normal-sized shield foreshortened in depth, not a smaller shield. Gloves and grips stay attached.\n\nLucan's identity: young adult human male knight, bare head with swept dark brown hair; articulated polished silver steel with restrained gold edging, oxblood split tabard, pale chest motif mostly hidden by overhead occlusion, dark trousers, brown boots/gloves. Preserve natural full body proportions and actual limb length; the footprint shortens only because of view projection. Cool moonlight and restrained existing warm rim accents, no palette flash. True TRANSPARENT background, no floor/shadow, no diagram colors or primitive cylinders, no labels/grid/text, no extra limbs/equipment. Keep complete hair, both boots, sword point and shield within generous clear margins.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/true_overhead_3d_pose_guide.png",
+      "sha256": "87b7b048a7192a13476441ee036e9f6ffd3338526ae895117f978ff886b8fc05"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches.png",
+      "sha256": "aa2237cd134d3d75cf75cb987baf6bbd20a2da93a4e470ce88c5d440a6f8b7db"
+    }
+  ],
+  "original_generation_path": "/workspace/generated_images/exec-279f1384-5bc2-41b8-a59b-ca8e889f2de4.png",
+  "generation_id": "exec-279f1384-5bc2-41b8-a59b-ca8e889f2de4",
+  "source_sha256": "ef8834ae5956c21e2af2381e3d09cb15f21791bb96342e06fc65d91dfbd49018"
+}

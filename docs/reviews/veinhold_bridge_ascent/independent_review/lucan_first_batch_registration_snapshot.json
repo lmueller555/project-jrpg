@@ -1,0 +1,247 @@
+[
+  {
+    "index": 11,
+    "gait_frame": 11,
+    "source": "assets/story/fire_veinhold_opening/shot07/characters/lucan/frame_11.png",
+    "source_sha256": "28fa4814cc12e0f11fbabd43142e782f81d3a2242fe24f65b14acf6f1dc0c8a9",
+    "cell": [
+      0,
+      0,
+      768,
+      1024
+    ],
+    "scale": 1.0,
+    "origin": [
+      128,
+      0
+    ],
+    "alpha_floor": 0,
+    "method": "Whole approved image padded unchanged for the matched12.2\u201313.3degree entry.",
+    "output_sha256": "4c49403cc253bb1b7b10f190548f2ef510b8b4a75855ad1258718641b972a940"
+  },
+  {
+    "index": 12,
+    "gait_frame": 12,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_012_015b.png",
+    "source_sha256": "8d0e3505d4b841112ab46fd12e934449ad2bd02bd908a97e38538878b57203c1",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.2422360248447206,
+    "origin": [
+      177.57635981366457,
+      4.6820793969797725
+    ],
+    "alpha_floor": 16,
+    "view_elevation_degrees": 13.59565451396918,
+    "source_landmark_matches": {
+      "eyes": {
+        "score": 0.8801770210266113,
+        "scale": 0.8049999999999999,
+        "point": [
+          267.0,
+          110.0
+        ]
+      },
+      "neck": {
+        "score": 0.6557775139808655,
+        "scale": 0.7727999999999999,
+        "point": [
+          271.5,
+          164.5
+        ]
+      },
+      "belt": {
+        "score": 0.8591514825820923,
+        "scale": 0.7929249999999999,
+        "point": [
+          277.0,
+          303.0
+        ]
+      }
+    },
+    "projected_reference_landmarks": {
+      "eyes": [
+        509.9584,
+        138.65135686859628
+      ],
+      "neck": [
+        515.263,
+        209.80290547314837
+      ],
+      "belt": [
+        516.0442,
+        396.54554915036783
+      ]
+    },
+    "registered_landmarks": {
+      "eyes": [
+        509.25337844720497,
+        141.32804212989902
+      ],
+      "neck": [
+        514.8434405590062,
+        209.0299054839363
+      ],
+      "belt": [
+        521.6757386956522,
+        381.0795949249301
+      ]
+    },
+    "method": "Actual feature matching at low elevation; uniform whole-image sampling and translation only.",
+    "output_sha256": "ee2932ae5ac9c12bb4bc8f71ea74c1c6e6300bc8f51cf212db1209cd61ffe087"
+  },
+  {
+    "index": 15,
+    "gait_frame": 15,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_012_015b.png",
+    "source_sha256": "8d0e3505d4b841112ab46fd12e934449ad2bd02bd908a97e38538878b57203c1",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.25,
+    "origin": [
+      178.23845000000003,
+      2.1469659447708356
+    ],
+    "alpha_floor": 16,
+    "view_elevation_degrees": 14.794596245464286,
+    "source_landmark_matches": {
+      "eyes": {
+        "score": 0.8472440838813782,
+        "scale": 0.8,
+        "point": [
+          265.0,
+          115.5
+        ]
+      },
+      "neck": {
+        "score": 0.7428104877471924,
+        "scale": 0.768,
+        "point": [
+          272.0,
+          168.5
+        ]
+      },
+      "belt": {
+        "score": 0.8304093480110168,
+        "scale": 0.776,
+        "point": [
+          274.5,
+          305.5
+        ]
+      }
+    },
+    "projected_reference_landmarks": {
+      "eyes": [
+        510.42220000000003,
+        142.95664769702046
+      ],
+      "neck": [
+        518.146,
+        214.53032288472718
+      ],
+      "belt": [
+        515.5252,
+        402.8006422052574
+      ]
+    },
+    "registered_landmarks": {
+      "eyes": [
+        509.48845000000006,
+        146.52196594477084
+      ],
+      "neck": [
+        518.2384500000001,
+        212.77196594477084
+      ],
+      "belt": [
+        521.3634500000001,
+        384.02196594477084
+      ]
+    },
+    "method": "Actual feature matching at low elevation; uniform whole-image sampling and translation only.",
+    "output_sha256": "06b2396c5462080cb5bdb608926dcda739bb9c58f860b2352c834a934d8691d2"
+  },
+  {
+    "index": 16,
+    "gait_frame": 16,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_016_019b.png",
+    "source_sha256": "533a06ddc33cd6c2fab2591ee85a0790917dc5d64bb45c10ba6bb68e2e1609fe",
+    "cell": [
+      0,
+      0,
+      623,
+      630
+    ],
+    "scale": 1.4388489208633093,
+    "origin": [
+      58.75898769784175,
+      38.86101543831219
+    ],
+    "alpha_floor": 16,
+    "view_elevation_degrees": 15.300399953090315,
+    "source_landmark_matches": {
+      "eyes": {
+        "score": 0.883887529373169,
+        "scale": 0.6950000000000001,
+        "point": [
+          313.5,
+          75.0
+        ]
+      },
+      "neck": {
+        "score": 0.7864897847175598,
+        "scale": 0.6672,
+        "point": [
+          319.5,
+          124.0
+        ]
+      },
+      "belt": {
+        "score": 0.9062986373901367,
+        "scale": 0.684575,
+        "point": [
+          316.0,
+          251.0
+        ]
+      }
+    },
+    "projected_reference_landmarks": {
+      "eyes": [
+        509.7876,
+        145.88922662967695
+      ],
+      "neck": [
+        518.3430000000001,
+        218.08910229605976
+      ],
+      "belt": [
+        514.0842,
+        403.740519075252
+      ]
+    },
+    "registered_landmarks": {
+      "eyes": [
+        509.83812438848923,
+        146.77468450306037
+      ],
+      "neck": [
+        518.4712179136691,
+        217.27828162536255
+      ],
+      "belt": [
+        513.4352466906475,
+        400.0120945750028
+      ]
+    },
+    "method": "Actual feature matching at low elevation; uniform whole-image sampling and translation only.",
+    "output_sha256": "4c1faa0b3287ca9e426c950111c9ad8272460d0327545b5c1515f8c55f0aba71"
+  }
+]

@@ -1,11 +1,11 @@
 # Fire Veinhold prologue — cinematic production
 
-**Status:** The Gallery presentation contains seven production shots totaling
-47 seconds: the existing 25-second summit approach/vista, a five-second island
-orbit, four-second alarm lead-in, one-second bridge rush and four-second frozen
-guard reveal, three seconds tracking the running party's legs and a five-second
-frontal running-party reveal. The overhead ascent and final playable handoff remain
-future implementation.
+**Status:** Shot 8, Bridge Ascent, is implemented in the Gallery. The eight-shot
+film lasts **55 seconds**, with the new shot occupying 47–55 seconds at native
+960×640 and 60 Hz. Frozen source exports, the complete 481-sample normal/Reduced
+Motion bank, fresh reproduction and Gallery validation are recorded in the
+[Bridge Ascent review](../../reviews/veinhold_bridge_ascent/README.md).
+The playable infiltration handoff remains future implementation.
 
 [Chapter 1](../game_01/CHAPTER_01.md) owns the opening story. This document owns
 cinematography and implementation. The [sprite standard](../../SPRITE_ANIMATION_STANDARD.md)
@@ -23,13 +23,13 @@ owns the approved geography; the canonical world map remains unchanged.
 | 5 — Frozen Bridge | 35–39s | Settle 20 feet onto the bridge from its Merovar mainland landing, facing mainland. Distinct Carcovian guards are frozen in stasis; ice coats parts of the deck and railings. The attackers remain unseen behind the camera. |
 | 6 — Running legs | 39–42s | Cut to boot-height side tracking of Iselin, Lucan and the Crown soldier running toward the Veinhold over the steel bridge. Their faces stay outside the frame. |
 | 7 — Faces | 42–47s | Track backward in front of the runners, starting above their heads and tilting down over 1.5 seconds to reveal their faces. Lucan leads in the center. Iselin is on his anatomical right, close behind (screen left); the Crown soldier is on his anatomical left (screen right), about ten feet behind. |
-| 8 — Bridge ascent | 8 seconds, future implementation | Rise over Lucan into an ascending overhead view. Frozen guards lie behind the party; more guards approach from the fortress. The final gameplay handoff remains open. |
+| 8 — Bridge Ascent | 47–55 seconds | Continue from Shot 7's exact terminal camera and running phase, rise above Lucan, then widen to a high view of the bridge with mainland up and fortress down. Four frozen guards remain behind the party; six guards advance from the fortress and two more emerge through its visible gate late in the shot. |
 
 The fortress access bridge is distinct from Elden Vale's western bridge. The
 five-second orbit replaces the previously proposed separate 15-second closer
-fortress shot. Later party shots are storyboard direction, not runtime
-placeholders. There is no cast reveal or new dialogue in Shots 2–5. Shot 6
-reveals their lower-body movement before Shot 7's frontal face reveal.
+fortress shot. There is no cast reveal or new dialogue in Shots 2–5. Shot 6
+reveals their lower-body movement before Shot 7's frontal face reveal; Shot 8
+continues that performance into the high bridge view.
 
 ## Shot 1 staging
 
@@ -93,10 +93,10 @@ bearing grid or guaranteed real-world line of sight.
 
 ## Art and runtime contract
 
-The implemented shot list is `assets/story/fire_veinhold_opening/scene.json`.
-The shot explicitly records `ascent_duration:15`, `vista_duration:10`, and
-`duration:25`. Durations must be positive, finite and sum correctly. Future
-storyboard rows are not runtime placeholders.
+The production shot list is `assets/story/fire_veinhold_opening/scene.json`.
+Its eight shots total 55 seconds.
+Shot 1 explicitly records `ascent_duration:15`, `vista_duration:10`, and
+`duration:25`. Durations must be positive, finite and sum correctly.
 
 The native picture remains **960×640**, full **3:2**, rendered directly to the
 actual UI surface. The new perspective sequences are authored at **60 FPS**;
@@ -356,6 +356,126 @@ that owner. Capture metadata records decoded/pending bytes and verifies that
 completion, restart and close release the temporary owner. No dialogue,
 overhead ascent or playable handoff is introduced here.
 
+## Bridge Ascent — production contract
+
+Shot 8 occupies **47–55 seconds** at native **960×640**, 60 Hz. Its 481 inclusive
+camera samples run from local `0/60` through `480/60`: **480 displayed intervals**,
+exactly eight seconds. The complete film therefore has **3300 displayed ticks**
+over 55 seconds; inclusive terminal samples do not add display time.
+
+The entry uses Shot 7's exact terminal camera pose, lens, party world positions
+and gait phase. The current composite using all three actual cast sources
+matches Shot 7's terminal sample 300 pixel for pixel. It rises continuously
+above Lucan before opening into a high view of the crossing. Mainland stays at
+the top and the fortress at the bottom;
+screen right remains bridge-local −X through the overhead portion, without a
+roll or basis flip. The current shared rig rises from 1.55 metres at entry to
+4 metres at 0.8 seconds, 22 metres at 2.2 seconds and approximately 300 metres
+at the end. Its optical axis reaches straight down at 2.2 seconds while the
+camera subsequently reframes along the bridge. These are cinematic staging
+coordinates, not new geographic distances or travel times.
+
+The party continues toward the Veinhold at **4 m/s**, from bridge marker 54.26
+to 86.26 metres. Lucan remains central; Iselin stays 0.65 metres on his anatomical
+right and 0.5 metres behind, and the Crown soldier stays 0.75 metres on his
+anatomical left and 3.048 metres behind. Their 800 ms run cycle continues across
+the cut. Entry phases are **0, 1/6 and 0.3 seconds** for Lucan, Iselin and the
+Crown soldier respectively; these are phases 0, 10 and 18 of the 48-pose cycle.
+They are not three new synchronized starts. Contact Foley follows the same
+continuous clock.
+
+Four frozen Carcovian guards retain their established world positions and
+distinct interrupted-action poses behind the party. They remain in stasis.
+Six live Carcovian guards advance from the fortress side toward the party;
+two further guards emerge from the gate late in the shot, after the gate has
+entered the picture. Their direction, spacing and gate exits must be readable
+in the actual projected frames. The steel deck, rails, ice trail, water and
+both landings retain one spatial layout through the rise.
+
+New elevated appearances require complete, detailed party and guard drawings
+with camera-appropriate anatomy, equipment, hair, cloth and occlusion. Approved
+Shot 7 art remains valid and reusable for the entry where its view applies.
+Tilting or vertically squeezing frontal PNGs cannot supply the later elevated
+views. Each actor's view follows the ray from that actor to the camera: a
+straight-down optical axis does not make every off-axis actor a 90° top view.
+Native review covers the exact entry, close transition, later cycle and
+source-batch joins; see the [inspection record](../../reviews/veinhold_bridge_ascent/independent_review/final_bank_review.json).
+Rough guides and phase metadata remain construction inputs. Acceptance is bound
+to the frozen exported drawings and their actual native projection.
+
+Each party export describes 133 logical transition rows through local 2.2
+seconds, followed by a 48-phase elevated cycle. These are sample/timing records,
+not a promise of 133 unique transition drawings. An authored pose can be exposed
+for two 60 Hz ticks: the Crown soldier's odd transition rows hold the preceding
+pose, and Iselin's phase-32 passing drawing covers rows 118–119. Lucan's rows
+36–37, 40–41 and 44–45 expose the complete drawings authored at phases 37, 41
+and 45 respectively. His logical phase and the 48 contact remain unchanged.
+The scene clock, camera and contact phase still advance at each tick. Judge
+these exposures and their joins in native projection rather than treating
+unique-file count as a motion requirement.
+
+All three party exports and the guard export are frozen for this revision and
+rebuild from their retained sources. Each party retains 133 logical transition
+records and 48 cycle records. The Crown soldier references 127 unique PNGs,
+Iselin 168 and Lucan 156. The
+[source freeze and export evidence](../../reviews/veinhold_bridge_ascent/source_checks/frozen_profiles.json) records
+the final manifests, raw/export hashes, authoring provenance and native approval.
+
+`cinematic_bridge_ascent.py` owns the shared camera, projection, formation,
+party/guard phase and acoustic source state. The offline builder is
+`tools/build_prologue_bridge_ascent.py`. Retained drawings, guides, prompts,
+generation provenance and registration recipes belong under
+`assets/source/cinematics/fire_veinhold/bridge_ascent/`; portable exported art
+manifests belong under `shot08/characters/` and `shot08/guards/`. The final
+`shot08/scene.json` and environment bank describe complete native pictures
+with all actors already composited and depth occlusion resolved. Runtime streams
+those pictures without an additional decoded source-character bank. Camera
+signatures and a separate performance signature bind the bank to the shared rig,
+scene, portable art manifests and declared PNG hashes; offline reproduction
+also verifies the actual source/export bytes.
+
+The builder now provides `--proof` for native cast checkpoints, `--bake` for
+the full normal/Reduced Motion bank, `--verify` for source/output integrity
+without rerendering, and `--check` for strict fresh reproduction of all 481
+normal and Reduced Motion samples. The final [bake](../../reviews/veinhold_bridge_ascent/logs/bake.log),
+[integrity verification](../../reviews/veinhold_bridge_ascent/logs/verify.log) and
+[fresh reproduction](../../reviews/veinhold_bridge_ascent/logs/fresh_check.log) pass against the frozen
+sources. The [tool catalogue](../../../tools/README.md) records their commands.
+
+An optional temporary environment cache accelerates `--proof` and `--bake`
+without supplying a production picture bank. Its 481 views and cached file
+hashes have been validated; fresh normal/Reduced Motion RGB and float32 depth
+at samples 0, 48, 348 and 480 reproduce exactly. See the
+[cache validation record](../../reviews/veinhold_bridge_ascent/render_logs/world_cache_validation.json)
+and [render log](../../reviews/veinhold_bridge_ascent/render_logs/world_cache.log).
+This is environment evidence only. `--check` always renders from current
+sources and cannot use that cache.
+
+The ascent owner reserves eight native image slots, **18.75 MiB** of decoded
+pictures plus pending loads, excluding temporary drawing/conversion buffers.
+During the final half-second of Shot 7, four incoming ascent slots may coexist
+with eight frontal slots: a transient maximum of twelve slots, **28.125 MiB**.
+The previous perspective, runner and frontal owners are released before the
+ascent expands to its full eight-slot working set. The
+[Gallery validation](../../reviews/veinhold_bridge_ascent/gallery/validation.json) records measured cache use,
+natural completion and cleanup on return. The
+[runtime regressions](../../reviews/veinhold_bridge_ascent/logs/final_tests.log)
+cover restart, Skip, focus/pause behavior and cleanup on close.
+Reduced Motion retains the same deliberate rise, duration and disclosures; this
+path has no shake or roll to remove.
+
+The preservation boundary for this extension is **47 seconds**. Existing
+0–47 second picture banks, the twelve existing WAV exports and the 39–47 second
+reconstructed PCM remain unchanged. The new audio perspective and one quiet
+reinforcement-group export begin at the ascent boundary. The
+[preservation/audio record](../../reviews/veinhold_bridge_ascent/preservation_after.json) confirms the
+protected picture/WAV hashes, exact earlier PCM and continuous contact phases.
+Final focused validation passes **255 unique tests**;
+see the [test log](../../reviews/veinhold_bridge_ascent/logs/final_tests.log). The
+[Bridge Ascent review](../../reviews/veinhold_bridge_ascent/README.md) binds the
+source freeze, native inspection, reproduction and Gallery evidence to this
+revision and states which playback was actually inspected.
+
 ## Alert and movement audio
 
 A shared reel clock activates both visible red signals and the siren at 30s.
@@ -388,6 +508,17 @@ the visible effort. It uses the warning channel whose near-siren gain has
 already receded to zero; active wind, distant warning and footfalls retain
 their owned channels and phase.
 
+For the ascent, the same shared camera and moving source positions
+drive footstep, breath, warning and machinery distance/pan rather than a timer
+unrelated to the picture. Party movement recedes as the camera rises. One quiet
+`reinforcement_group.wav` loop adds distant boot/gear movement from the actual
+advancing group centroid; its 2.4-second period retains the guards' 800 ms
+cadence without assigning a mixer channel to each guard. This is a thirteenth
+export alongside the unchanged twelve existing WAVs. Standalone and full-film
+captures use the same global audio timing and camera-derived source positions;
+validation and listening/inspection scope are recorded in the
+[preservation/audio record](../../reviews/veinhold_bridge_ascent/preservation_after.json).
+
 Pause, focus loss, effects volume, mute, Skip, restart and Gallery close apply
 to all owned effects. Standalone clips initialize from their full-reel offset:
 the bridge rush starts with the alarm already sounding, rather than replaying
@@ -396,11 +527,15 @@ exports and timing functions; it is not hardware-loopback listening evidence.
 
 ## Gallery and handoff
 
-The complete entry and all seven individual entries use the same production
-controller and ordered scene manifest. The complete film lasts **47 seconds**;
-individual durations are **25, 5, 4, 1, 4, 3 and 5 seconds**. Each entry has its own
-representative production thumbnail. The Gallery's disposable, save-disabled
-runtime preserves parent journey/settings/Continue state.
+The Gallery provides the complete entry and eight individual entries, including
+**Fire Veinhold — Bridge Ascent**, with representative production thumbnails.
+The complete film lasts **55 seconds**; individual durations are **25, 5, 4, 1,
+4, 3, 5 and 8 seconds**. Native 60 Hz captures cover the standalone ascent and
+complete reel in normal and Reduced Motion, with 480 and 3300 displayed ticks
+respectively. The [Gallery record](../../reviews/veinhold_bridge_ascent/gallery/validation.json) reports
+natural return, measured cache/lifecycle results and persistent-state isolation.
+The disposable, save-disabled runtime preserves parent journey/settings/Continue
+state.
 
 Individual previews return directly to the Gallery at their own endpoint.
 The complete film continues across the same boundaries without an underlying
@@ -409,7 +544,10 @@ bedroom opening until the complete cinematic and playable infiltration handoff
 are ready. No quest, save-schema or mission progression changes belong to this
 presentation extension.
 
-See [current running-correction review evidence](../../reviews/veinhold_running_polish/README.md).
+See the [Bridge Ascent review](../../reviews/veinhold_bridge_ascent/README.md)
+and the [approved 47-second motion-continuity baseline](../../reviews/veinhold_motion_continuity/README.md).
+The [running-polish review](../../reviews/veinhold_running_polish/README.md)
+records the preceding correction.
 The [original frontal-reveal review](../../reviews/veinhold_face_reveal/README.md)
 records the superseded 400 ms frontal performance and its earlier cache design.
 The [42-second running-shot review](../../reviews/veinhold_bridge_run/README.md)

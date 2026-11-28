@@ -1,0 +1,62 @@
+{
+  "name": "late01",
+  "kind": "transition",
+  "columns": 4,
+  "rows": 1,
+  "samples": [
+    {
+      "id": "transition_052",
+      "kind": "transition",
+      "index": 52,
+      "time": 0.8666666666666667,
+      "phase": 22,
+      "elevation": 34.04395317100672,
+      "azimuth": 8.322549572089377,
+      "native_pixels_per_metre": 105.9813976582767
+    },
+    {
+      "id": "transition_054",
+      "kind": "transition",
+      "index": 54,
+      "time": 0.9,
+      "phase": 24,
+      "elevation": 35.96070437625361,
+      "azimuth": 8.450486466345977,
+      "native_pixels_per_metre": 105.36479997807614
+    },
+    {
+      "id": "transition_056",
+      "kind": "transition",
+      "index": 56,
+      "time": 0.9333333333333333,
+      "phase": 26,
+      "elevation": 37.867767363184086,
+      "azimuth": 8.585477764556007,
+      "native_pixels_per_metre": 104.73994170637398
+    }
+  ],
+  "prompt": "Edit these THREE complete painted soldier drawings to fix ONLY their premature overhead view, returning a transparent FOUR-column by ONE-row atlas: three complete corrected figures in cells0,1,2; cell3 must remain EMPTY. Matching exact cells/layout of reference1. cell0=tick52/phase22, elevation34.04degrees, cell1=tick54/phase24, elevation35.96degrees, cell2=tick56/phase26, elevation37.87degrees. Reference1 supplies the exact current three matching phases/arm grips/equipment/body model/costume, but its camera pitch overshoots too steeply. Reference2 supplies the true3D camera/pose guides for these same three phases. Reference3 is the actual NEXT camera model ONLY2degrees higher than the last corrected cell; all three corrected cells must remain slightly more FRONT-facing than this next boundary, with a similarly visible FACE UNDER THE BRIM and CHEST, not a hidden-face topdown model. Reference4 is the previous-view boundary. Do not copy the boundary's different leg phase; preserve each target's own hip-knee-calf-boot chain and two-legged run phase. Smoothly increase camera elevation a little across the3 cells, NO exaggerated complete front-to-overhead arc in this tiny interval. All are the SAME approved man, same shallow roundedhelmet, same skull/face and torso proportions; head leans forward naturally but is NOT buried in the chest. The nextview's partiallyvisibleface and chest projection are the bounding model; do not paint helmet-crown-only finalcells. Keep rigid head/helmet/shoulders physically same size; do not extend/shrink anatomy to fill cell. Preserve warm burnished steel with subtle blue diamond pattern/warm silver border, navy split tabard, charcoalquilting,brownleather; no palette/design reset. Sword firmly anatomicalRIGHT/imageLEFT brown glove; shield anatomicalLEFT/imageRIGHT stays one oblique uprightplane, progressively foreshortened with angle. Preserve the actual successful swingingarmphase/rightgrip and opposite shieldcounterbalance, no extra limbs or detachedprop. Exactlytwolegchains/twoboots, including correctlyfoldedcalf behind eachrecoveryknee. Complete wholecharacter redraw in every cell, no compositedbodyparts/warps/puppetry/interpolation/crossfade or repeatedpose filling. Detailed painted cinematic fantasy material, thindarkoutline. Equal4cells, generousmargins, everycharacterwholly insideitscell. Clean transparentRGBA, no greyhaze/background/floor/shadow/celllines/labels/guides. Cell3 fully transparent.",
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_existing_targets.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_true_camera_guides.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_next_view_bound.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_previous_view_bound.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01.png",
+  "source_path": "/workspace/generated_images/exec-635e28d1-66d7-495a-bf35-bb4062c9084c.png",
+  "generation_id": "exec-635e28d1-66d7-495a-bf35-bb4062c9084c",
+  "transparent_background": true,
+  "construction": "Three complete ImageGen camera-view correction drawings bounded by actual adjacent painted models",
+  "status": "candidate_internal_review",
+  "source_sha256": "3d424dc19d2a901793e95f6e7eba1687412e4288e6b88c28a32b451859674387",
+  "output_sha256": "3d424dc19d2a901793e95f6e7eba1687412e4288e6b88c28a32b451859674387",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_existing_targets.png": "f3f442a91e7bece46323de91c4fe9b22a1422dc0e9a8b2596dc90d57fe90baa3",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_true_camera_guides.png": "5597f58d11b644b0eb1c206e1a136542149feec31b2cf610bdf0e3ebe0ccfc79",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_next_view_bound.png": "f094489289d87f7af802943dbdc92926a2317d6866c5ebc01c9cad4ec8c4fffd",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/repairs/late01_previous_view_bound.png": "36176ce61031640ef7fa079fa6bb4621741a5b1b7741f1c48cb21472d98868b1"
+  },
+  "prompt_text_sha256": "c9414ac836340a601f769b97aacaf4ce5f60c18a4efe060a6938c93138c26f75",
+  "prompt_file_sha256": "c9414ac836340a601f769b97aacaf4ce5f60c18a4efe060a6938c93138c26f75"
+}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "method": "Whole unedited ImageGen material masters, mapped onto fixed 3D terrain surfaces; no perspective painting used as a moving camera substitute.",
+  "records": [
+    {
+      "id": "mainland",
+      "generation_id": "exec-7919f307-9674-4aa9-abd1-7bbe0c7b4e5c",
+      "source": "mainland_top_generated.png",
+      "prompt": "Create a single new material painting for the visible upper surfaces of a moonlit rocky Merovar coast, using the supplied existing nighttime coastline only as the palette/style reference. This is a seamless-looking overhead orthographic ground material, NOT a landscape perspective and NOT a screenshot. Full-frame dark slate-blue coastal rock, irregular silver-blue fractured stone outcrops, rich dark moss and irregular dense patches of deep blue-green conifer canopy seen directly from above. Patches of natural gravel, roots, frost-like moonlit rock edges; restrained painterly fantasy illustration detail matching the reference. No sky, no horizon, no sea, no shoreline silhouette, no architecture, no road, no text, no labels, no grid, no borders, no light sources, no isolated icons. Surface detail organic and nonuniform at multiple scales. Keep the picture distinctly nighttime but preserve readable rock and vegetation. Diffuse overhead illumination with subtle cool moonlight from upper left. This image will be mapped to fixed 3D land surfaces, not displayed as a flat environment painting. No high-contrast repeating pattern.",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/environment/backdrop_generated.png"
+      ],
+      "raw_tool_file": "/workspace/generated_images/exec-7919f307-9674-4aa9-abd1-7bbe0c7b4e5c.png",
+      "source_sha256": "f7b7174c68b8ca482e509a7f447ce94b7499903f343094539202d1527d230964",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/environment/backdrop_generated.png": "523c52092f2b87af5ebc1b29de9e185350b6439809c4ef15aa890f671d59e76e"
+      }
+    },
+    {
+      "id": "ash",
+      "generation_id": "exec-a5743613-aade-4227-aa9c-27f43fa753ca",
+      "source": "ash_top_generated.png",
+      "prompt": "Create a single new overhead orthographic material painting for the expanded Cinder Isle ash terrace around an industrial fortress. Match the supplied nighttime fantasy scene's painted material richness, but show ONLY volcanic ground from directly overhead. Dense rust-red and dark umber ash and fractured charcoal basalt, varied natural deposits of orange-brown dust, subtle pale minerals, irregular larger dark basalt slabs and scattered small stones. The volcano has been drained of fire aether: absolutely NO lava, NO glowing cracks, NO fire, NO light sources. It is a cool nighttime surface, with subdued warm-earth colors remaining legible. No sky, horizon, buildings, ruins, roads, water, shore outline, labels, symbols, borders, tiles or grid. Organic low-frequency color variation and fine coherent brush detail. A single continuous diffuse overhead ground texture for genuine 3D terrace surfaces, not a perspective landscape.",
+      "references": [
+        "assets/source/cinematics/fire_veinhold/face_reveal/environment/backdrop_generated.png"
+      ],
+      "raw_tool_file": "/workspace/generated_images/exec-a5743613-aade-4227-aa9c-27f43fa753ca.png",
+      "source_sha256": "86353aeacbee2b8fd8ea3edd8142f67c943104f3e949be68e75097f78a72d9af",
+      "reference_sha256": {
+        "assets/source/cinematics/fire_veinhold/face_reveal/environment/backdrop_generated.png": "523c52092f2b87af5ebc1b29de9e185350b6439809c4ef15aa890f671d59e76e"
+      }
+    }
+  ]
+}

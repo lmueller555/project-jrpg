@@ -1,0 +1,29 @@
+{
+  "id": "transition_048_051b",
+  "output": "transition_048_051b.png",
+  "indices": [
+    48,
+    49,
+    50,
+    51
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Draw FOUR COMPLETE adult Lucan runners as2columns2rows at actual elevated camera54.3,55.7,56.9,58.1degrees. FIRST reference is exact camera and phase pose3Dguide. SECOND supplies actual matching approved gait phases0,1,2,3. THIRD cropped surfaces/identity ONLY. Paint all4 as new indivisible completefigures.\n\nIn ALL FOUR consecutive poses, the SAME anatomicalRIGHT leg/imageLEFT remains extended down/forward through contact. The anatomicalLEFTleg/imageRIGHT remains bent trailing/recovering, boot higher behind. Follow each actual matching knee/boot position from first/second guide; do NOT swap legs and do NOT compact the extended rightleg prematurely at last cell. Each cell is ONE60Hz tick later. Frame3 is still a contact/stance variant, not a folded passing pose. The rightboot moves continuously back by only one tick between cells. Exactlytwo connected hip-knee-ankle chains and two boots, no obsolete third toe underbelt. Both arms progress own coherent shoulder/elbow/glove motion, right sword/imageLEFT and left shield/imageRIGHT.\n\nCamera is now strongly elevatedfront, show dark barehair crown, shoulder TOPS and foreshortened torso, progressively less face/chest. No upward-facing portrait, no helmet, no long frontal silhouette pretendingoverhead. Natural full adult proportions with consistent rigid cranium/pauldrons dimensions in everycell. Same young knight polished articulatedsilversteel/gold trim, oxblood split tabard/pale chest motif wherevisible, browngloves/boots. Shield hangs UPRIGHT so face narrows appropriately with actual angle, not laidflat. Real cloth/hair lag, coolmoonlight/restainedwarmrim. True transparent alpha0 background, no haze/floor/shadow/grid/text, whole hair/swordtip/shield/twoboots inside generousclear margins.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_048_051.png",
+      "sha256": "57bccc6563657a1fedbd7fe6b27a94d51c1b21ac12deea2f3215684b415dd408"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/approved_048_051.png",
+      "sha256": "fcadb0cb1e0f5e8aa5997f312e5c95e80dd70ada0336dd8c0ea53b3628c6a69e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v4.png",
+      "sha256": "e2f78f20136017fc71bc76328d393571f303cff9584b0b1459260a58870a996e"
+    }
+  ]
+}

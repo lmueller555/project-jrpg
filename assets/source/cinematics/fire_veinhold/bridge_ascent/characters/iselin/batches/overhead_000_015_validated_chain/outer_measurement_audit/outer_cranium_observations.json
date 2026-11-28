@@ -1,0 +1,660 @@
+{
+  "version": 1,
+  "status": "Independent actual-source outercap audit; no production edits",
+  "calibration": {
+    "frozen_overhead32_visible_outer_cap_art_pixels": 131.54150197628454,
+    "uncertainty_art_pixels": 5.480895915678523,
+    "frozen55_oblique_visible_outer_cap_art_pixels": 123.44452554744525,
+    "frozen55_uncertainty_art_pixels": 10.395328467153284,
+    "interpretation": "Frozen overhead32 outercap96\u00b14rawpx at existing1.3702239789 gives131.54\u00b15.48artpx. Frozen55 visiblecap95\u00b18rawpx gives123.44\u00b110.40artpx, compatible within hair/angle uncertainty. Thus nominal~130 is independently supported by actual approved outercap; not by an internalNCCwhorl box."
+  },
+  "observations": [
+    {
+      "index": 71,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 2.407407407407408,
+      "current_crown_point": [
+        170,
+        183
+      ],
+      "label": "71",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        101,
+        195
+      ],
+      "right_cap_boundary_source_cell": [
+        190,
+        195
+      ],
+      "observed_width_source_cell_pixels": 89,
+      "width_uncertainty_source_cell_pixels": 6,
+      "boundary_note": "Left cap boundary blends into attached upwind hair, right boundary partly abuts jewel attachment; width is approximate.",
+      "current_width_art_pixels": 214.2592592592593,
+      "current_width_uncertainty_art_pixels": 14.444444444444446,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        5,
+        41,
+        247,
+        306
+      ],
+      "silhouette_width_in_cap_units": 2.7191011235955056,
+      "silhouette_height_in_cap_units": 2.9775280898876404,
+      "upstream_top_reach_in_cap_units": 1.7303370786516854,
+      "downstream_bottom_reach_in_cap_units": 1.247191011235955,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.477994404227916
+    },
+    {
+      "index": 72,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_072_087_linked_occlusion_alpha/master.png",
+      "source_sha256": "6861f285891ccd8e86038450576cd464569379e1f8ed16dcf47a0560ffa3e3f4",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 2.055335968379446,
+      "current_crown_point": [
+        144.0,
+        219.0
+      ],
+      "label": "72",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        94,
+        213
+      ],
+      "right_cap_boundary_source_cell": [
+        179,
+        213
+      ],
+      "observed_width_source_cell_pixels": 85,
+      "width_uncertainty_source_cell_pixels": 5,
+      "boundary_note": "Visible rounded attached cap; right boundary partly hidden by jewel/forward braid root.",
+      "current_width_art_pixels": 174.7035573122529,
+      "current_width_uncertainty_art_pixels": 10.276679841897229,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        13,
+        74,
+        236,
+        375
+      ],
+      "silhouette_width_in_cap_units": 2.623529411764706,
+      "silhouette_height_in_cap_units": 3.541176470588235,
+      "upstream_top_reach_in_cap_units": 1.6352941176470588,
+      "downstream_bottom_reach_in_cap_units": 1.9058823529411764,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.5475470820739357
+    },
+    {
+      "index": 87,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_072_087_linked_occlusion_alpha/master.png",
+      "source_sha256": "6861f285891ccd8e86038450576cd464569379e1f8ed16dcf47a0560ffa3e3f4",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 2.055335968379446,
+      "current_crown_point": [
+        146.5,
+        219.0
+      ],
+      "label": "87",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        93,
+        214
+      ],
+      "right_cap_boundary_source_cell": [
+        177,
+        214
+      ],
+      "observed_width_source_cell_pixels": 84,
+      "width_uncertainty_source_cell_pixels": 5,
+      "boundary_note": "Rounded cap edges, excluding separate left hair loops and imageRIGHT braid.",
+      "current_width_art_pixels": 172.64822134387344,
+      "current_width_uncertainty_art_pixels": 10.276679841897229,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        13,
+        84,
+        225,
+        269
+      ],
+      "silhouette_width_in_cap_units": 2.5238095238095237,
+      "silhouette_height_in_cap_units": 2.2023809523809526,
+      "upstream_top_reach_in_cap_units": 1.5476190476190477,
+      "downstream_bottom_reach_in_cap_units": 0.6547619047619048,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.565970261622435
+    },
+    {
+      "index": 88,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_088_103_matched_phase/master.png",
+      "source_sha256": "eb66bea5ebdf547a2bd3f7b77c2c112f868f409f867ac26af77de75d69579b1e",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 1.5112764473378277,
+      "current_crown_point": [
+        132.5,
+        213.5
+      ],
+      "label": "88",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        83,
+        209
+      ],
+      "right_cap_boundary_source_cell": [
+        178,
+        209
+      ],
+      "observed_width_source_cell_pixels": 95,
+      "width_uncertainty_source_cell_pixels": 4,
+      "boundary_note": "Convex cap outer edges are clearer than the internal whorl; braid/jewel excluded.",
+      "current_width_art_pixels": 143.57126249709364,
+      "current_width_uncertainty_art_pixels": 6.045105789351311,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        17,
+        20,
+        230,
+        341
+      ],
+      "silhouette_width_in_cap_units": 2.2421052631578946,
+      "silhouette_height_in_cap_units": 3.3789473684210525,
+      "upstream_top_reach_in_cap_units": 1.9894736842105263,
+      "downstream_bottom_reach_in_cap_units": 1.3894736842105264,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.3846473892240478
+    },
+    {
+      "index": 103,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_088_103_matched_phase/master.png",
+      "source_sha256": "eb66bea5ebdf547a2bd3f7b77c2c112f868f409f867ac26af77de75d69579b1e",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 1.5112764473378277,
+      "current_crown_point": [
+        134.0,
+        212.5
+      ],
+      "label": "103",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        82,
+        209
+      ],
+      "right_cap_boundary_source_cell": [
+        179,
+        209
+      ],
+      "observed_width_source_cell_pixels": 97,
+      "width_uncertainty_source_cell_pixels": 4,
+      "boundary_note": "Same convex cap family as88; excludes stray loops and star/pearl clasp.",
+      "current_width_art_pixels": 146.59381539176928,
+      "current_width_uncertainty_art_pixels": 6.045105789351311,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        31,
+        37,
+        223,
+        315
+      ],
+      "silhouette_width_in_cap_units": 1.9793814432989691,
+      "silhouette_height_in_cap_units": 2.865979381443299,
+      "upstream_top_reach_in_cap_units": 1.7731958762886597,
+      "downstream_bottom_reach_in_cap_units": 1.092783505154639,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.3560979585183972
+    },
+    {
+      "index": 104,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_104_119_matched_phase/master.png",
+      "source_sha256": "48438eecac891889064af0e6b2acb4a091b28696fa575391a182e931f91d3409",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 1.8684872439813143,
+      "current_crown_point": [
+        131.0,
+        217.0
+      ],
+      "label": "104",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        91,
+        207
+      ],
+      "right_cap_boundary_source_cell": [
+        165,
+        207
+      ],
+      "observed_width_source_cell_pixels": 74,
+      "width_uncertainty_source_cell_pixels": 4,
+      "boundary_note": "Smaller source cap than88/103; excludes imageRIGHT braid and star clasp.",
+      "current_width_art_pixels": 138.26805605461726,
+      "current_width_uncertainty_art_pixels": 7.473948975925257,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        32,
+        37,
+        206,
+        307
+      ],
+      "silhouette_width_in_cap_units": 2.3513513513513513,
+      "silhouette_height_in_cap_units": 3.6486486486486487,
+      "upstream_top_reach_in_cap_units": 2.2972972972972974,
+      "downstream_bottom_reach_in_cap_units": 1.3513513513513513,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.7775878645443857
+    },
+    {
+      "index": 117,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_104_119_matched_phase/master.png",
+      "source_sha256": "48438eecac891889064af0e6b2acb4a091b28696fa575391a182e931f91d3409",
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "source_cell_size": [
+        256,
+        384
+      ],
+      "current_density_scale": 1.8684872439813143,
+      "current_crown_point": [
+        130.0,
+        216.0
+      ],
+      "label": "117",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        95,
+        209
+      ],
+      "right_cap_boundary_source_cell": [
+        168,
+        209
+      ],
+      "observed_width_source_cell_pixels": 73,
+      "width_uncertainty_source_cell_pixels": 4,
+      "boundary_note": "Rounded white cap outer contour; right contour partly meets braid/clasp.",
+      "current_width_art_pixels": 136.39956881063594,
+      "current_width_uncertainty_art_pixels": 7.473948975925257,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        23,
+        46,
+        208,
+        323
+      ],
+      "silhouette_width_in_cap_units": 2.5342465753424657,
+      "silhouette_height_in_cap_units": 3.7945205479452055,
+      "upstream_top_reach_in_cap_units": 2.232876712328767,
+      "downstream_bottom_reach_in_cap_units": 1.5616438356164384,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.8019383832367746
+    },
+    {
+      "index": 118,
+      "export_registration_sha256": "4cea6934d3b6cb54c7c7a1c99a74f6253a492cf7d8981d0124befee758625ac5",
+      "source": "batches/transition_118_passing/master.png",
+      "source_sha256": "e7456c80fcc7046b1a4a162410aec8f8f92d9f45a89f7cfe03108b906cef3938",
+      "cell": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "source_cell_size": [
+        1536,
+        1024
+      ],
+      "current_density_scale": 0.3618549240104658,
+      "current_crown_point": [
+        834.5,
+        697.0
+      ],
+      "label": "118",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        642,
+        700
+      ],
+      "right_cap_boundary_source_cell": [
+        1044,
+        700
+      ],
+      "observed_width_source_cell_pixels": 402,
+      "width_uncertainty_source_cell_pixels": 15,
+      "boundary_note": "Large single drawing. Convex attached cap contour has fine loose fringe; exclude far upstream hair and star clasp.",
+      "current_width_art_pixels": 145.46567945220727,
+      "current_width_uncertainty_art_pixels": 5.4278238601569875,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        312,
+        71,
+        1180,
+        923
+      ],
+      "silhouette_width_in_cap_units": 2.1592039800995027,
+      "silhouette_height_in_cap_units": 2.1194029850746268,
+      "upstream_top_reach_in_cap_units": 1.564676616915423,
+      "downstream_bottom_reach_in_cap_units": 0.554726368159204,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 0.327217666607673
+    },
+    {
+      "name": "frozen55",
+      "index": 55,
+      "kind": "transition",
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "current_density_scale": 1.2994160583941605,
+      "label": "frozen55",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        247,
+        115
+      ],
+      "right_cap_boundary_source_cell": [
+        342,
+        115
+      ],
+      "observed_width_source_cell_pixels": 95,
+      "width_uncertainty_source_cell_pixels": 8,
+      "boundary_note": "Approved oblique/front head reference: left parietal boundary merges into windblown bangs, so much less precise than overhead. Face/skin width is not used.",
+      "current_width_art_pixels": 123.44452554744525,
+      "current_width_uncertainty_art_pixels": 10.395328467153284,
+      "collar": {
+        "state": "Only partial V-opening visible below chin; not equivalent to top-view fullcollar diameter, not density calibration.",
+        "partial_opening_points_source_cell": [
+          [
+            280,
+            192
+          ],
+          [
+            317,
+            192
+          ]
+        ],
+        "partial_opening_width_source_cell_pixels": 37,
+        "uncertainty_source_cell_pixels": 6
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        25,
+        29,
+        492,
+        716
+      ],
+      "silhouette_width_in_cap_units": 4.91578947368421,
+      "silhouette_height_in_cap_units": 7.231578947368421,
+      "upstream_top_reach_in_cap_units": 0.9052631578947369,
+      "downstream_bottom_reach_in_cap_units": 6.326315789473684,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.3846473892240478
+    },
+    {
+      "name": "overhead32",
+      "index": 32,
+      "kind": "overhead",
+      "source": "batches/overhead_032_047_pose_retry/master.png",
+      "source_sha256": "958d948eaad4f62623cfd79084cf3a2b10f4056ac82d9af2a7b11aa1fd05c332",
+      "cell": [
+        0,
+        0,
+        312,
+        290
+      ],
+      "current_density_scale": 1.3702239789196307,
+      "label": "overhead32",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        111,
+        180
+      ],
+      "right_cap_boundary_source_cell": [
+        207,
+        180
+      ],
+      "observed_width_source_cell_pixels": 96,
+      "width_uncertainty_source_cell_pixels": 4,
+      "boundary_note": "Frozen overhead calibration: clear convex attached cap, excluding separate left loops and imageRIGHT braid/jewel.",
+      "current_width_art_pixels": 131.54150197628454,
+      "current_width_uncertainty_art_pixels": 5.480895915678523,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        18,
+        10,
+        263,
+        250
+      ],
+      "silhouette_width_in_cap_units": 2.5520833333333335,
+      "silhouette_height_in_cap_units": 2.5,
+      "upstream_top_reach_in_cap_units": 1.7708333333333333,
+      "downstream_bottom_reach_in_cap_units": 0.7291666666666666,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.3702239789196307
+    },
+    {
+      "name": "alternate72",
+      "index": 72,
+      "kind": "alternative source not selected",
+      "source": "batches/transition_072_087_matched_phase/master.png",
+      "source_sha256": "821a8fb12ed196076792228ee76073657b0f5283e4424c6a1813e4ad5e2ec7c3",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "current_density_scale": null,
+      "label": "alternate72",
+      "observed_feature": "Horizontal width of convex attached hair-covered cranial cap; estimated skull-envelope proxy. Actual bony skull is occluded; loose trailing hair, braid and jewelry excluded.",
+      "left_cap_boundary_source_cell": [
+        104,
+        167
+      ],
+      "right_cap_boundary_source_cell": [
+        179,
+        167
+      ],
+      "observed_width_source_cell_pixels": 75,
+      "width_uncertainty_source_cell_pixels": 5,
+      "boundary_note": "Alternate unselected view: attached convex cap is narrower in sourcepixels; excludes left loose loops and imageRIGHT braid/jewel.",
+      "current_width_art_pixels": null,
+      "current_width_uncertainty_art_pixels": null,
+      "collar": {
+        "state": "occluded or no anatomically comparable rigid collar width exposed; not measured"
+      },
+      "clasp": {
+        "state": "Not used as density ruler: cluster versus star designs and subpixel small pearl boundaries differ across paintings; no reliable matching rigid diameter."
+      },
+      "silhouette_alpha128_bounds": [
+        19,
+        36,
+        225,
+        310
+      ],
+      "silhouette_width_in_cap_units": 2.7466666666666666,
+      "silhouette_height_in_cap_units": 3.6533333333333333,
+      "upstream_top_reach_in_cap_units": 1.7466666666666666,
+      "downstream_bottom_reach_in_cap_units": 1.9066666666666667,
+      "measurement_method": "Manual actual-source pixel ruler; no NCC location, correlation scale, occupiedheightfit or desired target substituted as observation.",
+      "proposed_uniform_scale_from_frozen_overhead32_outer_cap": 1.753886693017127
+    }
+  ],
+  "sampled_bank_scale_proposals": [
+    {
+      "source_bank": "transition_056_071_linked_view_bridge",
+      "observed_indices": [
+        "71"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 89,
+      "proposed_whole_drawing_scale": 1.477994404227916,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    },
+    {
+      "source_bank": "transition_072_087_linked_occlusion_alpha",
+      "observed_indices": [
+        "72",
+        "87"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 84.5,
+      "proposed_whole_drawing_scale": 1.556704165399817,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    },
+    {
+      "source_bank": "transition_088_103_matched_phase",
+      "observed_indices": [
+        "88",
+        "103"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 96.0,
+      "proposed_whole_drawing_scale": 1.3702239789196307,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    },
+    {
+      "source_bank": "transition_104_119_matched_phase",
+      "observed_indices": [
+        "104",
+        "117"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 73.5,
+      "proposed_whole_drawing_scale": 1.7896802989970686,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    },
+    {
+      "source_bank": "transition_118_passing",
+      "observed_indices": [
+        "118"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 402,
+      "proposed_whole_drawing_scale": 0.327217666607673,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    },
+    {
+      "source_bank": "unselected_alternate72",
+      "observed_indices": [
+        "alternate72"
+      ],
+      "median_outer_cap_width_source_cell_pixels": 75,
+      "proposed_whole_drawing_scale": 1.753886693017127,
+      "status": "Exploratory arithmetic from visiblehairenvelope only; NOT production recommendation. Rigidclasp crosscheck may contradict large rescale; see clasp_observations.json."
+    }
+  ],
+  "limitations": "Visible attached hair-covered cap is a skull-envelope proxy, not exposed bone. Hair merger/clasp occlusion create explicit boundary uncertainty. Collars mostly hidden; clasp designs differ. Density changes are proposed only, not applied; no runtime/native review inferred.",
+  "density_proposal_status": "EXPLORATORY ONLY / superseded by rigidappearance crosscheck. Windmerged hair cap is not proven rigid skull. Do notapply the listed cap-normalization scales as recommendations without independent model/native review.",
+  "critical_feature_definition_caution": "In selected72 the left outercap envelope includes a wrapping loose/windblown hair band. An inner anatomicallyrigid cap estimate around68rawpx versus85px outerhairwidth is plausible. These are different features, not conflicting exact bone measurements. The skull remains occluded; cap-only scales can overcorrect."
+}

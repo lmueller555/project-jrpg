@@ -1,0 +1,106 @@
+[
+  {
+    "sample_index": 72,
+    "gait_frame": 34,
+    "cell": [
+      0,
+      0,
+      512,
+      384
+    ],
+    "view_elevation": 71.95040787267735,
+    "guide": "guides/transition/guide_072.png",
+    "guide_sha256": "167fba4e32457f73cd5f64a3dcbd08a4525d78d02e1ce5ff369055c477472766"
+  },
+  {
+    "sample_index": 73,
+    "gait_frame": 35,
+    "cell": [
+      512,
+      0,
+      1024,
+      384
+    ],
+    "view_elevation": 72.67633700024163,
+    "guide": "guides/transition/guide_073.png",
+    "guide_sha256": "118dd593e7a3af40b786c28253a5e0ac8df8f2ea70beaff20fcbebf3da9ef043"
+  },
+  {
+    "sample_index": 74,
+    "gait_frame": 36,
+    "cell": [
+      0,
+      384,
+      512,
+      768
+    ],
+    "view_elevation": 73.38014010200183,
+    "guide": "guides/transition/guide_074.png",
+    "guide_sha256": "76adcaf1dbb8af9c015c9f4dd50a39070e2bf1e3f098c3b73ba531200f761f55"
+  },
+  {
+    "sample_index": 75,
+    "gait_frame": 37,
+    "cell": [
+      512,
+      384,
+      1024,
+      768
+    ],
+    "view_elevation": 74.06186531478473,
+    "guide": "guides/transition/guide_075.png",
+    "guide_sha256": "d28268ce34c1ed97e72aa24b2081123da73e1f253fdaa4905235632153e024aa"
+  },
+  {
+    "sample_index": 76,
+    "gait_frame": 38,
+    "cell": [
+      0,
+      768,
+      512,
+      1152
+    ],
+    "view_elevation": 74.72158316105696,
+    "guide": "guides/transition/guide_076.png",
+    "guide_sha256": "8688f40c1ec06dfe03e651955f80bc5b567deb15d5fe0c06a3ca5c4f34367347"
+  },
+  {
+    "sample_index": 77,
+    "gait_frame": 39,
+    "cell": [
+      512,
+      768,
+      1024,
+      1152
+    ],
+    "view_elevation": 75.35938870555519,
+    "guide": "guides/transition/guide_077.png",
+    "guide_sha256": "153c01fffbf4cd0e15b948bf9250f921b09a4eb1b66f6de38735fee68cd96869"
+  },
+  {
+    "sample_index": 78,
+    "gait_frame": 40,
+    "cell": [
+      0,
+      1152,
+      512,
+      1536
+    ],
+    "view_elevation": 75.97540335435166,
+    "guide": "guides/transition/guide_078.png",
+    "guide_sha256": "d11842bd62f55d911b56fe48fd4a9451c644317e83518f0f5a3425f9e386cd80"
+  },
+  {
+    "sample_index": 79,
+    "gait_frame": 41,
+    "cell": [
+      512,
+      1152,
+      1024,
+      1536
+    ],
+    "view_elevation": 76.56977628964644,
+    "guide": "guides/transition/guide_079.png",
+    "guide_sha256": "54c5c90b1d3cdb4f08ee25bf518db1e690d27df7f292af71d26fe040b69ca493"
+  }
+]

@@ -1,0 +1,2061 @@
+{
+  "method": "One whole-master density from actual face model width relative to accepted20\u201323model, actual neck translation and angle-aware body projection. No occupied-height fit, regional transforms or blended poses.",
+  "frames": [
+    {
+      "index": 20,
+      "gait_frame": 30,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        306.705,
+        179.847
+      ],
+      "neck_match": {
+        "point": [
+          305.5,
+          195.79569892473117
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        273,
+        101,
+        338,
+        193
+      ],
+      "face_skin_width": 65,
+      "face_skin_area": 2966,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "neck_match_used_for_registration": false,
+      "registration_override": "Retains the already inspected20\u201323 native prototype collar point from trial_registration.json; fresh face/neck observations are diagnostics only.",
+      "source": "batches/transition_020_023/master.png",
+      "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+      "generation_id": "exec-6f876ef8-63c0-4897-a834-c6360273a0c7",
+      "scale": 1.38,
+      "origin": [
+        88.74710000000005,
+        -25.292696601117513
+      ],
+      "neck_target": [
+        512.0,
+        222.8961633988825
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_020.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 15.153078665651753,
+      "native_scale": 0.49491025270614913,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 21,
+      "gait_frame": 31,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        287.575,
+        180.417
+      ],
+      "neck_match": {
+        "point": [
+          287.0,
+          196.752688172043
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        255,
+        104,
+        319,
+        194
+      ],
+      "face_skin_width": 64,
+      "face_skin_area": 2779,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "neck_match_used_for_registration": false,
+      "registration_override": "Retains the already inspected20\u201323 native prototype collar point from trial_registration.json; fresh face/neck observations are diagnostics only.",
+      "source": "batches/transition_020_023/master.png",
+      "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+      "generation_id": "exec-6f876ef8-63c0-4897-a834-c6360273a0c7",
+      "scale": 1.38,
+      "origin": [
+        115.14650000000006,
+        -23.142404326495466
+      ],
+      "neck_target": [
+        512.0,
+        225.8330556735045
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_021.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 15.830262067419108,
+      "native_scale": 0.49326626043309757,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 22,
+      "gait_frame": 32,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        308.705,
+        175.821
+      ],
+      "neck_match": {
+        "point": [
+          308.0,
+          193.752688172043
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        276,
+        98,
+        340,
+        191
+      ],
+      "face_skin_width": 64,
+      "face_skin_area": 2979,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "neck_match_used_for_registration": false,
+      "registration_override": "Retains the already inspected20\u201323 native prototype collar point from trial_registration.json; fresh face/neck observations are diagnostics only.",
+      "source": "batches/transition_020_023/master.png",
+      "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+      "generation_id": "exec-6f876ef8-63c0-4897-a834-c6360273a0c7",
+      "scale": 1.38,
+      "origin": [
+        85.98710000000005,
+        -13.774493254592613
+      ],
+      "neck_target": [
+        512.0,
+        228.85848674540736
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_022.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 16.55905690969682,
+      "native_scale": 0.491537425251781,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 23,
+      "gait_frame": 33,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        293.575,
+        176.391
+      ],
+      "neck_match": {
+        "point": [
+          294.5,
+          192.79569892473117
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        262,
+        97,
+        327,
+        190
+      ],
+      "face_skin_width": 65,
+      "face_skin_area": 3140,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "neck_match_used_for_registration": false,
+      "registration_override": "Retains the already inspected20\u201323 native prototype collar point from trial_registration.json; fresh face/neck observations are diagnostics only.",
+      "source": "batches/transition_020_023/master.png",
+      "source_sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+      "generation_id": "exec-6f876ef8-63c0-4897-a834-c6360273a0c7",
+      "scale": 1.38,
+      "origin": [
+        106.86650000000003,
+        -11.39262462375251
+      ],
+      "neck_target": [
+        512.0,
+        232.02695537624746
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_023.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 17.339498887114203,
+      "native_scale": 0.4897304186715931,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 24,
+      "gait_frame": 34,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        315.0,
+        175.09677419354838
+      ],
+      "neck_match": {
+        "point": [
+          315.0,
+          175.09677419354838
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        279,
+        70,
+        351,
+        172
+      ],
+      "face_skin_width": 72,
+      "face_skin_area": 3798,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_024_027_final_retry/master.png",
+      "source_sha256": "e80268324a0392e6cbc79a575bce0a56b3004a4c9e08f65a012ad6d273b0dd60",
+      "generation_id": "exec-8e670424-b089-4fe8-94ee-88efecd334a2",
+      "scale": 1.2277241379310344,
+      "origin": [
+        125.26689655172419,
+        20.438172859132123
+      ],
+      "neck_target": [
+        512.0,
+        235.40870901041131
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_024.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 18.171344196737714,
+      "native_scale": 0.48785385541758086,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 25,
+      "gait_frame": 35,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        308.5,
+        175.13978494623655
+      ],
+      "neck_match": {
+        "point": [
+          308.5,
+          175.13978494623655
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        272,
+        70,
+        345,
+        172
+      ],
+      "face_skin_width": 73,
+      "face_skin_area": 3898,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_024_027_final_retry/master.png",
+      "source_sha256": "e80268324a0392e6cbc79a575bce0a56b3004a4c9e08f65a012ad6d273b0dd60",
+      "generation_id": "exec-8e670424-b089-4fe8-94ee-88efecd334a2",
+      "scale": 1.2277241379310344,
+      "origin": [
+        133.24710344827588,
+        24.060760995099372
+      ],
+      "neck_target": [
+        512.0,
+        239.0841024856444
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_025.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 19.054056256644934,
+      "native_scale": 0.4858500843247002,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 26,
+      "gait_frame": 36,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        316.0,
+        180.09677419354838
+      ],
+      "neck_match": {
+        "point": [
+          316.0,
+          180.09677419354838
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        280,
+        70,
+        352,
+        177
+      ],
+      "face_skin_width": 72,
+      "face_skin_area": 3804,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_024_027_final_retry/master.png",
+      "source_sha256": "e80268324a0392e6cbc79a575bce0a56b3004a4c9e08f65a012ad6d273b0dd60",
+      "generation_id": "exec-8e670424-b089-4fe8-94ee-88efecd334a2",
+      "scale": 1.2277241379310344,
+      "origin": [
+        124.03917241379315,
+        22.034494297533797
+      ],
+      "neck_target": [
+        512.0,
+        243.14365113846816
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_026.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 19.986793286345137,
+      "native_scale": 0.48343471109200187,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 27,
+      "gait_frame": 37,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        311.0,
+        185.18279569892474
+      ],
+      "neck_match": {
+        "point": [
+          311.0,
+          185.18279569892474
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        274,
+        69,
+        348,
+        182
+      ],
+      "face_skin_width": 74,
+      "face_skin_area": 3948,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_024_027_final_retry/master.png",
+      "source_sha256": "e80268324a0392e6cbc79a575bce0a56b3004a4c9e08f65a012ad6d273b0dd60",
+      "generation_id": "exec-8e670424-b089-4fe8-94ee-88efecd334a2",
+      "scale": 1.2277241379310344,
+      "origin": [
+        130.17779310344832,
+        20.324981916003765
+      ],
+      "neck_target": [
+        512.0,
+        247.678370125125
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_027.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 20.968397504353213,
+      "native_scale": 0.48037586419628864,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 28,
+      "gait_frame": 38,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        293.0,
+        218.18279569892474
+      ],
+      "neck_match": {
+        "point": [
+          293.0,
+          218.18279569892474
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        256,
+        110,
+        330,
+        215
+      ],
+      "face_skin_width": 74,
+      "face_skin_area": 3564,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_028_031_continuity_retry/master.png",
+      "source_sha256": "73c639c2ce2e0dce31efeefb1b404ae7a8dfdeeb5e51f6648b4deb5809cac51d",
+      "generation_id": "exec-76dec64a-e8ea-4ca0-a0a5-dd0a63198b0c",
+      "scale": 1.1947651006711408,
+      "origin": [
+        161.93382550335576,
+        -7.901248917394611
+      ],
+      "neck_target": [
+        512.0,
+        252.77594095054215
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_028.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 21.997386762215754,
+      "native_scale": 0.47656207879130325,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 29,
+      "gait_frame": 39,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        279.0,
+        228.01075268817203
+      ],
+      "neck_match": {
+        "point": [
+          279.0,
+          228.01075268817203
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        244,
+        129,
+        314,
+        225
+      ],
+      "face_skin_width": 70,
+      "face_skin_area": 3379,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_028_031_continuity_retry/master.png",
+      "source_sha256": "73c639c2ce2e0dce31efeefb1b404ae7a8dfdeeb5e51f6648b4deb5809cac51d",
+      "generation_id": "exec-76dec64a-e8ea-4ca0-a0a5-dd0a63198b0c",
+      "scale": 1.1947651006711408,
+      "origin": [
+        178.6605369127517,
+        -13.902385101564391
+      ],
+      "neck_target": [
+        512.0,
+        258.5169047880221
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_029.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 23.07194946674446,
+      "native_scale": 0.4719844279977704,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 30,
+      "gait_frame": 40,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        293.5,
+        210.31182795698925
+      ],
+      "neck_match": {
+        "point": [
+          293.5,
+          210.31182795698925
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        255,
+        93,
+        332,
+        207
+      ],
+      "face_skin_width": 77,
+      "face_skin_area": 3700,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_028_031_continuity_retry/master.png",
+      "source_sha256": "73c639c2ce2e0dce31efeefb1b404ae7a8dfdeeb5e51f6648b4deb5809cac51d",
+      "generation_id": "exec-76dec64a-e8ea-4ca0-a0a5-dd0a63198b0c",
+      "scale": 1.1947651006711408,
+      "origin": [
+        161.33644295302014,
+        13.69213954711006
+      ],
+      "neck_target": [
+        512.0,
+        264.965371848474
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_030.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 24.189943633971993,
+      "native_scale": 0.46671202468978373,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 31,
+      "gait_frame": 41,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        283.5,
+        218.2258064516129
+      ],
+      "neck_match": {
+        "point": [
+          283.5,
+          218.2258064516129
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        246,
+        108,
+        321,
+        215
+      ],
+      "face_skin_width": 75,
+      "face_skin_area": 3586,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_028_031_continuity_retry/master.png",
+      "source_sha256": "73c639c2ce2e0dce31efeefb1b404ae7a8dfdeeb5e51f6648b4deb5809cac51d",
+      "generation_id": "exec-76dec64a-e8ea-4ca0-a0a5-dd0a63198b0c",
+      "scale": 1.1947651006711408,
+      "origin": [
+        173.2840939597316,
+        11.440815413573034
+      ],
+      "neck_target": [
+        512.0,
+        272.1693930277752
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_031.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 25.348900861434043,
+      "native_scale": 0.4608638516777455,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 32,
+      "gait_frame": 42,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        287.88,
+        201.68
+      ],
+      "neck_match": {
+        "point": [
+          287.88,
+          201.68
+        ],
+        "score": 0.7471,
+        "template_scale": 0.72
+      },
+      "face_skin_bounds": [
+        255,
+        123,
+        324,
+        213
+      ],
+      "face_skin_width": 69,
+      "face_skin_area": 2917,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_032_035/master.png",
+      "source_sha256": "0b3538e8883d7540fd039b4557fc652342c434ae2cf6c3822802073d08c071b1",
+      "generation_id": "exec-00d91a18-85ac-4289-b494-0fee98923b7c",
+      "scale": 1.2807194244604316,
+      "origin": [
+        143.30649208633093,
+        21.86044997599447
+      ],
+      "neck_target": [
+        512.0,
+        280.1559435011743
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_032.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 26.54603589418984,
+      "native_scale": 0.4545809323756735,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 33,
+      "gait_frame": 43,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        270.835,
+        209.685
+      ],
+      "neck_match": {
+        "point": [
+          270.835,
+          209.685
+        ],
+        "score": 0.7344,
+        "template_scale": 0.615
+      },
+      "face_skin_bounds": [
+        235,
+        129,
+        304,
+        220
+      ],
+      "face_skin_width": 69,
+      "face_skin_area": 2779,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_032_035/master.png",
+      "source_sha256": "0b3538e8883d7540fd039b4557fc652342c434ae2cf6c3822802073d08c071b1",
+      "generation_id": "exec-00d91a18-85ac-4289-b494-0fee98923b7c",
+      "scale": 1.2807194244604316,
+      "origin": [
+        165.13635467625903,
+        20.379614177378244
+      ],
+      "neck_target": [
+        512.0,
+        288.92726669536387
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_033.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 27.77826229254719,
+      "native_scale": 0.4480015620891251,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 34,
+      "gait_frame": 44,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        290.0,
+        198.01075268817203
+      ],
+      "neck_match": {
+        "point": [
+          290.0,
+          198.01075268817203
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        255,
+        109,
+        325,
+        195
+      ],
+      "face_skin_width": 70,
+      "face_skin_area": 2833,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_032_035/master.png",
+      "source_sha256": "0b3538e8883d7540fd039b4557fc652342c434ae2cf6c3822802073d08c071b1",
+      "generation_id": "exec-00d91a18-85ac-4289-b494-0fee98923b7c",
+      "scale": 1.2807194244604316,
+      "origin": [
+        140.59136690647483,
+        44.868633312811596
+      ],
+      "neck_target": [
+        512.0,
+        298.46485053258414
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_034.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 29.042214488509302,
+      "native_scale": 0.44123999875247716,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 35,
+      "gait_frame": 45,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        278.66,
+        202.26
+      ],
+      "neck_match": {
+        "point": [
+          278.66,
+          202.26
+        ],
+        "score": 0.7132,
+        "template_scale": 0.54
+      },
+      "face_skin_bounds": [
+        242,
+        126,
+        312,
+        209
+      ],
+      "face_skin_width": 70,
+      "face_skin_area": 2769,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_032_035/master.png",
+      "source_sha256": "0b3538e8883d7540fd039b4557fc652342c434ae2cf6c3822802073d08c071b1",
+      "generation_id": "exec-00d91a18-85ac-4289-b494-0fee98923b7c",
+      "scale": 1.2807194244604316,
+      "origin": [
+        155.11472517985607,
+        49.68812098841977
+      ],
+      "neck_target": [
+        512.0,
+        308.72643177978665
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_035.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 30.334276251702896,
+      "native_scale": 0.43436691632875857,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 36,
+      "gait_frame": 46,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        299.0,
+        199.83870967741936
+      ],
+      "neck_match": {
+        "point": [
+          299.0,
+          199.83870967741936
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        266,
+        102,
+        332,
+        197
+      ],
+      "face_skin_width": 66,
+      "face_skin_area": 2968,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_036_039/master.png",
+      "source_sha256": "0058a38270f3ff80fceef8ab0c765d2ef0ab3c580c777fa117829b84e46a7b43",
+      "generation_id": "exec-e9eca056-6d8c-49ac-98b7-3f6db2289f25",
+      "scale": 1.3486363636363634,
+      "origin": [
+        108.75772727272732,
+        50.140787138115684
+      ],
+      "neck_target": [
+        512.0,
+        319.65053787125345
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_036.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 31.650615287769863,
+      "native_scale": 0.42738904673491596,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 37,
+      "gait_frame": 47,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        295.01,
+        191.11
+      ],
+      "neck_match": {
+        "point": [
+          295.01,
+          191.11
+        ],
+        "score": 0.8517,
+        "template_scale": 0.69
+      },
+      "face_skin_bounds": [
+        264,
+        117,
+        330,
+        203
+      ],
+      "face_skin_width": 66,
+      "face_skin_area": 2861,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_036_039/master.png",
+      "source_sha256": "0058a38270f3ff80fceef8ab0c765d2ef0ab3c580c777fa117829b84e46a7b43",
+      "generation_id": "exec-e9eca056-6d8c-49ac-98b7-3f6db2289f25",
+      "scale": 1.3486363636363634,
+      "origin": [
+        114.13878636363643,
+        73.4240497665993
+      ],
+      "neck_target": [
+        512.0,
+        331.1619452211447
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_037.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 32.98722338166668,
+      "native_scale": 0.42008496323923683,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 38,
+      "gait_frame": 0,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        298.5,
+        198.79569892473117
+      ],
+      "neck_match": {
+        "point": [
+          298.5,
+          198.79569892473117
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        266,
+        111,
+        331,
+        196
+      ],
+      "face_skin_width": 65,
+      "face_skin_area": 2617,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_036_039/master.png",
+      "source_sha256": "0058a38270f3ff80fceef8ab0c765d2ef0ab3c580c777fa117829b84e46a7b43",
+      "generation_id": "exec-e9eca056-6d8c-49ac-98b7-3f6db2289f25",
+      "scale": 1.3486363636363634,
+      "origin": [
+        109.43204545454552,
+        75.06889782905284
+      ],
+      "neck_target": [
+        512.0,
+        343.17200633345163
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_038.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 34.339961197329295,
+      "native_scale": 0.41179517179180897,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 39,
+      "gait_frame": 1,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        297.0,
+        209.9247311827957
+      ],
+      "neck_match": {
+        "point": [
+          297.0,
+          209.9247311827957
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        263,
+        122,
+        331,
+        207
+      ],
+      "face_skin_width": 68,
+      "face_skin_area": 2763,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_036_039/master.png",
+      "source_sha256": "0058a38270f3ff80fceef8ab0c765d2ef0ab3c580c777fa117829b84e46a7b43",
+      "generation_id": "exec-e9eca056-6d8c-49ac-98b7-3f6db2289f25",
+      "scale": 1.3486363636363634,
+      "origin": [
+        111.45500000000004,
+        72.4754608573109
+      ],
+      "neck_target": [
+        512.0,
+        355.5875869570176
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_039.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 35.70460657747243,
+      "native_scale": 0.40219583461203623,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 40,
+      "gait_frame": 2,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        301.0,
+        210.752688172043
+      ],
+      "neck_match": {
+        "point": [
+          301.0,
+          210.752688172043
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        269,
+        135,
+        333,
+        208
+      ],
+      "face_skin_width": 64,
+      "face_skin_area": 2217,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_040_043_view_retry/master.png",
+      "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+      "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+      "scale": 1.4017322834645667,
+      "origin": [
+        90.0785826771654,
+        72.89572398358155
+      ],
+      "neck_target": [
+        512.0,
+        368.31457082127514
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_040.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 37.076904975469404,
+      "native_scale": 0.3913822908121597,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 41,
+      "gait_frame": 3,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        283.5,
+        235.70967741935485
+      ],
+      "neck_match": {
+        "point": [
+          283.5,
+          235.70967741935485
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        252,
+        142,
+        315,
+        233
+      ],
+      "face_skin_width": 63,
+      "face_skin_area": 2307,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_040_043_view_retry/master.png",
+      "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+      "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+      "scale": 1.4017322834645667,
+      "origin": [
+        114.60889763779534,
+        50.85934047614262
+      ],
+      "neck_target": [
+        512.0,
+        381.2612048398713
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_041.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 38.45262051398388,
+      "native_scale": 0.3797478325673073,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 42,
+      "gait_frame": 4,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        287.0,
+        214.752688172043
+      ],
+      "neck_match": {
+        "point": [
+          287.0,
+          214.752688172043
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        255,
+        140,
+        319,
+        212
+      ],
+      "face_skin_width": 64,
+      "face_skin_area": 2234,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_040_043_view_retry/master.png",
+      "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+      "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+      "scale": 1.4017322834645667,
+      "origin": [
+        109.70283464566938,
+        93.32014516181755
+      ],
+      "neck_target": [
+        512.0,
+        394.3459211333694
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_042.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 39.82758611474113,
+      "native_scale": 0.3678651623635128,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 43,
+      "gait_frame": 5,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        281.0,
+        206.58064516129033
+      ],
+      "neck_match": {
+        "point": [
+          281.0,
+          206.58064516129033
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        251,
+        144,
+        311,
+        204
+      ],
+      "face_skin_width": 60,
+      "face_skin_area": 2080,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_040_043_view_retry/master.png",
+      "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+      "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+      "scale": 1.4017322834645667,
+      "origin": [
+        118.11322834645676,
+        117.92586137447068
+      ],
+      "neck_target": [
+        512.0,
+        407.4966208359896
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_043.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 41.197751185062096,
+      "native_scale": 0.35637171584789895,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 44,
+      "gait_frame": 6,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        306.5,
+        202.79569892473117
+      ],
+      "neck_match": {
+        "point": [
+          306.5,
+          202.79569892473117
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        274,
+        133,
+        339,
+        200
+      ],
+      "face_skin_width": 65,
+      "face_skin_area": 2685,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_044_047_view_retry/master.png",
+      "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+      "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+      "scale": 1.3589312977099235,
+      "origin": [
+        95.48755725190847,
+        145.06905860298752
+      ],
+      "neck_target": [
+        512.0,
+        420.6544809127634
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_044.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 42.55922547559272,
+      "native_scale": 0.3458600014335777,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 45,
+      "gait_frame": 7,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        310.0,
+        216.83870967741936
+      ],
+      "neck_match": {
+        "point": [
+          310.0,
+          216.83870967741936
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        277,
+        133,
+        343,
+        214
+      ],
+      "face_skin_width": 66,
+      "face_skin_area": 2725,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_044_047_view_retry/master.png",
+      "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+      "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+      "scale": 1.3589312977099235,
+      "origin": [
+        90.7312977099237,
+        139.10753580865952
+      ],
+      "neck_target": [
+        512.0,
+        433.77644494434037
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_045.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 43.90831792810476,
+      "native_scale": 0.3367741356526285,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 46,
+      "gait_frame": 8,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        307.5,
+        203.79569892473117
+      ],
+      "neck_match": {
+        "point": [
+          307.5,
+          203.79569892473117
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        275,
+        133,
+        340,
+        201
+      ],
+      "face_skin_width": 65,
+      "face_skin_area": 2591,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_044_047_view_retry/master.png",
+      "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+      "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+      "scale": 1.3589312977099235,
+      "origin": [
+        94.12862595419853,
+        169.88708774132675
+      ],
+      "neck_target": [
+        512.0,
+        446.8314413488125
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_046.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 45.241569594026736,
+      "native_scale": 0.32931375247120437,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 47,
+      "gait_frame": 9,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        310.0,
+        214.83870967741936
+      ],
+      "neck_match": {
+        "point": [
+          310.0,
+          214.83870967741936
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        277,
+        134,
+        343,
+        212
+      ],
+      "face_skin_width": 66,
+      "face_skin_area": 2590,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_044_047_view_retry/master.png",
+      "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+      "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+      "scale": 1.3589312977099235,
+      "origin": [
+        90.7312977099237,
+        167.85146567507735
+      ],
+      "neck_target": [
+        512.0,
+        459.8025122153383
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_047.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 46.555780001121605,
+      "native_scale": 0.32334629659079417,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 48,
+      "gait_frame": 10,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        321.0,
+        216.9247311827957
+      ],
+      "neck_match": {
+        "point": [
+          321.0,
+          216.9247311827957
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        287,
+        132,
+        355,
+        214
+      ],
+      "face_skin_width": 68,
+      "face_skin_area": 2706,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_048_051_view_bridge/master.png",
+      "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+      "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+      "scale": 1.308970588235294,
+      "origin": [
+        91.82044117647064,
+        188.73486569705193
+      ],
+      "neck_target": [
+        512.0,
+        472.68295867617906
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_048.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 47.848026653756314,
+      "native_scale": 0.31832825333899784,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 49,
+      "gait_frame": 11,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        300.0,
+        204.9247311827957
+      ],
+      "neck_match": {
+        "point": [
+          300.0,
+          204.9247311827957
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        266,
+        139,
+        334,
+        202
+      ],
+      "face_skin_width": 68,
+      "face_skin_area": 2615,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_048_051_view_bridge/master.png",
+      "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+      "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+      "scale": 1.308970588235294,
+      "origin": [
+        119.30882352941182,
+        217.23646133064233
+      ],
+      "neck_target": [
+        512.0,
+        485.47690725094594
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_049.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 49.11612282497073,
+      "native_scale": 0.3134565799344273,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 50,
+      "gait_frame": 12,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        312.0,
+        203.9247311827957
+      ],
+      "neck_match": {
+        "point": [
+          312.0,
+          203.9247311827957
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        278,
+        132,
+        346,
+        201
+      ],
+      "face_skin_width": 68,
+      "face_skin_area": 2731,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_048_051_view_bridge/master.png",
+      "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+      "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+      "scale": 1.308970588235294,
+      "origin": [
+        103.60117647058826,
+        231.28192582676087
+      ],
+      "neck_target": [
+        512.0,
+        498.2134011588292
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_050.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 50.359864386676534,
+      "native_scale": 0.3084852512745631,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 51,
+      "gait_frame": 13,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        293.5,
+        211.88172043010752
+      ],
+      "neck_match": {
+        "point": [
+          293.5,
+          211.88172043010752
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        260,
+        142,
+        327,
+        209
+      ],
+      "face_skin_width": 67,
+      "face_skin_area": 2544,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_048_051_view_bridge/master.png",
+      "source_sha256": "ba416ebd4171393e74911d8090bde023992bfbe093ac4d68de0a2642f75cdf99",
+      "generation_id": "exec-7e56a5a0-a6bc-4f35-b32b-20e852c681ec",
+      "scale": 1.308970588235294,
+      "origin": [
+        127.8171323529412,
+        233.57793822460928
+      ],
+      "neck_target": [
+        512.0,
+        510.92487845231324
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_051.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 51.57952529252411,
+      "native_scale": 0.3033986378751662,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 52,
+      "gait_frame": 14,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        308.5,
+        211.96774193548387
+      ],
+      "neck_match": {
+        "point": [
+          308.5,
+          211.96774193548387
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        274,
+        146,
+        343,
+        209
+      ],
+      "face_skin_width": 69,
+      "face_skin_area": 2349,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+      "scale": 1.2994160583941605,
+      "origin": [
+        111.1301459854015,
+        248.20582206095878
+      ],
+      "neck_target": [
+        512.0,
+        523.6401097934759
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_052.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 52.775380038638275,
+      "native_scale": 0.2982266456123389,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 53,
+      "gait_frame": 15,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        293.5,
+        219.88172043010752
+      ],
+      "neck_match": {
+        "point": [
+          293.5,
+          219.88172043010752
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        260,
+        150,
+        327,
+        217
+      ],
+      "face_skin_width": 67,
+      "face_skin_area": 2325,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+      "scale": 1.2994160583941605,
+      "origin": [
+        130.6213868613139,
+        250.66446125071025
+      ],
+      "neck_target": [
+        512.0,
+        536.3822997249273
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_053.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 53.94769587043857,
+      "native_scale": 0.29302487965530394,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 54,
+      "gait_frame": 16,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        305.5,
+        204.05376344086022
+      ],
+      "neck_match": {
+        "point": [
+          305.5,
+          204.05376344086022
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        270,
+        134,
+        341,
+        201
+      ],
+      "face_skin_width": 71,
+      "face_skin_area": 2280,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+      "scale": 1.2994160583941605,
+      "origin": [
+        115.02839416058396,
+        284.01324967999034
+      ],
+      "neck_target": [
+        512.0,
+        549.1639866708074
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_054.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 55.096726412859795,
+      "native_scale": 0.2878533316698453,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    {
+      "index": 55,
+      "gait_frame": 17,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        296.0,
+        203.9247311827957
+      ],
+      "neck_match": {
+        "point": [
+          296.0,
+          203.9247311827957
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        262,
+        137,
+        330,
+        201
+      ],
+      "face_skin_width": 68,
+      "face_skin_area": 2261,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "generation_id": "exec-fc920756-eb8c-4e26-a89a-ce6cec583ea6",
+      "scale": 1.2994160583941605,
+      "origin": [
+        127.37284671532848,
+        297.0055012259013
+      ],
+      "neck_target": [
+        512.0,
+        561.9885716285385
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_055.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 56.22270664581673,
+      "native_scale": 0.2827594384134544,
+      "approval_state": "candidate_pending_composed_native_review"
+    }
+  ]
+}

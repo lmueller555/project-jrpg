@@ -36,7 +36,7 @@ from prologue_flight_audio import (ASSETS, CUES, DOWNSTROKE_PHASE,
                                    PrologueFlightAudio, wing_phase_at, FLAP_WINDOWS)
 
 FPS = 60
-OUT = ROOT/'docs/reviews/veinhold_motion_continuity'
+OUT = ROOT/'docs/reviews/veinhold_bridge_ascent'
 
 
 def clip_spec(shot_id=None):
@@ -62,7 +62,7 @@ def _samples(name):
         return np.frombuffer(stream.readframes(stream.getnframes()), '<i2').reshape(-1, 2)/32768.
 
 
-def audio_preview(path, seconds=25., start_seconds=0.):
+def audio_preview(path, seconds=25., start_seconds=0., *, reduced_motion=False):
     """Reconstruct the same global-clock mix for a whole film or late clip."""
     rate = 48000
     count = round(seconds*rate)
@@ -109,7 +109,8 @@ def audio_preview(path, seconds=25., start_seconds=0.):
     running_details = None
     if start_seconds+seconds > 25:
         from prologue_alert_audio import mix_alert_audio
-        mix += mix_alert_audio(start_seconds, seconds, sample_rate=rate)
+        options = {'reduced_motion':True} if reduced_motion else {}
+        mix += mix_alert_audio(start_seconds, seconds, sample_rate=rate, **options)
         machinery_details = {'start_global_seconds':25., 'retreat_start_global_seconds':34.}
     if start_seconds+seconds > 30:
         alert_details = {'alarm_start_global_seconds':30., 'rush_start_global_seconds':34.,
@@ -138,10 +139,14 @@ def audio_preview(path, seconds=25., start_seconds=0.):
 def _sample_frames(spec, fps, count):
     if spec['shot_id'] is None:
         cues = (0., 15., 25., 27.5, 30., 32., 34., 34.5, 35., 37.,
-                39., 39.5, 40.5, 41.5, 42., 42.5, 43.5, 45., 46.5)
+                39., 39.5, 40.5, 41.5, 42., 42.5, 43.5, 45., 46.5,
+                47.-1/fps, 47., 47.5, 48.5, 50., 52., 54.5)
         return {min(count-1, round(value*fps)) for value in cues if value < spec['duration']} | {count-1}
     if spec['shot_id'] == 'face_reveal':
         return {min(count-1, round(value*fps)) for value in (0., .5, 1.5, 2.5, 3.5)} | {count-1}
+    if spec['shot_id'] == 'bridge_ascent':
+        return {min(count-1, round(value*fps)) for value in
+                (0., .5, 1., 1.5, 2., 3., 4.5, 6., 7.5)} | {count-1}
     return set(np.linspace(0, count-1, 6).round().astype(int))
 
 
@@ -223,6 +228,7 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         states, stills, draw_times, update_times = [], [], [], []
         peak_cache_bytes = peak_decoded_bytes = peak_runner_cache_bytes = 0
         peak_face_cache_bytes = peak_total_cache_bytes = 0
+        peak_ascent_cache_bytes = peak_handoff_cache_bytes = 0
         count = round(fps*scene.duration)
         still_indices = _sample_frames(spec, fps, count)
         silent = folder/'silent.mp4'
@@ -254,8 +260,13 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                     face_caches = [owner.cache_info for owner in getattr(scene, '_face_reveals', {}).values()]
                     peak_face_cache_bytes = max(peak_face_cache_bytes,
                                                 sum(info['bytes'] for info in face_caches))
+                    ascent_caches = [owner.cache_info for owner in getattr(scene, '_bridge_ascents', {}).values()]
+                    peak_ascent_cache_bytes = max(peak_ascent_cache_bytes,
+                        sum(info['bytes'] for info in ascent_caches))
+                    peak_handoff_cache_bytes = max(peak_handoff_cache_bytes,
+                        sum(info['bytes'] for info in (*face_caches, *ascent_caches)))
                     peak_total_cache_bytes = max(peak_total_cache_bytes,
-                        sum(info['bytes'] for info in (*caches, *runner_caches, *face_caches)))
+                        sum(info['bytes'] for info in (*caches, *runner_caches, *face_caches, *ascent_caches)))
                     encoder.stdin.write(pygame.image.tobytes(frame, 'RGB'))
                     if index in still_indices:
                         pygame.image.save(frame, str(out/f'{stem}_{index:04d}.png'))
@@ -288,12 +299,18 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                                 for runner in getattr(scene, '_running', {}).values()]
         runtime_face_stats = [dict(owner.cache_info)
                               for owner in getattr(scene, '_face_reveals', {}).values()]
+        runtime_ascent_stats = [dict(owner.cache_info)
+                               for owner in getattr(scene, '_bridge_ascents', {}).values()]
+        assert peak_ascent_cache_bytes <= 8*960*640*4, 'Ascent cache exceeded eight native slots'
+        assert peak_handoff_cache_bytes <= 12*960*640*4, 'Face/ascent handoff exceeded twelve slots'
+        assert all(info['bytes'] == 0 for info in runtime_ascent_stats), 'Ascent retained pictures after completion'
         if spec['shot_id'] == 'island_orbit':
             _orbit_camera_sheet(scene, out/f'{stem}_camera_contact_sheet.png')
         parent.draw()
         pygame.image.save(parent.window, str(out/f'{stem}_gallery_return.png'))
         parent.music.stop();parent.opening_audio.reset();parent.regional_audio.reset()
-        audio = audio_preview(folder/'audio.wav', scene.duration, spec['offset'])
+        audio = audio_preview(folder/'audio.wav', scene.duration, spec['offset'],
+                              reduced_motion=reduced_motion)
         target = out/f'{stem}.mp4'
         subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(silent),
             '-i',str(folder/'audio.wav'),'-c:v','copy','-c:a','aac','-b:a','160k',
@@ -310,6 +327,7 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
         runtime_files = ('main.py','gallery_session.py','fire_veinhold_opening.py',
                          'cinematic_smoke.py','cinematic_facility.py',
                          'cinematic_perspective.py','cinematic_bridge_run.py','cinematic_face_reveal.py',
+                         'cinematic_bridge_ascent.py',
                          'prologue_flight_audio.py',
                          'prologue_alert_audio.py','cutscene_gallery.py')
         timings = (np.asarray(draw_times)+np.asarray(update_times))*1000
@@ -327,6 +345,9 @@ def capture(out=OUT, reduced_motion=False, shot_id=None, fps=FPS):
                         'runner_cache_at_completion':runtime_runner_stats,
                         'peak_face_reveal_image_cache_bytes':peak_face_cache_bytes,
                         'face_reveal_cache_at_completion':runtime_face_stats,
+                        'peak_bridge_ascent_image_cache_bytes':peak_ascent_cache_bytes,
+                        'bridge_ascent_cache_at_completion':runtime_ascent_stats,
+                        'peak_face_ascent_handoff_bytes':peak_handoff_cache_bytes,
                         'peak_combined_image_cache_bytes':peak_total_cache_bytes,
                         'mean_frame_ms':float(np.mean(timings)), 'p95_frame_ms':float(np.percentile(timings,95)),
                         'max_frame_ms':float(np.max(timings)),

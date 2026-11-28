@@ -1,0 +1,24 @@
+{
+  "generation_id": "exec-6b881f8c-ab54-4c6d-a9aa-2d4be6c9bfd3",
+  "original_generation_path": "/workspace/generated_images/exec-6b881f8c-ab54-4c6d-a9aa-2d4be6c9bfd3.png",
+  "master": "true_overhead_model.png",
+  "sha256": "4e5b04fbc5e9ebc909f7e2660faa569ba43d4a392fb0d907bfad3aac92682bf5",
+  "size": [
+    1254,
+    1254
+  ],
+  "prompt": "true_overhead_model_prompt.txt",
+  "prompt_sha256": "2f53d21d2c7959d2efec3e66f921a1e4eb9086efa37d95744da3187d27868c38",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/overhead_camera_pose_guide.png",
+      "sha256": "95392c6de1f01e5d96cf04c6b157b6acb08b5bfdb003926fd0386f9a6d201a8b"
+    },
+    {
+      "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_10.png",
+      "sha256": "b267ba33cd54923153c50698f691213652306f9ad35e1c45159b8746a52e3dab"
+    }
+  ],
+  "status": "awaiting_camera_model_review",
+  "guide_pixels_used_in_export": false
+}

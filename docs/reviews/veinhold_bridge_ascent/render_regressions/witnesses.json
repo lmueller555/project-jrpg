@@ -1,0 +1,245 @@
+{
+  "actual_rejected_frame_0024_sha256": "0a1df836804a9679ea91eeed4a35c778b1c05eced5769d3c9c9d0b1404414bd6",
+  "rejected_render_function_reconstruction_sha256": "5f90703cd5bffd3eb5ae6442159b112753ad88c56d6ef7ab565e1fc861962a9d",
+  "reconstruction_verification": "Reversed ownerrail-onlyrepair andomittedlaterfrostaddition on currentlyinspectedfunction; resultingframe24 exactlymatchesRGB ofretainedactual pre-fixguardproof. Originalfullbuilderbytes/SHA notretained andnotclaimed.",
+  "rig_sha256": "45c5491f8da49ee242b30803ab8d6b85befcb1563755fcd20dd96d3bb084bd25",
+  "method": "Control omitsonlyoldwhole-rectangle raildepth. Witnessalpha fromactualapprovedpremultipliedrailpyramid iszero; no raisedblocker; rayhitswater. Control isnotfinalcomposition andcanomitpaintedbraceselsewhere.",
+  "witnesses": [
+    {
+      "index": 24,
+      "time_seconds": 0.4,
+      "pixel": [
+        361,
+        163
+      ],
+      "rail_alpha": 0.0,
+      "incorrect_rail_plane_depth": 50.588233947753906,
+      "bad_depth": 50.588233947753906,
+      "expected_surface": "mainland horizontalz0",
+      "expected_surface_depth": 69.01164245605469,
+      "control_depth": 69.01164245605469,
+      "world_surface": [
+        9.549285888671875,
+        -11.397693634033203,
+        0.0
+      ],
+      "actual_bad_rgb": [
+        10,
+        36,
+        72
+      ],
+      "unoccluded_control_rgb": [
+        6,
+        17,
+        35
+      ],
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          58.725284909749085,
+          2.025
+        ],
+        "target": [
+          0.0,
+          57.74713730901528,
+          1.8170883091822407
+        ],
+        "forward": [
+          0.0,
+          -0.9781476007338057,
+          -0.2079116908177591
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.2079116908177591,
+          0.9781476007338057
+        ],
+        "focal_pixels": 860.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 40.819765667607975,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.2094395102393193,
+        "party_travel_metres": 55.86,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_fixed_rgb": [
+        6,
+        17,
+        35
+      ],
+      "fixed_depth": 69.01164245605469
+    },
+    {
+      "index": 36,
+      "time_seconds": 0.6,
+      "pixel": [
+        952,
+        145
+      ],
+      "rail_alpha": 0.0,
+      "incorrect_rail_plane_depth": 11.567795753479004,
+      "bad_depth": 11.567795753479004,
+      "expected_water_depth": 70.7335433959961,
+      "control_depth": 70.7335433959961,
+      "water_world": [
+        -42.80286407470703,
+        -11.539958953857422,
+        -12.65
+      ],
+      "actual_bad_rgb": [
+        1,
+        28,
+        60
+      ],
+      "unoccluded_control_rgb": [
+        5,
+        15,
+        29
+      ],
+      "independent_water_shader_rgb": [
+        5,
+        15,
+        29
+      ],
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.27323431707968,
+          2.8604492187500012
+        ],
+        "target": [
+          0.0,
+          58.366926530043024,
+          2.4378309570093015
+        ],
+        "forward": [
+          0.0,
+          -0.9063077870366498,
+          -0.4226182617406998
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4226182617406998,
+          0.9063077870366498
+        ],
+        "focal_pixels": 780.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.612410109815286,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.43633231299858277,
+        "party_travel_metres": 56.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "changed_transparent_gap_pixels": 4170,
+      "actual_fixed_rgb": [
+        5,
+        15,
+        29
+      ],
+      "fixed_depth": 70.7335433959961
+    },
+    {
+      "index": 48,
+      "time_seconds": 0.8,
+      "pixel": [
+        91,
+        34
+      ],
+      "rail_alpha": 0.0,
+      "incorrect_rail_plane_depth": 11.696659088134766,
+      "bad_depth": 11.696659088134766,
+      "expected_water_depth": 54.46015930175781,
+      "control_depth": 54.46015930175781,
+      "water_world": [
+        32.592308044433594,
+        2.5681724548339844,
+        -12.65
+      ],
+      "actual_bad_rgb": [
+        36,
+        73,
+        117
+      ],
+      "unoccluded_control_rgb": [
+        3,
+        11,
+        22
+      ],
+      "independent_water_shader_rgb": [
+        3,
+        11,
+        22
+      ],
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.68985886458327,
+          4.000000000000004
+        ],
+        "target": [
+          0.0,
+          58.92381442146429,
+          3.3572123903134647
+        ],
+        "forward": [
+          0.0,
+          -0.7660444431189779,
+          -0.6427876096865395
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6427876096865395,
+          0.7660444431189779
+        ],
+        "focal_pixels": 650.0000000000001,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.42275603566305,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.698131700797732,
+        "party_travel_metres": 57.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "changed_transparent_gap_pixels": 2372,
+      "actual_fixed_rgb": [
+        3,
+        11,
+        22
+      ],
+      "fixed_depth": 54.46015930175781
+    }
+  ],
+  "fixed_builder_sha256": "3f32b8b0965a3a56bb427d8b28ad727d9d7936b048aa4c0515bcebcc52f07acf"
+}

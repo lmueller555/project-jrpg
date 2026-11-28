@@ -1,0 +1,933 @@
+[
+  {
+    "local_frame": 0,
+    "local_time": 0.0,
+    "gait_frame": 0,
+    "elevation": 12.225122675735753,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 1,
+    "local_time": 0.016666666666666666,
+    "gait_frame": 1,
+    "elevation": 12.226037082284783,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 2,
+    "local_time": 0.03333333333333333,
+    "gait_frame": 2,
+    "elevation": 12.232347242367288,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 3,
+    "local_time": 0.05,
+    "gait_frame": 3,
+    "elevation": 12.249201012088536,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 4,
+    "local_time": 0.06666666666666667,
+    "gait_frame": 4,
+    "elevation": 12.281479057290463,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 5,
+    "local_time": 0.08333333333333333,
+    "gait_frame": 5,
+    "elevation": 12.33379876085174,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 6,
+    "local_time": 0.1,
+    "gait_frame": 6,
+    "elevation": 12.410518378711556,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 7,
+    "local_time": 0.11666666666666667,
+    "gait_frame": 7,
+    "elevation": 12.515741274185487,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 8,
+    "local_time": 0.13333333333333333,
+    "gait_frame": 8,
+    "elevation": 12.653320019261745,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 9,
+    "local_time": 0.15,
+    "gait_frame": 9,
+    "elevation": 12.826860113589932,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 10,
+    "local_time": 0.16666666666666666,
+    "gait_frame": 10,
+    "elevation": 13.039723040588715,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 11,
+    "local_time": 0.18333333333333332,
+    "gait_frame": 11,
+    "elevation": 13.295028358436552,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 12,
+    "local_time": 0.2,
+    "gait_frame": 12,
+    "elevation": 13.59565451396918,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 13,
+    "local_time": 0.21666666666666667,
+    "gait_frame": 13,
+    "elevation": 13.944238071565811,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 14,
+    "local_time": 0.23333333333333334,
+    "gait_frame": 14,
+    "elevation": 14.343171068598224,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 15,
+    "local_time": 0.25,
+    "gait_frame": 15,
+    "elevation": 14.794596245464286,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 16,
+    "local_time": 0.26666666666666666,
+    "gait_frame": 16,
+    "elevation": 15.300399953090315,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 17,
+    "local_time": 0.2833333333333333,
+    "gait_frame": 17,
+    "elevation": 15.86220261542868,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 18,
+    "local_time": 0.3,
+    "gait_frame": 18,
+    "elevation": 16.48134672001432,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 19,
+    "local_time": 0.31666666666666665,
+    "gait_frame": 19,
+    "elevation": 17.15888242668404,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 20,
+    "local_time": 0.3333333333333333,
+    "gait_frame": 20,
+    "elevation": 17.895551022819422,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 21,
+    "local_time": 0.35,
+    "gait_frame": 21,
+    "elevation": 18.691766611276933,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 22,
+    "local_time": 0.36666666666666664,
+    "gait_frame": 22,
+    "elevation": 19.547596590918765,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 23,
+    "local_time": 0.38333333333333336,
+    "gait_frame": 23,
+    "elevation": 20.462741673260858,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 24,
+    "local_time": 0.4,
+    "gait_frame": 24,
+    "elevation": 21.436516363173514,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 25,
+    "local_time": 0.4166666666666667,
+    "gait_frame": 25,
+    "elevation": 22.46783100457861,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 26,
+    "local_time": 0.43333333333333335,
+    "gait_frame": 26,
+    "elevation": 23.55517663839398,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 27,
+    "local_time": 0.45,
+    "gait_frame": 27,
+    "elevation": 24.696614021890834,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 28,
+    "local_time": 0.4666666666666667,
+    "gait_frame": 28,
+    "elevation": 25.889768197305337,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 29,
+    "local_time": 0.48333333333333334,
+    "gait_frame": 29,
+    "elevation": 27.131829954965493,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 30,
+    "local_time": 0.5,
+    "gait_frame": 30,
+    "elevation": 28.41956539765522,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 31,
+    "local_time": 0.5166666666666667,
+    "gait_frame": 31,
+    "elevation": 29.749334569958414,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 32,
+    "local_time": 0.5333333333333333,
+    "gait_frame": 32,
+    "elevation": 31.117119769395828,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 33,
+    "local_time": 0.55,
+    "gait_frame": 33,
+    "elevation": 32.51856371693411,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 34,
+    "local_time": 0.5666666666666667,
+    "gait_frame": 34,
+    "elevation": 33.94901725665229,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 35,
+    "local_time": 0.5833333333333334,
+    "gait_frame": 35,
+    "elevation": 35.40359571304351,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 36,
+    "local_time": 0.6,
+    "gait_frame": 36,
+    "elevation": 36.87724250324196,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 37,
+    "local_time": 0.6166666666666667,
+    "gait_frame": 37,
+    "elevation": 38.364798127998576,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 38,
+    "local_time": 0.6333333333333333,
+    "gait_frame": 38,
+    "elevation": 39.86107229516915,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 39,
+    "local_time": 0.65,
+    "gait_frame": 39,
+    "elevation": 41.360916700371114,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 40,
+    "local_time": 0.6666666666666666,
+    "gait_frame": 40,
+    "elevation": 42.85929592522973,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 41,
+    "local_time": 0.6833333333333333,
+    "gait_frame": 41,
+    "elevation": 44.35135402095575,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 42,
+    "local_time": 0.7,
+    "gait_frame": 42,
+    "elevation": 45.832474612322564,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 43,
+    "local_time": 0.7166666666666667,
+    "gait_frame": 43,
+    "elevation": 47.2983327563943,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 44,
+    "local_time": 0.7333333333333333,
+    "gait_frame": 44,
+    "elevation": 48.74493728133387,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 45,
+    "local_time": 0.75,
+    "gait_frame": 45,
+    "elevation": 50.168662866535094,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 46,
+    "local_time": 0.7666666666666667,
+    "gait_frame": 46,
+    "elevation": 51.56627165926105,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 47,
+    "local_time": 0.7833333333333333,
+    "gait_frame": 47,
+    "elevation": 52.934924713396015,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 48,
+    "local_time": 0.8,
+    "gait_frame": 0,
+    "elevation": 54.272183950843896,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 49,
+    "local_time": 0.8166666666666667,
+    "gait_frame": 1,
+    "elevation": 55.576425169055526,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 50,
+    "local_time": 0.8333333333333334,
+    "gait_frame": 2,
+    "elevation": 56.84795768095512,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 51,
+    "local_time": 0.85,
+    "gait_frame": 3,
+    "elevation": 58.087531959248174,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 52,
+    "local_time": 0.8666666666666667,
+    "gait_frame": 4,
+    "elevation": 59.29587816282141,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 53,
+    "local_time": 0.8833333333333333,
+    "gait_frame": 5,
+    "elevation": 60.47369797733436,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 54,
+    "local_time": 0.9,
+    "gait_frame": 6,
+    "elevation": 61.62165847085134,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 55,
+    "local_time": 0.9166666666666666,
+    "gait_frame": 7,
+    "elevation": 62.74038774497974,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 56,
+    "local_time": 0.9333333333333333,
+    "gait_frame": 8,
+    "elevation": 63.83047217111862,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 57,
+    "local_time": 0.95,
+    "gait_frame": 9,
+    "elevation": 64.89245501275978,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 58,
+    "local_time": 0.9666666666666667,
+    "gait_frame": 10,
+    "elevation": 65.92683624722862,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 59,
+    "local_time": 0.9833333333333333,
+    "gait_frame": 11,
+    "elevation": 66.93407341306282,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 60,
+    "local_time": 1.0,
+    "gait_frame": 12,
+    "elevation": 67.9145833218895,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 61,
+    "local_time": 1.0166666666666666,
+    "gait_frame": 13,
+    "elevation": 68.86874448590088,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 62,
+    "local_time": 1.0333333333333334,
+    "gait_frame": 14,
+    "elevation": 69.79690012368216,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 63,
+    "local_time": 1.05,
+    "gait_frame": 15,
+    "elevation": 70.69936161819497,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 64,
+    "local_time": 1.0666666666666667,
+    "gait_frame": 16,
+    "elevation": 71.57641231118433,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 65,
+    "local_time": 1.0833333333333333,
+    "gait_frame": 17,
+    "elevation": 72.4283115282365,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 66,
+    "local_time": 1.1,
+    "gait_frame": 18,
+    "elevation": 73.25529873826409,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 67,
+    "local_time": 1.1166666666666667,
+    "gait_frame": 19,
+    "elevation": 74.05759776041201,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 68,
+    "local_time": 1.1333333333333333,
+    "gait_frame": 20,
+    "elevation": 74.83542094035639,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 69,
+    "local_time": 1.15,
+    "gait_frame": 21,
+    "elevation": 75.58897322675301,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 70,
+    "local_time": 1.1666666666666667,
+    "gait_frame": 22,
+    "elevation": 76.31845608722743,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 71,
+    "local_time": 1.1833333333333333,
+    "gait_frame": 23,
+    "elevation": 77.02407121178639,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 72,
+    "local_time": 1.2,
+    "gait_frame": 24,
+    "elevation": 77.70602395985891,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 73,
+    "local_time": 1.2166666666666666,
+    "gait_frame": 25,
+    "elevation": 78.3645265153127,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 74,
+    "local_time": 1.2333333333333334,
+    "gait_frame": 26,
+    "elevation": 78.99980072167558,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 75,
+    "local_time": 1.25,
+    "gait_frame": 27,
+    "elevation": 79.61208057737588,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 76,
+    "local_time": 1.2666666666666666,
+    "gait_frame": 28,
+    "elevation": 80.20161437801546,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 77,
+    "local_time": 1.2833333333333334,
+    "gait_frame": 29,
+    "elevation": 80.76866649944515,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 78,
+    "local_time": 1.3,
+    "gait_frame": 30,
+    "elevation": 81.31351882165853,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 79,
+    "local_time": 1.3166666666666667,
+    "gait_frame": 31,
+    "elevation": 81.83647179919157,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 80,
+    "local_time": 1.3333333333333333,
+    "gait_frame": 32,
+    "elevation": 82.33784518877663,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 81,
+    "local_time": 1.35,
+    "gait_frame": 33,
+    "elevation": 82.81797844940402,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 82,
+    "local_time": 1.3666666666666667,
+    "gait_frame": 34,
+    "elevation": 83.27723083368409,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 83,
+    "local_time": 1.3833333333333333,
+    "gait_frame": 35,
+    "elevation": 83.71598119246292,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 84,
+    "local_time": 1.4,
+    "gait_frame": 36,
+    "elevation": 84.13462751704128,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 85,
+    "local_time": 1.4166666666666667,
+    "gait_frame": 37,
+    "elevation": 84.53358624509697,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 86,
+    "local_time": 1.4333333333333333,
+    "gait_frame": 38,
+    "elevation": 84.9132913575495,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 87,
+    "local_time": 1.45,
+    "gait_frame": 39,
+    "elevation": 85.2741932941799,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 88,
+    "local_time": 1.4666666666666666,
+    "gait_frame": 40,
+    "elevation": 85.61675771587137,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 89,
+    "local_time": 1.4833333333333334,
+    "gait_frame": 41,
+    "elevation": 85.94146414093154,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 90,
+    "local_time": 1.5,
+    "gait_frame": 42,
+    "elevation": 86.24880448214968,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 91,
+    "local_time": 1.5166666666666666,
+    "gait_frame": 43,
+    "elevation": 86.53928151009634,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 92,
+    "local_time": 1.5333333333333334,
+    "gait_frame": 44,
+    "elevation": 86.81340726674514,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 93,
+    "local_time": 1.55,
+    "gait_frame": 45,
+    "elevation": 87.07170145185358,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 94,
+    "local_time": 1.5666666666666667,
+    "gait_frame": 46,
+    "elevation": 87.31468980272727,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 95,
+    "local_time": 1.5833333333333333,
+    "gait_frame": 47,
+    "elevation": 87.54290248607522,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 96,
+    "local_time": 1.6,
+    "gait_frame": 0,
+    "elevation": 87.75687251867532,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 97,
+    "local_time": 1.6166666666666667,
+    "gait_frame": 1,
+    "elevation": 87.95713423156687,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 98,
+    "local_time": 1.6333333333333333,
+    "gait_frame": 2,
+    "elevation": 88.14422179049399,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 99,
+    "local_time": 1.65,
+    "gait_frame": 3,
+    "elevation": 88.31866778338285,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 100,
+    "local_time": 1.6666666666666667,
+    "gait_frame": 4,
+    "elevation": 88.48100188376529,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 101,
+    "local_time": 1.6833333333333333,
+    "gait_frame": 5,
+    "elevation": 88.63174959728745,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 102,
+    "local_time": 1.7,
+    "gait_frame": 6,
+    "elevation": 88.77143109678042,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 103,
+    "local_time": 1.7166666666666666,
+    "gait_frame": 7,
+    "elevation": 88.900560149829,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 104,
+    "local_time": 1.7333333333333334,
+    "gait_frame": 8,
+    "elevation": 89.01964314137005,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 105,
+    "local_time": 1.75,
+    "gait_frame": 9,
+    "elevation": 89.12917819257956,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 106,
+    "local_time": 1.7666666666666666,
+    "gait_frame": 10,
+    "elevation": 89.22965437617614,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 107,
+    "local_time": 1.7833333333333334,
+    "gait_frame": 11,
+    "elevation": 89.32155102727428,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 108,
+    "local_time": 1.8,
+    "gait_frame": 12,
+    "elevation": 89.40533714805854,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 109,
+    "local_time": 1.8166666666666667,
+    "gait_frame": 13,
+    "elevation": 89.4814709038198,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 110,
+    "local_time": 1.8333333333333333,
+    "gait_frame": 14,
+    "elevation": 89.55039920728558,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 111,
+    "local_time": 1.85,
+    "gait_frame": 15,
+    "elevation": 89.61255738768303,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 112,
+    "local_time": 1.8666666666666667,
+    "gait_frame": 16,
+    "elevation": 89.66836894058909,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 113,
+    "local_time": 1.8833333333333333,
+    "gait_frame": 17,
+    "elevation": 89.71824535433495,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 114,
+    "local_time": 1.9,
+    "gait_frame": 18,
+    "elevation": 89.76258600853622,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 115,
+    "local_time": 1.9166666666666667,
+    "gait_frame": 19,
+    "elevation": 89.80177814020617,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 116,
+    "local_time": 1.9333333333333333,
+    "gait_frame": 20,
+    "elevation": 89.83619687286574,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 117,
+    "local_time": 1.95,
+    "gait_frame": 21,
+    "elevation": 89.86620530408844,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 118,
+    "local_time": 1.9666666666666666,
+    "gait_frame": 22,
+    "elevation": 89.89215464699483,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 119,
+    "local_time": 1.9833333333333334,
+    "gait_frame": 23,
+    "elevation": 89.91438442133894,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 120,
+    "local_time": 2.0,
+    "gait_frame": 24,
+    "elevation": 89.93322268999876,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 121,
+    "local_time": 2.0166666666666666,
+    "gait_frame": 25,
+    "elevation": 89.94898633688436,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 122,
+    "local_time": 2.033333333333333,
+    "gait_frame": 26,
+    "elevation": 89.96198138251273,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 123,
+    "local_time": 2.05,
+    "gait_frame": 27,
+    "elevation": 89.97250333375415,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 124,
+    "local_time": 2.066666666666667,
+    "gait_frame": 28,
+    "elevation": 89.9808375645327,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 125,
+    "local_time": 2.0833333333333335,
+    "gait_frame": 29,
+    "elevation": 89.98725972455549,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 126,
+    "local_time": 2.1,
+    "gait_frame": 30,
+    "elevation": 89.99203617345063,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 127,
+    "local_time": 2.1166666666666667,
+    "gait_frame": 31,
+    "elevation": 89.99542443800982,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 128,
+    "local_time": 2.1333333333333333,
+    "gait_frame": 32,
+    "elevation": 89.99767369055253,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 129,
+    "local_time": 2.15,
+    "gait_frame": 33,
+    "elevation": 89.99902524676082,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 130,
+    "local_time": 2.1666666666666665,
+    "gait_frame": 34,
+    "elevation": 89.99971308166712,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 131,
+    "local_time": 2.183333333333333,
+    "gait_frame": 35,
+    "elevation": 89.9999643628202,
+    "azimuth": 0.0
+  },
+  {
+    "local_frame": 132,
+    "local_time": 2.2,
+    "gait_frame": 36,
+    "elevation": 90.0,
+    "azimuth": 0.0
+  }
+]

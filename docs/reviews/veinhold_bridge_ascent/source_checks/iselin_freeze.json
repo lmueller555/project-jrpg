@@ -1,0 +1,20 @@
+{
+  "state": "FROZEN source/native prepared revision; full-bank review remains outside SOURCE",
+  "raw_generation_records_verified": 60,
+  "python_files_compiled": 16,
+  "transition_records": 133,
+  "overhead_drawings": 48,
+  "unique_declared_pngs": 168,
+  "frozen_baseline_files_verified_unchanged": 121,
+  "accepted_native_sources_verified_unchanged": 34,
+  "source_files_fingerprinted": 840,
+  "owned_source_tree_sha256": "8bf0d47543b8c83de87c612ced0619c826319d9caaafeaae2fddeaacd9eabec1",
+  "profile_sha256": "ab6f806aa2e5b7d75f3bb4dec00e076ab9dd580167385e2754944a7f91a5f406",
+  "receipt_sha256": "0a17f1ca720381cda79b3168a2e6a57a7ebf8bff166519987ad21dcf803c71cc",
+  "exporter_sha256": "e77b8b0c7308b400b59941a412dd623026612684164cf830fde344e8c8e7e6de",
+  "review_record": "docs/reviews/veinhold_bridge_ascent/README.md",
+  "commands": [
+    "/workspace/.venvs/project-jrpg/bin/python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/export_performance.py --check",
+    "/workspace/.venvs/project-jrpg/bin/python /tmp/iselin_source_freeze/audit.py"
+  ]
+}

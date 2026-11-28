@@ -1,0 +1,33 @@
+{
+  "method": "SHA-256 comparison against actual pre-task snapshot; allowed changed metadata/complete thumbnail are explicit",
+  "files_checked": 1416,
+  "unchanged": 1412,
+  "missing": [],
+  "allowed_changes": [
+    {
+      "path": "assets/story/fire_veinhold_opening/continuation/audio/manifest.json",
+      "before_sha256": "19bffecdbc45e5b9d3a5519ebc76fb28b910d83605d4d1ea770506e6c3ff2a08",
+      "after_sha256": "8705f58c79c5533d535fe1472ce95e100caffe10b372c47355c9788063556374"
+    },
+    {
+      "path": "assets/story/fire_veinhold_opening/scene.json",
+      "before_sha256": "4d3937d0bd110216c761ca918a01c4179f1eb20c8e18a54ed42f051a7fa601db",
+      "after_sha256": "88b9a479063c20cb330ac1b656e6562496ae24ae5805f7f057adef56c3a7a52c"
+    },
+    {
+      "path": "assets/ui/gallery/capture.json",
+      "before_sha256": "9147b74d3fb8155ac950799c3ad66597c14d7a1ea5a593ab1405b8fe42ffe97f",
+      "after_sha256": "f2b030a7fbf5c9b5d8cbb9efbd2ca8ff31cd2b410ec1767cc9260899f03d6a54"
+    },
+    {
+      "path": "assets/ui/gallery/fire_veinhold_opening.png",
+      "before_sha256": "ee284460d3d853de833ef3b8eea3b998c58bb6ff16ed032bb53ae999d08b99a5",
+      "after_sha256": "ab66e2c28814205e42f127f3caf8d08833c8a41d93066188edebdb5c12741241"
+    }
+  ],
+  "previous_seven_gallery_thumbnails": "all byte-identical",
+  "previous_picture_banks": "all byte-identical",
+  "wav_exports_checked": 12,
+  "old_wavs": "all byte-identical",
+  "old_39_to_47_second_pcm": "exact preservation regression passed in logs/final_tests.log; fixture tests/fixtures/prologue_ascent_audio/preserved_prefix.json"
+}

@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "exporter_sha256": "0f79c8f88fdf25c37a3289ff8d5c09c98f65d12563795067d90aeadf00399f40",
+  "alpha_floor": 16,
+  "construction": "Whole ImageGen-painted figures. Only source-cell extraction and documented alpha floor; no limb transforms, recoloring or blended anatomy.",
+  "pose_mapping": "Painted frozen-stage spatial mapping: 1 left_back, 2 right_mid, 3 left_front, 4 right_back; old procedural pose indexes are not the painted layout.",
+  "registrations": [
+    {
+      "id": "carcovian_guard_1",
+      "source": "frozen_left_back.png",
+      "cell": [
+        0,
+        0,
+        600,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        3.2,
+        0.7,
+        0.1
+      ],
+      "view_elevation_degrees": 60,
+      "source_master": "frozen_60_master.png",
+      "source_cell": [
+        0,
+        0,
+        600,
+        656
+      ],
+      "source_sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55",
+      "sha256": "bbcf48322fde71856b006a363ad2508c005e5ff79c4e5d507513b2eb4173485c",
+      "registration": "Fixed 400 source pixels per metre for all four elevated frozen poses, with the ground root near supported feet. Whole-cell sampling only; no occupied-height fitting."
+    },
+    {
+      "id": "carcovian_guard_2",
+      "source": "frozen_right_mid.png",
+      "cell": [
+        0,
+        0,
+        600,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        -2.5,
+        1.6,
+        0.1
+      ],
+      "view_elevation_degrees": 60,
+      "source_master": "frozen_60_master.png",
+      "source_cell": [
+        0,
+        656,
+        600,
+        1312
+      ],
+      "source_sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55",
+      "sha256": "a1d0374b457307e9dd03968451cca03e13b3386a2b761ae8a4f4e3feec7887e5",
+      "registration": "Fixed 400 source pixels per metre for all four elevated frozen poses, with the ground root near supported feet. Whole-cell sampling only; no occupied-height fitting."
+    },
+    {
+      "id": "carcovian_guard_3",
+      "source": "frozen_left_front.png",
+      "cell": [
+        0,
+        0,
+        599,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        1.2,
+        3,
+        0.1
+      ],
+      "view_elevation_degrees": 60,
+      "source_master": "frozen_60_master.png",
+      "source_cell": [
+        600,
+        0,
+        1199,
+        656
+      ],
+      "source_sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55",
+      "sha256": "eda20de9c7e83cb66ed9137957615314524da233528ff18e4bb85a827515c94a",
+      "registration": "Fixed 400 source pixels per metre for all four elevated frozen poses, with the ground root near supported feet. Whole-cell sampling only; no occupied-height fitting."
+    },
+    {
+      "id": "carcovian_guard_4",
+      "source": "frozen_right_back.png",
+      "cell": [
+        0,
+        0,
+        599,
+        656
+      ],
+      "anchor": [
+        300,
+        560
+      ],
+      "art_pixels_per_metre": 400,
+      "world_position_metres": [
+        -4.6,
+        0.6,
+        0.1
+      ],
+      "view_elevation_degrees": 60,
+      "source_master": "frozen_60_master.png",
+      "source_cell": [
+        600,
+        656,
+        1199,
+        1312
+      ],
+      "source_sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55",
+      "sha256": "889adae9a9ea9793df492a911c313929ac40c46135a479ad37dc49bf3a51333d",
+      "registration": "Fixed 400 source pixels per metre for all four elevated frozen poses, with the ground root near supported feet. Whole-cell sampling only; no occupied-height fitting."
+    },
+    {
+      "frame": 0,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        0,
+        0,
+        320,
+        320
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "c56a58fe33a02185663f58272f8274f492849a8495d602d27b1942f76cff6517"
+    },
+    {
+      "frame": 1,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        320,
+        0,
+        640,
+        320
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "c5b889548a1939bc1d131cdb08ee3f410b6dee8a6e8d0e8ccd13872203b7fed0"
+    },
+    {
+      "frame": 2,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        640,
+        0,
+        960,
+        320
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "72ba58f4fe737b5f2ab5ae6f8aeddc92a37889580507447156fbfcef4518b5c5"
+    },
+    {
+      "frame": 3,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        960,
+        0,
+        1280,
+        320
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "973b8b5c117fda1d7a837b8e7cfa4035e79829f0d4eea1886256496a45f32488"
+    },
+    {
+      "frame": 4,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        0,
+        320,
+        320,
+        640
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "48a70656eae95a3f1d227281c79fc13517e23b90cead607b40520c8511030c7c"
+    },
+    {
+      "frame": 5,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        320,
+        320,
+        640,
+        640
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "995a1ae57de02b7c18a03e4f8d88e02fbd8254e23d774d08e82c930864fc32ed"
+    },
+    {
+      "frame": 6,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        640,
+        320,
+        960,
+        640
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "8a30b174a6f4b2273e891b7be7d8acec5a61d9616e8cccb116949e31b11941f1"
+    },
+    {
+      "frame": 7,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        960,
+        320,
+        1280,
+        640
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "ac11f58e292c8e3c52885e326fd6550b747b9c868b925bd268a899d1d5c11d2f"
+    },
+    {
+      "frame": 8,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        0,
+        640,
+        320,
+        960
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "d9ea5f103fbeda272ca2e040d33d4fe29b61d021f18dd2137849e4e0a4de26d6"
+    },
+    {
+      "frame": 9,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        320,
+        640,
+        640,
+        960
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "e8ca81a0a2e50935a5ff9610a50836922e4aaa31cabe26fd5e5cad8e58a9438d"
+    },
+    {
+      "frame": 10,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        640,
+        640,
+        960,
+        960
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "1753b502a338cb2895327b2a5d85bd7a394b88366c9802024565527aecaf4320"
+    },
+    {
+      "frame": 11,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        960,
+        640,
+        1280,
+        960
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "295a5ed0c8de525f8d8f133db10dcfcf070d11bd0c40084e197554c03f4347f1"
+    },
+    {
+      "frame": 12,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        0,
+        960,
+        320,
+        1280
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "2bc20bfc3a46140fdc842c477b0eb769e702b241fa3b1f3912b1cf2b2c18c374"
+    },
+    {
+      "frame": 13,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        320,
+        960,
+        640,
+        1280
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "83656aaab93439b1d45ae4904be36d9a050cd7cd745d75ffdba78ba695ca53a5"
+    },
+    {
+      "frame": 14,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        640,
+        960,
+        960,
+        1280
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "71fae60571f61e2949b531d9eb0cf39d057503556b522eaf2dcd200d1b3af90e"
+    },
+    {
+      "frame": 15,
+      "source_master": "live_cycle_master.png",
+      "source_cell": [
+        960,
+        960,
+        1280,
+        1280
+      ],
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "sha256": "cc07d9609a0c16ba1c2bf513e50355d0502bc449584157964c32a6514e0e3139"
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "source": "master.png",
+  "template": "../../keys/true_overhead_model_v2.png [505,700,758,931]",
+  "method": "Actual crown-region observations from source NCC, with explicit visually observed overrides where NCC matched face/loose hair. Density uses one median scale per whole master; no occupied-height fit.",
+  "observations": [
+    {
+      "sample_index": 32,
+      "gait_frame": 32,
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_032.png",
+      "guide_sha256": "2528c5fdc42145ec25c8349cf2ff8f97d34e9b6580495d85106d790d587069ca",
+      "point": [
+        158.5,
+        239.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        210,
+        190,
+        268
+      ],
+      "score": 0.739691436290741,
+      "actual_cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 33,
+      "gait_frame": 33,
+      "cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_033.png",
+      "guide_sha256": "cfba0d0ae4c78feaea013e976c0c5ba56e41590dd70a62733084ee86e159307c",
+      "point": [
+        158.5,
+        240.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        211,
+        190,
+        269
+      ],
+      "score": 0.757598876953125,
+      "actual_cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 34,
+      "gait_frame": 34,
+      "cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_034.png",
+      "guide_sha256": "c9c50634a86ac755fb96c1875e0f5df447597e4c6b5040f103114fff8003d59f",
+      "point": [
+        158.5,
+        239.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        210,
+        190,
+        268
+      ],
+      "score": 0.7493895292282104,
+      "actual_cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 35,
+      "gait_frame": 35,
+      "cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_035.png",
+      "guide_sha256": "679a0cbbdf58c185772665638648e8910c092417fbddc5ca2acf9b1fbff90f6a",
+      "point": [
+        158.5,
+        237.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        208,
+        190,
+        266
+      ],
+      "score": 0.7772010564804077,
+      "actual_cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 36,
+      "gait_frame": 36,
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_036.png",
+      "guide_sha256": "b79e6569df1577fb8128f94259ec5f6a95effa8dc92148769923277f49100f00",
+      "point": [
+        160.5,
+        236.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        129,
+        207,
+        192,
+        265
+      ],
+      "score": 0.7645237445831299,
+      "actual_cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 37,
+      "gait_frame": 37,
+      "cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_037.png",
+      "guide_sha256": "53ef2a48a3665ac35304c38c6cee62d74d16f4fd7f094df3a33365091f90e453",
+      "point": [
+        159.5,
+        235.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        128,
+        206,
+        191,
+        264
+      ],
+      "score": 0.7709941864013672,
+      "actual_cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 38,
+      "gait_frame": 38,
+      "cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_038.png",
+      "guide_sha256": "b0c63b99edc876cd70447b35e4ad1b5292fcb1bfd398c51142eb6dbfa82c2836",
+      "point": [
+        158.5,
+        234.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        205,
+        190,
+        263
+      ],
+      "score": 0.78999263048172,
+      "actual_cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 39,
+      "gait_frame": 39,
+      "cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_039.png",
+      "guide_sha256": "7144af608ba59a714264a0519af4a33663272540dc66d91740a85fe2a1617e73",
+      "point": [
+        158.5,
+        234.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        205,
+        190,
+        263
+      ],
+      "score": 0.784529983997345,
+      "actual_cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 40,
+      "gait_frame": 40,
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_040.png",
+      "guide_sha256": "92ca2e0ffd38ea904111354dead3f48111cba0d0718dd35ae39af53732ff7a85",
+      "point": [
+        159.0,
+        232.0
+      ],
+      "template_scale": 0.2600000000000001,
+      "template_box": [
+        126,
+        202,
+        192,
+        262
+      ],
+      "score": 0.7828376889228821,
+      "actual_cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 41,
+      "gait_frame": 41,
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_041.png",
+      "guide_sha256": "1345467763ccc008597509e5339700e64f4aadf4cec02afbaa2c87fadbf8ca14",
+      "point": [
+        159.5,
+        235.5
+      ],
+      "template_scale": 0.2550000000000001,
+      "template_box": [
+        127,
+        206,
+        192,
+        265
+      ],
+      "score": 0.7763012051582336,
+      "actual_cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 42,
+      "gait_frame": 42,
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_042.png",
+      "guide_sha256": "ed9c8beedb13758c284ced4286fba8d9c99e73ec47d6eca4adece44f7a38b87a",
+      "point": [
+        158.5,
+        236.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        127,
+        207,
+        190,
+        265
+      ],
+      "score": 0.788643479347229,
+      "actual_cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 43,
+      "gait_frame": 43,
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_043.png",
+      "guide_sha256": "e9ec5e3c9eabb9a5691086890a090658b6fd1651deed43848035ac99185b0d7f",
+      "point": [
+        159.5,
+        237.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        128,
+        208,
+        191,
+        266
+      ],
+      "score": 0.7815592288970947,
+      "actual_cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 44,
+      "gait_frame": 44,
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_044.png",
+      "guide_sha256": "c6321636932fe7cf8df0845ebe4de97b1a047023bff2238caf128e8f1640e72b",
+      "point": [
+        160.5,
+        240.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        129,
+        211,
+        192,
+        269
+      ],
+      "score": 0.7684122323989868,
+      "actual_cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 45,
+      "gait_frame": 45,
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_045.png",
+      "guide_sha256": "cd6b420502f60d463d1435a2de74406aa17980a29a0c01ce5fc19ae20a3b4545",
+      "point": [
+        159.5,
+        240.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        128,
+        211,
+        191,
+        269
+      ],
+      "score": 0.760434091091156,
+      "actual_cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 46,
+      "gait_frame": 46,
+      "cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_046.png",
+      "guide_sha256": "fbefa879731ee024f9baf9cbc266140d18436c742f322a1d73773dca2e83250f",
+      "point": [
+        159.5,
+        239.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        128,
+        210,
+        191,
+        268
+      ],
+      "score": 0.7596479654312134,
+      "actual_cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    },
+    {
+      "sample_index": 47,
+      "gait_frame": 47,
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "view_elevation": 90.0,
+      "view_azimuth": 0.0,
+      "guide": "guides/overhead/guide_047.png",
+      "guide_sha256": "2adc009f0be5775608a61a1de55d233b0d1edbfbcd35f256629888a4b5828d3d",
+      "point": [
+        159.5,
+        239.0
+      ],
+      "template_scale": 0.2500000000000001,
+      "template_box": [
+        128,
+        210,
+        191,
+        268
+      ],
+      "score": 0.7600613236427307,
+      "actual_cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "use_for_density": true,
+      "manual_review": "Crown/head overlay visually inspected; candidate physical registration feature."
+    }
+  ],
+  "source_sha256": "e1442da8ad05ae2e60545d6a04f0ca9e636e8216a4a4cc6182a95c5a2a7197b2"
+}
