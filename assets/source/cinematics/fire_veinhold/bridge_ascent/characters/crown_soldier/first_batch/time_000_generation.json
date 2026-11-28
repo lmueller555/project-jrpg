@@ -1,0 +1,41 @@
+{
+  "index": 0,
+  "local_time": 0,
+  "phase": 18,
+  "elevation_degrees": 6.087957462663611,
+  "azimuth_degrees": 7.0690429589534185,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "native_pixels_per_metre": 148.01167843749377,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/time_000_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_000.png",
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/time_000.png",
+  "prompt": "Draw ONE complete detailed painted allied Crown soldier at actual bridge-ascent local time0.000s, run phase18/48 (800mscycle). Reference1 is a TRUE BLENDER3D camera-volume/pose planning render and OWNS the body/equipment geometry, phase and camera. Reference2 is approved APPEARANCE/MATERIAL identity, not permission to copy the wrong camera/limb phase. Reference3 is the exact approved knee-armor material crop.\nCamera elevation6.0880degrees and azimuth7.0690degrees: frontal but genuinely elevated/oblique; exact face/helmet and full torso still visible. Follow the actual3D projected head/neck/pelvis/joints/shield/sword from reference1. Paint a natural real human over the simple planning volumes, never literal cylinders or a mannequin. The source guide gives true constant real body/limb lengths and perspective/occlusion, not a flat front sprite tilt. LEFT/imageRIGHT advances toward contact with its knee still bent and boot unfolding, RIGHT/imageLEFT folds behind; RIGHT sword arm pumps forward toward its apex. Both arms and both legs progress coherently with natural bent elbows/knees. ExactlyTWO connected arms,TWO connected legs,TWO boots,ONE sword,ONE shield. No stale reference legs,extra hands or3rdboot.\nFacing/travel is toward imageBOTTOM. AnatomicalRIGHT carries sword on imageLEFT; LEFT forearm carries upright plain boss shield on imageRIGHT. Do not swap ownership. The shield has the real camera-angle plane/thickness from guide, becoming edge-on overhead. Blade is world-DOWN/OUTSIDE in the right gripping leather glove and foreshortens correctly; keep exactly one secure hilt/grip. The rear/opposite limbs stay behind or occluded when appropriate, never painted through the torso. Helmet/head leans forward in worldspace: above near90degrees it projects ahead/BELOW the pelvis, with waist/tabard tails behind/ABOVE head, not an upright torso hanging below the helmet.\nExact current PR664 simpler allied soldier: young man's brown hair and focused face wherever physically visible; plain open polished steelhelmet, silver/steel chest/pauldrons/arms, articulated knee plates and short upper-shin lames on actual visible knees, navy split tabard with tails flowing behind, charcoal quilted trousers,brown leather boots/gloves. No red/oxblood royal uniform, elaborate gold plate,purpleblack enemy colors or new cape. Match approved detailed painted materials and thin dark silhouette. Keep shoulders/helmet/physical body model stable; cloth follows the thighs from the same waist.\n1024x1536 reference composition,500referencepixels/m, internal groundroot[512,960]. Preserve the guide's helmet diameter and shoulder physical width; do NOT stretch or enlarge the compact high-angle body to fill canvas or fit occupied height. Blank area is intentional. Final source must be ONE unified fully redrawn figure, no detached rigs/warps/pasted parts/blended endpoints. TRUE CLEAN TRANSPARENT RGBA, fully transparent outside figure, no floor/shadows/haze/glow/backgroundsquare/text/sheet/guide marks. Allhelmet/shield/blade/boots inside generous margins. Natural anatomy takes priority over tiny planning-coordinate differences; actual camera volume and continuous phase are essential.\n",
+  "source_path": "/workspace/generated_images/exec-9ff51f1e-4949-4016-9a33-b06fe073b6e3.png",
+  "generation_id": "exec-9ff51f1e-4949-4016-9a33-b06fe073b6e3",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen drawing from actual camera Blender planning guide and approved appearance references; raw output copied unchanged.",
+  "status": "first_camera_batch_pending_internal_source_and_native_review",
+  "source_sha256": "0363d13801ca2ec4e8cc51ddde6154a5377f73f67081282708510f00ee74a975",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_000.png": "24f3cfa27ed79dda1c303d64c893fbd3a6a778d4f6defe27dee56bff2c744cc9",
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png": "700d3d53e3d1b17f97aeb21f1c67711a9e4b9e6f4c7c5a16e5cb00b0ca246c97"
+  },
+  "prompt_sha256": "3f7a0e93757f2deb0a53afdb081959665a9d64b3df0e34bda41f6a6ac1501669",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "0363d13801ca2ec4e8cc51ddde6154a5377f73f67081282708510f00ee74a975",
+  "prompt_text_sha256": "3f7a0e93757f2deb0a53afdb081959665a9d64b3df0e34bda41f6a6ac1501669",
+  "prompt_file_sha256": "3f7a0e93757f2deb0a53afdb081959665a9d64b3df0e34bda41f6a6ac1501669"
+}

@@ -1,0 +1,35 @@
+{
+  "camera_time": 2.2,
+  "new47_registration": {
+    "uniform_scale": 0.56,
+    "origin": [
+      228.64,
+      539.92
+    ],
+    "observed_crown_center": [
+      506.0,
+      893.0
+    ]
+  },
+  "frames": [
+    {
+      "label": "unchanged46",
+      "phase": 46,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "ef4af745c72068021af6d66e8106c3ba91d7939643743177e18015bbb200fa8e"
+    },
+    {
+      "label": "new47",
+      "phase": 47,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "c8943f8f63434448c0f45f7400c614ad959cf522eb2d15feadfdbbcba574cd66"
+    },
+    {
+      "label": "unchanged0",
+      "phase": 0,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "10a44b99f45775a85940f41a54e3aeaf20dfe36e267c7a42a03cf6396b596269"
+    }
+  ],
+  "purpose": "Authoring diagnostic only; parent production compositor/native acceptance remains authoritative."
+}

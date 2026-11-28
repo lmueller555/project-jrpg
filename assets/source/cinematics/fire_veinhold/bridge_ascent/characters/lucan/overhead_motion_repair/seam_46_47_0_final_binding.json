@@ -1,0 +1,36 @@
+{
+  "camera_time": 2.2,
+  "selection_sha256": "3bb3c753f44fe4cc4aee8b91f5015a15882deb33b1e5f5f9e23db546f927babb",
+  "new47_registration": {
+    "uniform_scale": 0.5,
+    "origin": [
+      173.75,
+      715.75
+    ],
+    "observed_crown_center": [
+      676.5,
+      648.5
+    ]
+  },
+  "frames": [
+    {
+      "label": "unchanged46",
+      "phase": 46,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "ef4af745c72068021af6d66e8106c3ba91d7939643743177e18015bbb200fa8e"
+    },
+    {
+      "label": "selected47",
+      "phase": 47,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "92d88bba499de642815f0538dc2b5d3c3d5c7513bd4378b528fb73dd7ce74b3a"
+    },
+    {
+      "label": "unchanged0",
+      "phase": 0,
+      "native_pixels_per_metre": 28.436018957345997,
+      "complete_rgba_sha256": "10a44b99f45775a85940f41a54e3aeaf20dfe36e267c7a42a03cf6396b596269"
+    }
+  ],
+  "purpose": "Authoring diagnostic only; parent production compositor/native acceptance remains authoritative."
+}

@@ -1,0 +1,270 @@
+{
+  "reference": {
+    "file": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png",
+    "sha256": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+    "observed_steel_brim_endpoints_exported": [
+      [
+        298,
+        192
+      ],
+      [
+        466,
+        180
+      ]
+    ],
+    "observed_steel_brim_diameter": 168.4280261714184,
+    "declared_art_pixels_per_metre": 500
+  },
+  "records": [
+    {
+      "index": 0,
+      "file": "registered_samples/time_000.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "retained_approved_exact_bytes": true,
+      "sha256": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+      "source": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png",
+      "source_sha256": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7"
+    },
+    {
+      "index": 24,
+      "file": "registered_samples/time_024.png",
+      "canvas": [
+        768,
+        1024
+      ],
+      "anchor": [
+        384,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "retained_approved_exact_bytes": true,
+      "sha256": "afbc19ccdc49b60669252d6d90685bbbc18759749c2077e7c8f35ed836f5923f",
+      "source": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_42.png",
+      "source_sha256": "afbc19ccdc49b60669252d6d90685bbbc18759749c2077e7c8f35ed836f5923f"
+    },
+    {
+      "index": 48,
+      "phase": 18,
+      "local_time": 0.8,
+      "file": "registered_samples/time_048.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "sha256": "7dac0e7a58fdbf3a43f6c107fd27edd6dabc4762b71084d7156f2f3324d9642c",
+      "source": "first_batch/physical_048.png",
+      "source_sha256": "ca70effdc2eb891c6ccd1fb93b65283385c8981e9dbbd68895709cc3f3043201",
+      "observed_steel_brim_endpoints_source": [
+        [
+          490,
+          315
+        ],
+        [
+          653,
+          315
+        ]
+      ],
+      "observed_steel_brim_diameter_source": 163.0,
+      "uniform_whole_master_scale": 1.0333007740577815,
+      "whole_master_origin": [
+        -17.964629129976856,
+        13.720058900333811
+      ],
+      "applied_origin": [
+        -18,
+        14
+      ],
+      "planned_brim_center_exported": [
+        572.5667632440453,
+        339.209802728535
+      ],
+      "physical_brim_point_world": [
+        0.0,
+        0.23,
+        1.575
+      ],
+      "opaque_bounds_diagnostic_only": [
+        214,
+        258,
+        867,
+        1108
+      ],
+      "method": "Uniform whole-source calibration from approved steel-brim size, followed by entire-figure placement using camera-projected physical brim anchor. No occupied-height/foot fitting, limb edits, warps or part composites."
+    },
+    {
+      "index": 72,
+      "phase": 42,
+      "local_time": 1.2,
+      "file": "registered_samples/time_072.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "sha256": "98e78de2945c2093b6aef0eb57c080f404397fdc3f19d8126660ef0a42d1752a",
+      "source": "first_batch/corrected_072.png",
+      "source_sha256": "97e67fdaabfacc2fe5f550e9f7dab708c418f3e2514e96385796b326064d1275",
+      "observed_steel_brim_endpoints_source": [
+        [
+          482,
+          607
+        ],
+        [
+          684,
+          609
+        ]
+      ],
+      "observed_steel_brim_diameter_source": 202.00990074746338,
+      "uniform_whole_master_scale": 0.8337612441182952,
+      "whole_master_origin": [
+        98.81725431144156,
+        72.06443567733533
+      ],
+      "applied_origin": [
+        99,
+        72
+      ],
+      "planned_brim_center_exported": [
+        584.9000596324076,
+        578.9912721012588
+      ],
+      "physical_brim_point_world": [
+        0.0,
+        0.23,
+        1.575
+      ],
+      "opaque_bounds_diagnostic_only": [
+        233,
+        460,
+        848,
+        1098
+      ],
+      "method": "Uniform whole-source calibration from approved steel-brim size, followed by entire-figure placement using camera-projected physical brim anchor. No occupied-height/foot fitting, limb edits, warps or part composites."
+    },
+    {
+      "index": 96,
+      "phase": 18,
+      "local_time": 1.6,
+      "file": "registered_samples/time_096.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "sha256": "e6e022875bc5e5c4f0fe032b63efe92042382ebd34c629fda8ef246bf6a15015",
+      "source": "first_batch/time_096.png",
+      "source_sha256": "2d57f7b4b5d2d474bf3a997fe82f135e61c7aaa92758f0da17d7b880df6f8402",
+      "observed_steel_brim_endpoints_source": [
+        [
+          427,
+          907
+        ],
+        [
+          580,
+          909
+        ]
+      ],
+      "observed_steel_brim_diameter_source": 153.0130713370593,
+      "uniform_whole_master_scale": 1.1007427319748573,
+      "whole_master_origin": [
+        13.702081929282372,
+        -189.5897757086451
+      ],
+      "applied_origin": [
+        14,
+        -190
+      ],
+      "planned_brim_center_exported": [
+        567.926047478623,
+        809.8846249245253
+      ],
+      "physical_brim_point_world": [
+        0.0,
+        0.23,
+        1.575
+      ],
+      "opaque_bounds_diagnostic_only": [
+        182,
+        472,
+        865,
+        1289
+      ],
+      "method": "Uniform whole-source calibration from approved steel-brim size, followed by entire-figure placement using camera-projected physical brim anchor. No occupied-height/foot fitting, limb edits, warps or part composites."
+    },
+    {
+      "index": 132,
+      "phase": 6,
+      "local_time": 2.2,
+      "file": "registered_samples/time_132.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "sha256": "d630357ca2d86fce1c8854eadc51c30da2064a4707fdf56056d19d17a67074d0",
+      "source": "first_batch/compact_132.png",
+      "source_sha256": "6bd6f40f67fec71a36c1329c494e9124868b046eef38ed81598e9c7c9291d7e5",
+      "observed_steel_brim_endpoints_source": [
+        [
+          450,
+          962
+        ],
+        [
+          634,
+          974
+        ]
+      ],
+      "observed_steel_brim_diameter_source": 184.39088914585776,
+      "uniform_whole_master_scale": 0.9134292206714598,
+      "whole_master_origin": [
+        44.90200457791963,
+        77.02946435715376
+      ],
+      "applied_origin": [
+        45,
+        77
+      ],
+      "planned_brim_center_exported": [
+        539.9806421818508,
+        961.2289499671268
+      ],
+      "physical_brim_point_world": [
+        0.0,
+        0.23,
+        1.575
+      ],
+      "opaque_bounds_diagnostic_only": [
+        151,
+        679,
+        819,
+        1135
+      ],
+      "method": "Uniform whole-source calibration from approved steel-brim size, followed by entire-figure placement using camera-projected physical brim anchor. No occupied-height/foot fitting, limb edits, warps or part composites."
+    }
+  ]
+}

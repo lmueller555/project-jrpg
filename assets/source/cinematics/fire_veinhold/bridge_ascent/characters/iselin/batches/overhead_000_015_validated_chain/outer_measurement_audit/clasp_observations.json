@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "status": "Manual visible rigidappearance crosscheck; no production edits",
+  "observations": [
+    {
+      "index": 55,
+      "source": "batches/transition_052_055_view_bridge/master.png",
+      "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "current_density_scale": 1.2994160583941605,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        333,
+        85,
+        363,
+        134
+      ],
+      "whole_motif_width_source_pixels": 30,
+      "whole_motif_height_source_pixels": 49,
+      "whole_motif_width_uncertainty_source_pixels": 3,
+      "whole_motif_height_uncertainty_source_pixels": 4,
+      "whole_motif_current_art_width": 38.982481751824814,
+      "whole_motif_current_art_height": 63.67138686131386,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.0
+    },
+    {
+      "index": 56,
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "current_density_scale": 2.407407407407408,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        192,
+        54,
+        210,
+        86
+      ],
+      "whole_motif_width_source_pixels": 18,
+      "whole_motif_height_source_pixels": 32,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 43.33333333333334,
+      "whole_motif_current_art_height": 77.03703703703705,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.1116104307880517
+    },
+    {
+      "index": 60,
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "current_density_scale": 2.407407407407408,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        190,
+        72,
+        209,
+        107
+      ],
+      "whole_motif_width_source_pixels": 19,
+      "whole_motif_height_source_pixels": 35,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 45.74074074074075,
+      "whole_motif_current_art_height": 84.25925925925928,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.1733665658318322
+    },
+    {
+      "index": 64,
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "current_density_scale": 2.407407407407408,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        189,
+        98,
+        208,
+        133
+      ],
+      "whole_motif_width_source_pixels": 19,
+      "whole_motif_height_source_pixels": 35,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 45.74074074074075,
+      "whole_motif_current_art_height": 84.25925925925928,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.1733665658318322
+    },
+    {
+      "index": 68,
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "current_density_scale": 2.407407407407408,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        187,
+        134,
+        208,
+        171
+      ],
+      "whole_motif_width_source_pixels": 21,
+      "whole_motif_height_source_pixels": 37,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 50.555555555555564,
+      "whole_motif_current_art_height": 89.07407407407409,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.2968788359193935
+    },
+    {
+      "index": 71,
+      "source": "batches/transition_056_071_linked_view_bridge/master.png",
+      "source_sha256": "8aff41f852db035a686400fa5a454355de7d7b15856f267839ae0b1b4046e217",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "current_density_scale": 2.407407407407408,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        187,
+        164,
+        207,
+        205
+      ],
+      "whole_motif_width_source_pixels": 20,
+      "whole_motif_height_source_pixels": 41,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 48.14814814814816,
+      "whole_motif_current_art_height": 98.70370370370372,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.235122700875613
+    },
+    {
+      "index": 72,
+      "source": "batches/transition_072_087_linked_occlusion_alpha/master.png",
+      "source_sha256": "6861f285891ccd8e86038450576cd464569379e1f8ed16dcf47a0560ffa3e3f4",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "current_density_scale": 2.055335968379446,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        171,
+        187,
+        192,
+        220
+      ],
+      "whole_motif_width_source_pixels": 21,
+      "whole_motif_height_source_pixels": 33,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 43.16205533596836,
+      "whole_motif_current_art_height": 67.82608695652172,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 1.1072167136703115
+    },
+    {
+      "index": 87,
+      "source": "batches/transition_072_087_linked_occlusion_alpha/master.png",
+      "source_sha256": "6861f285891ccd8e86038450576cd464569379e1f8ed16dcf47a0560ffa3e3f4",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "current_density_scale": 2.055335968379446,
+      "motif_family": "beaded_cluster",
+      "whole_motif_source_cell_bounds": [
+        172,
+        190,
+        190,
+        215
+      ],
+      "whole_motif_width_source_pixels": 18,
+      "whole_motif_height_source_pixels": 25,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 3,
+      "whole_motif_current_art_width": 36.996047430830025,
+      "whole_motif_current_art_height": 51.38339920948615,
+      "central_pearl": {
+        "status": "No unambiguous single central sphere boundary at this coarse painting; metal/beads overlap. Whole cluster measured instead; not interchangeable with later flower/star."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements.",
+      "current_art_whole_motif_width_ratio_to_frozen55": 0.9490428974316957
+    },
+    {
+      "index": 88,
+      "source": "batches/transition_088_103_matched_phase/master.png",
+      "source_sha256": "eb66bea5ebdf547a2bd3f7b77c2c112f868f409f867ac26af77de75d69579b1e",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "current_density_scale": 1.5112764473378277,
+      "motif_family": "flower_star",
+      "whole_motif_source_cell_bounds": [
+        167,
+        188,
+        190,
+        213
+      ],
+      "whole_motif_width_source_pixels": 23,
+      "whole_motif_height_source_pixels": 25,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 2,
+      "whole_motif_current_art_width": 34.75935828877004,
+      "whole_motif_current_art_height": 37.78191118344569,
+      "central_pearl": {
+        "status": "Gray inner pearl surface visible; coarse boundary, excluding silver outer rim and glint.",
+        "source_cell_bounds": [
+          175,
+          196,
+          182,
+          203
+        ],
+        "horizontal_diameter_source_pixels": 7,
+        "vertical_diameter_source_pixels": 7,
+        "diameter_uncertainty_source_pixels": 1.5,
+        "current_art_mean_diameter": 10.578935131364794,
+        "warning": "Painted diameter is6\u20138pixels in sheet cells; \u00b11.5px is20\u201325% uncertainty. Local jewelry/head proportion can drift independently; not sole density calibration."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements."
+    },
+    {
+      "index": 103,
+      "source": "batches/transition_088_103_matched_phase/master.png",
+      "source_sha256": "eb66bea5ebdf547a2bd3f7b77c2c112f868f409f867ac26af77de75d69579b1e",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "current_density_scale": 1.5112764473378277,
+      "motif_family": "flower_star",
+      "whole_motif_source_cell_bounds": [
+        168,
+        186,
+        192,
+        211
+      ],
+      "whole_motif_width_source_pixels": 24,
+      "whole_motif_height_source_pixels": 25,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 2,
+      "whole_motif_current_art_width": 36.270634736107866,
+      "whole_motif_current_art_height": 37.78191118344569,
+      "central_pearl": {
+        "status": "Gray inner pearl surface visible; coarse boundary, excluding silver outer rim and glint.",
+        "source_cell_bounds": [
+          176,
+          194,
+          183,
+          201
+        ],
+        "horizontal_diameter_source_pixels": 7,
+        "vertical_diameter_source_pixels": 7,
+        "diameter_uncertainty_source_pixels": 1.5,
+        "current_art_mean_diameter": 10.578935131364794,
+        "warning": "Painted diameter is6\u20138pixels in sheet cells; \u00b11.5px is20\u201325% uncertainty. Local jewelry/head proportion can drift independently; not sole density calibration."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements."
+    },
+    {
+      "index": 104,
+      "source": "batches/transition_104_119_matched_phase/master.png",
+      "source_sha256": "48438eecac891889064af0e6b2acb4a091b28696fa575391a182e931f91d3409",
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "current_density_scale": 1.8684872439813143,
+      "motif_family": "flower_star",
+      "whole_motif_source_cell_bounds": [
+        160,
+        196,
+        185,
+        221
+      ],
+      "whole_motif_width_source_pixels": 25,
+      "whole_motif_height_source_pixels": 25,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 2,
+      "whole_motif_current_art_width": 46.712181099532856,
+      "whole_motif_current_art_height": 46.712181099532856,
+      "central_pearl": {
+        "status": "Gray inner pearl surface visible; coarse boundary, excluding silver outer rim and glint.",
+        "source_cell_bounds": [
+          168,
+          203,
+          176,
+          211
+        ],
+        "horizontal_diameter_source_pixels": 8,
+        "vertical_diameter_source_pixels": 8,
+        "diameter_uncertainty_source_pixels": 1.5,
+        "current_art_mean_diameter": 14.947897951850514,
+        "warning": "Painted diameter is6\u20138pixels in sheet cells; \u00b11.5px is20\u201325% uncertainty. Local jewelry/head proportion can drift independently; not sole density calibration."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements."
+    },
+    {
+      "index": 117,
+      "source": "batches/transition_104_119_matched_phase/master.png",
+      "source_sha256": "48438eecac891889064af0e6b2acb4a091b28696fa575391a182e931f91d3409",
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "current_density_scale": 1.8684872439813143,
+      "motif_family": "flower_star",
+      "whole_motif_source_cell_bounds": [
+        159,
+        196,
+        184,
+        222
+      ],
+      "whole_motif_width_source_pixels": 25,
+      "whole_motif_height_source_pixels": 26,
+      "whole_motif_width_uncertainty_source_pixels": 2,
+      "whole_motif_height_uncertainty_source_pixels": 2,
+      "whole_motif_current_art_width": 46.712181099532856,
+      "whole_motif_current_art_height": 48.58066834351417,
+      "central_pearl": {
+        "status": "Gray inner pearl surface visible; coarse boundary, excluding silver outer rim and glint.",
+        "source_cell_bounds": [
+          167,
+          204,
+          175,
+          211
+        ],
+        "horizontal_diameter_source_pixels": 8,
+        "vertical_diameter_source_pixels": 7,
+        "diameter_uncertainty_source_pixels": 1.5,
+        "current_art_mean_diameter": 14.013654329859857,
+        "warning": "Painted diameter is6\u20138pixels in sheet cells; \u00b11.5px is20\u201325% uncertainty. Local jewelry/head proportion can drift independently; not sole density calibration."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements."
+    },
+    {
+      "index": 118,
+      "source": "batches/transition_118_passing/master.png",
+      "source_sha256": "e7456c80fcc7046b1a4a162410aec8f8f92d9f45a89f7cfe03108b906cef3938",
+      "cell": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "current_density_scale": 0.3618549240104658,
+      "motif_family": "flower_star",
+      "whole_motif_source_cell_bounds": [
+        968,
+        601,
+        1064,
+        698
+      ],
+      "whole_motif_width_source_pixels": 96,
+      "whole_motif_height_source_pixels": 97,
+      "whole_motif_width_uncertainty_source_pixels": 5,
+      "whole_motif_height_uncertainty_source_pixels": 5,
+      "whole_motif_current_art_width": 34.73807270500472,
+      "whole_motif_current_art_height": 35.099927629015184,
+      "central_pearl": {
+        "status": "Gray inner pearl surface visible; coarse boundary, excluding silver outer rim and glint.",
+        "source_cell_bounds": [
+          1003,
+          636,
+          1033,
+          666
+        ],
+        "horizontal_diameter_source_pixels": 30,
+        "vertical_diameter_source_pixels": 30,
+        "diameter_uncertainty_source_pixels": 3,
+        "current_art_mean_diameter": 10.855647720313975,
+        "warning": "Painted diameter is6\u20138pixels in sheet cells; \u00b11.5px is20\u201325% uncertainty. Local jewelry/head proportion can drift independently; not sole density calibration."
+      },
+      "method": "Manual actualsource pixel ruler. Same visible whole beaded motif within55\u201387; same gray central pearl surface excluding metal rim/specularglint within88+. No NCC scale or target measurements."
+    }
+  ],
+  "frozen_overhead32_pearl_crosscheck": {
+    "label": "frozen_overhead32",
+    "source": "batches/overhead_032_047_pose_retry/master.png",
+    "source_sha256": "958d948eaad4f62623cfd79084cf3a2b10f4056ac82d9af2a7b11aa1fd05c332",
+    "cell": [
+      0,
+      0,
+      312,
+      290
+    ],
+    "current_density_scale": 1.3702239789196307,
+    "central_pearl_source_bounds": [
+      209,
+      170,
+      218,
+      179
+    ],
+    "central_pearl_diameter_source_pixels": 9,
+    "diameter_uncertainty_source_pixels": 1.5,
+    "current_art_diameter": 12.332015810276676,
+    "note": "Sameflower/star pearl family; approximategray sphere boundary at9sourcepx. Actualcap observation remains separate."
+  },
+  "findings": [
+    "Visible beaded motif rawwidth grows18px at56 to20px at71 while current density stays2.407. Currentart motifwidth is43.3\u219248.1px versus frozen55about39.0px. This supports some sourceframing/appearance drift, but coarsebounds and camera foreshortening prevent treating the wholemotif as exact isotropic ruler.",
+    "Selected72 beadedmotif current43.2x67.8artpx is close to frozen55~39.0x63.7 within sourceboundary/projection uncertainty; this does not support blindly shrinking72by25% solely to make a windmerged hairenvelope constant.",
+    "Flower/star central pearl currentdiameters are about10.6 at88/103,14.9 at104,14.0 at117,10.9 at118 versus frozenoverhead32~12.3artpx. Because smallcell pearl diameter has\u00b120\u201325% uncertainty and jewelry/head ratio visiblyvaries bypainting, accessory alone cannot prove wholebody density or justify anatomy-distorting rescale.",
+    "Outerhaircap measurements and clasp crosschecks do not supply one unambiguous physical skull width across every painting. Distinguish volume, visible capdefinition, camera projection and actual source framing. Use actualneck/collar/head model continuity with native proofs; do not replace NCC ruler error with a different unqualified hairenvelope ruler."
+  ],
+  "limitations": "Whole beaded motif is not the same geometric object outline as the flower/star. Pearl circles are only measured where resolved; no invented hidden circle diameters. Angled jewelry plane may foreshorten; spherical pearl surface is a better but coarse crosscheck."
+}

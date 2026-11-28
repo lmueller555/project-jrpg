@@ -1,0 +1,176 @@
+[
+  {
+    "id": "transition_012_015",
+    "output": "transition_012_015.png",
+    "grid": [
+      2,
+      2
+    ],
+    "frames": [
+      {
+        "local_frame": 12,
+        "local_time": 0.2,
+        "gait_frame": 12,
+        "elevation": 13.59565451396918,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 13,
+        "local_time": 0.21666666666666667,
+        "gait_frame": 13,
+        "elevation": 13.944238071565811,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 14,
+        "local_time": 0.23333333333333334,
+        "gait_frame": 14,
+        "elevation": 14.343171068598224,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 15,
+        "local_time": 0.25,
+        "gait_frame": 15,
+        "elevation": 14.794596245464286,
+        "azimuth": 0
+      }
+    ],
+    "prompt": "Create a2-by-2 sprite atlas with FOUR COMPLETE painterly cinematic drawings of the SAME Lucan, all on true transparent background. Cell order is top-left, top-right, bottom-left, bottom-right. The FIRST reference already contains the exact four approved gait poses in that order; preserve each corresponding pose's actual connected arm/leg action, sword grip and shield ownership. Redraw the whole figure for the specified slightly elevated camera, rather than applying a perspective transform to the old image. The second reference is the same approved Lucan's detailed appearance. He is UNHELMETED: swept dark brown hair, youthful face, polished articulated steel plate with gold edges, oxblood split tabard and pale silver chest motif, dark trousers, brown boots/gloves. Right-hand sword is on viewerLEFT, left-arm oxblood/gold kite shield on viewerRIGHT. Exactly two coherent arms/legs per figure. Rigid armor remains rigid; cloth follows gait. No extra hands, boots, isolated limb bits, ghosting or overlapping cells.\n\nThe four poses are consecutive samples of an800ms two-step run. BOTH leg chains progress, one recovering foot passes while the other advances, with continuous knee/calf/boot positions; both arm actions progress naturally. Do not freeze all four into a common key. These are the actual low-front beginning of a crane, so the elevation changes are small, never a leap to overhead or a new camera yaw. Preserve face/head/shoulder size, costume palette and natural proportions throughout. Cool silver night lighting with existing restrained warm rim. All four complete figures have uniform physical scale and enough empty space in their own equal cells for sword, shield, hair and boots. No ground, shadows, labels, numbers, borders, grid, text or background.\n\nCamera and gait for each cell: cell1: camera elevation13.60 degrees above horizontal, approved gait pose12; cell2: camera elevation13.94 degrees above horizontal, approved gait pose13; cell3: camera elevation14.34 degrees above horizontal, approved gait pose14; cell4: camera elevation14.79 degrees above horizontal, approved gait pose15. Travel is toward the camera/bottom of image; anatomical right stays viewer left. He looks forward along the bridge, not up at the camera.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/transition_012_015.png",
+        "sha256": "c8bdf5fcaacbefd8dba34d0055b77205ca76a1fe8d1321edfb8bf720955fb338"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_00.png",
+        "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4"
+      }
+    ],
+    "original_generation_path": "/workspace/generated_images/exec-e8103d84-3bed-4d97-867f-b3a6165cd870.png",
+    "generation_id": "exec-e8103d84-3bed-4d97-867f-b3a6165cd870",
+    "source_sha256": "4871a6d9faaf184830253f5fc0556942b8790f2c896d4f27d148735fec837bbf"
+  },
+  {
+    "id": "transition_016_019",
+    "output": "transition_016_019.png",
+    "grid": [
+      2,
+      2
+    ],
+    "frames": [
+      {
+        "local_frame": 16,
+        "local_time": 0.26666666666666666,
+        "gait_frame": 16,
+        "elevation": 15.300399953090315,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 17,
+        "local_time": 0.2833333333333333,
+        "gait_frame": 17,
+        "elevation": 15.86220261542868,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 18,
+        "local_time": 0.3,
+        "gait_frame": 18,
+        "elevation": 16.48134672001432,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 19,
+        "local_time": 0.31666666666666665,
+        "gait_frame": 19,
+        "elevation": 17.15888242668404,
+        "azimuth": 0
+      }
+    ],
+    "prompt": "Create a2-by-2 sprite atlas with FOUR COMPLETE painterly cinematic drawings of the SAME Lucan, all on true transparent background. Cell order is top-left, top-right, bottom-left, bottom-right. The FIRST reference already contains the exact four approved gait poses in that order; preserve each corresponding pose's actual connected arm/leg action, sword grip and shield ownership. Redraw the whole figure for the specified slightly elevated camera, rather than applying a perspective transform to the old image. The second reference is the same approved Lucan's detailed appearance. He is UNHELMETED: swept dark brown hair, youthful face, polished articulated steel plate with gold edges, oxblood split tabard and pale silver chest motif, dark trousers, brown boots/gloves. Right-hand sword is on viewerLEFT, left-arm oxblood/gold kite shield on viewerRIGHT. Exactly two coherent arms/legs per figure. Rigid armor remains rigid; cloth follows gait. No extra hands, boots, isolated limb bits, ghosting or overlapping cells.\n\nThe four poses are consecutive samples of an800ms two-step run. BOTH leg chains progress, one recovering foot passes while the other advances, with continuous knee/calf/boot positions; both arm actions progress naturally. Do not freeze all four into a common key. These are the actual low-front beginning of a crane, so the elevation changes are small, never a leap to overhead or a new camera yaw. Preserve face/head/shoulder size, costume palette and natural proportions throughout. Cool silver night lighting with existing restrained warm rim. All four complete figures have uniform physical scale and enough empty space in their own equal cells for sword, shield, hair and boots. No ground, shadows, labels, numbers, borders, grid, text or background.\n\nCamera and gait for each cell: cell1: camera elevation15.30 degrees above horizontal, approved gait pose16; cell2: camera elevation15.86 degrees above horizontal, approved gait pose17; cell3: camera elevation16.48 degrees above horizontal, approved gait pose18; cell4: camera elevation17.16 degrees above horizontal, approved gait pose19. Travel is toward the camera/bottom of image; anatomical right stays viewer left. He looks forward along the bridge, not up at the camera.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/transition_016_019.png",
+        "sha256": "f05637ed6022c5a57423e7384823c41f8a82393c6dc74fcfe9e44fc6450c3af9"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_00.png",
+        "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4"
+      }
+    ],
+    "original_generation_path": "/workspace/generated_images/exec-4f16ebe4-deed-46b7-aefb-a758395ad0c8.png",
+    "generation_id": "exec-4f16ebe4-deed-46b7-aefb-a758395ad0c8",
+    "source_sha256": "e6757b74719a84693879f08b69eac893f650f6663defb08af3e1a7acca3dd3a7"
+  },
+  {
+    "id": "transition_020_023",
+    "output": "transition_020_023.png",
+    "grid": [
+      2,
+      2
+    ],
+    "frames": [
+      {
+        "local_frame": 20,
+        "local_time": 0.3333333333333333,
+        "gait_frame": 20,
+        "elevation": 17.895551022819422,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 21,
+        "local_time": 0.35,
+        "gait_frame": 21,
+        "elevation": 18.691766611276933,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 22,
+        "local_time": 0.36666666666666664,
+        "gait_frame": 22,
+        "elevation": 19.547596590918765,
+        "azimuth": 0
+      },
+      {
+        "local_frame": 23,
+        "local_time": 0.38333333333333336,
+        "gait_frame": 23,
+        "elevation": 20.462741673260858,
+        "azimuth": 0
+      }
+    ],
+    "prompt": "Create a2-by-2 sprite atlas with FOUR COMPLETE painterly cinematic drawings of the SAME Lucan, all on true transparent background. Cell order is top-left, top-right, bottom-left, bottom-right. The FIRST reference already contains the exact four approved gait poses in that order; preserve each corresponding pose's actual connected arm/leg action, sword grip and shield ownership. Redraw the whole figure for the specified slightly elevated camera, rather than applying a perspective transform to the old image. The second reference is the same approved Lucan's detailed appearance. He is UNHELMETED: swept dark brown hair, youthful face, polished articulated steel plate with gold edges, oxblood split tabard and pale silver chest motif, dark trousers, brown boots/gloves. Right-hand sword is on viewerLEFT, left-arm oxblood/gold kite shield on viewerRIGHT. Exactly two coherent arms/legs per figure. Rigid armor remains rigid; cloth follows gait. No extra hands, boots, isolated limb bits, ghosting or overlapping cells.\n\nThe four poses are consecutive samples of an800ms two-step run. BOTH leg chains progress, one recovering foot passes while the other advances, with continuous knee/calf/boot positions; both arm actions progress naturally. Do not freeze all four into a common key. These are the actual low-front beginning of a crane, so the elevation changes are small, never a leap to overhead or a new camera yaw. Preserve face/head/shoulder size, costume palette and natural proportions throughout. Cool silver night lighting with existing restrained warm rim. All four complete figures have uniform physical scale and enough empty space in their own equal cells for sword, shield, hair and boots. No ground, shadows, labels, numbers, borders, grid, text or background.\n\nCamera and gait for each cell: cell1: camera elevation17.90 degrees above horizontal, approved gait pose20; cell2: camera elevation18.69 degrees above horizontal, approved gait pose21; cell3: camera elevation19.55 degrees above horizontal, approved gait pose22; cell4: camera elevation20.46 degrees above horizontal, approved gait pose23. Travel is toward the camera/bottom of image; anatomical right stays viewer left. He looks forward along the bridge, not up at the camera.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/transition_020_023.png",
+        "sha256": "717306a4580f969fbefe542e1b51a8400ef675e8668769dc5845c44e61d7feba"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/face_reveal/lucan/run_v2/frames/frame_00.png",
+        "sha256": "312f9009abce838f849de51f9529c12bf6323be1e9827b75b9aaa3eb6e11d8e4"
+      }
+    ],
+    "original_generation_path": "/workspace/generated_images/exec-3c51be1a-bda7-4365-a63d-1d30eb8951cb.png",
+    "generation_id": "exec-3c51be1a-bda7-4365-a63d-1d30eb8951cb",
+    "source_sha256": "d142c442b37ec2d8fa05bfc85cdca601a373f7c9b5493f42069ee6f229cbbd2c"
+  },
+  {
+    "id": "model_key_90_shield_edge",
+    "output": "model_key_90_shield_edge.png",
+    "prompt": "Edit the FIRST complete painted Lucan to correct only the physical viewing direction of his LEFT-ARM SHIELD (on image RIGHT). Preserve the successful exact overhead body, dark hair crown, proportions, right-foot-contact legs, sword grip and night palette. The SECOND image is a camera/overlap guide, not final style. Return ONE COMPLETE unified figure on a true TRANSPARENT background, generous clear margins, all anatomy and both weapons inside the canvas.\n\nThe camera is exactly vertically above Lucan. His kite shield is worn UPRIGHT in world space on his anatomical LEFT forearm; its point hangs downward toward the ground. Therefore its broad front face must NOT be presented flat toward this overhead camera. Redraw the shield and attached left forearm as a physically correct top-down carry: principally a narrow curved upper silver rim and a small sliver of dark oxblood inside/back beside the glove. The vertical shield height disappears in depth. Its projected depth should be only around one-fifth of its projected width, like the THIN RIM/ARC in the guide, not the large pointed red kite currently painted on image right. Almost all of the gold chevron is naturally hidden by this foreshortening. Keep the same shield's real-world size and attachment; do not shrink the actual object. Do not lay it flat on the ground to show its emblem. Resolve glove/forearm/rim occlusion naturally. This is one connected left arm, one shield, one right sword arm, two legs; no ghost equipment or extra hands. Avoid changing the accepted body, head, legs, sword, cloth palette or pose. No labels, grid, shadow, ground or background.",
+    "references": [
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/model_key_90_vertical.png",
+        "sha256": "079219cfcbf0ef84e6318064d5b890af8a6a0420ba2e2bf3868d1037b6c4c4bb"
+      },
+      {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/true_overhead_phase00_guide.png",
+        "sha256": "590e95e7f4c9a09a809a967a55d0a4cae2896d00cf2868b1362ca128eb891362"
+      }
+    ],
+    "original_generation_path": "/workspace/generated_images/exec-de9fce15-54fc-46e9-a09f-6d11d72534ff.png",
+    "generation_id": "exec-de9fce15-54fc-46e9-a09f-6d11d72534ff",
+    "source_sha256": "5b4591014d5a285347ee4f763ab3b6fc68e3ed45511cdab57243d81dc31262b3"
+  }
+]

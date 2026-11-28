@@ -1,0 +1,24 @@
+{
+  "cache_manifest_sha256": "ba6384fde2d2a73509889902498964f264502547564b17004210f1ea8c909040",
+  "samples": 481,
+  "native_size": [
+    960,
+    640
+  ],
+  "fps": 60,
+  "camera_signature": "09ead62a2647aed8ca7b26e16994958631dc33b832d5abe994b6a14c23bff195",
+  "environment_source_files": 17,
+  "hashed_cache_files": 1112,
+  "fresh_reproduction_checks": {
+    "samples": [
+      0,
+      48,
+      348,
+      480
+    ],
+    "normal_rgb": "exact",
+    "reduced_rgb": "exact",
+    "raised_depth_float32": "exact"
+  },
+  "note": "Temporary environment acceleration only; no environment-only production bank. Final strict --check does not use this cache."
+}

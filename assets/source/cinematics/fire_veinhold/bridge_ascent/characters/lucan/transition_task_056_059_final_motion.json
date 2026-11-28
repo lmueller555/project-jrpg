@@ -1,0 +1,33 @@
+{
+  "id": "transition_056_059_final_motion",
+  "output": "transition_056_059_final_motion.png",
+  "indices": [
+    56,
+    57,
+    58,
+    59
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Paint FOUR COMPLETE Lucan runners as2columns2rows at actual64\u201367degree elevatedcamera. FIRST reference supplies the EXACT approved gait phases8,9,10,11 in matchingcellorder. SECOND supplies actual3Dcamera/view ONLY. THIRD is cropped head/shoulders modelatthissteepview, FOURTH materialidentity. Preserve the FIRST corresponding knee/boot ownership and sequential motion while re-drawing entirebody from SECOND camera. First actualposed phase controls motion if camera-guide cylinders bend differently.\n\nIMPORTANT FOUR-PHASE ACTION: at8rightleg/imageLEFT is extended stance, leftleg/imageRIGHT has recovering knee bent up. At9rightcontactleg starts drawing back, leftkneecontinuesforward. At10rightboot has risen and leftboot lowers toward it. At11 BOTH BOOT TIPS ARE APPROXIMATELY LEVEL in the reference, bothkneesbent in passing/midflight before leftcontact. Do not leave a long extended rightleg in the lastcell. Do not jump to long leftcontact early either. Preserve natural continuous60Hz movement between first3 andlastcompactpassing. Two hip-knee-ankle chains/two boots, no thirdtoe. Both arms own connected shoulder-elbow-wrist with right sword/imageLEFT, left uprightchevronshield/imageRIGHT; keep appropriateactualphase andgrips.\n\nCAMERA: stronglyelevated64\u201367degrees, see headcrown and pauldrontops, eyeshidden and chestmostlyoccluded; THIRD correct steephead/shoulders appearance, no upwardface. Reproject entire torso/hips/thighs/shins under actualcamera, don't merely bow frontalhead above longfrontalbody. Naturally shorten projected torso/steelgreaves perview, keeping same trueadult body/limbsize; no chibi, no silhouettefit. Same bareheaded youngadult darkbrownhaired knight, polishedsilversteel shoulder/thigh/knee/greave armor goldtrimmed, oxbloodsplittabard/paleverticalchestmotif, normalbrownboots/gloves. Head/rigidshoulder physicalsize constant. Upright shield face naturallyforeshortens, notlaidflat. Coolmoonlight/restainedwarmrim. Newlypainted whole indivisible figures, no pixelparts/morph/warp, truealpha0transparentbackground, generousclearmargins around entirehair/boots/swordtip/shield, nofloor/glow/shadow/grid/text.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/approved_056_059_exact.png",
+      "sha256": "90d4de4c8566289ee8f1c7623aba795676de5b2656710ce38b8102342142854b"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_056_059_exact.png",
+      "sha256": "05e711179bb5bdb9887b39d7282374566803ab5a2b7b5bd685dab10800384340"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/steep_056_head_shoulders_crop.png",
+      "sha256": "2887206ca109f591259563c70d684657213a039106413cac132b85f3e77748cc"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v4.png",
+      "sha256": "e2f78f20136017fc71bc76328d393571f303cff9584b0b1459260a58870a996e"
+    }
+  ]
+}

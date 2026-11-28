@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-3564a545-8c9c-4d7a-8905-0960a94b08a0",
+  "original_generation_path": "/workspace/generated_images/exec-3564a545-8c9c-4d7a-8905-0960a94b08a0.png",
+  "master": "master.png",
+  "sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "eb45f76f6856387f7b829e3fcc1f69890481ca30a3574d509dea9dcebda5151a",
+  "references": [
+    {
+      "path": "batches/overhead_016_031_pose_retry/entry_016_023_bridge/camera_pose_guide.png",
+      "sha256": "2a503ac26f5f5ba334a8bda5e4f1a2e051c2bbc48b26c0e760105d0c3a2baa95"
+    },
+    {
+      "path": "batches/overhead_016_031_pose_retry/entry_016_023_bridge/approved_phase_reference.png",
+      "sha256": "60e1a847a51cf02706d75906245b9310155bafe19fed310f35cd8dc3e2a58c09"
+    },
+    {
+      "path": "batches/overhead_016_031_pose_retry/entry_016_023_bridge/angle_model_reference.png",
+      "sha256": "9abff79ea704cd67a0108765431a058d446a88f0756466f79f6c5484d5d264c1"
+    }
+  ],
+  "status": "candidate_complete_drawings",
+  "samples": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "guide_pixels_used_in_export": false
+}

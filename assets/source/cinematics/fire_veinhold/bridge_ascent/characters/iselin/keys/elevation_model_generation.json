@@ -1,0 +1,19 @@
+{
+  "generation_id": "exec-66b600cc-4cb5-48d8-8472-c055cc7bfc33",
+  "original_generation_path": "/workspace/generated_images/exec-66b600cc-4cb5-48d8-8472-c055cc7bfc33.png",
+  "master": "elevation_model_30_60_90.png",
+  "sha256": "655f5db92009289e1247226c67276935da4264765ee28f0fa23d02d551d51c29",
+  "size": [
+    2172,
+    724
+  ],
+  "prompt": "elevation_model_prompt.txt",
+  "prompt_sha256": "32ec00d22b4ea5456e9de332c7e409814419c6f5336d70f73e4afbb5e591bc1e",
+  "references": [
+    {
+      "path": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_10.png",
+      "sha256": "b267ba33cd54923153c50698f691213652306f9ad35e1c45159b8746a52e3dab"
+    }
+  ],
+  "status": "awaiting_directional_model_review"
+}

@@ -432,7 +432,7 @@ class ProductionFaceRevealTests(unittest.TestCase):
             complete.reset()
             single.reset()
 
-    def test_frontal_cut_releases_preceding_caches_and_completion_releases_new_owners(self):
+    def test_frontal_cut_ascent_handoff_and_completion_release_finished_banks(self):
         from fire_veinhold_opening import FireVeinholdOpening
         game = SimpleNamespace(audio=SimpleNamespace(reduced_motion=False, effects_volume=0),
                                _music_focused=True, to_canvas=lambda point:point)
@@ -457,6 +457,13 @@ class ProductionFaceRevealTests(unittest.TestCase):
             scene.update(5.)
             self.assertEqual(scene.elapsed, 47.)
             self.assertTrue(all(not owner.cache_info['surfaces'] for owner in scene._face_reveals.values()))
+            self.assertTrue(scene.active)
+            self.assertEqual(scene.state_at(scene.elapsed)['phase'],'bridge_ascent')
+            self.assertTrue(any(owner.cache_info['bytes'] for owner in scene._bridge_ascents.values()))
+            scene.update(8.)
+            self.assertEqual(scene.elapsed,55.)
+            self.assertFalse(scene.active)
+            self.assertTrue(all(not owner.cache_info['bytes'] for owner in scene._bridge_ascents.values()))
         finally:
             scene.reset()
 

@@ -1,0 +1,287 @@
+{
+  "source": "master.png",
+  "template": "../../keys/true_overhead_model_v2.png [505,700,758,931]",
+  "method": "Actual source NCC crown template observations; pending visible overlay review. No art transforms.",
+  "observations": [
+    {
+      "sample_index": 72,
+      "gait_frame": 34,
+      "cell": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "view_elevation": 71.95040787267735,
+      "guide": "guides/transition/guide_072.png",
+      "guide_sha256": "167fba4e32457f73cd5f64a3dcbd08a4525d78d02e1ce5ff369055c477472766",
+      "point": [
+        297.0,
+        203.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        258,
+        167,
+        336,
+        239
+      ],
+      "score": 0.647360622882843,
+      "actual_cell": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 73,
+      "gait_frame": 35,
+      "cell": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "view_elevation": 72.67633700024163,
+      "guide": "guides/transition/guide_073.png",
+      "guide_sha256": "118dd593e7a3af40b786c28253a5e0ac8df8f2ea70beaff20fcbebf3da9ef043",
+      "point": [
+        262.0,
+        206.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        223,
+        170,
+        301,
+        242
+      ],
+      "score": 0.6426986455917358,
+      "actual_cell": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 74,
+      "gait_frame": 36,
+      "cell": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "view_elevation": 73.38014010200183,
+      "guide": "guides/transition/guide_074.png",
+      "guide_sha256": "76adcaf1dbb8af9c015c9f4dd50a39070e2bf1e3f098c3b73ba531200f761f55",
+      "point": [
+        293.0,
+        202.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        254,
+        166,
+        332,
+        238
+      ],
+      "score": 0.6547073125839233,
+      "actual_cell": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 75,
+      "gait_frame": 37,
+      "cell": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "view_elevation": 74.06186531478473,
+      "guide": "guides/transition/guide_075.png",
+      "guide_sha256": "d28268ce34c1ed97e72aa24b2081123da73e1f253fdaa4905235632153e024aa",
+      "point": [
+        262.0,
+        202.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        223,
+        166,
+        301,
+        238
+      ],
+      "score": 0.6426799297332764,
+      "actual_cell": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 76,
+      "gait_frame": 38,
+      "cell": [
+        0,
+        768,
+        512,
+        1152
+      ],
+      "view_elevation": 74.72158316105696,
+      "guide": "guides/transition/guide_076.png",
+      "guide_sha256": "8688f40c1ec06dfe03e651955f80bc5b567deb15d5fe0c06a3ca5c4f34367347",
+      "point": [
+        294.0,
+        202.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        255,
+        166,
+        333,
+        238
+      ],
+      "score": 0.6532313823699951,
+      "actual_cell": [
+        0,
+        768,
+        512,
+        1152
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 77,
+      "gait_frame": 39,
+      "cell": [
+        512,
+        768,
+        1024,
+        1152
+      ],
+      "view_elevation": 75.35938870555519,
+      "guide": "guides/transition/guide_077.png",
+      "guide_sha256": "153c01fffbf4cd0e15b948bf9250f921b09a4eb1b66f6de38735fee68cd96869",
+      "point": [
+        263.0,
+        204.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        224,
+        168,
+        302,
+        240
+      ],
+      "score": 0.660744845867157,
+      "actual_cell": [
+        512,
+        768,
+        1024,
+        1152
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 78,
+      "gait_frame": 40,
+      "cell": [
+        0,
+        1152,
+        512,
+        1536
+      ],
+      "view_elevation": 75.97540335435166,
+      "guide": "guides/transition/guide_078.png",
+      "guide_sha256": "d11842bd62f55d911b56fe48fd4a9451c644317e83518f0f5a3425f9e386cd80",
+      "point": [
+        293.0,
+        202.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        254,
+        166,
+        332,
+        238
+      ],
+      "score": 0.6550676822662354,
+      "actual_cell": [
+        0,
+        1152,
+        512,
+        1536
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    },
+    {
+      "sample_index": 79,
+      "gait_frame": 41,
+      "cell": [
+        512,
+        1152,
+        1024,
+        1536
+      ],
+      "view_elevation": 76.56977628964644,
+      "guide": "guides/transition/guide_079.png",
+      "guide_sha256": "54c5c90b1d3cdb4f08ee25bf518db1e690d27df7f292af71d26fe040b69ca493",
+      "point": [
+        265.0,
+        203.0
+      ],
+      "template_scale": 0.31000000000000005,
+      "template_box": [
+        226,
+        167,
+        304,
+        239
+      ],
+      "score": 0.6469314098358154,
+      "actual_cell": [
+        512,
+        1152,
+        1024,
+        1536
+      ],
+      "use_for_density": false,
+      "manual_review": "NCCpoint overlay inspected as same white cranial feature for POSITION ONLY; templatebox width is not rigid skullmeasurement."
+    }
+  ],
+  "source_sha256": "aeb1b1ce8e92e7997f5c3ea9b05beaf3e7b68301f72146fdfccc9e9aac69f293",
+  "density_calibration": {
+    "uniform_scale": 1.9696969696969697,
+    "source_feature": "Same visible whole beaded temple motif as adjacent high-view source, excluding loosehair; no isolated centralpearl claim.",
+    "observed_first_cell_bounds": [
+      330,
+      168,
+      352,
+      201
+    ],
+    "observed_motif_width_source_pixels": 22,
+    "source_width_uncertainty_pixels": 2,
+    "target_art_motif_width": 43.333333333333336,
+    "target_uncertainty_art_pixels": 5,
+    "purpose": "Preserve adjacent visible rigid appearance. NCC region scale is NOT the density ruler. No occupied-height or loosehair-envelope fit."
+  }
+}

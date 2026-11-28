@@ -1,0 +1,33 @@
+{
+  "id": "transition_036_039b",
+  "output": "transition_036_039b.png",
+  "indices": [
+    36,
+    37,
+    38,
+    39
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Draw FOUR COMPLETE Lucan running figures as2columns2rows, reading phases36,37,38,39. FIRST reference supplies the EXACT actual approved phase-specific limb motion; preserve each cell own left/right leg bend and advancing boot, sword hand, shield arm and adult body. SECOND reference supplies actual camera elevations36.9,38.4,40,41.6degrees ONLY; its primitive blocking is a rough camera aid, actual FIRST phase pose takes precedence when a guide cylinder bends differently. THIRD is the preceding frame35 head/neck at35.4degrees. Preserve its bowed head and natural adult cranium, showing SLIGHTLY more crown and less face as elevation rises. Don't suddenly hide the entire face or bow head90degrees. FOURTH supplies materials only.\n\nCRITICAL CONTINUITY: at36LEFTleg (imageRIGHT) is still extended down and rightleg imageLEFT has its knee bent/recovering. At37leftleg begins drawing back as rightknee continues forward. By38\u201339rightleg gradually extends forward while leftfolds back. Follow the corresponding first reference one60Hz tick at a time, no instantaneous leg swap at36. The prior complete figure was naturally tall/adult: maintain same rigid head/cranium and pauldron size, torso proportions and limb lengths; no chibi/stubby compression. Camera foreshortens progressively, do not fit silhouettes to equal height. Complete connected twoarm/twoleg chains, no third boot.\n\nBare-headed young adult knight, swept darkbrown hair, polished articulated silversteel/gold, oxblood split tabard and pale chest emblem, brown leather gloves/boots, right sword/imageLEFT and left chevron kite shield/imageRIGHT. Both arms articulate, steel shoulders/plate remain rigid. Shield remains upright and gradually foreshortens; retain correct same normal size with believable forearm ownership. Cool moonlit silver and restrained warm rim, no palette changes. True transparent background alpha0, no shadow/floor/grid/text, no clipped boots/swordtip. Each cell one complete freshly redrawn image, no pasted/morphed limbs.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/approved_036_039.png",
+      "sha256": "d075edf2034e5848d12cff8ac2a598bc0327e4fb3ec05def598f296fa24a972d"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_036_039.png",
+      "sha256": "67e7989d29100e6f2c5bb8384363cb4beccd80ac490ae288cc42e2b8c5d20767"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/previous035_head_crop.png",
+      "sha256": "a85584e9ecacdf931f517164e8a1b8ace05828219fb590ad760673c6f9cc6a7c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+      "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+    }
+  ]
+}

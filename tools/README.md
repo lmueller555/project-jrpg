@@ -10,9 +10,12 @@ the standard.
 
 Capture the Fire Veinhold prologue through its actual save-disabled Gallery
 runtime with `python tools/capture_fire_veinhold_opening.py`. It defaults to the
-complete 47-second film at 60 FPS and writes to `docs/reviews/veinhold_motion_continuity/`.
+complete 55-second film at 60 FPS and writes to
+`docs/reviews/veinhold_bridge_ascent/`. The standalone eight-second ascent and
+complete reel use the same native 960×640 production bank and global clocks.
 Use `--shot-id island_orbit`, `alarm_hold`, `bridge_rush`, `frozen_bridge`,
-`bridge_running`, `face_reveal` or `eagle_ascent` for an individual clip; its Gallery ID also works. Add
+`bridge_running`, `face_reveal`, `bridge_ascent` or `eagle_ascent` for an
+individual clip; its Gallery ID also works. Add
 `--reduced-motion`, `--fps 60`, or `--out PATH` as needed. Movies retain native
 960×640 detail and reconstruct sound offline from the production exports and
 global timing; this is not hardware-loopback listening evidence. Capture JSON
@@ -24,6 +27,48 @@ Gallery replay screenshots retain the toolbar as separate UI evidence. The
 storyboard and camera contract. Use `tools/capture_gallery.py --mode thumbnails
 --scene fire_veinhold_shot_02 --out PATH` for a focused thumbnail recapture;
 repeat `--scene` to include other entries.
+
+`tools/build_prologue_bridge_ascent.py` reproduces the final Shot 8 performance.
+Its early inspection commands remain `--previs` for geometric camera blockout,
+`--world-proof` for environment checkpoints, `--entry-proof` for the existing
+frontal art at the exact handoff, and `--guard-proof` for guard staging. The
+production operations are now implemented:
+
+| Operation | Command and scope |
+| --- | --- |
+| Native cast checkpoints | `python tools/build_prologue_bridge_ascent.py --proof` |
+| Full production bake | `python tools/build_prologue_bridge_ascent.py --bake` renders all 481 inclusive normal and Reduced Motion samples. |
+| Integrity verification | `python tools/build_prologue_bridge_ascent.py --verify` checks actual source/output hashes and complete metadata without rerendering. |
+| Fresh reproduction | `python tools/build_prologue_bridge_ascent.py --check` verifies integrity, then freshly renders and compares all 481 normal and Reduced Motion samples and their ledgers. |
+
+The final [bake](../docs/reviews/veinhold_bridge_ascent/logs/bake.log),
+[integrity verification](../docs/reviews/veinhold_bridge_ascent/logs/verify.log) and
+[fresh reproduction](../docs/reviews/veinhold_bridge_ascent/logs/fresh_check.log) pass against the frozen
+cast, guards, world and camera inputs. The
+[scene owner](../docs/narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md#bridge-ascent--production-contract)
+owns the camera, source/export and cache contract; the
+[Bridge Ascent review](../docs/reviews/veinhold_bridge_ascent/README.md) retains
+source/native approval, reproducibility and Gallery evidence.
+
+For temporary environment acceleration, run
+`python tools/build_prologue_bridge_ascent.py --prepare-world-cache`; its default
+destination is `/tmp/veinhold-bridge-ascent-world`. Add
+`--world-cache /tmp/veinhold-bridge-ascent-world` to `--proof` or `--bake` to use
+it, or to `--prepare-world-cache` to choose the destination. The cache covers
+481 environment-only normal/Reduced Motion views plus depth. Its source/file
+hash validation and four exact fresh RGB/depth checkpoints are retained under
+[`render_logs`](../docs/reviews/veinhold_bridge_ascent/render_logs/).
+It is not a production character bank. `--check` always renders from current
+sources and rejects `--world-cache`.
+
+Capture the eight-second clip with
+`python tools/capture_fire_veinhold_opening.py --shot-id bridge_ascent --fps 60 --out PATH`
+and repeat with `--reduced-motion`. Capture the full 55-second reel with
+`--shot-id complete`. The [final Gallery record](../docs/reviews/veinhold_bridge_ascent/gallery/validation.json)
+covers both modes, native timing, measured cache/lifecycle behavior, natural
+return and persistent-state isolation. Captured movies alone do not establish
+that normal-speed playback was watched; the review identifies the actual visual
+and audio inspection scope.
 
 `tools/export_prologue_bridge_background.py` uniformly exports the registered
 far-scenery and transparent rail/deck paintings for Shot 6 to 1920×640,
@@ -53,7 +98,9 @@ complete lower-body drawings with the separate `bridge_running/playback.json`
 timing recipe, exported by `tools/export_prologue_runners.py`. The current run
 cycle is 800 ms in both shots; contact audio reads that same exported timing.
 The [motion continuity review](../docs/reviews/veinhold_motion_continuity/README.md)
-records current construction, Gallery validation and reproduction commands.
+records the approved 47-second baseline's construction, Gallery validation and
+reproduction commands. Its Shot 7 art remains approved and reusable; Shot 8's
+new elevated drawings have their own review gates.
 
 Run `python tools/audit_prologue_motion.py` for the scoped painted boot and
 material-contour regression checks, and `python tools/audit_prologue_hands.py`

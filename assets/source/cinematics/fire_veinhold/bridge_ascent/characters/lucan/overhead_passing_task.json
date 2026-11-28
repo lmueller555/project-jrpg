@@ -1,0 +1,23 @@
+{
+  "id": "overhead_passing_keys",
+  "output": "overhead_passing_keys.png",
+  "phases": [
+    12,
+    36
+  ],
+  "grid": [
+    2,
+    1
+  ],
+  "prompt": "Draw TWO COMPLETE Lucan figures in a2column1row transparent atlas, from EXACTLY VERTICAL camera. FIRST reference is the actual3D pose projection for passing/recovery phases12 LEFT and36 RIGHT. Follow their knee/calf/boot occlusion literally. CRITICAL: the silver part protruding down/forward below hair is the BENT KNEE, NOT A LONG SHIN. The calf bends back under/behind the torso, and its boot is mostly OCCLUDED by the body. DO NOT extend a long shin or brown boot below this visible forward kneecap. The other leg trails up behind the red hips with the only clearly exposed rear boot. This is a compact folded passing/recovery pose, never a long split-stride contact pose. Phase12 has imageRIGHT forward folded knee and imageLEFT trailing boot; phase36 reverses those two leg owners. Exactly two connected legs, actual boot can be hidden. No third foot under belt. Same naturaladult Lucan with swept bare dark hair, silvergold articulated steel, oxblood split tabard and brown gloves/boots; SECOND cropped appearance sheet ONLY supplies materials. Head crown DOWN/ahead of hips; no eyes/upturned face or frontal breastplate. Sword hand imageLEFT, shield hand imageRIGHT with two connected bent arm chains matching first guide. Shield carried upright so only narrow curved gold rim/back red sliver from overhead, never a full flat kite face. Keep constant real head/shoulder/body size across both, naturally foreshortened vertical view; don't enlarge compact pose. Cool moonlight/very restrained warm rim. Complete indivisible newly painted bodies, transparent background, no shadow/floor/grid/labels/guide colors, no clipping of sword or boots, generous margins.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_passing_guides.png",
+      "sha256": "4a8f1664f3fc68df758cbecb460ea3b372c521ca99f0ef7210ab355d7cc7f6dd"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+      "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+    }
+  ]
+}

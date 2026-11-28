@@ -1,0 +1,46 @@
+{
+  "generation_id": "exec-3bd65d4f-b807-47c7-8fca-9e99a47ed9cb",
+  "original_generation_path": "/workspace/generated_images/exec-3bd65d4f-b807-47c7-8fca-9e99a47ed9cb.png",
+  "master": "master.png",
+  "sha256": "bba288dd3ad50e9fffe403637ac964d8bc586de59d6c5860073c694544297fbe",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "a772ecc5c46a725e2ef6d4924b1f795e41c5e8d3747c8d80370150b63e24cefd",
+  "references": [
+    {
+      "path": "batches/transition_072_087_linked_occlusion/camera_pose_guide.png",
+      "sha256": "974f33ac4929f9df818526e4948d1a05222e48a75a407473ed8e61bc73db0f71"
+    },
+    {
+      "path": "batches/transition_072_087_linked_occlusion/approved_phase_reference.png",
+      "sha256": "f9b3c0e0f33be47101d562be3073072ff0b6b317e0e8c1d9d32fb9b31721dd01"
+    },
+    {
+      "path": "batches/transition_072_087_linked_occlusion/angle_model_reference.png",
+      "sha256": "d0ca7ce7d167f80cf1d4a92ac193fdab8b51b54508023111ffbf793fbd7dbe44"
+    }
+  ],
+  "status": "candidate_complete_drawings",
+  "samples": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87
+  ],
+  "guide_pixels_used_in_export": false
+}

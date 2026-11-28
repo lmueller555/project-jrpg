@@ -1,0 +1,19 @@
+{
+  "elevation_degrees": 90,
+  "phase": 18,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "ground_anchor": [
+    512,
+    960
+  ],
+  "pixels_per_meter": 500,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/final_overhead_phase18_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_90_phase18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/final_overhead_phase18.png"
+}

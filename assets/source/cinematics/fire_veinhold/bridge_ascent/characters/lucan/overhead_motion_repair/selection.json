@@ -1,0 +1,701 @@
+{
+  "version": 1,
+  "source_state": "whole_figure_image_authored",
+  "approval_scope": "Whole-figure source geometry and rigid measurements; native/composed acceptance is recorded separately in root review documents.",
+  "masters": [
+    {
+      "source": "phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "canvas": [
+        1312,
+        1199
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "uniform_scale": 0.84,
+      "measurement_overlay": "measurement_overlay_08_final.jpg"
+    },
+    {
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "uniform_scale": 1.08,
+      "measurement_overlay": "measurement_overlay_12.jpg"
+    },
+    {
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "uniform_scale": 1.08,
+      "measurement_overlay": "measurement_overlay_32.jpg"
+    },
+    {
+      "source": "phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "uniform_scale": 0.98,
+      "measurement_overlay": "measurement_overlay_36_final.jpg"
+    },
+    {
+      "source": "loop_key_47_final.png",
+      "source_sha256": "b00396f5c406deed2bc5e5b8560b5eeafbc5575aa81a65647f3dd7fbf21237e2",
+      "canvas": [
+        1312,
+        1199
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "phases": [
+        47
+      ],
+      "uniform_scale": 0.5,
+      "measurement_overlay": "measurement_overlay_47_final.jpg"
+    }
+  ],
+  "frames": [
+    {
+      "phase": 8,
+      "source": "phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        0,
+        0,
+        656,
+        599
+      ],
+      "crown_bbox": [
+        283,
+        197,
+        435,
+        382
+      ],
+      "crown_center": [
+        359.0,
+        289.5
+      ],
+      "crown_width": 152,
+      "main_pauldron_pair_x_bounds": [
+        190,
+        505
+      ],
+      "main_pauldron_pair_span": 315,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 127.67999999999999,
+      "projected_main_cap_pair_span": 264.59999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 9,
+      "source": "phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        656,
+        0,
+        1312,
+        599
+      ],
+      "crown_bbox": [
+        280,
+        201,
+        437,
+        383
+      ],
+      "crown_center": [
+        358.5,
+        292.0
+      ],
+      "crown_width": 157,
+      "main_pauldron_pair_x_bounds": [
+        185,
+        503
+      ],
+      "main_pauldron_pair_span": 318,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 131.88,
+      "projected_main_cap_pair_span": 267.12,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 10,
+      "source": "phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        0,
+        599,
+        656,
+        1198
+      ],
+      "crown_bbox": [
+        282,
+        201,
+        435,
+        378
+      ],
+      "crown_center": [
+        358.5,
+        289.5
+      ],
+      "crown_width": 153,
+      "main_pauldron_pair_x_bounds": [
+        188,
+        501
+      ],
+      "main_pauldron_pair_span": 313,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 128.51999999999998,
+      "projected_main_cap_pair_span": 262.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 11,
+      "source": "phase_08_11_arms_knees.png",
+      "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+      "cell": [
+        656,
+        599,
+        1312,
+        1198
+      ],
+      "crown_bbox": [
+        276,
+        206,
+        435,
+        380
+      ],
+      "crown_center": [
+        355.5,
+        293.0
+      ],
+      "crown_width": 159,
+      "main_pauldron_pair_x_bounds": [
+        185,
+        500
+      ],
+      "main_pauldron_pair_span": 315,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 133.56,
+      "projected_main_cap_pair_span": 264.59999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 12,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        206,
+        368,
+        326,
+        515
+      ],
+      "crown_center": [
+        266.0,
+        441.5
+      ],
+      "crown_width": 120,
+      "main_pauldron_pair_x_bounds": [
+        143,
+        394
+      ],
+      "main_pauldron_pair_span": 251,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 129.60000000000002,
+      "projected_main_cap_pair_span": 271.08000000000004,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 13,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        196,
+        370,
+        320,
+        516
+      ],
+      "crown_center": [
+        258.0,
+        443.0
+      ],
+      "crown_width": 124,
+      "main_pauldron_pair_x_bounds": [
+        143,
+        391
+      ],
+      "main_pauldron_pair_span": 248,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 133.92000000000002,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 14,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        366,
+        326,
+        514
+      ],
+      "crown_center": [
+        266.5,
+        440.0
+      ],
+      "crown_width": 119,
+      "main_pauldron_pair_x_bounds": [
+        145,
+        392
+      ],
+      "main_pauldron_pair_span": 247,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 128.52,
+      "projected_main_cap_pair_span": 266.76,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 15,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        201,
+        371,
+        326,
+        516
+      ],
+      "crown_center": [
+        263.5,
+        443.5
+      ],
+      "crown_width": 125,
+      "main_pauldron_pair_x_bounds": [
+        148,
+        393
+      ],
+      "main_pauldron_pair_span": 245,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 135.0,
+      "projected_main_cap_pair_span": 264.6,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 32,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        207,
+        290,
+        330,
+        438
+      ],
+      "crown_center": [
+        268.5,
+        364.0
+      ],
+      "crown_width": 123,
+      "main_pauldron_pair_x_bounds": [
+        142,
+        390
+      ],
+      "main_pauldron_pair_span": 248,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 132.84,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 33,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        209,
+        292,
+        331,
+        438
+      ],
+      "crown_center": [
+        270.0,
+        365.0
+      ],
+      "crown_width": 122,
+      "main_pauldron_pair_x_bounds": [
+        140,
+        389
+      ],
+      "main_pauldron_pair_span": 249,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 34,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        290,
+        329,
+        438
+      ],
+      "crown_center": [
+        268.0,
+        364.0
+      ],
+      "crown_width": 122,
+      "main_pauldron_pair_x_bounds": [
+        141,
+        390
+      ],
+      "main_pauldron_pair_span": 249,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 35,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        289,
+        328,
+        437
+      ],
+      "crown_center": [
+        267.5,
+        363.0
+      ],
+      "crown_width": 121,
+      "main_pauldron_pair_x_bounds": [
+        141,
+        393
+      ],
+      "main_pauldron_pair_span": 252,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 130.68,
+      "projected_main_cap_pair_span": 272.16,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 36,
+      "source": "phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        200,
+        334,
+        340,
+        488
+      ],
+      "crown_center": [
+        270.0,
+        411.0
+      ],
+      "crown_width": 140,
+      "main_pauldron_pair_x_bounds": [
+        140,
+        408
+      ],
+      "main_pauldron_pair_span": 268,
+      "uniform_scale": 0.98,
+      "projected_crown_width": 137.2,
+      "projected_main_cap_pair_span": 262.64,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 37,
+      "source": "phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        204,
+        331,
+        342,
+        487
+      ],
+      "crown_center": [
+        273.0,
+        409.0
+      ],
+      "crown_width": 138,
+      "main_pauldron_pair_x_bounds": [
+        130,
+        410
+      ],
+      "main_pauldron_pair_span": 280,
+      "uniform_scale": 0.98,
+      "projected_crown_width": 135.24,
+      "projected_main_cap_pair_span": 274.4,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 38,
+      "source": "phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        205,
+        334,
+        340,
+        488
+      ],
+      "crown_center": [
+        272.5,
+        411.0
+      ],
+      "crown_width": 135,
+      "main_pauldron_pair_x_bounds": [
+        135,
+        410
+      ],
+      "main_pauldron_pair_span": 275,
+      "uniform_scale": 0.98,
+      "projected_crown_width": 132.3,
+      "projected_main_cap_pair_span": 269.5,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 39,
+      "source": "phase_36_39_arms.png",
+      "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        205,
+        335,
+        341,
+        488
+      ],
+      "crown_center": [
+        273.0,
+        411.5
+      ],
+      "crown_width": 136,
+      "main_pauldron_pair_x_bounds": [
+        140,
+        405
+      ],
+      "main_pauldron_pair_span": 265,
+      "uniform_scale": 0.98,
+      "projected_crown_width": 133.28,
+      "projected_main_cap_pair_span": 259.7,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 47,
+      "source": "loop_key_47_final.png",
+      "source_sha256": "b00396f5c406deed2bc5e5b8560b5eeafbc5575aa81a65647f3dd7fbf21237e2",
+      "cell": [
+        0,
+        0,
+        1312,
+        1199
+      ],
+      "crown_bbox": [
+        554,
+        522,
+        799,
+        775
+      ],
+      "crown_center": [
+        676.5,
+        648.5
+      ],
+      "crown_width": 245,
+      "main_pauldron_pair_x_bounds": [
+        401,
+        947
+      ],
+      "main_pauldron_pair_span": 546,
+      "uniform_scale": 0.5,
+      "projected_crown_width": 122.5,
+      "projected_main_cap_pair_span": 273,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    }
+  ]
+}

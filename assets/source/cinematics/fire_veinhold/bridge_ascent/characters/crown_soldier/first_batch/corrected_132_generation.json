@@ -1,0 +1,45 @@
+{
+  "index": 132,
+  "local_time": 2.2,
+  "phase": 6,
+  "elevation_degrees": 81.53851347851253,
+  "azimuth_degrees": 13.823742710197942,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "native_pixels_per_metre": 28.436018957345997,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/corrected_132_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_132.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/corrected_132.png",
+  "prompt": "Draw ONE complete coherent painted Crown soldier at actual camera local2.2s, elevation81.5385deg/azimuth13.8237deg, phase6/48 of800msrun. Reference1 is a TRUE BLENDER3D camera/pose guide and OWNS ALL geometry, anatomical phase and occlusion. Other references are only tiny identity/material crops; no old full-body pose should be copied. Replace the guide's simple mannequin volumes with a naturally proportioned painted human while keeping its real shoulder/elbow/glove/hip/knee/ankle placements and physical projection.\nPhase6 is RIGHT/imageLEFT support/push-off with the boot under/behind the leaning body, while the LEFT/imageRIGHT knee RECOVERS HIGH FORWARD but its lower leg folds BACK. The LEFT boot belongs behind/above that raised knee toward imageTOP, NOT on a long straight shin extending down toward imageBOTTOM. In the guide the left knee is forward/downscreen but its ankle is back/upscreen: paint that real bent chain and its occlusion. Do not substitute a phase18 left-contact approach. Only two anatomical feet, whether visible or physically hidden, never add another boot to reveal an occluded one.\nRunning toward imageBOTTOM. WorldRIGHT is imageLEFT with ONE sword, LEFT is imageRIGHT with ONE plain upright boss shield. Follow the guide's true shield plane and foreshortened down/outside blade, secure LEATHER gripping gloves at actual wrists. Two connected legs and two connected arms, constant real limb lengths, exactlyonehelmet,onesword,oneshield. Natural knee/elbow articulation, no stale limbs or extra boots.\nAt this high camera angle the helmet CROWN and shoulder/back TOP planes dominate. At near82degrees NO face/eyes should show: brim/helmet occlude the forward face. No full frontal breastplate, no vertical torso hanging below the head. Head leans FORWARD in worldY; as camera nears overhead it projects BELOW/AHEAD of the pelvis, with waist/navy tails behind/ABOVE the head. Real3D volume, not a front sprite with its helmet tilted down.\nSame young ordinary allied Crown model as the approved materials: polished open steelhelmet, simple silver/steel plate and shoulder/arm/knee armor, charcoal quilted trousers, NAVY split tabard/tails,brown leather boots/gloves. Retain articulated knee caps/shortshin lames only at the actual visible knees. No ornate royal gold/red cloak or purpleblack enemy colors. Detailed painted cinematic finish with thin dark outline.\n1024x1536 reference canvas,500referencepixels/m,internal root[512,960]. Match the rigid helmet diameter/shoulder width from the guide, no occupied-height fitting or stretched body. Empty space is correct; fully contain allfigureparts with generous margins. ONE whole freshly drawn coherent figure, no rigs,warps,pastedlimbs,crossfades. TRUE CLEAN TRANSPARENT RGBA, alloutsidepixels transparent, no floor/shadow/haze/backgroundsquare/glow/text/sheet/guide marks. Anatomy/actual camera phase are essential.\n",
+  "source_path": "/workspace/generated_images/exec-e29b1edf-b669-43e9-996b-a89b68c9fcc4.png",
+  "generation_id": "exec-e29b1edf-b669-43e9-996b-a89b68c9fcc4",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen drawing from actual-camera Blender geometry and cropped identity materials only; raw bytes copied unchanged.",
+  "status": "corrected_camera_batch_pending_internal_review",
+  "source_sha256": "4eda7ca8d6c6aa6ed2159d5e33c978c342aaa5e427318af2f55e8cdf701f2a5b",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_guides/time_132.png": "f768af77f2d868c66180c795440b168c95cc039b016cf0e5eca17cb80f99161f",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/helmet_crown_identity_reference.png": "94452b2cbb68949fccfe3bb00a76b61ecdc5e61ba5d7b24a8c638e2bd46ebfac",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/navy_cloth_identity_reference.png": "fd6c7b6105ae4538337ed099a8a03ba33db5075d7c573d56b7f5095a96fca339",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/leather_glove_identity_reference.png": "3e1d8c9a79c75966f0a88897683623620ef0929482046b7acd005615114d1732",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png": "700d3d53e3d1b17f97aeb21f1c67711a9e4b9e6f4c7c5a16e5cb00b0ca246c97"
+  },
+  "prompt_sha256": "b425053de81ed1cdb72dd9938d1e43b448a6905e20b2d9cbc1a81610448f27cf",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "4eda7ca8d6c6aa6ed2159d5e33c978c342aaa5e427318af2f55e8cdf701f2a5b",
+  "prompt_text_sha256": "b425053de81ed1cdb72dd9938d1e43b448a6905e20b2d9cbc1a81610448f27cf",
+  "prompt_file_sha256": "b425053de81ed1cdb72dd9938d1e43b448a6905e20b2d9cbc1a81610448f27cf"
+}

@@ -14,15 +14,59 @@
     "bridge_arrival": 35,
     "running_start": 39,
     "frontal_start": 42,
-    "sequence_end": 47,
+    "ascent_start": 47,
+    "sequence_end": 55,
     "siren_period": 2
   },
   "running_foley": {
     "duration": 0.22,
     "contact_source": "assets/story/fire_veinhold_opening/shot06/scene.json and referenced character animation contacts",
-    "timing_authority": "The referenced animation durations and contact cues determine cadence independently of display FPS; the frontal shot continues those same phases.",
+    "timing_authority": "The referenced animation durations and contact cues determine cadence independently of display FPS; frontal and ascent shots continue those same phases.",
     "retiming_boundary_seconds": 39,
-    "scheduling": "One continuous global contact table from 39 to 47 seconds; the frontal cut at 42 advances the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
+    "scheduling": "One continuous global contact table from 39 to 55 seconds; the frontal cut at 42 and ascent at 47 advance the same actor phases without retriggering. One source per actor and near/far contact; no rhythm or guessed footstep loop is baked into the sources."
+  },
+  "ascent_perspective": {
+    "start": 47,
+    "end": 55,
+    "camera_source": "cinematic_bridge_ascent.actor_states_at, acoustic_sources_at and project_world; no image loading",
+    "sampling": "481 inclusive camera-derived acoustic samples at 60 Hz, linearly interpolated for live and absolute-frame offline PCM.",
+    "falloff": "Additional actual camera-source distance beyond the entry reference; footsteps (4/(4+extra_distance_m))**1.45 and breathing (2/(2+extra_distance_m))**1.7. Existing entry levels are preserved.",
+    "pan": "Actual projected source position, blending from the existing frontal pan over 1.2 seconds; no camera-side discontinuity.",
+    "factory_sources": {
+      "warning": [
+        0.0,
+        299.0819285747636,
+        12.0
+      ],
+      "machinery": [
+        0.0,
+        325.0,
+        3.0
+      ],
+      "falloff": "Entry-calibrated (entry_distance/current_distance)**1.2, capped at 1.25; source azimuth remains audible behind the camera."
+    },
+    "channels": "One reinforcement group lease plus the existing three ambience leases and at most three party contacts: seven owned effects plus the separately owned wind fit eight channels."
+  },
+  "reinforcement_group": {
+    "start": 47,
+    "period": 2.4,
+    "nominal_gain": 0.035,
+    "synthesis": "Original Crown near/far boot and gear sources combined at all eight guard contact phases; circular tails and a distant low-pass filter preserve the loop seam.",
+    "contact_strengths": "Small deterministic variation across three cycles; contact times retain the exact shared 800 ms guard cadence.",
+    "seed": 824733,
+    "phase_source": "cinematic_bridge_ascent.reinforcement_states_at(0)",
+    "phase_offsets": [
+      0.0,
+      0.18,
+      0.42,
+      0.56,
+      0.28,
+      0.7,
+      0.08,
+      0.48
+    ],
+    "falloff": "(45/(45+camera_to_group_centroid_distance_m))**1.15 with a smooth 0.8 second entrance. One source remains attached to the actual moving group centroid.",
+    "channel": "One owned effects lease; no per-soldier channels."
   },
   "frontal_breath": {
     "start": 42,

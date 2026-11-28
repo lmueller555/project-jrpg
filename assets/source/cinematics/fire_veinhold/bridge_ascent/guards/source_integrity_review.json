@@ -1,0 +1,14 @@
+{
+  "raw_master_checks": {
+    "frozen_60_master.png": {
+      "sha256": "d9974d660e47b1878475d515c0f0b476b6e6b912c38cf5fb4f7c770fc444ac55",
+      "visible_magenta_artifact_pixels_alpha_gt16": 0
+    },
+    "live_cycle_master.png": {
+      "sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "visible_magenta_artifact_pixels_alpha_gt16": 0
+    }
+  },
+  "historical_and_selected_reference_hashes": "all exact matches",
+  "cell_isolation": "all four frozen and sixteen live alpha>16 silhouettes lie fully within their selected cells"
+}

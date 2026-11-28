@@ -1,0 +1,30 @@
+{
+  "generation_id": "exec-b60ac4fa-2eb3-45a6-9797-573f32f5b1d6",
+  "original_generation_path": "/workspace/generated_images/exec-b60ac4fa-2eb3-45a6-9797-573f32f5b1d6.png",
+  "master": "master.png",
+  "sha256": "b1a68e943a3b62ef4a2d751a2d3402c93f103d157c775e8dfea0c03e92542693",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "9965987cfb86a000a42485b58e51cb1d031bac622f609cb462b8be0923794c66",
+  "references": [
+    {
+      "path": "batches/transition_024_027/camera_pose_guide.png",
+      "sha256": "4163b4227674f50dd3dfeeb176233d98ba7e3c5340637e2af34394471fc270b5"
+    },
+    {
+      "path": "batches/transition_024_027/approved_phase_reference.png",
+      "sha256": "b1e302e11ce5f64719a259c8c9fb4cf99da4dfa541185189ef55142863b8b412"
+    }
+  ],
+  "status": "candidate_complete_drawings",
+  "samples": [
+    24,
+    25,
+    26,
+    27
+  ],
+  "guide_pixels_used_in_export": false
+}

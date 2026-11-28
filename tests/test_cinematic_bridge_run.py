@@ -276,7 +276,7 @@ class ProductionBridgeRunTests(unittest.TestCase):
         self.scene.reset();self.clip.reset();pygame.quit()
 
     def test_side_shot_is_three_seconds_and_standalone_pixels_match_global_time(self):
-        self.assertEqual(self.scene.duration, 47.)
+        self.assertEqual(self.scene.duration, 55.)
         self.assertEqual(self.clip.global_offset, 39.)
         self.assertEqual(self.clip.duration, 3.)
         for local in (0., .4, 1.5, 2.8):

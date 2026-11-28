@@ -1,0 +1,80 @@
+def render(self,index,reduced_motion=False,*,beacons=True):
+    self.seconds=index/FPS;self.camera=camera_at(self.seconds,reduced_motion)
+    focal=self.camera['focal_pixels'];self.bridge.horizontal=(480-self.xx)/focal;self.bridge.vertical=(320-self.yy)/focal
+    old=frontal.camera_at;old_sampler=frontal._surface_samples
+    try:
+        frontal.camera_at=lambda seconds:self.camera
+        lod_bias=1+2*_ease((self.camera['position'][2]-40)/120)
+        frontal._surface_samples=lambda pyramid,u,v,footprint,**kw:old_sampler(pyramid,u,v,footprint*lod_bias,**kw)
+        original,_=self.bridge.render(index)
+    finally:
+        frontal.camera_at=old;frontal._surface_samples=old_sampler
+    self.frame=np.asarray(original).astype(np.float32)/255
+    self.depth=np.full((640,960),np.inf,dtype=np.float32)
+    self.raised_depth=np.full((640,960),np.inf,dtype=np.float32)
+    pitch=self.camera['pitch_radians'];horizontal=self.bridge.horizontal;vertical=self.bridge.vertical
+    self.rx=horizontal;self.ry=-math.cos(pitch)+vertical*math.sin(pitch)
+    self.rz=math.sin(pitch)+vertical*math.cos(pitch)
+    with np.errstate(divide='ignore',invalid='ignore'):
+        distance=-self.camera['position'][2]/self.rz
+    x=self.rx*distance;y=self.camera['position'][1]+self.ry*distance
+    width=14+(y/100)*8
+    deck=(distance>.05)&(self.rz<0)&(np.abs(x)<=7)&(y>=0)&(y<=BRIDGE_LENGTH)
+    approach=(distance>.05)&(self.rz<0)&(y<0)&(y>=-100)&(np.abs(x)<=width/2)
+    self.depth[deck|approach]=distance[deck|approach]
+    for side in (-1,1):
+        with np.errstate(divide='ignore',invalid='ignore'):rd=side*7/self.rx
+        ry=self.camera['position'][1]+self.ry*rd;rz=self.camera['position'][2]+self.rz*rd
+        valid=(rd>.05)&(ry>=0)&(ry<=BRIDGE_LENGTH)&(rz>=0)&(rz<=RAIL_HEIGHT)&(rd<self.depth)
+        self.depth[valid]=rd[valid]
+    self._horizontal(-12.65,lambda x,y:np.ones_like(x,dtype=bool),'water',32,(.85,.92,1.0))
+    shoreline=self.mainland_shore
+    self._horizontal(0,lambda x,y:(y<=shoreline(x))&(y>=-1100),'mainland_top',80,(1,1,1))
+    island_shore=self.island_shore
+    self._horizontal(0,lambda x,y:(y>=island_shore(x))&(y<760)&(np.abs(x)<310),'ash_top',80,(1,1,1))
+    for a,b in zip(range(-450,450,18),range(-432,468,18)):
+        self._face([(a,shoreline(a),0),(b,shoreline(b),0),
+                    (b,shoreline(b),-12.65),(a,shoreline(a),-12.65)],'schist',(.5,.7,.95))
+        if abs(a)<310 and abs(b)<310:
+            self._face([(a,island_shore(a),0),(a,island_shore(a),-12.65),
+                        (b,island_shore(b),-12.65),(b,island_shore(b),0)],'schist',(.85,.45,.34))
+    for i,x in enumerate(range(-320,321,22)):
+        if abs(x)<25:continue
+        self._rock(x,float(shoreline(x))-5,10+3*math.sin(i*1.2),7+2*math.cos(i),
+                   2.5+1.6*(.5+.5*math.sin(i*.8)),i*.73,(.62,.82,1.05))
+    for i,x in enumerate(range(-280,281,30)):
+        if abs(x)<28:continue
+        self._rock(x,float(island_shore(x))+7,9+2*math.sin(i),8,2.3+math.sin(i*.7),
+                   i*.63,(.88,.5,.4))
+    for x in (-7,7):
+        self._box((x,BRIDGE_LENGTH/2,1.17),(.18,BRIDGE_LENGTH,.13),'steel',(.57,.68,.82))
+        for y in range(0,300,4):self._box((x,y,.6),(.16,.16,1.2),'steel',(.55,.64,.75))
+    for y in (48,100,152,204,256):
+        self._box((0,y,-6.7),(5.2,7.8,12.5),'masonry',(.32,.41,.53))
+    self._box((0,300,-6.5),(50,24,13),'masonry',(.55,.62,.78))
+    for x in (-10,10):
+        self._box((x,299,14),(8,12,28),'masonry',(.75,.88,1.1))
+        self._box((x,299,28.5),(9,13,1.2),'steel',(.8,.95,1.2))
+        for z in (8,17,27):self._box((x,299,z),(8.7,12.7,.45),'steel',(1.5,.85,.55))
+        for sx in (-1,1):
+            for sy in (-1,1):
+                self._box((x+sx*4,299+sy*6,11),(1.1,1.1,22),'masonry',(.9,1,1.2))
+                self._box((x+sx*4,299+sy*6,30),(1.3,1.3,2.8),'steel',(1.1,.85,.65))
+        for bx in (-3,-1.5,0,1.5,3):
+            for sy in (-1,1):self._box((x+bx,299+sy*6,29.5),(1,1,1.7),'masonry',(.82,.93,1.16))
+    self._box((0,GATE['center_y'],(GATE['roof_bottom_z']+GATE['roof_top_z'])/2),
+              (GATE['clear_half_width']*2,GATE['far_y']-GATE['near_y'],GATE['roof_top_z']-GATE['roof_bottom_z']),
+              'masonry',(.7,.8,1))
+    for side in (-1,1):
+        self._box((side*69,311,4.5),(102,4.5,9),'masonry',(.65,.76,.95))
+        self._box((side*69,311,9.2),(104,5,.5),'steel',(1.3,.83,.56))
+        for x in range(22,120,12):
+            self._box((side*x,308,4.7),(2.8,7,9.4),'masonry',(.83,.94,1.12))
+            self._box((side*x,311,10),(2,4.7,1.4),'steel',(.85,.96,1.15))
+        self._box((side*103,313,7),(13,14,14),'masonry',(.75,.85,1.04))
+        self._box((side*103,313,14.4),(14,15,.8),'steel',(.9,1.05,1.24))
+    self._box((-37,350,10),(18,24,20),'masonry',(.36,.35,.4))
+    self._box((39,355,12),(22,28,24),'masonry',(.35,.34,.4))
+    self._box((0,321,-.03),(14,45,.06),'steel',(.5,.62,.78))
+    output=Image.fromarray(np.clip(np.rint(self.frame*255),0,255).astype(np.uint8))
+    return (self._beacons(output,reduced_motion) if beacons else output),self.raised_depth.copy()

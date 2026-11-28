@@ -1,0 +1,701 @@
+{
+  "version": 1,
+  "source_state": "whole_figure_image_authored",
+  "approval_scope": "Source anatomy inspected; native body-scale/gait/loop joins pending parent review.",
+  "masters": [
+    {
+      "source": "phase_08_11.png",
+      "source_sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6",
+      "canvas": [
+        1312,
+        1199
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "uniform_scale": 0.84,
+      "measurement_overlay": "measurement_overlay_08.jpg"
+    },
+    {
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "uniform_scale": 1.08,
+      "measurement_overlay": "measurement_overlay_12.jpg"
+    },
+    {
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "uniform_scale": 1.08,
+      "measurement_overlay": "measurement_overlay_32.jpg"
+    },
+    {
+      "source": "phase_36_39.png",
+      "source_sha256": "3dec2e2fbe352aad427d9918c60f90b6c4cf9f45b0e7515ce21e3f33bd78be15",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        2,
+        2
+      ],
+      "phases": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "uniform_scale": 1.01,
+      "measurement_overlay": "measurement_overlay_36.jpg"
+    },
+    {
+      "source": "loop_key_47.png",
+      "source_sha256": "879cb51d53a756aff62a39b83af76226e917d74527046fd96df567f6d87675fe",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "phases": [
+        47
+      ],
+      "uniform_scale": 0.56,
+      "measurement_overlay": "measurement_overlay_47.jpg"
+    }
+  ],
+  "frames": [
+    {
+      "phase": 8,
+      "source": "phase_08_11.png",
+      "source_sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6",
+      "cell": [
+        0,
+        0,
+        656,
+        599
+      ],
+      "crown_bbox": [
+        282,
+        197,
+        432,
+        376
+      ],
+      "crown_center": [
+        357.0,
+        286.5
+      ],
+      "crown_width": 150,
+      "main_pauldron_pair_x_bounds": [
+        176,
+        499
+      ],
+      "main_pauldron_pair_span": 323,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 126.0,
+      "projected_main_cap_pair_span": 271.32,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 9,
+      "source": "phase_08_11.png",
+      "source_sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6",
+      "cell": [
+        656,
+        0,
+        1312,
+        599
+      ],
+      "crown_bbox": [
+        282,
+        202,
+        435,
+        376
+      ],
+      "crown_center": [
+        358.5,
+        289.0
+      ],
+      "crown_width": 153,
+      "main_pauldron_pair_x_bounds": [
+        176,
+        500
+      ],
+      "main_pauldron_pair_span": 324,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 128.51999999999998,
+      "projected_main_cap_pair_span": 272.15999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 10,
+      "source": "phase_08_11.png",
+      "source_sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6",
+      "cell": [
+        0,
+        599,
+        656,
+        1198
+      ],
+      "crown_bbox": [
+        283,
+        203,
+        435,
+        376
+      ],
+      "crown_center": [
+        359.0,
+        289.5
+      ],
+      "crown_width": 152,
+      "main_pauldron_pair_x_bounds": [
+        178,
+        493
+      ],
+      "main_pauldron_pair_span": 315,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 127.67999999999999,
+      "projected_main_cap_pair_span": 264.59999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 11,
+      "source": "phase_08_11.png",
+      "source_sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6",
+      "cell": [
+        656,
+        599,
+        1312,
+        1198
+      ],
+      "crown_bbox": [
+        274,
+        208,
+        432,
+        375
+      ],
+      "crown_center": [
+        353.0,
+        291.5
+      ],
+      "crown_width": 158,
+      "main_pauldron_pair_x_bounds": [
+        174,
+        497
+      ],
+      "main_pauldron_pair_span": 323,
+      "uniform_scale": 0.84,
+      "projected_crown_width": 132.72,
+      "projected_main_cap_pair_span": 271.32,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 12,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        206,
+        368,
+        326,
+        515
+      ],
+      "crown_center": [
+        266.0,
+        441.5
+      ],
+      "crown_width": 120,
+      "main_pauldron_pair_x_bounds": [
+        143,
+        394
+      ],
+      "main_pauldron_pair_span": 251,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 129.60000000000002,
+      "projected_main_cap_pair_span": 271.08000000000004,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 13,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        196,
+        370,
+        320,
+        516
+      ],
+      "crown_center": [
+        258.0,
+        443.0
+      ],
+      "crown_width": 124,
+      "main_pauldron_pair_x_bounds": [
+        143,
+        391
+      ],
+      "main_pauldron_pair_span": 248,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 133.92000000000002,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 14,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        366,
+        326,
+        514
+      ],
+      "crown_center": [
+        266.5,
+        440.0
+      ],
+      "crown_width": 119,
+      "main_pauldron_pair_x_bounds": [
+        145,
+        392
+      ],
+      "main_pauldron_pair_span": 247,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 128.52,
+      "projected_main_cap_pair_span": 266.76,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 15,
+      "source": "phase_12_15.png",
+      "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        201,
+        371,
+        326,
+        516
+      ],
+      "crown_center": [
+        263.5,
+        443.5
+      ],
+      "crown_width": 125,
+      "main_pauldron_pair_x_bounds": [
+        148,
+        393
+      ],
+      "main_pauldron_pair_span": 245,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 135.0,
+      "projected_main_cap_pair_span": 264.6,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 32,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        207,
+        290,
+        330,
+        438
+      ],
+      "crown_center": [
+        268.5,
+        364.0
+      ],
+      "crown_width": 123,
+      "main_pauldron_pair_x_bounds": [
+        142,
+        390
+      ],
+      "main_pauldron_pair_span": 248,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 132.84,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 33,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        209,
+        292,
+        331,
+        438
+      ],
+      "crown_center": [
+        270.0,
+        365.0
+      ],
+      "crown_width": 122,
+      "main_pauldron_pair_x_bounds": [
+        140,
+        389
+      ],
+      "main_pauldron_pair_span": 249,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 34,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        290,
+        329,
+        438
+      ],
+      "crown_center": [
+        268.0,
+        364.0
+      ],
+      "crown_width": 122,
+      "main_pauldron_pair_x_bounds": [
+        141,
+        390
+      ],
+      "main_pauldron_pair_span": 249,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 35,
+      "source": "phase_32_35.png",
+      "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        207,
+        289,
+        328,
+        437
+      ],
+      "crown_center": [
+        267.5,
+        363.0
+      ],
+      "crown_width": 121,
+      "main_pauldron_pair_x_bounds": [
+        141,
+        393
+      ],
+      "main_pauldron_pair_span": 252,
+      "uniform_scale": 1.08,
+      "projected_crown_width": 130.68,
+      "projected_main_cap_pair_span": 272.16,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 36,
+      "source": "phase_36_39.png",
+      "source_sha256": "3dec2e2fbe352aad427d9918c60f90b6c4cf9f45b0e7515ce21e3f33bd78be15",
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "crown_bbox": [
+        204,
+        336,
+        337,
+        479
+      ],
+      "crown_center": [
+        270.5,
+        407.5
+      ],
+      "crown_width": 133,
+      "main_pauldron_pair_x_bounds": [
+        142,
+        405
+      ],
+      "main_pauldron_pair_span": 263,
+      "uniform_scale": 1.01,
+      "projected_crown_width": 134.33,
+      "projected_main_cap_pair_span": 265.63,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 37,
+      "source": "phase_36_39.png",
+      "source_sha256": "3dec2e2fbe352aad427d9918c60f90b6c4cf9f45b0e7515ce21e3f33bd78be15",
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "crown_bbox": [
+        204,
+        335,
+        337,
+        468
+      ],
+      "crown_center": [
+        270.5,
+        401.5
+      ],
+      "crown_width": 133,
+      "main_pauldron_pair_x_bounds": [
+        145,
+        410
+      ],
+      "main_pauldron_pair_span": 265,
+      "uniform_scale": 1.01,
+      "projected_crown_width": 134.33,
+      "projected_main_cap_pair_span": 267.65,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 38,
+      "source": "phase_36_39.png",
+      "source_sha256": "3dec2e2fbe352aad427d9918c60f90b6c4cf9f45b0e7515ce21e3f33bd78be15",
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "crown_bbox": [
+        205,
+        335,
+        337,
+        475
+      ],
+      "crown_center": [
+        271.0,
+        405.0
+      ],
+      "crown_width": 132,
+      "main_pauldron_pair_x_bounds": [
+        145,
+        405
+      ],
+      "main_pauldron_pair_span": 260,
+      "uniform_scale": 1.01,
+      "projected_crown_width": 133.32,
+      "projected_main_cap_pair_span": 262.6,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 39,
+      "source": "phase_36_39.png",
+      "source_sha256": "3dec2e2fbe352aad427d9918c60f90b6c4cf9f45b0e7515ce21e3f33bd78be15",
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        204,
+        335,
+        337,
+        472
+      ],
+      "crown_center": [
+        270.5,
+        403.5
+      ],
+      "crown_width": 133,
+      "main_pauldron_pair_x_bounds": [
+        145,
+        410
+      ],
+      "main_pauldron_pair_span": 265,
+      "uniform_scale": 1.01,
+      "projected_crown_width": 134.33,
+      "projected_main_cap_pair_span": 267.65,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    {
+      "phase": 47,
+      "source": "loop_key_47.png",
+      "source_sha256": "879cb51d53a756aff62a39b83af76226e917d74527046fd96df567f6d87675fe",
+      "cell": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "crown_bbox": [
+        397,
+        774,
+        615,
+        1012
+      ],
+      "crown_center": [
+        506.0,
+        893.0
+      ],
+      "crown_width": 218,
+      "main_pauldron_pair_x_bounds": [
+        270,
+        751
+      ],
+      "main_pauldron_pair_span": 481,
+      "uniform_scale": 0.56,
+      "projected_crown_width": 122.08000000000001,
+      "projected_main_cap_pair_span": 269.36,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    }
+  ]
+}

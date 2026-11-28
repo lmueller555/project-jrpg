@@ -1,0 +1,72 @@
+{
+  "status": "diagnostic, not art acceptance",
+  "finding": "Explicit local scale is not evidence for a legacy stretched-calf defect. The below-crown projection is a forward knee; actual boot is the other endpoint of the folded calf. Annotated guide labels disambiguate the chain.",
+  "rows": [
+    {
+      "phase": 0,
+      "legacy_sha256": "3f520c7429138362c4a77f5bdb3e27c38e2f3be5c63f284f4279cf8036c94691",
+      "diagnostic_sha256": "5bf6b406b59c1929e16f9244b56c7925ffd4219bff09860a045cbfac588965de",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 2472,
+      "max_channel_delta": 130
+    },
+    {
+      "phase": 8,
+      "legacy_sha256": "c94fe0df2ca9978307c7db0eb2307494efa81a4fa2f32d1a6fb6f1b045c711ef",
+      "diagnostic_sha256": "1906d33b8ece6a96a0bdc9ae097a54cfe1699aeee2aae919c2166b595b3af181",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 1994,
+      "max_channel_delta": 85
+    },
+    {
+      "phase": 16,
+      "legacy_sha256": "ac1c3655adc79d4dddb04e5e8af633eb0a12759d32f9f7da9061a0be5b97b099",
+      "diagnostic_sha256": "01e1ff0b4d8ec363824f92076424ce1a3b9fea8ebda039dd96365ce5cc0ca91b",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 3627,
+      "max_channel_delta": 119
+    },
+    {
+      "phase": 24,
+      "legacy_sha256": "5b9a1db3c486764670033016bb65414da87d7008055391134f754f87f1a54d58",
+      "diagnostic_sha256": "b24488aebe45c364934278700ce10eb86b23dabd6790bf84251f52b1fa764d2a",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 3821,
+      "max_channel_delta": 129
+    },
+    {
+      "phase": 32,
+      "legacy_sha256": "2528c5fdc42145ec25c8349cf2ff8f97d34e9b6580495d85106d790d587069ca",
+      "diagnostic_sha256": "891f44aa78f23620907eb27cd057e78fe332e738d8e731557260fd7b66d4b0f2",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 3180,
+      "max_channel_delta": 119
+    },
+    {
+      "phase": 40,
+      "legacy_sha256": "92ca2e0ffd38ea904111354dead3f48111cba0d0718dd35ae39af53732ff7a85",
+      "diagnostic_sha256": "ebc64dde62da0ea3ca8c563bbd241b3b4ae09c70bb0fcd2c4486d5f31046f8de",
+      "dimensions": [
+        512,
+        768
+      ],
+      "different_pixels": 3542,
+      "max_channel_delta": 85
+    }
+  ]
+}

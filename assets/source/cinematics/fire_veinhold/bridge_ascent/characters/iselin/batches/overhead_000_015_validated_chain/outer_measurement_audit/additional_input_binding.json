@@ -1,0 +1,44 @@
+[
+  {
+    "name": "frozen55",
+    "index": 55,
+    "kind": "transition",
+    "source": "batches/transition_052_055_view_bridge/master.png",
+    "source_sha256": "41378d9d7c6c0a1ee9b7b39ad7b9a583b8386ffabde00f4bc3250a100485e69b",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "current_density_scale": 1.2994160583941605
+  },
+  {
+    "name": "overhead32",
+    "index": 32,
+    "kind": "overhead",
+    "source": "batches/overhead_032_047_pose_retry/master.png",
+    "source_sha256": "958d948eaad4f62623cfd79084cf3a2b10f4056ac82d9af2a7b11aa1fd05c332",
+    "cell": [
+      0,
+      0,
+      312,
+      290
+    ],
+    "current_density_scale": 1.3702239789196307
+  },
+  {
+    "name": "alternate72",
+    "index": 72,
+    "kind": "alternative source not selected",
+    "source": "batches/transition_072_087_matched_phase/master.png",
+    "source_sha256": "821a8fb12ed196076792228ee76073657b0f5283e4424c6a1813e4ad5e2ec7c3",
+    "cell": [
+      0,
+      0,
+      256,
+      384
+    ],
+    "current_density_scale": null
+  }
+]

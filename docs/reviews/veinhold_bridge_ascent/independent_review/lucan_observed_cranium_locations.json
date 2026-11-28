@@ -1,0 +1,110 @@
+[
+  {
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_037_039c.png",
+    "source_sha256": "fc1555a1d237f4e2d42500e5ed4d6afa196523fba383ba9b32f842f41db244c6",
+    "cell_index": 0,
+    "cell": [
+      0,
+      0,
+      512,
+      1024
+    ],
+    "approx_main_hair_through_chin_bbox": [
+      220,
+      150,
+      356,
+      313
+    ],
+    "approx_bbox_center": [
+      288.0,
+      231.5
+    ],
+    "main_pauldron_pair_outer_x_band": [
+      159,
+      425
+    ],
+    "uncertainty_pixels": 5,
+    "meaning": "Observed approximate rigid material regions; excludes collar and fine flyaway hair; not exact skull geometry or desired guide/joint targets."
+  },
+  {
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_037_039c.png",
+    "source_sha256": "fc1555a1d237f4e2d42500e5ed4d6afa196523fba383ba9b32f842f41db244c6",
+    "cell_index": 2,
+    "cell": [
+      1024,
+      0,
+      1536,
+      1024
+    ],
+    "approx_main_hair_through_chin_bbox": [
+      165,
+      158,
+      302,
+      328
+    ],
+    "approx_bbox_center": [
+      233.5,
+      243.0
+    ],
+    "main_pauldron_pair_outer_x_band": [
+      104,
+      369
+    ],
+    "uncertainty_pixels": 5,
+    "meaning": "Observed approximate rigid material regions; excludes collar and fine flyaway hair; not exact skull geometry or desired guide/joint targets."
+  },
+  {
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_closed.png",
+    "source_sha256": "3cc81d835181a670a441aa2624437956ed90992898b08130d419c1f3c0176d7b",
+    "cell_index": 0,
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "approx_main_hair_through_chin_bbox": [
+      198,
+      76,
+      315,
+      213
+    ],
+    "approx_bbox_center": [
+      256.5,
+      144.5
+    ],
+    "main_pauldron_pair_outer_x_band": [
+      151,
+      373
+    ],
+    "uncertainty_pixels": 5,
+    "meaning": "Observed approximate rigid material regions; excludes collar and fine flyaway hair; not exact skull geometry or desired guide/joint targets."
+  },
+  {
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_closed.png",
+    "source_sha256": "5925e0ad5be6ddfca3fbc4b343fb36eb914686dc6c6271261428873bb7a989df",
+    "cell_index": 0,
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "approx_main_hair_through_chin_bbox": [
+      195,
+      72,
+      318,
+      217
+    ],
+    "approx_bbox_center": [
+      256.5,
+      144.5
+    ],
+    "main_pauldron_pair_outer_x_band": [
+      139,
+      385
+    ],
+    "uncertainty_pixels": 5,
+    "meaning": "Observed approximate rigid material regions; excludes collar and fine flyaway hair; not exact skull geometry or desired guide/joint targets."
+  }
+]

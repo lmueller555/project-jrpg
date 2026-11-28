@@ -1,0 +1,1570 @@
+{
+  "status": "PASS12final full-cast native composition checkpoints; full481frame critical joins/temporal/Gallery/audio review still pending.",
+  "frozen_actor_profiles": {
+    "lucan": "802a5591d6d8daf288cb33e9fb5a85326f00cbd8a3f1d212f1f9f9bd0b1c4c94",
+    "iselin": "ab6f806aa2e5b7d75f3bb4dec00e076ab9dd580167385e2754944a7f91a5f406",
+    "crown_soldier": "cd31e7c758a3fcc72870311a66c3b956147d20e7a185529fdd6491ff0dee4daa"
+  },
+  "method": "Direct full960\u00d7640 actual production-compositor still inspection at12indices, plus full contact. No realtime playback.",
+  "observations": [
+    "Allthree heads remain within viewport through close ascent samples; body palettes/visible attachment/occlusion coherent.",
+    "Formation holds Iselin on imageleft/Lucanfront/Crownbehindright, stableR=-X, mainlandup/fortressdown.",
+    "Camera/deck projection and world depth remain coherent through overhead transition; no visible old rail-plane rectangle through transparent brace gaps.",
+    "Native wide scene retains complete bridge span, organic shore/landing and fortress gate. Tiny moving groups readable as groups; joint anatomy is unmeasurable at1\u20133px/body.",
+    "No checkerboard/matte rectangle, obvious clipped actor, source-family body pop or composition blocker found in12sampled pictures.",
+    "The reviewed isolated source gates retain their scope; complete chronology and actual guard emergence/replay/audio still need final verification."
+  ],
+  "entry": {
+    "old": {
+      "path": "assets/story/fire_veinhold_opening/shot07/environment/frame_0300.png",
+      "sha256": "b35e157f86e846962410677401779646c65bdce738439365e7f211b72fd16c28",
+      "rgba_sha256": "59552a7e3676a96aab4795bcf325277ec315730845448a2a6722603697e61e0c",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "new": {
+      "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0000.png",
+      "sha256": "b35e157f86e846962410677401779646c65bdce738439365e7f211b72fd16c28",
+      "rgba_sha256": "59552a7e3676a96aab4795bcf325277ec315730845448a2a6722603697e61e0c",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "rgb_exact": true,
+    "difference_bbox": null
+  },
+  "checkpoints": [
+    {
+      "index": 0,
+      "local_seconds": 0.0,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0000.png",
+        "sha256": "b35e157f86e846962410677401779646c65bdce738439365e7f211b72fd16c28",
+        "rgba_sha256": "59552a7e3676a96aab4795bcf325277ec315730845448a2a6722603697e61e0c",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          57.26,
+          1.55
+        ],
+        "target": [
+          0.0,
+          56.26319829369738,
+          1.4700853060308274
+        ],
+        "forward": [
+          0.0,
+          -0.9968017063026194,
+          -0.0799146939691727
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.0799146939691727,
+          0.9968017063026194
+        ],
+        "focal_pixels": 900.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 39.14625166082039,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.08,
+        "party_travel_metres": 54.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            54.26,
+            0.0
+          ],
+          "frame_index": 0,
+          "cycle_phase": 0.0,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 12.225122675735753,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            697.2208622524508
+          ],
+          "pixels_per_metre": 295.82398396815546,
+          "scale": 0.5916479679363109,
+          "depth_metres": 3.0423496699878205
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            53.76,
+            0.0
+          ],
+          "frame_index": 10,
+          "cycle_phase": 0.16666666666666666,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 10.347769111938366,
+          "view_azimuth_degrees": -10.520784313874362,
+          "ground_anchor": [
+            318.070071959696,
+            635.2255569744402
+          ],
+          "pixels_per_metre": 254.18339815765535,
+          "scale": 0.5083667963153107,
+          "depth_metres": 3.5407505231391303
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            51.211999999999996,
+            0.0
+          ],
+          "frame_index": 18,
+          "cycle_phase": 0.3,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 6.087957462663611,
+          "view_azimuth_degrees": 7.0690429589534185,
+          "ground_anchor": [
+            589.7110625903093,
+            475.3096974742913
+          ],
+          "pixels_per_metre": 148.01167843749377,
+          "scale": 0.29602335687498754,
+          "depth_metres": 6.080601270798206
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "local_seconds": 0.4,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0024.png",
+        "sha256": "a583fa31fe167dce3df5fde9b68e71a8a92b7fc1e6b13676d267ba1c79220145",
+        "rgba_sha256": "9155046ebe0ad85e6ed038a4c861d8d86e012b88bfd830ba4333c34580767d1a",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          58.725284909749085,
+          2.025
+        ],
+        "target": [
+          0.0,
+          57.74713730901528,
+          1.8170883091822407
+        ],
+        "forward": [
+          0.0,
+          -0.9781476007338057,
+          -0.2079116908177591
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.2079116908177591,
+          0.9781476007338057
+        ],
+        "focal_pixels": 860.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 40.819765667607975,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.2094395102393193,
+        "party_travel_metres": 55.86,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            55.86,
+            0.0
+          ],
+          "frame_index": 24,
+          "cycle_phase": 0.4,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 21.436516363173514,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            689.4891501806828
+          ],
+          "pixels_per_metre": 283.21407822428444,
+          "scale": 0.5664281564485689,
+          "depth_metres": 3.036572212059826
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            55.36,
+            0.0
+          ],
+          "frame_index": 34,
+          "cycle_phase": 0.5666666666666667,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 18.171344196737714,
+          "view_azimuth_degrees": -10.931980854474745,
+          "ground_anchor": [
+            329.4384188026885,
+            616.7376083211421
+          ],
+          "pixels_per_metre": 243.92692770879043,
+          "scale": 0.48785385541758086,
+          "depth_metres": 3.525646012426729
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            52.812,
+            0.0
+          ],
+          "frame_index": 42,
+          "cycle_phase": 0.7,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 10.688139049517957,
+          "view_azimuth_degrees": 7.228403531049324,
+          "ground_anchor": [
+            583.9469776029443,
+            424.12823723972417
+          ],
+          "pixels_per_metre": 142.90542449701067,
+          "scale": 0.2858108489940213,
+          "depth_metres": 6.017966099096467
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "local_seconds": 0.6,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0036.png",
+        "sha256": "cde570e7188d66c82b7d918820525d52b5f2762e970bfd44f756e814cacd306e",
+        "rgba_sha256": "0a9d22c058b05811370acd26dbb2c86c6687de998054dc2ff282a7d22fa08532",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.27323431707968,
+          2.8604492187500012
+        ],
+        "target": [
+          0.0,
+          58.366926530043024,
+          2.4378309570093015
+        ],
+        "forward": [
+          0.0,
+          -0.9063077870366498,
+          -0.4226182617406998
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4226182617406998,
+          0.9063077870366498
+        ],
+        "focal_pixels": 780.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.612410109815286,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.43633231299858277,
+        "party_travel_metres": 56.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            56.66,
+            0.0
+          ],
+          "frame_index": 36,
+          "cycle_phase": 0.6,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 36.87724250324196,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            644.4585050286502
+          ],
+          "pixels_per_metre": 243.98512144851134,
+          "scale": 0.4879702428970227,
+          "depth_metres": 3.1969162519797543
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            56.16,
+            0.0
+          ],
+          "frame_index": 46,
+          "cycle_phase": 0.7666666666666666,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 31.650615287769863,
+          "view_azimuth_degrees": -11.793148292520899,
+          "ground_anchor": [
+            354.2068637642651,
+            567.0843733715094
+          ],
+          "pixels_per_metre": 213.69452336745798,
+          "scale": 0.42738904673491596,
+          "depth_metres": 3.6500701454980793
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            53.611999999999995,
+            0.0
+          ],
+          "frame_index": 6,
+          "cycle_phase": 0.09999999999999987,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 18.947045746194604,
+          "view_azimuth_degrees": 7.546596420285945,
+          "ground_anchor": [
+            572.2756768712543,
+            344.59533054417943
+          ],
+          "pixels_per_metre": 130.8869249934149,
+          "scale": 0.26177384998682984,
+          "depth_metres": 5.959342386867465
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "local_seconds": 0.8,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0048.png",
+        "sha256": "a4e4b93f5d0209675acd71a84b40ee453c77bad351668ea85875daa155c3eeba",
+        "rgba_sha256": "66cf6ffe82f5211e0ba4b046f5c4eff7777848a85c87c0fd6ddc851406f343fe",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.68985886458327,
+          4.000000000000004
+        ],
+        "target": [
+          0.0,
+          58.92381442146429,
+          3.3572123903134647
+        ],
+        "forward": [
+          0.0,
+          -0.7660444431189779,
+          -0.6427876096865395
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6427876096865395,
+          0.7660444431189779
+        ],
+        "focal_pixels": 650.0000000000001,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.42275603566305,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.698131700797732,
+        "party_travel_metres": 57.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            57.46,
+            0.0
+          ],
+          "frame_index": 0,
+          "cycle_phase": 0.0,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 54.272183950843896,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            567.715414008752
+          ],
+          "pixels_per_metre": 175.63710281615516,
+          "scale": 0.3512742056323103,
+          "depth_metres": 3.700812582181883
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            56.96,
+            0.0
+          ],
+          "frame_index": 10,
+          "cycle_phase": 0.16666666666666663,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 47.848026653756314,
+          "view_azimuth_degrees": -13.393165206653315,
+          "ground_anchor": [
+            389.38033926839717,
+            502.55795158616814
+          ],
+          "pixels_per_metre": 159.16412666949893,
+          "scale": 0.31832825333899784,
+          "depth_metres": 4.0838348037413725
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            54.412,
+            0.0
+          ],
+          "frame_index": 18,
+          "cycle_phase": 0.30000000000000004,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 30.178744811543663,
+          "view_azimuth_degrees": 8.087757359814983,
+          "ground_anchor": [
+            553.7047814139393,
+            287.7306206222273
+          ],
+          "pixels_per_metre": 107.6922763056558,
+          "scale": 0.2153845526113116,
+          "depth_metres": 6.035716044808529
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "local_seconds": 1.0,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0060.png",
+        "sha256": "a8133822f752c0cb4f9e2cd58dfc665bb3def246aceb18488b43757b3bef5d38",
+        "rgba_sha256": "cc1f98f2b9dfe4670a50835552f93fa33b040e1462584818544eca4a3cc7ba60",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.01427659561257,
+          5.223418813589575
+        ],
+        "target": [
+          0.0,
+          59.51427659561257,
+          4.357393409805136
+        ],
+        "forward": [
+          0.0,
+          -0.4999999999999997,
+          -0.8660254037844388
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.8660254037844388,
+          0.4999999999999997
+        ],
+        "focal_pixels": 630.3125,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 53.832414305801954,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.047197551196598,
+        "party_travel_metres": 58.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            58.26,
+            0.0
+          ],
+          "frame_index": 12,
+          "cycle_phase": 0.19999999999999996,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 67.9145833218895,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            447.49929258996656
+          ],
+          "pixels_per_metre": 136.3920474685589,
+          "scale": 0.2727840949371178,
+          "depth_metres": 4.621328821574437
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            57.76,
+            0.0
+          ],
+          "frame_index": 22,
+          "cycle_phase": 0.3666666666666667,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 61.51339243890672,
+          "view_azimuth_degrees": -16.084431698967798,
+          "ground_anchor": [
+            407.4958186379024,
+            393.5581253255999
+          ],
+          "pixels_per_metre": 129.39231225952838,
+          "scale": 0.25878462451905676,
+          "depth_metres": 4.871328821574437
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            55.211999999999996,
+            0.0
+          ],
+          "frame_index": 30,
+          "cycle_phase": 0.5,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 41.65317980631199,
+          "view_azimuth_degrees": 8.876516190360611,
+          "ground_anchor": [
+            548.2673396109417,
+            179.17047489424638
+          ],
+          "pixels_per_metre": 102.5677418248408,
+          "scale": 0.2051354836496816,
+          "depth_metres": 6.145328821574437
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "local_seconds": 1.2,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0072.png",
+        "sha256": "1e3cf4e6281595d8d3e38e3027670ff30dce3ebee795632572cd0642088926fd",
+        "rgba_sha256": "c7158424d7bb29a8d61a0a2e8219f6f19da46f317015b51785b9cc82ea2cda0a",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.30572340438743,
+          6.616290831201283
+        ],
+        "target": [
+          0.0,
+          59.96370326106176,
+          5.676598210415374
+        ],
+        "forward": [
+          0.0,
+          -0.3420201433256682,
+          -0.9396926207859085
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9396926207859085,
+          0.3420201433256682
+        ],
+        "focal_pixels": 620.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 54.59914442266561,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.2217304763960313,
+        "party_travel_metres": 59.059999999999995,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            59.059999999999995,
+            0.0
+          ],
+          "frame_index": 24,
+          "cycle_phase": 0.3999999999999999,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.70602395985891,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            421.9412705876472
+          ],
+          "pixels_per_metre": 106.94045613469652,
+          "scale": 0.21388091226939304,
+          "depth_metres": 5.797618809658722
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            58.559999999999995,
+            0.0
+          ],
+          "frame_index": 34,
+          "cycle_phase": 0.5666666666666667,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 71.95040787267735,
+          "view_azimuth_degrees": -20.422235158265064,
+          "ground_anchor": [
+            420.8601161482823,
+            376.6342941418688
+          ],
+          "pixels_per_metre": 103.87645342471376,
+          "scale": 0.20775290684942752,
+          "depth_metres": 5.968628881321556
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            56.01199999999999,
+            0.0
+          ],
+          "frame_index": 42,
+          "cycle_phase": 0.7,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 52.674086047406696,
+          "view_azimuth_degrees": 9.908097257599374,
+          "ground_anchor": [
+            540.501029988274,
+            177.06627951097082
+          ],
+          "pixels_per_metre": 90.64199994869001,
+          "scale": 0.18128399989738003,
+          "depth_metres": 6.840096206515359
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "local_seconds": 1.6,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0096.png",
+        "sha256": "e0bfec6aa5b230675394298d91b5150551d97f1b4ab953ab229a50dc8fdc4236",
+        "rgba_sha256": "12d5f1aabda6ec1e2e2f9e9b487c0b1ba3659cf4004323ebbad7693b81526edd",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          61.04676568292032,
+          10.774034628428627
+        ],
+        "target": [
+          0.0,
+          60.90759258196025,
+          9.783766559687056
+        ],
+        "forward": [
+          0.0,
+          -0.13917310096006547,
+          -0.9902680687415704
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9902680687415704,
+          0.13917310096006547
+        ],
+        "focal_pixels": 610.512,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.322581870885244,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.4311699866353502,
+        "party_travel_metres": 60.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            60.66,
+            0.0
+          ],
+          "frame_index": 0,
+          "cycle_phase": 0.0,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 87.75687251867532,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            383.5650472588269
+          ],
+          "pixels_per_metre": 62.09584724577663,
+          "scale": 0.12419169449155326,
+          "depth_metres": 9.831768581618364
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            60.16,
+            0.0
+          ],
+          "frame_index": 10,
+          "cycle_phase": 0.16666666666666674,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 83.64625995668587,
+          "view_azimuth_degrees": -36.241447865875436,
+          "ground_anchor": [
+            443.2310163825017,
+            355.14662681895004
+          ],
+          "pixels_per_metre": 61.659438718729604,
+          "scale": 0.1233188774374592,
+          "depth_metres": 9.901355132098397
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            57.611999999999995,
+            0.0
+          ],
+          "frame_index": 18,
+          "cycle_phase": 0.30000000000000004,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 70.40149349372611,
+          "view_azimuth_degrees": 12.31751487183468,
+          "ground_anchor": [
+            521.0761098407377,
+            215.83739494277364
+          ],
+          "pixels_per_metre": 59.52748570302475,
+          "scale": 0.11905497140604951,
+          "depth_metres": 10.255968193344644
+        }
+      ]
+    },
+    {
+      "index": 132,
+      "local_seconds": 2.2,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0132.png",
+        "sha256": "a7855f46853944ff868e019c8b52a3379a611f25341f822b34aeddb72476a200",
+        "rgba_sha256": "52bac788015615e611bdc6d333a386578b59c6242167daf242e015b9df55a9b8",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          63.06,
+          21.99999999999998
+        ],
+        "target": [
+          0.0,
+          63.06,
+          20.99999999999998
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 600.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.144973871705915,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 63.06,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            63.06,
+            0.0
+          ],
+          "frame_index": 36,
+          "cycle_phase": 0.6000000000000001,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 90.0,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            320.00000000000006
+          ],
+          "pixels_per_metre": 28.436018957345997,
+          "scale": 0.056872037914691996,
+          "depth_metres": 21.09999999999998
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            62.56,
+            0.0
+          ],
+          "frame_index": 46,
+          "cycle_phase": 0.7666666666666666,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 87.77429401399965,
+          "view_azimuth_degrees": -52.43140797117251,
+          "ground_anchor": [
+            462.27272727272725,
+            306.3636363636364
+          ],
+          "pixels_per_metre": 28.436018957345997,
+          "scale": 0.056872037914691996,
+          "depth_metres": 21.09999999999998
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            60.012,
+            0.0
+          ],
+          "frame_index": 6,
+          "cycle_phase": 0.09999999999999987,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 81.53851347851253,
+          "view_azimuth_degrees": 13.823742710197942,
+          "ground_anchor": [
+            500.4545454545455,
+            236.8727272727272
+          ],
+          "pixels_per_metre": 28.436018957345997,
+          "scale": 0.056872037914691996,
+          "depth_metres": 21.09999999999998
+        }
+      ]
+    },
+    {
+      "index": 180,
+      "local_seconds": 3.0,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0180.png",
+        "sha256": "c650eb6b49e27f39132e1cc1446a908c507441976784b97ea99aacddd26eb529",
+        "rgba_sha256": "056552f92e7f52438bf235252c35b366873ee095eba3844761d93b77e3cdf523",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          71.62565360971398,
+          55.71559213534521
+        ],
+        "target": [
+          0.0,
+          71.62565360971398,
+          54.71559213534521
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 586.7692932987858,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 57.21249361185445,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 66.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            66.25999999999999,
+            0.0
+          ],
+          "frame_index": 36,
+          "cycle_phase": 0.5999999999999999,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 84.40938217177681,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            263.491567512918
+          ],
+          "pixels_per_metre": 10.704423147523306,
+          "scale": 0.02140884629504661,
+          "depth_metres": 54.81559213534521
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            65.75999999999999,
+            0.0
+          ],
+          "frame_index": 46,
+          "cycle_phase": 0.7666666666666664,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 83.85508868719795,
+          "view_azimuth_degrees": -6.323408981416511,
+          "ground_anchor": [
+            473.15451876168333,
+            258.2258127142128
+          ],
+          "pixels_per_metre": 10.704423147523306,
+          "scale": 0.02140884629504661,
+          "depth_metres": 54.81559213534521
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            63.21199999999999,
+            0.0
+          ],
+          "frame_index": 6,
+          "cycle_phase": 0.09999999999999964,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 81.239699140739,
+          "view_azimuth_degrees": 5.0939290957648735,
+          "ground_anchor": [
+            487.8986321980577,
+            231.39152626001135
+          ],
+          "pixels_per_metre": 10.704423147523306,
+          "scale": 0.02140884629504661,
+          "depth_metres": 54.81559213534521
+        }
+      ]
+    },
+    {
+      "index": 240,
+      "local_seconds": 4.0,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0240.png",
+        "sha256": "cd9b062181deb46707877827860ee20ecef8bb7e44220af3928aacff1b4a40d4",
+        "rgba_sha256": "23432d8655d1b58437f59576b30657f466328e6d68ecfb04d924857899e07e6b",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          105.15500000000004,
+          165.43750000000003
+        ],
+        "target": [
+          0.0,
+          105.15500000000004,
+          164.43750000000003
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 566.5625,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 58.916365880890574,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 70.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            70.25999999999999,
+            0.0
+          ],
+          "frame_index": 0,
+          "cycle_phase": 0.0,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 78.0261648388578,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            200.49747827729493
+          ],
+          "pixels_per_metre": 3.4433639747777858,
+          "scale": 0.006886727949555572,
+          "depth_metres": 164.53750000000002
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            69.75999999999999,
+            0.0
+          ],
+          "frame_index": 10,
+          "cycle_phase": 0.16666666666666674,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.85766423555546,
+          "view_azimuth_degrees": -1.052071506359459,
+          "ground_anchor": [
+            477.77398942198715,
+            198.78516244805428
+          ],
+          "pixels_per_metre": 3.4433639747777858,
+          "scale": 0.006886727949555572,
+          "depth_metres": 164.53750000000002
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            67.21199999999999,
+            0.0
+          ],
+          "frame_index": 18,
+          "cycle_phase": 0.2999999999999996,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.01192317085633,
+          "view_azimuth_degrees": 1.1323890935819554,
+          "ground_anchor": [
+            482.568473743861,
+            190.0592009822439
+          ],
+          "pixels_per_metre": 3.4433639747777858,
+          "scale": 0.006886727949555572,
+          "depth_metres": 164.53750000000002
+        }
+      ]
+    },
+    {
+      "index": 348,
+      "local_seconds": 5.8,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0348.png",
+        "sha256": "090d0603901d93ddd2688d3d908d23ad32bbbd87a0689e8c5e2fad4d4a7c46df",
+        "rgba_sha256": "48bf2ffca9083bb21aebe1aae75680eaf7d58001c080cca82057e9efe0e6e674",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          145.00000000000028,
+          292.0
+        ],
+        "target": [
+          0.0,
+          145.00000000000028,
+          291.0
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 77.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            77.46,
+            0.0
+          ],
+          "frame_index": 12,
+          "cycle_phase": 0.1999999999999995,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 76.93755241314436,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            192.78424657534194
+          ],
+          "pixels_per_metre": 1.8893850910340089,
+          "scale": 0.0037787701820680177,
+          "depth_metres": 291.1
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            76.96,
+            0.0
+          ],
+          "frame_index": 22,
+          "cycle_phase": 0.3666666666666665,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 76.84362292174455,
+          "view_azimuth_degrees": -0.5473416194896431,
+          "ground_anchor": [
+            478.7756849315069,
+            191.84246575342414
+          ],
+          "pixels_per_metre": 1.8893850910340089,
+          "scale": 0.0037787701820680177,
+          "depth_metres": 291.1
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            74.41199999999999,
+            0.0
+          ],
+          "frame_index": 30,
+          "cycle_phase": 0.49999999999999933,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 76.3688620062586,
+          "view_azimuth_degrees": 0.6087467798274954,
+          "ground_anchor": [
+            481.41267123287673,
+            187.043150684931
+          ],
+          "pixels_per_metre": 1.8893850910340089,
+          "scale": 0.0037787701820680177,
+          "depth_metres": 291.1
+        }
+      ]
+    },
+    {
+      "index": 480,
+      "local_seconds": 8.0,
+      "native": {
+        "path": "docs/reviews/veinhold_bridge_ascent/performance_proofs/frame_0480.png",
+        "sha256": "a220f04bc424636f6fa9a64232a8faafd00797723b75eef46b64413d9c7e5b30",
+        "rgba_sha256": "697f675a5aa7ff6a3aa73179af05613d4144350a0c72bfb8f4e536a36afd3e58",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          150.0,
+          300.0
+        ],
+        "target": [
+          0.0,
+          150.0,
+          299.0
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 86.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "runners": [
+        {
+          "id": "lucan",
+          "lane_metres": 0.0,
+          "offset_metres": 0.0,
+          "phase_offset_seconds": 0.0,
+          "height_metres": 1.85,
+          "world_position_metres": [
+            0.0,
+            86.25999999999999,
+            0.0
+          ],
+          "frame_index": 0,
+          "cycle_phase": 0.0,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.9698845294083,
+          "view_azimuth_degrees": 0.0,
+          "ground_anchor": [
+            480.0,
+            203.14333333333337
+          ],
+          "pixels_per_metre": 1.8388498829822801,
+          "scale": 0.0036776997659645604,
+          "depth_metres": 299.1
+        },
+        {
+          "id": "iselin",
+          "lane_metres": 0.65,
+          "offset_metres": -0.5,
+          "phase_offset_seconds": 0.16666666666666666,
+          "height_metres": 1.72,
+          "world_position_metres": [
+            0.65,
+            85.75999999999999,
+            0.0
+          ],
+          "frame_index": 10,
+          "cycle_phase": 0.16666666666666563,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.87769418981335,
+          "view_azimuth_degrees": -0.5797164664688402,
+          "ground_anchor": [
+            478.80833333333334,
+            202.2266666666667
+          ],
+          "pixels_per_metre": 1.8388498829822801,
+          "scale": 0.0036776997659645604,
+          "depth_metres": 299.1
+        },
+        {
+          "id": "crown_soldier",
+          "lane_metres": -0.75,
+          "offset_metres": -3.048,
+          "phase_offset_seconds": 0.3,
+          "height_metres": 1.8,
+          "world_position_metres": [
+            -0.75,
+            83.21199999999999,
+            0.0
+          ],
+          "frame_index": 18,
+          "cycle_phase": 0.30000000000000027,
+          "cycle_seconds": 0.8,
+          "view_elevation_degrees": 77.41177919997058,
+          "view_azimuth_degrees": 0.6433794765239913,
+          "ground_anchor": [
+            481.375,
+            197.55533333333332
+          ],
+          "pixels_per_metre": 1.8388498829822801,
+          "scale": 0.0036776997659645604,
+          "depth_metres": 299.1
+        }
+      ]
+    }
+  ],
+  "source_adoption_verification": {
+    "lucan_close35_107_pixel_changes": [],
+    "lucan_far48_pixel_changes": [],
+    "lucan_transition108_132_corrected_far_alias_changes": []
+  }
+}

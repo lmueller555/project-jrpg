@@ -1,0 +1,242 @@
+[
+  {
+    "sample_index": 40,
+    "gait_frame": 2,
+    "cell": [
+      0,
+      0,
+      256,
+      384
+    ],
+    "view_elevation": 37.076904975469404,
+    "view_azimuth": -12.230407319689482,
+    "native_pixels_per_metre": 195.69114540607984,
+    "guide": "guides/transition/guide_040.png",
+    "guide_sha256": "41f3267daa7df0cac4a1bb3358cfc99e0a5fa3b7a43ef9822c41858aae452361"
+  },
+  {
+    "sample_index": 41,
+    "gait_frame": 3,
+    "cell": [
+      256,
+      0,
+      512,
+      384
+    ],
+    "view_elevation": 38.45262051398388,
+    "view_azimuth": -12.353615180938856,
+    "native_pixels_per_metre": 189.87391628365367,
+    "guide": "guides/transition/guide_041.png",
+    "guide_sha256": "33052d06efdcc8f7b3ad2b9082715b849c98392604a110e67235f540a4e39451"
+  },
+  {
+    "sample_index": 42,
+    "gait_frame": 4,
+    "cell": [
+      512,
+      0,
+      768,
+      384
+    ],
+    "view_elevation": 39.82758611474113,
+    "view_azimuth": -12.48274014669097,
+    "native_pixels_per_metre": 183.9325811817564,
+    "guide": "guides/transition/guide_042.png",
+    "guide_sha256": "45b68a763026f0e24bdb9833c6d1cc439b4e4d64c89bd9c61a972ba4ba57baad"
+  },
+  {
+    "sample_index": 43,
+    "gait_frame": 5,
+    "cell": [
+      768,
+      0,
+      1024,
+      384
+    ],
+    "view_elevation": 41.197751185062096,
+    "view_azimuth": -12.617975435262437,
+    "native_pixels_per_metre": 178.18585792394947,
+    "guide": "guides/transition/guide_043.png",
+    "guide_sha256": "64c7035c2c519f5a2895cc3db34fe9728b9562c0faf9aec876ce4290cca1ff15"
+  },
+  {
+    "sample_index": 44,
+    "gait_frame": 6,
+    "cell": [
+      0,
+      384,
+      256,
+      768
+    ],
+    "view_elevation": 42.55922547559272,
+    "view_azimuth": -12.759522473033286,
+    "native_pixels_per_metre": 172.93000071678884,
+    "guide": "guides/transition/guide_044.png",
+    "guide_sha256": "be55edcd05e2f3bcb533bbf8f71c6c08447318ec7be0ddfb638c698292cddfcb"
+  },
+  {
+    "sample_index": 45,
+    "gait_frame": 7,
+    "cell": [
+      256,
+      384,
+      512,
+      768
+    ],
+    "view_elevation": 43.90831792810476,
+    "view_azimuth": -12.907591276491832,
+    "native_pixels_per_metre": 168.38706782631425,
+    "guide": "guides/transition/guide_045.png",
+    "guide_sha256": "5ec9fdb06d11f8c8ea0013bda652703676fb3e6383e19906194e1ecbf263ba67"
+  },
+  {
+    "sample_index": 46,
+    "gait_frame": 8,
+    "cell": [
+      512,
+      384,
+      768,
+      768
+    ],
+    "view_elevation": 45.241569594026736,
+    "view_azimuth": -13.062400830736394,
+    "native_pixels_per_metre": 164.6568762356022,
+    "guide": "guides/transition/guide_046.png",
+    "guide_sha256": "077343a0450ed9e44edfcf04bb0c67983e2f27b92834cd94daa85e040d050376"
+  },
+  {
+    "sample_index": 47,
+    "gait_frame": 9,
+    "cell": [
+      768,
+      384,
+      1024,
+      768
+    ],
+    "view_elevation": 46.555780001121605,
+    "view_azimuth": -13.22417946266765,
+    "native_pixels_per_metre": 161.67314829539708,
+    "guide": "guides/transition/guide_047.png",
+    "guide_sha256": "a1c4fcdbcfe00ed3a160ede941fcd8beeb537f0e9c0f1f22f8549ef30a69b44c"
+  },
+  {
+    "sample_index": 48,
+    "gait_frame": 10,
+    "cell": [
+      0,
+      768,
+      256,
+      1152
+    ],
+    "view_elevation": 47.848026653756314,
+    "view_azimuth": -13.393165206653315,
+    "native_pixels_per_metre": 159.16412666949893,
+    "guide": "guides/transition/guide_048.png",
+    "guide_sha256": "d05c80c6cf4e4ee63d262987ad5c2e9dea818f31f5eb329103c3e039640b56f4"
+  },
+  {
+    "sample_index": 49,
+    "gait_frame": 11,
+    "cell": [
+      256,
+      768,
+      512,
+      1152
+    ],
+    "view_elevation": 49.11612282497073,
+    "view_azimuth": -13.569606159935965,
+    "native_pixels_per_metre": 156.72828996721367,
+    "guide": "guides/transition/guide_049.png",
+    "guide_sha256": "31d016c551d11cbe37a0a0da3cd327a6c82aa58d0ea6783213aa326bc98e60af"
+  },
+  {
+    "sample_index": 50,
+    "gait_frame": 12,
+    "cell": [
+      512,
+      768,
+      768,
+      1152
+    ],
+    "view_elevation": 50.359864386676534,
+    "view_azimuth": -13.75376082447199,
+    "native_pixels_per_metre": 154.24262563728155,
+    "guide": "guides/transition/guide_050.png",
+    "guide_sha256": "a359c2d17f4dac8c507064b42dfab4865ca300aa1c1f35cee31916af32677abb"
+  },
+  {
+    "sample_index": 51,
+    "gait_frame": 13,
+    "cell": [
+      768,
+      768,
+      1024,
+      1152
+    ],
+    "view_elevation": 51.57952529252411,
+    "view_azimuth": -13.945898431234069,
+    "native_pixels_per_metre": 151.6993189375831,
+    "guide": "guides/transition/guide_051.png",
+    "guide_sha256": "b81384a924e9b2ef26f5fe770882745136f331d6cad0a638d3f1e13075ec084d"
+  },
+  {
+    "sample_index": 52,
+    "gait_frame": 14,
+    "cell": [
+      0,
+      1152,
+      256,
+      1536
+    ],
+    "view_elevation": 52.775380038638275,
+    "view_azimuth": -14.146299242263076,
+    "native_pixels_per_metre": 149.11332280616946,
+    "guide": "guides/transition/guide_052.png",
+    "guide_sha256": "d2291ab050377a0e777ac48531eb783c0c0e7e38aa5bba93e640321a020af967"
+  },
+  {
+    "sample_index": 53,
+    "gait_frame": 15,
+    "cell": [
+      256,
+      1152,
+      512,
+      1536
+    ],
+    "view_elevation": 53.94769587043857,
+    "view_azimuth": -14.355254824919832,
+    "native_pixels_per_metre": 146.51243982765197,
+    "guide": "guides/transition/guide_053.png",
+    "guide_sha256": "bcabdc446a8a545287aa2bb1d3a39912f81f4de073b97f033d30c18868406a3e"
+  },
+  {
+    "sample_index": 54,
+    "gait_frame": 16,
+    "cell": [
+      512,
+      1152,
+      768,
+      1536
+    ],
+    "view_elevation": 55.096726412859795,
+    "view_azimuth": -14.573068291839984,
+    "native_pixels_per_metre": 143.92666583492263,
+    "guide": "guides/transition/guide_054.png",
+    "guide_sha256": "45c313f6d3ac9b3708e4d008543a679555ede85eaaf39f994acaf87001c38f76"
+  },
+  {
+    "sample_index": 55,
+    "gait_frame": 17,
+    "cell": [
+      768,
+      1152,
+      1024,
+      1536
+    ],
+    "view_elevation": 56.22270664581673,
+    "view_azimuth": -14.800054499038854,
+    "native_pixels_per_metre": 141.3797192067272,
+    "guide": "guides/transition/guide_055.png",
+    "guide_sha256": "0cd9fa7cc6f8775ff0a313b4e291e2e338b9a1299b8eac87c6ac9c96f1bb5a1a"
+  }
+]

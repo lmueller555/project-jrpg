@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "approval_scope": "Manual whole-figure source geometry and rigid observations only; native and composed acceptance is recorded separately in root review documents.",
+  "method": "Actual raw pixel inspection. Main connected cranium/hair mass through chin where visible, excluding isolated wisps/collar. Main paired rigid pauldron domes exclude segmented upper arms, shield and sword. Whole-master uniform scale balances both physical bands, never eyeNCC or occupied silhouette height.",
+  "coordinate_space": "All per-row head and cap observations are cell-local source pixels; cell rectangles are master-global.",
+  "uncertainty_source_pixels": {
+    "cranium_bbox_each_edge": 5,
+    "cranium_center": 5,
+    "main_cap_pair_each_edge": 8
+  },
+  "canonical_reference_art_pixels": {
+    "adult_cranium_width": [
+      120,
+      135
+    ],
+    "main_cap_pair_span": [
+      260,
+      275
+    ]
+  },
+  "density_note": "These are balanced candidate registrations, not hard per-pose fits. Masters40/44 show about9% main dome span variation with armor carry/torso exposure; head-width and cap-span uncertainty bands overlap the canonical bands. Native boundary controls must decide; no body part has been independently fitted.",
+  "masters": [
+    {
+      "source": "transition_036_039_view_corrected.png",
+      "sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.17,
+      "measurement_overlay": "measurement_overlay_036_039_view_corrected.jpg",
+      "rows": [
+        {
+          "index": 36,
+          "source": "transition_036_039_view_corrected.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            213,
+            71,
+            319,
+            199
+          ],
+          "cranium_center": [
+            266.0,
+            135.0
+          ],
+          "cranium_width": 106,
+          "main_cap_pair_x_bounds": [
+            145,
+            382
+          ],
+          "main_cap_pair_span": 237,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 124.02,
+          "scaled_main_cap_pair_span": 277.29
+        },
+        {
+          "index": 37,
+          "source": "transition_036_039_view_corrected.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            213,
+            83,
+            319,
+            211
+          ],
+          "cranium_center": [
+            266.0,
+            147.0
+          ],
+          "cranium_width": 106,
+          "main_cap_pair_x_bounds": [
+            145,
+            382
+          ],
+          "main_cap_pair_span": 237,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 124.02,
+          "scaled_main_cap_pair_span": 277.29
+        },
+        {
+          "index": 38,
+          "source": "transition_036_039_view_corrected.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            213,
+            86,
+            318,
+            216
+          ],
+          "cranium_center": [
+            265.5,
+            151.0
+          ],
+          "cranium_width": 105,
+          "main_cap_pair_x_bounds": [
+            145,
+            382
+          ],
+          "main_cap_pair_span": 237,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 122.85,
+          "scaled_main_cap_pair_span": 277.29
+        },
+        {
+          "index": 39,
+          "source": "transition_036_039_view_corrected.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            213,
+            111,
+            318,
+            238
+          ],
+          "cranium_center": [
+            265.5,
+            174.5
+          ],
+          "cranium_width": 105,
+          "main_cap_pair_x_bounds": [
+            145,
+            383
+          ],
+          "main_cap_pair_span": 238,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 122.85,
+          "scaled_main_cap_pair_span": 278.46
+        }
+      ],
+      "scaled_head_width_range": [
+        122.85,
+        124.02
+      ],
+      "scaled_cap_span_range": [
+        277.29,
+        278.46
+      ],
+      "revision_note": "Whole-master bowed-head/camera-attitude revision. Actual observed source dimensions remeasured; no region transformations. Native acceptance remains separate."
+    },
+    {
+      "source": "transition_040_043_view_corrected.png",
+      "sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.13,
+      "measurement_overlay": "measurement_overlay_040_043_view_corrected.jpg",
+      "rows": [
+        {
+          "index": 40,
+          "source": "transition_040_043_view_corrected.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            206,
+            75,
+            317,
+            217
+          ],
+          "cranium_center": [
+            261.5,
+            146.0
+          ],
+          "cranium_width": 111,
+          "main_cap_pair_x_bounds": [
+            146,
+            376
+          ],
+          "main_cap_pair_span": 230,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 125.43,
+          "scaled_main_cap_pair_span": 259.9
+        },
+        {
+          "index": 41,
+          "source": "transition_040_043_view_corrected.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            193,
+            87,
+            308,
+            229
+          ],
+          "cranium_center": [
+            250.5,
+            158.0
+          ],
+          "cranium_width": 115,
+          "main_cap_pair_x_bounds": [
+            132,
+            378
+          ],
+          "main_cap_pair_span": 246,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 129.95,
+          "scaled_main_cap_pair_span": 277.98
+        },
+        {
+          "index": 42,
+          "source": "transition_040_043_view_corrected.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            206,
+            102,
+            318,
+            242
+          ],
+          "cranium_center": [
+            262.0,
+            172.0
+          ],
+          "cranium_width": 112,
+          "main_cap_pair_x_bounds": [
+            147,
+            376
+          ],
+          "main_cap_pair_span": 229,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 126.56,
+          "scaled_main_cap_pair_span": 258.77
+        },
+        {
+          "index": 43,
+          "source": "transition_040_043_view_corrected.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            193,
+            127,
+            309,
+            263
+          ],
+          "cranium_center": [
+            251.0,
+            195.0
+          ],
+          "cranium_width": 116,
+          "main_cap_pair_x_bounds": [
+            132,
+            380
+          ],
+          "main_cap_pair_span": 248,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 131.08,
+          "scaled_main_cap_pair_span": 280.24
+        }
+      ],
+      "scaled_head_width_range": [
+        125.43,
+        131.08
+      ],
+      "scaled_cap_span_range": [
+        258.77,
+        280.24
+      ],
+      "revision_note": "Whole-master bowed-head/camera-attitude revision. Actual observed source dimensions remeasured; no region transformations. Native acceptance remains separate."
+    },
+    {
+      "source": "transition_044_047_view_corrected.png",
+      "sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.08,
+      "measurement_overlay": "measurement_overlay_044_047_view_corrected.jpg",
+      "rows": [
+        {
+          "index": 44,
+          "source": "transition_044_047_view_corrected.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            198,
+            87,
+            315,
+            230
+          ],
+          "cranium_center": [
+            256.5,
+            158.5
+          ],
+          "cranium_width": 117,
+          "main_cap_pair_x_bounds": [
+            133,
+            382
+          ],
+          "main_cap_pair_span": 249,
+          "uniform_scale": 1.08,
+          "scaled_cranium_width": 126.36,
+          "scaled_main_cap_pair_span": 268.92
+        },
+        {
+          "index": 45,
+          "source": "transition_044_047_view_corrected.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            195,
+            99,
+            310,
+            235
+          ],
+          "cranium_center": [
+            252.5,
+            167.0
+          ],
+          "cranium_width": 115,
+          "main_cap_pair_x_bounds": [
+            132,
+            381
+          ],
+          "main_cap_pair_span": 249,
+          "uniform_scale": 1.08,
+          "scaled_cranium_width": 124.2,
+          "scaled_main_cap_pair_span": 268.92
+        },
+        {
+          "index": 46,
+          "source": "transition_044_047_view_corrected.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            197,
+            108,
+            315,
+            244
+          ],
+          "cranium_center": [
+            256.0,
+            176.0
+          ],
+          "cranium_width": 118,
+          "main_cap_pair_x_bounds": [
+            131,
+            382
+          ],
+          "main_cap_pair_span": 251,
+          "uniform_scale": 1.08,
+          "scaled_cranium_width": 127.44,
+          "scaled_main_cap_pair_span": 271.08
+        },
+        {
+          "index": 47,
+          "source": "transition_044_047_view_corrected.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            195,
+            125,
+            315,
+            261
+          ],
+          "cranium_center": [
+            255.0,
+            193.0
+          ],
+          "cranium_width": 120,
+          "main_cap_pair_x_bounds": [
+            131,
+            383
+          ],
+          "main_cap_pair_span": 252,
+          "uniform_scale": 1.08,
+          "scaled_cranium_width": 129.6,
+          "scaled_main_cap_pair_span": 272.16
+        }
+      ],
+      "scaled_head_width_range": [
+        124.2,
+        129.6
+      ],
+      "scaled_cap_span_range": [
+        268.92,
+        272.16
+      ],
+      "revision_note": "Whole-master bowed-head/camera-attitude revision. Actual observed source dimensions remeasured; no region transformations. Native acceptance remains separate.",
+      "density_revision_note": "Raw cap spans249\u2013252 and cranium115\u2013120 are materially larger than previous221\u2013243 and106\u2013114; uniform scale changes1.15 to1.08 using both, not occupiedheight."
+    },
+    {
+      "source": "transition_056_059b.png",
+      "sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.18,
+      "measurement_overlay": "measurement_overlay_056_059b.jpg",
+      "rows": [
+        {
+          "index": 56,
+          "source": "transition_056_059b.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            214,
+            154,
+            315,
+            267
+          ],
+          "cranium_center": [
+            264.5,
+            210.5
+          ],
+          "cranium_width": 101,
+          "main_cap_pair_x_bounds": [
+            144,
+            375
+          ],
+          "main_cap_pair_span": 231,
+          "uniform_scale": 1.18,
+          "scaled_cranium_width": 119.18,
+          "scaled_main_cap_pair_span": 272.58
+        },
+        {
+          "index": 57,
+          "source": "transition_056_059b.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            212,
+            164,
+            316,
+            282
+          ],
+          "cranium_center": [
+            264.0,
+            223.0
+          ],
+          "cranium_width": 104,
+          "main_cap_pair_x_bounds": [
+            144,
+            376
+          ],
+          "main_cap_pair_span": 232,
+          "uniform_scale": 1.18,
+          "scaled_cranium_width": 122.72,
+          "scaled_main_cap_pair_span": 273.76
+        },
+        {
+          "index": 58,
+          "source": "transition_056_059b.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            212,
+            180,
+            314,
+            303
+          ],
+          "cranium_center": [
+            263.0,
+            241.5
+          ],
+          "cranium_width": 102,
+          "main_cap_pair_x_bounds": [
+            144,
+            376
+          ],
+          "main_cap_pair_span": 232,
+          "uniform_scale": 1.18,
+          "scaled_cranium_width": 120.36,
+          "scaled_main_cap_pair_span": 273.76
+        },
+        {
+          "index": 59,
+          "source": "transition_056_059b.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            212,
+            185,
+            315,
+            307
+          ],
+          "cranium_center": [
+            263.5,
+            246.0
+          ],
+          "cranium_width": 103,
+          "main_cap_pair_x_bounds": [
+            144,
+            377
+          ],
+          "main_cap_pair_span": 233,
+          "uniform_scale": 1.18,
+          "scaled_cranium_width": 121.54,
+          "scaled_main_cap_pair_span": 274.94
+        }
+      ],
+      "scaled_head_width_range": [
+        119.18,
+        122.72
+      ],
+      "scaled_cap_span_range": [
+        272.58,
+        274.94
+      ],
+      "revision_note": "Bounded replacement for rejected transition_056_059.png; old observations archived in rigid_observations_before_056_059b.json. Image-right long boot and image-left compact knee identities retained in this replacement source. Native acceptance remains separate."
+    }
+  ]
+}

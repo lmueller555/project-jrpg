@@ -1,0 +1,653 @@
+{
+  "version": 1,
+  "status": "All16 selectedsource crown observations visually inspected and accepted as registration features; native wholeperformance review pending",
+  "template": {
+    "path": "keys/true_overhead_model_v2.png",
+    "source_sha256": "dde55697603234fd2e0521f78b54fb9f57369d49871969b52ffea820108137f5",
+    "cell": [
+      505,
+      700,
+      758,
+      931
+    ],
+    "size": [
+      253,
+      231
+    ]
+  },
+  "coordinate_space": "Local source-cell pixels, before any export scale or origin",
+  "observations": [
+    {
+      "phase": 16,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        285.5,
+        225.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        242,
+        185,
+        329,
+        265
+      ],
+      "score": 0.7710492014884949,
+      "actual_cell": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 17,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        255.5,
+        223.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        212,
+        183,
+        299,
+        263
+      ],
+      "score": 0.7849234938621521,
+      "actual_cell": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 18,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        287.5,
+        222.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        243,
+        182,
+        332,
+        263
+      ],
+      "score": 0.7671400308609009,
+      "actual_cell": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 19,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        257.5,
+        222.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        213,
+        182,
+        302,
+        263
+      ],
+      "score": 0.7789483666419983,
+      "actual_cell": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 20,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        0,
+        768,
+        512,
+        1152
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        288.5,
+        222.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        244,
+        182,
+        333,
+        263
+      ],
+      "score": 0.7761231660842896,
+      "actual_cell": [
+        0,
+        768,
+        512,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 21,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        512,
+        768,
+        1024,
+        1152
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        259.5,
+        222.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        215,
+        182,
+        304,
+        263
+      ],
+      "score": 0.7783135771751404,
+      "actual_cell": [
+        512,
+        768,
+        1024,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 22,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        0,
+        1152,
+        512,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        291.5,
+        222.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        247,
+        182,
+        336,
+        263
+      ],
+      "score": 0.7739183902740479,
+      "actual_cell": [
+        0,
+        1152,
+        512,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 23,
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "cell": [
+        512,
+        1152,
+        1024,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        260.0,
+        223.0
+      ],
+      "template_scale": 0.35500000000000015,
+      "template_box": [
+        215,
+        182,
+        305,
+        264
+      ],
+      "score": 0.7624112963676453,
+      "actual_cell": [
+        512,
+        1152,
+        1024,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 24,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        131.0,
+        211.5
+      ],
+      "template_scale": 0.34000000000000014,
+      "template_box": [
+        88,
+        172,
+        174,
+        251
+      ],
+      "score": 0.7523704767227173,
+      "actual_cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 25,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        131.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        88,
+        172,
+        175,
+        252
+      ],
+      "score": 0.7556065917015076,
+      "actual_cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 26,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        130.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        87,
+        172,
+        174,
+        252
+      ],
+      "score": 0.7532461881637573,
+      "actual_cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 27,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "corner_alpha_max": 1,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        130.5,
+        211.5
+      ],
+      "template_scale": 0.35000000000000014,
+      "template_box": [
+        86,
+        171,
+        175,
+        252
+      ],
+      "score": 0.7676193118095398,
+      "actual_cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 28,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        130.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        87,
+        172,
+        174,
+        252
+      ],
+      "score": 0.7639965415000916,
+      "actual_cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 29,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        130.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        87,
+        172,
+        174,
+        252
+      ],
+      "score": 0.7395538687705994,
+      "actual_cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 30,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "corner_alpha_max": 1,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        131.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        88,
+        172,
+        175,
+        252
+      ],
+      "score": 0.7126943469047546,
+      "actual_cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    },
+    {
+      "phase": 31,
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "corner_alpha_max": 0,
+      "edge_pixels_over16": 0,
+      "review_state": "source crown measurement accepted; fullpose/native motion review remains parent responsibility",
+      "point": [
+        130.5,
+        212.0
+      ],
+      "template_scale": 0.34500000000000014,
+      "template_box": [
+        87,
+        172,
+        174,
+        252
+      ],
+      "score": 0.7407479882240295,
+      "actual_cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "feature": "Actual visible white cranium crown NCC, not occupied body bounds",
+      "use_for_density": true,
+      "visual_review": "Actual yellow box and redpoint inspected on the source overlay. Correct visible hair-covered cranium region, not loosehair trail, braidclasp, face, boot or occupied body bounds. This candidate registration feature is accepted; motion acceptance is separate.",
+      "point_uncertainty_source_pixels": 3,
+      "point_interpretation": "Observed center of visible hair-covered cranium template region, not a measured hidden skeletal joint."
+    }
+  ],
+  "density_groups": [
+    {
+      "source": "entry_016_023_bridge/master.png",
+      "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+      "phases": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "canonical_cranium_width_art_pixels": 130,
+      "median_template_scale": 0.35000000000000014,
+      "observed_cranium_width_source_pixels": 88.55000000000004,
+      "one_uniform_export_scale": 1.4680971202710327,
+      "method": "One density per whole master from the same observed rigid crown region; no occupied-height normalization or per-frame fitting."
+    },
+    {
+      "source": "master.png",
+      "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+      "phases": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "canonical_cranium_width_art_pixels": 130,
+      "median_template_scale": 0.34500000000000014,
+      "observed_cranium_width_source_pixels": 87.28500000000004,
+      "one_uniform_export_scale": 1.489373890130033,
+      "method": "One density per whole master from the same observed rigid crown region; no occupied-height normalization or per-frame fitting."
+    }
+  ]
+}

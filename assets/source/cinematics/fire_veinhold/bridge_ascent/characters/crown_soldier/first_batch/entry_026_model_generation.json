@@ -1,0 +1,21 @@
+{
+  "name": "entry_026_model",
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/entry_026_model.png",
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/entry_026_model_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_44.png"
+  ],
+  "prompt": "Edit this complete approved Crown soldier running drawing into the VERY SLIGHTLY elevated camera view for the next shot. Draw the WHOLE SAME MAN in the EXACT SAME phase44 pose, same rigid helmet and armor sizes and body proportions, same naturally upright forward-running posture, same broad oblique boss-shield face on anatomical LEFT/imageRIGHT, and sword low/back in anatomical RIGHT/imageLEFT. The camera angle changes only about SIX degrees above this reference, to 11.77 degrees elevation with 7.4 degrees azimuth. This is a subtle change: show a little more helmet/shoulder tops, but face and eyes remain clearly visible. Do NOT hunch his torso or bury his chin or tuck his head. Do NOT narrow the shield to an edge; its plane remains unchanged and broad at this early angle. Keep torso width, thigh/calf length and near-contact right boot exactly consistent. Preserve the warm softly burnished polished-steel color, the small blue diamond patterns and warm silver borders on armor/shield, the faded blue/navy split tabard with warm silver trim, charcoal quilted trousers, brown gloves/boots, young brown-haired face. This is the ordinary allied Crown soldier, not a dark grey redesigned knight. One coherent newly painted complete figure, no detached limb rig, pasted parts, warping, blend or interpolation. Precisely two arms/legs, shield LEFT, sword RIGHT with attached gripping brown glove. Transparent canvas, 768x1024 composition approximately matching this reference, whole helmet, shield, sword and boots included; no floor/shadow/labels/haze. The ground root is (384,960); no height-fitting or body stretch. Preserve high-quality detailed painted fantasy cinematic appearance.",
+  "source_path": "/workspace/generated_images/exec-c4c446c8-fb07-4247-aeee-451baf39724c.png",
+  "generation_id": "exec-c4c446c8-fb07-4247-aeee-451baf39724c",
+  "transparent_background": true,
+  "construction": "Complete ImageGen redraw from matching approved phase44; tiny actual camera change; no regional composites or warped anatomy",
+  "status": "candidate_internal_review",
+  "source_sha256": "439d0bfc1a26054579d7899215b2cf50c22b1b6e34980dbe40044e653cc4a109",
+  "output_sha256": "439d0bfc1a26054579d7899215b2cf50c22b1b6e34980dbe40044e653cc4a109",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_44.png": "1fd73430a64908689706a0c043a9c923208d7b7945a3df852c9538574b76f521"
+  },
+  "prompt_text_sha256": "bb71460c5ab9bc899fc7904ec59e2b7fad1d9085b1c1381261a20deab33d4498",
+  "prompt_file_sha256": "1db8faa123d2c9597356b935b65500c06ca651f10b176f566e6bd0d81033f21d"
+}

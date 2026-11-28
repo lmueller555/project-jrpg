@@ -1,0 +1,29 @@
+{
+  "id": "phase_08_11_arms_knees",
+  "output": "phase_08_11_arms_knees.png",
+  "phases": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Draw FOUR COMPLETE Lucan figures as2columns2rows. FIRST is exact actual3D camera/joint guide with marked hands/knees. SECOND is same-phase current wholemaster with CORRECT ARM PROGRESSION but INCORRECT little forward brown toes. THIRD is same-phase earlier wholemaster with CORRECT KNEE OCCLUSION. Redraw each complete indivisible figure coherently, keeping SECOND own arm/sword/shield positions and THIRD own correct knee/calf occlusion; no pixelsplicing or assembled isolatedparts.\n\nABSOLUTE EARLY-PASSING RULE FOR ALL4: The down-most point on anatomicalLEFT leg/imageRIGHT is the rounded SILVER KNEECAP. NO BROWN TOE or LEATHER BOOT may protrude below it at phases8,9,10. At11 toe may reach kneeLEVEL only; still NO dangling toe below knee. The cyan calf folds BACK to boot UNDER/BEHIND head/torso; the forward boot is naturally OCCLUDED. Only the opposite trailing boot behind/up of redhips may peek. Do not invent an extra foot so allboots are visible. TWO connected legs/two actual boots only, no thirdtoe. The correct thirdreference ends each forwardchain in rounded silvercap; retain that and remove secondreference obsolete brown tip through wholefigure redraw.\n\nRetain SECOND actual ARM SWING: right swordglove/imageLEFT starts BACK/UPIMAGE behindcrown then advances smoothly down towardneutral across8\u201311, and leftshieldglove counters. Each own natural shoulder-elbow-wrist/grip connected. FIRST magenta/green actualguide marks help trace true ownhand motion relative rigidhead/shoulders. No parkedcarry, no copying thirdreference oldlower rightglove positions. Naturaladult lengths, no stretchingtoexactmarkers. Uprightshield remains ONLY thin curvedgoldrim/redbacksliver, never broadflatkiteface. Exacttrue90vertical camera, bare darkbrown haircrown ahead/DOWN of redhips, no face/eyes/frontalchest/pronebody. Same adultmodel/head/pauldron realdimensions, articulatedsilversteel/gold/oxbloodtabard/normalbrownbootsgloves. Consistentcoolmoonlight/restainedwarmrim. Entirefigure newlypainted coherently eachcell, truealpha0transparentbackground, nofloor/glow/shadow/grid/text/guidecolors, generousmargins aroundhair/swordtip/shield/visibleboots.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_hand_guides.png",
+      "sha256": "0a7d6952d9158de5296e08d05c43ebc9172c03ca940dd1ea45012f9f767db628"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms.png",
+      "sha256": "9837a6d3ff183b3bfa449b6d7b937991213ac31a8a456e660357118e73d76602"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11.png",
+      "sha256": "0bbc4f2ea14968e27ae812629d0fb17c4b0741c93b013c126e67866601957ac6"
+    }
+  ]
+}

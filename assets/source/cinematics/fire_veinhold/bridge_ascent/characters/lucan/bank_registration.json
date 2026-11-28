@@ -1,0 +1,5276 @@
+[
+  {
+    "kind": "transition",
+    "index": 52,
+    "gait_frame": 4,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_052_059_alpha.png",
+    "source_sha256": "cc109bf4c62a5a606c3ae6c5a3184d8b2d5bff47e402d3a235d11461ab5e92e5",
+    "cell": [
+      0,
+      0,
+      443,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      491.03563263597016
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        72.0
+      ],
+      "score": 0.6299071311950684,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      579.3992689996065
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "cb08000b57b97826148ea1b60b579e5c04390b815a8701b10bfcdc5ab815aa72",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 53,
+    "gait_frame": 5,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_052_059_alpha.png",
+    "source_sha256": "cc109bf4c62a5a606c3ae6c5a3184d8b2d5bff47e402d3a235d11461ab5e92e5",
+    "cell": [
+      443,
+      0,
+      886,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      500.51841797471866
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        79.0
+      ],
+      "score": 0.6156154870986938,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      597.4729634292642
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "eba2a792e774e608e1ea7557336420606a3d286f19fbd74326738e20e11ca454",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 54,
+    "gait_frame": 6,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_052_059_alpha.png",
+    "source_sha256": "cc109bf4c62a5a606c3ae6c5a3184d8b2d5bff47e402d3a235d11461ab5e92e5",
+    "cell": [
+      886,
+      0,
+      1329,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      223.590909090909,
+      492.45486927472007
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        235.0,
+        100.0
+      ],
+      "score": 0.6446673274040222,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      615.1821420019928
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "23e209fe12b2293818c4f5c3d7ec4d9e8d59be9bc76659975347f2bd5a7411fb",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 55,
+    "gait_frame": 7,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_052_059_alpha.png",
+    "source_sha256": "cc109bf4c62a5a606c3ae6c5a3184d8b2d5bff47e402d3a235d11461ab5e92e5",
+    "cell": [
+      1329,
+      0,
+      1772,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      493.77205553536965
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        113.0
+      ],
+      "score": 0.6630851626396179,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      632.4538737171879
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "210fe35fff3a80775cb3837dcc65477ac26f853e6f53f84011efb7a0731a9a39",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 60,
+    "gait_frame": 12,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      0,
+      0,
+      443,
+      443
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      232.87837837837833,
+      563.0766678979494
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        229.5,
+        122.5
+      ],
+      "score": 0.8374852538108826,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      712.0631543844358
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "396f69009d9451a39a48672011e8625b02d670be81cd10372e149e8f7df8c4cd",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 61,
+    "gait_frame": 13,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      443,
+      0,
+      886,
+      443
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      232.87837837837833,
+      576.7007619782432
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        229.5,
+        123.5
+      ],
+      "score": 0.7974569797515869,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      726.903464680946
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "b15e3edb54da2a408ebfe626bb93678c22fc56ae999b5191d6cc0124b626e723",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 62,
+    "gait_frame": 14,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      886,
+      0,
+      1329,
+      443
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      231.66216216216208,
+      592.4279986826627
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        230.5,
+        122.5
+      ],
+      "score": 0.8306704759597778,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      741.4144851691491
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "ebd4a995f8cb3b77ec07cdaa50aba07f4bfd05b45a9018a4ad317124babce98d",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 63,
+    "gait_frame": 15,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      1329,
+      0,
+      1772,
+      443
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      231.66216216216208,
+      605.3549282483118
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        230.5,
+        123.5
+      ],
+      "score": 0.8001644015312195,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      755.5576309510146
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "6907f0255cd4c166aff3e19ec9f76de62a937b326e2dcf5875f2fee9731be14d",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 64,
+    "gait_frame": 16,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      0,
+      443,
+      443,
+      886
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      232.87837837837833,
+      620.3219475900103
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        229.5,
+        122.5
+      ],
+      "score": 0.8330845236778259,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      769.3084340764967
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "0ef95b37c14f07944eb74c0b38972e6f2fcdd5009684a38974cf88bf5b820851",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 65,
+    "gait_frame": 17,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      443,
+      443,
+      886,
+      886
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      232.87837837837833,
+      633.6645505148335
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        229.5,
+        122.5
+      ],
+      "score": 0.8216807246208191,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      782.6510370013201
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "40683d23b7dc3dbfa7e53d3e0e7091d8f2bde0a069d54193412fb0c4cb7740e2",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 66,
+    "gait_frame": 18,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      886,
+      443,
+      1329,
+      886
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      231.66216216216208,
+      646.5888678865142
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        230.5,
+        122.5
+      ],
+      "score": 0.8358977437019348,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      795.5753543730007
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "bb85d5db909b62a54c36ca63bad0c8f34ff29480c4ec5e4d5a094985b3f1d753",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 67,
+    "gait_frame": 19,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_060_067.png",
+    "source_sha256": "86e7fe72e4954276808aa99e428050e033e3e703cb8d32739cd60cbac0b58141",
+    "cell": [
+      1329,
+      443,
+      1772,
+      886
+    ],
+    "scale": 1.2162162162162162,
+    "origin": [
+      231.66216216216208,
+      660.3054760360408
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 222,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        230.5,
+        121.5
+      ],
+      "score": 0.7761154174804688,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      808.075746306311
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "881a33812a46fc9ab1a876a4ad5bc8f21ad3d8ac082850bbec039204d9009792",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 68,
+    "gait_frame": 20,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      0,
+      0,
+      443,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      236.47727272727275,
+      632.9910854833543
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        224.5,
+        152.5
+      ],
+      "score": 0.7349544763565063,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      820.1501763924452
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "8eefa85c2b8b090bf31c874875223be1c1a403d4e9822d1936d310bbfb37be7f",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 69,
+    "gait_frame": 21,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      443,
+      0,
+      886,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      235.25,
+      644.6402024095689
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        225.5,
+        152.5
+      ],
+      "score": 0.7362673878669739,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      831.7992933186598
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "d3e0a506f6dee499c4b7f4cd6ef07a0c3a0f641a1b7d5d49bc1d66e72e79d41c",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 70,
+    "gait_frame": 22,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      886,
+      0,
+      1329,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      235.25,
+      652.1844489346022
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        225.5,
+        155.5
+      ],
+      "score": 0.680199921131134,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      843.0253580255112
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "1d9455884cd54a7d3e84dffe8e55d748031e6c5bb67d4e1f04a37194949c3483",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 71,
+    "gait_frame": 23,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      1329,
+      0,
+      1772,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      231.56818181818176,
+      660.5358034588326
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        228.5,
+        157.5
+      ],
+      "score": 0.7334538698196411,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      853.8312580042872
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "cf90b5b9e37ba4b60e703b0c70b676d2afa887f16a71cfa28cd11cc1c0f1f1c6",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 72,
+    "gait_frame": 24,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      0,
+      443,
+      443,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      234.02272727272725,
+      664.7881158840778
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        226.5,
+        162.5
+      ],
+      "score": 0.631328284740448,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      864.2199340658959
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "7579b76ff371d7f53726294c28d3bf3b4a0773362430ee09d3ac05a91af660b6",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 73,
+    "gait_frame": 25,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      443,
+      443,
+      886,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      232.18181818181824,
+      672.922831139701
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        228.0,
+        164.0
+      ],
+      "score": 0.741174042224884,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      874.1955584124283
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "0f5537317f079ab7089e306c5211a80b25291c707f7c887bc55716c4e1d1e4d4",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 74,
+    "gait_frame": 26,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      886,
+      443,
+      1329,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      231.56818181818176,
+      680.654641250313
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        228.5,
+        165.5
+      ],
+      "score": 0.7620897889137268,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      883.7682776139493
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "36248f0424edd3e0581c20e2c2b7e0a912f10334b5dc62a9e516d3562ae7728e",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 75,
+    "gait_frame": 27,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_068_075.png",
+    "source_sha256": "cdd52bb0fd5821e865efc3fd70a2570d61d3f21cde10be790215bb193c098c1b",
+    "cell": [
+      1329,
+      443,
+      1772,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      228.5,
+      687.9973420391152
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        231.0,
+        167.0
+      ],
+      "score": 0.7409628033638,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      892.9518874936608
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "36b5db84ca9a319b6554bc510ca76e929c8c4a77517b5f655674c28d8286fe0f",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 76,
+    "gait_frame": 28,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      233.6428571428571,
+      570.0474179874525
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        216.5,
+        258.0
+      ],
+      "score": 0.8050660490989685,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      901.7617037017383
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "3cbe8a194eb65d26181ee33025283ac0b8dbb7bc7643febd2649f1acc46dee50",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 77,
+    "gait_frame": 29,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      233.6428571428571,
+      577.8562445788994
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        216.5,
+        258.5
+      ],
+      "score": 0.7705859541893005,
+      "matched_core_size": [
+        59,
+        61
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      910.2133874360421
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "1cc4867364513e1869dc8b5032b629cac7dac24ef109796caa5018eab1814f81",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 78,
+    "gait_frame": 30,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      233.6428571428571,
+      585.9647991223089
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        216.5,
+        258.5
+      ],
+      "score": 0.7974693775177002,
+      "matched_core_size": [
+        59,
+        61
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      918.3219419794518
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "2bc6011b50a9e560772a017da288bbabd821249214bb3de7bd52b53e05372191",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 79,
+    "gait_frame": 31,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      234.92857142857133,
+      593.7437929181592
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        215.5,
+        258.5
+      ],
+      "score": 0.7703636288642883,
+      "matched_core_size": [
+        59,
+        61
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      926.1009357753021
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "52464b289a28d514e66b90c81dfe8e41149b1b72da63c0a09de2a068e0ff01e0",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 80,
+    "gait_frame": 32,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      233.6428571428571,
+      581.2762689723747
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        216.5,
+        274.0
+      ],
+      "score": 0.7780517339706421,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      933.5619832580891
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "14ebd7ab8c198c335bcf1bb396734ea42643a88c455324fd88e5ca76d1ce157d",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 81,
+    "gait_frame": 33,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      237.5,
+      588.428776351836
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        213.5,
+        274.0
+      ],
+      "score": 0.805928647518158,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      940.7144906375503
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "dc99285839b2a2b4dbc804b59369094f5be78783ee2972889405ea6071702013",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 82,
+    "gait_frame": 34,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      240.07142857142856,
+      590.1370803662812
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        211.5,
+        278.0
+      ],
+      "score": 0.5993702411651611,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      947.5656517948527
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "047ca315fe3d1e2cf6e72c7dd91ffc2b22c4a8c764f5173ef758ed789e505356",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 83,
+    "gait_frame": 35,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_076_083b.png",
+    "source_sha256": "170cc45eb3579aad364a5e9c466ee3b478f17e72293b4fa090ed84b030ab019d",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      242.6428571428571,
+      596.6920893653505
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        209.5,
+        278.0
+      ],
+      "score": 0.5951783657073975,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      954.1206607939218
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "039b3af57309ed2394d0636f4a3472289f1033d85a75d07283beeb2d5c10c760",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 84,
+    "gait_frame": 36,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      236.8571428571429,
+      591.3830934277175
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        214.0,
+        287.0
+      ],
+      "score": 0.7906953692436218,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      960.3830934277174
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "ccc1f61c51d1a80ae87b46d00a42643d742e4113dacd3592d061ac56c61e878c",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 85,
+    "gait_frame": 37,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      242.0,
+      598.641115820672
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        210.0,
+        286.0
+      ],
+      "score": 0.7896656394004822,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      966.3554015349579
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "d2bc06930e1a9ab41ae7c177e4bae83ff724f16347f762bdb0ae534d05a39674",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 86,
+    "gait_frame": 38,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      251.0,
+      606.8966037330649
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        203.0,
+        284.0
+      ],
+      "score": 0.6275529861450195,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      972.039460875922
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "d1f88d5b9fb56ef79d9591ef37fa182fc09893739fed798ee1e9f7eb801504b9",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 87,
+    "gait_frame": 39,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      257.42857142857144,
+      609.7228302171025
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        198.0,
+        286.0
+      ],
+      "score": 0.6979235410690308,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      977.4371159313882
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "69fd3a8501e6099f2ab522f37cc36a85b9c0cd4272cac1251d06226667c9a1b3",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 88,
+    "gait_frame": 40,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      249.71428571428578,
+      634.1221009075662
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        204.0,
+        271.0
+      ],
+      "score": 0.762897253036499,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      982.5506723361376
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "acc4e7a3ab81af6205a048b7dddd15b458c28b0259ce2a84bec81bf50e6dc810",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 89,
+    "gait_frame": 41,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      260.0,
+      645.3832985963011
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        196.0,
+        266.0
+      ],
+      "score": 0.7725653052330017,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      987.3832985963011
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "a2829c0c6d194618737a851cbf7b52099b5385a4719340c3a878497c60a21738",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 90,
+    "gait_frame": 42,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      263.8571428571429,
+      647.3678832524174
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        193.0,
+        268.0
+      ],
+      "score": 0.7652068138122559,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      991.9393118238462
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "db375e0acf57f76289c47e4c910598cbdedaff3b1c3088fd1a860a6632a0c099",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 91,
+    "gait_frame": 43,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_084_091b.png",
+    "source_sha256": "b17928662cbb6f2405b6c11324c3daebfcd25254b3f2be7690dc2df3f77e94ce",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      265.1428571428571,
+      649.0814787995282
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        192.0,
+        270.0
+      ],
+      "score": 0.7853882908821106,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      996.2243359423853
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "bc7452c0f549e957676a4d9043977d94973ede27654927af0a210bad90f20b4f",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 92,
+    "gait_frame": 44,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      240.71428571428578,
+      638.9596195030958
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        211.0,
+        281.0
+      ],
+      "score": 0.7445215582847595,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1000.2453337888101
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "b5bdd2ba047cd320f7015ddd913994c6eb95388944bf45a6340a88b93b2e9c82",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 93,
+    "gait_frame": 45,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      242.0,
+      641.4390970638383
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        210.0,
+        282.0
+      ],
+      "score": 0.7905312776565552,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1004.0105256352668
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "701409ca4c49072819af0e67c84ce98754063bfe07b91c6bbf2ecdc48a7e4043",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 94,
+    "gait_frame": 46,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      243.28571428571422,
+      644.9577865460251
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        209.0,
+        282.0
+      ],
+      "score": 0.7858098745346069,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1007.5292151174538
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "1a84aae85901d6ed8e45b01720e761649aed11e1033271b22ddeecb2d54b85e1",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 95,
+    "gait_frame": 47,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      245.8571428571429,
+      641.8115489846348
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        207.0,
+        287.0
+      ],
+      "score": 0.8006229400634766,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1010.8115489846348
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "5a3dad89e362ad4c8d454209ecae2d424de0f3fe63851a11153803132f1e816f",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 96,
+    "gait_frame": 0,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      240.07142857142856,
+      644.2253822922748
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        211.5,
+        287.5
+      ],
+      "score": 0.7416529059410095,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1013.8682394351321
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "17b6a0a6620415db51d7b328cc51882c6855ec1f4420366753169438fd339f2a",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 97,
+    "gait_frame": 1,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      241.3571428571429,
+      648.3531589515653
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        210.5,
+        286.5
+      ],
+      "score": 0.7019484639167786,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1016.7103018087082
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "93d9dc85b4d861befad6b8ba9ccaefbf9e4a58416c71740e0794fb0f8a79f529",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 98,
+    "gait_frame": 2,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      243.28571428571422,
+      650.3488602584648
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        209.0,
+        287.0
+      ],
+      "score": 0.7449545860290527,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1019.3488602584647
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "1f5863befb640bd2b84b8f1f109843b89bdd2c89917c1bb7e5cdff1adc42a1b1",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 99,
+    "gait_frame": 3,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_092_099b.png",
+    "source_sha256": "9e61c414b46cb7a79794ae364b1fb07815be187315eaa2ea6ea1945d51d41dd6",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      243.92857142857133,
+      650.8662655812079
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        208.5,
+        288.5
+      ],
+      "score": 0.7083190679550171,
+      "matched_core_size": [
+        75,
+        77
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1021.7948370097794
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "bff7f54634feea91c33113198aa77c542420ef771f7195fee70aef473226161b",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 100,
+    "gait_frame": 4,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      231.71428571428567,
+      671.7730150054331
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        218.0,
+        274.0
+      ],
+      "score": 0.7346798777580261,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1024.0587292911473
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "5a46cb6f4985fa73e0fa36b95ce1ee86196f095daf00ad762cd510f13e47eac5",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 101,
+    "gait_frame": 5,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      236.8571428571429,
+      677.7218989517669
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        214.0,
+        271.0
+      ],
+      "score": 0.7632178664207458,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1026.1504703803384
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "228dabecba7fb5d6db1925dbbe7c62c94a057c6dd967e47e55591ae5226bcef5",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 102,
+    "gait_frame": 6,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      249.71428571428578,
+      679.6507831940053
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        204.0,
+        271.0
+      ],
+      "score": 0.7752832174301147,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1028.0793546225766
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "eb18bb1336a0009bf567c381fbd360ee82be37f8ac1131fe60959ecf09230022",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 103,
+    "gait_frame": 7,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      253.57142857142856,
+      681.4254516986716
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        201.0,
+        271.0
+      ],
+      "score": 0.8110895752906799,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1029.854023127243
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "101d2d5efbb231ff68564f2e1cfc97484c09616b8e922c76bc2f25f2f721c831",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 104,
+    "gait_frame": 8,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      242.0,
+      742.1967875181667
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        210.0,
+        225.0
+      ],
+      "score": 0.7675666809082031,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1031.4825018038812
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "fe711cd85d31fff5919bfb0b426432f92819d393c33e2aa5dc4d33827d263ab6",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 105,
+    "gait_frame": 9,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      244.57142857142856,
+      743.6865653982682
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        208.0,
+        225.0
+      ],
+      "score": 0.7858877182006836,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1032.9722796839826
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "26d7c74cfa2a5ff64693385f53ebb24598f53e517c6b93dd19ed4f72051837c1",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 106,
+    "gait_frame": 10,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      251.0,
+      745.044698998689
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        203.0,
+        225.0
+      ],
+      "score": 0.7336979508399963,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1034.3304132844032
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "4dcf2f6426eef30dc54104ace8ae9116bdcdda398a3c1fe39b59b5460f4a2cf9",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 107,
+    "gait_frame": 11,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_100_107b.png",
+    "source_sha256": "1a07ad7e61ace902952049ea0aa7c1a038d83a877646d591678c17a5613b5506",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      256.1428571428571,
+      746.2779278625985
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        199.0,
+        225.0
+      ],
+      "score": 0.7957913875579834,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512.0,
+      1035.5636421483127
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "a9d46c6e820108844e86135205a17efcea79c0c17cdc58fea29a7ffd5f5cd540",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "overhead",
+    "index": 0,
+    "gait_frame": 0,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      233.195652173913,
+      510.27173913043475
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        190.0,
+        361.0
+      ],
+      "score": 0.5484923124313354,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "03a8f89a971fdd16cd8d22d9ba0d357f90df4a172573cae8ec386379e77ea319"
+  },
+  {
+    "kind": "overhead",
+    "index": 1,
+    "gait_frame": 1,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      234.66304347826087,
+      510.27173913043475
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        189.0,
+        361.0
+      ],
+      "score": 0.6061069965362549,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "a571aaad8318212479a407aea34e66e0f84dd998254cfee33a6d366eee38fd5e"
+  },
+  {
+    "kind": "overhead",
+    "index": 2,
+    "gait_frame": 2,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      233.195652173913,
+      510.27173913043475
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        190.0,
+        361.0
+      ],
+      "score": 0.6454260945320129,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "4835d9df0bd8ec9cfe0c9ec1933809c7e89b96e6eef2e51283a0b518347c40a1"
+  },
+  {
+    "kind": "overhead",
+    "index": 3,
+    "gait_frame": 3,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      236.1304347826087,
+      510.27173913043475
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        188.0,
+        361.0
+      ],
+      "score": 0.6567509770393372,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "589ce20077ba0a7d2aae63d67e22b8fa882344df1145be9b50475dc9af8f7519"
+  },
+  {
+    "kind": "overhead",
+    "index": 4,
+    "gait_frame": 4,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      230.26086956521738,
+      508.8043478260869
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        192.0,
+        362.0
+      ],
+      "score": 0.618318498134613,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "3069b604e292d700a07a57f95e4715706a2084b44a648ca4c6c29d4b1508597a"
+  },
+  {
+    "kind": "overhead",
+    "index": 5,
+    "gait_frame": 5,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      231.7282608695652,
+      508.8043478260869
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        191.0,
+        362.0
+      ],
+      "score": 0.6975287199020386,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "1d4282559188e499744536aa954e0052df22029b1e3c5699b27f1f002687e159"
+  },
+  {
+    "kind": "overhead",
+    "index": 6,
+    "gait_frame": 6,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      233.195652173913,
+      508.8043478260869
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        190.0,
+        362.0
+      ],
+      "score": 0.7309445738792419,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "f53db439ecf5d3ada9072930521d39364d2596b3953fb4b042a2a4f04925610e"
+  },
+  {
+    "kind": "overhead",
+    "index": 7,
+    "gait_frame": 7,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+    "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.4673913043478262,
+    "origin": [
+      231.7282608695652,
+      510.27173913043475
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 184,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        191.0,
+        361.0
+      ],
+      "score": 0.6693230867385864,
+      "matched_core_size": [
+        66,
+        68
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "3cdf4c18e1b7064a6f7474cf6c72e11d25791334cb85d5d587c26530b8b062b8"
+  },
+  {
+    "kind": "overhead",
+    "index": 16,
+    "gait_frame": 16,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      0,
+      0,
+      443,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      224.8181818181818,
+      815.4090909090909
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        234.0,
+        183.0
+      ],
+      "score": 0.7712821960449219,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "672ff64eb2d182fb37d7d7e3542c9dbc9b95e60ee483479d4c8369d37daae3f7"
+  },
+  {
+    "kind": "overhead",
+    "index": 17,
+    "gait_frame": 17,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      443,
+      0,
+      886,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      223.59090909090907,
+      814.1818181818182
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        235.0,
+        184.0
+      ],
+      "score": 0.7538607120513916,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "238d5bbea8d4ad583cc39cf68a89772d47587616e5bde2f6acf2c4e19f7542b1"
+  },
+  {
+    "kind": "overhead",
+    "index": 18,
+    "gait_frame": 18,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      886,
+      0,
+      1329,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      814.1818181818182
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        184.0
+      ],
+      "score": 0.7292705774307251,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "30d4068b79fa7a00c5cc9d23b9b51174aca860f637ecf267a7dd49f6c7bc0c85"
+  },
+  {
+    "kind": "overhead",
+    "index": 19,
+    "gait_frame": 19,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      1329,
+      0,
+      1772,
+      443
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      221.13636363636363,
+      816.6363636363636
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        237.0,
+        182.0
+      ],
+      "score": 0.7372896075248718,
+      "matched_core_size": [
+        72,
+        74
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "3b2315a316d1baa6a0e73f97a3ef676e37de9d330a771551a9dbba0f5f9c6b72"
+  },
+  {
+    "kind": "overhead",
+    "index": 20,
+    "gait_frame": 20,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      0,
+      443,
+      443,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      223.59090909090907,
+      822.7727272727273
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        235.0,
+        177.0
+      ],
+      "score": 0.7354110479354858,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "42f01430c41ca784b2c3daa123039c433464e28e8f115e6566c620aa9e68760e"
+  },
+  {
+    "kind": "overhead",
+    "index": 21,
+    "gait_frame": 21,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      443,
+      443,
+      886,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      822.7727272727273
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        177.0
+      ],
+      "score": 0.750663161277771,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "9eba3896dd5556d654fafc55827f22eb958d46aabaad7dc35028405d25ea38a9"
+  },
+  {
+    "kind": "overhead",
+    "index": 22,
+    "gait_frame": 22,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      886,
+      443,
+      1329,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      222.36363636363637,
+      822.7727272727273
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        236.0,
+        177.0
+      ],
+      "score": 0.7449712753295898,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "252678ccec61388b8e38d13af92393a07e3120031a306d331dea6d67c9f1624b"
+  },
+  {
+    "kind": "overhead",
+    "index": 23,
+    "gait_frame": 23,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+    "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+    "cell": [
+      1329,
+      443,
+      1772,
+      886
+    ],
+    "scale": 1.2272727272727273,
+    "origin": [
+      221.13636363636363,
+      822.7727272727273
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 220,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        237.0,
+        177.0
+      ],
+      "score": 0.7260642647743225,
+      "matched_core_size": [
+        74,
+        76
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "42670bdc44974b03439d207eac6df6314b15f56b89cdbbbbf06bcb08cceaffad"
+  },
+  {
+    "kind": "overhead",
+    "index": 24,
+    "gait_frame": 24,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      0,
+      0,
+      362,
+      543
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      201.5,
+      673.3684210526316
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        218.5,
+        258.0
+      ],
+      "score": 0.7729361057281494,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "e0eead049415c301b3162db32d0e52614d434d589b7d926d2cdd8e9cefd9274f"
+  },
+  {
+    "kind": "overhead",
+    "index": 25,
+    "gait_frame": 25,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      362,
+      0,
+      724,
+      543
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      202.92105263157896,
+      676.2105263157895
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        217.5,
+        256.0
+      ],
+      "score": 0.7305545210838318,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "a9caedf0cce20bb5416c7600c2d5cb0b075dea53e75de072c0ea868cb94dc8f4"
+  },
+  {
+    "kind": "overhead",
+    "index": 26,
+    "gait_frame": 26,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      724,
+      0,
+      1086,
+      543
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      202.92105263157896,
+      676.2105263157895
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        217.5,
+        256.0
+      ],
+      "score": 0.7884311079978943,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "5ec61eae10dbc0140467077bed5c19490b84ac33dc479c8d8616d5adc72cb118"
+  },
+  {
+    "kind": "overhead",
+    "index": 27,
+    "gait_frame": 27,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      1086,
+      0,
+      1448,
+      543
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      200.07894736842104,
+      677.6315789473684
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        219.5,
+        255.0
+      ],
+      "score": 0.7803052663803101,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "788eeca7cc3a5822336550a6945a5bbba29cbf9b9c5be7b32a8bf68b700b4ab9"
+  },
+  {
+    "kind": "overhead",
+    "index": 28,
+    "gait_frame": 28,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      0,
+      543,
+      362,
+      1086
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      201.5,
+      680.4736842105262
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        218.5,
+        253.0
+      ],
+      "score": 0.7531546950340271,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "426fafb7cec76fad6042aa560edc5d283b24a3a281cf952c4e31ffa8a5d5427b"
+  },
+  {
+    "kind": "overhead",
+    "index": 29,
+    "gait_frame": 29,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      362,
+      543,
+      724,
+      1086
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      201.5,
+      680.4736842105262
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        218.5,
+        253.0
+      ],
+      "score": 0.7615589499473572,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "a9d6a9f9bd1ba154838486bbb73075414492f2eb5fbd574030e29faf9d9a484c"
+  },
+  {
+    "kind": "overhead",
+    "index": 30,
+    "gait_frame": 30,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      724,
+      543,
+      1086,
+      1086
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      200.07894736842104,
+      680.4736842105262
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        219.5,
+        253.0
+      ],
+      "score": 0.7449254989624023,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "b0f7f4e5aa87c88fb51fa565218af877dd0625db6ed80653d4b751815dc6ca3c"
+  },
+  {
+    "kind": "overhead",
+    "index": 31,
+    "gait_frame": 31,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+    "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+    "cell": [
+      1086,
+      543,
+      1448,
+      1086
+    ],
+    "scale": 1.4210526315789473,
+    "origin": [
+      197.23684210526318,
+      681.8947368421052
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 190,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        221.5,
+        252.0
+      ],
+      "score": 0.730657696723938,
+      "matched_core_size": [
+        61,
+        62
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "22171f4edf0edc4b759639729edec38bf3868e62ec6b7e236fa381df1e4c3017"
+  },
+  {
+    "kind": "overhead",
+    "index": 40,
+    "gait_frame": 40,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      0,
+      0,
+      443,
+      443
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      212.4285714285714,
+      740.4285714285713
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        233.0,
+        233.0
+      ],
+      "score": 0.6684756278991699,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "bb6ae243d25b8be2ee8b166a04164313f9cce760765e1e5b02ba8cab457346e0"
+  },
+  {
+    "kind": "overhead",
+    "index": 41,
+    "gait_frame": 41,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      443,
+      0,
+      886,
+      443
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      212.4285714285714,
+      739.1428571428571
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        233.0,
+        234.0
+      ],
+      "score": 0.6767328381538391,
+      "matched_core_size": [
+        70,
+        72
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "05215bc11b0e287aefb85d846f6dcc9836fe7ab7a10781c16b0a7179fb54140c"
+  },
+  {
+    "kind": "overhead",
+    "index": 42,
+    "gait_frame": 42,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      886,
+      0,
+      1329,
+      443
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      211.1428571428571,
+      741.7142857142857
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        234.0,
+        232.0
+      ],
+      "score": 0.764261782169342,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "8fda2a15dbf291d8477110b6cdf54891d539b0e45c823d4d15b18f44867793b5"
+  },
+  {
+    "kind": "overhead",
+    "index": 43,
+    "gait_frame": 43,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      1329,
+      0,
+      1772,
+      443
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      211.1428571428571,
+      741.7142857142857
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        234.0,
+        232.0
+      ],
+      "score": 0.6312323212623596,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "e3261ad4f402b87b4d0a4b27393b802fca9a3d8b393b2c65e16f3b498d4f6f43"
+  },
+  {
+    "kind": "overhead",
+    "index": 44,
+    "gait_frame": 44,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      0,
+      443,
+      443,
+      886
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      211.1428571428571,
+      739.1428571428571
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        234.0,
+        234.0
+      ],
+      "score": 0.6832848787307739,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "5fcb7065ee095e1217bdc1af6696335b001164c0a3c7af691da675204ae675ab"
+  },
+  {
+    "kind": "overhead",
+    "index": 45,
+    "gait_frame": 45,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      443,
+      443,
+      886,
+      886
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      212.4285714285714,
+      739.1428571428571
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        233.0,
+        234.0
+      ],
+      "score": 0.63253253698349,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "49f6b8c670098f99038104f838bc8e2865971f95ae5772f5d3c6eb014ebc2e1c"
+  },
+  {
+    "kind": "overhead",
+    "index": 46,
+    "gait_frame": 46,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+    "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+    "cell": [
+      886,
+      443,
+      1329,
+      886
+    ],
+    "scale": 1.2857142857142858,
+    "origin": [
+      211.1428571428571,
+      739.1428571428571
+    ],
+    "alpha_floor": 16,
+    "rigid_registration": {
+      "observed_main_pauldron_pair_span": 210,
+      "target_main_pauldron_pair_span": 270,
+      "main_cranium_reference_band": [
+        120,
+        135
+      ]
+    },
+    "crown_location_match": {
+      "point": [
+        234.0,
+        234.0
+      ],
+      "score": 0.7065382599830627,
+      "matched_core_size": [
+        68,
+        70
+      ]
+    },
+    "guide_head_centre": [
+      512,
+      1040
+    ],
+    "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+    "output_sha256": "e6b75cbe12c7ccec0bdff96b6cf1cba6415f70874b1f860ac5f3005c46c6c4c7"
+  },
+  {
+    "kind": "transition",
+    "index": 48,
+    "gait_frame": 0,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_048_051b.png",
+    "source_sha256": "3187f3927015af148b0560c57c1421fc5ffe17f508ae6fe33c959df1e6ff312c",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.062992125984252,
+    "origin": [
+      219.67716535433067,
+      319.0321051215674
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        275,
+        175
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      275,
+      175
+    ],
+    "guide_head_centre": [
+      512.0,
+      505.0557271688114
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "3cde8db78c57e9497413095ea08a64d95063e415ea9801473b79bd4d185e50aa",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 49,
+    "gait_frame": 1,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_048_051b.png",
+    "source_sha256": "3187f3927015af148b0560c57c1421fc5ffe17f508ae6fe33c959df1e6ff312c",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.0843373493975903,
+    "origin": [
+      221.39759036144574,
+      328.7064758410396
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        268,
+        180
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      268,
+      180
+    ],
+    "guide_head_centre": [
+      512.0,
+      523.8871987326058
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "1c770beedf288358c725ff246c1e21e163495945bb2d81b97468805da861c792",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 50,
+    "gait_frame": 2,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_050_model_join.png",
+    "source_sha256": "c3f45655c40d43b24a3f193fa64065f0b3c3c3ad7c8459495fac2f76c4607532",
+    "cell": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "scale": 0.4954128440366973,
+    "origin": [
+      249.9266055045871,
+      392.4285816968086
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        529,
+        303
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      529,
+      303
+    ],
+    "guide_head_centre": [
+      512.0,
+      542.5386734399278
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "4f72e223ef5cccd1ffc90c1edfb97247ecfa22816717e749a5309af52b0e60c8",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 51,
+    "gait_frame": 3,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_051_contact_armor.png",
+    "source_sha256": "1000a4e73aad8e83c2bf0831aba72df154aae3d5804fe839198bb06fd3ab0050",
+    "cell": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "scale": 0.52,
+    "origin": [
+      245.76,
+      294.8175001700216
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        512,
+        512
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      512,
+      512
+    ],
+    "guide_head_centre": [
+      512.0,
+      561.0575001700216
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "21d2f62d481b3d1ca855d4439923e73a8a95bf4d2cdff4e5faea499ee1b606c9",
+    "canonical_head_registration_note": "Adult cranium center calibrated from approved source35; same physical body convention as new36\u201347."
+  },
+  {
+    "kind": "transition",
+    "index": 36,
+    "gait_frame": 36,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039_view_corrected.png",
+    "source_sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.17,
+    "origin": [
+      200.78000000000003,
+      112.02558580459552
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      266.0,
+      147.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      284.0155858045955
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 106,
+      "observed_main_pauldron_pair_span": 237,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "source_pose_index": 37,
+    "source_pose_gait_frame": 37,
+    "exposure": "Adjacent complete drawn recovery pose held for two 60Hz samples; actual camera/body registration retained.",
+    "output_sha256": "1ed84867122fd5153d57e80bdcc6dd9256fa88c205654bef907f010a5986cf6a"
+  },
+  {
+    "kind": "transition",
+    "index": 37,
+    "gait_frame": 37,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039_view_corrected.png",
+    "source_sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.17,
+    "origin": [
+      200.78000000000003,
+      127.84946814910487
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      266.0,
+      147.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      299.83946814910485
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 106,
+      "observed_main_pauldron_pair_span": 237,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "6d6297fd40807fc1a0f9676801b78bd9fb97a59ef3a190360f477042956f281d"
+  },
+  {
+    "kind": "transition",
+    "index": 38,
+    "gait_frame": 38,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039_view_corrected.png",
+    "source_sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.17,
+    "origin": [
+      201.365,
+      139.77326444038974
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      265.5,
+      151.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      316.4432644403897
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 105,
+      "observed_main_pauldron_pair_span": 237,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "d182235ec271c04f916b23aee067c1fefb60965bf2c3c17d10fdf757f20fd7cc"
+  },
+  {
+    "kind": "transition",
+    "index": 39,
+    "gait_frame": 39,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_036_039_view_corrected.png",
+    "source_sha256": "f8ef4b546832a36936f419e2e88aeabe35c5a877cd0da76c316104cadda45732",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.17,
+    "origin": [
+      201.365,
+      129.58507822849785
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      265.5,
+      174.5
+    ],
+    "guide_head_centre": [
+      512.0,
+      333.75007822849784
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 105,
+      "observed_main_pauldron_pair_span": 238,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "a30255f9cd59e001c48928f5363af0018946d718deb124dd05c0f80416066ee0"
+  },
+  {
+    "kind": "transition",
+    "index": 40,
+    "gait_frame": 40,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043_view_corrected.png",
+    "source_sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.13,
+    "origin": [
+      228.935,
+      173.13387205285412
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      250.5,
+      158.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      351.6738720528541
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 115,
+      "observed_main_pauldron_pair_span": 246,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "source_pose_index": 41,
+    "source_pose_gait_frame": 41,
+    "exposure": "Adjacent complete drawn recovery pose held for two 60Hz samples; actual camera/body registration retained.",
+    "output_sha256": "6b7d1f40cc11915d66d39ac155a0415939640ee755c5cd2c0dcefd135df11617"
+  },
+  {
+    "kind": "transition",
+    "index": 41,
+    "gait_frame": 41,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043_view_corrected.png",
+    "source_sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.13,
+    "origin": [
+      228.935,
+      191.58094449785833
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      250.5,
+      158.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      370.1209444978583
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 115,
+      "observed_main_pauldron_pair_span": 246,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "22768bc407ea36d55bae7ccd90d71fb6dfa85ce6aba900eeede1ff591417d5b1"
+  },
+  {
+    "kind": "transition",
+    "index": 42,
+    "gait_frame": 42,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043_view_corrected.png",
+    "source_sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.13,
+    "origin": [
+      215.94000000000005,
+      194.6315227348155
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      262.0,
+      172.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      388.9915227348155
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 112,
+      "observed_main_pauldron_pair_span": 229,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "00b1b10e50b0c54028a405ca9a6bd5bbf99b1e1aa50c68aa25fd8e2431d4bc39"
+  },
+  {
+    "kind": "transition",
+    "index": 43,
+    "gait_frame": 43,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_040_043_view_corrected.png",
+    "source_sha256": "dc4f30473b6e0c82d2e4e5e150edd9e474dfe9751239d4dbc6b1559c0181cc65",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.13,
+    "origin": [
+      228.37,
+      187.8311238973584
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      251.0,
+      195.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      408.18112389735836
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 116,
+      "observed_main_pauldron_pair_span": 248,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "b39ce65ef6efc425c912217064a5e70f8a0608dc3b4810a7723cf8a880d73df4"
+  },
+  {
+    "kind": "transition",
+    "index": 44,
+    "gait_frame": 44,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047_view_corrected.png",
+    "source_sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      239.29999999999995,
+      247.22160529890664
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      252.5,
+      167.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      427.58160529890665
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 115,
+      "observed_main_pauldron_pair_span": 249,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "source_pose_index": 45,
+    "source_pose_gait_frame": 45,
+    "exposure": "Adjacent complete drawn recovery pose held for two 60Hz samples; actual camera/body registration retained.",
+    "output_sha256": "c96b7bf9edc56827ca3ebaddd3f2c2d58ac827c6c8d98789974360150a41db9f"
+  },
+  {
+    "kind": "transition",
+    "index": 45,
+    "gait_frame": 45,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047_view_corrected.png",
+    "source_sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      239.29999999999995,
+      266.7220512919205
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      252.5,
+      167.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      447.0820512919205
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 115,
+      "observed_main_pauldron_pair_span": 249,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "99e4cc91757d2ad7cfcc842d3f550adb7eee41d4844e8142eca5c6693bdc6d18"
+  },
+  {
+    "kind": "transition",
+    "index": 46,
+    "gait_frame": 46,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047_view_corrected.png",
+    "source_sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      235.51999999999998,
+      276.4897639198723
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      256.0,
+      176.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      466.56976391987234
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 118,
+      "observed_main_pauldron_pair_span": 251,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "09556d94246c618ae194f928fa3a6f588a1ae161a44d43666dfb337927e27871"
+  },
+  {
+    "kind": "transition",
+    "index": 47,
+    "gait_frame": 47,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_044_047_view_corrected.png",
+    "source_sha256": "929d5f105bcb886551c67b1fd3af5e8fe30a3053479637b321b14756ef98665d",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      236.59999999999997,
+      277.4915999390612
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      255.0,
+      193.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      485.9315999390612
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 120,
+      "observed_main_pauldron_pair_span": 252,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "785e1a19fb39bf1481e3fdc33f8cef824d8def96f741e2c66b341707d9f0bfac"
+  },
+  {
+    "kind": "transition",
+    "index": 56,
+    "gait_frame": 8,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059b.png",
+    "source_sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.18,
+    "origin": [
+      199.89000000000004,
+      400.8618143847517
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      264.5,
+      210.5
+    ],
+    "guide_head_centre": [
+      512.0,
+      649.2518143847517
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 101,
+      "observed_main_pauldron_pair_span": 231,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "a47f9c1679a8157cd2ac14270e8a176eb2d469c018f3c042fd9cb3c63848b1ce"
+  },
+  {
+    "kind": "transition",
+    "index": 57,
+    "gait_frame": 9,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059b.png",
+    "source_sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.18,
+    "origin": [
+      200.48000000000002,
+      402.4355779134662
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      264.0,
+      223.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      665.5755779134662
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 104,
+      "observed_main_pauldron_pair_span": 232,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "6fc2c0a5f63cc732b6a268af3e77013ab2c1230659bb5bfd993fc55c40053f4c"
+  },
+  {
+    "kind": "transition",
+    "index": 58,
+    "gait_frame": 10,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059b.png",
+    "source_sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.18,
+    "origin": [
+      201.66000000000003,
+      396.4824651589882
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      263.0,
+      241.5
+    ],
+    "guide_head_centre": [
+      512.0,
+      681.4524651589882
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 102,
+      "observed_main_pauldron_pair_span": 232,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "42ade391ee7c97adb70aebc43512299e51aa6353ce86e41458e29c2ea7ad321d"
+  },
+  {
+    "kind": "transition",
+    "index": 59,
+    "gait_frame": 11,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/transition_056_059b.png",
+    "source_sha256": "df9a44bdd24cedc2fad32845525f707b78c71adb9dd508cb8006713146a0de72",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.18,
+    "origin": [
+      201.07,
+      406.6484712277206
+    ],
+    "alpha_floor": 16,
+    "observed_whole_cranium_centre": [
+      263.5,
+      246.0
+    ],
+    "guide_head_centre": [
+      512.0,
+      696.9284712277206
+    ],
+    "rigid_registration": {
+      "observed_main_cranium_width": 103,
+      "observed_main_pauldron_pair_span": 233,
+      "uncertainty_source_pixels": {
+        "cranium_edges": 5,
+        "center": 5,
+        "main_caps": 8
+      }
+    },
+    "method": "Uniform complete-figure scale from observed rigid cranium/pauldron widths, one density per master; actual cranium center registers to the calibrated adult source35 model projected through the shot camera. No eye-template size or occupied-height fitting.",
+    "output_sha256": "2370da5ba8c7dff5337940e5b9e32e4cb7b865daa6bc9e0459ed3264aa29bac0"
+  },
+  {
+    "kind": "overhead",
+    "index": 8,
+    "gait_frame": 8,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+    "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+    "cell": [
+      0,
+      0,
+      656,
+      599
+    ],
+    "scale": 0.84,
+    "origin": [
+      210.44,
+      796.82
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      283,
+      197,
+      435,
+      382
+    ],
+    "observed_crown_center": [
+      359.0,
+      289.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        190,
+        505
+      ],
+      "observed_main_pauldron_pair_span": 315,
+      "projected_crown_width": 127.67999999999999,
+      "projected_main_cap_pair_span": 264.59999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "576665d2388a4acea1a29435f3f307aa7f2785f21d230279091b0c2c3ae01dce"
+  },
+  {
+    "kind": "overhead",
+    "index": 9,
+    "gait_frame": 9,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+    "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+    "cell": [
+      656,
+      0,
+      1312,
+      599
+    ],
+    "scale": 0.84,
+    "origin": [
+      210.86,
+      794.72
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      280,
+      201,
+      437,
+      383
+    ],
+    "observed_crown_center": [
+      358.5,
+      292.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        185,
+        503
+      ],
+      "observed_main_pauldron_pair_span": 318,
+      "projected_crown_width": 131.88,
+      "projected_main_cap_pair_span": 267.12,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "499c9b5952c19c91ce004325411bf011446d49e0fef99009d72f27461268c0f0"
+  },
+  {
+    "kind": "overhead",
+    "index": 10,
+    "gait_frame": 10,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+    "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+    "cell": [
+      0,
+      599,
+      656,
+      1198
+    ],
+    "scale": 0.84,
+    "origin": [
+      210.86,
+      796.82
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      282,
+      201,
+      435,
+      378
+    ],
+    "observed_crown_center": [
+      358.5,
+      289.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        188,
+        501
+      ],
+      "observed_main_pauldron_pair_span": 313,
+      "projected_crown_width": 128.51999999999998,
+      "projected_main_cap_pair_span": 262.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "ee04fc31de213eebee8c22b3325de2a40449060281f6d7a033a2e8171bcd9adb"
+  },
+  {
+    "kind": "overhead",
+    "index": 11,
+    "gait_frame": 11,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_08_11_arms_knees.png",
+    "source_sha256": "379434bf4c36c8b01ff73071b2c4fa6b5b3b9f559210d46cce626b72f7266f7b",
+    "cell": [
+      656,
+      599,
+      1312,
+      1198
+    ],
+    "scale": 0.84,
+    "origin": [
+      213.38,
+      793.88
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      276,
+      206,
+      435,
+      380
+    ],
+    "observed_crown_center": [
+      355.5,
+      293.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        185,
+        500
+      ],
+      "observed_main_pauldron_pair_span": 315,
+      "projected_crown_width": 133.56,
+      "projected_main_cap_pair_span": 264.59999999999997,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "42a16edfcb83f3ef039a761118d611a61de2b0e8425886d90d3ab2135856e0db"
+  },
+  {
+    "kind": "overhead",
+    "index": 12,
+    "gait_frame": 12,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+    "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      224.71999999999997,
+      563.18
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      206,
+      368,
+      326,
+      515
+    ],
+    "observed_crown_center": [
+      266.0,
+      441.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        143,
+        394
+      ],
+      "observed_main_pauldron_pair_span": 251,
+      "projected_crown_width": 129.60000000000002,
+      "projected_main_cap_pair_span": 271.08000000000004,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "e8c3cef455c61a8732571d52692eca68da678c418c17e2ee8723e509c3a63164"
+  },
+  {
+    "kind": "overhead",
+    "index": 13,
+    "gait_frame": 13,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+    "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      233.35999999999996,
+      561.56
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      196,
+      370,
+      320,
+      516
+    ],
+    "observed_crown_center": [
+      258.0,
+      443.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        143,
+        391
+      ],
+      "observed_main_pauldron_pair_span": 248,
+      "projected_crown_width": 133.92000000000002,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "00648472f9efab5371ce1b1089199296957b661becd29693022ef631319f7f63"
+  },
+  {
+    "kind": "overhead",
+    "index": 14,
+    "gait_frame": 14,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+    "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      224.18,
+      564.8
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      207,
+      366,
+      326,
+      514
+    ],
+    "observed_crown_center": [
+      266.5,
+      440.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        145,
+        392
+      ],
+      "observed_main_pauldron_pair_span": 247,
+      "projected_crown_width": 128.52,
+      "projected_main_cap_pair_span": 266.76,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "4c4c4ce8e4cd3ffeb18094926218177b208c4802f4d1d2257068105f6bf28699"
+  },
+  {
+    "kind": "overhead",
+    "index": 15,
+    "gait_frame": 15,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_12_15.png",
+    "source_sha256": "a42026149a350df10817f217bf06f2a391b602d7dfe229b8654ff1d218d9db7b",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      227.41999999999996,
+      561.02
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      201,
+      371,
+      326,
+      516
+    ],
+    "observed_crown_center": [
+      263.5,
+      443.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        148,
+        393
+      ],
+      "observed_main_pauldron_pair_span": 245,
+      "projected_crown_width": 135.0,
+      "projected_main_cap_pair_span": 264.6,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "7c4f53279a2907e4c8069ff54452c58e32ec5ada9a4922e6c4a1bc4b4931fafe"
+  },
+  {
+    "kind": "overhead",
+    "index": 32,
+    "gait_frame": 32,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+    "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      222.01999999999998,
+      646.88
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      207,
+      290,
+      330,
+      438
+    ],
+    "observed_crown_center": [
+      268.5,
+      364.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        142,
+        390
+      ],
+      "observed_main_pauldron_pair_span": 248,
+      "projected_crown_width": 132.84,
+      "projected_main_cap_pair_span": 267.84000000000003,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "47fe6d85a263d46386e4f4557f493c4494991704d933fa400ac94e080570d01b"
+  },
+  {
+    "kind": "overhead",
+    "index": 33,
+    "gait_frame": 33,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+    "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.08,
+    "origin": [
+      220.39999999999998,
+      645.8
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      209,
+      292,
+      331,
+      438
+    ],
+    "observed_crown_center": [
+      270.0,
+      365.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        140,
+        389
+      ],
+      "observed_main_pauldron_pair_span": 249,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "b8296f64af8d2177787bf2a9e69bd470cdf8bddd4a9616559402379b6f9ca919"
+  },
+  {
+    "kind": "overhead",
+    "index": 34,
+    "gait_frame": 34,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+    "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      222.56,
+      646.88
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      207,
+      290,
+      329,
+      438
+    ],
+    "observed_crown_center": [
+      268.0,
+      364.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        141,
+        390
+      ],
+      "observed_main_pauldron_pair_span": 249,
+      "projected_crown_width": 131.76000000000002,
+      "projected_main_cap_pair_span": 268.92,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "5921240e34f4dc8a1c4a7e9eb64d6acd39f2c1dc6536cc0887b181d436868612"
+  },
+  {
+    "kind": "overhead",
+    "index": 35,
+    "gait_frame": 35,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_32_35.png",
+    "source_sha256": "518de4e6522d66b60263f1c7f5b8b91f13aa7ba72abae51a9284dfed5f6fcf78",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.08,
+    "origin": [
+      223.09999999999997,
+      647.96
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      207,
+      289,
+      328,
+      437
+    ],
+    "observed_crown_center": [
+      267.5,
+      363.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        141,
+        393
+      ],
+      "observed_main_pauldron_pair_span": 252,
+      "projected_crown_width": 130.68,
+      "projected_main_cap_pair_span": 272.16,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "cbadbe1cf1a4563cffbd38dbcb252113c0bb8b75edf7bec8b29e65fff42b20d7"
+  },
+  {
+    "kind": "overhead",
+    "index": 36,
+    "gait_frame": 36,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+    "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 0.98,
+    "origin": [
+      247.39999999999998,
+      637.22
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      200,
+      334,
+      340,
+      488
+    ],
+    "observed_crown_center": [
+      270.0,
+      411.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        140,
+        408
+      ],
+      "observed_main_pauldron_pair_span": 268,
+      "projected_crown_width": 137.2,
+      "projected_main_cap_pair_span": 262.64,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "e4eefeb98b3040a7e223d71cf79c7582318e6840f0a394f6dfcdde8c8821baf9"
+  },
+  {
+    "kind": "overhead",
+    "index": 37,
+    "gait_frame": 37,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+    "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 0.98,
+    "origin": [
+      244.45999999999998,
+      639.1800000000001
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      204,
+      331,
+      342,
+      487
+    ],
+    "observed_crown_center": [
+      273.0,
+      409.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        130,
+        410
+      ],
+      "observed_main_pauldron_pair_span": 280,
+      "projected_crown_width": 135.24,
+      "projected_main_cap_pair_span": 274.4,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "7fd46b467a91b106e7c3dd2f1b5b57d7347a5c3b80a4289cf9d5b990d112a525"
+  },
+  {
+    "kind": "overhead",
+    "index": 38,
+    "gait_frame": 38,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+    "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 0.98,
+    "origin": [
+      244.95,
+      637.22
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      205,
+      334,
+      340,
+      488
+    ],
+    "observed_crown_center": [
+      272.5,
+      411.0
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        135,
+        410
+      ],
+      "observed_main_pauldron_pair_span": 275,
+      "projected_crown_width": 132.3,
+      "projected_main_cap_pair_span": 269.5,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "72277a60fe31d1d518dd1530826024f6ef02be47f73ef28bb207f131ec6414bf"
+  },
+  {
+    "kind": "overhead",
+    "index": 39,
+    "gait_frame": 39,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/phase_36_39_arms.png",
+    "source_sha256": "5907f3b1c6950a7ce2ffe51f21f0f10c4ff943fc9b6fcf53777d4cd7aa97ccd6",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 0.98,
+    "origin": [
+      244.45999999999998,
+      636.73
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      205,
+      335,
+      341,
+      488
+    ],
+    "observed_crown_center": [
+      273.0,
+      411.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        140,
+        405
+      ],
+      "observed_main_pauldron_pair_span": 265,
+      "projected_crown_width": 133.28,
+      "projected_main_cap_pair_span": 259.7,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "fdf82a7eb9f34a30c6d13b8855e39f68d9800bad0d053b1d7079d0844a7f9879"
+  },
+  {
+    "kind": "overhead",
+    "index": 47,
+    "gait_frame": 47,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/loop_key_47_final.png",
+    "source_sha256": "b00396f5c406deed2bc5e5b8560b5eeafbc5575aa81a65647f3dd7fbf21237e2",
+    "cell": [
+      0,
+      0,
+      1312,
+      1199
+    ],
+    "scale": 0.5,
+    "origin": [
+      173.75,
+      715.75
+    ],
+    "alpha_floor": 16,
+    "observed_crown_bbox": [
+      554,
+      522,
+      799,
+      775
+    ],
+    "observed_crown_center": [
+      676.5,
+      648.5
+    ],
+    "rigid_registration": {
+      "observed_main_pauldron_pair_x_bounds": [
+        401,
+        947
+      ],
+      "observed_main_pauldron_pair_span": 546,
+      "projected_crown_width": 122.5,
+      "projected_main_cap_pair_span": 273,
+      "uncertainty_source_pixels": {
+        "crown_edges": 5,
+        "crown_center": 5,
+        "cap_bounds": 8
+      }
+    },
+    "method": "One uniform scale per unchanged complete ImageGen master, from actual crown and rigid cap observations; whole-image translation registers crown. No occupied-height normalization or part transformation.",
+    "output_sha256": "a9273ae44eb889ccd3ac042dfc8491e1ed3ac0095254205e4249d29916a68f73"
+  }
+]

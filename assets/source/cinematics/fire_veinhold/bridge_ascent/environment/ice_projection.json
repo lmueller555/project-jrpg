@@ -1,0 +1,39 @@
+{
+  "source": "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_background.png",
+  "source_sha256": "188f095863a3c959f86ddffe21d6504bc3e77825a4215965e0dd1694d891a3f8",
+  "source_camera_bridge_local": {
+    "position": [
+      0,
+      6.096,
+      1.999999618530273
+    ],
+    "pitch_radians": -0.07762148767206307,
+    "focal_pixels": 768,
+    "source_size": [
+      1536,
+      1024
+    ]
+  },
+  "bridge_projection_bounds": {
+    "x": [
+      -7,
+      7
+    ],
+    "y": [
+      0,
+      3.5
+    ],
+    "deck_z": 0,
+    "rail_z": [
+      0,
+      1.2
+    ]
+  },
+  "actual_cool_bright_source_floor_world_bounds": [
+    -6.112153141209305,
+    6.120122050128743,
+    0.013833523438592898,
+    3.49571504199261
+  ],
+  "construction": "Guard-removed approved background ice material reprojected onto fixed deck and rail planes only. Orange reflections/dark steel rejected with cool-bright mask, premultiplied mip filtering. The observed foreground stops at Y3.5m; no extrapolated party trail. Initial distant layer follows previous shot omission until out of frustum at2.2s."
+}

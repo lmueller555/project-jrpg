@@ -12,8 +12,8 @@ import wave
 os.environ.setdefault('SDL_AUDIODRIVER','dummy')
 os.environ.setdefault('PYGAME_HIDE_SUPPORT_PROMPT','1')
 
-from prologue_alert_audio import (ALARM_START,ASSETS,BRIDGE_ARRIVAL,BREATH_GAIN,BREATH_PERIOD,
-                                  FRONTAL_START,MACHINERY_START,
+from prologue_alert_audio import (ALARM_START,ASCENT_START,ASSETS,BRIDGE_ARRIVAL,BREATH_GAIN,BREATH_PERIOD,
+                                  FRONTAL_START,GROUP_PERIOD,MACHINERY_START,
                                   PrologueAlertAudio,RUSH_START,SEQUENCE_END,
                                   SIREN_PERIOD,alert_mix_at,mix_alert_audio,
                                   running_contact_events)
@@ -89,7 +89,7 @@ class AlertAudioTests(unittest.TestCase):
                 self.advance(35.,39.,fps)
                 self.assertIs(self.audio.voices['industrial_siren.wav'],near)
                 self.assertIs(self.audio.voices['distant_siren.wav'],far)
-                self.advance(39.,47.,fps)
+                self.advance(39.,SEQUENCE_END,fps)
                 self.assertFalse(self.audio.voices)
 
     def test_standalone_clip_seeds_global_alarm_phase_and_current_transient(self):
@@ -182,7 +182,8 @@ class AlertAudioTests(unittest.TestCase):
                 self.assertGreater(peak,100);self.assertLess(peak,32767)
                 self.assertEqual(spec['clipped_samples'],0)
                 if spec['loop']:
-                    self.assertEqual(spec['duration'],BREATH_PERIOD if name=='running_breath.wav' else SIREN_PERIOD)
+                    self.assertEqual(spec['duration'],{'running_breath.wav':BREATH_PERIOD,
+                        'reinforcement_group.wav':GROUP_PERIOD}.get(name,SIREN_PERIOD))
                     self.assertLess(np.max(np.abs(samples[-1]-samples[0])),
                                     np.max(np.abs(np.diff(samples,axis=0))))
         from tools.build_prologue_alert_audio import products
@@ -242,10 +243,11 @@ class AlertAudioTests(unittest.TestCase):
 
     def test_running_contact_times_come_from_pose_contacts_and_positive_phase_offsets(self):
         cues = running_contact_events(RUN_TIMING)
-        self.assertEqual(len(cues),60)
-        self.assertTrue(all(39. <= cue['time'] < 47. for cue in cues))
+        self.assertEqual(len(cues),120)
+        self.assertTrue(all(39. <= cue['time'] < SEQUENCE_END for cue in cues))
         self.assertEqual(sum(cue['time'] < FRONTAL_START for cue in cues),23)
-        self.assertEqual(sum(cue['time'] >= FRONTAL_START for cue in cues),37)
+        self.assertEqual(sum(FRONTAL_START <= cue['time'] < ASCENT_START for cue in cues),37)
+        self.assertEqual(sum(cue['time'] >= ASCENT_START for cue in cues),60)
         first = {name:next(cue for cue in cues if cue['actor']==name) for name in
                  ('lucan','iselin','crown_soldier')}
         self.assertEqual((first['lucan']['time'],first['lucan']['foot']),(39.,'near'))
@@ -266,8 +268,8 @@ class AlertAudioTests(unittest.TestCase):
             'phase_offset_seconds':actor['phase_offset_seconds']/2,
             'contacts':tuple({**contact,'time_seconds':contact['time_seconds']/2}
                              for contact in actor['contacts'])} for actor in RUN_TIMING)
-        self.assertEqual(len(running_contact_events(old_timing)),120)
-        self.assertEqual(len(running_contact_events(RUN_TIMING)),60)
+        self.assertEqual(len(running_contact_events(old_timing)),240)
+        self.assertEqual(len(running_contact_events(RUN_TIMING)),120)
         old = mix_alert_audio(38.,2.,run_timing=old_timing)
         retimed = mix_alert_audio(38.,2.,run_timing=RUN_TIMING)
         np.testing.assert_array_equal(old[:48000],retimed[:48000])
@@ -305,12 +307,12 @@ class AlertAudioTests(unittest.TestCase):
         self.assertEqual(len([event for event in self.audio.events if event['id'].startswith('run:')]),23)
         # Event inspection is bounded at 64 records; channel histories retain
         # every actual play and expose missing or duplicate contacts at the cut.
-        self.advance(42.,47.)
+        self.advance(42.,SEQUENCE_END)
         self.assertFalse(self.audio.voices)
         step_plays = [sound for channel in self.mixer.channels for sound,_,_ in channel.plays
                       if '_step_' in sound.path.name]
-        self.assertEqual(len(step_plays),60)
-        self.audio.start(47.)
+        self.assertEqual(len(step_plays),120)
+        self.audio.start(SEQUENCE_END)
         self.assertFalse(self.audio.voices)
         self.assertFalse(self.audio.events)
         self.assertIs(self.mixer.channels[-1].sound,wind)
@@ -419,7 +421,7 @@ class AlertAudioTests(unittest.TestCase):
         self.assertEqual({actor['id'] for actor in timing},
                          {'lucan','iselin','crown_soldier'})
         self.assertTrue(all(abs(actor['cycle_seconds']-.8)<1e-9 for actor in timing))
-        self.assertEqual(len(cues),60)
+        self.assertEqual(len(cues),120)
         scene = CinematicBridgeRun()
         try:
             for cue in (cue for cue in cues if cue['time'] < FRONTAL_START):
@@ -456,7 +458,8 @@ class AlertAudioTests(unittest.TestCase):
                     bank = next(source for source in scene.data['actors'] if source['id']==actor['id'])['animation']
                     expected = min(len(bank['frames'])-1,bisect_right(bank['boundaries'],phase+1e-10))
                     self.assertEqual(actor['frame_index'],expected)
-            cues = [cue for cue in running_contact_events() if cue['time'] >= FRONTAL_START]
+            cues = [cue for cue in running_contact_events()
+                    if FRONTAL_START <= cue['time'] < ASCENT_START]
             self.assertEqual(len(cues),37)
             for cue in cues:
                 local = cue['time']-FRONTAL_START

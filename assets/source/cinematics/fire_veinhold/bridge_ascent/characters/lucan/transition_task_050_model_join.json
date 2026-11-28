@@ -1,0 +1,26 @@
+{
+  "id": "transition_050_model_join",
+  "output": "transition_050_model_join.png",
+  "indices": [
+    50
+  ],
+  "grid": [
+    1,
+    1
+  ],
+  "prompt": "Paint ONE COMPLETE Lucan runner at actual phase2 and56.9degree elevatedcamera from FIRST3Dguide. SECOND and THIRD are two COMPLETE drawings of this SAME phase2 and SAME named knight, showing appearance/model continuity at this near camera. Reconcile them as one coherent physicallyprojected adultbody following FIRST actualcamera/pose, never a pixelmix/crossfade or partspaste. Rightleg/imageLEFT is extendedcontact/stance and leftleg/imageRIGHT is bentrecovering with higherboot. EXACTLYtwo connectedlegchains/twoboots, never reverse theirowners. Rightstancefoot is naturallypartwayback underbody after contact0; the second bodyoverextends it slightly and third is somewhatcompact. Follow actualguide hip/knee/calf/boot projection and make one naturallyproportioned intermediate wholepose between those same-phase modelreferences. Same rigidhead/cranium/pauldrons actualphysicaldimensions, adultactualleglength, no silhouettefitting. The complete rightthigh/knee/steelgreave is still readilyvisible with calfshorteningnaturallyunder56.9degreeview; notstretchedfrontal and notalreadycompact90degreeoverhead. Crown/pauldron TOPS dominate, eyeshidden perhapschin edge, torsoforeshortensnaturally.\n\nPreserve establishedLucanidentity from both actualsame-phase models: bare swept darkbrown hair, polishedarticulatedSILVERSTEEL thigh/knee/greave/shoulderarmor restrainedGOLDtrim, oxbloodsplit tabard with paleverticaltaperedchestmotif, normalbrownleatherboots/gloves. Right sword/imageLEFT and left uprightoxblood/goldchevronshield/imageRIGHT, each attachedglove/forearmgrip. Shield actualheightforeshortensatcamera, notlaidflat. Coolmoonlight/restainedwarmrim, same palette. Complete indivisible newfigure, truealpha0background, generousclearmargins aroundentirehair/boots/swordtip/shield, nofloor/glow/shadow/grid/text.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/guide_frames/transition_050_guide.png",
+      "sha256": "b39bca90f75d868779d1927376e6567361116c5f3e1755bba6fa5a26b73bff3c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/same_phase_050_close_model.png",
+      "sha256": "0f52907f3743014cb820a7d46e72cfca84175b92b48d60eec5b494abd27feaee"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_050_physical_single.png",
+      "sha256": "abc74e5b90da76a51e720562f31446e343c6b216532fcd6d846b7f3c1a9e3946"
+    }
+  ]
+}

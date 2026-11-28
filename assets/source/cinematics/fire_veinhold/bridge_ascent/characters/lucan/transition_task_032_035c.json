@@ -1,0 +1,33 @@
+{
+  "id": "transition_032_035c",
+  "output": "transition_032_035c.png",
+  "indices": [
+    32,
+    33,
+    34,
+    35
+  ],
+  "grid": [
+    2,
+    2
+  ],
+  "prompt": "Draw a 2-column by 2-row atlas of FOUR COMPLETE naturally proportioned adult Lucan running figures. Reading order top-left, top-right, bottom-left, bottom-right is actual camera transition samples [32, 33, 34, 35], gait phases [32, 33, 34, 35]; camera elevations [31.12, 32.52, 33.95, 35.4] degrees. Each cell is a complete indivisible newly painted figure, never parts.\n\nPRIMARY FIRST REFERENCE is the actual requested-phase 3D camera/pose guide. Match each cell's own two hip-knee-ankle chains, contact/recovery foot positions and camera projection. The guide is only primitive anatomical blocking: replace it with Lucan's detailed believable adult body and polished plate, do not paint a toy/cylinder human. The SECOND cropped material sheet gives appearance only; it must never override the primary guide's phase or limb position. Frame-to-frame motion must follow the guide continuously, no later recovery pose pulled early, no fixed feet while torso changes.\n\nLucan is a youthful dark-haired BARE-HEADED male, detailed swept brown hair, polished articulated silver steel with restrained gold edging, oxblood split tabard, pale chest emblem, brown leather gloves/boots. Preserve one consistent adult body: same head, shoulder, plate, torso and actual limb lengths across cells. All body/equipment foreshortening comes from the specified viewpoint; do not shrink a tucked pose or fit every silhouette to one height. Show progressively more crown/shoulder top and less frontal chest as the camera rises.\n\nExactly TWO arms, TWO connected legs and TWO boots: no extra toes beneath the belt. His anatomicalRIGHT sword arm is imageLEFT, anatomicallyLEFT shield arm imageRIGHT; both have own coherent shoulder-elbow-wrist chains. Right glove grips the sword hilt, left glove/forearm owns the oxblood/gold chevron kite shield. Shield remains carried upright, gradually narrowing as the camera elevates; never laid flat to show its emblem. Preserve adult anatomy and rigid plate while elbows/knees articulate naturally. Smooth sequential gait, near/far ownership correct. The whole pose must include hair, both boots, sword point and shield with generous transparent margins, no clipping, no grid/text/labels, no ground/background/floor/shadow, no diagram colors. Same cool moonlight with restrained warm rim, no palette changes.\n\nIMPORTANT MOTION CONTROL: the SECOND reference is the SAME FOUR approved actual gait phases in matching cell order. Maintain each cell's own knee bend and foot ownership; apply the first guide's camera angle, never move ahead to a later phase. The THIRD reference is appearance crops only. In ALL FOUR cells here, the SAME leading leg remains the more extended/down leg: no sudden left/right stride swap between consecutive cells. Follow the actual corresponding approved drawing where simple guide cylinders obscure calf/knee overlap. Feet progress by only one 60Hz tick per cell, not quarter-cycle leaps. Match the previous complete model's mature head, slender adult neck and articulated plate rather than a broad/stubby toy. Keep both blades/boots within each cell with margins.\n\nCONTINUITY CORRECTION: THIRD image is only previous frame31 head/neck appearance at29.75degrees. The new samples32\u201335 are31.12\u201335.4degrees, so show SLIGHTLY MORE TOP OF HAIR and slightly LESS FACE than that crop; do not reset to a lifted face or frontal portrait. Never aim eyes toward camera. Head holds same physical cranium width, neck and natural adult shoulder width. Full adult model same scale in all cells. Both rigid pauldrons identical size and body width. Preserve the guide's continuous knee/foot phase as actual camera rises. The FOURTH image is material crops. Maintain full completefigure percell, no isolated pixel patches.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/camera_032_035.png",
+      "sha256": "39f80d17140c028da3ef0305a6099dd15b0b4fee7825610328b5be3452bc21a2"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/motion_references/approved_032_035.png",
+      "sha256": "227e60da38eda7f157efa377357146cb9a57f55621a207db3b9a9eafc8b1fa8d"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/previous031_head_crop.png",
+      "sha256": "22973731ee6b701fc51e8051463d0006d98fe0267ab83da43a131c09ad4a7384"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/early_appearance_patches.png",
+      "sha256": "c10cbcac0b3b6e66363b69dccb35d61615e6d9e4ca2bad8d519bcd7cf70e8280"
+    }
+  ]
+}

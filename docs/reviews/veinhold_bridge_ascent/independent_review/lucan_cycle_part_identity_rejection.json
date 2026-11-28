@@ -1,0 +1,922 @@
+{
+  "status": "REJECT concrete7\u21928 and31\u219232 knee-to-long-shin/boot resets;47\u21920 contact seam also requires correction/review.",
+  "method": "Direct actual raw material identity, fixed real2.2s compositor48pose contact, and actual guide8/32 rendered knee/calf occlusion. No verdict from bounds/labels alone.",
+  "profile_sha256": "163eb23fa810a5d26170ceda9a8c970dc81d493e8d7b706bf6bbde72b288acd3",
+  "probe": {
+    "profile_sha256": "04589a768116f48dbe864a1df6d84f01fac6fffcecd63da51ade18d9e8057bf6",
+    "projection": "Fixed actual2.2s camera and actor worldposition,all48phase images sampledwhole throughproductioncompositor; notchronologicalcamera playback.",
+    "actor": {
+      "id": "lucan",
+      "lane_metres": 0.0,
+      "offset_metres": 0.0,
+      "phase_offset_seconds": 0.0,
+      "height_metres": 1.85,
+      "world_position_metres": [
+        0.0,
+        63.06,
+        0.0
+      ],
+      "frame_index": 36,
+      "cycle_phase": 0.6000000000000001,
+      "cycle_seconds": 0.8,
+      "view_elevation_degrees": 90.0,
+      "view_azimuth_degrees": 0.0,
+      "ground_anchor": [
+        480.0,
+        320.00000000000006
+      ],
+      "pixels_per_metre": 28.436018957345997,
+      "scale": 0.056872037914691996,
+      "depth_metres": 21.09999999999998
+    },
+    "crop": [
+      410,
+      240,
+      550,
+      400
+    ],
+    "sources": {
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_000.png": "03a8f89a971fdd16cd8d22d9ba0d357f90df4a172573cae8ec386379e77ea319",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_001.png": "a571aaad8318212479a407aea34e66e0f84dd998254cfee33a6d366eee38fd5e",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_002.png": "4835d9df0bd8ec9cfe0c9ec1933809c7e89b96e6eef2e51283a0b518347c40a1",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_003.png": "589ce20077ba0a7d2aae63d67e22b8fa882344df1145be9b50475dc9af8f7519",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_004.png": "3069b604e292d700a07a57f95e4715706a2084b44a648ca4c6c29d4b1508597a",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_005.png": "1d4282559188e499744536aa954e0052df22029b1e3c5699b27f1f002687e159",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_006.png": "f53db439ecf5d3ada9072930521d39364d2596b3953fb4b042a2a4f04925610e",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_007.png": "3cdf4c18e1b7064a6f7474cf6c72e11d25791334cb85d5d587c26530b8b062b8",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_008.png": "19758a9af8fded4600fbadbdd9c9a2d5fec35d5485c9f09e3cf8767e590919b6",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_009.png": "20e47d4a80af235beab4f33826fc3bc539dd8473210cb233dad00c69b4a5ed9f",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_010.png": "4740f031ce7db131b07571751ac8cc40354bf967c510f3301f91079e4cd5aa2b",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_011.png": "8013859e32f1177f11e97b34b77e6777bc793cad943459f7186ccbffd15ae409",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_012.png": "caaab1f19041e16ee7a69019a8e5a2485819b5049e09f3465e5c72f32464b1f1",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_013.png": "4bf134b1016ea0d701e7adc8d05d2a33f20e674c06653c80146cad1e1dc22eff",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_014.png": "348efdc3724320bb4acf231cd19a7bbe4054eb5a0d006d7371bcf58704e3f1a1",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_015.png": "af9ac6ae2f3867dd57fdaf5671b1de7ecc79967415c8b6088d11c18eb5827b0c",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_016.png": "672ff64eb2d182fb37d7d7e3542c9dbc9b95e60ee483479d4c8369d37daae3f7",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_017.png": "238d5bbea8d4ad583cc39cf68a89772d47587616e5bde2f6acf2c4e19f7542b1",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_018.png": "30d4068b79fa7a00c5cc9d23b9b51174aca860f637ecf267a7dd49f6c7bc0c85",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_019.png": "3b2315a316d1baa6a0e73f97a3ef676e37de9d330a771551a9dbba0f5f9c6b72",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_020.png": "42f01430c41ca784b2c3daa123039c433464e28e8f115e6566c620aa9e68760e",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_021.png": "9eba3896dd5556d654fafc55827f22eb958d46aabaad7dc35028405d25ea38a9",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_022.png": "252678ccec61388b8e38d13af92393a07e3120031a306d331dea6d67c9f1624b",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_023.png": "42670bdc44974b03439d207eac6df6314b15f56b89cdbbbbf06bcb08cceaffad",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_024.png": "e0eead049415c301b3162db32d0e52614d434d589b7d926d2cdd8e9cefd9274f",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_025.png": "a9caedf0cce20bb5416c7600c2d5cb0b075dea53e75de072c0ea868cb94dc8f4",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_026.png": "5ec61eae10dbc0140467077bed5c19490b84ac33dc479c8d8616d5adc72cb118",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_027.png": "788eeca7cc3a5822336550a6945a5bbba29cbf9b9c5be7b32a8bf68b700b4ab9",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_028.png": "426fafb7cec76fad6042aa560edc5d283b24a3a281cf952c4e31ffa8a5d5427b",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_029.png": "a9d6a9f9bd1ba154838486bbb73075414492f2eb5fbd574030e29faf9d9a484c",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_030.png": "b0f7f4e5aa87c88fb51fa565218af877dd0625db6ed80653d4b751815dc6ca3c",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_031.png": "22171f4edf0edc4b759639729edec38bf3868e62ec6b7e236fa381df1e4c3017",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_032.png": "59f4c9325288980960148e78fb089b8125de2f0450ac1aea10a6370a505886fb",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_033.png": "a82930614dbcb5388f2e3ed9029e8961df273a58b9862424102d99c73de3f5da",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_034.png": "6ec533c66c1fadb62deacbfb55541fa665edd2e868061207dc7b691f792ad54b",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_035.png": "6b106fcbfdaf67e9c9110b37fe78a975400525fc5883a85c24a398e219799681",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_036.png": "f7a4b2610ff416a1653ea2a1117555639c679796f3a7ea9ff0f7c4454e5d87e0",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_037.png": "44f6bf26ccee726832942061f1fdcf59ccc33055f0d0aaa28797ba4f6214aa78",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_038.png": "c040ba29f9de00b6ae6fadfd132c4f90404b8f86b917a61c769a653d54078a9d",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_039.png": "6ab0b1fba706e09a43c3442d4381611fb2792cc6695da54083967d1ed3da7c20",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_040.png": "bb6ae243d25b8be2ee8b166a04164313f9cce760765e1e5b02ba8cab457346e0",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_041.png": "05215bc11b0e287aefb85d846f6dcc9836fe7ab7a10781c16b0a7179fb54140c",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_042.png": "8fda2a15dbf291d8477110b6cdf54891d539b0e45c823d4d15b18f44867793b5",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_043.png": "e3261ad4f402b87b4d0a4b27393b802fca9a3d8b393b2c65e16f3b498d4f6f43",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_044.png": "5fcb7065ee095e1217bdc1af6696335b001164c0a3c7af691da675204ae675ab",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_045.png": "49f6b8c670098f99038104f838bc8e2865971f95ae5772f5d3c6eb014ebc2e1c",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_046.png": "e6b75cbe12c7ccec0bdff96b6cf1cba6415f70874b1f860ac5f3005c46c6c4c7",
+      "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/overhead_047.png": "05a12bcde81534f011f8fc850194cae165d7f302c6a391b109f17c895e640bf7"
+    }
+  },
+  "probe_source_hash_changes": [],
+  "observations": [
+    "Source7/31 compact silver forward knee abruptly becomes long armored shin+brown boot at8/32;11/12/15 and35/36/39 compact again.",
+    "Actual guide8/32 exposes silver knee with folded-back/occluded calf/boot, consistent with accepted rough passing keys; down appendage identity matters.",
+    "Source47 long shin+brown boot\u2192source0 compact shape is another visible seam-class change; bounded review required.",
+    "Right sword/left shield ownership and two connected leg identities otherwise retained; no extra boot found in inspected sources."
+  ],
+  "records": [
+    {
+      "phase": 0,
+      "registration": {
+        "kind": "overhead",
+        "index": 0,
+        "gait_frame": 0,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+        "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+        "cell": [
+          0,
+          0,
+          362,
+          543
+        ],
+        "scale": 1.4673913043478262,
+        "origin": [
+          233.195652173913,
+          510.27173913043475
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 184,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            190.0,
+            361.0
+          ],
+          "score": 0.5484923124313354,
+          "matched_core_size": [
+            68,
+            70
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "03a8f89a971fdd16cd8d22d9ba0d357f90df4a172573cae8ec386379e77ea319"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+        "sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+        "rgba_sha256": "dbfb6a6ea893f22188081a42e98f0558e4b80fd2de91f9e92666829aecc4fd7a",
+        "size": [
+          1448,
+          1086
+        ]
+      }
+    },
+    {
+      "phase": 7,
+      "registration": {
+        "kind": "overhead",
+        "index": 7,
+        "gait_frame": 7,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+        "source_sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+        "cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "scale": 1.4673913043478262,
+        "origin": [
+          231.7282608695652,
+          510.27173913043475
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 184,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            191.0,
+            361.0
+          ],
+          "score": 0.6693230867385864,
+          "matched_core_size": [
+            66,
+            68
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "3cdf4c18e1b7064a6f7474cf6c72e11d25791334cb85d5d587c26530b8b062b8"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_000_007b.png",
+        "sha256": "0d41f8b4441bbcd691a4baf8bb39d620d2f512a13acc6c8e8d52dd92b2d7804d",
+        "rgba_sha256": "dbfb6a6ea893f22188081a42e98f0558e4b80fd2de91f9e92666829aecc4fd7a",
+        "size": [
+          1448,
+          1086
+        ]
+      }
+    },
+    {
+      "phase": 8,
+      "registration": {
+        "kind": "overhead",
+        "index": 8,
+        "gait_frame": 8,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "source_sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "cell": [
+          0,
+          0,
+          443,
+          443
+        ],
+        "scale": 1.255813953488372,
+        "origin": [
+          195.53488372093022,
+          802.6511627906976
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 215,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            252.0,
+            189.0
+          ],
+          "score": 0.7063416242599487,
+          "matched_core_size": [
+            74,
+            76
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "19758a9af8fded4600fbadbdd9c9a2d5fec35d5485c9f09e3cf8767e590919b6"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "rgba_sha256": "85ea97b47906d50965de40bc48333448c9137e5c55d8af02e7e28e4e3b1d1030",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 11,
+      "registration": {
+        "kind": "overhead",
+        "index": 11,
+        "gait_frame": 11,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "source_sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "cell": [
+          1329,
+          0,
+          1772,
+          443
+        ],
+        "scale": 1.255813953488372,
+        "origin": [
+          199.30232558139534,
+          807.6744186046511
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 215,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            249.0,
+            185.0
+          ],
+          "score": 0.7576747536659241,
+          "matched_core_size": [
+            74,
+            76
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "8013859e32f1177f11e97b34b77e6777bc793cad943459f7186ccbffd15ae409"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "rgba_sha256": "85ea97b47906d50965de40bc48333448c9137e5c55d8af02e7e28e4e3b1d1030",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 12,
+      "registration": {
+        "kind": "overhead",
+        "index": 12,
+        "gait_frame": 12,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "source_sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "cell": [
+          0,
+          443,
+          443,
+          886
+        ],
+        "scale": 1.255813953488372,
+        "origin": [
+          199.30232558139534,
+          805.1627906976744
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 215,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            249.0,
+            187.0
+          ],
+          "score": 0.6704017519950867,
+          "matched_core_size": [
+            74,
+            76
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "caaab1f19041e16ee7a69019a8e5a2485819b5049e09f3465e5c72f32464b1f1"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "rgba_sha256": "85ea97b47906d50965de40bc48333448c9137e5c55d8af02e7e28e4e3b1d1030",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 15,
+      "registration": {
+        "kind": "overhead",
+        "index": 15,
+        "gait_frame": 15,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "source_sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "cell": [
+          1329,
+          443,
+          1772,
+          886
+        ],
+        "scale": 1.255813953488372,
+        "origin": [
+          199.30232558139534,
+          807.6744186046511
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 215,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            249.0,
+            185.0
+          ],
+          "score": 0.7500192523002625,
+          "matched_core_size": [
+            72,
+            74
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "af9ac6ae2f3867dd57fdaf5671b1de7ecc79967415c8b6088d11c18eb5827b0c"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_008_015.png",
+        "sha256": "c2a22c73df696988016346ac85c753596c96d12d4beb7a9003ba38fde4e5b7f6",
+        "rgba_sha256": "85ea97b47906d50965de40bc48333448c9137e5c55d8af02e7e28e4e3b1d1030",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 16,
+      "registration": {
+        "kind": "overhead",
+        "index": 16,
+        "gait_frame": 16,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+        "source_sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+        "cell": [
+          0,
+          0,
+          443,
+          443
+        ],
+        "scale": 1.2272727272727273,
+        "origin": [
+          224.8181818181818,
+          815.4090909090909
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 220,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            234.0,
+            183.0
+          ],
+          "score": 0.7712821960449219,
+          "matched_core_size": [
+            72,
+            74
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "672ff64eb2d182fb37d7d7e3542c9dbc9b95e60ee483479d4c8369d37daae3f7"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_016_023.png",
+        "sha256": "17f2dc28e6ddbf0d7e650e5a78ff653ae167e2b182c6682f43d1b9b0280078b4",
+        "rgba_sha256": "e009640654dc213d9c896a27e238df510b870c1f591e3968986d372a0f5d27c6",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 31,
+      "registration": {
+        "kind": "overhead",
+        "index": 31,
+        "gait_frame": 31,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+        "source_sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+        "cell": [
+          1086,
+          543,
+          1448,
+          1086
+        ],
+        "scale": 1.4210526315789473,
+        "origin": [
+          197.23684210526318,
+          681.8947368421052
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 190,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            221.5,
+            252.0
+          ],
+          "score": 0.730657696723938,
+          "matched_core_size": [
+            61,
+            62
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "22171f4edf0edc4b759639729edec38bf3868e62ec6b7e236fa381df1e4c3017"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_024_031.png",
+        "sha256": "5c3f9070925599c145692ab5c2e8305afcf295ed45f3e5e76187008e52fa2579",
+        "rgba_sha256": "8ae466470f72dce42b6cc5b9fdb4461cdfaa4f2dc3cffdfb628ca7599fba0da2",
+        "size": [
+          1448,
+          1086
+        ]
+      }
+    },
+    {
+      "phase": 32,
+      "registration": {
+        "kind": "overhead",
+        "index": 32,
+        "gait_frame": 32,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "source_sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "cell": [
+          0,
+          0,
+          443,
+          443
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          199.57142857142856,
+          749.4285714285713
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            243.0,
+            226.0
+          ],
+          "score": 0.7263906002044678,
+          "matched_core_size": [
+            70,
+            72
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "59f4c9325288980960148e78fb089b8125de2f0450ac1aea10a6370a505886fb"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "rgba_sha256": "f03f9f91b5c133ad393f6173bd302b222254371cb3085f97f28375c582368a08",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 35,
+      "registration": {
+        "kind": "overhead",
+        "index": 35,
+        "gait_frame": 35,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "source_sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "cell": [
+          1329,
+          0,
+          1772,
+          443
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          199.57142857142856,
+          749.4285714285713
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            243.0,
+            226.0
+          ],
+          "score": 0.7314971685409546,
+          "matched_core_size": [
+            70,
+            72
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "6b106fcbfdaf67e9c9110b37fe78a975400525fc5883a85c24a398e219799681"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "rgba_sha256": "f03f9f91b5c133ad393f6173bd302b222254371cb3085f97f28375c582368a08",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 36,
+      "registration": {
+        "kind": "overhead",
+        "index": 36,
+        "gait_frame": 36,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "source_sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "cell": [
+          0,
+          443,
+          443,
+          886
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          200.85714285714283,
+          750.7142857142857
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            242.0,
+            225.0
+          ],
+          "score": 0.698076069355011,
+          "matched_core_size": [
+            70,
+            72
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "f7a4b2610ff416a1653ea2a1117555639c679796f3a7ea9ff0f7c4454e5d87e0"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "rgba_sha256": "f03f9f91b5c133ad393f6173bd302b222254371cb3085f97f28375c582368a08",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 39,
+      "registration": {
+        "kind": "overhead",
+        "index": 39,
+        "gait_frame": 39,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "source_sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "cell": [
+          1329,
+          443,
+          1772,
+          886
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          199.57142857142856,
+          752.0
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            243.0,
+            224.0
+          ],
+          "score": 0.7082831859588623,
+          "matched_core_size": [
+            70,
+            72
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "6ab0b1fba706e09a43c3442d4381611fb2792cc6695da54083967d1ed3da7c20"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_032_039_alpha.png",
+        "sha256": "57cfa044cb09981cc7559a94fcd08e4ee22cd8443ec10e94929b9172c9b97510",
+        "rgba_sha256": "f03f9f91b5c133ad393f6173bd302b222254371cb3085f97f28375c582368a08",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 40,
+      "registration": {
+        "kind": "overhead",
+        "index": 40,
+        "gait_frame": 40,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+        "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+        "cell": [
+          0,
+          0,
+          443,
+          443
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          212.4285714285714,
+          740.4285714285713
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            233.0,
+            233.0
+          ],
+          "score": 0.6684756278991699,
+          "matched_core_size": [
+            68,
+            70
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "bb6ae243d25b8be2ee8b166a04164313f9cce760765e1e5b02ba8cab457346e0"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+        "sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+        "rgba_sha256": "c7347ab33f5d6a7d150f691a98ba26556bbf82cc11ac9437b0f1aea4a65604fb",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "phase": 47,
+      "registration": {
+        "kind": "overhead",
+        "index": 47,
+        "gait_frame": 47,
+        "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+        "source_sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+        "cell": [
+          1329,
+          443,
+          1772,
+          886
+        ],
+        "scale": 1.2857142857142858,
+        "origin": [
+          211.1428571428571,
+          740.4285714285713
+        ],
+        "alpha_floor": 16,
+        "rigid_registration": {
+          "observed_main_pauldron_pair_span": 210,
+          "target_main_pauldron_pair_span": 270,
+          "main_cranium_reference_band": [
+            120,
+            135
+          ]
+        },
+        "crown_location_match": {
+          "point": [
+            234.0,
+            233.0
+          ],
+          "score": 0.5716862082481384,
+          "matched_core_size": [
+            68,
+            70
+          ]
+        },
+        "guide_head_centre": [
+          512,
+          1040
+        ],
+        "method": "Uniform completefigure scale from inspected rigid pauldron pair; crown texture NCC locates complete image only, never determines density.",
+        "output_sha256": "05a12bcde81534f011f8fc850194cae165d7f302c6a391b109f17c895e640bf7"
+      },
+      "raw_source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_040_047.png",
+        "sha256": "46c427713b5da2ec98f4a87b773bfa838f7e633a6932eb2addd23c896b14588f",
+        "rgba_sha256": "c7347ab33f5d6a7d150f691a98ba26556bbf82cc11ac9437b0f1aea4a65604fb",
+        "size": [
+          1774,
+          887
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected_cycle_native_contact.png",
+      "sha256": "2750caed2f95ec80165e027806498b3ed5bccd279dcf063ce307e60685237b72",
+      "rgba_sha256": "ed93f2bc6ffb579b93df64a81b38faf782541b1b9bc121bc42dce29a299bc647",
+      "size": [
+        1120,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected_cycle_source_boundaries.jpg",
+      "sha256": "2a15687b8c469581800c9647b58ec76897504061257cee0dfd8d39542b5fd041",
+      "rgba_sha256": "2cb7005556b24961899b0b0130d04609a4a091d9dc4c4fb6b3c8040af6003bc2",
+      "size": [
+        1800,
+        900
+      ]
+    }
+  ],
+  "guide_part_identity_sources": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/guide_frames/overhead_008_guide.png",
+      "sha256": "3a29bb92803dc05774f3bf3ba94651deb85bc83315b5fe0c3f1c2f20a320c799",
+      "rgba_sha256": "04c2d964c1a7d1b146aa865c71c9b910f533710527cd820d2dbf00353599ac7d",
+      "size": [
+        512,
+        768
+      ]
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/guide_frames/overhead_032_guide.png",
+      "sha256": "2f2a6d4a136b07f58acbb97403e80b85cfa876be867a419ac28adc0e3c731e63",
+      "rgba_sha256": "03fdece5d4d6110585557a3af00add60fd6e2cbdf69e332ff942f79176748450",
+      "size": [
+        512,
+        768
+      ]
+    }
+  ]
+}

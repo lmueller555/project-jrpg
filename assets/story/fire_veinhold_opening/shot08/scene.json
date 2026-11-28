@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "render_size": [
+    960,
+    640
+  ],
+  "duration_seconds": 8.0,
+  "camera": {
+    "starting_party_metres": 54.26,
+    "speed_metres_per_second": 4.0,
+    "height_keys": [
+      [
+        0,
+        1.55,
+        0
+      ],
+      [
+        0.8,
+        4,
+        6
+      ],
+      [
+        2.2,
+        22,
+        22
+      ],
+      [
+        5.8,
+        292,
+        7
+      ],
+      [
+        8,
+        300,
+        2
+      ]
+    ],
+    "focal_keys": [
+      [
+        0,
+        900,
+        0
+      ],
+      [
+        0.4,
+        860,
+        -200
+      ],
+      [
+        0.6,
+        780,
+        -500
+      ],
+      [
+        0.8,
+        650,
+        -100
+      ],
+      [
+        1.2,
+        620,
+        -25
+      ],
+      [
+        2.2,
+        600,
+        -15
+      ],
+      [
+        5.8,
+        550,
+        0
+      ],
+      [
+        8,
+        550,
+        0
+      ]
+    ],
+    "pitch_degree_keys": [
+      [
+        0,
+        -4.583662361046586,
+        0
+      ],
+      [
+        0.4,
+        -12,
+        -35
+      ],
+      [
+        0.6,
+        -25,
+        -70
+      ],
+      [
+        0.8,
+        -40,
+        -85
+      ],
+      [
+        1,
+        -60,
+        -75
+      ],
+      [
+        1.2,
+        -70,
+        -40
+      ],
+      [
+        1.6,
+        -82,
+        -22
+      ],
+      [
+        2.2,
+        -90,
+        0
+      ],
+      [
+        8,
+        -90,
+        0
+      ]
+    ],
+    "overhead_seconds": 2.2,
+    "reframe_seconds": 5.8,
+    "screen_right": [
+      -1,
+      0,
+      0
+    ],
+    "art_pixels_per_metre": 500,
+    "framing": "mainland_up_fortress_down"
+  },
+  "actors": [
+    {
+      "id": "lucan",
+      "lane_metres": 0.0,
+      "offset_metres": 0.0,
+      "phase_offset_seconds": 0.0,
+      "height_metres": 1.85
+    },
+    {
+      "id": "iselin",
+      "lane_metres": 0.65,
+      "offset_metres": -0.5,
+      "phase_offset_seconds": 0.16666666666666666,
+      "height_metres": 1.72
+    },
+    {
+      "id": "crown_soldier",
+      "lane_metres": -0.75,
+      "offset_metres": -3.048,
+      "phase_offset_seconds": 0.3,
+      "height_metres": 1.8
+    }
+  ],
+  "environment": "environment/manifest.json",
+  "environment_segments": {
+    "normal": "bridge_ascent",
+    "reduced_motion": "bridge_ascent_reduced"
+  },
+  "party_performances": {
+    "lucan": "characters/lucan/actorperformance.json",
+    "iselin": "characters/iselin/actorperformance.json",
+    "crown_soldier": "characters/crown_soldier/actorperformance.json"
+  },
+  "guard_performance": "guards/guardperformance.json",
+  "coordinate_space": "Bridge-local metres: +Y toward Veinhold; +X runners\u2019 anatomical right; +Z above walking deck. Screen right -X, mainland up, fortress down.",
+  "baked_characters": true
+}

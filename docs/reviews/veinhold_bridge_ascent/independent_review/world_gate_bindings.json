@@ -1,0 +1,969 @@
+{
+  "status": "Provisional world/guard/entry picture gate accepted; final composed actor bank and whole-shot chronological review pending.",
+  "method": "Actual960\u00d7640 native stills,4xNEAREST crops and source-only depth masks; no real-time playback.",
+  "entry": "entry_pixel_comparison.json",
+  "approved_late_stage_source_ledger": {
+    "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved_stage_current_sources.json",
+    "sha256": "05d205e0cccf04219b5c06e6dec151709f437e61f09d612e3325f45a03449a55"
+  },
+  "frozen_reentry_source_ledger": {
+    "path": "docs/reviews/veinhold_bridge_ascent/ice_reentry_probe/contributors.json",
+    "sha256": "500d45b80f55fb503d54357881b0f0813c7a43e046be20d01946d062874cca54"
+  },
+  "records": [
+    {
+      "index": 36,
+      "seconds": 0.6,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0036.png",
+        "sha256": "db6ef10018cb7a10fd8712100711e09928adf444a1346b6ce38992d00537e556",
+        "rgba_sha256": "1c6dec42a1872e64c3f197bf22cfb0b700eba7bf405451cd591b4a32b68790fc",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.27323431707968,
+          2.8604492187500012
+        ],
+        "target": [
+          0.0,
+          58.366926530043024,
+          2.4378309570093015
+        ],
+        "forward": [
+          0.0,
+          -0.9063077870366498,
+          -0.4226182617406998
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4226182617406998,
+          0.9063077870366498
+        ],
+        "focal_pixels": 780.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 44.612410109815286,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.43633231299858277,
+        "party_travel_metres": 56.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 48,
+      "seconds": 0.8,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0048.png",
+        "sha256": "c12aee0e0cf1361abd30b4d69702942f38e4cb011d7ac3afdee12d7a231e03be",
+        "rgba_sha256": "05923514d164f2fada59f45dbed25ce6724c908c04cabd02b7d5cc439599707e",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.68985886458327,
+          4.000000000000004
+        ],
+        "target": [
+          0.0,
+          58.92381442146429,
+          3.3572123903134647
+        ],
+        "forward": [
+          0.0,
+          -0.7660444431189779,
+          -0.6427876096865395
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6427876096865395,
+          0.7660444431189779
+        ],
+        "focal_pixels": 650.0000000000001,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.42275603566305,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.698131700797732,
+        "party_travel_metres": 57.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 72,
+      "seconds": 1.2,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0072.png",
+        "sha256": "5c071b2d0441714e53745c59a1c065d7c73d6e42a8f0235cfc373b765651f98a",
+        "rgba_sha256": "a5a2cc17b3f284b794c1c2e69ef71f416fc2b15d714142eea466fc46b8460880",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          60.30572340438743,
+          6.616290831201283
+        ],
+        "target": [
+          0.0,
+          59.96370326106176,
+          5.676598210415374
+        ],
+        "forward": [
+          0.0,
+          -0.3420201433256682,
+          -0.9396926207859085
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9396926207859085,
+          0.3420201433256682
+        ],
+        "focal_pixels": 620.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 54.59914442266561,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.2217304763960313,
+        "party_travel_metres": 59.059999999999995,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 96,
+      "seconds": 1.6,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0096.png",
+        "sha256": "701ed83f08b8658f876f6751de6e419cd46be82d80a06b5ae5b06ebe2eff8517",
+        "rgba_sha256": "5bf973a91322fdb6659219eb6b0e85900495fa9fdb3f3c057842410950880f96",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          61.04676568292032,
+          10.774034628428627
+        ],
+        "target": [
+          0.0,
+          60.90759258196025,
+          9.783766559687056
+        ],
+        "forward": [
+          0.0,
+          -0.13917310096006547,
+          -0.9902680687415704
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.9902680687415704,
+          0.13917310096006547
+        ],
+        "focal_pixels": 610.512,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 55.322581870885244,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.4311699866353502,
+        "party_travel_metres": 60.66,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 132,
+      "seconds": 2.2,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0132.png",
+        "sha256": "7c52cdac189c8bfeff8c3edd7d8909a253327efe65957fc26fdd7138d521f193",
+        "rgba_sha256": "a0654d44aa7a91a35852575e1532df0d1c2b14b748ba7803eb96de4f4e6af84d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          63.06,
+          21.99999999999998
+        ],
+        "target": [
+          0.0,
+          63.06,
+          20.99999999999998
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 600.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 56.144973871705915,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 63.06,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 180,
+      "seconds": 3.0,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/world_proofs/environment_0180.png",
+        "sha256": "d5cb8a4beddf6b0e8c71d7a5d3fe1666d3e350054a50c83d850d3b331bd183af",
+        "rgba_sha256": "8aefcc3627695072bf039e9e5cecc132b79deb637dd8705970fca876ada62fe0",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          71.62565360971398,
+          55.71559213534521
+        ],
+        "target": [
+          0.0,
+          71.62565360971398,
+          54.71559213534521
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 586.7692932987858,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 57.21249361185445,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 66.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 252,
+      "seconds": 4.2,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0252.png",
+        "sha256": "bd6bf15cd4536bc4c32ca114bd36bb728be1a58854a8d8a4812da10da22221ff",
+        "rgba_sha256": "fa330cd4bb8137ce987c793039797c8ae3f60bc59c6a8df8448c2cfb5760a14d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          113.0880191027791,
+          190.71422039323275
+        ],
+        "target": [
+          0.0,
+          113.0880191027791,
+          189.71422039323275
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 562.8110552253213,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 59.24291001764713,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 71.06,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 270,
+      "seconds": 4.5,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0270.png",
+        "sha256": "727f6711c194f9c7d23a718dd7e46ad098c1047a14aa4c6a0b1e5e51b46f1b0b",
+        "rgba_sha256": "c211f4c44ce8a522b8ff8a3604e889bd5083b6baa3c5e186e6184252bb17f14d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          124.1472887632253,
+          225.7849535250915
+        ],
+        "target": [
+          0.0,
+          124.1472887632253,
+          224.7849535250915
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 557.8950937793718,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 59.67583157427661,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 72.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 300,
+      "seconds": 5.0,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0300.png",
+        "sha256": "18487af0a6c64714756c19eba2f875925dcf7171e099fe3b29b1559680a13955",
+        "rgba_sha256": "a13525fa6873a96410cc00188217f0a33bfec195b13597ec2aa07ff8afb9990d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          137.89387999796787,
+          269.23090992226815
+        ],
+        "target": [
+          0.0,
+          137.89387999796787,
+          268.23090992226815
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 552.284204643601,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.177019674083404,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 74.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 348,
+      "seconds": 5.8,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0348.png",
+        "sha256": "5909bddd73e0a921517c443495ee926638bc3fd5864f6659fd210e3b02eb34cb",
+        "rgba_sha256": "b3b54f1dc2eb6eb24cdd32db9952e82b4be3f46b06ffd4600010a90b2447b811",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          145.00000000000028,
+          292.0
+        ],
+        "target": [
+          0.0,
+          145.00000000000028,
+          291.0
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 77.46,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 375,
+      "seconds": 6.25,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0375.png",
+        "sha256": "aac2074f8d6695448cc71d6b7807dda17c45f1c017c4242eaba5c7b1126dd925",
+        "rgba_sha256": "d2a4b9e7b0e785fbe080b50ddd39c6ecf793214de147b740bb3694cb067b0799",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          145.93688226817514,
+          294.94869644238275
+        ],
+        "target": [
+          0.0,
+          145.93688226817514,
+          293.94869644238275
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 79.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 420,
+      "seconds": 7.0,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0420.png",
+        "sha256": "7f4f2a009360db8d8955309216584b5ee88de010961421158b2463b0247951f5",
+        "rgba_sha256": "96c694d814e9771088d6ff25d28b3a407b6344328f2ee0f2835d6881fd275e6d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          147.7508553191225,
+          297.9906861801541
+        ],
+        "target": [
+          0.0,
+          147.7508553191225,
+          296.9906861801541
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 82.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 435,
+      "seconds": 7.25,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0435.png",
+        "sha256": "057e0c4143534e990067d04fcb2c707ce6abf2017b7bbd9f549348e28a922d2c",
+        "rgba_sha256": "2b35ae3f4d72c225da79aec142b63d8247fc19da15e3c95059ccc8ceaac738a8",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          148.3672644239053,
+          298.5587957616589
+        ],
+        "target": [
+          0.0,
+          148.3672644239053,
+          297.5587957616589
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 83.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 450,
+      "seconds": 7.5,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0450.png",
+        "sha256": "32bb07598df8b3bb01b47f7734ee62cb910e268cc745430163eb8f426a588d2d",
+        "rgba_sha256": "ff1bf12c9c0190c4fe86ea77c3f425dd1102d9306c5d845b6123ec4922559b91",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          148.95139350267928,
+          299.0394624606491
+        ],
+        "target": [
+          0.0,
+          148.95139350267928,
+          298.0394624606491
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 84.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    },
+    {
+      "index": 480,
+      "seconds": 8.0,
+      "proof": {
+        "path": "docs/reviews/veinhold_bridge_ascent/guard_proofs/frame_0480.png",
+        "sha256": "f3a793b2dac6d6d90cf70ed8f7283cbc12683b2c1b0f581fdf6a347b146a3037",
+        "rgba_sha256": "d210abadaac17f4472d098c55e70613d72acb33d2c18bd7eff798977d7a7f6fc",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          150.0,
+          300.0
+        ],
+        "target": [
+          0.0,
+          150.0,
+          299.0
+        ],
+        "forward": [
+          0.0,
+          -6.123233995736766e-17,
+          -1.0
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -1.0,
+          6.123233995736766e-17
+        ],
+        "focal_pixels": 550.0,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 60.38324592191522,
+        "fov_axis": "vertical",
+        "pitch_radians": -1.5707963267948966,
+        "party_travel_metres": 86.25999999999999,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      }
+    }
+  ],
+  "observations": [
+    "Exact entry pixels preserved after rail/ice fix under explicit inherited initial frozen omission.",
+    "Transparent brace gaps now show updated water/world while actual brace bars remain.",
+    "Frozen source and bounded coating enter naturally through top frustum4.3\u20134.5s, fixed in world; no conspicuous sparkle/whole-world frost toggle in reviewed stills.",
+    "Both late body sources contribute after depth at6.25/6.75/8; second reaches near-edgeY293 at6.75 and is outside by8Y288, first by6.25. Body source masks exclude contact shadows.",
+    "At1\u20133px/body only group direction/placement/visibility can be assessed; anatomy cannot."
+  ],
+  "current_late_body_masks": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0375_post_bodymask.png",
+      "sha256": "17a48a66cd6b15e2093dedb34bf0f64f9aa8e48522bf583a6be6f7f3fa2ce986",
+      "rgba_sha256": "8a74ab536dc6c23862cbc8ac732c467a659200ed04515eb0446845ed2bdc883d",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0375_pre_bodymask.png",
+      "sha256": "17a48a66cd6b15e2093dedb34bf0f64f9aa8e48522bf583a6be6f7f3fa2ce986",
+      "rgba_sha256": "8a74ab536dc6c23862cbc8ac732c467a659200ed04515eb0446845ed2bdc883d",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0405_post_bodymask.png",
+      "sha256": "2ca088e324c5bbc68002bb294bf50da2f002dd8e406a9359f614fe9c90cd8716",
+      "rgba_sha256": "2c4c3ff830b9994fca965acea5fe4a87311269d1118259077a74973a83d1f5bf",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0405_pre_bodymask.png",
+      "sha256": "2ca088e324c5bbc68002bb294bf50da2f002dd8e406a9359f614fe9c90cd8716",
+      "rgba_sha256": "2c4c3ff830b9994fca965acea5fe4a87311269d1118259077a74973a83d1f5bf",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0480_post_bodymask.png",
+      "sha256": "b8cada6d844eca11a4703d44e5b160d641b38f3e37f7842d2b21caa8950fac07",
+      "rgba_sha256": "ebd589d5a3cb5822e6bbd756aecd33eeb69e81b69035639218a1d4563d6bbdec",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_7_0480_pre_bodymask.png",
+      "sha256": "b8cada6d844eca11a4703d44e5b160d641b38f3e37f7842d2b21caa8950fac07",
+      "rgba_sha256": "ebd589d5a3cb5822e6bbd756aecd33eeb69e81b69035639218a1d4563d6bbdec",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0375_post_bodymask.png",
+      "sha256": "3b510bb10d44b0807528fecc01d0ee4f3f034e584cf0a7dc8feb33bc318e7e22",
+      "rgba_sha256": "ac3643d53faa4fe30da541becece5b6c1e02a0e32ccbbe9955f743411b4105e5",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0375_pre_bodymask.png",
+      "sha256": "3b510bb10d44b0807528fecc01d0ee4f3f034e584cf0a7dc8feb33bc318e7e22",
+      "rgba_sha256": "ac3643d53faa4fe30da541becece5b6c1e02a0e32ccbbe9955f743411b4105e5",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0405_post_bodymask.png",
+      "sha256": "0b7b356c1a51ad6969eefee60bbb8d5aa647b136e782e35f4d2a536cd8b9a7d7",
+      "rgba_sha256": "db77bff4dfc8cf0d14483212fbd9fdd6c197b57fd662a49cb5fddefa6a6058e7",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0405_pre_bodymask.png",
+      "sha256": "0b7b356c1a51ad6969eefee60bbb8d5aa647b136e782e35f4d2a536cd8b9a7d7",
+      "rgba_sha256": "db77bff4dfc8cf0d14483212fbd9fdd6c197b57fd662a49cb5fddefa6a6058e7",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0480_post_bodymask.png",
+      "sha256": "c83a94db4d150983ce080e9b58862a40c50949dd203be0a91ed20eb272d41d1f",
+      "rgba_sha256": "a07168feb2c49331a289bdc4813efd113566807e5a9ae7113082d609ae63723a",
+      "size": [
+        960,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved316_320_8_0480_pre_bodymask.png",
+      "sha256": "c83a94db4d150983ce080e9b58862a40c50949dd203be0a91ed20eb272d41d1f",
+      "rgba_sha256": "a07168feb2c49331a289bdc4813efd113566807e5a9ae7113082d609ae63723a",
+      "size": [
+        960,
+        640
+      ]
+    }
+  ],
+  "rail_evidence": {
+    "actual_rejected_frame_0024.png": {
+      "path": "/tmp/ascent-bake-review/rail_gap/actual_rejected_frame_0024.png",
+      "sha256": "0a1df836804a9679ea91eeed4a35c778b1c05eced5769d3c9c9d0b1404414bd6",
+      "rgba_sha256": "3714d9bf28bbd479ee7818f6dfd9880e6034acfa80300a55bcef224412f0df28",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "fixed_0024.png": {
+      "path": "/tmp/ascent-bake-review/rail_gap/fixed_0024.png",
+      "sha256": "e8f20c199b2fb0a7bd2c30f28d41f66309ce8659cef8abb366d76b02f84ba6a7",
+      "rgba_sha256": "410a10176e85f67ff11a64a693b1d4b41f4cb67baae702e4fdc4dd3687590c8d",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "fixed_0036.png": {
+      "path": "/tmp/ascent-bake-review/rail_gap/fixed_0036.png",
+      "sha256": "db6ef10018cb7a10fd8712100711e09928adf444a1346b6ce38992d00537e556",
+      "rgba_sha256": "1c6dec42a1872e64c3f197bf22cfb0b700eba7bf405451cd591b4a32b68790fc",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "fixed_0048.png": {
+      "path": "/tmp/ascent-bake-review/rail_gap/fixed_0048.png",
+      "sha256": "c12aee0e0cf1361abd30b4d69702942f38e4cb011d7ac3afdee12d7a231e03be",
+      "rgba_sha256": "05923514d164f2fada59f45dbed25ce6724c908c04cabd02b7d5cc439599707e",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "witnesses.json": {
+      "path": "/tmp/ascent-bake-review/rail_gap/witnesses.json",
+      "sha256": "f256d093fe696e082f3ca393b475f0ca747409a8ab83178ff6a501ed74703ba5"
+    }
+  }
+}

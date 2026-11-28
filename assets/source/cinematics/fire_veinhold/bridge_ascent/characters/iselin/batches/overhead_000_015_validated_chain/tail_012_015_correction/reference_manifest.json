@@ -1,0 +1,50 @@
+[
+  {
+    "sample_index": 12,
+    "gait_frame": 12,
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0
+  },
+  {
+    "sample_index": 13,
+    "gait_frame": 13,
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0
+  },
+  {
+    "sample_index": 14,
+    "gait_frame": 14,
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0
+  },
+  {
+    "sample_index": 15,
+    "gait_frame": 15,
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "view_elevation": 90.0,
+    "view_azimuth": 0.0
+  }
+]

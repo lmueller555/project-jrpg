@@ -1,0 +1,290 @@
+{
+  "method": "compile(source_bytes, repo_relative_filename, exec), no code execution or cache writes",
+  "passed": true,
+  "files": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_calibrated_pose_guides.py",
+      "sha256": "7c78448684812d13b22e93b1b49c5eb3d1bcb209b795e50b15bc64b11b45496e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/blender_pose_guides.py",
+      "sha256": "f5562d32e93324be79001d9a98ebe4058bafc42553ab0fa75283999aebd946fe"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/build_selected.py",
+      "sha256": "b3c3017327f688fdbef9bfc56c9b5cd5dfc9a97abc7677f7d247608db75d5a55"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/export_actorperformance.py",
+      "sha256": "a2482aab7bbe3976646f0900f554e69788b2b116105a1395270ae8aa2e61728e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/extract_register_atlases.py",
+      "sha256": "fff0c0a81ebb6cfe278648c683011112f5d89d3f7e5ec15f474a100652928ab9"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/make_direction_guides.py",
+      "sha256": "1a98fc674db8e069d42f2096a6b6f1284d965d143a0c76dae0b9482e8d7061d7"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/prepare_atlases.py",
+      "sha256": "5682582039f991670ca73d89a3ef2c2452492d50e2fa66e453a5f9c9bf35a480"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/register_first_batch.py",
+      "sha256": "3ab506deb5ca7f927c53220d429b7a02507d4a7cbc054c696e9436d0c09df8a4"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/register_minimal_repairs.py",
+      "sha256": "52a98b1478eda41665f79764cd864663fded9d7001021fa2474e86739661777a"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/render_atlas_guides.py",
+      "sha256": "69affa6a78db469148dca08bf7f2ddad4f8d598f44223361377c392fac203eb7"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/render_native_proofs.py",
+      "sha256": "b8c9e5c49184d3a33ca74987a032a300db4b6468401ce9732196e23044de9b25"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/review_actorperformance.py",
+      "sha256": "0017cc4c8cf093c7883e9666c163baaa5147b79526316376b2478536b3759d3e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/verify_provenance.py",
+      "sha256": "a62a8671afbcc48c972924188bca3cf041d7a7d141e7f2694e71bdb7690937e7"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_000_015_validated_chain/measure_crown_selection.py",
+      "sha256": "e1fa2a84a192ba9b4d79763908611edbaf17895fc6ac0e41877eb276514d9c06"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_000_015_validated_chain/outer_measurement_audit/measure_clasp_audit.py",
+      "sha256": "fba39238c6410778e239dc545ea106f30cede3e4912302a53cd11ab16952593f"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_000_015_validated_chain/outer_measurement_audit/measure_outer_audit.py",
+      "sha256": "8a4034b21572ff5afad5e5286e5796293c8197f194a503f3c51b8b3a2586d8ca"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_000_015_validated_chain/prepare_tail_correction.py",
+      "sha256": "54c5f538e4560716c28966d243d8047248c899565b7a3c4bca8645f1c5a116d4"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_016_031_pose_retry/build_corrected_key_guides.py",
+      "sha256": "6689356956b0dcbc2d5f9c37718cb6ce961c69f6c002e0cdcdf3a8256e14df98"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_016_031_pose_retry/measure_crown_selection.py",
+      "sha256": "ee55252f778ff577c2f31200fccc5a416c131fec8f7250cb29a8c5faa2fc8a4c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_016_031_pose_retry/prepare_annotated_batches.py",
+      "sha256": "44a7e52f9c133463a927fc8b6281ddf45bb752fbd705d546c8575204bc5e1a4a"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/overhead_032_047_pose_retry/measure_crown_selection.py",
+      "sha256": "7c0ceb9b4d0fafc6a0a6ee227e20fe663195306abd2b655f7b519903a9c74ac6"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/build_pose_guides.py",
+      "sha256": "b270e497dec4b84ae513c84fb9ec798eaada1ec6a37bc85412fdf628682e0bd1"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/build_pose_guides_v2.py",
+      "sha256": "3c6c4cffa22f08a53555ca09a635461664db98301031ee646ed878642b72ad76"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/export_performance.py",
+      "sha256": "e77b8b0c7308b400b59941a412dd623026612684164cf830fde344e8c8e7e6de"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/guide_revisions/legacy/build_pose_guides.py",
+      "sha256": "b270e497dec4b84ae513c84fb9ec798eaada1ec6a37bc85412fdf628682e0bd1"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/overhead_camera_guide_scene.py",
+      "sha256": "c2a3e6d160fce8ba041c7eea492cee24ff35adf3374947ce9d6e4e728ad781c0"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/record_master.py",
+      "sha256": "a5643666b77f96b869d61e3d0d3187cc3c0a074a2af5bdf88dc0406659ea6248"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/register_close_candidates.py",
+      "sha256": "cda873ef5aee785aaba8def7f489ca54b0cff29a273430b895b78e557261786a"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/retain_edit_master.py",
+      "sha256": "0e0da7e7744b0b64062bdf25083b28b8f3c7ac211ad6eeb34567b109d4688da5"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/adopt_candidate.py",
+      "sha256": "d5f9d0f8ec160f2199ce8eab93e399bd21d87dd19f5f5b18bd4a21aa15e128f4"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/check_source_provenance.py",
+      "sha256": "09de78367f32e240d7cc76ac24c6baf858b1dd0e48815377f0b1a2a63fbaeaf4"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/build_candidate.py",
+      "sha256": "169a3c07fdea8b18cf9a58d9902f67d3a9b5ec12f541623a54320dfe7cc36629"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/render_guides.py",
+      "sha256": "ab3224b1aa93b8fb8c05863678c02eacb90cca85b890340c2e4f81f0b10ea940"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_camera_guide_scene.py",
+      "sha256": "418338b40b97d98efd243a8ba9bad6cf26eb4278d590584fbeea879c3b103769"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/prepare_batch_tasks.py",
+      "sha256": "e9c3c186f95513e4ca670ffa268d836c515869d10016b4fad6ccd1cf32b19ca8"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/prepare_guides.py",
+      "sha256": "5e7e00d0d571ebf622f0d29bb9cc965027e8576295ddc861f31f78199ed7c56c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/prepare_key_tasks.py",
+      "sha256": "ad3154d095703a6932a2abaf471cca9e61cbcc7fc7cd3cacf03de478dfbc88ee"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_motion_repair/review_seam.py",
+      "sha256": "48b5620785ee13c64481edf18595c3a3f84933cde4a2f6215ca4fbb261333bda"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/prepare_dense_tasks.py",
+      "sha256": "eae37474ec0ab1ba07fdc6588c7698d2ff1d2f598504de069a4ce2bd7d2507fa"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/prepare_steep_repairs.py",
+      "sha256": "a8e6331ab450341ffb71291d24797881ac41bdc36a57245c9591055880aa5b5e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/prepare_transition_tasks.py",
+      "sha256": "2b6bbb2375aab58779ae0a262598c49619acb27c67a61de9f58dffd043bf0d57"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/rebuild_selected.py",
+      "sha256": "06f9649bf93ad29874e316c9d2351a433d4e064889836b24c914bb76827ccd90"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_banks.py",
+      "sha256": "7761edf7bb7f99e46dcd50a72dccea926739b214b590851cce95f190e4248377"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_close_recovery.py",
+      "sha256": "cfd83e2b5c53cacfeb54e90b385983b450363f6a84e26979bb2913f730c7d265"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_cycle_repairs.py",
+      "sha256": "44bb072c7a1799e5003a39edec2afb9d7b6b34d8b1320e94f387f5b5e4e9ff51"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_early.py",
+      "sha256": "78e7ce693427d6f15cf1de35931bef7ed268937271a995676feee46a6965c9ad"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_special.py",
+      "sha256": "3a761893a9d1156af8f6156aca37b43e670a79b448d6c52e8b271c0e76e5da43"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/render_native_proofs.py",
+      "sha256": "e952964b1aaf2c9cae5d1c50f532555c1236e51737143e0774cfabc315646e05"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/render_pose_guides.py",
+      "sha256": "e2b12f1dc3f5f105a4b81a95c7889be733321a28605eb56974cbd5b4d2ae79e6"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/guards/authoring/build_live_pose_guides.py",
+      "sha256": "1ce47ef6288e5a45c18c81314a03283891d19f34142cf10d72d8bf5209ea3077"
+    },
+    {
+      "path": "cinematic_bridge_ascent.py",
+      "sha256": "45c5491f8da49ee242b30803ab8d6b85befcb1563755fcd20dd96d3bb084bd25"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/approved_stage_probe.py",
+      "sha256": "a2dc74a628f1b40228903e1223515f7580b704e5667618bf990f8df689e8495d"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/guard_exit_probe/probe.py",
+      "sha256": "322e0d0744545d23aebc7a0528f38bbd0ff6d960cecd5c64c177a21b8be7a948"
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/ice_reentry_probe/probe.py",
+      "sha256": "4b97a6e91ee22cecd519fd9a8b0a628e3b034b003c6ee5952670c7acc9b380f0"
+    },
+    {
+      "path": "fire_veinhold_opening.py",
+      "sha256": "df6f9c96b9a9eb34bb14bc33dc453b8646001e64fae7effa476ce0975d0145f3"
+    },
+    {
+      "path": "prologue_alert_audio.py",
+      "sha256": "4fe7d71de58a66f7bf22302e6c3945f0b3a7c765664ad15f6a91a4281001afc9"
+    },
+    {
+      "path": "tests/test_cinematic_bridge_run.py",
+      "sha256": "96eb5b39d607c4f3bf0e447803ce0324b6f2c834cf9c003f9ef24b5b59f9c0e7"
+    },
+    {
+      "path": "tests/test_cinematic_face_reveal.py",
+      "sha256": "ea257458cf2870858fb6b7e95ce8ada5fb319594d33ad9f8157057d768f39f05"
+    },
+    {
+      "path": "tests/test_fire_veinhold_opening.py",
+      "sha256": "0bb975f92cc908bc534979563dfca5e5a6d6c9e4eb47353d1124e9d895742367"
+    },
+    {
+      "path": "tests/test_prologue_alert_audio.py",
+      "sha256": "0fb7e9a50c36f660f1953e0ef2f3397d5569c136bc824a8868905eea12707daf"
+    },
+    {
+      "path": "tests/test_prologue_ascent_audio.py",
+      "sha256": "54537f83e5067143234c36b96b369de8de5f6e1eaa33b5fdbac7dbc72b14cc41"
+    },
+    {
+      "path": "tests/test_prologue_ascent_bank.py",
+      "sha256": "de9e7af48cd29b86eed7680bb2a425a59c95fa30d285e80d10b83808846a2d9c"
+    },
+    {
+      "path": "tests/test_prologue_ascent_camera.py",
+      "sha256": "93af7427b6c68517c2c224c386779cd9ba98ea16d30c2b1abdb8001df06283b6"
+    },
+    {
+      "path": "tests/test_prologue_ascent_integration.py",
+      "sha256": "297de743cf1eb28162b4ea83474276bca808dcb4cbc0d65d99821ec2ee0a7211"
+    },
+    {
+      "path": "tests/test_prologue_ascent_production.py",
+      "sha256": "f8b46b66d522c36de0124461458ee038b0ffa426bfc3d31b1c8fa83d7e5ddf99"
+    },
+    {
+      "path": "tests/test_prologue_ascent_world.py",
+      "sha256": "a86a440f68194b759cfb3a976541130de8d891cb0298b521c12a249fc7782342"
+    },
+    {
+      "path": "tests/test_prologue_capture.py",
+      "sha256": "e3b3e0b86d7fa78e26279ac03fb98fe10a9ce4029a793ddc7cf7e3e32960acc7"
+    },
+    {
+      "path": "tools/build_prologue_alert_audio.py",
+      "sha256": "e5cac80fe08bd1af2134cff55a52fb8ef54ea086a19d2219d7191c684a8adc02"
+    },
+    {
+      "path": "tools/build_prologue_bridge_ascent.py",
+      "sha256": "d0084853b78bac0429a1447727af39a9c10dc25a31fc4bbae3e120961fce3b9d"
+    },
+    {
+      "path": "tools/capture_fire_veinhold_opening.py",
+      "sha256": "bc318508a4b1695e2969668eabc389fb1f9e803122b8b54053c677a41f19e81d"
+    },
+    {
+      "path": "tools/export_prologue_ascent_guards.py",
+      "sha256": "0f79c8f88fdf25c37a3289ff8d5c09c98f65d12563795067d90aeadf00399f40"
+    }
+  ]
+}

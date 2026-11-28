@@ -537,7 +537,8 @@ class FireVeinholdGalleryTests(unittest.TestCase):
         before = self.parent_state()
         for identifier, duration in (
                 ('fire_veinhold_opening', sequence_duration()),
-                ('fire_veinhold_shot_01', 25.)):
+                ('fire_veinhold_shot_01', 25.),
+                ('fire_veinhold_shot_08', 8.)):
             with self.subTest(entry=identifier):
                 session = self.launch(identifier)
                 scene = session.game.cinematic

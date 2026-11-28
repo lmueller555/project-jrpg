@@ -1,0 +1,37 @@
+{
+  "elevation_degrees": 30,
+  "phase": 18,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "ground_anchor": [
+    512,
+    960
+  ],
+  "pixels_per_meter": 500,
+  "prompt_file": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/armored_elevation_30_phase18_prompt.txt",
+  "referenced_image_paths": [
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_30_phase18.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/locked_volume_30_phase18.png"
+  ],
+  "output": "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/armored_elevation_30_phase18.png",
+  "prompt": "Make ONE complete whole-figure redraw of the exact Crown soldier in reference1, preserving its successful TRUE 30-degree camera volume, scale, placement and phase18 running action. This is a small COSTUME-CONTINUITY correction, not a new pose or camera. Reference2 is a material/detail crop from his approved leg armor. Reference3 is the locked camera projection diagram; its geometry/text never appears in final art.\nRestore the missing articulated SILVER/STEEL KNEE PLATES on both natural knees wherever visible, matching reference2's plain polished knee cap and short overlapping upper-shin lames. They are rigid armor attached to the knee joints, not extra knees or oversized new greaves. The plates must share each knee's true 30-degree view and foreshortening; at high angles only their correctly visible top/front portions appear. Hidden rear knee armor stays hidden. Keep charcoal quilted trousers and the same brown boots under/behind the armor, with exact real thigh/calf lengths and connected hip-knee-ankle-boot chains. No added straps crossing empty air.\nPreserve reference1's helmet physical width, shoulder width and compact body projection; NEVER stretch its body to fill canvas or revert to a frontal breastplate at90degrees. Running toward imageBOTTOM: RIGHT/imageLEFT sword arm and trailing folded right leg, LEFT/imageRIGHT shield and advancing left leg. Natural elbow/hand pumps, secure sword grip, blade DOWN/OUTSIDE with true-angle foreshortening; shield correctly edge-on at high camera angles. Exactlytwoarms,twolegs,twoboots,onesword,oneshield. Keep exact young male/open steelhelmet/navy split tabard/steel armor/brown leather design and all source-model dimensions.\nSame1024x1536 composition,500reference px/m, internal groundroot[512,960], generous transparent margins. Do NOT fit occupied height; empty space is intentional. One coherent complete detailed painted cinematic figure. TRUE CLEAN TRANSPARENT RGBA: no castshadow/floor/haze/glow/backgroundsquare/text/sheet/guide pixels. No detached rigs, warps, pasted armor/limbs or endpoint blends. All parts are painted together as one natural figure.\n",
+  "source_path": "/workspace/generated_images/exec-0150ca20-be43-45c3-8508-3e65237202bd.png",
+  "generation_id": "exec-0150ca20-be43-45c3-8508-3e65237202bd",
+  "transparent_background": true,
+  "construction": "Complete whole-character ImageGen camera-elevation drawing. Raw bytes copied unchanged; restored costume through whole-figure authoring, no regional pasting.",
+  "status": "directional_model_candidate_pending_internal_review",
+  "source_sha256": "3041243bc75c8a264445d43526b0a8e87ea5e59fb234fef839074669b2ffdc7d",
+  "reference_sha256": {
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/model_keys/locked_elevation_30_phase18.png": "ccd783f89e2d2eb362462f2e2033f984dd6c093e5870f5d95958d80e70404c69",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/knee_armor_material_reference.png": "700d3d53e3d1b17f97aeb21f1c67711a9e4b9e6f4c7c5a16e5cb00b0ca246c97",
+    "/workspace/project-jrpg/assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/locked_volume_30_phase18.png": "313cc978bc84307546c977cd5e064361f00bc17df0d4c3061a389aaf0ba1b3bb"
+  },
+  "prompt_sha256": "d950b8528c0a647c89d9070b41ad9adf88ca6098479ba6874b74c2ce9d82b67a",
+  "raw_source_byte_preservation_verified": true,
+  "output_sha256": "3041243bc75c8a264445d43526b0a8e87ea5e59fb234fef839074669b2ffdc7d",
+  "prompt_text_sha256": "d950b8528c0a647c89d9070b41ad9adf88ca6098479ba6874b74c2ce9d82b67a",
+  "prompt_file_sha256": "d950b8528c0a647c89d9070b41ad9adf88ca6098479ba6874b74c2ce9d82b67a"
+}

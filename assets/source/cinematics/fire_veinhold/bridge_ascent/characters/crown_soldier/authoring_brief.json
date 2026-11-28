@@ -1,0 +1,35 @@
+{
+  "actor": "crown_soldier",
+  "status": "rough90_direction_accepted; physical first-batch density/adjacency review inprogress",
+  "cycle_ms": 800,
+  "cycle_poses": 48,
+  "phase_at_global_47_seconds": {
+    "cycle_fraction": 0.3,
+    "frame": 18
+  },
+  "costume": "PR664 allied open steel helmet, silver/steel plate, navy split tabard, charcoal trousers, brown gloves/boots; simpler than Lucan oxblood/gold equipment",
+  "handedness": {
+    "anatomical_right": "sword",
+    "anatomical_left": "plain steel boss shield"
+  },
+  "camera_key_elevations_degrees": [
+    30,
+    60,
+    90
+  ],
+  "convention_for_studies": "0=frontal horizontal;90=vertical overhead; actor runs toward image bottom; true camera elevation with full figure redrawn, no frontal PNG tilt",
+  "full_sequence_dependency": "Wait for overhead_camera_scope locked camera, native actor size, projection/anchors and API before sampling transition/full overhead cycle",
+  "appearance_reference": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot07/characters/crown_soldier/frame_18.png",
+  "appearance_reference_sha256": "85e3fa7900f4043f6aceb44d1ed0f4e4634d779992c5700c4b2a5f9082e885e7",
+  "authoring": "Complete whole-figure ImageGen drawings; raw bytes/prompts/IDs/ref hashes retained. No detached rigs, warps, body-proportion normalization, endpoint blends or duplicated-pose filling.",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "anchor": [
+    512,
+    960
+  ],
+  "art_pixels_per_metre": 500,
+  "camera_contract": "cinematic_bridge_ascent.actor_states_at; sourceactualray/elevation/azimuth captured perrecord; heading imageBOTTOM"
+}

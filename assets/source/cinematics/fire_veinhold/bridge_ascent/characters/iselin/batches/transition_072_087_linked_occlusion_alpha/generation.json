@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-db33d134-401e-4275-bf5d-a164d6fea6b3",
+  "original_generation_path": "/workspace/generated_images/exec-db33d134-401e-4275-bf5d-a164d6fea6b3.png",
+  "master": "master.png",
+  "sha256": "6861f285891ccd8e86038450576cd464569379e1f8ed16dcf47a0560ffa3e3f4",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "6bb6a598d24e898e280ddd40769dfbdb1fcaafbb489c8c3a7bfd3d757ba7e85c",
+  "references": [
+    {
+      "path": "batches/transition_072_087_linked_occlusion_alpha/edit_reference.png",
+      "sha256": "bba288dd3ad50e9fffe403637ac964d8bc586de59d6c5860073c694544297fbe"
+    }
+  ],
+  "status": "ImageGen whole-sheet transparency edit; native review pending",
+  "samples": [
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87
+  ],
+  "guide_pixels_used_in_export": false
+}

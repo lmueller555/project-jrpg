@@ -1,0 +1,750 @@
+[
+  {
+    "kind": "transition",
+    "index": 36,
+    "gait_frame": 36,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_036_039b.png",
+    "source_sha256": "820ba0710ab29b578f787ef36a7818990af543848d6c20cbad65809e3e21ace9",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.15,
+    "origin": [
+      219.99212207031252,
+      183.47447216796877
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        253.92,
+        109.78
+      ],
+      "score": 0.46855518221855164,
+      "template_scale_for_location_only": 0.8400000000000001
+    },
+    "observed_whole_cranium_centre": [
+      253.92,
+      103.78
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      302.82147216796875
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "4a99fcd040c0e4d0b64d9fc30271b0e1d7c5fb28374ec3875b0f428bec4b209e"
+  },
+  {
+    "kind": "transition",
+    "index": 37,
+    "gait_frame": 37,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_037_039c.png",
+    "source_sha256": "fc1555a1d237f4e2d42500e5ed4d6afa196523fba383ba9b32f842f41db244c6",
+    "cell": [
+      0,
+      0,
+      512,
+      1024
+    ],
+    "scale": 1.0150375939849625,
+    "origin": [
+      219.6692950026433,
+      83.0294666720512
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        288.0,
+        232.0
+      ],
+      "score": 1.0,
+      "template_scale_for_location_only": 1.0
+    },
+    "observed_whole_cranium_centre": [
+      288.0,
+      232.0
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      318.5181884765625
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "ca8f94451d425723f417b85e6181c725d596315459a6a5506d2b61f81e700038"
+  },
+  {
+    "kind": "transition",
+    "index": 38,
+    "gait_frame": 38,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_037_039c.png",
+    "source_sha256": "fc1555a1d237f4e2d42500e5ed4d6afa196523fba383ba9b32f842f41db244c6",
+    "cell": [
+      512,
+      0,
+      1024,
+      1024
+    ],
+    "scale": 1.0150375939849625,
+    "origin": [
+      250.61779124324482,
+      91.2105375132166
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        257.51,
+        240.34
+      ],
+      "score": 0.8464183211326599,
+      "template_scale_for_location_only": 1.02
+    },
+    "observed_whole_cranium_centre": [
+      257.51,
+      240.34
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      335.1646728515625
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "612e38e949efed7b516a80f48285e63ee50019332aad4a36369108b7038befbe"
+  },
+  {
+    "kind": "transition",
+    "index": 39,
+    "gait_frame": 39,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_037_039c.png",
+    "source_sha256": "fc1555a1d237f4e2d42500e5ed4d6afa196523fba383ba9b32f842f41db244c6",
+    "cell": [
+      1024,
+      0,
+      1536,
+      1024
+    ],
+    "scale": 1.0150375939849625,
+    "origin": [
+      278.52624988986133,
+      101.42221991746945
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        230.015,
+        247.51
+      ],
+      "score": 0.6004467606544495,
+      "template_scale_for_location_only": 1.03
+    },
+    "observed_whole_cranium_centre": [
+      230.015,
+      247.51
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      352.6541748046875
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "fcb762f3b97d2f662a91d0caba0122a8ff9ab805d1a1e0468d59f2b3e912c2b3"
+  },
+  {
+    "kind": "transition",
+    "index": 40,
+    "gait_frame": 40,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_closed.png",
+    "source_sha256": "3cc81d835181a670a441aa2624437956ed90992898b08130d419c1f3c0176d7b",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.14,
+    "origin": [
+      217.4070220703125,
+      205.43302895507813
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        258.415,
+        151.11
+      ],
+      "score": 0.49673202633857727,
+      "template_scale_for_location_only": 0.8300000000000001
+    },
+    "observed_whole_cranium_centre": [
+      258.415,
+      145.11
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      370.8584289550781
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "cb33c38006c972961baf7a1fa491dabaa0bbcd6e1075a43f8111cfad5840af12"
+  },
+  {
+    "kind": "transition",
+    "index": 41,
+    "gait_frame": 41,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_closed.png",
+    "source_sha256": "3cc81d835181a670a441aa2624437956ed90992898b08130d419c1f3c0176d7b",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.14,
+    "origin": [
+      229.94702207031253,
+      212.8080228515625
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        247.415,
+        161.11
+      ],
+      "score": 0.5063885450363159,
+      "template_scale_for_location_only": 0.8300000000000001
+    },
+    "observed_whole_cranium_centre": [
+      247.415,
+      155.11
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      389.6334228515625
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "06d9fed9485fdea9138421a442f51f9a85db58dc4a2a3f32dc307d0ef950b867"
+  },
+  {
+    "kind": "transition",
+    "index": 42,
+    "gait_frame": 42,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_closed.png",
+    "source_sha256": "3cc81d835181a670a441aa2624437956ed90992898b08130d419c1f3c0176d7b",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.14,
+    "origin": [
+      207.10142207031254,
+      254.96037187500002
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        267.455,
+        140.97
+      ],
+      "score": 0.4982052445411682,
+      "template_scale_for_location_only": 0.91
+    },
+    "observed_whole_cranium_centre": [
+      267.455,
+      134.97
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      408.826171875
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "177254354937c3acf3ef53fde4cac5bb6adb3e65b1714b12f0b383d621be7c7c"
+  },
+  {
+    "kind": "transition",
+    "index": 43,
+    "gait_frame": 43,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_040_043_closed.png",
+    "source_sha256": "3cc81d835181a670a441aa2624437956ed90992898b08130d419c1f3c0176d7b",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.14,
+    "origin": [
+      221.9043220703125,
+      262.43154755859376
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        254.47,
+        151.48
+      ],
+      "score": 0.3789570927619934,
+      "template_scale_for_location_only": 0.94
+    },
+    "observed_whole_cranium_centre": [
+      254.47,
+      145.48
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      428.27874755859375
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "46ef3aa388638d7a0f44d8d12d4e0c83e2e914aeb27dc0ed138a589015ea98df"
+  },
+  {
+    "kind": "transition",
+    "index": 44,
+    "gait_frame": 44,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_closed.png",
+    "source_sha256": "5925e0ad5be6ddfca3fbc4b343fb36eb914686dc6c6271261428873bb7a989df",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.0975609756097562,
+    "origin": [
+      236.58365865567833,
+      286.72490085508764
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        250.935,
+        152.79
+      ],
+      "score": 0.5363464951515198,
+      "template_scale_for_location_only": 0.87
+    },
+    "observed_whole_cranium_centre": [
+      250.935,
+      146.79
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      447.83587646484375
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "08f8282e8193450dae88035dac52bb3262121818fa50e01032cdb709be0c349b"
+  },
+  {
+    "kind": "transition",
+    "index": 45,
+    "gait_frame": 45,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_closed.png",
+    "source_sha256": "5925e0ad5be6ddfca3fbc4b343fb36eb914686dc6c6271261428873bb7a989df",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.0975609756097562,
+    "origin": [
+      255.24219524104416,
+      304.04186386480563
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        233.935,
+        154.79
+      ],
+      "score": 0.5532380938529968,
+      "template_scale_for_location_only": 0.87
+    },
+    "observed_whole_cranium_centre": [
+      233.935,
+      148.79
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      467.34796142578125
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "63fa73598d7c13f2b8daf50c50a082d581ddac5019492339c1180be882454e51"
+  },
+  {
+    "kind": "transition",
+    "index": 46,
+    "gait_frame": 46,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_closed.png",
+    "source_sha256": "5925e0ad5be6ddfca3fbc4b343fb36eb914686dc6c6271261428873bb7a989df",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ],
+    "scale": 1.0975609756097562,
+    "origin": [
+      239.33304889958077,
+      355.93419576505335
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        248.43,
+        125.12
+      ],
+      "score": 0.5044353008270264,
+      "template_scale_for_location_only": 0.86
+    },
+    "observed_whole_cranium_centre": [
+      248.43,
+      119.12
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      486.6756591796875
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "89dc8a891fce1fde00a06b7de7ec2ccdb0c34ef325fe6a226ab6ac21ac3bd538"
+  },
+  {
+    "kind": "transition",
+    "index": 47,
+    "gait_frame": 47,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_044_047_closed.png",
+    "source_sha256": "5925e0ad5be6ddfca3fbc4b343fb36eb914686dc6c6271261428873bb7a989df",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ],
+    "scale": 1.0975609756097562,
+    "origin": [
+      256.32878060689785,
+      371.09808364495996
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        232.945,
+        128.63
+      ],
+      "score": 0.5221607089042664,
+      "template_scale_for_location_only": 0.89
+    },
+    "observed_whole_cranium_centre": [
+      232.945,
+      122.63
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      505.6919860839844
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "36c21e097ff8e3ca3ea99519301dfc9ad8c7843731eee673babcac2cd0e15953"
+  },
+  {
+    "kind": "transition",
+    "index": 48,
+    "gait_frame": 0,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_048_051b.png",
+    "source_sha256": "3187f3927015af148b0560c57c1421fc5ffe17f508ae6fe33c959df1e6ff312c",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ],
+    "scale": 1.062992125984252,
+    "origin": [
+      219.67728742464317,
+      338.26254128283404
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        275,
+        175
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      275,
+      175
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      524.2861633300781
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "af54884a43d838c21f4f45eed9c66c36789a829b55c70892486b39326925f1ac"
+  },
+  {
+    "kind": "transition",
+    "index": 49,
+    "gait_frame": 1,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_048_051b.png",
+    "source_sha256": "3187f3927015af148b0560c57c1421fc5ffe17f508ae6fe33c959df1e6ff312c",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ],
+    "scale": 1.0843373493975903,
+    "origin": [
+      221.3977124317583,
+      347.2349875576525
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        268,
+        180
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      268,
+      180
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      542.4157104492188
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "36219ee6b51823264d44d28f15392e39ac0cacbe07027e1ef4cf1b0950a61ea2"
+  },
+  {
+    "kind": "transition",
+    "index": 50,
+    "gait_frame": 2,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_050_model_join.png",
+    "source_sha256": "c3f45655c40d43b24a3f193fa64065f0b3c3c3ad7c8459495fac2f76c4607532",
+    "cell": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "scale": 0.4954128440366973,
+    "origin": [
+      249.92672757489964,
+      410.10621685063074
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        529,
+        303
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      529,
+      303
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      560.21630859375
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "340f540d93ad691f7eca84962b86c8bdb57b9e760dcd36560a5006de7295090f"
+  },
+  {
+    "kind": "transition",
+    "index": 51,
+    "gait_frame": 3,
+    "source": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_051_contact_armor.png",
+    "source_sha256": "1000a4e73aad8e83c2bf0831aba72df154aae3d5804fe839198bb06fd3ab0050",
+    "cell": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "scale": 0.52,
+    "origin": [
+      245.7601220703125,
+      311.5261437988281
+    ],
+    "alpha_floor": 16,
+    "head_location_match": {
+      "point": [
+        512,
+        512
+      ],
+      "method": "Manually observed whole cranium center; raw source pixel grid."
+    },
+    "observed_whole_cranium_centre": [
+      512,
+      512
+    ],
+    "guide_head_centre": [
+      512.0001220703125,
+      577.7661437988281
+    ],
+    "rigid_registration": {
+      "main_cranium_source_band": [
+        120,
+        140
+      ],
+      "main_pauldron_pair_source_band": [
+        250,
+        285
+      ]
+    },
+    "method": "Uniform completefigure sampling from inspected rigid cranium/pauldron widths; actual whole-cranium center registers to projected3Dhead center. Template locates only, never determines density.",
+    "output_sha256": "c763c01cc1cd45fb66d164c597601a8fac8c4ac5515fa7f9ff0a4385edca1d37"
+  }
+]

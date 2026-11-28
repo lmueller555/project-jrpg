@@ -1,0 +1,133 @@
+{
+  "source_sha256": "9e7825a98f35ebc777616cd373a0306ee4176301dfdf94de9ce85bdfe118bf6f",
+  "observations": [
+    {
+      "index": 48,
+      "gait_frame": 10,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        335.0,
+        263.86021505376345
+      ],
+      "neck_match": {
+        "point": [
+          335.0,
+          263.86021505376345
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        325,
+        231,
+        345,
+        263
+      ],
+      "face_skin_width": 20,
+      "face_skin_area": 285,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets."
+    },
+    {
+      "index": 49,
+      "gait_frame": 11,
+      "cell": [
+        512,
+        0,
+        1024,
+        768
+      ],
+      "source_neck": [
+        334.5,
+        263.81720430107526
+      ],
+      "neck_match": {
+        "point": [
+          334.5,
+          263.81720430107526
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        325,
+        230,
+        344,
+        263
+      ],
+      "face_skin_width": 19,
+      "face_skin_area": 261,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets."
+    },
+    {
+      "index": 50,
+      "gait_frame": 12,
+      "cell": [
+        0,
+        768,
+        512,
+        1536
+      ],
+      "source_neck": [
+        338.5,
+        264.81720430107526
+      ],
+      "neck_match": {
+        "point": [
+          338.5,
+          264.81720430107526
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        329,
+        233,
+        348,
+        264
+      ],
+      "face_skin_width": 19,
+      "face_skin_area": 275,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets."
+    },
+    {
+      "index": 51,
+      "gait_frame": 13,
+      "cell": [
+        512,
+        768,
+        1024,
+        1536
+      ],
+      "source_neck": [
+        336.0,
+        264.7741935483871
+      ],
+      "neck_match": {
+        "point": [
+          336.0,
+          264.7741935483871
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        327,
+        234,
+        345,
+        264
+      ],
+      "face_skin_width": 18,
+      "face_skin_area": 299,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets."
+    }
+  ]
+}

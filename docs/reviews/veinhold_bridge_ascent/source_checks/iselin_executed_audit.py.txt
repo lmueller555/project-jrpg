@@ -1,0 +1,24 @@
+from pathlib import Path
+from hashlib import sha256
+import importlib.util,json
+R=Path('/workspace/project-jrpg');B=R/'assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin';P=R/'assets/story/fire_veinhold_opening/shot08/characters/iselin/actorperformance.json';O=Path('/tmp/iselin_source_freeze')
+spec=importlib.util.spec_from_file_location('ise_frozen_export',B/'export_performance.py');e=importlib.util.module_from_spec(spec);spec.loader.exec_module(e)
+records=sorted((B/'batches').rglob('generation.json'))
+for path in records:e.verify_master(path.parent)
+pyfiles=sorted(B.rglob('*.py'))
+for path in pyfiles:compile(path.read_text(),str(path),'exec')
+profile=json.loads(P.read_text());assert profile['approval_state']=='source_revision_prepared'
+assert [r['index'] for r in profile['transition_frames']]==list(range(133))
+assert len(profile['overhead_cycle']['frames'])==48
+for relative,expected in profile['source_sha256'].items():assert sha256((P.parent/relative).read_bytes()).hexdigest()==expected,relative
+old=json.load(open('/tmp/iselin_before_continuations.snapshot.json'));names={r['file'] for r in old['transition_frames'] if r['index']<=56 or r['index']>=104}|{r['file'] for r in old['overhead_cycle']['frames']}
+assert len(names)==121
+for name in names:assert sha256((P.parent/name).read_bytes()).hexdigest()==old['source_sha256'][name],name
+accepted=json.load(open('/tmp/ascent-independent-review/iselin4793/binding.json'))
+for row in accepted['records']:assert sha256((R/row['source']).read_bytes()).hexdigest()==row['source_sha256'],row['index']
+manifest=[]
+for path in sorted(B.rglob('*')):
+ if path.is_file() and '__pycache__' not in path.parts and path.suffix!='.pyc':manifest.append({'path':path.relative_to(R).as_posix(),'sha256':sha256(path.read_bytes()).hexdigest()})
+canonical=json.dumps(manifest,sort_keys=True,separators=(',',':')).encode();tree_sha=sha256(canonical).hexdigest();(O/'owned_source_manifest.json').write_text(json.dumps({'sha256':tree_sha,'files':manifest},indent=2)+'\n')
+summary={'state':'FROZEN source/native prepared revision; full-bank review remains outside SOURCE','raw_generation_records_verified':len(records),'python_files_compiled':len(pyfiles),'transition_records':133,'overhead_drawings':48,'unique_declared_pngs':len(profile['source_sha256']),'frozen_baseline_files_verified_unchanged':len(names),'accepted_native_sources_verified_unchanged':len(accepted['records']),'source_files_fingerprinted':len(manifest),'owned_source_tree_sha256':tree_sha,'profile_sha256':sha256(P.read_bytes()).hexdigest(),'receipt_sha256':sha256((B/'export_registration.json').read_bytes()).hexdigest(),'exporter_sha256':sha256((B/'export_performance.py').read_bytes()).hexdigest(),'review_record':profile['source_review_record'],'commands':['/workspace/.venvs/project-jrpg/bin/python assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/export_performance.py --check','/workspace/.venvs/project-jrpg/bin/python /tmp/iselin_source_freeze/audit.py']}
+(O/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))

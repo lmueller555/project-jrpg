@@ -1,0 +1,3858 @@
+[
+  {
+    "index": 0,
+    "time": 0.0,
+    "global_time": 47.0,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        57.26,
+        1.55
+      ],
+      "target": [
+        0.0,
+        56.26319829369738,
+        1.4700853060308274
+      ],
+      "forward": [
+        0.0,
+        -0.9968017063026194,
+        -0.0799146939691727
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.0799146939691727,
+        0.9968017063026194
+      ],
+      "focal_pixels": 900.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 39.14625166082039,
+      "fov_axis": "vertical",
+      "pitch_radians": -0.08,
+      "party_travel_metres": 54.26,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 0,
+        "elevation": 12.225122675735753,
+        "azimuth": 0.0,
+        "pixels_per_metre": 295.82398396815546,
+        "upright_height_px": 540.685369502395,
+        "head": [
+          480.0,
+          156.5354927500558
+        ],
+        "root": [
+          480.0,
+          697.2208622524508
+        ],
+        "world_position_metres": [
+          0.0,
+          54.26,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 10,
+        "elevation": 10.347769111938366,
+        "azimuth": -10.520784313874362,
+        "pixels_per_metre": 254.18339815765535,
+        "upright_height_px": 431.5467947438791,
+        "head": [
+          311.66535638170535,
+          203.67876223056112
+        ],
+        "root": [
+          318.070071959696,
+          635.2255569744402
+        ],
+        "world_position_metres": [
+          0.65,
+          53.76,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 18,
+        "elevation": 6.087957462663611,
+        "azimuth": 7.0690429589534185,
+        "pixels_per_metre": 148.01167843749377,
+        "upright_height_px": 265.02967931708264,
+        "head": [
+          592.3375216323942,
+          210.28001815720864
+        ],
+        "root": [
+          589.7110625903093,
+          475.3096974742913
+        ],
+        "world_position_metres": [
+          -0.75,
+          51.211999999999996,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 56.42306131735259,
+        "ground_anchor": [
+          429.0216466590353,
+          271.0195171049168,
+          56.49498454192485
+        ],
+        "pixels_per_metre": 15.950924657170455,
+        "view_elevation_degrees": 0.556247749079253
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 55.52593316760442,
+        "ground_anchor": [
+          520.4691587516044,
+          271.3934453586778,
+          55.59785639217668
+        ],
+        "pixels_per_metre": 16.208642496531482,
+        "view_elevation_degrees": 0.5655752598834534
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.13040094226803,
+        "ground_anchor": [
+          460.0748668842105,
+          271.99971476290386,
+          54.20232416684029
+        ],
+        "pixels_per_metre": 16.626516418377935,
+        "view_elevation_degrees": 0.5806101031732911
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 56.52275403267754,
+        "ground_anchor": [
+          553.1514367277114,
+          270.97869647687764,
+          56.5946772572498
+        ],
+        "pixels_per_metre": 15.922791014034496,
+        "view_elevation_degrees": 0.5543301886951224
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          236.0,
+          0.0
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.20834324628007692
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          236.0,
+          0.0
+        ],
+        "cycle_phase": 0.18,
+        "frame_index": 3,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.20834324628007692
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          242.0,
+          0.0
+        ],
+        "cycle_phase": 0.42,
+        "frame_index": 8,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.20157769056016006
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          242.0,
+          0.0
+        ],
+        "cycle_phase": 0.56,
+        "frame_index": 11,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.20157769056016006
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          248.0,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.1952376824876015
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          248.0,
+          0.0
+        ],
+        "cycle_phase": 0.7,
+        "frame_index": 14,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.1952376824876015
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          316.0,
+          0.0
+        ],
+        "cycle_phase": 0.08,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.1439359987815785
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          320.0,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.1417447212870161
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "time": 0.4,
+    "global_time": 47.4,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        58.725284909749085,
+        2.025
+      ],
+      "target": [
+        0.0,
+        57.74713730901528,
+        1.8170883091822407
+      ],
+      "forward": [
+        0.0,
+        -0.9781476007338057,
+        -0.2079116908177591
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.2079116908177591,
+        0.9781476007338057
+      ],
+      "focal_pixels": 860.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 40.819765667607975,
+      "fov_axis": "vertical",
+      "pitch_radians": -0.2094395102393193,
+      "party_travel_metres": 55.86,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 24,
+        "elevation": 21.436516363173514,
+        "azimuth": 0.0,
+        "pixels_per_metre": 283.21407822428444,
+        "upright_height_px": 498.0929292218646,
+        "head": [
+          480.0,
+          191.39622095881822
+        ],
+        "root": [
+          480.0,
+          689.4891501806828
+        ],
+        "world_position_metres": [
+          0.0,
+          55.86,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 34,
+        "elevation": 18.171344196737714,
+        "azimuth": -10.931980854474745,
+        "pixels_per_metre": 243.92692770879043,
+        "upright_height_px": 399.6115789608031,
+        "head": [
+          313.39087785677543,
+          217.12602936033903
+        ],
+        "root": [
+          329.4384188026885,
+          616.7376083211421
+        ],
+        "world_position_metres": [
+          0.65,
+          55.36,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 42,
+        "elevation": 10.688139049517957,
+        "azimuth": 7.228403531049324,
+        "pixels_per_metre": 142.90542449701067,
+        "upright_height_px": 252.9999133409116,
+        "head": [
+          590.6186043589204,
+          171.12832389881257
+        ],
+        "root": [
+          583.9469776029443,
+          424.12823723972417
+        ],
+        "world_position_metres": [
+          -0.75,
+          52.812,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 56.97040635689763,
+        "ground_anchor": [
+          431.8520046561867,
+          166.8122402056825,
+          57.15752687863361
+        ],
+        "pixels_per_metre": 15.095556710837407,
+        "view_elevation_degrees": 1.0104730427381319
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 56.090067025936925,
+        "ground_anchor": [
+          518.2037311738437,
+          167.27544077199101,
+          56.27718754767291
+        ],
+        "pixels_per_metre": 15.332483015260484,
+        "view_elevation_degrees": 1.0269661715825085
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.72065073247697,
+        "ground_anchor": [
+          461.2050460131285,
+          168.0254974477058,
+          54.90777125421295
+        ],
+        "pixels_per_metre": 15.716187371463144,
+        "view_elevation_degrees": 1.0535245986999218
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 57.0682334269048,
+        "ground_anchor": [
+          549.0936738976108,
+          166.76164675462329,
+          57.25535394864078
+        ],
+        "pixels_per_metre": 15.069679721232676,
+        "view_elevation_degrees": 1.0071190269090127
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          234.4,
+          0.0
+        ],
+        "cycle_phase": 0.4,
+        "frame_index": 8,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.3668815810155993
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          234.4,
+          0.0
+        ],
+        "cycle_phase": 0.5800000000000001,
+        "frame_index": 11,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.3668815810155993
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          240.4,
+          0.0
+        ],
+        "cycle_phase": 0.020000000000000018,
+        "frame_index": 0,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.3547670497981557
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          240.4,
+          0.0
+        ],
+        "cycle_phase": 0.16000000000000003,
+        "frame_index": 3,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.3547670497981557
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          246.4,
+          0.0
+        ],
+        "cycle_phase": 0.68,
+        "frame_index": 13,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.34342693298879723
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          246.4,
+          0.0
+        ],
+        "cycle_phase": 0.30000000000000004,
+        "frame_index": 6,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.34342693298879723
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          314.4,
+          0.0
+        ],
+        "cycle_phase": 0.48000000000000004,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.25210557256619687
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          318.4,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999996,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.2482222529000061
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "time": 0.6,
+    "global_time": 47.6,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        59.27323431707968,
+        2.8604492187500012
+      ],
+      "target": [
+        0.0,
+        58.366926530043024,
+        2.4378309570093015
+      ],
+      "forward": [
+        0.0,
+        -0.9063077870366498,
+        -0.4226182617406998
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.4226182617406998,
+        0.9063077870366498
+      ],
+      "focal_pixels": 780.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 44.612410109815286,
+      "fov_axis": "vertical",
+      "pitch_radians": -0.43633231299858277,
+      "party_travel_metres": 56.66,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 36,
+        "elevation": 36.87724250324196,
+        "azimuth": 0.0,
+        "pixels_per_metre": 243.98512144851134,
+        "upright_height_px": 377.089279589831,
+        "head": [
+          480.0,
+          267.36922543881917
+        ],
+        "root": [
+          480.0,
+          644.4585050286502
+        ],
+        "world_position_metres": [
+          0.0,
+          56.66,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 46,
+        "elevation": 31.650615287769863,
+        "azimuth": -11.793148292520899,
+        "pixels_per_metre": 213.69452336745798,
+        "upright_height_px": 313.6941985504027,
+        "head": [
+          326.5274878437221,
+          253.3901748211067
+        ],
+        "root": [
+          354.2068637642651,
+          567.0843733715094
+        ],
+        "world_position_metres": [
+          0.65,
+          56.16,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 6,
+        "elevation": 18.947045746194604,
+        "azimuth": 7.546596420285945,
+        "pixels_per_metre": 130.8869249934149,
+        "upright_height_px": 224.72652905540838,
+        "head": [
+          584.8577653907871,
+          119.86880148877106
+        ],
+        "root": [
+          572.2756768712543,
+          344.59533054417943
+        ],
+        "world_position_metres": [
+          -0.75,
+          53.611999999999995,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 53.871641577199455,
+        "ground_anchor": [
+          433.99213784678494,
+          0.07083037433000072,
+          54.25199801276608
+        ],
+        "pixels_per_metre": 14.478860809953968,
+        "view_elevation_degrees": 1.8165547970146336
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 53.05595855524473,
+        "ground_anchor": [
+          516.4920125955796,
+          0.7392786969870144,
+          53.436314990811354
+        ],
+        "pixels_per_metre": 14.701459011202708,
+        "view_elevation_degrees": 1.8459002702024085
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 51.78711870988137,
+        "ground_anchor": [
+          462.0579767047334,
+          1.8206358136352492,
+          52.167475145447995
+        ],
+        "pixels_per_metre": 15.061660494565615,
+        "view_elevation_degrees": 1.8931362377123973
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 53.962283761736806,
+        "ground_anchor": [
+          546.0252123528429,
+          -0.0022116070458082504,
+          54.34264019730343
+        ],
+        "pixels_per_metre": 14.454540201522695,
+        "view_elevation_degrees": 1.81061069343074
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          233.6,
+          0.0
+        ],
+        "cycle_phase": 0.6,
+        "frame_index": 12,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6442601535731087
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          233.6,
+          0.0
+        ],
+        "cycle_phase": 0.78,
+        "frame_index": 15,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6442601535731087
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          239.6,
+          0.0
+        ],
+        "cycle_phase": 0.21999999999999997,
+        "frame_index": 4,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6228286925583931
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          239.6,
+          0.0
+        ],
+        "cycle_phase": 0.3600000000000001,
+        "frame_index": 7,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6228286925583931
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          245.6,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999996,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6027770252686018
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          245.6,
+          0.0
+        ],
+        "cycle_phase": 0.4999999999999998,
+        "frame_index": 10,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6027770252686018
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          313.6,
+          0.0
+        ],
+        "cycle_phase": 0.6799999999999999,
+        "frame_index": 13,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.44164712876288575
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          317.6,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.4348088784676028
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "time": 0.8,
+    "global_time": 47.8,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        59.68985886458327,
+        4.000000000000004
+      ],
+      "target": [
+        0.0,
+        58.92381442146429,
+        3.3572123903134647
+      ],
+      "forward": [
+        0.0,
+        -0.7660444431189779,
+        -0.6427876096865395
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.6427876096865395,
+        0.7660444431189779
+      ],
+      "focal_pixels": 650.0000000000001,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 52.42275603566305,
+      "fov_axis": "vertical",
+      "pitch_radians": -0.698131700797732,
+      "party_travel_metres": 57.46,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 0,
+        "elevation": 54.272183950843896,
+        "azimuth": 0.0,
+        "pixels_per_metre": 175.63710281615516,
+        "upright_height_px": 202.77106114694692,
+        "head": [
+          480.0,
+          364.94435286180504
+        ],
+        "root": [
+          480.0,
+          567.715414008752
+        ],
+        "world_position_metres": [
+          0.0,
+          57.46,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 10,
+        "elevation": 47.848026653756314,
+        "azimuth": -13.393165206653315,
+        "pixels_per_metre": 159.16412666949893,
+        "upright_height_px": 184.04520319631064,
+        "head": [
+          361.2117458104792,
+          318.5127483898575
+        ],
+        "root": [
+          389.38033926839717,
+          502.55795158616814
+        ],
+        "world_position_metres": [
+          0.65,
+          56.96,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 18,
+        "elevation": 30.178744811543663,
+        "azimuth": 8.087757359814983,
+        "pixels_per_metre": 107.6922763056558,
+        "upright_height_px": 171.07802726335206,
+        "head": [
+          569.3314075282368,
+          116.65259335887527
+        ],
+        "root": [
+          553.7047814139393,
+          287.7306206222273
+        ],
+        "world_position_metres": [
+          -0.75,
+          54.412,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 47.11721927700326,
+        "ground_anchor": [
+          436.3899021255358,
+          -156.03312781096741,
+          47.69572812572114
+        ],
+        "pixels_per_metre": 13.795381178558833,
+        "view_elevation_degrees": 2.9070703094365884
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 46.427774195263446,
+        "ground_anchor": [
+          514.5698233198871,
+          -155.01550160951007,
+          47.00628304398133
+        ],
+        "pixels_per_metre": 14.00024040063314,
+        "view_elevation_degrees": 2.9536349668953847
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 45.35530441551384,
+        "ground_anchor": [
+          463.01922578379896,
+          -153.3718088250526,
+          45.93381326423172
+        ],
+        "pixels_per_metre": 14.33128954543334,
+        "view_elevation_degrees": 3.0285628882050224
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 47.19383336194237,
+        "ground_anchor": [
+          542.5882430573753,
+          -156.14439742924634,
+          47.77234221066025
+        ],
+        "pixels_per_metre": 13.772985869042953,
+        "view_elevation_degrees": 2.8976661416085774
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          232.8,
+          0.0
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.025841672128776
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          232.8,
+          0.0
+        ],
+        "cycle_phase": 0.17999999999999994,
+        "frame_index": 3,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.025841672128776
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          238.8,
+          0.0
+        ],
+        "cycle_phase": 0.41999999999999993,
+        "frame_index": 8,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9914893141892351
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          238.8,
+          0.0
+        ],
+        "cycle_phase": 0.56,
+        "frame_index": 11,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9914893141892351
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          244.8,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9593627579665952
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          244.8,
+          0.0
+        ],
+        "cycle_phase": 0.7,
+        "frame_index": 14,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9593627579665952
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          312.8,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999996,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.701699064025168
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          316.8,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.6907835290573416
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "time": 1.0,
+    "global_time": 48.0,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        60.01427659561257,
+        5.223418813589575
+      ],
+      "target": [
+        0.0,
+        59.51427659561257,
+        4.357393409805136
+      ],
+      "forward": [
+        0.0,
+        -0.4999999999999997,
+        -0.8660254037844388
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.8660254037844388,
+        0.4999999999999997
+      ],
+      "focal_pixels": 630.3125,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 53.832414305801954,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.047197551196598,
+      "party_travel_metres": 58.26,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 12,
+        "elevation": 67.9145833218895,
+        "azimuth": 0.0,
+        "pixels_per_metre": 136.3920474685589,
+        "upright_height_px": 99.71199555347835,
+        "head": [
+          480.0,
+          347.7872970364882
+        ],
+        "root": [
+          480.0,
+          447.49929258996656
+        ],
+        "world_position_metres": [
+          0.0,
+          58.26,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 22,
+        "elevation": 61.51339243890672,
+        "azimuth": -16.084431698967798,
+        "pixels_per_metre": 129.39231225952838,
+        "upright_height_px": 103.93648113692916,
+        "head": [
+          381.54178904241076,
+          289.62164418867076
+        ],
+        "root": [
+          407.4958186379024,
+          393.5581253255999
+        ],
+        "world_position_metres": [
+          0.65,
+          57.76,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 30,
+        "elevation": 41.65317980631199,
+        "azimuth": 8.876516190360611,
+        "pixels_per_metre": 102.5677418248408,
+        "upright_height_px": 146.63185668066203,
+        "head": [
+          568.0996384739772,
+          32.53861821358436
+        ],
+        "root": [
+          548.2673396109417,
+          179.17047489424638
+        ],
+        "world_position_metres": [
+          -0.75,
+          55.211999999999996,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 33.314728150772126,
+        "ground_anchor": [
+          420.83985533674394,
+          -582.2958007753728,
+          34.094151014178124
+        ],
+        "pixels_per_metre": 18.91993526548982,
+        "view_elevation_degrees": 4.066925026411524
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 32.864724833123404,
+        "ground_anchor": [
+          526.836680105358,
+          -579.7620022527412,
+          33.6441476965294
+        ],
+        "pixels_per_metre": 19.17899824813766,
+        "view_elevation_degrees": 4.131585673295348
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 32.16471989908655,
+        "ground_anchor": [
+          457.04092747487994,
+          -575.682951271289,
+          32.94414276249255
+        ],
+        "pixels_per_metre": 19.596393252530714,
+        "view_elevation_degrees": 4.235600105028329
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 33.36473444324464,
+        "ground_anchor": [
+          564.9171597485882,
+          -582.573244018108,
+          34.14415730665064
+        ],
+        "pixels_per_metre": 18.891578504009924,
+        "view_elevation_degrees": 4.053895592641607
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          232.0,
+          0.0
+        ],
+        "cycle_phase": 0.19999999999999996,
+        "frame_index": 4,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.4398941687111912
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          232.0,
+          0.0
+        ],
+        "cycle_phase": 0.3799999999999999,
+        "frame_index": 7,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.4398941687111912
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          238.0,
+          0.0
+        ],
+        "cycle_phase": 0.6199999999999999,
+        "frame_index": 12,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.3913814718418676
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          238.0,
+          0.0
+        ],
+        "cycle_phase": 0.76,
+        "frame_index": 15,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.3913814718418676
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          244.0,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.3460303841992016
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          244.0,
+          0.0
+        ],
+        "cycle_phase": 0.09999999999999987,
+        "frame_index": 2,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.3460303841992016
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          312.0,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9829449741101572
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          316.0,
+          0.0
+        ],
+        "cycle_phase": 0.6799999999999999,
+        "frame_index": 13,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 0.9675886967419932
+      }
+    ]
+  },
+  {
+    "index": 72,
+    "time": 1.2,
+    "global_time": 48.2,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        60.30572340438743,
+        6.616290831201283
+      ],
+      "target": [
+        0.0,
+        59.96370326106176,
+        5.676598210415374
+      ],
+      "forward": [
+        0.0,
+        -0.3420201433256682,
+        -0.9396926207859085
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.9396926207859085,
+        0.3420201433256682
+      ],
+      "focal_pixels": 620.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 54.59914442266561,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.2217304763960313,
+      "party_travel_metres": 59.059999999999995,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 24,
+        "elevation": 77.70602395985891,
+        "azimuth": 0.0,
+        "pixels_per_metre": 106.94045613469652,
+        "upright_height_px": 43.849768487249435,
+        "head": [
+          480.0,
+          378.09150210039775
+        ],
+        "root": [
+          480.0,
+          421.9412705876472
+        ],
+        "world_position_metres": [
+          0.0,
+          59.059999999999995,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 34,
+        "elevation": 71.95040787267735,
+        "azimuth": -20.422235158265064,
+        "pixels_per_metre": 103.87645342471376,
+        "upright_height_px": 52.556683850349145,
+        "head": [
+          402.4713879505799,
+          324.07761029151965
+        ],
+        "root": [
+          420.8601161482823,
+          376.6342941418688
+        ],
+        "world_position_metres": [
+          0.65,
+          58.559999999999995,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 42,
+        "elevation": 52.674086047406696,
+        "azimuth": 9.908097257599374,
+        "pixels_per_metre": 90.64199994869001,
+        "upright_height_px": 104.00741964331681,
+        "head": [
+          557.5727522805053,
+          73.05885986765401
+        ],
+        "root": [
+          540.501029988274,
+          177.06627951097082
+        ],
+        "world_position_metres": [
+          -0.75,
+          56.01199999999999,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 25.663946390931535,
+        "ground_anchor": [
+          405.1588314366732,
+          -937.8452706916419,
+          26.509669749638853
+        ],
+        "pixels_per_metre": 24.158404578770458,
+        "view_elevation_degrees": 5.375051105949872
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 25.356125992533048,
+        "ground_anchor": [
+          539.1560897002944,
+          -932.6104525687404,
+          26.201849351240366
+        ],
+        "pixels_per_metre": 24.451684779551087,
+        "view_elevation_degrees": 5.459853721337252
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 24.877294416797127,
+        "ground_anchor": [
+          451.07679585076136,
+          -924.2183770676413,
+          25.723017775504445
+        ],
+        "pixels_per_metre": 24.92232433368544,
+        "view_elevation_degrees": 5.596222793512577
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 25.698152709568806,
+        "ground_anchor": [
+          587.4442767871606,
+          -938.4194904638955,
+          26.543876068276123
+        ],
+        "pixels_per_metre": 24.126247789365056,
+        "view_elevation_degrees": 5.357996763982504
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          231.2,
+          0.0
+        ],
+        "cycle_phase": 0.3999999999999999,
+        "frame_index": 8,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.9156297870914547
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          231.2,
+          0.0
+        ],
+        "cycle_phase": 0.5799999999999998,
+        "frame_index": 11,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.9156297870914547
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          237.2,
+          0.0
+        ],
+        "cycle_phase": 0.019999999999999796,
+        "frame_index": 0,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.8507105691010708
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          237.2,
+          0.0
+        ],
+        "cycle_phase": 0.15999999999999992,
+        "frame_index": 3,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.8507105691010708
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          243.2,
+          0.0
+        ],
+        "cycle_phase": 0.6799999999999999,
+        "frame_index": 13,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.7900455537113138
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          243.2,
+          0.0
+        ],
+        "cycle_phase": 0.2999999999999998,
+        "frame_index": 6,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.7900455537113138
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          311.2,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.3051753345729822
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          315.2,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999985,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 1.284700626414234
+      }
+    ]
+  },
+  {
+    "index": 96,
+    "time": 1.6,
+    "global_time": 48.6,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        61.04676568292032,
+        10.774034628428627
+      ],
+      "target": [
+        0.0,
+        60.90759258196025,
+        9.783766559687056
+      ],
+      "forward": [
+        0.0,
+        -0.13917310096006547,
+        -0.9902680687415704
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.9902680687415704,
+        0.13917310096006547
+      ],
+      "focal_pixels": 610.512,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 55.322581870885244,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.4311699866353502,
+      "party_travel_metres": 60.66,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 0,
+        "elevation": 87.75687251867532,
+        "azimuth": 0.0,
+        "pixels_per_metre": 62.09584724577663,
+        "upright_height_px": 4.581902794151972,
+        "head": [
+          480.0,
+          378.9831444646749
+        ],
+        "root": [
+          480.0,
+          383.5650472588269
+        ],
+        "world_position_metres": [
+          0.0,
+          60.66,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 10,
+        "elevation": 83.64625995668587,
+        "azimuth": -36.241447865875436,
+        "pixels_per_metre": 61.659438718729604,
+        "upright_height_px": 9.492343987533047,
+        "head": [
+          436.3408339316927,
+          345.654282831417
+        ],
+        "root": [
+          443.2310163825017,
+          355.14662681895004
+        ],
+        "world_position_metres": [
+          0.65,
+          60.16,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 18,
+        "elevation": 70.40149349372611,
+        "azimuth": 12.31751487183468,
+        "pixels_per_metre": 59.52748570302475,
+        "upright_height_px": 36.15784554134157,
+        "head": [
+          528.8945383405612,
+          179.67954940143207
+        ],
+        "root": [
+          521.0761098407377,
+          215.83739494277364
+        ],
+        "world_position_metres": [
+          -0.75,
+          57.611999999999995,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 18.077561428699155,
+        "ground_anchor": [
+          377.00705575465366,
+          -1555.5501033854582,
+          18.96880269056657
+        ],
+        "pixels_per_metre": 33.77181166873412,
+        "view_elevation_degrees": 9.18730423907332
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 17.952304714380173,
+        "ground_anchor": [
+          560.9974390446283,
+          -1539.1417132836377,
+          18.843545976247587
+        ],
+        "pixels_per_metre": 34.007444153449946,
+        "view_elevation_degrees": 9.328741121921519
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 17.75746099966566,
+        "ground_anchor": [
+          440.71541037217906,
+          -1513.179443286683,
+          18.648702261533074
+        ],
+        "pixels_per_metre": 34.38059078443111,
+        "view_elevation_degrees": 9.55592261686666
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 18.091480490280986,
+        "ground_anchor": [
+          627.9420598485447,
+          -1557.360105421264,
+          18.9827217521484
+        ],
+        "pixels_per_metre": 33.74582861408032,
+        "view_elevation_degrees": 9.158997636636096
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          229.6,
+          0.0
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.352333546681682
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          229.6,
+          0.0
+        ],
+        "cycle_phase": 0.17999999999999994,
+        "frame_index": 3,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.352333546681682
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          235.6,
+          0.0
+        ],
+        "cycle_phase": 0.41999999999999993,
+        "frame_index": 8,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.2373702493889263
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          235.6,
+          0.0
+        ],
+        "cycle_phase": 0.56,
+        "frame_index": 11,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.2373702493889263
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          241.6,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.130022351306017
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          241.6,
+          0.0
+        ],
+        "cycle_phase": 0.6999999999999997,
+        "frame_index": 14,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 3.130022351306017
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          309.6,
+          0.0
+        ],
+        "cycle_phase": 0.08000000000000007,
+        "frame_index": 1,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 2.2749261700810144
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          313.6,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": null,
+        "ground_anchor": null,
+        "pixels_per_metre": null,
+        "view_elevation_degrees": 2.2389326586775473
+      }
+    ]
+  },
+  {
+    "index": 132,
+    "time": 2.2,
+    "global_time": 49.2,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        63.06,
+        21.99999999999998
+      ],
+      "target": [
+        0.0,
+        63.06,
+        20.99999999999998
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 600.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 56.144973871705915,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 63.06,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 36,
+        "elevation": 90.0,
+        "azimuth": 0.0,
+        "pixels_per_metre": 28.436018957345997,
+        "upright_height_px": 0.0,
+        "head": [
+          480.0,
+          320.00000000000006
+        ],
+        "root": [
+          480.0,
+          320.00000000000006
+        ],
+        "world_position_metres": [
+          0.0,
+          63.06,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 46,
+        "elevation": 87.77429401399965,
+        "azimuth": -52.43140797117251,
+        "pixels_per_metre": 28.436018957345997,
+        "upright_height_px": 1.156535771920403,
+        "head": [
+          460.7692307692308,
+          305.20710059171597
+        ],
+        "root": [
+          462.27272727272725,
+          306.3636363636364
+        ],
+        "world_position_metres": [
+          0.65,
+          62.56,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 6,
+        "elevation": 81.53851347851253,
+        "azimuth": 13.823742710197942,
+        "pixels_per_metre": 28.436018957345997,
+        "upright_height_px": 7.40738073807384,
+        "head": [
+          502.2772277227723,
+          229.46534653465335
+        ],
+        "root": [
+          500.4545454545455,
+          236.8727272727272
+        ],
+        "world_position_metres": [
+          -0.75,
+          60.012,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 20.999999999999982,
+        "ground_anchor": [
+          392.328119209419,
+          -1388.493253127462,
+          21.89999999999998
+        ],
+        "pixels_per_metre": 28.571428571428594,
+        "view_elevation_degrees": 18.58839965886423
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 20.999999999999982,
+        "ground_anchor": [
+          548.4931043100122,
+          -1363.8355370919155,
+          21.89999999999998
+        ],
+        "pixels_per_metre": 28.571428571428594,
+        "view_elevation_degrees": 18.850076014589412
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 20.999999999999982,
+        "ground_anchor": [
+          447.12363701036634,
+          -1325.4791023501698,
+          21.89999999999998
+        ],
+        "pixels_per_metre": 28.571428571428594,
+        "view_elevation_degrees": 19.268638834004875
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 20.999999999999982,
+        "ground_anchor": [
+          606.0268478693747,
+          -1391.233323947874,
+          21.89999999999998
+        ],
+        "pixels_per_metre": 28.571428571428594,
+        "view_elevation_degrees": 18.53666257569098
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          227.2,
+          0.0
+        ],
+        "cycle_phase": 0.6000000000000001,
+        "frame_index": 12,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          540.0000000000001,
+          4796.54545454546,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 7.32448047693223
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          227.2,
+          0.0
+        ],
+        "cycle_phase": 0.7800000000000002,
+        "frame_index": 15,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          419.9999999999999,
+          4796.54545454546,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 7.32448047693223
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          233.2,
+          0.0
+        ],
+        "cycle_phase": 0.21999999999999997,
+        "frame_index": 4,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          540.0000000000001,
+          4960.181818181824,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 7.0688857401411775
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          233.2,
+          0.0
+        ],
+        "cycle_phase": 0.3600000000000001,
+        "frame_index": 7,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          419.9999999999999,
+          4960.181818181824,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 7.0688857401411775
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          239.2,
+          0.0
+        ],
+        "cycle_phase": 0.0800000000000003,
+        "frame_index": 1,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          540.0000000000001,
+          5123.818181818188,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 6.8304448189692915
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          239.2,
+          0.0
+        ],
+        "cycle_phase": 0.5000000000000002,
+        "frame_index": 10,
+        "depth_metres": 21.09999999999997,
+        "ground_anchor": [
+          419.9999999999999,
+          5123.818181818188,
+          21.999999999999968
+        ],
+        "pixels_per_metre": 28.43601895734601,
+        "view_elevation_degrees": 6.8304448189692915
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          307.2,
+          0.0
+        ],
+        "cycle_phase": 0.6800000000000002,
+        "frame_index": 13,
+        "depth_metres": 21.099999999999966,
+        "ground_anchor": [
+          501.81818181818187,
+          6978.363636363647,
+          21.999999999999964
+        ],
+        "pixels_per_metre": 28.43601895734602,
+        "view_elevation_degrees": 4.939534256975967
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          311.2,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": 21.099999999999966,
+        "ground_anchor": [
+          458.18181818181813,
+          7087.454545454556,
+          21.999999999999964
+        ],
+        "pixels_per_metre": 28.43601895734602,
+        "view_elevation_degrees": 4.860294658117825
+      }
+    ]
+  },
+  {
+    "index": 180,
+    "time": 3.0,
+    "global_time": 50.0,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        71.62565360971398,
+        55.71559213534521
+      ],
+      "target": [
+        0.0,
+        71.62565360971398,
+        54.71559213534521
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 586.7692932987858,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 57.21249361185445,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 66.25999999999999,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 36,
+        "elevation": 84.40938217177681,
+        "azimuth": 0.0,
+        "pixels_per_metre": 10.704423147523306,
+        "upright_height_px": 1.9407676766725217,
+        "head": [
+          480.0,
+          261.55079983624546
+        ],
+        "root": [
+          480.0,
+          263.491567512918
+        ],
+        "world_position_metres": [
+          0.0,
+          66.25999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 46,
+        "elevation": 83.85508868719795,
+        "azimuth": -6.323408981416511,
+        "pixels_per_metre": 10.704423147523306,
+        "upright_height_px": 1.9677828861515536,
+        "head": [
+          472.93645970789254,
+          256.25802982806124
+        ],
+        "root": [
+          473.15451876168333,
+          258.2258127142128
+        ],
+        "world_position_metres": [
+          0.65,
+          65.75999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 6,
+        "elevation": 81.239699140739,
+        "azimuth": 5.0939290957648735,
+        "pixels_per_metre": 10.704423147523306,
+        "upright_height_px": 2.958239841483987,
+        "head": [
+          488.1623321296251,
+          228.43328641852736
+        ],
+        "root": [
+          487.8986321980577,
+          231.39152626001135
+        ],
+        "world_position_metres": [
+          -0.75,
+          63.21199999999999,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.71559213534522,
+        "ground_anchor": [
+          446.23832377062035,
+          -428.2973073102887,
+          55.61559213534522
+        ],
+        "pixels_per_metre": 10.723986900248569,
+        "view_elevation_degrees": 37.62021602440861
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.71559213534522,
+        "ground_anchor": [
+          506.37609676908164,
+          -418.80183603898536,
+          55.61559213534522
+        ],
+        "pixels_per_metre": 10.723986900248569,
+        "view_elevation_degrees": 37.9851212431416
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.71559213534522,
+        "ground_anchor": [
+          467.3395995061758,
+          -404.03110773491915,
+          55.61559213534522
+        ],
+        "pixels_per_metre": 10.723986900248569,
+        "view_elevation_degrees": 38.56127475677829
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 54.71559213534522,
+        "ground_anchor": [
+          528.5318393492504,
+          -429.3524846721763,
+          55.61559213534522
+        ],
+        "pixels_per_metre": 10.723986900248569,
+        "view_elevation_degrees": 37.5513914312324
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          224.0,
+          0.0
+        ],
+        "cycle_phase": 0.5999999999999999,
+        "frame_index": 12,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          503.16932111430265,
+          1924.7318914084183,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 19.783933659692874
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          224.0,
+          0.0
+        ],
+        "cycle_phase": 0.78,
+        "frame_index": 15,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          456.83067888569735,
+          1924.7318914084183,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 19.783933659692874
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          230.0,
+          0.0
+        ],
+        "cycle_phase": 0.21999999999999975,
+        "frame_index": 4,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          503.16932111430265,
+          1987.9209489928803,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 19.08974923674942
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          230.0,
+          0.0
+        ],
+        "cycle_phase": 0.3599999999999999,
+        "frame_index": 7,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          456.83067888569735,
+          1987.9209489928803,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 19.08974923674942
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          236.0,
+          0.0
+        ],
+        "cycle_phase": 0.08000000000000007,
+        "frame_index": 1,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          503.16932111430265,
+          2051.1100065773417,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 18.440982653431014
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          236.0,
+          0.0
+        ],
+        "cycle_phase": 0.5,
+        "frame_index": 10,
+        "depth_metres": 54.815592135345206,
+        "ground_anchor": [
+          456.83067888569735,
+          2051.1100065773417,
+          55.715592135345204
+        ],
+        "pixels_per_metre": 10.704423147523308,
+        "view_elevation_degrees": 18.440982653431014
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          304.0,
+          0.0
+        ],
+        "cycle_phase": 0.6799999999999999,
+        "frame_index": 13,
+        "depth_metres": 54.8155921353452,
+        "ground_anchor": [
+          488.42520767792826,
+          2767.2526592012427,
+          55.7155921353452
+        ],
+        "pixels_per_metre": 10.70442314752331,
+        "view_elevation_degrees": 13.27297887588396
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          308.0,
+          0.0
+        ],
+        "cycle_phase": 0.2799999999999998,
+        "frame_index": 5,
+        "depth_metres": 54.8155921353452,
+        "ground_anchor": [
+          471.57479232207174,
+          2809.378697590884,
+          55.7155921353452
+        ],
+        "pixels_per_metre": 10.70442314752331,
+        "view_elevation_degrees": 13.056129496187175
+      }
+    ]
+  },
+  {
+    "index": 240,
+    "time": 4.0,
+    "global_time": 51.0,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        105.15500000000004,
+        165.43750000000003
+      ],
+      "target": [
+        0.0,
+        105.15500000000004,
+        164.43750000000003
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 566.5625,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 58.916365880890574,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 70.25999999999999,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 0,
+        "elevation": 78.0261648388578,
+        "azimuth": 0.0,
+        "pixels_per_metre": 3.4433639747777858,
+        "upright_height_px": 1.351445955143305,
+        "head": [
+          480.0,
+          199.14603232215163
+        ],
+        "root": [
+          480.0,
+          200.49747827729493
+        ],
+        "world_position_metres": [
+          0.0,
+          70.25999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 10,
+        "elevation": 77.85766423555546,
+        "azimuth": -1.052071506359459,
+        "pixels_per_metre": 3.4433639747777858,
+        "upright_height_px": 1.2734711963556151,
+        "head": [
+          477.7506031731489,
+          197.51169125169866
+        ],
+        "root": [
+          477.77398942198715,
+          198.78516244805428
+        ],
+        "world_position_metres": [
+          0.65,
+          69.75999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 18,
+        "elevation": 77.01192317085633,
+        "azimuth": 1.1323890935819554,
+        "pixels_per_metre": 3.4433639747777858,
+        "upright_height_px": 1.4293388632310098,
+        "head": [
+          482.59672675884195,
+          188.6298621190129
+        ],
+        "root": [
+          482.568473743861,
+          190.0592009822439
+        ],
+        "world_position_metres": [
+          -0.75,
+          67.21199999999999,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 164.43750000000003,
+        "ground_anchor": [
+          469.0344695029555,
+          -37.93627008974664,
+          165.33750000000003
+        ],
+        "pixels_per_metre": 3.4454580007601665,
+        "view_elevation_degrees": 57.56305421040011
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 164.43750000000003,
+        "ground_anchor": [
+          488.56675158985956,
+          -34.85221469208602,
+          165.33750000000003
+        ],
+        "pixels_per_metre": 3.4454580007601665,
+        "view_elevation_degrees": 57.79168022113595
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 164.43750000000003,
+        "ground_anchor": [
+          475.888000146183,
+          -30.054796738624077,
+          165.33750000000003
+        ],
+        "pixels_per_metre": 3.4454580007601665,
+        "view_elevation_degrees": 58.148065869865945
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 164.43750000000003,
+        "ground_anchor": [
+          495.7627648830648,
+          -38.278983510222474,
+          165.33750000000003
+        ],
+        "pixels_per_metre": 3.4454580007601665,
+        "view_elevation_degrees": 57.52530806285803
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          220.0,
+          0.0
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          487.53418964865887,
+          713.3018228182847,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 55.080535229039896
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          220.0,
+          0.0
+        ],
+        "cycle_phase": 0.1799999999999995,
+        "frame_index": 3,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          472.46581035134113,
+          713.3018228182847,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 55.080535229039896
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          226.0,
+          0.0
+        ],
+        "cycle_phase": 0.4199999999999997,
+        "frame_index": 8,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          487.53418964865887,
+          733.8496127691725,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 53.6999515148916
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          226.0,
+          0.0
+        ],
+        "cycle_phase": 0.5600000000000003,
+        "frame_index": 11,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          472.46581035134113,
+          733.8496127691725,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 53.6999515148916
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          232.0,
+          0.0
+        ],
+        "cycle_phase": 0.28,
+        "frame_index": 5,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          487.53418964865887,
+          754.3974027200603,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 52.36653967009892
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          232.0,
+          0.0
+        ],
+        "cycle_phase": 0.7,
+        "frame_index": 14,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          472.46581035134113,
+          754.3974027200603,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 52.36653967009892
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          300.0,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999985,
+        "frame_index": 1,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          482.73970532678504,
+          987.2723554967886,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 40.179291489118754
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          304.0,
+          0.0
+        ],
+        "cycle_phase": 0.4800000000000002,
+        "frame_index": 9,
+        "depth_metres": 164.53750000000002,
+        "ground_anchor": [
+          477.26029467321496,
+          1000.9708821307138,
+          165.43750000000003
+        ],
+        "pixels_per_metre": 3.4433639747777858,
+        "view_elevation_degrees": 39.60637652531143
+      }
+    ]
+  },
+  {
+    "index": 348,
+    "time": 5.8,
+    "global_time": 52.8,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        145.00000000000028,
+        292.0
+      ],
+      "target": [
+        0.0,
+        145.00000000000028,
+        291.0
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 550.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 60.38324592191522,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 77.46,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 12,
+        "elevation": 76.93755241314436,
+        "azimuth": 0.0,
+        "pixels_per_metre": 1.8893850910340089,
+        "upright_height_px": 0.8111292222492352,
+        "head": [
+          480.0,
+          191.9731173530927
+        ],
+        "root": [
+          480.0,
+          192.78424657534194
+        ],
+        "world_position_metres": [
+          0.0,
+          77.46,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 22,
+        "elevation": 76.84362292174455,
+        "azimuth": -0.5473416194896431,
+        "pixels_per_metre": 1.8893850910340089,
+        "upright_height_px": 0.7593735665706163,
+        "head": [
+          478.76843048091496,
+          191.08309218685352
+        ],
+        "root": [
+          478.7756849315069,
+          191.84246575342414
+        ],
+        "world_position_metres": [
+          0.65,
+          76.96,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 30,
+        "elevation": 76.3688620062586,
+        "azimuth": 0.6087467798274954,
+        "pixels_per_metre": 1.8893850910340089,
+        "upright_height_px": 0.8246806642561353,
+        "head": [
+          481.421433494142,
+          186.21847002067486
+        ],
+        "root": [
+          481.41267123287673,
+          187.043150684931
+        ],
+        "world_position_metres": [
+          -0.75,
+          74.41199999999999,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 291.0,
+        "ground_anchor": [
+          473.97049329609143,
+          48.10893437295681,
+          291.9
+        ],
+        "pixels_per_metre": 1.8900343642611683,
+        "view_elevation_degrees": 63.618670439509664
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 291.0,
+        "ground_anchor": [
+          484.7105141110774,
+          49.804733103390504,
+          291.9
+        ],
+        "pixels_per_metre": 1.8900343642611683,
+        "view_elevation_degrees": 63.763230928551465
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 291.0,
+        "ground_anchor": [
+          477.7389757210795,
+          52.442641385132674,
+          291.9
+        ],
+        "pixels_per_metre": 1.8900343642611683,
+        "view_elevation_degrees": 63.98809201962482
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 291.0,
+        "ground_anchor": [
+          488.66731404925554,
+          47.920489968298455,
+          291.9
+        ],
+        "pixels_per_metre": 1.8900343642611683,
+        "view_elevation_degrees": 63.59690214629206
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          212.8,
+          0.0
+        ],
+        "cycle_phase": 0.1999999999999995,
+        "frame_index": 4,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          484.14383561643837,
+          447.7054794520543,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 76.88233964634821
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          212.8,
+          0.0
+        ],
+        "cycle_phase": 0.3799999999999992,
+        "frame_index": 7,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          475.85616438356163,
+          447.7054794520543,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 76.88233964634821
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          218.8,
+          0.0
+        ],
+        "cycle_phase": 0.6199999999999994,
+        "frame_index": 12,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          484.14383561643837,
+          459.006849315068,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 75.76797323067167
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          218.8,
+          0.0
+        ],
+        "cycle_phase": 0.7599999999999991,
+        "frame_index": 15,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          475.85616438356163,
+          459.006849315068,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 75.76797323067167
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          224.8,
+          0.0
+        ],
+        "cycle_phase": 0.47999999999999976,
+        "frame_index": 9,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          484.14383561643837,
+          470.3082191780817,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 74.66441265565209
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          224.8,
+          0.0
+        ],
+        "cycle_phase": 0.09999999999999964,
+        "frame_index": 2,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          475.85616438356163,
+          470.3082191780817,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 74.66441265565209
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          292.8,
+          0.0
+        ],
+        "cycle_phase": 0.2799999999999996,
+        "frame_index": 5,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          481.5068493150685,
+          598.3904109589037,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 63.08142133495778
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          296.8,
+          0.0
+        ],
+        "cycle_phase": 0.679999999999999,
+        "frame_index": 13,
+        "depth_metres": 291.1,
+        "ground_anchor": [
+          478.4931506849315,
+          605.9246575342461,
+          292.0
+        ],
+        "pixels_per_metre": 1.8893850910340089,
+        "view_elevation_degrees": 62.45897136610702
+      }
+    ]
+  },
+  {
+    "index": 480,
+    "time": 8.0,
+    "global_time": 55.0,
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        150.0,
+        300.0
+      ],
+      "target": [
+        0.0,
+        150.0,
+        299.0
+      ],
+      "forward": [
+        0.0,
+        -6.123233995736766e-17,
+        -1.0
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -1.0,
+        6.123233995736766e-17
+      ],
+      "focal_pixels": 550.0,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 60.38324592191522,
+      "fov_axis": "vertical",
+      "pitch_radians": -1.5707963267948966,
+      "party_travel_metres": 86.25999999999999,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "actors": [
+      {
+        "id": "lucan",
+        "frame": 0,
+        "elevation": 77.9698845294083,
+        "azimuth": 0.0,
+        "pixels_per_metre": 1.8388498829822801,
+        "upright_height_px": 0.7250874839286894,
+        "head": [
+          480.0,
+          202.41824584940468
+        ],
+        "root": [
+          480.0,
+          203.14333333333337
+        ],
+        "world_position_metres": [
+          0.0,
+          86.25999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "iselin",
+        "frame": 10,
+        "elevation": 77.87769418981335,
+        "azimuth": -0.5797164664688402,
+        "pixels_per_metre": 1.8388498829822801,
+        "upright_height_px": 0.6791274417773252,
+        "head": [
+          478.8014617138259,
+          201.54753922488936
+        ],
+        "root": [
+          478.80833333333334,
+          202.2266666666667
+        ],
+        "world_position_metres": [
+          0.65,
+          85.75999999999999,
+          0.0
+        ]
+      },
+      {
+        "id": "crown_soldier",
+        "frame": 18,
+        "elevation": 77.41177919997058,
+        "azimuth": 0.6433794765239913,
+        "pixels_per_metre": 1.8388498829822801,
+        "upright_height_px": 0.7391026156941791,
+        "head": [
+          481.38329979879273,
+          196.81623071763914
+        ],
+        "root": [
+          481.375,
+          197.55533333333332
+        ],
+        "world_position_metres": [
+          -0.75,
+          83.21199999999999,
+          0.0
+        ]
+      }
+    ],
+    "guards": [
+      {
+        "id": "carcovian_guard_1",
+        "kind": "frozen",
+        "world_position_metres": [
+          3.200023648856204,
+          0.6999962608476988,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 299.0,
+        "ground_anchor": [
+          474.1313337550153,
+          46.19205716394214,
+          299.9
+        ],
+        "pixels_per_metre": 1.839464882943144,
+        "view_elevation_degrees": 63.46035719085639
+      },
+      {
+        "id": "carcovian_guard_2",
+        "kind": "frozen",
+        "world_position_metres": [
+          -2.4999983073154417,
+          1.6000028961451442,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 299.0,
+        "ground_anchor": [
+          484.5848585162504,
+          47.84261951610483,
+          299.9
+        ],
+        "pixels_per_metre": 1.839464882943144,
+        "view_elevation_degrees": 63.60058966689826
+      },
+      {
+        "id": "carcovian_guard_3",
+        "kind": "frozen",
+        "world_position_metres": [
+          1.1999872491216284,
+          3.0000127642188605,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 299.0,
+        "ground_anchor": [
+          477.79928980654586,
+          50.41016012110833,
+          299.9
+        ],
+        "pixels_per_metre": 1.839464882943144,
+        "view_elevation_degrees": 63.81872461618839
+      },
+      {
+        "id": "carcovian_guard_4",
+        "kind": "frozen",
+        "world_position_metres": [
+          -4.599979947232173,
+          0.5999836759026613,
+          0.1
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 299.0,
+        "ground_anchor": [
+          488.4361086061277,
+          46.00863961902792,
+          299.9
+        ],
+        "pixels_per_metre": 1.839464882943144,
+        "view_elevation_degrees": 63.43942297044105
+      },
+      {
+        "id": "carcovian_reinforcement_1",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          204.0,
+          0.0
+        ],
+        "cycle_phase": 0.0,
+        "frame_index": 0,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          484.03333333333336,
+          419.00000000000006,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 79.75766010926635
+      },
+      {
+        "id": "carcovian_reinforcement_2",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          204.0,
+          0.0
+        ],
+        "cycle_phase": 0.17999999999999927,
+        "frame_index": 3,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          475.96666666666664,
+          419.00000000000006,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 79.75766010926635
+      },
+      {
+        "id": "carcovian_reinforcement_3",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          210.0,
+          0.0
+        ],
+        "cycle_phase": 0.4199999999999995,
+        "frame_index": 8,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          484.03333333333336,
+          430.00000000000006,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 78.64949194073867
+      },
+      {
+        "id": "carcovian_reinforcement_4",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          210.0,
+          0.0
+        ],
+        "cycle_phase": 0.56,
+        "frame_index": 11,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          475.96666666666664,
+          430.00000000000006,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 78.64949194073867
+      },
+      {
+        "id": "carcovian_reinforcement_5",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -2.2,
+          216.0,
+          0.0
+        ],
+        "cycle_phase": 0.2799999999999989,
+        "frame_index": 5,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          484.03333333333336,
+          441.0,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 77.54971278396964
+      },
+      {
+        "id": "carcovian_reinforcement_6",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          2.2,
+          216.0,
+          0.0
+        ],
+        "cycle_phase": 0.6999999999999988,
+        "frame_index": 14,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          475.96666666666664,
+          441.0,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 77.54971278396964
+      },
+      {
+        "id": "carcovian_reinforcement_7",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          -0.8,
+          284.0,
+          0.0
+        ],
+        "cycle_phase": 0.07999999999999963,
+        "frame_index": 1,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          481.46666666666664,
+          565.6666666666667,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 65.86672889459985
+      },
+      {
+        "id": "carcovian_reinforcement_8",
+        "kind": "reinforcement",
+        "world_position_metres": [
+          0.8,
+          288.0,
+          0.0
+        ],
+        "cycle_phase": 0.48,
+        "frame_index": 9,
+        "depth_metres": 299.1,
+        "ground_anchor": [
+          478.53333333333336,
+          573.0,
+          300.0
+        ],
+        "pixels_per_metre": 1.8388498829822801,
+        "view_elevation_degrees": 65.23178227505443
+      }
+    ]
+  }
+]

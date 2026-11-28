@@ -1,0 +1,19 @@
+{
+  "source": "assets/source/cinematics/fire_veinhold/continuation/materials/frozen_bridge_final.png",
+  "source_sha256": "1d4fdb04052bfc7af50566a258df3fbac2f95c7f7d026e7236841fa2d403a2a9",
+  "purpose": "Armor material/identity references only, not final art or camera poses",
+  "crops": {
+    "references/carcovian_helmet.png": [
+      385,
+      350,
+      505,
+      465
+    ],
+    "references/carcovian_plate.png": [
+      435,
+      450,
+      585,
+      650
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "transition_051_contact_armor",
+  "output": "transition_051_contact_armor.png",
+  "indices": [
+    51
+  ],
+  "grid": [
+    1,
+    1
+  ],
+  "prompt": "Redraw this ONE COMPLETE Lucan figure, preserving the FIRST image exact58degree elevated camera, natural adult wholebody, correct rightleg contact and leftleg recovery, head/shoulder proportions and two arm/leg chains. Correct his established EQUIPMENT IDENTITY using SECOND cropped approved armor references, re-painting the whole indivisible figure. BOTH legs wear articulated polishedSILVERSTEEL thigh plates, steelkneecaps and steelgreaves edgedGOLD. Brown leather should appear only on the normal boots/gloves and cloth underarmor, not replace the shin/thigh armor. The oxblood/gold kite shield has the established single bold paleGOLD UPWARD CHEVRON, not a blank redface or differentemblem. Oxblood chest has the same small pale vertical tapered motif from secondreference, not a bird/eagle/crest redesign. Bare darkbrown swept hair, same youthful adult Lucan identity. Natural contactboot stays on ground and normally sized, not a giant kick aimed at camera. Keep same realistic projected wholebody/stancemotion and headcrown view from firstreference, don't extend legs or swap front/rear. Sword right/imageLEFT and shield left/imageRIGHT staygripped with attachedgloves/forearms. Exactcount two legs/two boots, no extra toes. Entirefigure newlypainted coherently, not isolated pasted parts. True transparent background alpha0, no glow/floor/shadow/text, generousclearmargins around hair/boots/swordpoint/shield.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/transition_051_contact.png",
+      "sha256": "5eb8279dd52936a9d298363a2f90e1fe7a27c47cf85fe37d11913e8a8db38c9f"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/armor_identity_patches_051.png",
+      "sha256": "65011b7f2284b88d59d57afa05cc1662cf4422f46025795b98f4e62539374a82"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "role": "ImageGen final whole-figure authoring references; guide pixels never enter final exports",
+  "prompt_file": "live_cycle_prompt.txt",
+  "reference_sha256": {
+    "authoring/live_cycle_bowed_guide.png": "82d98d2fd5facd6c3a9059355b2fd51aa32563fe7ed18e582084fac7f6841d8d",
+    "references/carcovian_plate.png": "711cfa4d91101f2dff7cd0ed210cc97460bd078f39429e845cf308a58a1bc158"
+  },
+  "guide_generator_sha256": "1ce47ef6288e5a45c18c81314a03283891d19f34142cf10d72d8bf5209ea3077",
+  "generation_id": "exec-c4f5cd0c-ff2e-4cc2-a487-b6c30106b0ff",
+  "raw_master": "live_cycle_master.png",
+  "raw_master_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+  "state": "selected for native-scale validation; helmet crowns obscure frontal visor direction"
+}

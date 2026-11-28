@@ -1,0 +1,28 @@
+{
+  "id": "overhead_quarter_keys",
+  "output": "overhead_quarter_keys.png",
+  "grid": [
+    2,
+    2
+  ],
+  "phases": [
+    0,
+    12,
+    24,
+    36
+  ],
+  "prompt": "Create a2-by-2 atlas of FOUR COMPLETE Lucan running figures on TRUE TRANSPARENT BACKGROUND. TOP-LEFT is gait phase00, TOP-RIGHT12, BOTTOM-LEFT24, BOTTOM-RIGHT36 of the same800ms run. The FIRST reference is an actual3D camera/pose guide with those four poses; obey each cell's real OVERHEAD projection, body overlaps and requested limb configuration. The SECOND reference supplies ONLY approved painted appearance/materials. All four are the SAME youthful unhelmeted male knight with swept dark-brown hair, polished articulated silver steel/gold-edged armor, oxblood split tabard, dark trousers, brown gloves/boots. No new cape or helmet. Match the material samples' detailed painterly night treatment and palette, not the primitive shapes.\n\nExact camera is VERTICALLY DOWN from above. He runs toward the BOTTOM of each cell. Head crown is AHEAD of and BELOW pelvis/back cloth mass. Head hides face/chest; NO eyes/face looking at camera and no long frontal torso. Show dark hair crown and shoulder tops. Keep constant physical head and shoulder size in all four cells, even when compact legs change occupied bounds. Do not enlarge a tucked flight pose to fill the cell.\n\nExactly TWO connected arms and TWO connected legs/boots per figure. Right-hand sword is imageLEFT; left-arm kite shield is imageRIGHT. The shield stays UPRIGHT: only a thin curved top rim and a narrow dark red sliver are seen, not a full frontal gold-chevron kite laid flat. Resolve glove/rim/body overlaps correctly. Sword follows its connected right glove.\n\nCell00: right contact boot is forward/lower-left; left recovering boot trails upper-right. Right sword arm swings back/upper-left; left shield arm smaller forward/lower-right counterbalance. Cell12: right leg lifts behind while left leg reaches forward, arms pass toward neutral as in guide. Cell24: left contact boot is forward/lower-right; right recovering boot trails upper-left. Right sword arm swings forward/lower-left; left shield arm counterbalances back/upper-right. Cell36: right leg reaches forward while left leg recovers behind; arms pass back toward neutral. Actual hips-knees-calves-boots and shoulders-elbows-gloves must be coherent, not symbols pasted around a static torso. Rigid plate remains rigid, and tabard cloth follows the stride.\n\nKeep every hair tip, both boots, shield rim and sword point inside its own equal cell with generous transparent margins. No clipping, no duplicate leftover boot under belt, no extra hands or weapons, no blending/ghosts, no grid/borders/numbers/labels/text, no floor or shadow. Redraw one unified whole figure per cell. Preserve approved natural proportions and warm/cool night palette across all four drawings.",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_quarter_pose_guides.png",
+      "sha256": "02753b5b7ccc3a6bded261f8812aac17fab56aaba250846e70c4331dfbf56190"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/overhead_appearance_patches_v2.png",
+      "sha256": "70145d3d1a6926b93e4367c95e60c85d8a278ab5537a99e5574693e0c187c9f4"
+    }
+  ],
+  "generation_id": "exec-a972fd2d-9f5e-4cb4-8372-55e17f4252cb",
+  "raw_original": "/workspace/generated_images/exec-a972fd2d-9f5e-4cb4-8372-55e17f4252cb.png",
+  "output_sha256": "307b1fd45f9440283121f2852ad9582e70bcd47fbbab67209ac7df028adf4e79"
+}

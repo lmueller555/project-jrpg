@@ -1,0 +1,1545 @@
+{
+  "status": "PENDING FINAL; additions are narrow provisional native gates, not final whole-scene approval.",
+  "accepted": [
+    {
+      "actor": "iselin",
+      "index": 40,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_040.png",
+        "sha256": "f546eeac2758787f027b10061de0d8a8c6e66a2b6a7368c459f4abb8823c0c8b",
+        "rgba_sha256": "964ec722a925be74b0a1bc068a661b88e1163a6ffa8fcd9bf8ccad02e0f50a5f",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_040.png",
+        "sha256": "7e3735811eb359883a707e3c7093968e25057bdfec340f1d5fafd192e75df241",
+        "rgba_sha256": "ccdb05444f326ebf462fb99eb90b99eedb54c8effc634eda768bd3d992fe7061",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_040_043_view_retry/master.png",
+        "sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "rgba_sha256": "f371f76f7699f44f169761f9dcdbb90348864d133a4609b3ec95d044883bb921",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 40,
+        "gait_frame": 2,
+        "cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_neck": [
+          301.0,
+          210.752688172043
+        ],
+        "neck_match": {
+          "point": [
+            301.0,
+            210.752688172043
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          269,
+          135,
+          333,
+          208
+        ],
+        "face_skin_width": 64,
+        "face_skin_area": 2217,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_040_043_view_retry/master.png",
+        "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+        "scale": 1.4017322834645667,
+        "origin": [
+          90.0785826771654,
+          72.89572398358155
+        ],
+        "neck_target": [
+          512.0,
+          368.31457082127514
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_040.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 37.076904975469404,
+        "native_scale": 0.3913822908121597,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.42533019101149,
+          3.2185956790123473
+        ],
+        "target": [
+          0.0,
+          58.55630394865948,
+          2.723829683714015
+        ],
+        "forward": [
+          0.0,
+          -0.8690262423520079,
+          -0.4947659952983322
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.4947659952983322,
+          0.8690262423520079
+        ],
+        "focal_pixels": 734.4444444444443,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 47.085849015225115,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5175655386778246,
+        "party_travel_metres": 56.92666666666666,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.42666666666666,
+          0.0
+        ],
+        "frame_index": 2,
+        "cycle_phase": 0.033333333333333215,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 37.076904975469404,
+        "view_azimuth_degrees": -12.230407319689482,
+        "ground_anchor": [
+          366.29182186852694,
+          549.761782559308
+        ],
+        "pixels_per_metre": 195.69114540607984,
+        "scale": 0.3913822908121597,
+        "depth_metres": 3.7530795934603702
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 41,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_041.png",
+        "sha256": "a8dc9f6db67b8d19f1d810a86cd500a7e5a234107a790be7fe4fe4b6592a46f3",
+        "rgba_sha256": "36619fb234984d9bc6790e98b274670316c1f188fc71383690e0af559e61325b",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_041.png",
+        "sha256": "5e6aa95c090df34217e10553912764f4a6f42f67491bd6acf9a39617f0047784",
+        "rgba_sha256": "d717c5bf339e2f883c0cf8a560d116386c26036b5bc800940526e971e6dc3f04",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_040_043_view_retry/master.png",
+        "sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "rgba_sha256": "f371f76f7699f44f169761f9dcdbb90348864d133a4609b3ec95d044883bb921",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 41,
+        "gait_frame": 3,
+        "cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_neck": [
+          283.5,
+          235.70967741935485
+        ],
+        "neck_match": {
+          "point": [
+            283.5,
+            235.70967741935485
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          252,
+          142,
+          315,
+          233
+        ],
+        "face_skin_width": 63,
+        "face_skin_area": 2307,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_040_043_view_retry/master.png",
+        "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+        "scale": 1.4017322834645667,
+        "origin": [
+          114.60889763779534,
+          50.85934047614262
+        ],
+        "neck_target": [
+          512.0,
+          381.2612048398713
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_041.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 38.45262051398388,
+        "native_scale": 0.3797478325673073,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.46115699678366,
+          3.3125703234731434
+        ],
+        "target": [
+          0.0,
+          58.60248165864407,
+          2.800050408083635
+        ],
+        "forward": [
+          0.0,
+          -0.8586753381395852,
+          -0.5125199153895085
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.5125199153895085,
+          0.8586753381395852
+        ],
+        "focal_pixels": 718.6513792438271,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 48.004762809429316,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5381168832060039,
+        "party_travel_metres": 56.99333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.49333333333333,
+          0.0
+        ],
+        "frame_index": 3,
+        "cycle_phase": 0.04999999999999993,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 38.45262051398388,
+        "view_azimuth_degrees": -12.353615180938856,
+        "ground_anchor": [
+          369.989091532657,
+          543.9743751258254
+        ],
+        "pixels_per_metre": 189.87391628365367,
+        "scale": 0.3797478325673073,
+        "depth_metres": 3.784887325809565
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 42,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_042.png",
+        "sha256": "d79a0aff3e39335af3df6b8b4015de51c43433f944c90054ec2f1141c59f4294",
+        "rgba_sha256": "b7aa5f5851c39f60ae7a4d76de95df1ef38b1c74671e12296665957b12ac4bc1",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_042.png",
+        "sha256": "c073497f1733bac7fa6ea3475676aafdd9366fba184c9431ea2dab4dc2534523",
+        "rgba_sha256": "e4d6600cda7f440e5e4c7cef1cf358fea2e9d1ab4e549769ab8294f106f39c71",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_040_043_view_retry/master.png",
+        "sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "rgba_sha256": "f371f76f7699f44f169761f9dcdbb90348864d133a4609b3ec95d044883bb921",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 42,
+        "gait_frame": 4,
+        "cell": [
+          0,
+          768,
+          512,
+          1536
+        ],
+        "source_neck": [
+          287.0,
+          214.752688172043
+        ],
+        "neck_match": {
+          "point": [
+            287.0,
+            214.752688172043
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          255,
+          140,
+          319,
+          212
+        ],
+        "face_skin_width": 64,
+        "face_skin_area": 2234,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_040_043_view_retry/master.png",
+        "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+        "scale": 1.4017322834645667,
+        "origin": [
+          109.70283464566938,
+          93.32014516181755
+        ],
+        "neck_target": [
+          512.0,
+          394.3459211333694
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_042.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 39.82758611474113,
+        "native_scale": 0.3678651623635128,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.4961460034399,
+          3.407986450195315
+        ],
+        "target": [
+          0.0,
+          58.648387059529774,
+          2.877604726320526
+        ],
+        "forward": [
+          0.0,
+          -0.8477589439101231,
+          -0.5303817238747889
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.5303817238747889,
+          0.8477589439101231
+        ],
+        "focal_pixels": 702.5,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 48.980049631321165,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5590507760294336,
+        "party_travel_metres": 57.059999999999995,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.559999999999995,
+          0.0
+        ],
+        "frame_index": 4,
+        "cycle_phase": 0.06666666666666654,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 39.82758611474113,
+        "view_azimuth_degrees": -12.48274014669097,
+        "ground_anchor": [
+          373.72603086842594,
+          537.7590929710094
+        ],
+        "pixels_per_metre": 183.9325811817564,
+        "scale": 0.3678651623635128,
+        "depth_metres": 3.819334211951343
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 43,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_043.png",
+        "sha256": "5bd578b31cf1684608dc35273ebee22f820dd73ce0eb77595fe8b0dcea8cd305",
+        "rgba_sha256": "13ac05937c3e4d4355947d3acd4dd2382fcc67eef653998f8624a33e2d4600f5",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_043.png",
+        "sha256": "0b3886b785b32525cca127fb6b789c8d9a782013080e1f133a59397f3aa4f182",
+        "rgba_sha256": "91069451e662feb7b704820d74197942bda7fcb5aca126a5887a30498e52a662",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_040_043_view_retry/master.png",
+        "sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "rgba_sha256": "f371f76f7699f44f169761f9dcdbb90348864d133a4609b3ec95d044883bb921",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 43,
+        "gait_frame": 5,
+        "cell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "source_neck": [
+          281.0,
+          206.58064516129033
+        ],
+        "neck_match": {
+          "point": [
+            281.0,
+            206.58064516129033
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          251,
+          144,
+          311,
+          204
+        ],
+        "face_skin_width": 60,
+        "face_skin_area": 2080,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_040_043_view_retry/master.png",
+        "source_sha256": "545b6e441389f1f0ab3f6716fd42c21bc1fa3eeb3fa74cc0583deee017916264",
+        "generation_id": "exec-171d31c4-398b-4a06-bbe4-350b8fa5ee85",
+        "scale": 1.4017322834645667,
+        "origin": [
+          118.11322834645676,
+          117.92586137447068
+        ],
+        "neck_target": [
+          512.0,
+          407.4966208359896
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_043.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 41.197751185062096,
+        "native_scale": 0.35637171584789895,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.530320158658476,
+          3.504662260597138
+        ],
+        "target": [
+          0.0,
+          58.69414674018626,
+          2.9561971165446677
+        ],
+        "forward": [
+          0.0,
+          -0.8361734184722109,
+          -0.5484651440524702
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.5484651440524702,
+          0.8361734184722109
+        ],
+        "focal_pixels": 687.1780960648148,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 49.94020928198246,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.5805275591728557,
+        "party_travel_metres": 57.126666666666665,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.626666666666665,
+          0.0
+        ],
+        "frame_index": 5,
+        "cycle_phase": 0.08333333333333326,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 41.197751185062096,
+        "view_azimuth_degrees": -12.617975435262437,
+        "ground_anchor": [
+          377.32158994605254,
+          531.3520848764826
+        ],
+        "pixels_per_metre": 178.18585792394947,
+        "scale": 0.35637171584789895,
+        "depth_metres": 3.8565243284240074
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 44,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_044.png",
+        "sha256": "687252a8b627d4d8f783cec151618d1fd5cb1aaf607ddfbd8c12d561605682ba",
+        "rgba_sha256": "65a5c454ae176abc9b74218e26b5a9bb792870f38925479afe1506216bca2687",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_044.png",
+        "sha256": "9c304c3aa45bc552cfa398063bbad375ef210146d521c536ee231ccc340258ae",
+        "rgba_sha256": "8786e89afa7c6cd2b58040361b08dbc5e39c17069f609d1a67c12e6ad3c3afcc",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_044_047_view_retry/master.png",
+        "sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "rgba_sha256": "f0a2a7b04bd93d7c7a00d7baa56863cb19ee3ec51f54d198e2badacb0e67d6c0",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 44,
+        "gait_frame": 6,
+        "cell": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "source_neck": [
+          306.5,
+          202.79569892473117
+        ],
+        "neck_match": {
+          "point": [
+            306.5,
+            202.79569892473117
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          274,
+          133,
+          339,
+          200
+        ],
+        "face_skin_width": 65,
+        "face_skin_area": 2685,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_044_047_view_retry/master.png",
+        "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+        "scale": 1.3589312977099235,
+        "origin": [
+          95.48755725190847,
+          145.06905860298752
+        ],
+        "neck_target": [
+          512.0,
+          420.6544809127634
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_044.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 42.55922547559272,
+        "native_scale": 0.3458600014335777,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.5637037037037,
+          3.6024076485339522
+        ],
+        "target": [
+          0.0,
+          58.73988274740833,
+          3.035557551975274
+        ],
+        "forward": [
+          0.0,
+          -0.8238209562953698,
+          -0.5668500965586779
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.5668500965586779,
+          0.8238209562953698
+        ],
+        "focal_pixels": 673.8271604938273,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 50.80601426051454,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.6026772738059432,
+        "party_travel_metres": 57.19333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.69333333333333,
+          0.0
+        ],
+        "frame_index": 6,
+        "cycle_phase": 0.09999999999999987,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 42.55922547559272,
+        "view_azimuth_degrees": -12.759522473033286,
+        "ground_anchor": [
+          380.6086156451742,
+          525.0014876803908
+        ],
+        "pixels_per_metre": 172.93000071678884,
+        "scale": 0.3458600014335777,
+        "depth_metres": 3.896531299952797
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 45,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_045.png",
+        "sha256": "6f5dfee22fe35da41122fc390859df1390e668c8e7759c20ddbf0088bbe2a303",
+        "rgba_sha256": "bea3d57890a323b6d52399a5a17c6ad36373462b4fb838742ca8957f2b360a47",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_045.png",
+        "sha256": "bc13980f151e7148dda637ed09a3d564d215086908f74b941e96e445be1cba38",
+        "rgba_sha256": "94507f6b20ad4c103215c92232b340e768da7343fde00a48604fc08d74cbed03",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_044_047_view_retry/master.png",
+        "sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "rgba_sha256": "f0a2a7b04bd93d7c7a00d7baa56863cb19ee3ec51f54d198e2badacb0e67d6c0",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 45,
+        "gait_frame": 7,
+        "cell": [
+          512,
+          0,
+          1024,
+          768
+        ],
+        "source_neck": [
+          310.0,
+          216.83870967741936
+        ],
+        "neck_match": {
+          "point": [
+            310.0,
+            216.83870967741936
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          277,
+          133,
+          343,
+          214
+        ],
+        "face_skin_width": 66,
+        "face_skin_area": 2725,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_044_047_view_retry/master.png",
+        "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+        "scale": 1.3589312977099235,
+        "origin": [
+          90.7312977099237,
+          139.10753580865952
+        ],
+        "neck_target": [
+          512.0,
+          433.77644494434037
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_045.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 43.90831792810476,
+        "native_scale": 0.3367741356526285,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.596322119526576,
+          3.701024341583255
+        ],
+        "target": [
+          0.0,
+          58.785695219240004,
+          3.115461340248826
+        ],
+        "forward": [
+          0.0,
+          -0.8106269002865717,
+          -0.585563001334429
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.585563001334429,
+          0.8106269002865717
+        ],
+        "focal_pixels": 663.3398437500001,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 51.50600386072068,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.625574409530741,
+        "party_travel_metres": 57.26,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.76,
+          0.0
+        ],
+        "frame_index": 7,
+        "cycle_phase": 0.11666666666666659,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 43.90831792810476,
+        "view_azimuth_degrees": -12.907591276491832,
+        "ground_anchor": [
+          383.46304788761967,
+          518.9113595833626
+        ],
+        "pixels_per_metre": 168.38706782631425,
+        "scale": 0.3367741356526285,
+        "depth_metres": 3.9393752282343524
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 46,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_046.png",
+        "sha256": "6c64f208ee423e45223682797c38d5d7dd2888b3511ca36247a4a33fe7b351aa",
+        "rgba_sha256": "c351e3377af15673a826ad39715e8b5bf9f508ad8c4c011d1c0c362f8620b73c",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_046.png",
+        "sha256": "5d30c02e9e6eeb5da26537bd7379ad508280a89399db5ac66570d9e0fbb36b8a",
+        "rgba_sha256": "3b9ba29b869388ebcd43382020835a780c02bd802bf4ed4ecaefdce79c776e5f",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_044_047_view_retry/master.png",
+        "sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "rgba_sha256": "f0a2a7b04bd93d7c7a00d7baa56863cb19ee3ec51f54d198e2badacb0e67d6c0",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 46,
+        "gait_frame": 8,
+        "cell": [
+          0,
+          768,
+          512,
+          1536
+        ],
+        "source_neck": [
+          307.5,
+          203.79569892473117
+        ],
+        "neck_match": {
+          "point": [
+            307.5,
+            203.79569892473117
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          275,
+          133,
+          340,
+          201
+        ],
+        "face_skin_width": 65,
+        "face_skin_area": 2591,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_044_047_view_retry/master.png",
+        "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+        "scale": 1.3589312977099235,
+        "origin": [
+          94.12862595419853,
+          169.88708774132675
+        ],
+        "neck_target": [
+          512.0,
+          446.8314413488125
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_046.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 45.241569594026736,
+        "native_scale": 0.32931375247120437,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.62820207286535,
+          3.800306042329769
+        ],
+        "target": [
+          0.0,
+          58.831642029821296,
+          3.1957466177686653
+        ],
+        "forward": [
+          0.0,
+          -0.7965600430440554,
+          -0.6045594245611036
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6045594245611036,
+          0.7965600430440554
+        ],
+        "focal_pixels": 656.1574074074074,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 51.99585911775121,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.64921265366911,
+        "party_travel_metres": 57.32666666666667,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.82666666666667,
+          0.0
+        ],
+        "frame_index": 8,
+        "cycle_phase": 0.1333333333333333,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 45.241569594026736,
+        "view_azimuth_degrees": -13.062400830736394,
+        "ground_anchor": [
+          385.83071102913516,
+          513.1886312186601
+        ],
+        "pixels_per_metre": 164.6568762356022,
+        "scale": 0.32931375247120437,
+        "depth_metres": 3.984998515753044
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "iselin",
+      "index": 47,
+      "drawing": {
+        "path": "/tmp/iselin_ascent_close/frame_047.png",
+        "sha256": "e2cf82e694565ccc54fb63f9dadfd6879d17b9f7d2b1c7517a75f6a3d1919796",
+        "rgba_sha256": "0c8c5e107252cea0683b416ef0f1f9bb8a71da9b138390d65b7f760d667c7d72",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "native_proof": {
+        "path": "/tmp/iselin_ascent_production_candidate/native_047.png",
+        "sha256": "90171e4daa68e1804d51125486ec66c09c33fc890387375dadbf3d270febf31f",
+        "rgba_sha256": "cb04d33b250c3039c9ad7c9a7017ef03209088ac0fcf2a0d58d455113cf8788d",
+        "size": [
+          960,
+          640
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_044_047_view_retry/master.png",
+        "sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "rgba_sha256": "f0a2a7b04bd93d7c7a00d7baa56863cb19ee3ec51f54d198e2badacb0e67d6c0",
+        "size": [
+          1024,
+          1536
+        ]
+      },
+      "registration": {
+        "index": 47,
+        "gait_frame": 9,
+        "cell": [
+          512,
+          768,
+          1024,
+          1536
+        ],
+        "source_neck": [
+          310.0,
+          214.83870967741936
+        ],
+        "neck_match": {
+          "point": [
+            310.0,
+            214.83870967741936
+          ],
+          "score": null,
+          "template_scale": null,
+          "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+        },
+        "face_skin_bounds": [
+          277,
+          134,
+          343,
+          212
+        ],
+        "face_skin_width": 66,
+        "face_skin_area": 2590,
+        "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+        "source": "batches/transition_044_047_view_retry/master.png",
+        "source_sha256": "38164d8393f6a8fedd6544df190322be018b467ac21071954f3fe79557ddc5d9",
+        "generation_id": "exec-182adb5e-5cb1-4c10-a0c3-ba82e5e4e674",
+        "scale": 1.3589312977099235,
+        "origin": [
+          90.7312977099237,
+          167.85146567507735
+        ],
+        "neck_target": [
+          512.0,
+          459.8025122153383
+        ],
+        "file": "/tmp/iselin_ascent_close/frame_047.png",
+        "canvas": [
+          1024,
+          1536
+        ],
+        "anchor": [
+          512,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "actual_elevation": 46.555780001121605,
+        "native_scale": 0.32334629659079417,
+        "approval_state": "candidate_pending_composed_native_review"
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          59.65937136234608,
+          3.9000385696505364
+        ],
+        "target": [
+          0.0,
+          58.87771524533808,
+          3.27632892987897
+        ],
+        "forward": [
+          0.0,
+          -0.7816561170079994,
+          -0.6237096397715661
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.6237096397715661,
+          0.7816561170079994
+        ],
+        "focal_pixels": 652.0671778549383,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 52.278712643508776,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.6734796405501677,
+        "party_travel_metres": 57.39333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "iselin",
+        "lane_metres": 0.65,
+        "offset_metres": -0.5,
+        "phase_offset_seconds": 0.16666666666666666,
+        "height_metres": 1.72,
+        "world_position_metres": [
+          0.65,
+          56.89333333333333,
+          0.0
+        ],
+        "frame_index": 9,
+        "cycle_phase": 0.1499999999999999,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 46.555780001121605,
+        "view_azimuth_degrees": -13.22417946266765,
+        "ground_anchor": [
+          387.751423858102,
+          507.8016980734656
+        ],
+        "pixels_per_metre": 161.67314829539708,
+        "scale": 0.32334629659079417,
+        "depth_metres": 4.033243520832105
+      },
+      "status": "provisional view/model/limb/material continuity accepted, including39\u219240 and43\u219244; next47\u219248 rejected"
+    },
+    {
+      "actor": "crown_soldier",
+      "index": 26,
+      "drawing": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/registered_samples/entry_026_close_model.png",
+        "sha256": "e9841073adafbbe604592ca2e41db811e0eb6970a19f8ebb96575e173b78efc5",
+        "rgba_sha256": "637743dcf11d50216c720d614ee3e69fd7cbe8c538e6d8e79ac9d267a871a75f",
+        "size": [
+          768,
+          1024
+        ]
+      },
+      "source": {
+        "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/first_batch/entry_026_close_model.png",
+        "sha256": "7b8f63947a4c5679fa467ab201748da27cd7267af63160b1c4c01a2646ea1d79",
+        "rgba_sha256": "3ff2d34b21f016847ff20f9d9662ccef75292ef2ecb42fe430af89bd42e9468a",
+        "size": [
+          1086,
+          1448
+        ]
+      },
+      "registration": {
+        "index": 26,
+        "phase": 44,
+        "file": "registered_samples/entry_026_close_model.png",
+        "canvas": [
+          768,
+          1024
+        ],
+        "anchor": [
+          384,
+          960
+        ],
+        "art_pixels_per_metre": 500,
+        "source": "first_batch/entry_026_close_model.png",
+        "source_sha256": "7b8f63947a4c5679fa467ab201748da27cd7267af63160b1c4c01a2646ea1d79",
+        "uniform_whole_master_scale": 0.7071823204419889,
+        "translation": [
+          0,
+          0
+        ],
+        "method": "Whole-source density calibration at matching canvas aspect; approved steel helmet/shoulder dimensions checked in same-camera control. No occupied-height/foot fitting or anatomy change."
+      },
+      "actual_camera": {
+        "space": "local_bridge_ascent",
+        "position": [
+          0.0,
+          58.826475848345254,
+          2.1351309693889853
+        ],
+        "target": [
+          0.0,
+          57.85323721529284,
+          1.9053341827833377
+        ],
+        "forward": [
+          0.0,
+          -0.9732386330524073,
+          -0.22979678660564762
+        ],
+        "right": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "up": [
+          0.0,
+          -0.22979678660564762,
+          0.9732386330524073
+        ],
+        "focal_pixels": 852.7237654320988,
+        "principal_point": [
+          480.0,
+          320.0
+        ],
+        "fov_degrees": 41.139019205070696,
+        "fov_axis": "vertical",
+        "pitch_radians": -0.23186887651398436,
+        "party_travel_metres": 55.99333333333333,
+        "direction": "toward_mainland_then_down",
+        "tracking_direction": "toward_veinhold",
+        "framing": "mainland_up_fortress_down"
+      },
+      "actual_actor_projection": {
+        "id": "crown_soldier",
+        "lane_metres": -0.75,
+        "offset_metres": -3.048,
+        "phase_offset_seconds": 0.3,
+        "height_metres": 1.8,
+        "world_position_metres": [
+          -0.75,
+          52.94533333333333,
+          0.0
+        ],
+        "frame_index": 44,
+        "cycle_phase": 0.7333333333333334,
+        "cycle_seconds": 0.8,
+        "view_elevation_degrees": 11.768012354952857,
+        "view_azimuth_degrees": 7.267487912205664,
+        "ground_anchor": [
+          582.9130223983755,
+          419.691747992707
+        ],
+        "pixels_per_metre": 141.94120844584333,
+        "scale": 0.28388241689168664,
+        "depth_metres": 6.007584229899308
+      },
+      "status": "single repaired26 source/native same-camera model gate only; replacement atlas and consecutive gait pending"
+    }
+  ],
+  "rejected_iselin48_revision": {
+    "source": {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_048_051_foreshortening_retry/master.png",
+      "sha256": "9e7825a98f35ebc777616cd373a0306ee4176301dfdf94de9ce85bdfe118bf6f",
+      "rgba_sha256": "9720e10985aa2fdff42796c89bd0d9c0c93d3d5c9f3c9d7a226698d3e0475703",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "registration": {
+      "index": 48,
+      "gait_frame": 10,
+      "cell": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "source_neck": [
+        279,
+        323
+      ],
+      "neck_match": {
+        "point": [
+          335.0,
+          263.86021505376345
+        ],
+        "score": null,
+        "template_scale": null,
+        "method": "Observed lower face-skin edge/center, excluding false braid ornament match; inspect source overlay."
+      },
+      "face_skin_bounds": [
+        325,
+        231,
+        345,
+        263
+      ],
+      "face_skin_width": 20,
+      "face_skin_area": 285,
+      "method": "Actual warm face component and actual collar/neck template; measurements, not desired motion targets.",
+      "rejected_automated_neck": [
+        335.0,
+        263.86021505376345
+      ],
+      "registration_override": "Visually observed chin/collar junction; automated warm component is braid ornament and rejected. Rigid cranium width~100 sourcepx vs~125 calibratedartpx, one whole-master density1.25; no occupied-height fit.",
+      "source": "batches/transition_048_051_foreshortening_retry/master.png",
+      "source_sha256": "9e7825a98f35ebc777616cd373a0306ee4176301dfdf94de9ce85bdfe118bf6f",
+      "generation_id": "exec-316ecc8c-abb6-4b9f-8bcd-c6fa55fdd967",
+      "scale": 1.25,
+      "origin": [
+        163.25,
+        68.93295867617906
+      ],
+      "neck_target": [
+        512.0,
+        472.68295867617906
+      ],
+      "file": "/tmp/iselin_ascent_close/frame_048.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        960
+      ],
+      "art_pixels_per_metre": 500,
+      "actual_elevation": 47.848026653756314,
+      "native_scale": 0.31832825333899784,
+      "approval_state": "candidate_pending_composed_native_review"
+    },
+    "drawing": {
+      "path": "/tmp/iselin_ascent_close/frame_048.png",
+      "sha256": "fc72581184ddbe2df8e6f6b6659fe0a566f94a539e63a219ca7e02f39e8cb2ad",
+      "rgba_sha256": "63af5aabe63db6af31332394d9e7b616ef348d8a7a6d9a9fd629a10b5ccfd4af",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "native_proof": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/iselin_rejected48_production.png",
+      "sha256": "f746bf654bc0454acab4a8884eeb11b67da2317c49dfe35a080a70ae390cd520",
+      "rgba_sha256": "7c40738809f77bd6e29176defeea59e084f3a4322525a49ee2d05a42966e5952",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "previous_native_proof": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/iselin_before_rejected48_production.png",
+      "sha256": "90171e4daa68e1804d51125486ec66c09c33fc890387375dadbf3d270febf31f",
+      "rgba_sha256": "cb04d33b250c3039c9ad7c9a7017ef03209088ac0fcf2a0d58d455113cf8788d",
+      "size": [
+        960,
+        640
+      ]
+    },
+    "camera": {
+      "space": "local_bridge_ascent",
+      "position": [
+        0.0,
+        59.68985886458327,
+        4.000000000000004
+      ],
+      "target": [
+        0.0,
+        58.92381442146429,
+        3.3572123903134647
+      ],
+      "forward": [
+        0.0,
+        -0.7660444431189779,
+        -0.6427876096865395
+      ],
+      "right": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        -0.6427876096865395,
+        0.7660444431189779
+      ],
+      "focal_pixels": 650.0000000000001,
+      "principal_point": [
+        480.0,
+        320.0
+      ],
+      "fov_degrees": 52.42275603566305,
+      "fov_axis": "vertical",
+      "pitch_radians": -0.698131700797732,
+      "party_travel_metres": 57.46,
+      "direction": "toward_mainland_then_down",
+      "tracking_direction": "toward_veinhold",
+      "framing": "mainland_up_fortress_down"
+    },
+    "reason": "Abrupt47\u219248 broad high-front to narrow steep construction, hair rotates lateral to up/back and lower body foreshortens; actual elevation46.56\u219247.85 and scale\u22121.55% cannot explain it. Whole-view bridge/redraw pending."
+  },
+  "proofs": {
+    "lucan_rejected31_32_native.jpg": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected31_32_native.jpg",
+      "sha256": "379f1f5bdca628e67b3fe7b2df06aa32f2007532e9ec7e598da31d5d1aec10b0",
+      "rgba_sha256": "bea69a287fad95049e9a51cc5f1fbf484a1e9b6ed6c5f80e088ce2ad3cb5cddc",
+      "size": [
+        1440,
+        1160
+      ]
+    },
+    "crown_rejected25_26_same_camera.jpg": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_rejected25_26_same_camera.jpg",
+      "sha256": "356e7cf8ed6867802715ea82e22d6fd7696c173436b8030d4de301504b558fba",
+      "rgba_sha256": "3c260ec735f2c39a08fa71e306e08fc8891b25809ca1b482209880382577e10a",
+      "size": [
+        1200,
+        540
+      ]
+    },
+    "iselin_rejected43_44_native.jpg": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/iselin_rejected43_44_native.jpg",
+      "sha256": "40c33c173c0a108981a0586d049cb67f66b0e3e9f1af28ac19a1b683f28bf604",
+      "rgba_sha256": "8d5f5201ed9d69a2470f3f794cac7f9e4b53aff792780765c41bf1e3ab59fed1",
+      "size": [
+        1260,
+        1080
+      ]
+    },
+    "iselin_current38_51_production.jpg": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/iselin_current38_51_production.jpg",
+      "sha256": "2e1eb79820d7386e81990368e41b8281720128b8206685cb4101521b9d059774",
+      "rgba_sha256": "608dc0396bbc38dfdb05761c7fe4579198bd6b35347efc19c8b99116f2ae3487",
+      "size": [
+        2100,
+        880
+      ]
+    },
+    "crown_repaired26_same_camera.jpg": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/crown_repaired26_same_camera.jpg",
+      "sha256": "8c9deb8632401cc66d2e6f6b2bf41a88b3627622b2e379dde806d8e4ad0f5d5a",
+      "rgba_sha256": "7ae22feb9ed54d6c63b6dcb1ccc92157d7626bba3554766fc22060b4d50c509c",
+      "size": [
+        1200,
+        540
+      ]
+    },
+    "late_pair_chosen_stage_native_x4.png": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/late_pair_chosen_stage_native_x4.png",
+      "sha256": "2fa6f1abd20f058fea5aebe7ef821d6cc68f624536b2b5a5f2100317ef6b70ca",
+      "rgba_sha256": "bd4a0911c18c40d7afe46fb00e8a620ba3de2ea9e860a8f4c44897eb2e2e0a8d",
+      "size": [
+        1320,
+        420
+      ]
+    },
+    "frozen_reentry_native_x4.png": {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/frozen_reentry_native_x4.png",
+      "sha256": "4d1c12ce3bfa757e5e03cfda7e14f0347e814d9fdee65b9604504ef09e319114",
+      "rgba_sha256": "197aab3983c8bb9b99be2a9808176e60effa2d72e5552be22a9cf7be8b883ba6",
+      "size": [
+        2000,
+        850
+      ]
+    }
+  },
+  "existing_62_picture_bindings_verified_unchanged": true
+}

@@ -1,0 +1,31 @@
+{
+  "runtime_tests_tools_documentation_check": "PASS",
+  "scoped_command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    ".",
+    ":!assets/source/cinematics/fire_veinhold/bridge_ascent",
+    ":!docs/reviews/veinhold_bridge_ascent/logs"
+  ],
+  "scoped_exit_code": 0,
+  "full_scan_exit_code": 2,
+  "full_scan_diagnostics": [
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/README.md:72: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/build_selected.py:18: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/export_actorperformance.py:54: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/register_minimal_repairs.py:34: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/render_native_proofs.py:15: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/review_actorperformance.py:34: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/crown_soldier/authoring/verify_provenance.py:56: new blank line at EOF.",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/close_recovery_v2/build_candidate.py:20: trailing whitespace.",
+    "+    ",
+    "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/lucan/register_close_recovery.py:36: trailing whitespace.",
+    "+        ",
+    "docs/reviews/veinhold_bridge_ascent/logs/rail_regression_control.log:1: trailing whitespace.",
+    "+test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) ... "
+  ],
+  "scope_note": "Frozen authoring-source bytes and raw review transcripts retain recorded whitespace. Cosmetic blank-line/EOF findings are retained rather than changing source bindings after validated freeze. This is not an unqualified whole-tree whitespace-pass claim."
+}

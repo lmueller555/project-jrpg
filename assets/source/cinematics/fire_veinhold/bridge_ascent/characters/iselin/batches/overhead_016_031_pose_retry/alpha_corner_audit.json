@@ -1,0 +1,197 @@
+{
+  "source_sha256": "2fe9d9c83f8dfe0d4a8e6e48765631d1afa376dde3946a8d63ae6fdddd700be7",
+  "rows": [
+    {
+      "phase": 16,
+      "cell": [
+        0,
+        0,
+        256,
+        384
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 17,
+      "cell": [
+        256,
+        0,
+        512,
+        384
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 18,
+      "cell": [
+        512,
+        0,
+        768,
+        384
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 19,
+      "cell": [
+        768,
+        0,
+        1024,
+        384
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 20,
+      "cell": [
+        0,
+        384,
+        256,
+        768
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 21,
+      "cell": [
+        256,
+        384,
+        512,
+        768
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 22,
+      "cell": [
+        512,
+        384,
+        768,
+        768
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 23,
+      "cell": [
+        768,
+        384,
+        1024,
+        768
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 24,
+      "cell": [
+        0,
+        768,
+        256,
+        1152
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 25,
+      "cell": [
+        256,
+        768,
+        512,
+        1152
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 26,
+      "cell": [
+        512,
+        768,
+        768,
+        1152
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 27,
+      "cell": [
+        768,
+        768,
+        1024,
+        1152
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 28,
+      "cell": [
+        0,
+        1152,
+        256,
+        1536
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 29,
+      "cell": [
+        256,
+        1152,
+        512,
+        1536
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 30,
+      "cell": [
+        512,
+        1152,
+        768,
+        1536
+      ],
+      "corner_max_alpha": 1,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 31,
+      "cell": [
+        768,
+        1152,
+        1024,
+        1536
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    }
+  ]
+}

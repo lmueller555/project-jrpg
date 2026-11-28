@@ -1,0 +1,30 @@
+{
+  "generation_id": "exec-6f876ef8-63c0-4897-a834-c6360273a0c7",
+  "original_generation_path": "/workspace/generated_images/exec-6f876ef8-63c0-4897-a834-c6360273a0c7.png",
+  "master": "master.png",
+  "sha256": "f01c67b33a6c9ae88403ddaae4343b887a56b1c0fd874f666255e88c161ed161",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "4dc9bebcd4b91efbdc11cf95654469d11c03a2548b7d858057ac1a60503e49fc",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_020_023/camera_pose_guide.png",
+      "sha256": "0b569c0ad89c0a2f5cf5bc723671c44798d1751b6bd8179ad7c4388d358d66c9"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/batches/transition_020_023/approved_phase_reference.png",
+      "sha256": "81541847117c232645a1ccad25d2b021b692005a21db9d3bbbd29ef8a4bca12d"
+    }
+  ],
+  "status": "first_native_motion_trial",
+  "samples": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "guide_pixels_used_in_export": false
+}

@@ -1,5 +1,11 @@
 # Veinhold motion continuity correction
 
+This remains the approved 47-second baseline review. The
+[Bridge Ascent extension](../veinhold_bridge_ascent/README.md) is implemented
+and extends the film to 55 seconds; the
+[scene owner](../../narrative/scenes/FIRE_VEINHOLD_PROLOGUE.md) records its
+current production contract. The evidence below describes this earlier revision.
+
 The selected drawings, 301-frame native bake and independent chronological
 frame review are complete. Final reproduction, test and Gallery results are
 recorded in the validation table below.

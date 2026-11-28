@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "actor": "lucan",
+  "selection_scope": "Selected whole-figure source/native registration; final composed scene acceptance recorded separately in root review documents.",
+  "native_binding_sha256": "4a0fadfff6978ee06221e6d32a94c672b56cd189547b7d187b223dd5fce10359",
+  "prepared_profile_sha256": "802a5591d6d8daf288cb33e9fb5a85326f00cbd8a3f1d212f1f9f9bd0b1c4c94",
+  "transition_records": 133,
+  "overhead_cycle_records": 48,
+  "used_pngs": 156,
+  "two_tick_source_poses": {
+    "36": 37,
+    "40": 41,
+    "44": 45
+  },
+  "whole_image_operations": [
+    "complete source cell crop",
+    "alpha floor at16",
+    "uniform whole-image sampling",
+    "whole-image translation"
+  ]
+}

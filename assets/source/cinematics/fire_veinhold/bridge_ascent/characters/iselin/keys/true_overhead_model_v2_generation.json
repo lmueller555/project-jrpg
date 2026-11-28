@@ -1,0 +1,32 @@
+{
+  "generation_id": "exec-8ce3c209-0824-49ed-ae98-036067d738d0",
+  "original_generation_path": "/workspace/generated_images/exec-8ce3c209-0824-49ed-ae98-036067d738d0.png",
+  "master": "true_overhead_model_v2.png",
+  "sha256": "dde55697603234fd2e0521f78b54fb9f57369d49871969b52ffea820108137f5",
+  "size": [
+    1254,
+    1254
+  ],
+  "prompt": "true_overhead_model_v2_prompt.txt",
+  "prompt_sha256": "295c24811ca42ee4e7ffeb0fc7b13b5eedbb90ac86d5d592f079e632183cf62e",
+  "references": [
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/overhead_3d_camera_pose_guide.png",
+      "sha256": "4f21a84a321d93837f7c411acacf86f3c1413861ad2421c402ba6331eb77a6be"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/hair_material_reference.png",
+      "sha256": "946f446602cb52bf95fceaecb6486e1a7c459bd41c4eaff4430f7d3c20f8743c"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/mantle_silver_blue_reference.png",
+      "sha256": "dacc53099cc53b544db2b62461a25c99e7caeadc338466a588423d17e44f1e9e"
+    },
+    {
+      "path": "assets/source/cinematics/fire_veinhold/bridge_ascent/characters/iselin/keys/coat_embroidery_reference.png",
+      "sha256": "d0ca7ce7d167f80cf1d4a92ac193fdab8b51b54508023111ffbf793fbd7dbe44"
+    }
+  ],
+  "status": "awaiting_camera_model_review",
+  "guide_pixels_used_in_export": false
+}

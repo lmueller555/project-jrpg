@@ -1,0 +1,27 @@
+{
+  "generation_id": "exec-8fc67216-0034-41f4-8341-7e1518d02a17",
+  "master": "passing_annotated_master.png",
+  "sha256": "29a178c35efd4377c006b90dd84f8266e988a1cc8927a868b5157144854a0a5c",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "passing_annotated_prompt.txt",
+  "prompt_sha256": "29827e0ba18f1cb45a66d398456fae41a3ec8bd9506b68cd5b5acc18d687997e",
+  "references": [
+    {
+      "path": "batches/overhead_016_031_pose_retry/passing_annotated_guide.png",
+      "sha256": "b82449d631378a7acd228b6a98ea0d74934a85912cb3100714980e7309a9e408"
+    },
+    {
+      "path": "batches/overhead_016_031_pose_retry/approved_phase_reference.png",
+      "sha256": "e9ebee1020cc697bd990819abe93d2fd56db9056f4f9b073622f184ba0739d3e"
+    },
+    {
+      "path": "batches/overhead_016_031_pose_retry/angle_model_reference.png",
+      "sha256": "d0ca7ce7d167f80cf1d4a92ac193fdab8b51b54508023111ffbf793fbd7dbe44"
+    }
+  ],
+  "status": "four-key source view/limb trial pending visual review",
+  "guide_pixels_used_in_export": false
+}

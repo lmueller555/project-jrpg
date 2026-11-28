@@ -1,0 +1,3521 @@
+{
+  "status": "NOT PASS current close view families; registration/recovery improved. Exact limited remaining authored-view issues36\u201338,40\u201342,44\u201346,47\u219248. Correct56b54\u201361carry/leg gatePASS.",
+  "candidate4b69": {
+    "binding_sha256": "4b69ddee3803157983c4ea4f9d613993b45655db335e3172f0e569d8d86cfb85",
+    "candidate_profile_sha256": "2e5523d8132fc0e2bd1d027c13e6e385ff813be1f7b8171fb83138664c3f6879",
+    "renderer": "FigureCompositor.compose(shadows=False)",
+    "camera_signature": "09ead62a2647aed8ca7b26e16994958631dc33b832d5abe994b6a14c23bff195"
+  },
+  "candidate528f56b": {
+    "binding_sha256": "528f737ebe81c013fcb7188e644e4e164fc9bbb96a3bd500d9e03f6d020abe63",
+    "candidate_profile_sha256": "497eec398376bcd2d9d4ecdf21b66fb048a5211a455096857bbea3cddb9ae042",
+    "unchanged35_47_source_and_native_indices": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ]
+  },
+  "observations": [
+    "35\u219236 no longer has the previous large body-registration jump; connected recovery legs improved.",
+    "First poses36/40/44 raise the gaze and expose a more frontal face/chest, then following poses bow through each four-tick group.37/41/45 also contain raised gaze, so skipping only firstpose cannot fully solve it.",
+    "39\u219240 previous frontal-foot-level preservation error is improved in actual elevated projection; current concern is view/model family, not a repeated ungrounded foot metric.",
+    "47\u219248 still changes torso/shield construction across source families; a bounded whole-model bridge is needed.",
+    "48\u201353canonical-registration controls improve position; no new categorical limb/extra-owner failure asserted there.",
+    "Correct56b54\u201361 retains matching-phase image-right long calf/boot and smoothly recovers the shield orientation into60. Rejected56a swapped-leg source is excluded."
+  ],
+  "curation_controls": {
+    "status": "review-only controls, no source/production mutation or adoption",
+    "next1": {
+      "whole_pose_mapping": {
+        "36": 37,
+        "40": 41,
+        "44": 45
+      },
+      "result": "Frontal gaze resets remain because selected37/41/45 themselves raise gaze."
+    },
+    "bowed2": {
+      "whole_pose_mapping": {
+        "36": 37,
+        "40": 42,
+        "41": 42,
+        "44": 46,
+        "45": 46
+      },
+      "result": "Some gaze reduction but skips/holds gait progression and leaves47\u219248 model switch; not recommended as complete fix."
+    },
+    "clock": "Actual target times/cameras unchanged; source48contact kept unchanged in controls."
+  },
+  "records4b69": [
+    {
+      "index": 35,
+      "state": {
+        "local_time": 0.5833333333333334,
+        "global_time": 47.583333333333336,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.232923349026976,
+            2.7761083096633734
+          ],
+          "target": [
+            0.0,
+            58.318136295196894,
+            2.3721718714148734
+          ],
+          "forward": [
+            0.0,
+            -0.9147870538300789,
+            -0.4039364382485002
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4039364382485002,
+            0.9147870538300789
+          ],
+          "focal_pixels": 788.3509355709876,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 44.18550968522493,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.4158158986227752,
+          "party_travel_metres": 56.593333333333334,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.593333333333334,
+              0.0
+            ],
+            "frame_index": 35,
+            "cycle_phase": 0.5833333333333334,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 35.40359571304351,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              648.4737198107807
+            ],
+            "pixels_per_metre": 248.4958556093626,
+            "scale": 0.4969917112187252,
+            "depth_metres": 3.1724912821495157
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.093333333333334,
+              0.0
+            ],
+            "frame_index": 45,
+            "cycle_phase": 0.75,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 30.334276251702896,
+            "view_azimuth_degrees": -11.696888019259637,
+            "ground_anchor": [
+              351.68213399598307,
+              570.9804938324128
+            ],
+            "pixels_per_metre": 217.1834581643793,
+            "scale": 0.43436691632875857,
+            "depth_metres": 3.629884809064555
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.54533333333333,
+              0.0
+            ],
+            "frame_index": 5,
+            "cycle_phase": 0.08333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 18.10924239017444,
+            "view_azimuth_degrees": 7.5120265685354735,
+            "ground_anchor": [
+              573.4906207277921,
+              350.1816504551505
+            ],
+            "pixels_per_metre": 132.2567326426421,
+            "scale": 0.2645134652852842,
+            "depth_metres": 5.960762222223598
+          }
+        ]
+      },
+      "source": "/workspace/project-jrpg/assets/story/fire_veinhold_opening/shot08/characters/lucan/transition_035.png",
+      "source_sha256": "bc45a5d75ca365b921f7ab310048f99a8229541dd2ba8c48ecd9da7a6fb537d5",
+      "output_sha256": "3af502d41e94a6ae70406a1c99a0908326ca9602ef116d971258bdc24f6eff80"
+    },
+    {
+      "index": 36,
+      "state": {
+        "local_time": 0.6,
+        "global_time": 47.6,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.27323431707968,
+            2.8604492187500012
+          ],
+          "target": [
+            0.0,
+            58.366926530043024,
+            2.4378309570093015
+          ],
+          "forward": [
+            0.0,
+            -0.9063077870366498,
+            -0.4226182617406998
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4226182617406998,
+            0.9063077870366498
+          ],
+          "focal_pixels": 780.0,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 44.612410109815286,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.43633231299858277,
+          "party_travel_metres": 56.66,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.66,
+              0.0
+            ],
+            "frame_index": 36,
+            "cycle_phase": 0.6,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 36.87724250324196,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              644.4585050286502
+            ],
+            "pixels_per_metre": 243.98512144851134,
+            "scale": 0.4879702428970227,
+            "depth_metres": 3.1969162519797543
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.16,
+              0.0
+            ],
+            "frame_index": 46,
+            "cycle_phase": 0.7666666666666666,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 31.650615287769863,
+            "view_azimuth_degrees": -11.793148292520899,
+            "ground_anchor": [
+              354.2068637642651,
+              567.0843733715094
+            ],
+            "pixels_per_metre": 213.69452336745798,
+            "scale": 0.42738904673491596,
+            "depth_metres": 3.6500701454980793
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.611999999999995,
+              0.0
+            ],
+            "frame_index": 6,
+            "cycle_phase": 0.09999999999999987,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 18.947045746194604,
+            "view_azimuth_degrees": 7.546596420285945,
+            "ground_anchor": [
+              572.2756768712543,
+              344.59533054417943
+            ],
+            "pixels_per_metre": 130.8869249934149,
+            "scale": 0.26177384998682984,
+            "depth_metres": 5.959342386867465
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_036.png",
+      "source_sha256": "2140db6a4460b6b62de803ffd7c40266c6bdea003168305fe8b3b22786ef3b47",
+      "output_sha256": "1404420963a9e7dc483015aa64d051e7b8604f4be375bd5fe70ab5a811ee919c"
+    },
+    {
+      "index": 37,
+      "state": {
+        "local_time": 0.6166666666666667,
+        "global_time": 47.61666666666667,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.31261403789635,
+            2.9470110445846758
+          ],
+          "target": [
+            0.0,
+            58.4150921886082,
+            2.5060410568866844
+          ],
+          "forward": [
+            0.0,
+            -0.897521849288157,
+            -0.4409699876979914
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4409699876979914,
+            0.897521849288157
+          ],
+          "focal_pixels": 771.3548900462963,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 45.06266992259815,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.45667912675504363,
+          "party_travel_metres": 56.72666666666667,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.72666666666667,
+              0.0
+            ],
+            "frame_index": 37,
+            "cycle_phase": 0.6166666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 38.364798127998576,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              640.5765704220041
+            ],
+            "pixels_per_metre": 239.28259465469856,
+            "scale": 0.4785651893093971,
+            "depth_metres": 3.2236147019360732
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.22666666666667,
+              0.0
+            ],
+            "frame_index": 47,
+            "cycle_phase": 0.7833333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 32.98722338166668,
+            "view_azimuth_degrees": -11.894469224793296,
+            "ground_anchor": [
+              356.7878972498075,
+              563.4285644848346
+            ],
+            "pixels_per_metre": 210.04248161961843,
+            "scale": 0.42008496323923683,
+            "depth_metres": 3.672375626580152
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.678666666666665,
+              0.0
+            ],
+            "frame_index": 7,
+            "cycle_phase": 0.1166666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 19.806885436045675,
+            "view_azimuth_degrees": 7.5827226313026665,
+            "ground_anchor": [
+              571.0169831800013,
+              339.4903888683731
+            ],
+            "pixels_per_metre": 129.4380043767944,
+            "scale": 0.2588760087535888,
+            "depth_metres": 5.9592612985663775
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_037.png",
+      "source_sha256": "0c24e5eb8cb3b91adb89f2902ab41f29b07eaace8d7d94826b6866f2569c3e31",
+      "output_sha256": "9cf8c9c393f1f0d3a7f2814f32532a2b121a78ea80951837959985f015655b82"
+    },
+    {
+      "index": 38,
+      "state": {
+        "local_time": 0.6333333333333333,
+        "global_time": 47.63333333333333,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.35107818273346,
+            3.0356556456766026
+          ],
+          "target": [
+            0.0,
+            58.46268774183955,
+            2.5765669565016998
+          ],
+          "forward": [
+            0.0,
+            -0.8883904408939063,
+            -0.4590886891749031
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4590886891749031,
+            0.8883904408939063
+          ],
+          "focal_pixels": 761.1882716049383,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 45.6033152810767,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.47696912640824973,
+          "party_travel_metres": 56.79333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.79333333333333,
+              0.0
+            ],
+            "frame_index": 38,
+            "cycle_phase": 0.6333333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 39.86107229516915,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              636.1552902232563
+            ],
+            "pixels_per_metre": 234.01510056176264,
+            "scale": 0.4680302011235253,
+            "depth_metres": 3.2527314253553525
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.29333333333333,
+              0.0
+            ],
+            "frame_index": 0,
+            "cycle_phase": 0.0,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 34.339961197329295,
+            "view_azimuth_degrees": -12.001008771284141,
+            "ground_anchor": [
+              359.62054495937696,
+              559.4757359703613
+            ],
+            "pixels_per_metre": 205.89758589590448,
+            "scale": 0.41179517179180897,
+            "depth_metres": 3.696926645802306
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.74533333333333,
+              0.0
+            ],
+            "frame_index": 8,
+            "cycle_phase": 0.1333333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 20.687117786350324,
+            "view_azimuth_degrees": 7.620424140262229,
+            "ground_anchor": [
+              569.5694709115578,
+              334.7268216487448
+            ],
+            "pixels_per_metre": 127.70446479842306,
+            "scale": 0.25540892959684613,
+            "depth_metres": 5.960545489199981
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_038.png",
+      "source_sha256": "82fa72482a0a794a1644321a8a0a4691e49326ccf02643fbeb44b153ffe0b777",
+      "output_sha256": "f3ff0226c94c54abde626b08e6178f449f7538fb7f96438a49b8149b4718d46b"
+    },
+    {
+      "index": 39,
+      "state": {
+        "local_time": 0.65,
+        "global_time": 47.65,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.3886439859307,
+            3.1262358665466325
+          ],
+          "target": [
+            0.0,
+            58.50973742786965,
+            2.6492418810528084
+          ],
+          "forward": [
+            0.0,
+            -0.8789065580610476,
+            -0.4769939854938241
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4769939854938241,
+            0.8789065580610476
+          ],
+          "focal_pixels": 748.84765625,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 46.276288292760604,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.4972313502776424,
+          "party_travel_metres": 56.86,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.86,
+              0.0
+            ],
+            "frame_index": 39,
+            "cycle_phase": 0.65,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 41.360916700371114,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              630.8447083856145
+            ],
+            "pixels_per_metre": 228.00532065386676,
+            "scale": 0.4560106413077335,
+            "depth_metres": 3.284342900869494
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.36,
+              0.0
+            ],
+            "frame_index": 1,
+            "cycle_phase": 0.016666666666666607,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 35.70460657747243,
+            "view_azimuth_degrees": -12.112931168470826,
+            "ground_anchor": [
+              362.79789585905536,
+              554.9495117463091
+            ],
+            "pixels_per_metre": 201.0979173060181,
+            "scale": 0.40219583461203623,
+            "depth_metres": 3.723796179900018
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.812,
+              0.0
+            ],
+            "frame_index": 9,
+            "cycle_phase": 0.1499999999999999,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 21.585982545181967,
+            "view_azimuth_degrees": 7.659719244073339,
+            "ground_anchor": [
+              567.8579299143905,
+              330.2669095442726
+            ],
+            "pixels_per_metre": 125.57710056901982,
+            "scale": 0.25115420113803966,
+            "depth_metres": 5.963250089839569
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_039.png",
+      "source_sha256": "01066dcc9312791c8d32166d2bab4bde3ce2e8092b125fddabaa4080f0414dcd",
+      "output_sha256": "0dfd504077e60e6bd0fd13c5aff43aa60fa503828249add874f3eec23d78e9d8"
+    },
+    {
+      "index": 40,
+      "state": {
+        "local_time": 0.6666666666666666,
+        "global_time": 47.666666666666664,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.42533019101149,
+            3.2185956790123473
+          ],
+          "target": [
+            0.0,
+            58.55630394865948,
+            2.723829683714015
+          ],
+          "forward": [
+            0.0,
+            -0.8690262423520079,
+            -0.4947659952983322
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.4947659952983322,
+            0.8690262423520079
+          ],
+          "focal_pixels": 734.4444444444443,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 47.085849015225115,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.5175655386778246,
+          "party_travel_metres": 56.92666666666666,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.92666666666666,
+              0.0
+            ],
+            "frame_index": 40,
+            "cycle_phase": 0.6666666666666666,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 42.85929592522973,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              624.5583707947362
+            ],
+            "pixels_per_metre": 221.31376622354728,
+            "scale": 0.4426275324470946,
+            "depth_metres": 3.318566472284367
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.42666666666666,
+              0.0
+            ],
+            "frame_index": 2,
+            "cycle_phase": 0.033333333333333215,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 37.076904975469404,
+            "view_azimuth_degrees": -12.230407319689482,
+            "ground_anchor": [
+              366.29182186852694,
+              549.761782559308
+            ],
+            "pixels_per_metre": 195.69114540607984,
+            "scale": 0.3913822908121597,
+            "depth_metres": 3.7530795934603702
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.87866666666666,
+              0.0
+            ],
+            "frame_index": 10,
+            "cycle_phase": 0.16666666666666652,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 22.501610982322287,
+            "view_azimuth_degrees": 7.700625583837829,
+            "ground_anchor": [
+              565.8979544504418,
+              326.0407575408706
+            ],
+            "pixels_per_metre": 123.07697777733449,
+            "scale": 0.24615395555466899,
+            "depth_metres": 5.967358458973288
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_040.png",
+      "source_sha256": "f27e4de7cbcf59da151f5ec03b23dc09ce94a3414793ddaeb3fc2dc60da2129f",
+      "output_sha256": "d3a441ebba97ff260590641f48ef0186ff43d045583f1cb2f3fa30627915b98e"
+    },
+    {
+      "index": 41,
+      "state": {
+        "local_time": 0.6833333333333333,
+        "global_time": 47.68333333333333,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.46115699678366,
+            3.3125703234731434
+          ],
+          "target": [
+            0.0,
+            58.60248165864407,
+            2.800050408083635
+          ],
+          "forward": [
+            0.0,
+            -0.8586753381395852,
+            -0.5125199153895085
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.5125199153895085,
+            0.8586753381395852
+          ],
+          "focal_pixels": 718.6513792438271,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 48.004762809429316,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.5381168832060039,
+          "party_travel_metres": 56.99333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              56.99333333333333,
+              0.0
+            ],
+            "frame_index": 41,
+            "cycle_phase": 0.6833333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 44.35135402095575,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              617.4183378699995
+            ],
+            "pixels_per_metre": 214.16800606731704,
+            "scale": 0.42833601213463407,
+            "depth_metres": 3.3555496567397722
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.49333333333333,
+              0.0
+            ],
+            "frame_index": 3,
+            "cycle_phase": 0.04999999999999993,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 38.45262051398388,
+            "view_azimuth_degrees": -12.353615180938856,
+            "ground_anchor": [
+              369.989091532657,
+              543.9743751258254
+            ],
+            "pixels_per_metre": 189.87391628365367,
+            "scale": 0.3797478325673073,
+            "depth_metres": 3.784887325809565
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              53.94533333333333,
+              0.0
+            ],
+            "frame_index": 11,
+            "cycle_phase": 0.18333333333333335,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 23.432035420071017,
+            "view_azimuth_degrees": 7.7431601234362875,
+            "ground_anchor": [
+              563.7711388285625,
+              321.9494063748857
+            ],
+            "pixels_per_metre": 120.32084303774205,
+            "scale": 0.2406416860754841,
+            "depth_metres": 5.972792087389229
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_041.png",
+      "source_sha256": "f489642a3e8b07b5ceb0956d4fb5cb19c5dac0c8e02ad78fc25d4819327a6723",
+      "output_sha256": "eedfe43b2f76de96f0315b5464ea432e16d3e0201007597a3d8d7aac005cd116"
+    },
+    {
+      "index": 42,
+      "state": {
+        "local_time": 0.7,
+        "global_time": 47.7,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.4961460034399,
+            3.407986450195315
+          ],
+          "target": [
+            0.0,
+            58.648387059529774,
+            2.877604726320526
+          ],
+          "forward": [
+            0.0,
+            -0.8477589439101231,
+            -0.5303817238747889
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.5303817238747889,
+            0.8477589439101231
+          ],
+          "focal_pixels": 702.5,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 48.980049631321165,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.5590507760294336,
+          "party_travel_metres": 57.059999999999995,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.059999999999995,
+              0.0
+            ],
+            "frame_index": 42,
+            "cycle_phase": 0.7,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 45.832474612322564,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              609.696789924046
+            ],
+            "pixels_per_metre": 206.8942317872773,
+            "scale": 0.4137884635745546,
+            "depth_metres": 3.395454739996281
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.559999999999995,
+              0.0
+            ],
+            "frame_index": 4,
+            "cycle_phase": 0.06666666666666654,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 39.82758611474113,
+            "view_azimuth_degrees": -12.48274014669097,
+            "ground_anchor": [
+              373.72603086842594,
+              537.7590929710094
+            ],
+            "pixels_per_metre": 183.9325811817564,
+            "scale": 0.3678651623635128,
+            "depth_metres": 3.819334211951343
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.01199999999999,
+              0.0
+            ],
+            "frame_index": 12,
+            "cycle_phase": 0.19999999999999996,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 24.37520010621788,
+            "view_azimuth_degrees": 7.787339120641825,
+            "ground_anchor": [
+              561.6004286532249,
+              317.87405669827945
+            ],
+            "pixels_per_metre": 117.48623276731662,
+            "scale": 0.23497246553463325,
+            "depth_metres": 5.979424001034339
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_042.png",
+      "source_sha256": "499533fef110fefb9a9af5190d7ae6f63b70fead61867eba90125e21752816ce",
+      "output_sha256": "869264306eda18a62dc32a076a4e8f9530617b34164aa1272e2ebb4077a4fa58"
+    },
+    {
+      "index": 43,
+      "state": {
+        "local_time": 0.7166666666666667,
+        "global_time": 47.71666666666667,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.530320158658476,
+            3.504662260597138
+          ],
+          "target": [
+            0.0,
+            58.69414674018626,
+            2.9561971165446677
+          ],
+          "forward": [
+            0.0,
+            -0.8361734184722109,
+            -0.5484651440524702
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.5484651440524702,
+            0.8361734184722109
+          ],
+          "focal_pixels": 687.1780960648148,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 49.94020928198246,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.5805275591728557,
+          "party_travel_metres": 57.126666666666665,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.126666666666665,
+              0.0
+            ],
+            "frame_index": 43,
+            "cycle_phase": 0.7166666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 47.2983327563943,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              601.7503947842183
+            ],
+            "pixels_per_metre": 199.85184324126672,
+            "scale": 0.39970368648253346,
+            "depth_metres": 3.4384376191879014
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.626666666666665,
+              0.0
+            ],
+            "frame_index": 5,
+            "cycle_phase": 0.08333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 41.197751185062096,
+            "view_azimuth_degrees": -12.617975435262437,
+            "ground_anchor": [
+              377.32158994605254,
+              531.3520848764826
+            ],
+            "pixels_per_metre": 178.18585792394947,
+            "scale": 0.35637171584789895,
+            "depth_metres": 3.8565243284240074
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.07866666666666,
+              0.0
+            ],
+            "frame_index": 13,
+            "cycle_phase": 0.21666666666666656,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 25.328973293167632,
+            "view_azimuth_degrees": 7.833178090655222,
+            "ground_anchor": [
+              559.5257536786658,
+              313.68708717546866
+            ],
+            "pixels_per_metre": 114.77656326420154,
+            "scale": 0.2295531265284031,
+            "depth_metres": 5.987094198691202
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_043.png",
+      "source_sha256": "b34bf902f420d6d77b2370223a5db223f889ce7c12ba40d01220dcd8949ee645",
+      "output_sha256": "b7ea3da468d0231cae9efd30fc81830241bf4c7d87be20fff0a08579fc018f52"
+    },
+    {
+      "index": 44,
+      "state": {
+        "local_time": 0.7333333333333333,
+        "global_time": 47.733333333333334,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.5637037037037,
+            3.6024076485339522
+          ],
+          "target": [
+            0.0,
+            58.73988274740833,
+            3.035557551975274
+          ],
+          "forward": [
+            0.0,
+            -0.8238209562953698,
+            -0.5668500965586779
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.5668500965586779,
+            0.8238209562953698
+          ],
+          "focal_pixels": 673.8271604938273,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 50.80601426051454,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.6026772738059432,
+          "party_travel_metres": 57.19333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.19333333333333,
+              0.0
+            ],
+            "frame_index": 44,
+            "cycle_phase": 0.7333333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 48.74493728133387,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              593.9467985432182
+            ],
+            "pixels_per_metre": 193.3717310868761,
+            "scale": 0.3867434621737522,
+            "depth_metres": 3.4846208218051116
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.69333333333333,
+              0.0
+            ],
+            "frame_index": 6,
+            "cycle_phase": 0.09999999999999987,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 42.55922547559272,
+            "view_azimuth_degrees": -12.759522473033286,
+            "ground_anchor": [
+              380.6086156451742,
+              525.0014876803908
+            ],
+            "pixels_per_metre": 172.93000071678884,
+            "scale": 0.3458600014335777,
+            "depth_metres": 3.896531299952797
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.145333333333326,
+              0.0
+            ],
+            "frame_index": 14,
+            "cycle_phase": 0.23333333333333317,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 26.291160341658735,
+            "view_azimuth_degrees": 7.880691761946712,
+            "ground_anchor": [
+              557.6800666415976,
+              309.26307634634077
+            ],
+            "pixels_per_metre": 112.38643592038652,
+            "scale": 0.22477287184077305,
+            "depth_metres": 5.995627096593401
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_044.png",
+      "source_sha256": "5866f5cd3146093eff5d09d744a3a3c7557c38e0f867cf5b12337099c2870808",
+      "output_sha256": "c1be0e44f576911d7cc7b62b07cf735f1f7ed49efd6133f611ac7640d801643d"
+    },
+    {
+      "index": 45,
+      "state": {
+        "local_time": 0.75,
+        "global_time": 47.75,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.596322119526576,
+            3.701024341583255
+          ],
+          "target": [
+            0.0,
+            58.785695219240004,
+            3.115461340248826
+          ],
+          "forward": [
+            0.0,
+            -0.8106269002865717,
+            -0.585563001334429
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.585563001334429,
+            0.8106269002865717
+          ],
+          "focal_pixels": 663.3398437500001,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 51.50600386072068,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.625574409530741,
+          "party_travel_metres": 57.26,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.26,
+              0.0
+            ],
+            "frame_index": 45,
+            "cycle_phase": 0.75,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 50.168662866535094,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              586.586919779485
+            ],
+            "pixels_per_metre": 187.69899492484396,
+            "scale": 0.3753979898496879,
+            "depth_metres": 3.5340617780910666
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.76,
+              0.0
+            ],
+            "frame_index": 7,
+            "cycle_phase": 0.11666666666666659,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 43.90831792810476,
+            "view_azimuth_degrees": -12.907591276491832,
+            "ground_anchor": [
+              383.46304788761967,
+              518.9113595833626
+            ],
+            "pixels_per_metre": 168.38706782631425,
+            "scale": 0.3367741356526285,
+            "depth_metres": 3.9393752282343524
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.211999999999996,
+              0.0
+            ],
+            "frame_index": 15,
+            "cycle_phase": 0.25,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 27.259517626267147,
+            "view_azimuth_degrees": 7.929894024282374,
+            "ground_anchor": [
+              556.1658912330629,
+              304.4916160518248
+            ],
+            "pixels_per_metre": 110.46729890519592,
+            "scale": 0.22093459781039185,
+            "depth_metres": 6.004852570164539
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_045.png",
+      "source_sha256": "23fb44de0fdbfbf1bf5422fbb2de69d1753e3824a3f8202546827c73e9bfc32b",
+      "output_sha256": "5fc6fb52d09e3ea6aad3877901351d37c37af3c6680153971cf488156dfaac7b"
+    },
+    {
+      "index": 46,
+      "state": {
+        "local_time": 0.7666666666666667,
+        "global_time": 47.766666666666666,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.62820207286535,
+            3.800306042329769
+          ],
+          "target": [
+            0.0,
+            58.831642029821296,
+            3.1957466177686653
+          ],
+          "forward": [
+            0.0,
+            -0.7965600430440554,
+            -0.6045594245611036
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.6045594245611036,
+            0.7965600430440554
+          ],
+          "focal_pixels": 656.1574074074074,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 51.99585911775121,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.64921265366911,
+          "party_travel_metres": 57.32666666666667,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.32666666666667,
+              0.0
+            ],
+            "frame_index": 46,
+            "cycle_phase": 0.7666666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 51.56627165926105,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              579.8306327618054
+            ],
+            "pixels_per_metre": 182.9408715690374,
+            "scale": 0.3658817431380748,
+            "depth_metres": 3.5867184942310155
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.82666666666667,
+              0.0
+            ],
+            "frame_index": 8,
+            "cycle_phase": 0.1333333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 45.241569594026736,
+            "view_azimuth_degrees": -13.062400830736394,
+            "ground_anchor": [
+              385.83071102913516,
+              513.1886312186601
+            ],
+            "pixels_per_metre": 164.6568762356022,
+            "scale": 0.32931375247120437,
+            "depth_metres": 3.984998515753044
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.278666666666666,
+              0.0
+            ],
+            "frame_index": 16,
+            "cycle_phase": 0.2666666666666666,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 28.231766985063913,
+            "view_azimuth_degrees": 7.9807978688088665,
+            "ground_anchor": [
+              555.0324424490398,
+              299.2970382568468
+            ],
+            "pixels_per_metre": 109.09349785238058,
+            "scale": 0.21818699570476116,
+            "depth_metres": 6.014633505429298
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_046.png",
+      "source_sha256": "0021aa42b5446b07828a14cf2b4264e31a71a059ae208fb3571e384ef3cfab05",
+      "output_sha256": "efa02c0450e3b04a003e908435cec15bbaf1db784bf17847f17e20df6504c9cc"
+    },
+    {
+      "index": 47,
+      "state": {
+        "local_time": 0.7833333333333333,
+        "global_time": 47.78333333333333,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.65937136234608,
+            3.9000385696505364
+          ],
+          "target": [
+            0.0,
+            58.87771524533808,
+            3.27632892987897
+          ],
+          "forward": [
+            0.0,
+            -0.7816561170079994,
+            -0.6237096397715661
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.6237096397715661,
+            0.7816561170079994
+          ],
+          "focal_pixels": 652.0671778549383,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.278712643508776,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.6734796405501677,
+          "party_travel_metres": 57.39333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.39333333333333,
+              0.0
+            ],
+            "frame_index": 47,
+            "cycle_phase": 0.7833333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 52.934924713396015,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              573.6353449167588
+            ],
+            "pixels_per_metre": 179.02053859560536,
+            "scale": 0.3580410771912107,
+            "depth_metres": 3.6424154623281053
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.89333333333333,
+              0.0
+            ],
+            "frame_index": 9,
+            "cycle_phase": 0.1499999999999999,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 46.555780001121605,
+            "view_azimuth_degrees": -13.22417946266765,
+            "ground_anchor": [
+              387.751423858102,
+              507.8016980734656
+            ],
+            "pixels_per_metre": 161.67314829539708,
+            "scale": 0.32334629659079417,
+            "depth_metres": 4.033243520832105
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.34533333333333,
+              0.0
+            ],
+            "frame_index": 17,
+            "cycle_phase": 0.2833333333333332,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 29.20561042923162,
+            "view_azimuth_degrees": 8.033415320068203,
+            "ground_anchor": [
+              554.253327568455,
+              293.67197385591294
+            ],
+            "pixels_per_metre": 108.2286544085692,
+            "scale": 0.2164573088171384,
+            "depth_metres": 6.024903306968489
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_047.png",
+      "source_sha256": "239fbcc2b8094b7c5c0de420e5bdc669c269ccfe9ced206606220d68e2e96ddf",
+      "output_sha256": "638111dfeec035a3ac245f388a66e77aee7e218379f4527f8c0ef6ce19642b9f"
+    },
+    {
+      "index": 48,
+      "state": {
+        "local_time": 0.8,
+        "global_time": 47.8,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.68985886458327,
+            4.000000000000004
+          ],
+          "target": [
+            0.0,
+            58.92381442146429,
+            3.3572123903134647
+          ],
+          "forward": [
+            0.0,
+            -0.7660444431189779,
+            -0.6427876096865395
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.6427876096865395,
+            0.7660444431189779
+          ],
+          "focal_pixels": 650.0000000000001,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.42275603566305,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.698131700797732,
+          "party_travel_metres": 57.46,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.46,
+              0.0
+            ],
+            "frame_index": 0,
+            "cycle_phase": 0.0,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 54.272183950843896,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              567.715414008752
+            ],
+            "pixels_per_metre": 175.63710281615516,
+            "scale": 0.3512742056323103,
+            "depth_metres": 3.700812582181883
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              56.96,
+              0.0
+            ],
+            "frame_index": 10,
+            "cycle_phase": 0.16666666666666663,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 47.848026653756314,
+            "view_azimuth_degrees": -13.393165206653315,
+            "ground_anchor": [
+              389.38033926839717,
+              502.55795158616814
+            ],
+            "pixels_per_metre": 159.16412666949893,
+            "scale": 0.31832825333899784,
+            "depth_metres": 4.0838348037413725
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.412,
+              0.0
+            ],
+            "frame_index": 18,
+            "cycle_phase": 0.30000000000000004,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 30.178744811543663,
+            "view_azimuth_degrees": 8.087757359814983,
+            "ground_anchor": [
+              553.7047814139393,
+              287.7306206222273
+            ],
+            "pixels_per_metre": 107.6922763056558,
+            "scale": 0.2153845526113116,
+            "depth_metres": 6.035716044808529
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_048.png",
+      "source_sha256": "3cde8db78c57e9497413095ea08a64d95063e415ea9801473b79bd4d185e50aa",
+      "output_sha256": "d361c74820d3eb7774d40944d09259667e33c56a09bf49fd1431332550a2d783"
+    },
+    {
+      "index": 49,
+      "state": {
+        "local_time": 0.8166666666666667,
+        "global_time": 47.81666666666667,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.71969448028037,
+            4.100011052769018
+          ],
+          "target": [
+            0.0,
+            58.96999801708589,
+            3.4382292057274917
+          ],
+          "forward": [
+            0.0,
+            -0.749696463194476,
+            -0.661781847041526
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.661781847041526,
+            0.749696463194476
+          ],
+          "focal_pixels": 648.3320636513793,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.539518513038416,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.7231930330113367,
+          "party_travel_metres": 57.526666666666664,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.526666666666664,
+              0.0
+            ],
+            "frame_index": 1,
+            "cycle_phase": 0.016666666666666607,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 55.576425169055526,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              561.4024511754003
+            ],
+            "pixels_per_metre": 172.34557348168659,
+            "scale": 0.34469114696337316,
+            "depth_metres": 3.761814420608087
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.026666666666664,
+              0.0
+            ],
+            "frame_index": 11,
+            "cycle_phase": 0.18333333333333324,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 49.11612282497073,
+            "view_azimuth_degrees": -13.569606159935965,
+            "ground_anchor": [
+              390.94840962810014,
+              496.9478205729931
+            ],
+            "pixels_per_metre": 156.72828996721367,
+            "scale": 0.3134565799344273,
+            "depth_metres": 4.136662652205325
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.47866666666666,
+              0.0
+            ],
+            "frame_index": 19,
+            "cycle_phase": 0.31666666666666665,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 31.14927439867169,
+            "view_azimuth_degrees": 8.143833842513516,
+            "ground_anchor": [
+              553.2027952241141,
+              281.48036885959954
+            ],
+            "pixels_per_metre": 107.21745311905659,
+            "scale": 0.21443490623811318,
+            "depth_metres": 6.046889240424852
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_049.png",
+      "source_sha256": "1c770beedf288358c725ff246c1e21e163495945bb2d81b97468805da861c792",
+      "output_sha256": "30b3e9ccc1cce6de132809fd78889d817cd8643023d1983e76a7370394ba316a"
+    },
+    {
+      "index": 50,
+      "state": {
+        "local_time": 0.8333333333333334,
+        "global_time": 47.833333333333336,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.748909080330435,
+            4.200090423816649
+          ],
+          "target": [
+            0.0,
+            59.01716056769657,
+            3.518515692581603
+          ],
+          "forward": [
+            0.0,
+            -0.7317485126338661,
+            -0.6815747312350456
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.6815747312350456,
+            0.7317485126338661
+          ],
+          "focal_pixels": 646.6578655478395,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.65720616455226,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.7499124953495698,
+          "party_travel_metres": 57.593333333333334,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.593333333333334,
+              0.0
+            ],
+            "frame_index": 2,
+            "cycle_phase": 0.033333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 56.84795768095512,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              553.6442731204746
+            ],
+            "pixels_per_metre": 168.9902975871633,
+            "scale": 0.3379805951743266,
+            "depth_metres": 3.8265975903989435
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.093333333333334,
+              0.0
+            ],
+            "frame_index": 12,
+            "cycle_phase": 0.19999999999999996,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 50.359864386676534,
+            "view_azimuth_degrees": -13.75376082447199,
+            "ground_anchor": [
+              392.53905293322623,
+              490.00209402413736
+            ],
+            "pixels_per_metre": 154.24262563728155,
+            "scale": 0.3084852512745631,
+            "depth_metres": 4.192471846715877
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.54533333333333,
+              0.0
+            ],
+            "frame_index": 20,
+            "cycle_phase": 0.33333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 32.11691065772662,
+            "view_azimuth_degrees": 8.201653402400284,
+            "ground_anchor": [
+              552.7084641988179,
+              274.1242725931358
+            ],
+            "pixels_per_metre": 106.76265191345777,
+            "scale": 0.21352530382691554,
+            "depth_metres": 6.056967056906969
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_050.png",
+      "source_sha256": "4f72e223ef5cccd1ffc90c1edfb97247ecfa22816717e749a5309af52b0e60c8",
+      "output_sha256": "a15e8527b158cbdac95d8889dbb0093bcc1d88afa1a5be8f5a3d42b5c716ff03"
+    },
+    {
+      "index": 51,
+      "state": {
+        "local_time": 0.85,
+        "global_time": 47.85,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.77753445191662,
+            4.300311812042601
+          ],
+          "target": [
+            0.0,
+            59.06595853608281,
+            3.5977025920594943
+          ],
+          "forward": [
+            0.0,
+            -0.7115759158338134,
+            -0.7026092199831067
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.7026092199831067,
+            0.7115759158338134
+          ],
+          "focal_pixels": 644.9746704101562,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.77602076336534,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.7790577094741875,
+          "party_travel_metres": 57.66,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.66,
+              0.0
+            ],
+            "frame_index": 3,
+            "cycle_phase": 0.04999999999999993,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 58.087531959248174,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              543.9351032210637
+            ],
+            "pixels_per_metre": 165.5531422584819,
+            "scale": 0.3311062845169638,
+            "depth_metres": 3.895876946890821
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.16,
+              0.0
+            ],
+            "frame_index": 13,
+            "cycle_phase": 0.21666666666666656,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 51.57952529252411,
+            "view_azimuth_degrees": -13.945898431234069,
+            "ground_anchor": [
+              394.1620797570946,
+              481.22929645774514
+            ],
+            "pixels_per_metre": 151.6993189375831,
+            "scale": 0.3033986378751662,
+            "depth_metres": 4.251664904807727
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.611999999999995,
+              0.0
+            ],
+            "frame_index": 21,
+            "cycle_phase": 0.34999999999999987,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 33.081766942416365,
+            "view_azimuth_degrees": 8.261223352011056,
+            "ground_anchor": [
+              552.2298276875779,
+              265.1675626330083
+            ],
+            "pixels_per_metre": 106.3479238134886,
+            "scale": 0.2126958476269772,
+            "depth_metres": 6.0647603383522855
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_051.png",
+      "source_sha256": "21d2f62d481b3d1ca855d4439923e73a8a95bf4d2cdff4e5faea499ee1b606c9",
+      "output_sha256": "92aaa354a09b56cffad543872941fa8100dc6ba9a242f38916cbe0537055e0fc"
+    },
+    {
+      "index": 52,
+      "state": {
+        "local_time": 0.8666666666666667,
+        "global_time": 47.86666666666667,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.805603244612875,
+            4.400754535698308
+          ],
+          "target": [
+            0.0,
+            59.11654564977897,
+            3.6760479530031387
+          ],
+          "forward": [
+            0.0,
+            -0.6890575948339078,
+            -0.7247065826951692
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.7247065826951692,
+            0.6890575948339078
+          ],
+          "focal_pixels": 643.2831790123457,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 52.89592336991024,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.8106084748151443,
+          "party_travel_metres": 57.72666666666667,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.72666666666667,
+              0.0
+            ],
+            "frame_index": 4,
+            "cycle_phase": 0.06666666666666665,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 59.29587816282141,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              532.3631443546261
+            ],
+            "pixels_per_metre": 162.05537740081738,
+            "scale": 0.32411075480163476,
+            "depth_metres": 3.9695268946323843
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.22666666666667,
+              0.0
+            ],
+            "frame_index": 14,
+            "cycle_phase": 0.2333333333333334,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 52.775380038638275,
+            "view_azimuth_degrees": -14.146299242263076,
+            "ground_anchor": [
+              395.80557513559563,
+              470.69519982477516
+            ],
+            "pixels_per_metre": 149.11332280616946,
+            "scale": 0.2982266456123389,
+            "depth_metres": 4.314055692049338
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.678666666666665,
+              0.0
+            ],
+            "frame_index": 22,
+            "cycle_phase": 0.3666666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 34.04395317100672,
+            "view_azimuth_degrees": 8.322549572089377,
+            "ground_anchor": [
+              551.7735257517585,
+              254.62375852916506
+            ],
+            "pixels_per_metre": 105.9813976582767,
+            "scale": 0.2119627953165534,
+            "depth_metres": 6.0697744436861365
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_052.png",
+      "source_sha256": "cb08000b57b97826148ea1b60b579e5c04390b815a8701b10bfcdc5ab815aa72",
+      "output_sha256": "182256b77be493d7085f2d4daab5987070d0f00cf20978fceadf0f440f2c7faa"
+    },
+    {
+      "index": 53,
+      "state": {
+        "local_time": 0.8833333333333333,
+        "global_time": 47.88333333333333,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.83314891648438,
+            4.501503256928514
+          ],
+          "target": [
+            0.0,
+            59.16863918716415,
+            3.7542236441738566
+          ],
+          "forward": [
+            0.0,
+            -0.6645097293202332,
+            -0.7472796127546572
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.7472796127546572,
+            0.6645097293202332
+          ],
+          "focal_pixels": 641.5870760693963,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.01666148971081,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.8439587742710524,
+          "party_travel_metres": 57.79333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.79333333333333,
+              0.0
+            ],
+            "frame_index": 5,
+            "cycle_phase": 0.08333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 60.47369797733436,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              519.4329098825448
+            ],
+            "pixels_per_metre": 158.54154517812853,
+            "scale": 0.31708309035625704,
+            "depth_metres": 4.046807260195076
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.29333333333333,
+              0.0
+            ],
+            "frame_index": 15,
+            "cycle_phase": 0.25,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 53.94769587043857,
+            "view_azimuth_degrees": -14.355254824919832,
+            "ground_anchor": [
+              397.4458662301536,
+              458.86117203670403
+            ],
+            "pixels_per_metre": 146.51243982765197,
+            "scale": 0.29302487965530394,
+            "depth_metres": 4.379062124855193
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.74533333333333,
+              0.0
+            ],
+            "frame_index": 23,
+            "cycle_phase": 0.3833333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 35.003570186709766,
+            "view_azimuth_degrees": 8.385636392818213,
+            "ground_anchor": [
+              551.3425762228002,
+              242.88075374535117
+            ],
+            "pixels_per_metre": 105.65916772844314,
+            "scale": 0.21131833545688627,
+            "depth_metres": 6.0722329151631484
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2_candidate/transition_053.png",
+      "source_sha256": "eba2a792e774e608e1ea7557336420606a3d286f19fbd74326738e20e11ca454",
+      "output_sha256": "ee65dc84f41cad9b422e4c08745a7f52f0821c6c5a95a18600b0deda84e1d7eb"
+    }
+  ],
+  "records56b": [
+    {
+      "index": 54,
+      "state": {
+        "local_time": 0.9,
+        "global_time": 47.9,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.860205680188265,
+            4.602647706312846
+          ],
+          "target": [
+            0.0,
+            59.22160573481662,
+            3.833108812057765
+          ],
+          "forward": [
+            0.0,
+            -0.6385999453716453,
+            -0.7695388942550803
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.7695388942550803,
+            0.6385999453716453
+          ],
+          "focal_pixels": 639.892578125,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.137796912430375,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.8781187799096469,
+          "party_travel_metres": 57.86,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.86,
+              0.0
+            ],
+            "frame_index": 6,
+            "cycle_phase": 0.09999999999999998,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 61.62165847085134,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              505.89185579373986
+            ],
+            "pixels_per_metre": 155.06297239983073,
+            "scale": 0.31012594479966143,
+            "depth_metres": 4.126662659832378
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.36,
+              0.0
+            ],
+            "frame_index": 16,
+            "cycle_phase": 0.2666666666666666,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 55.096726412859795,
+            "view_azimuth_degrees": -14.573068291839984,
+            "ground_anchor": [
+              399.05686097795336,
+              446.42634149885896
+            ],
+            "pixels_per_metre": 143.92666583492263,
+            "scale": 0.2878533316698453,
+            "depth_metres": 4.445962632518201
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.812,
+              0.0
+            ],
+            "frame_index": 24,
+            "cycle_phase": 0.3999999999999999,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 35.96070437625361,
+            "view_azimuth_degrees": 8.450486466345977,
+            "ground_anchor": [
+              550.9341845550922,
+              230.5718507535737
+            ],
+            "pixels_per_metre": 105.36479997807614,
+            "scale": 0.21072959995615226,
+            "depth_metres": 6.073115293325154
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_054.png",
+      "source_sha256": "23e209fe12b2293818c4f5c3d7ec4d9e8d59be9bc76659975347f2bd5a7411fb",
+      "output_sha256": "d540dbdd9b9e45bd935561d7ef7bd90fcf21492bcbd1df387f40282cb252a207"
+    },
+    {
+      "index": 55,
+      "state": {
+        "local_time": 0.9166666666666666,
+        "global_time": 47.916666666666664,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.88680844907407,
+            4.7042824074074066
+          ],
+          "target": [
+            0.0,
+            59.27457719330265,
+            3.9136036550328703
+          ],
+          "forward": [
+            0.0,
+            -0.6122312557714177,
+            -0.7906787523745361
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.7906787523745361,
+            0.6122312557714177
+          ],
+          "focal_pixels": 638.2079814392844,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.258734314246446,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.9119168586682465,
+          "party_travel_metres": 57.92666666666666,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.92666666666666,
+              0.0
+            ],
+            "frame_index": 7,
+            "cycle_phase": 0.11666666666666659,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 62.74038774497974,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              492.5710017434316
+            ],
+            "pixels_per_metre": 151.66448179619906,
+            "scale": 0.30332896359239814,
+            "depth_metres": 4.208025332502595
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.42666666666666,
+              0.0
+            ],
+            "frame_index": 17,
+            "cycle_phase": 0.2833333333333332,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 56.22270664581673,
+            "view_azimuth_degrees": -14.800054499038854,
+            "ground_anchor": [
+              400.61712824618616,
+              434.1802791640768
+            ],
+            "pixels_per_metre": 141.3797192067272,
+            "scale": 0.2827594384134544,
+            "depth_metres": 4.514140960388304
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.87866666666666,
+              0.0
+            ],
+            "frame_index": 25,
+            "cycle_phase": 0.4166666666666665,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 36.9154225844068,
+            "view_azimuth_degrees": 8.517100630616362,
+            "ground_anchor": [
+              550.5387478775917,
+              218.45029576814807
+            ],
+            "pixels_per_metre": 105.07027049171788,
+            "scale": 0.21014054098343576,
+            "depth_metres": 6.074106200093878
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_055.png",
+      "source_sha256": "210fe35fff3a80775cb3837dcc65477ac26f853e6f53f84011efb7a0731a9a39",
+      "output_sha256": "d1cd0003c8400c021024182953dabec083f57c27bf4445395962a98d3a01629e"
+    },
+    {
+      "index": 56,
+      "state": {
+        "local_time": 0.9333333333333333,
+        "global_time": 47.93333333333333,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.91299278328443,
+            4.806506401286354
+          ],
+          "target": [
+            0.0,
+            59.326602972495,
+            3.9964773957548587
+          ],
+          "forward": [
+            0.0,
+            -0.5863898107894241,
+            -0.8100290055314954
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.8100290055314954,
+            0.5863898107894241
+          ],
+          "focal_pixels": 636.5432098765432,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.37875072807745,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.9442015780542162,
+          "party_travel_metres": 57.99333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              57.99333333333333,
+              0.0
+            ],
+            "frame_index": 8,
+            "cycle_phase": 0.1333333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 63.83047217111862,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              480.24386479460463
+            ],
+            "pixels_per_metre": 148.37656390068238,
+            "scale": 0.29675312780136476,
+            "depth_metres": 4.29005223697336
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.49333333333333,
+              0.0
+            ],
+            "frame_index": 18,
+            "cycle_phase": 0.30000000000000004,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 57.32584913868877,
+            "view_azimuth_degrees": -15.036540193426278,
+            "ground_anchor": [
+              402.11374167802256,
+              422.8688198328554
+            ],
+            "pixels_per_metre": 138.88476665206713,
+            "scale": 0.27776953330413423,
+            "depth_metres": 4.583247142368072
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              54.94533333333333,
+              0.0
+            ],
+            "frame_index": 26,
+            "cycle_phase": 0.43333333333333335,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 37.867767363184086,
+            "view_azimuth_degrees": 8.585477764556007,
+            "ground_anchor": [
+              550.1410134900112,
+              207.26357743405595
+            ],
+            "pixels_per_metre": 104.73994170637398,
+            "scale": 0.20947988341274798,
+            "depth_metres": 6.077368380259526
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_056.png",
+      "source_sha256": "a47f9c1679a8157cd2ac14270e8a176eb2d469c018f3c042fd9cb3c63848b1ce",
+      "output_sha256": "833f7bdc45d81fc95da8cae9b762c7c95f6471d15cfd9050d8acdb89dc3c708d"
+    },
+    {
+      "index": 57,
+      "state": {
+        "local_time": 0.95,
+        "global_time": 47.95,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.93879483585556,
+            4.909422971083476
+          ],
+          "target": [
+            0.0,
+            59.37683551750612,
+            4.082258099658054
+          ],
+          "forward": [
+            0.0,
+            -0.5619593183494374,
+            -0.8271648714254225
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.8271648714254225,
+            0.5619593183494374
+          ],
+          "focal_pixels": 634.9093627929688,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.49702598572956,
+          "fov_axis": "vertical",
+          "pitch_radians": -0.9740437118454291,
+          "party_travel_metres": 58.059999999999995,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              58.059999999999995,
+              0.0
+            ],
+            "frame_index": 9,
+            "cycle_phase": 0.1499999999999999,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 64.89245501275978,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              469.5010591719474
+            ],
+            "pixels_per_metre": 145.21308157181562,
+            "scale": 0.29042616314363123,
+            "depth_metres": 4.372260101642235
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.559999999999995,
+              0.0
+            ],
+            "frame_index": 19,
+            "cycle_phase": 0.31666666666666665,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 58.40634145197344,
+            "view_azimuth_degrees": -15.282864099672489,
+            "ground_anchor": [
+              403.54299197702227,
+              413.07058205191714
+            ],
+            "pixels_per_metre": 136.44458386590847,
+            "scale": 0.27288916773181693,
+            "depth_metres": 4.653239760816954
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              55.01199999999999,
+              0.0
+            ],
+            "frame_index": 27,
+            "cycle_phase": 0.44999999999999996,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 38.81775259526451,
+            "view_azimuth_degrees": 8.655614634727966,
+            "ground_anchor": [
+              549.723670053686,
+              197.62327981851314
+            ],
+            "pixels_per_metre": 104.33815383263169,
+            "scale": 0.20867630766526338,
+            "depth_metres": 6.085112103971321
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_057.png",
+      "source_sha256": "6fc2c0a5f63cc732b6a268af3e77013ab2c1230659bb5bfd993fc55c40053f4c",
+      "output_sha256": "008bb8bf34e65f140bca031439f524242825ef75a698031e5a646c1abe274b75"
+    },
+    {
+      "index": 58,
+      "state": {
+        "local_time": 0.9666666666666667,
+        "global_time": 47.96666666666667,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.96425129881793,
+            5.013139366533785
+          ],
+          "target": [
+            0.0,
+            59.424738737258906,
+            4.171161815811662
+          ],
+          "forward": [
+            0.0,
+            -0.5395125615590195,
+            -0.841977550722123
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.841977550722123,
+            0.5395125615590195
+          ],
+          "focal_pixels": 633.3182629243828,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.61267421592693,
+          "fov_axis": "vertical",
+          "pitch_radians": -1.0009382457907297,
+          "party_travel_metres": 58.126666666666665,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              58.126666666666665,
+              0.0
+            ],
+            "frame_index": 10,
+            "cycle_phase": 0.16666666666666663,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 65.92683624722862,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              460.6336857188902
+            ],
+            "pixels_per_metre": 142.1726722278885,
+            "scale": 0.284345344455777,
+            "depth_metres": 4.454571001586277
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.626666666666665,
+              0.0
+            ],
+            "frame_index": 20,
+            "cycle_phase": 0.33333333333333326,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 59.46434461048487,
+            "view_azimuth_degrees": -15.539376934897486,
+            "ground_anchor": [
+              404.90900578143174,
+              405.0790065416987
+            ],
+            "pixels_per_metre": 134.05469711811287,
+            "scale": 0.26810939423622576,
+            "depth_metres": 4.7243272823657865
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              55.07866666666666,
+              0.0
+            ],
+            "frame_index": 28,
+            "cycle_phase": 0.46666666666666656,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 39.76535953161592,
+            "view_azimuth_degrees": 8.727505733620845,
+            "ground_anchor": [
+              549.2727993242077,
+              189.86865227837677
+            ],
+            "pixels_per_metre": 103.83959890049017,
+            "scale": 0.20767919780098035,
+            "depth_metres": 6.099005289218169
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_058.png",
+      "source_sha256": "42ade391ee7c97adb70aebc43512299e51aa6353ce86e41458e29c2ea7ad321d",
+      "output_sha256": "82d0907601345aa95c922b6898b4d0ccd4aba763db80b7bf9d4cb4e930ca7b51"
+    },
+    {
+      "index": 59,
+      "state": {
+        "local_time": 0.9833333333333333,
+        "global_time": 47.983333333333334,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            59.989399349296725,
+            5.117766528515087
+          ],
+          "target": [
+            0.0,
+            59.4703059183799,
+            4.263049025489087
+          ],
+          "forward": [
+            0.0,
+            -0.5190934309168237,
+            -0.8547175030260002
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.8547175030260002,
+            0.5190934309168237
+          ],
+          "focal_pixels": 631.7820042739679,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.724776445923055,
+          "fov_axis": "vertical",
+          "pitch_radians": -1.0250063833103948,
+          "party_travel_metres": 58.19333333333333,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              58.19333333333333,
+              0.0
+            ],
+            "frame_index": 11,
+            "cycle_phase": 0.18333333333333324,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 66.93407341306282,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              453.5183412196167
+            ],
+            "pixels_per_metre": 139.24107525821154,
+            "scale": 0.27848215051642305,
+            "depth_metres": 4.537324945978607
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.69333333333333,
+              0.0
+            ],
+            "frame_index": 21,
+            "cycle_phase": 0.34999999999999987,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 60.49999255011712,
+            "view_azimuth_degrees": -15.806441338038773,
+            "ground_anchor": [
+              406.2217678460486,
+              398.7850697444471
+            ],
+            "pixels_per_metre": 131.70708930009235,
+            "scale": 0.2634141786001847,
+            "depth_metres": 4.796871661437019
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              55.145333333333326,
+              0.0
+            ],
+            "frame_index": 29,
+            "cycle_phase": 0.48333333333333317,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 40.710533283257895,
+            "view_azimuth_degrees": 8.801143109816467,
+            "ground_anchor": [
+              548.7839304849383,
+              183.9262155349997
+            ],
+            "pixels_per_metre": 103.24042185466733,
+            "scale": 0.20648084370933467,
+            "depth_metres": 6.1195217234130865
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_059.png",
+      "source_sha256": "2370da5ba8c7dff5337940e5b9e32e4cb7b865daa6bc9e0459ed3264aa29bac0",
+      "output_sha256": "7c45d85e00f9ba76238c638591a257abf6bb0bb212a6eda1e4594bfa37f9c3d3"
+    },
+    {
+      "index": 60,
+      "state": {
+        "local_time": 1.0,
+        "global_time": 48.0,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            60.01427659561257,
+            5.223418813589575
+          ],
+          "target": [
+            0.0,
+            59.51427659561257,
+            4.357393409805136
+          ],
+          "forward": [
+            0.0,
+            -0.4999999999999997,
+            -0.8660254037844388
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.8660254037844388,
+            0.4999999999999997
+          ],
+          "focal_pixels": 630.3125,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.832414305801954,
+          "fov_axis": "vertical",
+          "pitch_radians": -1.047197551196598,
+          "party_travel_metres": 58.26,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              58.26,
+              0.0
+            ],
+            "frame_index": 12,
+            "cycle_phase": 0.19999999999999996,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 67.9145833218895,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              447.49929258996656
+            ],
+            "pixels_per_metre": 136.3920474685589,
+            "scale": 0.2727840949371178,
+            "depth_metres": 4.621328821574437
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.76,
+              0.0
+            ],
+            "frame_index": 22,
+            "cycle_phase": 0.3666666666666667,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 61.51339243890672,
+            "view_azimuth_degrees": -16.084431698967798,
+            "ground_anchor": [
+              407.4958186379024,
+              393.5581253255999
+            ],
+            "pixels_per_metre": 129.39231225952838,
+            "scale": 0.25878462451905676,
+            "depth_metres": 4.871328821574437
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              55.211999999999996,
+              0.0
+            ],
+            "frame_index": 30,
+            "cycle_phase": 0.5,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 41.65317980631199,
+            "view_azimuth_degrees": 8.876516190360611,
+            "ground_anchor": [
+              548.2673396109417,
+              179.17047489424638
+            ],
+            "pixels_per_metre": 102.5677418248408,
+            "scale": 0.2051354836496816,
+            "depth_metres": 6.145328821574437
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_060.png",
+      "source_sha256": "396f69009d9451a39a48672011e8625b02d670be81cd10372e149e8f7df8c4cd",
+      "output_sha256": "22f29d73b832bf30777468a4a7d95d5f4627ab9b9449739904c5385dee7eb962"
+    },
+    {
+      "index": 61,
+      "state": {
+        "local_time": 1.0166666666666666,
+        "global_time": 48.016666666666666,
+        "phase": "bridge_ascent",
+        "reduced_motion": false,
+        "camera": {
+          "space": "local_bridge_ascent",
+          "position": [
+            0.0,
+            60.038921023381974,
+            5.330213718545402
+          ],
+          "target": [
+            0.0,
+            59.557756082788735,
+            4.453583636958017
+          ],
+          "forward": [
+            0.0,
+            -0.48116494059323817,
+            -0.8766300815873852
+          ],
+          "right": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            -0.8766300815873852,
+            0.48116494059323817
+          ],
+          "focal_pixels": 628.9210303035783,
+          "principal_point": [
+            480.0,
+            320.0
+          ],
+          "fov_degrees": 53.93470477793187,
+          "fov_axis": "vertical",
+          "pitch_radians": -1.0688132132590877,
+          "party_travel_metres": 58.32666666666667,
+          "direction": "toward_mainland_then_down",
+          "tracking_direction": "toward_veinhold",
+          "framing": "mainland_up_fortress_down"
+        },
+        "runners": [
+          {
+            "id": "lucan",
+            "lane_metres": 0.0,
+            "offset_metres": 0.0,
+            "phase_offset_seconds": 0.0,
+            "height_metres": 1.85,
+            "world_position_metres": [
+              0.0,
+              58.32666666666667,
+              0.0
+            ],
+            "frame_index": 13,
+            "cycle_phase": 0.21666666666666656,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 68.86874448590088,
+            "view_azimuth_degrees": 0.0,
+            "ground_anchor": [
+              480.0,
+              441.71052969265463
+            ],
+            "pixels_per_metre": 133.59878994432268,
+            "scale": 0.26719757988864534,
+            "depth_metres": 4.707535379367442
+          },
+          {
+            "id": "iselin",
+            "lane_metres": 0.65,
+            "offset_metres": -0.5,
+            "phase_offset_seconds": 0.16666666666666666,
+            "height_metres": 1.72,
+            "world_position_metres": [
+              0.65,
+              57.82666666666667,
+              0.0
+            ],
+            "frame_index": 23,
+            "cycle_phase": 0.3833333333333333,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 62.50462577270373,
+            "view_azimuth_degrees": -16.37373387048229,
+            "ground_anchor": [
+              408.7445322533323,
+              388.5568861548657
+            ],
+            "pixels_per_metre": 127.10308230558354,
+            "scale": 0.2542061646111671,
+            "depth_metres": 4.948117849664062
+          },
+          {
+            "id": "crown_soldier",
+            "lane_metres": -0.75,
+            "offset_metres": -3.048,
+            "phase_offset_seconds": 0.3,
+            "height_metres": 1.8,
+            "world_position_metres": [
+              -0.75,
+              55.278666666666666,
+              0.0
+            ],
+            "frame_index": 31,
+            "cycle_phase": 0.5166666666666666,
+            "cycle_seconds": 0.8,
+            "view_elevation_degrees": 42.59316341781464,
+            "view_azimuth_degrees": 8.953611595755637,
+            "ground_anchor": [
+              547.7415567679453,
+              174.7376974569798
+            ],
+            "pixels_per_metre": 101.86397528225288,
+            "scale": 0.20372795056450577,
+            "depth_metres": 6.174126118295633
+          }
+        ]
+      },
+      "source": "/tmp/lucan_close_v2b_candidate/transition_061.png",
+      "source_sha256": "b15e3edb54da2a408ebfe626bb93678c22fc56ae999b5191d6cc0124b626e723",
+      "output_sha256": "3a0d2b465764894ecfb1cb19bd5d0704b84e33636a604eaea4e6e83bd6843a6f"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_v2_35_40_native.jpg",
+      "sha256": "a4b76d0a43ac5c34f34d8a017a2f47e0b27333b14e19dd7b18cde7f81a5d8693",
+      "rgba_sha256": "ec27c6a3dbf777e1830033bd97828e29709bd737e88d0da9b5c905a794bb4c03",
+      "size": [
+        2400,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_v2_43_48_native.jpg",
+      "sha256": "0fa082c5483d924af012076c0df5db394b0064826b1b34f2f97d74af94bf5b03",
+      "rgba_sha256": "d52a155692539649b5e8f0488e0a269676da692150876ec778466c00cde688a3",
+      "size": [
+        2400,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_v2_48_53_native.jpg",
+      "sha256": "7232da21c2cf40eea24a2c7d6e88667c7811b55d51a8d9c50099dce7fa88eab2",
+      "rgba_sha256": "3ff102b1347d5e787333f6018680e7427e7afc3430ee0a82ff90b27fe5e4e198",
+      "size": [
+        2400,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_56b_54_61_native.jpg",
+      "sha256": "e971cf986c0c377bb4ae54e4359bd353df63a5c8a5242578cd4d868d7265c29d",
+      "rgba_sha256": "8b73452a06f91e396d4d6aeb8b69cd24a042d16543a211c425e6ecab7562d291",
+      "size": [
+        3200,
+        640
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected_next1_curation_native.jpg",
+      "sha256": "9d55d6c9eace52fe6f816f2651d75b4c7ef9c53d048bf21317157531e7e53e93",
+      "rgba_sha256": "e91415f05cc52fe4cf89fa68a19d01b888ef7b89e18ad03473051e75be7f6c27",
+      "size": [
+        1750,
+        800
+      ]
+    },
+    {
+      "path": "docs/reviews/veinhold_bridge_ascent/independent_review/lucan_rejected_bowed2_curation_native.jpg",
+      "sha256": "1c0e5bd477586c1a59dd9eafaa52df7da9a350dc65568eb623ed3c4a6c4e78ed",
+      "rgba_sha256": "280d712321e85be41ac8771f7c9d64daa77ddc3fb29a0bc935d4564a38767b6d",
+      "size": [
+        1750,
+        800
+      ]
+    }
+  ],
+  "limits": "Actual native/whole-source chronological stills and exact FigureCompositor controls. No realtime playback, hidden-joint or diffuse-hair rigid-skull claims."
+}

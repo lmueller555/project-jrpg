@@ -1,0 +1,101 @@
+{
+  "source_sha256": "0c8bd22374001093b1d450c7a6e57488c2e47dbcb21225888a42ca5b6ee03706",
+  "rows": [
+    {
+      "phase": 16,
+      "cell": [
+        0,
+        0,
+        512,
+        384
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 17,
+      "cell": [
+        512,
+        0,
+        1024,
+        384
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 18,
+      "cell": [
+        0,
+        384,
+        512,
+        768
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 19,
+      "cell": [
+        512,
+        384,
+        1024,
+        768
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 20,
+      "cell": [
+        0,
+        768,
+        512,
+        1152
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 21,
+      "cell": [
+        512,
+        768,
+        1024,
+        1152
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 22,
+      "cell": [
+        0,
+        1152,
+        512,
+        1536
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    },
+    {
+      "phase": 23,
+      "cell": [
+        512,
+        1152,
+        1024,
+        1536
+      ],
+      "corner_max_alpha": 0,
+      "corner_pixels_over16": 0,
+      "edge_pixels_over16": 0
+    }
+  ]
+}

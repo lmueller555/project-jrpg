@@ -1,0 +1,70 @@
+[
+  {
+    "sample_index": 40,
+    "gait_frame": 2,
+    "view_elevation": 37.076904975469404,
+    "view_azimuth": -12.230407319689482,
+    "native_pixels_per_metre": 195.69114540607984,
+    "guide": "guides/transition/guide_040.png",
+    "guide_sha256": "41f3267daa7df0cac4a1bb3358cfc99e0a5fa3b7a43ef9822c41858aae452361",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_02.png",
+    "appearance_sha256": "ac4fd1eeb7159abdb7b72503b34935c62e5f95d99b68c73c0fe7e14c4a86bd3b",
+    "cell": [
+      0,
+      0,
+      512,
+      768
+    ]
+  },
+  {
+    "sample_index": 41,
+    "gait_frame": 3,
+    "view_elevation": 38.45262051398388,
+    "view_azimuth": -12.353615180938856,
+    "native_pixels_per_metre": 189.87391628365367,
+    "guide": "guides/transition/guide_041.png",
+    "guide_sha256": "33052d06efdcc8f7b3ad2b9082715b849c98392604a110e67235f540a4e39451",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_03.png",
+    "appearance_sha256": "43eebfee00a155a33b51fb9efc5f974ce3b508addca09980dcf0282dcfbe72ef",
+    "cell": [
+      512,
+      0,
+      1024,
+      768
+    ]
+  },
+  {
+    "sample_index": 42,
+    "gait_frame": 4,
+    "view_elevation": 39.82758611474113,
+    "view_azimuth": -12.48274014669097,
+    "native_pixels_per_metre": 183.9325811817564,
+    "guide": "guides/transition/guide_042.png",
+    "guide_sha256": "45b68a763026f0e24bdb9833c6d1cc439b4e4d64c89bd9c61a972ba4ba57baad",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_04.png",
+    "appearance_sha256": "3c171fc39f93481232c2f9bf24b89cb6be6996f450911c74d1ec4b9401775f27",
+    "cell": [
+      0,
+      768,
+      512,
+      1536
+    ]
+  },
+  {
+    "sample_index": 43,
+    "gait_frame": 5,
+    "view_elevation": 41.197751185062096,
+    "view_azimuth": -12.617975435262437,
+    "native_pixels_per_metre": 178.18585792394947,
+    "guide": "guides/transition/guide_043.png",
+    "guide_sha256": "64c7035c2c519f5a2895cc3db34fe9728b9562c0faf9aec876ce4290cca1ff15",
+    "appearance": "assets/story/fire_veinhold_opening/shot07/characters/iselin/frame_05.png",
+    "appearance_sha256": "98559b36f1d321efceb4d2d3de38160f786df931641177e5a17414538c1389cd",
+    "cell": [
+      512,
+      768,
+      1024,
+      1536
+    ]
+  }
+]

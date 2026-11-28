@@ -45,10 +45,9 @@ flow, rewards and learning. The regional bridge now starts intact, with
 layered phase art and a bounded west-bank road. Explicit damage/repair states
 are retained, while the old `legacy_layout` scenery placeholder loads intact;
 no attack or repair event is inferred. The new cinematic's
-[47-second opening presentation](scenes/FIRE_VEINHOLD_PROLOGUE.md) is implemented
-in the Gallery: eagle ascent, island orbit, alarm lead-in, bridge rush,
-frozen-guard reveal, a low side-on shot of the running party and a frontal face
-reveal, with individual clips and a complete entry. The playable
+[production owner](scenes/FIRE_VEINHOLD_PROLOGUE.md) records the implemented
+55-second Gallery presentation, including Bridge Ascent, and links its source,
+native-frame, reproduction and runtime evidence. The playable
 Fire Veinhold prologue, new arrival,
 attack/invasion and repair quest remain future implementation. The
 [overworld guide](../OVERWORLD.md) owns runtime details. Historical reviews

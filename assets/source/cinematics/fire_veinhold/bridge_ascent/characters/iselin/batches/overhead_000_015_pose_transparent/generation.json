@@ -1,0 +1,38 @@
+{
+  "generation_id": "exec-749b0eb6-1131-444c-bb8f-0cdbb7a0d7b3",
+  "original_generation_path": "/workspace/generated_images/exec-749b0eb6-1131-444c-bb8f-0cdbb7a0d7b3.png",
+  "master": "master.png",
+  "sha256": "b4f1b526668c91ff357e2d9dff5a519d9b004085d5b6c0894aa23676f081eba4",
+  "size": [
+    1024,
+    1536
+  ],
+  "prompt": "prompt.txt",
+  "prompt_sha256": "6bb6a598d24e898e280ddd40769dfbdb1fcaafbb489c8c3a7bfd3d757ba7e85c",
+  "references": [
+    {
+      "path": "batches/overhead_000_015_pose_transparent/edit_reference.png",
+      "sha256": "44191edde40d7177033212c7ca6bb974fd4bd48317d55110009b7638704a93d0"
+    }
+  ],
+  "status": "complete ImageGen alpha cleanup; gait acceptance pending",
+  "samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "guide_pixels_used_in_export": false
+}

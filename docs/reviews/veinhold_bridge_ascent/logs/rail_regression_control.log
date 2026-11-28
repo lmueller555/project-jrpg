@@ -1,0 +1,41 @@
+test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) ... 
+  test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=24) ... FAIL
+  test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=36) ... FAIL
+  test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=48) ... FAIL
+
+======================================================================
+FAIL: test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=24)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/project-jrpg/tests/test_prologue_ascent_world.py", line 53, in test_transparent_brace_gaps_reach_the_actual_world_surface
+    self.assertAlmostEqual(float(self.renderer.depth[y,x]),expected,delta=.001)
+AssertionError: 50.588233947753906 != 69.0116198537237 within 0.001 delta (18.423385905969795 difference)
+
+======================================================================
+FAIL: test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=36)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/project-jrpg/tests/test_prologue_ascent_world.py", line 53, in test_transparent_brace_gaps_reach_the_actual_world_surface
+    self.assertAlmostEqual(float(self.renderer.depth[y,x]),expected,delta=.001)
+AssertionError: 11.567795753479004 != 70.73354114869119 within 0.001 delta (59.165745395212184 difference)
+
+======================================================================
+FAIL: test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) (frame=48)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/project-jrpg/tests/test_prologue_ascent_world.py", line 53, in test_transparent_brace_gaps_reach_the_actual_world_surface
+    self.assertAlmostEqual(float(self.renderer.depth[y,x]),expected,delta=.001)
+AssertionError: 11.696659088134766 != 54.46016400282698 within 0.001 delta (42.76350491469221 difference)
+
+----------------------------------------------------------------------
+Ran 1 test in 2.002s
+
+FAILED (failures=3)
+test_transparent_brace_gaps_reach_the_actual_world_surface (tests.test_prologue_ascent_world.AscentWorldTests.test_transparent_brace_gaps_reach_the_actual_world_surface) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.966s
+
+OK
+Negative control: retained actual rejected frame SHA and reconstructed render match; all three transparent-gap rays correctly fail the rejected solid-plane renderer.
+Current renderer passes all three independent physical surface rays.

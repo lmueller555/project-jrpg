@@ -1,0 +1,568 @@
+{
+  "version": 1,
+  "approval_scope": "Manual whole-figure source geometry and rigid observations only; native and composed acceptance is recorded separately in root review documents.",
+  "method": "Actual raw pixel inspection. Main connected cranium/hair mass through chin where visible, excluding isolated wisps/collar. Main paired rigid pauldron domes exclude segmented upper arms, shield and sword. Whole-master uniform scale balances both physical bands, never eyeNCC or occupied silhouette height.",
+  "coordinate_space": "All per-row head and cap observations are cell-local source pixels; cell rectangles are master-global.",
+  "uncertainty_source_pixels": {
+    "cranium_bbox_each_edge": 5,
+    "cranium_center": 5,
+    "main_cap_pair_each_edge": 8
+  },
+  "canonical_reference_art_pixels": {
+    "adult_cranium_width": [
+      120,
+      135
+    ],
+    "main_cap_pair_span": [
+      260,
+      275
+    ]
+  },
+  "density_note": "These are balanced candidate registrations, not hard per-pose fits. Masters40/44 show about9% main dome span variation with armor carry/torso exposure; head-width and cap-span uncertainty bands overlap the canonical bands. Native boundary controls must decide; no body part has been independently fitted.",
+  "masters": [
+    {
+      "source": "transition_036_039.png",
+      "sha256": "39c8f92dfeae5a64513dcaa482e7fb566883d01c99911afef8aaeb3880705398",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.17,
+      "measurement_overlay": "measurement_overlay_036_039.jpg",
+      "rows": [
+        {
+          "index": 36,
+          "source": "transition_036_039.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            214,
+            70,
+            316,
+            189
+          ],
+          "cranium_center": [
+            265.0,
+            129.5
+          ],
+          "cranium_width": 102,
+          "main_cap_pair_x_bounds": [
+            145,
+            378
+          ],
+          "main_cap_pair_span": 233,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 119.34,
+          "scaled_main_cap_pair_span": 272.61
+        },
+        {
+          "index": 37,
+          "source": "transition_036_039.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            213,
+            81,
+            316,
+            202
+          ],
+          "cranium_center": [
+            264.5,
+            141.5
+          ],
+          "cranium_width": 103,
+          "main_cap_pair_x_bounds": [
+            145,
+            379
+          ],
+          "main_cap_pair_span": 234,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 120.51,
+          "scaled_main_cap_pair_span": 273.78
+        },
+        {
+          "index": 38,
+          "source": "transition_036_039.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            213,
+            85,
+            316,
+            208
+          ],
+          "cranium_center": [
+            264.5,
+            146.5
+          ],
+          "cranium_width": 103,
+          "main_cap_pair_x_bounds": [
+            145,
+            378
+          ],
+          "main_cap_pair_span": 233,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 120.51,
+          "scaled_main_cap_pair_span": 272.61
+        },
+        {
+          "index": 39,
+          "source": "transition_036_039.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            213,
+            110,
+            316,
+            230
+          ],
+          "cranium_center": [
+            264.5,
+            170.0
+          ],
+          "cranium_width": 103,
+          "main_cap_pair_x_bounds": [
+            145,
+            380
+          ],
+          "main_cap_pair_span": 235,
+          "uniform_scale": 1.17,
+          "scaled_cranium_width": 120.51,
+          "scaled_main_cap_pair_span": 274.95
+        }
+      ],
+      "scaled_head_width_range": [
+        119.34,
+        120.51
+      ],
+      "scaled_cap_span_range": [
+        272.61,
+        274.95
+      ]
+    },
+    {
+      "source": "transition_040_043.png",
+      "sha256": "a83302b87f42be17297f47999460742a4585195168560006a68a1c6b8ebdb30f",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.13,
+      "measurement_overlay": "measurement_overlay_040_043.jpg",
+      "rows": [
+        {
+          "index": 40,
+          "source": "transition_040_043.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            207,
+            77,
+            315,
+            205
+          ],
+          "cranium_center": [
+            261.0,
+            141.0
+          ],
+          "cranium_width": 108,
+          "main_cap_pair_x_bounds": [
+            146,
+            374
+          ],
+          "main_cap_pair_span": 228,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 122.04,
+          "scaled_main_cap_pair_span": 257.64
+        },
+        {
+          "index": 41,
+          "source": "transition_040_043.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            193,
+            95,
+            306,
+            225
+          ],
+          "cranium_center": [
+            249.5,
+            160.0
+          ],
+          "cranium_width": 113,
+          "main_cap_pair_x_bounds": [
+            130,
+            378
+          ],
+          "main_cap_pair_span": 248,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 127.69,
+          "scaled_main_cap_pair_span": 280.24
+        },
+        {
+          "index": 42,
+          "source": "transition_040_043.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            207,
+            110,
+            315,
+            241
+          ],
+          "cranium_center": [
+            261.0,
+            175.5
+          ],
+          "cranium_width": 108,
+          "main_cap_pair_x_bounds": [
+            146,
+            375
+          ],
+          "main_cap_pair_span": 229,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 122.04,
+          "scaled_main_cap_pair_span": 258.77
+        },
+        {
+          "index": 43,
+          "source": "transition_040_043.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            193,
+            131,
+            306,
+            258
+          ],
+          "cranium_center": [
+            249.5,
+            194.5
+          ],
+          "cranium_width": 113,
+          "main_cap_pair_x_bounds": [
+            130,
+            379
+          ],
+          "main_cap_pair_span": 249,
+          "uniform_scale": 1.13,
+          "scaled_cranium_width": 127.69,
+          "scaled_main_cap_pair_span": 281.37
+        }
+      ],
+      "scaled_head_width_range": [
+        122.04,
+        127.69
+      ],
+      "scaled_cap_span_range": [
+        257.64,
+        281.37
+      ]
+    },
+    {
+      "source": "transition_044_047.png",
+      "sha256": "289da2dcd6ae7f3b0a9224dfa5aa5fc5a54eae7bd3d10936219a089c708003a4",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.15,
+      "measurement_overlay": "measurement_overlay_044_047.jpg",
+      "rows": [
+        {
+          "index": 44,
+          "source": "transition_044_047.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            202,
+            89,
+            308,
+            212
+          ],
+          "cranium_center": [
+            255.0,
+            150.5
+          ],
+          "cranium_width": 106,
+          "main_cap_pair_x_bounds": [
+            145,
+            366
+          ],
+          "main_cap_pair_span": 221,
+          "uniform_scale": 1.15,
+          "scaled_cranium_width": 121.9,
+          "scaled_main_cap_pair_span": 254.15
+        },
+        {
+          "index": 45,
+          "source": "transition_044_047.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            194,
+            107,
+            308,
+            232
+          ],
+          "cranium_center": [
+            251.0,
+            169.5
+          ],
+          "cranium_width": 114,
+          "main_cap_pair_x_bounds": [
+            132,
+            374
+          ],
+          "main_cap_pair_span": 242,
+          "uniform_scale": 1.15,
+          "scaled_cranium_width": 131.1,
+          "scaled_main_cap_pair_span": 278.3
+        },
+        {
+          "index": 46,
+          "source": "transition_044_047.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            202,
+            110,
+            309,
+            238
+          ],
+          "cranium_center": [
+            255.5,
+            174.0
+          ],
+          "cranium_width": 107,
+          "main_cap_pair_x_bounds": [
+            145,
+            367
+          ],
+          "main_cap_pair_span": 222,
+          "uniform_scale": 1.15,
+          "scaled_cranium_width": 123.05,
+          "scaled_main_cap_pair_span": 255.3
+        },
+        {
+          "index": 47,
+          "source": "transition_044_047.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            194,
+            129,
+            308,
+            258
+          ],
+          "cranium_center": [
+            251.0,
+            193.5
+          ],
+          "cranium_width": 114,
+          "main_cap_pair_x_bounds": [
+            132,
+            375
+          ],
+          "main_cap_pair_span": 243,
+          "uniform_scale": 1.15,
+          "scaled_cranium_width": 131.1,
+          "scaled_main_cap_pair_span": 279.45
+        }
+      ],
+      "scaled_head_width_range": [
+        121.9,
+        131.1
+      ],
+      "scaled_cap_span_range": [
+        254.15,
+        279.45
+      ]
+    },
+    {
+      "source": "transition_056_059.png",
+      "sha256": "65ced715ea52f89ea3a67425b647840d6be9a3ac889779220c897375e382d808",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "uniform_scale": 1.1,
+      "measurement_overlay": "measurement_overlay_056_059.jpg",
+      "rows": [
+        {
+          "index": 56,
+          "source": "transition_056_059.png",
+          "cell": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "cranium_bbox": [
+            194,
+            114,
+            313,
+            252
+          ],
+          "cranium_center": [
+            253.5,
+            183.0
+          ],
+          "cranium_width": 119,
+          "main_cap_pair_x_bounds": [
+            141,
+            382
+          ],
+          "main_cap_pair_span": 241,
+          "uniform_scale": 1.1,
+          "scaled_cranium_width": 130.9,
+          "scaled_main_cap_pair_span": 265.1
+        },
+        {
+          "index": 57,
+          "source": "transition_056_059.png",
+          "cell": [
+            512,
+            0,
+            1024,
+            768
+          ],
+          "cranium_bbox": [
+            194,
+            132,
+            315,
+            276
+          ],
+          "cranium_center": [
+            254.5,
+            204.0
+          ],
+          "cranium_width": 121,
+          "main_cap_pair_x_bounds": [
+            138,
+            385
+          ],
+          "main_cap_pair_span": 247,
+          "uniform_scale": 1.1,
+          "scaled_cranium_width": 133.1,
+          "scaled_main_cap_pair_span": 271.7
+        },
+        {
+          "index": 58,
+          "source": "transition_056_059.png",
+          "cell": [
+            0,
+            768,
+            512,
+            1536
+          ],
+          "cranium_bbox": [
+            195,
+            148,
+            314,
+            284
+          ],
+          "cranium_center": [
+            254.5,
+            216.0
+          ],
+          "cranium_width": 119,
+          "main_cap_pair_x_bounds": [
+            140,
+            383
+          ],
+          "main_cap_pair_span": 243,
+          "uniform_scale": 1.1,
+          "scaled_cranium_width": 130.9,
+          "scaled_main_cap_pair_span": 267.3
+        },
+        {
+          "index": 59,
+          "source": "transition_056_059.png",
+          "cell": [
+            512,
+            768,
+            1024,
+            1536
+          ],
+          "cranium_bbox": [
+            196,
+            176,
+            315,
+            301
+          ],
+          "cranium_center": [
+            255.5,
+            238.5
+          ],
+          "cranium_width": 119,
+          "main_cap_pair_x_bounds": [
+            137,
+            386
+          ],
+          "main_cap_pair_span": 249,
+          "uniform_scale": 1.1,
+          "scaled_cranium_width": 130.9,
+          "scaled_main_cap_pair_span": 273.9
+        }
+      ],
+      "scaled_head_width_range": [
+        130.9,
+        133.1
+      ],
+      "scaled_cap_span_range": [
+        265.1,
+        273.9
+      ]
+    }
+  ]
+}

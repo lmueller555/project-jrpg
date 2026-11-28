@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "canvas": [
+    320,
+    320
+  ],
+  "anchor": [
+    160,
+    125
+  ],
+  "art_pixels_per_metre": 200,
+  "view_elevation_degrees": 70,
+  "heading_world": [
+    0,
+    -1,
+    0
+  ],
+  "cycle_ms": 800,
+  "frame_ms": 50,
+  "anatomical_right": "sword / image right",
+  "anatomical_left": "forearm shield / image left",
+  "registration": "One fixed density and internal ground root for all sixteen complete figures. No occupied-height fitting or per-part transformations. The camera guide at 70 degrees defines a high-view background bank; final native presentation at 2\u20136 pixels presentation is reviewed separately.",
+  "frames": [
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        0,
+        0,
+        320,
+        320
+      ],
+      "cycle_frame": 0
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        320,
+        0,
+        640,
+        320
+      ],
+      "cycle_frame": 1
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        640,
+        0,
+        960,
+        320
+      ],
+      "cycle_frame": 2
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        960,
+        0,
+        1280,
+        320
+      ],
+      "cycle_frame": 3
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        0,
+        320,
+        320,
+        640
+      ],
+      "cycle_frame": 4
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        320,
+        320,
+        640,
+        640
+      ],
+      "cycle_frame": 5
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        640,
+        320,
+        960,
+        640
+      ],
+      "cycle_frame": 6
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        960,
+        320,
+        1280,
+        640
+      ],
+      "cycle_frame": 7
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        0,
+        640,
+        320,
+        960
+      ],
+      "cycle_frame": 8
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        320,
+        640,
+        640,
+        960
+      ],
+      "cycle_frame": 9
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        640,
+        640,
+        960,
+        960
+      ],
+      "cycle_frame": 10
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        960,
+        640,
+        1280,
+        960
+      ],
+      "cycle_frame": 11
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        0,
+        960,
+        320,
+        1280
+      ],
+      "cycle_frame": 12
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        320,
+        960,
+        640,
+        1280
+      ],
+      "cycle_frame": 13
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        640,
+        960,
+        960,
+        1280
+      ],
+      "cycle_frame": 14
+    },
+    {
+      "source": "live_cycle_master.png",
+      "source_sha256": "35efae9efd1e4aa52ea42d287d236ba141608403f83b30c6c800d704e3c682aa",
+      "cell": [
+        960,
+        960,
+        1280,
+        1280
+      ],
+      "cycle_frame": 15
+    }
+  ]
+}
